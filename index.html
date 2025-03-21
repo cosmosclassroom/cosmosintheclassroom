@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos in the Classroom | Explore Physics through History and Mathematics</title>
+    <style>
+        :root {
+            --primary-dark: #0B3D91;
+            --primary: #1E88E5;
+            --primary-light: #90CAF9;
+            --accent: #FF6D00;
+            --dark: #1A237E;
+            --light: #E3F2FD;
+            --text: #212121;
+            --text-light: #FAFAFA;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .stars-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--dark) 0%, #000 100%);
+            opacity: 0.9;
+            z-index: -1;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: var(--text-light);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/api/placeholder/1200/800") center/cover no-repeat;
+            color: var(--text-light);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: var(--primary-light);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 109, 0, 0.4);
+        }
+        
+        .cta-button:hover {
+            background-color: #FF9E40;
+            transform: translateY(-3px);
+        }
+        
+        .features {
+            padding: 5rem 2rem;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            flex: 1 1 300px;
+            max-width: 350px;
+            padding: 2rem;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .icon {
+            color: var(--accent);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .timeline {
+            padding: 5rem 2rem;
+            background-color: var(--light);
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--accent);
+            border: 4px solid white;
+            border-radius: 50%;
+            z-index: 1;
+            top: 15px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+        
+        .testimonials {
+            padding: 5rem 2rem;
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: var(--text-light);
+        }
+        
+        .testimonial-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            flex: 1 1 300px;
+            max-width: 300px;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: var(--text);
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+        
+        .cta-section {
+            padding: 5rem 2rem;
+            text-align: center;
+            background-color: var(--dark);
+            color: var(--text-light);
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            padding: 2rem;
+            background-color: #000;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            flex: 1 1 250px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--primary-light);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .timeline-container::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-dot {
+                left: 21px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars-bg"></div>
+    
+    <header>
+        <nav>
+            <a href="#" class="logo">Cosmos<span>in</span>the<span>Classroom</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#features">Curriculum</a></li>
+                <li><a href="#timeline">Historical Timeline</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Cosmos in the Classroom</h1>
+        <h2>Explore Physics through History and Mathematics</h2>
+        <p>Journey through time and space to understand the universe's fundamental laws.</p>
+        <a href="#" class="cta-button">Begin Your Cosmic Journey</a>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Our Approach</h2>
+        <div class="features-container">
+            <div class="feature-card">
+                <span class="icon">✧</span>
+                <h3>Historical Context</h3>
+                <p>Understand physics concepts through the lens of their historical development, from ancient astronomers to modern physicists.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">∑</span>
+                <h3>Mathematical Foundations</h3>
+                <p>Build a strong mathematical framework to truly comprehend the language in which the universe speaks.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">⚗</span>
+                <h3>Hands-On Experiments</h3>
+                <p>Recreate historical experiments and conduct modern investigations to solidify theoretical knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="timeline">
+        <h2 class="section-title">Journey Through Physics History</h2>
+        <div class="timeline-container">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Ancient Astronomy</h3>
+                    <p>From Ptolemy to Copernicus: How early models of the universe evolved.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Newtonian Revolution</h3>
+                    <p>How Newton's laws of motion and gravity transformed our understanding of the physical world.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Electromagnetic Theory</h3>
+                    <p>Maxwell's equations and the unification of electricity and magnetism.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Relativity & Quantum Mechanics</h3>
+                    <p>Einstein's theories and the strange world of quantum physics.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <p>"Understanding the historical context behind physical laws has given me a much deeper appreciation of these concepts. The mathematical approach is challenging but incredibly rewarding."</p>
+                <p class="testimonial-author">- Alex P., Physics Teacher</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"The way this curriculum connects mathematical equations to real-world phenomena through historical discoveries makes complex physics accessible and fascinating."</p>
+                <p class="testimonial-author">- Sarah M., High School Student</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"After 20 years of teaching physics, this approach has revitalized my classroom. Students are more engaged when they understand the human stories behind the science."</p>
+                <p class="testimonial-author">- Dr. James W., University Professor</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="section-title">Ready to Transform Your Physics Classroom?</h2>
+            <p>Join educators worldwide who are using our curriculum to inspire the next generation of scientists and thinkers.</p>
+            <a href="#" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Cosmos in the Classroom</h3>
+                <p>Bringing the wonders of the universe into your learning environment through history and mathematics.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Curriculum Guides</a></li>
+                    <li><a href="#">Lesson Plans</a></li>
+                    <li><a href="#">Historical Timelines</a></li>
+                    <li><a href="#">Mathematical Foundations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">Email Newsletter</a></li>
+                    <li><a href="#">Teacher Community</a></li>
+                    <li><a href="#">Workshop Calendar</a></li>
+                    <li><a href="#">Contact Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 CosmosInTheClassroom.com. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
