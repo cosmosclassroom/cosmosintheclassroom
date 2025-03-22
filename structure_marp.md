@@ -2,6 +2,8 @@
 title: Working Structure - cosmosintheclassroom.org
 author: Jonathan Corbett
 date: 22 March 2025
+theme: gaia
+marp: true
 ---
 
 # `/main`
@@ -21,4 +23,4 @@ date: 22 March 2025
       - resource links
     - honors biology
   - 
-
+```
