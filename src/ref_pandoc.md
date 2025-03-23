@@ -18,10 +18,6 @@ abstract: A concise reference sheet for producing scientific educational content
 | Markdown | PPTX (via Marp) | `marp input.md --pptx -o slides.pptx` |
 | Multiple files | Single PDF | `pandoc chapter1.md chapter2.md -o book.pdf` |
 
-
-<div class="container">
-    <div class = "column">
-
 ## HTML Export with KaTeX for Math
 
 ```bash
@@ -34,11 +30,6 @@ pandoc input.md -o output.html --katex --standalone --css=style.css
 # Self-contained HTML (includes all assets)
 pandoc input.md -o output.html --katex --self-contained
 ```
-    
-    
-    
-    </div>
-
 
 ### KaTeX-Specific Options
 
