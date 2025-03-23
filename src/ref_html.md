@@ -1,3 +1,9 @@
+---
+layout: default
+title: HTML Reference
+author: Jonathan Corbett
+date: 23 March 2025
+---
 
 # Heading in HTML
 ```
