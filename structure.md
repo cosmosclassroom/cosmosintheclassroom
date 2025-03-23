@@ -2,9 +2,10 @@
 title: Working Structure - cosmosintheclassroom.org
 author: Jonathan Corbett
 date: 22 March 2025
+css: style.css
 ---
 
-# `/main`
+# Main
 <!-- markdownlint-capture -->
 - index.html
 - landing pages
@@ -20,6 +21,7 @@ date: 22 March 2025
       - content page links
       - resource links
     - honors biology
-  - 
-
+  - James Watt
+  
+## Reference
 ![James Watt]("build\cosmosintheclassroom\watt.png")
