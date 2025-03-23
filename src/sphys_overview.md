@@ -13,9 +13,15 @@ Date: 23 March 2025
 
 ### P1
 ### P2
+### L4 - Wave Variables
+1. [Wave Variables Lab]
 
 
 ## P3 Force, Impulse, and Collision Safety
 
 
 ## P4 Celestial Mechanics
+
+<!-- Definitions -->
+
+[Wave Variables Lab]: ..\src\p5l4_wave_variables
