@@ -1,14 +1,9 @@
 <!-- _includes/sidebar.html -->
 <aside class="sidebar">
     <h2>Categories</h2>
-    <ul>
+    <ul class="category-list">
       {% for category in site.categories %}
-        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-        
+        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }} ({{ category[1].size }})</a></li>
       {% endfor %}
     </ul>
-
-  </aside>
+</aside>
