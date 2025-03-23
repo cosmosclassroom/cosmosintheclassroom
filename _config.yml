@@ -15,15 +15,62 @@ sass:
 # Include these directories
 include:
   - assets
-  - "src/**/**/**/*.md"
-  - index.md
-  - template.md
+  - src
+  - "*.md"
   
 exclude:
   - "node_modules"
   - ".git"
   - ".github"
   - "README.md"
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  lessons:
+    output: true
+    permalink: /lessons/:path/
+  resources:
+    output: true
+    permalink: /resources/:path/
+  activities:
+    output: true
+    permalink: /activities/:path/
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "lessons"
+    values:
+      layout: "lesson"
+      has_quiz: true
+  -
+    scope:
+      path: ""
+      type: "activities"
+    values:
+      layout: "activity"
+      has_materials: true
+  -
+    scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+      has_downloads: false
 
 theme: minima
 # For using other GitHub-hosted themes, uncomment the following line:
