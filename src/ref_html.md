@@ -4,7 +4,7 @@ title: HTML Reference
 author: Jonathan Corbett
 date: 23 March 2025
 ---
-
+<toc></toc>
 # Heading in HTML
 ```
 <!DOCTYPE html>
@@ -93,7 +93,7 @@ HTML
 </body>
 ```
 
-3. Figures and Tables:
+### Figures and Tables:
 
 <figure>: Represents self-contained content, often with a caption (e.g., images, diagrams, code snippets).
 <img>: Embeds an image. Use the src attribute for the image path and alt for alternative text.
@@ -104,7 +104,9 @@ HTML
 <tfoot>: Contains the table footer rows (optional).
 <caption>: Provides a title for the <table>.
 
+
 Example:
+
 ```
 HTML
 <figure>
@@ -135,8 +137,37 @@ HTML
     </tbody>
 </table>
 ```
+HTML
+<figure>
+    <img src="figure1.png" alt="Graph showing experimental results">
+    <figcaption>Figure 1: Experimental results over time.</figcaption>
+</figure>
 
-4. Mathematical Content:
+<table>
+    <caption>Table 1: Summary of Statistical Analysis</caption>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Mean</th>
+            <th>Standard Deviation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Group A</td>
+            <td>10.5</td>
+            <td>2.1</td>
+        </tr>
+        <tr>
+            <td>Group B</td>
+            <td>12.3</td>
+            <td>1.8</td>
+        </tr>
+    </tbody>
+</table>
+
+
+### Mathematical Content:
 
 While HTML itself doesn't render complex mathematical notation, you can integrate it using:
 
