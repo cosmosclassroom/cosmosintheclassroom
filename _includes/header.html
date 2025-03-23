@@ -1,12 +1,72 @@
 <!-- _includes/header.html -->
 <header class="site-header">
-    <h1 class="site-title"><a href="{{ '/' | relative_url }}">Cosmos in the Classroom</a></h1>
+    <div class="header-content">
+        <h1 class="site-title"><a href="{{ '/' | relative_url }}">Cosmos in the Classroom</a></h1>
+        <p class="site-subtitle">Exploring Physics Through History and Mathematics</p>
+    </div>
     <nav class="site-nav">
-      <ul>
-        <a href="{{ '/' | relative_url }}">Home</a> </li>
-        <a href="{{ '/about' | relative_url }}">About</a> </li>
-        <a href="{{ '/contact' | relative_url }}">Contact</a> </li>
-        <!-- Add more navigation items as needed -->
-      </ul>
+        <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/about' | relative_url }}">About</a></li>
+            <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
+
+<style>
+    .site-header {
+        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+        padding: 2rem;
+        border-bottom: 3px double #8b7355;
+    }
+
+    .header-content {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .site-title {
+        font-family: "Crimson Text", "Palatino", serif;
+        font-size: 2.5rem;
+        margin: 0;
+        color: #2c4a3e;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
