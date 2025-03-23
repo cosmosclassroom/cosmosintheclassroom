@@ -19,7 +19,7 @@ The [Standard Physics Landing]
 
 <!-- document references are below -->
 
-[Honors Physics Landing]: ./src/hphys_overview.md
-[Aristotle]: build\cosmosintheclassroom\aristotle.png
+[Honors Physics Landing]: ../src/hphys_overview.md
+[Aristotle]: aristotle.png
 
-[Standard Physics Landing]: ./src/sphys_overview.md
+[Standard Physics Landing]: ../src/sphys_overview.md
