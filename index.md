@@ -8,5 +8,7 @@ The [Honors Physics Landing] page is accessible from here
 
 The [Standard]
 
-[Honors Physics Landing]: ("build\cosmosintheclassroom\0-Lesson-Overview.md")
+[Standard Physics Landing]: 
+
+[Honors Physics Landing]: ./build/cosmosintheclassroom/0%20Lesson%20Overview.md
 [Standard Physics Landing]: 
