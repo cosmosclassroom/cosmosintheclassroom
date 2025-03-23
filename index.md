@@ -19,7 +19,7 @@ The [LaTeX Reference] is available for mathematical notation help.
 
 <!-- document references are below -->
 
-[Honors Physics Landing]: ../src/hphys_overview
+[Honors Physics Landing]: ../src/hphys_landing
 [Aristotle]: aristotle.png
 [Standard Physics Landing]: ../src/sphys_overview
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref_latex
