@@ -223,3 +223,163 @@ Accessibility: Ensure your content is accessible to everyone by using appropriat
 Validation: Validate your HTML to ensure it is well-formed.
 
 This cheat sheet provides a foundation for structuring your academic and scientific writing in HTML. Remember to adapt it to the specific requirements of your document and consider using CSS for styling and JavaScript for enhanced functionality.
+
+# HTML Formatting Reference for Academic Writing (Markdown-Friendly)
+
+This reference guide covers HTML elements that are useful for academic writing and compatible with Markdown documents. These HTML elements can be embedded directly within Markdown files to enhance layout and formatting options.
+
+## Document Structure Elements
+
+### Article
+
+```html
+<article>
+  <h2>Section Title</h2>
+  <p>Content goes here. Useful for self-contained compositions like papers or reports.</p>
+</article>
+```
+
+### Section
+```html
+<section>
+  <h3>Subsection Heading</h3>
+  <p>Groups related content together. Good for organizing chapters or major divisions.</p>
+</section>
+```
+
+## Layout Elements
+
+### Columns
+```html
+<div style="display: flex; gap: 20px;">
+  <div style="flex: 1;">
+    <h3>Column 1</h3>
+    <p>First column content here.</p>
+  </div>
+  <div style="flex: 1;">
+    <h3>Column 2</h3>
+    <p>Second column content here.</p>
+  </div>
+</div>
+```
+
+### Grid Layout
+```html
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+</div>
+```
+
+## Academic Elements
+
+### Figure with Caption
+```html
+<figure>
+  <img src="image.jpg" alt="Description of image">
+  <figcaption>Figure 1: Detailed description of the figure. (Source: Citation)</figcaption>
+</figure>
+```
+
+### Block Quote with Citation
+```html
+<blockquote>
+  <p>The quoted text goes here.</p>
+  <cite>— Author Name, <i>Publication Title</i>, Year</cite>
+</blockquote>
+```
+
+### Table with Caption
+```html
+<figure>
+  <table>
+    <caption>Table 1: Description of data presented</caption>
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+      </tr>
+    </tbody>
+  </table>
+  <figcaption>Note: Additional information about the table data or methodology.</figcaption>
+</figure>
+```
+
+## Footnotes & References
+
+### Footnote
+```html
+<p>This sentence needs a footnote<sup id="fnref1"><a href="#fn1">1</a></sup>.</p>
+
+<!-- At the end of the document: -->
+<section class="footnotes">
+  <ol>
+    <li id="fn1">Footnote content here. <a href="#fnref1">↩</a></li>
+  </ol>
+</section>
+```
+
+### Definition List (Glossary)
+```html
+<dl>
+  <dt>Term</dt>
+  <dd>Definition or explanation of the term.</dd>
+  
+  <dt>Another Term</dt>
+  <dd>Its definition.</dd>
+</dl>
+```
+
+## Styling & Semantic Elements
+
+### Text Highlighting
+```html
+<mark>Highlighted text</mark> for emphasis or to indicate relevance.
+```
+
+### Subscript & Superscript
+```html
+H<sub>2</sub>O (subscript)
+E = mc<sup>2</sup> (superscript)
+```
+
+### Code or Variable
+```html
+<code>var = function()</code> for inline code
+<var>x</var> for mathematical variables
+```
+
+### Abbreviation with Full Form
+```html
+<abbr title="Full form of the abbreviation">Abbr</abbr>
+```
+
+## Accessibility Elements
+
+### Details & Summary (Expandable Content)
+```html
+<details>
+  <summary>Click to expand for additional information</summary>
+  <p>Extended content that appears when expanded. Good for supplementary material.</p>
+</details>
+```
+
+### Keyboard Navigation
+```html
+<div tabindex="0" role="button">Interactive element</div>
+```
+
+## Notes on Compatibility
+
+- Most modern Markdown processors support embedded HTML
+- GitHub-flavored Markdown (GFM) restricts some HTML elements for security
+- When using HTML in Markdown, leave blank lines before and after HTML blocks
+- Test your document in your target platform before finalizing
