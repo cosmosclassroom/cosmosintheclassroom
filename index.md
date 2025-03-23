@@ -1,3 +1,8 @@
+---
+Title: Cosmos in the Classroom Homepage
+Author: Jonathan Corbett
+Date: 23 March 2025
+---
 # Welcome
 
 ## to cosmos in the classroom.com
