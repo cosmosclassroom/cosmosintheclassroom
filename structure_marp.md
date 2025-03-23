@@ -3,7 +3,7 @@ title: Working Structure - cosmosintheclassroom.org
 author: Jonathan Corbett
 date: 22 March 2025
 theme: gaia
-style: 
+css: styles.css
 ---
 
 <!-- header -->
