@@ -15,5 +15,5 @@ The [Standard]
 
 [Standard Physics Landing]: 
 
-[Honors Physics Landing]: ./build/cosmosintheclassroom/0%20Lesson%20Overview.md
-[Standard Physics Landing]: 
+[Honors Physics Landing]: .src/hphys_overview.md
+[Standard Physics Landing]: .src/sphys_overview.md
