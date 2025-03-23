@@ -23,6 +23,10 @@ css: "../templates/styles/scientific.css"
 
 ## Unit 1 | Principles of Physics
 
+<!-- figurecaption -->
+This is a test of the figure caption, to see what it'll do
+
+
 [Google Drive Folder](https://drive.google.com/drive/folders/1DGNr9ajb9qYIu_zZ8N3ad2iLq_gbjVJ3?usp=drive_link)  
 [Giancoli Problems](https://docs.google.com/document/d/1MJ7LFYv6wkFhRkQnnu_5I2m8t9pYXzz3lyhTnrYcVPs/edit?usp=sharing) 
 
