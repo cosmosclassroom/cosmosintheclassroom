@@ -3,10 +3,16 @@ title: Working Structure - cosmosintheclassroom.org
 author: Jonathan Corbett
 date: 22 March 2025
 theme: gaia
-marp: true
+style: 
 ---
 
-# `/main`
+<!-- header -->
+<!-- import header here -->
+
+<!-- sidebar -->
+<!-- import sidebar here -->
+
+# /main
 <!-- markdownlint-capture -->
 - index.html
 - landing pages
@@ -14,13 +20,20 @@ marp: true
     - standard physics
       - units
         - storylines
+  ---
+  ### Heading
         - lesson_pages
       - library
         - readings
         - hexagon_labs
     - honors physics
+
+---
+### Heading
       - content page links
       - resource links
-    - honors biology
-  - 
-```
+    - honors biology 
+---
+
+<!-- footer -->
+<!-- import footer here -->
