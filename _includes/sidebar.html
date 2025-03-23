@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=10%, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="\templates\styles.css">
-</head>
-<body>
-    <nav><button><a href="sidebar"></a></button></nav>
-        <h2> Cosmos in the Classroom</h2>
-        <p> Physics Education Resources for Teachers and Students</p>
-    <h3> Side Bar</h3>
-    <link><a href ="hphys_landing.html" <button> This is the button</button></link>
-    <p> This is the side bar</p>
-    <p> This is the side bar</p>
-</body>
-</html>
+<!-- _includes/sidebar.html -->
+<aside class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      {% for category in site.categories %}
+        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+        <li><a href="{{ '/categories/' | relative_url }}#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+        
+      {% endfor %}
+    </ul>
+
+  </aside>

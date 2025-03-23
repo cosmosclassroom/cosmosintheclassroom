@@ -1,297 +1,46 @@
-/* Classical Scientific Stylesheet
- * Optimized for markdown and LaTeX content
- * For Cosmos in the Classroom
- */
+---
+---
 
-/* --------------- TYPOGRAPHY --------------- */
-:root {
-  --text-primary: #333333;
-  --text-secondary: #555555;
-  --link-color: #14568f;
-  --link-hover: #0e3e6f;
-  --accent-color: #8b5d33;
-  --bg-primary: #fefefe;
-  --bg-secondary: #f7f7f7;
-  --bg-code: #f4f6f8;
-  --border-color: #d9d9d9;
-  --footer-bg: #f0f0f0;
-  --math-color: #333333;
-  --formula-bg: #f9f9f9;
-  --header-font: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-  --body-font: "Libre Baskerville", Georgia, serif;
-  --code-font: "Consolas", "DejaVu Sans Mono", monospace;
+@import "main";
+
+/* Basic layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-body {
-  font-family: var(--body-font);
-  line-height: 1.7;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  max-width: 45rem;
-  margin: 0 auto;
-  padding: 1rem;
-  font-size: 16px;
-}
-discussion {
-  font-family: var(--body-font);
-  line-height: 1.7;
-  color: var{--text-primary};
-  background-color: var(--bg-primary);
-  max-width: 15rem;
-  margin: 0 auto;
-  padding: 1rem;
-  font-size: 16px;
+.content-wrapper {
+  display: flex;
+  flex: 1;
 }
 
-/* Classical header styling */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--header-font);
-  margin: 2rem 0 1rem;
-  line-height: 1.3;
-  color: var(--text-primary);
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin-top: 0;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.5rem;
-}
-
-h2 {
-  font-size: 1.8rem;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.3rem;
-}
-
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.3rem; }
-h5 { font-size: 1.1rem; font-style: italic; }
-h6 { font-size: 1rem; font-style: italic; }
-
-/* Paragraphs and lists */
-p, ul, ol {
-  margin-bottom: 1.5rem;
-}
-
-/* Links styled like traditional academic papers */
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-a:hover, a:focus {
-  color: var(--link-hover);
-  border-bottom: 1px solid var(--link-hover);
-}
-
-/* --------------- CODE BLOCKS --------------- */
-pre, code {
-  font-family: var(--code-font);
-  font-size: 0.9rem;
-  background-color: var(--bg-code);
-  border-radius: 3px;
-}
-
-code {
-  padding: 0.2rem 0.4rem;
-}
-
-pre {
-  padding: 1rem;
-  overflow-x: auto;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--border-color);
-}
-
-pre code {
-  padding: 0;
-  background-color: transparent;
-}
-
-/* --------------- MATH/LATEX STYLING --------------- */
-/* Styling for inline LaTeX */
-.math, .MathJax {
-  color: var(--math-color);
-  font-size: 1.05em;
-}
-
-/* Styling for LaTeX display equations */
-.math-display, .MathJax_Display {
-  padding: 1rem;
-  margin: 1.5rem 0;
-  background-color: var(--formula-bg);
-  border-left: 3px solid var(--accent-color);
-  overflow-x: auto;
-  text-align: center;
-}
-
-/* Styling for theorem-like environments */
-.theorem, .definition, .lemma, .proof {
-  margin: 1.5rem 0;
-  padding: 0.8rem 1rem;
-  border-left: 3px solid var(--accent-color);
-  background-color: var(--bg-secondary);
-}
-
-.theorem::before, .definition::before, .lemma::before, .proof::before {
-  font-weight: bold;
-  font-style: italic;
-  font-family: var(--header-font);
-}
-
-.theorem::before { content: "Theorem. "; }
-.definition::before { content: "Definition. "; }
-.lemma::before { content: "Lemma. "; }
-.proof::before { content: "Proof. "; }
-
-/* --------------- TABLES --------------- */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 1.5rem 0;
-  font-size: 0.95rem;
-}
-
-th, td {
-  padding: 0.75rem;
-  border: 1px solid var(--border-color);
-}
-
-th {
-  background-color: var(--bg-secondary);
-  font-weight: bold;
-  text-align: left;
-}
-
-caption {
-  caption-side: bottom;
-  font-style: italic;
-  padding: 0.5rem;
-  color: var(--text-secondary);
-}
-
-/* --------------- BLOCKQUOTES --------------- */
-blockquote {
-  margin: 1.5rem 0;
-  padding: 0.5rem 1.5rem;
-  border-left: 3px solid var(--accent-color);
-  font-style: italic;
-  color: var(--text-secondary);
-}
-
-blockquote em {
-  font-style: normal;
-}
-
-blockquote cite {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  text-align: right;
-}
-
-/* --------------- FIGURES & IMAGES --------------- */
-figure {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border: 1px solid var(--border-color);
-}
-
-figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  font-style: italic;
-  color: var(--text-secondary);
-}
-
-/* --------------- PRINT STYLES --------------- */
-@media print {
-  body {
-    font-size: 12pt;
-    max-width: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  a {
-    color: var(--text-primary);
-    text-decoration: none;
-    border-bottom: none;
-  }
-  
-  a::after {
-    content: " (" attr(href) ")";
-    font-size: 0.9em;
-    color: var(--text-secondary);
-  }
-  
-  pre, blockquote, .theorem, .definition, .lemma, .proof {
-    page-break-inside: avoid;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
-  }
-  
-  img {
-    max-width: 100% !important;
-  }
-}
-
-/* --------------- RESPONSIVE ADJUSTMENTS --------------- */
-@media (max-width: 768px) {
-  body {
-    padding: 0.8rem;
-    font-size: 15px;
-  }
-  
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.6rem; }
-  h3 { font-size: 1.3rem; }
-  
-  .math-display, .MathJax_Display {
-    padding: 0.8rem 0.4rem;
-  }
-}
-
-.article {
-  
-  background-color: rgb(139, 106, 68);
-  border-radius: 8px;
+.sidebar {
+  width: 250px;
   padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 10px 2px 5px rgba(0,0,0,0.75);
+  background-color: #f5f5f5;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
-.article img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: 15px;
+
+.main-content {
+  flex: 1;
+  padding: 20px;
 }
-.article-title {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-bottom: 10px;
+
+.site-header {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
 }
-footer {
+
+.site-footer {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
   text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  font-size: 0.9em;
-  color: #666;
 }
-.quote {
-  font-style: italic;
-  border-left: 3px solid #0c3c60;
-  padding-left: 20px;
-  margin: 20px 0;
-  color: #555;
+
+/* Additional styling as needed */
