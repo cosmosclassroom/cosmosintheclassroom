@@ -16,6 +16,8 @@ Welcome to your journey through physics and astronomy
 This is your official welcome to Cosmos in the Classroom.com!
 <img src="aristotle.png" alt="Aristotle" width="30%" height="auto">
 
+The [Reference Landing] is here.
+
 The [Honors Physics Landing] page is accessible from here
 
 The [Standard Physics Landing]
