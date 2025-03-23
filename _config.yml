@@ -1,41 +1,7 @@
-# Site settings
-title: Cosmos in the Classroom
-description: Instructional Website by Jonathan Corbett
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "cosmosintheclassroom.org" # the base hostname & protocol, e.g. http://example.com
-
-# Build settings
-markdown: kramdown
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
-
-# Directory settings
-source: .
-destination: ./_site
-layouts_dir: build/cosmosintheclassroom/layouts
-includes_dir: build/cosmosintehclassroom/includes
-
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /:categories/:year/:month/:day/:title/
-
-# Default front matter
-defaults:
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-
-# Exclude from processing
+include:
+  - "src/**/*.md"
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .git
-  - README.md
+  - "node_modules"
+  - ".git"
+  - ".github"
+  - "README.md"
