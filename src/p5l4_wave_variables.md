@@ -3,7 +3,7 @@ layout: default
 title: "P5L4 | Wave Variables and Relationships"
 author: Jonathan Corbett
 date: 13 March 2025
-math: 
+math: mathjax
 ---
 
 #   P5L4 | Wave Variables & Relationships
