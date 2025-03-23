@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Markdown implementations of HTML Styling
 author: Jonathan Corbett
 date: "March 22, 2025"

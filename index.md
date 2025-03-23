@@ -14,12 +14,12 @@ The [Honors Physics Landing] page is accessible from here
 
 The [Standard Physics Landing]
 
-
+The [LaTeX Reference] is available for mathematical notation help.
 
 
 <!-- document references are below -->
 
 [Honors Physics Landing]: ../src/hphys_overview
 [Aristotle]: aristotle.png
-
 [Standard Physics Landing]: ../src/sphys_overview
+[LaTeX Reference]: https://cosmosintheclassroom.org/ref_latex

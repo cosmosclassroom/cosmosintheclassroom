@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Document Title"
 author: Jonathan Corbett
 date: March , 2025
