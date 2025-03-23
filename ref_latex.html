@@ -15,19 +15,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- MathJax for rendering mathematical equations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-9DkJEmXbL/Tdj8b1SxJ3ZZd9fYhGxlMjJTZSQwaDVHnQdaR4X/kzhcOCJFbEiRktrCjIxYkgdQym17szhVHlVA==" crossorigin="anonymous"></script>
+    <!-- MathJax configuration -->
     <script>
-        <math>
-            MathJax = {
+        MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                packages: ['base', 'ams', 'noerrors', 'noundefined']
             }
         };
-        </math>
     </script>
+    <!-- Load MathJax after configuration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-9DkJEmXbL/Tdj8b1SxJ3ZZd9fYhGxlMjJTZSQwaDVHnQdaR4X/kzhcOCJFbEiRktrCjIxYkgdQym17szhVHlVA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="../templates/styles/styles.css">
 </head>
 <body> <!-- -->
@@ -101,8 +101,8 @@ css: templates/styles/styles.css</p>
 <td style="text-align: left;"><code>\vec{F}, \vec{v}</code></td>
 </tr>
 <tr>
-<td style="text-align: right;">$$\frac{a}{b}$</td>
-<td style="text-align: left;">\frac{a}{b}$$</td>
+<td style="text-align: right;">$$\frac{a}{b}$$</td>
+<td style="text-align: left;"><code>\frac{a}{b}</code></td>
 </tr>
 <tr>
 <td style="text-align: right;">$x^2$ <br> $y^{ab}$</td>
@@ -119,16 +119,14 @@ css: templates/styles/styles.css</p>
 </tbody>
 </table>
 <h2>Systems of Two Equations</h2>
-<p>\begin{align}
-  v_f $|<code>`
-\begin{align}
-    v_f &amp;= v_i + at \\
-    s &amp;= v_i t + \frac{1}{2} a t^2
-\end{align}</code>|
-|$$|<code>|
-|$$|</code>|
-|$$|<code>|
-|$$|</code>|</p>
+<p>
+    $$
+    \begin{align}
+        v_f &= v_i + at \\
+        s &= v_i t + \frac{1}{2} a t^2
+    \end{align}
+    $$
+</p>
 <div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="w"> </span><span class="nv">Fractions</span><span class="w"> </span><span class="o">#</span>
 <span class="nv">``</span>
 <span class="p">$</span>\<span class="nv">frac</span><span class="p">{</span><span class="nv">a</span><span class="p">}{</span><span class="nv">b</span><span class="p">}</span><span class="w">  </span><span class="nv">%</span><span class="w"> </span><span class="nf">Fraction</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="o">/</span><span class="nv">b</span><span class="p">)</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="p">$</span>\<span class="nv">frac</span><span class="p">{</span><span class="nv">a</span><span class="p">}{</span><span class="nv">b</span><span class="p">}$</span>
@@ -155,18 +153,18 @@ css: templates/styles/styles.css</p>
 
 <p>\begin{equation}
     F = ma
-\end{equation}</p>
+\end{equation></p>
 <div class="codehilite"><pre><span></span><code>## Systems of equations ##
 </code></pre></div>
 
 <p>\begin{align}
     v_f &amp;= v_i + at \
     s &amp;= v_i t + \frac{1}{2} a t^2
-\end{align}</p>
+\end{align></p>
 <div class="codehilite"><pre><span></span><code>\begin{align}
     v_f &amp;= v_i + at \\
     s &amp;= v_i t + \frac{1}{2} a t^2
-\end{align}
+</end{align}
 
 <span class="gu">##</span> SI Units (siunitx Package) #
 </code></pre></div>
@@ -181,16 +179,4 @@ css: templates/styles/styles.css</p>
   <p><a href="index.html">Back to Home Page</a></p>
 </footer>
 </body>
-<aside>
-    <body>
-        <header>
-            Research Paper <Title> {% Document Title}</Title>
-        </header>
-        <main>
-            <article>
-                This is an article. It contains just regular text that someone might want to read. I'm not sure why this is all at the bottom, b,ut that's just how it is
-            </article>
-        </main>
-    </body>
-</aside>
 </html>
