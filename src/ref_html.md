@@ -95,18 +95,22 @@ HTML
 
 ### Figures and Tables:
 
-<figure>: Represents self-contained content, often with a caption (e.g., images, diagrams, code snippets).
-<img>: Embeds an image. Use the src attribute for the image path and alt for alternative text.
-<figcaption>: Provides a caption for the <figure>.
-<table>: Creates a table for presenting data.
-<thead>: Contains the table header rows (<th>).
-<tbody>: Contains the main table data rows (<tr>) with data cells (<td>).
-<tfoot>: Contains the table footer rows (optional).
-<caption>: Provides a title for the <table>.
+|||
+|-|-|
+`<figure>`| Represents self-contained content, often with a caption (e.g., images, `diagrams, code snippets).
+`<img>`| Embeds an image. Use the src attribute for the image path and alt for `alternative text.
+`<figcaption>`| Provides a caption for the `<figure>`.
+`<table>`| Creates a table for presenting data.
+`<thead>`| Contains the table header rows (`<th>`).
+`<tbody>`| Contains the main table data rows (`<tr>`) with data cells (`<td>`).
+`<tfoot>`| Contains the table footer rows (optional).
+`<caption>`| Provides a title for the `<table>`.
 
+---
 
-Example:
+##### Example:
 
+Example of an html code for a table
 ```
 HTML
 <figure>
@@ -136,6 +140,7 @@ HTML
         </tr>
     </tbody>
 </table>
+
 ```
 HTML
 <figure>
@@ -171,17 +176,16 @@ HTML
 
 While HTML itself doesn't render complex mathematical notation, you can integrate it using:
 
-MathML: A markup language for describing mathematical notation within HTML. Requires browser support or JavaScript libraries for rendering.
+*MathML*: A markup language for describing mathematical notation within HTML. Requires browser support or JavaScript libraries for rendering.
 LaTeX via JavaScript Libraries: Libraries like MathJax or KaTeX can render LaTeX equations within your HTML. This is a common approach in scientific writing.
 
-Example (using MathJax - requires including the library in your <head>):
-```
-HTML
+Example (using MathJax - requires including the library in your `<head>`):
+```HTML
 <p>The equation for Einstein's theory of relativity is:</p>
 <p>$$E = mc^2$$</p>
 ```
 
-5. Citations and References:
+#### Citations and References:
 
 While HTML doesn't have specific citation elements, you can use standard text and potentially link to a bibliography section.
 Consider using JavaScript libraries or server-side processing for more sophisticated citation management.
