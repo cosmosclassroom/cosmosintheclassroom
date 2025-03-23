@@ -185,6 +185,11 @@ Example (using MathJax - requires including the library in your `<head>`):
 <p>$$E = mc^2$$</p>
 ```
 
+<html>
+<p>The equation for Einstein's theory of relativity is:</p>
+<p>$$E = mc^2$$</p>
+</html>
+
 #### Citations and References:
 
 While HTML doesn't have specific citation elements, you can use standard text and potentially link to a bibliography section.
