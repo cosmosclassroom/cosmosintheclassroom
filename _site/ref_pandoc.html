@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    # The header.html file contains the header section of the HTML template. It includes the site logo, site title, site tagline, and the main navigation menu. The header section is consistent across all pages of the website.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cosmos in the Classroom - Physics Education Resources for Teachers and Students">
+    <title>Cosmos in the Classroom | Physics Education</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- MathJax for rendering mathematical equations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js" integrity="sha512-9DkJEmXbL/Tdj8b1SxJ3ZZd9fYhGxlMjJTZSQwaDVHnQdaR4X/kzhcOCJFbEiRktrCjIxYkgdQym17szhVHlVA==" crossorigin="anonymous"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
+<link rel="stylesheet" type="text/css" href="/templates/styles/styles.css">
+</head>
+<body> <!-- -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <img src="\src\images\ps5.2_f1.png" alt="Cosmos in the Classroom Logo">
+                </a>
+                <h1 class="site-title">Cosmos in the Classroom</h1>
+                <p class="site-tagline">Exploring Physics Through History and Math</p>
+            </div>
+            
+            <nav class="main-navigation">
+                <div class="nav-buttons">
+                    <a href="/" class="nav-button">Home</a>
+                    <a href="/resources/" class="nav-button">Resources</a>
+                    <a href="/standard-physics/" class="nav-button">Standard Physics</a>
+                    <a href="/honors-physics/" class="nav-button">Honors Physics</a>
+                    <a href="/honors-biology/" class="nav-button">Honors Biology</a>
+                    <a href="/about/" class="nav-button">About</a>
+                    <a href="/contact/" class="nav-button">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="/">Home</a> &raquo; <span class="current-page">Current Page</span>
+        </div>
+    </div>
+    
+    <main class="content">
+        <div class="container">
+            <!-- The Markdown content will be inserted here by the Python script -->
+<hr />
+<p>title: "Document Title"
+author: "Your Name"
+date: "March 22, 2025"
+abstract: A concise reference sheet for producing scientific educational content using pandoc</p>
+<hr />
+<h1>Pandoc Reference Sheet</h1>
+<p><strong>Focus: LaTeX-rich exports with KaTeX and Marp</strong><br />
+<em>Last updated: March 22, 2025</em></p>
+<h2>Basic Conversion Commands</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>To</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown</td>
+<td>PDF</td>
+<td><code>pandoc input.md -o output.pdf --pdf-engine=xelatex</code></td>
+</tr>
+<tr>
+<td>Markdown</td>
+<td>HTML (with KaTeX)</td>
+<td><code>pandoc input.md -o output.html --katex</code></td>
+</tr>
+<tr>
+<td>Markdown</td>
+<td>PPTX (via Marp)</td>
+<td><code>marp input.md --pptx -o slides.pptx</code></td>
+</tr>
+<tr>
+<td>Multiple files</td>
+<td>Single PDF</td>
+<td><code>pandoc chapter1.md chapter2.md -o book.pdf</code></td>
+</tr>
+</tbody>
+</table>
+<h2>HTML Export with KaTeX for Math</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Basic HTML with KaTeX rendering for math</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>--katex
+
+<span class="c1"># Standalone HTML with custom styling</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>--katex<span class="w"> </span>--standalone<span class="w"> </span>--css<span class="o">=</span>style.css
+
+<span class="c1"># Self-contained HTML (includes all assets)</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>--katex<span class="w"> </span>--self-contained
+</code></pre></div>
+
+<h3>KaTeX-Specific Options</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Use a specific KaTeX version</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>--katex<span class="o">=</span><span class="s2">&quot;https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/&quot;</span>
+
+<span class="c1"># Add KaTeX options</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.html<span class="w"> </span>--katex<span class="w"> </span>--metadata<span class="w"> </span>katexOptions:<span class="s2">&quot;{throwOnError: false}&quot;</span>
+</code></pre></div>
+
+<h2>PDF Export with LaTeX Math</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Basic PDF with LaTeX math</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--pdf-engine<span class="o">=</span>xelatex
+
+<span class="c1"># PDF with customized margins and font size</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--pdf-engine<span class="o">=</span>xelatex<span class="w"> </span>-V<span class="w"> </span>geometry:margin<span class="o">=</span>1in<span class="w"> </span>-V<span class="w"> </span><span class="nv">fontsize</span><span class="o">=</span>12pt
+
+<span class="c1"># PDF with table of contents and numbered sections</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--pdf-engine<span class="o">=</span>xelatex<span class="w"> </span>--toc<span class="w"> </span>--number-sections
+
+<span class="c1"># PDF with bibliography and citations</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>output.pdf<span class="w"> </span>--pdf-engine<span class="o">=</span>xelatex<span class="w"> </span>--citeproc<span class="w"> </span>--bibliography<span class="o">=</span>sources.bib
+</code></pre></div>
+
+<h2>Presentations with Marp (PPTX)</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Basic Marp presentation</span>
+marp<span class="w"> </span>input.md<span class="w"> </span>--pptx<span class="w"> </span>-o<span class="w"> </span>slides.pptx
+
+<span class="c1"># Marp with specific theme</span>
+marp<span class="w"> </span>input.md<span class="w"> </span>--pptx<span class="w"> </span>-o<span class="w"> </span>slides.pptx<span class="w"> </span>--theme<span class="w"> </span>default
+
+<span class="c1"># Marp with custom theme file</span>
+marp<span class="w"> </span>input.md<span class="w"> </span>--pptx<span class="w"> </span>-o<span class="w"> </span>slides.pptx<span class="w"> </span>--theme-set<span class="w"> </span>custom-theme.css
+</code></pre></div>
+
+<h3>Alternative: Direct Pandoc to PPTX</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Using Pandoc for PowerPoint (less LaTeX support than Marp)</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>slides.pptx<span class="w"> </span>-t<span class="w"> </span>pptx
+
+<span class="c1"># With slide level specified</span>
+pandoc<span class="w"> </span>input.md<span class="w"> </span>-o<span class="w"> </span>slides.pptx<span class="w"> </span>-t<span class="w"> </span>pptx<span class="w"> </span>--slide-level<span class="o">=</span><span class="m">2</span>
+</code></pre></div>
+
+<h2>Writing LaTeX in Your Markdown</h2>
+<h3>Inline Math</h3>
+<div class="codehilite"><pre><span></span><code>Einstein&#39;s equation: $E = mc^2$
+
+The Pythagorean theorem: $a^2 + b^2 = c^2$
+</code></pre></div>
+
+<h3>Display Math</h3>
+<div class="codehilite"><pre><span></span><code>The quadratic formula:
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+Maxwell&#39;s equations:
+
+$$\begin{aligned}
+\nabla \times \vec{E} &amp;= -\frac{\partial \vec{B}}{\partial t} \\
+\nabla \times \vec{B} &amp;= \mu<span class="ge">_0 \vec{J} + \mu_</span>0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+\end{aligned}$$
+</code></pre></div>
+
+<h2>Setting Document Metadata</h2>
+<div class="codehilite"><pre><span></span><code><span class="nn">---</span>
+<span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Document</span><span class="nv"> </span><span class="s">Title&quot;</span>
+<span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Your</span><span class="nv"> </span><span class="s">Name&quot;</span>
+<span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;March</span><span class="nv"> </span><span class="s">22,</span><span class="nv"> </span><span class="s">2025&quot;</span>
+<span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;A</span><span class="nv"> </span><span class="s">brief</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">document.&quot;</span>
+<span class="nt">bibliography</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">references.bib</span>
+<span class="nn">---</span>
+</code></pre></div>
+
+<h2>Marp-Specific Syntax</h2>
+<div class="codehilite"><pre><span></span><code>---
+marp: true
+theme: default
+paginate: true
+<span class="gu">math: katex</span>
+<span class="gu">---</span>
+
+<span class="gh"># Slide 1</span>
+
+Content for first slide
+
+---
+
+<span class="gh"># Slide 2</span>
+
+Math example: $E = mc^2$
+
+---
+
+&lt;!-- 
+_backgroundColor: black
+_color: white
+--&gt;
+
+<span class="gh"># Dark Slide</span>
+
+With custom background
+</code></pre></div>
+
+<h2>Example Workflow: Math-Heavy PDF Document</h2>
+<ol>
+<li>Create markdown file with LaTeX equations</li>
+<li>Include YAML metadata header with document info</li>
+<li>Run: <code>pandoc input.md -o output.pdf --pdf-engine=xelatex --toc</code></li>
+</ol>
+<h2>Example Workflow: Math Presentation with Marp</h2>
+<ol>
+<li>Create markdown file with marp directives and LaTeX</li>
+<li>Include marp: true in YAML header with math: katex</li>
+<li>Run: <code>marp input.md --pptx -o presentation.pptx</code></li>
+</ol>
+<h2>Example Workflow: Web Page with KaTeX</h2>
+<ol>
+<li>Create markdown file with inline and display math</li>
+<li>Create custom CSS file for styling (optional)</li>
+<li>Run: <code>pandoc input.md -o webpage.html --katex --standalone --css=style.css</code></li>
+</ol>
+<h2>Helpful Resources</h2>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html">Pandoc Documentation</a></li>
+<li><a href="https://katex.org/docs/supported.html">KaTeX Documentation</a></li>
+<li><a href="https://marp.app/">Marp Documentation</a></li>
+<li><a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">LaTeX Math Reference</a></li>
+</ul>
+</body>
+</html>
