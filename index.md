@@ -2,8 +2,14 @@
 Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
+css: styles.css
 ---
-# Welcome
+
+<div class="header">
+# Cosmos in the Classroom
+
+Welcome to your journey through physics and astronomy
+</div>
 
 ## to cosmos in the classroom.com
 
@@ -18,7 +24,7 @@ The [LaTeX Reference] is available for mathematical notation help.
 
 
 <!-- document references are below -->
-
+[Reference Landing]: /ref/ref_lib
 [Honors Physics Landing]: ../src/hphys_landing
 [Aristotle]: aristotle.png
 [Standard Physics Landing]: ../src/sphys_overview
