@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Document Title | Cosmos in the Classroom</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Document Title" />
+<meta name="author" content="Your Name" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Instructional Website by Jonathan Corbett" />
+<meta property="og:description" content="Instructional Website by Jonathan Corbett" />
+<link rel="canonical" href="cosmosintheclassroom.org/src/ref_pandoc.html" />
+<meta property="og:url" content="cosmosintheclassroom.org/src/ref_pandoc.html" />
+<meta property="og:site_name" content="Cosmos in the Classroom" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-22T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Document Title" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Your Name"},"dateModified":"2025-03-22T00:00:00-04:00","datePublished":"2025-03-22T00:00:00-04:00","description":"Instructional Website by Jonathan Corbett","headline":"Document Title","mainEntityOfPage":{"@type":"WebPage","@id":"cosmosintheclassroom.org/src/ref_pandoc.html"},"url":"cosmosintheclassroom.org/src/ref_pandoc.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=198ac2dc9ff1a6741d1d9d571c5bba9ca9ee8e82">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="cosmosintheclassroom.org/">Cosmos in the Classroom</a></h1>
+      
+
+      <h1 id="pandoc-reference-sheet">Pandoc Reference Sheet</h1>
+<p><strong>Focus: LaTeX-rich exports with KaTeX and Marp</strong><br />
+<em>Last updated: March 22, 2025</em></p>
+
+<h2 id="basic-conversion-commands">Basic Conversion Commands</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>To</th>
+      <th>Command</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Markdown</td>
+      <td>PDF</td>
+      <td><code class="language-plaintext highlighter-rouge">pandoc input.md -o output.pdf --pdf-engine=xelatex</code></td>
+    </tr>
+    <tr>
+      <td>Markdown</td>
+      <td>HTML (with KaTeX)</td>
+      <td><code class="language-plaintext highlighter-rouge">pandoc input.md -o output.html --katex</code></td>
+    </tr>
+    <tr>
+      <td>Markdown</td>
+      <td>PPTX (via Marp)</td>
+      <td><code class="language-plaintext highlighter-rouge">marp input.md --pptx -o slides.pptx</code></td>
+    </tr>
+    <tr>
+      <td>Multiple files</td>
+      <td>Single PDF</td>
+      <td><code class="language-plaintext highlighter-rouge">pandoc chapter1.md chapter2.md -o book.pdf</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+    <div class="column">
+
+## HTML Export with KaTeX for Math
+
+```bash
+# Basic HTML with KaTeX rendering for math
+pandoc input.md -o output.html --katex
+
+# Standalone HTML with custom styling
+pandoc input.md -o output.html --katex --standalone --css=style.css
+
+# Self-contained HTML (includes all assets)
+pandoc input.md -o output.html --katex --self-contained
+```
+    
+    
+    
+    </div>
+
+
+### KaTeX-Specific Options
+
+```bash
+# Use a specific KaTeX version
+pandoc input.md -o output.html --katex="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/"
+
+# Add KaTeX options
+pandoc input.md -o output.html --katex --metadata katexOptions:"{throwOnError: false}"
+```
+
+## PDF Export with LaTeX Math
+
+```bash
+# Basic PDF with LaTeX math
+pandoc input.md -o output.pdf --pdf-engine=xelatex
+
+# PDF with customized margins and font size
+pandoc input.md -o output.pdf --pdf-engine=xelatex -V geometry:margin=1in -V fontsize=12pt
+
+# PDF with table of contents and numbered sections
+pandoc input.md -o output.pdf --pdf-engine=xelatex --toc --number-sections
+
+# PDF with bibliography and citations
+pandoc input.md -o output.pdf --pdf-engine=xelatex --citeproc --bibliography=sources.bib
+```
+
+## Presentations with Marp (PPTX)
+
+```bash
+# Basic Marp presentation
+marp input.md --pptx -o slides.pptx
+
+# Marp with specific theme
+marp input.md --pptx -o slides.pptx --theme default
+
+# Marp with custom theme file
+marp input.md --pptx -o slides.pptx --theme-set custom-theme.css
+```
+
+### Alternative: Direct Pandoc to PPTX
+
+```bash
+# Using Pandoc for PowerPoint (less LaTeX support than Marp)
+pandoc input.md -o slides.pptx -t pptx
+
+# With slide level specified
+pandoc input.md -o slides.pptx -t pptx --slide-level=2
+```
+
+## Writing LaTeX in Your Markdown
+
+### Inline Math
+
+```markdown
+Einstein's equation: $E = mc^2$
+
+The Pythagorean theorem: $a^2 + b^2 = c^2$
+```
+
+### Display Math
+
+```markdown
+The quadratic formula:
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+Maxwell's equations:
+
+$$\begin{aligned}
+\nabla \times \vec{E} &amp;= -\frac{\partial \vec{B}}{\partial t} \\
+\nabla \times \vec{B} &amp;= \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+\end{aligned}$$
+```
+
+## Setting Document Metadata
+
+```yaml
+---
+title: "Document Title"
+author: "Your Name"
+date: "March 22, 2025"
+abstract: "A brief description of the document."
+bibliography: references.bib
+---
+```
+
+## Marp-Specific Syntax
+
+```markdown
+---
+marp: true
+theme: default
+paginate: true
+math: katex
+---
+
+# Slide 1
+
+Content for first slide
+
+---
+
+# Slide 2
+
+Math example: $E = mc^2$
+
+---
+
+<!-- 
+_backgroundColor: black
+_color: white
+-->
+
+# Dark Slide
+
+With custom background
+```
+
+## Example Workflow: Math-Heavy PDF Document
+
+1. Create markdown file with LaTeX equations
+2. Include YAML metadata header with document info
+3. Run: `pandoc input.md -o output.pdf --pdf-engine=xelatex --toc`
+
+## Example Workflow: Math Presentation with Marp
+
+1. Create markdown file with marp directives and LaTeX
+2. Include marp: true in YAML header with math: katex
+3. Run: `marp input.md --pptx -o presentation.pptx`
+
+## Example Workflow: Web Page with KaTeX
+
+1. Create markdown file with inline and display math
+2. Create custom CSS file for styling (optional)
+3. Run: `pandoc input.md -o webpage.html --katex --standalone --css=style.css`
+
+## Helpful Resources
+
+- [Pandoc Documentation](https://pandoc.org/MANUAL.html)
+- [KaTeX Documentation](https://katex.org/docs/supported.html)
+- [Marp Documentation](https://marp.app/)
+- [LaTeX Math Reference](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+</div>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/cosmosclassroom/cosmosintheclassroom/edit/gh-pages/src/ref_pandoc.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
