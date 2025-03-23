@@ -8,13 +8,18 @@ css: styles.css
 <div class="header">
 # Cosmos in the Classroom
 
-Welcome to your journey through physics and astronomy
+
 </div>
 
-## to cosmos in the classroom.com
-
 This is your official welcome to Cosmos in the Classroom.com!
-<img src="aristotle.png" alt="Aristotle" width="30%" height="auto">
+
+<div class="column1" >
+<span>
+    <img src="aristotle.png" alt="Aristotle" width="50%" height="auto">
+    <figure>This is the caption for that figure</figure>
+    <figcaption> Figure 1. This is the figure caption</figcaption>
+    </span>
+</div>
 
 The [Reference Landing] is here.
 
