@@ -8,7 +8,7 @@ Date: 23 March 2025
 ## to cosmos in the classroom.com
 
 This is your official welcome to Cosmos in the Classroom.com!
-<img src="aristotle.png" alt="Aristotle" width="300" height="auto">
+<img src="aristotle.png" alt="Aristotle" width="30%" height="auto">
 
 The [Honors Physics Landing] page is accessible from here
 
