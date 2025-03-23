@@ -22,4 +22,4 @@ The [LaTeX Reference] is available for mathematical notation help.
 [Honors Physics Landing]: ../src/hphys_overview
 [Aristotle]: aristotle.png
 [Standard Physics Landing]: ../src/sphys_overview
-[LaTeX Reference]: https://cosmosintheclassroom.org/ref_latex
+[LaTeX Reference]: https://cosmosintheclassroom.org/src/ref_latex
