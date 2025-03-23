@@ -24,4 +24,4 @@ Date: 23 March 2025
 
 <!-- Definitions -->
 
-[Wave Variables Lab]: ..\src\p5l4_wave_variables
+[Wave Variables Lab]: ./p5l4_wave_variables

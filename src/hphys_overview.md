@@ -3,6 +3,10 @@ layout: default
 title: "Document Title"
 author: Jonathan Corbett
 date: March , 2025
+math: mathjax
+markdown: kramdown
+kramdown:
+    math_engine: mathjax
 css: "../templates/styles/scientific.css"
 ---
 <toc>
