@@ -10,16 +10,16 @@ kramdown:
 css: "../templates/styles/scientific.css"
 ---
 <toc>
-[Principles of Physics](#unit-1--principles-of-physics)
-[Kinematics 1](#unit-2--kinematics-1)
 
 [Fundamentals]
-[Kinematics 1]
-[Kinematics 2]
+[Mechanics]
 [Dynamics]
 [Conservation]
 [Harmonics]
 [Electricity]
+[Harmonics]
+[Electricity]
+
 
 ## Unit 1 | Principles of Physics
 
