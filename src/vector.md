@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Lecture : Advanced Vectors"
 author: Jonathan Corbett
 date: "March 22, 2025"

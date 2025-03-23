@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Working Structure - cosmosintheclassroom.org
 author: Jonathan Corbett
 date: 22 March 2025

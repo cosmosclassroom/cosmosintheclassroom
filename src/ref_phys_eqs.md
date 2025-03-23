@@ -1,3 +1,10 @@
+---
+layout: default
+title: Physical Reference Sheet
+author: Jonathan Corbett
+date: 23 March 2025
+---
+
 # Common Notations Reference
 <details>
 

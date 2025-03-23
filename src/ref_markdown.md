@@ -1,4 +1,5 @@
 ---
+layout: default
 title: "Document Title"
 author: "Your Name"
 date: "March 22, 2025"

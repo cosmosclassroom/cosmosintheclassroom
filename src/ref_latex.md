@@ -1,3 +1,10 @@
+---
+layout: default
+title: Latex Reference
+author: Jonathan Corbett
+date: 23 March 2025
+---
+
 <div style="display: flex; gap: 10px;">
   <a href="ref_latex.html"><button>LaTeX Reference</button></a>
   <a href="ref_pandoc.html"><button>Pandoc Reference</button></a>
