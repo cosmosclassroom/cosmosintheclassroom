@@ -3,54 +3,89 @@ layout: default
 title: Partials! | Conservation of Mechanical Energy
 marp: true
 ---
-# Energy Problems: Redrafted
+Problem 1: A bird is flying with a speed of 18.0 m/s over water when it accidentally drops a 2.00 kg fish. If the altitude of the bird is 5.40 m, what is the speed of the fish when it hits the water? Ignore air resistance.
 
-## Problem 1: Roller Coaster
+(a) Player 1 : Draw a reference frame
+(b) Player 2 : Define a net work/energy equation for the system
+(c) Player 3:  Change in System Work
+(d) Final Velocity Calculation:
 
-A roller coaster car with a mass of 500 kg starts from rest at point A, which is 100 meters above the ground. It descends a curved track to point B, which is 20 meters above the ground. At point B, the car enters a loop-the-loop with a radius of 15 meters. After completing the loop, the car reaches point C, which is 50 meters above the ground. Finally, the car reaches point D, located on the ground. Assume negligible friction for the first three chunks, and consider a constant frictional force of 1000 N between C and D.
+Use the conservation of energy equation from step (b).
+Plug in the known values.
+Solve for the final velocity of the fish just before it hits the water.
+Make sure to include units!
+---
+### Problem 2: A diver weighing 755 N drops from a board 10.0 m above the water’s surface.
+
+(a) Player 1: Define a reference frame
+(b) Player 2: Write a net work/energy equation for the system
+(b) Player 2: Find the diver’s speed 5.00 m above the surface of the water.
+(d) Final Velocity Calculation:
+
+Use the conservation of energy equation from step (b).
+Remember to use the weight to find the diver's mass (weight = mg).
+Substitute the known values into the equation.
+Solve for the diver's velocity at 5.00 m above the water.
+Include units!
 
 ---
-## Problem 1: Chunks
 
-**(a) Diagram:** Draw a diagram of the roller coaster track, labeling points A, B, C, and D, and including heights and the loop's radius.
-**(b) Net Force and Work Equations:** Define the net force and work equations for each segment of the track, considering gravity and friction where applicable.
-**(c) Change in System Work:** Calculate the change in the system's work between points A and B, B and C, and C and D.
-**(d) Final Velocity at D:** Determine the velocity of the car at point D.
+### Problem 3: A car with mass 1.50 x 10^3 kg starts from rest and accelerates to a speed of 18.0 m/s in 12.0 s. During its acceleration, the car covers a distance of 108 m. Assume the net frictional force (friction + air resistance) is a constant 400.0 N during this time.
 
----
-# Energy Problems
+(a) What is the average power delivered by the car’s engine?
+(a) Diagram:
 
-## Problem 2: Pendulum and Block
+Draw a diagram showing the car's motion.
+Label the initial and final states of the car.
+Include the given information:
+Mass of the car = 1.50 x 10^3 kg
+Initial velocity = 0 m/s
+Final velocity = 18.0 m/s
+Time = 12.0 s
+Distance = 108 m
+Frictional force = 400.0 N
+(b) Net Force and Work Equations:
 
-A pendulum with a mass of 2 kg is released from rest at an angle of 60 degrees with the vertical. The length of the pendulum string is 3 meters. At the bottom of its swing, the pendulum collides elastically with a 1 kg block resting on a horizontal surface. The block then slides up an inclined plane with an angle of 30 degrees. The coefficient of kinetic friction between the block and the plane is 0.2.
-## Problem 2: Chunks
+Identify all the forces acting on the car (engine force, friction).
+Write an expression for the net force acting on the car.
+Write the formula for the work done by each force.
+Write the formula for power in terms of work and time.
+Write the formula for kinetic energy.
+(c) Change in System Work:
 
-**(a) Diagram:** Draw a diagram of the pendulum's swing and the block's motion on the inclined plane.
-**(b) Net Force and Work Equations:** Define the net force and work equations for the pendulum's swing, the collision, and the block's motion up the incline.
-**(c) Change in System Work:** Calculate the change in the system's work during the pendulum's swing and the block's motion up the incline.
-**(d) Distance Block Slides Up Incline:** Determine how far the block slides up the inclined plane.
+Explain how the work done by the engine relates to the change in kinetic energy of the car and the work done by friction.
+(d) Average Power Calculation:
 
----
-# Energy Problems
+Calculate the work required to change the car’s kinetic energy.
+Calculate the work done by friction.
+Calculate the total work that needs to be done by the engine.
+Calculate the average power delivered by the car's engine.
+Include units!
+Problem 4: A 1.0 x 10^3 kg elevator carries a maximum load of 800.0 kg. A constant frictional force of 4.0 x 10^3 N reduces the elevator’s upward motion. What minimum power, in kilowatts, must the motor deliver to lift the fully-loaded elevator at a constant speed of 3.0 m/s?
 
-## Problem 3: Inclined Plane and Spring
+(a) Diagram:
 
-A 2 kg block is initially at rest at the top of an inclined plane that makes an angle of 30 degrees with the horizontal. The block slides down the plane, which has a length of 5 meters, and collides with a spring at the bottom. The spring has a spring constant of 300 N/m. The coefficient of kinetic friction between the block and the plane is 0.1.
+Draw a diagram of the elevator and its load.
+Indicate the direction of motion and the forces acting on the elevator.
+Include the given information:
+Mass of the elevator = 1.0 x 10^3 kg
+Mass of the load = 800.0 kg
+Frictional force = 4.0 x 10^3 N
+Constant speed = 3.0 m/s
+(b) Net Force and Work Equations:
 
----
-## Problem 3: Chunks
+Since the elevator moves at a constant speed, what is the net force?
+Identify all the forces acting on the elevator (motor force, gravity, friction).
+Write an expression for the net force.
+Write the formula for the force of gravity.
+Write the formula for power in terms of force and velocity.
+(c) Change in System Work:
 
-**(a) Diagram:** Draw a diagram of the inclined plane and the spring system.
-**(b) Net Force and Work Equations:** Define the net force and work equations for the block's motion down the plane and the compression of the spring.
-**(c) Change in System Work:** Calculate the change in the system's work during the block's slide down the plane and the compression of the spring.
-**(d) Spring Compression:** Determine how much the spring is compressed when the block comes to a stop.
+Explain that the motor must do work against gravity and friction.
+(d) Minimum Power Calculation:
 
----
-## Problem 4: Projectile Explosion
-
-A 10 kg projectile is launched vertically upwards with an initial velocity of 50 m/s. At its maximum height, an internal explosion breaks the projectile into two fragments. One fragment, with a mass of 4 kg, falls straight down. The air resistance on the projectile during its ascent is negligible. The explosion releases 2000 J of energy.
-
-**(a) Diagram:** Draw a diagram of the projectile's ascent and the explosion at its maximum height.
-**(b) Net Force and Work Equations:** Define the net force and work equations for the projectile's ascent and the motion of the fragments after the explosion.
-**(c) Change in System Work:** Calculate the change in the system's work during the projectile's ascent and the explosion.
-**(d) Velocity of 6kg Fragment:** Determine the velocity of the 6 kg fragment immediately after the explosion.
+Calculate the total weight of the elevator and the load.
+Determine the force that the motor must exert to lift the elevator at a constant speed (equal to the sum of the gravitational force and friction).
+Calculate the minimum power required by the motor.
+Convert the power to kilowatts.
+Include units!
