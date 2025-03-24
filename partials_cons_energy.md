@@ -12,7 +12,9 @@ math: mathjax
 <details>
   The final velocity is 20.7 m/s
 </details>
+
 ---
+
 ### Problem 2: A diver weighing 755 N drops from a board 10.0 m above the water’s surface.
 
 - (a) Player 1: Define a reference frame
@@ -22,13 +24,16 @@ math: mathjax
 <details>
   The final velocity is 9.9 m/s
 </details>
+
 ---
+
 ### Problem 3: A car with mass $1.50 x 10^3 kg$ starts from rest and accelerates to a speed of 18.0 m/s in 12.0 s. During its acceleration, the car covers a distance of 108 m. Assume the net frictional force (friction + air resistance) is a constant 400.0 N during this time.
 
 - (a) Player 1: Draw a reference frame
 - (b) Player 2: Write a Net Force / Net work / Net Energy Equation
 - (c) Player 3: Determine the work done by friction
 - (d) Player 4: determine the work done by the car
+
 <details>
   The work done by friction is $43/,200 J$ = $4.32x10^4 J$
   The work done by the car is $286/,200 J$ = $2.86x10^5 J$
