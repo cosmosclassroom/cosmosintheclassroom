@@ -13,7 +13,7 @@ kramdown:
 [Dynamics]
 [Conservation]
 [Harmonics]
-[Electricity]
+[Electricity]~~~~
 [Harmonics]
 [Electricity]
 
