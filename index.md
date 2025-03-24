@@ -8,7 +8,7 @@ css: styles.css
 <div class="header">
 # Cosmos in the Classroom
 
-![Meteor]
+![Meteor](cosmosintheclassroom\assets\images\meteor.png)
 
 </div>
 
