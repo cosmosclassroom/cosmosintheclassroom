@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Problem Set 1.2 | Scientific Notation and Exponents Practice
 author: Jonathan Corbett
 date: 25 March 2026
