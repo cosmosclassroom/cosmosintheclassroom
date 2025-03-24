@@ -1,12 +1,15 @@
 ---
+layout: default
 Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 css: styles.css
 ---
 
-<div class="header">
+
 # Cosmos in the Classroom
+
+There will be two such events that change history
 
 ![Meteor](cosmosintheclassroom\assets\images\meteor.png)
 
