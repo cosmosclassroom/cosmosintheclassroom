@@ -5,7 +5,24 @@ url: ""
 # Build Settings
 markdown: kramdown
 permalink: pretty
-use_math: true
+
+# MathJax Configuration
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+
+# Enable MathJax in Layout
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+      mathjax: true
+  
+theme: minima
 
 
 # Asset settings
@@ -19,7 +36,7 @@ include:
   - assets
   - src
   - "*.md"
-  - "**/*.md"  # Add this line to include MD files in subdirectories
+  - "**/*.md"
   
 exclude:
   - "node_modules"

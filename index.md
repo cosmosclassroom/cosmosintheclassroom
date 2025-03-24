@@ -3,13 +3,14 @@ layout: default
 Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
-css: styles.css
+css: /assets/css/style.css
 math: mathjax
 ---
 
 # Cosmos in the Classroom
 
 ## References
+
 $$F=m \cdot a$$
 
 The [Reference Landing] is here.
