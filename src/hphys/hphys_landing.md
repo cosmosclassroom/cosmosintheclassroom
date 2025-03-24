@@ -3,13 +3,10 @@ layout: default
 title: "Document Title"
 author: Jonathan Corbett
 date: March , 2025
-math: mathjax
 markdown: kramdown
 kramdown:
     math_engine: mathjax
-css: "../templates/styles/scientific.css"
 ---
-<toc>
 
 [Fundamentals]
 [Mechanics]
@@ -44,7 +41,7 @@ css: "../templates/styles/scientific.css"
 
 ## Unit 8 | Waves and Harmonics
 
-[PS 5.3 | Universal Gravitation]("./src/hphys/PS-5.3-_-Universal-Gravitation.md") [[Key]]()
+[PS 5.3 | Universal Gravitation](PS%205.3%20_%20Universal%20Gravitation) [[Key]](ps5.3_universal%20gravitation.3_universal%20gravitation)
 
 
 ## Unit 9 | Light and Optics
