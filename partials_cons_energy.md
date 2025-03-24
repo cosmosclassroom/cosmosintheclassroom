@@ -2,6 +2,7 @@
 layout: default
 title: Partials! | Conservation of Mechanical Energy
 marp: true
+math: katex
 ---
 ### Problem 1: A bird is flying with a speed of 18.0 m/s over water when it accidentally drops a 2.00 kg fish. If the altitude of the bird is 5.40 m, what is the speed of the fish when it hits the water? Ignore air resistance.
 - (a) Player 1 : Draw a reference frame
@@ -18,7 +19,7 @@ marp: true
 - (d) Final Velocity Calculation:
 
 ---
-### Problem 3: A car with mass 1.50 x 10^3 kg starts from rest and accelerates to a speed of 18.0 m/s in 12.0 s. During its acceleration, the car covers a distance of 108 m. Assume the net frictional force (friction + air resistance) is a constant 400.0 N during this time.
+### Problem 3: A car with mass $1.50 x 10^3 kg$ starts from rest and accelerates to a speed of 18.0 m/s in 12.0 s. During its acceleration, the car covers a distance of 108 m. Assume the net frictional force (friction + air resistance) is a constant 400.0 N during this time.
 
 - (a) Player 1: Draw a reference frame
 - (b) Player 2: Write a Net Force / Net work / Net Energy Equation
@@ -27,7 +28,7 @@ marp: true
 
 ---
 
-### Problem 4: A 1.0 x 10^3 kg elevator carries a maximum load of 800.0 kg. A constant frictional force of 4.0 x 10^3 N reduces the elevator’s upward motion. What minimum power, in kilowatts, must the motor deliver to lift the fully-loaded elevator at a constant speed of 3.0 m/s?
+### Problem 4: A $1.0 x 10^3$ kg elevator carries a maximum load of 800.0 kg. A constant frictional force of $4.0 x 10^3 N$ reduces the elevator’s upward motion. What minimum power, in kilowatts, must the motor deliver to lift the fully-loaded elevator at a constant speed of 3.0 m/s?
 
 - (a) Player 1: Draw a reference frame
 - (b) Player 2: Write a Net Force / Net work / Net Energy Equation
