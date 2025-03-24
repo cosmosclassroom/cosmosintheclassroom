@@ -23,5 +23,4 @@ Body Text
 This is article text
 
 <!--figcaption-->
-
 Figure 1. This is figure caption text
