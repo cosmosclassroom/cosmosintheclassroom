@@ -68,7 +68,6 @@ kramdown:
 |  |  |  |
 |  |  |  |
 
-<!-- Definitions of Links -->
 [Fundamentals]: #0-Fundamentals
 [Mechanics]: #unit-2--kinematics-1
 [Dynamics]: #unit-4--dynamics
