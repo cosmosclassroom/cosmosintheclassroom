@@ -26,6 +26,10 @@ There will be two such events that change history
 <div style="flex: 2;">
 <h3> Column 2 </h3>
 <p> See, now this is just text in column 2<p>
+</div>
+</div>
+
+
 <span>
         <figure>This is the caption for that figure</figure>
     <figcaption> Figure 1. This is the figure caption</figcaption>
