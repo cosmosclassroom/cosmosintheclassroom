@@ -41,7 +41,7 @@ kramdown:
 
 ## Unit 8 | Waves and Harmonics
 
-[PS 5.3 | Universal Gravitation](PS%205.3%20_%20Universal%20Gravitation) [[Key]](ps5.3_universal%20gravitation.3_universal%20gravitation)
+[PS 5.3 | Universal Gravitation](PS5.3_univ_grav.md) [[Key]](ps5.3_universal%20gravitation.3_universal%20gravitation)
 
 
 ## Unit 9 | Light and Optics
