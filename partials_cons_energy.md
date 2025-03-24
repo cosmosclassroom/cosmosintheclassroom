@@ -15,8 +15,8 @@ math: katex
 
 - (a) Player 1: Define a reference frame
 - (b) Player 2: Write a net work/energy equation for the system
-- (b) Player 2: Find the diver’s speed 5.00 m above the surface of the water.
-- (d) Final Velocity Calculation:
+- (b) Player 3: Find the diver’s speed 5.00 m above the surface of the water.
+- (d) Player 4: Calculate the velocity at the moment the diver hits the water.
 
 ---
 ### Problem 3: A car with mass $1.50 x 10^3 kg$ starts from rest and accelerates to a speed of 18.0 m/s in 12.0 s. During its acceleration, the car covers a distance of 108 m. Assume the net frictional force (friction + air resistance) is a constant 400.0 N during this time.
