@@ -1,4 +1,6 @@
 ---
+layout: default
+title: Partials! | Conservation of Mechanical Energy
 marp: true
 ---
 # Energy Problems
