@@ -9,9 +9,9 @@ math: mathjax
 - (b) Player 2 : Define a net work/energy equation for the system
 - (c) Player 3 : How will the energies in this system change from beginning to end?
 - (d) Player 4: Determine the Final Velocity when the bird hits the water
-<details>
-  The final velocity is 20.7 m/s
-</details>
+  <details>
+    The final velocity is 20.7 m/s
+  </details>
 
 ---
 
@@ -21,9 +21,10 @@ math: mathjax
 - (b) Player 2: Write a net work/energy equation for the system
 - (b) Player 3: Find the diver’s speed 5.00 m above the surface of the water.
 - (d) Player 4: Calculate the velocity at the moment the diver hits the water.
-<details>
-  The final velocity is 9.9 m/s
-</details>
+
+  <details>
+    The final velocity is 9.9 m/s
+  </details>
 
 ---
 
@@ -34,10 +35,10 @@ math: mathjax
 - (c) Player 3: Determine the work done by friction
 - (d) Player 4: determine the work done by the car
 
-<details>
-  The work done by friction is $43/,200 J$ = $4.32x10^4 J$
-  The work done by the car is $286/,200 J$ = $2.86x10^5 J$
-</details>
+  <details>
+    The work done by friction is $43/,200 J$ = $4.32x10^4 J$
+    The work done by the car is $286/,200 J$ = $2.86x10^5 J$
+  </details>
 
 ---
 
