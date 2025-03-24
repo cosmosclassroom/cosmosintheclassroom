@@ -9,32 +9,9 @@ math: mathjax
 
 # Cosmos in the Classroom
 
-There will be two such events that change history
 
 ![Meteor](cosmosintheclassroom\assets\images\meteor.png)
 
-
-
-<div style=display: flex; gap: 20px;">
-<div style="flex: 1;">
-<h3> Column 1 </h3>
-<p>This is in column one, you see?<p>
-<form>
-<input> Please enter your name</input>
-</form>
-</div>
-<div style="flex: 2;">
-<h3> Column 2 </h3>
-<p> See, now this is just text in column 2<p>
-</div>
-</div>
-
-<div>
-<span>
-        <figure>This is the caption for that figure</figure>
-    <figcaption> Figure 1. This is the figure caption</figcaption>
-    </span>
-</div>
 
 ## References
 The [Reference Landing] is here.
