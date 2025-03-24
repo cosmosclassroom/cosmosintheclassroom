@@ -29,19 +29,10 @@ This document serves as a directory to all of the reference pages in this folder
 
 <div></div>
 
-- [LaTeX Reference](ref_latex.md)
-- [Pandoc Reference](ref_pandoc.md)
-- [Stable Diffusion Reference](stable-diffusion.md)
-- [Additional Reference 1](additional_ref_1.md)
-- [Additional Reference 2](additional_ref_2.md)
-
-## Local Directories
-
-<a href = r"file:///D:/python/Jupyter/">Local Jupiter Folder</a>
-
-\end{document}
-
-
-<footer>
-  <p><a href="index.html">Back to Home Page</a></p>
-</footer>
+<!--
+[LaTeX Reference]:ref_latex
+[Pandoc Reference]:ref_pandoc
+[Stable Diffusion Reference]d:stable-diffusion
+[Additional Reference 1]:additional_ref_1
+[Additional Reference 2]:additional_ref_2
+-->

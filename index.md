@@ -36,8 +36,8 @@ The [LaTeX Reference] is available for mathematical notation help.
 
 
 <!-- document references are below -->
-[Reference Landing]: /ref/ref_lib
-[Honors Physics Landing]: ../src/hphys_landing
+[Reference Landing]: /src/ref/ref_lib
+[Honors Physics Landing]: ../src/hphys/hphys_landing
 [Meteor]: meteor.png
 [Standard Physics Landing]: cosmosintheclassroom/src/sphys/sphys_overview
-[LaTeX Reference]: https://cosmosintheclassroom.org/src/ref_latex
+[LaTeX Reference]: https://cosmosintheclassroom.org/src/ref/ref_latex
