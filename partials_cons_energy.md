@@ -10,7 +10,7 @@ math: mathjax
 - (c) Player 3 : How will the energies in this system change from beginning to end?
 - (d) Player 4: Determine the Final Velocity when the bird hits the water
   <details>
-    The final velocity is 20.7 m/s
+    The velocity is 20.7 m/s
   </details>
 
 ---
@@ -23,7 +23,8 @@ math: mathjax
 - (d) Player 4: Calculate the velocity at the moment the diver hits the water.
 
   <details>
-    The final velocity is 9.9 m/s
+    The velocity at 5.0 m is 9.9 m/s
+    The final velocity before striking the water is 14.0 m/s
   </details>
 
 ---
