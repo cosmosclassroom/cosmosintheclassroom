@@ -10,9 +10,6 @@ math: mathjax
 # Cosmos in the Classroom
 
 
-![Meteor](cosmosintheclassroom\assets\images\meteor.png)
-
-
 ## References
 
 The [Reference Landing] is here.
@@ -24,7 +21,6 @@ The [Standard Physics Landing]
 The [LaTeX Reference] is available for mathematical notation help.
 
 
-<!-- document references are below -->
 [Reference Landing]: /src/ref/ref_lib
 [Honors Physics Landing]: ../src/hphys/hphys_landing
 [Meteor]: meteor.png
