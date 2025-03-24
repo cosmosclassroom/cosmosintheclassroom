@@ -4,8 +4,7 @@ title: "Document Title"
 author: Jonathan Corbett
 date: March , 2025
 markdown: kramdown
-kramdown:
-    math_engine: mathjax
+usemathjax: true
 ---
 
 [Fundamentals]
