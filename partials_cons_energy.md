@@ -19,7 +19,7 @@ math: mathjax
 
 - (a) Player 1: Define a reference frame
 - (b) Player 2: Write a net work/energy equation for the system
-- (b) Player 3: Find the diver’s speed 5.00 m above the surface of the water.
+- (c) Player 3: Find the diver’s speed 5.00 m above the surface of the water.
 - (d) Player 4: Calculate the velocity at the moment the diver hits the water.
 
   <details>
