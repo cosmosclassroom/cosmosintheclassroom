@@ -10,7 +10,7 @@ math: mathjax
 # Cosmos in the Classroom
 
 ## References
-$$F=m\cdota$$
+$$F=m \cdot a$$
 
 The [Reference Landing] is here.
 
