@@ -2,7 +2,7 @@
 layout: default
 title: Partials! | Conservation of Mechanical Energy
 author: Jonathan Corbett
-math: mathjax
+math: kramdown
 ---
 ### Problem 1: A bird is flying with a speed of 18.0 m/s over water when it accidentally drops a 2.00 kg fish. If the altitude of the bird is 5.40 m, what is the speed of the fish when it hits the water? Ignore air resistance.
 - (a) Player 1 : Draw a reference frame
