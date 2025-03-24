@@ -29,7 +29,7 @@ There will be two such events that change history
 </div>
 </div>
 
-
+<div>
 <span>
         <figure>This is the caption for that figure</figure>
     <figcaption> Figure 1. This is the figure caption</figcaption>
