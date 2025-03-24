@@ -4,8 +4,8 @@ Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 css: styles.css
+math: mathjax
 ---
-
 
 # Cosmos in the Classroom
 
@@ -13,15 +13,19 @@ There will be two such events that change history
 
 ![Meteor](cosmosintheclassroom\assets\images\meteor.png)
 
+
+
+<div style=display: flex; gap: 20px;">
+<div style="flex: 1;">
+<h3> Column 1 </h3>
+<p>This is in column one, you see?<p>
+<form>
+<input> Please enter your name</input>
+</form>
 </div>
-
-<dl>
-<dt>Term</dt>
-<dd> Definition or explanation of term</dd?>
-
-This is your official welcome to Cosmos in the Classroom.com!
-
-<div class="column1" >
+<div style="flex: 2;">
+<h3> Column 2 </h3>
+<p> See, now this is just text in column 2<p>
 <span>
         <figure>This is the caption for that figure</figure>
     <figcaption> Figure 1. This is the figure caption</figcaption>
