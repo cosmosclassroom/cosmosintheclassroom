@@ -27,32 +27,9 @@ marp: true
 
 ---
 
-
 ### Problem 4: A 1.0 x 10^3 kg elevator carries a maximum load of 800.0 kg. A constant frictional force of 4.0 x 10^3 N reduces the elevator’s upward motion. What minimum power, in kilowatts, must the motor deliver to lift the fully-loaded elevator at a constant speed of 3.0 m/s?
 
-(a) Diagram:
-
-Draw a diagram of the elevator and its load.
-Indicate the direction of motion and the forces acting on the elevator.
-Include the given information:
-Mass of the elevator = 1.0 x 10^3 kg
-Mass of the load = 800.0 kg
-Frictional force = 4.0 x 10^3 N
-Constant speed = 3.0 m/s
-(b) Net Force and Work Equations:
-
-Since the elevator moves at a constant speed, what is the net force?
-Identify all the forces acting on the elevator (motor force, gravity, friction).
-Write an expression for the net force.
-Write the formula for the force of gravity.
-Write the formula for power in terms of force and velocity.
-(c) Change in System Work:
-
-Explain that the motor must do work against gravity and friction.
-(d) Minimum Power Calculation:
-
-Calculate the total weight of the elevator and the load.
-Determine the force that the motor must exert to lift the elevator at a constant speed (equal to the sum of the gravitational force and friction).
-Calculate the minimum power required by the motor.
-Convert the power to kilowatts.
-Include units!
+- (a) Player 1: Draw a reference frame
+- (b) Player 2: Write a Net Force / Net work / Net Energy Equation
+- (c) Player 3: Determine the work done by friction
+- (d) Player 4: determine the work done by the car 
