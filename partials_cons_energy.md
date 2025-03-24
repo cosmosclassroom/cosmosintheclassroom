@@ -47,12 +47,10 @@ math: mathjax
 
 - (a) Player 1: Draw a reference frame
 - (b) Player 2: Write a Net Force / Net work / Net Energy Equation
-- (c) Player 3: Determine the work done by friction
-- (d) Player 4: determine the minimum power required by the motor (in kW)
+- (c) Player 3: determine the minimum power required by the motor (in kW)
   
   <details>
-    The work done by friction is $12,\000 J$
-    The minimum power by the motor is $65 kW$ or $6.5x10^4 W$
+       The minimum power by the motor is $65 kW$ or $6.5x10^4 W$
   </details>
 
   ---
