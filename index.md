@@ -8,15 +8,19 @@ css: styles.css
 <div class="header">
 # Cosmos in the Classroom
 
+![Meteor]("meteor.png" w
 
 </div>
+
+<dl>
+<dt>Term</dt>
+<dd> Definition or explanation of term</dd?>
 
 This is your official welcome to Cosmos in the Classroom.com!
 
 <div class="column1" >
 <span>
-    <img src="aristotle.png" alt="Aristotle" width="50%" height="auto">
-    <figure>This is the caption for that figure</figure>
+        <figure>This is the caption for that figure</figure>
     <figcaption> Figure 1. This is the figure caption</figcaption>
     </span>
 </div>
@@ -33,6 +37,6 @@ The [LaTeX Reference] is available for mathematical notation help.
 <!-- document references are below -->
 [Reference Landing]: /ref/ref_lib
 [Honors Physics Landing]: ../src/hphys_landing
-[Aristotle]: aristotle.png
+[Meteor]: meteor.png
 [Standard Physics Landing]: ../src/sphys_overview
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref_latex
