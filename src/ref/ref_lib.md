@@ -3,13 +3,8 @@ layout: default
 title: Reference Library (Test Home Page)
 author: Jonathan Corbett
 date: 21 March 2025
-css: ./templates/style.css
+css: cosmosintheclassroom/assets/style.css
 ---
-
-Latex rendered css
-$if(css)$
-<link rel="stylesheet" href="$css%">
-$endif$
 
 ## Navigation
 
