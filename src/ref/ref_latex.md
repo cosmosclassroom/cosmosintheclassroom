@@ -24,27 +24,36 @@ Change in variables
 ```
 \Delta x, \Delta t
 ```
-
 Vectors
+
+$\vec{F},\, \vec{v}$
 ```
 \vec{F}, \vec{v}
 
 ```
 
 # Fractions #
+
+$\frac{a}{b}$ 
+
 ``
-$\frac{a}{b}  % Fraction (a/b) | $\frac{a}{b}$
+$\frac{a}{b}
 ``
 ## Exponents ##
 
 Exponents | Example
 ------------------ | -----------------------
- x^2, y^{-1} | $x^2, y^{-1}$
+ `x^2, y^{-1} `| $x^2, y^{-1}$
 
 ## Greek Letters  ##
+
+$\alpha, \beta, \gamma, \theta, \lambda$
+
 \alpha, \beta, \gamma, \theta, \lambda
 
 ## Trigonometry ##
+$\sin \theta, \cos \theta, \tan \theta$
+
 ```
 \sin \theta, \cos \theta, \tan \theta
 ```
@@ -66,21 +75,23 @@ $F = ma$  % Inline equation
     s &= v_i t + \frac{1}{2} a t^2
 \end{align}
 ```
+
+
+
 $$
 \begin{align}
     v_f &= v_i + at \\
     s &= v_i t + \frac{1}{2} a t^2
-\end{align}
-$$
+\end{align} 
+$$ 
 
-## SI Units (siunitx Package) #
-```
-\SI{9.8}{m/s^2}  % 9.8 m/s²
-```
 
 ## Scientific Notation ##
+
+$3.0 \times 10^8 \text{ m/s}$
+
 ```
-3.0 \times 10^8 \text{ m/s}  % Scientific notation
+3.0 \times 10^8 \text{ m/s}
 ```
 
 
