@@ -10,7 +10,16 @@ permalink: pretty
 kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
+  input: GFM
+  math_engine_opts:
+    preview: true
+    preview_as_code: true
 
+# Add MathJax script to head
+mathjax:
+  enable: true
+  combo: "tex-svg"
+  tags: "ams"
 
 # Enable MathJax in Layout
 defaults:
@@ -21,6 +30,7 @@ defaults:
     values:
       layout: default
       mathjax: true
+      use_math: true
   
 theme: minima
 
