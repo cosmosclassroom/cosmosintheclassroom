@@ -23,5 +23,5 @@ The [LaTeX Reference] is available for mathematical notation help.
 [Reference Landing]: https://cosmosintheclassroom.com/src/ref/ref_lib
 [Honors Physics Landing]: https://cosmosintheclassroom.com/src/hphys/hphys_landing
 [Meteor]: https://cosmosintheclassroom.com/src/assets/images/meteor.png
-[Standard Physics Landing]: https://cosmosintheclassroom.org/src/sphys/sphys_landing
+[Standard Physics Landing]: https://cosmosintheclassroom.org/src/sphys/sphys_overview
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref/ref_latex
