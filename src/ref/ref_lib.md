@@ -6,6 +6,7 @@ date: 21 March 2025
 css: ./templates/style.css
 ---
 
+Latex rendered css
 $if(css)$
 <link rel="stylesheet" href="$css%">
 $endif$

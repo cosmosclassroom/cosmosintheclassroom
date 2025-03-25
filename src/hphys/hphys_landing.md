@@ -5,6 +5,7 @@ author: Jonathan Corbett
 date: March , 2025
 markdown: kramdown
 usemathjax: true
+toc: true
 ---
 
 [Fundamentals]
