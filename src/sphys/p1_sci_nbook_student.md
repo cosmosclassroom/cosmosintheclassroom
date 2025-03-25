@@ -30,7 +30,16 @@ math: mathjax
 ## L5 | Wave Interactions: Absorption, Transmission, Reflection
 ## L6 | The Greenhouse Effect
 ## L7 | Polarity: Particle/Wave Interactions
-1. Polarity Observations
+### Defining Scale
+<dl>
+    <td>Macroscopic</td>
+    <dd> Sized large enough to see with an unaided eye.</dd>
+    <td>Microscopic</td>
+    <dd> Sized large enough to see with a microscope.</dd>
+    <td>Particle-scale</td>
+    <dd> Too small to see, even with a microscope.</dd>
+</dl>
+2. Polarity Observations
   I notice:
 - There's a colored scale for electron density
 - In Water, the O side has more electrons than the H
