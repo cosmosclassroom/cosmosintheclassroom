@@ -24,6 +24,6 @@ The [LaTeX Reference] is available for mathematical notation help.
 
 [Reference Landing]: /src/ref/ref_lib
 [Honors Physics Landing]: /src/hphys/hphys_landing
-[Meteor]: .src/assets/images/meteor.png
-[Standard Physics Landing]: /src/sphys/sphys_overview
+[Meteor]: /src/assets/images/meteor.png
+[Standard Physics Landing]: (https://cosmosintheclassroom.org/src/sphys/P5L7_sim_EM_polarity
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref/ref_latex
