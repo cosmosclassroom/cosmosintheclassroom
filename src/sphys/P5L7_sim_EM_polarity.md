@@ -3,7 +3,7 @@ Layout: default
 Title: P5L7 Field-Particle+Interactions Simulation
 Author: Jonathan Corbett & Open Sci Ed
 Date: 24 March 2025
-css: /src/assets/style.css
+css: /cosmosintheclassroom/assets/style.css
 ---
 
 # Simulation Lab | Field-Particle Interactions
@@ -23,6 +23,8 @@ Take a moment to familiarize with yourself with the simulation, which can be fou
 #### Change the Frequency of Flip
 Try changing the **frequency-of-flip** pulldown. What changes about the electric field at high or low frequencies?
 
+---
+
 ### Part II. Observations
 
 #### Forces on Particles
@@ -31,7 +33,7 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
    |Particle-Type|Force on Particle|Change in Motion|Interaction|
-   |-|-|-|-|
+   |-:|-|-|-|
    |Water|<br><br>||
    |Ethylene (plastic)|<br> <br>|||
    |Electron|<br><br>|||
@@ -45,7 +47,7 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    **Table 2**. Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
    
    |Molecule|1.0 Hz|0.5 Hz|0.25 Hz| 0.125 Hz|
-   |-|-|-|-|-|
+   |-:|-|-|-|-|
    |Water||||
    |Ethylene|
 
