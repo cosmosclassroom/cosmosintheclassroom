@@ -9,7 +9,9 @@ css: /cosmosintheclassroom/assets/style.css
 # Simulation Lab | Field-Particle Interactions
 #### Introduction
 
-Electromagnetic radiation plays a primary role in various scientific and technological applications, from communication devices to medical imaging. Understanding how EM radiation interacts with different materials is essential for optimizing these technologies. This study delves into the interaction between EM radiation and matter through an interactive simulation tool, focusing on key materials like water and plastic.
+>Electromagnetic radiation plays a primary role in various scientific and technological applications, from communication devices to medical imaging. Understanding how EM radiation interacts with different materials is essential for optimizing these technologies. This study delves into the interaction between EM radiation and matter through an interactive simulation tool, focusing on key materials like water and plastic.
+
+
 
 ### Part I. Variables
 Take a moment to familiarize with yourself with the simulation, which can be found here:
@@ -34,7 +36,7 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
 
    |Particle-Type|Force on Particle|Change in Motion|Interaction|
    |-:|-|-|-|
-   |Water|<br><br>||
+   |Water|<br><br>|<span></span>>|
    |Ethylene (plastic)|<br> <br>|||
    |Electron|<br><br>|||
 
