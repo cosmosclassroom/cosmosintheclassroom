@@ -20,8 +20,8 @@ The [Standard Physics Landing]
 The [LaTeX Reference] is available for mathematical notation help.
 
 
-[Reference Landing]: /src/ref/ref_lib
-[Honors Physics Landing]: /src/hphys/hphys_landing
-[Meteor]: /src/assets/images/meteor.png
-[Standard Physics Landing]: (https://cosmosintheclassroom.org/src/sphys/P5L7_sim_EM_polarity
+[Reference Landing]: https://cosmosintheclassroom.com/src/ref/ref_lib
+[Honors Physics Landing]: https://cosmosintheclassroom.com/src/hphys/hphys_landing
+[Meteor]: https://cosmosintheclassroom.com/src/assets/images/meteor.png
+[Standard Physics Landing]: https://cosmosintheclassroom.org/src/sphys/P5L7_sim_EM_polarity
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref/ref_latex
