@@ -18,6 +18,12 @@ Date: 23 March 2025
 2. Model - Differential Heating in the Microwave
 3. Reading | Metal in the Microwave 
 
+### L7 - Polarity Interactions
+- Molecular Models
+- Simulation | Field-Particle Interactions
+- [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.com/src/sphys/P5L7_consensus_model.html)
+- Reading | Metal in the Microwave
+
 
 ## P3 Force, Impulse, and Collision Safety
 
