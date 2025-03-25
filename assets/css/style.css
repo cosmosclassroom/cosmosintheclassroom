@@ -7,10 +7,11 @@ head link[href*="fonts.googleapis.com"] {
 head link[href*="@import"] {
     display: none;
 }
-/* Base typography */
+/* Garamond CSS for Scientific/Academic Writing */
+
 body {
     font-family: "Garamond", "Times New Roman", serif;
-    font-size: 14pt; /* Adjust as needed */
+    font-size: 12pt; /* Adjust as needed */
     line-height: 1.6; /* Adjust as needed */
     color: #333; /* Dark gray for readability */
     margin: 2cm; /* Typical margins for academic documents */
@@ -18,8 +19,8 @@ body {
     background-color: #f8f8f8; /* Light background for contrast */
 }
 
-/* Headings */
-font-family: "Garamond", "Times New Roman", serif;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Garamond", "Times New Roman", serif;
     font-weight: bold; /* Bold headings */
     color: #222; /* Slightly darker gray for headings */
     line-height: 1.2;
@@ -27,114 +28,141 @@ font-family: "Garamond", "Times New Roman", serif;
 }
 
 h1 {
-    font-size: 24pt;
-    text-align: center;
-    margin-bottom: 2.5rem;
+    font-size: 1.8em;
 }
 
 h2 {
-    font-size: 16pt;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+h5, h6 {
+    font-size: 1em;
 }
 
 p {
-    margin-bottom: 1.5rem;
-    text-align: justify;
-    hyphens: auto;
+    margin-bottom: 1em; /* Space between paragraphs */
+    text-align: justify; /* Justified text for formal look */
 }
 
-/* Tables */
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 2rem 0;
-    font-size: 10pt;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-    transition: background-color 0.2s ease;
-}
-
-th, td {
-    padding: 0.75rem;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-}
-
-/* Figure captions */
-figure {
-    margin: 2.5rem 0;
-    text-align: center;
-}
-
-figcaption {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 10pt;
-    color: #555;
-    text-align: center;
-    margin-top: 1rem;
-    font-style: italic;
-}
-
-/* Math equations */
-.math-display, div.MathJax_Display {
-    overflow-x: auto;
-    margin: 2rem 0;
-    padding: 1rem;
-    background-color: #fafafa;
-    border-left: 3px solid #ddd;
-}
-
-/* Code blocks */
-pre, code {
-    font-family: 'Consolas', monospace;
-    font-size: 10pt;
-    background-color: #f8f8f8;
-    border: 1px solid #eee;
-    border-radius: 2px;
-    padding: 0.2em 0.4em;
-    box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
-}
-
-/* References and citations */
-.reference {
-    font-size: 10pt;
-    color: #666;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid #000;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Links */
 a {
-    color: #1a67bd;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.2s ease;
+    color: #007bff; /* Standard blue link color */
+    text-decoration: none; /* No underline by default */
 }
 
 a:hover {
-    border-bottom-color: currentColor;
+    text-decoration: underline; /* Underline on hover */
 }
 
-/* Print optimizations */
+em, i {
+    font-style: italic;
+}
+
+strong, b {
+    font-weight: bold;
+}
+
+blockquote {
+    margin: 1em 2em;
+    padding: 0.5em 1em;
+    border-left: 3px solid #ccc; /* Light gray border for quotes */
+    font-style: italic;
+    color: #555; /* Slightly lighter gray for quotes */
+}
+
+code, pre {
+    font-family: "Courier New", monospace;
+    background-color: #f0f0f0; /* Light gray background for code */
+    padding: 0.2em 0.5em;
+    border-radius: 3px;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+pre {
+    white-space: pre-wrap; /* Allow wrapping of long lines */
+    display: block;
+    margin: 1em 0;
+}
+
+ul, ol {
+    margin-bottom: 1em;
+    padding-left: 2em; /* Indent lists */
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Light gray table borders */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for table headers */
+    font-weight: bold;
+}
+
+/* MathJax (or similar) integration */
+.mjx-chtml {
+    font-size: 1em; /* Adjust MathJax font size to match document */
+}
+
+/* Figures and Images */
+figure{
+    text-align: center;
+    margin: 1em 0;
+}
+
+figcaption{
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footnotes/Endnotes */
+.footnote {
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+hr {
+  border: 1px solid #ddd;
+  margin: 2em 0;
+}
+
+/* Print Specific Styles */
 @media print {
-    body {
-        padding: 0;
-        font-size: 11pt;
-    }
-    
-    a {
-        color: #000;
-        text-decoration: none;
-    }
+  body {
+    font-size: 12pt;
+    margin: 1in;
+    background-color: white;
+    color: black;
+  }
+  a {
+    color: black; /* Print links in black */
+    text-decoration: none; /* No underline in print */
+  }
 }
