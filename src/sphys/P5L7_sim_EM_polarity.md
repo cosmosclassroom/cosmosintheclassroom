@@ -11,7 +11,7 @@ css: /cosmosintheclassroom/assets/style.css
 
 >Electromagnetic radiation plays a primary role in various scientific and technological applications, from communication devices to medical imaging. Understanding how EM radiation interacts with different materials is essential for optimizing these technologies. This study delves into the interaction between EM radiation and matter through an interactive simulation tool, focusing on key materials like water and plastic.
 
-
+___
 
 ### Part I. Variables
 Take a moment to familiarize with yourself with the simulation, which can be found here:
@@ -29,16 +29,16 @@ Try changing the **frequency-of-flip** pulldown. What changes about the electric
 
 ### Part II. Observations
 
-#### Forces on Particles
+#### Wave-Particle Interactions
 The simulation allows you to investigate 3 types of particles. For each, use a combination of pictures and words to describe what you notice about (a) the force on the particle and (b) any changes in motion when the particles are exposed to changing electric fields. You likely want to enable *show-force-arrows*.
 
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
    |Particle-Type|Force on Particle|Change in Motion|Interaction|
    |-:|-|-|-|
-   |Water|<br><br>|<span></span>>|
-   |Ethylene (plastic)|<br> <br>|||
-   |Electron|<br><br>|||
+   |Water|<br><br><br><br>| | |
+   |Ethylene (plastic)|<br> <br><br><br>| | |
+   |Electron|<br><br><br><br>| | |
 
 1. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above.
 
@@ -50,7 +50,9 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    
    |Molecule|1.0 Hz|0.5 Hz|0.25 Hz| 0.125 Hz|
    |-:|-|-|-|-|
-   |Water||||
-   |Ethylene|
+   |Water| | | |
+   |Ethylene| | | |
 
-3. For e
+3. For each matter type, use the questions to connect to the conclusions we reached about energy transfer at a macroscopic scale to the observations you made in the simulation. 
+   - What happens on a **macroscopic** scale to each type of matter when we expose it to EM radiation in the microwave oven?
+   - What **particle-scale** observations from the simulation help us explain this observation?
