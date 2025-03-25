@@ -12,11 +12,13 @@ css: /src/assets/style.css
 Electromagnetic radiation plays a primary role in various scientific and technological applications, from communication devices to medical imaging. Understanding how EM radiation interacts with different materials is essential for optimizing these technologies. This study delves into the interaction between EM radiation and matter through an interactive simulation tool, focusing on key materials like water and plastic.
 
 ### Part I. Variables
-Take a moment to familiarize with yourself with the simulation, which can be found [here](Field-Particle Interactions Sim)
+Take a moment to familiarize with yourself with the simulation, which can be found here:
+
+[Field-Particle Interactions Sim](https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
 
 
 
-[Field-Particle Interactions Sim]:(https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
+[Field-Particle Interactions Sim]: (https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
 
 #### Change the Frequency of Flip
 Try changing the **frequency-of-flip** pulldown. What changes about the electric field at high or low frequencies?
