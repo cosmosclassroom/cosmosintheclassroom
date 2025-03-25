@@ -32,11 +32,11 @@ math: mathjax
 ## L7 | Polarity: Particle/Wave Interactions
 ### Defining Scale
 <dl>
-    <td>**Macroscopic**</td>
+    <td>Macroscopic</td>
     <dd> Sized large enough to see with an unaided eye.</dd>
-    <td>**Microscopic**</td>
+    <td>Microscopic</td>
     <dd> Sized large enough to see with a microscope.</dd>
-    <td>**Particle-scale**</td>
+    <td>Particle-scale</td>
     <dd> Too small to see, even with a microscope.</dd>
 </dl>
 2. Polarity Observations
