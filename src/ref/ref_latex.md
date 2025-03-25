@@ -3,7 +3,7 @@ layout: default
 title: Latex Reference
 author: Jonathan Corbett
 date: 23 March 2025
-math: kandown
+markdown: kandown
 ---
 
 <div style="display: flex; gap: 10px;">
