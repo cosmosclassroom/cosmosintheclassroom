@@ -14,10 +14,10 @@ $endif$
 ## Navigation
 
 <div style="display: flex; gap: 10px;">
-  <a href="ref_latex.html"><button>LaTeX Reference</button></a>
-  <a href="ref_pandoc.html"><button>Pandoc Reference</button></a>
-  <a href="stable-diffusion.html"><button>Stable Diffusion Reference</button></a>
-  <a href="additional_ref_1.html"><button>Additional Reference 1</button></a>
+  <a href="ref_latex"><button>LaTeX Reference</button></a>
+  <a href="ref_pandoc"><button>Pandoc Reference</button></a>
+  <a href="ref_markdown"><button>Markdown Reference</button></a>
+  <a href="ref_html"><button>HTML Reference</button></a>
   <a href="additional_ref_2.html"><button>Additional Reference 2</button></a>
 </div>
 
