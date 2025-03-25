@@ -34,17 +34,17 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
 
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
-   |Particle-Type|Force on Particle|Change in Motion|Interaction|
+   |Particle-Type|Force on Particle|Observed Motion|Interaction|
    |-:|-|-|-|
    |Water|<br><br><br><br>| | |
    |Ethylene (plastic)|<br> <br><br><br>| | |
    |Electron|<br><br><br><br>| | |
 
-1. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above.
+1. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above. Summarize your **reasoning**.
 
 #### Frequencies and Particles
 
-2. How do different particles respond to the increased frequency/flipping of the electric field?
+2. How do different particles respond to the increased frequency/flipping of the electric field? Summarize your observations in Table 2 below.
    
    **Table 2**. Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
    
@@ -53,6 +53,11 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    |Water| | | |
    |Ethylene| | | |
 
+Describe any patterns you observe in the data.
+
+---
+
+### Conclusions
 3. For each matter type, use the questions to connect to the conclusions we reached about energy transfer at a macroscopic scale to the observations you made in the simulation. 
-   - What happens on a **macroscopic** scale to each type of matter when we expose it to EM radiation in the microwave oven?
-   - What **particle-scale** observations from the simulation help us explain this observation?
+   - (a) What happens on a **macroscopic** scale to each type of matter when we expose it to EM radiation in the microwave oven?
+   - (b) What **particle-scale** observations from the simulation help us explain this observation?
