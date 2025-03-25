@@ -4,7 +4,7 @@ Title: P5L7 Field-Particle+Interactions Simulation
 Author: Jonathan Corbett & Open Sci Ed
 Date: 24 March 2025
 math: mathjax
-css: /cosmosintheclassroom/assets/style.css
+<!-- css: /cosmosintheclassroom/assets/style.css -->
 ---
 
 # Simulation Lab | Field-Particle Interactions
