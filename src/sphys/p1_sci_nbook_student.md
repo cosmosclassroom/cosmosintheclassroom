@@ -2,6 +2,7 @@
 title: P1 Energy From Earth Systems | Student Science Notebook
 author: Jonathan Corbett
 date: 16 March 2025
+math: mathjax
 ---
 
 1. [P5 Electromagnetic Radiation](#p5-electromagnetic-radiation)

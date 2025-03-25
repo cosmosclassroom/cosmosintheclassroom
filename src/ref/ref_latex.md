@@ -3,7 +3,7 @@ layout: default
 title: Latex Reference
 author: Jonathan Corbett
 date: 23 March 2025
-markdown: kandown
+math: mathjax
 ---
 
 <div style="display: flex; gap: 10px;">
