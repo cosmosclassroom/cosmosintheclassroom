@@ -10,7 +10,9 @@ css: /cosmosintheclassroom/assets/style.css
 # Simulation Lab | Field-Particle Interactions
 #### Introduction
 
->Electromagnetic radiation plays a primary role in various scientific and technological applications, from communication devices to medical imaging. Understanding how EM radiation interacts with different materials is essential for optimizing these technologies. This study delves into the interaction between EM radiation and matter through an interactive simulation tool, focusing on key materials like water and plastic.
+>Previous investigations have shown how microwaves interact with different materials on a macroscopic scale. We observed that water heats up significantly in a microwave oven, while materials like aluminum foil remain relatively cool. These observations raise a fundamental question: Why do different materials respond so differently to microwave radiation? To truly understand this, we need to delve into the sub-microscopic scale of **particles** and examine how microwaves interact with individual particles within these materials.
+
+Electromagnetic (EM) radiation, including microwaves, consists of oscillating electric and magnetic fields. These fields can exert forces on charged particles, causing them to move. The way these *particles* respond to the oscillating fields determines how the material as a whole interacts with the radiation. In this simulation, we will shift our focus from the bulk behavior of materials to the behavior of individual particles within water, plastic (ethylene), and even an electron, as they are subjected to changing electric fields. By observing these particle-level interactions, we can gain a deeper understanding of the mechanisms behind energy transfer and explain the macroscopic phenomena we've already observed. This exploration will help us connect the visible effects of microwaves to the underlying interactions occurring at the atomic and molecular level, providing a more complete picture of how EM radiation interacts with matter.
 
 ___
 
