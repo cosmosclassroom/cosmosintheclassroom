@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=Fira+Sans:wght@400;600&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@400;600&display=swap');
 
 /* Hide @import if it appears in head */
 head link[href*="fonts.googleapis.com"] {
@@ -9,20 +9,41 @@ head link[href*="@import"] {
 }
 /* Base typography */
 body {
-    font-family: 'Source Serif Pro', 'Crimson Text', serif;
-    line-height: 1.6;
-    max-width: 960px;
+    font-family: 'Literata', serif;
+    line-height: 1.7;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
-    color: #2c3e50;
+    padding: 3rem;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    font-size: 12pt;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fira Sans', 'Libre Baskerville', serif;
-    color: #34495e;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #000000;
+    line-height: 1.3;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 24pt;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    font-size: 16pt;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
 }
 
 /* Tables */
@@ -30,8 +51,8 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin: 2rem 0;
-    font-size: 0.9rem;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 10pt;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 tr:hover {
@@ -52,40 +73,70 @@ th {
 
 /* Figure captions */
 figure {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
+    text-align: center;
 }
 
 figcaption {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.9rem;
-    color: #666;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 10pt;
+    color: #555;
     text-align: center;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     font-style: italic;
 }
 
 /* Math equations */
-.math-display {
+.math-display, div.MathJax_Display {
     overflow-x: auto;
-    margin: 1rem 0;
+    margin: 2rem 0;
     padding: 1rem;
-    background-color: #f8f9fa;
+    background-color: #fafafa;
+    border-left: 3px solid #ddd;
 }
 
 /* Code blocks */
 pre, code {
-    font-family: 'Fira Code', monospace;
-    background-color: #f1f3f5;
-    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 10pt;
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 2px;
     padding: 0.2em 0.4em;
     box-shadow: inset 0 0 2px rgba(0,0,0,0.1);
 }
 
 /* References and citations */
 .reference {
-    font-size: 0.9rem;
+    font-size: 10pt;
     color: #666;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #ddd;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Links */
+a {
+    color: #1a67bd;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+}
+
+a:hover {
+    border-bottom-color: currentColor;
+}
+
+/* Print optimizations */
+@media print {
+    body {
+        padding: 0;
+        font-size: 11pt;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
 }
