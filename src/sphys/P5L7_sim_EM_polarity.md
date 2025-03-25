@@ -21,19 +21,23 @@ Take a moment to familiarize with yourself with the simulation, which can be fou
 
 [Field-Particle Interactions Sim](https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
 
-
-
 [Field-Particle Interactions Sim]: (https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
 
 #### Change the Frequency of Flip
 Try changing the **frequency-of-flip** pulldown. What changes about the electric field at high or low frequencies?
 
+#### Identify Variables
+Explore the simulation and make a list of variables it allows you to change/visualize. Annotate your list with:
+- $(\Delta)$ for variables that you, the scientist, can change
+- (=) for variables that are constant/controlled
+- (m) for variables you can observe/measure. You likely want to enable *show-force-arrows*
+
 ---
 
 ### Part II. Observations
 
-#### Wave-Particle Interactions
-The simulation allows you to investigate 3 types of particles. For each, use a combination of pictures and words to describe what you notice about (a) the force on the particle and (b) any changes in motion when the particles are exposed to changing electric fields. You likely want to enable *show-force-arrows*.
+#### Particle Type and EM Interactions
+The simulation allows you to investigate 3 types of particles. For each, use a combination of pictures and words to describe what you notice about (a) the force on the particle and (b) any changes in motion when the particles are exposed to changing electric fields.
 
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
@@ -45,7 +49,7 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
 
 1. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above. Summarize your **reasoning**.
 
-#### Frequencies and Particles
+#### Frequency and EM Interactions
 
 2. How do different particles respond to the increased frequency/flipping of the electric field? Summarize your observations in Table 2 below.
    
