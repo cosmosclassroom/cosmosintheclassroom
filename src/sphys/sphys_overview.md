@@ -21,7 +21,7 @@ Date: 23 March 2025
 ### L7 - Polarity Interactions
 - Molecular Models
 - Simulation | Field-Particle Interactions
-- [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.com/src/sphys/P5L7_consensus_model.html)
+- [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.org/src/sphys/P5L7_consensus_model.html)
 - Reading | Metal in the Microwave
 
 
@@ -32,5 +32,5 @@ Date: 23 March 2025
 
 <!-- Definitions -->
 
-[Wave Variables Lab]:(https://cosmosintheclassroom.com\src\sphys\P5L7_sim_EM_polarity)
+[Wave Variables Lab]:(https://cosmosintheclassroom.org\src\sphys\P5L7_sim_EM_polarity)
 []: ./P5L7_Reading_metalinmicrowave
