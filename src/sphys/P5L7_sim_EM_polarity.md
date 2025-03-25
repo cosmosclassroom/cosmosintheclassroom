@@ -24,10 +24,12 @@ Take a moment to familiarize with yourself with the simulation, which can be fou
 [Field-Particle Interactions Sim]: (https://openscied-static.s3.us-east-1.amazonaws.com/HTML+Files/Field-Particle%2BInteractions.html)
 
 #### Change the Frequency of Flip
-Try changing the **frequency-of-flip** pulldown. What changes about the electric field at high or low frequencies?
+Try changing the **frequency-of-flip** pulldown. 
+
+1. What changes about the electric field at high or low frequencies?
 
 #### Identify Variables
-Explore the simulation and make a list of variables it allows you to change/visualize. Annotate your list with:
+2. Explore the simulation and make a list of variables it allows you to change/visualize. Annotate your list with:
 - $(\Delta)$ for variables that you, the scientist, can change
 - (=) for variables that are constant/controlled
 - (m) for variables you can observe/measure. You likely want to enable *show-force-arrows*
@@ -37,7 +39,7 @@ Explore the simulation and make a list of variables it allows you to change/visu
 ### Part II. Observations
 
 #### Particle Type and EM Interactions
-The simulation allows you to investigate 3 types of particles. For each, use a combination of pictures and words to describe what you notice about (a) the force on the particle and (b) any changes in motion when the particles are exposed to changing electric fields.
+3. The simulation allows you to investigate 3 types of particles. For each, use a combination of pictures and words to describe what you notice about (a) the force on the particle and (b) any changes in motion when the particles are exposed to changing electric fields.
 
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
@@ -47,11 +49,11 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    |Ethylene (plastic)|<br> <br><br><br>| | |
    |Electron|<br><br><br><br>| | |
 
-1. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above. Summarize your **reasoning**.
+4. For each matter type, does the motion of the particle suggest that the microwave radiation is being **transmitted, reflected, or absorbed?** Indicate your results in Table 1 above. Summarize your **reasoning**.
 
 #### Frequency and EM Interactions
 
-2. How do different particles respond to the increased frequency/flipping of the electric field? Summarize your observations in Table 2 below.
+ How do different particles respond to the increased frequency/flipping of the electric field? Summarize your observations in Table 2 below.
    
    **Table 2**. Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
    
@@ -60,11 +62,11 @@ The simulation allows you to investigate 3 types of particles. For each, use a c
    |Water| | | |
    |Ethylene| | | |
 
-Describe any patterns you observe in the data.
+5. Describe any patterns you observe in the data.
 
 ---
 
 ### Conclusions
-3. For each matter type, use the questions to connect to the conclusions we reached about energy transfer at a macroscopic scale to the observations you made in the simulation. 
+6. For each matter type, use the questions to connect to the conclusions we reached about energy transfer at a macroscopic scale to the observations you made in the simulation. 
    - (a) What happens on a **macroscopic** scale to each type of matter when we expose it to EM radiation in the microwave oven?
    - (b) What **particle-scale** observations from the simulation help us explain this observation?
