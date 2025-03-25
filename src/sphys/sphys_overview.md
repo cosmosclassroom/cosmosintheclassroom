@@ -15,6 +15,8 @@ Date: 23 March 2025
 ### P2
 ### L4 - Wave Variables
 1. [Wave Variables Lab]
+2. Model - Differential Heating in the Microwave
+3. Reading | Metal in the Microwave 
 
 
 ## P3 Force, Impulse, and Collision Safety
@@ -25,3 +27,4 @@ Date: 23 March 2025
 <!-- Definitions -->
 
 [Wave Variables Lab]: ./p5l4_wave_variables
+[]: ./P5L7_Reading_metalinmicrowave
