@@ -25,4 +25,4 @@ css: style.css
   - James Watt
   
 ## Reference
-![James Watt]("build\cosmosintheclassroom\watt.png")
+![James Watt](cosmosintheclassroom/assets/images/watt.png")
