@@ -26,5 +26,5 @@ Date: 23 March 2025
 
 <!-- Definitions -->
 
-[Wave Variables Lab]:cosmosintheclassroom.com\src\sphys\P5L7_sim_EM_polarity
+[Wave Variables Lab]:(https://cosmosintheclassroom.com\src\sphys\P5L7_sim_EM_polarity)
 []: ./P5L7_Reading_metalinmicrowave
