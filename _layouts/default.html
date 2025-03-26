@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ...other head elements... -->
-    {% if page.mathjax or page.use_math %}
-    <script type="text/javascript">
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                packages: ['base', 'ams', 'noerrors', 'noundefined']
-            },
-            loader: {load: ['[tex]/ams']},
-            svg: {
-                fontCache: 'global'
-            }
-        };
-    </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-    </script>
+    <!-- Page-specific metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Title will be dynamically set by Jekyll -->
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    
+    <!-- SEO and social media metadata -->
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    
+    <!-- Favicon (replace with your own) -->
+    <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    
+    <!-- Optional custom page-specific CSS -->
+    {% if page.css %}
+        <link rel="stylesheet" href="{{ page.css | relative_url }}">
     {% endif %}
+    
+    <!-- MathJax Configuration -->
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            displayMath: [['$$','$$'], ['\\[','\\]']],
+            processEscapes: true
+        }
+    });
+    </script>
 </head>
 <body>
-    {{ content }}
+    <!-- Page Header -->
+    <header>
+        <nav>
+            <!-- Navigation menu items -->
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <!-- Add more navigation items as needed -->
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Content Area -->
+    <main class="markdown-content">
+        <!-- Page-specific content will be injected here by Jekyll -->
+        {{ content }}
+    </main>
+    
+    <!-- Page Footer -->
+     
+    
+    <!-- Optional JavaScript -->
+    {% if page.js %}
+        <script src="{{ page.js | relative_url }}"></script>
+    {% endif %}
 </body>
 </html>
