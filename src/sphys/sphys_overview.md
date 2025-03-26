@@ -34,5 +34,4 @@ markdown: kandown
 
 <!-- Definitions -->
 
-[Wave Variables Lab]:(https://cosmosintheclassroom.org\src\sphys\P5L7_sim_EM_polarity)
-[]: ./P5L7_Reading_metalinmicrowave
+[Wave Variables Lab]:(https://cosmosintheclassroom.org/src/sphys/P5L7_sim_EM_polarity)
