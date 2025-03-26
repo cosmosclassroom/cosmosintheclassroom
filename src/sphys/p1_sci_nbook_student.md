@@ -40,16 +40,12 @@ math: mathjax
     <dd> Too small to see, even with a microscope.</dd>
 </dl>
 2. Polarity Observations
-  I notice:
-- There's a colored scale for electron density
-- In Water, the O side has more electrons than the H
-- The plastic has more balanced electrons
   
-  I wonder:
-  - If size of the molecules affects the microwave interactions
-  - If charge affects the microwave interactions
+  |I notice| I wonder|
+  |-|-|
+  |There's a colored scale for electron density <br> In Water, the O side has more electrons than the H <br> The plastic has more balanced electrons| If size of the molecules affects the microwave interactions <br> If charge affects the microwave interactions
 
-   I/we predict that *polarity* affects how matter interacts with microwaves.
+   I/we predict that _*polarity*_ affects how matter interacts with microwaves.
 
 ### Simulation Lab | Field-Particle Interactions
 
@@ -84,18 +80,37 @@ Conclusions: I *think* "absorbed" means the energy from the field is used to mak
 
 ### Conclusions
 
-(a) Observations at the **macroscopic** scale:
+- (a) Observations at the **macroscopic** level:
 
 **Water**: The water gets really hot, may boil or steam.
 **Ethylene (Plastic)**: The plastic stays mostly the same. It might get a little warm, but not much.
-**Electron**: The electron moves around really fast and changes direction a lot.
-(b) What’s Happening at a Tiny Level?
+
+
+
+- (b) What’s Happening at the **particle** level?
 
 Imagine everything is made of tiny building blocks. When microwaves shine on these building blocks, something happens:
 
-*Water*: Water molecules are a bit like tiny magnets. Microwaves push and pull on these magnets, making them spin and wiggle really fast. This spinning and wiggling creates heat. The faster they spin and wiggle, the hotter the water gets. This is called energy transfer – the microwave is giving its energy to the water molecules.
+Water molecules are a bit like tiny magnets. Microwaves push and pull on these magnets, making them spin and wiggle really fast. This spinning and wiggling creates heat. The faster they spin and wiggle, the hotter the water gets. This is called energy transfer – the microwave is giving its energy to the water molecules.
 Ethylene (Plastic): Plastic molecules don't react to microwaves very much. They don’t spin or wiggle much, so they don’t get much energy. That’s why the plastic stays cool. The microwave's energy just passes through it.
-Electron: The electron is a tiny part of everything. It's moving really fast because the microwave is pushing it. This shows that the microwave is giving energy to the tiny parts of the material.
+Electron: The **electron** is a tiny part of everything. It's moving really fast because the microwave is pushing it. This shows that the microwave is giving energy to the tiny parts of the material.
+
+### Evaluating Information - Validity and Reliability
+[Reference | Validity and Reliability](p5l7_validity_reliability)
+
+A quick checklist to evaluate the validity and reliability of information:
+
+**Validity Assessment:**
+
+*   [ ] Is there clear evidence?
+*   [ ] Does it fit with what you know?
+*   [ ] Does it agree with science?
+
+**Reliability Assessment:**
+
+*   [ ] Is the source an expert? Did they cite good sources?
+*   [ ] Can it be checked?
+*   [ ] Are limitations acknowledged?
 
 ## L8 | Wave Interference
 ## L9 | EM Radiation Technology
