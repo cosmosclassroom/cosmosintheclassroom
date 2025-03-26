@@ -99,11 +99,11 @@ The acceleration of the human is centripetal, toward Jupiter's center.
 #### 6. Hypothetical Planet
 
 Calculating the acceleration due to gravity on a hypothetical planet requires G, the planet's mass, and the planet's radius.
-- a. Calculating *g* on the surface of the planet, the distance between the two masses is the radius of the planet.
+- a. Calculating $a_g$ on the surface of the planet, the distance between the two masses is the radius of the planet.
   
-   |3 sig figs|$g = \frac{GM}{r^2}$|
+   |3 sig figs|$a_g = \frac{GM}{r^2}$|
    |-:|:-|
-   |$M = 5.970x10^{24} kg$ <br> $r = 2(6\,378x10^3 m)$| $g = G \left(\frac{(5.970x10^{24}kg)}{(2(6\,378x10^3 m))^2} \right)$ <br> $g = 2.4514 m/s^2$ <br> $g = 2.45 m/s^2$|
+   |$M = 5.970x10^{24} kg$ <br> $r = 2(6\,378x10^3 m)$| $a_g = G \left(\frac{(5.970x10^{24}kg)}{(2(6\,378x10^3 m))^2} \right)$ <br> $a_g = 2.4514 m/s^2$ <br> $a_g = 2.45 m/s^2$|
 
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Earth's center.
