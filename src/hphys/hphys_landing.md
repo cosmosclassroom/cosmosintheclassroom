@@ -43,6 +43,10 @@ toc: true
 
 ### Unit 8 | Waves and Harmonics
 
+[Problem Set - Scientific Notation Practice](ps1.5_key_sci_not_practice.md)
+
+[Problem Set - Universal Gravitation](PS5.3_univ_grav.md)
+
 [PS 5.3 | Universal Gravitation](https://cosmosintheclassroom.org/src/hphys/PS5.3_univ_grav) 
 
 [[Key]](https://cosmosintheclassroom.org/src/hphys/ps5.3_univ_grav_key)
