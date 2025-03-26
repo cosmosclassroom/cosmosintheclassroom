@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Template Page
 author: Jonathan Corbett
 date: 23 March 2025
