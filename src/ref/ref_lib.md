@@ -8,7 +8,9 @@ css: cosmosintheclassroom/assets/style.css
 # Reference Library
 
 This document serves as a directory to all of the reference pages in this folder.
+[Explain Like I'm Five](ref_eli5.md)
 
+[LaTeX](ref_latex.md)
 
 ## Navigation
 <div style="display: flex; gap: 10px;">
