@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title | default: site.title }}</title>
+    
+    <!-- VERY EXPLICIT CSS LINK -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <div class="markdown-content">
+        {{ content }}
+    </div>
+</body>
+</html>
+```
+
+Mental Exercise for Troubleshooting:
+- Imagine your webpage as a layered cake
+- CSS is the frosting that decorates and styles the cake
+- If no frosting appears, something is blocking its application
+
+Diagnostic Questions for You:
+1. When you view page source, is the CSS link present?
+2. Are you using a Jekyll theme?
+3. Have you run `jekyll build` recently?
+4. Can you confirm your project structure looks like:
+```
+your-project/
+├── _config.yml
+├── _layouts/
+│   └── default.html
+└── assets/
+    └── css/
+        └── main.css
+```
+
+Would you be willing to confirm these details so we can precisely pinpoint where the rendering is breaking down?
