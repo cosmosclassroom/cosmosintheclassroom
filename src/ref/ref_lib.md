@@ -8,7 +8,7 @@ css: cosmosintheclassroom/assets/style.css
 
 ## Navigation
 
-
+![Rocket-Launch]
 
 # Reference Library
 
@@ -21,3 +21,6 @@ This document serves as a directory to all of the reference pages in this folder
   <a href="www.cosmosintheclassroom.org/ref/ref_html.html"><button>HTML Reference</button></a>
   <a href="www.cosmosintheclassroom.org/ref/additional_ref_2.html"><button>Additional Reference 2</button></a>
 </div>
+
+[Rocket-Launch]: (../../assets/images/rocket-launch-trail.png)
+
