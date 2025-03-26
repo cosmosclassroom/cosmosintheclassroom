@@ -13,7 +13,7 @@ math: mathjax
 Calculating the force of attraction between the human and Earth's center of gravity requires G, (a) Earth's radius, and the masses of the two bodies. As the human is standing on the surface of the Earth, the distance between their centers of mass is simply Earth's radius (ignoring the height of the human)
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
     
-  |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
+  |3 sig figs|$F_g = G \frac{m \cdot M}{r^2}$|
   |-:|:-|
   |$m = 70.0 kg$ <br> $M = 5.970x10^{24} kg$ <br> $r = 6\,378x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(5.970x10^{24}kg)}{(6\,378x10^{3} m)^2} \right)$ <br> $F_g = 685.66 N$ <br> $F_g = 686 N$|
 
@@ -33,7 +33,7 @@ Calculating the force of attraction between the human and Europa's center of gra
  |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
  |-:|:-|
  |$m = 70.0 kg$ <br> $M = 4.897x10^{22} kg$ <br> $r = 1\,561x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(4.897x10^{22}kg)}{(1\,561x10^{3} m)^2} \right)$ <br> $F_g = 113.38 N$ <br> $F_g = 113 N$|
- 
+
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Europa's center.
 
