@@ -43,7 +43,7 @@ toc: true
 
 [PS 5.3 | Universal Gravitation](PS5.3_univ_grav) 
 
-[[Key]](ps5.3_univ_grav_key_)
+[[Key]](https://cosmosintheclassroom.org/src/hphys/ps5.3_univ_grav_key)
 
 
 ## Unit 9 | Light and Optics
