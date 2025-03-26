@@ -4,6 +4,7 @@ title: HTML Reference
 author: Jonathan Corbett & Claude
 date: 23 March 2025
 marp: true
+css: cosmosintheclassroom.org/assets/css/styles.css
 ---
 
 # ELI5 vs ELI-Sci
