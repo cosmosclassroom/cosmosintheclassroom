@@ -41,7 +41,7 @@ toc: true
 
 ## Unit 8 | Waves and Harmonics
 
-[PS 5.3 | Universal Gravitation](PS5.3_univ_grav) 
+[PS 5.3 | Universal Gravitation](https://cosmosintheclassroom.org/src/hphys/PS5.3_univ_grav) 
 
 [[Key]](https://cosmosintheclassroom.org/src/hphys/ps5.3_univ_grav_key)
 
