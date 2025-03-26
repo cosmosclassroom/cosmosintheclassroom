@@ -1,4 +1,5 @@
 ---
+layout: default
 title: P1 Energy From Earth Systems | Student Science Notebook
 author: Jonathan Corbett
 date: 16 March 2025
