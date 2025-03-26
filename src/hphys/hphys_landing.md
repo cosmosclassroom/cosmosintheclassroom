@@ -13,40 +13,42 @@ toc: true
 [Dynamics]
 [Conservation]
 [Harmonics]
-[Electricity]~~~~
+[Electricity]
 [Harmonics]
 [Electricity]
 
+### Mechanics
 
-## Unit 1 | Principles of Physics
+### Unit 1 | Principles of Physics
 
-## Unit 2 | Kinematics 1
-
-
-## Unit 3 | Kinematics 2
+### Unit 2 | Kinematics 1
 
 
-## Unit 4 | Dynamics
+### Unit 3 | Kinematics 2
 
 
-## Unit 5 | Work and Energy
+### Unit 4 | Dynamics
+
+## Conservation
+
+### Unit 5 | Work and Energy
 
 
-## Unit 6 | Collisions, Impulse, Momentum
+### Unit 6 | Collisions, Impulse, Momentum
 
 
-## Unit 7 | Rotational Motion and Gravitation
+### Unit 7 | Rotational Motion and Gravitation
 
+## Harmonics
 
-
-## Unit 8 | Waves and Harmonics
+### Unit 8 | Waves and Harmonics
 
 [PS 5.3 | Universal Gravitation](https://cosmosintheclassroom.org/src/hphys/PS5.3_univ_grav) 
 
 [[Key]](https://cosmosintheclassroom.org/src/hphys/ps5.3_univ_grav_key)
 
 
-## Unit 9 | Light and Optics
+### Unit 9 | Light and Optics
 
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
@@ -54,21 +56,25 @@ toc: true
 |  |  |  |
 
 
+### Unit 11 | Optics 
 
-## Unit 10 | Electrostatics
+| Topic | Activity | Assignment |
+| :---- | :---- | :---- |
+|  |  |  |
+|  |  |  |
+
+
+## Electronics
+
+### Unit 10 | Electrostatics
 
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
 |  |  |  |
 |  |  |  |
 
+### Unit 11 | Electromagnetism and Currents
 
-## Unit 11 | Optics 
-
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
 
 [Fundamentals]: #0-Fundamentals
 [Mechanics]: #unit-2--kinematics-1
