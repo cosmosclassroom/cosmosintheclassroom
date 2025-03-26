@@ -5,16 +5,12 @@ author: Jonathan Corbett
 date: 21 March 2025
 css: cosmosintheclassroom/assets/style.css
 ---
-
-## Navigation
-
-![alt text](../../assets/images/watt.png)
-
-
 # Reference Library
 
 This document serves as a directory to all of the reference pages in this folder.
 
+
+## Navigation
 <div style="display: flex; gap: 10px;">
   <a href="www.cosmosintheclassroom.org/ref/ref_latex.html"><button>LaTeX Reference</button></a>
   <a href="www.cosmosintheclassroom.org/ref/ref_pandoc.html"><button>Pandoc Reference</button></a>
