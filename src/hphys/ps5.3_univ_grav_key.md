@@ -4,6 +4,7 @@ title: Problem Set 5.3 Answer Key | Universal Gravitation
 author: Jonathan Corbett
 date: 25 March 2025
 math: mathjax
+css: cosmosintheclassroom\assets\css\style.css
 ---
 
 # Problem Set 5.3 | Universal Gravitation
