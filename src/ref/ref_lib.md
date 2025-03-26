@@ -8,7 +8,8 @@ css: cosmosintheclassroom/assets/style.css
 
 ## Navigation
 
-![Rocket-Launch]
+![alt text](../../assets/images/watt.png)
+
 
 # Reference Library
 
