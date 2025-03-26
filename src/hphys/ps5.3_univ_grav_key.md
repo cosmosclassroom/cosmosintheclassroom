@@ -50,6 +50,8 @@ Calculating the force of attraction between the human and the Moon's center of g
  |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
  |-:|:-|
  |$m = 70.0 kg$ <br> $M = 7.348x10^{22} kg$ <br> $r = 1\,737x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(7.348x10^{22}kg)}{(1\,737x10^{3} m)^2} \right)$ <br> $F_g = 245.98 N$ <br> $F_g = 246 N$|
+
+
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward the Moon's center.
 
