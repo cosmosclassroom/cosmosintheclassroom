@@ -1,5 +1,4 @@
 ---
-layout: default
 title: stable diffusion reference sheet
 author: jonathan corbett
 date: 21 March 2025
