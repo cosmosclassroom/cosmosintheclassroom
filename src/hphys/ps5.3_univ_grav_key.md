@@ -80,19 +80,20 @@ The acceleration of the human is centripetal, toward Mars' center.
 ---
 
 #### 5. A 70.0 kg human standing on Jupiter
-Calculating the force of attraction between the human and Jupiter's center of gravity requires G, (a) Jupiter's radius, and the masses of the two bodies. As the human is standing on the surface of Jupiter, the distance between their centers of mass is simply Jupiter's radius (ignoring the height of the human)
+Calculating the force of attraction between the human and Jupiter's center of gravity requires G, (a) Jupiter's radius, and the masses of the two bodies. As the human is standing on the surface of Jupiter, the distance between their centers of mass is simply Jupiter's radius (ignoring the height of the human).
+> Note: We are unsure whether or not Jupiter has a surface upon which a person could stand.
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
 
- |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $M = 1.898x10^{27} kg$ <br> $r = 69\,911 km$|$F_g = G \left(\frac{(70.0 kg)(1.898x10^{27}kg)}{(69\,911 km)^2} \right)$ <br> $F_g = 2484.9 N$ <br> $F_g = 2485 N$|
+   |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
+   |-:|:-|
+   |$m = 70.0 kg$ <br> $M = 1.898x10^{27} kg$ <br> $r = 69\,911 km$|$F_g = G \left(\frac{(70.0 kg)(1.898x10^{27}kg)}{(69\,911 km)^2} \right)$ <br> $F_g = 2484.9 N$ <br> $F_g = 2485 N$|
 
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Jupiter's center.
 
- |3 sf|$F_g = m \cdot a_g$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $F_g = 2484.9 N$ <br> $r = 69\,911 km$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{2484.9 N}{70.0 kg}$ <br> $a_g = 35.5130000000... \frac{m}{s^2}$ <br> $a_g = 35.5 \frac{m}{s^2}$|
+   |3 sf|$F_g = m \cdot a_g$|
+   |-:|:-|
+   |$m = 70.0 kg$ <br> $F_g = 2484.9 N$ <br> $r = 69\,911 km$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{2484.9 N}{70.0 kg}$ <br> $a_g = 35.5130000000... \frac{m}{s^2}$ <br> $a_g = 35.5 \frac{m}{s^2}$|
 
 ---
 
@@ -126,9 +127,9 @@ Calculating the orbital speed of a satellite requires G, the mass of the planet,
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Earth's center.
 
- |3 sig figs|$F_g = m \cdot a_g$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
+   |3 sig figs|$F_g = m \cdot a_g$|
+   |-:|:-|
+   |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
 
 ---
 
@@ -143,6 +144,6 @@ Calculating the gravitational potential energy between two masses requires G, th
    
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law. The acceleration of the human is centripetal, toward Earth's center.
 
- |3 sig figs|$F_g = m \cdot a_g$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
+   |3 sig figs|$F_g = m \cdot a_g$|
+   |-:|:-|
+   |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|

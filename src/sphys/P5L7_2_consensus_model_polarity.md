@@ -27,6 +27,7 @@ math: mathjax
 **Water Interaction**
 - The electric field exerts a force on the polar molecule's dipole, causing rotation.
   - Continuous forces lead to increased molecular motion, increasing kinetic energy.
+  
 **Plastic Interaction:**
 - Non-polar molecules do not have dipoles and thus are not polarized by the electric field.
   - Balanced charges result in no net movement of charge carriers.
@@ -38,7 +39,7 @@ math: mathjax
   - The dipole aligns with the field, causing continuous force application.
   - This leads to rotational motion and increased molecular speed.
 - **Higher kinetic energy translates to higher temperature** (heating).
-Plastic Heating Mechanism:
+
 **Non-polar plastic molecules lack dipoles** and cannot align with an electric field.
   - No net force is experienced by the molecule.
   - Charges are balanced, resulting in no movement or rotation.
