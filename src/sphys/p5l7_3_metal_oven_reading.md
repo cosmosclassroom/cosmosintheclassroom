@@ -3,6 +3,7 @@ Layout: default
 Title: Key - P5L7 Evaluating Information Metal in the Microwave
 Author: Jonathan Corbett and Gemma3:12b
 Date: 26 March 2025
+markdown: kramdown
 math: mathjax
 css: /cosmosintheclassroom/assets/style.css
 ---

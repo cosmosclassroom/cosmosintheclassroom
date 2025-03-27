@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "P5L4 | Wave Variables and Relationships"
+title: Key - Consensus Model - Polarity in the Microwave Oven
 author: Jonathan Corbett
 date: 13 March 2025
+markdown: kramdown
 math: mathjax
 ---
 # Consensus Model
