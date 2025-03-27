@@ -7,5 +7,6 @@ gem "rake", "~> 13.0"
 group :jekyll_plugins do
   gem "github-pages", "~> 231"
   gem "kramdown-parser-gfm"
-  gem "kramdown-math-katex"
+  gem "jekyll-relative-links"
+  gem "jekyll-redirect-from"
 end
