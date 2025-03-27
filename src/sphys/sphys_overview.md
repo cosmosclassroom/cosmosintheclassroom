@@ -48,4 +48,4 @@ The study of meteors and orbital mechanics unveils the grand choreography of cel
 
 <!-- Definitions -->
 
-[Wave Variables Lab]:(https://cosmosintheclassroom.org/src/sphys/P5L7_sim_EM_polarity)
+[Wave Variables Lab]:(# ./P5L7_sim_EM_polarity)
