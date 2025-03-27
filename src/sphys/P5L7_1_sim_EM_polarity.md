@@ -58,7 +58,7 @@ Try changing the **frequency-of-flip** pulldown.
    **Table 2**. Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
    
    |Molecule|1.0 Hz|0.5 Hz|0.25 Hz| 0.125 Hz|
-   |-:|-|-|-|-|
+   |-:|:-:|:-:|:-:|:-:|
    |Water| | | |
    |Ethylene| | | |
 
