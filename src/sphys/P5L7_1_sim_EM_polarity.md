@@ -44,7 +44,7 @@ Try changing the **frequency-of-flip** pulldown.
    **Table 1**. Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields.
 
    |Particle-Type|Force on Particle|Observed Motion|Interaction|
-   |-:|-|-|-|
+   |-:|:-:|:-:|:-:|
    |Water|<br><br><br><br>| | |
    |Ethylene (plastic)|<br> <br><br><br>| | |
    |Electron|<br><br><br><br>| | |
