@@ -84,9 +84,10 @@ The acceleration of the human is centripetal, toward Europa's center.
   At that altitude, gravity would act over a distance of
       $r = r_S + 1.0 \times 10^6 \, m = 6.1268 \times 10^7 \,m$
 
-  | 3 sf| $F_g = G \frac{m \cdot M_Saturn}{r^2}$ |
-  |-:|:-|
-  |$m = 45.5 , kg$ <br> $M_{Saturn} = 5.68 \times 10^{26} \, kg$ <br> $r = 6.1268 \times 10^7 \,m$ | $F_g = G \frac{(45.5\,kg)(5.683 \times 10^{26} \, kg)}{(6.1268 \times 10^7)^2}$ <br> $F_g  = 459.66... \, N$ <br> $F_g = 4.60 \times 10^2\, N$ |
+    | 3 sf| $F_g = G \frac{m \cdot M_Saturn}{r^2}$ |
+    |-:|:-|
+    |$m = 45.5 , kg$ <br> $M_{Saturn} = 5.68 \times 10^{26} \, kg$ <br> $r = 6.1268 \times 10^7 \,m$ | $F_g = G \frac{(45.5\,kg)(5.683 \times 10^{26} \, kg)}{(6.1268 \times 10^7)^2}$ <br> $F_g  = 459.66... \, N$ <br> $F_g = 4.60 \times 10^2\, N$ |
+
 
 - f. An altitude of $1.0x10^6 m$ on Earth represents a change of $\approx$ 15% of Earth's radius. In contrast, $1.0 \times 10^6 \, m$ above Saturn's outermost clouds represents only $\approx$ 1.5% change in the radius. Thus, rising 1 000 km above Earth will affect the force of gravity much more substantially than rising 1 000 km above Saturn's much larger radius.
 ---
