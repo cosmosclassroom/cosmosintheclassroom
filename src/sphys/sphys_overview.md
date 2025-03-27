@@ -8,7 +8,7 @@ markdown: kandown
 ---
 # Welcome to Standard Physics
 
-[text](p1_sci_nbook_student.md)
+[text](p1_sci_nbook_student)
 
 ## P1 Energy from Earth Systems
 Today, energy grids represent a complex, dynamic network that transforms raw energy sources into the lifeblood of our technological society, connecting distant power generation facilities to the light switches and outlets in our homes and workplaces. These sophisticated systems are not merely passive conduits, but intelligent, responsive infrastructures that must continuously balance generation, transmission, and consumption across vast geographical regions, integrating an increasingly diverse array of energy sources from traditional fossil fuel power plants to intermittent renewable technologies like solar and wind, all while maintaining stability, reliability, and efficiency in a constantly shifting landscape of energy demand and supply.
