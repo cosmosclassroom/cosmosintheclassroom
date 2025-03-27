@@ -8,7 +8,7 @@ markdown: kandown
 ---
 # Welcome to Standard Physics
 
-[P5 Science Notebook](p1_sci_nbook_student)
+[P5 Science Notebook](./p5_sci_nbook_student.mdp1_sci_nbook_student)
 
 ## P1 Energy from Earth Systems
 Today, energy grids represent a complex, dynamic network that transforms raw energy sources into the lifeblood of our technological society, connecting distant power generation facilities to the light switches and outlets in our homes and workplaces. These sophisticated systems are not merely passive conduits, but intelligent, responsive infrastructures that must continuously balance generation, transmission, and consumption across vast geographical regions, integrating an increasingly diverse array of energy sources from traditional fossil fuel power plants to intermittent renewable technologies like solar and wind, all while maintaining stability, reliability, and efficiency in a constantly shifting landscape of energy demand and supply.
@@ -29,8 +29,8 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 - Simulation | Field-Particle Interactions
 
 - [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.org/src/sphys/P5L7_consensus_model.html)
-- [Consensus Model - Polarity](P5L7_2_consensus_model_polarity)
-- [Metal in Oven Reading](p5l7_3_metal_oven_reading)
+- [Consensus Model - Polarity](% ./P5L7_2_consensus_model_polarity.mdP5L7_2_consensus_model_polarity %)
+- [Metal in Oven Reading](% ./p5l7_3_metal_oven_readingp5l7_3_metal_oven_reading %)
 
 
 
