@@ -30,7 +30,7 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 
 - [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.org/src/sphys/P5L7_consensus_model.html)
 - [Consensus Model - Polarity]({% ./P5L7_2_consensus_model_polarity.mdP5L7_2_consensus_model_polarity %})
-- [Metal in Oven Reading]({% ./p5l7_3_metal_oven_readingp5l7_3_metal_oven_reading %})
+- [Metal in Oven Reading](./p5l7_3_metal_oven_readingp5l7_3_metal_oven_reading)
 
 
 
