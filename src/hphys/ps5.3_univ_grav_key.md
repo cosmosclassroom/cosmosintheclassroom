@@ -44,28 +44,42 @@ The acceleration of the human is centripetal, toward Europa's center.
 
 - c. The acceleration of Luna can be calculated using the known force of gravity and the mass of Luna:
 
-- |2 sf|$F_g = m \cdot a_g$|
-   |-:|:-|
-   |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_g = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_g = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
+    |2 sf|$F_g = m \cdot a_g$|
+    |-:|:-|
+    |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_{g_Luna} = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_{g_{Luna}} = \frac{F_g}{m}$ <br> $a_{g_{Luna}} = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_{g_{Luna}} = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
 
 ---
 
-#### 3. A 70.0 kg human standing on the Moon
-Calculating the force of attraction between the human and the Moon's center of gravity requires G, (a) the Moon's radius, and the masses of the two bodies. As the human is standing on the surface of the Moon, the distance between their centers of mass is simply the Moon's radius (ignoring the height of the human)
-- a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
+#### 3. A 70.0 kg human tours the solar system
 
- |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $M = 7.348x10^{22} kg$ <br> $r = 1\,737x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(7.348x10^{22}kg)}{(1\,737x10^{3} m)^2} \right)$ <br> $F_g = 245.98 N$ <br> $F_g = 246 N$|
+- a. On the surface of Earth
 
+|3|$F_g = m \cdot a_g$|
+|-:|:-|
+| $m=45.5kg$ <br> $a_g=9.80 \frac{m}{s^2}$ | $F_g=45.5 kg \cdot 9.80 \frac{m}{s^2}$ <br> $F_g=446N$|
 
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
-The acceleration of the human is centripetal, toward the Moon's center.
+- b. At a distance of $1.0 x 10^3 km$ above Earth:
 
- |3 sf|$F_g = m \cdot a_g$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $F_g = 245.98 N$ <br> $r = 1\,737x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{245.98 N}{70.0 kg}$ <br> $a_g = 3.5140000000... \frac{m}{s^2}$ <br> $a_g = 3.51 \frac{m}{s^2}$|
+  At that altitude, gravity would act over a distance of:
+      $r = r_E + 1.0 \times 10^6 \, m = 7.378 \times 10^6 \, m$
+  
+  | 3 | $F_g = G \frac{m \cdot M_{Earth}}{r^2}$ |
+  |-:|:-|
+  |($m = 45.5$ , kg) <br> $$M_E = 5.972 \times 10^{24} , kg$  <br> $r = 7.371 \times 10^6 m$ | $F_g = G \frac{(45.5(5.972 \times 10^{24} kg)}{(7.371 \times 10^6)^2}$ <br> $F_g = 333 \,N$|
 
+- c. On the "surface" of Saturn 
+ 
+  | 3 sf | $F_g = G \frac{m\cdot M_{Saturn}}{r^2}$ |
+  |-:|:-|
+  |$m = 45.5 \, kg$ <br> $M_{Saturn} = 5.683 \times 10^{26} \, kg$ <br> $r_{Saturn} = 60 \,268 \times 10^3  m$  | $F_g = G \frac{(45.5 kg)(5.683 \times 10^{26} \,kg)}{(60 \,268 \times 10^3  m)^2}$ <br> $F_g  = 475 \, N$ |
+
+- d. Values from (a) and (c): The values are similar because the ratio of mass to the square of the radius, $\frac{M}{r^2}$, which determines the acceleration due to gravity is somewhat comparable for Earth's surface and Saturn's cloud tops. Saturn is approximately 100x the mass of Earth, but it is also approximately 10x larger in radius:
+
+   Since $ F_g \propto \frac{M}{r^2}$, and $\frac {M_{Saturn}}{r_{Saturn}^2} \approx \frac{100 \cdot m_{Earth}}{(10\cdot r_{Earth})^2}$ = $\frac{100 \cdot m}{100 \cdot r^2}$ so the forces should be approximately equal.
+
+| 3 sf| $F_g = m \frac{GM}{r^2}$ |
+|-:|:-|
+|$m = 45.5 , kg$ <br> $M_{Saturn} = 5.683 \times 10^{26} , kg$ <br> (r = R_S + 1.0 \times 10^6 , m = 5.9232 \times 10^7 , m) | $F_g = (45.5 \frac{(6.674 \times 10^{-11})(5.683 \times 10^{26})}{(5.9232 \times 10^7)^2}) <br> (F_g = (45.5) \frac{3.7928 \times 10^{16}}{3.5084 \times 10^{15}}) <br> (F_g = (45.5)(10.811) = 491 , N) |
 ---
 
 #### 4. A 70.0 kg human standing on Mars
