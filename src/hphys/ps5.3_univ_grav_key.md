@@ -46,26 +46,26 @@ The acceleration of the human is centripetal, toward Europa's center.
 
     |2 sf|$F_g = m \cdot a_g$|
     |-:|:-|
-    |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_{g_Luna} = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_{g_{Luna}} = \frac{F_g}{m}$ <br> $a_{g_{Luna}} = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_{g_{Luna}} = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
+    |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_{g_{Luna} = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_{g_{Luna}} = \frac{F_g}{m}$ <br> $a_{g_{Luna}} = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_{g_{Luna}} = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
 
 ---
 
-#### 3. A 70.0 kg human tours the solar system
+#### 3. A 45.5 kg human tours the solar system
 
 - a. On the surface of Earth
 
-|3|$F_g = m \cdot a_g$|
-|-:|:-|
-| $m=45.5kg$ <br> $a_g=9.80 \frac{m}{s^2}$ | $F_g=45.5 kg \cdot 9.80 \frac{m}{s^2}$ <br> $F_g=446N$|
+  |3 sf |$F_g = m \cdot a_g$|
+  |-:|:-|
+  | $m=45.5kg$ <br> $a_g=9.80 \frac{m}{s^2}$ | $F_g=45.5 kg \cdot 9.80 \frac{m}{s^2}$ <br> $F_g=446N$|
 
 - b. At a distance of $1.0 x 10^3 km$ above Earth:
 
-  At that altitude, gravity would act over a distance of:
+  At that altitude, gravity would act over a distance of
       $r = r_E + 1.0 \times 10^6 \, m = 7.378 \times 10^6 \, m$
   
-  | 3 | $F_g = G \frac{m \cdot M_{Earth}}{r^2}$ |
+  | 3 sf | $F_g = G \frac{m \cdot M_{E}}{r^2}$ |
   |-:|:-|
-  |($m = 45.5$ , kg) <br> $$M_E = 5.972 \times 10^{24} , kg$  <br> $r = 7.371 \times 10^6 m$ | $F_g = G \frac{(45.5(5.972 \times 10^{24} kg)}{(7.371 \times 10^6)^2}$ <br> $F_g = 333 \,N$|
+  |$m = 45.5$ \, kg <br> $M_E = 5.972 \times 10^{24} , kg$  <br> $r = 7.371 \times 10^6 m$ | $F_g = G \frac{(45.5 kg)(5.972 \times 10^{24} kg)}{(7.371 \times 10^6)^2}$ <br> $F_g = 333 \,N$|
 
 - c. On the "surface" of Saturn 
  
@@ -75,11 +75,20 @@ The acceleration of the human is centripetal, toward Europa's center.
 
 - d. Values from (a) and (c): The values are similar because the ratio of mass to the square of the radius, $\frac{M}{r^2}$, which determines the acceleration due to gravity is somewhat comparable for Earth's surface and Saturn's cloud tops. Saturn is approximately 100x the mass of Earth, but it is also approximately 10x larger in radius:
 
-   Since $ F_g \propto \frac{M}{r^2}$, and $\frac {M_{Saturn}}{r_{Saturn}^2} \approx \frac{100 \cdot m_{Earth}}{(10\cdot r_{Earth})^2}$ = $\frac{100 \cdot m}{100 \cdot r^2}$ so the forces should be approximately equal.
+   Since $ F_g \propto \frac{M}{r^2}$, and $\frac {M_{Saturn}}{r_{Saturn}^2} \approx \frac{100 \cdot M_{Earth}}{(10\cdot r_{Earth})^2}$ = $\frac{\cancel{100} \cdot M}{\cancel{100} \cdot r^2}$ 
+   
+   so the forces should be approximately equal.
 
-| 3 sf| $F_g = m \frac{GM}{r^2}$ |
-|-:|:-|
-|$m = 45.5 , kg$ <br> $M_{Saturn} = 5.683 \times 10^{26} , kg$ <br> (r = R_S + 1.0 \times 10^6 , m = 5.9232 \times 10^7 , m) | $F_g = (45.5 \frac{(6.674 \times 10^{-11})(5.683 \times 10^{26})}{(5.9232 \times 10^7)^2}) <br> (F_g = (45.5) \frac{3.7928 \times 10^{16}}{3.5084 \times 10^{15}}) <br> (F_g = (45.5)(10.811) = 491 , N) |
+- e. $1.0 \times 10^3 km$ above Saturn's atmosphere.
+
+  At that altitude, gravity would act over a distance of
+      $r = r_S + 1.0 \times 10^6 \, m = 6.1268 \times 10^7 \,m$
+
+  | 3 sf| $F_g = G \frac{m \cdot M_Saturn}{r^2}$ |
+  |-:|:-|
+  |$m = 45.5 , kg$ <br> $M_{Saturn} = 5.68 \times 10^{26} \, kg$ <br> $r = 6.1268 \times 10^7 \,m$ | $F_g = G \frac{(45.5\,kg)(5.683 \times 10^{26} \, kg)}{(6.1268 \times 10^7)^2}$ <br> $F_g  = 459.66... \, N$ <br> $F_g = 4.60 \times 10^2\, N$ |
+
+- f. An altitude of $1.0x10^6 m$ on Earth represents a change of $\approx$ 15% of Earth's radius. In contrast, $1.0 \times 10^6 \, m$ above Saturn's outermost clouds represents only $\approx$ 1.5% change in the radius. Thus, rising 1 000 km above Earth will affect the force of gravity much more substantially than rising 1 000 km above Saturn's much larger radius.
 ---
 
 #### 4. A 70.0 kg human standing on Mars
@@ -89,7 +98,7 @@ Calculating the force of attraction between the human and Mars' center of gravit
 
  |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
  |-:|:-|
- |$m = 70.0 kg$ <br> $M = 6.417x10^{23} kg$ <br> $r = 3\,389x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(6.417x10^{23}kg)}{(3\,389x10^{3} m)^2} \right)$ <br> $F_g = 375.66 N$ <br> $F_g = 376 N$|
+ |$m = 70.0 kg$ <br> $M = 6.417x10^{23} kg$ <br> $r = 3\,389x10^3 m$|$F_g =G \frac{(70.0 kg)(6.417x10^{23}kg)}{(3\,389x10^{3} m)^2}$ <br> $F_g = 375.66 N$ <br> $F_g = 376 N$|
 
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Mars' center.
