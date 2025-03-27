@@ -22,6 +22,7 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 
 1. [Wave Variables Lab]
 2. Model - Differential Heating in the Microwave
+   1. Transmission, reflection, absorption
    
 
 ### L7 - Polarity Interactions
