@@ -46,7 +46,7 @@ The acceleration of the human is centripetal, toward Europa's center.
 
     |2 sf|$F_g = m \cdot a_g$|
     |-:|:-|
-    |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_{g_{Luna} = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_{g_{Luna}} = \frac{F_g}{m}$ <br> $a_{g_{Luna}} = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_{g_{Luna}} = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
+    |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_{g_{Luna}} = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_{g_{Luna}} = \frac{F_g}{m}$ <br> $a_{g_{Luna}} = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_{g_{Luna}} = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
 
 ---
 
@@ -91,8 +91,26 @@ The acceleration of the human is centripetal, toward Europa's center.
 - f. An altitude of $1.0x10^6 m$ on Earth represents a change of $\approx$ 15% of Earth's radius. In contrast, $1.0 \times 10^6 \, m$ above Saturn's outermost clouds represents only $\approx$ 1.5% change in the radius. Thus, rising 1 000 km above Earth will affect the force of gravity much more substantially than rising 1 000 km above Saturn's much larger radius.
 ---
 
-#### 4. A 70.0 kg human standing on Mars
-Calculating the force of attraction between the human and Mars' center of gravity requires G, (a) Mars' radius, and the masses of the two bodies. As the human is standing on the surface of Mars, the distance between their centers of mass is simply Mars' radius (ignoring the height of the human).
+#### 4. A spacecraft 2 Earth radii above our planet
+
+A spacecraft orbiting 2 Earth radii above the surface would experience gravity acting over a total distance of $3 \times r_E$ or $(3)(6\,378 \times 10^3 m)$ which is $6.378 \times 10^6 m$
+
+| 3 | $F_g = G \frac{m_s M_E}{r^2}$ |
+|-:|:-|
+|$m_s = 1\,850 \, kg$ <br> $M_E = 5.972 \times 10^{24} , kg$ <br> $r =6.378 \times 10^6 m$ | $F_g = G \frac{(1\,850 \,kg)(5.972 \times 10^{24} \, kg)}{(6.378 \times 10^6 m)^2}$ <br> <br> $F_g = 2010 \, N$|
+
+<br>
+
+| 3 | $F_{net} = ma$ |
+|-:|:-|
+|$F_{net} = F_g = 2010 , N$ <br> $m_s = 1850 , kg$ | $a_c = \frac{F_{net}}{m_s}$ <br> $a_c = \frac{2010 , N}{1850 , kg}$ <br> $a_c = 1.09 , m/s^2$ |
+
+<br>
+
+| 3 | $a_c = \frac{v^2}{r}$ |
+|-:|:-|
+|$a_c = 1.09 , m/s^2$ <br> $r = 1.9113 \times 10^7 , m$ | $v^2 = a_c r$ <br> $v = \sqrt{a_c r}$ <br> $v = \sqrt{(1.09)(1.9113 \times 10^7)}$ <br> $v = \sqrt{2.083317 \times 10^7}$ <br> $v = 4560 , m/s$ |
+
 
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
 
@@ -110,9 +128,9 @@ The acceleration of the human is centripetal, toward Mars' center.
 ---
 
 #### 5. A 70.0 kg human standing on Jupiter
-Calculating the force of attraction between the human and Jupiter's center of gravity requires G, (a) Jupiter's radius, and the masses of the two bodies. As the human is standing on the surface of Jupiter, the distance between their centers of mass is simply Jupiter's radius (ignoring the height of the human).
 
-> Note: We are unsure whether or not Jupiter has a surface upon which a person could stand. It possibly contains a liquid metallic hydrogen core, but we cannot
+Calculating the force of attraction between the human and Jupiter's center of gravity requires G, (a) Jupiter's radius, and the masses of the two bodies. As the human is on the outer edge of Jupiter, the distance between their centers of mass is simply Jupiter's radius (ignoring the height of the human).
+
 
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
 
