@@ -36,25 +36,25 @@ math: mathjax
    2. Calculate the circumference of the moon (in km)  
 6. Jupiter and Saturn are an average of 646,270,000 km apart. Calculate the (average) attractive force between the two bodies.
 
-# 
+
 
 # Answers
 
-1. (a) 685 N  
-   (b) 9.79 m/s2  
+1. (a) $685 \,N$ 
+   (b) $9.79 \,m/s2  $
    (c) $1.15 x 10^{-22} \, \frac{m}{s^2}$  
-2. (a) 113 N  
+2. (a) $113 \,N$  
    (b) $1.61 \frac{m}{s^2}$  
-   (c) 1.5 x 10{-21} m/s2   
-3. (a) 446 N  
-   (b) 333 N  
-   (c) 475 N  
-   (e) 475 N  
-4. (a) 1 900 N  
-   (b) 1.09 m/s2  
-   (c) 4 560 m/s  
-5.  5.98 x 1024 kg  
-6.  2.45 m/s2  
-7. (a) 1910 N  
-   (b) 8.07 x 103 km  
-8. 1.72 x 1020 N
+   (c) $1.5 x 10{-21} \,m/s^2$   
+3. (a) $446 \,N$  
+   (b) $333 \,N$  
+   (c) $475 \,N$  
+   (e) $475 \,N$ 
+4. (a) $1 900 \,N $<br>
+   (b) $1.09 \,m/s^2 $ <br>
+   (c) $4 560 \,m/s $ 
+5.  $5.98 x 10^{24} \,kg$  
+6.  $2.45 \,m/s2 $ 
+7. (a) $1\,910 \, N$<br> 
+   (b) $8.07 x 10^3 \,km$ 
+8. $1.72 x 1020 \, N$
