@@ -11,6 +11,7 @@ markdown: kandown
 [P5 Science Notebook](/src/sphys/p5_sci_nbook_student)
 
 ## P1 Energy from Earth Systems
+
 Today, energy grids represent a complex, dynamic network that transforms raw energy sources into the lifeblood of our technological society, connecting distant power generation facilities to the light switches and outlets in our homes and workplaces. These sophisticated systems are not merely passive conduits, but intelligent, responsive infrastructures that must continuously balance generation, transmission, and consumption across vast geographical regions, integrating an increasingly diverse array of energy sources from traditional fossil fuel power plants to intermittent renewable technologies like solar and wind, all while maintaining stability, reliability, and efficiency in a constantly shifting landscape of energy demand and supply.
 
 ## P5 Energy and Information in Waves
@@ -21,7 +22,7 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 
 1. [Wave Variables Lab]
 2. Model - Differential Heating in the Microwave
-3. Reading | Metal in the Microwave 
+   
 
 ### L7 - Polarity Interactions
 
@@ -46,4 +47,4 @@ The study of meteors and orbital mechanics unveils the grand choreography of cel
 
 <!-- Definitions -->
 
-[Wave Variables Lab]:(# ./P5L7_sim_EM_polarity)
+[Wave Variables Lab]:(/src/sphys/P5L7_sim_EM_polarity)
