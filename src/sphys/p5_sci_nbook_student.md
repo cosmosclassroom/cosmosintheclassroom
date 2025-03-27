@@ -87,7 +87,6 @@ Conclusions: I *think* "absorbed" means the energy from the field is used to mak
 **Ethylene (Plastic)**: The plastic stays mostly the same. It might get a little warm, but not much.
 
 
-
 - (b) What’s Happening at the **particle** level?
 
 Imagine everything is made of tiny building blocks. When microwaves shine on these building blocks, something happens:
@@ -95,6 +94,16 @@ Imagine everything is made of tiny building blocks. When microwaves shine on the
 Water molecules are a bit like tiny magnets. Microwaves push and pull on these magnets, making them spin and wiggle really fast. This spinning and wiggling creates heat. The faster they spin and wiggle, the hotter the water gets. This is called energy transfer – the microwave is giving its energy to the water molecules.
 Ethylene (Plastic): Plastic molecules don't react to microwaves very much. They don’t spin or wiggle much, so they don’t get much energy. That’s why the plastic stays cool. The microwave's energy just passes through it.
 Electron: The **electron** is a tiny part of everything. It's moving really fast because the microwave is pushing it. This shows that the microwave is giving energy to the tiny parts of the material.
+
+### Modeling Polarity in the Microwave Oven
+
+*Gotta Have It!*:
+- A changing electric field (a wave)
+- A polar molecule (like water)
+- A non-polar molecule (like ethylene)
+- Forces causing movement
+- Charge (and its balance)
+
 
 ### Evaluating Information - Validity and Reliability
 [Reference | Validity and Reliability](p5l7_validity_reliability)
@@ -112,6 +121,8 @@ A quick checklist to evaluate the validity and reliability of information:
 *   [ ] Is the source an expert? Did they cite good sources?
 *   [ ] Can it be checked?
 *   [ ] Are limitations acknowledged?
+
+
 
 ## L8 | Wave Interference
 ## L9 | EM Radiation Technology
