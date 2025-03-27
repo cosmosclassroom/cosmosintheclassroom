@@ -112,20 +112,6 @@ A spacecraft orbiting 2 Earth radii above the surface would experience gravity a
 |-:|:-|
 |$a_c = 1.09 , m/s^2$ <br> $r = 1.9113 \times 10^7 , m$ | $v^2 = a_c r$ <br> $v = \sqrt{a_c r}$ <br> $v = \sqrt{(1.09)(1.9113 \times 10^7)}$ <br> $v = \sqrt{2.083317 \times 10^7}$ <br> $v = 4560 , m/s$ |
 
-
-- a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
-
- |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $M = 6.417x10^{23} kg$ <br> $r = 3\,389x10^3 m$|$F_g =G \frac{(70.0 kg)(6.417x10^{23}kg)}{(3\,389x10^{3} m)^2}$ <br> $F_g = 375.66 N$ <br> $F_g = 376 N$|
-
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
-The acceleration of the human is centripetal, toward Mars' center.
-
- |3 sf|$F_g = m \cdot a_g$|
- |-:|:-|
- |$m = 70.0 kg$ <br> $F_g = 375.66 N$ <br> $r = 3\,389x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{375.66 N}{70.0 kg}$ <br> $a_g = 5.36657142857... \frac{m}{s^2}$ <br> $a_g = 5.37 \frac{m}{s^2}$|
-
 ---
 
 #### 5. A 70.0 kg human standing on Jupiter
