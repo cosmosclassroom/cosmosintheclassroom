@@ -26,11 +26,9 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 ### L7 - Polarity Interactions
 
 - Molecular Models
-- Simulation | Field-Particle Interactions
-
-- [Model | Particle-Scale Microwave Interactions](/src/sphysP5L7_1_sim_EM_polarity)
-- [Consensus Model - Polarity](/src/sphysP5L7_2_consensus_model_polarity)
-- [Metal in Oven Reading](/src/sphys/p5l7_3_metal_oven_reading)
+- [Simulation - Field+Particle Interactions](/src/sphys/P5L7_1_sim_EM_polarity)
+- [Consensus Model - Polarity](/src/sphys/P5L7_2_consensus_model_polarity)
+- [Metal in Oven Reading](/src/sphys/p5l7_validity_reliability)
 
 
 
