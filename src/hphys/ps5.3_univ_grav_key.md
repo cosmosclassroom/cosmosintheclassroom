@@ -16,7 +16,7 @@ Calculating the force of attraction between the human and Earth's center of grav
     
   |3 sig figs|$F_g = G \frac{m \cdot M}{r^2}$|
   |-:|:-|
-  |$m = 70.0 kg$ <br> $M = 5.970x10^{24} kg$ <br> $r = 6\,378x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(5.970x10^{24}kg)}{(6\,378x10^{3} m)^2} \right)$ <br> $F_g = 685.66 N$ <br> $F_g = 686 N$|
+  |$m = 70.0 kg$ <br> $M = 5.970x10^{24} kg$ <br> $r = 6\,378x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(5.970x10^{24}kg)}{(6\,378x10^{3} m)^2} \right)$ <br> $F_g = 685.66 N$ <br> $F_g \approx 685 N$|
 
 - b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
 The acceleration of the human is centripetal, toward Earth's center.
@@ -40,7 +40,13 @@ The acceleration of the human is centripetal, toward Europa's center.
 
    |3 sf|$F_g = m \cdot a_g$|
    |-:|:-|
-   |$m = 70.0 kg$ <br> $F_g = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{113.38 N}{70.0 kg}$ <br> $a_g = 1.6197142857... \frac{m}{s^2}$ <br> $a_g = 1.61 \frac{m}{s^2}$|
+   |$m = 70.0 kg$ <br> $F_g = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{113.38 N}{70.0 kg}$ <br> $a_g = 1.6197142857... \frac{m}{s^2}$ <br> $a_g = 1.62 \frac{m}{s^2}$|
+
+- c. The acceleration of Luna can be calculated using the known force of gravity and the mass of Luna:
+
+- |2 sf|$F_g = m \cdot a_g$|
+   |-:|:-|
+   |$m_{Luna} = 0.073 \times 10^{24}  kg$ <br> $F_g = 113.38 N$ <br> $r = 1\,561x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{113.38 N}{0.642 \times 10^{24} kg}$ <br> $a_g = 1.547... \times 10^{-21} \frac{m}{s^2}$ <br> $a_g = 1.5 \times 10^{-21} \frac{m}{s^2}$|
 
 ---
 
@@ -100,53 +106,47 @@ The acceleration of the human is centripetal, toward Jupiter's center.
 
 ---
 
-#### 6. Hypothetical Planet
+**Problem 6: Hypothetical Planet**
 
-Calculating the acceleration due to gravity on a hypothetical planet requires G, the planet's mass, and the planet's radius.
-- a. Calculating $a_g$ on the surface of the planet, the distance between the two masses is the radius of the planet.
-  
-   |3 sig figs|$a_g = \frac{GM}{r^2}$|
-   |-:|:-|
-   |$M = 5.970x10^{24} kg$ <br> $r = 2(6\,378x10^3 m)$| $a_g = G \left(\frac{(5.970x10^{24}kg)}{(2(6\,378x10^3 m))^2} \right)$ <br> $a_g = 2.4514 m/s^2$ <br> $a_g = 2.45 m/s^2$|
+This problem can be solved computationally using Newton's Universal Law of Gravitation (see below) or conceptually using the inverse square law:
+- Let $P$ represent the hypothetical planet:
 
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
-The acceleration of the human is centripetal, toward Earth's center.
+  $F \propto \frac{1}{r^2}$
+  $m_E \cdot a_{g_{Earth}} = \frac{1}{(r_{Earth})^2} = 9.80 \frac{m}{s^2}$
+  $m_P \cdot a_{g_{P}} = \frac{1}{(2 \cdot r_{Earth})^2} = \frac{1}{4 \cdot (r_{Earth})^2}$ and since $m_E = m_P$:
+  $a_{g_Earth} \propto \frac{1}{4} \cdot a_{g_P} = (\frac{1}{4})(9.80 \frac{m}{s^2}) \approx 2.45 \frac{m}{s^2}$
 
-   |3 sig figs|$F_g = m \cdot a_g$|
-   |-:|:-|
-   |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
+- Alternately, use Universal Gravitation:
 
----
-
-#### 7. A Satellite in Circular Orbit
-
-Calculating the orbital speed of a satellite requires G, the mass of the planet, the radius of the orbit, and the mass of the satellite.
-- a. Calculating *v* of the satellite, the distance between the two masses is the radius of the orbit.
-  
-  | 3 sig figs|$v = \sqrt{\frac{GM}{r}}$|
+  |3 sf | \(a_{g_P} = G \frac{M_P}{r^2}\)|
   |-:|:-|
-  |$M = 5.970x10^{24} kg$ <br> $r = 6\,378x10^3 m$| $v = \sqrt{G \left(\frac{5.970x10^{24}kg}{6\,378x10^3 m} \right)}$ <br> $v = 7\,908.2 m/s$ <br> $v = 7\,910 m/s$|
-
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
-The acceleration of the human is centripetal, toward Earth's center.
-
-   |3 sig figs|$F_g = m \cdot a_g$|
-   |-:|:-|
-   |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
+  $M_P = M_E$<br> $R_P = 2.0 R_E$|$a_{g_{P}} = G \frac{M_E}{(2.0 R_E)^2} = \frac{1}{4} G \frac{M_E}{R_E^2}$<br>$a_{g_{P}} = \frac{1}{4} a_g = \frac{1}{4} (9.80)$<br>$a_{g_{P}} = 2.45 \, m/s^2$|
 
 ---
 
-#### 8. Gravitational Potential Energy
+**Problem 7: Lander Probe on Europa**
+- a. Determine the force of gravity on Europa's surface.
 
-Calculating the gravitational potential energy between two masses requires G, the masses of the two bodies, and the distance between them.
-- a. Calculating $PE_g$ of the two masses, the distance between the two masses is the radius of the orbit.
+  |3 sf| \(F_g = m_{Lander} \cdot a_{g_{Europa}}\)|
+  |-:|:-|
+  |$m_{Lander} = 958 \, kg$<br> $a_{g_{Europa}} = 1.98 \, \frac{m}{s^2}$|$F_g = (958 \, kg)(1.98\, \frac{m}{s^2})$<br>$F_g = 1897 \, N$ <br> $F_g =1.90 x 10^3 N$|
 
-   |3 sig figs|$PE_g = -\frac{GMm}{r}$|
-   |-:|:-|
-   |$M = 5.970x10^{24} kg$ <br> $m = 70.0 kg$ <br> $r = 6\,378x10^3 m$| $PE_g =-\frac{G \left(5.970x10^{24}kg\right)(70.0 kg)}{6\,378x10^3 m}$ <br> $PE_g =-3.660x10^8 J$ <br> $PE_g =-3.66x10^8 J$|
-   
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law. The acceleration of the human is centripetal, toward Earth's center.
+- b. Calculating the circumference of Europa first requires knowing its radius, $r$. Note that this could also be determined using $F_g = G \frac{M \cdot m}{r^2}$
+  
+  |3 sf| \(a_{g_{Europa}} = G \frac{M_{Europa}}{r_{Europa}^2}\)|
+  |-:|:-|
+  $a_{g_{Europa}} = 1.98 \, m/s^2$<br> $M_{Europa} = 4.9 \times 10^{22} \, kg$|$r_{Europa} = \sqrt{\frac{G \cdot M_{Europa}}{a_{g_{Europa}}}} $ <br> $r_{Europa} = \sqrt{\frac{G(4.9 \times 10^{22} \,kg)}{1.98 \, \frac{m}{s^2}}}$<br>$r_{Europa} = 1.29 \times 10^6 \, m$|
 
-   |3 sig figs|$F_g = m \cdot a_g$|
-   |-:|:-|
-   |$m = 70.0 kg$ <br> $F_g = 685.66 N$ <br> $r = 6\,378x10^3 m$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{685.66 N}{70.0 kg}$ <br> $a_g = 9.795142857... \frac{m}{s^2}$ <br> $a_g = 9.80 \frac{m}{s^2}$|
+  |3 sf| \(C = 2 \pi r\)|
+  |-:|:-|
+  |$r_{Europa} = 1.29 \times 10^6 \, m$| $C = 2 \pi (1.29 \times 10^6)$<br>$C = 8.09 \times 10^6 \, m$ <br> $C = 8090 \, km$|
+
+Note: using the unrounded value for Europa's radius gives a circumference closer to $8.07x10^6 \, m$
+
+---
+
+**Problem 8: Jupiter and Saturn Attraction**
+
+|3 sf| \(F_g = G \frac{m_1 m_2}{r^2}\) |
+|-:|:-|
+| $M_J = 1.898 \times 10^{27} \, kg$ <br> $M_S = 5.683 \times 10^{26} \, kg$<br>$r = 6.4627 \times 10^{11} \, m$ <br> $G = 6.673 \times 10^{-11}$ |$F_g = G \frac{(1.898 \times 10^{27})(5.683 \times 10^{26})}{(6.4627 \times 10^{11})^2}$<br>$F_g = G \frac{1.0786 \times 10^{54}}{4.1766 \times 10^{23}}$<br>$F_g = 1.72 \times 10^{20} \, N$|
