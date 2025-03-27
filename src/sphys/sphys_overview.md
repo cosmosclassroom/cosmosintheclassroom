@@ -18,17 +18,17 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 ### P1
 ### P2
 ### L4 - Wave Variables
+
 1. [Wave Variables Lab]
 2. Model - Differential Heating in the Microwave
 3. Reading | Metal in the Microwave 
 
 ### L7 - Polarity Interactions
+
 - Molecular Models
 - Simulation | Field-Particle Interactions
 
-[Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.org/src/sphys/P5L7_consensus_model.html)
-
-- 
+- [Model | Particle-Scale Microwave Interactions](https://cosmosintheclassroom.org/src/sphys/P5L7_consensus_model.html)
 - [Consensus Model - Polarity](P5L7_2_consensus_model_polarity)
 - [Metal in Oven Reading](p5l7_3_metal_oven_reading)
 
