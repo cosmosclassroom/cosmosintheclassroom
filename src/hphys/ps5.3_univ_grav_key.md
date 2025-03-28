@@ -134,9 +134,9 @@ This problem can be solved computationally using Newton's Universal Law of Gravi
 
 - Alternately, use Universal Gravitation:
 
-  |3 sf | \(a_{g_P} = G \frac{M_P}{r^2}\)|
+  |3 sf | $a_{g_P} = G \frac{M_P}{r^2}$|
   |-:|:-|
-  $M_P = M_E$<br> $R_P = 2.0 R_E$|$a_{g_{P}} = G \frac{M_E}{(2.0 R_E)^2} = \frac{1}{4} G \frac{M_E}{R_E^2}$<br>$a_{g_{P}} = \frac{1}{4} a_g = \frac{1}{4} (9.80)$<br>$a_{g_{P}} = 2.45 \, m/s^2$|
+  |$M_P = M_E$<br> $R_P = 2.0 R_E$ | $a_{g_{P}} = G \frac{M_E}{(2.0 R_E)^2} = \frac{1}{4} G \frac{M_E}{R_E^2}$ <br> $a_{g_{P}} = \frac{1}{4} a_g = \frac{1}{4} (9.80)$ <br> $a_{g_{P}} = 2.45 \, m/s^2$|
 
 ---
 
