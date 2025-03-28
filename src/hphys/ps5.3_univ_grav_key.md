@@ -129,7 +129,7 @@ This problem can be solved computationally using Newton's Universal Law of Gravi
 
   $F \propto \frac{1}{r^2}$
   $m_E \cdot a_{g_{Earth}} = \frac{1}{(r_{Earth})^2} = 9.80 \frac{m}{s^2}$
-  $m_P \cdot a_{g_{P}} = \frac{1}{(2 \cdot r_{Earth})^2} = \frac{1}{4 \cdot (r_{Earth})^2}$ and since $m_E = m_P$:
+  $m_P \cdot a_{g_{P}} = \frac{1}{(2 \cdot r_{Earth})^2} = \frac{1}{4 \cdot (r_{Earth})^2}$ <br> and since $m_E = m_P$:
   $a_{g_Earth} \propto \frac{1}{4} \cdot a_{g_P} = (\frac{1}{4})(9.80 \frac{m}{s^2}) \approx 2.45 \frac{m}{s^2}$
 
 - Alternately, use Universal Gravitation:
