@@ -65,7 +65,7 @@ The acceleration of the human is centripetal, toward Europa's center.
   
   | 3 sf | $F_g = G \frac{m \cdot M_{E}}{r^2}$ |
   |-:|:-|
-  |$m = 45.5$ \, kg <br> $M_E = 5.972 \times 10^{24} , kg$  <br> $r = 7.371 \times 10^6 m$ | $F_g = G \frac{(45.5 kg)(5.972 \times 10^{24} kg)}{(7.371 \times 10^6)^2}$ <br> $F_g = 333 \,N$|
+  |$m = 45.5$ \, kg <br> $M_E = 5.972 \times 10^{24} , kg$  <br> $r = 7.371 \times 10^6 m$ | $F_g = G \frac{(45.5 kg)(5.972 \times 10^{24} kg)}{(7.378 \times 10^6)^2}$ <br> $F_g = 333 \,N$|
 
 - c. On the "surface" of Saturn 
  
