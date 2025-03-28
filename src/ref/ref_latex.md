@@ -61,12 +61,30 @@ $\sin \theta, \cos \theta, \tan \theta$
 ## Inline Equations ##
 ```
 $F = ma$  % Inline equation
-```
-```
+
+
 \begin{equation}
-    F = ma
+    \vec{F} = ma
 \end{equation}
 ```
+$F = ma$  % Inline equation
+
+$$
+\begin{equation} \text{This is the text}
+    \vec{F} = ma
+\end{equation}
+$$
+
+## Subscripts
+
+```
+$F_g=m \cot a_g$
+$F_{g_{Europa}} = x \cdot a_g?$
+```
+
+$F_g=m \cot a_g$
+
+$F_{g_{Europa}} = x \cdot a_{g_{Earth}}$ 
 
 ## Systems of equations ##
 ```
@@ -92,6 +110,7 @@ $3.0 \times 10^8 \text{ m/s}$
 
 ```
 3.0 \times 10^8 \text{ m/s}
+3.0 \times 10^{80} \text{ m/s}
 ```
 
 
