@@ -101,19 +101,19 @@ A spacecraft orbiting 2 Earth radii above the surface would experience gravity a
 
 | 3 sf| $F_g = G \frac{m_s M_E}{r^2}$ |
 |-:|:-|
-|$m_s = 1\,850 \, kg$ <br> $M_E = 5.972 \times 10^{24} , kg$ <br> $r =6.378 \times 10^6 m$ | $F_g = G \frac{(1\,850 \,kg)(5.972 \times 10^{24} \, kg)}{(6.378 \times 10^6 m)^2}$ <br> <br> $F_g = 2010 \, N$|
+|$m_s = 1\,850 \, kg$ <br> $M_E = 5.972 \times 10^{24} , kg$ <br> $r =6.378 \times 10^6 m$ | $F_g = G \frac{(1\,850 \,kg)(5.972 \times 10^{24} \, kg)}{(6.378 \times 10^6 m)^2}$ <br> $F_g = 2\,010 \, N$|
 
 <br>
 
 | 3 sf| $F_{net} = ma$ |
 |-:|:-|
-|$F_{net} = F_g = 2010 , N$ <br> $m_s = 1850 , kg$ | $a_c = \frac{F_{net}}{m_s}$ <br> $a_c = \frac{2010 , N}{1850 , kg}$ <br> $a_c = 1.09 , m/s^2$ |
+|$F_{net} = F_g = 2\,010 , N$ <br> $m_s = 1\,850 , kg$ | $a_c = \frac{F_{net}}{m_s}$ <br> $a_c = \frac{2010 \, N}{1850 , kg}$ <br> $a_c = 1.09 \, m/s^2$ |
 
 <br>
 
 | 3 sf| $a_c = \frac{v^2}{r}$ |
 |-:|:-|
-|$a_c = 1.09 , m/s^2$ <br> $r = 1.9113 \times 10^7 , m$ | $v^2 = a_c r$ <br> $v = \sqrt{a_c r}$ <br> $v = \sqrt{(1.09)(1.9113 \times 10^7)}$ <br> $v = \sqrt{2.083317 \times 10^7}$ <br> $v = 4560 , m/s$ |
+|$a_c = 1.09 , m/s^2$ <br> $r = 1.9113 \times 10^7 , m$ | $v^2 = a_c r$ <br> $v = \sqrt{a_c r}$ <br> $v = \sqrt{(1.09)(1.9113 \times 10^7)}$ <br> $v = \sqrt{2.083317 \times 10^7}$ <br> $v = 4\,560 \, m/s$ |
 
 ---
 
@@ -154,7 +154,7 @@ This problem can be solved computationally using Newton's Universal Law of Gravi
 
   |3 sf| \(C = 2 \pi r\)|
   |-:|:-|
-  |$r_{Europa} = 1.29 \times 10^6 \, m$| $C = 2 \pi (1.29 \times 10^6)$<br>$C = 8.09 \times 10^6 \, m$ <br> $C = 8090 \, km$|
+  |$r_{Europa} = 1.29 \times 10^6 \, m$| $C = 2 \pi (1.29 \times 10^6)$<br>$C = 8.09 \times 10^6 \, m$ <br> $C = 8\,090 \, km$|
 
 Note: using the unrounded value for Europa's radius gives a circumference closer to $8.07x10^6 \, m$
 
