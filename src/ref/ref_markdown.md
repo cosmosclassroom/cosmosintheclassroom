@@ -9,6 +9,7 @@ css: templates/styles/styles.css
 # Markdown Reference Guide
 
 ## Table of Contents
+
 - [Markdown Reference Guide](#markdown-reference-guide)
   - [Table of Contents](#table-of-contents)
   - [Basic Syntax](#basic-syntax)
