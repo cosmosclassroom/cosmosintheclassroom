@@ -93,6 +93,7 @@ The acceleration of the human is centripetal, toward Europa's center.
 
 
 - f. An altitude of $1.0x10^6 m$ on Earth represents a change of $\approx$ 15% of Earth's radius. In contrast, $1.0 \times 10^6 \, m$ above Saturn's outermost clouds represents only $\approx$ 1.5% change in the radius. Thus, rising 1 000 km above Earth will affect the force of gravity much more substantially than rising 1 000 km above Saturn's much larger radius.
+  
 ---
 
 #### 4. A spacecraft 2 Earth radii above our planet
