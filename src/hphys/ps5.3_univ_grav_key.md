@@ -8,13 +8,15 @@ css: cosmosintheclassroom\assets\css\style.css
 ---
 
 # Problem Set 5.3 | Universal Gravitation
+
 ##  Answer Key
 
 #### 1. A 70.0 kg human standing on Earth
+
 Calculating the force of attraction between the human and Earth's center of gravity requires G, (a) Earth's radius, and the masses of the two bodies. As the human is standing on the surface of the Earth, the distance between their centers of mass is simply Earth's radius (ignoring the height of the human)
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
     
-  |3 sig figs|$F_g = G \frac{m \cdot M}{r^2}$|
+  |3 sf|$F_g = G \frac{m \cdot M}{r^2}$|
   |-:|:-|
   |$m = 70.0 kg$ <br> $M = 5.970x10^{24} kg$ <br> $r = 6\,378x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(5.970x10^{24}kg)}{(6\,378x10^{3} m)^2} \right)$ <br> $F_g = 685.66 N$ <br> $F_g \approx 685 N$|
 
@@ -28,10 +30,11 @@ The acceleration of the human is centripetal, toward Earth's center.
 ---
 
 #### 2. A 70.0 kg human standing on Europa
-Calculating the force of attraction between the human and Europa's center of gravity requires G, (a) Europa's radius, and the masses of the two bodies. As the human is standing on the surface of the Europa, the distance between their centers of mass is simply Europa's radius (ignoring the height of the human)
+
+As the human is standing on the surface of the Europa, the distance between their centers of mass is simply Europa's radius (ignoring the trivially small height of the human):
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
 
-   |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
+   |3 sf|$F_g = G \frac{m \dot M}{r^2}$|
    |-:|:-|
    |$m = 70.0 kg$ <br> $M = 4.897x10^{22} kg$ <br> $r = 1\,561x10^3 m$|$F_g =G \left(\frac{(70.0 kg)(4.897x10^{22}kg)}{(1\,561x10^{3} m)^2} \right)$ <br> $F_g = 113.38 N$ <br> $F_g = 113 N$|
 
@@ -54,7 +57,7 @@ The acceleration of the human is centripetal, toward Europa's center.
 
 - a. On the surface of Earth
 
-  |3 sf |$F_g = m \cdot a_g$|
+  |3 sf|$F_g = m \cdot a_g$|
   |-:|:-|
   | $m=45.5kg$ <br> $a_g=9.80 \frac{m}{s^2}$ | $F_g=45.5 kg \cdot 9.80 \frac{m}{s^2}$ <br> $F_g=446N$|
 
@@ -102,7 +105,7 @@ A spacecraft orbiting 2 Earth radii above the surface would experience gravity a
 
 <br>
 
-| 3 | $F_{net} = ma$ |
+| 3 sf| $F_{net} = ma$ |
 |-:|:-|
 |$F_{net} = F_g = 2010 , N$ <br> $m_s = 1850 , kg$ | $a_c = \frac{F_{net}}{m_s}$ <br> $a_c = \frac{2010 , N}{1850 , kg}$ <br> $a_c = 1.09 , m/s^2$ |
 
@@ -114,23 +117,7 @@ A spacecraft orbiting 2 Earth radii above the surface would experience gravity a
 
 ---
 
-#### 5. A 70.0 kg human standing on Jupiter
-
-Calculating the force of attraction between the human and Jupiter's center of gravity requires G, (a) Jupiter's radius, and the masses of the two bodies. As the human is on the outer edge of Jupiter, the distance between their centers of mass is simply Jupiter's radius (ignoring the height of the human).
-
-
-- a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
-
-   |3 sf|$F_g = G \frac{m \dot M}{r^2}$|
-   |-:|:-|
-   |$m = 70.0 kg$ <br> $M = 1.898x10^{27} kg$ <br> $r = 69\,911 km$|$F_g = G \left(\frac{(70.0 kg)(1.898x10^{27}kg)}{(69\,911 km)^2} \right)$ <br> $F_g = 2484.9 N$ <br> $F_g = 2485 N$|
-
-- b. Since the gravitational force and the mass of the human are known, the acceleration can be calculated using Newton's Second Law:
-The acceleration of the human is centripetal, toward Jupiter's center.
-
-   |3 sf|$F_g = m \cdot a_g$|
-   |-:|:-|
-   |$m = 70.0 kg$ <br> $F_g = 2484.9 N$ <br> $r = 69\,911 km$|$a_g = \frac{F_g}{m}$ <br> $a_g = \frac{2484.9 N}{70.0 kg}$ <br> $a_g = 35.5130000000... \frac{m}{s^2}$ <br> $a_g = 35.5 \frac{m}{s^2}$|
+5. 
 
 ---
 
