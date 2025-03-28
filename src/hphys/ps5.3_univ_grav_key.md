@@ -96,7 +96,7 @@ The acceleration of the human is centripetal, toward Europa's center.
 
 A spacecraft orbiting 2 Earth radii above the surface would experience gravity acting over a total distance of $3 \times r_E$ or $(3)(6\,378 \times 10^3 m)$ which is $6.378 \times 10^6 m$
 
-| 3 | $F_g = G \frac{m_s M_E}{r^2}$ |
+| 3 sf| $F_g = G \frac{m_s M_E}{r^2}$ |
 |-:|:-|
 |$m_s = 1\,850 \, kg$ <br> $M_E = 5.972 \times 10^{24} , kg$ <br> $r =6.378 \times 10^6 m$ | $F_g = G \frac{(1\,850 \,kg)(5.972 \times 10^{24} \, kg)}{(6.378 \times 10^6 m)^2}$ <br> <br> $F_g = 2010 \, N$|
 
@@ -108,7 +108,7 @@ A spacecraft orbiting 2 Earth radii above the surface would experience gravity a
 
 <br>
 
-| 3 | $a_c = \frac{v^2}{r}$ |
+| 3 sf| $a_c = \frac{v^2}{r}$ |
 |-:|:-|
 |$a_c = 1.09 , m/s^2$ <br> $r = 1.9113 \times 10^7 , m$ | $v^2 = a_c r$ <br> $v = \sqrt{a_c r}$ <br> $v = \sqrt{(1.09)(1.9113 \times 10^7)}$ <br> $v = \sqrt{2.083317 \times 10^7}$ <br> $v = 4560 , m/s$ |
 
@@ -121,7 +121,7 @@ Calculating the force of attraction between the human and Jupiter's center of gr
 
 - a. Calculating $F_g$ between the two masses at the surface, the distance between the two masses is the radius of the planet. 
 
-   |3 sig figs|$F_g = G \frac{m \dot M}{r^2}$|
+   |3 sf|$F_g = G \frac{m \dot M}{r^2}$|
    |-:|:-|
    |$m = 70.0 kg$ <br> $M = 1.898x10^{27} kg$ <br> $r = 69\,911 km$|$F_g = G \left(\frac{(70.0 kg)(1.898x10^{27}kg)}{(69\,911 km)^2} \right)$ <br> $F_g = 2484.9 N$ <br> $F_g = 2485 N$|
 
