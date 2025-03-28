@@ -7,8 +7,15 @@ math: mathjax
 
 # Cosmos in the Classroom
 
+<div class="flex-container">
+    <div class="flex-item">Item 1
+    ![Aristotle](assets/images/aristotle.png)
+    </div>
+    <div class="flex-item">Item 2
+    </div>
 
-![Aristotle](assets/images/aristotle.png)
+
+
 
 ## References
 
@@ -21,6 +28,8 @@ The [Honors Physics Landing] page is accessible from here
 The [Standard Physics Landing]
 
 The [LaTeX Reference] is available for mathematical notation help.
+
+</div>
 
 
 [Reference Landing]: https://cosmosintheclassroom.org/src/ref/ref_lib
