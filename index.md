@@ -7,6 +7,9 @@ math: mathjax
 
 # Cosmos in the Classroom
 
+
+![Aristotle](assets/images/aristotle.png)
+
 ## References
 
 $$F=m \cdot a$$

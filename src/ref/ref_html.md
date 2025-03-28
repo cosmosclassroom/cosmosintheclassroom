@@ -5,7 +5,13 @@ author: Jonathan Corbett
 date: 23 March 2025
 ---
 <toc></toc>
-# Heading in HTML
+
+# Reference | HTML
+
+
+[HTML Reference]: (#-HTML-Div-and-Containers-Reference-Guide)
+
+
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +29,9 @@ date: 23 March 2025
     </body>
 </html>
 ```
+
 ## Section Types
+
 |Code|Type|
 |-|-|
 |`<!DOCTYPE html>`|: Declares the document type.
@@ -48,6 +56,7 @@ Element|Layout
 `<footer>`|Contains footer information for a section or the entire document (e.g., copyright, acknowledgments, contact info).
 
 Example:
+
 ```
 HTML
 <body>
@@ -377,9 +386,148 @@ E = mc<sup>2</sup> (superscript)
 <div tabindex="0" role="button">Interactive element</div>
 ```
 
-## Notes on Compatibility
+# HTML Div and Containers Reference Guide
 
-- Most modern Markdown processors support embedded HTML
-- GitHub-flavored Markdown (GFM) restricts some HTML elements for security
-- When using HTML in Markdown, leave blank lines before and after HTML blocks
-- Test your document in your target platform before finalizing
+## What is a <div>?
+- A <div> is a block-level container element used to group and structure content
+- Stands for "division" and provides a way to create logical sections in HTML
+- By default, takes up the full width of its parent container
+- Primarily used for layout and styling purposes
+
+## Basic Usage
+```html
+<div class="container">
+    <div class="section">
+        <p>Content inside nested divs</p>
+    </div>
+</div>
+```
+
+## Key Attributes
+- `class`: Assign CSS classes for styling
+- `id`: Unique identifier for specific targeting
+- `style`: Inline styling (use sparingly)
+
+## Container Types
+1. **Block Containers**
+   - Full-width elements that stack vertically
+   - Examples: `<div>`, `<section>`, `<article>`
+
+2. **Inline Containers**
+   - Content flows inline
+   - Examples: `<span>`, `<label>`
+
+## Common Container Patterns
+### Flexbox Container
+```html
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+</div>
+```
+```css
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+```
+
+### Grid Container
+```html
+<div class="grid-container">
+    <div class="grid-item">Grid Cell 1</div>
+    <div class="grid-item">Grid Cell 2</div>
+</div>
+```
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+```
+
+## Best Practices
+- Use semantic HTML5 elements when possible (e.g., `<section>`, `<article>`)
+- Keep divs meaningful and avoid excessive nesting
+- Use classes for styling, IDs for unique JavaScript interactions
+- Prioritize accessibility and meaningful structure
+
+## Performance Tips
+- Minimize unnecessary div wrappers
+- Use CSS Grid or Flexbox for efficient layouts
+- Consider using CSS `display` properties for advanced structuring
+
+
+
+# HTML Div and Containers Reference Guide
+
+## What is a <div>?
+- A <div> is a block-level container element used to group and structure content
+- Stands for "division" and provides a way to create logical sections in HTML
+- By default, takes up the full width of its parent container
+- Primarily used for layout and styling purposes
+
+## Basic Usage
+```html
+<div class="container">
+    <div class="section">
+        <p>Content inside nested divs</p>
+    </div>
+</div>
+```
+
+## Key Attributes
+- `class`: Assign CSS classes for styling
+- `id`: Unique identifier for specific targeting
+- `style`: Inline styling (use sparingly)
+
+## Container Types
+1. **Block Containers**
+   - Full-width elements that stack vertically
+   - Examples: `<div>`, `<section>`, `<article>`
+
+2. **Inline Containers**
+   - Content flows inline
+   - Examples: `<span>`, `<label>`
+
+## Common Container Patterns
+### Flexbox Container
+```html
+<div class="flex-container">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+</div>
+```
+
+
+```css
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+```
+
+### Grid Container
+```html
+<div class="grid-container">
+    <div class="grid-item">Grid Cell 1</div>
+    <div class="grid-item">Grid Cell 2</div>
+</div>
+```
+```css
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+```
+
+## Best Practices
+- Use semantic HTML5 elements when possible (e.g., `<section>`, `<article>`)
+- Keep divs meaningful and avoid excessive nesting
+- Use classes for styling, IDs for unique JavaScript interactions
+- Prioritize accessibility and meaningful structure
+
+## Performance Tips
+- Minimize unnecessary div wrappers
+- Use CSS Grid or Flexbox for efficient layouts
+- Consider using CSS `display` properties for advanced structuring
