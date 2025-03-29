@@ -18,9 +18,19 @@
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     
-    <!-- Optional custom page-specific CSS -->
     {% if page.css %}
-        <link rel="stylesheet" href="{{ page.css | relative_url }}">
+        {% if page.css.first %}
+            {% for css in page.css %}
+                <link rel="stylesheet" href="{{ css | relative_url }}">
+            {% endfor %}
+        {% else %}
+            <link rel="stylesheet" href="{{ page.css | relative_url }}">
+        {% endif %}
+    {% endif %}
+    
+    <!-- Custom header includes -->
+    {% if page.header-includes %}
+        {{ page.header-includes }}
     {% endif %}
     
     <!-- MathJax Configuration -->
