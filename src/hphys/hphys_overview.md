@@ -248,36 +248,36 @@ Updated Spring 2025
 
 ## Course Resources
 
-#### Lecture Slides
+### Lecture Slides
 
-| Unit | Title | Link |
+| Topic | Title | Link |
 | :---- | :---- | :---- |
-| 1 | Principles of Physics | [Link](https://docs.google.com/presentation/d/1YiTcVn7fFvuPImypXe34auUq5UlhGmQ0wo6lBBjG8g0/edit?usp=drive_link) |
-| 2 | Kinematics 1 | [Link](https://docs.google.com/presentation/d/1uWpF89uq-8Ay02r7KPRJjBsvsA3kPgG1CO0NEZQlHAE/edit?usp=drive_link) |
-| 3 | Vectors and Scalars | [Link](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) |
-| 3 | Projectile Motion | [Link](https://docs.google.com/presentation/d/1htkBmXR26SI_xgU8Bf-5CCoHvX0XgHCUkO0rvqD8Rmg/edit?usp=drive_link) |
-| 3 | Relative Motion | [Link](https://docs.google.com/presentation/d/1C7-e7S3f39jpVpFGAILRWqNQa_stn9A2CheAscfG2hc/edit?usp=drive_link) |
-| 4 | Force, Mass, and Newton's Laws | [Link](https://docs.google.com/presentation/d/11VyGu-JfmU9om5yT56dVarn_JR2S9F9YyC_Jkf2czjk/edit?usp=drive_link) |
-| 4 | Gravity and Normal Force | [Link](https://docs.google.com/presentation/d/1TXWmYLehuXLiCtpUogTaoO5dbH5r3jytL5m3v7202To/edit?usp=drive_link) |
-| 4 | Friction and Inclined Planes | [Link](https://docs.google.com/presentation/d/1QvSHcCa1dmfCvd4Sec1s26fLhA2AAWq-z48z54WrU_w/edit?usp=drive_link) |
-| 5 | Work and Energy Principles | [Link](https://docs.google.com/presentation/d/1A4sCGU4bF--3rcvyNN0mYGulnSzCI3XzacolKQEamOQ/edit?usp=drive_link) |
-| 5 | Conservation and Power | [Link](https://docs.google.com/presentation/d/1q2C0Bt0yucgzOjAO5LeyG5NH41zgcrxCW-KuVUlwP9A/edit?usp=drive_link) |
-| 7 | Circular Motion | [Link](https://docs.google.com/presentation/d/1VLp_MG9WnOeU_q5NhAsGODIbgY3BJhCjk5OaJfzCrTs/edit?usp=drive_link) |
-| 7 | Gravitation | [Link](https://docs.google.com/presentation/d/1JifikBdN4FBoyZ5Jyqc2jyV4e74rAWDjw2rwPbLAfHk/edit?usp=drive_link) |
+| Unit 1 | Principles of Physics | [View Slides](https://docs.google.com/presentation/d/1YiTcVn7fFvuPImypXe34auUq5UlhGmQ0wo6lBBjG8g0/edit?usp=drive_link) |
+| Unit 2 | Kinematics 1 | [View Slides](https://docs.google.com/presentation/d/1uWpF89uq-8Ay02r7KPRJjBsvsA3kPgG1CO0NEZQlHAE/edit?usp=drive_link) |
+| Unit 3 | Vectors and Scalars | [View Slides](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) |
+| Unit 3 | Projectile Motion | [View Slides](https://docs.google.com/presentation/d/1htkBmXR26SI_xgU8Bf-5CCoHvX0XgHCUkO0rvqD8Rmg/edit?usp=drive_link) |
+| Unit 3 | Relative Motion | [View Slides](https://docs.google.com/presentation/d/1C7-e7S3f39jpVpFGAILRWqNQa_stn9A2CheAscfG2hc/edit?usp=drive_link) |
+| Unit 4 | Newton's Laws | [View Slides](https://docs.google.com/presentation/d/11VyGu-JfmU9om5yT56dVarn_JR2S9F9YyC_Jkf2czjk/edit?usp=drive_link) |
+| Unit 4 | Gravity and Normal Force | [View Slides](https://docs.google.com/presentation/d/1TXWmYLehuXLiCtpUogTaoO5dbH5r3jytL5m3v7202To/edit?usp=drive_link) |
+| Unit 4 | Friction and Inclined Planes | [View Slides](https://docs.google.com/presentation/d/1QvSHcCa1dmfCvd4Sec1s26fLhA2AAWq-z48z54WrU_w/edit?usp=drive_link) |
+| Unit 5 | Work and Energy | [View Slides](https://docs.google.com/presentation/d/1A4sCGU4bF--3rcvyNN0mYGulnSzCI3XzacolKQEamOQ/edit?usp=drive_link) |
+| Unit 5 | Conservation and Power | [View Slides](https://docs.google.com/presentation/d/1q2C0Bt0yucgzOjAO5LeyG5NH41zgcrxCW-KuVUlwP9A/edit?usp=drive_link) |
+| Unit 7 | Circular Motion | [View Slides](https://docs.google.com/presentation/d/1VLp_MG9WnOeU_q5NhAsGODIbgY3BJhCjk5OaJfzCrTs/edit?usp=drive_link) |
+| Unit 7 | Gravitation | [View Slides](https://docs.google.com/presentation/d/1JifikBdN4FBoyZ5Jyqc2jyV4e74rAWDjw2rwPbLAfHk/edit?usp=drive_link) |
 
-#### Labs and Simulations
+### Labs and Simulations
 
-| Unit | Title | Type | Link |
-| :---- | :---- | :---- | :---- |
-| 1 | Lab Safety Assessment | Assessment | [Link](https://app.edulastic.com/author/tests/tab/review/id/66d8bb0afcaf2d0008949549) |
-| 2 | 1D Kinematics on an Inclined Plane | Lab | [Link](https://docs.google.com/document/d/1bfR2JVBJzxeKU8zblhXAG7c5SZ4ZfcTBU2bnPMxjMJ8/edit?usp=drive_link) |
-| 3 | Projectile Motion | PhET Lab | [Link](https://docs.google.com/document/d/1HdBQiLQEkqu59tiyRft17_iUv_LUufkUecNgAQc9CrU/edit?usp=drive_link) |
-| 3 | Projectile Motion | Lab | [Link](https://docs.google.com/document/d/129C3m44FjNPZE3EjYeuuts05D57eB3ThV93792SlQ5M/edit?usp=drive_link) |
-| 7 | Circular Motion | Lab | [Link](https://docs.google.com/document/d/1vStbEMsUmF0ksoV5zqA93PjLVdmbnsArU9SEbJF2skI/edit?usp=drive_link) |
-| 7 | Gravitation Simulator | PhET Lab | [Link](https://docs.google.com/document/d/1CkfJgq_KYViYITI_kpVOaVGOf8k_clkJ75TdhbUSuok/edit?usp=drive_link) |
-| 8 | Standing Waves on a String | Lab | (placeholder) |
-| 8 | Wave Interference | PhET Lab | (placeholder) |
-| 9 | Speed of Sound | Lab | (placeholder) |
-| 10 | Electric Field Hockey | PhET Lab | (placeholder) |
-| 11 | Snell's Law | Lab | (placeholder) |
-| 11 | Geometric Optics | PhET Lab | (placeholder) |
+| Topic | Title | Type |
+| :---- | :---- | :---- |
+| Safety | Lab Safety Assessment | [Assessment](https://app.edulastic.com/author/tests/tab/review/id/66d8bb0afcaf2d0008949549) |
+| Kinematics | 1D Motion on Inclined Plane | [Lab](https://docs.google.com/document/d/1bfR2JVBJzxeKU8zblhXAG7c5SZ4ZfcTBU2bnPMxjMJ8/edit?usp=drive_link) |
+| Projectile Motion | Projectile Simulation | [PhET Lab](https://docs.google.com/document/d/1HdBQiLQEkqu59tiyRft17_iUv_LUufkUecNgAQc9CrU/edit?usp=drive_link) |
+| Projectile Motion | Projectile Launch | [Lab](https://docs.google.com/document/d/129C3m44FjNPZE3EjYeuuts05D57eB3ThV93792SlQ5M/edit?usp=drive_link) |
+| Circular Motion | Uniform Circular Motion | [Lab](https://docs.google.com/document/d/1vStbEMsUmF0ksoV5zqA93PjLVdmbnsArU9SEbJF2skI/edit?usp=drive_link) |
+| Gravitation | Orbital Motion | [PhET Lab](https://docs.google.com/document/d/1CkfJgq_KYViYITI_kpVOaVGOf8k_clkJ75TdhbUSuok/edit?usp=drive_link) |
+| Waves | Standing Waves | [Lab](placeholder) |
+| Waves | Wave Interference | [PhET Lab](placeholder) |
+| Sound | Speed of Sound | [Lab](placeholder) |
+| Electrostatics | Electric Field Hockey | [PhET Lab](placeholder) |
+| Optics | Snell's Law | [Lab](placeholder) |
+| Optics | Geometric Optics | [PhET Lab](placeholder) |
