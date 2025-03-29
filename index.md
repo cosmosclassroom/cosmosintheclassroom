@@ -7,8 +7,6 @@ css: ./cosmosintheclassroom\assets\css\style.css
 ---
 
 # Cosmos in the Classroom
-
-
 <!DOCTYPE html>
 <html>
   <head>
