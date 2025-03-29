@@ -3,19 +3,9 @@ Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 math: mathjax
-css: ./assets/css/style.css
-header-includes: |
-    <style>
-    .gallery {
-        margin: 5px;
-        border: 1px solid #ccc;
-        float: left;
-        width: 180px;
-    }
-    .gallery:hover { border: 1px solid #777; }
-    .gallery img { width: 100%; height: auto; }
-    .gallery-desc { padding: 15px; text-align: center; }
-    </style>
+css: 
+  - ./assets/css/style.css
+  - ./assets/css/gallery.css
 ---
 
 # Cosmos in the Classroom
