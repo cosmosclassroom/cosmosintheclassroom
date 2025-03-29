@@ -1,5 +1,5 @@
 ---
-Layout: page.html
+Layout: default.html
 Title: Lesson Overview - Honors Physics
 Author: Jonathan Corbett
 Date: 29 March 2025
