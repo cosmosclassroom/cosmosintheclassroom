@@ -38,8 +38,6 @@ When an object vibrates back and forth over the same path, each oscillation taki
 
 An oscillating object undergoes simple harmonic motion (SHM) if the restoring force is proportional to the negative of its displacement (Hooke's Law)
 
-![Spring motion](8_waves_slide4_img1.png)
-
 $F = -kx$
 
 where:
@@ -57,7 +55,7 @@ Oscillations are described by three properties:
 - **Period** ($T$): Time required for one complete cycle
 - **Frequency** ($f$): Number of cycles per second
 
-![Oscillation properties](8_waves_slide5_img2.png)
+![Wave Motion](../../../assets/images/8_waves_shm/8_waves_slide5_img2.png)
 
 ---
 
