@@ -3,70 +3,52 @@ Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 math: mathjax
-css: ./cosmosintheclassroom\assets\css\style.css
----
-
-# Cosmos in the Classroom
-<!DOCTYPE html>
-<html>
-  <head>
+css: ./assets/css/style.css
+header-includes: |
     <style>
-      div.gallery {
+    .gallery {
         margin: 5px;
         border: 1px solid #ccc;
         float: left;
         width: 180px;
-      }
+    }
+    .gallery:hover { border: 1px solid #777; }
+    .gallery img { width: 100%; height: auto; }
+    .gallery-desc { padding: 15px; text-align: center; }
+    </style>
+---
 
-      div.gallery:hover {
-        border: 1px solid #777;
-      }
-
-      div.gallery img {
-        width: 100%;
-        height: auto;
-      }
-
-      div.desc {
-        padding: 15px;
-        text-align: center;
-      }
-      </style>
-  </head>
-<body>
+# Cosmos in the Classroom
 
 <div class="gallery">
-  <a target="_blank" href="img_5terre.jpg">
-    <img src="cosmosintheclassroom/assets/images/aristotle.png" alt="Aristotle" width="600" height="400">
+  <a target="_blank" href="./assets/images/aristotle.png">
+    <img src="./assets/images/aristotle.png" alt="Aristotle">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="gallery-desc">Aristotle's contributions to early astronomy</div>
 </div>
 
 <div class="gallery">
-  <a target="_blank" href="img_forest.jpg">
-    <img src="cosmosintheclassroom/assets/images/meteor.png" alt="Meteor" width="600" height="400">
+  <a target="_blank" href="./assets/images/meteor.png">
+    <img src="./assets/images/meteor.png" alt="Meteor">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="gallery-desc">Meteor shower observation guide</div>
 </div>
 
 <div class="gallery">
-  <a target="_blank" href="img_lights.jpg">
-    <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+  <a target="_blank" href="./assets/images/northern-lights.jpg">
+    <img src="./assets/images/northern-lights.jpg" alt="Northern Lights">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="gallery-desc">Aurora Borealis and atmospheric physics</div>
 </div>
 
 <div class="gallery">
-  <a target="_blank" href="img_mountains.jpg">
-    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+  <a target="_blank" href="./assets/images/mountains.jpg">
+    <img src="./assets/images/mountains.jpg" alt="Mountains">
   </a>
-  <div class="desc">Add a description of the image here</div>
+  <div class="gallery-desc">Atmospheric effects on astronomical observations</div>
 </div>
 
-</body>
-</html>
-
-<br>
+<div style="clear: both;"></div>
 
 ## References
 
@@ -74,17 +56,13 @@ $$F=m \cdot a$$
 
 The [Reference Landing] is here.
 
-The [Honors Physics Landing] page is accessible from here
+The [Honors Physics Landing] page is accessible from here.
 
-The [Standard Physics Landing]
+The [Standard Physics Landing] page provides an overview.
 
 The [LaTeX Reference] is available for mathematical notation help.
 
-</div>
-
-
 [Reference Landing]: https://cosmosintheclassroom.org/src/ref/ref_lib
 [Honors Physics Landing]: https://cosmosintheclassroom.org/src/hphys/hphys_landing
-[Meteor]: https://cosmosintheclassroom.org/src/assets/images/meteor.png
 [Standard Physics Landing]: https://cosmosintheclassroom.org/src/sphys/sphys_overview
 [LaTeX Reference]: https://cosmosintheclassroom.org/src/ref/ref_latex
