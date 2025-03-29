@@ -1,4 +1,5 @@
 ---
+Layout: page.html
 Title: Lesson Overview - Honors Physics
 Author: Jonathan Corbett
 Date: 29 March 2025
@@ -6,7 +7,6 @@ markdown: kramdown
 kramdown:
     math: mathjax
 ---
-
 
 # Lesson Overview | Honors Physics
 
