@@ -1,25 +1,18 @@
 ---
-layout: default
-title: "Document Title"
-author: Jonathan Corbett
-date: March , 2025
-math: mathjax
+Title: Lesson Overview - Honors Physics
+Author: Jonathan Corbett
+Date: 29 March 2025
 markdown: kramdown
 kramdown:
-    math_engine: mathjax
-css: "../templates/styles/scientific.css"
+    math: mathjax
 ---
-<toc>
-[Principles of Physics](#unit-1--principles-of-physics)
-[Kinematics 1](#unit-2--kinematics-1)
 
-[Fundamentals]
-[Kinematics 1]
-[Kinematics 2]
-[Dynamics]
-[Conservation]
-[Harmonics]
-[Electricity]
+
+# Lesson Overview | Honors Physics
+
+Updated Spring 2025
+
+
 
 ## Unit 1 | Principles of Physics
 
@@ -62,8 +55,8 @@ css: "../templates/styles/scientific.css"
 | Free fall P-T and V-T Graphs | Lecture | Kinematics 1 Freefall P-T & V-T Graphs | [Slides | Kinematics 1](https://docs.google.com/presentation/d/1uWpF89uq-8Ay02r7KPRJjBsvsA3kPgG1CO0NEZQlHAE/edit?usp=drive_link) |
 | P-T and V-T Graphs | Pre-Lab | 1D Kinematics on Inclined Plane Pre-lab questions Predicting P-T and V-T graphs Setting up data tables | [Pre-Lab | 1D Kinematics on an Inclined Plane](https://docs.google.com/document/d/1bfR2JVBJzxeKU8zblhXAG7c5SZ4ZfcTBU2bnPMxjMJ8/edit?usp=drive_link) |
 |  | Lab | 1D Kinematics on an Inclined Plane Computer setups Trials Analysis Post-lab questions | Lab | 1D Kinematics on an Inclined Plane |
-|  | PS 2.3 | P-T Graphs | [PS 1.3 | P-T Graphs](https://docs.google.com/document/d/1ZpAQaZmzbhVISI91Z1eM4eYXad6CN1EdKoiOdiR1OSs/edit?usp=sharing) |
-| Freefall  | PS 2.4 | Freefall acceleration | [PS 2.4 | Freefall](https://docs.google.com/document/d/1v6VvrvKp6ax4va7pDAuPvChyrq18u6oFrwRbokBTA1Q/edit?usp=sharing) |
+|  | PS 2.3 | P-T Graphs | [PS 1.3 | P-T Graphs](https://docs.google.com/document/d/1ZpAQaZmzbhVISI91Z1eM4eYXad6CN1EdKoiOdiR1OSs/edit?usp=drive_link) |
+| Freefall  | PS 2.4 | Freefall acceleration | [PS 2.4 | Freefall](https://docs.google.com/document/d/1v6VvrvKp6ax4va7pDAuPvChyrq18u6oFrwRbokBTA1Q/edit?usp=drive_link) |
 |  | Giancoli 2-7  | Please attempt and complete items 39, 41, 43, 45, 49, and 51\* in Giancoli, pg. 44-45.  Note that 51 is a challenge and there is an easy way and a difficult way to solve it \- you may choose whether to use the quadratic method or to solve for another variable first. |
 
 ## Unit 3 | Kinematics 2
@@ -75,10 +68,10 @@ css: "../templates/styles/scientific.css"
 | :---- | :---- | :---- |
 | Vectors, Scalars, and Trig | Reading | Vectors and Scalars | Read Sections 3.1 to 3.5 |
 |  | [Lecture | Vectors and Scalars](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) | [Lecture | Advanced Vectors](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) |
-| Advanced Vectors | PS 3.0 | Graphical Vector Addition | [PS 3.0 | Graphical Vector Addition](https://docs.google.com/document/d/19eHy0CGQ8ryUM_EjTylFx-Cu_2eYNOOuu7Jm8c0Hfw0/edit?usp=sharing) |
+| Advanced Vectors | PS 3.0 | Graphical Vector Addition | [PS 3.0 | Graphical Vector Addition](https://docs.google.com/document/d/19eHy0CGQ8ryUM_EjTylFx-Cu_2eYNOOuu7Jm8c0Hfw0/edit?usp=drive_link) |
 |  | PS 3.1 | Triangles and Trig Practice | [PS 3.1 Triangles and Trig Practice](https://docs.google.com/document/d/1ujb4IBsg0tI-hu50I4r8SAQ5vs50j_UzqU8ktGc4L28/edit?usp=drive_link) |
 |  | Lecture | Vector Resolution |  |
-|  | PS 3.2 | Vectors in Kinematics 1 | [PS 3.2 | Vectors in Kinematics 1](https://docs.google.com/document/d/1WxCe4HbvvG17GK2l2rwd9p_Sfhd21iChFEIxRQqR7BQ/edit?usp=sharing) |
+|  | PS 3.2 | Vectors in Kinematics 1 | [PS 3.2 | Vectors in Kinematics 1](https://docs.google.com/document/d/1WxCe4HbvvG17GK2l2rwd9p_Sfhd21iChFEIxRQqR7BQ/edit?usp=drive_link) |
 |  | PS 3.3 | Vectors in Kinematics 2  | [PS 3.3 | Vectors in Kinematics 2](https://docs.google.com/document/d/1E7QqDsl1rE194Kv3d6L4swea34K1Ey1MkQuVhntEu6M/edit?usp=drive_link) |
 |  | Textbook Problems | Giancoli Vector Addition | Pp. 68: 1, 3, 5, 8, 9, 11 8a) Vnorth \= 625 km/h; Vwest \= 553 km/hb) dnorth \= 1090 km; dwest \= 968 km |
 | Projectile Motion | Reading | Projectile Motion Giancoli Sections 3-5 to 3-7 | Pp. 58 \- 64 |
@@ -87,8 +80,8 @@ css: "../templates/styles/scientific.css"
 |  | PS 3.4 | Projectile Motion | [PS 3.4 | Projectile Motion](https://docs.google.com/document/d/1N0EusUSwyXfbNyqnUH6gRaKcOKA182-Ok_GYxdd5NkQ/edit?usp=drive_link) |
 |  | Textbook Problems | Projectile Motion 3-5 to 3-6 | Pp. 68: 17, 19, 21, 22, 27 22\) 1.89 s |
 |  | Lab | Projectile Motion Horizontal/Drop Launch Launch at an Angle | [Lab | Projectile Motion](https://docs.google.com/document/d/129C3m44FjNPZE3EjYeuuts05D57eB3ThV93792SlQ5M/edit?usp=drive_link) |
-| Relative Motion | Lecture | Relative Motion | [Slides | Relative Motion](https://docs.google.com/presentation/d/1C7-e7S3f39jpVpFGAILRWqNQa_stn9A2CheAscfG2hc/edit?usp=sharing) |
-|  | PS 3.5 | Relative Motion A (Sorted) | [PS 3.5a | Relative Motion (Sorted)](https://docs.google.com/document/d/1C57U7e5s0g0OSOue8oFVcaOT02VSW8k_fa6HtAmhYWo/edit?usp=sharing) |
+| Relative Motion | Lecture | Relative Motion | [Slides | Relative Motion](https://docs.google.com/presentation/d/1C7-e7S3f39jpVpFGAILRWqNQa_stn9A2CheAscfG2hc/edit?usp=drive_link) |
+|  | PS 3.5 | Relative Motion A (Sorted) | [PS 3.5a | Relative Motion (Sorted)](https://docs.google.com/document/d/1C57U7e5s0g0OSOue8oFVcaOT02VSW8k_fa6HtAmhYWo/edit?usp=drive_link) |
 |  | Chapter 3 Assessment | Kinematics 2 |  |
 |  | Ch. 3 Culminating Reflection Prompts |  |
 
@@ -108,8 +101,8 @@ css: "../templates/styles/scientific.css"
 | F \= ma | Problem Set 4.1 | Force and Motion | [PS 4.1 Force and Motion](https://docs.google.com/document/d/1fcc0WjbTw6z4oV0VaSlQiZ4qMfubejMOa3hOJ-Lzb98/edit?usp=drive_link) |
 |  | Quiz | 4.1 to 4.4 | [Quiz 4.1 to 4.4](https://app.edulastic.com/author/tests/verid/65ba8822841c42c512f81604) |
 |  | Reading 4.5 to 4.6 | Pp. 81 \- 86 |
-|  | Lecture | Newton’s Second and Third Laws, Gravity, and The Normal Force | [Slides | Gravity and the Normal Force](https://docs.google.com/presentation/d/1TXWmYLehuXLiCtpUogTaoO5dbH5r3jytL5m3v7202To/edit?usp=sharing) |
-|  | PS 4.2 | Net & Normal Force Practice | [PS 4.2 Net Force Practice](https://docs.google.com/document/d/1Utq3pKz70bjLtJjH2M2LI88CP6-PpFKIUfwgGuSSBLk/edit?usp=sharing) |
+|  | Lecture | Newton’s Second and Third Laws, Gravity, and The Normal Force | [Slides | Gravity and the Normal Force](https://docs.google.com/presentation/d/1TXWmYLehuXLiCtpUogTaoO5dbH5r3jytL5m3v7202To/edit?usp=drive_link) |
+|  | PS 4.2 | Net & Normal Force Practice | [PS 4.2 Net Force Practice](https://docs.google.com/document/d/1Utq3pKz70bjLtJjH2M2LI88CP6-PpFKIUfwgGuSSBLk/edit?usp=drive_link) |
 |  | Giancoli Textbook Problems | Pp. 101 10, 11, 12, 14, 15, 16 10.) 1.3 x 104 N 12.) 1.84 m/s2 upward 14.) 5.08x104 N 16.) \-2.5 m/s2\*\*\* \*\* This is a challenge. Hint: substitute ma for net force and see what cancels |
 |  | Reading 4.7 to 4.8 | Pp. 87-97 |
 |  | Lecture | Friction and Inclined Plane Problems | [Slides | Friction and Inclined Plane Problems](https://docs.google.com/presentation/d/1QvSHcCa1dmfCvd4Sec1s26fLhA2AAWq-z48z54WrU_w/edit?usp=drive_link) |
@@ -135,12 +128,10 @@ css: "../templates/styles/scientific.css"
 | Potential Energy Conservation of Mechanical Energy | Giancoli Textbook Problems, 6-4 to 6-7 Potential Energy Conservation of mechanical Energy | Pp. 165 27-30 Pp. 167 75 Answers to evens: 28\) 48 J 30\) 35.6 J |
 |  | Reading | 6-5 to 6-10  | Please review sections 6-5 through 6-10 in Giancoli, pp. 149 to 161\.  Focus mostly on the conservation of mechanical energy (which should feel like review) and power (6-10). |
 |  | Quiz 6.2 | Concepts of Power and the Conservation of Mechanical Energy Edulastic \- 8 Questions | [Quiz 6.2 | Concepts of Power and Conservation of Mechanical Energy](https://app.edulastic.com/author/tests/verid/661fe4f6f9d8dc1a88401200) |
-|  | Lecture 6.2 | Conservation, Energy, Power | [Lecture Slides](https://docs.google.com/presentation/d/1q2C0Bt0yucgzOjAO5LeyG5NH41zgcrxCW-KuVUlwP9A/edit?usp=sharing) |
-| Work-Energy Principle Work Power | PS 6.3 | Conservation and Power | [PS 6.3 | Conservation of Energy and Power](https://docs.google.com/document/d/1U8rI3q5nxIAgD1pZSYuzbhIUXXeZ1Zxguzj1bjVkjB0/edit?usp=sharing) |
+|  | Lecture 6.2 | Conservation, Energy, Power | [Lecture Slides](https://docs.google.com/presentation/d/1q2C0Bt0yucgzOjAO5LeyG5NH41zgcrxCW-KuVUlwP9A/edit?usp=drive_link) |
+| Work-Energy Principle Work Power | PS 6.3 | Conservation and Power | [PS 6.3 | Conservation of Energy and Power](https://docs.google.com/document/d/1U8rI3q5nxIAgD1pZSYuzbhIUXXeZ1Zxguzj1bjVkjB0/edit?usp=drive_link) |
 |  | Textbook Problems, 6-5 to 6-10 | Please attempt items  31, 33, 39, 43, 53\*, 57, 59, 63, 65, 67 in Giancoli, pp. 166 |
 |  | Quiz 6.3 | Power and Conservation of Mechanical Energy Computational Quiz | [Quiz 6.3 | Power and Conservation](https://app.edulastic.com/author/tests/verid/66268415fab67467446cbdf4) |
-|  |  |  |
-|  |  |  |
 |  |  |  |
 |  |  |  |
 |  |  |  |
@@ -152,12 +143,23 @@ css: "../templates/styles/scientific.css"
 
 ## Unit 6 | Collisions, Impulse, Momentum
 
+[Google Drive Folder](https://drive.google.com/drive/folders/placeholder)  
+[Giancoli Problems](https://docs.google.com/document/placeholder)
+
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
-
- 
+| Linear Momentum Conservation of Momentum | Reading | Giancoli 7-1 to 7-3 | Read sections 7-1 through 7-3 (pp. 170-178) |
+| | Lecture | Momentum and Conservation | [Slides | Momentum and Conservation](placeholder) |
+| | PS 6.1 | Introduction to Momentum | [PS 6.1 | Intro to Momentum](placeholder) |
+| | Giancoli Textbook Problems | Pp. 196: 1, 3, 5, 7, 9, 11 |
+| Impulse Collisions | Reading | Giancoli 7-4 to 7-6 | Read sections 7-4 through 7-6 (pp. 179-188) |
+| | Lab | Conservation of Momentum in Collisions | [Lab | Conservation of Momentum](placeholder) |
+| | PS 6.2 | Impulse and Collisions | [PS 6.2 | Impulse and Collisions](placeholder) |
+| | Quiz | Momentum and Impulse | [Quiz 6.1](placeholder) |
+| Elastic/Inelastic Collisions | Lecture | Types of Collisions | [Slides | Collisions](placeholder) |
+| | PS 6.3 | Elastic and Inelastic Collisions | [PS 6.3 | Types of Collisions](placeholder) |
+| | Giancoli Problems | Pp. 197: 15, 17, 19, 21, 23, 25 |
+| | Chapter Assessment | [Test | Chapter 7](placeholder) |
 
 ## Unit 7 | Rotational Motion and Gravitation
 
@@ -167,7 +169,7 @@ css: "../templates/styles/scientific.css"
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
 | Universal Circular Motion | Reading | 5.1 to 5.3 Uniform Circular Motion | Review Giancoli sections 5-1 through 5-3, pp. 109 to 117\. |
-|  | Lab | Circular Motion | [Lab | Circular Motion](https://docs.google.com/document/d/1vStbEMsUmF0ksoV5zqA93PjLVdmbnsArU9SEbJF2skI/edit?usp=sharing) |
+|  | Lab | Circular Motion | [Lab | Circular Motion](https://docs.google.com/document/d/1vStbEMsUmF0ksoV5zqA93PjLVdmbnsArU9SEbJF2skI/edit?usp=drive_link) |
 |  | Lecture | Circular Motion | [Slides | Circular Motion](https://docs.google.com/presentation/d/1VLp_MG9WnOeU_q5NhAsGODIbgY3BJhCjk5OaJfzCrTs/edit?usp=drive_link) |
 |  | PS 5.1 | Circular Motion 1 | [PS 5.1](https://docs.google.com/document/d/1EdSNTOzRqBWkzpfvB4jfKlQ0TIOuZqwIXSg5V2dJnco/edit?usp=drive_link) |
 |  | PS 5.2 | Circular Motion 2 | [PS 5.2](https://docs.google.com/document/d/149m8Ow-iA2tfsxQ5Uk5x3QT5ERLLU7fQGKdHUEtNH2A/edit?usp=drive_link) |
@@ -178,44 +180,104 @@ css: "../templates/styles/scientific.css"
 | Kepler’s Laws |  |  |
 | 5-5 and 5-6 | Gravitation and Kepler pp. 133 | 29, 32, 35, 37, 57, 59 ("very near" Earth \= Earth's Radius), 63, 65 (see Table 5-2), 80  |
 
-
 ## Unit 8 | Waves and Harmonics
 
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
-
-
-
-## Unit 9 | Light and Optics
+[Google Drive Folder](placeholder)  
+[Giancoli Problems](placeholder)
 
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
+| Wave Properties | Reading | Giancoli 11-1 to 11-3 | Read sections 11-1 through 11-3 (pp. 280-288) |
+| | Lecture | Wave Properties | [Slides | Wave Properties](placeholder) |
+| | PS 8.1 | Wave Properties | [PS 8.1 | Wave Properties](placeholder) |
+| | Giancoli Problems | Pp. 305: 1, 3, 5, 7, 9, 11 |
+| Standing Waves Harmonics | Reading | Giancoli 11-4 to 11-6 | Read sections 11-4 through 11-6 (pp. 289-296) |
+| | Lab | Standing Waves on a String | [Lab | Standing Waves](placeholder) |
+| | PS 8.2 | Standing Waves and Harmonics | [PS 8.2 | Standing Waves](placeholder) |
+| | PhET Lab | Wave Interference | [PhET | Wave Interference](placeholder) |
+| | Chapter Assessment | [Test | Chapter 11](placeholder) |
 
+## Unit 9 | Sound
 
+[Google Drive Folder](placeholder)  
+[Giancoli Problems](placeholder)
+
+| Topic | Activity | Assignment |
+| :---- | :---- | :---- |
+| Sound Waves | Reading | Giancoli 12-1 to 12-3 | Read sections 12-1 through 12-3 (pp. 310-318) |
+| | Lecture | Sound Properties | [Slides | Sound](placeholder) |
+| | PS 9.1 | Sound Properties | [PS 9.1 | Sound Properties](placeholder) |
+| | Lab | Speed of Sound | [Lab | Speed of Sound](placeholder) |
+| Doppler Effect | Reading | Giancoli 12-6 to 12-7 | Read sections 12-6 through 12-7 (pp. 324-330) |
+| | PS 9.2 | Doppler Effect | [PS 9.2 | Doppler Effect](placeholder) |
+| | Giancoli Problems | Pp. 336: 1, 3, 5, 7, 9, 11, 13, 15 |
+| | Chapter Assessment | [Test | Chapter 12](placeholder) |
 
 ## Unit 10 | Electrostatics
 
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
-
-
-## Unit 11 | Optics 
+[Google Drive Folder](placeholder)  
+[Giancoli Problems](placeholder)
 
 | Topic | Activity | Assignment |
 | :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
+| Electric Charge and Force | Reading | Giancoli 16-1 to 16-4 | Read sections 16-1 through 16-4 (pp. 436-444) |
+| | Lecture | Electric Forces | [Slides | Electric Forces](placeholder) |
+| | PS 10.1 | Coulomb's Law | [PS 10.1 | Coulomb's Law](placeholder) |
+| Electric Fields | Reading | Giancoli 16-5 to 16-7 | Read sections 16-5 through 16-7 (pp. 445-452) |
+| | PhET Lab | Electric Field Hockey | [PhET | Electric Fields](placeholder) |
+| | PS 10.2 | Electric Fields | [PS 10.2 | Electric Fields](placeholder) |
+| | Giancoli Problems | Pp. 463: 1, 3, 5, 7, 9, 11, 13, 15 |
+| | Chapter Assessment | [Test | Chapter 16](placeholder) |
 
-<!-- Definitions of Links -->
-[Fundamentals]: #0-Fundamentals
-[Mechanics]: #unit-2--kinematics-1
-[Dynamics]: #unit-4--dynamics
-[Conservation]: #unit-5--work-and-energy
-[Harmonics]: #unit-8--waves-and-harmonics
-[Electricity]: #unit-10--electrostatics
+## Unit 11 | Light and Optics
+
+[Google Drive Folder](placeholder)  
+[Giancoli Problems](placeholder)
+
+| Topic | Activity | Assignment |
+| :---- | :---- | :---- |
+| Nature of Light | Reading | Giancoli 22-1 to 22-3 | Read sections 22-1 through 22-3 (pp. 612-618) |
+| | Lecture | Properties of Light | [Slides | Light Properties](placeholder) |
+| | PS 11.1 | Light Properties | [PS 11.1 | Light Properties](placeholder) |
+| Reflection Refraction | Reading | Giancoli 22-4 to 22-6 | Read sections 22-4 through 22-6 (pp. 619-626) |
+| | Lab | Snell's Law | [Lab | Snell's Law](placeholder) |
+| | PS 11.2 | Reflection and Refraction | [PS 11.2 | Reflection and Refraction](placeholder) |
+| | PhET Lab | Geometric Optics | [PhET | Geometric Optics](placeholder) |
+| | Giancoli Problems | Pp. 644: 1, 3, 5, 7, 9, 11, 13, 15 |
+| | Chapter Assessment | [Test | Chapter 22](placeholder) |
+
+## Course Resources
+
+#### Lecture Slides
+
+| Unit | Title | Link |
+| :---- | :---- | :---- |
+| 1 | Principles of Physics | [Link](https://docs.google.com/presentation/d/1YiTcVn7fFvuPImypXe34auUq5UlhGmQ0wo6lBBjG8g0/edit?usp=drive_link) |
+| 2 | Kinematics 1 | [Link](https://docs.google.com/presentation/d/1uWpF89uq-8Ay02r7KPRJjBsvsA3kPgG1CO0NEZQlHAE/edit?usp=drive_link) |
+| 3 | Vectors and Scalars | [Link](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) |
+| 3 | Projectile Motion | [Link](https://docs.google.com/presentation/d/1htkBmXR26SI_xgU8Bf-5CCoHvX0XgHCUkO0rvqD8Rmg/edit?usp=drive_link) |
+| 3 | Relative Motion | [Link](https://docs.google.com/presentation/d/1C7-e7S3f39jpVpFGAILRWqNQa_stn9A2CheAscfG2hc/edit?usp=drive_link) |
+| 4 | Force, Mass, and Newton's Laws | [Link](https://docs.google.com/presentation/d/11VyGu-JfmU9om5yT56dVarn_JR2S9F9YyC_Jkf2czjk/edit?usp=drive_link) |
+| 4 | Gravity and Normal Force | [Link](https://docs.google.com/presentation/d/1TXWmYLehuXLiCtpUogTaoO5dbH5r3jytL5m3v7202To/edit?usp=drive_link) |
+| 4 | Friction and Inclined Planes | [Link](https://docs.google.com/presentation/d/1QvSHcCa1dmfCvd4Sec1s26fLhA2AAWq-z48z54WrU_w/edit?usp=drive_link) |
+| 5 | Work and Energy Principles | [Link](https://docs.google.com/presentation/d/1A4sCGU4bF--3rcvyNN0mYGulnSzCI3XzacolKQEamOQ/edit?usp=drive_link) |
+| 5 | Conservation and Power | [Link](https://docs.google.com/presentation/d/1q2C0Bt0yucgzOjAO5LeyG5NH41zgcrxCW-KuVUlwP9A/edit?usp=drive_link) |
+| 7 | Circular Motion | [Link](https://docs.google.com/presentation/d/1VLp_MG9WnOeU_q5NhAsGODIbgY3BJhCjk5OaJfzCrTs/edit?usp=drive_link) |
+| 7 | Gravitation | [Link](https://docs.google.com/presentation/d/1JifikBdN4FBoyZ5Jyqc2jyV4e74rAWDjw2rwPbLAfHk/edit?usp=drive_link) |
+
+#### Labs and Simulations
+
+| Unit | Title | Type | Link |
+| :---- | :---- | :---- | :---- |
+| 1 | Lab Safety Assessment | Assessment | [Link](https://app.edulastic.com/author/tests/tab/review/id/66d8bb0afcaf2d0008949549) |
+| 2 | 1D Kinematics on an Inclined Plane | Lab | [Link](https://docs.google.com/document/d/1bfR2JVBJzxeKU8zblhXAG7c5SZ4ZfcTBU2bnPMxjMJ8/edit?usp=drive_link) |
+| 3 | Projectile Motion | PhET Lab | [Link](https://docs.google.com/document/d/1HdBQiLQEkqu59tiyRft17_iUv_LUufkUecNgAQc9CrU/edit?usp=drive_link) |
+| 3 | Projectile Motion | Lab | [Link](https://docs.google.com/document/d/129C3m44FjNPZE3EjYeuuts05D57eB3ThV93792SlQ5M/edit?usp=drive_link) |
+| 7 | Circular Motion | Lab | [Link](https://docs.google.com/document/d/1vStbEMsUmF0ksoV5zqA93PjLVdmbnsArU9SEbJF2skI/edit?usp=drive_link) |
+| 7 | Gravitation Simulator | PhET Lab | [Link](https://docs.google.com/document/d/1CkfJgq_KYViYITI_kpVOaVGOf8k_clkJ75TdhbUSuok/edit?usp=drive_link) |
+| 8 | Standing Waves on a String | Lab | (placeholder) |
+| 8 | Wave Interference | PhET Lab | (placeholder) |
+| 9 | Speed of Sound | Lab | (placeholder) |
+| 10 | Electric Field Hockey | PhET Lab | (placeholder) |
+| 11 | Snell's Law | Lab | (placeholder) |
+| 11 | Geometric Optics | PhET Lab | (placeholder) |
