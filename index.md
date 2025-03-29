@@ -3,6 +3,7 @@ Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 math: mathjax
+css: ./cosmosintheclassroom\assets\css\style.css
 ---
 
 # Cosmos in the Classroom
