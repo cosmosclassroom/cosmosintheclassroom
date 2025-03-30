@@ -42,10 +42,7 @@ css:
 
 ## References
 
-[Lecture - Wave Physics](src/hphys/8_waves/hphys_8_waves_lecture.md)
-
-
-<a href="slides.html">View Presentation Slides</a>
+[H-Physics : Waves Lecture](src/slides/hphys_8_waves_lecture.md)
 
 The [Reference Landing] is here.
 
