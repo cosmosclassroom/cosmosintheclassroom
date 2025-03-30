@@ -44,6 +44,9 @@ css:
 
 [Lecture - Wave Physics](src/hphys/8_waves/hphys_8_waves_lecture.md)
 
+
+<a href="slides.html">View Presentation Slides</a>
+
 The [Reference Landing] is here.
 
 The [Honors Physics Landing] page is accessible from here.
