@@ -16,6 +16,8 @@ How can energy transfer through space?
 
 ## Introducing Waves: Transverse and Longitudinal
 
+![Transverse vs Longitudinal waves comparison](./images/wave_types.png)
+
 *   **What is a Wave?** A disturbance that transfers energy through a medium or space.
 *   **Transverse Waves:** The medium moves *perpendicular* to the direction of the wave. (Holt: Think of a rope being shaken up and down.)
 *   **Longitudinal Waves:** The medium moves *parallel* to the direction of the wave. (Holt: Think of a slinky being pushed and pulled.)
@@ -24,6 +26,8 @@ How can energy transfer through space?
 ---
 
 ## Wave Properties: Amplitude, Wavelength, and Period
+
+![Wave properties labeled diagram](./images/wave_properties.png)
 
 *   **Amplitude (A):** The maximum displacement from the equilibrium position. (Holt: The height of a crest or depth of a trough.)
 *   *Example:* The amplitude of visible light waves is typically around 400 nanometers for violet light and 700 nanometers for red light, crucial in spectroscopy measurements.
@@ -42,6 +46,8 @@ How can energy transfer through space?
 
 ## Superposition and Interference
 
+![Constructive and destructive interference](./images/interference.png)
+
 *   **Superposition Principle:** When two or more waves overlap, the resulting displacement is the sum of the individual displacements.
 *   **Constructive Interference:** Waves combine to produce a larger amplitude. (Holt: Crest meets crest, or trough meets trough.)
 *   **Destructive Interference:** Waves combine to produce a smaller amplitude. (Holt: Crest meets trough – they partially or completely cancel each other out.)
@@ -51,6 +57,8 @@ How can energy transfer through space?
 
 ## Diffraction: Bending Around Obstacles
 
+![Wave diffraction through a slit](./images/diffraction.png)
+
 *   **What is Diffraction?** The spreading of waves as they pass through an opening or around an obstacle. (Holt: Waves don’t travel in perfectly straight lines.)
 *   **Why does it happen?**  Huygens' Principle: Every point on a wave front acts as a source of new, smaller wavelets.
 *   **Holt’s Illustration:**  Water waves spreading out after passing through a narrow gap in a barrier.
@@ -58,6 +66,8 @@ How can energy transfer through space?
 ---
 
 ## The Doppler Effect
+
+![Doppler effect illustration](./images/doppler_effect.png)
 
 *   **What is the Doppler Effect?** The apparent change in frequency of a wave due to the motion of the source or observer. (Holt: The pitch of a siren changes as it moves towards or away from you.)
 *   **Why does it happen?**  The distance between wave crests is compressed or stretched due to relative motion.
@@ -97,7 +107,3 @@ How can energy transfer through space?
 * **Conceptual:** Why does the pitch suddenly drop as it passes by?
 * **Calculation:** What frequency does a stationary observer hear when the ambulance approaches? Use: f' = f((v + vo)/(v - vs)) 
 * (Given: speed of sound = 343 m/s)
-
----
-
-
