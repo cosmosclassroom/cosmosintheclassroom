@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Presentation</title>
+  
+  <!-- Link to reveal.js CSS -->
+  <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme">
+  
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+  
+  <!-- Custom styles to help with Marp compatibility -->
+  <style>
+    .reveal img {
+      max-height: 65vh;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .reveal section {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- Load your Markdown file -->
+      <section data-markdown="/slides/hphys_8_waves_lecture.md"
+               data-separator="^---"
+               data-separator-vertical="^--"
+               data-charset="utf-8">
+      </section>
+    </div>
+  </div>
+
+  <!-- Load reveal.js -->
+  <script src="reveal.js/dist/reveal.js"></script>
+  
+  <!-- Load plugins -->
+  <script src="reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="reveal.js/plugin/notes/notes.js"></script>
+  <script src="reveal.js/plugin/zoom/zoom.js"></script>
+
+  <!-- Initialize reveal.js -->
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealZoom
+      ]
+    });
+  </script>
+</body>
+</html>

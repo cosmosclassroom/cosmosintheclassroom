@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Presentation" }}</title>
+  
+  <!-- Link to reveal.js CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/reveal.js/dist/theme/{{ page.theme | default: 'white' }}.css" id="theme">
+  
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/reveal.js/plugin/highlight/monokai.css">
+  
+  <!-- Custom styles -->
+  <style>
+    .reveal img {
+      max-height: 65vh;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .reveal section {
+      height: 100%;
+    }
+    
+    /* Add any additional custom styles */
+    {% if page.custom_css %}{{ page.custom_css }}{% endif %}
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section 
+        data-markdown
+        data-separator="{{ page.separator | default: '^---$' }}"
+        data-separator-vertical="{{ page.separator_vertical | default: '^--$' }}"
+        data-separator-notes="^Note:"
+        data-charset="utf-8">
+        <script type="text/template">
+{{ content }}
+        </script>
+      </section>
+    </div>
+  </div>
+
+  <!-- Load reveal.js -->
+  <script src="{{ site.baseurl }}/reveal.js/dist/reveal.js"></script>
+  
+  <!-- Load plugins -->
+  <script src="{{ site.baseurl }}/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="{{ site.baseurl }}/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="{{ site.baseurl }}/reveal.js/plugin/notes/notes.js"></script>
+  <script src="{{ site.baseurl }}/reveal.js/plugin/zoom/zoom.js"></script>
+
+  <!-- Initialize reveal.js -->
+  <script>
+    Reveal.initialize({
+      controls: {{ page.controls | default: true }},
+      progress: {{ page.progress | default: true }},
+      history: {{ page.history | default: true }},
+      center: {{ page.center | default: true }},
+      
+      plugins: [
+        RevealMarkdown,
+        RevealHighlight,
+        RevealNotes,
+        RevealZoom
+      ],
+      
+      // Add any additional options from the front matter
+      {% if page.reveal_options %}
+      {{ page.reveal_options }}
+      {% endif %}
+    });
+  </script>
+</body>
+</html>
