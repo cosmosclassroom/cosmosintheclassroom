@@ -3,6 +3,23 @@ marp: true
 theme: default
 paginate: true
 math: katex
+style: |
+  section {
+    background-color: #ffffff;
+    font-family: EB Geramond, serif;
+    font-weight: 100;
+  }
+  img {
+    max-height: 450px;
+  }
+  a {
+    color: #0366d6;
+  }
+export:
+  type: html
+  format: html
+  dir: dist
+  theme: default
 ---
 
 # 8 Harmonics and Waves
@@ -50,10 +67,11 @@ where:
 ## Properties of Oscillations
 
 Oscillations are described by three properties:
-
-- **Amplitude** ($A$): Maximum displacement from equilibrium
-- **Period** ($T$): Time required for one complete cycle
-- **Frequency** ($f$): Number of cycles per second
+- Space:
+  - **Amplitude** ($A$): Maximum displacement from equilibrium
+- Time:
+  - **Period** ($T$): Time required for one complete cycle
+  - **Frequency** ($f$): Number of cycles per second
 
 ![Wave Motion](../../../assets/images/8_waves_shm/8_waves_slide5_img2.png)
 
@@ -61,7 +79,7 @@ Oscillations are described by three properties:
 
 ## Frequency and Period
 
-The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles that occur each second.
+The unit of frequency is the Hz or $\frac{1}{s}$ and represents the number of cycles that occur each second.
 
 - **Period** ($T$): Time required for one complete cycle
 - **Frequency** ($f$): Number of cycles per second
@@ -74,9 +92,8 @@ The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles 
 
 The period of oscillation for a mass $m$ on the end of a spring with spring constant $k$ is:
 
-$T = 2\pi\sqrt{\frac{m}{k}}$
+$$T = 2\pi\sqrt{\frac{m}{k}}$$
 
-![Spring oscillation](8_waves_slide7_img4.png)
 
 $T$ is the period of time for the mass to complete one cycle of movement.
 
@@ -90,7 +107,7 @@ Strange though it seems, the period is not dependent on amplitude.
 
 ![Amplitude independence](8_waves_slide8_img6.png)
 
-Displacing a spring farther increases its velocity, and therefore the period is kept constant.
+Displacing a spring farther increases its velocity, always such that the period is kept constant.
 
 ![Amplitude independence example](8_waves_slide8_img7.png)
 
@@ -199,7 +216,8 @@ When the amplitude of a wave is doubled, its energy increases by a factor of fou
 
 A pulse is a single wave traveling through a medium.
 
-![Wave pulse](8_waves_slide19_img17.png)
+![Wave Pulse](../../../assets/images/8_waves_shm/8_waves_slide21_img19.png)
+
 
 ---
 
@@ -207,13 +225,15 @@ A pulse is a single wave traveling through a medium.
 
 ![Wave creation](8_waves_slide20_img18.png)
 
+![Sine wave](8_waves_slide21_img19.png)
+
 ---
 
 ## Creating Waves
 
 Sine waves describe particles vibrating within harmonic motion.
 
-![Sine wave](8_waves_slide21_img19.png)
+![alt text](../../../assets/images/8_waves_shm/8_waves_slide20_img18.png)
 
 - **Wavelength** ($\lambda$): Distance a wave travels in one cycle or the distance between crests or troughs on a wave.
 - The trigonometric function $y = \sin x$ produces the curve when plotted.

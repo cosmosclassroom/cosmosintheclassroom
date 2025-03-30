@@ -149,11 +149,11 @@ This problem can be solved computationally using Newton's Universal Law of Gravi
 
 - b. Calculating the circumference of Europa first requires knowing its radius, $r$. Note that this could also be determined using $F_g = G \frac{M \cdot m}{r^2}$
   
-  |3 sf| \(a_{g_{Europa}} = G \frac{M_{Europa}}{r_{Europa}^2}\)|
+  |3 sf| $a_{g_{Europa}} = G \frac{M_{Europa}}{r_{Europa}^2}$|
   |-:|:-|
   $a_{g_{Europa}} = 1.98 \, m/s^2$<br> $M_{Europa} = 4.9 \times 10^{22} \, kg$|$r_{Europa} = \sqrt{\frac{G \cdot M_{Europa}}{a_{g_{Europa}}}} $ <br> $r_{Europa} = \sqrt{\frac{G(4.9 \times 10^{22} \,kg)}{1.98 \, \frac{m}{s^2}}}$<br>$r_{Europa} = 1.29 \times 10^6 \, m$|
 
-  |3 sf| \(C = 2 \pi r\)|
+  |3 sf| $C = 2 \pi r$|
   |-:|:-|
   |$r_{Europa} = 1.29 \times 10^6 \, m$| $C = 2 \pi (1.29 \times 10^6)$<br>$C = 8.09 \times 10^6 \, m$ <br> $C = 8\,090 \, km$|
 
@@ -163,6 +163,6 @@ Note: using the unrounded value for Europa's radius gives a circumference closer
 
 **Problem 8: Jupiter and Saturn Attraction**
 
-|3 sf| \(F_g = G \frac{m_1 m_2}{r^2}\) |
+|3 sf| $F_g = G \frac{m_1 m_2}{r^2}$ |
 |-:|:-|
 | $M_J = 1.898 \times 10^{27} \, kg$ <br> $M_S = 5.683 \times 10^{26} \, kg$<br>$r = 6.4627 \times 10^{11} \, m$ <br> $G = 6.673 \times 10^{-11}$ |$F_g = G \frac{(1.898 \times 10^{27})(5.683 \times 10^{26})}{(6.4627 \times 10^{11})^2}$<br>$F_g = G \frac{1.0786 \times 10^{54}}{4.1766 \times 10^{23}}$<br>$F_g = 1.72 \times 10^{20} \, N$|

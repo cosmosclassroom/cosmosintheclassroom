@@ -78,11 +78,11 @@ $$
 ## Subscripts
 
 ```
-$F_g=m \cot a_g$
+$F_g=m \cdot a_g$
 $F_{g_{Europa}} = x \cdot a_g?$
 ```
 
-$F_g=m \cot a_g$
+$F_g=m \cdot a_g$
 
 $F_{g_{Europa}} = x \cdot a_{g_{Earth}}$ 
 
