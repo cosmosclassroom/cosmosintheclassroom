@@ -1,4 +1,5 @@
-baseurl: ""
+title: Cosmos in the Classroom
+baseurl: "/cosmosintheclassroom"
 url: ""
 
 # Build Settings
@@ -13,7 +14,7 @@ kramdown:
   math_engine_opts:
     preview: true
     preview_as_code: true
-
+  parse_block_html: true
 
 # Plugins
 
@@ -56,17 +57,15 @@ theme: null
 
 # Basic includes
 include:
-  - "*.md"
-  - "**/*.md"
-  - "*.marp.md"
-  - ".marprc.yml"
-  - "slides/**/*.md"
+  - _pages
 
 exclude:
+  - .marp.json
+  - template.html
+  - README.md
+  - vendor
   - "node_modules"
   - ".git"
   - ".github"
-  - "README.md"
   - Gemfile
   - Gemfile.lock
-  - vendor
