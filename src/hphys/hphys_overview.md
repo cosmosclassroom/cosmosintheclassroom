@@ -14,6 +14,14 @@ Updated Spring 2025
 
 
 
+|Strand|Topics|
+|-|-|
+|1 Motion| 0 Principles <br> 1 Motion in One Dimension <br> 2 Motion in 2 Dimensions <br> 3 Newtonian Forces|
+|Energy|4 Energetics <br> 5 Conservation of Momentum <br> 6 Rotational Motion <br> 7 Simple Harmonics|
+|Waves|8 Wave Functions <br> 9 Light and Sound <br> 10 Electromagnetism|
+|Charge|11 Electrostatics <br> 12 Electrical Current|
+
+
 ## Unit 1 | Principles of Physics
 
 [Google Drive Folder](https://drive.google.com/drive/folders/1DGNr9ajb9qYIu_zZ8N3ad2iLq_gbjVJ3?usp=drive_link)  
