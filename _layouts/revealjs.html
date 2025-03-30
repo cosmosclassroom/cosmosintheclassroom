@@ -6,7 +6,7 @@ layout: default
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>{{ page.title | default: "Presentation" }}</title>
   
   <!-- Link to reveal.js CSS -->
@@ -56,20 +56,35 @@ layout: default
   <script src="{{ site.baseurl }}/reveal.js/plugin/highlight/highlight.js"></script>
   <script src="{{ site.baseurl }}/reveal.js/plugin/notes/notes.js"></script>
   <script src="{{ site.baseurl }}/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="{{ site.baseurl }}/reveal.js/plugin/math/math.js"></script>
 
   <!-- Initialize reveal.js -->
   <script>
+    // Check if plugins are loaded
+    if (typeof RevealMarkdown === 'undefined' || 
+        typeof RevealHighlight === 'undefined' || 
+        typeof RevealNotes === 'undefined' || 
+        typeof RevealZoom === 'undefined') {
+      console.error('Some Reveal.js plugins failed to load');
+    }
+
     Reveal.initialize({
       controls: {{ page.controls | default: true }},
       progress: {{ page.progress | default: true }},
       history: {{ page.history | default: true }},
       center: {{ page.center | default: true }},
+      width: '100%',
+      height: '100%',
+      margin: 0.1,
+      minScale: 0.2,
+      maxScale: 2.0,
       
       plugins: [
         RevealMarkdown,
         RevealHighlight,
         RevealNotes,
-        RevealZoom
+        RevealZoom,
+        RevealMath
       ],
       
       // Add any additional options from the front matter
