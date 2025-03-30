@@ -42,7 +42,7 @@ css:
 
 ## References
 
-$$F=m \cdot a$$
+[Lecture - Wave Physics](src/hphys/8_waves/hphys_8_waves_lecture.md)
 
 The [Reference Landing] is here.
 
