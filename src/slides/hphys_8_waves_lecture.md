@@ -2,14 +2,6 @@
 Layout: revealjs
 Title: Lecture 8 - Waves
 marp: true
-theme: default
-separator: "^\\n---\\n$"  # Note the double backslashes for escaping in YAML
-separator_vertical: "^\\n--\\n$"
-custom_css: |
-  .reveal h1 {
-    color: #8A2BE2;
-  }
-  paginate: true
 ---
 
 <!-- Original slides from Google Classroom -->
