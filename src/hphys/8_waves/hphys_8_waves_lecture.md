@@ -1,7 +1,12 @@
 ---
+Title: Lecture 8  - Waves
 marp: true
 theme: gaisa
 ---
+
+<!--
+These slides were imported from previously-used slides on Google Classroom
+ -->
 
 # Waves
 

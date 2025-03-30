@@ -3,6 +3,10 @@ marp: true
 theme: default
 ---
 
+<!-- These slides were drafted by Ainsworth v1.0 
+
+-->
+
 # Wave Functions & Phenomena
 
 A Lecture on the Mathematical Description of Waves
