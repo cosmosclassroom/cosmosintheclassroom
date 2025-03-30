@@ -15,6 +15,7 @@ css:
 Welcome to Cosmos in the Classroom, your gateway to understanding the wonders of astronomy and physics. Our carefully curated resources help bring the cosmos down to earth.
 
 ### Quick Start Guides
+
 - **Classical Astronomy**: Discover Aristotle's contributions and early astronomical theories
 - **Observational Astronomy**: Learn meteor shower observation techniques
 - **Atmospheric Physics**: Understand phenomena like Aurora Borealis
