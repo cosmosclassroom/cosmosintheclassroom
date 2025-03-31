@@ -63,7 +63,7 @@ From a force perspective, explain the changes in the matter that we observe duri
 In your lab notebook, draw what you see happening with the matter after the interaction.
 After the waves meet at the same place in space, how does the total energy compare with the total energy before?
 
-
+![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg)
 
 
 ### Interaction C
