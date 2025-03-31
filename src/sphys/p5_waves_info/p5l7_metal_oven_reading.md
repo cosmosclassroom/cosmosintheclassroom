@@ -3,7 +3,7 @@ layout: default
 title: P5L7 Evaluating Information Checklist
 author: Jonathan Corbett
 date: 26 March 2025
-math: mathjax
+mathjax: true
 ---
 
 # Evaluating Information Checklist
@@ -19,3 +19,4 @@ math: mathjax
 | Is the writer clear about certainty vs uncertainty? | 3 | 3 |
 
 Justification of Ratings for Source 1:
+

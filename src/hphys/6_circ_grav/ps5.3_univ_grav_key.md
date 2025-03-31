@@ -3,7 +3,7 @@ layout: default
 title: Problem Set 5.3 Answer Key | Universal Gravitation
 author: Jonathan Corbett
 date: 25 March 2025
-math: mathjax
+mathjax: true
 css: cosmosintheclassroom\assets\css\style.css
 ---
 
@@ -166,3 +166,4 @@ Note: using the unrounded value for Europa's radius gives a circumference closer
 |3 sf| $F_g = G \frac{m_1 m_2}{r^2}$ |
 |-:|:-|
 | $M_J = 1.898 \times 10^{27} \, kg$ <br> $M_S = 5.683 \times 10^{26} \, kg$<br>$r = 6.4627 \times 10^{11} \, m$ <br> $G = 6.673 \times 10^{-11}$ |$F_g = G \frac{(1.898 \times 10^{27})(5.683 \times 10^{26})}{(6.4627 \times 10^{11})^2}$<br>$F_g = G \frac{1.0786 \times 10^{54}}{4.1766 \times 10^{23}}$<br>$F_g = 1.72 \times 10^{20} \, N$|
+
