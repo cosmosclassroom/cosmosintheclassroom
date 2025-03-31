@@ -4,7 +4,7 @@ Title: Cosmos in the Classroom Homepage
 Author: Jonathan Corbett
 Date: 23 March 2025
 markdown: kramdown
-math: mathjax
+mathjax: true
 css: 
   - ./assets/css/style.css
 ---
@@ -23,3 +23,4 @@ css:
 - [LaTeX Guide](https://cosmosintheclassroom.org/src/ref/ref_latex)
 
 ---
+

@@ -3,7 +3,7 @@ layout: default
 title: PS 5.3 | Universal Gravitation
 author: Jonathan Corbett
 css: /templates/styles/styles.css
-math: mathjax
+mathjax: true
 ---
 # PS 5.3 | Universal Gravitation
 ---

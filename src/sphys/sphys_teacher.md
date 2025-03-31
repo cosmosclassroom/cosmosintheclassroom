@@ -3,7 +3,7 @@ layout: default
 Title: Standard Physics Course Overview
 Author: Jonathan Corbett
 Date: 23 March 2025
-math: mathjax
+mathjax: true
 markdown: kandown
 ---
 # Welcome to Standard Physics
@@ -51,3 +51,4 @@ markdown: kandown
 <!-- Definitions -->
 
 [Wave Variables Lab]:(/src/sphys/P5L7_sim_EM_polarity)
+

@@ -3,7 +3,7 @@ layout: default
 title: P1 Energy From Earth Systems | Student Science Notebook
 author: Jonathan Corbett
 date: 16 March 2025
-math: mathjax
+mathjax: true
 ---
 
 - [P5 Electromagnetic Radiation](#p5-electromagnetic-radiation)
@@ -150,3 +150,4 @@ A quick checklist to evaluate the validity and reliability of information:
 ## L12 | Digital Communication
 ## L13 | Evaluating Safety Claims
 ##
+
