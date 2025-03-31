@@ -5,8 +5,6 @@ Author: Jonathan Corbett
 Date: 23 March 2025
 markdown: kramdown
 mathjax: true
-css: 
-  - ./assets/css/style.css
 ---
 
 # Cosmos in the Classroom

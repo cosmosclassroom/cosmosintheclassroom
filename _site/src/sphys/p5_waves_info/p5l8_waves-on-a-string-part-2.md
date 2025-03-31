@@ -14,7 +14,7 @@ In your lab notebook, open to a fresh page and add a heading for Wave Interferen
 
 |Before|During|After|
 |-|-|-|
-|(![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg))|||
+|![Interaction A]|||
 
 Open the simulation and select the “Pulse” and “Loose End” settings at the top.
 At the bottom, select the following settings:
@@ -32,7 +32,7 @@ Produce two waves similar to the “before” diagram above and run the simulati
 4. In your lab notebook, draw what you see happening with the matter after the interaction.
 5. After the waves meet at the same place in space, how does the total energy compare with the total energy before?
 
-### Interaction B
+### Interaction B asdaf
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
 {: .figure-caption}
