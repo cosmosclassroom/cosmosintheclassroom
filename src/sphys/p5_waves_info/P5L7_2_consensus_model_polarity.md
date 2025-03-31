@@ -4,7 +4,7 @@ title: Key - Consensus Model - Polarity in the Microwave Oven
 author: Jonathan Corbett
 date: 13 March 2025
 markdown: kramdown
-math: mathjax
+mathjax: true
 ---
 # Consensus Model
 >Teacher Key

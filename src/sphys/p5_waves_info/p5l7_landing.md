@@ -1,6 +1,6 @@
 ---
 title: P5L7 Landing Page
-math: mathjax
+mathjax: true
 css: /cosmosintheclassroom/assets/style.css
 ---
 
@@ -18,3 +18,4 @@ css: /cosmosintheclassroom/assets/style.css
 
   - [Annotated reading: Metal in the Microwave](p5l7_3_metal_oven_reading)
   - Evaluating Information Checklist
+

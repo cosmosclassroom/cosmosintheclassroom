@@ -4,7 +4,7 @@ Title: P5L7 Revaluating Scientific Claims
 Author: Jonathan Corbett and Gemma3:12b
 Date: 26 March 2025
 markdown: kramdown
-math: mathjax
+mathjax: true
 css: /cosmosintheclassroom/assets/style.css
 ---
 
@@ -45,3 +45,4 @@ A *reliable* statement comes from a trustworthy source and can be checked by oth
 *   [ ] Is the source an expert? Did they cite good sources?
 *   [ ] Can it be checked?
 *   [ ] Are limitations acknowledged?
+

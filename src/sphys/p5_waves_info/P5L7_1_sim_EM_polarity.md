@@ -3,7 +3,7 @@ Layout: default
 Title: P5L7 Field-Particle+Interactions Simulation
 Author: Jonathan Corbett & Open Sci Ed
 Date: 24 March 2025
-math: mathjax
+mathjax: true
 css: /cosmosintheclassroom/assets/style.css
 ---
 
@@ -70,3 +70,4 @@ Try changing the **frequency-of-flip** pulldown.
 6. For each matter type, use the questions to connect to the conclusions we reached about energy transfer at a macroscopic scale to the observations you made in the simulation. 
    - (a) What happens on a **macroscopic** scale to each type of matter when we expose it to EM radiation in the microwave oven?
    - (b) What **particle-scale** observations from the simulation help us explain this observation?
+

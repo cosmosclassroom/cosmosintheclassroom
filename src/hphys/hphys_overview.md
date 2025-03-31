@@ -5,7 +5,7 @@ Author: Jonathan Corbett
 Date: 29 March 2025
 markdown: kramdown
 kramdown:
-    math: mathjax
+    mathjax: true
 ---
 
 # Lesson Overview | Honors Physics

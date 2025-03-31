@@ -3,7 +3,7 @@ layout: default
 title: "P5L4 | Wave Variables and Relationships"
 author: Jonathan Corbett
 date: 13 March 2025
-math: mathjax
+mathjax: true
 ---
 
 #   P5L4 | Wave Variables & Relationships
@@ -39,3 +39,4 @@ As **amplitude** increases, energy transferred and average vertical speed increa
 As **tension** increases, wave speed and wavelength increase. Amplitude, damping, frequency, and period remain unaffected.
 
 As **damping** increases, amplitude and energy transferred decrease. Frequency, period, wavelength, wave speed, and tension remain unaffected.
+
