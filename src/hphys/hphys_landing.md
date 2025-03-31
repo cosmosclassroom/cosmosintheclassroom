@@ -7,27 +7,32 @@ markdown: kramdown
 usemathjax: true
 toc: true
 ---
-
-[Fundamentals]
-[Mechanics]
-[Dynamics]
-[Conservation]
-[Harmonics]
-[Electricity]
-[Harmonics]
-[Electricity]
-
-### Mechanics
-
-### Unit 1 | Principles of Physics
-
-### Unit 2 | Kinematics 1
+|Strand|Topics|
+|-|-|
+|1 Motion| 0 [Fundamentals] <br> 1 Motion in One Dimension <br> 2 [Mechanics] <br> 3 [Dynamics]|
+|Energy|4 [Conservation] <br> 5 Conservation of Momentum <br> 6 Rotational Motion <br> 7 [Harmonics]|
+|Waves|8 Wave Functions <br> 9 Light and Sound <br> 10 Electromagnetism|
+|Charge|11 [Electricity] <br> 12 [Electricity]|
 
 
-### Unit 3 | Kinematics 2
 
 
-### Unit 4 | Dynamics
+
+
+
+
+
+## Mechanics
+
+#### Unit 1 | Principles of Physics
+
+#### Unit 2 | Kinematics 1
+
+
+#### Unit 3 | Kinematics 2
+
+
+#### Unit 4 | Dynamics
 
 ## Conservation
 
@@ -50,9 +55,12 @@ toc: true
 
 ### Unit 8 | Waves and Harmonics
 
-[Lecture 8.1 Waves](8_waves/hphys_8_waves_lecture.md)
-
-
+- Lectures
+  - 
+  - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
+- Problem Sets
+  - [PS 8.1 SHM](<8_waves/PS 8.1 _ Harmonics of Springs and Pendula.md>)
+  - [PS 8.2 Waves](<8_waves/PS 8.2 _ Waves.md>)
 
 
 ### Unit 9 | Light and Optics
