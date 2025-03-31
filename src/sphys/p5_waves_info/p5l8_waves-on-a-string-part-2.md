@@ -14,7 +14,7 @@ In your lab notebook, open to a fresh page and add a heading for Wave Interferen
 
 |Before|During|After|
 |-|-|-|
-|![Interaction A](cosmosintheclassroom.org/assets/images/p5_waves/interaction_A.jpg)|||
+|(![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg))|||
 
 Open the simulation and select the “Pulse” and “Loose End” settings at the top.
 At the bottom, select the following settings:
@@ -91,6 +91,7 @@ Predict what you expect to see happening with the matter during and after the in
 
 
 
-
-
-
+<img src="(../../../assets/images/p5_waves/interaction_A.jpg)" width="20%" alt=Interaction A>
+<img src="(../../../assets/images/p5_waves/interaction_B.jpg) width="20%" alt = Interaction B>
+<img src="(../../../assets/images/p5_waves/interaction_C.jpg) width="20%" alt = Interaction C>
+<img src="(../../../assets/images/p5_waves/interactionD.jpg) width="20%" alt = Interaction D>
