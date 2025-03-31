@@ -6,7 +6,6 @@ Date: 23 March 2025
 math: mathjax
 css: 
   - ./assets/css/style.css
-  - ./assets/css/gallery.css
 ---
 
 # Cosmos in the Classroom
