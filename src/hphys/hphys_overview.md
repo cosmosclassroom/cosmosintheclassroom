@@ -12,8 +12,6 @@ kramdown:
 
 Updated Spring 2025
 
-
-
 |Strand|Topics|
 |-|-|
 |1 Motion| 0 Principles <br> 1 Motion in One Dimension <br> 2 Motion in 2 Dimensions <br> 3 Newtonian Forces|
