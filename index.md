@@ -11,6 +11,8 @@ css:
 
 # Cosmos in the Classroom
 
+$\vec{F} = m \cdot \vec{a}$
+
 ### Quick Links
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
