@@ -8,35 +8,12 @@ markdown: kandown
 ---
 # Welcome to Standard Physics
 
-[P5 Science Notebook](/src/sphys/p5_sci_nbook_student)
-
 ## P1 Energy from Earth Systems
 
 Today, energy grids represent a complex, dynamic network that transforms raw energy sources into the lifeblood of our technological society, connecting distant power generation facilities to the light switches and outlets in our homes and workplaces. These sophisticated systems are not merely passive conduits, but intelligent, responsive infrastructures that must continuously balance generation, transmission, and consumption across vast geographical regions, integrating an increasingly diverse array of energy sources from traditional fossil fuel power plants to intermittent renewable technologies like solar and wind, all while maintaining stability, reliability, and efficiency in a constantly shifting landscape of energy demand and supply.
 
 ## P5 Energy and Information in Waves
 Electromagnetic waves are the invisible messengers that traverse the universe, carrying energy and information through space without requiring a physical medium, representing a fundamental mechanism by which nature communicates across immense distances and scales. From the radio waves that connect our global communication networks to the visible light that allows us to perceive the world around us, from the X-rays that peer inside the human body to the cosmic radiation that carries information about distant celestial events, these waves embody a profound principle of physical interaction that bridges the microscopic quantum realm with the vast astronomical expanses, governed by elegant mathematical principles that describe their propagation, interaction, and transformation.
-### P1
-### P2
-### L4 - Wave Variables
-
-1. [Wave Variables Lab]
-2. Model - Differential Heating in the Microwave
-   1. Transmission, reflection, absorption
-   
-
-### L7 - Polarity Interactions
-
-- Molecular Models
-- [Simulation - Field+Particle Interactions](/src/sphys/P5L7_1_sim_EM_polarity)
-- [Consensus Model - Polarity](/src/sphys/P5L7_2_consensus_model_polarity)
-- [Metal in Oven Reading](/src/sphys/p5l7_validity_reliability)
-
-
-
-
-- Reading - Metal in the Microwave
-
 
 ## P3 Force, Impulse, and Collision Safety
 
