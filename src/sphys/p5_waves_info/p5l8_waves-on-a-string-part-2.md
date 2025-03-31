@@ -71,7 +71,11 @@ Produce a copy of the three-box table below; this is where you will make sketche
 
 Note that the waves are no longer of the same amplitude.
 
-<figcaption>**Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.</figcaption>
+<html>
+<figcaption>
+**Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
+</figcaption>
+</html>
 
 |Before|During|After|
 |-|-|-|
