@@ -13,7 +13,7 @@ In your lab notebook, open to a fresh page and add a heading for Wave Interferen
 
 |Before|During|After|
 |-|-|-|
-|![Interaction A]({{ site.baseurl }}/assets/images/p5_waves/interaction_A.jpg)|||
+|![Interaction A](cosmosintheclassroom/assets/images/p5_waves/interaction_A.jpg)|||
 
 Open the simulation and select the “Pulse” and “Loose End” settings at the top.
 At the bottom, select the following settings:
