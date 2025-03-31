@@ -38,7 +38,7 @@ Produce two waves similar to the “before” diagram above and run the simulati
 ### Interaction B
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
-**Table 2**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
+<figcaption>**Table 2**. Visualization of waves (a) before (b) during and (c) after occupying the same space.</figcaption>
 
 |Before|During|After|
 |-|-|-|
@@ -71,7 +71,7 @@ Produce a copy of the three-box table below; this is where you will make sketche
 
 Note that the waves are no longer of the same amplitude.
 
-**Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
+<figcaption>**Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.</figcaption>
 
 |Before|During|After|
 |-|-|-|
