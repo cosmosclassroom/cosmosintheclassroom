@@ -68,7 +68,7 @@ Note that the waves are no longer of the same amplitude.
 
 |Before|During|After|
 |-|-|-|
-|![alt text](../../../assets/images/p5_waves/interaction_C.jpg)|||
+|![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg)|||
 
 ### Interaction D
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
@@ -80,7 +80,7 @@ Note that the waves are no longer of the same amplitude.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)|                                  |                                                                          |
+|![Interaction D](../../../assets/images/p5_waves/interactionD.jpg)|||
 
 Label this set of interaction diagrams “Interaction D”
 Before
@@ -88,10 +88,3 @@ During
 After
 
 Predict what you expect to see happening with the matter during and after the interaction.
-
-
-
-<img src="(../../../assets/images/p5_waves/interaction_A.jpg)" width="20%" alt=Interaction A>
-<img src="(../../../assets/images/p5_waves/interaction_B.jpg) width="20%" alt = Interaction B>
-<img src="(../../../assets/images/p5_waves/interaction_C.jpg) width="20%" alt = Interaction C>
-<img src="(../../../assets/images/p5_waves/interactionD.jpg) width="20%" alt = Interaction D>
