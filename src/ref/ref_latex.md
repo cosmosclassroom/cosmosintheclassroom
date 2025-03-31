@@ -7,18 +7,11 @@ markdown: kandown
 mathjax: true
 ---
 
-<div style="display: flex; gap: 10px;">
-  <a href="ref_latex.html"><button>LaTeX Reference</button></a>
-  <a href="ref_pandoc.html"><button>Pandoc Reference</button></a>
-  <a href="stable-diffusion.html"><button>Stable Diffusion Reference</button></a>
-  <a href="additional_ref_1.html"><button>Additional Reference 1</button></a>
-  <a href="additional_ref_2.html"><button>Additional Reference 2</button></a>
-</div>
-
+# Reference - LaTeX
 
 Regular variables
 ```
-x, v, a, F  % Regular variables
+x, v, a, F  
 ```
 Change in variables
 ```
@@ -70,10 +63,12 @@ $F = ma$  % Inline equation
 $F = ma$  % Inline equation
 
 $$
-\begin{equation} \text{This is the text}
-    \vec{F} = ma
+\begin{equation}
+    \vec{F} = ma \label{eq:force}
 \end{equation}
 $$
+
+You can reference this equation as Equation \ref{eq:force}.
 
 ## Subscripts
 
