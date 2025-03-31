@@ -80,7 +80,7 @@ Note that the waves are no longer of the same amplitude.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)|||
+|![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)|                                  |                                                                          |
 
 Label this set of interaction diagrams “Interaction D”
 Before
