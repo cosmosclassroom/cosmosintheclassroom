@@ -8,11 +8,6 @@ mathjax: true
 ---
 
 # Cosmos in the Classroom
-![alt text](assets/images/9_magnetism/electron_spin_pairs.png)
-
-
-
-$\vec{F} = m \cdot \vec{a}$
 
 ### Quick Links
 
