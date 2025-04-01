@@ -12,7 +12,7 @@ In your lab notebook, open to a fresh page and add a heading for Wave Interferen
 ![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
-**Figure 1**. Interaction A - two waves of equal and same amplitudes approach one another.
+**Figure 1**. Interaction A - two waves of equal and "up" amplitudes approach one another.
 
 {: .figure-caption}
 **Table 1**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
@@ -89,7 +89,7 @@ Produce a copy of the three-box table below; this is where you will make sketche
 ![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
-**Figure 4**. Interaction D - two waves of *unequal* and opposite amplitudes approach one another.
+**Figure 4**. Interaction D - two waves of *unequal* and "up" amplitudes approach one another.
 
 **Table 4**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
