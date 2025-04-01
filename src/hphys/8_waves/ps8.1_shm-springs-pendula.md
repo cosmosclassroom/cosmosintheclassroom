@@ -1,8 +1,12 @@
 # PS 8.1 | Harmonics of Springs and Pendula
 
-# Problems
+## Problems
+
+#### Spring Constant of hanging mass
 
 1. A load of 45 N attached to a spring that is hanging vertically stretches the spring 14 cm. What is the spring constant?  
+
+#### A pendulum in a tower
 2. A tower contains a pendulum that extends from the ceiling to very near the floor.   
    1. If the period of the pendulum is 12 s, how tall is the tower?  
    2. What would be the height of the tower if the period of the pendulum was doubled?  
@@ -21,7 +25,7 @@
 8. A violin string fixed at both ends has a fundamental frequency of 196 Hz (G3). Calculate:
    1. The frequency of its first overtone
    2. The frequency of its second overtone
-9. A 0.50 kg mass attached to a spring oscillates with a period of 0.40 s. Calculate:
+9.  A 0.50 kg mass attached to a spring oscillates with a period of 0.40 s. Calculate:
    1. The spring constant
    2. The total energy if the amplitude is 5.0 cm
 10. Two identical waves traveling in opposite directions have wavelength 2.0 m and amplitude 3.0 cm. What is:
