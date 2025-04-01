@@ -1,3 +1,13 @@
+---
+Layout: Default
+Title: P5L8 Waves on a String Simulation, Part II
+Author: Jonathan Corbett
+Date: 31 March 2025
+markdown: kramdown
+mathjax: true
+---
+
+
 # Waves on a String - Part II
 
 ### Introduction
