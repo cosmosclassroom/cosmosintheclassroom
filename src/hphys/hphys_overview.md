@@ -37,7 +37,7 @@ Updated Spring 2025
 | Lecture | What is Physics | Lecture | What is Physics? Nature of Physics Significant Digits | [Lecture | Principles of Physics](https://docs.google.com/presentation/d/1YiTcVn7fFvuPImypXe34auUq5UlhGmQ0wo6lBBjG8g0/edit?usp=drive_link) |
 | Significant Digits Scientific Notation | Significant Rules and Sci Notation Practice | [Significant Figures Rules Practice](https://docs.google.com/document/d/1eq4Qyut9AybdCKVmdhyjXlpBtZo5Z15CPWiqy1TKA54/edit?usp=drive_link) |
 | Lecture | Metric | Lecture | Principles of Physics |  |
-| Units and Notation | Metric Conversions Significant Digits Scientific Notation | [PS 1.3 | Conversions and Sig Figs](https://docs.google.com/document/d/17Q5aD5egs-wlFNMlVLGrlkdMpuqXvGvaB5OxUDfJF-0/edit?usp=sharing) |
+| Units and Notation | Metric Conversions Significant Digits Scientific Notation | [PS 1.3 | Conversions and Sig Figs](https://docs.google.com/document/d/17Q5aD5egs-wlFNMlVLGrlkdMpuqXvGvaB5OxUDfJF-0/edit?usp=drive_link) |
 | Conversions Estimation Dimensional Analysis | Reading 1.6 to 1.8 | Pp. 11-15 |
 | Measurement Uncertainty Significant Figures Unit Conversions | Giancoli Textbook Problems Pp. 18 | 1, 3, 11, 13, 15, 17, 18, 19, 21 (give meters), 23 |
 | Assessment | Chapter 1 Quiz | [Principles of Physics Quiz](https://app.edulastic.com/author/tests/verid/64fe51e9eef2dc61ff05011f) |
@@ -75,11 +75,11 @@ Updated Spring 2025
 | Vectors, Scalars, and Trig | Reading | Vectors and Scalars | Read Sections 3.1 to 3.5 |
 |  | [Lecture | Vectors and Scalars](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) | [Lecture | Advanced Vectors](https://docs.google.com/presentation/d/1E1xXHUPzvluISyy5AT_xmtgWFO25gaI0EYQD9Q8TQBE/edit?usp=drive_link) |
 | Advanced Vectors | PS 3.0 | Graphical Vector Addition | [PS 3.0 | Graphical Vector Addition](https://docs.google.com/document/d/19eHy0CGQ8ryUM_EjTylFx-Cu_2eYNOOuu7Jm8c0Hfw0/edit?usp=drive_link) |
-|  | PS 3.1 | Triangles and Trig Practice | [PS 3.1 Triangles and Trig Practice](https://docs.google.com/document/d/1ujb4IBsg0tI-hu50I4r8SAQ5vs50j_UzqU8ktGc4L28/edit?usp=drive_link) |
-|  | Lecture | Vector Resolution |  |
+|  | PS 3.1 | Triangles and Trig Practice | [PS 3.1 | Triangles and Trig Practice](https://docs.google.com/document/d/1ujb4IBsg0tI-hu50I4r8SAQ5vs50j_UzqU8ktGc4L28/edit?usp=drive_link) |
+|  | Lecture | Vector Resolution | [Slides | Vector Resolution](#) |
 |  | PS 3.2 | Vectors in Kinematics 1 | [PS 3.2 | Vectors in Kinematics 1](https://docs.google.com/document/d/1WxCe4HbvvG17GK2l2rwd9p_Sfhd21iChFEIxRQqR7BQ/edit?usp=drive_link) |
 |  | PS 3.3 | Vectors in Kinematics 2  | [PS 3.3 | Vectors in Kinematics 2](https://docs.google.com/document/d/1E7QqDsl1rE194Kv3d6L4swea34K1Ey1MkQuVhntEu6M/edit?usp=drive_link) |
-|  | Textbook Problems | Giancoli Vector Addition | Pp. 68: 1, 3, 5, 8, 9, 11 8a) Vnorth \= 625 km/h; Vwest \= 553 km/hb) dnorth \= 1090 km; dwest \= 968 km |
+|  | Textbook Problems | Giancoli Vector Addition | Pp. 68: 1, 3, 5, 8, 9, 11 8a) Vnorth = 625 km/h; Vwest = 553 km/h b) dnorth = 1090 km; dwest = 968 km |
 | Projectile Motion | Reading | Projectile Motion Giancoli Sections 3-5 to 3-7 | Pp. 58 \- 64 |
 |  | Lecture | Projectile Motion | [Slides | Projectile Motion](https://docs.google.com/presentation/d/1htkBmXR26SI_xgU8Bf-5CCoHvX0XgHCUkO0rvqD8Rmg/edit?usp=drive_link) |
 |  | PheT Lab | Projectile Motion | [PhET Lab | Projectile Motion](https://docs.google.com/document/d/1HdBQiLQEkqu59tiyRft17_iUv_LUufkUecNgAQc9CrU/edit?usp=drive_link) |
