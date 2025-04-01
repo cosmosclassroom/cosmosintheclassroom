@@ -125,6 +125,12 @@ A quick checklist to evaluate the validity and reliability of information:
 
 
 ## L8 | Wave Interference
+
+### I notice.../I wonder... - Lightbulb Array in the Microwave
+
+|I notice...|I wonder...|
+|-|-|
+|Not||
 ## L9 | EM Radiation Technology
 ## L10 | Wave-Particle Duality
 ## L11 | Radiography and Digital Imaging
