@@ -2,16 +2,17 @@
 
 ## Wave Interference
 
-We have explored how waves interact with matter when the two come into contact.
-In this simulation, examine how waves interact when they come in contact with one another.
-Use this [link](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html) to reach the simulation for this investigation.
+We have explored how waves interact with matter when the two come into contact with particles in matter. In this simulation, examine how waves interact when they come in contact with one another.
+
+>Use this [link](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html) to reach the simulation for this investigation.
 
 ### Interaction A
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
-![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg)
+![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
 
 {: .figure-caption}
+**Figure 1**. Interaction A - two waves of equal and same amplitudes approach one another.
 
 {: .figure-caption}
 **Table 1**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
@@ -36,12 +37,13 @@ Produce two waves similar to the “before” diagram above and run the simulati
 4. In your lab notebook, draw what you see happening with the matter after the interaction.
 5. After the waves meet at the same place in space, how does the total energy compare with the total energy before?
 
-### Interaction B asdaf
+### Interaction B
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
-![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)
+![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
 
-
+{: .figure-caption}
+**Figure 2**. Interaction B - two waves of equal and opposite amplitudes approach one another.
 
 {: .figure-caption}
 **Table 2**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
@@ -69,12 +71,10 @@ After the waves meet at the same place in space, how does the total energy compa
 ### Interaction C
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-
-![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg)
+![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
 
 {: .figure-caption}
 **Figure 3**. Interaction C - two waves of *unequal* and opposite amplitudes approach one another.
-
 
 {: .figure-caption}
 **Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
@@ -86,11 +86,10 @@ Produce a copy of the three-box table below; this is where you will make sketche
 ### Interaction D
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-![Interaction D](../../../assets/images/p5_waves/interactionD.jpg)
+![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
 
 {: .figure-caption}
-**Figure 3**. Interaction C - two waves of *unequal* and opposite amplitudes approach one another.
-
+**Figure 4**. Interaction D - two waves of *unequal* and opposite amplitudes approach one another.
 
 **Table 4**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
