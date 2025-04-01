@@ -2,7 +2,7 @@
 layout: default
 title: Quiz | UCM and Gravitational Basics - Student Study Guide 
 author: Jonathan Corbett
-date 26 March 2025
+date: 26 March 2025
 mathjax: true
 ---
 # Uniform Circular Motion and Gravitational Basics
