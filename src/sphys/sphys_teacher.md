@@ -1,10 +1,10 @@
 ---
 layout: default
-Title: Standard Physics Course Overview
-Author: Jonathan Corbett
-Date: 23 March 2025
+title: Standard Physics Course Overview
+author: Jonathan Corbett
+date: 23 March 2025
 mathjax: true
-markdown: kandown
+markdown: kramdown
 ---
 # Welcome to Standard Physics
 
@@ -38,7 +38,7 @@ markdown: kandown
 - I notice/I wonder... - Bulb Array in the Microwave
 - Initial model - Interference in the microwave
 - Simulation - Wave Interferences
-  - [Waves on a String - Part II](cosmosintheclassroom/src/sphys/p5_waves_info/p5l8_waves-on-a-string-part-2)
+  - [Waves on a String Part II](p5_waves_info/p5l8_waves-on-a-string-part-2.md)
   - Exit Ticket
 - Model - Interference in the Microwave
 
