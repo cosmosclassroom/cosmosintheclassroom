@@ -9,12 +9,16 @@ Use this [link](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave
 ### Interaction A
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
+![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg)
+
+{: .figure-caption}
+
 {: .figure-caption}
 **Table 1**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction A]|||
+|||
 
 Open the simulation and select the “Pulse” and “Loose End” settings at the top.
 At the bottom, select the following settings:
@@ -35,12 +39,16 @@ Produce two waves similar to the “before” diagram above and run the simulati
 ### Interaction B asdaf
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
+![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)
+
+
+
 {: .figure-caption}
 **Table 2**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg)|||
+||||
 
 Open the simulation and select the “Pulse” and “Loose End” settings at the top.
 At the bottom, select the following settings:
@@ -59,28 +67,36 @@ In your lab notebook, draw what you see happening with the matter after the inte
 After the waves meet at the same place in space, how does the total energy compare with the total energy before?
 
 ### Interaction C
-Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
+Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-Note that the waves are no longer of the same amplitude.
+
+![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg)
+
+{: .figure-caption}
+**Figure 3**. Interaction C - two waves of *unequal* and opposite amplitudes approach one another.
+
 
 {: .figure-caption}
 **Table 3**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg)|||
+||||
 
 ### Interaction D
-Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
+Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-Note that the waves are no longer of the same amplitude.
+![Interaction D](../../../assets/images/p5_waves/interactionD.jpg)
 
 {: .figure-caption}
+**Figure 3**. Interaction C - two waves of *unequal* and opposite amplitudes approach one another.
+
+
 **Table 4**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
 |Before|During|After|
 |-|-|-|
-|![Interaction D](../../../assets/images/p5_waves/interactionD.jpg)|||
+||||
 
 Label this set of interaction diagrams “Interaction D”
 Before
