@@ -9,7 +9,7 @@ We have explored how waves interact with matter when the two come into contact w
 ### Interaction A
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
-![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
+![Interaction A](../../../assets/images/p5_waves/interaction_A.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
 **Figure 1**. Interaction A - two waves of equal and same amplitudes approach one another.
@@ -40,7 +40,7 @@ Produce two waves similar to the “before” diagram above and run the simulati
 ### Interaction B
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
 
-![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
+![Interaction B](../../../assets/images/p5_waves/interaction_B.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
 **Figure 2**. Interaction B - two waves of equal and opposite amplitudes approach one another.
@@ -71,7 +71,7 @@ After the waves meet at the same place in space, how does the total energy compa
 ### Interaction C
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
+![Interaction C](../../../assets/images/p5_waves/interaction_C.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
 **Figure 3**. Interaction C - two waves of *unequal* and opposite amplitudes approach one another.
@@ -86,7 +86,7 @@ Produce a copy of the three-box table below; this is where you will make sketche
 ### Interaction D
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: block; margin: 0 auto; width: 40%;"}
+![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
 **Figure 4**. Interaction D - two waves of *unequal* and opposite amplitudes approach one another.
