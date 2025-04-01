@@ -15,7 +15,6 @@ $\vec{F} = m \cdot \vec{a}$
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
 - [Standard Physics](https://cosmosintheclassroom.org/src/sphys/sphys_overview)
-- [Latest Lecture: Waves](src/slides/hphys_8_waves_lecture.md)
 
 ### Resources
 
