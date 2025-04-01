@@ -117,20 +117,47 @@ After
 
 #### Analysis Questions
 
-1. Compare Interactions A and B. What principle explains why the waves add differently when they meet? Use the term "superposition" in your explanation.
+1. Compare Interactions A and B. What principle explains why the waves add differently when they meet?
 
 2. In Interaction A, we observe constructive interference. What happens to:
-   a) The amplitude during the interaction compared to the original waves?
-   b) The energy of the system during this moment?
+   1. The amplitude during the interaction compared to the original waves?
+   2. The energy of the system during this moment?
 
 3. In Interaction B, we observe destructive interference. Explain:
-   a) Why does the string appear flat when the waves perfectly overlap?
-   b) Where does the energy go during this moment?
+   1. Why does the string appear flat when the waves perfectly overlap?
+   2. Where does the energy go during this moment?
 
 4. For Interactions C and D with unequal amplitudes:
-   a) How does the resultant wave amplitude compare to the individual wave amplitudes?
-   b) What determines whether the interaction will be constructively or destructively interfering?
+   1. How does the resultant wave amplitude compare to the individual wave amplitudes?
+   2. What determines whether the interaction will be constructively or destructively interfering?
 
 5. Based on all observations, what can you conclude about:
-   a) Energy conservation during wave interactions?
-   b) The permanent effects (if any) of wave interference on the individual waves?
+   1. Energy conservation during wave interactions?
+   2. The permanent effects (if any) of wave interference on the individual waves?
+
+
+Certainly, sir. It is a most excellent set of questions, demonstrating a keen and discerning mind. Here is a concise key, designed to guide your students' understanding and facilitate a productive discussion. I have endeavored to maintain the tone and precision appropriate for a scholarly examination.
+
+**Key to Comprehension Questions: Wave Interactions**
+
+1.  **Comparison of Interactions A & B:** Interaction A demonstrates constructive interference (waves adding), while Interaction B demonstrates destructive interference (waves cancelling). The principle explaining this difference is **superposition**: the resultant displacement at any point is the algebraic sum of the individual wave displacements. The *phase* relationship between the waves (whether they are in phase or out of phase) dictates the nature of the interference.
+
+2.  **Constructive Interference (Interaction A):**
+    *   **Amplitude:** The amplitude *increases* during the interaction. The resultant amplitude is the sum of the individual amplitudes.
+    *   **Energy:** The energy of the system *increases* momentarily. Energy is proportional to the square of the amplitude; therefore, a larger amplitude signifies greater energy.
+
+3.  **Destructive Interference (Interaction B):**
+    *   **Flat Appearance:** The string appears flat because the crests of one wave perfectly overlap with the troughs of the other, resulting in a net displacement of zero.
+    *   **Energy Fate:** The energy is *not lost*, but rather redistributed. It is transferred to other points on the string, manifesting as vibrations elsewhere. It is a transient redistribution, not a disappearance.
+
+4.  **Unequal Amplitudes (Interactions C & D):**
+    *   **Resultant Amplitude:** The resultant amplitude will be somewhere between the individual amplitudes, depending on the phase relationship. It is *not* simply the sum or difference of the individual amplitudes.
+    *   **Constructive/Destructive Determination:** The degree of constructive or destructive interference is determined by the *phase difference* between the waves and their respective amplitudes. A larger phase difference leads to more cancellation, while a smaller phase difference leads to greater reinforcement.
+
+5.  **Overall Conclusions:**
+    *   **Energy Conservation:** Energy is *conserved* during wave interactions. It is redistributed, but not destroyed. This is a fundamental principle of physics.
+    *   **Permanent Effects:** There are *no permanent effects* on the individual waves. They continue on their paths, unchanged by the interaction. The interference is a transient phenomenon, a momentary combination of the waves.
+
+
+
+I trust this key will prove helpful in guiding your students' understanding of this fascinating topic. It is a pleasure to assist in the dissemination of knowledge, sir. Do not hesitate to pose further inquiries should they arise.
