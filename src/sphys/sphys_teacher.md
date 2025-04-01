@@ -37,8 +37,8 @@ markdown: kandown
 
 - I notice/I wonder... - Bulb Array in the Microwave
 - Initial model - Interference in the microwave
-- Simulation - Waves on a String
-  - Simulation Guide
+- Simulation - Wave Interferences
+  - [Waves on a String - Part II](p5_waves_info/p5l8_waves-on-a-string-part-2.md)
   - Exit Ticket
 - Model - Interference in the Microwave
 

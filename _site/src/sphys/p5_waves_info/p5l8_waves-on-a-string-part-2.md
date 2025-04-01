@@ -1,10 +1,20 @@
 # Waves on a String - Part II
 
-## Wave Interference
+### Introduction
 
-We have explored how waves interact with matter when the two come into contact with particles in matter. In this simulation, examine how waves interact when they come in contact with one another.
+Unlike a collection of discrete particles, a wave is a disturbance, a transfer of energy propagating through a medium – or, in the case of light and other electromagnetic waves, through space itself. This distinction is crucial, for it unlocks a profound and often perplexing truth: very unlike particles, waves can occupy the same space at the same time.
 
->Use this [link](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html) to reach the simulation for this investigation.
+Consider, for a moment, the implications of this. We are accustomed to thinking of the world as composed of solid, impenetrable objects. A ball cannot pass through a wall; a person cannot occupy the same volume as another. This is because these objects are made of matter – of particles that possess mass and volume. But waves, being disturbances of energy rather than collections of matter, are not bound by this constraint. They are, in a very real sense, ethereal.
+
+Let’s elaborate. Imagine two ripples spreading outwards from two pebbles dropped into a still pond.  Each ripple is a wave, a crest and a trough moving through the water.  Now, what happens when these two ripples meet? Do they collide and destroy each other?  The answer, surprisingly, is no. They *interfere*.  Where the crests of both waves coincide, we see a larger crest – a phenomenon we call *constructive interference*. Where a crest of one wave meets a trough of another, they partially or completely cancel each other out – *destructive interference*.  The waves pass through each other, largely unchanged, continuing on their respective paths.
+
+This seemingly simple observation reveals a profound truth about the nature of energy. It demonstrates that energy, unlike matter, is not inherently exclusive. It can be shared, combined, and redistributed without fundamentally altering the underlying waves themselves. It’s important to note that this isn’t merely a quirk of water waves; it’s a universal principle that governs the behaviour of all types of waves – sound waves, light waves, even the waves that describe the probability of finding an electron in a given location.
+
+The underlying principle here is that the total displacement at any point is the sum of the displacements of the individual waves.  This is the essence of superposition.  It's a mathematical statement, but its implications are deeply philosophical. It challenges our intuitive understanding of space and matter, revealing a universe where energy can flow and interact in ways that defy our everyday experience.
+
+## Wave Interference Simulation
+
+Use this [link](https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_all.html) to reach the simulation for this investigation.
 
 ### Interaction A
 In your lab notebook, open to a fresh page and add a heading for Wave Interference. Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time.
