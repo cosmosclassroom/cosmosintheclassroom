@@ -130,7 +130,10 @@ A quick checklist to evaluate the validity and reliability of information:
 
 |I notice...|I wonder...|
 |-|-|
-|Not||
+|||
+
+
+
 ## L9 | EM Radiation Technology
 ## L10 | Wave-Particle Duality
 ## L11 | Radiography and Digital Imaging
