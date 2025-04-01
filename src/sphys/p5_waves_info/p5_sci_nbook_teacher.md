@@ -143,6 +143,10 @@ A quick checklist to evaluate the validity and reliability of information:
 |-|-|-|
 ||||
 
+**Superposition** - when two waves occupy the same space at the same time
+**Constructive Interference** - when two superpositioned waves combine energy to make a higher-energy wave at that location
+**Destructive Interference** - when two superpositioned waves combine energy to reduce or cancel-out the energy at that location
+
 
 ## L9 | EM Radiation Technology
 ## L10 | Wave-Particle Duality
