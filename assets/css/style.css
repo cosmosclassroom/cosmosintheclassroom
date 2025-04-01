@@ -112,11 +112,10 @@ ul, ol {
 /* Table styling for data presentation */
 table {
     width: 100%;
+    margin: 1.5rem 0;
     border-collapse: collapse;
     border: 1px solid #151e27;
-    margin: 1.5rem 0;
-    table-layout: fixed;
-    empty-cells: show;
+    table-layout: auto;    /* Changed from fixed to auto for better column sizing */
 }
 
 /* Table header and cell styling */
@@ -124,8 +123,19 @@ th, td {
     border: 1px solid #151e27;
     padding: 0.75rem;
     text-align: left;
-    empty-cells: show;
     min-width: 50px;
+    min-height: 50px; /* Added to maintain square shape */
+    height: 50px; /* Added to maintain square shape */
+}
+
+/* Empty cell handling */
+td:empty::after {
+    content: "\00a0";    /* Add non-breaking space for empty cells */
+    display: inline-block;
+    width: 50px; /* Fixed width for square shape */
+    height: 50px; /* Fixed height for square shape */
+    min-width: 50px;
+    min-height: 50px;
 }
 
 /* Zebra striping for tables */
