@@ -22,7 +22,11 @@ mathjax: true
     - [Modeling Polarity in the Microwave Oven](#modeling-polarity-in-the-microwave-oven)
     - [Evaluating Information - Validity and Reliability](#evaluating-information---validity-and-reliability)
   - [L8 | Wave Interference](#l8--wave-interference)
+    - [Waves on a String - Part II](#waves-on-a-string---part-ii)
+      - [Wave Interference](#wave-interference)
+    - [Modeling Interference in the Microwave Oven](#modeling-interference-in-the-microwave-oven)
   - [L9 | EM Radiation Technology](#l9--em-radiation-technology)
+    - [Powers of 10 - Quick Reference](#powers-of-10---quick-reference)
   - [L10 | Wave-Particle Duality](#l10--wave-particle-duality)
   - [L11 | Radiography and Digital Imaging](#l11--radiography-and-digital-imaging)
   - [L12 | Digital Communication](#l12--digital-communication)
@@ -139,16 +143,75 @@ A quick checklist to evaluate the validity and reliability of information:
 |Some of the bulbs aren't turning on|Why the waves aren't transferring energy to some bulbs|
 |Some bulbs are flickering|I wonder if the waves are being disrupted by something|
 
+### Waves on a String - Part II
+
+#### Wave Interference
+
 |Before|During|After|
 |-|-|-|
 ||||
 
 **Superposition** - when two waves occupy the same space at the same time
+
 **Constructive Interference** - when two superpositioned waves combine energy to make a higher-energy wave at that location
+
 **Destructive Interference** - when two superpositioned waves combine energy to reduce or cancel-out the energy at that location
 
+### Modeling Interference in the Microwave Oven
+
+*Gotta Have It!*
+- outgoing (incident) microwave
+- reflected microwave 
+- force arrows
+- wave amplitudes (and differences)
 
 ## L9 | EM Radiation Technology
+
+
+### Powers of 10 - Quick Reference
+Certainly, sir. A concise reference for students’ notebooks regarding powers of ten and metric prefixes relating to wavelengths is an excellent and practical addition. Here is a draft, presented with the clarity and precision I trust you will find suitable:
+
+**Reference: Powers of Ten and Metric Prefixes for Wavelengths**
+
+Understanding the scale of wavelengths requires familiarity with powers of ten and the corresponding metric prefixes. These prefixes allow us to express extremely large or small distances in a more manageable form.
+
+**I. Powers of Ten**
+
+Very well, sir. I shall revise the reference accordingly. Removing the approximate values and extending the table to include "giga" will enhance its utility. Here is the amended version:
+
+**Reference: Powers of Ten and Metric Prefixes for Wavlengths**
+
+Understanding the scale of wavelengths requires familiarity with powers of ten and the corresponding metric prefixes. These prefixes allow us to express extremely large or small distances in a more manageable form.
+
+**I. Powers of Ten**
+
+As a base identity, $10^0 = 1$
+
+A power of ten is any number that results from raising 10 to an integer exponent. For example:
+
+|Larger Than 1|Smaller Than 1|
+|-|-|
+|10⁰ = 1 <br> 10¹ = 10 <br> 10² = 100 <br> 10³ = 1000|10⁻¹ = 0.1 <br> 10⁻² = 0.01 <br> 10⁻³ = 0.001|  
+
+**II. Metric Prefixes for Wavlengths**
+
+The following table outlines common metric prefixes used when describing wavelengths, along with their corresponding powers of ten.
+
+| Prefix    | Symbol | Power of Ten |
+| ---------- | ------ | ------------ |
+| Nano (n)  | n     | 10⁻⁹        |
+| Micro (µ) | µ     | 10⁻⁶        |
+| Milli (m) | m     | 10⁻³        |
+| Centi (c) | c     | 10⁻²        |
+||Base Units (m, g, N)||
+| Kilo (k)  | k     | 10³         |
+| Mega (M) | M | 10⁶ |
+| Giga (G) | G | 10⁹ |
+
+**Example:**
+
+A wavelength of 500 *nanometers* (500 nm) is equal to 500 x 10⁻⁹ meters.
+
 ## L10 | Wave-Particle Duality
 ## L11 | Radiography and Digital Imaging
 ## L12 | Digital Communication
