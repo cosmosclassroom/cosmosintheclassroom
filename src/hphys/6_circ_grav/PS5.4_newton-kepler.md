@@ -43,7 +43,7 @@ In this problem set, use the mathematical relationships described by Kepler and 
 6.  1.86 x 10^6 N
 7.  4.16 x 10^17 N
 8.  5.51 x 10^20 N
-9.  $F_{g_orbit}} = 4.08 \times 10^6 \, N; F_{g_ground}} = 4.09 \times 10^6 \, N$
+9.  $F_{{g_orbit}} = 4.08 \times 10^6 \, N; F_{{g_ground}} = 4.09 \times 10^6 \, N$
 10. The force is reduced to $\frac{1}{4}\,$ its strength.
 11. The force is increased by four times its strength.
 </details>
