@@ -3,7 +3,7 @@ layout: default
 title: PS 5.4 Newton's and Kepler's Laws
 author: Jonathan Corbett
 date: 23 March 2025
-markdown: kandown
+markdown: kramdown
 mathjax: true
 ---
 # Newton’s and Kepler’s Laws Problem Set
