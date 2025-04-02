@@ -1,6 +1,10 @@
+---
+Layout: Default
+Title: PS 6.4 Newton's and Kepler's Laws
+Author: Jonathan Corbett
+Date: 2 April 2025
+---
 # Newton’s and Kepler’s Laws Problem Set
-
-# ---
 
 In this problem set, use the mathematical relationships described by Kepler and Newton to answer questions about the forces and orbits of bodies in space. This sheet is designed to be accompanied by the [Planetary Fact Sheet Metric](6.3_orbit_fact_sheet.md) handout.
 
