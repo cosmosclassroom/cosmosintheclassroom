@@ -31,3 +31,19 @@ In this problem set, use the mathematical relationships described by Kepler and 
 
 11. Suppose that two objects attract each other with a gravitational force of 16 units. If the distance between the two objects is reduced in half, then what is the new force of attraction between the two objects?
 
+
+<details>
+
+1.  9.54 AU
+2.  165.8 years; 60,557 days
+3.  39.5 AU
+4.  0.24 years
+5.  3.54 x 10^22 N
+6.  1.86 x 10^6 N
+7.  4.16 x 10^17 N
+8.  5.51 x 10^20 N
+9.  $F_{g_orbit}} = 4.08 \times 10^6 \, N; F_{g_ground} = 4.09 \times 10^6 \, N$
+10. The force is reduced to $\frac{1}{4}$ its strength.
+11. The force is increased by four times its strength.
+
+</details>
