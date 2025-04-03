@@ -34,22 +34,22 @@ Use this equation to solve the following problems. Express your answers in scien
 
 **Solutions:**
 
-1.  **Speed:**  $1.0 \times 10^3 \text{ m/s}$
+1.  $1.0 \times 10^3 \text{ m/s}$
 
-2.  **Wavelength:** $6.86 \times 10^{-1} \text{ m}$
+2.  $6.86 \times 10^{-1} \text{ m}$
 
-3.  **Frequency:** $ 1.0 \times 10^6 \text{ Hz}$
+3.  $1.0 \times 10^6 \text{ Hz}$
 
-4.  **Frequency:** $ 2.5 \times 10^1 \text{ Hz}$
+4.  $2.5 \times 10^1 \text{ Hz}$
 
-5.  **Wavelength:** $3.0 \text{ m}$
+5.  $3.0 \text{ m}$
 
-6.  **Frequency:** $6.0 \times 10^{14} \text{ Hz}$
+6.  $6.0 \times 10^{14} \text{ Hz}$
 
-7.  **Speed:** $ 1.43 \times 10^3 \text{ m/s}$
+7.  $1.43 \times 10^3 \text{ m/s}$
 
-8.  **Wavelength:** $ 3.6 \times 10^2 \text{ m}$
+8.  $3.6 \times 10^2 \text{ m}$
 
-9.  **Frequency:** $ \approx 6.67 \times 10^{14} \text{ Hz}$
+9.  $\approx 6.67 \times 10^{14} \text{ Hz}$
 
-10. **Wavelength:** $ 5.0 \text{ m}$
+10. $5.0 \text{ m}$
