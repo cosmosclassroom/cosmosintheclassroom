@@ -27,11 +27,11 @@ $$ c = fλ$$.
 
 #### Energy and Frequency: The energy of an EM wave is directly proportional to its frequency.  Higher frequency waves have higher energy.
 
-Which type of EM radiation has the highest energy?  Which has the lowest?
+- Which type of EM radiation has the highest energy?  Which has the lowest?
 
-How does the energy of the radiation relate to its potential to cause harm to living tissue?  Give examples from the cards.
+- How does the energy of the radiation relate to its potential to cause harm to living tissue?  Give examples from the cards.
 
-Penetration and Wavelength: Longer wavelength EM waves generally penetrate materials more easily than shorter wavelength waves.
+#### Penetration and Wavelength: Longer wavelength EM waves generally penetrate materials more easily than shorter wavelength waves.
 
 Explain why radio waves are used for communication, while gamma rays are used in cancer treatment (think about their relative wavelengths and how they interact with matter).
 
