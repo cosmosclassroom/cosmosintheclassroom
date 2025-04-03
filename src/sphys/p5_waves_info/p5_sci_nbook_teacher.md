@@ -86,7 +86,7 @@ Conclusions: I *think* "absorbed" means the energy from the field is used to mak
 **Table 2.** Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
 
 | Molecule | 1.0 Hz | 0.5 Hz | 0.25 Hz | 0.125 Hz |
-| :-------- | :----- | :----- | :----- | :----- |
+| :-------- | :----- | :-----: | :-----: | :-----: |
 | **Water** | *Significant* rotation and vibration. Molecules appear to be moving rapidly and chaotically.  | *Moderate* rotation and vibration. Movement is noticeable but less intense than at 1.0 Hz. | *Slight* rotation and vibration. Movement is subtle and may require close observation. | *Very Slight* rotation and vibration. Movement is barely perceptible. |
 | **Ethylene** | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. |
 
