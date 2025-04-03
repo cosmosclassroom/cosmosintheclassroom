@@ -1,3 +1,11 @@
+---
+Title: Problem Set - Wave Equation in Sci. Not. Practice
+Author: Jonathan Corbett
+Date: 3 April 2025
+Markdown: kramdown
+mathjax: True
+---
+
 # Wave Equation Practice Problems
 
 The wave equation relates the speed ($v$), frequency ($f$), and wavelength ($\lambda$) of a wave:
