@@ -168,6 +168,8 @@ A quick checklist to evaluate the validity and reliability of information:
 
 ## L9 | EM Radiation Technology
 
+<--- Frequency Increases ----- Frequency Decreases ----->
+<---- Wavelength Decreases --- Wavelength Increases ----> 
 
 ### Powers of 10 - Quick Reference
 
