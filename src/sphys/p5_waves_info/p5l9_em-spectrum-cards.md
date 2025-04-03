@@ -22,6 +22,7 @@ Describe what you observe about the trend in frequency as wavelength increases:
 
  - The Speed of Light: The speed of light (c) is constant for all types of electromagnetic radiation. The relationship between speed, frequency (f), and wavelength (λ) is given by the equation:
 
+
 $$c = fλ$$. 
 
 - How does this equation explain the relationship you observed between frequency and wavelength in Part 1?
