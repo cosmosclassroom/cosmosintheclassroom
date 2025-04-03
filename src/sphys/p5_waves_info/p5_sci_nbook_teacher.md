@@ -170,10 +170,6 @@ A quick checklist to evaluate the validity and reliability of information:
 
 ### Powers of 10 - Quick Reference
 
-**Reference: Powers of Ten and Metric Prefixes for Wavlengths**
-
-Understanding the scale of wavelengths requires familiarity with powers of ten and the corresponding metric prefixes. These prefixes allow us to express extremely large or small distances in a more manageable form.
-
 **I. Powers of Ten**
 
 As a base identity, $10^0 = 1$
