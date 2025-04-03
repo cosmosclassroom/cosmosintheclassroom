@@ -164,6 +164,7 @@ A quick checklist to evaluate the validity and reliability of information:
 - reflected microwave 
 - force arrows
 - wave amplitudes (and differences)
+- lightbulb with electrons in filament
 
 ## L9 | EM Radiation Technology
 
