@@ -8,9 +8,9 @@ mathjax: True
 
 # Wave Equation Practice Problems
 
-The wave equation relates the speed ($v$), frequency ($f$), and wavelength ($\lambda$) of a wave:
+The wave equation relates the speed of light, ($c$), frequency ($f$), and wavelength ($\lambda$) of a wave:
 
-$$v = f \lambda$$
+$$c = f \lambda$$
 
 Use this equation to solve the following problems. Express your answers in scientific notation where appropriate.
 
