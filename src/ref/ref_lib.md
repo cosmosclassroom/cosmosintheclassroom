@@ -12,11 +12,16 @@ marp: True
 # Reference Library
 
 This document serves as a directory to all of the reference pages in this folder.
+
+## Instructional Activities
+
 [Explain Like I'm Five](ref_eli5.md)
 
 [ELI-Sci](ref_eli5-sci.md)
 
+<img src="../../assets/images/aristotle.png" style="width: 30%; float: right; margin: 0 0 10px 10px;" alt="Aristotle image"/>
 
+## Programming and Computer Design
 
 [LaTeX](ref_latex.md)
 
@@ -32,18 +37,10 @@ This document serves as a directory to all of the reference pages in this folder
 
 
 
----
-
-## Navigation
-<div style="display: flex; gap: 10px;">
-  <a href="www.cosmosintheclassroom.org/ref/ref_latex.html"><button>LaTeX Reference</button></a>
-  <a href="www.cosmosintheclassroom.org/ref/ref_pandoc.html"><button>Pandoc Reference</button></a>
-  <a href="www.cosmosintheclassroom.org/ref/ref_markdown.html"><button>Markdown Reference</button></a>
-  <a href="www.cosmosintheclassroom.org/ref/ref_html.html"><button>HTML Reference</button></a>
-  <a href="www.cosmosintheclassroom.org/ref/additional_ref_2.html"><button>Additional Reference 2</button></a>
-</div>
-
 [Rocket-Launch]: (../../assets/images/rocket-launch-trail.png)
 
+## Historical Biographies
+
 [Kepler](ref_johannes_kepler.md)
+
 [Newton](ref_isaac_newton.md)
