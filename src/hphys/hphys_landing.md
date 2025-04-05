@@ -9,24 +9,20 @@ toc: true
 ---
 |Strand|Topics|
 |-|-|
-|1 Motion| 0 [Fundamentals] <br> 1 Motion in One Dimension <br> 2 [Mechanics] <br> 3 [Dynamics]|
+|Motion| 0 [Fundamentals] <br> 1 Motion in One Dimension <br> 2 [Mechanics] <br> 3 [Dynamics]|
 |Energy|4 [Conservation] <br> 5 Conservation of Momentum <br> 6 Rotational Motion <br> 7 [Harmonics]|
 |Waves|8 Wave Functions <br> 9 Light and Sound <br> 10 Electromagnetism|
 |Charge|11 [Electricity] <br> 12 [Electricity]|
 
 
-
-
-
-
-
-
+[Formulae and Constants Reference Sheet](../ref/ref_phys_eqs.md)
 
 ## Mechanics
 
 #### Unit 1 | Principles of Physics
 
 #### Unit 2 | Kinematics 1
+
 [PS 2.2 Vectors](1_mechanics/2.2_vectors.md)
 
 #### Unit 3 | Kinematics 2
