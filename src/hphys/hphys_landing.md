@@ -9,11 +9,10 @@ toc: true
 ---
 |Strand|Topics|
 |-|-|
-|Motion| 0 [Fundamentals] <br> 1 Motion in One Dimension <br> 2 [Mechanics] <br> 3 [Dynamics]|
-|Energy|4 [Conservation] <br> 5 Conservation of Momentum <br> 6 Rotational Motion <br> 7 [Harmonics]|
-|Waves|8 Wave Functions <br> 9 Light and Sound <br> 10 Electromagnetism|
-|Charge|11 [Electricity] <br> 12 [Electricity]|
-
+|Motion| [Unit 0 - Fundamentals](#unit-0--fundamentals) <br> [Unit 1 - Motion in One Dimension](#unit-1--principles-of-physics) <br> [Unit 2 - Mechanics](#unit-2--kinematics-1) <br> [Unit 3 - Dynamics](#unit-3--kinematics-2)|
+|Energy|[Unit 4 - Conservation](#unit-4--dynamics) <br> [Unit 5 - Conservation of Momentum](#unit-5--work-and-energy) <br> [Unit 6 - Rotational Motion](#unit-6--collisions-impulse-momentum) <br> [Unit 7 - Harmonics](#unit-7--rotational-motion-and-gravitation)|
+|Waves|[Unit 8 - Wave Functions](#unit-8--waves-and-harmonics) <br> [Unit 9 - Light and Sound](#unit-9--light-and-optics) <br> [Unit 10 - Electromagnetism](#unit-10--electrostatics)|
+|Charge|[Unit 11 - Electricity](#unit-11--electromagnetism-and-currents) <br> [Unit 12 - Circuits](#unit-11--optics)|
 
 [Formulae and Constants Reference Sheet](../ref/ref_phys_eqs.md)
 
@@ -46,7 +45,7 @@ toc: true
 |Topic|Resource|
 |-:|:-|
 |Uniform Circular Motion|Lecture <br> PS 5.1 - Uniform Circular Motion <br> Giancoli Problems - UCM <br> Lab - Uniform Circular Motion|
-|Universal Gravitation|Lab - Gravity and Orbits Simulation <br> [Problem Set - Scientific Notation Practice](ps1.5_key_sci_not_practice.md) <br> [Problem Set - Universal Gravitation](PS5.3_univ_grav.md) <br> [PS 5.3 - Universal Gravitation](https://cosmosintheclassroom.org/src/hphys/PS5.3_univ_grav) <br> [Key - PS5.3](6_circ_grav/ps5.3_univ_grav_key.md)
+|Universal Gravitation|Lab - Gravity and Orbits Simulation <br> [Problem Set - Scientific Notation Practice](1_mechanics/ps1.5_sci_not_practice.md) <br> [Problem Set - Universal Gravitation](6_circ_grav/PS5.3_univ_grav.md) <br> [Key - PS5.3](6_circ_grav/ps5.3_univ_grav_key.md)|
 |Kepler's Laws and Orbits|Lecture <br> PS 8.4 Kepler's Laws of Motion <br> Giancoli Problems|
 
 ### Unit 8 | Waves and Harmonics
@@ -56,8 +55,8 @@ toc: true
   - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
   
 - Problem Sets
-  - [8.1 SHM Springs and Pendula](<8_waves/PS 8.1 _ Harmonics of Springs and Pendula.md>)
-  - [8.2 SHM Waves](<8_waves/PS 8.2 _ Waves.md>)
+  - [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
+  - [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
 
 - Textbook Assignments
 
@@ -93,14 +92,15 @@ toc: true
 ### Unit 11 | Electromagnetism and Currents
 
 
-[Fundamentals]: #0-Fundamentals
+[Fundamentals]: #unit-0--fundamentals
 [Mechanics]: #unit-2--kinematics-1
 [Dynamics]: #unit-4--dynamics
 [Conservation]: #unit-5--work-and-energy
 [Harmonics]: #unit-8--waves-and-harmonics
 [Electricity]: #unit-10--electrostatics
 
-[6.1 Orbital Station (key)](6_circ_grav/6.1_ucm_orbital_station_key.md) <br>
-[6.1 UCM Orbital Station](6_circ_grav/6.1_ucm_orbital_station.md)
+[6.1 Orbital Station (Key)]: (6_circ_grav/6.1_ucm_orbital_station_key.md)
+[6.1 UCM Orbital Station]: (6_circ_grav/6.1_ucm_orbital_station.md)
+[6.0 Orbital Fact Sheet]: (6_circ_grav/6.3_orbit_fact_sheet.md)
 
-[6.0 Orbital Fact Sheet](6_circ_grav/6.3_orbit_fact_sheet.md)
+[def]: #unit-8--waves-and-harmonics
