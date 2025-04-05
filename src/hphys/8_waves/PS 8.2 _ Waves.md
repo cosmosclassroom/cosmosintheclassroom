@@ -1,4 +1,11 @@
-# PS 8.2 | Waves 1
+---
+Layout: Default
+Title: PS 8.2 - Harmonics of Waves
+Author: Jonathan Corbett
+Date: 5 April 2025
+---
+
+# PS 8.2 | Harmonics of Waves
 
 Problems
 

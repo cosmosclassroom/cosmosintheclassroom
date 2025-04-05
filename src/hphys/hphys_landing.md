@@ -54,10 +54,16 @@ toc: true
 - Lectures
   - [Slides - SHM](8_waves/slides_8_shm.md)
   - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
+  
 - Problem Sets
   - [8.1 SHM Springs and Pendula](<8_waves/PS 8.1 _ Harmonics of Springs and Pendula.md>)
   - [8.2 SHM Waves](<8_waves/PS 8.2 _ Waves.md>)
 
+- Textbook Assignments
+
+|Topic & Sections|Pages and Problems|
+|-:|:-|
+|||
 
 ### Unit 9 | Light and Optics
 

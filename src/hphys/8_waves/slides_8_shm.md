@@ -368,6 +368,20 @@ For any given wave of period $T$, four standing waves can exist:
 
 ---
 
+## Key Equations Summary
+
+**Simple Harmonic Motion:**
+- Hooke's Law: $F = -kx$
+- Spring Period: $T = 2\pi\sqrt{\frac{m}{k}}$
+- Pendulum Period: $T = 2\pi\sqrt{\frac{l}{g}}$
+
+**Waves:**
+- Wave Speed: $v = \frac{\lambda}{T}$ or $v = f\lambda$
+- Frequency-Period Relationship: $f = \frac{1}{T}$
+- Wave Energy: $E \propto A^2$
+
+---
+
 ## Example 1 | A pendulum clock
 
 A pendulum clock is being designed to have a period of exactly 1.0 s. How long should the pendulum be?
@@ -383,3 +397,6 @@ The body of a 1 275 kg car is supported on a frame by four springs. Two people r
 ## Example 3 | A piano string
 
 A piano string tuned to middle C vibrates with a frequency of 262 Hz. Assuming the speed of sound in air is 343 m/s, find the wavelength of the sound waves produced by the string.
+
+
+
