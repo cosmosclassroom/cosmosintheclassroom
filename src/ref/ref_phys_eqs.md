@@ -3,6 +3,7 @@ layout: default
 title: Physical Reference Sheet
 author: Jonathan Corbett
 date: 23 March 2025
+markdown: kramdown
 ---
 
 # Common Notations Reference
@@ -96,9 +97,3 @@ This file can be expanded as needed to include any other commonly used values or
 | $\Sigma$ | Sigma, often used for summation |
 
 This file can be expanded as needed to include any other commonly used values or notations. You can refer to this file whenever you need to use these symbols or equations in your documents.
-
-
-
-<footer>
-  <p><a href="index.html">Back to Home Page</a></p>
-</footer>

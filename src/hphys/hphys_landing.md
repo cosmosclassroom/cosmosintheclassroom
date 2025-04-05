@@ -27,7 +27,7 @@ toc: true
 #### Unit 1 | Principles of Physics
 
 #### Unit 2 | Kinematics 1
-
+[PS 2.2 Vectors](1_mechanics/2.2_vectors.md)
 
 #### Unit 3 | Kinematics 2
 
