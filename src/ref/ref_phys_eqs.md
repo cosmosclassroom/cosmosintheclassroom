@@ -7,9 +7,10 @@ markdown: kramdown
 ---
 
 # Common Notations Reference
-<details>
+
 
 ## Mathematical Symbols
+
 | Symbol | Description | Example |
 |--------|-------------|---------|
 | $\pi$  | Pi          | $\pi \approx 3.14159$ |
@@ -17,9 +18,10 @@ markdown: kramdown
 | $i$    | Imaginary Unit | $i^2 = -1$ |
 | $\infty$ | Infinity | $\lim_{x \to \infty} f(x)$ |
 
-</details>
+
 
 ## Equations
+
 | Equation | Description |
 |----------|-------------|
 | $E = mc^2$ | Einstein's mass-energy equivalence |
@@ -28,6 +30,7 @@ markdown: kramdown
 | $e^{i\pi} + 1 = 0$ | Euler's identity |
 
 ## Units of Measurement
+
 | Unit | Symbol | Description |
 |------|--------|-------------|
 | Meter | m | Unit of length |
@@ -36,6 +39,7 @@ markdown: kramdown
 | Ampere | A | Unit of electric current |
 
 ## Common Constants
+
 | Constant | Symbol | Value |
 |----------|--------|-------|
 | Speed of Light | $c$ | $3 \times 10^8 \, \text{m/s}$ |
@@ -44,6 +48,7 @@ markdown: kramdown
 | Avogadro's Number | $N_A$ | $6.022 \times 10^{23} \, \text{mol}^{-1}$ |
 
 ## Common Notations
+
 | Notation | Description |
 |----------|-------------|
 | $\alpha$ | Alpha, often used for angles |
@@ -52,10 +57,11 @@ markdown: kramdown
 | $\Delta$ | Delta, often used for change or difference |
 | $\Sigma$ | Sigma, often used for summation |
 
-This file can be expanded as needed to include any other commonly used values or notations. You can refer to this file whenever you need to use these symbols or equations in your documents.<!-- filepath: d:\python\Jupyter\Reference\Common Notations.md -->
+
 # Common Notations Reference
 
 ## Mathematical Symbols
+
 | Symbol | Description | Example |
 |--------|-------------|---------|
 | $\pi$  | Pi          | $\pi \approx 3.14159$ |
@@ -64,6 +70,7 @@ This file can be expanded as needed to include any other commonly used values or
 | $\infty$ | Infinity | $\lim_{x \to \infty} f(x)$ |
 
 ## Equations
+
 | Equation | Description |
 |----------|-------------|
 | $E = mc^2$ | Einstein's mass-energy equivalence |
@@ -72,6 +79,7 @@ This file can be expanded as needed to include any other commonly used values or
 | $e^{i\pi} + 1 = 0$ | Euler's identity |
 
 ## Units of Measurement
+
 | Unit | Symbol | Description |
 |------|--------|-------------|
 | Meter | m | Unit of length |
@@ -80,6 +88,7 @@ This file can be expanded as needed to include any other commonly used values or
 | Ampere | A | Unit of electric current |
 
 ## Common Constants
+
 | Constant | Symbol | Value |
 |----------|--------|-------|
 | Speed of Light | $c$ | $3 \times 10^8 \, \text{m/s}$ |
@@ -88,6 +97,7 @@ This file can be expanded as needed to include any other commonly used values or
 | Avogadro's Number | $N_A$ | $6.022 \times 10^{23} \, \text{mol}^{-1}$ |
 
 ## Common Notations
+
 | Notation | Description |
 |----------|-------------|
 | $\alpha$ | Alpha, often used for angles |
