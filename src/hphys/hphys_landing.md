@@ -56,7 +56,7 @@ toc: true
 ### Unit 8 | Waves and Harmonics
 
 - Lectures
-  - 
+  - [Slides - SHM](8_waves/slides_8_shm.md)
   - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
 - Problem Sets
   - [PS 8.1 SHM](<8_waves/PS 8.1 _ Harmonics of Springs and Pendula.md>)
