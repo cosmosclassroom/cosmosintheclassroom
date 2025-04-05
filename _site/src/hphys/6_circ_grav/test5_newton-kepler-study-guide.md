@@ -12,7 +12,9 @@ Understand the factors affecting gravitational force and their mathematical rela
 
 Know the equation for gravitational force and what each variable represents.
 
-State and explain Kepler's Laws conceptually and/or mathematically.
+Kepler's Laws of Planetary Motion
+
+State and explain Kepler's Laws.
 
 Describe orbits using Kepler's Laws (shape, location of the central body).
 

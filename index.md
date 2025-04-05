@@ -9,6 +9,14 @@ mathjax: true
 
 # Cosmos in the Classroom
 
+The force of gravity near the surface of Earth is
+
+$$F_g = m \cdot a_g$$
+
+Where $a_g \approx 9.80 \frac{m}{s^2}$
+
+
+
 ### Quick Links
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)

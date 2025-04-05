@@ -1,3 +1,10 @@
+---
+Layout: Default
+Title: PS 8.1 - Wave Equation 1
+Author: Jonathan Corbett
+Date: 5 April 2025
+---
+
 # PS 8.1 | Harmonics of Springs and Pendula
 
 # Problems
