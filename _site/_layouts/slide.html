@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal.js/dist/theme/{{ site.reveal_theme | default: 'black' }}.css" id="theme">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/reveal.js/plugin/highlight/monokai.css">
+  {% if site.mathjax %}
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  {% endif %}
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      {{ content }}
+    </div>
+  </div>
+  
+  <script src="{{ site.baseurl }}/assets/reveal.js/dist/reveal.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal.js/plugin/math/math.js"></script>
+  <script src="{{ site.baseurl }}/assets/reveal.js/plugin/notes/notes.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      controls: {{ site.reveal_controls | default: "true" }},
+      progress: {{ site.reveal_progress | default: "true" }},
+      history: {{ site.reveal_history | default: "true" }},
+      center: {{ site.reveal_center | default: "true" }},
+      slideNumber: {{ site.reveal_slide_number | default: "true" }},
+      transition: '{{ site.reveal_transition | default: "slide" }}',
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+    });
+  </script>
+</body>
+</html>

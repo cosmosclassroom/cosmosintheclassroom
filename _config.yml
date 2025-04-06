@@ -29,19 +29,58 @@ defaults:
     values:
       layout: "default"
       mathjax: true
+  -
+    scope: 
+      path: "slides"
+      type: "slides"
+    values:
+      layout: "slide"
+      mathjax: true
 
 # Minimal theme settings
 theme: null
 
-# Basic includes
+# Previous configurations remain the same...
+
+# Updated defaults for slides
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+      mathjax: true
+  -
+    scope: 
+      path: "slides"      # Change this to match your actual directory
+      type: "pages"       # Change to "pages" instead of "slides"
+    values:
+      layout: "slide"
+      mathjax: true
+
+# Keep your includes but be consistent with directories
 include:
   - _includes
   - _layouts
   - _posts
   - _pages
-  - _slides
+  - slides            # Make sure this matches the directory you're using
   - assets
   - assets/css
+
+# Remove this line from your exclude section
+exclude:
+  - vendor
+  - "node_modules"
+  - ".git"
+  - ".github"
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - .DS_Store
+  - .gitignore
+  # Remove this line: - _slides/*.md
 
 # Sass/SCSS configuration
 sass:
@@ -54,13 +93,19 @@ keep_files:
   - reveal.js
   - README.md
 
-exclude:
-  - vendor
-  - "node_modules"
-  - ".git"
-  - ".github"
-  - Gemfile
-  - Gemfile.lock
+## Reveal.js settings
+reveal_path: assets/reveal.js
+reveal_theme: black
+reveal_transition: slide
+reveal_transition_speed: default
+reveal_controls: true
+reveal_progress: true
+reveal_history: true
+reveal_center: true
+reveal_slide_number: true
+reveal_keyboard_shortcuts: true
+
+
 
 ### Pagination Settings
 pagination:
