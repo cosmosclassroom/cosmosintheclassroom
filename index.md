@@ -21,7 +21,8 @@ Where $a_g \approx 9.80 \frac{m}{s^2}$
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
 - [Standard Physics](https://cosmosintheclassroom.org/src/sphys/sphys_overview)
-
+- [Honors Physics Landing](src/hphys/hphys_landing.md)
+  
 ### Resources
 
 - [Reference Library](https://cosmosintheclassroom.org/src/ref/ref_lib)
