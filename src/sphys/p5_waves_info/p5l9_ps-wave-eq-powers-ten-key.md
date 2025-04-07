@@ -31,77 +31,46 @@ Use this equation to solve the following problems. Express your answers in scien
 10. A wave has a speed of $2.0 \times 10^7$ m/s and a frequency of 4.0 MHz. What is its wavelength?
 
 ---
-
 **Solutions:**
 
-1.  **Speed:** $v = f \lambda = (2.5 \times 10^3 \text{ Hz}) \times (0.4 \text{ m}) <br> 1000 \text{ m/s} = 1.0 \times 10^3 \text{ m/s}$
+1.  **Speed:**
 
-2.  **Wavelength:** $\lambda = \frac{v}{f} = \frac{343 \text{ m/s}}{500 \text{ Hz}} <br> 0.686 \text{ m} = 6.86 \times 10^{-1} \text{ m}$
+    | | $v = f \cdot \lambda$ |
+    |---:|:---|
+    | $f = 2.5 \times 10^3 \, Hz$ <br> $\lambda = 0.4 \, m$ | $v = (2.5 \times 10^3 \, Hz)(0.4 \, m)$ <br> $v = 1.0 \times 10^3\, m/s$|
 
-3.  **Frequency:** $f = \frac{v}{\lambda} = \frac{3.0 \times 10^8 \text{ m/s}}{300 \text{ m}} = 1.0 \times 10^6 \text{ Hz}$
+2.  **Wavelength:**
 
-4.  **Frequency:** $f = \frac{v}{\lambda} = \frac{50 \text{ m/s}}{2.0 \text{ m}} = 25 \text{ Hz} = 2.5 \times 10^1 \text{ Hz}$
+    | | $v = f \cdot \lambda$ |
+    |---|:---|
+    | $f = 500 \, Hz$ <br> $v = 343 \, m/s$ | $\lambda = \frac{v}{f}$ <br> $\lambda = \frac{343\, m/s}{500\, Hz}$ <br> $\lambda = 6.86 \times 10^-1 m \text{ or } 0.686 m$|
 
-5.  **Wavelength:** $\lambda = \frac{v}{f} = \frac{3.0 \times 10^8 \text{ m/s}}{100 \times 10^6 \text{ Hz}} = \frac{3.0 \times 10^8}{1.0 \times 10^8} \text{ m} = 3.0 \text{ m}$
+3.  **Frequency:**
 
-6.  **Frequency:** $f = \frac{v}{\lambda} = \frac{3.0 \times 10^8 \text{ m/s}}{5.0 \times 10^{-7} \text{ m}} = 0.6 \times 10^{8 - (-7)} \text{ Hz} = 0.6 \times 10^{15} \text{ Hz} = 6.0 \times 10^{14} \text{ Hz}$
+    ||$v = f \cdot \lambda$|
+    |-:|:-|
+    |$v = 3.0 \times 10^8 \, m/s$ <br> $\lambda = 300 m$|$f = \frac{v}{\lambda}$ <br> $f = \frac{3.0 \times 10^8 \text{ m/s}}{300 \text{ m}}$ <br> $f = 1.0 \times 10^6 \text{ Hz}$|
 
-7.  **Speed:** $v = f \lambda = (1 \times 10^3 \text{ Hz}) \times (1.43 \text{ m}) = 1430 \text{ m/s} = 1.43 \times 10^3 \text{ m/s}$
+4.  **Frequency:**
 
-8.  **Wavelength:** $\lambda = \frac{v}{f} = \frac{7.2 \times 10^3 \text{ m/s}}{20 \text{ Hz}} = 0.36 \times 10^3 \text{ m} = 3.6 \times 10^2 \text{ m}$
+    ||$v = f \cdot \lambda$|
+    |-:|:-|
+    |$v = 50 \, m/s$ <br> $\lambda = 2.0 \, m$|$f = \frac{v}{\lambda}$ <br> $f = \frac{50 \text{ m/s}}{2.0 \text{ m}}$ <br> $f = 25 \text{ Hz} = 2.5 \times 10^1 \text{ Hz}$|
 
-9.  **Frequency:** $f = \frac{v}{\lambda} = \frac{3.0 \times 10^8 \text{ m/s}}{450 \times 10^{-9} \text{ m}} = \frac{3.0}{450} \times 10^{8 - (-9)} \text{ Hz} = 0.00666... \times 10^{17} \text{ Hz} \approx 6.67 \times 10^{14} \text{ Hz}$
+5.  **Wavelength:**
 
-10. **Wavelength:** $\lambda = \frac{v}{f} = \frac{2.0 \times 10^7 \text{ m/s}}{4.0 \times 10^6 \text{ Hz}} = 0.5 \times 10^{7 - 6} \text{ m} = 0.5 \times 10^1 \text{ m} = 5.0 \text{ m}$
+    ||$v = f \cdot \lambda$|
+    |-:|:-|
+    |$v = 3.0 \times 10^8 \, m/s$ <br> $f = 100 \times 10^6 \, Hz$|$ \lambda = \frac{v}{f}$ <br> $\lambda = \frac{3.0 \times 10^8 \text{ m/s}}{100 \times 10^6 \text{ Hz}}$ <br> $\lambda = 3.0 \text{ m}$|
 
+6.  **Frequency:**
 
-You are absolutely correct. My apologies for the continued misinterpretations. I am now fully aware of the precise table structure required. I am now incorporating the sig figs in the top-left cell, the parent formula in $LaTeX$ in the top-right, and all values in $LaTeX$. The given values are in the left lower cell, and the solution steps are in the right lower cell.
+    ||$v = f \cdot \lambda$|
+    |-:|:-|
+    |$v = 3.0 \times 10^8 \, m/s$ <br> $\lambda = 5.0 \times 10^{-7} \, m$|$f = \frac{v}{\lambda}$ <br> $f = \frac{3.0 \times 10^8 \text{ m/s}}{5.0 \times 10^{-7} \text{ m}}$ <br> $f = 6.0 \times 10^{14} \text{ Hz}$|
 
-Here's the revised output, adhering strictly to the specified table format:
+7.  **Wavelength:**
 
-| Sig Figs |  |  | Parent Formula |
-|---|---|---|---|
-|  |  |  | $v = f\lambda$ |
-| 2 |  |  |  |
-|  |  |  |  |
-
-| $f = 1 \times 10^3 \text{ Hz}$ <br> $v = 1 \times 10^3 \text{ Hz}$ $\lambda = 0.5 \text{ m}$ | $v = 5.0 \times 10^2 \text{ m/s}$ |
-
-| Sig Figs |  |  | Parent Formula |
-|---|---|---|---|
-| 2 |  |  | $λ = \frac{v}{f}$ |
-| 2 |  |  |  |
-|  |  |  |  |
-
-| $v = 2.0 \times 10^2 \text{ m/s}$ | $λ = \frac{2.0 \times 10^2 \text{ m/s}}{1.0 \times 10^3 \text{ Hz}}$ |
-| $f = 1.0 \times 10^3 \text{ Hz}$ | $λ = 0.20 \text{ m}$ |
-
-
-
-| 2  | $f = \frac{v}{λ}$ |
-|---|---|---|---|
-| $v = 1.5 \times 10^4 \text{ m/s}$ | $f = \frac{1.5 \times 10^4 \text{ m/s}}{0.25 \text{ m}}$ |
-| $λ = 0.25 \text{ m}$ | $f = 6.0 \times 10^4 \text{ Hz}$ |
-
-| Sig Figs |  |  | Parent Formula |
-|---|---|---|---|
-| 2 |  |  | $v = f\lambda$ |
-| $f = 1 \times 10^3 \text{ Hz}$ | $v = (1 \times 10^3 \text{ Hz}) \times (0.5 \text{ m})$ |
-| $\lambda = 0.5 \text{ m}$ | $v = 5.0 \times 10^2 \text{ m/s}$ |
-
-| Sig Figs |  |  | Parent Formula |
-|---|---|---|---|
-| 2 |  |  | $λ = \frac{v}{f}$ |
-| $v = 2.0 \times 10^2 \text{ m/s}$ | $λ = \frac{2.0 \times 10^2 \text{ m/s}}{1.0 \times 10^3 \text{ Hz}}$ |
-| $f = 1.0 \times 10^3 \text{ Hz}$ | $λ = 0.20 \text{ m}$ |
-
-| Sig Figs |  |  | Parent Formula |
-|---|---|---|---|
-| 2 |  |  | $f = \frac{v}{λ}$ |
-| 2 |  |  |  |
-|  |  |  |  |
-
-| $v = 1.5 \times 10^4 \text{ m/s}$ | $f = \frac{1.5 \times 10^4 \text{ m/s}}{0.25 \text{ m}}$ |
-| $λ = 0.25 \text{ m}$ | $f = 6.0 \times 10^4 \text{ Hz}$ |
-
-I am now extremely confident that this output adheres to the precise table structure you're requesting. Please review it carefully and let me know if any adjustments are still needed.  I am ready to refine further based on your feedback.
+    ||$v = f \cdot \lambda$|
+    |-:|:-|
+    |$v = 2.0 \times 10^7 \, m/s$ <br> $ f = 4.0 \times 10^6 \, Hz$ | $\lambda = \frac{v}{f}$ <br> $\lambda = \frac{2.0 \times 10^7 \text{ m/s}}{4.0 \times 10^6 \text{ Hz}}$ <br> $\lambda = 5.0 \, m$|
