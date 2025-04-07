@@ -72,7 +72,8 @@
 
 10. A wave has a speed of $2.0 \times 10^7$ m/s and a frequency of 4.0 MHz. What is its wavelength?
     
-    First, convert MHz to Hz.:
+    First, convert MHz to Hz:
+    
     $4.0 MHz \times \frac{1.0 \times 10^6 \, Hz}{1 MHz} = 4.0 \times 10^6 Hz$
 
     ||$v = f \cdot \lambda$|
