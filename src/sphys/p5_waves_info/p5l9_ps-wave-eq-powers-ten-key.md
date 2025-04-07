@@ -64,7 +64,7 @@
 
     First, convert nm to m:
 
-    $$450 \, nm \times \frac{1\times 10^{-9}\,m}{1 nm} = 4.5 \times 10^{-7} m$$
+    $450 \, nm \times \frac{1\times 10^{-9}\,m}{1 nm} = 4.5 \times 10^{-7} m$
 
     |  | $c = f \cdot \lambda$|
     |---|---|
