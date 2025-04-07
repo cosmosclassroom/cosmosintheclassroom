@@ -8,9 +8,14 @@ mathjax: True
 
 # Wave Equation Practice Problems
 
-The wave equation relates the velocity, ($v$), frequency ($f$), and wavelength ($\lambda$) of a wave:
+The general wave equation relates the velocity, ($v$), frequency ($f$), and wavelength ($\lambda$) of a wave:
 
-$$v = f \lambda$$
+$$v = f \cdot \lambda$$
+
+For electromagnetic waves (in a vaccuum), the speed of light is constant (given as $c = 3.0 \times 10^8 \, m/s$ and the equation becomes:
+
+$$c = f \cdot lambda $$
+
 
 Use this equation to solve the following problems. Express your answers in scientific notation where appropriate.
 
