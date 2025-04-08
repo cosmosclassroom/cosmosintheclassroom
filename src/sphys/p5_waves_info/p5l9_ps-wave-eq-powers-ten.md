@@ -12,14 +12,12 @@ The general wave equation relates the velocity, ($v$), frequency ($f$), and wave
 
 $$v = f \cdot \lambda$$
 
-For electromagnetic waves (in a vaccuum), the speed of light is constant (given as $c = 3.0 \times 10^8 \, m/s$ and the equation becomes:
+For electromagnetic waves (in a vaccuum), the speed of light is constant (given as $c = 3.0 \times 10^8 \, m/s$) and the equation becomes:
 
 $$c = f \cdot \lambda $$
 
 
-Use this equation to solve the following problems. Express your answers in scientific notation where appropriate.
-
-**Instructions:** Show your work and provide the final answer with appropriate units.
+Use these equation to solve the following problems. Express your answers in scientific notation where appropriate.
 
 **Problems:**
 
