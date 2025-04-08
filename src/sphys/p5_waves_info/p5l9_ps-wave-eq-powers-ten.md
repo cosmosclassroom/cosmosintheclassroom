@@ -14,7 +14,7 @@ $$v = f \cdot \lambda$$
 
 For electromagnetic waves (in a vaccuum), the speed of light is constant (given as $c = 3.0 \times 10^8 \, m/s$ and the equation becomes:
 
-$$c = f \cdot lambda $$
+$$c = f \cdot \lambda $$
 
 
 Use this equation to solve the following problems. Express your answers in scientific notation where appropriate.
@@ -27,19 +27,19 @@ Use this equation to solve the following problems. Express your answers in scien
 
 2.  A sound wave travels at a speed of 343 m/s and has a frequency of 500 Hz. What is its wavelength?
 
-3.  A radio wave has a wavelength of 300 meters and travels at the speed of light ($3.0 \times 10^8$ m/s). What is the frequency of the radio wave?
+3.  A radio wave has a wavelength of 300 meters and travels at the speed of light. What is the frequency of the radio wave?
 
 4.  A wave on a string has a speed of 50 m/s and a wavelength of 2.0 meters. What is the frequency of the wave?
 
-5.  An electromagnetic wave has a frequency of 100 MHz. What is its wavelength in a vacuum (speed of light = $3.0 \times 10^8$ m/s)? (Note: 1 MHz = $1 \times 10^6$ Hz)
+5.  An electromagnetic wave has a frequency of 100 MHz. What is its wavelength in a vacuum?
 
 6.  A wave has a wavelength of $5.0 \times 10^{-7}$ meters and a speed of $3.0 \times 10^8$ m/s. What is its frequency?
 
-7.  A sound wave in water has a frequency of 1 kHz and a wavelength of 1.43 meters. What is the speed of sound in water? (Note: 1 kHz = $1 \times 10^3$ Hz)
+7.  A sound wave in water has a frequency of 1 kHz and a wavelength of 1.43 meters. What is the speed of sound in water?
 
 8.  A seismic wave travels at a speed of $7.2 \times 10^3$ m/s and has a frequency of 20 Hz. What is its wavelength?
 
-9.  A light wave has a wavelength of 450 nm. What is its frequency in a vacuum? (speed of light = $3.0 \times 10^8$ m/s) (Note: 1 nm = $1 \times 10^{-9}$ m)
+9.  A light wave has a wavelength of 450 nm. What is its frequency in a vacuum?
 
 10. A wave has a speed of $2.0 \times 10^7$ m/s and a frequency of 4.0 MHz. What is its wavelength?
 
