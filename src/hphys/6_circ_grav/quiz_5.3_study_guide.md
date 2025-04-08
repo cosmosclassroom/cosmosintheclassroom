@@ -7,7 +7,6 @@ mathjax: true
 ---
 # Uniform Circular Motion and Gravitational Basics
 ## Quiz Review Guide
----
 
 ### Students Should Know
 - Definitions/conditions of UCM
