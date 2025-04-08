@@ -17,6 +17,8 @@ Previously we have examined the algebraic relationship between frequency, $f$, w
 
 **Table 1.** Common metric prefixes and their scientific notation equivalents.
 
+---
+
 **The Wave Equation**
  $v = f \cdot \lambda$
  
