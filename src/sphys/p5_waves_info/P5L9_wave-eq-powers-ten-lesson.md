@@ -1,8 +1,21 @@
-# Wave Equation Practice Problems
+# Wave Equation in Scientific Notation
 
+### Introduction
+Previously we have examined the algebraic relationship between frequency, $f$, wavelength, $\lambda$, and velocity, $v$ of a wave. Two peculiarities arise when working with electromagnetic waves. First, the speed of EM waves in a vaccuum is constant for all EM waves. This is not just a staggeringly fast speed, it constitutes a sort of cosmic speed limit at $3.0 \times 10^8 \, m/s$. Further, EM waves have measurements on a scale unlike sound and water waves that we have discussed previously. To manage numbers at this scale we must begin working in **scientific notation**. Some common prefixes in the SI system and their scientific notation equivalents are given in Table 1 below:
 
+| Prefix | Symbol | Power of Ten | Example                      |
+|--------|--------|--------------|------------------------------|
+| giga   | G      | $10^9$       | 1 gigameter (Gm) = $10^9$ m  |
+| mega   | M      | $10^6$       | 1 megawatt (MW) = $10^6$ W   |
+| kilo   | k      | $10^3$       | 1 kilometer (km) = $10^3$ m  |
+|**Base Unit**|**m, g, Hz, s, etc.**|**$10^0$**| **1 meter (m) = $10^0$ m**|
+| centi  | c      | $10^{-2}$      | 1 centimeter (cm) = $10^{-2}$ m |
+| milli  | m      | $10^{-3}$      | 1 millimeter (mm) = $10^{-3}$ m |
+| micro  | $\mu$  | $10^{-6}$      | 1 micrometer ($\mu$m) = $10^{-6}$ m |
+| nano   | n      | $10^{-9}$      | 1 nanosecond (ns) = $10^{-9}$ s |
+| pico   | p      | $10^{-12}$     | 1 picofarad (pF) = $10^{-12}$ F |
 
-## The Wave Equation
+**Table 1.** Common metric prefixes and their scientific notation equivalents.
 
 **The Wave Equation**
  $v = f \cdot \lambda$
