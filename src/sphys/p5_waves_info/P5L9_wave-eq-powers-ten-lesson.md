@@ -41,4 +41,4 @@ $136 cm \times \frac{1 m}{100 cm} = 1.36 m$
 
     ||$c = f \cdot \lambda$|
     |-:|:-|
-    |$f = 1.0 \times 10^8 \,Hz$ <br> $c = 3.0 \times 10^6 \, m/s$ | $\lambda = \frac{c}{f}$ <br> $\lambda = \frac{3.0 \times 10^6 \, m/s}{1.0 \times 10^8 \, Hz}$ <br> $\lambda = 3.0 \, m$ |
+    |$f = 1.0 \times 10^8 \,Hz$ <br> $c = 3.0 \times 10^8 \, m/s$ | $\lambda = \frac{c}{f}$ <br> $\lambda = \frac{3.0 \times 10^8 \, m/s}{1.0 \times 10^8 \, Hz}$ <br> $\lambda = 3.0 \, m$ |
