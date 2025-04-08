@@ -57,12 +57,13 @@ $136 cm \times \frac{1 m}{100 cm} = 1.36 m$
   A radio wave has a frequency of 100 MHz (megahertz) and travels at the speed of light, which is approximately $3.0 \times 10^8 \, m/s$. What is the wavelength of this radio wave in meters?
 
 <details>
+ 
   - First, convert megahertz (MHz) to Hz:
 
     $100 \, MHz \times \frac{1 \times 10^6 Hz}{1 MHz} = 1.0 \times 10^8 Hz$
 
     ||$c = f \cdot \lambda$|
     |-:|:-|
-    |$f = 1.0 \times 10^8 \,Hz$ <br> $c = 3.0 \times 10^8 \, m/s$ | $\lambda = \frac{c}{f}$ <br> $\lambda = \frac{3.0 \times 10^8 \, m/s}{1.0 \times 10^8 \, Hz}$ <br> $\lambda = 3.0 \, m$ |
+    |$f = 1.0 \times 10^8 \,Hz$ <br> $c = 3.0 \times 10^8 \, m/s$ <br> $\lambda = ??$ | $\lambda = \frac{c}{f}$ <br> $\lambda = \frac{3.0 \times 10^8 \, m/s}{1.0 \times 10^8 \, Hz}$ <br> $\lambda = 3.0 \, m$ |
 
 </details>
