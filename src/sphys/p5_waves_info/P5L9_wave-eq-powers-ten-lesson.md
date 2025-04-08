@@ -39,6 +39,7 @@ Previously we have examined the algebraic relationship between frequency, $f$, w
 * $f$ represents the **frequency** of the wave (typically in Hertz, Hz, which is cycles per second or $\frac{1}{s}$ or $s^{-1}$).
 * $\lambda$ represents the **wavelength** of the wave (typically in meters, m).
 
+---
 
 ### Sample Problem 1: Finding the Speed
 
