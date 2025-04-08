@@ -10,7 +10,7 @@ Date: 8 April 2025
 Previously we have examined the algebraic relationship between frequency, $f$, wavelength, $\lambda$, and velocity, $v$ of a wave. Two peculiarities arise when working with electromagnetic waves. First, the speed of EM waves in a vaccuum is constant for all EM waves. This is not just a staggeringly fast speed, it constitutes a sort of cosmic speed limit at $3.0 \times 10^8 \, m/s$. Further, EM waves have measurements on a scale unlike sound and water waves that we have discussed previously. To manage numbers at this scale we must begin working in **scientific notation**. Some common prefixes in the SI system and their scientific notation equivalents are given in Table 1 below:
 
 | Prefix | Symbol | Power of Ten | Example                      |
-|--------|--------|--------------|------------------------------|
+|:--------:|:--------:|:--------------:|:------------------------------:|
 | giga   | G      | $10^9$       | 1 gigameter (Gm) = $10^9$ m  |
 | mega   | M      | $10^6$       | 1 megawatt (MW) = $10^6$ W   |
 | kilo   | k      | $10^3$       | 1 kilometer (km) = $10^3$ m  |
