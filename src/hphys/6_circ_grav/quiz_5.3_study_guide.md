@@ -24,4 +24,4 @@ mathjax: true
   - Period/Frequency
 - Construct free-body diagrams of objects in UCM
 - Describe relationships between UCM variables (velocity, radius/distance, period, centripetal acceleration) describing *perfectly circular orbits*
-  - i.e. a satellite orbiting closer to a parent body would be expected to 
+  - i.e. a satellite orbiting closer to a parent body would be expected to have a longer/shorter/same orbital period (if velocity was kept constant) 
