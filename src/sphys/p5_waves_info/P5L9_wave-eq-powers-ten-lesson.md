@@ -1,3 +1,9 @@
+---
+Title: P5L9 Wave Equation in Scientific Notation
+Author: Jonathan Corbett
+Date: 8 April 2025
+---
+
 # P5L9 Wave Equation in Scientific Notation
 
 ### Introduction
