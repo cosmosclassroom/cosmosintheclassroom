@@ -1,5 +1,5 @@
 ---
-Layout: slide
+Layout: slides
 title: Test Slide
 permalink: /slides/test/
 marp: true
