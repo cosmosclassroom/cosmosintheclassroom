@@ -24,4 +24,4 @@ This is more text and $latex$
 
 # Slide 3
 
-Possibly this is working?
+Possibly this is working? Well, it isn't working, bud. And I'm just not sure why not...
