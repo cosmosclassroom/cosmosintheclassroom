@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title | append: '.html' }}</title>
+  <link rel="stylesheet" href="{{ asset_url | append: '/assets/reveal.js/css/reveal.css' }}">
+  <link rel="stylesheet" href="{{ asset_url | append: '/assets/reveal.js/css/theme/black.css' }}">
+  <script src="{{ asset_url | append: '/assets/reveal.js/js/reveal.js' }}"></script>
   <style>
     /* Marp slide styles */
     section {
