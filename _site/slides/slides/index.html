@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentations</title>
+  <link rel="stylesheet" href="/assets/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/assets/reveal.js/css/theme/black.css">
+  <link rel="stylesheet" href="/assets/reveal.js/css/theme/black.css">
+  <script src="/assets/reveal.js/dist/reveal.js"></script>
+  <style>
+    /* Marp slide styles */
+    section {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 2em;
+    }
+    h1, h2, h3 {
+      margin: 0.5em 0;
+    }
+    p {
+      margin: 1em 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      
+      {{ content }}
+      
+    </div>
+  </div>
+  <script>
+    Reveal.initialize({
+      hash: true, // Enable URL hash for navigation
+      slideNumber: true, // Show slide numbers
+      controls: true, // Show navigation controls
+      progress: true, // Show progress bar
+      transition: 'slide' // Slide transition effect
+    });
+  </script>
+</body>
+</html>

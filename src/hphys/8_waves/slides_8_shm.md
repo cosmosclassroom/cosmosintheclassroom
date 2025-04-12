@@ -1,7 +1,7 @@
 ---
 layout: default
 marp: true
-theme: default
+theme: gaia
 math: katex
 paginate: true
 ---
@@ -38,6 +38,10 @@ An oscillating or vibrating object undergoes simple harmonic motion (SHM) if the
 $F = -kx$ (where $k$ is the spring constant and $x$ is displacement)
 
 Hooke's Law accurately describes springs, but other oscillating solids as well.
+
+---
+
+# Restoring Force
 
 ---
 
@@ -192,7 +196,7 @@ When the amplitude of a wave is doubled, its energy increases by a factor of fou
 ## Creating Waves
 
 A pulse is a single wave traveling through a medium.
-
+![Wave Pulse](<../../../assets/images/8_waves_shm/spring longitudinal visual.jpg>)
 ![](8_waves_slide19_img17.png)
 
 ---

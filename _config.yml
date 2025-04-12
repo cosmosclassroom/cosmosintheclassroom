@@ -2,7 +2,6 @@ title: Cosmos in the Classroom
 baseurl: ""
 url: "https://cosmosintheclassroom.github.io"
 
-
 # Build Settings
 markdown: kramdown
 permalink: pretty
@@ -20,6 +19,7 @@ kramdown:
 # Plugins
 plugins:
   - jekyll-paginate-v2
+  - jekyll-marp
 
 # Simplified defaults
 defaults:
@@ -28,6 +28,12 @@ defaults:
       path: ""
     values:
       layout: "default"
+      mathjax: true
+  -
+    scope:
+      path: "slides"
+    values:
+      layout: "slides"
       mathjax: true
 
 # Minimal theme settings
@@ -41,11 +47,15 @@ include:
   - _pages
   - assets
   - assets/css
+  - assets/js
+  - assets/reveal.js
+  - assets/reveal.js/css
+  - assets/reveal.js/js
 
 # Sass/SCSS configuration
 sass:
-  sass_dir: assets/css
-  style: expanded
+  sass_dir: assets/reveal.js/css
+  style: expanded 
 
 keep_files:
   - .marp.json
@@ -55,13 +65,18 @@ keep_files:
 
 exclude:
   - vendor
-  - "node_modules"
+  - node_modules
   - ".git"
   - ".github"
   - Gemfile
   - Gemfile.lock
+  - /reveal.js/node_modules
+  - /assets/reveal.js/node_modules
+  - README.md
+  - LICENSE
 
-### Pagination Settings
+
+# Pagination Settings
 pagination:
   enabled: true
   per_page: 10

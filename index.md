@@ -1,10 +1,12 @@
 ---
-Layout: Default
-Title: Cosmos in the Classroom Homepage
-Author: Jonathan Corbett
-Date: 23 March 2025
+layout: default
+title: Cosmos in the Classroom Homepage
+author: Jonathan Corbett
+date: 23 March 2025
 markdown: kramdown
 mathjax: true
+pagination:
+    enabled: false
 ---
 
 # Cosmos in the Classroom
@@ -15,7 +17,8 @@ $$F_g = m \cdot a_g$$
 
 Where $a_g \approx 9.80 \frac{m}{s^2}$
 
-
+[Slides/slides](slides/slides.md)<br>
+[Slides/test](slides/test.md)
 
 ### Quick Links
 
