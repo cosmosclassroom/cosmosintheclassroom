@@ -11,7 +11,7 @@ pagination:
 
 # Cosmos in the Classroom
 
-<img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto">
+<img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto"><br>
 [Slides/slides](slides/slides.md)<br>
 [Slides/test](slides/test.md)
 [Slides-Test](slides/slides-test.html)
