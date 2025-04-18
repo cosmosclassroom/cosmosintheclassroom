@@ -1,0 +1,38 @@
+.worksheet-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+  
+  .worksheet-table th,
+  .worksheet-table td {
+    border: 1pt solid black;
+    padding: 20px 15px;
+    text-align: left;
+    height: 40px;
+  }
+  
+  .worksheet-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Add even more space for specific writing cells */
+  .worksheet-table td.writing-space {
+    height: 80px;
+    vertical-align: top;
+  }
+  
+  /* Print-specific styles */
+  @media print {
+    .worksheet-table th,
+    .worksheet-table td {
+      padding: 25px 20px; /* Even more padding when printed */
+    }
+    
+    .worksheet-table {
+      page-break-inside: avoid;
+    }
+  }

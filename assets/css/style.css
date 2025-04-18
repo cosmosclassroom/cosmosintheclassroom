@@ -1,0 +1,253 @@
+/* Scientific Paper CSS - Modern and Professional Styling */
+
+/* Import a modern, readable font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap'); /* Import a serif font for a classic academic feel */
+
+body {
+    /* Use Garamond font for a traditional, formal look */
+    font-family: 'EB Garamond', 'Times New Roman', Times, serif; 
+    font-weight: 100;
+    
+    /* Responsive max-width to mimic academic paper layout */
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333;
+    
+    /* Soft padding for better readability */
+    padding: 2rem;
+    
+    /* Parchment-like background color */
+    background-color: #fff9f0;
+}
+
+/* Headings with professional hierarchy */
+h1 {
+    font-weight: 350;   /* Slightly bolder for main title */
+    color: #1d1527;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+    text-align: left;
+}
+
+h2 {
+    font-weight: 300;   /* Lighter for section titles */
+    color: #151e27;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    border-bottom: 1px solid #151e27;
+    padding-bottom: 0.3rem;
+}
+
+h3 {
+    font-weight: 300;   /* Lighter for subsection titles */
+    color: #151e27;
+    margin-top: 1.5rem; /* Space above subsections */
+    font-size: 1.4rem;  /* Font size for subsections */
+}   
+
+h4, h5, h6 {
+    font-weight: 200;   /* Lighter for lower-level headings */
+    color: #1a2938; /* Darker for contrast */
+}
+
+/* Paragraph styling for academic readability */
+p {
+    text-align: justify;    /* Justified text for a formal look */
+    margin:left: 3rem;  /* Indent paragraphs for a formal look */
+    margin-bottom: 1rem;    /* Space between paragraphs */
+   
+}
+
+/* Code blocks to look like academic notation */
+pre, code {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    background-color: #f8f9fa; /* Light background for code blocks */
+    border: 1px solid #e9ecef; /* Light border for code blocks */
+    line-height: 1.6; /* Line height for readability */
+    border-radius: 4px; /* Rounded corners for code blocks */
+    padding: 0.5rem; /* Padding for code blocks */
+    font-size: 0.75rem; /* Font size for code blocks */
+    white-space: nowrap; /* Prevent line breaks in code blocks */
+    overflow-x: auto; /* Horizontal scrolling for long lines
+    
+}
+/* Code blocks for inline code snippets */
+pre {
+    overflow-x: auto;
+    line-height: 1.4;
+}
+
+/* Links with subtle, professional styling */
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+/* Change link color on hover for better UX */
+a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Blockquotes for citations or quotes */
+blockquote {
+    border-left: 4px solid #2980b9;
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* Lists with academic-style spacing */
+ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Table styling for data presentation */
+table {
+    width: 100%; /* Ensure the table spans the full width of the page */
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border: 1px solid #151e27;
+    table-layout: fixed; /* Retain fixed layout for consistent column sizing */
+    border-bottom: 1px solid #151e27;
+    border-left: 1px solid #151e27;
+    border-right: 1px solid #151e27;
+    border-top: 1px solid #151e27;
+}
+
+/* Table header and cell styling */
+th, td {
+    border: 1px solid #151e27;
+    padding: 0.75rem;
+    text-align: left;
+    min-width: 50px;
+    min-height: 50px; /* Added to maintain square shape */
+    height: 50px; /* Added to maintain square shape */
+}
+
+/* Empty cell handling */
+td:empty::after {
+    content: "\00a0";    /* Add non-breaking space for empty cells */
+    display: inline-block;
+    width: 50px; /* Fixed width for square shape */
+    height: 50px; /* Fixed height for square shape */
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Zebra striping for tables */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+/* Table header styling */
+th {
+    background-color: #f2f2f2;
+    font-weight: 400;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Table with clear borders for empty cells */
+.bordered-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border: 1px solid #151e27;
+    table-layout: fixed;
+}
+
+.bordered-table th, .bordered-table td {
+    border: 1px solid #151e27;
+    padding: 0.75rem;
+    text-align: left;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.bordered-table td:empty::after {
+    content: "\00a0"; /* Add non-breaking space for empty cells */
+    display: inline-block;
+}
+
+/* Table without borders for a clean presentation */
+.borderless-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.borderless-table th, .borderless-table td {
+    border: none;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+/* Responsive images for better scaling */
+img {
+    max-width: 40%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    object-fit: contain;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Figure caption styling with hanging indent */
+figcaption {
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-left: 2em;
+    text-indent: -2em;
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.4;
+}
+
+.figure-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: #666;
+}
+
+
+
+
+/* Responsive design for various screen sizes */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 1rem;
+        max-width: 50%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+/* Optional: Add subtle side margins for visual breathing room */
+@media screen and (min-width: 1200px) {
+    body {
+        /* Add subtle side margins on very wide screens */
+        margin-left: calc(15% / 2);
+        margin-right: calc(15% / 2);
+    }
+}
+
+@media print {
+    div {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }

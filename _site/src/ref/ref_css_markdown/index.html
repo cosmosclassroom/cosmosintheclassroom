@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Markdown implementations of HTML Styling | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="markdown-body">
+      <h3 id="css-flexbox-or-css-grid">CSS Flexbox or CSS Grid</h3>
+
+<p>Creates two columns</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="container"&gt;
+  &lt;div class="column"&gt;Column 1&lt;/div&gt;
+  &lt;div class="column"&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+<p>and the corresponding css:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+  display: flex;
+}
+</code></pre></div></div>
+<h3 id="using-css-grid">Using CSS Grid</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item"&gt;Column 1&lt;/div&gt;
+  &lt;div class="grid-item"&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<h1 id="markdown-works-inside-of-it">Markdown works inside of it</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div markdown="1" class="columns"&gt;
+  &lt;div markdown="1" class="column"&gt;
+    Column 1
+    This is the content for the first column. You can include text, images, or other elements here.
+  &lt;/div&gt;
+  &lt;div markdown="1" class="column"&gt;
+    Column 2
+    This is the content for the second column. It can also include various types of content.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+</code></pre></div></div>
+
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
