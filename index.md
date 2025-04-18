@@ -11,25 +11,22 @@ pagination:
 
 # Cosmos in the Classroom
 
-The force of gravity near the surface of Earth is
-
-$$F_g = m \cdot a_g$$
-
-Where $a_g \approx 9.80 \frac{m}{s^2}$
-
+<img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto">
 [Slides/slides](slides/slides.md)<br>
 [Slides/test](slides/test.md)
 [Slides-Test](slides/slides-test.html)
-### Quick Links
+
+## Courses
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
 - [Standard Physics](https://cosmosintheclassroom.org/src/sphys/sphys_overview)
 - [Honors Physics Landing](src/hphys/hphys_landing.md)
-  
-### Resources
+
+---
+
+## Resources
 
 - [Reference Library](https://cosmosintheclassroom.org/src/ref/ref_lib)
 - [LaTeX Guide](https://cosmosintheclassroom.org/src/ref/ref_latex)
 
----
 
