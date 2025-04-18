@@ -9,6 +9,11 @@ mathjax: true
 
 ## Teacher Links
 
+I am adding this text to cosmosintheclassroom.com/teacher
+
+to see if the site updates.
+
+
 ## Courses
 
 [H Physics Landing](src/hphys/hphys_landing.md)
