@@ -12,17 +12,8 @@ pagination:
 # Cosmos in the Classroom
 
 
-<img src="assets/img/Physics_00001_.png" width: 30%, height: auto; >
-
-
-<section>
-<p><img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto"><p>
-<p>[Slides/slides](slides/slides.md)<p>
-</section>
-
-<br>
-
 [Slides/test](slides/test.md)
+
 [Slides-Test](slides/slides-test.html)
 
 ## Courses
