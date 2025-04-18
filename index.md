@@ -11,8 +11,13 @@ pagination:
 
 # Cosmos in the Classroom
 
-<img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto"><br>
-[Slides/slides](slides/slides.md)<br>
+<section>
+<p><img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto"><p>
+<p>[Slides/slides](slides/slides.md)<p>
+</section>
+
+<br>
+
 [Slides/test](slides/test.md)
 [Slides-Test](slides/slides-test.html)
 
@@ -28,5 +33,3 @@ pagination:
 
 - [Reference Library](https://cosmosintheclassroom.org/src/ref/ref_lib)
 - [LaTeX Guide](https://cosmosintheclassroom.org/src/ref/ref_latex)
-
-

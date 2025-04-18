@@ -13,7 +13,6 @@ I am adding this text to cosmosintheclassroom.com/teacher
 
 to see if the site updates.
 
-
 ## Courses
 
 [H Physics Landing](src/hphys/hphys_landing.md)
@@ -25,4 +24,3 @@ to see if the site updates.
 [Standard Physics Overview Page](src/sphys/sphys_overview.md)
 
 ## References
-[])
