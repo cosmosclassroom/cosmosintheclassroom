@@ -10,7 +10,9 @@ pagination:
 ---
 
 # Cosmos in the Classroom
-![width: 50px ](assets/img/Physics_00001_.png)
+
+
+<img src="assets/img/Physics_00001_.png" width: 30%, height: auto; >
 
 
 <section>
