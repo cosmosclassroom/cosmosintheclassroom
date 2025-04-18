@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Latex Reference | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="markdown-body">
+      <h1 id="reference---latex">Reference - LaTeX</h1>
+
+<p>Regular variables</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x, v, a, F  
+</code></pre></div></div>
+<p>Change in variables</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\Delta x, \Delta t
+</code></pre></div></div>
+<p>Vectors</p>
+
+<p>$\vec{F},\, \vec{v}$</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\vec{F}, \vec{v}
+
+</code></pre></div></div>
+
+<h1 id="fractions">Fractions</h1>
+
+<p>$\frac{a}{b}$</p>
+
+<p><code class="language-plaintext highlighter-rouge">
+$\frac{a}{b}
+</code></p>
+<h2 id="exponents">Exponents</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exponents</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">x^2, y^{-1} </code></td>
+      <td>$x^2, y^{-1}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="greek-letters">Greek Letters</h2>
+
+<p>$\alpha, \beta, \gamma, \theta, \lambda$</p>
+
+<p>\alpha, \beta, \gamma, \theta, \lambda</p>
+
+<h2 id="trigonometry">Trigonometry</h2>
+<p>$\sin \theta, \cos \theta, \tan \theta$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\sin \theta, \cos \theta, \tan \theta
+</code></pre></div></div>
+
+<h2 id="inline-equations">Inline Equations</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$F = ma$  % Inline equation
+
+
+\begin{equation}
+    \vec{F} = ma
+\end{equation}
+</code></pre></div></div>
+<p>$F = ma$  % Inline equation</p>
+
+\[\begin{equation}
+    \vec{F} = ma \label{eq:force}
+\end{equation}\]
+
+<p>You can reference this equation as Equation \ref{eq:force}.</p>
+
+<h2 id="subscripts">Subscripts</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$F_g=m \cdot a_g$
+$F_{g_{Europa}} = x \cdot a_g?$
+</code></pre></div></div>
+
+<p>$F_g=m \cdot a_g$</p>
+
+<p>$F_{g_{Europa}} = x \cdot a_{g_{Earth}}$</p>
+
+<h2 id="systems-of-equations">Systems of equations</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\begin{align}
+    v_f &amp;= v_i + at \\
+    s &amp;= v_i t + \frac{1}{2} a t^2
+\end{align}
+</code></pre></div></div>
+
+\[\begin{align}
+    v_f &amp;= v_i + at \\
+    s &amp;= v_i t + \frac{1}{2} a t^2
+\end{align}\]
+
+<h2 id="scientific-notation">Scientific Notation</h2>
+
+<p>$3.0 \times 10^8 \text{ m/s}$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3.0 \times 10^8 \text{ m/s}
+3.0 \times 10^{80} \text{ m/s}
+</code></pre></div></div>
+
+<footer>
+  <p><a href="index.html">Back to Home Page</a></p>
+</footer>
+
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
