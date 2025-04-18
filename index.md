@@ -10,6 +10,8 @@ pagination:
 ---
 
 # Cosmos in the Classroom
+![width: 50px ](assets/img/Physics_00001_.png)
+
 
 <section>
 <p><img src="cosmosintheclassroom/assets/images/aristotle.png", width="30%", height="auto"><p>
