@@ -19,7 +19,7 @@ Where $a_g \approx 9.80 \frac{m}{s^2}$
 
 [Slides/slides](slides/slides.md)<br>
 [Slides/test](slides/test.md)
-
+[Slides-Test](slides/slides-test.html)
 ### Quick Links
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
