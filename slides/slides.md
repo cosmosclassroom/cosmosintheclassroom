@@ -1,87 +1,103 @@
 ---
 layout: slides
-title: Presentations
+title: Introduction to Astrophysics
 marp: true
-theme: slidesA
-math: mathjax![enter image description here](<D:\python\Jupyter\build\cosmosintheclassroom\slides\img\0 Lecture _ 10 Electrostatics_0.jpg>)
+theme: slidesB
+math: mathjax
 ---
-
-<!-- Add MathJax configuration -->
-
-<!--  
-
-cosmosintheclassroom\slides\hlec_10_electrostatics.md
-
--->
 
 <!-- class: dark -->
-## Title Slide
+## The Universe at a Glance
 
-![bg left fill](img/Physics_00001_.png)
-
+![bg left:40% brightness:0.5](img/Physics_00001_.png)
 
 <div>
 
-This is the text
+Modern astrophysics reveals our cosmic context:
 
-+ this text is added as a fragment
-+ so is this one
++ The observable universe spans 93 billion light-years
++ Contains over 100 billion galaxies
++ Each galaxy hosts billions of stars
 
 </div>
 
-<section>
-
-This is a slide all by itself?
-
-</section>
-
 ---
-
-# Heading 1
 
 <!-- _class: light -->
-This is the second slide's text
+# Stellar Evolution
 
-$ \vec{F_g} = m \cdot a $
 
-$$\text{this is doubled latex} \, f = m \cdot a_g$$
+The life cycle of stars follows predictable patterns:
 
----
-<div class="column">
+$$L = 4\pi R^2\sigma T^4$$
 
-![bg left 50%](<../assets/img/0 Lecture _ 10 Electrostatics_4.png>)
-
-</div>
-<div class="column">
-
-Here is more text $f = m \cdot a$
-
-</div>
+Where:
+- L is luminosity
+- R is radius
+- T is surface temperature
 
 ---
 
-# There is another header here
-
+# Galactic Structure
 |||
 |-|-|
-|cats | dogs |
-| aliens | squirrels |
+|Bulge | Dense stellar population at galaxy center |
+|Disk | Primary region of star formation |
+|Halo | Spherical region of old stars |
+|Dark Matter | Invisible mass affecting rotation |
 
 ---
 
-## And a subheader for flavor
+<!-- _class: dark -->
+<div class="column">
+
+![bg right:50%](img/Physics_00002_.png)
+
+</div>
+
+
+<div class="column">
+
+## Black Holes
+
+The Schwarzschild radius is given by: 
+
+$R_s = \frac{2GM}{c^2}$
+
+Where:
+- G is gravitational constant
+- M is mass
+- c is speed of light
+
+</div>
+
+---
+
+## Cosmological Principles
 
 <div class="column">
 <div>
 
-![alt text](<../assets/img/0 Lecture _ 9 Light and Optics_0.png>)
+The universe is:
+- Homogeneous
+- Isotropic
+- Expanding according to:
+
+$$v = H_0d$$
 
 </div>
-
 <div>
 
-Column?
+![width:400px](img/Physics_00003_.png)
 
 </div>
+</div>
+
+---
+<!-- _class: light -->
+
+# Light Header
+
+
 
 ---
