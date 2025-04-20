@@ -5,6 +5,7 @@ author: Jonathan Corbett
 date: 23 March 2025
 mathjax: true
 markdown: kramdown
+css: cosmosintheclassroom/assets/css/documents.css
 ---
 # Welcome to Standard Physics
 

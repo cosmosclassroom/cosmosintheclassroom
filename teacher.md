@@ -1,5 +1,5 @@
 ---
-Layout: Default
+layout: page
 Title: Teacher Landing Page
 Author: Jonathan Corbett
 Date: 31 March 2025
@@ -8,7 +8,7 @@ mathjax: true
 ---
 
 ## Teacher Links
-
+![alt text](assets/images/aristotle.png)
 I am adding this text to cosmosintheclassroom.com/teacher
 
 to see if the site updates.

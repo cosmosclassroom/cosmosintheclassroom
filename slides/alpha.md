@@ -5,7 +5,7 @@ author: Jonathan Corbett
 marp: true
 ---
 
----
+<section>
 
 # Marp
 
@@ -13,10 +13,15 @@ marp: true
 
 This is body text in the first slide 
 
+</section>
+
 ---
+
+<section>
 
 # Second Slide
 
 ## Second Header on Second Slide
 
 Second slide's body text in /slides/alpha.md
+</section>
