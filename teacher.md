@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default
 Title: Teacher Landing Page
 Author: Jonathan Corbett
 Date: 31 March 2025
