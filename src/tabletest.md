@@ -3,8 +3,10 @@ layout: simple
 title: Table Test
 intro: There's nothing quite like the sea in your hair and a slap in the face.
 author: Jonathan Corbett
-custom_css: style
+stylesheet: style
 ---
+<!--  cosmosintheclassroom\src\tabletest.md  -->
+
 <div class="instruction">
 
 Well, I suppose some text on this slide would be helfpul, really.
@@ -23,6 +25,7 @@ This document is helpful for testing configuration of tables.
 > Blockquote
 
 ### Header 3
+
 
 **Table 1.** Example of major dinosaur classifications and simple biological descriptions.
 
