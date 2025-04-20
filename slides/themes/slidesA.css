@@ -6,7 +6,7 @@
 :root {
   --color-background: #dfd9d1;
   --color-foreground: #333333;
-  --color-highlight: #0077cc;
+  --color-highlight: #5a7080;
   --color-dimmed: #888888;
   
   /* Set font families */
@@ -25,6 +25,9 @@ section {
   font-family: var(--font-body);
   font-size: var(--base-font-size);
   padding: 40px;
+  border:#eaeaea 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Headers */
@@ -46,6 +49,25 @@ section.title {
   text-align: center;
   background-color: var(--color-highlight);
   color: white;
+}
+
+section.askew {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 5px;
+}
+
+section.askew .text-content {
+  width: 75%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+section.askew .image-content {
+  width: 25%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 section.title h1 {
@@ -74,9 +96,17 @@ pre {
   overflow: auto;
 }
 
+/* remove list-style from procedural list */
+ol.procedural {
+  list-style: none;
+}
+
 /* Lists */
 ul, ol {
-  padding-left: 1.5em;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  list-style-position: outside;
+  list-style-type: disc;
 }
 
 li {
@@ -87,6 +117,8 @@ li {
 img {
   max-width: 100%;
   height: auto;
+  box-shadow: #333333 0px 0px 5px 0px;
+  border-radius: 5px;
 }
 
 /* Tables */
@@ -148,6 +180,19 @@ th {
   background-color: transparent;
   color: black;
   font-weight: bold;
+  //* alternate shading on rows */
+  background-color: #f0f0f0;
+  children: nth-child(odd) {
+    background-color: #eaeaea;
+  }
+  children: nth-child(even) {
+    background-color: #ffffff;
+  }
+  color: var(--color-highlight);
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-dimmed);
+  font-size: var(--base-font-size);
   text-align: center;
 }
 td {
