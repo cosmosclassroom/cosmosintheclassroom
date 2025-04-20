@@ -3,7 +3,7 @@ layout: default
 marp: true
 math: katex
 paginate: true
-theme: cosmosintheclassroom/assets/themes/slidesA.css
+theme: slidesC
 ---
 <!-- D:\python\Jupyter\build\cosmosintheclassroom\src\hphys\7_shm\hlec7_shm.md -->
 
@@ -12,9 +12,31 @@ theme: cosmosintheclassroom/assets/themes/slidesA.css
 How can regular, repeating motion be described with waves?
 
 ---
+<div class="alpha">
+<div class='left'>
+
+Cotton
+
+</div>
+<div>
+
+* 39 bottles of beer on the walls, 39 bottles of beer!
+
+</div>
+<div>
+
+<div class='img'>
+  <div class='left'
+
+  ![50%](img/Physics_00003_.png)
+
+  </div>
+</div>
+
+---
 
 ## Contents
-<!-- _class: dark -->
+<!-- -->
 
 - Simple Harmonic Motion and Springs
 - Simple Pendula
@@ -26,17 +48,21 @@ How can regular, repeating motion be described with waves?
 
 ## Harmonics
 
-Many objects oscillate - an object on the end of a spring, a pendulum, a tuning fork, electrons in atoms and molecules, and the molecules themselves.
+* Many objects oscillate - an object on the end of a spring, a pendulum, a tuning fork, electrons in atoms and molecules, and the molecules themselves.
 
-When an object vibrates or oscillates back and forth, over the same path, each oscillation taking the same amount of time, the motion is periodic.
+* When an object vibrates or oscillates back and forth, over the same path, each oscillation taking the same amount of time, the motion is periodic.
 
+</div>
+</div>
 ---
 
 ## Simple Harmonic Motion
 
-An oscillating or vibrating object undergoes simple harmonic motion (SHM) if the restoring force is proportional to the (negative of) its displacement (Hooke's Law).
 
-![bg left contain](../../../assets/img/8_waves_slide4_img1.png)
+- An oscillating or vibrating object undergoes simple harmonic motion (SHM) if the restoring force is proportional to the (negative of) its displacement (Hooke's Law).
+
+![bg left](img/9_waves-optics/8_waves_1.png)
+![alt text](img/9_waves-optics/8_waves_0.png)
 
 $F = -kx$ (where $k$ is the spring constant and $x$ is displacement)
 
@@ -52,16 +78,30 @@ Hooke's Law accurately describes springs, but other oscillating solids as well.
 
 Oscillations can be described by three properties:
 
-- **Amplitude ($A$)** - the maximum displacement from equilibrium
+<div class='dict'>
+
+# Th
+
+- **Amplitude (A)** - the maximum displacement from equilibrium
+
+</div>
+<div class='trm'>
+
 - **Period ($T$)** - the time required to complete one full cycle
+
+</div>
+<div class='trm'>
+
 - **Frequency ($f$)** - the number of cycles per second
 
-![bg left contain](../../../assets/img/8_waves_slide5_img2.png)
+</div>
+</div>
+$f = \frac{1}{T}$ or $T = \frac{1}{f}$
 
 ---
 
 ## Frequency and Period
-<!-- class: dark -->
+<!-- class: inverted -->
 The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles that occur each second.
 
 - **Period ($T$)** - the time required to complete one full cycle
@@ -69,7 +109,7 @@ The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles 
   
 <div class="columns">
 
-![bg left contain](../../../assets/img/8_waves_3.png)
+![bg left contain](img/9_waves-optics/8_waves_3.png)
 
 </div>
 ---
@@ -78,11 +118,13 @@ The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles 
 
 The period of oscillation for a mass $m$ on the end of a spring with spring constant $k$ is:
 
-![bg left contain](../../../assets/img/8_waves_slide7_img4.png)
+$$ T = 2 \pi \sqrt{m}{k} $$
 
 $T$ is the period of time for the mass to complete one cycle of movement.
 
-![bg left contain](../../../assets/img/8_waves_slide7_img5.png)
+---
+
+![bg left contain](img/9_waves-optics/8_waves_5.png)
 
 ---
 
@@ -90,11 +132,11 @@ $T$ is the period of time for the mass to complete one cycle of movement.
 
 Strange though it seems, the period is not dependent on amplitude.
 
-![bg left contain](../../../assets/img/8_waves_slide8_img6.png)
+![bg left contain](img/9_waves-optics/8_waves_6.png)
 
 Displacing a spring farther increases its velocity, and therefore the period is kept constant.
 
-![bg left contain](../../../assets/img/8_waves_slide8_img7.png)
+![bg left contain](img/9_waves-optics/8_waves_7.png)
 
 ---
 
@@ -102,7 +144,7 @@ Displacing a spring farther increases its velocity, and therefore the period is 
 
 During simple harmonic motion, the total energy of the system is conserved but it is continually changing from kinetic to potential (and back).
 
-![bg left contain](../../../assets/img/8_waves_slide9_img8.png)
+![bg left contain](img/9_waves-optics/8_waves_8.png)
 
 ---
 
@@ -112,7 +154,7 @@ When friction is present, the motion is damped.
 
 The maximum displacement of the pendulum decreases with time, mechanical energy is eventually transformed into thermal energy (friction).
 
-![bg left contain](../../../assets/img/8_waves_slide10_img9.png)
+![bg 50% left contain](img/9_waves-optics/8_waves_9.png)
 
 ---
 
@@ -124,15 +166,19 @@ For small amplitudes, its period of a pendulum is given by:
 
 Note that the period depends only on length, not the mass or “bob”.
 
-![bg left contain](../../../assets/img/8_waves_slide11_img10.png)
+$$ T = 2\pi \sqrt{\frac{l}{g}} $$
 
-This is the length of the pendulum.
 
-![bg left contain](../../../assets/img/8_waves_slide11_img11.png)
 
 ---
 
-![bg left contain](../../../assets/img/8_waves_slide12_img12.png)
+This is the length of the pendulum.
+
+![bg left contain](img/9_waves-optics/8_waves_11.png)
+
+---
+
+![bg left contain](img/9_waves-optics/8_waves_12.png)
 
 ## Measures of SHM
 
@@ -147,13 +193,13 @@ Most waves require a medium, or material through which the disturbance travels.
 - Waves that require a medium are called mechanical waves.
 - Waves that do not require a medium are electromagnetic waves.
 
-![bg left contain](../../../assets/img/8_waves_slide13_img13.png)
+![bg left contain](img/9_waves-optics/8_waves_13.png)
 
 ---
 
 ## Particles in Waves
 
-![bg left contain](../../../assets/img/8_waves_slide14_img14.png)
+![bg left contain](img/9_waves-optics/8_waves_14.png)
 
 Particles in the medium oscillate, tracing a returning path but not traveling with the wave.
 
@@ -163,7 +209,7 @@ As the wave passes, particles return to their original positions.
 
 ## Particles in Waves
 
-![bg left contain](../../../assets/img/8_waves_slide15_img15.png)
+![bg left contain](img/9_waves-optics/8_waves_15.png)
 
 Particles in the medium oscillate, tracing a returning path but not traveling with the wave.
 
@@ -185,7 +231,7 @@ Vibrating objects act as sources of waves that travel outward from the source.
 
 Examples include waves in water or a string or cord.
 
-![bg left contain](../../../assets/img/8_waves_slide17_img16.png)
+![bg left contain](img/9_waves-optics/8_waves_16.png)
 
 ---
 
@@ -202,14 +248,14 @@ When the amplitude of a wave is doubled, its energy increases by a factor of fou
 ## Creating Waves
 
 A pulse is a single wave traveling through a medium.
-![Wave Pulse](<../../../assets/images/8_waves_shm/spring longitudinal visual.jpg>)
-![bg left contain](../../../assets/img/8_waves_slide19_img17.png)
+![Wave Pulse](<images/8_waves_shm/spring longitudinal visual.jpg>)
+![bg left contain](img/9_waves-optics/8_waves_17.png)
 
 ---
 
 ## Creating Waves
 
-![bg left contain](../../../assets/img/8_waves_slide20_img18.png)
+![bg left contain](img/9_waves-optics/8_waves_18.png)
 
 ---
 
@@ -217,7 +263,7 @@ A pulse is a single wave traveling through a medium.
 
 Sine waves describe particles vibrating within harmonic motion.
 
-![bg left contain](../../../assets/img/8_waves_slide21_img19.png)
+![bg left contain](img/9_waves-optics/8_waves_19.png)
 
 - **Wavelength ($\lambda$)** - the distance a wave travels in one cycle or the distance between crests or troughs on a wave.
 
@@ -229,7 +275,7 @@ The trigonometric function $y = \sin x$ produces the curve when plotted.
 
 - **Crest** - the highest point above the equilibrium position.
 
-![bg left contain](../../../assets/img/8_waves_slide22_img20.png)
+![bg left contain](img/9_waves-optics/8_waves_20.png)
 
 - **Trough** - the lowest point below the equilibrium position.
 
@@ -245,7 +291,7 @@ The velocity of a wave is its wavelength divided by its period.
 
 ## Interacting Waves
 
-![bg left contain](../../../assets/img/8_waves_slide24_img21.png)
+![bg left contain](img/9_waves-optics/8_waves_21.png)
 
 The waves interact to form an interference pattern.
 
@@ -278,9 +324,9 @@ The resulting sum is the displacement of the resultant wave.
 
 Displacements in the same direction produce constructive interference.
 
-![bg left contain](../../../assets/img/8_waves_slide27_img22.png)
+![bg left contain](img/9_waves-optics/8_waves_22.png)
 
-![bg left contain](../../../assets/img/8_waves_slide27_img23.png)
+![bg left contain](img/9_waves-optics/8_waves_23.png)
 
 ---
 
@@ -288,9 +334,9 @@ Displacements in the same direction produce constructive interference.
 
 Displacements in opposite directions produce destructive interference.
 
-![bg left contain](../../../assets/img/8_waves_slide28_img24.png)
+![bg left contain](img/9_waves-optics/8_waves_24.png)
 
-![bg left contain](../../../assets/img/8_waves_slide28_img25.png)
+![bg left contain](img/9_waves-optics/8_waves_25.png)
 
 Resultant displacement at each point is zero; pulses cancel each other out.
 
@@ -308,9 +354,9 @@ Waves maintain their own characteristics after interference.
 
 ## After collision
 
-![bg left contain](../../../assets/img/8_waves_slide30_img26.png)
+![bg left contain](img/9_waves-optics/8_waves_26.png)
 
-![bg left contain](../../../assets/img/8_waves_slide30_img27.png)
+![bg left contain](img/9_waves-optics/8_waves_27.png)
 
 - Constructive
 - Destructive
@@ -323,7 +369,7 @@ When a pulse reaches a boundary, two changes can occur:
 
 - If it is a free boundary, the wave reflects, changing direction and maintaining its amplitude and orientation.
 
-![bg left contain](../../../assets/img/8_waves_slide31_img28.png)
+![bg left contain](img/9_waves-optics/8_waves_28.png)
 
 ---
 
@@ -333,7 +379,7 @@ When a pulse reaches a boundary, two changes can occur:
 
 - If it is a fixed boundary, the wave reflects, changing direction and is also inverted.
 
-![bg left contain](../../../assets/img/8_waves_slide32_img29.png)
+![bg left contain](img/9_waves-optics/8_waves_29.png)
 
 ---
 
@@ -353,7 +399,7 @@ A standing wave is a wave that appears to stand motionless due to alternating re
 - **Nodes** are points of complete destructive interference (displacement = 0).
 - **Antinodes** are points of largest amplitude, caused by perfectly aligned constructive interference.
 
-![bg left contain](../../../assets/img/8_waves_slide34_img30.png)
+![bg left contain](img/9_waves-optics/8_waves_30.png)
 
 Only certain frequencies (and therefore wavelengths) produce standing waves.
 
@@ -363,17 +409,17 @@ Only certain frequencies (and therefore wavelengths) produce standing waves.
 
 Only certain frequencies (and therefore wavelengths) produce standing waves.
 
-![bg left contain](../../../assets/img/8_waves_slide35_img31.png)
+![bg left contain](img/9_waves-optics/8_waves_31.png)
 
 For any given wave of period $T$, four standing waves can exist:
 
-![bg left contain](../../../assets/img/8_waves_slide35_img32.png)
+![bg left contain](img/9_waves-optics/8_waves_32.png)
 
 ---
 
 ## The Scales of Things
 
-![bg left contain](../../../assets/img/8_waves_slide36_img33.png)
+![bg left contain](img/9_waves-optics/8_waves_33.png)
 
 ---
 
@@ -406,6 +452,3 @@ The body of a 1 275 kg car is supported on a frame by four springs. Two people r
 ## Example 3 | A piano string
 
 A piano string tuned to middle C vibrates with a frequency of 262 Hz. Assuming the speed of sound in air is 343 m/s, find the wavelength of the sound waves produced by the string.
-
-
-

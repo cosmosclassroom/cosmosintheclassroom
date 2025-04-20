@@ -4,6 +4,7 @@ title: Template Page
 author: Jonathan Corbett
 date: 23 March 2025
 stylesheet: modern.css
+markdown: kramdown
 ---
 
 # Template Page
@@ -25,26 +26,22 @@ This is article text
 
 <div class="figcaption">
 
-**Figure 1.** This is figure caption text
+<p class="figure-caption" markdown="1"> **Figure 1.** This is figure caption text</p>
 
 </div>
 
-|Animal|Animal|Animal|
-|-|-|-|-|
-|<br><br><br><br><br>|dog|squirrel|monkey|
-|<br><br><br><br><br>|pig|lamb|goat|
 
+|Animal|Animal|Animal|Animal Four|
+|-|-|-|-|
+|asdf|dog|squirrel|monkey|
+|asd|pig|lamb|goat|
+
+<div> <!-- custom style for indented blockquote -->
+<style>
+    blockquote {background: transparent; border-top: 1px red;}
+</style>
 
 > Indented blockquote
-
-
-<div class="d">
-
-|Animal|Animal|Animal|
-|-|-|-|-|
-|<br><br><br><br><br>|dog|squirrel|monkey|
-|<br><br><br><br><br>|pig|lamb|goat|
-
 
 </div>
 
