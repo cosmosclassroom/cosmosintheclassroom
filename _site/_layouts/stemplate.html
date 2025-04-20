@@ -1,0 +1,92 @@
+<!doctype html>
+<title>{{ page.title }} | {{ site.title }}</title>
+
+
+<link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
+
+<style>
+    column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+    }
+    content {
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+        height: 75vh; /* Content area takes 75% of the viewport height */
+    }
+    h1 {
+        font-family: 'Georgia', serif;
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        padding: 10px;
+
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+    }
+    h2 {
+        font-family: 'Georgia', serif;
+        font-size: 1.5em;
+        font-weight: lighter;
+        margin-bottom: 0.5em;
+        padding: 10px;
+    }
+    p {
+        font-family: 'Georgia', serif;
+        font-weight: lighter;
+        font-size: 1.2em;
+        margin-bottom: 1em;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: default;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        empty-cells: show;
+        // border-spacing: 0px;
+        // border-collapse: collapse;
+        // border: 1px solid #fff
+        margin: 25px 0;
+    }
+
+    .caption {
+        font-family: 'Georgia', serif;
+        font-size: 1.2em;
+        font-weight: lighter;
+        margin-bottom: 0.5em;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    td {
+        max-width: 50%;
+        align-self: center;
+        height: auto;
+        margin: auto;
+        text-wrap: normal;
+        align-self: left;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+</style>
+<container class="flex-container">
+  <div class="content">
+    {{ content | markdownify }}
+  </div>

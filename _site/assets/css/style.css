@@ -64,7 +64,8 @@ p {
 /* Code blocks to look like academic notation */
 pre, code {
     font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
-    background-color: #f8f9fa; /* Light background for code blocks */
+    color: white; /* White text for code blocks */
+    background-color: #121314; /* Light background for code blocks */
     border: 1px solid #e9ecef; /* Light border for code blocks */
     line-height: 1.6; /* Line height for readability */
     border-radius: 4px; /* Rounded corners for code blocks */
@@ -82,13 +83,13 @@ pre {
 
 /* Links with subtle, professional styling */
 a {
-    color: #2980b9;
+    color: #155179;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 /* Change link color on hover for better UX */
 a:hover {
-    color: #3498db;
+    color: #459eda;
     text-decoration: underline;
 }
 
@@ -110,9 +111,10 @@ ul, ol {
 /* Table styling for data presentation */
 table {
     width: 100%; /* Ensure the table spans the full width of the page */
-    margin: 1.5rem 0;
-    border-collapse: collapse;
-    border: 1px solid #151e27;
+    margin: 1.5rem 0; /* Space above and below the table */
+    font-size: 1rem; /* Font size for table text */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    border: 1px solid #151e27; /* Border for the table */
     table-layout: fixed; /* Retain fixed layout for consistent column sizing */
     border-bottom: 1px solid #151e27;
     border-left: 1px solid #151e27;
@@ -128,7 +130,8 @@ th, td {
     min-width: 50px;
     min-height: 50px; /* Added to maintain square shape */
     height: 50px; /* Added to maintain square shape */
-}
+    border: 1px solid #151e27; /* Border for table cells */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
 
 /* Empty cell handling */
 td:empty::after {
@@ -138,6 +141,9 @@ td:empty::after {
     height: 50px; /* Fixed height for square shape */
     min-width: 50px;
     min-height: 50px;
+    border: 1px solid #151e27; /* Border for empty cells */
+    background-color: #f8f9fa; /* Light background for empty cells */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 /* Zebra striping for tables */
