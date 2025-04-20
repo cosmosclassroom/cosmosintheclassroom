@@ -1,9 +1,9 @@
 ---
-layout: pset
+layout: problemset
 title: 8.1 | Harmonics of Springs and Pendula
 author: Jonathan Corbett
 date: 18 April 2025
-css: cosmosintheclassroom/assets/css/problemset.css
+css: problemset
 ---
 
 # PS 8.1 | Harmonics of Springs and Pendula
