@@ -3,7 +3,7 @@ layout: default
 marp: true
 math: katex
 paginate: true
-theme: slidesC
+theme: slidesA
 ---
 
 <!-- D:\python\Jupyter\build\cosmosintheclassroom\src\hphys\7_shm\hlec7_shm-v2.md -->
@@ -32,9 +32,7 @@ How can regular, repeating motion be described with waves?
 
 <div class="dict">
 
-# Oscillate
-
-to move in a repeating motion; retracing a fixed path
+* **Oscillate** - to move in a repeating motion; retracing a fixed path
 
 </div>
 
@@ -42,11 +40,12 @@ to move in a repeating motion; retracing a fixed path
 
 ## Simple Harmonic Motion
 
-An oscillating or vibrating object undergoes simple harmonic motion (SHM) if the restoring force is proportional to the (negative of) its displacement (Hooke's Law).
+An oscillating or vibrating object undergoes **simple harmonic motion (SHM)** if the **restoring** force is proportional to the (negative of) its displacement (Hooke's Law):
 
 <div class='formula'>
 
 $$ F \propto -k \cdot x $$
+
 <center>
 
 *where $k$ is the spring constant and $x$ is displacement*
@@ -62,11 +61,10 @@ Hooke's Law accurately describes springs, but other oscillating solids as well.
 
 The restoring force always acts to return the system to its equilibrium position:
 
-- In a spring: The force that pulls/pushes back to the rest position
-- In a pendulum: The gravitational force component that swings back to center
-- In waves: The tension or pressure that restores displaced particles
+* In a **spring**: The force that pulls/pushes back to the rest position
+* In a **pendulum**: The gravitational force component that swings back to center
 
-![Restoring force diagram](img/9_waves-optics/restore_force.png)
+![bg left 80%](img/9_waves-optics/8_waves_3.png)
 
 ---
 
@@ -76,7 +74,6 @@ Oscillations can be described by three properties:
 
 <div class='dict'>
 
-# Amplitude
 
 - **Amplitude (A)** - the maximum displacement from equilibrium
 
@@ -93,31 +90,43 @@ Oscillations can be described by three properties:
 </div>
 </div>
 
+<center>
+
 $f = \frac{1}{T}$ or $T = \frac{1}{f}$
+
+</center>
 
 ---
 
-## Frequency and Period
+## Time in Harmonic Motion
 
 The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles that occur each second.
+
+<div class='column'>
+<div>
 
 - **Period ($T$)** - the time required to complete one full cycle
 - **Frequency ($f$)** - the number of cycles per second
   
-<div class="columns">
+<div>
 
-![bg left contain](img/9_waves-optics/8_waves_3.png)
+![bg left contain](img/9_waves-optics/8_waves_11.png)
+
+
 
 </div>
+
 ---
 
 ## Frequency and Period
 
 The period of oscillation for a mass $m$ on the end of a spring with spring constant $k$ is:
 
-$$ T = 2 \pi \sqrt{m}{k} $$
+$$ T = 2 \pi \sqrt{\frac{m}{k}} $$
 
 $T$ is the period of time for the mass to complete one cycle of movement.
+
+
 
 ---
 
@@ -146,16 +155,11 @@ This is partly explained by the **conservation of mechanical energy**, which is 
 
 ## Transformation in SHM
 
-<div class='container'>
-
 During simple harmonic motion, the total energy of the system is conserved but it is continually changing from kinetic to potential (and back).
 
-</div>
-<div>
 
-![50%](img/9_waves-optics/8_waves_8.png)
+![bg 75% left](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExejUydmNkZnZvbjl1MGFwdGxneWN1MGFpZHl3cjdlN3BjbWR1MzZ2MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KG4S4T3n2qEqgxBEuV/giphy.gif)
 
-</div>
 
 ---
 
@@ -175,9 +179,9 @@ A simple pendulum with length $l$ approximates SHM if the amplitude is small and
 
 For small amplitudes, its period of a pendulum is given by:
 
-$$ T = 2\pi \sqrt{\frac{l}{g}} $$
+$$ T = 2\pi \sqrt{\frac{l}{a_g}} $$
 
-where l is the length of the pendulum and $a_g$ is the acceleration due to gravity on the parent body.
+> where l is the length of the pendulum and $a_g$ is the acceleration due to gravity on the parent body.
 
 Note that the period depends only on length, not the mass or “bob”.
 
@@ -187,32 +191,35 @@ Note that the period depends only on length, not the mass or “bob”.
 
 This is the length of the pendulum.
 
-![bg left contain](img/9_waves-optics/8_waves_11.png)
 
----
-
-![bg left contain](img/9_waves-optics/8_waves_12.png)
 
 ---
 
 ## Wave Motions
 
-A wave is the motion of a disturbance.
+  A wave is the motion of a **disturbance**. 
+  
+  ![auto drop-shadow](img/9_waves-optics/8_waves_12.png)
+
+---
 
 Most waves require a medium, or material through which the disturbance travels.
 
-- Waves that require a medium are called mechanical waves.
-- Waves that do not require a medium are electromagnetic waves.
+- Waves that require a medium are called **mechanical waves**.
+- Waves that do not require a medium are **electromagnetic waves**.
 
-![bg left contain](img/9_waves-optics/8_waves_13.png)
+---
 
+![alt text](img/9_waves-optics/8_waves_13.gif)
+
+![alt text](img/9_waves-optics/8_waves_15.gif)
 ---
 
 ## Particles in Waves
 <div class='column'>
 <div>
 
-![bg left center](8_waves_14-1.gif)
+![bg left center](img/9_waves-optics/8_waves_14-1.gif)
 
 </div>
 
@@ -220,7 +227,7 @@ Particles in the medium oscillate, tracing a returning path but not traveling wi
 
 As the wave passes, particles return to their original positions.
 
-![bg left center](8_waves_14-1.gif)
+![bg left center](img/9_waves-optics/8_waves_14-1.gif)
 
 
 ---
@@ -229,8 +236,9 @@ As the wave passes, particles return to their original positions.
 
 Particles in the medium oscillate, tracing a returning path but not **traveling with** the wave.
 
-![contain left](8_waves_13.gif)
-![alt text](8_waves_14.gif)
+![contain left](img/9_waves-optics/8_waves_13.gif)
+
+![alt text](img/9_waves-optics/8_waves_14.gif)
 ---
 
 ## Transverse and Longitudinal Waves
@@ -245,23 +253,19 @@ Particles in the medium oscillate, tracing a returning path but not **traveling 
 
 ## Creating Waves
 
-Vibrating objects act as sources of waves that travel outward from the source.
+**Vibrating** objects act as sources of waves that travel outward from the source.
 
-Examples include waves in water or a string or cord.
-<div>
-<style
-  padding: 0.5pt;
-  margin: 0.5px;
+![center](img/9_waves-optics/8_waves_15.gif)
 
-</style>
+* Examples include waves in water or a string or cord.
 
-![bg left vertical](img/9_waves-optics/8_waves_15.gif)
 
-![bg left vertical](img/9_waves-optics/8_waves_16.png)
 
-</div>
+![center 50%](img/9_waves-optics/8_waves_16.png)
 
-<img href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmpxZmJjd3FicjlhZmcyem9vdzJqN3lmMXNrMnZ4ZnZvYWZxZjI1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/F5rQlfTXqCJ8c/giphy.gif">
+---
+
+<img url(<>"https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmpxZmJjd3FicjlhZmcyem9vdzJqN3lmMXNrMnZ4ZnZvYWZxZjI1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/F5rQlfTXqCJ8c/giphy.gif">)
 
 ---
 

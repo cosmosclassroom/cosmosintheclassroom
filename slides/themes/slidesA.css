@@ -4,7 +4,7 @@
 @import 'default';
 
 :root {
-  --color-background: #dfd9d1;
+  --color-background: #f8f8f8;
   --color-foreground: #333333;
   --color-highlight: #5a7080;
   --color-dimmed: #888888;
@@ -49,6 +49,24 @@ section.title {
   text-align: center;
   background-color: var(--color-highlight);
   color: white;
+}
+
+.dict h1 {
+    color: var(--color-highlight);
+    margin-left: 10%;
+    flex: column;
+    font-size: 1.1rem;
+    font-style: bold;
+    margin-top: 0;
+    margin-left: 1px;
+}
+.dict p {
+    color: var(--font-body);
+    flex: column;
+    column-span: all;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin: 0.5em 0;
 }
 
 section.askew {
@@ -106,7 +124,7 @@ ul, ol {
   padding-left: 1em;
   margin-bottom: 1em;
   list-style-position: outside;
-  list-style-type: disc;
+  list-style-type: none;
 }
 
 li {
@@ -180,14 +198,10 @@ th {
   background-color: transparent;
   color: black;
   font-weight: bold;
-  //* alternate shading on rows */
+  padding: 10px;
+  border-bottom: 1px solid var(--color-dimmed);
+  font-size: var(--base-font-size);
   background-color: #f0f0f0;
-  children: nth-child(odd) {
-    background-color: #eaeaea;
-  }
-  children: nth-child(even) {
-    background-color: #ffffff;
-  }
   color: var(--color-highlight);
   font-weight: bold;
   padding: 10px;
@@ -199,4 +213,11 @@ td {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid var(--color-dimmed);
+}
+
+.column {
+  column-count: 2;
+  column-gap: 2%;
+  padding: 0.5em;
+  margin: 0 auto;
 }

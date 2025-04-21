@@ -29,22 +29,24 @@ Many objects in our world **oscillate** - springs, pendulums, tuning forks, guit
 
 When an object vibrates back and forth over the same path, with each oscillation taking the same amount of time, the motion is called **periodic**.
 
-**Oscillate**: to move in a repeating motion, retracing a fixed path
+* **Oscillate**: to move in a repeating motion, retracing a fixed path
 
 ---
 
-## Simple Harmonic Motion
+## Hooke's Law
 
 An oscillating object undergoes simple harmonic motion (SHM) when the restoring force is directly proportional to the displacement from equilibrium:
 
-$$ F = -k \cdot x $$
+* $$ F = -k \cdot x $$
 
-Where:
-- $k$ is the spring constant (stiffness)
-- $x$ is displacement from equilibrium
-- The negative sign indicates the force acts in the opposite direction of the displacement
+<center>
 
-This relationship is known as **Hooke's Law**.
+* $k$ is the spring constant (stiffness)
+* $x$ is displacement from equilibrium
+
+The negative sign indicates the force acts in the opposite direction of the displacement (can often be ignored)
+
+</center>
 
 ---
 
@@ -52,9 +54,9 @@ This relationship is known as **Hooke's Law**.
 
 The restoring force always acts to return the system to its equilibrium position:
 
-- **In a spring**: The force pulls/pushes back to the rest position
-- **In a pendulum**: The gravitational force component swings the bob back to center
-- **In waves**: Tension or pressure restores displaced particles
+* **In a spring**: The force pulls/pushes back to the rest position
+* **In a pendulum**: The gravitational force component swings the bob back to center
+* **In waves**: Tension or pressure restores displaced particles
 
 ![Restoring force diagram](img/9_waves-optics/restore_force.png)
 
@@ -64,11 +66,11 @@ The restoring force always acts to return the system to its equilibrium position
 
 All oscillations can be described by three key properties:
 
-**Amplitude (A)**: The maximum displacement from equilibrium
+* **Amplitude (A)**: The maximum displacement from equilibrium
 
-**Period (T)**: The time required to complete one full cycle
+* **Period (T)**: The time required to complete one full cycle
 
-**Frequency (f)**: The number of cycles per second
+* **Frequency (f)**: The number of cycles per second
 
 These are related by the equation: $f = \frac{1}{T}$ or $T = \frac{1}{f}$
 
@@ -86,9 +88,9 @@ Where:
 - $m$ is the mass
 - $k$ is the spring constant
 
-An important fact: The period does not depend on the amplitude! 
+Interestingly, the **period does not depend on the amplitude**! 
 
-This means a spring will oscillate with the same period regardless of how far you stretch it (as long as you don't exceed the elastic limit).
+This means a spring will oscillate with the same period regardless of how far you stretch it (to a limit)
 
 ---
 
@@ -244,15 +246,23 @@ Standing waves form when the length of the medium equals exactly:
 
 ## Key Equations Summary
 
+<div class="column">
+<div>
+
 **Simple Harmonic Motion:**
 - Hooke's Law: $F = -kx$
 - Spring Period: $T = 2\pi\sqrt{\frac{m}{k}}$
 - Pendulum Period: $T = 2\pi\sqrt{\frac{l}{g}}$
 
+</div>
+<div>
+
 **Waves:**
 - Wave Speed: $v = fλ$ or $v = \frac{λ}{T}$
 - Frequency-Period Relationship: $f = \frac{1}{T}$
 - Wave Energy: $E \propto A^2$
+
+</div>
 
 ---
 
