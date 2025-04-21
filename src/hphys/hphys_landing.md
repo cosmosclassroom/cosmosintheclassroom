@@ -41,8 +41,11 @@ toc: true
 
 ### Unit 7 | Rotational Motion and Gravitation
 
-[text](../../slides/hlec_5.2_gravitation-kepler.html)
-[text](../../slides/hlec_claude_keplerslides.html)
+[Lecture - Uniform Circular Motion](/src/hphys/6_circ_grav/circles.html)
+
+[Lecture - Universal Gravitation](../../slides/hlec_5.2_gravitation-kepler.html)
+
+[Lecture - Kepler's Laws](../../slides/hlec_claude_keplerslides.html)
 
 
 - Textbook Assignments
