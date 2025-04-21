@@ -41,8 +41,8 @@ toc: true
 
 ### Unit 7 | Rotational Motion and Gravitation
 
-
-
+[text](../../slides/hlec_5.2_gravitation-kepler.html)
+[text](../../slides/hlec_claude_keplerslides.html)
 
 
 - Textbook Assignments
@@ -50,6 +50,9 @@ toc: true
 |Topic & Sections|Pages and Problems|
 |-:|:-|
 |||
+
+[SHM v2](../../slides/hlec7_shm-v2.html)
+[SHM Original](../../slides/hlec7.html)
 
 ### Unit 9 | Light and Optics
 
