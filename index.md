@@ -16,6 +16,8 @@ pagination:
 
 <div class='container'>
 
+[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md)
+
 # Slideshows
 
 - [Slides/test](slides/test.md)
