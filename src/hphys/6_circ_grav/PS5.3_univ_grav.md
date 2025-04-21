@@ -13,14 +13,13 @@ mathjax: true
 #### 1 Consider a 70.0 kg human standing on the surface of Earth  
    - a. Calculate the force of attraction between the two masses  
    - b. Calculate the resulting acceleration of the human toward Earth  
-   - c. Calculate the resulting acceleration of the Earth toward the human  
-   - 
+   - c. Calculate the resulting acceleration of the Earth toward the human
+     
 #### 2. Consider a 70.0 kg human standing on the surface of Earth’s moon, Luna
-
    - a. Calculate the force of attraction between the two masses  
    - b. Calculate the resulting acceleration of the human toward Luna  
-   - c. Calculate the resulting acceleration of Luna toward the human.  
- 
+   - c. Calculate the resulting acceleration of Luna toward the human.
+     
 #### 3. Calculate the weight of a 45.5 kg person in the following locations:  
 
    - a. On the surface of Earth  
