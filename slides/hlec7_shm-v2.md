@@ -6,7 +6,7 @@ paginate: true
 theme: slidesC
 ---
 
-<!-- D:\python\Jupyter\build\cosmosintheclassroom\src\hphys\7_shm\hlec7_shm.md -->
+<!-- D:\python\Jupyter\build\cosmosintheclassroom\src\hphys\7_shm\hlec7_shm-v2.md -->
 
 # 8 Harmonics and Waves
 
@@ -15,7 +15,6 @@ How can regular, repeating motion be described with waves?
 ---
 
 ## Contents
-
 
 - Simple Harmonic Motion and Springs
 - Simple Pendula
@@ -35,7 +34,7 @@ How can regular, repeating motion be described with waves?
 
 # Oscillate
 
-to move in a repating motion; retracing a fixed path
+to move in a repeating motion; retracing a fixed path
 
 </div>
 
@@ -55,13 +54,19 @@ $$ F \propto -k \cdot x $$
 </center>
 </div>
 
-
-
 Hooke's Law accurately describes springs, but other oscillating solids as well.
 
 ---
 
 # Restoring Force
+
+The restoring force always acts to return the system to its equilibrium position:
+
+- In a spring: The force that pulls/pushes back to the rest position
+- In a pendulum: The gravitational force component that swings back to center
+- In waves: The tension or pressure that restores displaced particles
+
+![Restoring force diagram](img/9_waves-optics/restore_force.png)
 
 ---
 
@@ -93,7 +98,7 @@ $f = \frac{1}{T}$ or $T = \frac{1}{f}$
 ---
 
 ## Frequency and Period
-<!-- class: invert -->
+
 The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles that occur each second.
 
 - **Period ($T$)** - the time required to complete one full cycle
@@ -170,9 +175,11 @@ A simple pendulum with length $l$ approximates SHM if the amplitude is small and
 
 For small amplitudes, its period of a pendulum is given by:
 
-Note that the period depends only on length, not the mass or “bob”.
-
 $$ T = 2\pi \sqrt{\frac{l}{g}} $$
+
+where l is the length of the pendulum and $a_g$ is the acceleration due to gravity on the parent body.
+
+Note that the period depends only on length, not the mass or “bob”.
 
 
 
@@ -185,8 +192,6 @@ This is the length of the pendulum.
 ---
 
 ![bg left contain](img/9_waves-optics/8_waves_12.png)
-
-## Measures of SHM
 
 ---
 
@@ -204,21 +209,28 @@ Most waves require a medium, or material through which the disturbance travels.
 ---
 
 ## Particles in Waves
+<div class='column'>
+<div>
 
-![bg left contain](img/9_waves-optics/8_waves_14.png)
+![bg left center](8_waves_14-1.gif)
+
+</div>
 
 Particles in the medium oscillate, tracing a returning path but not traveling with the wave.
 
 As the wave passes, particles return to their original positions.
 
+![bg left center](8_waves_14-1.gif)
+
+
 ---
 
 ## Particles in Waves
 
-![bg left contain](img/9_waves-optics/8_waves_15.png)
+Particles in the medium oscillate, tracing a returning path but not **traveling with** the wave.
 
-Particles in the medium oscillate, tracing a returning path but not traveling with the wave.
-
+![contain left](8_waves_13.gif)
+![alt text](8_waves_14.gif)
 ---
 
 ## Transverse and Longitudinal Waves
@@ -236,8 +248,18 @@ Particles in the medium oscillate, tracing a returning path but not traveling wi
 Vibrating objects act as sources of waves that travel outward from the source.
 
 Examples include waves in water or a string or cord.
+<div>
+<style
+  padding: 0.5pt;
+  margin: 0.5px;
 
-![bg left contain](img/9_waves-optics/8_waves_16.png)
+</style>
+
+![bg left vertical](img/9_waves-optics/8_waves_15.gif)
+
+![bg left vertical](img/9_waves-optics/8_waves_16.png)
+
+</div>
 
 <img href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmpxZmJjd3FicjlhZmcyem9vdzJqN3lmMXNrMnZ4ZnZvYWZxZjI1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/F5rQlfTXqCJ8c/giphy.gif">
 
@@ -426,6 +448,13 @@ For any given wave of period $T$, four standing waves can exist:
 ---
 
 ## The Scales of Things
+
+Different types of waves have vastly different scales:
+
+- Radio waves: Kilometers long
+- Visible light: 400-700 nanometers
+- X-rays: Less than 10 nanometers
+- Sound waves in air: Centimeters to meters
 
 ![bg left contain](img/9_waves-optics/8_waves_33.png)
 
