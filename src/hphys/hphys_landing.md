@@ -6,8 +6,10 @@ date: March , 2025
 markdown: kramdown
 usemathjax: true
 toc: true
+css: style
 ---
 <!-- src/hphys/6_circ_grav/PS5.3_univ_grav --> 
+
 |Strand|Topics|
 |-|-|
 |Motion| [Unit 0 - Fundamentals](#unit-0--fundamentals) <br> [Unit 1 - Motion in One Dimension](#unit-1--principles-of-physics) <br> [Unit 2 - Mechanics](#unit-2--kinematics-1) <br> [Unit 3 - Dynamics](#unit-3--kinematics-2)|
@@ -27,74 +29,77 @@ toc: true
 
 #### Unit 3 | Kinematics 2
 
-
 #### Unit 4 | Dynamics
+- Newton's Laws
+- Forces and Free Body Diagrams
+
+[Lecture - Forces and Newton's Laws](../../slides/hlec_4.1_newton_laws.html)
+[PS 4.1 - Force and Motion](../../problem_sets/ps4.1_force_motion.md)
+[PS 4.2 - Free Body Diagrams](../../problem_sets/ps4.2_fbd.md)
+
+*Giancoli Ch 4: pp 75-97*
 
 ## Conservation
 
 ### Unit 5 | Work and Energy
+- Work-Energy Theorem
+- Conservation of Energy
+- Power
 
+[Lecture - Work and Energy](../../slides/hlec_5.1_work_energy.html)
+[PS 5.1 - Work and Energy](../../problem_sets/ps5.1_work_energy.md)
+[PS 5.2 - Conservation of Energy](../../problem_sets/ps5.2_cons_energy.md)
+
+*Giancoli Ch 6: pp 138-164*
 
 ### Unit 6 | Collisions, Impulse, Momentum
+- Linear Momentum
+- Conservation of Momentum
+- Elastic/Inelastic Collisions
 
+[Lecture - Momentum and Collisions](../../slides/hlec_6.1_momentum.html)
+[PS 6.1 - Momentum](../../problem_sets/ps6.1_momentum.md)
+[PS 6.2 - Collisions](../../problem_sets/ps6.2_collisions.md)
+
+*Giancoli Ch 7: pp 170-196*
 
 ## Harmonics
 
 ### Unit 7 | Rotational Motion and Gravitation
+- Uniform Circular Motion
+- Universal Gravitation
+- Kepler's Laws
 
-[Lecture - Uniform Circular Motion](/src/hphys/6_circ_grav/circles.html)
+[Lecture - Uniform Circular Motion](../../slides/hlec_7.1_ucm.html)
+[Lecture - Universal Gravitation](../../slides/hlec_7.2_gravity.html)
+[PS 7.1 - Circular Motion](../../problem_sets/ps7.1_circular.md)
+[PS 7.2 - Orbital Motion](../../problem_sets/ps7.2_orbits.md)
 
-[Lecture - Universal Gravitation](../../slides/hlec_5.2_gravitation-kepler.html)
+*Giancoli Ch 5: pp 115-137*
 
-[Lecture - Kepler's Laws](../../slides/hlec_claude_keplerslides.html)
+[PhET Lab - Gravity and Orbits](../../labs/lab7_gravity_orbits.md)
+[Orbital Reference Sheet](../../ref/ref_orbits.md)
 
-
-- Textbook Assignments
-
-|Topic & Sections|Pages and Problems|
-|-:|:-|
-|||
-
-[SHM v2](../../slides/hlec7_shm-v2.html)
-[SHM Original](../../slides/hlec7.html)
+### Unit 8 | Harmonics and Waves
 
 ### Unit 9 | Light and Optics
+- Wave Optics
+- Geometric Optics
+- Mirrors and Lenses
 
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
+[Lecture - Geometric Optics](../../slides/hlec_9.1_optics.html)
+[PS 9.1 - Ray Diagrams](../../problem_sets/ps9.1_rays.md)
+[PS 9.2 - Thin Lenses](../../problem_sets/ps9.2_lenses.md)
 
+*Giancoli Ch 22-23: pp 641-698*
 
-### Unit 11 | Optics 
+### Unit 11 | Optics
+- Interference
+- Diffraction
+- Polarization 
 
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
+[Lecture - Wave Optics](../../slides/hlec_11.1_wave_optics.html)
+[PS 11.1 - Interference](../../problem_sets/ps11.1_interference.md)
+[PS 11.2 - Diffraction](../../problem_sets/ps11.2_diffraction.md)
 
-
-## Electronics
-
-### Unit 10 | Electrostatics
-
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
-
-### Unit 11 | Electromagnetism and Currents
-
-
-[Fundamentals]: #unit-0--fundamentals
-[Mechanics]: #unit-2--kinematics-1
-[Dynamics]: #unit-4--dynamics
-[Conservation]: #unit-5--work-and-energy
-[Harmonics]: #unit-8--waves-and-harmonics
-[Electricity]: #unit-10--electrostatics
-
-[6.1 Orbital Station (Key)]: (6_circ_grav/6.1_ucm_orbital_station_key.md)
-[6.1 UCM Orbital Station]: (6_circ_grav/6.1_ucm_orbital_station.md)
-[6.0 Orbital Fact Sheet]: (6_circ_grav/6.3_orbit_fact_sheet.md)
-
-[def]: #unit-8--waves-and-harmonics
+*Giancoli Ch 24: pp 699-726*
