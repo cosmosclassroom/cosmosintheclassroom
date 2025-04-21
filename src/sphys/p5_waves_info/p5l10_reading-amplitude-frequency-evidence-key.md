@@ -2,6 +2,10 @@
 Title: P5L10 Reading - Amplitude and Frequency Evidence 
 Author: Open Sci Ed
 Date: 8 April 2025
+layout: default
+css: worksheets
+style: |
+   @import "cosmosintheclassroom/assets/css/worksheets.css"
 ---
 
 # Amplitude/Frequency Evidence

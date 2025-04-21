@@ -4,6 +4,7 @@ title: Table Test
 intro: There's nothing quite like the sea in your hair and a slap in the face.
 author: Jonathan Corbett
 stylesheet: style
+css: cosmosintheclassroom/assets/css/worksheets.css
 ---
 <!--  cosmosintheclassroom\src\tabletest.md  -->
 
