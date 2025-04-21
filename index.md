@@ -1,5 +1,5 @@
 ---
-layout: sidenav
+layout: default
 title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
