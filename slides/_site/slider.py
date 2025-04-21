@@ -24,6 +24,10 @@ class MarpConverter:
         input_path = Path(input_path)
         output_dir = Path(output_dir)
         
+        # Ensure output has .html extension
+        if not output_dir.suffix:
+            output_dir = output_dir.with_suffix('.html')
+        
         # Get theme from frontmatter if not specified
         if not theme:
             frontmatter = self.extract_frontmatter(input_path)
