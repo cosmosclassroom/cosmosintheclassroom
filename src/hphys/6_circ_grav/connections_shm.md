@@ -1,4 +1,20 @@
+---
+layout: default
+title: Connections - SHM
+subtitle: From Cathedral Ceilings to Quantum Fields
+author: Jonathan Corbett and Claude AI
+date: 15 April 2025
+stylesheet: worksheets
+---
+{% assign author = page.author %}
+{% assign date = page.date %}
+
+
 # The Swinging Truth: From Cathedral Ceilings to Quantum Fields
+
+
+---
+## Pendula
 
 In 1583, a young medical student named Galileo Galilei sat bored during a tedious sermon at the Cathedral of Pisa. To pass the time, he began observing the swinging motion of a chandelier disturbed by a gust of wind. Using his pulse as a timekeeper, Galileo noticed something curious: regardless of how wide the arc of the swing, the time it took to complete one oscillation remained remarkably constant.
 
@@ -12,11 +28,21 @@ Accurate timekeeping might seem a modest achievement, but it solved one of the m
 
 Meanwhile, back on land, the mathematical description of pendulum motion was becoming more sophisticated. In 1822, Jean-Baptiste Joseph Fourier published his groundbreaking work Théorie analytique de la chaleur (The Analytical Theory of Heat). In it, he showed that any periodic function—including the swing of a pendulum—could be broken down into a sum of simpler sine waves. Fourier developed a mathematical technique, now called Fourier analysis, to decompose complex waveforms into their constituent frequencies. This proved to be immensely powerful, far beyond just describing pendulum motion.
 
+## Sound
+
 In an unexpected turn, Fourier's mathematical approach would transform an entirely different field: sound analysis. Hermann von Helmholtz applied these principles to understand how the human ear processes complex sounds. He built resonators—acoustical devices, often shaped like hollow spheres with openings—that were essentially tuned to specific frequencies. By holding these resonators to his ear, Helmholtz could isolate specific frequencies from a complex tone, demonstrating that our ears perform a kind of natural Fourier analysis, breaking down sound into its component frequencies.
 
 These insights into sound would later enable Alexander Graham Bell to develop the telephone in 1876. Bell understood that sound waves could be converted to electrical signals that mirrored the original vibration patterns—essentially electrical "pendulums" swinging in sympathy with sound waves. His early experiments involved using a diaphragm to convert sound waves into varying electrical currents, which then vibrated another diaphragm at the receiving end to reproduce the sound.
 
+## Light and Lenses
+
+The realization that light behaves as a wave opened yet another door to discovery. In the 17th century, scientists like Isaac Newton and Christiaan Huygens debated the nature of light, with Huygens championing the wave theory. This understanding, combined with the ability to bend light through glass lenses, led to the invention of microscopes and telescopes—tools that unlocked entire worlds at scales previously unimaginable.
+
+Microscopes revealed the intricate structures of living cells, laying the foundation for modern biology. Telescopes, on the other hand, brought distant celestial objects into focus, transforming our understanding of the cosmos. Galileo himself, using a rudimentary telescope, discovered the moons of Jupiter, the phases of Venus, and countless stars invisible to the naked eye. These instruments bridged the gap between the infinitely small and the infinitely large, forever altering humanity's perception of its place in the universe.
+
 The mathematics that began with Galileo's pendulum found yet another application when Heinrich Hertz demonstrated the existence of electromagnetic waves in 1887. James Clerk Maxwell had theoretically predicted these waves, describing them with a set of partial differential equations (Maxwell's equations) that, remarkably, have mathematical similarities to the equations that govern pendulum motion. Hertz's experimental confirmation involved creating sparks with an induction coil, which generated electromagnetic waves that were detected by a receiver consisting of a loop of wire with a small gap. The oscillating electric and magnetic fields of the waves induced a current in the loop, creating a spark across the gap.
+
+## Quantum
 
 By the early 20th century, physicists were exploring the microscopic world, where they discovered that all matter exhibits wave-like properties. Erwin Schrödinger's famous equation, published in 1926, describes subatomic particles as wave functions—essentially quantum "pendulums"—whose oscillations determine the probability of finding a particle in a particular location. Schrödinger's work built on the earlier ideas of Louis de Broglie, who proposed that particles have a wavelength inversely proportional to their momentum.
 
