@@ -190,14 +190,6 @@ table {
     background-color: var(--secondary-color);
 }
 
-/* Print optimization */
-@media print {
-
-    .data-table,
-    .template-table {
-        page-break-inside: avoid;
-    }
-}
 
 .figure-right {
     border-radius: 1rem;
@@ -225,6 +217,7 @@ table {
     margin-top: 5px;
 }
 
+/* Instruction Box - For worksheets and assignments */
 .checkpoint {
     border-left: 4px solid var(--primary-color);
     background-color: var(--secondary-color);
@@ -235,8 +228,18 @@ table {
     margin: 1rem 1rem;
 }
 
-.checkpoint {
+.checkpoint h1 {
     display: block;
     text-align: center;
 
+}
+
+
+/* Print optimization */
+@media print {
+
+    .data-table,
+    .template-table {
+        page-break-inside: avoid;
+    }
 }
