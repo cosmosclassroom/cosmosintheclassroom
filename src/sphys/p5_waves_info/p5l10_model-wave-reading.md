@@ -4,16 +4,19 @@ title: Experiments in Wave and Particle Models
 subtitle: The Wave Model
 author: Jonathan Corbett
 date: 21 April 2025
-stylsheet: cosmosintheclassroom/assets/css/worksheets.css
+stylsheet: worksheets
 ---
 
 ## The Wave Model of Electromagnetism
+
+> # Wave Variables in Wave-Particle Duality
+> Copy the table below into your science notebook, including the diagram (or some version of it that makes sense to you). The missing diagram will follow.
 
 <div class="template-table">
 
 |Wave Model|Particle Model
 |-|-|
-|![EM variables in the wave model](../../../assets/images/p5_waves/p5l10_photon_vars.png)| asdfasdfss|
+|![EM variables in the wave model](../../../assets/images/p5_waves/p5l10_photon_vars.png){:style="margin:0,"}||
 
 
 </div>
@@ -50,6 +53,18 @@ The fact that electromagnetic radiation can exhibit both interference and diffra
 ### The Limitations of the Wave Model
 
 Despite its successes, the wave model cannot explain all aspects of electromagnetic radiation. As scientists delved deeper into the nature of light, they encountered phenomena that defied explanation by the wave model alone.
+
+Imagine that you just built a large sandcastle at the beach.
+
+![alt text](<../../../assets/images/p5_waves/P5 L10 Digital Handout _ Water Wave Analogy.png>){: class="figure-right"}
+
+ Waves are crashing nearby, and eventually the waves are going to destroy your sandcastle. If we model EM radiation as a wave, we should consider the energy in each wave. Destroying a sandcastle is affected by both:
+(A) the frequency of the water waves      (B) the amplitude of the water waves.
+
+High-frequency water waves come crashing rapidly. Many waves hit every second, and your sandcastle is pummeled by lots of waves.
+High-amplitude water waves are large, like a wall of water. If the frequency is low, the waves don’t hit often, but when they do, they are very destructive.
+
+Some particle-scale events, such as ionizing an atom or producing an electron from the material on the surface of a solar cell, require a lot of energy at once in order to occur. This is similar to the energy from water waves destroying a sandcastle. Increasing the amplitude and/or frequency both increase a wave’s energy, but in the analogy, tall walls of high-amplitude water are more destructive than many tiny waves.
 
 <div class="checkpoint">
 

@@ -44,7 +44,9 @@ layout: default
 
 [Analogy: Wave-Particle Duality](p5l10_model-particle-reading.md)
 
-`[Reading: Particle Model](p5l10_model-particle-reading.md)`
+[Reading: Wave Model](p5l10_model-wave-reading.md)
+
+[Reading: Particle Model](p5l10_model-particle-reading.md)
 
 [PartiCLE](p5l10_model-particle-reading.md)
 
