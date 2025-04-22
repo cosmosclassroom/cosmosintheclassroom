@@ -18,9 +18,9 @@
     {% endif %}
     <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
     {% if page.stylesheet %}
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/' | append: page.stylesheet | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/' | append: page.stylesheet | append: '.css' | relative_url }}" />
     {% else %}
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/worksheets.css' | relative_url }}" />
     {% endif %}
 
   

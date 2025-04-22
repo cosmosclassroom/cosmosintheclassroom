@@ -1,10 +1,10 @@
 ---
-layout: sidenav
+layout: default
 title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
 markdown: kramdown
-stylesheet: modern
+stylesheet: worksheets
 mathjax: true
 pagination:
     enabled: false
@@ -16,11 +16,17 @@ pagination:
 
 $$\vec{F} = m \cdot \vec{a}$$
 
-{sections.kinematics.velocity.latex}
+{% assign velocity = site.data.physics_course.sections.kinematics.velocity.latex %}
+
+{{ velocity | markdownify }}
 
 <div class='container'>
 
+
 [p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md){.button}
+
 [Standard Physics Overview](src/sphys/sphys_overview.md){.button}
+
 [text](src/sphys/sphys_teacher.md){.button}
+
 [Honors Physics Landing](src/hphys/hphys_landing.md){.button}
