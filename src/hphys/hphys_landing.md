@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Document Title"
+title: "Honors Physics Landing Page"
 author: Jonathan Corbett
 date: March , 2025
 markdown: kramdown
