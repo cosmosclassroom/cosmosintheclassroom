@@ -37,10 +37,23 @@ h1 {
     font-weight: bold;
 }
 
+.button {
+    background-color: var(--primary-color); /* Accent color for buttons */
+    color: white; /* White text for contrast */
+    margin: 0.5em 0.5em 0.5em 0.5em;
+    border: 1px solid var(--primary-color); /* Border for buttons */
+    border-radius: 4px; /* Rounded corners for buttons */
+    padding: 0.5rem 1rem; /* Padding for buttons */
+    cursor: pointer /* Pointer cursor on hover */;
+    font-size: 1rem; /* Font size for buttons */
+}
+
 ol, ul {
     margin: 0.5em 0;
     padding-left: 2em;
     color: var(--text-color);
+    line-height: 1.6;
+    padding-bottom: 1em;
 }
 
 .reference-box {
@@ -114,11 +127,13 @@ table {
 
 /* Template Table - For student notebooks */
 .template-table {
-    border: 2px solid var(--text-color);
+    display: block;
+    border: 1px solid var(--text-color);
     width: 100%;
+    margin-top: 1em;
+    margin-left: auto; margin-right:auto;
     max-width: 100%;
-    table-layout: fixed;
-    margin: 1em auto;
+    table-layout: fixed center;
     border-collapse: collapse;
 }
 
@@ -129,11 +144,12 @@ table {
 }
 
 .template-table td {
-    border: 2px solid var(--text-color);
+    border: 1px solid var(--text-color);
+    font-weight: light;
     padding: 8px;
-    min-height: 2em;
+    min-height: 10em;
     word-wrap: break-word;
-    empty-cells: show;
+    empty-cells:show;
 }
 
 /* Hover effects for better visibility */
