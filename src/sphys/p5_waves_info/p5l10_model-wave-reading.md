@@ -11,7 +11,7 @@ stylsheet: worksheets
 # The Wave Model of Electromagnetism
 
 > ### Wave Variables in Wave-Particle Duality
-> Copy the diagram below, including figure caption, into your science notebook:
+> Copy **Figure 1** below, including figure caption, into your science notebook:
 
 ### The Mystery of Light
 
@@ -37,7 +37,6 @@ One of the most convincing demonstrations of the wave nature of light is Young's
 **Figure 2.** Simple schematic of Young's double-slit experiment. A beam of laser light was shone on a metal screen containing two slits. As the light transmitted through the slits, the interference pattern of the waves was visible on a second screen behind the slits.
 
 </div>
-
 A beam of light is directed through a screen with two slits and the interference pattern of the light waves is observed on a screen behind. Instead of seeing two bright lines (which is what one might expect if light were made of particles), Young saw a pattern of alternating bright and dark bands, called interference fringes. This pattern could only be explained if light were a wave. The light waves passing through the two slits spread out and overlap. Where the crests of the two waves meet, they reinforce each other, creating a bright band (constructive interference). Where a crest meets a trough, they cancel each other out, creating a dark band (destructive interference). This experiment provided strong evidence that light behaves as a wave.
 
 Young's double-slit experiment highlights the phenomenon of interference. Interference is a property of waves where two or more waves combine to create a new wave pattern. When waves overlap, they can either reinforce each other (constructive interference), resulting in a larger wave, or cancel each other out (destructive interference), resulting in a smaller wave or no wave at all. Waves also have the ability to bend around obstacles and spread out after passing through narrow openings, a phenomenon called diffraction. This is why you can sometimes hear someone talking even if they are around a corner – sound waves diffract around the corner. Light also diffracts, although the effect is less obvious because the wavelengths of visible light are much smaller than those of sound waves.
