@@ -10,7 +10,9 @@ stylsheet: worksheets
 
 # The Wave Model of Electromagnetism
 
-### Wave Variables in Wave-Particle Duality
+## Wave Variables in Wave-Particle Duality
+
+---
 
 > Copy **Figure 1** below, including figure caption, into your science notebook:
 
