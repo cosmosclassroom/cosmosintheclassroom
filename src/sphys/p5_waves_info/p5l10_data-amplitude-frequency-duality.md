@@ -16,8 +16,7 @@ This study investigates the relationship between electromagnetic wave properties
 [Scientific Notation Reference](P5L9_wave-eq-powers-ten-lesson.md){: .button}
 {: .reference-box}
 
-**Table 1**: Effects of Light on Living Cells
-*Using various light sources, this experiment measures cellular damage caused by different frequencies (colors) of light at both low and high intensities. Exposure time is kept constant to isolate frequency and amplitude effects.*
+**Table 1**: Effects of Light on civing cells. Using various laser sources, this experiment measures cellular damage caused by different frequencies (colors) of light at both low and high intensities. Exposure time is kept constant to isolate frequency and amplitude effects.
 
 <div class='data-table'>
 
@@ -53,34 +52,41 @@ This study investigates the relationship between electromagnetic wave properties
 
 ### Analysis Questions
 
-#### Relating to Cell Damage
+#### Cell Damage Analysis
 
-1. Observe Table 1 and Graph 1. What general trend do you notice between the frequency of light and the likelihood and level of cell damage?
+1. Examining Table 1, what relationship exists between light frequency and cell damage?
 
-2. Examine the data for the red and green lasers (different amplitudes, similar lower frequencies). Does increasing the amplitude of these lower-frequency lights cause cell damage in this experiment? What does this suggest about the primary factor determining whether light can damage cells in this scenario?
+2. For red and green lasers, does amplitude affect cell damage? What factor appears most critical?
 
-3. Compare the UV lamp data points with different amplitudes. Does a higher amplitude UV light cause more severe damage? How does this relate to your answer in question 2?
+3. Compare the UV lamp results at different amplitudes. What effect does higher amplitude have on damage severity?
 
-4. Based on this data, is the energy carried by a light wave solely determined by its amplitude? Explain your reasoning. Consider how different frequencies behave.
+4. Does the data suggest light's energy depends solely on amplitude? Explain using frequency behavior.
 
-5. How might the frequency of light be related to the energy of individual "packets" of light (photons) interacting with the cells?
+5. How might photon energy relate to light frequency based on these results?
 
-#### Relating to the Photoelectric Effect
+#### Photoelectric Effect Analysis
 
-6. Observe Table 2 and Graph 2. What is the relationship between the frequency of light and the kinetic energy of the ejected electrons? What happens below a certain frequency?
+6. From Table 2, identify the threshold frequency for electron ejection. What pattern emerges in kinetic energy as frequency increases?
 
-7. Compare the data for the red light with the green, blue, and UV light. Even with a higher amplitude, red light does not eject electrons. What does this imply about the role of frequency in initiating the photoelectric effect?
+7. For each light type (green/blue/UV):
+  - Does amplitude change affect kinetic energy?
+  - How does amplitude affect current?
+  What conclusions can you draw?
 
-8. Examine the data for the green, blue, and UV light sources at different amplitudes (Graph 3). What effect does increasing the amplitude have on the number of ejected electrons? What does this suggest about the intensity of the light?
+8. Regarding red light:
+  - Why doesn't higher amplitude trigger electron ejection?
+  - What does this reveal about electron liberation?
 
-9. Does changing the amplitude of the light change the kinetic energy of the individual ejected electrons? Support your answer with evidence from Table 2 and Graph 2.
+9. Complete these statements:
+  - Frequency determines: ___ (kinetic energy/electron ejection)
+  - Amplitude determines: ___ (electron quantity/kinetic energy)
 
-10. Based on these data, what two properties of light seem to be important in the photoelectric effect? What does this suggest about the nature of light interacting with electrons?
+#### Synthesis
 
-#### Bridging the Two Phenomena
+10. Compare both phenomena (cell damage and photoelectric effect):
+   - How do threshold frequencies relate?
+   - How do amplitude effects compare?
 
-11. How does the concept of a "threshold" (seen in the photoelectric effect) relate to the idea that only certain frequencies of light can cause cell damage?
-
-12. In both the cell damage and photoelectric effect experiments, does the amplitude of light always have the same effect? Explain.
-
-13. Based on your analysis of both datasets, can you propose a model where light exhibits both wave-like and particle-like properties? How might frequency and amplitude relate to the energy and number of these "particles"?
+11. Provide evidence from the data showing light behaving as:
+   - A particle
+   - A wave
