@@ -1,5 +1,5 @@
 ---
-layout: stemplate
+layout: sidenav
 title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
@@ -12,44 +12,15 @@ pagination:
 
 <!-- <div class="main-content"> -->
 
-# Markdown Resumes
+# Index
+
+$$\vec{F} = m \cdot \vec{a}$$
+
+{sections.kinematics.velocity.latex}
 
 <div class='container'>
 
-[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md)
-
-# Slideshows
-
-- [Slides/test](slides/test.md)
-
-- [Slides-Test](slides/slides-test.html)
-
-</div>
-<div>
-
-## Courses
-
-- [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
-- [Standard Physics](https://cosmosintheclassroom.org/src/sphys/sphys_overview)
-- [Honors Physics Landing](src/hphys/hphys_landing.md)
-
-</div>
-
-<div>
-
-## Resources
-
-- [Reference Library](https://cosmosintheclassroom.org/src/ref/ref_lib)
-- [LaTeX Guide](https://cosmosintheclassroom.org/src/ref/ref_latex)
-
-</div>
-</div>
-</div>
-
-<div class="other-content">
-
-#### other content
-
-This is *other* content - very special and hush-hush 
-
-</div>
+[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md){.button}
+[Standard Physics Overview](src/sphys/sphys_overview.md){.button}
+[text](src/sphys/sphys_teacher.md){.button}
+[Honors Physics Landing](src/hphys/hphys_landing.md){.button}
