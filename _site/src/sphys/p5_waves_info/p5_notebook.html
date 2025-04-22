@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>p5.js Waves Notebook</title>
     <!-- Corrected CSS Imports -->
-    <link rel="stylesheet" href="../../assets/css/notebook.css" onerror="handleMissingCSS('documents.css')">
+    <link rel="stylesheet" href="../../assets/css/notebook.css" onerror="handleMissingCSS('notebook.css')" />
+    <link rel="stylesheet" href="../../assets/css/style.css" onerror="handleMissingCSS('style.css')" />
     <!-- KaTeX Dependencies -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-    
-
     <!-- Include Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
     <script>
         // Handle missing CSS files
         function handleMissingCSS(fileName) {
@@ -29,8 +27,92 @@
             'p5l4_wave_variables.md',
             'p5l7_1_sim_EM_polarity.md',
             'p5l7_2_consensus_model_polarity.md',
-            'p5l7_3_metal_oven_reading.md'
+            'p5l7_3_metal_oven_reading.md',
+            'p5l10.md',
+            'p5l10_data-amplitude-frequency-duality.md',
+            'p5l10_model-particle-reading.md',
+            'p5l10_model-wave-reading.md',
+            'p5l10_reading-amplitude-frequency-evidence.md',
+            'p5l10_wave-particle-duality.md'
         ];
+
+        // Function to strip YAML front matter
+        function stripYAMLFrontMatter(markdownText) {
+            // Match YAML front matter enclosed by "---" at the start of the file
+            return markdownText.replace(/^(---\s*[\s\S]*?\s*---\s*)/, '');
+        }
+
+        // Function to load and render a markdown file
+        function loadMarkdownFile(index) {
+            const contentDiv = document.getElementById('content');
+            contentDiv.innerHTML = '<p>Loading...</p>';
+
+            // Update navigation UI
+            document.getElementById('currentIndex').textContent = index + 1;
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === markdownFiles.length - 1;
+
+            // Fetch the markdown file
+            fetch(markdownFiles[index])
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load file: ${markdownFiles[index]}`);
+                    }
+                    return response.text();
+                })
+                .then(markdownText => {
+                    // Strip YAML front matter
+                    const cleanedMarkdown = stripYAMLFrontMatter(markdownText);
+
+                    // Parse and render markdown
+                    contentDiv.innerHTML = marked.parse(cleanedMarkdown);
+
+                    // Render LaTeX after Markdown is parsed
+                    renderMathInElement(contentDiv, {
+                        delimiters: [
+                            { left: "$$", right: "$$", display: true },
+                            { left: "$", right: "$", display: false }
+                        ]
+                    });
+                })
+                .catch(error => {
+                    contentDiv.innerHTML = `
+                        <div class="load-error">
+                            ${error.message}<br>
+                            Make sure the file exists in the correct location.
+                        </div>
+                    `;
+                    console.error(error);
+                });
+        }
+
+        // Initialize the current file index
+        let currentFileIndex = 0;
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('totalFiles').textContent = markdownFiles.length;
+            loadMarkdownFile(currentFileIndex);
+
+            // Set up event listeners for navigation buttons
+            document.getElementById('prevBtn').addEventListener('click', navigatePrevious);
+            document.getElementById('nextBtn').addEventListener('click', navigateNext);
+        });
+
+        // Navigation functions
+        function navigatePrevious() {
+            if (currentFileIndex > 0) {
+                currentFileIndex--;
+                loadMarkdownFile(currentFileIndex);
+            }
+        }
+
+        function navigateNext() {
+            if (currentFileIndex < markdownFiles.length - 1) {
+                currentFileIndex++;
+                loadMarkdownFile(currentFileIndex);
+            }
+        }
     </script>
 </head>
 <!-- BEGIN BODY CONTENT -->
@@ -44,13 +126,10 @@
         <div class='dropdown'>
 
         </div>
-
-            <p>P5L1</p>
-            <p>P5L2</p>
         </menu>
         <h3>Navigation</h3>
-        <a href="/" class="button">Homepage</a>
-    <div class="nav-buttons">
+            <div class="nav-buttons"
+            style="display: flex; justify-content: space-between; width: 100%; max-width: 80%">
         <button id="prevBtn" disabled>Previous</button>
         <div class="file-info">
             File <span id="currentIndex">1</span> of <span id="totalFiles">?</span>
@@ -64,67 +143,13 @@
     </div>
     
     <script>
-        // Initialize the current file index
-        
-        let currentFileIndex = 0;
-        
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('totalFiles').textContent = markdownFiles.length;
-            loadMarkdownFile(currentFileIndex);
-            
-            // Set up event listeners for navigation buttons
-            document.getElementById('prevBtn').addEventListener('click', navigatePrevious);
-            document.getElementById('nextBtn').addEventListener('click', navigateNext);
-        });
-        
-        // Function to load and render a markdown file
-        function loadMarkdownFile(index) {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = '<p>Loading...</p>';
-            
-            // Update navigation UI
-            document.getElementById('currentIndex').textContent = index + 1;
-            document.getElementById('prevBtn').disabled = index === 0;
-            document.getElementById('nextBtn').disabled = index === markdownFiles.length - 1;
-            
-            // Fetch the markdown file
-            fetch(markdownFiles[index])
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to load file: ${markdownFiles[index]}`);
-                    }
-                    return response.text();
-                })
-                .then(markdownText => {
-                    // Parse and render markdown
-                    contentDiv.innerHTML = marked.parse(markdownText);
-                })
-                .catch(error => {
-                    contentDiv.innerHTML = `
-                        <div class="load-error">
-                            ${error.message}<br>
-                            Make sure the file exists in the correct location.
-                        </div>
-                    `;
-                    console.error(error);
-                });
-        }
-        
-        // Navigation functions
-        function navigatePrevious() {
-            if (currentFileIndex > 0) {
-                currentFileIndex--;
-                loadMarkdownFile(currentFileIndex);
-            }
-        }
-        
-        function navigateNext() {
-            if (currentFileIndex < markdownFiles.length - 1) {
-                currentFileIndex++;
-                loadMarkdownFile(currentFileIndex);
-            }
-        }
+        // apply CSS stylesheet /assets/css/style.css to the content div
+        const styleSheet = document.createElement('link');
+        styleSheet.rel = 'stylesheet';
+        styleSheet.type = 'text/css';
+        styleSheet.href = '../../assets/css/style.css';
+        document.getElementById('content').appendChild(styleSheet); // Append the stylesheet to the content div
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
