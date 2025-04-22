@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>P5L9 Wave Equation in Scientific Notation | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    
+
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='nav'>
+
+      Text in the nav setup
+      
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="p5l9-wave-equation-in-scientific-notation">P5L9 Wave Equation in Scientific Notation</h1>
+
+<h3 id="introduction">Introduction</h3>
+<p>Previously we have examined the algebraic relationship between frequency, $f$, wavelength, $\lambda$, and velocity, $v$ of a wave. Two peculiarities arise when working with electromagnetic waves. First, the speed of EM waves in a vaccuum is constant for all EM waves. This is not just a staggeringly fast speed, it constitutes a sort of cosmic speed limit at $3.0 \times 10^8 \, m/s$. Further, EM waves have measurements on a scale unlike sound and water waves that we have discussed previously. To manage numbers at this scale we must begin working in <strong>scientific notation</strong>. Some common prefixes in the SI system and their scientific notation equivalents are given in Table 1 below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Prefix</th>
+      <th style="text-align: center">Symbol</th>
+      <th style="text-align: center">Power of Ten</th>
+      <th style="text-align: center">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">giga</td>
+      <td style="text-align: center">G</td>
+      <td style="text-align: center">$10^9$</td>
+      <td style="text-align: center">1 gigameter (Gm) = $10^9$ m</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">mega</td>
+      <td style="text-align: center">M</td>
+      <td style="text-align: center">$10^6$</td>
+      <td style="text-align: center">1 megawatt (MW) = $10^6$ W</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">kilo</td>
+      <td style="text-align: center">k</td>
+      <td style="text-align: center">$10^3$</td>
+      <td style="text-align: center">1 kilometer (km) = $10^3$ m</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>Base Unit</strong></td>
+      <td style="text-align: center"><strong>m, g, Hz, s, etc.</strong></td>
+      <td style="text-align: center"><strong>$10^0$</strong></td>
+      <td style="text-align: center"><strong>1 meter (m) = $10^0$ m</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">centi</td>
+      <td style="text-align: center">c</td>
+      <td style="text-align: center">$10^{-2}$</td>
+      <td style="text-align: center">1 centimeter (cm) = $10^{-2}$ m</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">milli</td>
+      <td style="text-align: center">m</td>
+      <td style="text-align: center">$10^{-3}$</td>
+      <td style="text-align: center">1 millimeter (mm) = $10^{-3}$ m</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">micro</td>
+      <td style="text-align: center">$\mu$</td>
+      <td style="text-align: center">$10^{-6}$</td>
+      <td style="text-align: center">1 micrometer ($\mu$m) = $10^{-6}$ m</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">nano</td>
+      <td style="text-align: center">n</td>
+      <td style="text-align: center">$10^{-9}$</td>
+      <td style="text-align: center">1 nanosecond (ns) = $10^{-9}$ s</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">pico</td>
+      <td style="text-align: center">p</td>
+      <td style="text-align: center">$10^{-12}$</td>
+      <td style="text-align: center">1 picofarad (pF) = $10^{-12}$ F</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Table 1.</strong> Common metric prefixes and their scientific notation equivalents.</p>
+
+<hr />
+
+<p><strong>The Wave Equation</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Wave Type</th>
+      <th style="text-align: center">Formula</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">All waves</td>
+      <td style="text-align: center">$v = f \cdot \lambda$</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Electromagnetic Waves</td>
+      <td style="text-align: center">$c = f \cdot \lambda$</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>$v$ represents the <strong>speed</strong> of the wave (typically in meters per second, m/s). $c$ is constant for EM waves in a vaccuum.</li>
+  <li>$f$ represents the <strong>frequency</strong> of the wave (typically in Hertz, Hz, which is cycles per second or $\frac{1}{s}$ or $s^{-1}$).</li>
+  <li>$\lambda$ represents the <strong>wavelength</strong> of the wave (typically in meters, m).</li>
+</ul>
+
+<hr />
+
+<h3 id="sample-problem-1-finding-the-speed">Sample Problem 1: Finding the Speed</h3>
+
+<p>A sound wave in air has a frequency of $250 \,Hz$ and a wavelength of $136 \, cm$. What is the speed of this sound wave?</p>
+<details>
+  <p>First, convert the wavelength to meters:</p>
+
+  <p>$136 cm \times \frac{1 m}{100 cm} = 1.36 m$</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: right"> </th>
+        <th style="text-align: left">$v = f \cdot \lambda$</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: right">$f = 250 \, Hz$ <br /> $\lambda = 1.36 \, m$ <br /> $v = ??$</td>
+        <td style="text-align: left">$v = (250 \, Hz)(1.36 \, m)$ <br /> $v = 340 \, m/s$</td>
+      </tr>
+    </tbody>
+  </table>
+
+</details>
+
+<h3 id="sample-problem-2-finding-the-wavelength-with-metric-prefix-conversion">Sample Problem 2: Finding the Wavelength (with Metric Prefix Conversion)</h3>
+
+<p>A radio wave has a frequency of 100 MHz (megahertz) and travels at the speed of light, which is approximately $3.0 \times 10^8 \, m/s$. What is the wavelength of this radio wave in meters?</p>
+
+<details>
+
+  <ul>
+    <li>
+      <p>First, convert megahertz (MHz) to Hz:</p>
+
+      <p>$100 \, MHz \times \frac{1 \times 10^6 Hz}{1 MHz} = 1.0 \times 10^8 Hz$</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: right"> </th>
+            <th style="text-align: left">$c = f \cdot \lambda$</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: right">$f = 1.0 \times 10^8 \,Hz$ <br /> $c = 3.0 \times 10^8 \, m/s$ <br /> $\lambda = ??$</td>
+            <td style="text-align: left">$\lambda = \frac{c}{f}$ <br /> $\lambda = \frac{3.0 \times 10^8 \, m/s}{1.0 \times 10^8 \, Hz}$ <br /> $\lambda = 3.0 \, m$</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
+</details>
+
+      </div>  
+  </body>
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
