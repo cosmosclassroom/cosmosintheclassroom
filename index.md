@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: stemplate
 title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
 markdown: kramdown
-stylesheet: style
+stylesheet: modern
 mathjax: true
 pagination:
     enabled: false
 ---
 
-<div class="main-content">
+<!-- <div class="main-content"> -->
 
 # Markdown Resumes
 
