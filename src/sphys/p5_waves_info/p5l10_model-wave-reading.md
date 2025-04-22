@@ -7,25 +7,22 @@ date: 21 April 2025
 stylsheet: worksheets
 ---
 
-## The Wave Model of Electromagnetism
+# The Wave Model of Electromagnetism
 
-> # Wave Variables in Wave-Particle Duality
-> Copy the table below into your science notebook, including the diagram (or some version of it that makes sense to you). The missing diagram will follow.
-
-<div class="template-table">
-
-|Wave Model|Particle Model
-|-|-|
-|![EM variables in the wave model](../../../assets/images/p5_waves/p5l10_photon_vars.png){:style="margin:0,"}||
-
-
-</div>
+> ### Wave Variables in Wave-Particle Duality
+> Copy the diagram below, including figure caption, into your science notebook:
 
 ### The Mystery of Light
 
-Imagine a beam of light. What is it? For centuries, scientists have grappled with this question. Is it a wave, like the ripples in a pond, or a stream of particles, like tiny bullets? The answer, it turns out, is both, and neither, in a way that challenges our everyday intuition. We begin by exploring the evidence that led scientists to believe that light, and electromagnetic radiation in general, behaves like a wave.
+<div class='figure-right'>
 
-### The Wave Model: A Familiar Idea
+![alt text](../../../assets/images/p5_waves/p5l10_photon_vars.png)
+
+**Figure 1.** A bunch of stuff that you can't see well.
+
+</div>
+
+Imagine a beam of light. What is it? For centuries, scientists have grappled with this question. Is it a wave, like the ripples in a pond, or a stream of particles, like tiny bullets? The answer, it turns out, is both, and neither, in a way that challenges our everyday intuition. We begin by exploring the evidence that led scientists to believe that light, and electromagnetic radiation in general, behaves like a wave.
 
 The idea of waves is familiar to us. We see water waves on the ocean, hear sound waves in the air, and even feel seismic waves during an earthquake. The wave model describes these phenomena as disturbances that travel through a medium, transferring energy without transferring matter. In the case of electromagnetic radiation, the "disturbance" consists of oscillating electric and magnetic fields.
 
@@ -36,15 +33,8 @@ One of the most convincing demonstrations of the wave nature of light is Young's
 
 ![Interaction A](../../../assets/images/p5_waves/young-double-slit.jpg){: class="figure-right"}
 
-### The Observation
 
-A beam of light is directed through a screen with two slits and the interference pattern of the light waves is observed on a screen behind. Instead of seeing two bright lines (which is what one might expect if light were made of particles), Young saw a pattern of alternating bright and dark bands, called interference fringes.
-
-### The Explanation
-
-This pattern could only be explained if light were a wave. The light waves passing through the two slits spread out and overlap. Where the crests of the two waves meet, they reinforce each other, creating a bright band (constructive interference). Where a crest meets a trough, they cancel each other out, creating a dark band (destructive interference). This experiment provided strong evidence that light behaves as a wave.
-
-### Interference and Diffraction: Hallmarks of Waves
+A beam of light is directed through a screen with two slits and the interference pattern of the light waves is observed on a screen behind. Instead of seeing two bright lines (which is what one might expect if light were made of particles), Young saw a pattern of alternating bright and dark bands, called interference fringes. This pattern could only be explained if light were a wave. The light waves passing through the two slits spread out and overlap. Where the crests of the two waves meet, they reinforce each other, creating a bright band (constructive interference). Where a crest meets a trough, they cancel each other out, creating a dark band (destructive interference). This experiment provided strong evidence that light behaves as a wave.
 
 Young's double-slit experiment highlights the phenomenon of interference. Interference is a property of waves where two or more waves combine to create a new wave pattern. When waves overlap, they can either reinforce each other (constructive interference), resulting in a larger wave, or cancel each other out (destructive interference), resulting in a smaller wave or no wave at all. Waves also have the ability to bend around obstacles and spread out after passing through narrow openings, a phenomenon called diffraction. This is why you can sometimes hear someone talking even if they are around a corner – sound waves diffract around the corner. Light also diffracts, although the effect is less obvious because the wavelengths of visible light are much smaller than those of sound waves.
 
@@ -56,7 +46,7 @@ Despite its successes, the wave model cannot explain all aspects of electromagne
 
 Imagine that you just built a large sandcastle at the beach.
 
-![alt text](<../../../assets/images/p5_waves/P5 L10 Digital Handout _ Water Wave Analogy.png>){: class="figure-right"}
+![alt text](<../../../assets/images/p5l10_water_castle.png>){: class="figure-right"}
 
  Waves are crashing nearby, and eventually the waves are going to destroy your sandcastle. If we model EM radiation as a wave, we should consider the energy in each wave. Destroying a sandcastle is affected by both:
 (A) the frequency of the water waves      (B) the amplitude of the water waves.
