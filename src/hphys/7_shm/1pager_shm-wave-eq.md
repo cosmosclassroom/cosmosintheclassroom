@@ -1,3 +1,8 @@
+---
+css: style
+marp: True
+---
+
 # Simple Harmonic Motion & Wave Equation Reference Sheet
 
 ## Simple Harmonic Motion (SHM)
