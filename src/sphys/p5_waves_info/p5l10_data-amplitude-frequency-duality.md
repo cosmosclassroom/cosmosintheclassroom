@@ -33,7 +33,7 @@ This study investigates the relationship between electromagnetic wave properties
 
 </div>
 
-**Table 2**: Photoelectric effects of a simple photovoltaic (PV) panel. This experiment measures the electric current produced when light hits a metal surface. Current indicates the number of electrons ejected, while frequency determines if electrons will be ejected at all and with what energy.
+**Table 2**: Photoelectric effects of a simple photovoltaic (PV) panel. This experiment measures the electric current produced when light hits a metal surface. Current indicates the number of electrons ejected, while frequency determines if electrons will be ejected at all and with what energy. Electric currents are reported in microamps ($\mu A$).
 
 <div class='data-table'>
 
