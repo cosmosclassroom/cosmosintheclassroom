@@ -136,7 +136,7 @@ A quick checklist to evaluate the validity and reliability of information:
 
 ## L9 | EM Radiation and Powers of 10
 
-**The Wave Equation**
+### The Wave Equation in Electromagnetic Radiation
 
 |Wave Type|Formula|
 |-:|:-:|
@@ -147,6 +147,18 @@ A quick checklist to evaluate the validity and reliability of information:
 * $v$ represents the **speed** of the wave (typically in meters per second, m/s). $c$ is constant for EM waves in a vaccuum.
 * $f$ represents the **frequency** of the wave (typically in Hertz, Hz, which is cycles per second or $\frac{1}{s}$ or $s^{-1}$).
 * $\lambda$ represents the **wavelength** of the wave (typically in meters, m).
+
+### EM Radiation and Human Health
+
+**Table** Summary of effects of exposure to electromagnetic radiation on human health. Gathered from readings, experimental data, and a video of experiments.
+
+|  | High-amplitude (brighter)  EM radiation | Low-amplitude (dimmer) EM radiation |
+| -----------------------------------------: | :---------------------------------- |
+| **Infrared (lower frequency)** | Can break down skin’s collagen, contributing to wrinkles (in very high amplitudes) <br>  Can help wounds heal, reduce swelling, and treat acne. Does not cause sunburn or skin cancer |
+|**Visible light (middle frequency)** | Can cause skin redness in people with very sensitive skin (bright SAD lamps) <br> Treats symptoms of Seasonal Affective Disorder (SAD). Not dangerous and has no negative health effects  |
+| **Ultraviolet (high frequency)** | Can make skin darker over time, similar to a suntan or sunburn. Contributes to skin cancer and eyelid cancer <br>  Used to harden gel nail polish, make bodily fluids glow for crime scene investigation, and harden resin in 3D printers. May increase risk of skin cancer |
+|  **X-ray (higher frequency)**  | Used in CT scans and nuclear imaging. Exposure to many scans can increase cancer risk <br>  Used in medical imaging. Can be harmful, even at low amplitudes |
+
 
 ## L10 | Wave-Particle Duality
 
