@@ -10,7 +10,8 @@ stylsheet: worksheets
 
 # The Wave Model of Electromagnetism
 
-> ### Wave Variables in Wave-Particle Duality
+### Wave Variables in Wave-Particle Duality
+
 > Copy **Figure 1** below, including figure caption, into your science notebook:
 
 ### The Mystery of Light
@@ -47,7 +48,7 @@ The fact that electromagnetic radiation can exhibit both interference and diffra
 
 ### Comprehension Checkpoint 1
 
-Explain how Young's double-slit experiment demonstrates the wave nature of light. Use the concepts of constructive and destructive interference in your explanation.
+Explain how Young's double-slit experiment demonstrates the wave nature of light. Use the concepts of **diffraction**, constructive and destructive interference in your explanation.
 
 </div>
 
