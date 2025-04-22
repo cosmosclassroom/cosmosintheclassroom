@@ -16,7 +16,11 @@ This study investigates the relationship between electromagnetic wave properties
 [Scientific Notation Reference](P5L9_wave-eq-powers-ten-lesson.md){: .button}
 {: .reference-box}
 
+<div class='figure-caption'>
+
 **Table 1**: Effects of Light on civing cells. Using various laser sources, this experiment measures cellular damage caused by different frequencies (colors) of light at both low and high intensities. Exposure time is kept constant to isolate frequency and amplitude effects.
+
+</div>
 
 <div class='data-table'>
 
