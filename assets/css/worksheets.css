@@ -6,21 +6,34 @@
     max-width: 85%;
     margin: 0 auto;
     --font-family: 'Arial', sans-serif;
-    --font-size: 16px;
+    --font-size: 2em;
     --primary-color: #4a90e2;
     --secondary-color: #7ba2d6;
     --text-color: #333333;
     --border-color: #dddddd;
+    --instruction-color: #3b6b3c;
 }
-
 p {
     font-family: inherit;
+    font-size: inherit;
     text-align: justify;
     line-height: 1.5;
     margin: 0.5em 0;
     color: var(--text-color);
 }
 
+blockquote {
+    font-family: inherit;
+    background-color: (var(--secondary-color)) opacity: 0.1;
+    font-size: inherit;
+    border-left: 4px solid var(--primary-color);
+    text-align: justify;
+    line-height: 1.5;
+    margin: 0.5em 0;
+    color: var(--text-color);
+    padding-left: 1em;
+    border-left: 4px solid var(--primary-color);
+}
 h1,
 h2,
 h3,
@@ -85,11 +98,18 @@ ol, ul {
 
 /* Base styles for all tables */
 table {
-    max-width: 100%;
-    padding-left: 5% 5% margin: 1.5em 0;
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 90%;
+    max-width: 100%; /* Ensure the table does not exceed the container width */
+    width: 100%; /* Make the table span the full width of the container */
+    margin: 1.5em 0; /* Add spacing above and below the table */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    overflow-x: auto; /* Enable horizontal scrolling if the table overflows */
+    display: block; /* Ensure the table behaves like a block element */
+}
+
+/* Add a wrapper for tables to handle overflow */
+.table-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+    margin: 0 auto; /* Center the table wrapper */
 }
 
 /* Data Presentation Table - Clean, scientific paper style */
@@ -129,29 +149,27 @@ table {
 
 /* Template Table - For student notebooks */
 .template-table {
-    display: block;
-    border: 0px solid var(--text-color);
-    width: 100%;
+    display: table; /* Use table display for proper table behavior */
+    border: 1px solid var(--text-color); /* Ensure a visible border */
+    width: 100%; /* Make the table span the full width of the container */
     margin-top: 1em;
-    margin-left: auto; margin-right:auto;
-    max-width: 100%;
-    table-layout: fixed center;
-    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; /* Prevent the table from exceeding the container width */
+    table-layout: auto; /* Allow the table to resize based on content */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
 }
 
-.template-table th {
-    background-color: var(--secondary-color);
-    padding: 12px 8px;
-    min-width: 100px;
+.template-table th, .template-table td {
+    padding: 8px; /* Add padding for better readability */
+    word-wrap: break-word; /* Ensure long text wraps within cells */
+    text-align: left; /* Align text to the left for better readability */
+    border: 1px solid var(--text-color); /* Add borders for clarity */
 }
 
 .template-table td {
-    border: 1px solid var(--text-color);
-    font-weight: light;
-    padding: 8px;
-    min-height: 10em;
-    word-wrap: break-word;
-    empty-cells:show;
+    min-height: 10em; /* Maintain a minimum height for cells */
+    empty-cells: show; /* Ensure empty cells are visible */
 }
 
 /* Hover effects for better visibility */
