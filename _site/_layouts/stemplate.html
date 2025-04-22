@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- import katex for math rendering --->
     {% if page.math != false %}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
     {% endif %}
-    {% if page.custom_css %}
+    {% if page.stylesheet %}
     <link rel="stylesheet" href="{{ '/assets/css/' | append: page.stylesheet | append: '.css' | relative_url }}" />
     {% else %}
     <link rel="stylesheet" href="{{ '/assets/css/worksheets.css' | relative_url }}" />
@@ -23,8 +24,9 @@
         <container class="flex-container">
             <div class="content">
 
-                {{ page.content | markdownify}}
+                {{ page.content | markdownify}} <!-- This will render the markdown content of the page -->
 
+               
             </div>
 
             <!-- Initialize KaTeX rendering -->
