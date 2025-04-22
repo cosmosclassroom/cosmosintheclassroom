@@ -80,12 +80,12 @@ Consider the analogy of EM radiation as a water wave destroying a sandcastle. Wh
 
 <center>
 
- ## Exit Ticket 
+## Exit Ticket 
  
- </center>
+</center>
 
 <div>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwubffbxIB0mHKvfSXIa3WwFTF5ndmrDM5fGDiBX6Ip81Rw/viewform?embedded=true" width="100%" height="500px" style="max-width: 100%; border: none; margin: 0;">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwubffbxIB0mHKvfSXIa3WwFTF5ndmrDM5fGDiBX6Ip81Rw/viewform?embedded=true" width="100%" height="850px" style="min-height: 100%; max-width: 100%; border: none; margin-bottom: 3rem; allowfullscreen: true;">Loading…</iframe>
 
 </div>
