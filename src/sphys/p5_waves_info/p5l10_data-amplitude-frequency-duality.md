@@ -1,7 +1,8 @@
 ---
 layout: stemplate
 title: "P5L10 Data: Amplitude and Frequency"
-subtitle: Experimental Data B
+subtitle: Experimental Data - 
+author: Jonathan Corbett
 date: 21 April 2025
 stylesheet: worksheets
 math: true

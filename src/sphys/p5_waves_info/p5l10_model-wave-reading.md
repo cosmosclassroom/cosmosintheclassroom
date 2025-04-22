@@ -14,13 +14,7 @@ stylsheet: worksheets
 
 ### The Mystery of Light
 
-<div class='figure-right'>
-
-![alt text](../../../assets/images/p5_waves/p5l10_photon_vars.png)
-
-**Figure 1.** A bunch of stuff that you can't see well.
-
-</div>
+![alt text](../../../assets/images/p5_waves/p5l10_photon_vars.png){: class='figure-right'}
 
 Imagine a beam of light. What is it? For centuries, scientists have grappled with this question. Is it a wave, like the ripples in a pond, or a stream of particles, like tiny bullets? The answer, it turns out, is both, and neither, in a way that challenges our everyday intuition. We begin by exploring the evidence that led scientists to believe that light, and electromagnetic radiation in general, behaves like a wave.
 
@@ -40,13 +34,21 @@ Young's double-slit experiment highlights the phenomenon of interference. Interf
 
 The fact that electromagnetic radiation can exhibit both interference and diffraction provides strong evidence for its wave-like nature.
 
+<div class="checkpoint">
+
+### Comprehension Checkpoint 1
+
+Explain how Young's double-slit experiment demonstrates the wave nature of light. Use the concepts of constructive and destructive interference in your explanation.
+
+</div>
+
 ### The Limitations of the Wave Model
 
 Despite its successes, the wave model cannot explain all aspects of electromagnetic radiation. As scientists delved deeper into the nature of light, they encountered phenomena that defied explanation by the wave model alone.
 
 Imagine that you just built a large sandcastle at the beach.
 
-![alt text](<../../../assets/images/p5l10_water_castle.png>){: class="figure-right"}
+![Sandcastle frequency/amplitude analogy](../../../assets/images/p5_waves/p5l10_water_wave.svg){: class="figure-right"}
 
  Waves are crashing nearby, and eventually the waves are going to destroy your sandcastle. If we model EM radiation as a wave, we should consider the energy in each wave. Destroying a sandcastle is affected by both:
 (A) the frequency of the water waves      (B) the amplitude of the water waves.
@@ -58,14 +60,20 @@ Some particle-scale events, such as ionizing an atom or producing an electron fr
 
 <div class="checkpoint">
 
-### Comprehension Checkpoint 1
+### Comprehension Checkpoint 2
 
-Explain how Young's double-slit experiment demonstrates the wave nature of light. Use the concepts of constructive and destructive interference in your explanation.
+Consider the analogy of EM radiation as a water wave destroying a sandcastle. What parts of this model are useful for understanding the ways in which EM radiation acts as a wave?
 
 </div>
 
-Discussion Questions:
+<center>
 
-What does high amplitude mean in this model?
-What does high frequency mean in this model?
+ ## Exit Ticket 
+ 
+ </center>
 
+<div>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdCwubffbxIB0mHKvfSXIa3WwFTF5ndmrDM5fGDiBX6Ip81Rw/viewform?embedded=true" width="100%" height="500px" style="max-width: 100%; border: none; margin: 0;">Loading…</iframe>
+
+</div>
