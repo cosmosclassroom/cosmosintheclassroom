@@ -162,8 +162,18 @@ A quick checklist to evaluate the validity and reliability of information:
 
 ## L10 | Wave-Particle Duality
 
+|                                 |Wave Model|Particle Model|
+|---------------------------------|----------|--------------|
+|What is light?                   |||
+|What does high amplitude mean?   |||
+|What does high frequency mean?   |||
+|What contributes to total energy?|||
+
+
+|Wave Evidence|Particle Evidence|
+|-|-|
 |||
-|||
+
 
 
 ## L11 | Radiography and Digital Imaging

@@ -114,45 +114,31 @@ table {
 /* Template Table - For student notebooks */
 .template-table {
     border: 2px solid var(--text-color);
-}
-
-.template-table th,
-.template-table td {
-    border: 2px solid var(--text-color);
-    padding: 20px;
-    min-height: 40px;
-    min-width: 100px;
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    margin: 1em auto;
+    border-collapse: collapse;
 }
 
 .template-table th {
     background-color: var(--secondary-color);
-    font-weight: bold;
+    padding: 12px 8px;
+    word-wrap: break-word;
+    min-width: 100px;
+}
+
+.template-table td {
+    border: 2px solid var(--text-color);
+    padding: 8px;
+    min-height: 2em;
+    word-wrap: break-word;
+    empty-cells: show;
 }
 
 /* Hover effects for better visibility */
 .template-table td:hover {
     background-color: var(--secondary-color);
-}
-
-/* Markdown-specific table styles */
-.markdown-body table {
-    margin: 1.5em 0;
-    font-family: Arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid var(--border-color);
-}
-
-.markdown-body table th,
-.markdown-body table td {
-    padding: 8px 15px;
-    border: 1px solid var(--border-color);
-    text-align: left;
-}
-
-.markdown-body table th {
-    background-color: var(--secondary-color);
-    font-weight: 600;
 }
 
 /* Print optimization */
@@ -173,12 +159,14 @@ table {
 
 .checkpoint {
     border: solid black 0.5px;
+    background-color: var(--secondary-color) margin: 5% 2%;
     padding: 1%;
     padding-left: 15pt;
     box-shadow: 5px;
 }
 
-.checkpoint p {
+.checkpoint {
+    display: block;
     text-align: center;
-    margin: 5% 2%;
+
 }

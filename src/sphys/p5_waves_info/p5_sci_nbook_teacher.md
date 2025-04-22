@@ -203,6 +203,16 @@ The following table outlines common metric prefixes used when describing wavelen
 A wavelength of 500 *nanometers* (500 nm) is equal to 500 x 10⁻⁹ meters.
 
 ## L10 | Wave-Particle Duality
+
+**Table**. Summary of experimental evidence supporting the wave and the particle model of electromagnetic radiation.
+
+| Wave Model Evidence | Particle Model Evidence |
+| --------------------| ------------------------|
+|Light waves exhibit interference when they overlap <br> Light waves bend and spread when encountering obstacles and splits <br> A continuous spectrum is observed in phenomena like rainbows <br> Light waves propagate as continuous wave fronts | Photons can cause emission of electrons <br> Light energy is quantized, (it comes in packets called photons) <br> High energy photons can collide with particles like electrons <br> The behavior of atoms with discrete energy levels is explained (chemistry connection)
+
+
+
+
 ## L11 | Radiography and Digital Imaging
 ## L12 | Digital Communication
 ## L13 | Evaluating Safety Claims

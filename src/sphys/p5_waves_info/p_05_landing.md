@@ -37,10 +37,17 @@ layout: default
 
 - [P5L10 Overview](p5l10.md)
 - [Data: Amplitude and Frequency Duality](p5l10_data-amplitude-frequency-duality.md)
+- 
 - [Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
-[Reading: Waves and Human Health](p5l10_model-wave-reading.md)
 
-[Reading: Particle Model](p5l10_model-particle-reading.md)
-[Reading: Wave Model](p5l10_model-wave-reading.md)
+[Reading: The Wave Model](p5l10_model-wave-reading.md)
+
+[Analogy: Wave-Particle Duality](p5l10_model-particle-reading.md)
+
+`[Reading: Particle Model](p5l10_model-particle-reading.md)`
+
+[PartiCLE](p5l10_model-particle-reading.md)
+
+
 ## Navigation
 - [Wave Topics Landing Page](p5l7_landing.md)

@@ -5,10 +5,18 @@ subtitle: The Wave Model
 author: Jonathan Corbett
 date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
-permalink: cosmosintheclassroom.org\src\sphys\p5_waves_info\p5l10_model-wave-reading
 ---
 
 ## The Wave Model of Electromagnetism
+
+<div class="template-table">
+
+|Wave Model|Particle Model
+|-|-|
+|![EM variables in the wave model](../../../assets/images/p5_waves/p5l10_photon_vars.png)| asdfasdfss|
+
+
+</div>
 
 ### The Mystery of Light
 
@@ -43,6 +51,16 @@ The fact that electromagnetic radiation can exhibit both interference and diffra
 
 Despite its successes, the wave model cannot explain all aspects of electromagnetic radiation. As scientists delved deeper into the nature of light, they encountered phenomena that defied explanation by the wave model alone.
 
+<div class="checkpoint">
+
 ### Comprehension Checkpoint 1
 
 Explain how Young's double-slit experiment demonstrates the wave nature of light. Use the concepts of constructive and destructive interference in your explanation.
+
+</div>
+
+Discussion Questions:
+
+What does high amplitude mean in this model?
+What does high frequency mean in this model?
+
