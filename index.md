@@ -16,17 +16,13 @@ pagination:
 
 $$\vec{F} = m \cdot \vec{a}$$
 
-{% assign velocity = site.data.physics_course.sections.kinematics.velocity.latex %}
-
-{{ velocity | markdownify }}
-
 <div class='container'>
 
 
-[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md){.button}
+[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md){:.button}
 
-[Standard Physics Overview](src/sphys/sphys_overview.md){.button}
+[Standard Physics Overview](src/sphys/sphys_overview.md){:.button}
 
-[text](src/sphys/sphys_teacher.md){.button}
+[text](src/sphys/sphys_teacher.md){:.button}
 
-[Honors Physics Landing](src/hphys/hphys_landing.md){.button}
+[Honors Physics Landing](src/hphys/hphys_landing.md){:.button}
