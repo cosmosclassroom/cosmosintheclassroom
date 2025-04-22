@@ -15,17 +15,17 @@ layout: default
 - [Overview of Wave Concepts](p5l8_overview.md)
 
 ## Wave Properties and Simulations
-- [Waves on a String Part 2](p5l8_waves-on-a-string-part-2.md)
-- [Waves on a String Part 2 - Answer Key](p5l8_waves-on-a-string-part-2-key.md)
 - [EM Wave Polarity Simulation](P5L7_1_sim_EM_polarity.md)
 - [Consensus Model for Polarity](P5L7_2_consensus_model_polarity.md)
+- [Waves on a String Part 2](p5l8_waves-on-a-string-part-2.md)
+- [Waves on a String Part 2 - Answer Key](p5l8_waves-on-a-string-part-2-key.md)
 
 ## Electromagnetic Waves
-- [EM Spectrum Cards Activity](p5l9_em-spectrum-cards.md)
-- [EM Spectrum Cards - Answer Key](p5l9_em-spectrum-cards-key.md)
 - [Wave Equation and Powers of Ten](p5l9_ps-wave-eq-powers-ten.md)
 - [Wave Equation Solutions - Answer Key](p5l9_ps-wave-eq-powers-ten-key.md)
 - [Wave Equation Powers of Ten Lesson](P5L9_wave-eq-powers-ten-lesson.md)
+- [EM Spectrum Cards Activity](p5l9_em-spectrum-cards.md)
+- [EM Spectrum Cards - Answer Key](p5l9_em-spectrum-cards-key.md)
 
 ## Applications and Readings
 - [Metal Oven Reading](p5l7_3_metal_oven_reading.md)
@@ -33,11 +33,14 @@ layout: default
 - [Validity and Reliability in Waves](p5l7_validity_reliability.md)
 - [Explaining Soap Bubble Rainbows](p5l8_eli5_soap_bubble_rainbow.md)
 
-## Wave Analysis
+## Wave - Particle Duality
+
+- [P5L10 Overview](p5l10.md)
 - [Data: Amplitude and Frequency Duality](p5l10_data-amplitude-frequency-duality.md)
 - [Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
-- [Amplitude/Frequency Evidence - Answer Key](p5l10_reading-amplitude-frequency-evidence-key.md)
-- [Wave Analysis Overview](p5l10.md)
+[Reading: Waves and Human Health](p5l10_model-wave-reading.md)
 
+[Reading: Particle Model](p5l10_model-particle-reading.md)
+[Reading: Wave Model](p5l10_model-wave-reading.md)
 ## Navigation
 - [Wave Topics Landing Page](p5l7_landing.md)

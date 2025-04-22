@@ -37,6 +37,11 @@ h1 {
     font-weight: bold;
 }
 
+p {
+    font-size: 1.05em;
+    text-indent: 5%;
+}
+
 .reference-box {
     display: flex;
     max-width: 100%;
@@ -75,37 +80,32 @@ table {
 
 /* Data Presentation Table - Clean, scientific paper style */
 .data-table {
-    display: flex;
+    padding: 1% 1%;
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border-color);
     flex-direction: column;
-    margin: 1.5em auto;
-    margin-left: 10%;
-    max-width: 75rem;
+    margin: 5px 0;
+    padding: 0.5em 0.5em;
+    max-width: 85rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .data-table th {
     background-color: var(--secondary-color);
     text-align: center;
-    font-size: 0.95em;
+    font-size: 1em;
     padding: 8px 8px;
     color: var(--text-color);
     font-weight: 600;
     text-align: left;
     border-bottom: 2px solid var(--border-color);
     border-top: 2px solid var(--border-color);
-    border-left,
-    border-right 0px;
 }
 
 .data-table td {
-    font-size: 0.9em;
-    padding: 5px 5px;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.data-table {
-    font-size: 0.5em;
+    font-size: 1em;
+    width: fit-content;
     padding: 5px 5px;
     text-align: center;
     border-bottom: 1px solid var(--border-color);
@@ -165,8 +165,7 @@ table {
 }
 
 .figure-right {
-    text-indent: -15%;
-    margin-left: 15%;
+    display: block;
     width: 45%;
     float: right;
     margin: 10px;
