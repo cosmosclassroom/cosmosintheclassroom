@@ -25,7 +25,7 @@ This study investigates the relationship between electromagnetic wave properties
 <div class='data-table'>
 
 |Light Source|Frequency (Hz)|Amplitude|Exposure Time (seconds)|Cell Damage Observed|Damage Level|
-|:------------:|:-------------:|:---------:|:----------------------:|-------------------|------------|
+|:------------:|:-------------:|:---------:|:----------------------:|:-----------------:|:------------:|
 |Red Laser|$14.3 \times 10^{14}$|Low|30|No|None|
 |Red Laser|$14.3 \times 10^{14}$|High|30|No|None|
 |Green Laser|$15.5 \times 10^{14}$|Low|30|No|None|
@@ -54,7 +54,7 @@ This study investigates the relationship between electromagnetic wave properties
 
 </div>
 
-### Analysis Questions
+### Analysis Questions - Discuss these to help you complete the table below.
 
 1. Compare the cell damage observed across different frequencies of electromagnetic radiation (from red laser to X-ray). What pattern do you notice about the relationship between frequency and biological damage? How might this inform safety protocols for working with different parts of the electromagnetic spectrum?
 <!--
@@ -74,3 +74,13 @@ This occurs because amplitude represents the intensity of light, which relates t
 -->
 
 1. Notice that red light produces no current regardless of amplitude, while green light and beyond all produce some current. Using both tables, formulate a hypothesis about why high frequency EM waves might be both more dangerous to cells and more effective at initiating the photoelectric effect, while higher amplitude primarily affects the magnitude of the current.
+
+<div class='template-table'>
+
+**Table 3.**. Summary of experimental evidence supporting the wave and the particle models of electromagnetic radiation. 
+
+| Wave Model Evidence | Particle Model Evidence |
+| --------------------| ------------------------|
+||<br><br><br><br><br><br>|
+
+</div>
