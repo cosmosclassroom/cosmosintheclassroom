@@ -1,5 +1,5 @@
 ---
-css: worksheets
+css: style
 title: p5 landing
 author: Jonathan Corbett
 layout: default
