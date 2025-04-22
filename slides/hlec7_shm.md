@@ -93,7 +93,8 @@ $f = \frac{1}{T}$ or $T = \frac{1}{f}$
 ---
 
 ## Frequency and Period
-<!-- class: invert -->
+<!-- _class: invert -->
+<!-- _style: "bod"-->
 The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles that occur each second.
 
 - **Period ($T$)** - the time required to complete one full cycle
@@ -105,6 +106,7 @@ The unit of frequency is the Hz or $s^{-1}$ and represents the number of cycles 
 
 </div>
 ---
+
 
 ## Frequency and Period
 
