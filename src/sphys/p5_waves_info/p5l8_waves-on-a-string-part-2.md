@@ -99,17 +99,25 @@ Produce a copy of the three-box table below; this is where you will make sketche
 ### Interaction D
 Produce a copy of the three-box table below; this is where you will make sketches of the wave interactions before, during, and after the two waves cross the same point in space and time. Note that the waves are no longer of the same amplitude.
 
-![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: block; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
+![Interaction D](../../../assets/images/p5_waves/interactionD.jpg){: style="display: flex; margin: 0 auto; width: 40%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: 1.5px solid #999;"}
 
 {: .figure-caption}
 **Figure 4**. Interaction D - two waves of *unequal* and same-sided amplitudes approach one another.
 
 **Table 4**. Visualization of waves (a) before (b) during and (c) after occupying the same space.
 
+<!-- add a div and css to make this table easily read -->
+
+<div>
+<style 
+
+</style>
+
 |Before|During|After|
 |-|-|-|
 ||||
 
+</div>
 Label this set of interaction diagrams “Interaction D”
 Before
 During

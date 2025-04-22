@@ -134,8 +134,26 @@ A quick checklist to evaluate the validity and reliability of information:
 
 
 
-## L9 | EM Radiation Technology
+## L9 | EM Radiation and Powers of 10
+
+**The Wave Equation**
+
+|Wave Type|Formula|
+|-:|:-:|
+|All waves|$v = f \cdot \lambda$|
+|Electromagnetic Waves|$c = f \cdot \lambda$|
+
+
+* $v$ represents the **speed** of the wave (typically in meters per second, m/s). $c$ is constant for EM waves in a vaccuum.
+* $f$ represents the **frequency** of the wave (typically in Hertz, Hz, which is cycles per second or $\frac{1}{s}$ or $s^{-1}$).
+* $\lambda$ represents the **wavelength** of the wave (typically in meters, m).
+
 ## L10 | Wave-Particle Duality
+
+|||
+|||
+
+
 ## L11 | Radiography and Digital Imaging
 ## L12 | Digital Communication
 ## L13 | Evaluating Safety Claims
