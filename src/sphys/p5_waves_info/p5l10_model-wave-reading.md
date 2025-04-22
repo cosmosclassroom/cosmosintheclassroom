@@ -14,7 +14,7 @@ stylsheet: worksheets
 
 ---
 
-> Copy **Figure 1** below, including figure caption, into your science notebook:
+> Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.
 
 ### The Mystery of Light
 
