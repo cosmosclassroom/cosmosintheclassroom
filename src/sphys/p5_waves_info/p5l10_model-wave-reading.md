@@ -2,6 +2,7 @@
 layout: stemplate
 title: Experiments in Wave and Particle Models
 subtitle: The Wave Model
+lesson: p5l10
 author: Jonathan Corbett
 date: 21 April 2025
 stylsheet: worksheets
@@ -14,7 +15,12 @@ stylsheet: worksheets
 
 ### The Mystery of Light
 
-![alt text](../../../assets/images/p5_waves/p5l10_photon_vars.png){: class='figure-right'}
+<div class="figure-right">
+
+![alt text](../../../assets/images/p5_waves/p5l10_photon_vars.png)
+
+**Figure 1.** Visual representation of amplitude and frequency in the wave model of EM radiation.
+</div>
 
 Imagine a beam of light. What is it? For centuries, scientists have grappled with this question. Is it a wave, like the ripples in a pond, or a stream of particles, like tiny bullets? The answer, it turns out, is both, and neither, in a way that challenges our everyday intuition. We begin by exploring the evidence that led scientists to believe that light, and electromagnetic radiation in general, behaves like a wave.
 
@@ -24,9 +30,13 @@ The idea of waves is familiar to us. We see water waves on the ocean, hear sound
 
 One of the most convincing demonstrations of the wave nature of light is Young's double-slit experiment. In the early 19th century, Thomas Young conducted a simple yet profound experiment. He passed a beam of light through two narrow, closely spaced slits and observed the pattern of light on a screen behind the slits.
 
+<div class="figure-left">
 
-![Interaction A](../../../assets/images/p5_waves/young-double-slit.jpg){: class="figure-right"}
+![Interaction A](../../../assets/images/p5_waves/young-double-slit.jpg)
 
+**Figure 2.** Simple schematic of Young's double-slit experiment. A beam of laser light was shone on a metal screen containing two slits. As the light transmitted through the slits, the interference pattern of the waves was visible on a second screen behind the slits.
+
+</div>
 
 A beam of light is directed through a screen with two slits and the interference pattern of the light waves is observed on a screen behind. Instead of seeing two bright lines (which is what one might expect if light were made of particles), Young saw a pattern of alternating bright and dark bands, called interference fringes. This pattern could only be explained if light were a wave. The light waves passing through the two slits spread out and overlap. Where the crests of the two waves meet, they reinforce each other, creating a bright band (constructive interference). Where a crest meets a trough, they cancel each other out, creating a dark band (destructive interference). This experiment provided strong evidence that light behaves as a wave.
 
