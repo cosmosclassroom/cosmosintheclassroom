@@ -15,6 +15,8 @@
             console.warn('Favicon not found. Using default fallback.');
         }
     </script>
+    <!-- MathJax for rendering LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Notebook</h1>
@@ -35,7 +37,8 @@
             document.getElementById('content').innerHTML = '<p>Error loading script. Some functionality may be unavailable.</p>';
         }
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('./index.md')
+            // Dynamically load the markdown file
+            fetch('./index.md') // Adjust the file name as needed
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Failed to load file: index.md`);
@@ -43,7 +46,18 @@
                     return response.text();
                 })
                 .then(content => {
+                    // Insert the content into the content div
                     document.getElementById('content').innerHTML = content;
+
+                    // Render LaTeX using MathJax
+                    MathJax.typeset();
+
+                    // Dynamically apply the CSS for the loaded document
+                    const documentCSS = document.createElement('link');
+                    documentCSS.rel = 'stylesheet';
+                    documentCSS.href = '/assets/css/documents.css'; // Path to the desired CSS file
+                    documentCSS.onerror = () => console.error('Failed to load CSS file: /assets/css/documents.css');
+                    document.head.appendChild(documentCSS);
                 })
                 .catch(error => {
                     console.error(error.message);
