@@ -6,7 +6,10 @@ date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
-
+<div class='nav-panel'>
+    <button href="./p5l10_model_particle-reading.md" class="nav-button">← Back</button>
+    <button href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</button>
+</div>
 
 ## The Wave-Particle Duality: A Paradoxical Reality
 
