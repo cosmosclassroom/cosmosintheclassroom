@@ -9,9 +9,13 @@ stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 
 ## The Particle Model of Electromagnetism
 
-|Wave Model|Particle Model
-|-|-|
-|| ![EM variables in the particle model](../../../assets/images/p5_waves/p5l10_particle_vars.png){: style="width: 50%"} |
+> Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.
+<div class="figure-right">
+
+!![EM variables in the particle model](../../../assets/images/p5_waves/p5l10_particle_vars.png)
+
+**Figure 1.** Visual representation of amplitude and frequency in the particle model of EM radiation.
+</div>
 
 Evidence from interactions between electromagnetic radiation and photovoltaic (PV) panels was difficult to explain. Why did higher-frequency waves not transfer enough energy to move electrons but lower-frequency waves did? To explain the phenomena that the wave model could not, scientists developed a new model: the particle model. This model proposes that electromagnetic radiation is not a continuous wave, but rather a stream of tiny packets of energy called photons.
 
