@@ -1,14 +1,32 @@
 ---
 marp: true
-theme: slidesA
+theme: slidesC
 paginate: true
 ---
+<!-- style: inverted -->
 
 # Kepler's Laws and Universal Gravitation
 
+How can the motions of the planets be described?
+![bg right 85%](<img/5_circ-gravitation/0 Lecture _ 53 Laws of Planetary Motion_0.png>)
+
 ---
 
-## Introduction
+## Historical Context
+<div class='column'>
+<div>
+
+- Ancient astronomers noticed certain "stars" moved differently
+- Greeks called these "planets" (meaning wanderer)
+- Ptolemy's geocentric model (perfect circles) lasted 1,400 years
+
+<div>
+
+![bg right fill](<img/5_circ-gravitation/0 Lecture _ 53 Laws of Planetary Motion_1.jpg>)
+
+<div>
+
+---
 
 - Kepler's empirical observations (early 1600s) laid groundwork for Newton's theoretical framework (1687)
 - Kepler described *how* planets move; Newton explained *why* they move this way
@@ -16,12 +34,21 @@ paginate: true
 
 ---
 
+# Tycho Brahe
+
+* 1576 - *still* using Ptolemy's measurements
+* Noticed a previously unrecorded "new" star - *stella novae* (supernova)
+  * Refuted Plato and Aristotle's ideas that the 'heavens' were perfect and unchanging ![auto](<img/5_circ-gravitation/0 Lecture _ 53 Laws of Planetary Motion_2.png>)
+
+---
+
 ## Review: Universal Gravitation & Circular Motion
 
-- Newton's Law of Universal Gravitation: $F_g = G\frac{m_1 m_2}{r^2}$
-- For orbiting bodies, gravitational force provides the centripetal force
-- Recall uniform circular motion: $a_c = \frac{v^2}{r}$
-- For an orbit: $F_g = F_c$ → $G\frac{m_1 m_2}{r^2} = m_1\frac{v^2}{r}$
+- Newton's Law of Universal Gravitation: 
+$$F_g = G\frac{m_1 m_2}{r^2}$$
+  * For orbiting bodies, gravitational force provides the centripetal force
+  * In circular motion: $F_g = F_c$ and $a_c = \frac{v^2}{r}$
+$$G\frac{m_1 m_2}{r^2} = m_1\frac{v^2}{r}$$
 
 ---
 

@@ -5,7 +5,7 @@ date: 18 April 2025
 marp: true
 size: 16:9
 paginate: true
-stylesheet: slidesA
+stylesheet: slidesC
 ---
 
 # Kepler's Laws and Planetary Motion
@@ -21,7 +21,7 @@ stylesheet: slidesA
 - Tycho Brahe (1576) made precise astronomical observations
 - Discovery of supernova challenged "unchanging heavens" belief
 
-![bg right:40% 90%](<img/5_circ-gravitation/0 Lecture _ 53 Laws of Planetary Motion_1.jpg>)
+
 
 ---
 

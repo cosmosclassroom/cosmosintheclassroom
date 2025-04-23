@@ -4,6 +4,7 @@ import subprocess
 import yaml
 import sys
 import os
+import shutil  # Add this import to check for command availability
 
 class MarpConverter:
     def __init__(self, config_file=None):
@@ -41,6 +42,12 @@ class MarpConverter:
     def convert_slides(self, input_path: str, output_dir: Path, theme=None):
         """Convert Marp markdown to HTML"""
         try:
+            # Check if 'node' and 'npx' are installed
+            if not shutil.which("node"):
+                raise EnvironmentError("Node.js is not installed or not in PATH.")
+            if not shutil.which("npx"):
+                raise EnvironmentError("npx is not installed or not in PATH.")
+            
             # Convert input path to absolute path
             if not os.path.isabs(input_path):
                 # Remove any leading 'cosmosintheclassroom/slides' if present
@@ -87,6 +94,9 @@ class MarpConverter:
             subprocess.run(cmd, check=True)
             print("Conversion successful!")
             
+        except EnvironmentError as e:
+            print(f"Environment Error: {e}")
+            sys.exit(1)
         except Exception as e:
             print(f"Error: {e}")
             sys.exit(1)
