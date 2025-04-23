@@ -6,6 +6,8 @@ date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
+
+
 ## The Wave-Particle Duality: A Paradoxical Reality
 
 While the particle model successfully explains phenomena like the photoelectric effect, it seems to contradict the wave model's explanation of interference and diffraction. How can light be both a wave and a particle?
