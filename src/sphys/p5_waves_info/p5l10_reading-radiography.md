@@ -34,6 +34,7 @@ An X-ray digital detector is a set of many individual sensors whose function is 
 <div class='figure-right'>
 
 ![Adapted from OpenSciEd](../../../assets/images/p5_waves/xray-grid.jpg)
+
 </div>
 
 The best way to understand how digital images are created out of pixels is to look at the screen of any modern device with a magnifying glass. If you look closely, you will see that the image is made up of a collection of very small squares, which are pixels.
