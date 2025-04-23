@@ -12,8 +12,6 @@ math: true
 
 ### Introduction
 
-
-
 Previous readings have explored the effects of electromagnetic radiation on human health. A video showing the effect of different electromagnetic waves on solar panels has shown that the relationships between **amplitude**, **frequency**, and **energy transfer** can be complex.
 
 ![Amplitude vs. Frequency of X-Ray Radiation](<../../../assets/images/p5_waves/P.5 Lesson 10 Handout AmplitudeFrequency Evidence.png>){: style="float: right"}
@@ -81,7 +79,7 @@ This study investigates the relationship between electromagnetic wave properties
 </div>
 
 > ### Analysis Questions
-> Discuss these to help you complete the table below. You do not need to write the complete answers in your notebooks.
+> Discuss these to help you make sense of the data below. You do not need to write the complete answers in your notebooks.
 
   1. Compare the cell damage observed across different frequencies of electromagnetic radiation (from red laser to X-ray). What pattern do you notice about the relationship between frequency and cell damage? 
 <!--

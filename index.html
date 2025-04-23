@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notebook</title>
     <link rel="stylesheet" href="./assets/css/notebook.css" onerror="handleMissingCSS('notebook.css')" />
-    <link rel="stylesheet" href="../../assets/css/style.css" onerror="handleMissingCSS('style.css')" />
+    <link rel="text/css" href="./assets/css/style.css" onerror="handleMissingCSS('style.css')" />
+    <link rel="icon" href="./assets/images/favicon.ico" onerror="handleMissingFavicon()" />
     <script>
         function handleMissingCSS(fileName) {
             console.error(`Failed to load CSS file: ${fileName}`);
+        }
+        function handleMissingFavicon() {
+            console.warn('Favicon not found. Using default fallback.');
         }
     </script>
 </head>
@@ -24,10 +28,14 @@
     <div id="content">
         <p>Loading...</p>
     </div>
-    <script src="../../shared/script.js"></script>
+    <script src="./shared/script.js" onerror="handleMissingScript('script.js')"></script>
     <script>
+        function handleMissingScript(fileName) {
+            console.error(`Failed to load script file: ${fileName}`);
+            document.getElementById('content').innerHTML = '<p>Error loading script. Some functionality may be unavailable.</p>';
+        }
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('index.md') // Adjust the file name as needed
+            fetch('./index.md')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`Failed to load file: index.md`);
@@ -39,7 +47,7 @@
                 })
                 .catch(error => {
                     console.error(error.message);
-                    document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
+                    document.getElementById('content').innerHTML = '<p>Error loading content. Please check back later.</p>';
                 });
         });
     </script>
