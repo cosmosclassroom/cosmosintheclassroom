@@ -6,16 +6,16 @@ function loadMarkdownConfig(configPath) {
     return fetch(configPath)
         .then(response => {
             if (!response.ok) {
-                throw new Error(`Failed to load config file: ${configPath}`);
+                throw new Error(`Failed to load config file: ${configPath}`); // Check if the response is ok (status 200-299)
             }
             return response.json();
         })
-        .then(config => {
+        .then(config => { // Parse the JSON response
             markdownFiles = config.markdownFiles;
             document.getElementById('totalFiles').textContent = markdownFiles.length;
             loadMarkdownFile(currentFileIndex);
         })
-        .catch(error => {
+        .catch(error => { // Handle any errors that occur during the fetch or parsing
             console.error(`Error loading markdown configuration: ${error.message}`);
         });
 }
@@ -25,14 +25,14 @@ function loadMarkdownFile(index) {
     const contentDiv = document.getElementById('content');
     contentDiv.innerHTML = '<p>Loading...</p>';
 
-    fetch(markdownFiles[index])
+    fetch(markdownFiles[index]) // Fetch the Markdown file from the server
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load file: ${markdownFiles[index]}`);
             }
             return response.text();
         })
-        .then(markdownText => {
+        .then(markdownText => { // Parse the Markdown text
             contentDiv.innerHTML = marked.parse(markdownText);
             renderMathInElement(contentDiv, {
                 delimiters: [
@@ -41,7 +41,7 @@ function loadMarkdownFile(index) {
                 ]
             });
         })
-        .catch(error => {
+        .catch(error => { // Handle any errors that occur during the fetch or parsing
             contentDiv.innerHTML = `<div class="load-error">${error.message}</div>`;
             console.error(error);
         });
