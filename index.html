@@ -11,6 +11,8 @@
             console.error(`Failed to load CSS file: ${fileName}`);
         }
     </script>
+    <!-- MathJax for rendering LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Notebook</h1>
@@ -27,6 +29,7 @@
     <script src="../../shared/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Dynamically load the markdown file
             fetch('./index.md') // Adjust the file name as needed
                 .then(response => {
                     if (!response.ok) {
@@ -35,7 +38,18 @@
                     return response.text();
                 })
                 .then(content => {
+                    // Insert the content into the content div
                     document.getElementById('content').innerHTML = content;
+
+                    // Render LaTeX using MathJax
+                    MathJax.typeset();
+
+                    // Dynamically apply the CSS for the loaded document
+                    const documentCSS = document.createElement('link');
+                    documentCSS.rel = 'stylesheet';
+                    documentCSS.href = '/assets/css/documents.css'; // Path to the desired CSS file
+                    documentCSS.onerror = () => console.error('Failed to load CSS file: /assets/css/documents.css');
+                    document.head.appendChild(documentCSS);
                 })
                 .catch(error => {
                     console.error(error.message);
