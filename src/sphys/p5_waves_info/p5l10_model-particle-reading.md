@@ -47,3 +47,6 @@ Solar cells use silicon and other photovoltaic materials to convert photon energ
 Explain how the photovoltaic effect demonstrates the particle nature of light. Use the concept of a photon and possibly threshold frequency in your explanation.
 
 </div>
+
+<div class='table'>
+

@@ -49,7 +49,7 @@ In digital radiography, patients are still exposed to the ionizing radiation and
 
 ![alt text](../../../assets/images/p5_waves/xray-digital2.jpg)
 
-Figure 1. In conventional radiography, patients are exposed to 
+**Figure 1.** In conventional radiography patients experience longer exposures to harmful x-ray radiation.
 
 </div>
 
@@ -61,9 +61,13 @@ Similarly to how you can access a picture in a smartphone in a matter of seconds
 
 </center>
 
+<div class='citation'>
+
 Bansal, G. J. (2006). Digital radiography. A comparison with modern conventional imaging. Postgraduate Medical Journal, 82(969), 425-428.
+
 DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., Hlabangana, L. T., ... & Mendel, J. (2019). Equipment in the global radiology environment: why we fail, how we could succeed. Journal of Global Radiology, 5(1), e1079.
 
+</div>
 
 
 Use the photon model or the wave model of light to explain why the exposure time of digital radiography is much shorter than the exposure time of conventional radiography. 
