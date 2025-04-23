@@ -1,47 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notebook</title>
-    <link rel="stylesheet" href="./assets/css/notebook.css" onerror="handleMissingCSS('notebook.css')" />
-    <link rel="stylesheet" href="../../assets/css/style.css" onerror="handleMissingCSS('style.css')" />
-    <script>
-        function handleMissingCSS(fileName) {
-            console.error(`Failed to load CSS file: ${fileName}`);
-        }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Cosmos in the Classroom Homepage | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
-</head>
-<body>
-    <h1>Notebook</h1>
-    <div class="nav">
-        <button id="prevBtn" disabled>Previous</button>
-        <div class="file-info">
-            File <span id="currentIndex">1</span> of <span id="totalFiles">?</span>
-        </div>
-        <button id="nextBtn">Next</button>
+    
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
     </div>
-    <div id="content">
-        <p>Loading...</p>
+    <body>
+      <div class="markdown-body">
+        <div class="main-content">
+
+  <style>
+    content {
+        font-family: 'Georgia', serif;
+        font-size: 1.6rm;
+        padding: 0.2rm 0.2rm 0.2rm;
+            }
+    .card { /* create cards for each course that share space horizontally on the home page */
+        display: flex;
+        border: 2rm solid (var(--primary-color)
+}
+</style>
+
+  <h1 id="index">Index</h1>
+
+  <div class="card">
+
+\[\vec{F} = m \cdot \vec{a}\]
+
+  </div>
+
+  <p><a href="/src/sphys/p5_waves_info/p5_notebook.html">p5 Notebook</a></p>
+
+  <p><a href="/src/sphys/p5_waves_info/notebook.html">notebook.html in p5_waves_info</a></p>
+  <div class="container">
+
+    <div class="card">
+
+      <p><a href="/src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality/" class="button">p5l10</a></p>
+
     </div>
-    <script src="../../shared/script.js"></script>
+
+    <p><a href="/src/sphys/sphys_overview/" class="button">Standard Physics Overview</a></p>
+
+    <p><a href="/src/sphys/sphys_teacher/" class="button">text</a></p>
+
+    <p><a href="/src/hphys/hphys_landing/" class="button">Honors Physics Landing</a></p>
+
+  </div>
+</div>
+
+      </div>  
+  </body>
+    
+    <!-- Initialize KaTeX rendering -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('index.md') // Adjust the file name as needed
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to load file: index.md`);
-                    }
-                    return response.text();
-                })
-                .then(content => {
-                    document.getElementById('content').innerHTML = content;
-                })
-                .catch(error => {
-                    console.error(error.message);
-                    document.getElementById('content').innerHTML = '<p>Error loading content.</p>';
-                });
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
         });
     </script>
-</body>
+    
+  </body>
 </html>
