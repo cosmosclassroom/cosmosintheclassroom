@@ -1,8 +1,11 @@
 ---
-css: style
-title: p5 landing
+title: P5 Waves and Information - OSE Unit Overview
+subtitle: Lesson Content Landing Page
 author: Jonathan Corbett
 layout: default
+date: ${CURRENT_YEAR} - ${CURRENT_MONTH}- ${CURRENT DATE}
+topic: 
+mathjax: true
 ---
 
 ## Notebooks and Reference Materials
@@ -38,7 +41,14 @@ layout: default
 - [P5L10 Overview](p5l10.md)
 - [Data: Amplitude and Frequency Duality](p5l10_data-amplitude-frequency-duality.md)
 - 
-- [Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
+
+
+## Navigation
+- [Wave Topics Landing Page](p5l7_landing.md)
+
+<button type="button" class="collapsible">Lesson 10 - EM Wave Technologies</button>
+<div class="content">
+[Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
 
 [Reading: The Wave Model](p5l10_model-wave-reading.md)
 
@@ -48,9 +58,7 @@ layout: default
 
 [Reading: Particle Model](p5l10_model-particle-reading.md)
 
-[PartiCLE](p5l10_model-particle-reading.md)
+[Reading - The Particle Model of Light](p5l10_model-particle-reading.md)
 
 [Reading - Radiography](p5l10_reading-radiography.md)
-
-## Navigation
-- [Wave Topics Landing Page](p5l7_landing.md)
+</div>
