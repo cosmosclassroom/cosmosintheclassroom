@@ -38,10 +38,14 @@
         }
         document.addEventListener('DOMContentLoaded', () => {
             // Dynamically load the markdown file
-            fetch('./index.md') // Adjust the file name as needed
+            const baseUrl = './src/sphys/p5_waves_info/';
+            const fileName = 'p5l4_wave_variables.md';
+            const fileUrl = `${baseUrl}${fileName}`;
+
+            fetch(fileUrl)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`Failed to load file: index.md`);
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
                     }
                     return response.text();
                 })
@@ -60,7 +64,7 @@
                     document.head.appendChild(documentCSS);
                 })
                 .catch(error => {
-                    console.error(error.message);
+                    console.error(`File loading error: ${error.message}`);
                     document.getElementById('content').innerHTML = '<p>Error loading content. Please check back later.</p>';
                 });
         });
