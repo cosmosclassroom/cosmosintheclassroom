@@ -30,6 +30,7 @@
     <div id="content">
         <p>Loading...</p>
     </div>
+   
     <script src="./shared/script.js" onerror="handleMissingScript('script.js')"></script>
     <script>
         function handleMissingScript(fileName) {
@@ -59,7 +60,7 @@
                     // Dynamically apply the CSS for the loaded document
                     const documentCSS = document.createElement('link');
                     documentCSS.rel = 'stylesheet';
-                    documentCSS.href = '/assets/css/documents.css'; // Path to the desired CSS file
+                    documentCSS.href = '/assets/css/style.css'; // Path to the desired CSS file
                     documentCSS.onerror = () => console.error('Failed to load CSS file: /assets/css/documents.css');
                     document.head.appendChild(documentCSS);
                 })

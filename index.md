@@ -4,7 +4,6 @@ title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
 markdown: kramdown
-stylesheet: worksheets
 mathjax: true
 pagination:
     enabled: false
@@ -20,7 +19,7 @@ pagination:
             }
     .card { /* create cards for each course that share space horizontally on the home page */
         display: flex;
-        border: 2rm solid (var(--primary-color)
+        border: 2rm solid (var(--primary-color))
 }
 </style>
 
@@ -36,6 +35,7 @@ $$\vec{F} = m \cdot \vec{a}$$
 [p5 Notebook](src/sphys/p5_waves_info/p5_notebook.html)
 
 [notebook.html in p5_waves_info](src/sphys/p5_waves_info/notebook.html)
+
 <div class='container'>
 
 <div class='card'>
@@ -52,3 +52,5 @@ $$\vec{F} = m \cdot \vec{a}$$
 
 </div>
 </div>
+
+Text 
