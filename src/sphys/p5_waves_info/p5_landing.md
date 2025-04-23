@@ -50,6 +50,7 @@ layout: default
 
 [PartiCLE](p5l10_model-particle-reading.md)
 
+[Reading - Radiography](p5l10_reading-radiography.md)
 
 ## Navigation
 - [Wave Topics Landing Page](p5l7_landing.md)
