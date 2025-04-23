@@ -17,7 +17,7 @@ In conventional radiography, the patient is positioned between an X-ray machine 
 
 <div class='figure-right'>
 
-![alt text](cosmosintheclassroom/assets/images/p5_waves/xray-conv.jpg)
+![alt text](../../../assets/images/p5_waves/xray-conv.jpg)
 
 Figure 1. In conventional radiography, patients are exposed to 
 
@@ -33,7 +33,7 @@ An X-ray digital detector is a set of many individual sensors whose function is 
 
 <div class='figure-right'>
 
-![Adapted from OpenSciEd](cosmosintheclassroom/assets/images/p5_waves/xray-grid.jpg)
+![Adapted from OpenSciEd](../../../assets/images/p5_waves/xray-grid.jpg)
 </div>
 
 The best way to understand how digital images are created out of pixels is to look at the screen of any modern device with a magnifying glass. If you look closely, you will see that the image is made up of a collection of very small squares, which are pixels.
@@ -44,9 +44,22 @@ These numerical values are stored as electrical charges in computer memory circu
 
 In digital radiography, patients are still exposed to the ionizing radiation and must wear appropriate shielding, such as lead aprons, to absorb the radiation that otherwise could reach sensitive organs and tissues. But unlike conventional radiographs, digital radiographs are created in a fraction of a second. For example, a chest X-ray with digital radiography may require an exposure time of only 0.02-0.1 seconds. This is because digital sensors are more sensitive to X-rays than the film used in conventional radiography. These sensors can detect low levels of X-ray radiation and produce the electrical signals used to create a digital radiograph.
 
+<div class='figure-right'>
+
+![alt text](../../../assets/images/p5_waves/xray-digital2.jpg)
+
+Figure 1. In conventional radiography, patients are exposed to 
+
+</div>
+
 Similarly to how you can access a picture in a smartphone in a matter of seconds, the doctor’s computer can use the digital information to create the X-ray image in seconds. This eliminates the need for film processing and storage, which can be time-consuming and expensive. However, like the digital information stored in a smartphone, medical records stored digitally can be lost due to hardware failures, software glitches, accidental deletion, or other technical issues. If not properly backed up, this loss of data can result in significant disruptions or irretrievable loss of information critical to patients. Although recent developments have decreased the cost of digital radiography, the amount of resources required for the initial purchase of digital radiography equipment can limit access to this technology. This can create inequitable cost and quality of medical care.
 
-References
+<center>
+
+##### References
+
+</center>
+
 Bansal, G. J. (2006). Digital radiography. A comparison with modern conventional imaging. Postgraduate Medical Journal, 82(969), 425-428.
 DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., Hlabangana, L. T., ... & Mendel, J. (2019). Equipment in the global radiology environment: why we fail, how we could succeed. Journal of Global Radiology, 5(1), e1079.
 
