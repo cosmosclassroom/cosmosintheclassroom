@@ -4,10 +4,6 @@ Title: P5L10 Reading - Amplitude and Frequency Evidence
 Author: Open Sci Ed
 Date: 8 April 2025
 ---
-<div class='nav-panel'>
-    <a href="./p5l10_model_particle-reading.md" class="nav-button">← Back</a>
-    <a href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</a>
-</div>
 
 # Amplitude/Frequency Evidence
 
