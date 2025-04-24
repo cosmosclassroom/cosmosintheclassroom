@@ -8,6 +8,8 @@ topic:
 mathjax: true
 ---
 
+<div class="content">
+
 ## Notebooks and Reference Materials
 - [Student Homework Notebook](p5_notebook_hw.md)
 - [Student Science Notebook](p5_sci_nbook_student%20copy.md)
@@ -48,20 +50,14 @@ mathjax: true
 
 <a type="button" class="collapsible">Lesson 10 - EM Wave Technologies</a>
 
-<div class="content">
 
-[Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
 
-[Reading: The Wave Model](p5l10_model-wave-reading.md)
+# P5L10 Overview
 
-[Analogy: Wave-Particle Duality](p5l10_model-particle-reading.md)
-
-[Reading: Wave Model](p5l10_model-wave-reading.md)
-
-[Reading: Particle Model](p5l10_model-particle-reading.md)
-
-[Reading - The Particle Model of Light](p5l10_model-particle-reading.md)
-
-[Reading - Radiography](p5l10_reading-radiography.md)
+- [Reading: Amplitude/Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
+- [Reading: The Wave Model Evidence](p5l10_model-wave-reading.md)
+- [Reading: The Particle Model Evidence](p5l10_model-particle-reading.md)
+- [Reading: Wave/Particle Duality Summary](p5l10_model-wave-particle-duality.md)
+- [Reading - Radiography](p5l10_reading-radiography.md)
 
 </div>
