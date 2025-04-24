@@ -14,6 +14,12 @@ The answer lies in the concept of wave-particle **duality**. Electromagnetic rad
 
 The wave and particle models of electromagnetic radiation are not mutually exclusive. Instead, they represent two complementary aspects of a single, more complex reality. Electromagnetic radiation exhibits both wave-like and particle-like properties, and both models are necessary to fully understand its behavior. In Young's double-slit experiment, light behaves as a wave, creating interference patterns. In the photoelectric effect, light behaves as a stream of particles (photons), each carrying a discrete amount of energy.
 
+<div class="checkpoint">
+
+#### Checkpoint: Wave-Particle Duality
+
+Copy the following tables into your science notebook. Use them to summarize the differences between the wave and particle models of light (electromagnetic radiation).
+
 **Table 1.** Comparison of wave variables in the wave and particle model of light (electromagnetic radiation).
 
 |                                 |Wave Model|Particle Model|
