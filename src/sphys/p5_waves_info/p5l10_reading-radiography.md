@@ -21,7 +21,7 @@ In conventional radiography, the patient is positioned between an X-ray machine 
 
 ![alt text](../../../assets/images/p5_waves/xray-conv.jpg)
 
-Figure 1. In conventional radiography, patients are exposed to 
+</div>
 
 </div>
 
