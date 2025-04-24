@@ -64,7 +64,7 @@ Similarly to how you can access a picture in a smartphone in a matter of seconds
 
 </center>
 
-<div class='citation'>
+<div class='citations'>
 
 Bansal, G. J. (2006). Digital radiography. A comparison with modern conventional imaging. Postgraduate Medical Journal, 82(969), 425-428.
 
