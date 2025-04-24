@@ -8,6 +8,11 @@ date: 21 April 2025
 stylsheet: worksheets
 ---
 
+<div class='nav-panel'>
+    <button href="./p5l10_model_particle-reading.md" class="nav-button">← Back</button>
+    <button href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</button>
+</div>
+
 # The Wave Model of Electromagnetism
 
 ## Wave Variables in Wave-Particle Duality
