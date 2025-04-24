@@ -8,7 +8,7 @@ stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 
 <div class='nav-panel'>
     <a href="./p5l10_model_particle-reading.md" class="nav-button">← Back</a>
-    <a href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</a>
+    <a href="./p5l10_reading-radiography.md" class="nav-button">Forward →</a>
 </div>
 
 ## The Wave-Particle Duality: A Paradoxical Reality
