@@ -4,15 +4,18 @@ author: Jonathan Corbett
 layout: stemplate
 date: ${CURRENT_YEAR} - ${CURRENT_MONTH}- ${CURRENT DATE}
 topic: 
+permalink: www.cosmosintheclassroom.org/src/sphys/p5_waves_info/p5l10_reading-radiography
 mathjax: true
 ---
 
-# Radiography: Conventional versus Digital
+# Radiography: Imaging the Inner World
 
 Radiography, or the use of X-rays to create images of the internal structures of the human body, has revolutionized the field of medicine. The first X-ray was taken by Wilhelm Conrad Roentgen in 1895, and since then, radiography has become an essential tool in medical diagnosis and treatment. Over the years, the technology used in radiography has evolved from conventional photographic film to digital detectors. Let’s examine the differences between these two methods.
 
+</details>
+
 ## Creating an Image Using Conventional Radiography
-In conventional radiography, the patient is positioned between an X-ray machine and a piece of special film. This film is a see-through plastic sheet coated with a specific substance that can absorb X-ray radiation. A separate piece of film is required for each image taken. When the X-rays pass through the patient and hit the film, a chemical reaction occurs in the film as it absorbs them. The amount of X-rays absorbed by the film depends on how much is absorbed by various parts of the body as they pass through. For example, bones are quite dense and absorb lots of X-rays, so wherever a bone is between the generator and the film, very little radiation reaches the film. Organs and tissues that are less dense absorb less X-ray radiation, so more passes through them and reaches the film. The film is then dipped into a solution that causes chemicals to stick to it based on how much X-ray radiation was absorbed. This makes the parts of the film that absorbed more X-rays look darker. The parts of the film that absorbed less X-ray radiation look brighter and more transparent. 
+In conventional radiography, the patient is positioned between an X-ray machine and a piece of specialized film. This film is a see-through plastic sheet coated with a substance that can absorb X-ray radiation. A separate piece of film is required for each image taken. When the X-rays pass through the patient and hit the film, a chemical reaction occurs in the film as it absorbs them. The amount of X-rays absorbed by the film depends on how much is absorbed by various parts of the body as they pass through. For example, bones are quite dense and absorb lots of X-rays, so wherever a bone is between the generator and the film, very little radiation reaches the film. Organs and tissues that are less dense absorb less X-ray radiation, so more passes through them and reaches the film. The film is then dipped into a solution that causes chemicals to stick to it based on how much X-ray radiation was absorbed. This makes the parts of the film that absorbed more X-rays look darker. The parts of the film that absorbed less X-ray radiation look brighter and more transparent. 
 
 <div class='figure-right'>
 
@@ -22,7 +25,17 @@ Figure 1. In conventional radiography, patients are exposed to
 
 </div>
 
-With this technology, the patient must be exposed to X-rays for a short time so the film can capture enough radiation to make a clear image. For example, a chest X-ray with conventional radiography may require an exposure time of 0.1-0.5 seconds for the chemical reaction to occur in the film and create changes that will be visible in the final radiograph. The patient must remain still during this time to prevent blurring of the image. X-rays are a type of ionizing radiation, which can be harmful, so to reduce the risk, patients are often given a lead apron or shield to cover the areas of the body not being imaged. Creating viewable images with conventional radiography can take from minutes to days, depending on the facility’s resources to process the film. Usually, only one image is made per exposure, which the patient can keep or share with other healthcare professionals.
+With this technology, the patient must be exposed to X-rays for a short time so the film can capture enough radiation to make a clear image. For example, a chest X-ray with conventional radiography may require an exposure time of 0.1-0.5 seconds for the chemical reaction to occur in the film and create changes that will be visible in the final radiograph. The patient must remain still during this time to prevent blurring of the image. X-rays are a type of **ionizing radiation**, which can be harmful, so to reduce the risk, patients are often given a lead apron or shield to cover the areas of the body not being imaged. Creating viewable images with conventional radiography can take from minutes to days, depending on the facility’s resources to process the film. Usually, only one image is made per exposure, which the patient can keep or share with other healthcare professionals.
+
+<div class='checkpoint'>
+
+##### Checkpoint
+
+In your science notebook, draw a simplified, labeled sketch showing how conventional radiography works. Add visuals of the wave model and the particle model. Indicate which parts of the image show the x-rays interacting with matter to generate an image.
+
+Alternately, do the same with a flowchart diagram.
+
+</div> 
 
 ## Creating an Image Using Digital Radiography
 Digital radiography has now widely replaced conventional radiography for capturing detailed images of the inside of the human body. Like conventional radiography, an X-ray machine emits radiation that passes through the patient's body and is absorbed in different amounts by different tissues. But unlike conventional radiography, digital radiography uses a digital detector to capture the X-rays that pass through, and creates digital images instead of X-ray film.
@@ -39,6 +52,16 @@ An X-ray digital detector is a set of many individual sensors whose function is 
 The best way to understand how digital images are created out of pixels is to look at the screen of any modern device with a magnifying glass. If you look closely, you will see that the image is made up of a collection of very small squares, which are pixels.
 
 The X-ray digital detector quantifies the number of photons that each sensor absorbs. For example, when X-rays pass through the patient’s arm, the bones absorb more photons, and very few pass through. Because a sensor right under the bone would receive and absorb very few photons, the detector would assign it a numerical value of 0. For other sensors that absorb many photons, the detector assigns a higher numerical value. Each numerical value corresponds with how dark the pixel will appear in the digital image. The fact that the image is represented as numbers is one reason it is considered digital information. In math, the word digital means “made of numbers.” The same is true in computer science.
+
+<div class='checkpoint'>
+
+##### Checkpoint
+
+In your science notebook, draw a simplified, labeled sketch showing how digital radiography works. Add visuals of the wave model and the particle model interacting with matter to generate the image. 
+
+Alternately, do the same with a flowchart diagram.
+
+</div> 
 
 These numerical values are stored as electrical charges in computer memory circuits. Those charges can be detected by the computer at any later time to retrieve and reconstruct the digital image that represents the number of photons each sensor detected. Because of this, the numerical (or digital) information composing the images stored in computer memory can be quickly transmitted to other computers. This makes digital radiographs quickly and easily accessible to radiologists and other healthcare professionals. In fact, anyone with access to that information can generate the images on their computer, which is why passwords are required to access medical records preventing unauthorized access or disclosure of sensitive health information. Despite these precautions, security breaches and unauthorized access to medical records can occur.
 
@@ -69,6 +92,20 @@ DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., 
 </div>
 
 
-Use the photon model or the wave model of light to explain why the exposure time of digital radiography is much shorter than the exposure time of conventional radiography. 
-How can we use this model to identify strategies that reduce harm from exposure to high-frequency EM radiation?
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCg40rr0W2LpW_XPCuUWPyu0sMxV1mnadNmPPkyFC3stxknA/viewform?embedded=true" width="640" height="2127" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+
+<div class='checkpoint'>
+
+##### Summary
+
+Write concise answers to the following in your science notebook. 
+
+1. Use the photon model or the wave model of light to explain why the exposure time of digital radiography is much shorter than the exposure time of conventional radiography. 
+2. What explains the difference in exposure times between digital and conventional radiography? 
+3. How can we use this model to identify strategies that reduce harm from exposure to high-frequency EM radiation?
 Based on all the information you gathered from this reading, what are the trade-offs of digital radiography versus conventional radiography?
+
+
+</div> 
+

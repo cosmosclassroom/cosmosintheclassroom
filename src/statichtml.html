@@ -1,6 +1,39 @@
-<link rel="text/css" href="../assets/css/worksheets.css">
+<!-- This is a static HTML file for the Cosmos in the Classroom project. -->
+<!-- It includes a navigation panel and some example content. -->
+<!-- The file is structured with a head and body -->
+ 
+<head>
+<link rel="stylesheet" href="../assets/css/navbar.css">
+<link rel="stylesheet" href="../assets/css/reading.css">
+</head>
+<body>
 
-<div class='nav-panel'>
-  <a href="./p5l10_reading-wave-particle-duality.md" class="nav-button">← Back</a>
-  <a href="./p5l10_reading-radiography.md" class="nav-button">Forward →</a>
+<!-- Updated navigation panel -->
+<div class="navbar">
+  <div class="nav-panel">
+    <button onclick="navigatePage(-1)" class="nav-button">← Back</button>
+    <button onclick="navigatePage(1)" class="nav-button">Forward →</button>
+  </div>
+  <script>
+    async function navigatePage(direction) {
+      const response = await fetch('./statichtml.json');
+      const pages = await response.json();
+      const currentPath = window.location.pathname;
+      const currentIndex = pages.findIndex(page => page.path === currentPath);
+      const newIndex = currentIndex + direction;
+      
+      if (newIndex >= 0 && newIndex < pages.length) {
+        window.location.href = pages[newIndex].path;
+      }
+    }
+  </script>
 </div>
+
+<h1> This is text</h1>
+<p> This is a paragraph. </p>
+<p> This is another paragraph. </p>
+<p> This is a third paragraph. </p> 
+<p> This is a fourth paragraph. </p>
+<a> This is a <link rel="alternate" href="rss.xml" type="application/rss+xml" title="RSS">
+
+</body>
