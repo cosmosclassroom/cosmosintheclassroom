@@ -60,7 +60,7 @@ X-rays are used in medical imaging to help get a better idea of what is inside 
 
 ### References </center>
 
-<div class='references'>
+<div class='citations'>
 
 *Is there a link between infrared saunas and skin cancer?* (2021, November 24). Retrieved from: [https://skincancer.net/clinical/infrared-saunas-skin-cancer](https://skincancer.net/clinical/infrared-saunas-skin-cancer).  
 
