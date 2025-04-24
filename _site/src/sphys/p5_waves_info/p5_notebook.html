@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>p5.js Waves Notebook</title>
     <!-- Corrected CSS Imports -->
-    <link rel="stylesheet" href="../../assets/css/notebook.css" onerror="handleMissingCSS('notebook.css')" />
-    <link rel="stylesheet" href="../../assets/css/style.css" onerror="handleMissingCSS('style.css')" />
+    <link rel="stylesheet" href="/cosmosintheclassroom/src/assets/css/notebook.css" />
+    <link rel="stylesheet" href="/cosmosintheclassroom/src/assets/css/style.css" />
     <!-- KaTeX Dependencies -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script>
-        function handleMissingCSS(fileName) {
-            console.warn(`Failed to load CSS file: ${fileName}`);
-        }
-    </script>
 </head>
 <body>
+    <div class="nav-panel">
+        <a href="./p5l10_model-wave-reading.md" class="nav-button">Back</a>
+        <span class="nav-title">Navigation</span>
+        <a href="./p5l10_reading-radiography.md" class="nav-button">Forward</a>
+      </div>
+
     <h1>Student Science Notebook</h1>
     <h2>P5 Waves and Information</h2>
     <div class="nav">
@@ -31,55 +32,70 @@
         <p>Loading...</p>
     </div>
     <script>
-        const markdownFiles = {markdownFiles.json:currentFileIndex}
-
-        let currentFileIndex = 0;
+        let htmlFiles = [];
+        let currentFileIndex = 1;
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('totalFiles').textContent = markdownFiles.length;
-            loadMarkdownFile(currentFileIndex);
+            fetch('p5_notebook.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load p5_notebook.json');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.htmlFiles && Array.isArray(data.htmlFiles)) {
+                        htmlFiles = data.htmlFiles;
+                        document.getElementById('totalFiles').textContent = htmlFiles.length;
+                        loadHtmlFile(currentFileIndex);
+                    } else {
+                        throw new Error('Invalid or missing "htmlFiles" property in p5_notebook.json');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading p5_notebook.json:', error);
+                    document.getElementById('content').innerHTML = `<div class="load-error">${error.message}</div>`;
+                });
 
             document.getElementById('prevBtn').addEventListener('click', navigatePrevious);
             document.getElementById('nextBtn').addEventListener('click', navigateNext);
         });
 
-        function loadMarkdownFile(index) {
+        function loadHtmlFile(index) {
             const contentDiv = document.getElementById('content');
             contentDiv.innerHTML = '<p>Loading...</p>';
 
-            fetch(markdownFiles[index])
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Failed to load file: ${markdownFiles[index]}`);
-                    }
-                    return response.text();
-                })
-                .then(markdownText => {
-                    contentDiv.innerHTML = marked.parse(markdownText);
-                    renderMathInElement(contentDiv, {
-                        delimiters: [
-                            { left: "$$", right: "$$", display: true },
-                            { left: "$", right: "$", display: false }
-                        ]
+            if (htmlFiles[index]) {
+                fetch(htmlFiles[index])
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Failed to load file: ${htmlFiles[index]}`);
+                        }
+                        return response.text();
+                    })
+                    .then(htmlText => {
+                        contentDiv.innerHTML = htmlText;
+                    })
+                    .catch(error => {
+                        contentDiv.innerHTML = `<div class="load-error">${error.message}</div>`;
+                        console.error(error);
                     });
-                })
-                .catch(error => {
-                    contentDiv.innerHTML = `<div class="load-error">${error.message}</div>`;
-                    console.error(error);
-                });
+            } else {
+                contentDiv.innerHTML = `<div class="load-error">Invalid file index: ${index}</div>`;
+            }
         }
 
         function navigatePrevious() {
             if (currentFileIndex > 0) {
                 currentFileIndex--;
-                loadMarkdownFile(currentFileIndex);
+                loadHtmlFile(currentFileIndex);
             }
         }
 
         function navigateNext() {
-            if (currentFileIndex < markdownFiles.length - 1) {
+            if (currentFileIndex < htmlFiles.length - 1) {
                 currentFileIndex++;
-                loadMarkdownFile(currentFileIndex);
+                loadHtmlFile(currentFileIndex);
             }
         }
     </script>
