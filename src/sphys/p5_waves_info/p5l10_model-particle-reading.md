@@ -7,11 +7,6 @@ date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
-<div class='nav-panel'>
-    <a href="./p5l10_data-amplitude-frequency-duality.md" class="nav-button">← Back</a>
-    <a href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</a>
-</div>
-
 ## The Particle Model of Electromagnetism
 
 > Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.

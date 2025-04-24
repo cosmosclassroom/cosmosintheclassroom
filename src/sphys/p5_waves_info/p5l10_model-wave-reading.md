@@ -8,10 +8,7 @@ date: 21 April 2025
 stylsheet: worksheets
 ---
 
-<div class='nav-panel'>
-    <a href="./p5l10_reading-amplitude-frequen.md" class="nav-button">← Back</a>
-    <a href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</a>
-</div>
+
 
 # The Wave Model of Electromagnetism
 
