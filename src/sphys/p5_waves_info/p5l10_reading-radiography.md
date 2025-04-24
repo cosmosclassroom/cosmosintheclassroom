@@ -1,7 +1,7 @@
 ---
 title:
 author: Jonathan Corbett
-layout: default
+layout: stemplate
 date: ${CURRENT_YEAR} - ${CURRENT_MONTH}- ${CURRENT DATE}
 topic: 
 mathjax: true
