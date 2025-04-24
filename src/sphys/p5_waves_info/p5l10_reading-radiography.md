@@ -93,7 +93,6 @@ DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., 
 Write concise answers to the following in your science notebook. 
 
 1. Compare how X-ray photons interact with matter in conventional film versus digital sensors. How does this explain the difference in exposure times?
-
-2. Use the particle model of light to explain why some body tissues appear darker or lighter in both types of X-ray images.
+1. Use the particle model of light to explain why some body tissues appear darker or lighter in both types of X-ray images.
 
 </div>
