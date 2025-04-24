@@ -242,6 +242,11 @@ table {
     text-align: center;
 
 }
+.checkpoint li {
+    font-size: inherit;
+    color: var(--text-color);
+    margin: 0.5em 0;
+}
 /* Citations and References - APA-Style */
 .citations {
     font-size: 0.8em;
@@ -268,6 +273,38 @@ table {
     cursor: pointer;
     font-size: 0.9em;
     margin-top: 0.5em;
+}
+
+.iframe {
+    display: block;
+    width: 100%;
+    height: 500px; /* Fixed height to ensure visibility */
+    border: none;
+    margin: 1em auto;
+    padding: 0.5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents scrollbars unless needed */
+    position: relative; /* Allows proper stacking context */
+}
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    :root {
+        --font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+    .data-table,
+    .template-table {
+        width: 100%; /* Ensure tables are responsive */
+        margin: 0 auto; /* Center tables on smaller screens */
+    }
+    .figure-right,
+    .figure-left {
+        width: 90%; /* Adjust figure width for smaller screens */
+        float: none; /* Remove float for better stacking */
+        margin: 0 auto; /* Center figures on smaller screens */
+    }
 }
 
 
