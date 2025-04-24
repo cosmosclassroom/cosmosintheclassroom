@@ -15,6 +15,7 @@ Humans create EM radiation in a wide variety of frequencies and amplitudes. Medi
 
 As you read these excerpts from health and wellness literature, organize your thinking by taking notes in the table below about the effects that various technologies have on human health.  
  
+<div class='template-table'>
 
 |  | High-amplitude (brighter)  EM radiation | Low-amplitude (dimmer) EM radiation |
 | -----: | :-----: | :-----: |
@@ -22,6 +23,8 @@ As you read these excerpts from health and wellness literature, organize your th
 | Visible light (middle frequency) |  |   |
 | Ultraviolet (high frequency) |  |   |
 |  X-ray (higher frequency)  |  |   |
+
+</div>
 
 ### INFRARED
 
