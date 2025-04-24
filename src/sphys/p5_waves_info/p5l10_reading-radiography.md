@@ -6,10 +6,6 @@ date: ${CURRENT_YEAR} - ${CURRENT_MONTH}- ${CURRENT DATE}
 topic: 
 mathjax: true
 ---
-<div class='nav-panel'>
-    <a href="./p5l10_reading-wave-particle-duality.md" class="nav-button">← Back</a>
-    <a href="./p5l10_reading-radiography.md" class="nav-button">Forward →</a>
-</div>
 
 # Radiography: Conventional versus Digital
 

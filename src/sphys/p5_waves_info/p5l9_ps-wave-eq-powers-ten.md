@@ -1,5 +1,6 @@
 ---
 Title: Problem Set - Wave Equation in Sci. Not. Practice
+lesson: p5l9
 Author: Jonathan Corbett
 Date: 3 April 2025
 Markdown: kramdown
