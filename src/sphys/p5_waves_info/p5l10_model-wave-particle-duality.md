@@ -8,11 +8,11 @@ stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 
 ## The Wave-Particle Duality: A Paradoxical Reality
 
-While the particle model successfully explains phenomena like the photoelectric effect, it seems to contradict the wave model's explanation of interference and diffraction. How can light be both a wave and a particle?
+While the particle model successfully explains phenomena like the photovoltaic effect, it seems to contradict the wave model's explanation of interference and diffraction. How can light be both a wave and a particle?
 
 The answer lies in the concept of wave-particle **duality**. Electromagnetic radiation, and indeed all matter, exhibits *both* wave-like and particle-like properties. Which aspect is observed depends on the specific experiment being performed.
 
-The wave and particle models of electromagnetic radiation are not mutually exclusive. Instead, they represent two complementary aspects of a single, more complex reality. Electromagnetic radiation exhibits both wave-like and particle-like properties, and both models are necessary to fully understand its behavior. In Young's double-slit experiment, light behaves as a wave, creating interference patterns. In the photoelectric effect, light behaves as a stream of particles (photons), each carrying a discrete amount of energy.
+The wave and particle models of electromagnetic radiation are not mutually exclusive. Instead, they represent two complementary aspects of a single, more complex reality. Electromagnetic radiation exhibits both wave-like and particle-like properties, and both models are necessary to fully understand its behavior. In Young's double-slit experiment, light behaves as a wave, creating interference patterns. In the photovoltaic effect, light behaves as a stream of particles (photons), each carrying a discrete amount of energy.
 
 <div class="checkpoint">
 

@@ -13,6 +13,7 @@ mathjax: true
 Radiography, or the use of X-rays to create images of the internal structures of the human body, has revolutionized the field of medicine. The first X-ray was taken by Wilhelm Conrad Roentgen in 1895, and since then, radiography has become an essential tool in medical diagnosis and treatment. Over the years, the technology used in radiography has evolved from conventional photographic film to digital detectors. Let’s examine the differences between these two methods.
 
 ## Creating an Image Using Conventional Radiography
+
 In conventional radiography, the patient is positioned between an X-ray machine and a piece of specialized film. This film is a see-through plastic sheet coated with a substance that can absorb X-ray radiation. A separate piece of film is required for each image taken. When the X-rays pass through the patient and hit the film, a chemical reaction occurs in the film as it absorbs them. The amount of X-rays absorbed by the film depends on how much is absorbed by various parts of the body as they pass through. For example, bones are quite dense and absorb lots of X-rays, so wherever a bone is between the generator and the film, very little radiation reaches the film. Organs and tissues that are less dense absorb less X-ray radiation, so more passes through them and reaches the film. The film is then dipped into a solution that causes chemicals to stick to it based on how much X-ray radiation was absorbed. This makes the parts of the film that absorbed more X-rays look darker, while the parts of the film that absorbed less X-ray radiation look brighter and more transparent.
 
 <div class='figure-right'>
@@ -85,7 +86,7 @@ DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., 
 
 </div>
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCg40rr0W2LpW_XPCuUWPyu0sMxV1mnadNmPPkyFC3stxknA/viewform?embedded=true" width="100%" height="50%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCg40rr0W2LpW_XPCuUWPyu0sMxV1mnadNmPPkyFC3stxknA/viewform?embedded=true" width="fit" height="675px" frameborder="1" marginheight="0" marginwidth="0">Loading…</iframe>
 
 <div class='checkpoint'>
 
