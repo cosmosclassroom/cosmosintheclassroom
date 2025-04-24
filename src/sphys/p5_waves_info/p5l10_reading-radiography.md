@@ -88,7 +88,7 @@ DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., 
 
 <div class='checkpoint'>
 
-##### Summary
+#### Summary
 
 Write concise answers to the following in your science notebook. 
 
