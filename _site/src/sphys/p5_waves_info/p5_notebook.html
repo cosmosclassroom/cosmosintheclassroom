@@ -1,103 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- This is a static HTML file for the Cosmos in the Classroom project. -->
+<!-- It includes a navigation panel and some example content. -->
+<!-- The file is structured with a head and body -->
+ 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>p5.js Waves Notebook</title>
-    <!-- Corrected CSS Imports -->
-    <link rel="stylesheet" href="/cosmosintheclassroom/src/assets/css/notebook.css" />
-    <link rel="stylesheet" href="/cosmosintheclassroom/src/assets/css/style.css" />
-    <!-- KaTeX Dependencies -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-</head>
-<body>
-    <div class="nav-panel">
-        <a href="./p5l10_model-wave-reading.md" class="nav-button">Back</a>
-        <span class="nav-title">Navigation</span>
-        <a href="./p5l10_reading-radiography.md" class="nav-button">Forward</a>
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/reading.css">
+    </head>
+    <body>
+    
+    <!-- Updated navigation panel -->
+    <div class="navbar">
+      <div class="nav-panel">
+        <button onclick="navigatePage(-1)" class="nav-button">← Back</button>
+        <button onclick="navigatePage(1)" class="nav-button">Forward →</button>
       </div>
-
-    <h1>Student Science Notebook</h1>
-    <h2>P5 Waves and Information</h2>
-    <div class="nav">
-        <button id="prevBtn" disabled>Previous</button>
-        <div class="file-info">
-            File <span id="currentIndex">1</span> of <span id="totalFiles">?</span>
-        </div>
-        <button id="nextBtn">Next</button>
+      <script>
+        async function navigatePage(direction) {
+          const response = await fetch('./statichtml.json');
+          const pages = await response.json();
+          const currentPath = document.getElementById('content-frame').src.split('/').pop();
+          const currentIndex = pages.findIndex(page => page.url === currentPath); // Ensure exact match with `url`
+          let newIndex = currentIndex + direction;
+    
+          // Wrap around logic
+          if (newIndex < 0) {
+            newIndex = pages.length - 1; // Go to the last page
+          } else if (newIndex >= pages.length) {
+            newIndex = 0; // Go to the first page
+          }
+    
+          document.getElementById('content-frame').src = pages[newIndex].url;
+        }
+      </script>
     </div>
-    <div id="content">
-        <p>Loading...</p>
-    </div>
+    
+    <!-- Viewing port for rendering HTML pages -->
+    <style>
+        #content-frame {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .slide-out {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .slide-in {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    </style>
+    <iframe id="content-frame" src="html1.html" class="slide-in"></iframe>
     <script>
-        let htmlFiles = [];
-        let currentFileIndex = 1;
-
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('p5_notebook.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Failed to load p5_notebook.json');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.htmlFiles && Array.isArray(data.htmlFiles)) {
-                        htmlFiles = data.htmlFiles;
-                        document.getElementById('totalFiles').textContent = htmlFiles.length;
-                        loadHtmlFile(currentFileIndex);
-                    } else {
-                        throw new Error('Invalid or missing "htmlFiles" property in p5_notebook.json');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error loading p5_notebook.json:', error);
-                    document.getElementById('content').innerHTML = `<div class="load-error">${error.message}</div>`;
-                });
-
-            document.getElementById('prevBtn').addEventListener('click', navigatePrevious);
-            document.getElementById('nextBtn').addEventListener('click', navigateNext);
-        });
-
-        function loadHtmlFile(index) {
-            const contentDiv = document.getElementById('content');
-            contentDiv.innerHTML = '<p>Loading...</p>';
-
-            if (htmlFiles[index]) {
-                fetch(htmlFiles[index])
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Failed to load file: ${htmlFiles[index]}`);
-                        }
-                        return response.text();
-                    })
-                    .then(htmlText => {
-                        contentDiv.innerHTML = htmlText;
-                    })
-                    .catch(error => {
-                        contentDiv.innerHTML = `<div class="load-error">${error.message}</div>`;
-                        console.error(error);
-                    });
-            } else {
-                contentDiv.innerHTML = `<div class="load-error">Invalid file index: ${index}</div>`;
-            }
+        function animatePageTransition(direction) {
+            const frame = document.getElementById('content-frame');
+            frame.classList.remove('slide-in');
+            frame.classList.add('slide-out');
+            
+            setTimeout(() => {
+                frame.classList.remove('slide-out');
+                frame.classList.add('slide-in');
+            }, 500);
         }
-
-        function navigatePrevious() {
-            if (currentFileIndex > 0) {
-                currentFileIndex--;
-                loadHtmlFile(currentFileIndex);
-            }
-        }
-
-        function navigateNext() {
-            if (currentFileIndex < htmlFiles.length - 1) {
-                currentFileIndex++;
-                loadHtmlFile(currentFileIndex);
-            }
-        }
+        
+        // Update the existing navigatePage function to use animation
+        const oldNavigatePage = window.navigatePage;
+        window.navigatePage = async (direction) => {
+            animatePageTransition(direction);
+            await oldNavigatePage(direction);
+        };
     </script>
-</body>
-</html>
+    </body>
+    </html>
