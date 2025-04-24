@@ -46,8 +46,10 @@ mathjax: true
 ## Navigation
 - [Wave Topics Landing Page](p5l7_landing.md)
 
-<button type="button" class="collapsible">Lesson 10 - EM Wave Technologies</button>
+<a type="button" class="collapsible">Lesson 10 - EM Wave Technologies</a>
+
 <div class="content">
+
 [Reading: Amplitude and Frequency Evidence](p5l10_reading-amplitude-frequency-evidence.md)
 
 [Reading: The Wave Model](p5l10_model-wave-reading.md)
@@ -61,4 +63,5 @@ mathjax: true
 [Reading - The Particle Model of Light](p5l10_model-particle-reading.md)
 
 [Reading - Radiography](p5l10_reading-radiography.md)
+
 </div>
