@@ -1,6 +1,6 @@
 ---
 layout: stemplate
-title: Notebook - The Particle Model of Electromagnetism
+title: The Particle Model of Electromagnetism
 subtitle: The Particle Model
 author: Jonathan Corbett
 date: 21 April 2025
