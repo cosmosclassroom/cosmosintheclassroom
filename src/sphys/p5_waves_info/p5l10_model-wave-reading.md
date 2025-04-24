@@ -13,6 +13,12 @@ stylsheet: worksheets
     <button href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</button>
 </div>
 
+<div class='nav-panel'>
+    <a href="./p5l10_reading-amplitude-frequencyt-evidence.md" class="nav-button">← Back</a>
+    <a href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</a>
+</div>
+
+
 # The Wave Model of Electromagnetism
 
 ## Wave Variables in Wave-Particle Duality
