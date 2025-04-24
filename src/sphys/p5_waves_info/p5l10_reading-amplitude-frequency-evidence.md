@@ -4,6 +4,11 @@ Author: Open Sci Ed
 Date: 8 April 2025
 ---
 
+<div class='nav-panel'>
+    <button href="./p5l10_model_particle-reading.md" class="nav-button">← Back</button>
+    <button href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</button>
+</div>
+
 # Amplitude/Frequency Evidence
 
 ### Do EM radiation’s frequency and/or amplitude affect the risk of harm?
