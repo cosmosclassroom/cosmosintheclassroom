@@ -6,6 +6,7 @@ date: ${CURRENT_YEAR} - ${CURRENT_MONTH}- ${CURRENT DATE}
 topic: 
 mathjax: true
 ---
+
 <div class='nav-panel'>
     <button href="./p5l10_reading-wave-particle-duality.md" class="nav-button">← Back</button>
     <button href="" class="nav-button">Forward →</button>
