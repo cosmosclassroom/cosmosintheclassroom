@@ -1,13 +1,13 @@
 ---
 layout: stemplate
-title: Experiments in Wave and Particle Models
+title: Notebook - The Particle Model of Electromagnetism
 subtitle: The Particle Model
 author: Jonathan Corbett
 date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
-## The Particle Model of Electromagnetism
+# The Particle Model of Electromagnetism
 
 > Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.
  
