@@ -1,7 +1,7 @@
 ---
 layout: stemplate
 title: Experiments in Wave and Particle Models
-subtitle: The Wave Model
+subtitle: The Wave Model of Electromagnetism
 lesson: p5l10
 author: Jonathan Corbett
 date: 21 April 2025
