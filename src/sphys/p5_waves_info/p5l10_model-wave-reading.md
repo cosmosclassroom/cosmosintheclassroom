@@ -14,7 +14,7 @@ stylsheet: worksheets
 </div>
 
 <div class='nav-panel'>
-    <a href="./p5l10_reading-amplitude-frequencyt-evidence.md" class="nav-button">← Back</a>
+    <a href="./p5l10_reading-amplitude-frequency-evidence.md" class="nav-button">← Back</a>
     <a href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</a>
 </div>
 
