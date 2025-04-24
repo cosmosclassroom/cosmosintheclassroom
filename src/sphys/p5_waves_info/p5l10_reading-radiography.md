@@ -4,7 +4,7 @@ author: Jonathan Corbett
 layout: stemplate
 date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}
 topic: 
-permalink: www.cosmosintheclassroom.org/src/sphys/p5_waves_info/p5l10_reading-radiography
+permalink: p5l10_reading-radiography
 mathjax: true
 ---
 
