@@ -8,8 +8,8 @@ stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
 <div class='nav-panel'>
-    <button href="./p5l10_data-amplitude-frequency-duality.md" class="nav-button">← Back</button>
-    <button href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</button>
+    <a href="./p5l10_data-amplitude-frequency-duality.md" class="nav-button">← Back</a>
+    <a href="./p5l10_model_particle_reading.md" class="nav-button">Forward →</a>
 </div>
 
 ## The Particle Model of Electromagnetism
