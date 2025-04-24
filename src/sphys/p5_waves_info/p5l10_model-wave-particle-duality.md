@@ -20,6 +20,8 @@ The wave and particle models of electromagnetic radiation are not mutually exclu
 
 Copy the following tables into your science notebook. Use them to summarize the differences between the wave and particle models of light (electromagnetic radiation).
 
+<div class='template-table'>
+
 **Table 1.** Comparison of wave variables in the wave and particle model of light (electromagnetic radiation).
 
 |                                 |Wave Model|Particle Model|
@@ -34,3 +36,5 @@ Copy the following tables into your science notebook. Use them to summarize the 
 |Wave Evidence|Particle Evidence|
 |-|-|
 |||
+
+</div>
