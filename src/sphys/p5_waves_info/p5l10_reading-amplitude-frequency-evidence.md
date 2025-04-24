@@ -4,10 +4,9 @@ Title: P5L10 Reading - Amplitude and Frequency Evidence
 Author: Open Sci Ed
 Date: 8 April 2025
 ---
-
 <div class='nav-panel'>
-    <button href="./p5l10_model_particle-reading.md" class="nav-button">← Back</button>
-    <button href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</button>
+    <a href="./p5l10_model_particle-reading.md" class="nav-button">← Back</a>
+    <a href="./p5l10_model_wave_reading.md" class="nav-button">Forward →</a>
 </div>
 
 # Amplitude/Frequency Evidence
@@ -57,10 +56,16 @@ X-rays are used in medical imaging to help get a better idea of what is inside 
 
 
 <footer>
-References
+<center> 
 
-* *Is there a link between infrared saunas and skin cancer?* (2021, November 24). Retrieved from: [https://skincancer.net/clinical/infrared-saunas-skin-cancer](https://skincancer.net/clinical/infrared-saunas-skin-cancer).  
-* Linet, M. S., Kim, K. P., Miller, D. L., Kleinerman, R. A., Simon, S. L., & Berrington de Gonzalez, A. (2010). Historical review of occupational exposures and cancer risks in medical radiation workers. *Radiation research*, *174*(6), 793–808. https://doi.org/10.1667/RR2014.1   
-* The American Cancer Society medical and editorial content team. (2019, July 10). *Ultraviolet (UV) Radiation*. Information and resources about cancer: Breast, colon, lung, prostate, skin. https://amp.cancer.org/healthy/cancer-causes/radiation-exposure/uv-radiation.html
+### References </center>
+
+<div class='references'>
+
+*Is there a link between infrared saunas and skin cancer?* (2021, November 24). Retrieved from: [https://skincancer.net/clinical/infrared-saunas-skin-cancer](https://skincancer.net/clinical/infrared-saunas-skin-cancer).  
+
+Linet, M. S., Kim, K. P., Miller, D. L., Kleinerman, R. A., Simon, S. L., & Berrington de Gonzalez, A. (2010). Historical review of occupational exposures and cancer risks in medical radiation workers. *Radiation research*, *174*(6), 793–808. https://doi.org/10.1667/RR2014.1   
+
+The American Cancer Society medical and editorial content team. (2019, July 10). *Ultraviolet (UV) Radiation*. Information and resources about cancer: Breast, colon, lung, prostate, skin. https://amp.cancer.org/healthy/cancer-causes/radiation-exposure/uv-radiation.html
 
 </footer>
