@@ -15,9 +15,10 @@ stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ## The Particle Model of Electromagnetism
 
 > Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.
+ 
 <div class="figure-right">
 
-!![EM variables in the particle model](../../../assets/images/p5_waves/p5l10_particle_vars.png)
+![EM variables in the particle model](../../../assets/images/p5_waves/p5l10_particle_vars.png)
 
 **Figure 1.** Visual representation of amplitude and frequency in the particle model of EM radiation.
 </div>
