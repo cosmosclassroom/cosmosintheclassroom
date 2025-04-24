@@ -73,11 +73,9 @@ In digital radiography, patients are still exposed to the ionizing radiation and
 
 Similarly to how you can access a picture in a smartphone in a matter of seconds, the doctor’s computer can use the digital information to create the X-ray image in seconds. This eliminates the need for film processing and storage, which can be time-consuming and expensive. However, like the digital information stored in a smartphone, medical records stored digitally can be lost due to hardware failures, software glitches, accidental deletion, or other technical issues. If not properly backed up, this loss of data can result in significant disruptions or irretrievable loss of information critical to patients. Although recent developments have decreased the cost of digital radiography, the amount of resources required for the initial purchase of digital radiography equipment can limit access to this technology. This can create inequitable cost and quality of medical care.
 
-<center>
 
-##### References
 
-</center>
+#### References
 
 <div class='citations'>
 
