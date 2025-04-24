@@ -85,18 +85,6 @@ Bansal, G. J. (2006). Digital radiography. A comparison with modern conventional
 DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., Hlabangana, L. T., ... & Mendel, J. (2019). Equipment in the global radiology environment: why we fail, how we could succeed. Journal of Global Radiology, 5(1), e1079.
 
 
-<summary>Click to view</summary>
-    <div class='iframe'>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCg40rr0W2LpW_XPCuUWPyu0sMxV1mnadNmPPkyFC3stxknA/viewform?embedded=true" 
-                width="100%" 
-                height="500" 
-                frameborder="0" 
-                allowfullscreen>
-            Loading…
-        </iframe>
-    </div>
-
-
 
 <div class='checkpoint'>
 
