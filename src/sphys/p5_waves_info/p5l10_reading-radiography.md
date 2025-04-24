@@ -93,9 +93,8 @@ DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., 
 
 Write concise answers to the following in your science notebook. 
 
-1. Use the photon model or the wave model of light to explain why the exposure time of digital radiography is much shorter than the exposure time of conventional radiography. 
-2. What explains the difference in exposure times between digital and conventional radiography? 
-3. How can we use this model to identify strategies that reduce harm from exposure to high-frequency EM radiation?
-Based on all the information you gathered from this reading, what are the trade-offs of digital radiography versus conventional radiography?
+1. Compare how X-ray photons interact with matter in conventional film versus digital sensors. How does this explain the difference in exposure times?
+
+2. Use the particle model of light to explain why some body tissues appear darker or lighter in both types of X-ray images.
 
 </div>
