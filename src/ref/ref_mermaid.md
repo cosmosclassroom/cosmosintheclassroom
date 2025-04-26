@@ -6,10 +6,18 @@ Mermaid is a JavaScript-based diagramming and charting tool that renders Markdow
 
 Mermaid diagrams in Markdown are created using code blocks with the `mermaid` language identifier:
 
-````markdown
+
+
+<li style: |
+        font-family: Garamond;
+        padding: 20px
+        ></style>
+
 ```mermaid
 diagram-code-here
 ```
+
+</li>
 ````
 
 ## Diagram Types
