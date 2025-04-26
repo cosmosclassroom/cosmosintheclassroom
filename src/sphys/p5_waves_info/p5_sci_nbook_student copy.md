@@ -1,0 +1,183 @@
+---
+layout: default
+title: P1 Energy From Earth Systems | Student Science Notebook
+author: Jonathan Corbett
+date: 16 March 2025
+mathjax: true
+---
+
+1. [P5 Electromagnetic Radiation](#p5-electromagnetic-radiation)
+    [L1 | The Microwave Oven](#l1--the-microwave-oven)
+    [L2 | The Magnetron](#l2--the-magnetron)
+    [L3 | Wave Variables and Equation](#l3--wave-variables-and-equation)
+    [L4 | Energy Transfer in Radio and Light](#l4--energy-transfer-in-radio-and-light)
+    [L5 | Wave Interactions: Absorption, Transmission, Reflection](#l5--wave-interactions-absorption-transmission-reflection)
+    [L6 | The Greenhouse Effect](#l6--the-greenhouse-effect)
+    [L7 | Polarity: Particle/Wave Interactions](#l7--polarity-particlewave-interactions)
+    [L8 | Wave Interference](#l8--wave-interference)
+    [L9 | EM Radiation Technology](#l9--em-radiation-technology)
+    [L10 | Wave-Particle Duality](#l10--wave-particle-duality)
+     [L11 | Radiography and Digital Imaging](#l11--radiography-and-digital-imaging)
+     [L12 | Digital Communication](#l12--digital-communication)
+     [L13 | Evaluating Safety Claims](#l13--evaluating-safety-claims)
+
+
+# P5 Electromagnetic Radiation
+
+## L1 | The Microwave Oven
+## L2 | The Magnetron
+## L3 | Wave Variables and Equation
+## L4 | Energy Transfer in Radio and Light
+## L5 | Wave Interactions: Absorption, Transmission, Reflection
+## L6 | The Greenhouse Effect
+## L7 | Polarity: Particle/Wave Interactions
+### Defining Scale
+<dl>
+    <td>Macroscopic</td>
+    <dd> Sized large enough to see with an unaided eye.</dd>
+    <td>Microscopic</td>
+    <dd> Sized large enough to see with a microscope.</dd>
+    <td>Particle-scale</td>
+    <dd> Too small to see, even with a microscope.</dd>
+</dl>
+2. Polarity Observations
+  
+  |I notice| I wonder|
+  |-|-|
+  |There's a colored scale for electron density <br> In Water, the O side has more electrons than the H <br> The plastic has more balanced electrons| If size of the molecules affects the microwave interactions <br> If charge affects the microwave interactions
+
+   I/we predict that _*polarity*_ affects how matter interacts with microwaves.
+
+### Simulation Lab | Field-Particle Interactions
+
+#### Variables
+- ($\Delta$) particle type
+- ($\Delta$) frequency-of-flip
+- (m) direction of force
+- (m) movement of particle
+
+Changing the frequency-of-flip caused the direction of the electric field to change directions more quickly. Higher frequency means the field arrows flip more quickly.
+
+**Table 1.** Summary of (a) forces and (b) changes in motion of particles exposed to changing electric fields 
+
+| Particle-Type | Force on Particle | Observed Effect |Interaction|
+|---:|:---|:---|:---:|
+| Water |  Seemed to be pulled and pushed by the field.  The molecules moved noticeably. | Water molecules vibrated and rotated. Some seemed to be "pulled" towards the field. | Absorption - energy was gained|
+| Ethylene (plastic) |  Hard to tell if there was much force. |  Very little movement observed.  The material seemed mostly unaffected. |Transmission - energy passed through|
+| Electron |  Strong force!  The electron moved very quickly and erratically. | Electron was visibly pushed and pulled, moving rapidly in response to the field. |Absorption?|
+
+Conclusions: I *think* "absorbed" means the energy from the field is used to make the material move. "Transmitted" means the field just goes through.  The electron didn't just absorb, it also changed direction. Hard to say.
+
+---
+#### Frequencies and Particles
+
+**Table 2.** Reactions of water and ethylene (plastic) to microwave radiation of different frequencies. 
+
+| Molecule | 1.0 Hz | 0.5 Hz | 0.25 Hz | 0.125 Hz |
+| :-------- | :----- | :----- | :----- | :----- |
+| **Water** | *Significant* rotation and vibration. Molecules appear to be moving rapidly and chaotically.  | *Moderate* rotation and vibration. Movement is noticeable but less intense than at 1.0 Hz. | *Slight* rotation and vibration. Movement is subtle and may require close observation. | *Very Slight* rotation and vibration. Movement is barely perceptible. |
+| **Ethylene** | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. | *Negligible* movement. Molecules remain largely stationary. |
+
+
+### Conclusions
+
+- (a) Observations at the **macroscopic** level:
+
+**Water**: The water gets really hot, may boil or steam.
+**Ethylene (Plastic)**: The plastic stays mostly the same. It might get a little warm, but not much.
+
+
+- (b) What’s Happening at the **particle** level?
+
+Imagine everything is made of tiny building blocks. When microwaves shine on these building blocks, something happens:
+
+Water molecules are a bit like tiny magnets. Microwaves push and pull on these magnets, making them spin and wiggle really fast. This spinning and wiggling creates heat. The faster they spin and wiggle, the hotter the water gets. This is called energy transfer – the microwave is giving its energy to the water molecules.
+Ethylene (Plastic): Plastic molecules don't react to microwaves very much. They don’t spin or wiggle much, so they don’t get much energy. That’s why the plastic stays cool. The microwave's energy just passes through it.
+Electron: The **electron** is a tiny part of everything. It's moving really fast because the microwave is pushing it. This shows that the microwave is giving energy to the tiny parts of the material.
+
+### Modeling Polarity in the Microwave Oven
+
+*Gotta Have It!*:
+- A changing electric field (a wave)
+- A polar molecule (like water)
+- A non-polar molecule (like ethylene)
+- Forces causing movement
+- Charge (and its balance)
+
+
+### Evaluating Information - Validity and Reliability
+[Reference | Validity and Reliability](p5l7_validity_reliability)
+
+A quick checklist to evaluate the validity and reliability of information:
+
+**Validity Assessment:**
+
+*   [ ] Is there clear evidence?
+*   [ ] Does it fit with what you know?
+*   [ ] Does it agree with science?
+
+**Reliability Assessment:**
+
+*   [ ] Is the source an expert? Did they cite good sources?
+*   [ ] Can it be checked?
+*   [ ] Are limitations acknowledged?
+
+
+
+## L8 | Wave Interference
+
+### I notice.../I wonder... - Lightbulb Array in the Microwave
+
+|I notice...|I wonder...|
+|-|-|
+|||
+
+
+
+## L9 | EM Radiation and Powers of 10
+
+### The Wave Equation in Electromagnetic Radiation
+
+|Wave Type|Formula|
+|-:|:-:|
+|All waves|$v = f \cdot \lambda$|
+|Electromagnetic Waves|$c = f \cdot \lambda$|
+
+
+* $v$ represents the **speed** of the wave (typically in meters per second, m/s). $c$ is constant for EM waves in a vaccuum.
+* $f$ represents the **frequency** of the wave (typically in Hertz, Hz, which is cycles per second or $\frac{1}{s}$ or $s^{-1}$).
+* $\lambda$ represents the **wavelength** of the wave (typically in meters, m).
+
+### EM Radiation and Human Health
+
+**Table** Summary of effects of exposure to electromagnetic radiation on human health. Gathered from readings, experimental data, and a video of experiments.
+
+|  | High-amplitude (brighter)  EM radiation | Low-amplitude (dimmer) EM radiation |
+| -----------------------------------------: | :---------------------------------- |
+| **Infrared (lower frequency)** | Can break down skin’s collagen, contributing to wrinkles (in very high amplitudes) <br>  Can help wounds heal, reduce swelling, and treat acne. Does not cause sunburn or skin cancer |
+|**Visible light (middle frequency)** | Can cause skin redness in people with very sensitive skin (bright SAD lamps) <br> Treats symptoms of Seasonal Affective Disorder (SAD). Not dangerous and has no negative health effects  |
+| **Ultraviolet (high frequency)** | Can make skin darker over time, similar to a suntan or sunburn. Contributes to skin cancer and eyelid cancer <br>  Used to harden gel nail polish, make bodily fluids glow for crime scene investigation, and harden resin in 3D printers. May increase risk of skin cancer |
+|  **X-ray (higher frequency)**  | Used in CT scans and nuclear imaging. Exposure to many scans can increase cancer risk <br>  Used in medical imaging. Can be harmful, even at low amplitudes |
+
+
+## L10 | Wave-Particle Duality
+
+|                                 |Wave Model|Particle Model|
+|---------------------------------|----------|--------------|
+|What is light?                   |||
+|What does high amplitude mean?   |||
+|What does high frequency mean?   |||
+|What contributes to total energy?|||
+
+
+|Wave Evidence|Particle Evidence|
+|-|-|
+|||
+
+
+
+## L11 | Radiography and Digital Imaging
+## L12 | Digital Communication
+## L13 | Evaluating Safety Claims
+##
+
