@@ -1,0 +1,25 @@
+name: Save Quiz Response
+
+on:
+  repository_dispatch:
+    types: [quiz-submission]
+
+  jobs:
+    save-response:
+      runs-on: ubuntu-latest
+      steps:
+        -name: checkout repository
+          uses: actions/checkout@v3
+
+          -name: set up Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.10'
+            
+          -name: Commit and push if changes are detected
+            run: |
+              git config --global user.cosmosclassroom 'GitHub Action'
+              git config --global user.email 'action@github.com'
+              git add _data/quiz_responses/
+            env:
+              STUDENT_ID: ${github.event.client_payload.student_id}
