@@ -3,7 +3,7 @@
 }
 
 :root {
-    max-width: 85%;
+    max-width: 90%;
     margin: 0 auto;
     --font-family: 'Arial', sans-serif;
     --font-size: 2em;
@@ -13,6 +13,19 @@
     --border-color: #dddddd;
     --instruction-color: #3b6b3c;
 }
+
+.parent {
+    display: 'flex';
+    justify-content: 'left; | 'space-between';
+    align-items: 'center';
+}
+
+
+
+body {
+    padding-top: 3.5em; /* Add padding to prevent content from overlapping the navbar */
+}
+
 p {
     font-family: inherit;
     font-size: inherit;
@@ -69,7 +82,7 @@ h1 {
     margin: 0.5em 0.5em 0.5em 0.5em;
     border: 1px solid var(--primary-color); /* Border for buttons */
     border-radius: 4px; /* Rounded corners for buttons */
-    padding: 3rem 3rem; /* Padding for buttons */
+    padding: 0.15rem 1rem; /* Padding for buttons */
     cursor: pointer /* Pointer cursor on hover */;
     font-size: 2rem; /* Font size for buttons */
 }
@@ -84,6 +97,7 @@ ol, ul {
 
 .reference-box {
     display: flex;
+    position: relative;
     max-width: 100%;
     flex-direction: column;
     align-items: center;
@@ -256,24 +270,44 @@ table {
     padding-left: 1em;
     text-indent: -1em;
 }
-.nav-panel {
+
+.navbar {
     display: flex;
-    max-width: 100%;
-    flex-direction: row;
-    border: 3px solid var(--border-color);
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
-    padding: 0.5em;
-    }
-.nav-button {
     background-color: var(--primary-color);
     color: white;
-    border: none;
-    padding: 3em 3em;
+    padding: 0.5em 1em;
+    position: fixed; /* Ensure it floats at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-panel {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-size: 1em;
     cursor: pointer;
-    font-size: 0.9em;
-    margin-top: 0.5em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .iframe {

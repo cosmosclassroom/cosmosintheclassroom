@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <pre><code class="language-mermaid">%% Sample Mermaid Flowchart showcasing different structures and styles
+graph TD
+    A[Start] --&gt;|Process 1| B{Decision?}
+    B --&gt;|Yes| C[Action 1]
+    B --&gt;|No| D[Action 2]
+    C --&gt; E[End]
+    D --&gt; E
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">mermaid
+flowchart TD
+    A[Evidence for Interactions: Amplitude &amp; Frequency] --&gt; B[Wave Model Evidence]
+    B --&gt; C[Particle Model Evidence]
+    C --&gt; || Wave-Particle Duality || --&gt; D[Wave-Particle Duality]
+    C --&gt; D[Wave-Particle Duality]
+    D --&gt; E[Conclusion: X-ray Imaging]
+    E --&gt; F[Transfer Task Practice]
+   </code></p>
+
+      </div>  
+  </body>
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
