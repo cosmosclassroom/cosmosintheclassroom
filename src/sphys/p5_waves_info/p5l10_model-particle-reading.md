@@ -1,13 +1,13 @@
 ---
 layout: stemplate
-title: Experiments in Wave and Particle Models
+title: The Particle Model of Electromagnetism
 subtitle: The Particle Model
 author: Jonathan Corbett
 date: 21 April 2025
 stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
-## The Particle Model of Electromagnetism
+# The Particle Model of Electromagnetism
 
 > Copy **Figure 1** below, including figure caption, into your science notebook. As you read, record your responses to the comprehension checkpoint questions in your science notebook.
  
@@ -47,11 +47,15 @@ Solar cells use silicon and other photovoltaic materials to convert photon energ
 
 <div class="checkpoint">
 
-### Comprehension Checkpoint 2
+### Comprehension Checkpoint 2 - Practice Quiz
 
-Explain how the photovoltaic effect demonstrates the particle nature of light. Use the concept of a photon and possibly threshold frequency in your explanation.
+First, take the embedded practice quiz below to be sure the major concepts are clear. Then, in your science notebook, explain how the photovoltaic effect demonstrates the particle nature of light. Use the concept of a photon, amplitude and possibly threshold frequency in your explanation.
 
 </div>
 
-<div class='table'>
+<div>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeCg40rr0W2LpW_XPCuUWPyu0sMxV1mnadNmPPkyFC3stxknA/viewform?embedded=true" width="1024" height="920" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</div>
 
