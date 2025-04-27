@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <pre><code class="language-mermaid">
+flowchart TD
+    subgraph LocalDev["Local Development"]
+        LocalMachine["Teacher's Local Machine"]
+    end
+
+    subgraph GitHub["GitHub Repositories"]
+        PrivateRepo["Private Repository\ncosmosintheclassroom-source\n(Source Files, Answers, Exams)"]
+        PublicRepo["Public Repository\ncosmosintheclassroom-site\n(Built HTML, CSS, JS)"]
+    end
+
+    subgraph Users["Users"]
+        Teacher["Teacher"]
+        Student["Student"]
+    end
+
+    subgraph WebServices["Web Services"]
+        GitHubPages["GitHub Pages\n(Public Website)"]
+        GitHubActions["GitHub Actions\n(Form Processing)"]
+    end
+
+    subgraph Storage["Data Storage"]
+        JSONFiles["JSON Files\n(Quiz Results, User Data)"]
+    end
+    
+    %% Teacher workflows
+    Teacher --&gt;|edits content on| LocalMachine
+    LocalMachine --&gt;|pushes changes to| PrivateRepo
+    PrivateRepo --&gt;|triggers build via| GitHubActions
+    GitHubActions --&gt;|builds and deploys to| PublicRepo
+    
+    %% Student workflows
+    Student --&gt;|views content on| GitHubPages
+    Student --&gt;|submits quizzes via| GitHubPages
+    GitHubPages --&gt;|displays content from| PublicRepo
+    
+    %% Form processing
+    GitHubPages --&gt;|sends form data to| GitHubActions
+    GitHubActions --&gt;|processes form data| GitHubActions
+    GitHubActions --&gt;|writes results to| JSONFiles
+    GitHubActions --&gt;|commits JSON to| PrivateRepo
+    
+    %% Teacher review
+    Teacher --&gt;|reviews submissions in| PrivateRepo
+    JSONFiles --&gt;|stored in| PrivateRepo
+    
+    %% Website updates
+    PublicRepo --&gt;|hosts via| GitHubPages
+    
+    %% Styling
+    classDef private fill:#f9d6d6,stroke:#a12222,stroke-width:2px
+    classDef public fill:#d6f9d6,stroke:#22a122,stroke-width:2px
+    classDef user fill:#d6d6f9,stroke:#2222a1,stroke-width:2px
+    classDef service fill:#f9f9d6,stroke:#a1a122,stroke-width:2px
+    
+    class PrivateRepo private
+    class PublicRepo,GitHubPages,JSONFiles public
+    class Teacher,Student,LocalMachine user
+    class GitHubActions service
+
+</code></pre>
+
+      </div>  
+  </body>
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

@@ -14,10 +14,6 @@
     --instruction-color: #3b6b3c;
 }
 
-
-
-
-
 body {
     padding-top: 3.5em; /* Add padding to prevent content from overlapping the navbar */
 }
@@ -91,6 +87,45 @@ ol, ul {
     padding-bottom: 1em;
 }
 
+
+/* Instruction Box - For worksheets and assignments */
+.checkpoint {
+    border-left: 4px solid var(--primary-color);
+    /* background-color: var(--secondary-color); */
+    margin: 5% 2%;
+    border-right: 0.5px solid var(--primary-color); border-top: 0.5px solid var(--primary-color); border-bottom: 0.5px solid var(--primary-color); border-top: 0.5px solid var(--primary-color);
+    border-radius: 1rem;
+    padding: 1%;
+    padding-left: 15pt;
+    box-shadow: 5px;
+    margin: 1rem 1rem;
+}
+
+.checkpoint h1 {
+    display: block;
+    text-align: center;
+
+}
+.checkpoint li {
+    color: var(--text-color);
+    margin: 1em 0;
+    padding-left: 1em;
+    list-style-position: outside;
+
+/* Citations and References - APA-Style */
+}
+.citations {
+    display: inline-block;
+    margin: 1em, 1em;
+    padding: 1em, 1em;
+    font-size: 0.9em;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    margin: 0.5em 0;
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
 .reference-box {
     display: flex;
     position: relative;
@@ -119,20 +154,7 @@ ol, ul {
     background-color: var(--secondary-color);
 }
 
-/* Base styles for all tables */
-table {
-    max-width: 100%; /* Ensure the table does not exceed the container width */
-    width: 100%; /* Make the table span the full width of the container */
-    margin: 1.5em 0; /* Add spacing above and below the table */
-    border-collapse: collapse; /* Collapse borders for a cleaner look */
-    overflow-x: auto; /* Enable horizontal scrolling if the table overflows */
-    display: block; /* Ensure the table behaves like a block element */
-}
 
-/* Add a wrapper for tables to handle overflow */
-.table-wrapper {
-    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
-    margin: 0 auto; /* Center the table wrapper */
 }
 
 /* Data Presentation Table - Clean, scientific paper style */
@@ -169,8 +191,23 @@ table {
     text-align: center;
     border-bottom: 1px solid var(--border-color);
 }
+/* Base styles for all tables */
+table {
+    max-width: 100%; /* Ensure the table does not exceed the container width */
+    width: 100%; /* Make the table span the full width of the container */
+    margin: 1.5em 0; /* Add spacing above and below the table */
+    border-collapse: collapse; /* Collapse borders for a cleaner look */
+    overflow-x: auto; /* Enable horizontal scrolling if the table overflows */
+    display: block; /* Ensure the table behaves like a block element */
+}
 
+/* Add a wrapper for tables to handle overflow */
+.table-wrapper {
+    overflow-x: auto; /* Enable horizontal scrolling for wide tables */
+    margin: 0 auto; /* Center the table wrapper */
 /* Template Table - For student notebooks */
+}
+
 .template-table {
     margin-left: auto; margin-right: auto;
     display: table; /* Use table display for proper table behavior */
@@ -203,7 +240,11 @@ table {
 }
 
 /* Figure styles for images and captions */
-
+.figure-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .figure-right {
     clear: both;
     border-radius: 1rem;
@@ -235,45 +276,34 @@ table {
     margin-top: 5px;
 }
 
-/* Instruction Box - For worksheets and assignments */
-.checkpoint {
-    border-left: 4px solid var(--primary-color);
-    /* background-color: var(--secondary-color); */
-    margin: 5% 2%;
-    border-right: 0.5px solid var(--primary-color); border-top: 0.5px solid var(--primary-color); border-bottom: 0.5px solid var(--primary-color); border-top: 0.5px solid var(--primary-color);
+.flex-container{
+    display: flex;
+    border: 2px (var(--primary-color));
+    border-radius: 3px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.iframe-wrapper {
+    display: flex;
+    justify-content: center;
+    border: 2px solid (var(--text-color))
+    box-shadow: 0 1px 3px (var(--secondary-color))
+}
+.iframe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    border: 2px solid #333333; /* Changed to direct color instead of variable */
     border-radius: 1rem;
-    padding: 1%;
-    padding-left: 15pt;
-    box-shadow: 5px;
-    margin: 1rem 1rem;
+    margin: 1em auto;
+    padding: 0.5em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
 }
-
-.checkpoint h1 {
-    display: block;
-    text-align: center;
-
-}
-.checkpoint li {
-    color: var(--text-color);
-    margin: 1em 0;
-    padding-left: 1em;
-    list-style-position: outside;
-}
-
-.parent {
-    display: 'flex';
-    justify-content: 'left; | 'space-between';
-    align-items: 'center';
-}
-/* Citations and References - APA-Style */
-.citations {
-    font-size: 0.9em;
-    color: var(--text-color);
-    margin: 0.5em 0;
-    padding-left: 1em;
-    text-indent: -1em;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -313,18 +343,12 @@ table {
     color: white;
 }
 
-.iframe {
-    display: block;
-    width: 100%;
-    height: 500px; /* Fixed height to ensure visibility */
-    border: var(--secondary-color) 2px solid;
-    box-shadow: #333333 0px 0px 5px;
-    border-radius: 1rem;
-    margin: 1em auto;
-    padding: 0.5em;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Prevents scrollbars unless needed */
-    position: relative; /* Allows proper stacking context */
+}
+
+.parent {
+    display: 'flex';
+    justify-content: 'left; | 'space-between';
+    align-items: 'center';
 }
 
 

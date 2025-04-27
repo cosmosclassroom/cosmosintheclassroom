@@ -4,6 +4,8 @@
  
 <head>
 <link rel="stylesheet" href="../assets/css/worksheets.css"> <!-- Ensure the path is correct -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true});</script>
 </head>
 <body>
 
@@ -18,6 +20,7 @@
     const lastPage = localStorage.getItem("lastPage");
     if (lastPage) {
       document.getElementById("content-frame").src = lastPage;
+      
     }
   });
 
@@ -56,8 +59,9 @@
 </section>
 
 <!-- Viewing port for rendering HTML pages -->
-
-<iframe id="content-frame" src="html1.html" style="width: 100%; height: 80vh; border: 4px (var(--page));"></iframe>
+<div class="iframe-wrapper">
+  <iframe id="content-frame" src="html1.html" style="width: 100%; height: auto;> </iframe>
+</div>
 
 <h1> This is text</h1>
 <p> This is a paragraph. </p>
