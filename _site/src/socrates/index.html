@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Cosmos in the Classroom">
+
+  
+  <link rel="stylesheet" href="/assets/css/reveal.css" />
+  <!-- Import KaTeX styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <!-- Import KaTeX script -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <!-- Import auto-render extension for KaTeX -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="/assets/css/worksheets.css" />
+  
+  
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="socrates">socrates</h1>
+<p>This is Socrates, an AI-Assisted Educational Library designed by Jonathan Corbett</p>
+
+<h1 id="repository-separation-plan">Repository Separation Plan</h1>
+
+<h2 id="overview">Overview</h2>
+<ul>
+  <li><strong>cosmos-repo</strong>: Public-facing website repository (built HTML, CSS, JS)</li>
+  <li><strong>socrates-repo</strong>: Private source files repository (source materials, answers, exams)</li>
+</ul>
+
+<h2 id="file-mapping">File Mapping</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original Location (cosmos)</th>
+      <th>New Location (socrates)</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/build/scripts/*.py</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/scripts/*.py</code></td>
+      <td>Move all build scripts to socrates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/00 Exams/*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/courses/physics/exams/*</code></td>
+      <td>Move all exam content to socrates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/00 Teacher/*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/courses/physics/teacher/*</code></td>
+      <td>Move teacher materials to socrates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/*.md</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/docs/*.md</code></td>
+      <td>Move documentation to socrates</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/styles/*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/public/styles/*</code></td>
+      <td>Keep in cosmos (public website files)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/images/*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/public/images/*</code></td>
+      <td>Keep in cosmos (public website files)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">/js/*</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/public/js/*</code></td>
+      <td>Keep in cosmos (public website files)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-storage">Data Storage</h2>
+<ul>
+  <li>Move all data storage to socrates:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">/data/quiz_responses/*</code> → <code class="language-plaintext highlighter-rouge">/data/quiz_responses/*</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="github-actions-workflows">GitHub Actions Workflows</h2>
+<ul>
+  <li>Update workflows to:
+    <ol>
+      <li>Pull from socrates</li>
+      <li>Build the site</li>
+      <li>Deploy to cosmos</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="path-updates-required">Path Updates Required</h2>
+<ul>
+  <li>Update all file path references in Python scripts</li>
+  <li>Update all import paths in JS files</li>
+  <li>Update all image and CSS references in Markdown files</li>
+</ul>
+
+<h2 id="testing-areas">Testing Areas</h2>
+<p>For each module, verify:</p>
+<ol>
+  <li>Scripts execute correctly</li>
+  <li>Data is saved in the correct location</li>
+  <li>References between files remain intact</li>
+</ol>
+
+      </div>  
+  </body>
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Layout</title>
+    <! -- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    
+        <link rel="stylesheet" href="/assets/css/problemset.css" />
+    
+</head>
+<body>
+    <div class="content">
+        <!--   cosmosintheclassroom\src\hphys\6_circ_grav\PS5.5_orbital_mechanics.md    -->
+<h1 id="orbital-mechanics-problem-set">Orbital Mechanics Problem Set</h1>
+
+<p>Use the <a href="/src/socrates/src/hphys/6_circ_grav/6.0_orbit_fact_sheet/">Planetary Fact Sheet</a> and the following equations to solve these problems:</p>
+
+<ul>
+  <li>Newton’s Universal Law of Gravitation: $F_g = G\frac{m_1m_2}{r^2}$</li>
+  <li>Kepler’s Third Law (simplified): $T^2 = s^3$ (when using AU and years)</li>
+  <li>Kepler’s Third Law (fractional): $\frac{T_1^2}{T_2^2} = \frac{r_1^3}{r_2^3}$</li>
+  <li>Kepler’s Third Law (general): $T^2 = \frac{4\pi^2}{GM}r^3$</li>
+</ul>
+
+<ol>
+  <li>
+    <p>Calculate Mars’ average orbital speed in m/s given its average distance from the Sun.</p>
+  </li>
+  <li>
+    <p>Venus has the most circular orbit of all planets. Calculate the difference between its apoapsis and periapsis distances as a percentage of its average orbital distance.</p>
+  </li>
+  <li>
+    <p>The ratio of Jupiter’s mass to Saturn’s mass is approximately 3.34. If they were brought to the same orbital distance, what would be the ratio of their orbital periods?</p>
+  </li>
+  <li>
+    <p>Calculate the escape velocity from Mars’ surface using its mass and radius.</p>
+  </li>
+  <li>
+    <p>What percentage stronger is the Sun’s gravitational pull on Mercury at perihelion compared to aphelion?</p>
+  </li>
+  <li>
+    <p>If Earth’s orbit were perfectly circular (use average distance), how long would it take a satellite to orbit at twice Earth’s radius from the center of Earth?</p>
+  </li>
+  <li>
+    <p>Compare the gravitational force between:
+a) The Earth and Moon at average distance
+b) Jupiter and Io (use Jupiter’s radius + 421,800 km, Io mass = 8.93×10^22 kg)
+Which is stronger and by what factor?</p>
+  </li>
+  <li>
+    <p>The ISS orbits at approximately 408 km above Earth’s surface. What is its orbital velocity?</p>
+  </li>
+  <li>
+    <p>For bodies orbiting the Sun, the period T (in years) and semi-major axis a (in AU) follow the relation T² = a³. Using this, find how many Earth years it would take a hypothetical asteroid to orbit the Sun at a distance of 3.5 AU.</p>
+  </li>
+  <li>
+    <p>Uranus’ average orbital radius is about 19.2 AU. Without using the fact sheet, calculate its orbital period in years using Kepler’s laws.</p>
+  </li>
+</ol>
+
+<div>
+  <p>&lt;style width: 100%&gt;
+&lt;/style&gt;</p>
+
+  <h2 id="solutions">Solutions</h2>
+
+  <ol>
+    <li>Mars’ orbital speed:
+      <ul>
+        <li>Using $v = \sqrt{\frac{GM}{r}}$ where $G = 6.67 \times 10^{-11}$, $M_{sun} = 1.989 \times 10^{30}$ kg</li>
+        <li>$r = 2.28 \times 10^{11}$ m</li>
+        <li>$v = \sqrt{\frac{(6.67 \times 10^{-11})(1.989 \times 10^{30})}{2.28 \times 10^{11}}}$</li>
+        <li>$v = 24,100$ m/s</li>
+      </ul>
+    </li>
+    <li>Venus orbit circularity:
+      <ul>
+        <li>Apoapsis = $1.09 \times 10^{11}$ m</li>
+        <li>Periapsis = $1.08 \times 10^{11}$ m</li>
+        <li>Average = $1.08 \times 10^{11}$ m</li>
+        <li>Difference = $(1.09 - 1.08) \times 10^{11}$ = $0.01 \times 10^{11}$ m</li>
+        <li>Percentage = $\frac{0.01}{1.08} \times 100\% = 0.93\%$</li>
+      </ul>
+    </li>
+    <li>Jupiter/Saturn orbital period ratio:
+      <ul>
+        <li>Using $T^2 = \frac{4\pi^2}{GM}r^3$</li>
+        <li>Period ratio = $\sqrt{\frac{M_{Saturn}}{M_{Jupiter}}} = \sqrt{\frac{1}{3.34}}$</li>
+        <li>$= 0.547$ (Saturn’s period would be 0.547 times Jupiter’s)</li>
+      </ul>
+    </li>
+    <li>Mars escape velocity:
+      <ul>
+        <li>$v_{escape} = \sqrt{\frac{2GM}{r}}$</li>
+        <li>$M_{Mars} = 6.42 \times 10^{23}$ kg</li>
+        <li>$r = 3.396 \times 10^6$ m</li>
+        <li>$v_{escape} = \sqrt{\frac{2(6.67 \times 10^{-11})(6.42 \times 10^{23})}{3.396 \times 10^6}}$</li>
+        <li>$= 5,030$ m/s</li>
+      </ul>
+    </li>
+    <li>Mercury Sun gravity comparison:
+      <ul>
+        <li>$F \propto \frac{1}{r^2}$</li>
+        <li>Perihelion: $r_p = 4.6 \times 10^{10}$ m</li>
+        <li>Aphelion: $r_a = 7.0 \times 10^{10}$ m</li>
+        <li>Ratio = $(\frac{r_a}{r_p})^2 = (\frac{7.0}{4.6})^2 = 2.32$</li>
+        <li>Percentage stronger = $(2.32 - 1) \times 100\% = 132\%$</li>
+      </ul>
+    </li>
+    <li>Satellite at 2× Earth radius:
+      <ul>
+        <li>Using $T^2 = \frac{4\pi^2}{GM}r^3$</li>
+        <li>$r = 2(6.378 \times 10^6)$ m</li>
+        <li>$M_{Earth} = 5.97 \times 10^{24}$ kg</li>
+        <li>$T = 2\pi\sqrt{\frac{r^3}{GM}}$</li>
+        <li>$= 11.3$ hours</li>
+      </ul>
+    </li>
+    <li>Gravitational force comparison:
+a) Earth-Moon: $F = G\frac{(5.97 \times 10^{24})(7.3 \times 10^{22})}{(3.84 \times 10^8)^2} = 1.98 \times 10^{20}$ N
+b) Jupiter-Io: $F = G\frac{(1.898 \times 10^{27})(8.93 \times 10^{22})}{(4.22 \times 10^8)^2} = 5.37 \times 10^{20}$ N
+      <ul>
+        <li>Jupiter-Io force is 2.71 times stronger</li>
+      </ul>
+    </li>
+    <li>ISS orbital velocity:
+      <ul>
+        <li>$r = 6.378 \times 10^6 + 4.08 \times 10^5$ m</li>
+        <li>$v = \sqrt{\frac{GM_{Earth}}{r}} = \sqrt{\frac{(6.67 \times 10^{-11})(5.97 \times 10^{24})}{6.786 \times 10^6}}$</li>
+        <li>$= 7,670$ m/s</li>
+      </ul>
+    </li>
+    <li>Asteroid at 3.5 AU:
+      <ul>
+        <li>Using $T^2 = a^3$ (in AU and years)</li>
+        <li>$T = \sqrt{3.5^3} = \sqrt{42.875}$</li>
+        <li>$= 6.55$ years</li>
+      </ul>
+    </li>
+    <li>Uranus period:
+      <ul>
+        <li>Using $T^2 = a^3$ where $a = 19.2$ AU</li>
+        <li>$T = \sqrt{19.2^3} = \sqrt{7,077.888}$</li>
+        <li>$= 84.1$ years</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+
+<div class="pals">
+  <style>
+   :root {
+      display: flex; flex-direction: row;
+   }
+   .givens content {
+      display: flex; flex-direction: row;
+      align: left;
+      width: 300px; height: auto; font-style: italic; font-weight: light;
+   }
+   .givens p {
+      display: flex; flex-direction: row;
+   }
+   .solutions {
+      display: flex;
+      width: 600px; align: right; font-style: bold; font-weight: normal; padding: 0.5rem;
+   }
+</style>
+
+  <div class="givens">
+
+    <p>content $f = m \cdot a$ and some text to accompany it, which is NOT formatted properly, if I do say so</p>
+
+  </div>
+  <p>&lt;div class = &gt;</p>
+
+</div>
+
+<p>&lt;/div&gt;</p>
+
+    </div>
+</body>
+</html>
