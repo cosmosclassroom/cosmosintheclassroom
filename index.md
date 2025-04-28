@@ -4,6 +4,7 @@ title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
 markdown: kramdown
+stylesheet: worksheets.css
 mathjax: true
 pagination:
     enabled: false
