@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Review Guide: Kepler's Laws and Newton's Universal Gravitation
 
 ### What Students Should Know
