@@ -4,7 +4,7 @@ title: Cosmos in the Classroom Homepage
 author: Jonathan Corbett
 date: 23 March 2025
 markdown: kramdown
-stylesheet: worksheets.css
+stylesheet: worksheets
 mathjax: true
 pagination:
     enabled: false
@@ -25,33 +25,11 @@ pagination:
 </style>
 
 
-# Index
+# Welcome to the Index of Cosmos in the Classroom.org
 
-<div class='card'>
+<div class='flex-container'>
 
-$$\vec{F} = m \cdot \vec{a}$$
+<a href="src/hphys/hphys_landing" class='button'>Honors Physics</a>
 
-</div>
+<a href="src/sphys/sphys_overview" class='button'>Standard Physics</a>
 
-[p5 Notebook](src/sphys/p5_waves_info/p5_notebook.html)
-
-[notebook.html in p5_waves_info](src/sphys/p5_waves_info/notebook.html)
-
-<div class='container'>
-
-<div class='card'>
-
-[p5l10](src/sphys/p5_waves_info/p5l10_data-amplitude-frequency-duality.md){:.button}
-
-</div>
-
-[Standard Physics Overview](src/sphys/sphys_overview.md){:.button}
-
-[text](src/sphys/sphys_teacher.md){:.button}
-
-[Honors Physics Landing](src/hphys/hphys_landing.md){:.button}
-
-</div>
-</div>
-
-Text 

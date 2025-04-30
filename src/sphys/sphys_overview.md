@@ -14,7 +14,7 @@ Today, energy grids represent a complex, dynamic network that transforms raw ene
 
 ## P5 Energy and Information in Waves
 
-[P5 Landing](p5_waves_info/p_05_landing.md){.button}
+[P5 Landing](p5_waves_info/p5_landing)
 
 Electromagnetic waves are the invisible messengers that traverse the universe, carrying energy and information through space without requiring a physical medium, representing a fundamental mechanism by which nature communicates across immense distances and scales. From the radio waves that connect our global communication networks to the visible light that allows us to perceive the world around us, from the X-rays that peer inside the human body to the cosmic radiation that carries information about distant celestial events, these waves embody a profound principle of physical interaction that bridges the microscopic quantum realm with the vast astronomical expanses, governed by elegant mathematical principles that describe their propagation, interaction, and transformation.
 
