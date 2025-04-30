@@ -60,6 +60,8 @@ Alternately, do the same with a flowchart diagram.
 
 </div> 
 
+## Digital Information Storage
+
 These numerical values are stored as electrical charges in computer memory circuits. Those charges can be detected by the computer at any later time to retrieve and reconstruct the digital image that represents the number of photons each sensor detected. Because of this, the numerical (or digital) information composing the images stored in computer memory can be quickly transmitted to other computers. This makes digital radiographs quickly and easily accessible to radiologists and other healthcare professionals. In fact, anyone with access to that information can generate the images on their computer, which is why passwords are required to access medical records preventing unauthorized access or disclosure of sensitive health information. Despite these precautions, security breaches and unauthorized access to medical records can occur.
 
 In digital radiography, patients are still exposed to the ionizing radiation and must wear appropriate shielding, such as lead aprons, to absorb the radiation that otherwise could reach sensitive organs and tissues. But unlike conventional radiographs, digital radiographs are created in a fraction of a second. For example, a chest X-ray with digital radiography may require an exposure time of only 0.02–0.1 seconds. This is because digital sensors are more sensitive to X-rays than the film used in conventional radiography. These sensors can detect low levels of X-ray radiation and produce the electrical signals used to create a digital radiograph.
@@ -84,6 +86,7 @@ Bansal, G. J. (2006). Digital radiography. A comparison with modern conventional
 
 DeStigter, K., Horton, S., Atalabi, O. M., Garcia-Monaco, R. D., Gharbi, H. A., Hlabangana, L. T., ... & Mendel, J. (2019). Equipment in the global radiology environment: why we fail, how we could succeed. Journal of Global Radiology, 5(1), e1079.
 
+</div>
 
 
 <div class='checkpoint'>
