@@ -27,18 +27,12 @@ pagination:
 
 # Welcome to the Index of Cosmos in the Classroom.org
 
-Is there more editability here?
 
 <div class='flex-container'>
     <div>
-
-<a href="src/hphys/hphys_landing" class='button'>Honors Physics</a>
-
-</div>
-
-<div>
-
-<a href="src/sphys/sphys_overview" class='button'>Standard Physics</a>
-
-</div>
+        <a href="src/hphys/hphys_landing" class='button'>Honors Physics</a>
+    </div>
+    <div>
+        <a href="src/sphys/sphys_overview" class='button'>Standard Physics</a>
+    </div>
 </div>
