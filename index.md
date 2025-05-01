@@ -10,20 +10,6 @@ pagination:
     enabled: false
 ---
 
-<div class="main-content">
-
-<style>
-    content {
-        font-family: 'Georgia', serif;
-        font-size: 1.6rm;
-        padding: 0.2rm 0.2rm 0.2rm;
-            }
-    .card { /* create cards for each course that share space horizontally on the home page */
-        display: flex;
-        border: 2rm solid (var(--primary-color))
-}
-</style>
-
 
 # Welcome to the Index of Cosmos in the Classroom.org
 
