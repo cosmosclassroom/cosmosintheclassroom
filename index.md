@@ -27,6 +27,8 @@ pagination:
 
 # Welcome to the Index of Cosmos in the Classroom.org
 
+Is there more editability here?
+
 <div class='flex-container'>
     <div>
 
@@ -38,4 +40,5 @@ pagination:
 
 <a href="src/sphys/sphys_overview" class='button'>Standard Physics</a>
 
+</div>
 </div>

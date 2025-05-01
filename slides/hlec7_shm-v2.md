@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: slides
 marp: true
 math: katex
 paginate: true
