@@ -12,6 +12,8 @@ mathjax: true
 
 Radiography, or the use of X-rays to create images of the internal structures of the human body, has revolutionized the field of medicine. The first X-ray was taken by Wilhelm Conrad Roentgen in 1895, and since then, radiography has become an essential tool in medical diagnosis and treatment. Over the years, the technology used in radiography has evolved from conventional photographic film to digital detectors. Let’s examine the differences between these two methods.
 
+<div style="display: block">
+
 ## Creating an Image Using Conventional Radiography
 
 In conventional radiography, the patient is positioned between an X-ray machine and a piece of specialized film. This film is a see-through plastic sheet coated with a substance that can absorb X-ray radiation. A separate piece of film is required for each image taken. When the X-rays pass through the patient and hit the film, a chemical reaction occurs in the film as it absorbs them. The amount of X-rays absorbed by the film depends on how much is absorbed by various parts of the body as they pass through. For example, bones are quite dense and absorb lots of X-rays, so wherever a bone is between the generator and the film, very little radiation reaches the film. Organs and tissues that are less dense absorb less X-ray radiation, so more passes through them and reaches the film. The film is then dipped into a solution that causes chemicals to stick to it based on how much X-ray radiation was absorbed. This makes the parts of the film that absorbed more X-rays look darker, while the parts of the film that absorbed less X-ray radiation look brighter and more transparent.
@@ -21,7 +23,7 @@ In conventional radiography, the patient is positioned between an X-ray machine 
 ![alt text](../../../assets/images/p5_waves/xray-conv.jpg)
 
 </div>
-
+</div>
 With this technology, the patient must be exposed to X-rays for a short time so the film can capture enough radiation to make a clear image. For example, a chest X-ray with conventional radiography may require an exposure time of 0.1–0.5 seconds for the chemical reaction to occur in the film and create changes that will be visible in the final radiograph. The patient must remain still during this time to prevent blurring of the image. X-rays are a type of **ionizing radiation**, which can be harmful, so to reduce the risk, patients are often given a lead apron or shield to cover the areas of the body not being imaged. Creating viewable images with conventional radiography can take from minutes to days, depending on the facility’s resources to process the film. Usually, only one image is made per exposure, which the patient can keep or share with other healthcare professionals.
 
 <div class='checkpoint'>
