@@ -1,7 +1,18 @@
 ---
-Layout: revealjs
-Title: Lecture 8 - Waves
 marp: true
+theme: default
+paginate: true
+title: "Lecture 8 - Waves"
+description: "Understanding wave fundamentals in physics"
+author: "Instructor"
+style: |
+  section {
+    font-size: 1.5em;
+  }
+  img {
+    display: flex;
+    padding: 2px 2px;
+  }
 ---
 
 <!-- Original slides from Google Classroom -->
@@ -56,6 +67,7 @@ How can energy transfer through space?
 ---
 
 ## The Doppler Effect
+
 ![Doppler effect illustration](./images/doppler_effect.png)
 
 * **What is the Doppler Effect?** The apparent change in frequency of a wave due to the motion of the source or observer. (Holt: The pitch of a siren changes as it moves towards or away from you.)
