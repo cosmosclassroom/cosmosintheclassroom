@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="markdown-body">
+      <pre><code class="language-mermaid">flowchart TD
+    A[Start] --&gt; B[Import libraries]
+    B --&gt; C[Load quiz data from environment variable]
+    C --&gt; D[Extract student_id, student_name, quiz_id, quiz_name]
+    D --&gt; E[Get current timestamp in ISO format]
+    E --&gt; F["Create directory '_data/quiz_responses/' if it doesn't exist"]
+    F --&gt; G["Define CSV filename: quiz_id_student_id_timestamp.csv"]
+    G --&gt; H[Check if file already exists]
+    H --&gt; I[Define CSV fields]
+    I --&gt; J["Open CSV file at '_data/quiz_responses/quiz_id_student_id_timestamp.csv'"]
+    J --&gt; K{File exists?}
+    K -- No --&gt; L[Write CSV header]
+    K -- Yes --&gt; M[Skip header]
+    L --&gt; N[Prepare row data with timestamp and student info]
+    M --&gt; N
+    N --&gt; O[Format answer data for CSV compatibility]
+    O --&gt; P[Write row to CSV file]
+    P --&gt; Q["Print confirmation: 'Saved response from {student_name} ({student_id}) to {quiz_id}'"]
+    Q --&gt; R[End]
+</code></pre>
+
+
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

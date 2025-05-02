@@ -1,0 +1,19 @@
+<head>
+    <!-- Include KaTeX CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <!-- Include Custom Worksheet Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/worksheets.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Automatically render LaTeX on page load
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            });
+        });
+    </script>
+</head>

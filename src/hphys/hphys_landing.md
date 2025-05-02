@@ -4,6 +4,7 @@ title: "Document Title"
 author: Jonathan Corbett
 date: March , 2025
 markdown: kramdown
+css: D:\python\cosmosintheclassroom\_site\assets\css\style.css
 usemathjax: true
 toc: true
 ---
@@ -64,6 +65,17 @@ toc: true
 |-:|:-|
 |||
 
+<section style="
+    display:block;
+    width: 100%;
+    backgroundColor: yellow;
+    ">
+    <h1> Unit 8 - Waves and Harmonics</h1>
+  <div style="display:flex">
+  </div>
+</section>
+
+
 ### Unit 9 | Light and Optics
 
 | Topic | Activity | Assignment |
@@ -83,12 +95,18 @@ toc: true
 ## Electronics
 
 ### Unit 10 | Electrostatics
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
+<ul>
+<li>Lecture Slides</li>
+<li>Problem Set 1</li>
+<li>Problem Set 2</li>
+<li>Problem Set 3</li>
 
-| Topic | Activity | Assignment |
-| :---- | :---- | :---- |
-|  |  |  |
-|  |  |  |
-
+</ul>
 ### Unit 11 | Electromagnetism and Currents
 
 
