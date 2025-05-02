@@ -12,10 +12,6 @@ pagination:
 # Cosmos in the Classroom
 
 
-[Slides/test](slides/test.md)
-
-[Slides-Test](slides/slides-test.html)
-
 ## Courses
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
