@@ -1,71 +1,225 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Cosmos in the Classroom">
-
-  
-  <!-- Fixed path to CSS file, assuming it's in the correct location -->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <!-- Import KaTeX styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-  <!-- Import KaTeX script -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <!-- Import auto-render extension for KaTeX -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
-  
-  
-  <link rel="stylesheet" href="/assets/css/worksheets.css" />
-  
-  
-  <body>
-    <div class='nav'>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Cosmos in the Classroom Homepage | Cosmos in the Classroom</title>
     
-      <a href="/" class="button">Homepage</a>
-      
-      </div>
-      
-    <div class="navbar">
-      </div>
-    </div>
-    <body>
-      <div class="markdown-body">
-        <div class="main-content">
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-  <style>
-    content {
-        font-family: 'Georgia', serif;
-        font-size: 1.6rm;
-        padding: 0.2rm 0.2rm 0.2rm;
-            }
-    .card { /* create cards for each course that share space horizontally on the home page */
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content">
+        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src%5Chphys%5Chphys_landing">Honors Physics</a></li>
+            <li><a href="/src%5Csphys%5Csphys_overview">Standard Physics</a></li>
+            <li><a href="/src%5Cref%5Cref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+        .site-header {
+        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+        border-bottom: 3px double #8b7355;
+        border-top: 3px double #8b7355;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .header-content {
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    .header-content.img {
+        max-width: 100%;
+        max-height: 100px;
+        margin: 0 auto;
+        display: block;
+
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2.5rem;
+        margin: 0;
+        color: #2c4a3e;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
         display: flex;
-        border: 2rm solid (var(--primary-color))
-}
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+    </header>
+    <div class="markdown-body">
+      <style>
+    .{
+        font-family: Georgia sans-serif;
+    }
+    .card{
+        margin: 10px;
+        padding: 40px;
+        max-width: 25%;
+        text-align: center;
+        background-color: tan;
+        color: ;
+        border: 1px black;
+        border-radius: 8px;
+        box-shadow: 10px 10px 5px lightblue;
+        border-left: 4px solid;
+        div{
+            border: 1px solid black;
+            background: black;
+            color: white;
+            padding: 5px;
+        }
+        li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .math {
+            border: 1px solid black;
+
+<<<<<<< HEAD
+
+# Welcome to the Index of Cosmos in the Classroom.org
+=======
+        }
+    
 </style>
 
-  <h1 id="welcome-to-the-index-of-cosmos-in-the-classroomorg">Welcome to the Index of Cosmos in the Classroom.org</h1>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <p>dev</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
 
-  <p>Is there more editability here?</p>
+<section class="flexbox">
 
+  <p>«««&lt; HEAD</p>
   <div class="flex-container">
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
+    &lt;a href="src/hphys/hphys_landing" class='button'&gt;Honors Physics&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;a href="src/sphys/sphys_overview" class='button'&gt;Standard Physics&lt;/a&gt;
+&lt;/div&gt;
 </code></pre></div>    </div>
-
-    <p><a href="src/hphys/hphys_landing" class="button">Honors Physics</a></p>
+  </div>
+  <p>=======</p>
+  <div class="card">
+    <p>Honors Physics&lt;div&gt;Click Here for help&lt;/div&gt;&lt;/div&gt;</p>
 
   </div>
+  <div class="math">
 
-  <div>
-
-    <p><a href="src/sphys/sphys_overview" class="button">Standard Physics</a></p>
+    <p>$F = m \cdot a$</p>
 
   </div>
-</div>
+  <div class="card">
+    <p>Standard Physics &lt;/div&gt;
+&lt;/section&gt;</p>
 
-      </div>  
-  </body>
+    <ul>
+<li> <a href="src\hphys\optics\rays_mirrors_lecture">&lt;/li&gt;
+<li> <a href="src/hphys/8_waves/ainsworth_waves_lecture.md">&lt;/li&gt;
+<li> <a href="src/ref/ref_css_markdown">&lt;/li&gt;
+<li> <a href="src\hphys\optics\rays_mirrors_lecture">&lt;/li&gt;
+&lt;/ul&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
+</a></li></a></li></a></li></a></li></ul>
+  </div>
+</section>
+
+    </div>
+    
     
     <!-- Initialize KaTeX rendering -->
     <script>
