@@ -1,4 +1,5 @@
 ---
+layout: default
 title: P5L7 Landing Page
 mathjax: true
 css: /cosmosintheclassroom/assets/style.css

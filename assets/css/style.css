@@ -14,6 +14,42 @@
     --earth-green: #718355;
 }
 
+/* Table with clear borders for empty cells */
+.bordered-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    border: 1px solid var(--primary-color);
+    table-layout: fixed;
+}
+
+.bordered-table th, .bordered-table td {
+    border: 1px solid var(--primary-color);
+    padding: 0.75rem;
+    text-align: left;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.bordered-table td:empty::after {
+    content: "\00a0"; /* Add non-breaking space for empty cells */
+    display: inline-block;
+}
+
+/* Table without borders for a clean presentation */
+.borderless-table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.borderless-table th, .borderless-table td {
+    border: none;
+    padding: 0.75rem;
+    text-align: left;
+}
+
 /* Navbar styling for a clean, professional look */
 nav {
     background-color: var(--secondary-color); /* Earthy green for a natural look */
@@ -188,42 +224,6 @@ th {
     font-weight: 400;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
     position: relative;
-}
-
-/* Table with clear borders for empty cells */
-.bordered-table {
-    width: 100%;
-    margin: 1.5rem 0;
-    border-collapse: collapse;
-    border: 1px solid var(--primary-color);
-    table-layout: fixed;
-}
-
-.bordered-table th, .bordered-table td {
-    border: 1px solid var(--primary-color);
-    padding: 0.75rem;
-    text-align: left;
-    min-width: 50px;
-    min-height: 50px;
-}
-
-.bordered-table td:empty::after {
-    content: "\00a0"; /* Add non-breaking space for empty cells */
-    display: inline-block;
-}
-
-/* Table without borders for a clean presentation */
-.borderless-table {
-    width: 100%;
-    margin: 1.5rem 0;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.borderless-table th, .borderless-table td {
-    border: none;
-    padding: 0.75rem;
-    text-align: left;
 }
 
 /* Responsive images for better scaling */
