@@ -1,18 +1,21 @@
 <!-- _includes/header.html -->
 <header class="site-header">
     <div class="header-content">
-        <img src="{{ 'www.cosmosintheclassroom.org/assets/images/aristotle.png' | relative_url }}" alt="Aristotle" width="2.5rem" height="auto">
+        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
         <h1 class="site-title"><a href="{{ '/' | relative_url }}">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
         <ul>
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/src\hphys\hphys_landing' | relative_url }}">Honors Physics</a></li>
+            <li><a href="{{ '/src\sphys\sphys_overview' | relative_url }}">Standard Physics</a></li>
+            <li><a href="{{ '/src\ref\ref_lib' | relative_url }}" type="button">Library</a></li>
         </ul>
     </nav>
 </header>
 
 <style>
-    .site-header {
+        .site-header {
         background: linear-gradient(to right, #f4f1ea, #e8e4d8);
         border-bottom: 3px double #8b7355;
         border-top: 3px double #8b7355;
@@ -20,11 +23,17 @@
         padding: 1rem 0;
         margin-bottom: 1rem;
     }
-
     .header-content {
         text-align: center;
         margin-bottom: 1rem;
         padding: 1rem;
+    }
+    .header-content.img {
+        max-width: 100%;
+        max-height: 100px;
+        margin: 0 auto;
+        display: block;
+
     }
 
     .site-title {
