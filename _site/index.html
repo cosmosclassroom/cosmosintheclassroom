@@ -43,10 +43,11 @@
   </head>
   <body>
     <header>
-      <!-- _includes/header.html -->
+      <div class="site-header">
+        <!-- _includes/header.html -->
 <header class="site-header">
     <div class="header-content">
-        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
         <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
@@ -60,22 +61,36 @@
 </header>
 
 <style>
-        .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        /* background: linear-gradient(to left, #f4f1ea, #948455);
         border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
+        border-top: 3px double #8b7355; */
+        max-height: 100px;
+        width: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
         margin-bottom: 1rem;
+        /* position: sticky; */
+        .title{
+            color: #2c4a3e;
+
+        }
     }
     .header-content {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         margin-bottom: 1rem;
         padding: 1rem;
     }
     .header-content.img {
-        max-width: 100%;
+        max-width: 20%;
         max-height: 100px;
+        height: auto;
         margin: 0 auto;
         display: block;
 
@@ -102,6 +117,7 @@
     }
 
     .site-nav {
+        position: fixed, initial;
         display: flex;
         justify-content: center;
     }
@@ -116,108 +132,82 @@
 
     .site-nav a {
         font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
+        color: #e9e6e1;
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
     }
 
     .site-nav a:hover {
-        color: #7b6340;
+        color: #e9ba74;
     }
 </style>
+      </div>
     </header>
+    
     <div class="markdown-body">
+    
       <style>
-    .{
+    * {
         font-family: Georgia sans-serif;
-    }
+            }
     .card{
         margin: 10px;
         padding: 40px;
-        max-width: 25%;
+        display: flex;
+        max-width: 40%;
         text-align: center;
         background-color: tan;
         color: ;
         border: 1px black;
         border-radius: 8px;
-        box-shadow: 10px 10px 5px lightblue;
+        box-shadow: 10px 10px 5px (var(--primary-color));
         border-left: 4px solid;
         div{
             border: 1px solid black;
             background: black;
             color: white;
             padding: 5px;
+            margin: 5px;
+            min-height: 20px; min-width: 50px; 
         }
-        li {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .a {
+            text-decoration: none;
+            color: (var(--primary-color))
         }
-        .math {
-            border: 1px solid black;
-
-<<<<<<< HEAD
-
-# Welcome to the Index of Cosmos in the Classroom.org
-=======
-        }
+    }
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .math {
+        border: 1px solid black;
+    }
+    section{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex: space-between;
+    }
     
 </style>
 
-<blockquote>
-  <blockquote>
-    <blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
-              <p>dev</p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
-    </blockquote>
-  </blockquote>
-</blockquote>
-
-<section class="flexbox">
-
-  <p>«««&lt; HEAD</p>
-  <div class="flex-container">
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
-    &lt;a href="src/hphys/hphys_landing" class='button'&gt;Honors Physics&lt;/a&gt;
-&lt;/div&gt;
-&lt;div&gt;
-    &lt;a href="src/sphys/sphys_overview" class='button'&gt;Standard Physics&lt;/a&gt;
-&lt;/div&gt;
-</code></pre></div>    </div>
-  </div>
-  <p>=======</p>
+<section>
   <div class="card">
-    <p>Honors Physics&lt;div&gt;Click Here for help&lt;/div&gt;&lt;/div&gt;</p>
-
-  </div>
-  <div class="math">
-
-    <p>$F = m \cdot a$</p>
-
-  </div>
-  <div class="card">
-    <p>Standard Physics &lt;/div&gt;
-&lt;/section&gt;</p>
-
-    <ul>
-<li> <a href="src\hphys\optics\rays_mirrors_lecture">&lt;/li&gt;
-<li> <a href="src/hphys/8_waves/ainsworth_waves_lecture.md">&lt;/li&gt;
-<li> <a href="src/ref/ref_css_markdown">&lt;/li&gt;
-<li> <a href="src\hphys\optics\rays_mirrors_lecture">&lt;/li&gt;
-&lt;/ul&gt;
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; dev
-</a></li></a></li></a></li></a></li></ul>
+    <p><a src="Honors Physics">Honors Physics</a>&lt;/div&gt;</p>
+    <div class="card">
+      <p><a src="Standard Physics">Standard Physics</a>&lt;/div&gt;</p>
+      <div class="card">
+        <p><a src="Socrates' Library">Socrates’ Library</a>&lt;/div&gt;
+<!-- <div class="card"> --></p>
+      </div>
+      <p>&lt;/section&gt;</p>
+    </div>
   </div>
 </section>
 
+    
     </div>
     
     

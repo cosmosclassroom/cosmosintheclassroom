@@ -43,10 +43,11 @@
   </head>
   <body>
     <header>
-      <!-- _includes/header.html -->
+      <div class="site-header">
+        <!-- _includes/header.html -->
 <header class="site-header">
     <div class="header-content">
-        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
         <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
@@ -60,22 +61,36 @@
 </header>
 
 <style>
-        .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        /* background: linear-gradient(to left, #f4f1ea, #948455);
         border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
+        border-top: 3px double #8b7355; */
+        max-height: 100px;
+        width: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
         margin-bottom: 1rem;
+        /* position: sticky; */
+        .title{
+            color: #2c4a3e;
+
+        }
     }
     .header-content {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         margin-bottom: 1rem;
         padding: 1rem;
     }
     .header-content.img {
-        max-width: 100%;
+        max-width: 20%;
         max-height: 100px;
+        height: auto;
         margin: 0 auto;
         display: block;
 
@@ -102,6 +117,7 @@
     }
 
     .site-nav {
+        position: fixed, initial;
         display: flex;
         justify-content: center;
     }
@@ -116,18 +132,21 @@
 
     .site-nav a {
         font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
+        color: #e9e6e1;
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
     }
 
     .site-nav a:hover {
-        color: #7b6340;
+        color: #e9ba74;
     }
 </style>
+      </div>
     </header>
+    
     <div class="markdown-body">
+    
       <p>The year is 1666. London is still reeling from the Great Fire, a catastrophic event that, ironically, cleared the way for a new kind of clarity. Imagine, if you will, a young man named Isaac Newton, holed up in his family’s Woolsthorpe Manor, escaping the devastation of the city. He’s not rebuilding, he’s observing. He’s not lamenting loss, he’s dissecting light.</p>
 
 <p>Now, Newton wasn’t just looking at light; he was playing with it. He took a prism, a simple piece of glass used to refract light, and held it up to a beam of sunlight. What he saw wasn’t just a rainbow – it was a revelation. He saw that white light wasn’t pure; it was a mixture of colors. Red, orange, yellow, green, blue, indigo, violet – all hidden within that seemingly singular beam.</p>
@@ -142,6 +161,7 @@
 
 <p>It’s easy to see these events as isolated moments in time, as the work of individual geniuses. But the truth is far more complex, far more interconnected. It’s a reminder that progress isn’t linear; it’s a tangled web of influences, a dance of ideas, where a single experiment, a single observation, can have consequences that ripple across centuries, transforming not just our understanding of the world, but the very fabric of our lives. Newton, playing with a prism, unknowingly set in motion a chain of events that would eventually lead to the instantaneous communication we take for granted today. And that, my friends, is the beautiful, chaotic, and utterly astonishing nature of human progress.</p>
 
+    
     </div>
     
     

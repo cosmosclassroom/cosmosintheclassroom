@@ -43,10 +43,11 @@
   </head>
   <body>
     <header>
-      <!-- _includes/header.html -->
+      <div class="site-header">
+        <!-- _includes/header.html -->
 <header class="site-header">
     <div class="header-content">
-        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
         <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
@@ -60,22 +61,36 @@
 </header>
 
 <style>
-        .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        /* background: linear-gradient(to left, #f4f1ea, #948455);
         border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
+        border-top: 3px double #8b7355; */
+        max-height: 100px;
+        width: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
         margin-bottom: 1rem;
+        /* position: sticky; */
+        .title{
+            color: #2c4a3e;
+
+        }
     }
     .header-content {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         margin-bottom: 1rem;
         padding: 1rem;
     }
     .header-content.img {
-        max-width: 100%;
+        max-width: 20%;
         max-height: 100px;
+        height: auto;
         margin: 0 auto;
         display: block;
 
@@ -102,6 +117,7 @@
     }
 
     .site-nav {
+        position: fixed, initial;
         display: flex;
         justify-content: center;
     }
@@ -116,18 +132,21 @@
 
     .site-nav a {
         font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
+        color: #e9e6e1;
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
     }
 
     .site-nav a:hover {
-        color: #7b6340;
+        color: #e9ba74;
     }
 </style>
+      </div>
     </header>
+    
     <div class="markdown-body">
+    
       <h1 id="ps-53--universal-gravitation">PS 5.3 | Universal Gravitation</h1>
 <hr />
 
@@ -192,6 +211,7 @@ c. Determine the velocity of the spacecraft</p>
   <li>$1.72 x 1020 \, N$</li>
 </ol>
 
+    
     </div>
     
     
