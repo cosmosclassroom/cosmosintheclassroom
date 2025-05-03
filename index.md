@@ -11,7 +11,7 @@ pagination:
 
 # Cosmos in the Classroom
 
-
+<section>
 ## Courses
 
 - [Honors Physics](https://cosmosintheclassroom.org/src/hphys/hphys_landing)
