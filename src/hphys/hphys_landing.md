@@ -11,6 +11,7 @@ toc: true
 <!-- src/hphys/h_phys_landing --> 
 <style>
   section{
+    display: block;
     background-color: tan;
     border: black 1px solid;
     margin: 0.5rem;
@@ -63,7 +64,7 @@ toc: true
 ## Unit 3 | Kinematics 2
 
 <div class="ps-wrapper">
-
+Test
 </section>
 <section>
 
