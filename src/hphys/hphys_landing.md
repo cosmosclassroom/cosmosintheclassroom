@@ -104,6 +104,7 @@ toc: true
 -->
 
 
+<<<<<<< HEAD
 
 <section>
 
@@ -134,6 +135,32 @@ toc: true
 
 
 
+=======
+### Unit 7 | Rotational Motion and Gravitation
+
+
+|Topic|Resource|
+|-:|:-|
+|Uniform Circular Motion|Lecture <br> PS 5.1 - Uniform Circular Motion <br> Giancoli Problems - UCM <br> Lab - Uniform Circular Motion|
+|Universal Gravitation|Lab - Gravity and Orbits Simulation <br> [Problem Set - Scientific Notation Practice](1_mechanics/ps1.5_sci_not_practice.md) <br> [Problem Set - Universal Gravitation](6_circ_grav/PS5.3_univ_grav.md) <br> [Key - PS5.3](6_circ_grav/ps5.3_univ_grav_key.md)|
+|Kepler's Laws and Orbits|Lecture <br> PS 8.4 Kepler's Laws of Motion <br> Giancoli Problems|
+
+### Unit 8 | Waves and Harmonics
+
+- Lectures
+  - [Slides - SHM](8_waves/slides_8_shm.md)
+  - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
+  
+- Problem Sets
+  - [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
+  - [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
+
+- Textbook Assignments
+
+|Topic & Sections|Pages and Problems|
+|-:|:-|
+|||
+>>>>>>> 7734d43400630c8ac58d722bda619de1a69f9c56
 
 </section>
 
@@ -167,10 +194,20 @@ toc: true
 </section>
 <section>
 
+<<<<<<< HEAD
 
 
 </section>
 <section>
+=======
+### Unit 11 | Optics 
+
+| Topic | Activity | Assignment |
+| :---- | :---- | :---- |
+|  |  |  |
+|  |  |  |
+
+>>>>>>> 7734d43400630c8ac58d722bda619de1a69f9c56
 
 ## Electronics
 
@@ -204,6 +241,7 @@ toc: true
 
 [def]: #unit-8--waves-and-harmonics
 
+<<<<<<< HEAD
 [Optics Lecture]:(optics/optics_lecture.md)
 [Rays and Mirros Lecture]:(optics/rays_mirrors_lecture.md)
 
@@ -219,3 +257,7 @@ Lecture 9 | Electromagnetism
 
 [PS 10.2 | Wave Optics]:(../q4-2025/ps10.2_wave_optics.md)
 
+=======
+[Optics Lecture](optics/optics_lecture.md)
+[Rays and Mirros Lecture](optics/rays_mirrors_lecture.md)
+>>>>>>> 7734d43400630c8ac58d722bda619de1a69f9c56
