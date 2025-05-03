@@ -1,6 +1,6 @@
 ---
 title: alpha
-layout: themes/SlidesC
+layout: slidesC
 author: Jonathan Corbett
 marp: true
 

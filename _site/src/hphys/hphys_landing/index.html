@@ -43,10 +43,11 @@
   </head>
   <body>
     <header>
-      <!-- _includes/header.html -->
+      <div class="site-header">
+        <!-- _includes/header.html -->
 <header class="site-header">
     <div class="header-content">
-        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
         <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
@@ -60,22 +61,36 @@
 </header>
 
 <style>
-        .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        /* background: linear-gradient(to left, #f4f1ea, #948455);
         border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
+        border-top: 3px double #8b7355; */
+        max-height: 100px;
+        width: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
         margin-bottom: 1rem;
+        /* position: sticky; */
+        .title{
+            color: #2c4a3e;
+
+        }
     }
     .header-content {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         margin-bottom: 1rem;
         padding: 1rem;
     }
     .header-content.img {
-        max-width: 100%;
+        max-width: 20%;
         max-height: 100px;
+        height: auto;
         margin: 0 auto;
         display: block;
 
@@ -102,6 +117,7 @@
     }
 
     .site-nav {
+        position: fixed, initial;
         display: flex;
         justify-content: center;
     }
@@ -116,47 +132,26 @@
 
     .site-nav a {
         font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
+        color: #e9e6e1;
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
     }
 
     .site-nav a:hover {
-        color: #7b6340;
+        color: #e9ba74;
     }
 </style>
+      </div>
     </header>
+    
     <div class="markdown-body">
+    
       <!-- src/hphys/h_phys_landing -->
-<style>
-  section{
-    display: block;
-    background-color: tan;
-    border: black 1px solid;
-    margin: 0.5rem;
-    h2 {
-      font-size: 1.1rem;
-      text-align: center;
-      color: (var(--primary-color))
-    }
-  }
-  .ps-wrapper{
-    margin: 1px; padding: 1px;
-    display: flex;
-    border: 1px solid black;
-    a {
-      font-style: comic; 
-    }
-      }
-    .column{
-      display: flex;
-      margin: 15px; 
-      padding: 15px;
-      flex: space-between;
-    }
 
-</style>
+<p><a href="#unit-8--electromagnetism">8 Electromagnetism</a>
+<a href="#unit-9--electricity">9 Electricity</a>
+<a href="#unit-10--optics">10 Optics</a></p>
 
 <h1 id="honors-physics">Honors Physics</h1>
 <h2 id="branford-high-school---2025">Branford High School - 2025</h2>
@@ -166,307 +161,231 @@
 
   <h2 id="unit-1--principles-of-physics">Unit 1 | Principles of Physics</h2>
 
-  <div class="column">
-    <div>
-      <p>Shoes&lt;/div&gt;</p>
-      <div>
-        <p>Socks&lt;/div&gt;</p>
-      </div>
-      <p>&lt;/section&gt;</p>
-      <section>
+</section>
 
-        <h2 id="unit-2--kinematics-1">Unit 2 | Kinematics 1</h2>
+<section>
 
-        <p><a href="/src/hphys/1_mechanics/2.2_vectors/">PS 2.2 Vectors</a></p>
+  <h2 id="unit-2--kinematics-1">Unit 2 | Kinematics 1</h2>
 
-      </section>
-      <section>
+  <p><a href="/src/hphys/1_mechanics/2.2_vectors/">PS 2.2 Vectors</a></p>
 
-        <h2 id="unit-3--kinematics-2">Unit 3 | Kinematics 2</h2>
+</section>
 
-        <div class="ps-wrapper">
-          <p>Test
-&lt;/section&gt;</p>
-          <section>
-
-            <h2 id="unit-4--dynamics">Unit 4 | Dynamics</h2>
-            <ul>
-              <li>Newton’s Laws</li>
-              <li>Forces and Free Body Diagrams</li>
-            </ul>
-
-            <p><a href="../../slides/hlec_4.1_newton_laws.html">Lecture - Forces and Newton’s Laws</a>
-<a href="../../problem_sets/ps4.1_force_motion.md">PS 4.1 - Force and Motion</a>
-<a href="../../problem_sets/ps4.2_fbd.md">PS 4.2 - Free Body Diagrams</a></p>
-
-            <p><em>Giancoli Ch 4: pp 75-97</em></p>
-          </section>
-          <section>
-
-            <h2 id="unit-5--work-and-energy">Unit 5 | Work and Energy</h2>
-            <ul>
-              <li>Work-Energy Theorem</li>
-              <li>Conservation of Energy</li>
-              <li>Power</li>
-            </ul>
-
-            <p><a href="../../slides/hlec_5.1_work_energy.html">Lecture - Work and Energy</a>
-<a href="../../problem_sets/ps5.1_work_energy.md">PS 5.1 - Work and Energy</a>
-<a href="../../problem_sets/ps5.2_cons_energy.md">PS 5.2 - Conservation of Energy</a></p>
-
-            <p><em>Giancoli Ch 6: pp 138-164</em></p>
-          </section>
-          <!-- ### Unit 6 | Collisions, Impulse, Momentum 
-- Linear Momentum
-- Conservation of Momentum
-- Elastic/Inelastic Collisions
-
-[Lecture - Momentum and Collisions](../../slides/hlec_6.1_momentum.html)
-[PS 6.1 - Momentum](../../problem_sets/ps6.1_momentum.md)
-[PS 6.2 - Collisions](../../problem_sets/ps6.2_collisions.md)
-
-*Giancoli Ch 7: pp 170-196*
--->
-
-          <p>«««&lt; HEAD</p>
-
-          <section>
-
-            <p>#&lt;section&gt;</p>
-
-            <h2 id="unit-6--rotational-motion-and-gravitation">Unit 6 | Rotational Motion and Gravitation</h2>
-
-            <p>|Topic|Resource|
-|-:|:-|
-|Uniform Circular Motion|Lecture <br /> PS 5.1 - Uniform Circular Motion <br /> Giancoli Problems - UCM <br /> Lab - Uniform Circular Motion|
-|Universal Gravitation|Lab - Gravity and Orbits Simulation <br /> <a href="1_mechanics/ps1.5_sci_not_practice.md">Problem Set - Scientific Notation Practice</a> <br /> <a href="/src/hphys/6_circ_grav/PS5.3_univ_grav/">Problem Set - Universal Gravitation</a> <br /> <a href="/src/hphys/6_circ_grav/ps5.3_univ_grav_key/">Key - PS5.3</a>|
-|Kepler’s Laws and Orbits|Lecture <br /> PS 8.4 Kepler’s Laws of Motion <br /> Giancoli Problems|</p>
-          </section>
-          <section>
-
-            <h3 id="unit-7--waves-and-harmonics">Unit 7 | Waves and Harmonics</h3>
-
-            <ul>
-              <li>Lectures
-                <ul>
-                  <li><a href="8_waves/slides_8_shm.md">Slides - SHM</a></li>
-                  <li><a href="8_waves/hphys_8_waves_lecture.md">Lecture 8.2 Waves</a></li>
-                </ul>
-              </li>
-              <li>Problem Sets
-                <ul>
-                  <li><a href="8_waves/PS_8.1_Harmonics_Springs_Pendula.md">8.1 SHM Springs and Pendula</a></li>
-                  <li><a href="8_waves/PS_8.2_Waves.md">8.2 SHM Waves</a></li>
-                </ul>
-              </li>
-            </ul>
-
-            <p>=======</p>
-            <h3 id="unit-7--rotational-motion-and-gravitation">Unit 7 | Rotational Motion and Gravitation</h3>
-
-            <table>
-              <thead>
-                <tr>
-                  <th style="text-align: right">Topic</th>
-                  <th style="text-align: left">Resource</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: right">Uniform Circular Motion</td>
-                  <td style="text-align: left">Lecture <br /> PS 5.1 - Uniform Circular Motion <br /> Giancoli Problems - UCM <br /> Lab - Uniform Circular Motion</td>
-                </tr>
-                <tr>
-                  <td style="text-align: right">Universal Gravitation</td>
-                  <td style="text-align: left">Lab - Gravity and Orbits Simulation <br /> <a href="1_mechanics/ps1.5_sci_not_practice.md">Problem Set - Scientific Notation Practice</a> <br /> <a href="/src/hphys/6_circ_grav/PS5.3_univ_grav/">Problem Set - Universal Gravitation</a> <br /> <a href="/src/hphys/6_circ_grav/ps5.3_univ_grav_key/">Key - PS5.3</a></td>
-                </tr>
-                <tr>
-                  <td style="text-align: right">Kepler’s Laws and Orbits</td>
-                  <td style="text-align: left">Lecture <br /> PS 8.4 Kepler’s Laws of Motion <br /> Giancoli Problems</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3 id="unit-8--waves-and-harmonics">Unit 8 | Waves and Harmonics</h3>
-
-            <ul>
-              <li>Lectures
-                <ul>
-                  <li><a href="8_waves/slides_8_shm.md">Slides - SHM</a></li>
-                  <li><a href="8_waves/hphys_8_waves_lecture.md">Lecture 8.2 Waves</a></li>
-                </ul>
-              </li>
-              <li>Problem Sets
-                <ul>
-                  <li><a href="8_waves/PS_8.1_Harmonics_Springs_Pendula.md">8.1 SHM Springs and Pendula</a></li>
-                  <li><a href="8_waves/PS_8.2_Waves.md">8.2 SHM Waves</a></li>
-                </ul>
-              </li>
-              <li>Textbook Assignments</li>
-            </ul>
-
-            <p>|Topic &amp; Sections|Pages and Problems|
-|-:|:-|
-|||</p>
-            <blockquote>
-              <blockquote>
-                <blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <blockquote>
-                        <blockquote>
-                          <p>7734d43400630c8ac58d722bda619de1a69f9c56</p>
-                        </blockquote>
-                      </blockquote>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-              </blockquote>
-            </blockquote>
-
-          </section>
-
-          <section>
-
-            <h2 id="electromagnetism">8 Electromagnetism</h2>
-
-            <div class="column">
-
-              <h3 id="problem-sets">Problem Sets</h3>
-
-              <h3 id="lectures">Lectures</h3>
-
-            </div>
-
-          </section>
-
-          <section>
-
-            <h3 id="unit-9--light-and-optics">Unit 9 | Light and Optics</h3>
-            <ul>
-              <li>Wave Optics</li>
-              <li>Geometric Optics</li>
-              <li>Mirrors and Lenses</li>
-            </ul>
-
-            <p><a href="../../slides/hlec_9.1_optics.html">Lecture - Geometric Optics</a>
-<a href="../../problem_sets/ps9.1_rays.md">PS 9.1 - Ray Diagrams</a>
-<a href="../../problem_sets/ps9.2_lenses.md">PS 9.2 - Thin Lenses</a></p>
-
-            <p><em>Giancoli Ch 22-23: pp 641-698</em></p>
-          </section>
-          <section>
-
-            <p>«««&lt; HEAD</p>
-
-          </section>
-          <section>
-            <p>=======</p>
-            <h3 id="unit-11--optics">Unit 11 | Optics</h3>
-
-            <table>
-              <thead>
-                <tr>
-                  <th style="text-align: left">Topic</th>
-                  <th style="text-align: left">Activity</th>
-                  <th style="text-align: left">Assignment</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="text-align: left"> </td>
-                  <td style="text-align: left"> </td>
-                  <td style="text-align: left"> </td>
-                </tr>
-                <tr>
-                  <td style="text-align: left"> </td>
-                  <td style="text-align: left"> </td>
-                  <td style="text-align: left"> </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <blockquote>
-              <blockquote>
-                <blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <blockquote>
-                        <blockquote>
-                          <p>7734d43400630c8ac58d722bda619de1a69f9c56</p>
-                        </blockquote>
-                      </blockquote>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-              </blockquote>
-            </blockquote>
-
-            <h2 id="electronics">Electronics</h2>
-
-            <h3 id="unit-10--electrostatics">Unit 10 | Electrostatics</h3>
-            <style>
+<section>
+  <style>
   ul {
     list-style: none;
+    border: 1px solid black;
+    padding: 15px; 
   }
 </style>
 
-            <ul>
-<li>Lecture Slides</li>
-<li>Problem Set 1</li>
-<li>Problem Set 2</li>
-<li>Problem Set 3</li>
+  <h2 id="unit-3--kinematics-2">Unit 3 | Kinematics 2</h2>
 
-</ul>
-            <h3 id="unit-11--electromagnetism-and-currents">Unit 11 | Electromagnetism and Currents</h3>
+  <ul>
+    <li>Lecture - Kinematics in Two Dimensions</li>
+    <li>Problem Sets
+      <ul>
+        <li>PS 3.1 Kinematics in 2 Dimensions</li>
+        <li>PS 3.2 Relative Motion Problems</li>
+      </ul>
+    </li>
+  </ul>
 
-            <p>«««&lt; HEAD
-[Optics Lecture]:(optics/optics_lecture.md)
-[Rays and Mirros Lecture]:(optics/rays_mirrors_lecture.md)</p>
+  <h2 id="unit-4--dynamics">Unit 4 | Dynamics</h2>
+  <ul>
+    <li>Newton’s Laws</li>
+    <li>Forces and Free Body Diagrams</li>
+  </ul>
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>Lecture 9</td>
-                  <td>Electromagnetism</td>
-                </tr>
-              </tbody>
-            </table>
+  <p><a href="../../slides/hlec_4.1_newton_laws.html">Lecture - Forces and Newton’s Laws</a>
+<a href="../../problem_sets/ps4.1_force_motion.md">PS 4.1 - Force and Motion</a>
+<a href="../../problem_sets/ps4.2_fbd.md">PS 4.2 - Free Body Diagrams</a></p>
 
-            <table>
-              <tbody>
-                <tr>
-                  <td>[PS 10.2</td>
-                  <td>Wave Optics]:(../q4-2025/ps10.2_wave_optics.md)</td>
-                </tr>
-              </tbody>
-            </table>
+  <p><em>Giancoli Ch 4: pp 75-97</em></p>
 
-            <p>=======
-<a href="optics/optics_lecture.md">Optics Lecture</a>
-<a href="optics/rays_mirrors_lecture.md">Rays and Mirros Lecture</a></p>
-            <blockquote>
-              <blockquote>
-                <blockquote>
-                  <blockquote>
-                    <blockquote>
-                      <blockquote>
-                        <blockquote>
-                          <p>7734d43400630c8ac58d722bda619de1a69f9c56</p>
-                        </blockquote>
-                      </blockquote>
-                    </blockquote>
-                  </blockquote>
-                </blockquote>
-              </blockquote>
-            </blockquote>
-          </section>
-        </div>
-      </section>
-    </div>
-  </div>
 </section>
 
+<section>
+
+  <h2 id="unit-5--work-and-energy">Unit 5 | Work and Energy</h2>
+  <ul>
+    <li>Work-Energy Theorem</li>
+    <li>Conservation of Energy</li>
+    <li>Power</li>
+  </ul>
+
+  <p><a href="../../slides/hlec_5.1_work_energy.html">Lecture - Work and Energy</a>
+<a href="../../problem_sets/ps5.1_work_energy.md">PS 5.1 - Work and Energy</a>
+<a href="../../problem_sets/ps5.2_cons_energy.md">PS 5.2 - Conservation of Energy</a></p>
+
+  <p><em>Giancoli Ch 6: pp 138-164</em></p>
+
+</section>
+
+<section>
+
+  <h2 id="unit-6--rotational-motion-and-gravitation">Unit 6 | Rotational Motion and Gravitation</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: right">Topic</th>
+        <th style="text-align: left">Resource</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: right">Uniform Circular Motion</td>
+        <td style="text-align: left">Lecture <br /> PS 5.1 - Uniform Circular Motion <br /> Giancoli Problems - UCM <br /> Lab - Uniform Circular Motion</td>
+      </tr>
+      <tr>
+        <td style="text-align: right">Universal Gravitation</td>
+        <td style="text-align: left">Lab - Gravity and Orbits Simulation <br /> <a href="1_mechanics/ps1.5_sci_not_practice.md">Problem Set - Scientific Notation Practice</a> <br /> <a href="/src/hphys/6_circ_grav/PS5.3_univ_grav/">Problem Set - Universal Gravitation</a> <br /> <a href="/src/hphys/6_circ_grav/ps5.3_univ_grav_key/">Key - PS5.3</a></td>
+      </tr>
+      <tr>
+        <td style="text-align: right">Kepler’s Laws and Orbits</td>
+        <td style="text-align: left">Lecture <br /> PS 8.4 Kepler’s Laws of Motion <br /> Giancoli Problems</td>
+      </tr>
+    </tbody>
+  </table>
+
+</section>
+
+<section>
+
+  <h2 id="unit-7--waves-and-harmonics">Unit 7 | Waves and Harmonics</h2>
+
+  <div class="column">
+    <div>
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Lectures
+  - [Slides - SHM](8_waves/slides_8_shm.md)
+  - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
+</code></pre></div>      </div>
+    </div>
+    <div>
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Problem Sets
+  - [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
+  - [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
+</code></pre></div>      </div>
+    </div>
+  </div>
+
+</section>
+
+<section>
+
+  <h2 id="unit-8--electromagnetism">Unit 8 | Electromagnetism</h2>
+
+  <h3 id="electrostatics">Electrostatics</h3>
+
+  <h4 id="magnetism-and-fields">8.1 Magnetism and Fields</h4>
+  <h4 id="electromagnetic-induction">8.2 Electromagnetic Induction</h4>
+
+  <h3 id="electricity">Electricity</h3>
+
+  <h4 id="electromagnetic-waves">8.3 Electromagnetic Waves</h4>
+  <h4 id="wave-particle-duality">8.4 Wave-Particle Duality</h4>
+
+  <div class="column">
+
+    <h3 id="problem-sets">Problem Sets</h3>
+    <ul>
+      <li><a href="../../problem_sets/ps8.1_electrostatics.md">PS 8.1 - Electrostatics</a></li>
+      <li><a href="../../problem_sets/ps8.2_electromagnetism.md">PS 8.2 - Electromagnetism</a></li>
+    </ul>
+
+    <h3 id="lectures">Lectures</h3>
+    <ul>
+      <li><a href="../../slides/hlec_8.1_electrostatics.html">Lecture - Electrostatics</a></li>
+      <li><a href="../../slides/hlec_8.2_electromagnetism.html">Lecture - Electromagnetism</a></li>
+    </ul>
+
+    <p><em>Giancoli Ch 16-20: pp 446-576</em></p>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 id="unit-9--electricity">Unit 9 | Electricity</h2>
+
+  <h2 id="electrostatics-1">Electrostatics</h2>
+
+  <h3 id="electric-point-charge--fields">9.1 Electric Point Charge &amp; Fields</h3>
+  <h3 id="electric-potential--capacitance">9.2 Electric Potential &amp; Capacitance</h3>
+
+  <h2 id="electricity-1">Electricity</h2>
+
+  <h3 id="electric-currents">9.3 Electric Currents</h3>
+  <h3 id="circuit-analysis">9.4 Circuit Analysis</h3>
+  <h3 id="electrical-power">9.5 Electrical Power</h3>
+
+  <pre><code class="language-mermaid">    flowchart TD
+        8[electromagnetism] --&gt; 8.1[magnetism and fields]
+        8[electromagnetism] --&gt; 8.2[Electromagnetic Induction]
+        8[electromagnetism] --&gt; 8.3[Electromagnetic Waves]
+        8[electromagnetism] --&gt; 8.4[Wave-Particle Duality]
+        
+        8.4--&gt; |EM particles carry charge| 9.1
+        9[Electricity]--&gt; 9.1[Electric Point Charge &amp; Fields]
+        9[Electricity]--&gt; 9.2[Electric Potential &amp; Capacitance]
+        9[Electricity]--&gt;9.3[Electric Currents]
+        9[Electricity]--9.4[Circuit Analysis]
+        9[Electricity]--&gt; 9.5[Electrical Power]
+        
+        10[optics]--&gt; 10.1[Quantum and Modern Physics]
+        10[optics]--&gt; 10.1[Reflection and Refraction]
+        10[optics]--&gt; 10.2[Lenses and Mirrors]
+        10[optics]--&gt; 10.1[Reflection and Refraction]
+</code></pre>
+
+</section>
+
+<section>
+
+  <h2 id="unit-10--optics">Unit 10 | Optics</h2>
+
+  <h3 id="lectures-1">Lectures</h3>
+  <ul>
+    <li><a href="optics/optics_lecture">Optics Lecture</a></li>
+    <li><a href="optics/rays_mirrors_lecture">Rays and Mirrors Lecture</a></li>
+  </ul>
+
+  <h3 id="problem-sets-1">Problem Sets</h3>
+  <ul>
+    <li><a href="../q4-2025/ps10.1_geometric_optics">PS 10.1 Geometric Optics</a></li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>[PS 10.2</td>
+            <td>Wave Optics](../q4-2025/ps10.2_wave_optics)</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
+  <h3 id="electromagnetism-resources">Electromagnetism Resources</h3>
+  <ul>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>[Lecture 9</td>
+            <td>Electromagnetism](../q4-2025/lecture9_electromagnetism)</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li><a href="../q4-2025/ps9.1_electromagnetism">9.1 Electromagnetism</a></li>
+    <li><a href="../q4-2025/ps9.1_electrostatics">9.1 Electrostatics</a></li>
+  </ul>
+</section>
+
+    
     </div>
     
     
