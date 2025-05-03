@@ -9,7 +9,13 @@ usemathjax: true
 toc: true
 ---
 <!-- src/hphys/h_phys_landing --> 
-
+<style>
+  h2 {
+    margin: 10px;
+    box-shadow: 5px solid black;
+    
+  }
+</style>
 [8 Electromagnetism](#unit-8--electromagnetism)
 [9 Electricity](#unit-9--electricity)
 [10 Optics](#unit-10--optics)
@@ -101,8 +107,10 @@ toc: true
   </div>
   <div>
     - Problem Sets
-      - [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
-      - [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
+ 
+- [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
+- [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
+
   </div>
 </div>
 
@@ -116,10 +124,13 @@ toc: true
 
 #### 8.1 Magnetism and Fields
 #### 8.2 Electromagnetic Induction
-
+[text](8_electromagnetism/ps_8.2_waves.md)
 ### Electricity
 
 #### 8.3 Electromagnetic Waves
+
+PS 8.3 
+
 #### 8.4 Wave-Particle Duality
 
 <div class="column">
@@ -145,6 +156,22 @@ toc: true
 ## Electrostatics
 
 ### 9.1 Electric Point Charge & Fields
+
+- Coulomb's Law
+  
+<div style="border:1px black solid; padding: 10px; margin: 1rem; ">
+
+### Chapter 11
+
+|Section|Problems|
+|-:|:-|
+|16-5 & 16-6 <br> Coulomb's Law|1, 2, 3, 6, 13* <br> 2) 3.00x1014 electrons <br>6) 2.7 N <br>** In 13, the charge Q is distributed between the two spheres; they each have a charge Q|
+|16-7 & 16-8<br> Electric Fields and Field Lines|19,21,23|
+
+</div>
+
+
+
 ### 9.2 Electric Potential & Capacitance
 
 ## Electricity
