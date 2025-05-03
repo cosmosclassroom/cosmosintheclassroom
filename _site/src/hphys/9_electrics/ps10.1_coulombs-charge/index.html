@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>PS 10.1 Coulomb's Law and Charges | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content">
+        <img src="assets/img/Physics_00001_.png" alt="Cosmos Header Image" class="header-content img" />
+        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src%5Chphys%5Chphys_landing">Honors Physics</a></li>
+            <li><a href="/src%5Csphys%5Csphys_overview">Standard Physics</a></li>
+            <li><a href="/src%5Cref%5Cref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+        .site-header {
+        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+        border-bottom: 3px double #8b7355;
+        border-top: 3px double #8b7355;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+    .header-content {
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+    .header-content.img {
+        max-width: 100%;
+        max-height: 100px;
+        margin: 0 auto;
+        display: block;
+
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2.5rem;
+        margin: 0;
+        color: #2c4a3e;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+    </header>
+    <div class="markdown-body">
+      <h1 id="ps-101--coulombs-law-and-charge">PS 10.1 | Coulomb’s Law and Charge</h1>
+
+<p>Problems
+A balloon rubbed against denim gains a charge of -8.0 µC. What is the electric force between the balloon and the denim when the two are separated by a distance of 5.0 cm? 
+Two identical conducting spheres are placed with their centers 0.30 m apart. One is given a charge of +12 x 10-9 C and the other is given a charge of -18 x 10-9 C.
+Find the electric force exerted on one sphere by the other.
+The spheres are connected by a conducting wire. After equilibrium (of charge) is reached, find the electric force between the two spheres
+Two electrostatic point charges of +60.0 µC and +50.0 µC exert a repulsive force on each other of 175 N. What is the distance between the two charges?
+A charge of +2.00 x 10-9 C is placed at the origin, and another charge of +4.00 x 10-9 C is placed at x=1.5 m. Find the point between these two charges where a charge, q3 of +3.00 x 10-9 C should be placed such that the net electric force on q3 is zero.
+A charge q1 of -5.00 x 10-9 C and a charge q2 of -2.00 x 10-9 C are separated by a distance of 40.0 cm. Find the equilibrium position for a third charge of +15.0 x 10-9 C. 
+An electron is released above the Earth’s surface. A second electron directly below it exerts just enough electric force on the first electron to cancel the gravitational force on it. The mass of an electron is 9.109 x 10-31 kg. Calculate the distance at which the electrical force cancels the gravitational force acting upon it.
+A proton and an electron in a hydrogen atom are separated, on average, by a distance of 5.3 x 10-11 m. What is the magnitude and direction of the electric field set up by a proton at the position of the electron?
+An electric field of 2.0 x 104 N/C is directed along the positive x-axis.
+What is the electric force on an electron in this field?
+What is the electric force on a proton in this field?</p>
+
+<p>Answers
+(-) 230 N, attractive
+(a) 2.2 x 10-5 N, attractive
+(b) 9.0 x 10-7 N, repulsive
+0.393 m
+X = 0.62 m
+24.5 cm from q1 (15.5 cm from q2)
+5.08 m
+5.1 x 1011 N/C away from the proton
+(a) 3.2 x 10-15 N attractive or along the negative x-axis
+(b) 3.2 x 10-15 N repulsive or along the positive x-axis</p>
+
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
