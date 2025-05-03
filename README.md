@@ -1,51 +1,52 @@
-# XML to Markdown Converter
+# Windows Directory Tree Commands
 
-A Python utility for converting XML documents to Markdown format and extracting embedded images.
+## Limiting Tree Command Depth
 
-## Features
+To display a directory tree structure with files (`/F`) and limit it to only 3 levels deep, use the following command in Windows Command Prompt:
 
-- Converts common XML elements to their Markdown equivalents
-- Extracts embedded base64 images and saves them to a separate folder
-- Handles external image references
-- Preserves document structure and formatting
-
-## Usage
-
-### Command Line
-
-```bash
-python xml_to_markdown.py your_xml_file.xml --output_dir output_folder
+```cmd
+tree /F /A /L 3
 ```
 
-### Python API
+### Parameters Explained:
 
-```python
-from xml_to_markdown import convert_xml_to_markdown
+- `/F` - Display the names of the files in each folder
+- `/A` - Use ASCII characters instead of extended characters
+- `/L n` - Limit the display to n levels of the directory tree (e.g., `/L 3` for 3 levels)
 
-# Convert XML to markdown
-convert_xml_to_markdown('your_xml_file.xml', 'output_folder')
+### Example:
+
+```
+C:\>tree /F /A /L 3 D:\python
+D:\PYTHON
+|   README.txt
+|   setup.py
+|
++---cosmosintheclassroom
+|   |   example.xml
+|   |   README.md
+|   |   test_xml_to_markdown.py
+|   |   xml_to_markdown.py
+|   |
+|   \---output
+|       |   example.md
+|       |
+|       \---images
+|               [Files not shown due to level limit]
+|
+\---otherproject
+    |   main.py
+    |
+    \---modules
+        |   module1.py
+        |   module2.py
+        |
+        \---submodules
+                [Contents not shown due to level limit]
 ```
 
-## Supported XML Elements
+### Notes:
 
-- Headings (h1, h2, h3)
-- Paragraphs (p)
-- Text formatting (strong, b, em, i, code)
-- Links (a href)
-- Lists (ul, ol, li)
-- Images (img with src attribute)
-- Code blocks (pre)
-
-## Requirements
-
-- Python 3.6 or higher
-
-## Getting Started
-
-1. Clone the repository
-2. Run the test script: `python test_xml_to_markdown.py`
-3. Check the output folder for the generated Markdown and extracted images
-
-## Example
-
-See the included `example.xml` file for a demonstration of the conversion capabilities.
+- Without the `/L` parameter, the `tree` command will display all levels.
+- The maximum depth you can specify is 999.
+- For very large directory structures, limiting the depth can make the output more manageable.

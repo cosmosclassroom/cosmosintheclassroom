@@ -122,3 +122,6 @@ toc: true
 [6.0 Orbital Fact Sheet]: (6_circ_grav/6.3_orbit_fact_sheet.md)
 
 [def]: #unit-8--waves-and-harmonics
+
+[Optics Lecture](optics/optics_lecture.md)
+[Rays and Mirros Lecture](optics/rays_mirrors_lecture.md)

@@ -17,6 +17,14 @@
     </script>
     {% endif %}
     
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
     <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
     <style>
       body {
@@ -34,6 +42,9 @@
     </style>
   </head>
   <body>
+    <header>
+      {% include header.html %}
+    </header>
     <div class="markdown-body">
       {{ content }}
     </div>
