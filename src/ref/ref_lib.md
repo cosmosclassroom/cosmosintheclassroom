@@ -44,3 +44,9 @@ This document serves as a directory to all of the reference pages in this folder
 [Kepler](ref_johannes_kepler.md)
 
 [Newton](ref_isaac_newton.md)
+
+
+[Lecture 10 Slides - Optics](../../_site/optics.html)
+
+[KEY - PS 1.5 Scientific Notation Practice](../hphys/0_principles/ps1.5_key_sci_not_practice.md)
+[PS 1.5 Scientific Notation Practice](../hphys/0_principles/ps1.5_sci_not_practice.md)

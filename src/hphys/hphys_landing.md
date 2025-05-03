@@ -4,32 +4,70 @@ title: "Honors Physics Landing Page"
 author: Jonathan Corbett
 date: March , 2025
 markdown: kramdown
+css: D:\python\cosmosintheclassroom\_site\assets\css\style.css
 usemathjax: true
 toc: true
-css: style
 ---
-<!-- src/hphys/6_circ_grav/PS5.3_univ_grav --> 
+<!-- src/hphys/h_phys_landing --> 
+<style>
+  section{
+    background-color: tan;
+    border: black 1px solid;
+    margin: 0.5rem;
+    h2 {
+      font-size: 1.1rem;
+      text-align: center;
+      color: (var(--primary-color))
+    }
+  }
+  .ps-wrapper{
+    margin: 1px; padding: 1px;
+    display: flex;
+    border: 1px solid black;
+    a {
+      font-style: comic; 
+    }
+      }
+    .column{
+      display: flex;
+      margin: 15px; 
+      padding: 15px;
+      flex: space-between;
+    }
 
-|Strand|Topics|
-|-|-|
-|Motion| [Unit 0 - Fundamentals](#unit-0--fundamentals) <br> [Unit 1 - Motion in One Dimension](#unit-1--principles-of-physics) <br> [Unit 2 - Mechanics](#unit-2--kinematics-1) <br> [Unit 3 - Dynamics](#unit-3--kinematics-2)|
-|Energy|[Unit 4 - Conservation](#unit-4--dynamics) <br> [Unit 5 - Conservation of Momentum](#unit-5--work-and-energy) <br> [Unit 6 - Rotational Motion](#unit-6--collisions-impulse-momentum) <br> [Unit 7 - Harmonics](#unit-7--rotational-motion-and-gravitation)|
-|Waves|[Unit 8 - Wave Functions](#unit-8--waves-and-harmonics) <br> [Unit 9 - Light and Sound](#unit-9--light-and-optics) <br> [Unit 10 - Electromagnetism](#unit-10--electrostatics)|
-|Charge|[Unit 11 - Electricity](#unit-11--electromagnetism-and-currents) <br> [Unit 12 - Circuits](#unit-11--optics)|
+</style>
 
-[Formulae and Constants Reference Sheet](../ref/ref_phys_eqs.md)
+# Honors Physics
+## Branford High School - 2025
 
-## Mechanics
+---
+<section>
 
-#### Unit 1 | Principles of Physics
+## Unit 1 | Principles of Physics
 
-#### Unit 2 | Kinematics 1
+<div class="column">
+  <div>Shoes</div>
+  <div>Socks</div>
+</div>
+</section>
+<section>
+
+## Unit 2 | Kinematics 1
+
 
 [PS 2.2 Vectors](1_mechanics/2.2_vectors.md)
 
-#### Unit 3 | Kinematics 2
+</section>
+<section>
 
-#### Unit 4 | Dynamics
+## Unit 3 | Kinematics 2
+
+<div class="ps-wrapper">
+
+</section>
+<section>
+
+## Unit 4 | Dynamics
 - Newton's Laws
 - Forces and Free Body Diagrams
 
@@ -38,10 +76,11 @@ css: style
 [PS 4.2 - Free Body Diagrams](../../problem_sets/ps4.2_fbd.md)
 
 *Giancoli Ch 4: pp 75-97*
+</section>
+<section>
 
-## Conservation
 
-### Unit 5 | Work and Energy
+## Unit 5 | Work and Energy
 - Work-Energy Theorem
 - Conservation of Energy
 - Power
@@ -51,8 +90,8 @@ css: style
 [PS 5.2 - Conservation of Energy](../../problem_sets/ps5.2_cons_energy.md)
 
 *Giancoli Ch 6: pp 138-164*
-
-### Unit 6 | Collisions, Impulse, Momentum
+</section>
+<!-- ### Unit 6 | Collisions, Impulse, Momentum 
 - Linear Momentum
 - Conservation of Momentum
 - Elastic/Inelastic Collisions
@@ -62,25 +101,58 @@ css: style
 [PS 6.2 - Collisions](../../problem_sets/ps6.2_collisions.md)
 
 *Giancoli Ch 7: pp 170-196*
+-->
 
-## Harmonics
 
-### Unit 7 | Rotational Motion and Gravitation
-- Uniform Circular Motion
-- Universal Gravitation
-- Kepler's Laws
 
-[Lecture - Uniform Circular Motion](../../slides/hlec_7.1_ucm.html)
-[Lecture - Universal Gravitation](../../slides/hlec_7.2_gravity.html)
-[PS 7.1 - Circular Motion](../../problem_sets/ps7.1_circular.md)
-[PS 7.2 - Orbital Motion](../../problem_sets/ps7.2_orbits.md)
+<section>
 
-*Giancoli Ch 5: pp 115-137*
+#<section>
 
-[PhET Lab - Gravity and Orbits](../../labs/lab7_gravity_orbits.md)
-[Orbital Reference Sheet](../../ref/ref_orbits.md)
+## Unit 6 | Rotational Motion and Gravitation
 
-### Unit 8 | Harmonics and Waves
+
+|Topic|Resource|
+|-:|:-|
+|Uniform Circular Motion|Lecture <br> PS 5.1 - Uniform Circular Motion <br> Giancoli Problems - UCM <br> Lab - Uniform Circular Motion|
+|Universal Gravitation|Lab - Gravity and Orbits Simulation <br> [Problem Set - Scientific Notation Practice](1_mechanics/ps1.5_sci_not_practice.md) <br> [Problem Set - Universal Gravitation](6_circ_grav/PS5.3_univ_grav.md) <br> [Key - PS5.3](6_circ_grav/ps5.3_univ_grav_key.md)|
+|Kepler's Laws and Orbits|Lecture <br> PS 8.4 Kepler's Laws of Motion <br> Giancoli Problems|
+</section>
+<section>
+
+### Unit 7 | Waves and Harmonics
+
+- Lectures
+  - [Slides - SHM](8_waves/slides_8_shm.md)
+  - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
+  
+- Problem Sets
+  - [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
+  - [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
+
+
+
+
+
+
+</section>
+
+<section>
+
+## 8 Electromagnetism
+
+<div class="column">
+
+### Problem Sets
+
+
+### Lectures
+
+</div>
+
+</section>
+
+<section>
 
 ### Unit 9 | Light and Optics
 - Wave Optics
@@ -92,14 +164,58 @@ css: style
 [PS 9.2 - Thin Lenses](../../problem_sets/ps9.2_lenses.md)
 
 *Giancoli Ch 22-23: pp 641-698*
+</section>
+<section>
 
-### Unit 11 | Optics
-- Interference
-- Diffraction
-- Polarization 
 
-[Lecture - Wave Optics](../../slides/hlec_11.1_wave_optics.html)
-[PS 11.1 - Interference](../../problem_sets/ps11.1_interference.md)
-[PS 11.2 - Diffraction](../../problem_sets/ps11.2_diffraction.md)
 
-*Giancoli Ch 24: pp 699-726*
+</section>
+<section>
+
+## Electronics
+
+### Unit 10 | Electrostatics
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
+
+<ul>
+<li>Lecture Slides</li>
+<li>Problem Set 1</li>
+<li>Problem Set 2</li>
+<li>Problem Set 3</li>
+
+</ul>
+### Unit 11 | Electromagnetism and Currents
+
+
+[Fundamentals]: #unit-0--fundamentals
+[Mechanics]: #unit-2--kinematics-1
+[Dynamics]: #unit-4--dynamics
+[Conservation]: #unit-5--work-and-energy
+[Harmonics]: #unit-8--waves-and-harmonics
+[Electricity]: #unit-10--electrostatics
+
+[6.1 Orbital Station (Key)]: (6_circ_grav/6.1_ucm_orbital_station_key.md)
+[6.1 UCM Orbital Station]: (6_circ_grav/6.1_ucm_orbital_station.md)
+[6.0 Orbital Fact Sheet]: (6_circ_grav/6.3_orbit_fact_sheet.md)
+
+[def]: #unit-8--waves-and-harmonics
+
+[Optics Lecture]:(optics/optics_lecture.md)
+[Rays and Mirros Lecture]:(optics/rays_mirrors_lecture.md)
+
+Lecture 9 | Electromagnetism
+
+[9.1 Electromagnetism]:(../q4-2025/ps9.1_electromagnetism.md)
+
+[9.1 Electrostatics]:(../q4-2025/ps9.1_electrostatics.md)
+
+
+
+[PS 10.1 Geometric Optics]:(../q4-2025/ps10.1_geometric_optics.md)
+
+[PS 10.2 | Wave Optics]:(../q4-2025/ps10.2_wave_optics.md)
+
