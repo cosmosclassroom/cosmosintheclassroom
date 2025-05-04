@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometric Optics: Light and Reflection</title>
+  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Creveal.scss">
+  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Ctheme%5Csource%5Cnight.scss">
+
+  <!-- Custom styles for Marp slides
+
+  <style>
+    /* Marp slide styles */
+    section {
+      font-family: 'Georgia', serif;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 2em;
+    }
+    h1, h2, h3 {
+      margin: 0.5em 0;
+    }
+    p {
+      margin: 1em 0;
+    }
+  </style>
+  -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+          <style>
+section {
+  font-size: 1.8rem;
+  padding: 1rem; 
+}
+
+h1 {
+  font-family: Georgia, serif;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: system-ui, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  margin: auto;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flexbox > div {
+  flex: 1;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: black; 
+  border: 1px black solid; 
+}
+
+.formula {
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  background-color: lavender;
+  border: 1px black solid; 
+}
+
+footer {
+  font-size: 0.7rem;
+  font-style: italic;
+  text-align: left;
+  opacity: 80%;
+  margin-top: 0.5rem;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+</style>
+
+<!-- paginate: false -->
+<h1 id="geometric-optics">Geometric Optics</h1>
+<h3 id="how-can-wave-equations-describe-the-behavior-of-electromagnetic-radiation">How can wave equations describe the behavior of electromagnetic radiation?</h3>
+
+<div class="image-container">
+  <p><img src="../../../assets/images/10_optics/lens-7105005_640.jpg" alt="Lens forming an image" /></p>
+</div>
+
+<hr />
+
+<!-- paginate: true -->
+
+<h1 id="contents">Contents</h1>
+
+<ol>
+  <li><strong>Characteristics of Light</strong>
+    <ul>
+      <li>Light as an electromagnetic wave</li>
+      <li>Wave-particle duality</li>
+    </ul>
+  </li>
+  <li><strong>Reflection and Flat Mirrors</strong>
+    <ul>
+      <li>Law of reflection</li>
+      <li>Ray diagrams</li>
+      <li>Virtual image formation</li>
+    </ul>
+  </li>
+  <li><strong>Curved Mirrors</strong>
+    <ul>
+      <li>Concave and convex mirrors</li>
+      <li>Ray diagrams</li>
+      <li>Mirror equation</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="origins-of-optics">Origins of Optics</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Light has been studied since ancient times, with significant contributions from:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Early civilizations - created primitive lenses&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Newton - developed corpuscular theory of light&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Huygens - proposed wave theory of light&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Maxwell - unified electromagnetism with light&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../../../assets/images/10_optics/Nimrud_lens_British_Museum.jpg" alt="Lens" /&amp;gt; &amp;lt;p&amp;gt;Ancient Nimrud lens (750-710 BCE)&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="light-as-an-electromagnetic-wave">Light as an Electromagnetic Wave</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Light originates from oscillating charged particles:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Electrons in atoms undergo Simple Harmonic Motion&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Frequency of oscillation determines wavelength: &amp;lt;em&amp;gt;c = f · λ&amp;lt;/em&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Electric and magnetic fields oscillate perpendicular to each other&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;All EM waves move at the speed of light in a vacuum, &amp;lt;em&amp;gt;c = 3.00 × 10⁸ m/s&amp;lt;/em&amp;gt;&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../../../assets/images/10_optics/Onde_electromagnetique.svg.png" alt="Electromagnetic wave" style="height: 350px"/&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="wave-particle-duality-of-light">Wave-Particle Duality of Light</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Wave Properties:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Interference&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Diffraction&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Polarization&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Particle Properties:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Photoelectric effect&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Discrete energy packets (photons)&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Energy: E = hf&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<div class="formula">
+  <p>Wave directions of travel can be approximated as rays</p>
+  <p>This allows us to use geometric optics to analyze light behavior</p>
+</div>
+
+<hr />
+
+<h1 id="law-of-reflection">Law of Reflection</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Key Principles:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;The incident ray, the reflected ray, and the normal to the surface all lie in the same plane&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;The angle of incidence equals the angle of reflection&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;θᵢ = θᵣ&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Reflection_angles.svg/500px-Reflection_angles.svg.png" alt="Angle of reflection" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="ray-diagrams-to-predict-images">Ray Diagrams to Predict Images</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Imaging the tip of a pencil:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Ray 1:&amp;lt;/strong&amp;gt; incident angle = 0°, reflected angle = 0°&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Ray 2:&amp;lt;/strong&amp;gt; incident angle = θ°, reflected angle = θ°&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;&amp;lt;em&amp;gt;Both rays can be traced back to their point of apparent origination behind the mirror&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../img/0%20Lecture%20_%209%20Light%20and%20Optics_0.png" alt="Ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="virtual-image-formation">Virtual Image Formation</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Imaging Process:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Dashed lines behind mirror meet at the &amp;lt;strong&amp;gt;image point&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Collection of rays forms the &amp;lt;strong&amp;gt;virtual image&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image distance equals object distance: &amp;lt;em&amp;gt;p = q&amp;lt;/em&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Virtual images cannot be projected onto a screen&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../img/0%20Lecture%20_%209%20Light%20and%20Optics_1.png" alt="Virtual image formation" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="ray-diagrams-on-flat-mirrors">Ray Diagrams on Flat Mirrors</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;For a flat mirror:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Dashed lines behind the mirror meet at the &amp;lt;strong&amp;gt;image point&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;The collection of all rays forms the &amp;lt;strong&amp;gt;virtual image&amp;lt;/strong&amp;gt;&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;The virtual image appears as far behind the mirror as the object is in front of it&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;\( p = q \) where &amp;lt;em&amp;gt;p&amp;lt;/em&amp;gt; is object distance and &amp;lt;em&amp;gt;q&amp;lt;/em&amp;gt; is image distance&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../img/0%20Lecture%20_%209%20Light%20and%20Optics_2.png" alt="Flat mirror ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="images-on-flat-mirrors">Images on Flat Mirrors</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Properties of images in flat mirrors:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Images appear reversed to observer (left-right inversion)&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Angles of perspective are maintained&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image is upright (not inverted)&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image size equals object size (magnification = 1)&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../img/0%20Lecture%20_%209%20Light%20and%20Optics_3.png" alt="Mirror image formation" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="curved-mirrors-introduction">Curved Mirrors: Introduction</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Types of Curved Mirrors:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Concave mirrors:&amp;lt;/strong&amp;gt; curve inward, reflect light toward focus&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Convex mirrors:&amp;lt;/strong&amp;gt; curve outward, reflect light away from virtual focus&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;p&amp;gt;Images formed on curved mirrors are rather different from those on flat mirrors&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Concave_and_convex_mirrors.svg/800px-Concave_and_convex_mirrors.svg.png" alt="Curved mirrors" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="concave-mirrors-key-terminology">Concave Mirrors: Key Terminology</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Vertex:&amp;lt;/strong&amp;gt; center point of the mirror surface&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Center of curvature (C):&amp;lt;/strong&amp;gt; center of the sphere from which the mirror is cut&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Focal point (F):&amp;lt;/strong&amp;gt; point where parallel rays converge after reflection&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Focal length (f):&amp;lt;/strong&amp;gt; distance from vertex to focal point&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;&amp;lt;strong&amp;gt;Principal axis:&amp;lt;/strong&amp;gt; line passing through C and F&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Concave_mirror_ray_diagram.svg/800px-Concave_mirror_ray_diagram.svg.png" alt="Concave mirror ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="concave-mirror-ray-diagrams">Concave Mirror Ray Diagrams</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Three Principal Rays:&amp;lt;/h3&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;Ray parallel to principal axis reflects through focal point&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Ray through focal point reflects parallel to principal axis&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Ray through center of curvature reflects back on itself&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;p&amp;gt;Where these rays intersect is where the image forms&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Concave_mirror_principal_rays.png" alt="Concave mirror principal rays" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="convex-mirror-ray-diagrams">Convex Mirror Ray Diagrams</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Three Principal Rays:&amp;lt;/h3&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;Ray parallel to principal axis reflects as if coming from focal point&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Ray heading toward focal point reflects parallel to principal axis&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Ray heading toward center of curvature reflects back on itself&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &amp;lt;p&amp;gt;Convex mirrors always form virtual, upright, diminished images&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Convex_mirror_principal_rays.png" alt="Convex mirror principal rays" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="mirror-equation-and-magnification">Mirror Equation and Magnification</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Mirror Equation:&amp;lt;/h3&amp;gt; &amp;lt;div class="formula"&amp;gt;   \[ \frac{1}{f} = \frac{1}{p} + \frac{1}{q} \] &amp;lt;/div&amp;gt; &amp;lt;p&amp;gt;where:&amp;lt;/p&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;\(f\) = focal length&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;\(p\) = object distance&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;\(q\) = image distance&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Magnification:&amp;lt;/h3&amp;gt; &amp;lt;div class="formula"&amp;gt;   \[ m = -\frac{q}{p} \] &amp;lt;/div&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Positive m: upright image&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Negative m: inverted image&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;|m| &amp;gt; 1: enlarged image&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;|m| &amp;lt; 1: reduced image&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="sign-conventions-for-mirrors">Sign Conventions for Mirrors</h1>
+
+<div class="columns">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Focal Length (f):&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Positive for concave mirrors&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Negative for convex mirrors&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;
+</code></pre></div>    </div>
+
+    <p>&lt;h3&gt;Object Distance (p):&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Always positive for real objects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;</p>
+  </div>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Image Distance (q):&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Positive for real images (in front of mirror)&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Negative for virtual images (behind mirror)&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt;
+</code></pre></div>    </div>
+
+    <p>&lt;h3&gt;Image Height (h’):&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Positive for upright images&lt;/li&gt;
+  &lt;li&gt;Negative for inverted images&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;</p>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="practice-problem-1">Practice Problem 1</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;A student stands 1.5 m in front of a flat mirror. If they are 1.7 m tall:&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;How far behind the mirror does their image appear?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the height of their image?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the minimum mirror height needed to see their full body?&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Plane_mirror_height.svg/640px-Plane_mirror_height.svg.png" alt="Mirror height problem" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="practice-problem-2">Practice Problem 2</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;A concave mirror has a focal length of 20 cm. An object is placed 30 cm from the mirror.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Calculate:&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;The image distance using \[\frac{1}{f} = \frac{1}{p} + \frac{1}{q}\]&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;The magnification using \[m = -\frac{q}{p}\]&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Determine if the image is real or virtual&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Concave_mirror_ray_diagram.svg/800px-Concave_mirror_ray_diagram.svg.png" alt="Concave mirror ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="practice-problem-3">Practice Problem 3</h1>
+
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Light strikes a flat mirror at an angle of 35° to the normal.&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;What is the angle of reflection?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the angle between the incident and reflected rays?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;If the mirror is rotated by 10°, how much does the reflected ray rotate?&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Reflection_angles.svg/500px-Reflection_angles.svg.png" alt="Angle of reflection" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="applications-of-mirrors">Applications of Mirrors</h1>
+
+<div class="columns">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Concave Mirrors:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Makeup and shaving mirrors&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Headlights and flashlights&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Astronomical telescopes&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Solar collectors&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Convex Mirrors:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Car side mirrors&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Security mirrors in stores&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Road safety mirrors&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Decorative fisheye effects&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<div class="formula">
+  <p>The specific shape and focal length of mirrors are carefully designed for each application</p>
+</div>
+
+<hr />
+
+<h1 id="summary-geometric-optics">Summary: Geometric Optics</h1>
+
+<div class="columns">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Flat Mirrors:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Virtual images&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image distance = Object distance&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Magnification = 1&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Left-right reversal&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Curved Mirrors:&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Concave: can form real or virtual images&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Convex: always form virtual images&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Mirror equation: \(\frac{1}{f} = \frac{1}{p} + \frac{1}{q}\)&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Magnification: \(m = -\frac{q}{p}\)&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<div class="formula">
+  <p>Next topic: Refraction and lenses</p>
+</div>
+
+        </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="/slides/reveal.js/dist/reveal.js"></script>
+  <script src="/slides/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="/slides/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="/slides/reveal.js/plugin/notes/notes.js"></script>
+  <script src="/slides/reveal.js/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, // Enable URL hash for navigation
+      slideNumber: true, // Show slide numbers
+      controls: true, // Show navigation controls
+      progress: true, // Show progress bar
+      transition: 'slide', // Slide transition effect
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+      math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js',
+        config: 'TeX-AMS_HTML-full'
+      }
+    });
+  </script>
+</body>
+</html>

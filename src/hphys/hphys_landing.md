@@ -29,94 +29,15 @@ toc: true
 ## Unit 1 | Principles of Physics
 
 
-</section>
-
-<section>
-
-## Unit 2 | Kinematics 1
-
-[PS 2.2 Vectors](1_mechanics/2.2_vectors.md)
-
-</section>
-
-<section>
-<style>
-  ul {
-    list-style: none;
-    border: 1px solid black;
-    padding: 15px; 
-  }
-</style>
-
-
 ## Unit 3 | Kinematics 2
 
-- Lecture - Kinematics in Two Dimensions
-- Problem Sets
-  - PS 3.1 Kinematics in 2 Dimensions
-  - PS 3.2 Relative Motion Problems
-
 ## Unit 4 | Dynamics
-- Newton's Laws
-- Forces and Free Body Diagrams
-
-[Lecture - Forces and Newton's Laws](../../slides/hlec_4.1_newton_laws.html)
-[PS 4.1 - Force and Motion](../../problem_sets/ps4.1_force_motion.md)
-[PS 4.2 - Free Body Diagrams](../../problem_sets/ps4.2_fbd.md)
-
-*Giancoli Ch 4: pp 75-97*
-
-</section>
-
-<section>
 
 ## Unit 5 | Work and Energy
-- Work-Energy Theorem
-- Conservation of Energy
-- Power
-
-[Lecture - Work and Energy](../../slides/hlec_5.1_work_energy.html)
-[PS 5.1 - Work and Energy](../../problem_sets/ps5.1_work_energy.md)
-[PS 5.2 - Conservation of Energy](../../problem_sets/ps5.2_cons_energy.md)
-
-*Giancoli Ch 6: pp 138-164*
-
-</section>
-
-<section>
 
 ## Unit 6 | Rotational Motion and Gravitation
 
-|Topic|Resource|
-|-:|:-|
-|Uniform Circular Motion|Lecture <br> PS 5.1 - Uniform Circular Motion <br> Giancoli Problems - UCM <br> Lab - Uniform Circular Motion|
-|Universal Gravitation|Lab - Gravity and Orbits Simulation <br> [Problem Set - Scientific Notation Practice](1_mechanics/ps1.5_sci_not_practice.md) <br> [Problem Set - Universal Gravitation](6_circ_grav/PS5.3_univ_grav.md) <br> [Key - PS5.3](6_circ_grav/ps5.3_univ_grav_key.md)|
-|Kepler's Laws and Orbits|Lecture <br> PS 8.4 Kepler's Laws of Motion <br> Giancoli Problems|
-
-</section>
-
-<section>
-
 ## Unit 7 | Waves and Harmonics
-
-<div class='column'>
-  <div>
-    - Lectures
-      - [Slides - SHM](8_waves/slides_8_shm.md)
-      - [Lecture 8.2 Waves](8_waves/hphys_8_waves_lecture.md)
-  </div>
-  <div>
-    - Problem Sets
- 
-- [8.1 SHM Springs and Pendula](8_waves/PS_8.1_Harmonics_Springs_Pendula.md)
-- [8.2 SHM Waves](8_waves/PS_8.2_Waves.md)
-
-  </div>
-</div>
-
-</section>
-
-<section>
 
 ## Unit 8 | Electromagnetism
 
@@ -161,7 +82,6 @@ PS 8.3
   
 <div style="border:1px black solid; padding: 10px; margin: 1rem; ">
 
-### Chapter 11
 
 |Section|Problems|
 |-:|:-|

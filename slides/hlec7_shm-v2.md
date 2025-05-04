@@ -8,7 +8,7 @@ theme: slidesA
 
 <!-- D:\python\Jupyter\build\cosmosintheclassroom\src\hphys\7_shm\hlec7_shm-v2.md -->
 
-# 8 Harmonics and Waves
+# 7 Harmonics and Waves
 
 How can regular, repeating motion be described with waves?
 
