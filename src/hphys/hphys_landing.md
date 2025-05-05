@@ -93,12 +93,18 @@ toc: true
 ## Unit 10 | Optics
 
 ### 10.1 Geometric Optics
+
+[Problem Set 10.1 Geometric Optics](../q4-2025/ps10.1_geometric_optics)
+
 - Reflection and refraction
 - Mirrors and lenses
 - Image formation
 - Optical instruments
 
 ### 10.2 Wave Optics  
+
+[Problem Set 10.2 Wave Optics](../q4-2025/ps10.2_wave_optics)
+
 - Wave nature of light
 - Interference
 - Diffraction
