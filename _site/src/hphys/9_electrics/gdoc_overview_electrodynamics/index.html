@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content" style="background-image: src=(/assets/images/cosmos/cosmos_00001_.png), style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="/" style="color: inherit;">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+            <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+            <li><a href="/src/ref/ref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    :root {
+        --primary-color: #2c3e50; /* Nice blue primary */
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --background-color: #cecfc9;
+        --text-color: #2c3e50;
+        --earth-brown: #8b7355;
+        --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
+    }
+
+    body {
+        background-color(var(--parchment));
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+    }
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        background: none; /* Removed gradient background */
+        border-bottom: 3px double var(--earth-brown);
+        border-top: 3px double var(--earth-brown);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        background-image: url('/assets/images/cosmos/cosmos_00001_.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 100px;
+    }
+
+    .header-content img {
+        max-width: 20%;
+        max-height: 60px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--background-color);
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: #cecfc9;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: block;
+        background-color: var(--secondary-color);
+        justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
+        border-bottom: 2px solid var(--earth-brown);
+    }
+
+    .site-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 2px 2px;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #e9ba74;
+        background-color: #718355;
+    }
+</style>
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <p>11 Electrodynamics
+Electromagnetism
+Light - the range of electromagnetic radiation that is visible to the human eye
+Electromagnetic Spectrum - the range of all wavelengths/frequencies of electromagnetic radiation
+Electromagnetic Radiation - waves produced by synchronization of oscillations between electric and magnetic fields
+Caused by the movement (oscillations) of charged particles
+EM waves vary depending on frequency and wavelength
+EM waves are composed of a wave of oscillating, perpendicular electric and magnetic fields
+All EM waves move at the speed of light
+In a vacuum, c = 3.00 x 108 m/s
+Wave directions of travel can be approximated as rays
+Electric Potential &amp; Voltage
+Any time a force is applied to move an object, work is done on that object
+Work being done equals a change in the energy of the object
+Electric Potential is energy that a charged object has because of its shape and position in an electric field
+Electric potential energy (PEelectric) in a uniform field depends on the charge (q), the strength of the field, (E), and the displacement (d)</p>
+
+<p>The displacement, d, is generally chosen as movement in the direction of the field 
+The potential difference is a measure of the potential energy at two different locations in a field, thus represents the energy a particle would gain or lose by traveling from one to the other position
+Thus, the amount of work done by a field to move a charge is equal to the negative of the change in potential energy</p>
+
+<p>An electric potential exists at some point in an electric field whether or not there is another charge at that point
+The negative sign indicates that the electrical potential energy will increase if the charge is negative and decrease if the charge is positive
+When the electric force does positive work on a charge, the kinetic energy increases and the potential energy decreases 
+Electric potential (V) is the amount of potential energy per unit charge
+The unit of electric potential energy is still the Joule 
+As with other forms of potential energy, it is the difference or change in values that become physically relevant</p>
+
+<p>The charge in this case is the charge creating the field, not the test charge
+The SI unit for potential difference is the volt (V), and it equivalent to 1 Joule of energy per Coulomb of charge</p>
+
+<p>V (regular) stands for volts, the unit of potential
+V (italics) stands for voltage, the electric potential itself
+As a charge of 1 C (1.6x10-19 electrons) moves through a potential difference of 1 V, the charge gains 1 Joule of energy</p>
+
+<p>*d is displacement parallel to the field
+Batteries
+Luigi Galvani
+Around 1791, Luigi Galvani found that frog legs could twitch if static electricity was applied to them
+He found they could also be made to twitch by injection with mixtures of metals
+Galvani assumed that the metals acted like conductors for the frog’s “life force” 
+Alessandro Volta was skeptical of Galvani’s explanation, predicting instead that the metals were the source of the electricity and that the liquid in the frog tissues helped conduct it
+He was able to demonstrate that frog legs are actually very sensitive instruments for detecting what he called electromotive force, which we now call voltage
+To test his hypothesis, Volta placed discs of zinc and silver in columns separated by cloth or paper soaked in salt or acid
+These “piles” or “batteries” produced a much larger potential difference than induction or static electricity
+The voltage was so strong that connecting conductors to either side of the columns could force a spark to leap through the air
+An electric battery is a source of nearly constant potential difference by transforming chemical energy into electric energy
+A simple battery consists of two electrodes made of different materials immersed in a solution or paste known as an electrolyte
+An assembly of two electrodes dissolved in the electrolyte is called a cell, and batteries are composed of one or more cells
+The electrolyte dissolves one of the electrodes, releasing electrons into the conductor and positive ions into solution
+The charge of this solution attracts the electrons from the other electrode, causing the second electrode to carry a positive charge
+If charge is allowed to flow through the terminals by a conductor, the chemical reaction continues and a flow of electrons through the conductor is sustainable
+The voltage produced depends on the materials of the electrons and their abilities to be dissolved by the acid
+Multiple cells can be connected between the positive terminal of one and the negative terminal of another
+These cells are said to be in series, and their combined voltage is the algebraic sum of the voltage of each.</p>
+
+<p>Voltage 
+Also known as electric potential difference, voltage is a measure of the electric potential energy per unit charge between two points in a circuit
+Voltage is the “push” that drives electric charge through a conductor (rather than being distributed evenly as in statics)
+Voltage provides the energy needed for charges to move or flow, similarly to water pressure
+Voltage is measured in volts (V)</p>
+
+<p>Electric Currents
+Electric current, I, refers to the rate of flow of electric charge through a conductor, like a wire, in a circuit
+Current is measured in amperes (A)</p>
+
+<p>past any given point
+The flow of charge through a conductor is very similar to the flow of water through a pipe
+The direction of a conventional current is that of positive charge flow (for historical reasons)
+A positive charge flow in one direction is almost always equivalent to the negative charge flow in the opposite direction
+Positive conventional current always flows from high to low potential
+In a wire, electrons move and so flow in the opposite direction of the conventional current
+Ohm’s Law
+Resistance (R ) is a measure of how much a material opposes the flow of current.
+Resistance is measured in ohms (Ω)
+Visualize resistance as the narrowness of a pipe that restricts the flow of water, or a thumb over a hose
+Resistance of a device is defined by Ohm’s Law</p>
+
+<p>Resistance in a circuit depends on length, cross-sectional area, temperature, and material of the conductors
+Electric Power
+Electrical power is the rate at which electrical energy is converted into another form of energy (like heat, light, or motion). It is measured in watts (W).
+It can be calculated using current and voltage or current and resistance.
+The unit of power is still the Watt (W)</p>
+
+<p>Power can also be computed using derivations from Ohm’s Law</p>
+
+<p>Lecture Notes: Electric Potential Energy, Voltage, Current, Resistance, and Power</p>
+
+<p>History
+   Luigi Galvani (1737–1798) was an Italian physician and physicist who conducted pioneering experiments on bioelectricity. He discovered that the muscles of dissected frogs twitched when touched with a metal instrument, leading him to propose the existence of “animal electricity.”
+   Alessandro Volta (1745–1827), also an Italian physicist, challenged Galvani’s theory and demonstrated that the source of the electric current in Galvani’s experiments was not the animal tissue but the metal electrodes. Volta invented the voltaic pile, the first chemical battery, which produced a steady source of electric current.
+   Georg Simon Ohm (1789–1854), a German physicist, formulated Ohm’s Law, which describes the relationship between voltage, current, and resistance in electrical circuits. His work laid the foundation for understanding the behavior of electric currents in conductors.</p>
+
+<p>Energy Stored in a Battery:
+The energy stored in a battery can be calculated using the formula ( E = Q \cdot V ), where ( Q ) is the total charge stored in the battery and ( V ) is the potential difference provided by the battery.
+   The energy stored in a battery is measured in joules (J).</p>
+
+<p>Electric Potential Energy (PEE):
+Electric potential energy is the energy associated with the position of electric charges in an electric field.</p>
+
+<p>Electric potential energy is measured in joules (J).</p>
+
+<p>Understanding Voltage:
+Voltage, also known as electric potential difference, is the measure of the potential energy difference per unit charge between two points in an electric field.
+It represents the work needed to move a charge from one point to another against an electric field.
+Voltage is measured in volts (V), where 1 volt is equivalent to 1 joule per coulomb (1 V = 1 J/C).</p>
+
+<ol>
+  <li>
+    <p>Electric Current and Charge:
+Electric current is the flow of electric charge.
+The total charge that passes through a circuit can be calculated using the formula ( Q = I \cdot t ), where ( I ) is the current and ( t ) is the time.
+Charge is measured in coulombs (C).</p>
+  </li>
+  <li>
+    <p>Voltage Drop Across a Resistor:
+When a current flows through a resistor, a potential difference or voltage drop is experienced.
+The voltage drop across a resistor can be calculated using Ohm’s Law: ( V = I \cdot R ), where ( V ) is the voltage drop, ( I ) is the current, and ( R ) is the resistance.
+Voltage is measured in volts (V).</p>
+  </li>
+  <li>
+    <p>Resistance and Ohm’s Law:
+Resistance is a measure of how much a material opposes the flow of electric current.
+Resistors are passive electrical components designed to introduce resistance into an electric circuit.
+Ohm’s Law states that the current through a conductor between two points is directly proportional to the voltage across the two points and inversely proportional to the resistance.
+The resistance of a resistor can be calculated using ( R = V / I ), where ( R ) is the resistance, ( V ) is the voltage, and ( I ) is the current.
+Resistance is measured in ohms (( \Omega )).</p>
+  </li>
+  <li>
+    <p>Function of a Resistor:
+A resistor functions to regulate or limit the flow of electric current in a circuit.
+By introducing resistance into a circuit, resistors control the amount of current that can pass through them.
+Resistors are used to reduce current flow, divide voltage, or provide a specific voltage drop in a circuit.
+They are commonly used for purposes such as controlling the brightness of LEDs, setting the gain in amplifier circuits, and providing biasing in transistor circuits.</p>
+  </li>
+  <li>
+    <p>Electrical Power and Operation of Appliances:
+Electrical power is the rate at which electrical energy is transferred or converted into other forms of energy.
+Power in an electrical circuit can be calculated using the formula ( P = V \cdot I ), where ( P ) is power, ( V ) is voltage, and ( I ) is current.
+Power is measured in watts (W).
+Electrical appliances operate by converting electrical power into other forms of energy. 
+Examples:
+  Light bulbs: Convert electrical power into light and heat energy.
+  Heaters: Convert electrical power into heat energy.
+  Motors: Convert electrical power into mechanical energy to perform tasks such as rotating a fan or driving a conveyor belt.
+The power consumed by an electrical appliance depends on its voltage and current requirements. Appliances with higher power ratings require more electrical energy to operate and may have higher voltage and current demands.
+Understanding power consumption is essential for selecting the appropriate electrical components and designing efficient electrical systems.</p>
+  </li>
+  <li>
+    <p>Calculating Power Consumed:
+To determine the power consumed by a device, multiply the voltage across the device by the current flowing through it.
+( P = V \cdot I ), where ( P ) is power, ( V ) is voltage, and ( I ) is current.</p>
+  </li>
+</ol>
+
+<p>Understanding the contributions of Galvani, Volta, and Ohm provides context for the development of the principles of electricity and serves as the foundation for understanding electric potential energy, voltage, current, resistance, and power in high school physics.</p>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

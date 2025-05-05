@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Bridging Unit: From Wave Mechanics to Electromagnetism and Optics | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content" style="background-image: src=(/assets/images/cosmos/cosmos_00001_.png), style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="/" style="color: inherit;">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+            <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+            <li><a href="/src/ref/ref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    :root {
+        --primary-color: #2c3e50; /* Nice blue primary */
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --background-color: #cecfc9;
+        --text-color: #2c3e50;
+        --earth-brown: #8b7355;
+        --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
+    }
+
+    body {
+        background-color(var(--parchment));
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+    }
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        background: none; /* Removed gradient background */
+        border-bottom: 3px double var(--earth-brown);
+        border-top: 3px double var(--earth-brown);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        background-image: url('/assets/images/cosmos/cosmos_00001_.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 100px;
+    }
+
+    .header-content img {
+        max-width: 20%;
+        max-height: 60px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--background-color);
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: #cecfc9;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: block;
+        background-color: var(--secondary-color);
+        justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
+        border-bottom: 2px solid var(--earth-brown);
+    }
+
+    .site-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 2px 2px;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #e9ba74;
+        background-color: #718355;
+    }
+</style>
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="bridging-unit-from-wave-mechanics-to-electromagnetism-and-optics">Bridging Unit: From Wave Mechanics to Electromagnetism and Optics</h1>
+
+<h2 id="unit-overview">Unit Overview</h2>
+<p>This bridging unit connects students’ knowledge of mechanical waves and harmonics to the dual nature of waves in electromagnetism and optics. By exploring wave-particle duality, electromagnetic wave properties, and electric charge interactions, students will develop the conceptual foundation needed for both geometric optics and electromagnetic induction.</p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this unit, students will be able to:</p>
+<ol>
+  <li>Explain the wave-particle duality concept and its implications for light and matter</li>
+  <li>Describe how electromagnetic waves carry energy and momentum across the EM spectrum</li>
+  <li>Apply wave principles to explain interference, diffraction, and resonant phenomena</li>
+  <li>Calculate photon energies and wavelengths using fundamental relationships</li>
+  <li>Describe the nature of electric charge and calculate forces using Coulomb’s Law</li>
+  <li>Explain electric fields and their influence on charged particles</li>
+  <li>Connect wave behavior to electromagnetic induction principles</li>
+  <li>Apply wave models to explain basic optical phenomena</li>
+</ol>
+
+<h2 id="conceptual-progression">Conceptual Progression</h2>
+
+<h3 id="day-1-2-electromagnetic-waves-and-energy-transport">Day 1-2: Electromagnetic Waves and Energy Transport</h3>
+<ul>
+  <li>Review of mechanical waves and their properties</li>
+  <li>Introduction to electromagnetic waves as self-sustaining oscillations</li>
+  <li>Structure of EM waves: perpendicular electric and magnetic fields</li>
+  <li>The electromagnetic spectrum and applications across frequency ranges</li>
+  <li>Wave energy transport and intensity relationship (I ∝ A²)</li>
+  <li>Energy in electromagnetic fields: Poynting vector and energy density</li>
+  <li><strong>Key Connection</strong>: How EM waves transfer energy without requiring a medium</li>
+</ul>
+
+<h3 id="day-3-4-wave-particle-duality">Day 3-4: Wave-Particle Duality</h3>
+<ul>
+  <li>Historical context: Newton vs. Huygens debate on light’s nature</li>
+  <li>Evidence for wave behavior: Young’s double-slit experiment and interference patterns</li>
+  <li>Evidence for particle behavior: The photoelectric effect</li>
+  <li>Einstein’s photon theory and photon energy (E = hf)</li>
+  <li>De Broglie wavelength of matter (λ = h/p)</li>
+  <li>Electron diffraction demonstrations</li>
+  <li><strong>Key Connection</strong>: How particles exhibit wave properties and waves exhibit particle properties</li>
+</ul>
+
+<h3 id="day-5-6-interference-diffraction-and-resonance">Day 5-6: Interference, Diffraction, and Resonance</h3>
+<ul>
+  <li>Young’s double-slit experiment with light and matter</li>
+  <li>Single-slit diffraction patterns</li>
+  <li>Diffraction gratings and spectroscopy</li>
+  <li>Interference in thin films</li>
+  <li>Resonant absorption in materials</li>
+  <li>Applications of resonance in everyday technology (microwaves, MRI)</li>
+  <li><strong>Key Connection</strong>: How wave interference forms the foundation for understanding both light behavior and electron behavior</li>
+</ul>
+
+<h3 id="day-7-8-electric-charges-and-fields">Day 7-8: Electric Charges and Fields</h3>
+<ul>
+  <li>Electric charge as a fundamental property of matter</li>
+  <li>Quantization and conservation of charge</li>
+  <li>Coulomb’s Law for electric forces (F = k q₁q₂/r²)</li>
+  <li>Electric fields: concept, calculation, and visualization</li>
+  <li>Conductors vs. insulators and their properties</li>
+  <li>Charging methods: friction, contact, and induction</li>
+  <li>Electric field interactions with charges</li>
+  <li><strong>Key Connection</strong>: How static and moving charges serve as the source of electromagnetic phenomena</li>
+</ul>
+
+<h2 id="laboratory-activities">Laboratory Activities</h2>
+
+<h3 id="lab-1-photoelectric-effect-simulation">Lab 1: Photoelectric Effect Simulation</h3>
+<p>Students use PhET simulations to investigate the relationship between light frequency, intensity, and electron ejection, helping them understand the particle nature of light and the concept of photon energy.</p>
+
+<h3 id="lab-2-double-slit-experiment">Lab 2: Double-Slit Experiment</h3>
+<p>Students perform the classic double-slit experiment with light and analyze interference patterns, then compare with simulations of electron diffraction patterns to visualize wave-particle duality.</p>
+
+<h3 id="lab-3-electric-fields-and-forces">Lab 3: Electric Fields and Forces</h3>
+<p>Students map electric field lines using various charge configurations and measure forces between charged objects, connecting the concept of fields to observable forces.</p>
+
+<h3 id="lab-4-electromagnetic-energy-and-resonance">Lab 4: Electromagnetic Energy and Resonance</h3>
+<p>Students investigate resonant absorption of EM waves in different materials and connect this to the concept of energy transfer in wave systems.</p>
+
+<h2 id="assessment">Assessment</h2>
+<ul>
+  <li><strong>Formative</strong>: Concept mapping activity connecting mechanical waves, electromagnetic waves, electric fields, and particle models</li>
+  <li><strong>Formative</strong>: Problem sets calculating photon energies, wavelengths, and electric forces</li>
+  <li><strong>Summative</strong>: Design-based assessment where students explain phenomena that demonstrate both wave and particle properties</li>
+  <li><strong>Summative</strong>: Lab practical requiring students to determine unknown charge values using electric field measurements</li>
+</ul>
+
+<h2 id="connections-to-upcoming-units">Connections to Upcoming Units</h2>
+<ul>
+  <li><strong>To Geometric Optics</strong>: Wave model explains interference and diffraction; particle model explains light ray behavior and photon energy</li>
+  <li><strong>To Electromagnetic Induction</strong>: Understanding of electromagnetic waves provides foundation for how changing magnetic fields induce currents</li>
+  <li><strong>To Electric Circuits</strong>: Understanding of electric charge and fields explains the driving force behind current in circuits</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

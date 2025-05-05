@@ -31,7 +31,7 @@
         line-height: 1.6;
         max-width: 80%;
         margin: 0 auto;
-        padding: 2rem;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
         justify-content: center;
       }
       .markdown-body {
@@ -46,9 +46,8 @@
       <div class="site-header">
         <!-- _includes/header.html -->
 <header class="site-header">
-    <div class="header-content">
-        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
-        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    <div class="header-content" style="background-image: src=(/assets/images/cosmos/cosmos_00001_.png), style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="/" style="color: inherit;">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
         <ul>
@@ -69,7 +68,15 @@
         --text-color: #2c3e50;
         --earth-brown: #8b7355;
         --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
     }
+
+    body {
+        background-color(var(--parchment));
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+    }
+
     .site-header {
         position: fixed;
         top: 0;
@@ -77,19 +84,26 @@
         width: 100%;
         height: 100px;
         z-index: 1000;
-        background: linear-gradient(to left, #cac8c4, #948455);
-        border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
+        background: none; /* Removed gradient background */
+        border-bottom: 3px double var(--earth-brown);
+        border-top: 3px double var(--earth-brown);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         justify-content: space-between;
     }
+
     .header-content {
-        display: block;
-        text-align: center;
+        background-image: url('/assets/images/cosmos/cosmos_00001_.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
         padding: 0.5rem 1rem;
+        height: 100px;
     }
+
     .header-content img {
         max-width: 20%;
         max-height: 60px;
@@ -102,12 +116,14 @@
         font-family: "Libre Baskerville", Georgia, serif;
         font-size: 2rem;
         margin: 0;
-        color: var(--primary-color);
+        color: var(--background-color);
+        text-align: left;
+        padding-left: 20px;
     }
 
     .site-title a {
         text-decoration: none;
-        color: inherit;
+        color: #cecfc9;
     }
 
     .site-subtitle {
@@ -120,21 +136,30 @@
 
     .site-nav {
         width: 100%;
-        display: flex;
+        display: block;
+        background-color: var(--secondary-color);
         justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
+        border-bottom: 2px solid var(--earth-brown);
     }
 
     .site-nav ul {
+        display: flex;
+        justify-content: center;
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 2px 2px;
         display: flex;
         gap: 2rem;
     }
 
     .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
         font-family: "Libre Baskerville", Georgia, serif;
-        color: (var(--background-color));
+        color: var(--text-color);
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
@@ -142,12 +167,13 @@
 
     .site-nav a:hover {
         color: #e9ba74;
+        background-color: #718355;
     }
 </style>
       </div>
     </header>
     
-    <div class="markdown-body">
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
       <h2 id="p3-force-impulse-and-collision-safety">P3 Force, Impulse, and Collision Safety</h2>
 
@@ -167,49 +193,151 @@
 <ul>
   <li>Graphing: Distracted vs. non-distracted driving</li>
   <li><strong>P/T and V/T graphs</strong></li>
-  <li><strong>Home Learning</strong> : Distracted Driver Research</li>
-  <li></li>
+  <li><strong>Home Learning</strong>: Distracted Driver Research</li>
+  <li>Sources of distraction while driving</li>
+  <li>Statistical analysis of reaction time delays</li>
+  <li>Connection between distraction and accident probability</li>
+  <li>Key vocabulary: reaction time, distraction factor, cognitive load</li>
 </ul>
 
 <h3 id="l3---speed-and-collisions-avoidance">L3 - Speed and Collisions (avoidance)</h3>
 <ul>
-  <li>V-T Graphing</li>
-  <li>Calculating Reaction Distances</li>
-  <li>Discussion : Speed Limits</li>
-  <li>Engineering : Engineering Faster Reaction Times (HUD, Cameras, DND Settings on Phones)</li>
-  <li>Home Learning : Speed Limits (reading) (Validity and Reliability?)</li>
+  <li>V-T Graphing
+    <ul>
+      <li>Interpreting velocity-time graphs for vehicles</li>
+      <li>Calculating displacement from v-t graphs (area under curve)</li>
+      <li>Critical points in collision avoidance scenarios</li>
+    </ul>
+  </li>
+  <li>Calculating Reaction Distances
+    <ul>
+      <li>Equation: d = v × t (distance = velocity × reaction time)</li>
+      <li>Braking distance equation: d = v²/(2μg)</li>
+      <li>Total stopping distance = reaction distance + braking distance</li>
+    </ul>
+  </li>
+  <li>Discussion: Speed Limits
+    <ul>
+      <li>Physics-based justifications for speed limits</li>
+      <li>Urban vs. highway considerations</li>
+    </ul>
+  </li>
+  <li>Engineering: Engineering Faster Reaction Times
+    <ul>
+      <li>HUD displays and driver attention</li>
+      <li>Camera systems and machine vision</li>
+      <li>DND Settings on Phones and distraction reduction</li>
+      <li>Key vocabulary: reaction distance, braking distance, coefficient of friction</li>
+    </ul>
+  </li>
+  <li>Home Learning: Speed Limits (reading)
+    <ul>
+      <li>Validity and Reliability of speed limit studies</li>
+      <li>International comparisons and outcomes</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="l4---speed-and-collision-outcomes">L4 - Speed and Collision (outcomes)</h3>
-
 <ul>
-  <li>Analyzing Collision Data</li>
-  <li>YouTube Videos of Green/Blue Carts</li>
-  <li>Collisions A - D</li>
+  <li>Analyzing Collision Data
+    <ul>
+      <li>YouTube Videos of Green/Blue Carts</li>
+      <li>Collisions A - D</li>
+      <li>Data collection techniques</li>
+      <li>Graphical analysis of momentum exchange</li>
+    </ul>
+  </li>
   <li>Force, velocity, and Newton’s Laws
-    <h3 id="l5---mass-speed-force">L5 - Mass, Speed, Force</h3>
+    <ul>
+      <li>Newton’s Second Law: F = ma</li>
+      <li>Force-time graphs during collisions</li>
+      <li>Impulse concept: J = F·Δt</li>
+      <li>Conservation of momentum: m₁v₁ + m₂v₂ = m₁v₁’ + m₂v₂’</li>
+      <li>Key vocabulary: impulse, momentum, collision, conservation</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="l5---mass-speed-force">L5 - Mass, Speed, Force</h3>
+<ul>
+  <li>Relationship between mass and collision outcomes
+    <ul>
+      <li>Equation: KE = ½mv²</li>
+      <li>Momentum equation: p = mv</li>
+      <li>Demonstration of mass effects on collision force</li>
+    </ul>
+  </li>
+  <li>Elastic vs. inelastic collisions
+    <ul>
+      <li>Energy conservation in elastic collisions</li>
+      <li>Energy loss in inelastic collisions</li>
+      <li>Coefficient of restitution: e = (v₂’ - v₁’)/(v₁ - v₂)</li>
+    </ul>
+  </li>
+  <li>Safety features in vehicle design
+    <ul>
+      <li>Crumple zones and impulse extension</li>
+      <li>Airbags and force distribution</li>
+      <li>Seatbelts and impulse reduction</li>
+      <li>Key vocabulary: kinetic energy, elastic collision, inelastic collision, crumple zone</li>
+    </ul>
   </li>
 </ul>
 
 <h3 id="l6---lab---momentum-and-impulse-carts">L6 - Lab - Momentum and Impulse Carts</h3>
+<ul>
+  <li>Experimental design
+    <ul>
+      <li>Control variables</li>
+      <li>Data collection methods</li>
+      <li>Error analysis</li>
+    </ul>
+  </li>
+  <li>Laboratory procedures
+    <ul>
+      <li>Cart collision setups (1D collisions)</li>
+      <li>Photogates and timing systems</li>
+      <li>Mass variations</li>
+    </ul>
+  </li>
+  <li>Calculations and analysis
+    <ul>
+      <li>Pre-collision and post-collision momentum</li>
+      <li>Impulse calculation: J = Δp</li>
+      <li>Conservation verification</li>
+      <li>Key vocabulary: experimental error, significant figures, uncertainty, verification</li>
+    </ul>
+  </li>
+</ul>
 
 <h3 id="l7---assessment---vehicle-stopping-times">L7 - Assessment - Vehicle Stopping Times</h3>
+<ul>
+  <li>Comprehensive problem solving
+    <ul>
+      <li>Multi-step problems combining reaction time, braking distance, momentum, and impulse</li>
+      <li>Real-world scenario analysis</li>
+      <li>Engineering design challenge</li>
+    </ul>
+  </li>
+  <li>Performance task
+    <ul>
+      <li>Vehicle safety feature design</li>
+      <li>Mathematical modeling of collision scenarios</li>
+      <li>Evidence-based argumentation</li>
+    </ul>
+  </li>
+  <li>Key formulas for assessment:
+    <ul>
+      <li>d = vt + ½at²</li>
+      <li>F = ma</li>
+      <li>p = mv</li>
+      <li>J = FΔt = Δp</li>
+      <li>KE = ½mv²</li>
+    </ul>
+  </li>
+</ul>
 
-<h3 id="l8---modern-safety-features">L8 - Modern Safety Features</h3>
-
-<h2 id="vehicle-safety-project">Vehicle Safety Project</h2>
-
-<p>### L9 - Force, Time, Safety</p>
-
-<p>### L10 - Crumple Zones and Impulse</p>
-
-<p>### L11 - Vehicle Mass</p>
-
-<p>### L12 Vehicle Size</p>
-
-<p>### L13 Designing the “Dream Car”</p>
-
-<p>### L14 Transfer Task - Pedestrian Safety Solutions</p>
 
     
     </div>

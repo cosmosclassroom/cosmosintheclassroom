@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Unit 7 Waves and Harmonics | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content" style="background-image: src=(/assets/images/cosmos/cosmos_00001_.png), style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="/" style="color: inherit;">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+            <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+            <li><a href="/src/ref/ref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    :root {
+        --primary-color: #2c3e50; /* Nice blue primary */
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --background-color: #cecfc9;
+        --text-color: #2c3e50;
+        --earth-brown: #8b7355;
+        --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
+    }
+
+    body {
+        background-color(var(--parchment));
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+    }
+
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        background: none; /* Removed gradient background */
+        border-bottom: 3px double var(--earth-brown);
+        border-top: 3px double var(--earth-brown);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        background-image: url('/assets/images/cosmos/cosmos_00001_.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 100px;
+    }
+
+    .header-content img {
+        max-width: 20%;
+        max-height: 60px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--background-color);
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: #cecfc9;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: block;
+        background-color: var(--secondary-color);
+        justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
+        border-bottom: 2px solid var(--earth-brown);
+    }
+
+    .site-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 2px 2px;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #e9ba74;
+        background-color: #718355;
+    }
+</style>
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h2 id="unit-7--waves-and-harmonics">Unit 7 | Waves and Harmonics</h2>
+
+<style>
+    h3 {
+        border-bottom: 1px black solid;
+    }
+</style>
+
+<h3 id="81-wave-particle-energies">8.1 Wave-Particle Energies</h3>
+
+<p>Light exhibits both wave and particle properties, a concept known as wave-particle duality. Let’s explore these fascinating properties:</p>
+
+<h4 id="electromagnetic-waves-and-photons">Electromagnetic Waves and Photons</h4>
+<ul>
+  <li>Light travels as electromagnetic waves with electric and magnetic fields</li>
+  <li>These waves can also behave as discrete particles called photons</li>
+  <li>Each photon carries a specific amount of energy</li>
+</ul>
+
+<h4 id="wave-particle-duality">Wave-Particle Duality</h4>
+<ul>
+  <li>Light demonstrates wave properties like diffraction and interference</li>
+  <li>In certain experiments, light acts as particles (photons)</li>
+  <li>Einstein used this duality to explain the photoelectric effect</li>
+</ul>
+
+<h4 id="energy-quantization">Energy Quantization</h4>
+<ul>
+  <li>Energy of electromagnetic radiation comes in discrete packets</li>
+  <li>Energy (E) of a photon relates to frequency (f): E = hf</li>
+  <li>Higher frequencies mean higher energy photons</li>
+</ul>
+
+<h4 id="plancks-constant-and-photoelectric-effect">Planck’s Constant and Photoelectric Effect</h4>
+<ul>
+  <li>Planck’s constant (h) ≈ 6.626 × 10^-34 J·s</li>
+  <li>Photoelectric effect: light hits metal, electrons are ejected</li>
+  <li>Only photons above threshold frequency can eject electrons</li>
+  <li>Einstein won Nobel Prize for explaining this phenomenon</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>E = hf (photon energy)</li>
+  <li>λf = c (wave equation)</li>
+  <li>KEmax = hf - φ (photoelectric effect)</li>
+</ul>
+
+<h3 id="82-electric-charges-and-fields">8.2 Electric Charges and Fields</h3>
+
+<h4 id="fundamental-concepts">Fundamental Concepts</h4>
+<ul>
+  <li>Electric charge is a fundamental property of matter</li>
+  <li>Two types: positive and negative charges</li>
+  <li>Like charges repel, opposite charges attract</li>
+  <li>Charge is conserved in isolated systems</li>
+</ul>
+
+<h4 id="coulombs-law">Coulomb’s Law</h4>
+<ul>
+  <li>Describes force between charged particles</li>
+  <li>Force proportional to product of charges</li>
+  <li>Inversely proportional to distance squared</li>
+  <li>F = k(q₁q₂)/r²</li>
+  <li>k is Coulomb’s constant ≈ 8.99 × 10⁹ N⋅m²/C²</li>
+</ul>
+
+<h4 id="electric-fields">Electric Fields</h4>
+<ul>
+  <li>Region where electric forces act</li>
+  <li>Field lines show direction of force</li>
+  <li>Field strength proportional to line density</li>
+  <li>Points from positive to negative charge</li>
+  <li>E = F/q defines field strength</li>
+</ul>
+
+<h4 id="gausss-law">Gauss’s Law</h4>
+<ul>
+  <li>Relates electric flux to enclosed charge</li>
+  <li>Flux through closed surface</li>
+  <li>∮E⋅dA = Q/ε₀</li>
+  <li>Useful for symmetric charge distributions</li>
+</ul>
+
+<h4 id="electric-potential">Electric Potential</h4>
+<ul>
+  <li>Work done per unit charge</li>
+  <li>Potential difference creates electric fields</li>
+  <li>Measured in volts (V)</li>
+  <li>V = W/q relationship</li>
+  <li>Conservative force field property</li>
+</ul>
+
+<h3 id="83-electromagnetic-power-and-energy">8.3 Electromagnetic Power and Energy</h3>
+
+<h4 id="electromagnetic-induction">Electromagnetic Induction</h4>
+<ul>
+  <li>Moving magnets create electric fields</li>
+  <li>Changing magnetic fields induce current flow</li>
+  <li>Faraday’s law: EMF = -N(ΔΦ/Δt)</li>
+  <li>Lenz’s law determines current direction</li>
+</ul>
+
+<h4 id="power-transmission">Power Transmission</h4>
+<ul>
+  <li>Electric power = voltage × current</li>
+  <li>Power loss in transmission lines</li>
+  <li>Step-up transformers increase voltage</li>
+  <li>High voltage reduces current and power loss</li>
+  <li>P = I²R relationship for power loss</li>
+</ul>
+
+<h4 id="energy-in-fields">Energy in Fields</h4>
+<ul>
+  <li>Both electric and magnetic fields store energy</li>
+  <li>Electric field energy: UE = ½CV²</li>
+  <li>Magnetic field energy: UB = ½LI²</li>
+  <li>Energy density proportional to field strength squared</li>
+</ul>
+
+<h4 id="maxwells-equations">Maxwell’s Equations</h4>
+<ul>
+  <li>Four fundamental equations</li>
+  <li>Describe all electromagnetic phenomena</li>
+  <li>Predict electromagnetic waves</li>
+  <li>Unify electricity and magnetism</li>
+  <li>Lead to wave equation c = 1/√(ε₀μ₀)</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>P = VI (power)</li>
+  <li>EMF = -N(ΔΦ/Δt) (Faraday’s law)</li>
+  <li>P = I²R (power loss)</li>
+</ul>
+
+<h2 id="unit-9--electricity">Unit 9 | Electricity</h2>
+
+<h3 id="91-electrostatics">9.1 Electrostatics</h3>
+
+<h4 id="static-electricity-fundamentals">Static Electricity Fundamentals</h4>
+<ul>
+  <li>Electric charge is a fundamental property of matter</li>
+  <li>Objects can become charged by friction or contact</li>
+  <li>Charge transfer occurs between materials</li>
+  <li>Conductors allow charge flow, insulators restrict it</li>
+</ul>
+
+<h4 id="charge-distribution">Charge Distribution</h4>
+<ul>
+  <li>Like charges repel, opposite charges attract</li>
+  <li>Charges redistribute to minimize potential energy</li>
+  <li>Conductors hold charge on surface</li>
+  <li>Sharp points concentrate charge (lightning rods)</li>
+  <li>Charge density varies with surface geometry</li>
+</ul>
+
+<h4 id="electric-potential-difference">Electric Potential Difference</h4>
+<ul>
+  <li>Potential difference measured in volts</li>
+  <li>Work per unit charge between points</li>
+  <li>Higher potential to lower potential flow</li>
+  <li>Earth typically used as reference (ground)</li>
+  <li>Electric field lines perpendicular to equipotential surfaces</li>
+</ul>
+
+<h4 id="capacitance">Capacitance</h4>
+<ul>
+  <li>Ability to store electric charge</li>
+  <li>Measured in farads (F)</li>
+  <li>C = Q/V relationship</li>
+  <li>Parallel plate capacitor basics</li>
+  <li>Energy storage: U = ½CV²</li>
+  <li>Common applications in electronics</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>C = Q/V (capacitance)</li>
+  <li>E = F/q (electric field)</li>
+  <li>V = W/q (potential difference)
+    <h3 id="92-electric-circuits">9.2 Electric Circuits</h3>
+  </li>
+</ul>
+
+<h4 id="current-and-voltage">Current and Voltage</h4>
+<ul>
+  <li>Electric current is the flow of charge through a conductor</li>
+  <li>Current (I) measured in amperes (A)</li>
+  <li>Voltage (V) is electric potential difference</li>
+  <li>Conventional current flows from positive to negative</li>
+  <li>Current density depends on conductor cross-section</li>
+</ul>
+
+<h4 id="series-and-parallel-circuits">Series and Parallel Circuits</h4>
+<ul>
+  <li>Series: components connected end-to-end
+    <ul>
+      <li>Same current through all components</li>
+      <li>Voltage divides across components</li>
+      <li>Total resistance: Rtotal = R₁ + R₂ + R₃</li>
+    </ul>
+  </li>
+  <li>Parallel: components connected across same points
+    <ul>
+      <li>Same voltage across components</li>
+      <li>Current divides through branches</li>
+      <li>Total resistance: 1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="resistance-and-ohms-law">Resistance and Ohm’s Law</h4>
+<ul>
+  <li>Resistance (R) opposes current flow</li>
+  <li>Measured in ohms (Ω)</li>
+  <li>Ohm’s law: V = IR</li>
+  <li>Temperature affects resistance</li>
+  <li>Resistivity depends on material properties</li>
+</ul>
+
+<h4 id="kirchhoffs-laws">Kirchhoff’s Laws</h4>
+<ul>
+  <li>Current law (KCL): sum of currents at junction = 0</li>
+  <li>Voltage law (KVL): sum of voltages around loop = 0</li>
+  <li>Used to analyze complex circuits</li>
+  <li>Conservation of charge and energy principles</li>
+</ul>
+
+<h4 id="power-and-energy">Power and Energy</h4>
+<ul>
+  <li>Electric power: P = VI = I²R = V²/R</li>
+  <li>Energy transferred: E = Pt</li>
+  <li>Power measured in watts (W)</li>
+  <li>Energy measured in joules (J)</li>
+  <li>Heat generation in resistors</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>V = IR (Ohm’s law)</li>
+  <li>P = VI (power)</li>
+  <li>Series resistance: Rtotal = R₁ + R₂ + R₃</li>
+  <li>Parallel resistance: 1/Rtotal = 1/R₁ + 1/R₂ + 1/R₃</li>
+</ul>
+
+<h2 id="unit-10--optics">Unit 10 | Optics</h2>
+
+<h3 id="101-geometric-optics">10.1 Geometric Optics</h3>
+
+<h4 id="reflection-and-refraction">Reflection and Refraction</h4>
+<ul>
+  <li>Light rays travel in straight lines</li>
+  <li>Law of reflection: angle of incidence = angle of reflection</li>
+  <li>Refraction occurs when light changes medium</li>
+  <li>Snell’s law: n₁sin(θ₁) = n₂sin(θ₂)</li>
+  <li>Total internal reflection when angle exceeds critical angle</li>
+</ul>
+
+<h4 id="mirrors">Mirrors</h4>
+<ul>
+  <li>Plane mirrors form virtual images</li>
+  <li>Curved mirrors: concave and convex</li>
+  <li>Focal point where parallel rays converge</li>
+  <li>Mirror equation: 1/f = 1/p + 1/i</li>
+  <li>Ray diagrams show image formation</li>
+</ul>
+
+<h4 id="lenses">Lenses</h4>
+<ul>
+  <li>Converging (convex) focuses light</li>
+  <li>Diverging (concave) spreads light</li>
+  <li>Focal length depends on curvature</li>
+  <li>Lens equation: 1/f = 1/p + 1/i</li>
+  <li>Magnification: m = -i/p</li>
+</ul>
+
+<h4 id="optical-instruments">Optical Instruments</h4>
+<ul>
+  <li>Human eye uses lens and retina</li>
+  <li>Microscopes magnify tiny objects</li>
+  <li>Telescopes gather distant light</li>
+  <li>Cameras focus light on sensors</li>
+  <li>Fiber optics use total internal reflection</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>n₁sin(θ₁) = n₂sin(θ₂) (Snell’s law)</li>
+  <li>1/f = 1/p + 1/i (mirror/lens equation)</li>
+  <li>m = -i/p (magnification)</li>
+</ul>
+
+<h3 id="102-wave-optics">10.2 Wave Optics</h3>
+
+<h4 id="wave-nature-of-light">Wave Nature of Light</h4>
+<ul>
+  <li>Light propagates as electromagnetic waves</li>
+  <li>Wavelengths of visible light: 380-700 nanometers</li>
+  <li>Each color has distinct wavelength</li>
+  <li>White light contains all visible wavelengths</li>
+  <li>Speed of light in vacuum: c ≈ 3 × 10⁸ m/s</li>
+</ul>
+
+<h4 id="interference">Interference</h4>
+<ul>
+  <li>Waves combine through superposition</li>
+  <li>Constructive interference: waves add together</li>
+  <li>Destructive interference: waves cancel out</li>
+  <li>Double-slit experiment shows wave nature</li>
+  <li>Thin film interference creates colorful patterns</li>
+</ul>
+
+<h4 id="diffraction">Diffraction</h4>
+<ul>
+  <li>Light bends around obstacles</li>
+  <li>Occurs through small openings</li>
+  <li>Single-slit diffraction pattern</li>
+  <li>Resolution limited by diffraction</li>
+  <li>Diffraction gratings separate wavelengths</li>
+</ul>
+
+<h4 id="polarization">Polarization</h4>
+<ul>
+  <li>Light waves oscillate perpendicular to travel</li>
+  <li>Polarizing filters select one oscillation direction</li>
+  <li>Malus’s law: I = I₀cos²θ</li>
+  <li>LCD screens use polarization</li>
+  <li>Polarized sunglasses reduce glare</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>c = λf (wave equation)</li>
+  <li>d sin θ = mλ (diffraction grating)</li>
+  <li>I = I₀cos²θ (Malus’s law)</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

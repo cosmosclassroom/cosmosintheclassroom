@@ -1,7 +1,7 @@
 <!-- _includes/header.html -->
 <header class="site-header">
-    <div class="header-content" style="background-image: url('{{ "/assets/images/cosmos/cosmos_00001_.png" | relative_url }}'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
-        <h1 class="site-title" style="color: #cecfc9; text-align: left; padding-left: 20px;"><a href="{{ '/' | relative_url }}" style="color: inherit;">Cosmos in the Classroom</a></h1>
+    <div class="header-content" style="background-image: src=(/assets/images/cosmos/cosmos_00001_.png), style="background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="{{ '/' | relative_url }}" style="color: inherit;">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav">
         <ul>
@@ -22,9 +22,12 @@
         --text-color: #2c3e50;
         --earth-brown: #8b7355;
         --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
     }
 
     body {
+        background-color(var(--parchment));
         padding-top: 110px; /* Add padding to push content below the fixed header */
     }
 
@@ -39,7 +42,7 @@
         border-bottom: 3px double var(--earth-brown);
         border-top: 3px double var(--earth-brown);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
         justify-content: space-between;
     }
@@ -87,22 +90,30 @@
 
     .site-nav {
         width: 100%;
-        display: flex;
+        display: block;
+        background-color: var(--secondary-color);
         justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
         border-bottom: 2px solid var(--earth-brown);
     }
 
     .site-nav ul {
+        display: flex;
+        justify-content: center;
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 2px 2px;
         display: flex;
         gap: 2rem;
     }
 
     .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
         font-family: "Libre Baskerville", Georgia, serif;
-        color: var(--background-color);
+        color: var(--text-color);
         text-decoration: none;
         font-size: 1.1rem;
         transition: color 0.2s;
@@ -110,5 +121,6 @@
 
     .site-nav a:hover {
         color: #e9ba74;
+        background-color: #718355;
     }
 </style>
