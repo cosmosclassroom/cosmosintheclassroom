@@ -72,13 +72,18 @@ toc: true
 ## Unit 9 | Electricity
 
 ### 9.1 Electrostatics
+
+[Slides 9.1 Electrostatics](../../slides/hlec_9.1_electrostatics.html)
+
 - Static electricity principles
 - Charge distribution
 - Electric potential difference
 - Capacitance
 
 ### 9.2 Electric Circuits
-- 
+  
+  [Slides 9.2 Electric Currents](../../slides/hlec_9.2-electricity-currents.html)
+
 - Current and voltage
 - Series and parallel circuits  
 - Resistance and Ohm's law
