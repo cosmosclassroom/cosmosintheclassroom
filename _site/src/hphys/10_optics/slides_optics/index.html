@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 2rem;
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content">
+        <!-- <img src="../assets/images/aristotle.png" alt="Cosmos Header Image"/> -->
+        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+            <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+            <li><a href="/src/ref/ref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    :root {
+        --primary-color: #2c3e50; /* Nice blue primary */
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --background-color: #cecfc9;
+        --text-color: #2c3e50;
+        --earth-brown: #8b7355;
+        --earth-green: #718355;
+    }
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        background: linear-gradient(to left, #cac8c4, #948455);
+        border-bottom: 3px double #8b7355;
+        border-top: 3px double #8b7355;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .header-content {
+        display: block;
+        text-align: center;
+        padding: 0.5rem 1rem;
+    }
+    .header-content img {
+        max-width: 20%;
+        max-height: 60px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--primary-color);
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: (var(--background-color));
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #e9ba74;
+    }
+</style>
+      </div>
+    </header>
+    
+    <div class="markdown-body">
+    
+      <!-- Slide 1 -->
+<h1 id="optics-waves-light-and-energy">Optics: Waves, Light, and Energy</h1>
+<h2 id="a-two-week-exploration-of-fundamental-concepts">A Two-Week Exploration of Fundamental Concepts</h2>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Dispersive_Prism_Illustration_by_Spigget.jpg/640px-Dispersive_Prism_Illustration_by_Spigget.jpg" /></p>
+</div>
+
+<p class="reference">Image: Dispersive prism illustration (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 2 -->
+<h1 id="course-overview">Course Overview</h1>
+
+<ul>
+  <li><strong>Week 1</strong>: Wave Nature of Light, Reflection, Refraction, Interference</li>
+  <li><strong>Week 2</strong>: Diffraction, Lenses, Color, Human Eye</li>
+  <li><strong>Labs</strong>: Wave Properties, Reflection/Refraction, Lenses &amp; Color</li>
+  <li><strong>Assessments</strong>: 1 Quiz, 1 Midterm, 1 Final Test</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Light_dispersion_conceptual_waves.gif/640px-Light_dispersion_conceptual_waves.gif" /></p>
+</div>
+
+<p class="reference">Image: Light dispersion concept (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 3 -->
+<h1 id="day-1-introduction-to-light-waves">Day 1: Introduction to Light Waves</h1>
+
+<h2 id="wave-properties-of-light">Wave Properties of Light</h2>
+
+<ul>
+  <li>Light as an electromagnetic wave</li>
+  <li>Wavelength, frequency, and amplitude</li>
+  <li>Speed of light: $c = 3.00 \times 10^8 \text{ m/s}$</li>
+  <li>Wave relation: $c = \lambda f$</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Electromagnetic_spectrum-en.svg/640px-Electromagnetic_spectrum-en.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Electromagnetic spectrum (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 4 -->
+<h1 id="the-electromagnetic-spectrum">The Electromagnetic Spectrum</h1>
+
+<h2 id="beyond-what-we-can-see">Beyond What We Can See</h2>
+
+<div class="columns">
+  <div>
+
+    <ul>
+      <li>Visible light is a small part of the EM spectrum</li>
+      <li>Radio waves to gamma rays</li>
+      <li>All travel at speed of light in vacuum</li>
+      <li>Differ only in wavelength and frequency</li>
+    </ul>
+
+  </div>
+  <div class="image-container">
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/EM_Spectrum_Properties_edit.svg/640px-EM_Spectrum_Properties_edit.svg.png" /></p>
+  </div>
+</div>
+
+<p class="reference">Image: EM spectrum properties (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 5 -->
+<h1 id="light-energy">Light Energy</h1>
+
+<ul>
+  <li>Light carries energy in discrete packets called <strong>photons</strong></li>
+  <li>Photon energy depends on frequency: $E = hf = \frac{hc}{\lambda}$</li>
+  <li>Planck’s constant: $h = 6.63 \times 10^{-34} \text{ J·s}$</li>
+  <li>Intensity follows inverse square law: $I \propto \frac{1}{r^2}$</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Photoelectric_effect.svg/640px-Photoelectric_effect.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Photoelectric effect (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 6 -->
+<h1 id="wave-particle-duality">Wave-Particle Duality</h1>
+
+<ul>
+  <li>Light exhibits both wave and particle properties</li>
+  <li>Wave model explains interference and diffraction</li>
+  <li>Particle model explains photoelectric effect</li>
+  <li>Neither model alone is complete!</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Wave-particle_duality.svg/640px-Wave-particle_duality.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Wave-particle duality concept (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 7 -->
+<h1 id="day-2-reflection-of-light">Day 2: Reflection of Light</h1>
+
+<h2 id="law-of-reflection">Law of Reflection</h2>
+
+<ul>
+  <li>Angle of incidence equals angle of reflection</li>
+  <li>$\theta_i = \theta_r$</li>
+  <li>Incident ray, reflected ray, and normal all lie in same plane</li>
+  <li>Applies to all waves (light, sound, water)</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Law_of_reflection.svg/640px-Law_of_reflection.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Law of reflection (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 8 -->
+<h1 id="types-of-reflection">Types of Reflection</h1>
+
+<div class="columns">
+  <div>
+
+    <h3 id="specular-reflection">Specular Reflection</h3>
+    <ul>
+      <li>Smooth surfaces (mirrors)</li>
+      <li>Parallel rays remain parallel</li>
+      <li>Creates clear images</li>
+    </ul>
+
+    <h3 id="diffuse-reflection">Diffuse Reflection</h3>
+    <ul>
+      <li>Rough surfaces</li>
+      <li>Rays scattered in various directions</li>
+      <li>No clear image formation</li>
+    </ul>
+
+  </div>
+  <div class="image-container">
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Reflection_types.svg/640px-Reflection_types.svg.png" /></p>
+  </div>
+</div>
+
+<p class="reference">Image: Types of reflection (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 9 -->
+<h1 id="plane-mirrors">Plane Mirrors</h1>
+
+<ul>
+  <li>Virtual images: appear to be behind mirror</li>
+  <li>Same distance behind mirror as object is in front</li>
+  <li>Laterally inverted (left becomes right)</li>
+  <li>Same size as object (magnification = 1)</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Plane_mirror_diagram.svg/640px-Plane_mirror_diagram.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Plane mirror diagram (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 10 -->
+<h1 id="day-3-refraction-of-light">Day 3: Refraction of Light</h1>
+
+<h2 id="snells-law">Snell’s Law</h2>
+
+<ul>
+  <li>Light bends when passing between media</li>
+  <li>$n_1 \sin \theta_1 = n_2 \sin \theta_2$</li>
+  <li>$n$ = index of refraction = $\frac{c}{v}$</li>
+  <li>Caused by change in wave speed</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Snells_law2.svg/640px-Snells_law2.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Snell’s Law (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 11 -->
+<h1 id="index-of-refraction">Index of Refraction</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Medium</th>
+      <th style="text-align: center">Index of Refraction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">Vacuum</td>
+      <td style="text-align: center">1.00000</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Air</td>
+      <td style="text-align: center">1.00029</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Water</td>
+      <td style="text-align: center">1.33</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Glass</td>
+      <td style="text-align: center">1.5 - 1.9</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Diamond</td>
+      <td style="text-align: center">2.42</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Light_refraction.jpg/640px-Light_refraction.jpg" /></p>
+</div>
+
+<p class="reference">Image: Refraction in water (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 12 -->
+<h1 id="total-internal-reflection">Total Internal Reflection</h1>
+
+<ul>
+  <li>Occurs when light travels from higher to lower index medium</li>
+  <li>Critical angle: $\sin \theta_c = \frac{n_2}{n_1}$ (where $n_1 &gt; n_2$)</li>
+  <li>If angle of incidence exceeds critical angle, all light is reflected</li>
+  <li>Applications: fiber optics, prism binoculars</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Total_internal_reflection_of_a_laser_beam.jpg/640px-Total_internal_reflection_of_a_laser_beam.jpg" /></p>
+</div>
+
+<p class="reference">Image: Total internal reflection of laser beam (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 13 -->
+<h1 id="day-4-lab---reflection-and-refraction">Day 4: Lab - Reflection and Refraction</h1>
+
+<h2 id="activities">Activities:</h2>
+<ol>
+  <li>Verify law of reflection using laser and mirror</li>
+  <li>Measure index of refraction of various materials</li>
+  <li>Observe total internal reflection and determine critical angle</li>
+  <li>Problem-solving workshop</li>
+</ol>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/RefractionReflectionLaser.jpg/640px-RefractionReflectionLaser.jpg" /></p>
+</div>
+
+<p class="reference">Image: Refraction and reflection demonstration (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 14 -->
+<h1 id="day-5-interference-of-light">Day 5: Interference of Light</h1>
+
+<h2 id="wave-superposition">Wave Superposition</h2>
+
+<ul>
+  <li>When waves meet, their displacements add algebraically</li>
+  <li>Constructive interference: waves in phase, amplitudes add</li>
+  <li>Destructive interference: waves out of phase, amplitudes subtract</li>
+  <li>Proof of wave nature of light</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Wave_interference.svg/640px-Wave_interference.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Wave interference (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 15 -->
+<h1 id="youngs-double-slit-experiment">Young’s Double-Slit Experiment</h1>
+
+<ul>
+  <li>1801: Thomas Young proved light behaves as a wave</li>
+  <li>Coherent light through two narrow slits</li>
+  <li>Interference pattern of bright and dark bands</li>
+  <li>Spacing depends on wavelength, slit separation, and screen distance</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Young%27s_experiment_with_single_slit.svg/640px-Young%27s_experiment_with_single_slit.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Young’s double-slit experiment (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 16 -->
+<h1 id="double-slit-interference-formulas">Double-Slit Interference Formulas</h1>
+
+<ul>
+  <li>Bright fringes (constructive): $d \sin \theta = m\lambda$ (m = 0, ±1, ±2, …)</li>
+  <li>Dark fringes (destructive): $d \sin \theta = (m+\frac{1}{2})\lambda$ (m = 0, ±1, ±2, …)</li>
+  <li>Fringe spacing: $\Delta y = \frac{L\lambda}{d}$</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Double-slit_experiment_results_Tanamura_2.jpg/640px-Double-slit_experiment_results_Tanamura_2.jpg" /></p>
+</div>
+
+<p class="reference">Image: Double-slit experiment results (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 17 -->
+<h1 id="day-6-diffraction-of-light">Day 6: Diffraction of Light</h1>
+
+<h2 id="what-is-diffraction">What is Diffraction?</h2>
+
+<ul>
+  <li>Bending of waves around obstacles or through apertures</li>
+  <li>Occurs with all waves (water, sound, light)</li>
+  <li>More pronounced when obstacle/aperture size ≈ wavelength</li>
+  <li>Another confirmation of wave nature of light</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Diffraction_pattern_of_a_small_circular_aperture.jpg/640px-Diffraction_pattern_of_a_small_circular_aperture.jpg" /></p>
+</div>
+
+<p class="reference">Image: Diffraction pattern of circular aperture (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 18 -->
+<h1 id="single-slit-diffraction">Single-Slit Diffraction</h1>
+
+<ul>
+  <li>Light spreads out after passing through narrow slit</li>
+  <li>Pattern of bright and dark bands</li>
+  <li>Central bright maximum is twice as wide as others</li>
+  <li>Minima occur at: $a \sin \theta = m\lambda$ (m = ±1, ±2, …)</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Single_slit_and_intensity.svg/640px-Single_slit_and_intensity.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Single-slit diffraction pattern (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 19 -->
+<h1 id="resolution-limits">Resolution Limits</h1>
+
+<ul>
+  <li>Diffraction limits the resolution of optical instruments</li>
+  <li>Rayleigh criterion: $\sin \theta = 1.22 \frac{\lambda}{D}$</li>
+  <li>Minimum angle to resolve two points</li>
+  <li>Explains why telescopes need large apertures for detail</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Airy_disk_spacing_near_Rayleigh_criterion.svg/640px-Airy_disk_spacing_near_Rayleigh_criterion.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Airy disk spacing near Rayleigh criterion (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 20 -->
+<h1 id="day-7-lab---wave-properties">Day 7: Lab - Wave Properties</h1>
+
+<h2 id="activities-1">Activities:</h2>
+<ol>
+  <li>Observe interference patterns with Young’s double-slit setup</li>
+  <li>Measure wavelength of laser light using diffraction grating</li>
+  <li>Investigate factors affecting diffraction pattern</li>
+  <li>Document patterns with digital photography</li>
+</ol>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Wave_Interference_4Lambda_Diffraction.png/640px-Wave_Interference_4Lambda_Diffraction.png" /></p>
+</div>
+
+<p class="reference">Image: Wave interference diffraction (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 21 -->
+<h1 id="day-8-thin-lenses---part-1">Day 8: Thin Lenses - Part 1</h1>
+
+<h2 id="converging-lenses">Converging Lenses</h2>
+
+<ul>
+  <li>Thicker in center than at edges</li>
+  <li>Parallel rays converge to focal point</li>
+  <li>Focal length is positive</li>
+  <li>Can form real or virtual images</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Converging_lens_ray_diagram.svg/640px-Converging_lens_ray_diagram.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Converging lens ray diagram (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 22 -->
+<h1 id="ray-diagrams">Ray Diagrams</h1>
+
+<h2 id="three-principal-rays">Three Principal Rays</h2>
+<ol>
+  <li>Ray parallel to axis → through focal point</li>
+  <li>Ray through center → no deflection</li>
+  <li>Ray through focal point → parallel to axis</li>
+</ol>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Lens3.svg/640px-Lens3.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Principal rays for converging lens (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 23 -->
+<h1 id="day-9-thin-lenses---part-2">Day 9: Thin Lenses - Part 2</h1>
+
+<h2 id="lens-equation-and-magnification">Lens Equation and Magnification</h2>
+
+<ul>
+  <li>Thin lens equation: $\frac{1}{s} + \frac{1}{s’} = \frac{1}{f}$</li>
+  <li>Magnification: $m = \frac{h’}{h} = -\frac{s’}{s}$</li>
+  <li>Sign conventions are crucial!</li>
+  <li>Real image: inverted, can project on screen</li>
+  <li>Virtual image: upright, cannot project on screen</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Lens_focal_length.svg/640px-Lens_focal_length.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Lens focal length (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 24 -->
+<h1 id="diverging-lenses">Diverging Lenses</h1>
+
+<ul>
+  <li>Thinner in center than at edges</li>
+  <li>Parallel rays diverge from focal point</li>
+  <li>Focal length is negative</li>
+  <li>Always forms virtual, upright, reduced images</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Lens15.svg/640px-Lens15.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Diverging lens ray diagram (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 25 -->
+<h1 id="day-10-color-and-dispersion">Day 10: Color and Dispersion</h1>
+
+<h2 id="color-as-wavelength">Color as Wavelength</h2>
+
+<ul>
+  <li>Visible spectrum: ~380-750 nm</li>
+  <li>Violet (~400 nm) to red (~700 nm)</li>
+  <li>Objects appear colored by reflecting/transmitting certain wavelengths</li>
+  <li>White light contains all visible wavelengths</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Linear_visible_spectrum.svg/640px-Linear_visible_spectrum.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Visible light spectrum (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 26 -->
+<h1 id="dispersion">Dispersion</h1>
+
+<ul>
+  <li>Refractive index varies with wavelength</li>
+  <li>Short wavelengths (blue) refract more than long wavelengths (red)</li>
+  <li>Explains prism splitting white light into spectrum</li>
+  <li>Causes chromatic aberration in lenses</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Dispersive_prism.svg/640px-Dispersive_prism.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Dispersive prism (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 27 -->
+<h1 id="rainbow-formation">Rainbow Formation</h1>
+
+<ul>
+  <li>Natural example of dispersion</li>
+  <li>Primary rainbow: single reflection inside droplet</li>
+  <li>Secondary rainbow: double reflection inside droplet</li>
+  <li>Always appears in direction opposite the sun</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Double-alaskan-rainbow.jpg/640px-Double-alaskan-rainbow.jpg" /></p>
+</div>
+
+<p class="reference">Image: Double rainbow (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 28 -->
+<h1 id="day-11-lab---lenses-and-color">Day 11: Lab - Lenses and Color</h1>
+
+<h2 id="activities-2">Activities:</h2>
+<ol>
+  <li>Determine focal length of various lenses</li>
+  <li>Create and measure real and virtual images</li>
+  <li>Observe chromatic dispersion with prisms</li>
+  <li>Explore color addition and subtraction</li>
+</ol>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/RGB_color_solid_cube.png/640px-RGB_color_solid_cube.png" /></p>
+</div>
+
+<p class="reference">Image: RGB color solid cube (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 29 -->
+<h1 id="day-12-the-human-eye">Day 12: The Human Eye</h1>
+
+<h2 id="structure-and-function">Structure and Function</h2>
+
+<ul>
+  <li>Cornea and lens focus light</li>
+  <li>Iris controls amount of light</li>
+  <li>Retina contains photoreceptors (rods and cones)</li>
+  <li>Accommodation: changing lens shape to focus</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Schematic_diagram_of_the_human_eye_en.svg/640px-Schematic_diagram_of_the_human_eye_en.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Schematic diagram of human eye (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 30 -->
+<h1 id="vision-defects-and-corrections">Vision Defects and Corrections</h1>
+
+<div class="columns">
+  <div>
+
+    <h3 id="myopia-nearsightedness">Myopia (Nearsightedness)</h3>
+    <ul>
+      <li>Images focus in front of retina</li>
+      <li>Corrected with diverging lenses</li>
+    </ul>
+
+    <h3 id="hyperopia-farsightedness">Hyperopia (Farsightedness)</h3>
+    <ul>
+      <li>Images focus behind retina</li>
+      <li>Corrected with converging lenses</li>
+    </ul>
+
+  </div>
+  <div class="image-container">
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Myopia_and_Hyperopia.svg/640px-Myopia_and_Hyperopia.svg.png" /></p>
+  </div>
+</div>
+
+<p class="reference">Image: Myopia and hyperopia (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 31 -->
+<h1 id="course-review">Course Review</h1>
+
+<h2 id="key-concepts">Key Concepts:</h2>
+<ul>
+  <li>Light as electromagnetic wave with particle properties</li>
+  <li>Reflection and refraction of light rays</li>
+  <li>Interference and diffraction as wave phenomena</li>
+  <li>Lenses and image formation</li>
+  <li>Color perception and dispersion</li>
+</ul>
+
+<div class="image-container">
+  <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Optics_overview.svg/640px-Optics_overview.svg.png" /></p>
+</div>
+
+<p class="reference">Image: Optics overview (Wikimedia Commons)</p>
+
+<hr />
+
+<!-- Slide 32 -->
+<h1 id="key-equations">Key Equations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phenomenon</th>
+      <th>Equation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Wave relation</td>
+      <td>$c = \lambda f$</td>
+    </tr>
+    <tr>
+      <td>Law of reflection</td>
+      <td>$\theta_i = \theta_r$</td>
+    </tr>
+    <tr>
+      <td>Snell’s law</td>
+      <td>$n_1 \sin \theta_1 = n_2 \sin \theta_2$</td>
+    </tr>
+    <tr>
+      <td>Double-slit interference</td>
+      <td>$d \sin \theta = m\lambda$</td>
+    </tr>
+    <tr>
+      <td>Single-slit diffraction</td>
+      <td>$a \sin \theta = m\lambda$</td>
+    </tr>
+    <tr>
+      <td>Thin lens equation</td>
+      <td>$\frac{1}{s} + \frac{1}{s’} = \frac{1}{f}$</td>
+    </tr>
+    <tr>
+      <td>Photon energy</td>
+      <td>$E = hf = \frac{hc}{\lambda}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<!-- Slide 33 -->
+<h1 id="further-exploration">Further Exploration</h1>
+
+<h2 id="resources">Resources:</h2>
+<ul>
+  <li>PhET Simulations: https://phet.colorado.edu/
+    <ul>
+      <li>Wave Interference</li>
+      <li>Bending Light</li>
+      <li>Geometric Optics</li>
+    </ul>
+  </li>
+  <li>Ray Optics Simulation: https://ricktu288.github.io/ray-optics/</li>
+  <li>Khan Academy: Optics</li>
+</ul>
+
+<h2 id="applications">Applications:</h2>
+<ul>
+  <li>Photography and cameras</li>
+  <li>Fiber optic communications</li>
+  <li>Medical endoscopes</li>
+  <li>Lasers and holography</li>
+</ul>
+
+<hr />
+
+<!-- Slide 34 -->
+<h1 id="thank-you">Thank You!</h1>
+
+<div class="centered">
+  <h2>Questions?</h2>
+
+  <div class="image-container">
+    <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Light_dispersion_conceptual.gif/640px-Light_dispersion_conceptual.gif" /></p>
+  </div>
+</div>
+
+<p class="reference">Image: Light dispersion conceptual animation (Wikimedia Commons)</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

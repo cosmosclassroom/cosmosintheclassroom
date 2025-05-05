@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Principles of Optics</title>
+  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Creveal.scss">
+  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Ctheme%5Csource%5Cnight.scss">
+
+  <!-- Custom styles for Marp slides
+
+  <style>
+    /* Marp slide styles */
+    section {
+      font-family: 'Georgia', serif;
+      font-size: 1.5em;
+      text-align: center;
+      padding: 2em;
+    }
+    h1, h2, h3 {
+      margin: 0.5em 0;
+    }
+    p {
+      margin: 1em 0;
+    }
+  </style>
+  -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+          <style>
+section {
+  font-size: 2rem;
+  padding: 1rem; 
+}
+
+h1 {
+  font-family: Georgia, serif;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: system-ui, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  margin: auto;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.flexbox > div {
+  flex: 1;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: black; 
+  border: 1px black solid; 
+}
+
+.formula{
+    margin: 2px;
+    padding: 2px;
+    align: center;
+    justify: center;
+    border: 1px;
+    background-color: lavender;
+    border: 1px black solid; 
+}
+
+footer {
+  font-size: 0.7rem;
+  font-style: italic;
+  text-align: left;
+  opacity: 80%;
+  margin-top: 0.5rem;
+}
+
+ul{
+    list-style: none;
+}
+</style>
+
+<h1 id="principles-of-optics">Principles of Optics</h1>
+<div class="flexbox">
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h2&amp;gt;How can light form an image?&amp;lt;/h2&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <div class="image-container">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="../../../assets/images/10_optics/lens-7105005_640.jpg" alt="Lens forming an image" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<hr />
+
+<h1 id="origins">Origins</h1>
+<div class="image-container">
+  <p><img src="d:\python\cosmosintheclassroom\assets\images\10_optics\Nimrud_lens_British_Museum.jpg" alt="Lens" /></p>
+  <div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Light has been studied since ancient times, with significant contributions from scientists like Newton and Huygens.&amp;lt;/p&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+  <p>&lt;</p>
+</div>
+
+<footer>
+  <table>
+    <tbody>
+      <tr>
+        <td>Photo by user:geni</td>
+        <td>Author = Geni</td>
+        <td>Date = Feb 2011&lt;/footer&gt;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h1 id="light-as-an-electromagnetic-wave">Light as an Electromagnetic Wave</h1>
+
+  <p>Light originates from oscillating charged particles</p>
+  <div class="flexbox">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div&gt;
+  &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;Electrons in atoms undergo Simple Harmonic Motion&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Frequency of oscillation determines wavelength: $c = f \cdot \lambda$&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Electric and magnetic fields oscillate perpendicular to each other
+&amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt;&lt;/p&gt;
+      &lt;div class="image-container"&gt;
+        &lt;p&gt;&lt;img src="../../../assets/images/10_optics/Onde_electromagnetique.svg.png" alt="Electromagnetic wave" style="height: 350px" /&gt;&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;Image: Wikimedia&amp;lt;/footer&amp;gt;&lt;/p&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="simple-harmonic-motion-and-light-production"&gt;Simple Harmonic Motion and Light Production&lt;/h1&gt;
+
+  &lt;h2 id="atomic-level-process"&gt;Atomic Level Process:&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;Electrons oscillate around equilibrium position at the frequency:&lt;/p&gt;
+
+      &lt;div class="formula"&gt;
+
+        &lt;p&gt;$f = \frac{1}{2\pi}\sqrt{\frac{k}{m}}$&lt;/p&gt;
+
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Acceleration causes EM radiation&lt;/li&gt;
+    &lt;li&gt;Energy of light: $E = hf$&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="contents"&gt;Contents&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Characteristics of Light&lt;/li&gt;
+    &lt;li&gt;Reflection and Flat Mirrors&lt;/li&gt;
+    &lt;li&gt;Curved Mirrors&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="ray-diagrams-to-predict-images"&gt;Ray Diagrams to Predict Images&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h2&amp;gt;Imaging the tip of a pencil:&amp;lt;/h2&amp;gt; &amp;lt;ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+
+      &lt;p&gt;Ray 1: incident angle = $0°$, reflected angle = $0°$&lt;/p&gt;
+
+      &lt;p&gt;Ray 2: incident angle = $\theta°$, reflected angle = $\theta’°$&lt;/p&gt;
+
+      &lt;p&gt;&lt;em&gt;Both rays can be traced back to their point of apparent origination behind the mirror&lt;/em&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Snells_law2.svg/500px-Snells_law2.svg.png" alt="Ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="virtual-image-formation"&gt;Virtual Image Formation&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h2&amp;gt;Imaging Process:&amp;lt;/h2&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Dashed lines behind mirror meet at image point&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Collection of rays forms the virtual image&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image distance equals object distance ($p = q$)&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Plane_mirror_image.svg/640px-Plane_mirror_image.svg.png" alt="Virtual image formation" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="ray-diagrams-on-flat-mirrors"&gt;Ray Diagrams on Flat Mirrors&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Image point formed where dashed lines meet&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Virtual image forms from ray collection&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Distance relationship: $p = q$&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Reflection_in_a_plane_mirror.svg/640px-Reflection_in_a_plane_mirror.svg.png" alt="Flat mirror ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="images-on-flat-mirrors"&gt;Images on Flat Mirrors&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Images appear reversed to observer&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Angles of perspective are maintained&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Left-right inversion occurs&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Image_in_a_mirror.png" alt="Mirror image formation" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="images-on-curved-mirrors"&gt;Images on Curved Mirrors&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;h2&amp;gt;Key differences from flat mirrors:&amp;lt;/h2&amp;gt; &amp;lt;ul&amp;gt;   &amp;lt;li&amp;gt;Different image formation process&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Image location varies with object position&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Distance relationship more complex&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Can form real or virtual images&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Concave_and_convex_mirrors.svg/800px-Concave_and_convex_mirrors.svg.png" alt="Curved mirrors" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="practice-problem-1"&gt;Practice Problem 1&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;A student stands 1.5 m in front of a flat mirror. If they are 1.7 m tall:&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;How far behind the mirror does their image appear?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the height of their image?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the minimum mirror height needed to see their full body?&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Plane_mirror_height.svg/640px-Plane_mirror_height.svg.png" alt="Mirror height problem" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="practice-problem-2"&gt;Practice Problem 2&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;A concave mirror has a focal length of 20 cm. An object is placed 30 cm from the mirror.&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;Calculate:&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;The image distance using $\frac{1}{f} = \frac{1}{p} + \frac{1}{q}$&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;The magnification using $m = -\frac{q}{p}$&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;Determine if the image is real or virtual&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Concave_mirror_ray_diagram.svg/800px-Concave_mirror_ray_diagram.svg.png" alt="Concave mirror ray diagram" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;hr /&gt;
+
+  &lt;h1 id="practice-problem-3"&gt;Practice Problem 3&lt;/h1&gt;
+
+  &lt;div class="flexbox"&gt;
+    &lt;div&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;p&amp;gt;Light strikes a flat mirror at an angle of $35°$ to the normal.&amp;lt;/p&amp;gt; &amp;lt;ol&amp;gt;   &amp;lt;li&amp;gt;What is the angle of reflection?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;What is the angle between the incident and reflected rays?&amp;lt;/li&amp;gt;   &amp;lt;li&amp;gt;If the mirror is rotated by $10°$, how much does the reflected ray rotate?&amp;lt;/li&amp;gt; &amp;lt;/ol&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image-container"&gt;
+      &lt;div class="language-plaintext highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&amp;lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Reflection_angles.svg/500px-Reflection_angles.svg.png" alt="Angle of reflection" /&amp;gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;          &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/footer&gt;
+</code></pre></div>    </div>
+  </div>
+</footer>
+
+        </textarea>
+      </section>
+    </div>
+  </div>
+  <script src="/slides/reveal.js/dist/reveal.js"></script>
+  <script src="/slides/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="/slides/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="/slides/reveal.js/plugin/notes/notes.js"></script>
+  <script src="/slides/reveal.js/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true, // Enable URL hash for navigation
+      slideNumber: true, // Show slide numbers
+      controls: true, // Show navigation controls
+      progress: true, // Show progress bar
+      transition: 'slide', // Slide transition effect
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
+      math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js',
+        config: 'TeX-AMS_HTML-full'
+      }
+    });
+  </script>
+</body>
+</html>

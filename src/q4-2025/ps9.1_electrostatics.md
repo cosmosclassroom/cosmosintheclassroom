@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Problem Set 3: Electrostatics
 
 ## Problem 3.1: Coulomb's Law with Multiple Charges
@@ -56,3 +57,13 @@ a) Calculate the electric field strength between the plates.
 b) If a smoke particle of mass 1.5 × 10⁻¹⁵ kg acquires a charge of +8.0 × 10⁻¹⁷ C, calculate the electric force on it.
 c) Calculate the acceleration of the particle due to this electric force.
 d) If the particle enters the precipitator with a horizontal velocity of 2.0 m/s perpendicular to the field, how far will it travel horizontally before hitting one of the plates? (Assume the effect of gravity is negligible compared to the electric force.)
+=======
+Problem Set 3: Electrostatics
+
+Problem 3.1: Coulomb's Law with multiple charges
+Problem 3.2: Electric field calculations for point and distributed charges
+Problem 3.3: Electric potential and potential difference
+Problem 3.4: Electric potential energy calculations
+Problem 3.5: Capacitance calculations (parallel plate)
+Application Problem: Photocopier or electrostatic precipitator analysis
+>>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701

@@ -4,6 +4,7 @@ layout: default
 <!-- transition: slide -->
 # Heading
 
+<<<<<<< HEAD
 
 
 [2.3 Projectile Motion](hlec_2.3_projectile-motion)
@@ -36,3 +37,15 @@ layout: default
 [10.1 Geometric Optics](hlec10.1_geometic-optics.md)
 
 [10.2 Wave Optics](hlec_10.2_wave-optics.md)
+=======
+Text text text
+
+
+# Slides
+
+[text](hlec7_shm.md)
+
+[Optics MD](../src/hphys/10_optics/slides_optics.md)
+
+[Optics HTML](../src/hphys/10_optics/slides_optics.html)
+>>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701
