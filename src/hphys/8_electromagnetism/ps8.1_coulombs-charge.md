@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PS 10.1 Coulomb's Law and Charges
+title: PS 8.1 Coulomb's Law and Charges
 author: Jonathan Corbett
 ---
 
