@@ -61,8 +61,7 @@ pagination:
     }
 </style>
 
-<section>
-    <div class="card"><a href="src/hphys/hphys_landing">Honors Physics</a></div>
-    <div class="card"><a href="src/sphys/sphys_overview">Standard Physics</a></div>
-    <div class="card"><a href="src/ref/ref_lib">Socrates' Library</a></div>
-</section>
+
+<div class="card"><a href="src/hphys/hphys_landing">Honors Physics</a></div>
+<div class="card"><a href="src/sphys/sphys_overview">Standard Physics</a></div>
+<div class="card"><a href="src/ref/ref_lib">Socrates' Library</a></div>

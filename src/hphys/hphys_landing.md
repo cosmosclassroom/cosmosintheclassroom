@@ -94,6 +94,8 @@ toc: true
 
 ### 10.1 Geometric Optics
 
+[Slides 10.1 Geometric Optics](../../slides/hlec_10.1_geometic-optics.html)
+
 [Problem Set 10.1 Geometric Optics](../q4-2025/ps10.1_geometric_optics)
 
 - Reflection and refraction
@@ -102,6 +104,8 @@ toc: true
 - Optical instruments
 
 ### 10.2 Wave Optics  
+
+[Slides 10.2 Wave Optics](../../slides/hlec_10.1b_light-optics.html)
 
 [Problem Set 10.2 Wave Optics](../q4-2025/ps10.2_wave_optics)
 
