@@ -44,18 +44,26 @@ toc: true
 ## Unit 8 | Electromagnetism
 
 ### 8.1 Wave-Particle Energies
+[Slides 8.1 Wave Particle Energies](../../slides/hlec_8.1_wave-particle-energies.html)
+
 - Electromagnetic waves and photons
 - Wave-particle duality
 - Energy quantization
 - Planck's constant and photoelectric effect
 
 ### 8.2 Electric Charges and Fields 
+
+[Slides 8.2 Electric Charges](../../slides/hlec_8.2_electric-charges.html)
+
 - Electric charge and Coulomb's law
 - Electric field lines and flux
 - Gauss's law
 - Electric potential
 
 ### 8.3 Electromagnetic Power and Energy
+
+[Slides 8.3 EM Power and Energy](../../slides/hlec_8.3_electromagnetic-power-energy.html)
+
 - Electromagnetic induction
 - Power transmission
 - Energy in electromagnetic fields
@@ -70,6 +78,7 @@ toc: true
 - Capacitance
 
 ### 9.2 Electric Circuits
+- 
 - Current and voltage
 - Series and parallel circuits  
 - Resistance and Ohm's law
