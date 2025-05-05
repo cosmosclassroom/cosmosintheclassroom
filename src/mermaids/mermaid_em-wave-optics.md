@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     EM[Electromagnetism] --> ES[Electrostatics]
     EM --> EC[Electrical Currents]
@@ -42,3 +43,5 @@ flowchart TD
     class EM,ES,EC,EMR,Light,GO,PWire,PSpace mainConcept
     class Coulomb,EField,MagField,Circuits,WO,Conduction,Resistance,Photons,EMWaves subConcept
     class LorentzForce,Induction,Reflection,Refraction,Interference,Diffraction phenomenon
+
+```

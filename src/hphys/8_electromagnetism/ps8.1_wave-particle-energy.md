@@ -40,6 +40,21 @@ author: Jonathan Corbett
    a) Calculate the energy carried by 7 photons.
    b) If this energy were converted to thermal energy, by how much would it raise the temperature of 1.0 × 10⁻¹⁵ g of water?
 
+8. X-rays used in medical imaging typically have wavelengths around 0.1 nm.
+   a) Calculate the frequency and energy (in eV) of these X-ray photons.
+   b) How many of these X-ray photons would carry a total energy of 1.0 J?
+   c) Compare the energy of one X-ray photon to that of a visible light photon (550 nm). What implications does this have for biological safety?
+
+9. An electron microscope accelerates electrons through a potential difference of 50 kV.
+   a) Calculate the kinetic energy of these electrons in joules.
+   b) Calculate the momentum and de Broglie wavelength of these electrons.
+   c) Why can electron microscopes achieve much higher resolution than light microscopes?
+
+10. The photoelectric effect demonstrates the particle nature of light. When light with a frequency of 1.0 × 10¹⁵ Hz strikes a cesium surface (work function 1.9 eV):
+    a) Will electrons be emitted? If so, calculate their maximum kinetic energy in eV.
+    b) What is the threshold frequency for electron emission from this surface?
+    c) If the intensity of the light is doubled but the frequency remains the same, how does this affect the maximum kinetic energy and the number of emitted electrons?
+
 ## Answers
 
 1. a) 4.97 × 10⁻¹⁹ J (3.11 eV)
@@ -63,4 +78,16 @@ author: Jonathan Corbett
 
 7. a) 2.52 × 10⁻¹⁸ J
    b) Approximately 6.0 × 10⁻⁴ K (negligible temperature increase)
+
+8. a) f = 3.0 × 10¹⁸ Hz; E = 12.4 keV
+   b) Approximately 5.0 × 10¹⁴ photons
+   c) An X-ray photon has about 22,000 times more energy than a visible light photon, which is why X-rays can cause ionization and damage to biological tissues
+
+9. a) 8.0 × 10⁻¹⁵ J (50 keV)
+   b) p = 1.2 × 10⁻²² kg·m/s; λ = 5.5 × 10⁻¹² m (0.0055 nm)
+   c) Electron microscopes can achieve higher resolution because the de Broglie wavelength of accelerated electrons is much smaller than the wavelength of visible light, allowing smaller structures to be resolved
+
+10. a) Yes; KE_max = 4.1 - 1.9 = 2.2 eV
+    b) $f_{threshold}$ = 4.6 × 10¹⁴ Hz
+    c) The maximum kinetic energy remains unchanged; the number of emitted electrons doubles (demonstrates that energy depends on frequency, not intensity)
 

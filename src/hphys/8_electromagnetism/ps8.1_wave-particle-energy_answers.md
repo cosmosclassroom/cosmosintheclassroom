@@ -6,16 +6,13 @@ author: Jonathan Corbett
 
 | Category | Formula | Symbols |
 |:---------|:--------|:--------|
-| **Photon Energy** | $E = hf$ | $h$ = Planck's constant = $6.63 \times 10^{-34}$ J·s |
+| **Photon Energy** | $E = hf$ | $h$ = Planck's constant = $6.63 \times 10^{-34}$ J \cdot s |
 |  | $E = \frac{hc}{\lambda}$ | $c$ = speed of light = $3.00 \times 10^8$ m/s |
 |  | 1 eV = $1.602 \times 10^{-19}$ J | $\lambda$ = wavelength in meters |
 | **Wave Properties** | $c = f\lambda$ | $f$ = frequency in Hz |
 |  | $d\sin\theta = m\lambda$ | $d$ = slit separation |
 |  |  | $\theta$ = angle to maximum |
 |  |  | $m$ = order number (0, 1, 2...) |
-| **EM Waves** | $B = \frac{E}{c}$ | $E$ = electric field amplitude |
-|  | $I = \frac{1}{2}\varepsilon_0 E^2 c$ | $B$ = magnetic field amplitude |
-|  |  | $\varepsilon_0$ = $8.85 \times 10^{-12}$ F/m |
 | **De Broglie Wavelength** | $\lambda  = \frac{h}{mv}$ | $m$ = mass  |
 |  |  | $v$ = velocity |
 | **Energy Conversion** | $E_K = \frac{1}{2}mv^2$ | $E_K$ = kinetic energy |
@@ -39,7 +36,7 @@ $$E = hf$$ (Photon energy formula)
 
 **Solution:**
 
-$$E = h \times f = (6.63 \times 10^{-34} \text{ J·s}) \times (7.5 \times 10^{14} \text{ Hz})$$
+$$E = h \times f = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (7.5 \times 10^{14} \text{ Hz})$$
 $$E = 4.97 \times 10^{-19} \text{ J}$$
 
 **Converting to electron-volts:**
@@ -84,7 +81,7 @@ $$\lambda = \frac{c}{f} = \frac{3.00 \times 10^8 \text{ m/s}}{98.6 \times 10^6 \
 - $$\text{Photons/second} = \frac{\text{Total Power}}{E_{\text{photon}}}$$
 
 **Solution:**
-$$E_{\text{photon}} = h \times f = (6.63 \times 10^{-34} \text{ J·s}) \times (98.6 \times 10^6 \text{ Hz}) = 6.54 \times 10^{-27} \text{ J}$$
+$$E_{\text{photon}} = h \times f = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (98.6 \times 10^6 \text{ Hz}) = 6.54 \times 10^{-27} \text{ J}$$
 
 $$\text{Photons/second} = \frac{\text{Total Power}}{E_{\text{photon}}} = \frac{50 \times 10^3 \text{ W}}{6.54 \times 10^{-27} \text{ J}} = 7.65 \times 10^{30} \div 5.03 = 1.52 \times 10^{28} \text{ photons/s}$$
 
@@ -94,7 +91,7 @@ $$\text{Photons/second} = \frac{\text{Total Power}}{E_{\text{photon}}} = \frac{5
 
 **Solution:**
 Using a mid-range visible light frequency of about $$5.5 \times 10^{14} \text{ Hz}$$:
-$$E_{\text{visible}} = h \times f = (6.63 \times 10^{-34} \text{ J·s}) \times (5.5 \times 10^{14} \text{ Hz}) = 3.65 \times 10^{-19} \text{ J}$$
+$$E_{\text{visible}} = h \times f = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (5.5 \times 10^{14} \text{ Hz}) = 3.65 \times 10^{-19} \text{ J}$$
 
 $$\frac{E_{\text{radio}}}{E_{\text{visible}}} = \frac{6.54 \times 10^{-27} \text{ J}}{3.65 \times 10^{-19} \text{ J}} \approx 1.79 \times 10^{-8} \approx 10^{-8}$$
 
@@ -137,7 +134,7 @@ Find velocity from kinetic energy:
 $$v = \sqrt{\frac{2E_K}{m}} = \sqrt{\frac{2 \cdot 8.01 \times 10^{-18} \text{ J}}{9.11 \times 10^{-31} \text{ kg}}} = \sqrt{1.76 \times 10^{13}} = 4.19 \times 10^6 \text{ m/s}$$
 
 Calculate de Broglie wavelength:
-$$\lambda = \frac{h}{mv} = \frac{6.63 \times 10^{-34} \text{ J·s}}{(9.11 \times 10^{-31} \text{ kg}) \times (4.19 \times 10^6 \text{ m/s})} = 1.74 \times 10^{-10} \text{ m} \approx 0.17 \text{ nm}$$
+$$\lambda = \frac{h}{mv} = \frac{6.63 \times 10^{-34} \text{ J \cdot s}}{(9.11 \times 10^{-31} \text{ kg}) \times (4.19 \times 10^6 \text{ m/s})} = 1.74 \times 10^{-10} \text{ m} \approx 0.17 \text{ nm}$$
 
 ### Part b) Diffraction effects
 
@@ -159,7 +156,7 @@ Determine if a detector can register green light (520 nm) with intensity $$1.0 \
 
 **Solution:**
 Calculate energy of one photon:
-$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{(6.63 \times 10^{-34} \text{ J·s}) \times (3.00 \times 10^8 \text{ m/s})}{520 \times 10^{-9} \text{ m}} = 3.83 \times 10^{-19} \text{ J}$$
+$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{(6.63 \times 10^{-34} \text{ J \cdot s}) \times (3.00 \times 10^8 \text{ m/s})}{520 \times 10^{-9} \text{ m}} = 3.83 \times 10^{-19} \text{ J}$$
 
 Calculate photon flux:
 $$\text{Photon flux} = \frac{\text{Intensity}}{E_{\text{photon}}} = \frac{1.0 \times 10^{-12} \text{ W/m²}}{3.83 \times 10^{-19} \text{ J}} = 2.61 \times 10^6 \text{ photons/(s·m²)}$$
@@ -204,7 +201,7 @@ This resonant absorption is much more efficient than non-resonant frequencies, a
 - $$\text{Photons/second} = \frac{\text{Power}}{E_{\text{photon}}}$$
 
 **Solution:**
-$$E_{\text{photon}} = h \times f = (6.63 \times 10^{-34} \text{ J·s}) \times (2.45 \times 10^9 \text{ Hz}) = 1.62 \times 10^{-24} \text{ J}$$
+$$E_{\text{photon}} = h \times f = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (2.45 \times 10^9 \text{ Hz}) = 1.62 \times 10^{-24} \text{ J}$$
 
 $$\text{Photons/second} = \frac{\text{Power}}{E_{\text{photon}}} = \frac{900 \text{ W}}{1.62 \times 10^{-24} \text{ J}} = 5.55 \times 10^{26} \text{ photons/s} \approx 1.8 \times 10^{26} \text{ photons/s}$$
 
@@ -218,7 +215,7 @@ Calculate the energy of 7 photons of green light (550 nm) and its thermal effect
 **Starting Formula:** $$E_{\text{total}} = 7 \cdot E_{\text{photon}} = 7 \cdot \frac{hc}{\lambda}$$
 
 **Solution:**
-$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{(6.63 \times 10^{-34} \text{ J·s}) \times (3.00 \times 10^8 \text{ m/s})}{550 \times 10^{-9} \text{ m}} = 3.62 \times 10^{-19} \text{ J}$$
+$$E_{\text{photon}} = \frac{hc}{\lambda} = \frac{(6.63 \times 10^{-34} \text{ J \cdot s}) \times (3.00 \times 10^8 \text{ m/s})}{550 \times 10^{-9} \text{ m}} = 3.62 \times 10^{-19} \text{ J}$$
 
 $$E_{\text{total}} = 7 \cdot (3.62 \times 10^{-19} \text{ J}) = 2.53 \times 10^{-18} \text{ J} \approx 2.52 \times 10^{-18} \text{ J}$$
 
@@ -234,3 +231,131 @@ Using specific heat capacity of water $$c = 4186 \text{ J/(kg·K)}$$:
 $$\Delta T = \frac{2.52 \times 10^{-18} \text{ J}}{(1.0 \times 10^{-15} \text{ kg}) \times (4186 \text{ J/(kg·K)})} = \frac{2.52 \times 10^{-18}}{4.19 \times 10^{-12}} = 6.02 \times 10^{-7} \text{ K} \approx 6.0 \times 10^{-4} \text{ mK}$$
 
 This represents a negligible temperature increase, demonstrating that while the eye can detect this energy as light, its thermal effect is imperceptible.
+
+## Problem 8: X-ray Analysis
+
+**Problem Statement:**  
+Analyze the properties of X-rays used in medical imaging with wavelength of 0.1 nm.
+
+### Part a) Frequency and energy calculation
+
+**Starting Formulas:**
+- $c = f\lambda$ (Wave relationship)
+- $E = hf$ (Photon energy)
+
+**Solution:**
+Calculate frequency:
+$$f = \frac{c}{\lambda} = \frac{3.00 \times 10^8 \text{ m/s}}{0.1 \times 10^{-9} \text{ m}} = 3.0 \times 10^{18} \text{ Hz}$$
+
+Calculate energy:
+
+$E = h \times f = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (3.0 \times 10^{18} \text{ Hz}) = 1.99 \times 10^{-15} \text{ J}$
+
+Converting to electron-volts:
+$$E \text{ in eV} = \frac{E \text{ in J}}{1.602 \times 10^{-19} \text{ J/eV}} = \frac{1.99 \times 10^{-15} \text{ J}}{1.602 \times 10^{-19} \text{ J/eV}} = 12,400 \text{ eV} = 12.4 \text{ keV}$$
+
+### Part b) Number of photons in 1.0 J
+
+**Starting Formula:** $\text{Number of photons} = \frac{\text{Total energy}}{E_{\text{photon}}}$
+
+**Solution:**
+$$\text{Number of photons} = \frac{1.0 \text{ J}}{1.99 \times 10^{-15} \text{ J}} = 5.03 \times 10^{14} \approx 5.0 \times 10^{14} \text{ photons}$$
+
+### Part c) Comparison with visible light
+
+**Starting Formulas:** 
+- $E = \frac{hc}{\lambda}$ (Photon energy)
+- $\text{Ratio} = \frac{E_{\text{X-ray}}}{E_{\text{visible}}}$
+
+**Solution:**
+For visible light (550 nm):
+$$E_{\text{visible}} = \frac{hc}{\lambda} = \frac{(6.63 \times 10^{-34} \text{ J \cdot s}) \times (3.00 \times 10^8 \text{ m/s})}{550 \times 10^{-9} \text{ m}} = 3.62 \times 10^{-19} \text{ J}$$
+
+Calculate the ratio:
+$$\frac{E_{\text{X-ray}}}{E_{\text{visible}}} = \frac{1.99 \times 10^{-15} \text{ J}}{3.62 \times 10^{-19} \text{ J}} \approx 5.5 \times 10^{3} \approx 22,000$$
+
+An X-ray photon has about 22,000 times more energy than a visible photon. This high energy means X-rays can ionize atoms and break molecular bonds, potentially damaging DNA and cellular structures. This explains why X-ray exposure must be limited and carefully controlled in medical settings, and why protective shielding is used for both patients and operators.
+
+## Problem 9: Electron Microscope Analysis
+
+**Problem Statement:**  
+Analyze the properties of electrons accelerated through a potential difference of 50 kV in an electron microscope.
+
+### Part a) Kinetic energy calculation
+
+**Starting Formula:** $E_K = qV$ (Electric potential energy)
+
+**Solution:**
+$$E_K = qV = (1.602 \times 10^{-19} \text{ C}) \times (50 \times 10^3 \text{ V}) = 8.01 \times 10^{-15} \text{ J} = 8.0 \times 10^{-15} \text{ J}$$
+
+In electron-volts:
+$$E_K = 50 \text{ keV}$$
+
+### Part b) Momentum and de Broglie wavelength
+
+**Starting Formulas:**
+- $E_K = \frac{1}{2}mv^2$ (Kinetic energy)
+- $p = mv$ (Momentum)
+- $\lambda = \frac{h}{p}$ (De Broglie wavelength)
+
+**Solution:**
+Find velocity from kinetic energy:
+$$v = \sqrt{\frac{2E_K}{m}} = \sqrt{\frac{2 \times 8.01 \times 10^{-15} \text{ J}}{9.11 \times 10^{-31} \text{ kg}}} = \sqrt{1.76 \times 10^{16}} = 1.33 \times 10^8 \text{ m/s}$$
+
+At this speed (approaching half the speed of light), relativistic effects become significant, but we'll use classical mechanics for an approximate answer.
+
+Calculate momentum:
+$$p = mv = (9.11 \times 10^{-31} \text{ kg}) \times (1.33 \times 10^8 \text{ m/s}) = 1.21 \times 10^{-22} \text{ kg·m/s} \approx 1.2 \times 10^{-22} \text{ kg·m/s}$$
+
+Calculate de Broglie wavelength:
+$$\lambda = \frac{h}{p} = \frac{6.63 \times 10^{-34} \text{ J \cdot s}}{1.21 \times 10^{-22} \text{ kg·m/s}} = 5.48 \times 10^{-12} \text{ m} = 5.5 \times 10^{-12} \text{ m} = 0.0055 \text{ nm}$$
+
+### Part c) Resolution comparison
+
+Electron microscopes can achieve much higher resolution than light microscopes because the de Broglie wavelength of accelerated electrons (0.0055 nm at 50 keV) is much smaller than the wavelength of visible light (approximately 400-700 nm).
+
+According to the Rayleigh criterion, the minimum resolvable feature size is approximately half the wavelength of the illumination source. With a wavelength roughly 100,000 times smaller than visible light, electron microscopes can theoretically resolve structures 100,000 times smaller, enabling imaging of individual atoms and molecular structures impossible with optical microscopes.
+
+The wave-particle duality of electrons, as described by de Broglie, is directly applied in electron microscopy and represents one of the most important practical applications of quantum mechanics.
+
+## Problem 10: Photoelectric Effect Analysis
+
+**Problem Statement:**  
+Analyze the photoelectric effect when light with frequency 1.0 × 10¹⁵ Hz strikes a cesium surface with work function 1.9 eV.
+
+### Part a) Electron emission and maximum kinetic energy
+
+**Starting Formulas:**
+- $E = hf$ (Photon energy)
+- $KE_{max} = hf - \phi$ (Photoelectric equation)
+
+**Solution:**
+Calculate photon energy:
+$$E = hf = (6.63 \times 10^{-34} \text{ J \cdot s}) \times (1.0 \times 10^{15} \text{ Hz}) = 6.63 \times 10^{-19} \text{ J}$$
+
+Convert to electron-volts:
+$$E \text{ in eV} = \frac{6.63 \times 10^{-19} \text{ J}}{1.602 \times 10^{-19} \text{ J/eV}} = 4.14 \text{ eV} \approx 4.1 \text{ eV}$$
+
+Since the photon energy (4.1 eV) exceeds the work function (1.9 eV), electrons will be emitted.
+
+Calculate maximum kinetic energy:
+$$KE_{max} = hf - \phi = 4.1 \text{ eV} - 1.9 \text{ eV} = 2.2 \text{ eV}$$
+
+### Part b) Threshold frequency calculation
+
+**Starting Formula:** $hf_{threshold} = \phi$ (Threshold condition)
+
+**Solution:**
+$$f_{threshold} = \frac{\phi}{h} = \frac{1.9 \text{ eV} \times 1.602 \times 10^{-19} \text{ J/eV}}{6.63 \times 10^{-34} \text{ J \cdot s}} = \frac{3.04 \times 10^{-19}}{6.63 \times 10^{-34}} = 4.59 \times 10^{14} \text{ Hz} \approx 4.6 \times 10^{14} \text{ Hz}$$
+
+### Part c) Effect of doubling intensity
+
+When the intensity of light is doubled while maintaining the same frequency:
+
+1. The maximum kinetic energy of emitted electrons remains unchanged at 2.2 eV.
+   - This is because $KE_{max}$ depends only on the frequency of light (which determines the energy per photon) and the work function of the material.
+
+2. The number of emitted electrons doubles.
+   - This is because doubling the intensity means doubling the number of incident photons per unit time, which leads to twice as many electron emissions.
+
+This result demonstrates a key principle of the photoelectric effect: the energy of emitted electrons depends on the frequency (not the intensity) of the incident light, while the number of emitted electrons depends on the intensity. This observation was crucial in establishing the particle nature of light, as it could not be explained by classical wave theory, which predicted that increasing intensity (amplitude of the wave) would increase the energy transferred to electrons.
