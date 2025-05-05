@@ -5,6 +5,7 @@ layout: default
 # Heading
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 [2.3 Projectile Motion](hlec_2.3_projectile-motion)
@@ -38,6 +39,8 @@ layout: default
 
 [10.2 Wave Optics](hlec_10.2_wave-optics.md)
 =======
+=======
+>>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701
 Text text text
 
 
@@ -47,5 +50,9 @@ Text text text
 
 [Optics MD](../src/hphys/10_optics/slides_optics.md)
 
+<<<<<<< HEAD
+[Optics HTML](../src/hphys/10_optics/slides_optics.html)
+>>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701
+=======
 [Optics HTML](../src/hphys/10_optics/slides_optics.html)
 >>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701
