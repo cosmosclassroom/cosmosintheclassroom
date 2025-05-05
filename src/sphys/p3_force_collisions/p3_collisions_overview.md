@@ -20,40 +20,90 @@ date: 1 May 2025
 ### L2 - Distracted Driving 
 - Graphing: Distracted vs. non-distracted driving
  - **P/T and V/T graphs**
-- **Home Learning** : Distracted Driver Research 
-- 
+- **Home Learning**: Distracted Driver Research 
+ - Sources of distraction while driving
+ - Statistical analysis of reaction time delays
+ - Connection between distraction and accident probability
+ - Key vocabulary: reaction time, distraction factor, cognitive load
 
 ### L3 - Speed and Collisions (avoidance)
 - V-T Graphing
+  - Interpreting velocity-time graphs for vehicles
+  - Calculating displacement from v-t graphs (area under curve)
+  - Critical points in collision avoidance scenarios
 - Calculating Reaction Distances
-- Discussion : Speed Limits
-- Engineering : Engineering Faster Reaction Times (HUD, Cameras, DND Settings on Phones)
-- Home Learning : Speed Limits (reading) (Validity and Reliability?)
+  - Equation: d = v × t (distance = velocity × reaction time)
+  - Braking distance equation: d = v²/(2μg) 
+  - Total stopping distance = reaction distance + braking distance
+- Discussion: Speed Limits
+  - Physics-based justifications for speed limits
+  - Urban vs. highway considerations
+- Engineering: Engineering Faster Reaction Times
+  - HUD displays and driver attention
+  - Camera systems and machine vision
+  - DND Settings on Phones and distraction reduction
+  - Key vocabulary: reaction distance, braking distance, coefficient of friction
+- Home Learning: Speed Limits (reading)
+  - Validity and Reliability of speed limit studies
+  - International comparisons and outcomes
 
 ### L4 - Speed and Collision (outcomes)
-
 - Analyzing Collision Data
- - YouTube Videos of Green/Blue Carts
- - Collisions A - D
+  - YouTube Videos of Green/Blue Carts
+  - Collisions A - D
+  - Data collection techniques
+  - Graphical analysis of momentum exchange
 - Force, velocity, and Newton's Laws
+  - Newton's Second Law: F = ma
+  - Force-time graphs during collisions
+  - Impulse concept: J = F·Δt
+  - Conservation of momentum: m₁v₁ + m₂v₂ = m₁v₁' + m₂v₂'
+  - Key vocabulary: impulse, momentum, collision, conservation
+
 ### L5 - Mass, Speed, Force
+- Relationship between mass and collision outcomes
+  - Equation: KE = ½mv²
+  - Momentum equation: p = mv
+  - Demonstration of mass effects on collision force
+- Elastic vs. inelastic collisions
+  - Energy conservation in elastic collisions
+  - Energy loss in inelastic collisions
+  - Coefficient of restitution: e = (v₂' - v₁')/(v₁ - v₂)
+- Safety features in vehicle design
+  - Crumple zones and impulse extension
+  - Airbags and force distribution
+  - Seatbelts and impulse reduction
+  - Key vocabulary: kinetic energy, elastic collision, inelastic collision, crumple zone
 
 ### L6 - Lab - Momentum and Impulse Carts
+- Experimental design
+  - Control variables
+  - Data collection methods
+  - Error analysis
+- Laboratory procedures
+  - Cart collision setups (1D collisions)
+  - Photogates and timing systems
+  - Mass variations
+- Calculations and analysis
+  - Pre-collision and post-collision momentum
+  - Impulse calculation: J = Δp
+  - Conservation verification
+  - Key vocabulary: experimental error, significant figures, uncertainty, verification
 
 ### L7 - Assessment - Vehicle Stopping Times
+- Comprehensive problem solving
+  - Multi-step problems combining reaction time, braking distance, momentum, and impulse
+  - Real-world scenario analysis
+  - Engineering design challenge
+- Performance task
+  - Vehicle safety feature design
+  - Mathematical modeling of collision scenarios
+  - Evidence-based argumentation
+- Key formulas for assessment:
+  - d = vt + ½at²
+  - F = ma
+  - p = mv
+  - J = FΔt = Δp
+  - KE = ½mv²
 
-### L8 - Modern Safety Features
 
-## Vehicle Safety Project
-
- ### L9 - Force, Time, Safety
-
- ### L10 - Crumple Zones and Impulse
-
- ### L11 - Vehicle Mass
-
- ### L12 Vehicle Size
-
- ### L13 Designing the "Dream Car"
-
- ### L14 Transfer Task - Pedestrian Safety Solutions

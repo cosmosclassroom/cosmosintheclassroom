@@ -1,33 +1,33 @@
 Physics Curriculum Schedule (May to June 6th)
-Week 1 (May 6-10)
+### Week 1 (May 6-10)
 
 Monday: Introduction to Geometric Optics - Reflection laws and ray diagrams
 Wednesday: Refraction and Snell's Law, Total Internal Reflection
 Friday: Thin Lens Equation, problem-solving with lenses and mirrors
-Weekend Homework: Problem Set 1 - Geometric Optics applications
+###  Homework: Problem Set 1 - Geometric Optics applications
 
-Week 2 (May 13-17)
+## ### Week 2 (May 13-17)
 
 Monday: Review Problem Set 1, Introduction to Wave Optics - Interference
 Wednesday: Double-slit experiment, diffraction patterns
 Friday: Polarization and Malus' Law, Lab demonstration if possible
-Weekend Homework: Problem Set 2 - Wave Optics problems
+###  Homework: Problem Set 2 - Wave Optics problems
 
-Week 3 (May 20-24)
+### Week 3 (May 20-24)
 
 Monday: Review Problem Set 2, Introduction to Electrostatics
 Wednesday: Electric charge, Coulomb's Law, Electric fields
 Friday: Electric potential, capacitance basics
-Weekend Homework: Problem Set 3 - Electrostatics problems
+###  Homework: Problem Set 3 - Electrostatics problems
 
-Week 4 (May 27-31)
+### Week 4 (May 27-31)
 
 Monday: Review Problem Set 3, Introduction to DC Circuits
 Wednesday: Current, resistance, Ohm's Law
 Friday: Series/parallel circuits, Kirchhoff's Rules
-Weekend Homework: Problem Set 4 - Circuit analysis problems
+###  Homework: Problem Set 4 - Circuit analysis problems
 
-Week 5 (June 3-7)
+### Week 5 (June 3-7)
 
 Monday: Review Problem Set 4, Magnetic fields and forces
 Wednesday: Electromagnetic induction, Faraday's Law
@@ -52,7 +52,7 @@ Prepare condensed handouts with key definitions and examples
 Consider a final project that integrates multiple concepts rather than separate assessments for each unit
 
 Lecture Files to Create
-Geometric Optics (Week 1)
+Geometric Optics (### Week 1)
 
 Lecture 1A: Reflection Fundamentals
 
@@ -79,7 +79,7 @@ Real-world optical systems (cameras, eyes, telescopes)
 
 
 
-Wave Optics (Week 2)
+Wave Optics (### Week 2)
 
 Lecture 2A: Wave Interference
 
@@ -98,7 +98,7 @@ Malus' Law and applications
 
 
 
-Electrostatics (Week 3)
+Electrostatics (### Week 3)
 
 Lecture 3A: Electric Charge and Coulomb's Law
 
@@ -117,7 +117,7 @@ Capacitors and energy storage
 
 
 
-DC Circuits (Week 4)
+DC Circuits (### Week 4)
 
 Lecture 4A: Current and Resistance
 
@@ -136,7 +136,7 @@ Practical circuit applications
 
 
 
-Electromagnetism (Week 5)
+Electromagnetism (### Week 5)
 
 Lecture 5A: Magnetic Fields and Forces
 

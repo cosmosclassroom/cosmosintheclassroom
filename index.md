@@ -61,7 +61,18 @@ pagination:
     }
 </style>
 
+# Honors Physics
 
-<div class="card"><a href="src/hphys/hphys_landing">Honors Physics</a></div>
-<div class="card"><a href="src/sphys/sphys_overview">Standard Physics</a></div>
-<div class="card"><a href="src/ref/ref_lib">Socrates' Library</a></div>
+- 8 Electromagnetism
+- 9 Electricity
+- 10 Optics
+
+# Standard Physics
+- P5 Waves and Information
+- P3 Force, Motion, and Collisions
+  - L1 Historical Data
+  - L2 Distracted Driving
+  - L3 Speed and Collision Avoidance
+  - L4 Speed and Collision Outcomes
+  - L5 Mass, Speed, and Force
+  - L6 Momentum and Impulse Carts
