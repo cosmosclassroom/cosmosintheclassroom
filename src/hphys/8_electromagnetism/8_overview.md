@@ -79,26 +79,3 @@ Students investigate resonant absorption of EM waves in different materials and 
 - **To Electric Circuits**: Understanding of electric charge and fields explains the driving force behind current in circuits
 
 ## Resources
-
-### Problem Sets
-- [Problem Set 8.1: Wave and Particle Energy](ps8.1_wave-particle-energy.md)
-- [Problem Set 8.1: Wave and Particle Energy [KEY]](ps8.1_wave-particle-energy_answers.md)
-- [Problem Set 8.1: Electromagnetic Waves and Energy](/hphys/8_electromagnetism/problem_sets/8.1_em_waves)
-- [Problem Set 8.2: Wave-Particle Duality](/hphys/8_electromagnetism/problem_sets/8.2_wave_particle)
-- [Problem Set 8.3: Interference and Diffraction](/hphys/8_electromagnetism/problem_sets/8.3_interference)
-- [Problem Set 8.4: Electric Charges and Fields](/hphys/8_electromagnetism/problem_sets/8.4_electric_fields)
-- [Comprehensive Review: Electromagnetism Foundations](/hphys/8_electromagnetism/problem_sets/8_review)
-
-### Lecture Slides
-- [Lecture: Introduction to Electromagnetic Waves](/slides/8_electromagnetism/8.1_em_waves_intro.pptx)
-- [Lecture: The Electromagnetic Spectrum](/slides/8_electromagnetism/8.2_em_spectrum.pptx)
-- [Lecture: Wave-Particle Duality](/slides/8_electromagnetism/8.3_wave_particle_duality.pptx)
-- [Lecture: Double-Slit Experiment and Interference](/slides/8_electromagnetism/8.4_double_slit.pptx)
-- [Lecture: Electric Charge and Coulomb's Law](/slides/8_electromagnetism/8.5_electric_charge.pptx)
-- [Lecture: Electric Fields and Forces](/slides/8_electromagnetism/8.6_electric_fields.pptx)
-
-### Lab Resources
-- [Lab Guide: Photoelectric Effect](/hphys/8_electromagnetism/labs/photoelectric_lab.pdf)
-- [Lab Guide: Double-Slit Experiment](/hphys/8_electromagnetism/labs/double_slit_lab.pdf)
-- [Lab Guide: Electric Fields Mapping](/hphys/8_electromagnetism/labs/electric_fields_lab.pdf)
-- [Simulation Resources: PhET Electromagnetic Wave Models](/hphys/8_electromagnetism/labs/em_simulations.pdf)
