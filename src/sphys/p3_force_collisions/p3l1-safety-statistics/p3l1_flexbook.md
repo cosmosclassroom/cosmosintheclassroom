@@ -11,30 +11,36 @@ css: /assets/css/worksheets.css
 
 # P3L1 Reviewing Historical Collision Data
 
+## Part 1: One Hundred Years of Change
+
 Table 1. Comparison of driving statistics, 1921 and 2021.
+
+<div class="data-table">
 
 |Year|US Population (millions)|US Vehicles (millions)|People:Vehicle Ratio|
 |-:|:-:|:-:|:-:|
 |1921|113|9|13:1|
 |2021|333|289.5|1:1|
 
-<section style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; width: 100%; margin: 0 auto;">
+</div>
 
-<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+<section class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px; width: 100%; margin: 20px auto;">
 
-![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021")
+<div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+
+![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021"){style="max-width: 100%; height: auto;"}
 
 </div>
 
-<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+<div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
 
-![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021")
+![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
 
 </div>
 
-<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+<div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
 
-![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021")
+![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
 
 </div>
 
