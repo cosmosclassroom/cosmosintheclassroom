@@ -69,33 +69,49 @@ Produce a copy of the table below in your Science Notebook. Brainstorm at least 
 ---
 
 ### Quantifying Safety
+#### Making Predictions
 
-## US Vehicle Collision Statistis
+Driving safety can be measured in multiple ways. In your science notebook, make predictions for how the following quantifiable safety metrics have changed over time:
+1. Number of vehicle collisions (vehicle-vehicle)
+2. Number of pedestrian collisions (vehicle-pedestrian)
+3. Number of injuries
+4. Number of fatalities
+
+#### US Vehicle Collision Statistics
+
+Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:
+
+![Sample annotated trendlines](<../../../assets/images/p3_collisions/annotated_ex.png>){style="width:250px"}
+
+Below each trendline sketch, write pattern statements for different intervals of trendline you observed. 
+
+- For example, US vehicle crashes decreased between 1921 and 2011. 
 
 <details>
 <summary>US Motor Vehicle Deaths per Capita (1920-2012)</summary>
 
-![US Motor Vehicle Deaths per Capita](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_13.png>)
+![US Motor Vehicle Deaths per Capita](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_13.png>){style="max-width: 90%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
 
-![US Motor Vehicle Deaths per Mile](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_15.png>)
+![US Motor Vehicle Deaths per Mile](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_15.png>){style="max-width: 90%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
 
-![US Motor Vehicle Crashes per Year](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_18.png>)
+![US Motor Vehicle Crashes per Year](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_18.png>){style="max-width: 90%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Injuries per Crash (1996-2019)</summary>
 
-![US Motor Vehicle Injuries per Crash](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_20.png>)
+![US Motor Vehicle Injuries per Crash](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_20.png>){: style="max-width: 90%"}
 
 </details>
+
