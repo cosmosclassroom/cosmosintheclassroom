@@ -3,11 +3,11 @@ layout: stemplate
 title: P3L1 Reviewing Historical Crash Data
 author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
-css: /assets/css/worksheets.css
-# Alternative approach: uncomment one of these depending on your theme
-# styles: /assets/css/worksheets.css
-# style: /assets/css/worksheets.css
+stylsheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
+
+<!-- Direct stylesheet inclusion as fallback -->
+<link rel="stylesheet" href="{{ '/assets/css/worksheets.css' | relative_url }}">
 
 # P3L1 Reviewing Historical Collision Data
 
@@ -57,6 +57,7 @@ In a simple t-chart, record observations and any wonderings about the historical
 |<br> <br> <br> <br> |<br> <br> <br> <br>|
 
 </div>
+
 <checkpoint>
 
 # Checkpoint 1
@@ -87,17 +88,20 @@ Driving safety can be measured in multiple ways. In your science notebook, make 
 4. Number of fatalities
 
 ---
+<span>
 
 #### US Vehicle Collision Statistics
 
 Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:
 
-![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png){style="width:250px"}
+![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png)
+
 
 Below each trendline sketch, write pattern statements for different intervals of trendline you observed. 
 
 - For example, US vehicle crashes decreased between 2005 and 2011.
 
+<span>
 ---
 
 <details>
