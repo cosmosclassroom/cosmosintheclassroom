@@ -98,6 +98,8 @@ Below each trendline sketch, write pattern statements for different intervals of
 
 - For example, US vehicle crashes decreased between 2005 and 2011.
 
+---
+
 <details>
 <summary>US Motor Vehicle Deaths per Capita (1920-2012)</summary>
 
