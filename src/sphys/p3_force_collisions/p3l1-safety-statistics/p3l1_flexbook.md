@@ -1,5 +1,5 @@
 ---
-layout: 
+layout: default
 title: P3L1 Reviewing Historical Crash Data
 author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
@@ -20,14 +20,11 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 ### Part 1: One Hundred Years of Change
 
-<div class='figure'>
-
-![1921-2021 Vehicle and Human Statistics](../../../../assets/images/p3_collisions/historical-people-cars-ratio.png)
-
-**Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).**
-
+<div class="figure">
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/historical-people-cars-ratio.png" style="width:120%;" alt="1921-2021 Vehicle and Human Statistics">
+<br>
+<strong>Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).</strong>
 </div>
-
 
 ---
 
@@ -40,8 +37,6 @@ The need for safety regulations became increasingly apparent as more cars filled
 |<br> <br> <br> <br> |<br> <br> <br> <br>|
 
 </div>
-
-
 
 ---
 
