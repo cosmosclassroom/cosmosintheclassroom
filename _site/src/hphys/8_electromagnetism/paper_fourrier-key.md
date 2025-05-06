@@ -1,3 +1,5 @@
+<!--    \src\hphys\8_electromagnetism\paper_fourrier-key    -->
+
 # Solutions to Wave Analysis Questions
 
 ## Question 1: Guitar String Frequencies

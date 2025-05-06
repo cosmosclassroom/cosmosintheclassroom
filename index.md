@@ -68,7 +68,7 @@ pagination:
 # Standard Physics
 - P5 Waves and Information
 - P3 Force, Motion, and Collisions
-  - L1 Historical Data
+  - [L1 Historical Data](src/sphys/p3_force_collisions/p3l1-safety-statistics/p3l1_flexbook.md)
   - L2 Distracted Driving
   - L3 Speed and Collision Avoidance
   - L4 Speed and Collision Outcomes

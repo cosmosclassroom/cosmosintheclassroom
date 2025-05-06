@@ -34,7 +34,7 @@ img {
 }
 
 blockquote {
-    background-color: var(--secondary-color);
+    background-color: var(grey);
     border-left: 4px solid var(--primary-color);
     color: var(--text-color);
     font-family: inherit;
@@ -155,6 +155,10 @@ h1 {
     width: 45%;
 }
 
+.figure{
+    display: flex;
+    flex-direction: row;
+}
 .figure-left {
     border: solid var(--primary-color) 0.5px;
     border-radius: 1rem;
@@ -179,9 +183,19 @@ h1 {
 
 .flex-container {
     display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem auto;
     padding: 5px;
     margin: 5px;
     border: 1pt black solid;
+    div{
+        flex: 1;
+        margin: 5px;
+        padding: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
 }
 
 ol,

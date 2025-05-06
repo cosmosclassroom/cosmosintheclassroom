@@ -1,40 +1,199 @@
 <!doctype html>
-<head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>P3L1 Reviewing Historical Crash Data | Cosmos in the Classroom</title>
-    <!-- import katex for math rendering --->
     
+    
+    <!-- KaTeX Dependencies -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
     
     
-    <link rel="stylesheet" href="/assets/css/cosmosintheclassroom/assets/css/worksheets.css.css" />
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header">
+    <div class="header-content" style="background-image: url('/assets/images/cosmos/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;">
+        <h1 class="site-title" style="color: var(--parchment); text-align: left; padding-left: 20px;"><a href="/" style="color: inherit;">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+            <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+            <li><a href="/src/ref/ref_lib" type="button">Library</a></li>
+        </ul>
+    </nav>
+</header>
 
-</head>
+<style>
+    :root {
+        --primary-color: #2c3e50; /* Nice blue primary */
+        --secondary-color: #34495e;
+        --accent-color: #3498db;
+        --background-color: #cecfc9;
+        --text-color: #2c3e50;
+        --earth-brown: #8b7355;
+        --earth-green: #718355;
+        --parchment: #f5f5dc;
+        --parchment-light: #f9f9e6;
+    }
 
-<body>
-    <header class="header">
-        <container class="flex-container">
-            <div class="content">
+    body {
+        background-color: var(--parchment);
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+    }
 
-                <!-- Direct stylesheet inclusion as fallback -->
-<link rel="stylesheet" href="{{ '/assets/css/worksheets.css' | relative_url }}" />
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1000;
+        background: none; /* Removed gradient background */
+        border-bottom: 3px double var(--earth-brown);
+        border-top: 3px double var(--earth-brown);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        background-image: url('/assets/images/cosmos/cosmos_00001_.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 100px;
+    }
+
+    .header-content img {
+        max-width: 20%;
+        max-height: 60px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--background-color);
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: #cecfc9;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        width: 100%;
+        display: block;
+        background-color: var(--secondary-color);
+        justify-content: center;
+        padding-bottom: 0.5rem; padding-top: 0.5rem;
+        border-bottom: 2px solid var(--earth-brown);
+    }
+
+    .site-nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 2px 2px;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        display: block;
+        border-radius: 5px;
+        padding: 1rem 2rem;
+        background-color: var(--background-color);
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #e9ba74;
+        background-color: #718355;
+    }
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <link rel="stylesheet" href="/assets/css/worksheets.css" />
 
 <h1 id="p3l1-reviewing-historical-collision-data">P3L1 Reviewing Historical Collision Data</h1>
 
-<h2 id="the-physics-of-car-collisions-a-historical-perspective">The Physics of Car Collisions: A Historical Perspective</h2>
+<hr />
+
+<h3 id="the-physics-of-car-collisions-a-historical-perspective">The Physics of Car Collisions: A Historical Perspective</h3>
 
 <p>In the early days of automobiles, driving was a dangerous and often deadly activity. When cars first appeared on roads in the early 1900s, there were no safety standards, traffic signals, or even basic requirements for driver training. Vehicles lacked essential safety features we take for granted today, such as windshields, headlights, and brakes that worked reliably. This resulted in numerous accidents, with both drivers and pedestrians at serious risk.</p>
 
 <p>The need for safety regulations became increasingly apparent as more cars filled the streets. Pedestrians were especially vulnerable, as they shared the roads with automobiles in an unorganized system. Before the 1930s, there were no speed limits, no clear traffic rules, and no standardized road signs. These conditions led to a public safety crisis, with accident rates soaring and public demand growing for government intervention. This chapter will explore how our understanding of physics helped shape modern car safety standards and how these regulations have saved countless lives.</p>
 
+<hr />
+
 <h3 id="part-1-one-hundred-years-of-change">Part 1: One Hundred Years of Change</h3>
 
-<p>Table 1. Comparison of driving statistics, 1921 and 2021.</p>
+<p><strong>Table 1. Comparison of driving statistics, 1921 and 2021.</strong></p>
 
+<p>&lt;div class=table-wrapper&gt;</p>
 <div class="data-table">
 
   <table>
@@ -63,32 +222,25 @@
   </table>
 
 </div>
+<p>&lt;/div&gt;</p>
 
-<section class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px; width: 100%; margin: 20px auto;">
-
-  <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-
-    <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png" alt="US Population 1921-2021" title="US Population 1921-2021" /></p>
-
+<p><strong>Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).</strong></p>
+<div class="flex-container">
+  <div>
+    <p><img src="https://raw.githubusercontent.com/cosmosclassroomcosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png" alt="US Population 1921-2021" title="US Population 1921-2021" /></p>
   </div>
-
-  <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-
+  <div>
     <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png" alt="US Vehicles 1921-2021" title="US Vehicles 1921-2021" /></p>
-
   </div>
-
-  <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
-
-    <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png" alt="Ratio of people to vehicles 1921-2021" title="Ratio of people to vehicles 1921-2021" /></p>
-
+  <div>
+    <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png" alt="Ratio of people to vehicles 1921-2021" title="Ratio of people to vehicles 1921-2021" />&lt;p class=figure-caption&gt;Humans : Cars&lt;/p&gt;&lt;p&gt;13: 1 in 1921&lt;/p&gt;</p>
   </div>
+</div>
+<hr />
 
-</section>
-
-<p>Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).</p>
-
-<p>In a simple t-chart, record observations and any wonderings about the historical driving data presented.</p>
+<blockquote>
+  <p>In a simple t-chart, record observations and any wonderings about the historical driving data presented.</p>
+</blockquote>
 
 <div class="template-table">
 
@@ -109,13 +261,11 @@
 
 </div>
 
-<checkpoint>
+<hr />
 
-# Checkpoint 1
+<h2 id="checkpoint-2">Checkpoint 2</h2>
 
-Based on the statistics in the table and figure above, has driving become more or less safe over time?
-
-</checkpoint>
+<p>Based on the statistics in the table and figure above, has driving become more or less safe over time?</p>
 
 <p>Produce a copy of the table below in your Science Notebook. Brainstorm at least <em>three</em> factors that have changed between 1921 and 2021 that would make driving more or less safe.</p>
 
@@ -140,8 +290,9 @@ Based on the statistics in the table and figure above, has driving become more o
 
 <hr />
 
-<h4 id="part-2-quantifying-safety">Part 2: Quantifying Safety</h4>
-<h5 id="making-predictions">Making Predictions</h5>
+<h3 id="part-2-quantifying-safety">Part 2: Quantifying Safety</h3>
+
+<h4 id="making-predictions">Making Predictions</h4>
 
 <p>Driving safety can be measured in multiple ways. In your science notebook, make predictions for how the following quantifiable safety metrics have changed over time:</p>
 <ol>
@@ -155,7 +306,10 @@ Based on the statistics in the table and figure above, has driving become more o
 
 <h4 id="us-vehicle-collision-statistics">US Vehicle Collision Statistics</h4>
 
-<p>Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:</p>
+<blockquote>
+  <p>Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:</p>
+
+</blockquote>
 
 <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png" alt="Sample annotated trendlines" />{style=”width:250px”}</p>
 
@@ -175,25 +329,25 @@ Based on the statistics in the table and figure above, has driving become more o
 
 <p><img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png" alt="US Motor Vehicle Injuries per Crash" />{style=”max-width: 70%”}</p>
 
- <!-- This will render the markdown content of the page -->
 
-               
-            </div>
-
-            <!-- Initialize KaTeX rendering -->
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    renderMathInElement(document.body, {
-                        delimiters: [
-                            { left: "$$", right: "$$", display: true },
-                            { left: "$", right: "$", display: false },
-                            { left: "\\[", right: "\\]", display: true },
-                            { left: "\\(", right: "\\)", display: false }
-                        ],
-                        throwOnError: false
-                    });
-                });
-            </script>
-</body>
-
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
 </html>
