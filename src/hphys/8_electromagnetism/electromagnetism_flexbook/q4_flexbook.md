@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # 8 Electromagnetism
 
 ## Student Flexbook
