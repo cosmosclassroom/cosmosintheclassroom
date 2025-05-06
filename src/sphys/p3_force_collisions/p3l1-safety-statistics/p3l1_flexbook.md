@@ -3,7 +3,7 @@ layout: stemplate
 title: P3L1 Reviewing Historical Crash Data
 author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
-stylsheet: cosmosintheclassroom/assets/css/worksheets.css
+stylesheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
 <!-- Direct stylesheet inclusion as fallback -->
@@ -28,19 +28,19 @@ Table 1. Comparison of driving statistics, 1921 and 2021.
 
 <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
 
-![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021"){style="max-width: 100%; height: auto;"}
+![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021")
 
 </div>
 
 <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
 
-![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021")
 
 </div>
 
 <div class="flex-item" style="flex: 1 1 300px; text-align: center; min-width: 0; box-sizing: border-box; padding: 10px; margin-bottom: 20px; border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
 
-![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021")
 
 </div>
 
@@ -88,20 +88,17 @@ Driving safety can be measured in multiple ways. In your science notebook, make 
 4. Number of fatalities
 
 ---
-<span>
 
 #### US Vehicle Collision Statistics
 
 Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:
 
-![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png)
-
+![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png){style="width:250px"}
 
 Below each trendline sketch, write pattern statements for different intervals of trendline you observed. 
 
 - For example, US vehicle crashes decreased between 2005 and 2011.
 
-<span>
 ---
 
 <details>
@@ -112,14 +109,14 @@ Below each trendline sketch, write pattern statements for different intervals of
 </details>
 
 <details>
-<summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
+<summary>US Motor Vehicle Deaths per Mile (1920-2015)</summary>
 
 ![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png){style="max-width: 70%"}
 
 </details>
 
 <details>
-<summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
+<summary>US Motor Vehicle Crashes per Year (1996-2019)</summary>
 
 ![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png){style="max-width: 70%"}
 
