@@ -112,21 +112,21 @@ Below each trendline sketch, write pattern statements for different intervals of
 </details>
 
 <details>
-    <summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
+<summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
 
 ![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png){style="max-width: 70%"}
 
 </details>
 
 <details>
-    <summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
+<summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
 
 ![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png){style="max-width: 70%"}
 
 </details>
 
 <details>
-    <summary>US Motor Vehicle Injuries per Crash (1996-2019)</summary>
+<summary>US Motor Vehicle Injuries per Crash (1996-2019)</summary>
 
 ![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png){style="max-width: 70%"}
 
