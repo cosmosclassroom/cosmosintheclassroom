@@ -20,7 +20,7 @@ Electromagnetic waves are the invisible messengers that traverse the universe, c
 
 ## P3 Force, Impulse, and Collision Safety
 
-[P3 Forces and Collisions Overview](/src/sphys/p3_force_collisions/p3_collisions_overview)
+### [P3 Force and Collisions Overview](p3_force_collisions/p3_collisions_overview.md)
 
 At the intersection of physics and engineering, the study of force and momentum reveals the critical scientific principles that underpin automotive safety, transforming abstract physical concepts into life-saving technologies that protect human lives during the complex, high-stakes scenarios of vehicular collisions. By understanding how forces are transmitted, how momentum is conserved, and how energy is dissipated during an impact, engineers design crumple zones, airbag systems, seat belts, and structural reinforcements that can absorb and redistribute potentially catastrophic kinetic energy, turning the fundamental laws of classical mechanics into a sophisticated shield that mitigates the devastating potential of automotive accidents.
 
