@@ -1,0 +1,101 @@
+---
+layout: stemplate
+title: P3L1 Reviewing Historical Crash Data
+author: Jonathan Corbett and Open Sci Ed
+date: 6 May 2025
+stylesheet: cosmosintheclassroom/assets/css/worksheets.css
+---
+
+# P3L1 Reviewing Historical Collision Data
+
+Table 1. Comparison of driving statistics, 1921 and 2021.
+
+|Year|US Population (millions)|US Vehicles (millions)|People:Vehicle Ratio|
+|-:|:-:|:-:|:-:|
+|1921|113|9|13:1|
+|2021|333|289.5|1:1|
+
+<section style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; width: 100%; margin: 0 auto;">
+
+<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+
+![US Population 1921-2021](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_1.png> "US Population 1921-2021"){style="max-width: 100%; height: auto;"}
+
+</div>
+
+<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+
+![US Vehicles 1921-2021](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_2.png> "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+
+</div>
+
+<div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
+
+![Ratio of people to vehicles 1921-2021](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_3.png> "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+
+</div>
+
+</section>
+
+Figure 1. (A) population , (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue). 
+
+In a simple t-chart, record observations and any wonderings about the historical driving data presented.
+
+<div class="template-table">
+
+|I notice...|I wonder...|
+|-|-|
+|<br> <br> <br> <br> |<br> <br> <br> <br>|
+
+</div>
+<checkpoint>
+
+# Checkpoint 1
+
+Based on the statistics in the table and figure above, has driving become more or less safe over time?
+
+</checkpoint>
+
+Produce a copy of the table below in your Science Notebook. Brainstorm at least *three* factors that have changed between 1921 and 2021 that would make driving more or less safe.
+
+<div class="template-table">
+
+|More Safe|Less Safe|
+|-|-|
+|<br> <br> <br> <br> |<br> <br> <br> <br>|
+
+</div>
+
+---
+
+### Quantifying Safety
+
+## US Vehicle Collision Statistis
+
+<details>
+<summary>US Motor Vehicle Deaths per Capita (1920-2012)</summary>
+
+![US Motor Vehicle Deaths per Capita](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_13.png>)
+
+</details>
+
+<details>
+    <summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
+
+![US Motor Vehicle Deaths per Mile](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_15.png>)
+
+</details>
+
+<details>
+    <summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
+
+![US Motor Vehicle Crashes per Year](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_18.png>)
+
+</details>
+
+<details>
+    <summary>US Motor Vehicle Injuries per Crash (1996-2019)</summary>
+
+![US Motor Vehicle Injuries per Crash](<../../../assets/images/p3_collisions/0 P3 Lesson 1 slides_20.png>)
+
+</details>
