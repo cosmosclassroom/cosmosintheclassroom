@@ -63,9 +63,7 @@ pagination:
 
 # Honors Physics
 
-- 8 Electromagnetism
-- 9 Electricity
-- 10 Optics
+- [Flexbook | Quarter 4 Honors Physics](src/hphys/8_electromagnetism/electromagnetism_flexbook/q4_flexbook.md)
 
 # Standard Physics
 - P5 Waves and Information
