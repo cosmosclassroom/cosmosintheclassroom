@@ -80,9 +80,9 @@ Driving safety can be measured in multiple ways. In your science notebook, make 
 
 <div class='figure'>
 
-![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png)
+<img src='https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png' style="width: 100%; max-width: none;" alt="Sample trendline sketch for US Motor Vehicle Crashes 1996 to 2019">
 
-<div>
+</div>
 
 Below each trendline sketch, write pattern statements for different intervals of trendline you observed. 
 
@@ -90,12 +90,10 @@ Below each trendline sketch, write pattern statements for different intervals of
 
 ---
 
-![US Motor Vehicle Deaths per Capita](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png)
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
 
-![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png)
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
 
-![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png)
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
 
-![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png)
-
-
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
