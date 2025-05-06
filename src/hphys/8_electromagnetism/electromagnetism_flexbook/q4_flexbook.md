@@ -15,4 +15,4 @@
 ### 10 Optics
 - [10.1 Light and Reflection](10.1_light-reflection)
 - [10.2 Refraction and Optical Waves](10.2_refraction-optics)
-- 
+- [10.3 Geometric Optics](10.3_geometric-optics.md)
