@@ -3,8 +3,19 @@ layout: stemplate
 title: P3L1 Reviewing Historical Crash Data
 author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
-stylesheet: cosmosintheclassroom/assets/css/worksheets.css
+css: /assets/css/worksheets.css
+# Alternative approach: uncomment one of these depending on your theme
+styles: /assets/css/worksheets.css
+# style: /assets/css/worksheets.css
 ---
+
+<style>
+    body{
+        max-width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+</style>
 
 # P3L1 Reviewing Historical Collision Data
 
@@ -31,7 +42,7 @@ Table 1. Comparison of driving statistics, 1921 and 2021.
 
 <div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
 
-![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides3.png "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
 
 </div>
 
