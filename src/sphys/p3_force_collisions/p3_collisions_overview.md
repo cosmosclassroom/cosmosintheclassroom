@@ -5,10 +5,45 @@ author: Jonathan Corbett
 date: 1 May 2025
 ---
 
+## Links
+
+Flexbooks
+- [P3L1.1 - Safe Driving Statistics](p3l1_flexbook.md)
+- 
+
+Home Learning
+
+- #### L1 - Driving Safety Statistics
+  - Initial Predictions
+  - Data Review
+  - Brainstorming cause/effect
+  - Driving Safety Data
+  - Distracted Driving Discussion
+- #### L2 - Distracted
+  - P-T Graphs 
+    - Position-Time Data: regular driver
+    - Position-Time Data: distracted driver 
+  - Reading | Distracted Driving Research
+  - Timelines
+    - Create a time measure of YouTube Videos
+    - Arrange paper to make P-T graphs
+    - Debrief the graphing
+  - Exit Ticket - P-T Graphs
+- #### L3 - Velocity and Avoiding Collisions
+  - V-T Graphs
+    - Produce V-T graphs for both driving scenarios
+  - [Calculating Reaction Distances](p3l3-speed-avoiding/p3l3_calculating-reaction-distances.md)
+- #### L4 - Velocity and Collision Outcomes
+  - Discuss Velocity
+  - [YouTube Data](https://www.youtube.com/watch?v=5F6rEvlSsW0&list=PLSLDxqPb5NQmc9aOPrh0SjG_BRiZsVdWA&index=3) | Collision Carts A-
+  - Initial Explanations
+    - Collisions A - D
+
+
 ## P3 Force, Impulse, and Collision Safety
 
 ### L1 - Safe Driving Statistics
-- Data Discussion
+- Data Discussion - **P3L1 Flexbook**
  - Prevalence of auto injuries/fatalities
  - Predictions about causes/reasons
  - Review historical US Data (injuries/fatalities)
