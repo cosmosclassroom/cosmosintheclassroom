@@ -22,19 +22,19 @@ Table 1. Comparison of driving statistics, 1921 and 2021.
 
 <div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
 
-![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021"){style="max-width: 100%; height: auto;"}
+![US Population 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png "US Population 1921-2021")
 
 </div>
 
 <div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
 
-![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021")
 
 </div>
 
 <div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
 
-![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![Ratio of people to vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png "Ratio of people to vehicles 1921-2021")
 
 </div>
 
