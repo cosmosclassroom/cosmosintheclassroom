@@ -22,32 +22,12 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 ### Part 1: One Hundred Years of Change
 
-**Table 1. Comparison of driving statistics, 1921 and 2021.**
-
-
-<div class=table-wrapper>
-<div class="data-table">
-
-| Year | US Population (millions) | US Vehicles (millions) | People:Vehicle Ratio |
-|---:|:---:|:---:|:---:|
-| 1921 | 113 | 9 | 13:1 |
-| 2021 | 333 | 289.5 | 1:1 |
-
-</div>
-</div>
+![1921-2021 Vehicle and Human Statistics](../../../../assets/images/p3_collisions/historical-people-cars-ratio.png)
 
 **Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).**
-<div class='flex-container'>
-<div>
-<img src="https://raw.githubusercontent.com/cosmosclassroomcosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_1.png" alt="US Population 1921-2021" title="US Population 1921-2021">
-</div>
-<div>
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png" alt="US Vehicles 1921-2021" title="US Vehicles 1921-2021">
-</div>
-<div>
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_3.png" alt="Ratio of people to vehicles 1921-2021" title="Ratio of people to vehicles 1921-2021"><p class=figure-caption>Humans : Cars</p><p>13: 1 in 1921</p>
-</div>
-</div>
+
+
+
 ---
 
 > In a simple t-chart, record observations and any wonderings about the historical driving data presented.
@@ -63,10 +43,13 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 
 ---
+<div class='checkpoint'>
 
 ## Checkpoint 2
 
 Based on the statistics in the table and figure above, has driving become more or less safe over time?
+
+</div>
 
 Produce a copy of the table below in your Science Notebook. Brainstorm at least *three* factors that have changed between 1921 and 2021 that would make driving more or less safe.
 

@@ -2,6 +2,7 @@
 layout: default
 title: P3 Collisions Overview
 author: Jonathan Corbett
+permalink: p3
 date: 1 May 2025
 ---
 
