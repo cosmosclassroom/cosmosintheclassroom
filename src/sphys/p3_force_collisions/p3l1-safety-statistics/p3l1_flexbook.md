@@ -6,8 +6,6 @@ date: 6 May 2025
 stylesheet: cosmosintheclassroom/assets/css/worksheets.css
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/worksheets.css' | relative_url }}">
-
 # P3L1 Reviewing Historical Collision Data
 
 ---
@@ -22,10 +20,13 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 ### Part 1: One Hundred Years of Change
 
+<div class='figure'>
+
 ![1921-2021 Vehicle and Human Statistics](../../../../assets/images/p3_collisions/historical-people-cars-ratio.png)
 
 **Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).**
 
+</div>
 
 
 ---
@@ -43,15 +44,16 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 
 ---
+
 <div class='checkpoint'>
 
 ## Checkpoint 2
 
-Based on the statistics in the table and figure above, has driving become more or less safe over time?
+- Based on the statistics in the table and figure above, has driving become more or less safe over time?
 
 </div>
 
-Produce a copy of the table below in your Science Notebook. Brainstorm at least *three* factors that have changed between 1921 and 2021 that would make driving more or less safe.
+> Produce a copy of the table below in your Science Notebook. Brainstorm at least *three* factors that have changed between 1921 and 2021 that would make driving more or less safe.
 
 <div class="template-table">
 
@@ -80,7 +82,11 @@ Driving safety can be measured in multiple ways. In your science notebook, make 
 > Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:
 >
 
-![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png){style="width:250px"}
+<div class='figure'>
+
+![Sample annotated trendlines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/annotated_ex.png)
+
+<div>
 
 Below each trendline sketch, write pattern statements for different intervals of trendline you observed. 
 

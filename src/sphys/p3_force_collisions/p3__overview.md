@@ -7,7 +7,7 @@ date: 1 May 2025
 ---
 
 - L1 - Introduction
-  - [P3L1.1 - Safe Driving Statistics](p3l1_flexbook.md)
+  - [P3L1 Historical Safety Statistics](p3l1-safety-statistics/p3l1_flexbook.md)
   - [P3L1.2 - Distance and Time](p3l1.2_position-graphs.md)
 - L2 Position and Time
 - L3 - Velocity
@@ -24,9 +24,9 @@ Home Learning
   - Driving Safety Data
   - Distracted Driving Discussion
 - #### L2 - Distracted
-  - P-T Graphs 
+  - P-T Graphs
     - Position-Time Data: regular driver
-    - Position-Time Data: distracted driver 
+    - Position-Time Data: distracted driver
   - Reading | Distracted Driving Research
   - Timelines
     - Create a time measure of YouTube Videos
@@ -43,36 +43,38 @@ Home Learning
   - Initial Explanations
     - Collisions A - D
 
-
 ## P3 Force, Impulse, and Collision Safety
 
 ### L1 - Safe Driving Statistics
-- Data Discussion - **P3L1 Flexbook**
- - Prevalence of auto injuries/fatalities
- - Predictions about causes/reasons
- - Review historical US Data (injuries/fatalities)
-- Modeling Collisions
- - YouTube Videos and Strips of Paper Models
- - Factors & Features That Determine Collision Outcomes
- - Annotate a timeline with factors and features that affect collision outcomes
 
-### L2 - Distracted Driving 
+- Data Discussion - **P3L1 Flexbook**
+- Prevalence of auto injuries/fatalities
+- Predictions about causes/reasons
+- Review historical US Data (injuries/fatalities)
+- Modeling Collisions
+- YouTube Videos and Strips of Paper Models
+- Factors & Features That Determine Collision Outcomes
+- Annotate a timeline with factors and features that affect collision outcomes
+
+### L2 - Distracted Driving
+
 - Graphing: Distracted vs. non-distracted driving
- - **P/T and V/T graphs**
-- **Home Learning**: Distracted Driver Research 
- - Sources of distraction while driving
- - Statistical analysis of reaction time delays
- - Connection between distraction and accident probability
- - Key vocabulary: reaction time, distraction factor, cognitive load
+- **P/T and V/T graphs**
+- **Home Learning**: Distracted Driver Research
+- Sources of distraction while driving
+- Statistical analysis of reaction time delays
+- Connection between distraction and accident probability
+- Key vocabulary: reaction time, distraction factor, cognitive load
 
 ### L3 - Speed and Collisions (avoidance)
+
 - V-T Graphing
   - Interpreting velocity-time graphs for vehicles
   - Calculating displacement from v-t graphs (area under curve)
   - Critical points in collision avoidance scenarios
 - Calculating Reaction Distances
   - Equation: d = v × t (distance = velocity × reaction time)
-  - Braking distance equation: d = v²/(2μg) 
+  - Braking distance equation: d = v²/(2μg)
   - Total stopping distance = reaction distance + braking distance
 - Discussion: Speed Limits
   - Physics-based justifications for speed limits
@@ -87,6 +89,7 @@ Home Learning
   - International comparisons and outcomes
 
 ### L4 - Speed and Collision (outcomes)
+
 - Analyzing Collision Data
   - YouTube Videos of Green/Blue Carts
   - Collisions A - D
@@ -100,6 +103,7 @@ Home Learning
   - Key vocabulary: impulse, momentum, collision, conservation
 
 ### L5 - Mass, Speed, Force
+
 - Relationship between mass and collision outcomes
   - Equation: KE = ½mv²
   - Momentum equation: p = mv
@@ -115,6 +119,7 @@ Home Learning
   - Key vocabulary: kinetic energy, elastic collision, inelastic collision, crumple zone
 
 ### L6 - Lab - Momentum and Impulse Carts
+
 - Experimental design
   - Control variables
   - Data collection methods
@@ -130,6 +135,7 @@ Home Learning
   - Key vocabulary: experimental error, significant figures, uncertainty, verification
 
 ### L7 - Assessment - Vehicle Stopping Times
+
 - Comprehensive problem solving
   - Multi-step problems combining reaction time, braking distance, momentum, and impulse
   - Real-world scenario analysis
@@ -144,5 +150,3 @@ Home Learning
   - p = mv
   - J = FΔt = Δp
   - KE = ½mv²
-
-
