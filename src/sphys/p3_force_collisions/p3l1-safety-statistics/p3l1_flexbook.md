@@ -11,7 +11,14 @@ stylesheet: cosmosintheclassroom/assets/css/worksheets.css
 
 # P3L1 Reviewing Historical Collision Data
 
-## Part 1: One Hundred Years of Change
+## The Physics of Car Collisions: A Historical Perspective
+
+In the early days of automobiles, driving was a dangerous and often deadly activity. When cars first appeared on roads in the early 1900s, there were no safety standards, traffic signals, or even basic requirements for driver training. Vehicles lacked essential safety features we take for granted today, such as windshields, headlights, and brakes that worked reliably. This resulted in numerous accidents, with both drivers and pedestrians at serious risk.
+
+The need for safety regulations became increasingly apparent as more cars filled the streets. Pedestrians were especially vulnerable, as they shared the roads with automobiles in an unorganized system. Before the 1930s, there were no speed limits, no clear traffic rules, and no standardized road signs. These conditions led to a public safety crisis, with accident rates soaring and public demand growing for government intervention. This chapter will explore how our understanding of physics helped shape modern car safety standards and how these regulations have saved countless lives.
+
+
+### Part 1: One Hundred Years of Change
 
 Table 1. Comparison of driving statistics, 1921 and 2021.
 
@@ -78,8 +85,8 @@ Produce a copy of the table below in your Science Notebook. Brainstorm at least 
 
 ---
 
-### Quantifying Safety
-#### Making Predictions
+#### Part 2: Quantifying Safety
+##### Making Predictions
 
 Driving safety can be measured in multiple ways. In your science notebook, make predictions for how the following quantifiable safety metrics have changed over time:
 1. Number of vehicle collisions (vehicle-vehicle)
