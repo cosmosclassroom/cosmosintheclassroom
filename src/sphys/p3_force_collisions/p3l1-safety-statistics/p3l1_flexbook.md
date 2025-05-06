@@ -5,17 +5,9 @@ author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
 css: /assets/css/worksheets.css
 # Alternative approach: uncomment one of these depending on your theme
-styles: /assets/css/worksheets.css
+# styles: /assets/css/worksheets.css
 # style: /assets/css/worksheets.css
 ---
-
-<style>
-    body{
-        max-width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-</style>
 
 # P3L1 Reviewing Historical Collision Data
 
@@ -36,7 +28,7 @@ Table 1. Comparison of driving statistics, 1921 and 2021.
 
 <div style="flex: 1 1 200px; text-align: center; min-width: 0; max-width: 100%; margin-bottom: 10px;">
 
-![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_2.png "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
+![US Vehicles 1921-2021](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides2.png "US Vehicles 1921-2021"){style="max-width: 100%; height: auto;"}
 
 </div>
 
@@ -88,6 +80,8 @@ Driving safety can be measured in multiple ways. In your science notebook, make 
 3. Number of injuries
 4. Number of fatalities
 
+---
+
 #### US Vehicle Collision Statistics
 
 Review the safety statistics below. In your science notebooks, produce rough sketches of major patterns/trends in the data. An example has been provided for you below:
@@ -103,28 +97,28 @@ Below each trendline sketch, write pattern statements for different intervals of
 <details>
 <summary>US Motor Vehicle Deaths per Capita (1920-2012)</summary>
 
-![US Motor Vehicle Deaths per Capita](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png){style="max-width: 90%"}
+![US Motor Vehicle Deaths per Capita](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png){style="max-width: 70%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Deaths per Mile (1920-2015) </summary>
 
-![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png){style="max-width: 90%"}
+![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png){style="max-width: 70%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Crashes per Year (1996-2019) </summary>
 
-![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png){style="max-width: 90%"}
+![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png){style="max-width: 70%"}
 
 </details>
 
 <details>
     <summary>US Motor Vehicle Injuries per Crash (1996-2019)</summary>
 
-![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png){style="max-width: 90%"}
+![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png){style="max-width: 70%"}
 
 </details>
 
