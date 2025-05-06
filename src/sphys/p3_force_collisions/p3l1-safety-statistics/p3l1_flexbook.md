@@ -20,11 +20,12 @@ The need for safety regulations became increasingly apparent as more cars filled
 
 ### Part 1: One Hundred Years of Change
 
-<div class="figure">
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/historical-people-cars-ratio.png" style="width:120%;" alt="1921-2021 Vehicle and Human Statistics">
+ 
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/historical-people-cars-ratio.png" style="width:100%; max-width: none;" alt="1921-2021 Vehicle and Human Statistics">
+
 <br>
 <strong>Figure 1. (A) Population, (B) Number of vehicles, and (C) Ratio of people to vehicles in 1921 (orange) and 2021 (blue).</strong>
-</div>
+
 
 ---
 
@@ -89,12 +90,12 @@ Below each trendline sketch, write pattern statements for different intervals of
 
 ---
 
-![US Motor Vehicle Deaths per Capita](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png){style="max-width: 70%"}
+![US Motor Vehicle Deaths per Capita](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png)
 
-![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png){style="max-width: 70%"}
+![US Motor Vehicle Deaths per Mile](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png)
 
-![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png){style="max-width: 70%"}
+![US Motor Vehicle Crashes per Year](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png)
 
-![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png){style="max-width: 70%"}
+![US Motor Vehicle Injuries per Crash](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png)
 
 
