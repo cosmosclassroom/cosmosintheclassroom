@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: 
 title: P3L1 Reviewing Historical Crash Data
 author: Jonathan Corbett and Open Sci Ed
 date: 6 May 2025
