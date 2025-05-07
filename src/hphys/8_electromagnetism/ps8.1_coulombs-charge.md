@@ -47,3 +47,119 @@ author: Jonathan Corbett
 
 8. a) 3.2 × 10⁻¹⁵ N attractive or along the negative x-axis
    b) 3.2 × 10⁻¹⁵ N repulsive or along the positive x-axis
+
+---
+<!--
+## JSON Problem Type Entries
+
+```json
+[
+  {
+    "type": "Coulomb's Law Force Calculations",
+    "parent_formula": "F = k * |q_1 * q_2| / r^2",
+    "variables": [
+      "F (force)",
+      "k (Coulomb constant)",
+      "q_1 (charge 1)",
+      "q_2 (charge 2)",
+      "r (distance)"
+    ],
+    "concepts": [
+      "Coulomb's Law",
+      "electrostatic force",
+      "attraction/repulsion",
+      "inverse square law"
+    ]
+  },
+  {
+    "type": "Charge Redistribution/Conservation",
+    "parent_formula": "q_{final} = (q_1 + q_2) / 2",
+    "variables": [
+      "q_{final} (final charge on each sphere)",
+      "q_1 (initial charge 1)",
+      "q_2 (initial charge 2)"
+    ],
+    "concepts": [
+      "charge conservation",
+      "conductors",
+      "equilibrium"
+    ]
+  },
+  {
+    "type": "Solving for Distance Given Force",
+    "parent_formula": "r = sqrt(k * |q_1 * q_2| / F)",
+    "variables": [
+      "r (distance)",
+      "k (Coulomb constant)",
+      "q_1 (charge 1)",
+      "q_2 (charge 2)",
+      "F (force)"
+    ],
+    "concepts": [
+      "algebraic manipulation",
+      "Coulomb's Law"
+    ]
+  },
+  {
+    "type": "Equilibrium Position for a Third Charge",
+    "parent_formula": "F_{net} = 0",
+    "variables": [
+      "q_1 (charge 1)",
+      "q_2 (charge 2)",
+      "q_3 (third charge)",
+      "r_1, r_2 (distances from q_3 to q_1 and q_2)"
+    ],
+    "concepts": [
+      "superposition of forces",
+      "equilibrium",
+      "vector addition"
+    ]
+  },
+  {
+    "type": "Electric Field from Point Charge",
+    "parent_formula": "E = k * |q| / r^2",
+    "variables": [
+      "E (electric field)",
+      "k (Coulomb constant)",
+      "q (charge)",
+      "r (distance)"
+    ],
+    "concepts": [
+      "electric field",
+      "point charge"
+    ]
+  },
+  {
+    "type": "Force on a Charge in an Electric Field",
+    "parent_formula": "F = q * E",
+    "variables": [
+      "F (force)",
+      "q (charge)",
+      "E (electric field)"
+    ],
+    "concepts": [
+      "electric force",
+      "field direction",
+      "charge sign"
+    ]
+  },
+  {
+    "type": "Balancing Electric and Gravitational Forces",
+    "parent_formula": "F_{electric} = F_{gravity}",
+    "variables": [
+      "F_{electric} (electric force)",
+      "F_{gravity} (gravitational force)",
+      "q (charge)",
+      "E (electric field)",
+      "m (mass)",
+      "g (acceleration due to gravity)"
+    ],
+    "concepts": [
+      "force balance",
+      "gravity",
+      "electric field"
+    ]
+  }
+]
+```
+-->

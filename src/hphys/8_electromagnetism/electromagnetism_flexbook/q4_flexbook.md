@@ -1,6 +1,7 @@
 ---
 layout: default
 css: assets/css/worksheets.css
+permalink: /hphys/q4flexbook
 ---
 
 
