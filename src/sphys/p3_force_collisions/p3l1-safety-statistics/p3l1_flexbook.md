@@ -89,11 +89,26 @@ Below each trendline sketch, write pattern statements for different intervals of
 - For example, US vehicle crashes decreased between 2005 and 2011.
 
 ---
+<div style="width:600px; height: auto;">
 
 ![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png)
 
+</div>
+
+<div style="width:600px; height: auto;">
+
 ![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png)
+
+</div>
+
+<div style="width:600px; height: auto;">
 
 ![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png)
 
+</div>
+
+<div style="width:600px; height: auto;">
+
 ![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png)
+
+</div>
