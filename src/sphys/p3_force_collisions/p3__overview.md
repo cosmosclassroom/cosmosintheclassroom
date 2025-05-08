@@ -8,9 +8,10 @@ date: 1 May 2025
 
 - L1 - Introduction
   - [P3L1 Historical Safety Statistics](p3l1-safety-statistics/p3l1_flexbook.md)
-  - [P3L1.2 - Distance and Time](p3l1.2_position-graphs.md)
 - L2 Position and Time
+  - [P3L2 Position-Time Graphs](p3l2-distracted-driving/p3l2_flexbook.md)
 - L3 - Velocity
+  - [P3L3 Velocity-Time Graphs](p3l3-speed-avoiding/p3l3_flexbook.md)
 - L4 - Velocity, Impact, and Force
 - L5 - Conservation of Momentum
 - L6 - Collision Carts Lab
