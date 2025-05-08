@@ -1,5 +1,5 @@
 ---
-layout: stemplate
+layout: default
 title: P3L3 - Velocity-Time Graphs, Stopping Distance, and Safe Driving
 permalink: /sphys/p3l3
 author: Jonathan Corbett and Claude Sonnet 3.3

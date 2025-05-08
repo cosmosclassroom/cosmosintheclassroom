@@ -1,5 +1,5 @@
 ---
-layout: stemplate
+layout: default
 title: P3L2 - Position, Time, Velocity and P-T Graphs
 permalink: /sphys/p3l2
 author: Jonathan Corbett and Claude Sonnet 3.3
