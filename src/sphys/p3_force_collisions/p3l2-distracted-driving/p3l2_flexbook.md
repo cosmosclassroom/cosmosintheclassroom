@@ -15,18 +15,17 @@ When you're driving, the distance it takes to stop your car in an emergency isn'
 **Braking distance** is the distance your car travels from the moment you start braking until the car comes to a complete stop. This distance is affected by things like your speed, the condition of your brakes and tires, and the road surface.
 
 ---
-## Data - Analyizing the Motion of Driving
+## Data - Analyzing the Motion of Driving
 
-Review the two short video clips below. The first shows a driver reacting to the appearance of an obstacle, applying the brakes, and coming to a stop. The second shows the same scenario, except that the driver was temporarily *distracted* - temporarily paying attention to something other than driving.
+Review the two short video clips below. The first shows a driver reacting to the appearance of an obstacle, applying the brakes, and coming to a stop. The second shows the same scenario, except that the driver was temporarily *distracted*—temporarily paying attention to something other than driving.
 
 ### Scenario 1 - Non-Distracted Driver and Obstacle
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z11esq-Zs2E?si=CRB7VjKEVVxD80Fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Non-distracted Driver and Obstacle</iframe>
 
-
 ### Scenario 2 - Distracted Driver and Obstacle
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D2-2L_e3bLU?si=-29VNGTdN4TEeTXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D2-2L_e3bLU?si=-29VNGTdN4TEeTXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Distracted Driver and Obstacle</iframe>
 
 > In your notebook, copy the table below and decide what events we should measure to best describe the motion of the car responding to the obstacle.
 
@@ -39,18 +38,15 @@ Review the two short video clips below. The first shows a driver reacting to the
 |Position 2|$x_2$||
 |Position 3|$x_3$||
 
-
 </div>
 
-<checkpoint>
+<div class='checkpoint'>
 
 # Checkpoint 1
 - In the table above, which interval(s) (distances between positions) represent *reaction distance?*
 - Which interval(s) represent *braking distance*?
 
 </checkpoint>
-
-
 
 ### Analyzing Motion with Position
 To really understand how reaction time and braking distance work, we can analyze the position of a car mathematically. By marking the car's position at different points in time, we can visualize and calculate the distances traveled during the reaction and braking phases.
@@ -81,7 +77,7 @@ We can use a scale (like the known length of the car) to convert measurements fr
 </div>
 
 >Instructions
->1. Using a ruler, determine the *relative* size (length) of the car in the videos. Record this value in your table (in m)
+>1. Using a ruler, determine the *relative* size (length) of the car in the videos. Record this value in your table (in m).
 >2. Use a ruler to determine the lengths of the position intervals (distances from $x_0$ to each position). Record these values in the table above.
 >3. Find the ratio of the actual length of the car (4.5 meters) to the length you measured. Set this ratio equal to the ratio of the actual distance of each position interval to the measured length of that interval. This relationship is illustrated in this equation:
 > $$\frac{\text{actual car length}}{\text{measured car length}} = \frac{\text{actual distance}\,(\Delta X)}{\text{measured} \,(\Delta X)}$$
@@ -112,9 +108,8 @@ We can use a scale (like the known length of the car) to convert measurements fr
 ### The Relationship Between Space and Time  
 All change occurs over time, and understanding an object's position in space requires knowing its position in time. Motion is inherently tied to the passage of time, as an object's location can only be described relative to specific moments. This connection between space and time is fundamental to analyzing and predicting motion in all of physics.
 
-
 > 1. Use two new strips of paper to reconstruct a timeline of each driver stopping. 
->2. Determine and record time at which each important position was reached. Label each point with a corresponding position (example: the car was at position $x_0$ at the time $t_0$)
+>2. Determine and record the time at which each important position was reached. Label each point with a corresponding position (example: the car was at position $x_0$ at the time $t_0$)
 
 Table 1. Position and time data for a non-distracted driver reacting to an obstacle.
 
@@ -124,8 +119,6 @@ Table 1. Position and time data for a non-distracted driver reacting to an obsta
 |$x_1$||
 |$x_2$||
 |$x_3$||
-
-
 
 ## Visualizing Motion with Position-Time Graphs
 A powerful way to visualize motion is by creating a **position-time (P-T) graph**. This type of graph plots the position of an object on the vertical axis (y-axis) against time on the horizontal axis (x-axis).
@@ -149,7 +142,7 @@ The table above contains position and time data that should look familiar from y
 ### Velocity (Speed)
 The **slope** of a position-time graph tells us about the object's **velocity** (speed and direction). 
 
-From maths class, the equation for slope should be familiar:
+From math class, the equation for slope should be familiar:
 $$ \text{slope} = \frac{\text{rise}}{\text{run}} = \frac{\text{change in position}}{\text{change in time}} = \frac{\Delta x*}{\Delta t}$$
 
 $\text{*}$ note that in this example $\Delta x$ is on the vertical axis, even though $x$ is usually the horizontal axis, we are using the letter $x$ to represent position.
@@ -160,14 +153,9 @@ A student determined that the distance between $x_0$ and $x_1$ was 6.9 meters an
 
 $$slope = \frac{\Delta x}{\Delta t} = \frac{6.9\, meters}{1.9\,seconds} \approx 3.6\, \frac{m}{s}$$
 
-
 > 1. In a different color or line type or on a different graph entirely, produce a P-T graph of the distracted driver's motion.
 
 By comparing the position-time graphs for a non-distracted driver and a distracted driver, we can see how the longer reaction time of the distracted driver affects the overall motion and stopping distance. The graph for the distracted driver will show the car covering more distance at a constant speed during the reaction time before the slope changes due to braking.
-
-
-
-
 
 ### Putting it Together: Distraction and Stopping Distance
 Being distracted significantly increases your reaction time. This longer reaction time means your car travels a greater distance before you even begin to brake. While the braking process itself might be the same once the brakes are applied, the extra distance covered during the reaction time adds to the total stopping distance. This increased stopping distance can be the crucial difference between avoiding a collision and being involved in one.
