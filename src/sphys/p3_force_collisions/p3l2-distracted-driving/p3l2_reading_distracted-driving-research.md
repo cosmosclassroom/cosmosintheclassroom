@@ -1,3 +1,7 @@
+---
+layout: default
+permalink: /sphys/p3l2-distracted-driving
+---
 # Distracted Driving Research
 
 **Before you begin, consider:**  
