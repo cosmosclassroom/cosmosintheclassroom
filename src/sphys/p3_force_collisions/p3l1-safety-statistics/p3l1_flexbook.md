@@ -9,6 +9,11 @@ stylesheet: cosmosintheclassroom/assets/css/worksheets.css
 # P3L1 Reviewing Historical Collision Data
 
 ---
+<style>
+    img {
+        max-width: 100%
+    }
+</style>
 
 ### The Physics of Car Collisions: A Historical Perspective
 
@@ -89,11 +94,26 @@ Below each trendline sketch, write pattern statements for different intervals of
 - For example, US vehicle crashes decreased between 2005 and 2011.
 
 ---
+<div style="max-width:800px; height: auto; display: centered;">
 
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
+![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_13.png)
 
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
+</div>
 
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
+<div style="max-width:800px; height: auto; display: centered;">
 
-<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png' style="width: 100%; max-width: 120%;" alt="Trends in US Motor Vehicle">
+![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_15.png)
+
+</div>
+
+<div style="max-width:800px; height: auto; display: centered;">
+
+![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_18.png)
+
+</div>
+
+<div style="max-width:800px; height: auto; display: centered;">
+
+![Trends in US Motor Vehicle](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/p3l1_slides_20.png)
+
+</div>
