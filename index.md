@@ -9,7 +9,7 @@ mathjax: true
 pagination:
     enabled: false
 ---
-<style>
+<!-- <style>
     * {
         font-family: Georgia, sans-serif;
     }
@@ -59,7 +59,7 @@ pagination:
         flex-wrap: wrap;
         margin-top: 120px; /* Added to ensure content is below header */
     }
-</style>
+</style> -->
 
 # Honors Physics
 
@@ -69,8 +69,8 @@ pagination:
 - P5 Waves and Information
 - P3 Force, Motion, and Collisions
   - [L1 Historical Data](src/sphys/p3_force_collisions/p3l1-safety-statistics/p3l1_flexbook.md)
-  - L2 Distracted Driving
-  - L3 Speed and Collision Avoidance
+  - [L2 Motion, Position-Time](src/sphys/p3_force_collisions/p3l2-distracted-driving/p3l2_flexbook.md)
+  - [L3 Velocity, Distances and Speed Limits](src/sphys/p3_force_collisions/p3l3-speed-avoiding/ps3l3-reaction-distances.md)
   - L4 Speed and Collision Outcomes
   - L5 Mass, Speed, and Force
   - L6 Momentum and Impulse Carts
