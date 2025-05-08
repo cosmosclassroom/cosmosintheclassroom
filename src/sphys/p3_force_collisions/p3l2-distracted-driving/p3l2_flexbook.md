@@ -21,11 +21,11 @@ Review the two short video clips below. The first shows a driver reacting to the
 
 ### Scenario 1 - Non-Distracted Driver and Obstacle
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z11esq-Zs2E?si=CRB7VjKEVVxD80Fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Non-distracted Driver and Obstacle</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z11esq-Zs2E?si=CRB7VjKEVVxD80Fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ### Scenario 2 - Distracted Driver and Obstacle
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/D2-2L_e3bLU?si=-29VNGTdN4TEeTXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Distracted Driver and Obstacle</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D2-2L_e3bLU?si=-29VNGTdN4TEeTXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 > In your notebook, copy the table below and decide what events we should measure to best describe the motion of the car responding to the obstacle.
 
@@ -143,6 +143,7 @@ The table above contains position and time data that should look familiar from y
 The **slope** of a position-time graph tells us about the object's **velocity** (speed and direction). 
 
 From math class, the equation for slope should be familiar:
+
 $$ \text{slope} = \frac{\text{rise}}{\text{run}} = \frac{\text{change in position}}{\text{change in time}} = \frac{\Delta x*}{\Delta t}$$
 
 $\text{*}$ note that in this example $\Delta x$ is on the vertical axis, even though $x$ is usually the horizontal axis, we are using the letter $x$ to represent position.
