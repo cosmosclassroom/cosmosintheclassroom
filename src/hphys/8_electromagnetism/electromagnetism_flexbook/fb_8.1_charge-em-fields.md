@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Understanding Electric Charge and Fields - From Coulomb's Law to Field Energy
+title: "8.1 Understanding Electric Charge and Fields: From Coulomb's Law to Field Energy"
 author: Jonathan Corbett and Claude 3.7 Sonnet
 permalink: hphys/8.3/
 date: 5 May 2025
@@ -13,22 +13,25 @@ date: 5 May 2025
         box-shadow: 5pt grey solid;
         border: 0.5px lightgrey solid;
     }
-    
 </style>
 
-# Understanding Electric Charge and Fields: From Coulomb's Law to Field Energy
+# 8.1 Understanding Electric Charge and Fields  
+## From Coulomb's Law to Field Energy
 
 Electric charge is one of the fundamental properties of matter, giving rise to many of the phenomena we observe in the natural world and utilize in technology. This tutorial explores the nature of electric charge, how charges interact through Coulomb's law, the concept of electric fields, and the energy stored within these fields.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TFlVWf8JX4A?si=wckm3TYLgAnLU7Ne" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## The Nature of Electric Charge
+---
+
+## 1. The Nature of Electric Charge
 
 Electric charge is a fundamental property of matter, similar to mass, but with some important differences:
 
-- **Types of Charge**: Unlike mass, charge comes in two varieties: positive and negative
-- **Quantization**: Charge occurs in discrete amounts, with the electron carrying the smallest naturally occurring charge
-- **Conservation**: The total charge in an isolated system remains constant
-- **Carriers**: Electrons (negative) and protons (positive) are the most common charge carriers
+- **Types of Charge:** Positive and negative
+- **Quantization:** Charge occurs in discrete amounts, with the electron carrying the smallest naturally occurring charge
+- **Conservation:** The total charge in an isolated system remains constant
+- **Carriers:** Electrons (negative) and protons (positive) are the most common charge carriers
 
 <div class="important-info">
 
@@ -46,11 +49,13 @@ In everyday objects, charges can be transferred through processes like friction 
 
 *Induction occurs when charges are temporarily isolated (a) before attaching a ground (b). The ground allows charge of one type to escape, resulting in an isolated charge. If no ground is attached (c) the temporary isolation reverts when the isolating charge is removed (d).*
 
-## Coulomb's Law: The Force Between Charges
+---
+
+## 2. Coulomb's Law: The Force Between Charges
 
 ![Coulomb's Experiment](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/coulomb's%20experiment.png)
 
-In 1785, Charles-Augustin de Coulomb discovered the mathematical relationship governing the force between two charged objects. Coulomb's law states:
+In 1785, Charles-Augustin de Coulomb discovered the mathematical relationship governing the force between two charged objects.
 
 <div class='important-info'>
 
@@ -60,8 +65,10 @@ The force between two charged objects is:
 - Inversely proportional to the square of the distance between them
 - Attractive for opposite charges, repulsive for like charges
 
-Mathematically:  
-$F = k \frac{|q_1 q_2|}{r^2}$,  
+**Mathematical Form:**  
+$$
+F = k \frac{|q_1 q_2|}{r^2}
+$$
 where $k = 8.99 \times 10^9$ N·m²/C² (Coulomb's constant)
 
 </div>
@@ -69,19 +76,44 @@ where $k = 8.99 \times 10^9$ N·m²/C² (Coulomb's constant)
 As a simple illustration, if you double the charge on one object, the force doubles. If you halve the distance between charges, the force becomes four times stronger. This relationship follows the same mathematical pattern as Newton's law of gravitation, but with some key differences:
 
 - Electric forces can be attractive or repulsive
-- Electric forces are vastly stronger than gravitational forces (approximately 10^36 times stronger for electrons and protons)
+- Electric forces are vastly stronger than gravitational forces (approximately $10^{36}$ times stronger for electrons and protons)
 
 This powerful interaction between charges is what allows atoms to hold together and form molecules, and ultimately, all matter.
 
-## The Electric Field Concept
+### Example: Calculating Electric Force
+
+**Given:**  
+$q_1 = 3.00 \times 10^{-6}$ C  
+$q_2 = -2.00 \times 10^{-6}$ C  
+$r = 0.150$ m
+
+**Solution:**  
+$$
+F = k \frac{|q_1 q_2|}{r^2}
+$$
+1. Multiply charges:  
+   $|q_1 q_2| = |3.00 \times 10^{-6} \cdot -2.00 \times 10^{-6}| = 6.00 \times 10^{-12} \text{ C}^2$
+2. Square distance:  
+   $r^2 = (0.150)^2 = 0.0225 \text{ m}^2$
+3. Plug in values:  
+   $F = (8.99 \times 10^9) \frac{6.00 \times 10^{-12}}{0.0225} = 2.40 \text{ N}$
+
+**Interpretation:**  
+The force is attractive (opposite charges).
+
+---
+
+## 3. The Electric Field Concept
 
 While Coulomb's law describes the direct interaction between charges, the electric field concept provides a more powerful way to understand how charges influence space around them.
 
 ### What is an Electric Field?
 
+<div class='figure-right'>
+
 ![Electric Field Lines](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/electric%20field%20lines.png)
 
-*Fields can be visualized as arrows showing the direction of the field. In these electric fields, the arrows show the direction of acceleration of a test charge, $q_0$, which is always positive. Thus, the charge would accelerate away from the positive charge (a) and toward the negative charge (b).*
+</div>
 
 An electric field is a region of space where an electric charge will experience a force. It can be visualized as:
 
@@ -91,8 +123,6 @@ An electric field is a region of space where an electric charge will experience 
 
 The electric field concept was developed by Michael Faraday in the 19th century and provides a more intuitive way to understand electric and magnetic interactions than action-at-a-distance forces.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mdulzEfQXDE?si=t5K63Laiz8AbvOW4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 ### Electric Field of a Point Charge
 
 A single point charge creates an electric field that:
@@ -100,19 +130,26 @@ A single point charge creates an electric field that:
 - Gets weaker with distance (following the inverse square relationship)
 - Points away from positive charges and toward negative charges
 
-We can visualize electric fields using field lines - imaginary lines that show the direction a positive test charge would move if placed in the field. The density of these lines indicates the field strength.
+**Mathematical Form:**  
+$$
+E = k \frac{|q|}{r^2}
+$$
+
+We can visualize electric fields using field lines—imaginary lines that show the direction a positive test charge would move if placed in the field. The density of these lines indicates the field strength.
 
 ![Test Charge Field](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/test%20charge%20field.png)
 
-## Electric Field Patterns
+---
+
+## 4. Electric Field Patterns
 
 Different charge arrangements create distinctive field patterns:
 
-- **Point Charge**: Field lines radiate equally in all directions
-- **Two Like Charges**: Field lines repel each other, creating a pattern that pushes outward
-- **Two Unlike Charges**: Field lines connect the charges, creating an attractive pattern
-- **Dipole** (positive and negative charge pair): Field lines flow from positive to negative, creating a characteristic pattern found in many molecules
-- **Uniform Field**: Field lines that are parallel and equally spaced, found between charged plates
+- **Point Charge:** Field lines radiate equally in all directions
+- **Two Like Charges:** Field lines repel each other, creating a pattern that pushes outward
+- **Two Unlike Charges:** Field lines connect the charges, creating an attractive pattern
+- **Dipole:** Field lines flow from positive to negative, creating a characteristic pattern found in many molecules
+- **Uniform Field:** Field lines that are parallel and equally spaced, found between charged plates
 
 These patterns help us understand how charges will influence other charges placed in their vicinity.
 
@@ -120,24 +157,22 @@ These patterns help us understand how charges will influence other charges place
 
 *Here, two fields are shown overlapping. The strength of the field lines is indicated by the closeness of the lines (closer lines indicating stronger fields). The direction of acceleration of a test charge $q_0$ indicates field direction.*
 
-## Electric Potential and Voltage
+---
 
-![Charge Potential Energy](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/charge-potential-energy.png)
-
-*Analogy of gravitational and electric fields. A mass (a) requires work to be lifted a distance out of an attractive gravitational field. Thus its potential energy at a height $h$ is greater than at the ground. Similarly, 2 charges (b) change potential energy when pushed a distance toward a like-charged field. Releasing the stones would return the energy stored in the field to the stones as kinetic energy; releasing the charges in the electric field would release the energy stored in the field as kinetic energy of the charged particles.*
+## 5. Electric Potential and Voltage
 
 
 <div class='important-info'>
 
-
 **Electric Potential (Voltage):**  
 The electric potential per unit charge at a point in space.  
-$V = \frac{U}{q}$
+$$
+V = \frac{PE_{electric}}{q}
+$$
 
+The units of electric potential are $\frac{Joules}{Coulomb}$ ($\frac{J}{C}$), more commonly known as a **volt** (V).
 
-The units of electric potential are $\frac{Joules}{Coulomb}$ ($\frac{J}{C}$), more commonly known as a **volt** (V)
-
-
+</div>
 
 Voltage is measured in volts (V) and represents how much energy a charge would gain or lose by moving between two points. This concept is crucial for understanding:
 
@@ -145,7 +180,20 @@ Voltage is measured in volts (V) and represents how much energy a charge would g
 - Electrical circuits (where potential differences drive current)
 - Capacitors (which store energy as a separation of charge)
 
-</div>
+### Example: Calculating Electric Potential
+
+**Given:**  
+$q = 2.00 \times 10^{-6}$ C  
+$r = 0.300$ m
+
+**Solution:**  
+$$
+V = k \frac{q}{r}
+$$
+Plug in values:  
+$V = (8.99 \times 10^9) \frac{2.00 \times 10^{-6}}{0.300} = 59,933$ volts
+
+The potential is positive since we used a positive charge. This means work would be required to bring another positive charge closer to this point.
 
 ---
 
@@ -153,12 +201,23 @@ Voltage is measured in volts (V) and represents how much energy a charge would g
 
 > Focus on the first ~75% of this video - we will limit our discussion to the basics of capacitance without dialectrics or integrations.
 
-  
-Imagine a positive test charge moving between the plates of a capacitor. The uniform electric field between the plates exerts a constant force on the charge, pushing it toward the negative plate. If you move the charge from the positive to the negative plate, the electric field does work on it, and this work is stored as electric potential energy. The amount of work done per unit charge is the electric potential difference, or voltage, between the plates. This is why voltage is measured in joules per coulomb (volts). Equipotential lines—lines where the potential is constant—run parallel to the plates and are always perpendicular to the electric field. In a capacitor, these lines help us visualize how the potential changes from one plate to the other.
+Imagine a positive test charge moving between the plates of a capacitor. The uniform electric field between the plates exerts a constant force on the charge, pushing it toward the negative plate. If you move the charge from the positive to the negative plate, the electric field does work on it, and this work is stored as electric potential energy. The amount of work done per unit charge is the electric potential difference, or voltage, between the plates. 
+
+
+
+
+This is why voltage is measured in joules per coulomb (volts). Equipotential lines—lines where the potential is constant—run parallel to the plates and are always perpendicular to the electric field. In a capacitor, these lines help us visualize how the potential changes from one plate to the other.
+
+
+![Charge Potential Energy](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/charge-potential-energy.png)
+
+*Analogy of gravitational and electric fields. A mass (a) requires work to be lifted a distance out of an attractive gravitational field. Thus its potential energy at a height $h$ is greater than at the ground. Similarly, 2 charges (b) change potential energy when pushed a distance toward a like-charged field. Releasing the stones would return the energy stored in the field to the stones as kinetic energy; releasing the charges in the electric field would release the energy stored in the field as kinetic energy of the charged particles.*
 
 Just as a ball held above the ground has gravitational potential energy, a charged object in an electric field has electric potential energy. The **difference** in potential energy per unit charge between two points is the **voltage**, and it determines how much **work** the field can do on a charge moving between those points. 
 
-## Energy Stored in Electric Fields
+<!--
+
+## 6. Energy Stored in Electric Fields
 
 One of the most profound concepts in electromagnetism is that energy can be stored in the electric field itself. When charges are separated against their natural attraction (like charges on opposite plates of a capacitor), energy is stored in the resulting electric field.
 
@@ -231,13 +290,14 @@ One helpful way to understand field energy is to imagine that every region of sp
 - How energy can be transmitted through space without a physical medium
 - Why electric fields can exert forces on charged objects
 
+-->
+
 ---
 
-These problems help students apply the concepts of charge, force, field, potential, and energy in quantitative and visual ways.
 
-## Summary
+## 7. Summary
 
-Electric charge is a fundamental property of matter that creates electric fields in the surrounding space. These fields exert forces on other charges according to Coulomb's law - a relationship that shows how the force depends on the charges and the distance between them. 
+Electric charge is a fundamental property of matter that creates electric fields in the surrounding space. These fields exert forces on other charges according to Coulomb's law—a relationship that shows how the force depends on the charges and the distance between them.
 
 The electric field concept provides a powerful way to visualize and calculate how charges influence each other across space. Perhaps most remarkably, these fields aren't just mathematical tools but physical entities that store energy. This stored energy explains numerous natural phenomena and enables many of our most important technologies.
 
@@ -246,8 +306,10 @@ The electric field concept provides a powerful way to visualize and calculate ho
     - Coulomb's law describes the force between charges, varying with the product of charges and inversely with distance squared
 - Electric fields describe how charges influence space around them
     - These fields contain energy, particularly where field strength is high
-  
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0VhBGI9aoC9CdVsPEOfEtPTa6xMldWA5Wj3usXL437ri8kA/viewform?embedded=true" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0VhBGI9aoC9CdVsPEOfEtPTa6xMldWA5Wj3usXL437ri8kA/viewform?embedded=true" width="100%" height="100%" min-height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+---
+
 
 

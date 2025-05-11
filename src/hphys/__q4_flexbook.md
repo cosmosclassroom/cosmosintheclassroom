@@ -7,6 +7,15 @@ permalink: /hphys/q4flexbook
 ## Student Flexbook - Quarter 4
 ### Spring 2025
 
+
+# Problem Sets
+- ## 8 Electromagnetism
+  - [8.1 Coulomb's Law and Charge](8_electromagnetism/ps8.1_coulombs-charge)
+  - [8.2 Electric Fields and Charge](8_electromagnetism/ps8.2_field-charge)
+
+- ## 9 Electricity
+  - 
+
 ### Important Equations by Topic
 
 #### 8 Electromagnetism
@@ -31,9 +40,16 @@ permalink: /hphys/q4flexbook
 ## Problem Set Organization
 
 ### 8 Electromagnetism
-- [8.0 SHM in Electromagnetism](8.1_shm_em.md)
-- [8.1 Charges and EM Fields](8.3_charge-em-fields.md)
+- Simple Harmonic Motion
+  - [Tutorial - 8.0 SHM in Electromagnetism](8.1_shm_em.md)
+  - Problem Set
+- Charges and Fields
+  - [Tutorial - 8.1 Charges and EM Fields](8.3_charge-em-fields.md)
 - [8.2 Wave-Particle Energies](8.2_wave-particle-energies.md)
+
+Problem Sets
+[PS 8.1 Coulomb's Law](8_electromagnetism/ps8.1_coulombs-charge.md)
+[PS 8.2 Field Charge](8_electromagnetism/ps8.2_field-charge.md)
 
 #### Problem Set 8.1: SHM in Electromagnetism
 **Formulas:**
@@ -70,6 +86,8 @@ permalink: /hphys/q4flexbook
 9. Explain the difference between conductors and insulators in terms of electric fields.
 10. Describe a real-life scenario where electric field concepts are important.
 
+<!-- 
+
 #### Problem Set 8.3: Wave-Particle Energies
 **Formulas:**
 - Wave equation: $c = \lambda f$
@@ -88,12 +106,14 @@ permalink: /hphys/q4flexbook
 9. Give a real-world example of wave-particle duality in technology.
 10. Describe how diffraction and interference patterns are formed.
 
+-->
+
 ### 9 Electricity
-- [9.1 Amps, volts, and resistance](9.1_electrical-power.md)
+- [9.1 Amps, volts, and resistance](9_electrics/ps_9.1_electrical-current.md)
 - [9.2 Simple Circuit Diagrams](9.2_simple-circuits.md)
 - [9.3 Electrical Power](9.2_electrical-power.md)
 
-#### Problem Set 9.1: Amps, Volts, and Resistance
+<!-- #### Problem Set 9.1: Amps, Volts, and Resistance
 **Formulas:**
 - Ohm's Law: $V = IR$
 - Current: $I = \frac{Q}{t}$
@@ -107,7 +127,7 @@ permalink: /hphys/q4flexbook
 7. Explain the role of a battery in a circuit.
 8. Describe the direction of current flow in a circuit.
 9. Explain why electrons flow opposite to conventional current.
-10. Give a real-world example of Ohm's law in action.
+10. Give a real-world example of Ohm's law in action. -->
 
 #### Problem Set 9.2: Simple Circuit Diagrams
 **Formulas:**

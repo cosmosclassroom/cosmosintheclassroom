@@ -2,6 +2,7 @@
 layout: default
 title: Answer Key - Wave-Particle Duality Bridge
 author: Jonathan Corbett
+permalink: hphys/ps_8.1
 ---
 
 | Category | Formula | Symbols |
