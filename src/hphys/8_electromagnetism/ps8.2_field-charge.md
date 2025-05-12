@@ -18,6 +18,8 @@ permalink: /hphys/ps_8.2
 | $U = \frac{1}{2}\frac{Q^2}{C}$ | Energy stored (alternate form) | U: energy, Q: charge, C: capacitance |
 | $E = \frac{\sigma}{\epsilon_0}$ | Electric field between plates | E: field, σ: surface charge density, ε₀: permittivity |
 
+* We will ignore $\epsilon_0$ for now and imagine that the permissivity of our free space is always 1.0. This is essentially analogous to "ignoring friction"
+
 > **Note to Students:** Understanding the differences between V, PE, and U:
 > - V (electric potential): a property of the electric field at a point, measured in volts (V)
 > - PE_electric (electric potential energy): energy of a charge in an electric field, measured in joules (J)
