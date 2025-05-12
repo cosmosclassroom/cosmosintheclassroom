@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>PS 9.3 Electrical Power | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!-- <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style> -->
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header> -->
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --earth-brown: #8b7355;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="ps-93--electrical-power">PS 9.3 | Electrical Power</h1>
+
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Power: $P = IV$</li>
+  <li>Power (resistor): $P = I^2R$, $P = \frac{V^2}{R}$</li>
+  <li>Energy: $E = Pt$</li>
+  <li>Cost: $\text{Cost} = \text{Energy (kWh)} \times \text{rate}$</li>
+  <li>Efficiency: $\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%$</li>
+</ul>
+
+<h2 id="problems">Problems</h2>
+
+<ol>
+  <li>Define electrical power and its unit.<br />
+<strong>Conceptual:</strong> Why is power an important quantity in electrical systems?</li>
+</ol>
+
+<details>
+  <summary>
+    <p>Solution&lt;/summary&gt;</p>
+
+    <p><strong>Definition:</strong><br />
+Electrical power is the rate at which electrical energy is transferred or converted.<br />
+<strong>Unit:</strong> The SI unit of power is the watt ($\mathrm{W}$), where $1~\mathrm{W} = 1~\mathrm{J/s}$.</p>
+
+    <p><strong>Conceptual:</strong><br />
+Power tells us how quickly energy is used or supplied. High-power devices use energy faster, which affects efficiency, safety, and cost.</p>
+
+    <p>&lt;/details&gt;</p>
+
+    <ol>
+      <li>A device operates at $24\,\mathrm{V}$ and draws $3.0\,\mathrm{A}$ of current. Calculate the power consumed.<br />
+<strong>Conceptual:</strong> What happens to the power if the current is doubled?</li>
+    </ol>
+
+    <details>
+      <summary>
+        <p>Solution&lt;/summary&gt;</p>
+
+        <p><strong>Parent formula:</strong><br />
+$P = IV$</p>
+
+        <p><strong>Substitute values:</strong><br />
+$P = (24~\mathrm{V})(3.0~\mathrm{A}) = 72~\mathrm{W}$</p>
+
+        <p><strong>Conceptual:</strong><br />
+If current doubles ($I = 6.0~\mathrm{A}$), $P = (24~\mathrm{V})(6.0~\mathrm{A}) = 144~\mathrm{W}$, so power also doubles.</p>
+
+        <p>&lt;/details&gt;</p>
+
+        <ol>
+          <li>A $10\,\Omega$ resistor has a current of $2.0\,\mathrm{A}$ flowing through it.<br />
+a) Calculate the power dissipated using $P = I^2R$.<br />
+b) Calculate the power using $P = \frac{V^2}{R}$ if the voltage across the resistor is $20\,\mathrm{V}$.<br />
+<strong>Conceptual:</strong> Why do both formulas give the same result?</li>
+        </ol>
+
+        <details>
+          <summary>
+            <p>Solution&lt;/summary&gt;</p>
+
+            <p>a) <strong>Parent formula:</strong> $P = I^2R$<br />
+$P = (2.0~\mathrm{A})^2 \times 10~\Omega = 4.0 \times 10 = 40~\mathrm{W}$</p>
+
+            <p>b) <strong>Parent formula:</strong> $P = \frac{V^2}{R}$<br />
+$P = \frac{(20~\mathrm{V})^2}{10~\Omega} = \frac{400}{10} = 40~\mathrm{W}$</p>
+
+            <p><strong>Conceptual:</strong><br />
+Both formulas are derived from Ohm’s Law ($V = IR$), so they are equivalent for resistors.</p>
+
+            <p>&lt;/details&gt;</p>
+
+            <ol>
+              <li>A $60\,\mathrm{W}$ light bulb is left on for $8$ hours.<br />
+a) How much energy does it use in joules?<br />
+b) How much in kilowatt-hours?<br />
+<strong>Conceptual:</strong> Why do electric companies bill in kilowatt-hours?</li>
+            </ol>
+
+            <details>
+              <summary>
+                <p>Solution&lt;/summary&gt;</p>
+
+                <p>a) <strong>Parent formula:</strong> $E = Pt$<br />
+$t = 8~\mathrm{h} = 8 \times 3600~\mathrm{s} = 28,800~\mathrm{s}$<br />
+$E = 60~\mathrm{W} \times 28,800~\mathrm{s} = 1,728,000~\mathrm{J}$</p>
+
+                <p>b) $E = 60~\mathrm{W} \times 8~\mathrm{h} = 480~\mathrm{Wh} = 0.48~\mathrm{kWh$</p>
+
+                <p><strong>Conceptual:</strong><br />
+Kilowatt-hours are a convenient unit for large amounts of energy used over time, matching household consumption.</p>
+
+                <p>&lt;/details&gt;</p>
+
+                <ol>
+                  <li>An electric heater rated at $1500\,\mathrm{W}$ runs for $5$ hours each day for a month ($30$ days). If electricity costs $0.12$ per kWh, what is the monthly cost to run the heater?<br />
+<strong>Conceptual:</strong> How can you reduce the cost of running the heater?</li>
+                </ol>
+
+                <details>
+                  <summary>
+                    <p>Solution&lt;/summary&gt;</p>
+
+                    <p><strong>Parent formula:</strong><br />
+$\text{Energy} = P \times t$<br />
+$\text{Cost} = \text{Energy (kWh)} \times \text{rate}$</p>
+
+                    <p>Total hours: $5~\mathrm{h/day} \times 30~\mathrm{days} = 150~\mathrm{h}$<br />
+Energy: $E = 1.5~\mathrm{kW} \times 150~\mathrm{h} = 225~\mathrm{kWh}$<br />
+Cost: $225~\mathrm{kWh} \times $0.12/\mathrm{kWh} = $27.00$</p>
+
+                    <p><strong>Conceptual:</strong><br />
+Reduce cost by using the heater fewer hours, lowering the power setting, or improving insulation.</p>
+
+                    <p>&lt;/details&gt;</p>
+
+                    <ol>
+                      <li>Explain the difference between AC and DC power.<br />
+<strong>Calculation:</strong> If a $120\,\mathrm{V}$ RMS AC source supplies $5.0\,\mathrm{A}$ to a device, what is the average power delivered?</li>
+                    </ol>
+
+                    <details>
+                      <summary>
+                        <p>Solution&lt;/summary&gt;</p>
+
+                        <p><strong>Conceptual:</strong></p>
+                        <ul>
+                          <li><strong>DC (Direct Current):</strong> Current flows in one direction (e.g., batteries).</li>
+                          <li><strong>AC (Alternating Current):</strong> Current reverses direction periodically (e.g., household outlets).</li>
+                        </ul>
+
+                        <p><strong>Calculation:</strong><br />
+<strong>Parent formula:</strong> $P = IV$ (for AC, use RMS values)<br />
+$P = (120~\mathrm{V})(5.0~\mathrm{A}) = 600~\mathrm{W}$</p>
+
+                        <p>&lt;/details&gt;</p>
+
+                        <ol>
+                          <li>A fuse in a circuit is rated for $2.0\,\mathrm{A}$. The circuit operates at $120\,\mathrm{V}$.<br />
+a) What is the maximum power the circuit can safely use?<br />
+<strong>Conceptual:</strong> How does a fuse protect the circuit?</li>
+                        </ol>
+
+                        <details>
+                          <summary>
+                            <p>Solution&lt;/summary&gt;</p>
+
+                            <p>a) <strong>Parent formula:</strong> $P = IV$<br />
+$P_{max} = (2.0~\mathrm{A})(120~\mathrm{V}) = 240~\mathrm{W}$</p>
+
+                            <p><strong>Conceptual:</strong><br />
+A fuse melts and breaks the circuit if current exceeds its rating, preventing overheating and fire.</p>
+
+                            <p>&lt;/details&gt;</p>
+
+                            <ol>
+                              <li>A device has an input power of $200\,\mathrm{W}$ and an output power of $150\,\mathrm{W}$.<br />
+a) Calculate its efficiency.<br />
+<strong>Conceptual:</strong> What happens to the “lost” power?</li>
+                            </ol>
+
+                            <details>
+                              <summary>
+                                <p>Solution&lt;/summary&gt;</p>
+
+                                <p>a) <strong>Parent formula:</strong> $\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%$<br />
+$\text{Efficiency} = \frac{150~\mathrm{W}}{200~\mathrm{W}} \times 100\% = 75\%$</p>
+
+                                <p><strong>Conceptual:</strong><br />
+The lost power is converted to heat, sound, or other non-useful forms.</p>
+
+                                <p>&lt;/details&gt;</p>
+
+                                <ol>
+                                  <li>Power lines transmit $500,000\,\mathrm{W}$ of power at $10,000\,\mathrm{V}$.<br />
+a) What is the current in the lines?<br />
+b) If the voltage is doubled, what happens to the current?<br />
+<strong>Conceptual:</strong> Why are high voltages used for power transmission?</li>
+                                </ol>
+
+                                <details>
+                                  <summary>
+                                    <p>Solution&lt;/summary&gt;</p>
+
+                                    <p>a) <strong>Parent formula:</strong> $P = IV \implies I = \frac{P}{V}$<br />
+$I = \frac{500,000~\mathrm{W}}{10,000~\mathrm{V}} = 50~\mathrm{A}$</p>
+
+                                    <p>b) If $V = 20,000~\mathrm{V}$, $I = \frac{500,000~\mathrm{W}}{20,000~\mathrm{V}} = 25~\mathrm{A}$</p>
+
+                                    <p><strong>Conceptual:</strong><br />
+High voltage reduces current, minimizing energy lost as heat ($P_{loss} = I^2R$) in transmission lines.</p>
+
+                                    <p>&lt;/details&gt;</p>
+
+                                    <ol>
+                                      <li>A microwave oven is rated at $1200\,\mathrm{W}$ and operates on $120\,\mathrm{V}$.<br />
+a) What is the current drawn by the oven?<br />
+b) How much energy does it use in $10$ minutes?<br />
+<strong>Conceptual:</strong> Why is it important to match appliance ratings to circuit capacity?</li>
+                                    </ol>
+
+                                    <details>
+                                      <summary>
+                                        <p>Solution&lt;/summary&gt;</p>
+
+                                        <p>a) <strong>Parent formula:</strong> $I = \frac{P}{V}$<br />
+$I = \frac{1200~\mathrm{W}}{120~\mathrm{V}} = 10~\mathrm{A}$</p>
+
+                                        <p>b) <strong>Parent formula:</strong> $E = Pt$<br />
+$t = 10~\mathrm{min} = 600~\mathrm{s}$<br />
+$E = 1200~\mathrm{W} \times 600~\mathrm{s} = 720,000~\mathrm{J}$</p>
+
+                                        <p><strong>Conceptual:</strong><br />
+If an appliance draws more current than the circuit can handle, it can cause overheating or trip the breaker.</p>
+
+                                        <p>&lt;/details&gt;</p>
+
+                                        <hr />
+                                      </summary>
+                                    </details>
+                                  </summary>
+                                </details>
+                              </summary>
+                            </details>
+                          </summary>
+                        </details>
+                      </summary>
+                    </details>
+                  </summary>
+                </details>
+              </summary>
+            </details>
+          </summary>
+        </details>
+      </summary>
+    </details>
+  </summary>
+</details>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
