@@ -218,9 +218,9 @@ As the plates are moved apart (with $Q$ constant):
 The field depends only on charge and plate area, not separation (for ideal parallel plates).
 </details>
 
-7.  Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole). Describe the pattern and explain the relationship between field lines and equipotentials.
-
-    How would the field pattern change if both charges were positive?
+7.  Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole). 
+- Describe the pattern and explain the relationship between field lines and equipotentials.
+- How would the field pattern change if both charges were positive?
 
 <details markdown="1">
 <summary>Solution</summary>
@@ -232,7 +232,7 @@ Conceptual:
 If both charges were positive, field lines would repel and not connect between charges.
 </details>
 
-8.  A small test charge is placed near a large, positively charged conducting sphere. Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.
+1.  A small test charge is placed near a large, positively charged conducting sphere. Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.
 
     Why is the electric field inside a conductor zero in electrostatic equilibrium?
 

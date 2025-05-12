@@ -63,7 +63,7 @@ pagination:
 
 # Honors Physics
 
-[Q4 Flexbook](src/hphys/__q4_flexbook.md)
+[Q4 Flexbook - Honors Physics](src/hphys/q4_flexbook.md)
 
 # Standard Physics
 - P5 Waves and Information
