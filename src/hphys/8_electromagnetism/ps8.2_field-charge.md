@@ -5,6 +5,28 @@ author: Jonathan Corbett
 permalink: hphys/ps_8.2/
 ---
 
+<style>
+details {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #007bff;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+details[open] summary {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+</style>
+
 # PS 8.2 | Electric Field and Charge
 
 | Formula | Description | Variables |
@@ -32,7 +54,7 @@ permalink: hphys/ps_8.2/
    
    **Conceptual:** Explain what the direction of the electric field tells you about the force a positive test charge would experience at that point.
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -55,14 +77,13 @@ $E = 4.3 \times 10^5~\text{N/C}$
 
 **Conceptual:**  
 The electric field direction shows the force direction on a positive test charge: away from positive, toward negative.
-
 </details>
 
 2. **Computation:** Two charges, +2.0 μC and -2.0 μC, are placed 40 cm apart on the x-axis. Calculate the net electric field at a point exactly midway between them.
 
    **Conceptual:** If both charges were positive, how would the direction and magnitude of the net electric field at the midpoint change? Explain.
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -89,14 +110,13 @@ Since the fields are equal and opposite, $E_{net} = 0~\text{N/C}$
 
 **Conceptual:**  
 If both charges were positive, the fields would add at the midpoint, pointing away from each charge, resulting in a nonzero field.
-
 </details>
 
 3. **Computation:** Three point charges are arranged at the corners of an equilateral triangle (side 0.50 m): +4.0 μC at A, +4.0 μC at B, and -4.0 μC at C. Find the magnitude and direction of the net electric field at the center of the triangle.
 
    **Conceptual:** Why does the symmetry of the arrangement affect the direction of the net electric field at the center?
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -120,14 +140,13 @@ By symmetry, the two positive charges' fields partially cancel, and the net fiel
 
 **Conceptual:**  
 The symmetry means the fields from the positive charges partially cancel, so the net field points toward the negative charge.
-
 </details>
 
 4. **Computation:** A charge of -6.0 μC is located 30 cm from a point P. What is the electric potential at point P due to this charge? How much work is required to bring a +1.0 μC charge from infinity to point P?
 
    **Conceptual:** Is electric potential a vector or a scalar? How does this affect how you combine potentials from multiple charges?
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -148,14 +167,13 @@ $PE = (1.0 \times 10^{-6}~\text{C})(-1.8 \times 10^5~\text{V}) = -0.18~\text{J}$
 
 **Conceptual:**  
 Electric potential is a scalar, so potentials from multiple charges are added algebraically (not as vectors).
-
 </details>
 
 5. **Computation:** A parallel plate capacitor has a capacitance of 8.0 μF and is charged to a potential difference of 15 V. Calculate the energy stored in the capacitor.
 
    **Conceptual:** What happens to the energy stored in a capacitor if the voltage is doubled? Explain why.
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -174,14 +192,13 @@ $U = 9.0 \times 10^{-4}~\text{J}$
 
 **Conceptual:**  
 If voltage is doubled, stored energy increases by a factor of four (since $U \propto V^2$).
-
 </details>
 
 6. **Computation:** The plates of a parallel plate capacitor are moved farther apart while keeping the charge constant. Qualitatively describe what happens to the electric field, potential difference, and stored energy.
 
    **Conceptual:** Why does the electric field between the plates remain constant even as the plates are moved apart (with constant charge)?
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 **Parent formula:**  
@@ -197,14 +214,13 @@ As the plates are moved apart (with $Q$ constant):
 
 **Conceptual:**  
 The field depends only on charge and plate area, not separation (for ideal parallel plates).
-
 </details>
 
 7. **Computation:** Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole). Describe the pattern and explain the relationship between field lines and equipotentials.
 
    **Conceptual:** How would the field pattern change if both charges were positive?
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 Computation:  
@@ -212,14 +228,13 @@ Field lines emerge from the positive charge and enter the negative charge; equip
 
 Conceptual:  
 If both charges were positive, field lines would repel and not connect between charges.
-
 </details>
 
 8. **Computation:** A small test charge is placed near a large, positively charged conducting sphere. Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.
 
    **Conceptual:** Why is the electric field inside a conductor zero in electrostatic equilibrium?
 
-<details>
+<details markdown="1">
 <summary>Solution</summary>
 
 Computation:  
@@ -228,7 +243,6 @@ Computation:
 
 Conceptual:  
 The field inside a conductor is zero because charges redistribute to cancel any internal field.
-
 </details>
 
 ---
