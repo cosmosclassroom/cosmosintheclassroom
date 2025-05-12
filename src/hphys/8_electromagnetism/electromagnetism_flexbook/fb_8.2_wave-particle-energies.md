@@ -2,7 +2,7 @@
 layout: default
 title: Understanding Wave-Particle Energies - The Dual Nature of Light
 author: Jonathan Corbett and Claude 3.7 Sonnet
-permalink: hphys/8.2
+permalink: hphys/8.2/
 date: 4 May 2025
 ---
 
