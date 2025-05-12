@@ -63,7 +63,7 @@ pagination:
 
 # Honors Physics
 
-- [Flexbook Quarter 4 Honors Physics](src/hphys/8_electromagnetism/electromagnetism_flexbook/q4_flexbook.md)
+[Q4 Flexbook](src/hphys/__q4_flexbook.md)
 
 # Standard Physics
 - P5 Waves and Information
