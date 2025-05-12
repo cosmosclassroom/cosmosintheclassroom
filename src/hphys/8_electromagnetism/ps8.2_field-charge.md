@@ -2,7 +2,7 @@
 layout: default
 title: "PS 8.2 Electric Field and Charge"
 author: Jonathan Corbett
-permalink: /hphys/ps_8.2
+permalink: hphys/ps_8.2/
 ---
 
 # PS 8.2 | Electric Field and Charge
