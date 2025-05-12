@@ -9,8 +9,13 @@ css: assets/css/worksheets.css
 
 # Problem Sets
 - ## 8 Electromagnetism
-  - [8.1 Coulomb's Law and Charge](8_electromagnetism/ps8.1_coulombs-charge)
-  - [8.2 Electric Fields and Charge](8_electromagnetism/ps8.2_field-charge)
+  - Tutorials
+    - 8.1 Charge and Coulomb's Law
+    - 8.2 Electric Charge and Fields
+  - Problem Sets
+    - [8.1 Coulomb's Law and Charge](8_electromagnetism/ps8.1_coulombs-charge)
+    - [8.2 Electric Fields and Charge](8_electromagnetism/ps8.2_field-charge)
+ 
 
 - ## 9 Electricity
   - 
