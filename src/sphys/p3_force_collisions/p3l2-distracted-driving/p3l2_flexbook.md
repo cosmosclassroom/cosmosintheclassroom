@@ -46,7 +46,7 @@ Review the two short video clips below. The first shows a driver reacting to the
 - In the table above, which interval(s) (distances between positions) represent *reaction distance?*
 - Which interval(s) represent *braking distance*?
 
-</checkpoint>
+</div>
 
 ### Analyzing Motion with Position
 To really understand how reaction time and braking distance work, we can analyze the position of a car mathematically. By marking the car's position at different points in time, we can visualize and calculate the distances traveled during the reaction and braking phases.
@@ -80,6 +80,7 @@ We can use a scale (like the known length of the car) to convert measurements fr
 >1. Using a ruler, determine the *relative* size (length) of the car in the videos. Record this value in your table (in m).
 >2. Use a ruler to determine the lengths of the position intervals (distances from $x_0$ to each position). Record these values in the table above.
 >3. Find the ratio of the actual length of the car (4.5 meters) to the length you measured. Set this ratio equal to the ratio of the actual distance of each position interval to the measured length of that interval. This relationship is illustrated in this equation:
+> 
 > $$\frac{\text{actual car length}}{\text{measured car length}} = \frac{\text{actual distance}\,(\Delta X)}{\text{measured} \,(\Delta X)}$$
 > 4. Solve to get the actual distances of each position interval and record each in the table above.
 
@@ -165,4 +166,4 @@ Understanding the physics behind reaction time, braking distance, and how to ana
 
 ## Exit Ticket
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8ZGsIlEVB0n5T9O9v5-4mgH7P9Kd8QTXFdk77Sx3VFxNEjg/viewform?embedded=true" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8ZGsIlEVB0n5T9O9v5-4mgH7P9Kd8QTXFdk77Sx3VFxNEjg/viewform?embedded=true" width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
