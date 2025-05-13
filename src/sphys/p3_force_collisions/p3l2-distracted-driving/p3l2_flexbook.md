@@ -166,4 +166,4 @@ Understanding the physics behind reaction time, braking distance, and how to ana
 
 ## Exit Ticket
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8ZGsIlEVB0n5T9O9v5-4mgH7P9Kd8QTXFdk77Sx3VFxNEjg/viewform?embedded=true" width="100%" height="auto" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8ZGsIlEVB0n5T9O9v5-4mgH7P9Kd8QTXFdk77Sx3VFxNEjg/viewform?embedded=true" width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
