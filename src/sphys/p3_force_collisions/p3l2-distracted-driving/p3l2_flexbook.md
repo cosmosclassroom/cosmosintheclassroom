@@ -113,12 +113,12 @@ All change occurs over time, and understanding an object's position in space req
 
 Table 1. Position and time data for a non-distracted driver reacting to an obstacle.
 
-|Position|Distance ($\Delta X$)(m)| Time (s)|
-|-:|-|-|
-|$x_0$||
-|$x_1$||
-|$x_2$||
-|$x_3$||
+|Position|Time (s)| Distance (m)|
+|-:|-|:-:|
+|$x_0$||0|
+|$x_1$|||
+|$x_2$|||
+|$x_3$|||
 
 ## Visualizing Motion with Position-Time Graphs
 A powerful way to visualize motion is by creating a **position-time (P-T) graph**. This type of graph plots the position of an object on the vertical axis (y-axis) against time on the horizontal axis (x-axis).

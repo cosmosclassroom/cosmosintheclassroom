@@ -54,14 +54,14 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 
 </div>
 
-<checkpoint>
+<div class='checkpoint'>
 
 # Checkpoint 1
 - On your V-T graph, which region represents the **reaction distance**?
 - Which region represents the **braking distance**?
 - How can you find the **total stopping distance** using the graph?
 
-</checkpoint>
+</div>
 
 ---
 
@@ -96,10 +96,40 @@ To avoid collisions, drivers must leave enough space to stop safely if the car i
 
 ---
 
-> In your notebook, calculate:
-> 1. At 50 km/h (about 14 m/s), how far do you travel in 2 seconds?
-> 2. If your reaction time is 1.5 seconds and your car's braking distance from 50 km/h is 20 meters, what is your total stopping distance?
-> 3. How does this compare to your following distance?
+> 1. **At 50 km/h (about 14 m/s), how far do you travel in 2 seconds?**  
+   Answer
+    - **Solution:**  
+      Distance = Speed × Time  
+      Distance = 14 m/s × 2 s = **28 meters**  
+    - **Answer:** You travel **28 meters** in 2 seconds.
+
+
+> 2. **If your reaction time is 1.5 seconds and your car's braking distance from 50 km/h is 20 meters, what is your total stopping distance?**  
+Answer
+
+- **Solution:**  
+  Reaction distance = Speed × Reaction time  
+  Reaction distance = 14 m/s × 1.5 s = **21 meters**  
+  Total stopping distance = Reaction distance + Braking distance  
+  Total stopping distance = 21 m + 20 m = **41 meters**  
+- **Answer:** Your total stopping distance is **41 meters**.
+  
+
+
+> 3. **How does this compare to your following distance?** 
+
+
+Answers
+
+  - **Solution:**  
+    Using the "2-second rule," the safe following distance at 50 km/h is:  
+    Following distance = Speed × 2 seconds  
+    Following distance = 14 m/s × 2 s = **28 meters**  
+    Compare this to the total stopping distance:  
+    Total stopping distance (41 meters) > Following distance (28 meters).  
+  - **Answer:** Your total stopping distance is **13 meters longer** than the safe following distance, meaning the "2-second rule" may not provide enough space to stop safely at this speed.
+
+
 
 <div class='checkpoint'>
 
@@ -115,7 +145,7 @@ To avoid collisions, drivers must leave enough space to stop safely if the car i
 
 By analyzing velocity-time graphs, we can see how reaction time and braking combine to determine stopping distance. This helps explain why speed limits and safe following distances are critical for avoiding collisions.
 
-> 1. Draw a V-T graph for a car following another at a safe distance and then stopping suddenly.
+> 1. In your notebook, sketch a V-T graph for a car following another at a safe distance and then stopping suddenly.
 > 2. Show what happens if the following distance is too short.
 
 ---
