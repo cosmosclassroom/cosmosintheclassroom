@@ -95,9 +95,11 @@ c) If two such lamps are connected in parallel to a $120\,\mathrm{V}$ source, wh
 
 <details>
 <summary>Solution</summary>
+
 a) $I = \frac{P}{V} = \frac{60\,\mathrm{W}}{120\,\mathrm{V}} = 0.5\,\mathrm{A}$  
 b) $R = \frac{V}{I} = \frac{120\,\mathrm{V}}{0.5\,\mathrm{A}} = 240\,\Omega$  
 c) Each lamp draws $0.5\,\mathrm{A}$, so total current is $0.5\,\mathrm{A} + 0.5\,\mathrm{A} = 1.0\,\mathrm{A}$
+
 </details>
 
 ---

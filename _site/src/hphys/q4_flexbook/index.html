@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Student Flexbook - Quarter 4 | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!-- <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style> -->
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header> -->
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --earth-brown: #8b7355;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h2 id="student-flexbook---quarter-4">Student Flexbook - Quarter 4</h2>
+<h3 id="spring-2025">Spring 2025</h3>
+
+<h1 id="problem-sets">Problem Sets</h1>
+<ul>
+  <li>
+    <h2 id="8-electromagnetism">8 Electromagnetism</h2>
+    <ul>
+      <li>Tutorials
+        <ul>
+          <li>8.1 Charge and Coulomb’s Law</li>
+          <li><a href="8_electromagnetism/">8.2 Electric Fields and Charge</a></li>
+        </ul>
+      </li>
+      <li>Problem Sets
+        <ul>
+          <li><a href="8_electromagnetism/ps8.1_coulombs-charge">8.1 Coulomb’s Law and Charge</a></li>
+          <li><a href="8_electromagnetism/ps8.2_field-charge">8.2 Electric Fields and Charge</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2 id="9-electricity">9 Electricity</h2>
+    <ul>
+      <li></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="important-equations-by-topic">Important Equations by Topic</h3>
+
+<h4 id="8-electromagnetism-1">8 Electromagnetism</h4>
+<ul>
+  <li>Wave Mechanics: $c = \lambda f$</li>
+  <li>Photon Energy: $E = hf$</li>
+  <li>Photon Energy (wavelength): $E = \frac{hc}{\lambda}$</li>
+  <li>Electric Field: $E = \frac{q}{r^2}$</li>
+  <li>Coulomb’s Law: $F = \frac{q_1q_2}{r^2}$</li>
+</ul>
+
+<h4 id="9-electricity-1">9 Electricity</h4>
+<ul>
+  <li>Ohm’s Law: $V = IR$</li>
+  <li>Power: $P = IV$</li>
+  <li>Power (resistor): $P = I^2R$, $P = \frac{V^2}{R}$</li>
+  <li>Series Resistance: $R_{total} = R_1 + R_2$</li>
+  <li>Parallel Resistance: $\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2}$</li>
+</ul>
+
+<h4 id="10-optics">10 Optics</h4>
+<ul>
+  <li>Snell’s Law: $n_1\sin\theta_1 = n_2\sin\theta_2$</li>
+  <li>Thin Lens: $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</li>
+  <li>Magnification: $m = -\frac{d_i}{d_o}$</li>
+</ul>
+
+<h2 id="problem-set-organization">Problem Set Organization</h2>
+
+<h3 id="8-electromagnetism-2">8 Electromagnetism</h3>
+<ul>
+  <li>Simple Harmonic Motion
+    <ul>
+      <li><a href="8.1_shm_em.md">Tutorial - 8.0 SHM in Electromagnetism</a></li>
+      <li>Problem Set</li>
+    </ul>
+  </li>
+  <li>Charges and Fields
+    <ul>
+      <li><a href="8.3_charge-em-fields.md">Tutorial - 8.1 Charges and EM Fields</a></li>
+    </ul>
+  </li>
+  <li><a href="8.2_wave-particle-energies.md">8.2 Wave-Particle Energies</a></li>
+</ul>
+
+<p>Problem Sets
+<a href="/src/hphys/8_electromagnetism/ps8.1_coulombs-charge/">PS 8.1 Coulomb’s Law</a>
+<a href="/hphys/ps_8.2/">PS 8.2 Field Charge</a></p>
+
+<h4 id="problem-set-81-shm-in-electromagnetism">Problem Set 8.1: SHM in Electromagnetism</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Period of mass-spring: $T = 2\pi\sqrt{\frac{m}{k}}$</li>
+  <li>Period of pendulum: $T = 2\pi\sqrt{\frac{L}{g}}$</li>
+  <li>Frequency: $f = \frac{1}{T}$</li>
+  <li>Energy in SHM: $E = \frac{1}{2}kA^2$</li>
+</ul>
+
+<ol>
+  <li>Define simple harmonic motion (SHM) and give a real-world example.</li>
+  <li>Describe the relationship between SHM and electromagnetic waves.</li>
+  <li>Calculate the period of a mass-spring system given mass and spring constant.</li>
+  <li>Find the frequency of oscillation for a pendulum of given length.</li>
+  <li>Explain how SHM applies to the oscillation of charges in an antenna.</li>
+  <li>Calculate the maximum speed of an object in SHM.</li>
+  <li>Determine the energy stored in a mass-spring system at maximum displacement.</li>
+  <li>Describe how energy is transferred in SHM.</li>
+  <li>Explain the connection between SHM and resonance in circuits.</li>
+  <li>Give an example of SHM in a physical or electrical system and explain its significance.</li>
+</ol>
+
+<h4 id="problem-set-82-charges-and-em-fields">Problem Set 8.2: Charges and EM Fields</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Electric field (point charge): $E = \frac{q}{r^2}$</li>
+  <li>Coulomb’s Law: $F = \frac{q_1q_2}{r^2}$</li>
+  <li>Superposition principle for fields: $E_{net} = E_1 + E_2 + …$</li>
+</ul>
+
+<ol>
+  <li>Define electric field and electric force. How are they different?</li>
+  <li>Calculate the electric field strength at a given distance from a point charge.</li>
+  <li>Use Coulomb’s law to find the force between two charges.</li>
+  <li>Draw the electric field lines for a single positive charge and a dipole.</li>
+  <li>Explain the principle of superposition for electric fields.</li>
+  <li>Calculate the net electric field at a point due to multiple charges.</li>
+  <li>Describe how electric fields are used in real-world technology (e.g., photocopiers, TVs).</li>
+  <li>Find the force on a charge placed in a known electric field.</li>
+  <li>Explain the difference between conductors and insulators in terms of electric fields.</li>
+  <li>Describe a real-life scenario where electric field concepts are important.</li>
+</ol>
+
+<!-- 
+
+#### Problem Set 8.3: Wave-Particle Energies
+**Formulas:**
+- Wave equation: $c = \lambda f$
+- Photon energy: $E = hf$
+- Photon energy (wavelength): $E = \frac{hc}{\lambda}$
+- Photoelectric effect: $KE_{max} = hf - \phi$
+
+1. State the relationship between wavelength, frequency, and speed of light.
+2. Calculate the wavelength of electromagnetic radiation given its frequency.
+3. Explain the evidence for the wave nature of light (e.g., double-slit experiment).
+4. Describe Huygens' principle and its application to light.
+5. Calculate the energy of a photon given its frequency.
+6. Use $E = \frac{hc}{\lambda}$ to find photon energy from wavelength.
+7. Explain the photoelectric effect and its significance.
+8. Calculate the maximum kinetic energy of ejected electrons using the photoelectric equation.
+9. Give a real-world example of wave-particle duality in technology.
+10. Describe how diffraction and interference patterns are formed.
+
+-->
+
+<h3 id="9-electricity-2">9 Electricity</h3>
+<ul>
+  <li><a href="/src/hphys/9_electrics/ps_9.1_electrical-current/">9.1 Amps, volts, and resistance</a></li>
+  <li><a href="9.2_simple-circuits.md">9.2 Simple Circuit Diagrams</a></li>
+  <li><a href="9.2_electrical-power.md">9.3 Electrical Power</a></li>
+</ul>
+
+<!-- #### Problem Set 9.1: Amps, Volts, and Resistance
+**Formulas:**
+- Ohm's Law: $V = IR$
+- Current: $I = \frac{Q}{t}$
+
+1. Define electric current, voltage, and resistance.
+2. Explain the difference between current and voltage.
+3. Apply Ohm's law to find missing voltage, current, or resistance.
+4. Calculate the current in a circuit given voltage and resistance.
+5. Calculate the voltage across a resistor given current and resistance.
+6. Calculate the resistance of a device given voltage and current.
+7. Explain the role of a battery in a circuit.
+8. Describe the direction of current flow in a circuit.
+9. Explain why electrons flow opposite to conventional current.
+10. Give a real-world example of Ohm's law in action. -->
+
+<h4 id="problem-set-92-simple-circuit-diagrams">Problem Set 9.2: Simple Circuit Diagrams</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Series resistance: $R_{total} = R_1 + R_2 + …$</li>
+  <li>Parallel resistance: $\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + …$</li>
+  <li>Ohm’s Law: $V = IR$</li>
+</ul>
+
+<ol>
+  <li>Draw a simple series circuit with a battery and two resistors.</li>
+  <li>Draw a parallel circuit with a battery and two resistors.</li>
+  <li>Calculate total resistance in a series circuit.</li>
+  <li>Calculate total resistance in a parallel circuit.</li>
+  <li>Find the current through each resistor in a parallel circuit.</li>
+  <li>Find the voltage across each resistor in a series circuit.</li>
+  <li>Explain the advantages of parallel circuits in household wiring.</li>
+  <li>Identify circuit symbols for battery, resistor, and switch.</li>
+  <li>Draw a circuit diagram for a flashlight.</li>
+  <li>Troubleshoot a simple circuit that does not work and suggest possible causes.</li>
+</ol>
+
+<h4 id="problem-set-93-electrical-power">Problem Set 9.3: Electrical Power</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Power: $P = IV$</li>
+  <li>Power (resistor): $P = I^2R$, $P = \frac{V^2}{R}$</li>
+  <li>Energy: $E = Pt$</li>
+  <li>Cost: $\text{Cost} = \text{Energy (kWh)} \times \text{rate}$</li>
+  <li>Efficiency: $\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%$</li>
+</ul>
+
+<ol>
+  <li>Define electrical power and its unit.</li>
+  <li>Calculate power consumed by a device given current and voltage.</li>
+  <li>Use $P = I^2R$ and $P = \frac{V^2}{R}$ to find power in a resistor.</li>
+  <li>Calculate energy used by a device over a given time.</li>
+  <li>Calculate the cost of running an appliance for a month.</li>
+  <li>Explain the difference between AC and DC power.</li>
+  <li>Describe how fuses and circuit breakers protect circuits.</li>
+  <li>Calculate the efficiency of a device given input and output power.</li>
+  <li>Explain why power lines are high voltage for long-distance transmission.</li>
+  <li>Give a real-world example of electrical power in use (e.g., toaster, microwave).</li>
+</ol>
+
+<h3 id="10-optics-1">10 Optics</h3>
+<ul>
+  <li><a href="10.1_light-reflection.md">10.1 Rays and Reflection</a></li>
+  <li><a href="10.2_refraction-optics.md">10.2 Refraction and Optics</a></li>
+  <li><a href="10.3_geometric-optics.md">10.3 Geometric Optics</a></li>
+</ul>
+
+<h4 id="problem-set-101-rays-and-reflection">Problem Set 10.1: Rays and Reflection</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Law of reflection: $\theta_i = \theta_r$</li>
+</ul>
+
+<ol>
+  <li>Define reflection and state the law of reflection.</li>
+  <li>Draw a ray diagram for a plane mirror.</li>
+  <li>Calculate the angle of reflection given the angle of incidence.</li>
+  <li>Explain the difference between real and virtual images.</li>
+  <li>Describe how a periscope works using plane mirrors.</li>
+  <li>Draw a ray diagram for a concave mirror.</li>
+  <li>Find the focal point of a concave mirror given its radius of curvature.</li>
+  <li>Calculate the image distance for an object in front of a plane mirror.</li>
+  <li>Explain why your image in a mirror appears reversed.</li>
+  <li>Give a real-world example of reflection in technology.</li>
+</ol>
+
+<h4 id="problem-set-102-refraction-and-optics">Problem Set 10.2: Refraction and Optics</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Snell’s Law: $n_1\sin\theta_1 = n_2\sin\theta_2$</li>
+  <li>Thin lens equation: $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</li>
+  <li>Magnification: $m = -\frac{d_i}{d_o}$</li>
+</ul>
+
+<ol>
+  <li>Define refraction and state Snell’s law.</li>
+  <li>Calculate the angle of refraction for light passing from air into water.</li>
+  <li>Explain why objects appear bent in water.</li>
+  <li>Draw a ray diagram for a converging lens.</li>
+  <li>Calculate the focal length of a lens using the thin lens equation.</li>
+  <li>Find the image distance for an object placed in front of a lens.</li>
+  <li>Calculate magnification for a lens system.</li>
+  <li>Explain total internal reflection and its applications.</li>
+  <li>Describe how fiber optic cables use total internal reflection.</li>
+  <li>Give a real-world example of refraction (e.g., eyeglasses, prisms).</li>
+</ol>
+
+<h4 id="problem-set-103-geometric-optics">Problem Set 10.3: Geometric Optics</h4>
+<p><strong>Formulas:</strong></p>
+<ul>
+  <li>Thin lens equation: $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</li>
+  <li>Magnification: $m = -\frac{d_i}{d_o}$</li>
+</ul>
+
+<ol>
+  <li>Define focal point, focal length, and principal axis.</li>
+  <li>Draw a ray diagram for a diverging lens.</li>
+  <li>Calculate the image position for an object in front of a diverging lens.</li>
+  <li>Find the magnification of an image produced by a lens.</li>
+  <li>Explain the difference between real and virtual images for lenses.</li>
+  <li>Calculate the image distance for a convex mirror.</li>
+  <li>Draw a ray diagram for a convex mirror.</li>
+  <li>Explain how corrective lenses help people see clearly.</li>
+  <li>Describe the use of lenses in microscopes and telescopes.</li>
+  <li>Give a real-world example of geometric optics in technology.</li>
+</ol>
+
+<hr />
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

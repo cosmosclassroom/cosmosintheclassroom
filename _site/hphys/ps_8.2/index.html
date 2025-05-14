@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>PS 8.2 Electric Field and Charge | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <!-- <style>
+      body {
+        line-height: 1.6;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: 110px; /* Add padding to push content below the fixed header */
+        justify-content: center;
+      }
+      .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 100%;
+      }
+    </style> -->
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header> -->
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --earth-brown: #8b7355;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <style>
+details {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #007bff;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+details[open] summary {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+
+.sigfig{
+    margin: 2px;
+}
+.parent-formula{
+    margin: 2px;
+}
+.givens{
+    margin:2px;
+}
+.calculations{
+    margin:2px;
+}
+</style>
+
+<h1 id="ps-82--electric-field-and-charge">PS 8.2 | Electric Field and Charge</h1>
+
+<h2 id="problems">Problems</h2>
+
+<p>Q1. A point charge of +3.0 μC is placed at the origin.<br />
+(a) What is the magnitude and direction of the electric field 25 cm away from the charge along the x-axis?<br />
+(b) Explain what the direction of the electric field tells you about the force a positive test charge would experience at that point.</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$E = k \frac{|q|}{r^2}$</p>
+
+  <p><strong>Substitute values:</strong><br />
+$k = 8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2$<br />
+$q = 3.0~\mu\text{C} = 3.0 \times 10^{-6}~\text{C}$<br />
+$r = 25~\text{cm} = 0.25~\text{m}$</p>
+
+  <p>(a)<br />
+$E = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{3.0 \times 10^{-6}~\text{C}}{(0.25~\text{m})^2}$</p>
+
+  <p>$E = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{3.0 \times 10^{-6}~\text{C}}{0.0625~\text{m}^2}$</p>
+
+  <p>$E = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \times 4.8 \times 10^{-5}~\text{C}/\text{m}^2$</p>
+
+  <p>$E = 4.3 \times 10^5~\text{N/C}$</p>
+
+  <p><strong>Direction:</strong> Away from the charge along the x-axis.</p>
+
+  <p>(b)<br />
+The electric field direction shows the force direction on a positive test charge: away from positive, toward negative.</p>
+
+</details>
+
+<p>Q2. Two charges, +2.0 μC and -2.0 μC, are placed 40 cm apart on the x-axis.<br />
+(a) Calculate the net electric field at a point exactly midway between them.<br />
+(b) If both charges were positive, how would the direction and magnitude of the net electric field at the midpoint change? Explain.</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$E = k \frac{|q|}{r^2}$<br />
+$E_{net} = E_1 + E_2$ (vector sum)</p>
+
+  <p><strong>At midpoint:</strong><br />
+Distance from each charge: $r = 0.20~\text{m}$<br />
+$k = 8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2$<br />
+$q_1 = +2.0~\mu\text{C} = 2.0 \times 10^{-6}~\text{C}$<br />
+$q_2 = -2.0~\mu\text{C} = -2.0 \times 10^{-6}~\text{C}$</p>
+
+  <p>(a)<br />
+$E_1 = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{2.0 \times 10^{-6}~\text{C}}{(0.20~\text{m})^2}$</p>
+
+  <p>$E_1 = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{2.0 \times 10^{-6}~\text{C}}{0.04~\text{m}^2}$</p>
+
+  <p>$E_1 = (8.99 \times 10^9) \times 5.0 \times 10^{-5}~\text{N/C}$</p>
+
+  <p>$E_1 = 4.5 \times 10^5~\text{N/C}$</p>
+
+  <p>$E_2 = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{2.0 \times 10^{-6}~\text{C}}{0.04~\text{m}^2} = 4.5 \times 10^5~\text{N/C}$ (opposite direction)</p>
+
+  <p>Since the fields are equal and opposite, $E_{net} = 0~\text{N/C}$</p>
+
+  <p>(b)<br />
+If both charges were positive, the fields would add at the midpoint, pointing away from each charge, resulting in a nonzero field.</p>
+
+</details>
+
+<p>Q3. Three point charges are arranged at the corners of an equilateral triangle (side 0.50 m): +4.0 μC at A, +4.0 μC at B, and -4.0 μC at C.<br />
+(a) Find the magnitude and direction of the net electric field at the center of the triangle.<br />
+(b) Why does the symmetry of the arrangement affect the direction of the net electric field at the center?</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$E = k \frac{|q|}{r^2}$</p>
+
+  <p><strong>Distance from center to vertex:</strong><br />
+$r = \frac{a}{\sqrt{3}} = \frac{0.50~\text{m}}{\sqrt{3}} = 0.289~\text{m}$</p>
+
+  <p>$k = 8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2$<br />
+$q = 4.0~\mu\text{C} = 4.0 \times 10^{-6}~\text{C}$</p>
+
+  <p>(a)<br />
+$E_{vertex} = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{4.0 \times 10^{-6}~\text{C}}{(0.289~\text{m})^2}$</p>
+
+  <p>$E_{vertex} = (8.99 \times 10^9) \frac{4.0 \times 10^{-6}}{0.0835}$</p>
+
+  <p>$E_{vertex} = (8.99 \times 10^9) \times 4.79 \times 10^{-5}~\text{N/C}$</p>
+
+  <p>$E_{vertex} = 4.3 \times 10^5~\text{N/C}$</p>
+
+  <p>By symmetry, the two positive charges’ fields partially cancel, and the net field points toward the negative charge. The total field is $8.0 \times 10^5~\text{N/C}$ toward the negative charge.</p>
+
+  <p>(b)<br />
+The symmetry means the fields from the positive charges partially cancel, so the net field points toward the negative charge.</p>
+
+</details>
+
+<p>Q4. A charge of -6.0 μC is located 30 cm from a point P.<br />
+(a) What is the electric potential at point P due to this charge?<br />
+(b) How much work is required to bring a +1.0 μC charge from infinity to point P?<br />
+(c) Is electric potential a vector or a scalar? How does this affect how you combine potentials from multiple charges?</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$V = k \frac{q}{r}$<br />
+$PE = qV$</p>
+
+  <p>$k = 8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2$<br />
+$q = -6.0~\mu\text{C} = -6.0 \times 10^{-6}~\text{C}$<br />
+$r = 0.30~\text{m}$</p>
+
+  <p>(a)<br />
+$V = (8.99 \times 10^9~\text{N}\cdot\text{m}^2/\text{C}^2) \frac{-6.0 \times 10^{-6}~\text{C}}{0.30~\text{m}}$</p>
+
+  <p>$V = (8.99 \times 10^9) \times -2.0 \times 10^{-5}~\text{V}$</p>
+
+  <p>$V = -1.8 \times 10^5~\text{V}$</p>
+
+  <p>(b)<br />
+$PE = (1.0 \times 10^{-6}~\text{C})(-1.8 \times 10^5~\text{V}) = -0.18~\text{J}$</p>
+
+  <p>(c)<br />
+Electric potential is a scalar, so potentials from multiple charges are added algebraically (not as vectors).</p>
+</details>
+
+<p>Q5. A parallel plate capacitor has a capacitance of 8.0 μF and is charged to a potential difference of 15 V.<br />
+(a) Calculate the energy stored in the capacitor.<br />
+(b) What happens to the energy stored in a capacitor if the voltage is doubled? Explain why.</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$U = \frac{1}{2}CV^2$</p>
+
+  <p>$C = 8.0~\mu\text{F} = 8.0 \times 10^{-6}~\text{F}$<br />
+$V = 15~\text{V}$</p>
+
+  <p>(a)<br />
+$U = \frac{1}{2}(8.0 \times 10^{-6}~\text{F})(15~\text{V})^2$</p>
+
+  <p>$U = 0.5 \times 8.0 \times 10^{-6} \times 225~\text{V}^2$</p>
+
+  <p>$U = 4.0 \times 10^{-6} \times 225~\text{J}$</p>
+
+  <p>$U = 9.0 \times 10^{-4}~\text{J}$</p>
+
+  <p>(b)<br />
+If voltage is doubled, stored energy increases by a factor of four (since $U \propto V^2$).</p>
+</details>
+
+<p>Q6. The plates of a parallel plate capacitor are moved farther apart while keeping the charge constant.<br />
+(a) Using the formula $U = \frac{1}{2}\frac{Q^2}{C}$, explain what happens to the energy stored in the capacitor as the plates are moved farther apart (with $Q$ constant). Show your reasoning.<br />
+(b) Why does the electric field between the plates remain constant even as the plates are moved apart (with constant charge)?</p>
+
+<details>
+
+  <p><strong>Parent formula:</strong><br />
+$E = \frac{\sigma}{\epsilon_0}$ (for ideal plates, $E$ depends only on charge and area)<br />
+$V = \frac{Q}{C}$<br />
+$U = \frac{1}{2}\frac{Q^2}{C}$</p>
+
+  <p>(a)<br />
+As the plates are moved apart (with $Q$ constant):</p>
+  <ul>
+    <li>$E$ remains constant (depends only on charge and area)</li>
+    <li>$C$ decreases (capacitance decreases as distance increases)</li>
+    <li>$V$ increases (since $V = Q/C$ and $C$ decreases)</li>
+    <li>$U$ increases (since $U = \frac{1}{2}\frac{Q^2}{C}$ and $C$ decreases)</li>
+  </ul>
+
+  <p>(b)<br />
+The field depends only on charge and plate area, not separation (for ideal parallel plates).</p>
+</details>
+
+<p>Q7. Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole).<br />
+(a) Describe the pattern and explain the relationship between field lines and equipotentials.<br />
+(b) How would the field pattern change if both charges were positive?</p>
+
+<details>
+
+  <p>(a)<br />
+Field lines emerge from the positive charge and enter the negative charge; equipotentials are perpendicular to field lines and crowd near the charges.</p>
+
+  <p><img src="../../../assets/images/8_electromagnetism/electric dipole.png" alt="Electric Dipole" /></p>
+
+  <p>(b)<br />
+If both charges were positive, field lines would repel and not connect between charges.</p>
+
+  <p><img src="../../../assets/images/8_electromagnetism/dipole-positive.png" alt="Positive Dipole" /></p>
+
+</details>
+
+<p>Q8. A small test charge is placed near a large, positively charged <em>conducting</em> sphere.<br />
+(a) Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.<br />
+(b) Why is the electric field inside a conductor zero in electrostatic equilibrium?</p>
+
+<details>
+
+  <p>(a)<br />
+<strong>Outside:</strong> The electric field points radially outward from the surface of the sphere. The force on a positive test charge is also radially outward (repulsive).<br />
+<strong>Inside:</strong> The electric field is zero, so the force on the test charge is zero.</p>
+
+  <p>(b)<br />
+The field inside a conductor is zero because charges redistribute to cancel any internal field.</p>
+
+</details>
+
+<hr />
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>
