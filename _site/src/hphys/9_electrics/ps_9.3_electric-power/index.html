@@ -26,20 +26,7 @@
     
     
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <!-- <style>
-      body {
-        line-height: 1.6;
-        max-width: 80%;
-        margin: 0 auto;
-        padding-top: 110px; /* Add padding to push content below the fixed header */
-        justify-content: center;
-      }
-      .markdown-body {
-        box-sizing: border-box;
-        min-width: 200px;
-        max-width: 100%;
-      }
-    </style> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
   </head>
   <body>
     <header>
@@ -189,244 +176,285 @@
     
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
-      <h1 id="ps-93--electrical-power">PS 9.3 | Electrical Power</h1>
+      <style>
+.solution-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+.sigfig {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: right;
+}
+.parent-formula {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+.givens {
+  grid-column: 1;
+  grid-row: 2;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+.calculations {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+details {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #007bff;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+details[open] summary {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+</style>
 
-<p><strong>Formulas:</strong></p>
-<ul>
-  <li>Power: $P = IV$</li>
-  <li>Power (resistor): $P = I^2R$, $P = \frac{V^2}{R}$</li>
-  <li>Energy: $E = Pt$</li>
-  <li>Cost: $\text{Cost} = \text{Energy (kWh)} \times \text{rate}$</li>
-  <li>Efficiency: $\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%$</li>
-</ul>
+<h1 id="ps-93--electrical-power">PS 9.3 | Electrical Power</h1>
 
-<h2 id="problems">Problems</h2>
+<h2 id="calculation-problems">Calculation Problems</h2>
 
-<ol>
-  <li>Define electrical power and its unit.<br />
-<strong>Conceptual:</strong> Why is power an important quantity in electrical systems?</li>
-</ol>
+<p>Q1. A toaster draws 8.0 A of current when connected to a 120 V outlet.<br />
+(a) Calculate the power consumed by the toaster in watts.<br />
+(b) If the toaster is used for 5.0 minutes each morning, how much electrical energy in kilowatt-hours does it consume in a 30-day month?</p>
 
 <details>
-  <summary>
-    <p>Solution&lt;/summary&gt;</p>
+  <div class="solution-grid">
+    <div class="parent-formula">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$P = IV$&lt;br&gt;
+$E = P \times t$
+</code></pre></div>      </div>
+    </div>
+    <div class="givens">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 8.0~\text{A}$&lt;br&gt;
+$V = 120~\text{V}$&lt;br&gt;
+$t = 5.0~\text{min/day} \times 30~\text{days}$
+</code></pre></div>      </div>
+    </div>
+    <div class="calculations">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
+$P = (8.0~\text{A})(120~\text{V})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$P = 960~\text{W}$&lt;/div&gt;
+&lt;br&gt;
+(b)&lt;br&gt;
+$E = (0.96~\text{kW}) \times (5.0~\text{min/day}) \times (1~\text{hr}/60~\text{min}) \times (30~\text{days})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$E = 2.4~\text{kWh}$&lt;/div&gt;
+</code></pre></div>      </div>
+    </div>
+  </div>
+</details>
 
-    <p><strong>Definition:</strong><br />
-Electrical power is the rate at which electrical energy is transferred or converted.<br />
-<strong>Unit:</strong> The SI unit of power is the watt ($\mathrm{W}$), where $1~\mathrm{W} = 1~\mathrm{J/s}$.</p>
+<p>Q2. A household circuit has a 15 A circuit breaker. What is the maximum number of 60 W light bulbs that can be safely operated simultaneously on this circuit if the voltage is 120 V?</p>
 
-    <p><strong>Conceptual:</strong><br />
-Power tells us how quickly energy is used or supplied. High-power devices use energy faster, which affects efficiency, safety, and cost.</p>
+<details>
+  <div class="solution-grid">
+    <div class="parent-formula">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
 
-    <p>&lt;/details&gt;</p>
+$P_\text{max} = IV$&lt;br&gt;
 
-    <ol>
-      <li>A device operates at $24\,\mathrm{V}$ and draws $3.0\,\mathrm{A}$ of current. Calculate the power consumed.<br />
-<strong>Conceptual:</strong> What happens to the power if the current is doubled?</li>
-    </ol>
+$\text{Number of bulbs} = P_\text{max} / P_\text{bulb}$
+</code></pre></div>      </div>
+    </div>
+    <div class="givens">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 15~\text{A}$&lt;br&gt;
+$V = 120~\text{V}$&lt;br&gt;
+$P_\text{bulb} = 60~\text{W}$
+</code></pre></div>      </div>
+    </div>
+    <div class="calculations">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$P_\text{max} = (15~\text{A})(120~\text{V})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$P_\text{max} = 1800~\text{W}$&lt;/div&gt;
+&lt;br&gt;
+$\text{Number of bulbs} = 1800~\text{W} \div 60~\text{W}$&lt;br&gt;
+&lt;div class="sigfig"&gt;30 bulbs&lt;/div&gt;
+</code></pre></div>      </div>
+    </div>
+  </div>
+</details>
 
-    <details>
-      <summary>
-        <p>Solution&lt;/summary&gt;</p>
+<p>Q3. A hair dryer has a resistance of 10 Ω when operating.<br />
+(a) If it is connected to a 120 V outlet, what current will it draw?<br />
+(b) What is the power consumption of the hair dryer?<br />
+(c) How much electrical energy in joules does it consume when used for 8.0 minutes?</p>
 
-        <p><strong>Parent formula:</strong><br />
-$P = IV$</p>
+<details>
+  <div class="solution-grid">
+    <div class="parent-formula">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$I = V/R$&lt;br&gt;
+$P = VI$&lt;br&gt;
+$E = Pt$
+</code></pre></div>      </div>
+    </div>
+    <div class="givens">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$R = 10~\Omega$&lt;br&gt;
+$V = 120~\text{V}$&lt;br&gt;
+$t = 8.0~\text{min} \times 60~\text{s/min}$
+</code></pre></div>      </div>
+    </div>
+    <div class="calculations">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
+$I = 120~\text{V} / 10~\Omega$&lt;br&gt;
+&lt;div class="sigfig"&gt;$I = 12~\text{A}$&lt;/div&gt;
+&lt;br&gt;
+(b)&lt;br&gt;
+$P = (120~\text{V})(12~\text{A})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$P = 1440~\text{W}$&lt;/div&gt;
+&lt;br&gt;
+(c)&lt;br&gt;
+$E = (1440~\text{W})(8.0~\text{min})(60~\text{s/min})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$E = 691,200~\text{J}$&lt;/div&gt;
+</code></pre></div>      </div>
+    </div>
+  </div>
+</details>
 
-        <p><strong>Substitute values:</strong><br />
-$P = (24~\mathrm{V})(3.0~\mathrm{A}) = 72~\mathrm{W}$</p>
+<p>Q4. A student accidentally connects a 6.0 V battery to a 3.0 V, 0.50 W light bulb.<br />
+(a) What is the resistance of the light bulb when operating normally?<br />
+(b) What current will flow through the bulb with the 6.0 V battery?<br />
+(c) What power will the bulb dissipate with the 6.0 V battery?<br />
+(d) Why might this cause the bulb to burn out?</p>
 
-        <p><strong>Conceptual:</strong><br />
-If current doubles ($I = 6.0~\mathrm{A}$), $P = (24~\mathrm{V})(6.0~\mathrm{A}) = 144~\mathrm{W}$, so power also doubles.</p>
+<details>
+  <div class="solution-grid">
+    <div class="parent-formula">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$R = V^2/P$&lt;br&gt;
+$I = V/R$&lt;br&gt;
+$P = VI$
+</code></pre></div>      </div>
+    </div>
+    <div class="givens">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V_\text{normal} = 3.0~\text{V}$&lt;br&gt;
+$P_\text{normal} = 0.50~\text{W}$&lt;br&gt;
+$V_\text{battery} = 6.0~\text{V}$
+</code></pre></div>      </div>
+    </div>
+    <div class="calculations">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
+$R = (3.0~\text{V})^2 / 0.50~\text{W}$&lt;br&gt;
+&lt;div class="sigfig"&gt;$R = 18~\Omega$&lt;/div&gt;
+&lt;br&gt;
+(b)&lt;br&gt;
+$I = 6.0~\text{V} / 18~\Omega$&lt;br&gt;
+&lt;div class="sigfig"&gt;$I = 0.33~\text{A}$&lt;/div&gt;
+&lt;br&gt;
+(c)&lt;br&gt;
+$P = (6.0~\text{V})(0.33~\text{A})$&lt;br&gt;
+&lt;div class="sigfig"&gt;$P = 2.0~\text{W}$&lt;/div&gt;
+</code></pre></div>      </div>
+    </div>
+  </div>
+  <p>(d) The bulb will dissipate 4 times more power than its rating, causing excessive heating and likely failure.</p>
+</details>
 
-        <p>&lt;/details&gt;</p>
+<p>Q5. The electrical energy cost is $0.14 per kilowatt-hour. A refrigerator with a power rating of 350 W operates with a duty cycle where it runs 40% of the time.<br />
+(a) How much electrical energy in kilowatt-hours does it consume in a day?<br />
+(b) What is the monthly cost (30 days) to operate the refrigerator?</p>
 
-        <ol>
-          <li>A $10\,\Omega$ resistor has a current of $2.0\,\mathrm{A}$ flowing through it.<br />
-a) Calculate the power dissipated using $P = I^2R$.<br />
-b) Calculate the power using $P = \frac{V^2}{R}$ if the voltage across the resistor is $20\,\mathrm{V}$.<br />
-<strong>Conceptual:</strong> Why do both formulas give the same result?</li>
-        </ol>
+<details>
+  <div class="solution-grid">
+    <div class="parent-formula">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$E = P \times t \times (\text{duty cycle})$&lt;br&gt;
+$\text{Cost} = E \times \text{rate}$
+</code></pre></div>      </div>
+    </div>
+    <div class="givens">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$P = 0.350~\text{kW}$&lt;br&gt;
+$t = 24~\text{h}$&lt;br&gt;
+$\text{duty cycle} = 0.40$&lt;br&gt;
+$\text{rate} = \$0.14/\text{kWh}$
+</code></pre></div>      </div>
+    </div>
+    <div class="calculations">
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
+$E = (0.350~\text{kW})(24~\text{h})(0.40)$&lt;br&gt;
+&lt;div class="sigfig"&gt;$E = 3.36~\text{kWh}$&lt;/div&gt;
+&lt;br&gt;
+(b)&lt;br&gt;
+$\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&gt;
+&lt;div class="sigfig"&gt;\$14.11&lt;/div&gt;
+</code></pre></div>      </div>
+    </div>
+  </div>
+</details>
 
-        <details>
-          <summary>
-            <p>Solution&lt;/summary&gt;</p>
+<h2 id="conceptual-problems">Conceptual Problems</h2>
 
-            <p>a) <strong>Parent formula:</strong> $P = I^2R$<br />
-$P = (2.0~\mathrm{A})^2 \times 10~\Omega = 4.0 \times 10 = 40~\mathrm{W}$</p>
+<p>Q6. Explain the difference between electrical energy and electrical power. Include the units for each and explain how they are related.</p>
 
-            <p>b) <strong>Parent formula:</strong> $P = \frac{V^2}{R}$<br />
-$P = \frac{(20~\mathrm{V})^2}{10~\Omega} = \frac{400}{10} = 40~\mathrm{W}$</p>
+<details>
+  <p>Electrical energy is the capacity to do work, measured in joules (J) or kilowatt-hours (kWh), while electrical power is the rate at which energy is transferred, measured in watts (W). Power equals energy divided by time: $P = E/t$.</p>
+</details>
 
-            <p><strong>Conceptual:</strong><br />
-Both formulas are derived from Ohm’s Law ($V = IR$), so they are equivalent for resistors.</p>
+<p>Q7. Two light bulbs are labeled 75 W and 40 W respectively, and both are designed to operate at 120 V.<br />
+(a) Which bulb has the higher resistance?<br />
+(b) Which bulb draws more current?<br />
+(c) Explain why the power rating is related to the brightness of the bulb.</p>
 
-            <p>&lt;/details&gt;</p>
+<details>
+  <p>(a) The 40 W bulb has higher resistance ($R = V^2/P$: $R_{40W} = (120~\text{V})^2/40~\text{W} = 360~\Omega$; $R_{75W} = (120~\text{V})^2/75~\text{W} = 192~\Omega$)<br />
+(b) The 75 W bulb draws more current ($I = P/V$: $I_{75W} = 75~\text{W}/120~\text{V} = 0.625~\text{A}$; $I_{40W} = 40~\text{W}/120~\text{V} = 0.333~\text{A}$)<br />
+(c) Higher power means more electrical energy converted to light and heat per unit time, resulting in greater brightness.</p>
+</details>
 
-            <ol>
-              <li>A $60\,\mathrm{W}$ light bulb is left on for $8$ hours.<br />
-a) How much energy does it use in joules?<br />
-b) How much in kilowatt-hours?<br />
-<strong>Conceptual:</strong> Why do electric companies bill in kilowatt-hours?</li>
-            </ol>
+<p>Q8. A space heater can be operated at either 1000 W or 1500 W settings.<br />
+(a) If the voltage remains constant at 120 V, how does the current change when switching from the lower to the higher setting?<br />
+(b) How does the resistance of the heater element change when switching from the lower to the higher setting?</p>
 
-            <details>
-              <summary>
-                <p>Solution&lt;/summary&gt;</p>
+<details>
+  <p>(a) $I_{1000W} = 1000~\text{W}/120~\text{V} = 8.33~\text{A}$; $I_{1500W} = 1500~\text{W}/120~\text{V} = 12.5~\text{A}$; Current increases by 50%.<br />
+(b) $R_{1000W} = (120~\text{V})^2/1000~\text{W} = 14.4~\Omega$; $R_{1500W} = (120~\text{V})^2/1500~\text{W} = 9.6~\Omega$; Resistance decreases.</p>
+</details>
 
-                <p>a) <strong>Parent formula:</strong> $E = Pt$<br />
-$t = 8~\mathrm{h} = 8 \times 3600~\mathrm{s} = 28,800~\mathrm{s}$<br />
-$E = 60~\mathrm{W} \times 28,800~\mathrm{s} = 1,728,000~\mathrm{J}$</p>
+<p>Q9. A power transmission line delivers electrical energy from a generating station to a city. The same amount of power can be transmitted using either high voltage and low current, or low voltage and high current.<br />
+(a) Which approach would result in less energy lost as heat in the transmission lines? Why?<br />
+(b) If the resistance of the transmission line is 5.0 Ω, compare the power lost when transmitting 100 kW at 20,000 V versus transmitting 100 kW at 4,000 V.</p>
 
-                <p>b) $E = 60~\mathrm{W} \times 8~\mathrm{h} = 480~\mathrm{Wh} = 0.48~\mathrm{kWh$</p>
+<details>
+  <p>(a) High voltage and low current would result in less energy lost as heat because power loss is proportional to the square of current ($P = I^2R$).<br />
+(b) $P_{20,000V} = I^2R = (P/V)^2R = (100,000~\text{W}/20,000~\text{V})^2(5.0~\Omega) = (5~\text{A})^2(5.0~\Omega) = 125~\text{W}$<br />
+$P_{4,000V} = (100,000~\text{W}/4,000~\text{V})^2(5.0~\Omega) = (25~\text{A})^2(5.0~\Omega) = 3,125~\text{W}$<br />
+The power loss is 25 times greater at the lower voltage.</p>
+</details>
 
-                <p><strong>Conceptual:</strong><br />
-Kilowatt-hours are a convenient unit for large amounts of energy used over time, matching household consumption.</p>
+<p>Q10. Three resistors of 3.0 Ω, 6.0 Ω, and 9.0 Ω are connected in the following configurations:<br />
+(a) If connected in series to a 12 V battery, which resistor will dissipate the most power? The least power? Explain why without doing calculations.<br />
+(b) If connected in parallel to the same 12 V battery, which resistor will dissipate the most power? The least power? Explain why without doing calculations.<br />
+(c) For which configuration (series or parallel) will the battery deliver more total power? Explain.</p>
 
-                <p>&lt;/details&gt;</p>
-
-                <ol>
-                  <li>An electric heater rated at $1500\,\mathrm{W}$ runs for $5$ hours each day for a month ($30$ days). If electricity costs $0.12$ per kWh, what is the monthly cost to run the heater?<br />
-<strong>Conceptual:</strong> How can you reduce the cost of running the heater?</li>
-                </ol>
-
-                <details>
-                  <summary>
-                    <p>Solution&lt;/summary&gt;</p>
-
-                    <p><strong>Parent formula:</strong><br />
-$\text{Energy} = P \times t$<br />
-$\text{Cost} = \text{Energy (kWh)} \times \text{rate}$</p>
-
-                    <p>Total hours: $5~\mathrm{h/day} \times 30~\mathrm{days} = 150~\mathrm{h}$<br />
-Energy: $E = 1.5~\mathrm{kW} \times 150~\mathrm{h} = 225~\mathrm{kWh}$<br />
-Cost: $225~\mathrm{kWh} \times $0.12/\mathrm{kWh} = $27.00$</p>
-
-                    <p><strong>Conceptual:</strong><br />
-Reduce cost by using the heater fewer hours, lowering the power setting, or improving insulation.</p>
-
-                    <p>&lt;/details&gt;</p>
-
-                    <ol>
-                      <li>Explain the difference between AC and DC power.<br />
-<strong>Calculation:</strong> If a $120\,\mathrm{V}$ RMS AC source supplies $5.0\,\mathrm{A}$ to a device, what is the average power delivered?</li>
-                    </ol>
-
-                    <details>
-                      <summary>
-                        <p>Solution&lt;/summary&gt;</p>
-
-                        <p><strong>Conceptual:</strong></p>
-                        <ul>
-                          <li><strong>DC (Direct Current):</strong> Current flows in one direction (e.g., batteries).</li>
-                          <li><strong>AC (Alternating Current):</strong> Current reverses direction periodically (e.g., household outlets).</li>
-                        </ul>
-
-                        <p><strong>Calculation:</strong><br />
-<strong>Parent formula:</strong> $P = IV$ (for AC, use RMS values)<br />
-$P = (120~\mathrm{V})(5.0~\mathrm{A}) = 600~\mathrm{W}$</p>
-
-                        <p>&lt;/details&gt;</p>
-
-                        <ol>
-                          <li>A fuse in a circuit is rated for $2.0\,\mathrm{A}$. The circuit operates at $120\,\mathrm{V}$.<br />
-a) What is the maximum power the circuit can safely use?<br />
-<strong>Conceptual:</strong> How does a fuse protect the circuit?</li>
-                        </ol>
-
-                        <details>
-                          <summary>
-                            <p>Solution&lt;/summary&gt;</p>
-
-                            <p>a) <strong>Parent formula:</strong> $P = IV$<br />
-$P_{max} = (2.0~\mathrm{A})(120~\mathrm{V}) = 240~\mathrm{W}$</p>
-
-                            <p><strong>Conceptual:</strong><br />
-A fuse melts and breaks the circuit if current exceeds its rating, preventing overheating and fire.</p>
-
-                            <p>&lt;/details&gt;</p>
-
-                            <ol>
-                              <li>A device has an input power of $200\,\mathrm{W}$ and an output power of $150\,\mathrm{W}$.<br />
-a) Calculate its efficiency.<br />
-<strong>Conceptual:</strong> What happens to the “lost” power?</li>
-                            </ol>
-
-                            <details>
-                              <summary>
-                                <p>Solution&lt;/summary&gt;</p>
-
-                                <p>a) <strong>Parent formula:</strong> $\text{Efficiency} = \frac{\text{Output Power}}{\text{Input Power}} \times 100\%$<br />
-$\text{Efficiency} = \frac{150~\mathrm{W}}{200~\mathrm{W}} \times 100\% = 75\%$</p>
-
-                                <p><strong>Conceptual:</strong><br />
-The lost power is converted to heat, sound, or other non-useful forms.</p>
-
-                                <p>&lt;/details&gt;</p>
-
-                                <ol>
-                                  <li>Power lines transmit $500,000\,\mathrm{W}$ of power at $10,000\,\mathrm{V}$.<br />
-a) What is the current in the lines?<br />
-b) If the voltage is doubled, what happens to the current?<br />
-<strong>Conceptual:</strong> Why are high voltages used for power transmission?</li>
-                                </ol>
-
-                                <details>
-                                  <summary>
-                                    <p>Solution&lt;/summary&gt;</p>
-
-                                    <p>a) <strong>Parent formula:</strong> $P = IV \implies I = \frac{P}{V}$<br />
-$I = \frac{500,000~\mathrm{W}}{10,000~\mathrm{V}} = 50~\mathrm{A}$</p>
-
-                                    <p>b) If $V = 20,000~\mathrm{V}$, $I = \frac{500,000~\mathrm{W}}{20,000~\mathrm{V}} = 25~\mathrm{A}$</p>
-
-                                    <p><strong>Conceptual:</strong><br />
-High voltage reduces current, minimizing energy lost as heat ($P_{loss} = I^2R$) in transmission lines.</p>
-
-                                    <p>&lt;/details&gt;</p>
-
-                                    <ol>
-                                      <li>A microwave oven is rated at $1200\,\mathrm{W}$ and operates on $120\,\mathrm{V}$.<br />
-a) What is the current drawn by the oven?<br />
-b) How much energy does it use in $10$ minutes?<br />
-<strong>Conceptual:</strong> Why is it important to match appliance ratings to circuit capacity?</li>
-                                    </ol>
-
-                                    <details>
-                                      <summary>
-                                        <p>Solution&lt;/summary&gt;</p>
-
-                                        <p>a) <strong>Parent formula:</strong> $I = \frac{P}{V}$<br />
-$I = \frac{1200~\mathrm{W}}{120~\mathrm{V}} = 10~\mathrm{A}$</p>
-
-                                        <p>b) <strong>Parent formula:</strong> $E = Pt$<br />
-$t = 10~\mathrm{min} = 600~\mathrm{s}$<br />
-$E = 1200~\mathrm{W} \times 600~\mathrm{s} = 720,000~\mathrm{J}$</p>
-
-                                        <p><strong>Conceptual:</strong><br />
-If an appliance draws more current than the circuit can handle, it can cause overheating or trip the breaker.</p>
-
-                                        <p>&lt;/details&gt;</p>
-
-                                        <hr />
-                                      </summary>
-                                    </details>
-                                  </summary>
-                                </details>
-                              </summary>
-                            </details>
-                          </summary>
-                        </details>
-                      </summary>
-                    </details>
-                  </summary>
-                </details>
-              </summary>
-            </details>
-          </summary>
-        </details>
-      </summary>
-    </details>
-  </summary>
+<details>
+  <p>(a) In series, all resistors have the same current. Since $P = I^2R$, the 9.0 Ω resistor will dissipate the most power and the 3.0 Ω resistor will dissipate the least power.<br />
+(b) In parallel, all resistors have the same voltage. Since $P = V^2/R$, the 3.0 Ω resistor will dissipate the most power and the 9.0 Ω resistor will dissipate the least power.<br />
+(c) The parallel configuration will deliver more total power because the equivalent resistance is lower, allowing more current from the battery.</p>
 </details>
 
     

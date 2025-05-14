@@ -1,11 +1,11 @@
 ---
 layout: default
-title: PS 9.2 Simple Circuit Diagrams
+title: PS 9.2 Simple Circuit Resistance
 author: Jonathan Corbett
 css: /assets/css/worksheets.css
 ---
 
-# PS 9.2 | Simple Circuit Diagrams
+# PS 9.2 | Simple Circuit Resistance
 
 **Formulas:**
 - Series resistance: $R_{total} = R_1 + R_2 + \ldots$

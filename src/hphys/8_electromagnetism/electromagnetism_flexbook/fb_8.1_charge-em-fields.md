@@ -7,11 +7,10 @@ date: 5 May 2025
 ---
 
 <style>
-    .important-info{
+    .important-info {
         padding: 1rem;
-        border: 0.1 pt black solid;
-        box-shadow: 5pt grey solid;
-        border: 0.5px lightgrey solid;
+        border: 1px solid lightgrey;
+        box-shadow: 0 0 5px grey;
     }
 </style>
 
@@ -203,11 +202,7 @@ The potential is positive since we used a positive charge. This means work would
 
 Imagine a positive test charge moving between the plates of a capacitor. The uniform electric field between the plates exerts a constant force on the charge, pushing it toward the negative plate. If you move the charge from the positive to the negative plate, the electric field does work on it, and this work is stored as electric potential energy. The amount of work done per unit charge is the electric potential difference, or voltage, between the plates. 
 
-
-
-
 This is why voltage is measured in joules per coulomb (volts). Equipotential lines—lines where the potential is constant—run parallel to the plates and are always perpendicular to the electric field. In a capacitor, these lines help us visualize how the potential changes from one plate to the other.
-
 
 ![Charge Potential Energy](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/charge-potential-energy.png)
 
@@ -215,13 +210,13 @@ This is why voltage is measured in joules per coulomb (volts). Equipotential lin
 
 Just as a ball held above the ground has gravitational potential energy, a charged object in an electric field has electric potential energy. The **difference** in potential energy per unit charge between two points is the **voltage**, and it determines how much **work** the field can do on a charge moving between those points. 
 
-<!--
+---
 
 ## 6. Energy Stored in Electric Fields
 
 One of the most profound concepts in electromagnetism is that energy can be stored in the electric field itself. When charges are separated against their natural attraction (like charges on opposite plates of a capacitor), energy is stored in the resulting electric field.
 
-![Capacitor](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/capacitor.png)
+![Capacitor](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/8_electromagnetism/capacitor.jpg)
   
 A capacitor is a device that stores energy by separating charges onto two plates, creating an electric field between them. The energy stored in a capacitor is electric potential energy, just like the gravitational potential energy of a lifted object. When a battery is connected to a capacitor, it moves charge from one plate to the other, building up a voltage across the plates. The amount of energy stored depends on the amount of charge, the voltage, and the geometry of the plates. The closer the plates and the larger their area, the more charge (and thus energy) the capacitor can store. The energy is actually stored in the electric field between the plates, and can be released rapidly—like in a defibrillator, which uses a capacitor to deliver a life-saving jolt of energy.
 
@@ -237,7 +232,7 @@ $$PE_{e} = \frac{1}{2} C V^2$$
 
   
 Capacitance is a measure of how much charge a capacitor can store for a given voltage. It depends on the size, shape, and separation of the plates, as well as the material between them (the dielectric). Inserting a dielectric increases the capacitance, allowing more energy to be stored for the same voltage. This is why capacitors are so useful in electronics and medical devices—they can store and release energy quickly and efficiently.
-
+<!--
 <div class='important-info'>
 
 **Energy Stored in an Electric Field:**  
@@ -246,7 +241,12 @@ The energy stored in an electric field is proportional to:
 - The volume occupied by the field
 
 Mathematically:  
-$PE_{e} = \frac{1}{2} \epsilon_0 E^2$  
+$$
+PE_{e} = \frac{1}{2} \epsilon_0 E^2$$  
+or equivalently,  
+$$
+u = \frac{1}{2} \epsilon_0 E^2
+$$  
 where $PE_{e}$ is energy density, $\epsilon_0$ is the permittivity of free space, and $E$ is the electric field strength.
 
 </div>
@@ -291,9 +291,7 @@ One helpful way to understand field energy is to imagine that every region of sp
 - Why electric fields can exert forces on charged objects
 
 -->
-
 ---
-
 
 ## 7. Summary
 
