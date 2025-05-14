@@ -65,7 +65,7 @@ permalink: hphys/ps_8.2/
 
 ---
 
-## Solution Outline
+## Solutions
 
 1. Field of a point charge  
   a. $E = 4.3 \times 10^5~\text{N/C}$  

@@ -7,6 +7,8 @@ css: /assets/css/worksheets.css
 
 # PS 8.1 | Coulomb's Law and Charge
 
+
+
 ## Problems
 
 1. A balloon rubbed against denim gains a charge of -8.0 µC. What is the electric force between the balloon and the denim when the two are separated by a distance of 5.0 cm?

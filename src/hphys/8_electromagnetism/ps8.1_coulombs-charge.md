@@ -7,6 +7,16 @@ css: /assets/css/worksheets.css
 
 # PS 8.1 | Coulomb's Law and Charge
 
+## Formula Summary
+
+| **Concept**                        | **Formula**                                         | **Description**                                 |
+|---------------------------------|-------------------------------------------------|---------------------------------------------|
+| Coulomb's Law                  | $F = k \frac{q_1 q_2}{r^2}$                   | Force between two point charges             |
+| Charge Redistribution          | $q_{final} = \frac{q_1 + q_2}{2}$               | Final charge after contact (identical spheres) |
+| Electric Field (point charge)  | $E = k \frac{q}{r^2}$                         | Field from a point charge                   |
+| Force in Electric Field        | $F = qE$                                        | Force on a charge in an electric field      |
+
+
 ## Problems
 
 1. A balloon rubbed against denim gains a charge of -8.0 µC. What is the electric force between the balloon and the denim when the two are separated by a distance of 5.0 cm?
