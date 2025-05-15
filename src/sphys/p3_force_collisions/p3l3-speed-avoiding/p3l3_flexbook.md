@@ -106,6 +106,7 @@ The distance traveled can be found by multiplying speed by time:
 - Distance = Speed × Time
 
 For example: At 30 mph for 2 hours
+
   $x = 30 \frac{miles}{\cancel{hour}} \times 2 \,\cancel{hour}$ 
 
   $x=30 \frac{miles}{hour} \times 2 \,hour$ = 60 miles
@@ -156,8 +157,7 @@ A common rule: "2-second rule" – Stay at least 2 seconds behind the car in fro
        Compare this to the total stopping distance:  
        Total stopping distance (41 meters) > Following distance (28 meters).  
      - **Answer:** Your total stopping distance is **13 meters longer** than the safe following distance, meaning the "2-second rule" may not provide enough space to stop safely at this speed.
-
-       </details>
+     </details>
 
 <div class='checkpoint'>
 
