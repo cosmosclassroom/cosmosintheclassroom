@@ -131,7 +131,6 @@ A common rule: "2-second rule" – Stay at least 2 seconds behind the car in fro
     </details>
 
 1. If your reaction time is 1.5 seconds and your car's braking distance from 50 km/h is 20 meters, what is your total stopping distance?
-Answer
 
    <details>
 
@@ -180,4 +179,4 @@ By analyzing velocity-time graphs, we can see how reaction time and braking comb
 
 ## Exit Ticket
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-f9VGfgJwc6zPlhx3-0duQShh4jkUssAsPVrTgaxtGMbbIQ/viewform?embedded=true" width="800" height="1000" max-height="100%" max-width="100% frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-f9VGfgJwc6zPlhx3-0duQShh4jkUssAsPVrTgaxtGMbbIQ/viewform?embedded=true" width="640" height="3133" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

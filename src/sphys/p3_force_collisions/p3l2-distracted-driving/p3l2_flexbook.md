@@ -127,14 +127,14 @@ A powerful way to visualize motion is by creating a **position-time (P-T) graph*
 The table above contains position and time data that should look familiar from your mathematics classes. Each row represents a coordinate point (time, position) that can be plotted on an x-y coordinate system, with time on the x-axis and position on the y-axis. By plotting these points and connecting them, we create a mathematical model of the car's motion that allows us to analyze patterns and calculate important values like **velocity**. 
 
 > 1. Produce an x-y axis in your science notebook. One quadrant is sufficient as we have no negative values.
-> 2. Plot each point (position, time) on the coordinate axes. Use a ruler to ensure precision.
+> 2. Plot each point (time, position) on the coordinate axes. Use a ruler to ensure precision.
 >3. Connect each plotted point with a straight line.
 
 <div class='checkpoint'>
 
 # Checkpoint 4
-- How *far* did the car move to get from $x_0$ to $x_1$?
-- How *long* did it take for the car to move from $x_0$ to $x_1$?
+- How *far* did the car move to get from $x_0$ to $x_1$? Show this calculation in your notebook.
+- How *long* did it take for the car to move from $x_0$ to $x_1$? Show this calculation in your notebook.
 
 </div>
 
@@ -163,6 +163,8 @@ By comparing the position-time graphs for a non-distracted driver and a distract
 Being distracted significantly increases your reaction time. This longer reaction time means your car travels a greater distance before you even begin to brake. While the braking process itself might be the same once the brakes are applied, the extra distance covered during the reaction time adds to the total stopping distance. This increased stopping distance can be the crucial difference between avoiding a collision and being involved in one.
 
 Understanding the physics behind reaction time, braking distance, and how to analyze motion helps us appreciate the importance of staying focused while driving.
+
+[Calculations Practice: Reaction Distance](../p3l3-speed-avoiding/p3l3_calculating-reaction-distances.md)
 
 ## Exit Ticket
 

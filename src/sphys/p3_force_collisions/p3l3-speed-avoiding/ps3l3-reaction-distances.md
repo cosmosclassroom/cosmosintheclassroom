@@ -5,27 +5,26 @@ layout: default
 
 # Calculating Reaction Distances
 
-Use a mathematical model (**distance = speed × time**) to generate data to tell us about how speed affects reaction distance.  
-Assume that the average reaction time of a non-distracted adult in the U.S. is **0.75 seconds**.  
-Assume that being distracted **doubles reaction time**.
+Use a mathematical model from Lesson 3 to generate data to tell us about how speed affects reaction distance.  
+$$ \text{distance} = \text{velocity} \times \text{time}$$
+$$ x = v \times t$$
+Assume that the average reaction time of a non-distracted adult in the U.S. is **0.75 seconds**.  Assume that being distracted **doubles reaction time**.
 
-Fill in the table below. The speed in miles per hour (MPH) has already been converted to meters per second (m/s) for you.
+On a separate page, perform the calculations needed to complete the table below. You may choose whether or not to copy the table. The speed in miles per hour (MPH) has already been converted to meters per second (m/s) for you.
 
-| Speed (MPH) | Speed (m/s) | Reaction distance (not distracted, m) | Reaction distance (distracted, m) |
-|:-----------:|:-----------:|:-------------------------------------:|:----------------------------------:|
-|      7      |      3      |                                     |                                    |
-|     20      |      9      |                                     |                                    |
-|     55      |     25      |                                     |                                    |
-|     67      |     30      |                                     |                                    |
-|     80      |     36      |                                     |                                    |
-|    100      |     45      |                                     |                                    |
+---
 
->**Instructions:**  
-> - For each row, calculate the reaction distance for a non-distracted driver:  
->  distance = speed (m/s) × 0.75 s
-> - For a distracted driver, double the reaction time:  
->  distanc = speed (m/s) × 1.5 s
+|Speed (MPH)|Speed (m/s)| Reaction distance <br>(not distracted, m) | Reaction distance <br> (distracted, m)|
+|:-----------:|:--------:|:-------------------------:|:-----------------------:|
 
+|d|de|e|d|
+|-|-|-|-|
+|7|3|||
+|20|9|||
+|55|25|||
+|67|30|||
+|80|36|||
+|100|45|||
 ---
 
 ## Plotting
