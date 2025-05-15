@@ -29,6 +29,15 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 
 > Review the same video clips from P3L2. This time, focus on how the car's velocity changes during the reaction and braking phases.
 
+### Scenario 1 - Non-Distracted Driver and Obstacle
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z11esq-Zs2E?si=CRB7VjKEVVxD80Fm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Scenario 2 - Distracted Driver and Obstacle
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/D2-2L_e3bLU?si=-29VNGTdN4TEeTXX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 ### Scenario 1 – Non-Distracted Driver
 
 - During **reaction time**, the car moves at a constant velocity (no braking yet).
@@ -36,7 +45,7 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 
 ### Scenario 2 – Distracted Driver
 
-- The reaction phase is longer, so the car travels at constant velocity for a longer time before braking begins.
+- The **reaction phase** is longer, so the car travels at constant velocity for a longer time before braking begins.
 
 ---
 
@@ -57,6 +66,8 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 <div class='checkpoint'>
 
 # Checkpoint 1
+
+Write the answers to the following in your notebook. It is helpful to describe regions in terms of time (i.e. $t_0$ and $t_1$)
 - On your V-T graph, which region represents the **reaction distance**?
 - Which region represents the **braking distance**?
 - How can you find the **total stopping distance** using the graph?
@@ -73,8 +84,8 @@ The **area under the velocity-time graph** gives the total distance travelled. F
 - **Braking distance:** Area under the sloped section (triangle or trapezoid).
 - **Total stopping distance:** Sum of both areas.
 
-> 1. Use your V-T graph to estimate the reaction and braking distances for each scenario.
-> 2. Compare your results to the position-time analysis from P3L2.
+> 1. Use your V-T graph to *estimate* the reaction and braking distances for each scenario.
+> 2. Compare your results to the position-time analysis from Lesson 2.
 
 ---
 
@@ -88,54 +99,71 @@ Higher speeds mean:
 
 *Doubling your speed **more than doubles** your stopping distance!*
 
+### Calculating Distance from Speed and Time
+
+The distance traveled can be found by multiplying speed by time:
+- Distance = Speed × Time
+
+For example: At 30 mph for 2 hours
+  $x = 30 \frac{miles}{\cancel{hour}} \times 2 \,\cancel{hour}$ 
+
+  $x=30 \frac{miles}{hour} \times 2 \,hour$ = 60 miles
+
+
 ### Safe Following Distance
 
 To avoid collisions, drivers must leave enough space to stop safely if the car in front suddenly brakes. This is called the **following distance**.
 
-> A common rule: "2-second rule" – Stay at least 2 seconds behind the car in front. At higher speeds or in poor conditions, increase this gap.
+A common rule: "2-second rule" – Stay at least 2 seconds behind the car in front. At higher speeds or in poor conditions, increase this gap.
+
+> In your notebook, attempt these calculations to examine the "2-second rule" mathematically. The solutions are provided in the details, so be sure your notebook has accurate examples before you finish this work.
 
 ---
 
-> 1. **At 50 km/h (about 14 m/s), how far do you travel in 2 seconds?**  
-   Answer
+1. At 50 km/h (about 14 m/s or 31 mph), how far do you travel in 2 seconds? 
+   <details>
+
     - **Solution:**  
       Distance = Speed × Time  
       Distance = 14 m/s × 2 s = **28 meters**  
     - **Answer:** You travel **28 meters** in 2 seconds.
 
+    </details>
 
-> 2. **If your reaction time is 1.5 seconds and your car's braking distance from 50 km/h is 20 meters, what is your total stopping distance?**  
+1. If your reaction time is 1.5 seconds and your car's braking distance from 50 km/h is 20 meters, what is your total stopping distance?
 Answer
 
-- **Solution:**  
-  Reaction distance = Speed × Reaction time  
-  Reaction distance = 14 m/s × 1.5 s = **21 meters**  
-  Total stopping distance = Reaction distance + Braking distance  
-  Total stopping distance = 21 m + 20 m = **41 meters**  
-- **Answer:** Your total stopping distance is **41 meters**.
+   <details>
+
+   - **Solution:**  
+     Reaction distance = Speed × Reaction time  
+     Reaction distance = $14 m/s \times 1.5 s$ = **21 meters** 
+     Total stopping distance = Reaction distance + Braking distance  
+     Total stopping distance = $21 m + 20 m$ = **41 meters**  
+   - **Answer:** Your total stopping distance is **41 meters**.
   
+    </details>
+
+1. How does this compare to your following distance?
 
 
-> 3. **How does this compare to your following distance?** 
+     <details>
 
+     - **Solution:**  
+       Using the "2-second rule," the safe following distance at 50 km/h is:  
+       Following distance = Speed × 2 seconds  
+       Following distance = $14 m/s × 2 s$ = **28 meters**  
+       Compare this to the total stopping distance:  
+       Total stopping distance (41 meters) > Following distance (28 meters).  
+     - **Answer:** Your total stopping distance is **13 meters longer** than the safe following distance, meaning the "2-second rule" may not provide enough space to stop safely at this speed.
 
-Answers
-
-  - **Solution:**  
-    Using the "2-second rule," the safe following distance at 50 km/h is:  
-    Following distance = Speed × 2 seconds  
-    Following distance = 14 m/s × 2 s = **28 meters**  
-    Compare this to the total stopping distance:  
-    Total stopping distance (41 meters) > Following distance (28 meters).  
-  - **Answer:** Your total stopping distance is **13 meters longer** than the safe following distance, meaning the "2-second rule" may not provide enough space to stop safely at this speed.
-
-
+       </details>
 
 <div class='checkpoint'>
 
 # Checkpoint 2
 - How does increasing speed affect your reaction and braking distances?
-- Why is it important to adjust your following distance at higher speeds or in poor conditions?
+- Why is it important to adjust your following distance at higher speeds or in poor conditions to avoid accidents? Reference physics concepts in your answer.
 
 </div>
 
@@ -152,4 +180,4 @@ By analyzing velocity-time graphs, we can see how reaction time and braking comb
 
 ## Exit Ticket
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd6nK1wQwK8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw8Qw/viewform?embedded=true" width="640" height="590" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-f9VGfgJwc6zPlhx3-0duQShh4jkUssAsPVrTgaxtGMbbIQ/viewform?embedded=true" width="800" height="1000" max-height="100%" max-width="100% frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

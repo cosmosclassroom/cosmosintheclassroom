@@ -1,5 +1,7 @@
-Name:  ______________________________________  
-Date:  ___________________
+---
+layout: default
+
+---
 
 # Calculating Reaction Distances
 
@@ -18,11 +20,11 @@ Fill in the table below. The speed in miles per hour (MPH) has already been conv
 |     80      |     36      |                                     |                                    |
 |    100      |     45      |                                     |                                    |
 
-> **Instructions:**  
+>**Instructions:**  
 > - For each row, calculate the reaction distance for a non-distracted driver:  
->   `distance = speed (m/s) × 0.75 s`
+>  distance = speed (m/s) × 0.75 s
 > - For a distracted driver, double the reaction time:  
->   `distance = speed (m/s) × 1.5 s`
+>  distanc = speed (m/s) × 1.5 s
 
 ---
 
