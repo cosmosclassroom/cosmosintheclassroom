@@ -287,11 +287,11 @@ Q7. Sketch the electric field lines and equipotential surfaces for a system of t
 <div class="solution-grid">
 (a) <br>
 Field lines emerge from the positive charge and enter the negative charge; equipotentials are perpendicular to field lines and crowd near the charges.<br>
-<img src="../../../assets/images/8_electromagnetism/electric dipole.png" alt="Electric Dipole">
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/8_electromagnetism/electric dipole.png" alt="Electric Dipole">
 <br><br>
 (b)<br>
 If both charges were positive, field lines would repel and not connect between charges.<br>
-<img src="../../../assets/images/8_electromagnetism/dipole-positive.png" alt="Positive Dipole">
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/8_electromagnetism/dipole-positive.png" alt="Positive Dipole">
 </div>
 
 <p>
