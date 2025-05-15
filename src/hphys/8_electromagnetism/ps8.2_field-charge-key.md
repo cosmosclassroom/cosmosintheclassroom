@@ -150,45 +150,9 @@ $E_{net} = 0~\mathrm{N/C}$
 
 (b) If both charges were positive, the fields would add at the midpoint, pointing away from each charge, resulting in a nonzero field.
 
-Q3. Three point charges are arranged at the corners of an equilateral triangle (side 0.50 m): +4.0 μC at A, +4.0 μC at B, and -4.0 μC at C.  
-(a) Find the magnitude and direction of the net electric field at the center of the triangle.  
-(b) Why does the symmetry of the arrangement affect the direction of the net electric field at the center?
 
-<div class="solution-grid">
 
-<div class="parent-formula">
-<b>Parent formula:</b><br>
-$E = k \frac{|q|}{r^2}$
-</div>
-
-<div class="givens">
-<b>Distance from center to vertex:</b><br>
-$r = \frac{a}{\sqrt{3}} = \frac{0.50~\mathrm{m}}{\sqrt{3}} = 0.289~\mathrm{m}$<br>
-$k = 8.99 \times 10^9~\mathrm{\frac{N \cdot m^2}{C^2}}$<br>
-$q = 4.0~\mu\mathrm{C} = 4.0 \times 10^{-6}~\mathrm{C}$
-</div>
-
-<div class="calculations">
-(a) <br>
-$E_{vertex} = (8.99 \times 10^9~\mathrm{\frac{N \cdot m^2}{C^2}}) \frac{4.0 \times 10^{-6}~\mathrm{C}}{(0.289~\mathrm{m})^2}$<br>
-$E_{vertex} = (8.99 \times 10^9~\mathrm{\frac{N \cdot m^2}{C^2}}) \frac{4.0 \times 10^{-6}~\mathrm{C}}{0.0835~\mathrm{m}^2}$<br>
-$E_{vertex} = (8.99 \times 10^9~\mathrm{\frac{N \cdot m^2}{C^2}}) \times 4.79 \times 10^{-5}~\mathrm{\frac{C}{m^2}}$<br>
-<div class="sigfig">
-$E_{vertex} = 4.3 \times 10^5~\mathrm{N/C}$
-</div>
-<br>
-By symmetry, the two positive charges' fields partially cancel, and the net field points toward the negative charge. The total field is 
-<div class="sigfig">
-$8.0 \times 10^5~\mathrm{N/C}$
-</div>
-toward the negative charge.
-</div>
-
-</div>
-
-(b) The symmetry means the fields from the positive charges partially cancel, so the net field points toward the negative charge.
-
-Q4. A charge of -6.0 μC is located 30 cm from a point P.  
+Q3. A charge of -6.0 μC is located 30 cm from a point P.  
 (a) What is the electric potential at point P due to this charge?  
 (b) How much work is required to bring a +1.0 μC charge from infinity to point P?  
 (c) Is electric potential a vector or a scalar? How does this affect how you combine potentials from multiple charges?
@@ -226,7 +190,7 @@ $-0.18~\mathrm{J}$
 
 (c) Electric potential is a scalar, so potentials from multiple charges are added algebraically (not as vectors).
 
-Q5. A parallel plate capacitor has a capacitance of 8.0 μF and is charged to a potential difference of 15 V.  
+Q4. A parallel plate capacitor has a capacitance of 8.0 μF and is charged to a potential difference of 15 V.  
 (a) Calculate the energy stored in the capacitor.  
 (b) What happens to the energy stored in a capacitor if the voltage is doubled? Explain why.
 
@@ -254,7 +218,7 @@ $U = 9.0 \times 10^{-4}~\mathrm{J}$
 
 (b) If voltage is doubled, stored energy increases by a factor of four (since $U \propto V^2$).
 
-Q6. The plates of a parallel plate capacitor are moved farther apart while keeping the charge constant.  
+Q5. The plates of a parallel plate capacitor are moved farther apart while keeping the charge constant.  
 (a) Using the formula $U = \frac{1}{2}\frac{Q^2}{C}$, explain what happens to the energy stored in the capacitor as the plates are moved farther apart (with $Q$ constant). Show your reasoning.  
 (b) Why does the electric field between the plates remain constant even as the plates are moved apart (with constant charge)?
 
@@ -280,7 +244,7 @@ As the plates are moved apart (with $Q$ constant):<br>
 
 (b) The field depends only on charge and plate area, not separation (for ideal parallel plates).
 
-Q7. Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole).  
+Q6. Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole).  
 (a) Describe the pattern and explain the relationship between field lines and equipotentials.  
 (b) How would the field pattern change if both charges were positive?
 
@@ -298,7 +262,7 @@ If both charges were positive, field lines would repel and not connect between c
 <b>Conceptual explanation:</b> The field lines show the direction a positive test charge would move. Equipotentials are always perpendicular to field lines. For two positive charges, the field lines repel and do not connect, and equipotentials are distorted accordingly.
 </p>
 
-Q8. A small test charge is placed near a large, positively charged *conducting* sphere.  
+Q7. A small test charge is placed near a large, positively charged *conducting* sphere.  
 (a) Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.  
 (b) Why is the electric field inside a conductor zero in electrostatic equilibrium?
 
