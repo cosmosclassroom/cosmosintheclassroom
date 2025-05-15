@@ -16,7 +16,7 @@ In the previous lesson, we explored how reaction time and braking distance combi
 A **velocity-time graph** plots an object's velocity (speed and direction) on the vertical axis (y-axis) against time on the horizontal axis (x-axis). These graphs help us visualize how an object's speed changes over time and allow us to calculate important quantities like distance travelled.
 
 ### Key Features of V-T Graphs
-
+![Velocity-Time Graph Example 1](../../../../assets/images/p3_collisions/199426-004-535813D4.webp)
 - **Horizontal line:** Constant velocity (no acceleration).
 - **Sloped line:** Changing velocity (acceleration or deceleration).
 - **Area under the curve:** Represents the total distance travelled.
@@ -54,14 +54,6 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 > - The braking phase (decreasing velocity)
 > - The total stopping time
 
-<div class='template-table'>
-
-| Phase | Description | V-T Graph Shape |
-|:-----:|:-----------|:---------------|
-| Reaction | Driver hasn't braked yet | Horizontal line (constant velocity) |
-| Braking | Brakes applied, car slows | Downward sloped line (deceleration) |
-
-</div>
 
 <div class='checkpoint'>
 
