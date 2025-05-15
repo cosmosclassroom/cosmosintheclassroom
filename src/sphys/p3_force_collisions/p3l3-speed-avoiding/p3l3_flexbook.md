@@ -70,6 +70,8 @@ Write the answers to the following in your notebook. It is helpful to describe r
 
 ## Part 2: Connecting Area to Distance Travelled
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d-_eqgj5-K8?si=gCxDUEmWICc2FCuz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 The **area under the velocity-time graph** gives the total distance travelled. For stopping scenarios:
 ![Area under a V-T graph is total distance travelled](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/area-vt-graph.png)
 - **Reaction distance:** Area under the constant velocity section (rectangle).
