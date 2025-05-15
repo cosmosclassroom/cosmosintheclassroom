@@ -51,17 +51,10 @@ permalink: hphys/ps_8.2/
     a. Describe the pattern and explain the relationship between field lines and equipotentials.  
     b. How would the field pattern change if both charges were positive?
 
-<p>
-<b>Conceptual explanation:</b> The field lines show the direction a positive test charge would move. Equipotentials are always perpendicular to field lines. For two positive charges, the field lines repel and do not connect, and equipotentials are distorted accordingly.
-</p>
-
 8. A small test charge is placed near a large, positively charged *conducting* sphere.  
     a. Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.  
     b. Why is the electric field inside a conductor zero in electrostatic equilibrium?
 
-<p>
-<b>Conceptual explanation:</b> In electrostatic equilibrium, any excess charge on a conductor resides on its surface, and the charges arrange themselves so that the electric field inside is zero. This is why a test charge inside a conductor feels no force.
-</p>
 
 ---
 
@@ -100,5 +93,9 @@ permalink: hphys/ps_8.2/
 8. Field near a conducting sphere  
   a. Outside: field and force point radially outward; inside: both are zero  
   b. Field inside a conductor is zero because charges redistribute to cancel any internal field
+
+  ><b>Conceptual explanation:</b> In electrostatic equilibrium, any excess charge on a conductor resides distributed on its surface, and the charges arrange themselves so that the electric field inside is zero. This is why a test charge inside a conductor feels no force.
+
+
 
 
