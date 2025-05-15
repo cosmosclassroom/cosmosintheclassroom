@@ -16,7 +16,7 @@ In the previous lesson, we explored how reaction time and braking distance combi
 A **velocity-time graph** plots an object's velocity (speed and direction) on the vertical axis (y-axis) against time on the horizontal axis (x-axis). These graphs help us visualize how an object's speed changes over time and allow us to calculate important quantities like distance travelled.
 
 ### Key Features of V-T Graphs
-![Velocity-Time Graph Example 1](../../../../assets/images/p3_collisions/199426-004-535813D4.webp)
+![Velocity-Time Graph Example 1](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/199426-004-535813D4.webp)
 - **Horizontal line:** Constant velocity (no acceleration).
 - **Sloped line:** Changing velocity (acceleration or deceleration).
 - **Area under the curve:** Represents the total distance travelled.
@@ -27,7 +27,7 @@ A **velocity-time graph** plots an object's velocity (speed and direction) on th
 
 Recall the two scenarios from the previous lesson: a non-distracted driver and a distracted driver reacting to an obstacle.
 
-> Review the same video clips from P3L2. This time, focus on how the car's velocity changes during the reaction and braking phases.
+> Review the same video clips from P3L2. This time, focus on how the car's **velocity changes** during the reaction and braking phases.
 
 ### Scenario 1 - Non-Distracted Driver and Obstacle
 
@@ -49,7 +49,7 @@ Recall the two scenarios from the previous lesson: a non-distracted driver and a
 
 ---
 
-> In your notebook, sketch velocity-time graphs for both scenarios. Mark the following:
+> In your notebook, sketch the rough shapes of velocity-time graphs for both scenarios. Label the following:
 > - The reaction phase (constant velocity)
 > - The braking phase (decreasing velocity)
 > - The total stopping time
@@ -71,7 +71,7 @@ Write the answers to the following in your notebook. It is helpful to describe r
 ## Part 2: Connecting Area to Distance Travelled
 
 The **area under the velocity-time graph** gives the total distance travelled. For stopping scenarios:
-![Area under a V-T graph is total distance travelled](../../../../assets/images/p3_collisions/area-vt-graph.png)
+![Area under a V-T graph is total distance travelled](https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/p3_collisions/area-vt-graph.png)
 - **Reaction distance:** Area under the constant velocity section (rectangle).
 - **Braking distance:** Area under the sloped section (one or more triangle) 
     - *What is the formula for the area of a triangle?*.
