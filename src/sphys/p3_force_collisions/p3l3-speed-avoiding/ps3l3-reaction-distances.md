@@ -1,13 +1,17 @@
 ---
 layout: default
-
+title: P3L3 - Practice Calculating Reaction Distances
+author: Open Sci Ed and Jonathan Corbett
 ---
 
 # Calculating Reaction Distances
 
 Use a mathematical model from Lesson 3 to generate data to tell us about how speed affects reaction distance.  
+
 $$ \text{distance} = \text{velocity} \times \text{time}$$
+
 $$ x = v \times t$$
+
 Assume that the average reaction time of a non-distracted adult in the U.S. is **0.75 seconds**.  Assume that being distracted **doubles reaction time**.
 
 >On a separate page, perform the calculations needed to complete the table below. You may choose whether or not to copy the table. The speed in miles per hour (MPH) has already been converted to meters per second (m/s) for you. Be prepared to submit your calculations, graph, and responses on paper.
