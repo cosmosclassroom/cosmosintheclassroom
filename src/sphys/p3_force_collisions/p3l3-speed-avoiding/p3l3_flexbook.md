@@ -11,7 +11,7 @@ In the previous lesson, we explored how reaction time and braking distance combi
 
 ---
 
-## Understanding Velocity-Time Graphs
+## Part 1: Understanding Velocity-Time Graphs
 
 A **velocity-time graph** plots an object's velocity (speed and direction) on the vertical axis (y-axis) against time on the horizontal axis (x-axis). These graphs help us visualize how an object's speed changes over time and allow us to calculate important quantities like distance travelled.
 
@@ -76,12 +76,13 @@ Write the answers to the following in your notebook. It is helpful to describe r
 
 ---
 
-## Connecting Area to Distance Travelled
+## Part 2: Connecting Area to Distance Travelled
 
 The **area under the velocity-time graph** gives the total distance travelled. For stopping scenarios:
 
 - **Reaction distance:** Area under the constant velocity section (rectangle).
-- **Braking distance:** Area under the sloped section (triangle or trapezoid).
+- **Braking distance:** Area under the sloped section (one or more triangle) 
+    - *What is the formula for the area of a triangle?*.
 - **Total stopping distance:** Sum of both areas.
 
 > 1. Use your V-T graph to *estimate* the reaction and braking distances for each scenario.
@@ -89,7 +90,7 @@ The **area under the velocity-time graph** gives the total distance travelled. F
 
 ---
 
-## Speed Limits, Stopping Distance, and Safe Following Distance
+## Part 3: Speed Limits, Stopping Distance, and Safe Following Distance
 
 ### Why Do Speed Limits Matter?
 
@@ -168,15 +169,18 @@ A common rule: "2-second rule" – Stay at least 2 seconds behind the car in fro
 
 ---
 
-## Visualizing Safe Driving with V-T Graphs
+## Part 4: Visualizing Safe Driving with V-T Graphs
 
 By analyzing velocity-time graphs, we can see how reaction time and braking combine to determine stopping distance. This helps explain why speed limits and safe following distances are critical for avoiding collisions.
 
 > 1. In your notebook, sketch a V-T graph for a car following another at a safe distance and then stopping suddenly.
 > 2. Show what happens if the following distance is too short.
 
+
+<!-- [Lesson 3 Practice : Calculating Reaction Distances](ps3l3-reaction-distances.md) -->
+
 ---
 
 ## Exit Ticket
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-f9VGfgJwc6zPlhx3-0duQShh4jkUssAsPVrTgaxtGMbbIQ/viewform?embedded=true" width="640" height="3133" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc-f9VGfgJwc6zPlhx3-0duQShh4jkUssAsPVrTgaxtGMbbIQ/viewform?embedded=true" width="100%" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>

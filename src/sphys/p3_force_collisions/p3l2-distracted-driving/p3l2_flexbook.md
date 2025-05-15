@@ -164,7 +164,7 @@ Being distracted significantly increases your reaction time. This longer reactio
 
 Understanding the physics behind reaction time, braking distance, and how to analyze motion helps us appreciate the importance of staying focused while driving.
 
-[Calculations Practice: Reaction Distance](../p3l3-speed-avoiding/p3l3_calculating-reaction-distances.md)
+
 
 ## Exit Ticket
 
