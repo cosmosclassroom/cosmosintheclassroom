@@ -71,7 +71,7 @@ Write the answers to the following in your notebook. It is helpful to describe r
 ## Part 2: Connecting Area to Distance Travelled
 
 The **area under the velocity-time graph** gives the total distance travelled. For stopping scenarios:
-
+![Area under a V-T graph is total distance travelled](../../../../assets/images/p3_collisions/area-vt-graph.png)
 - **Reaction distance:** Area under the constant velocity section (rectangle).
 - **Braking distance:** Area under the sloped section (one or more triangle) 
     - *What is the formula for the area of a triangle?*.
