@@ -1,5 +1,6 @@
 ---
 layout: default
+title: 8 Electromagnetism Quiz Study Guide
 ---
 
 # Unit 8 Study Guide: Electric Potential Energy and Capacitance
