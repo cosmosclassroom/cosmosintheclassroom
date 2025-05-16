@@ -14,8 +14,8 @@ css: assets/css/worksheets.css
   - Problem Sets
     - [PS 8.1 Coulomb's Law and Charge](8_electromagnetism/ps8.1_coulombs-charge.md)
     - [PS 8.2 Electric Fields and Charge](8_electromagnetism/ps8.2_field-charge.md)
-
-[Unit 8 Electromagnetism Quiz Study Guide](8_electromagnetism/8_quiz_study_guide)
+  - Study Guides
+    - [8 Electromagnetism Quiz Study Guide](8_electromagnetism/8_quiz_study_guide.md)
  
 
 - ## 9 Electricity

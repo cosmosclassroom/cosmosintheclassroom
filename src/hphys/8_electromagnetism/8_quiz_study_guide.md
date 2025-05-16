@@ -21,7 +21,7 @@ permalink: /8-quiz-study-guide/
   - That electric potential describes the electric "pressure" at a point in space
   - That electric potential is independent of test charge/charge in field
 - The units of electric potential (volts, V, where 1 V = 1 J/C)
-- That positive charges naturally move from high potential to low potential
+- That positive charges are positive, infinitely small, and carry a charge of +1e
 - That electric field points in the direction of force exerted on a positive test charge
 - The definition of a capacitor as a device that stores electric charge
 - That a basic capacitor consists of two conductors separated by an insulator
