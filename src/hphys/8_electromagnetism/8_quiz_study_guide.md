@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 8 Electromagnetism Quiz Study Guide
+permalink: /8-quiz-study-guide/
 ---
 
 # Unit 8 Study Guide: Electric Potential Energy and Capacitance
@@ -26,7 +27,6 @@ title: 8 Electromagnetism Quiz Study Guide
 - That a basic capacitor consists of two conductors separated by an insulator
 - The units of capacitance (farads, F, where 1 F = 1 C/V)
 
-
 ### Students should be able to:
 
 - Calculate the force between two charges
@@ -40,8 +40,6 @@ title: 8 Electromagnetism Quiz Study Guide
 - Calculate capacitance
 - Calculate energy stored in a capacitor
 - Calculate electric field between capacitor plates
-
-
 
 ## Key Terms to Know
 - Electric potential energy
