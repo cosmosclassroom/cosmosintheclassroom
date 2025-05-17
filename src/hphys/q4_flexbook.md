@@ -26,6 +26,8 @@ css: assets/css/worksheets.css
     - [PS 9.1 Electrical Circuits](9_electrics/ps_9.1_electrical-current.md)
     - [PS 9.2 Simple Circuit Resistors](9_electrics/ps_9.2_simple_circuits.md)
     - [PS 9.3 Electrical Power](9_electrics/ps_9.3_electric-power.md)
+  - Slides
+    - [9 Electricity and Circuits](../../slides/hlec_9.2-electricity-currents.html)
 
 - ## 10 Optics
   - Tutorials

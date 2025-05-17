@@ -1,52 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Creveal.scss">
-  <link rel="stylesheet" href="/%5Cscripts%5Creveal.js%5Ccss%5Ctheme%5Csource%5Cnight.scss">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>9 Electrical Circuits | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
-  <!-- Custom styles for Marp slides
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header> -->
 
-  <style>
-    /* Marp slide styles */
-    section {
-      font-family: 'Georgia', serif;
-      font-size: 1.5em;
-      text-align: center;
-      padding: 2em;
-    }
-    h1, h2, h3 {
-      margin: 0.5em 0;
-    }
-    p {
-      margin: 1em 0;
-    }
-  </style>
-  -->
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --earth-brown: #8b7355;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML"></script>
-  <script>
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true
-      }
-    });
-  </script>
-</head>
-<body>
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown>
-        <textarea data-template>
-          <p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_0.gif" alt="" /></p>
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
 
-<h1 id="11-electrodynamics">11 Electrodynamics</h1>
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="11-electrodynamics">11 Electrodynamics</h1>
 
 <h2 id="how-can-charges-move">How can charges move?</h2>
+
 <hr />
 
 <h1 id="contents">Contents</h1>
@@ -55,289 +188,460 @@
   <li>Electric Potential</li>
   <li>Electric Currents</li>
   <li>Ohm’s Law</li>
-  <li>
-    <h2 id="electric-power">Electric Power</h2>
-  </li>
+  <li>Electric Power</li>
 </ul>
+
+<hr />
 
 <h1 id="the-life-force">The “Life Force”</h1>
+<!-- style: inverted -->
 
-<p><strong>1791:</strong> Static electricity causes a frog leg to twitch.</p>
+<div class="flex-row">
 
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_1.png" alt="" /></p>
+  <p><strong>1791:</strong> Static electricity causes a frog leg to twitch.
+    &lt;/div&gt;</p>
+  <div class="flex-row">
 
-<ul>
-  <li>Twitching also induced by metals.</li>
-  <li>Metals thought to conduct the animal’s “life force”.</li>
-</ul>
+    <p><img src="Galvani,_De_viribus_electricitatis_in_motu_musculari..._Wellcome_L0029687-1.jpg" alt="Galvani's charge in frog muscles" /></p>
 
-<h2 id="luigi-galvani-17371798"><strong>Luigi Galvani (1737–1798)</strong></h2>
-
-<h1 id="skeptical-interrogation">Skeptical Interrogation</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_2.png" alt="" /></p>
-
-<ul>
-  <li>Galvani’s “life force” claim questioned.</li>
-  <li>Experiments showed metals were the source of electricity, conducted by frog tissue.</li>
-  <li>First battery: zinc and silver disks.</li>
-  <li>Debunked idea that electricity is only in living things.</li>
-</ul>
-
-<h2 id="alessandro-volta-17451827"><strong>Alessandro Volta (1745–1827)</strong></h2>
-
-<h1 id="electric-potential-energy">Electric Potential Energy</h1>
-
-<p>Electric potential energy is the energy associated with the position of electric charges in an electric field.</p>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_3.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_4.png" alt="" /></p>
-
-<ul>
-  <li>
-    <h2 id="measured-in-joules-j">Measured in <strong>Joules (J)</strong></h2>
-  </li>
-</ul>
-
-<h1 id="gravitational-vs-electric-potential-energy">Gravitational vs. Electric Potential Energy</h1>
-
-<h2><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_5.png" alt="" /></h2>
-
-<h1 id="understanding-voltage">Understanding Voltage</h1>
-
-<p>Voltage (electric potential difference) is the potential energy difference per unit charge between two points in an electric field.</p>
-
-<ul>
-  <li>Represents the work needed to move a charge from one point to another against an electric field.</li>
-</ul>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_6.png" alt="" /></p>
-
-<ul>
-  <li>Measured in <strong>volts (V)</strong></li>
-</ul>
-
-<h2 id="-1"><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_7.png" alt="" /></h2>
-
-<h1 id="electric-current">Electric Current</h1>
-
-<p>Electric current (<strong>I</strong>) is the rate of flow of electric charge through a conductor (like a wire).</p>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_8.png" alt="" /></p>
-
-<ul>
-  <li>Measured in <strong>amperes (A)</strong></li>
-</ul>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_9.png" alt="" /></p>
-
-<ul>
-  <li>
-    <h2 id="flow-of-charge-through-a-conductor-is-similar-to-water-flowing-through-a-pipe">Flow of charge through a conductor is similar to water flowing through a pipe.</h2>
-  </li>
-</ul>
-
-<h1 id="electric-current-analogy">Electric Current Analogy</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_10.png" alt="" /></p>
-
-<ul>
-  <li>Current is measured in <strong>amperes (A)</strong></li>
-  <li>Charge flow in a conductor is like water in a pipe.</li>
-</ul>
-
-<h2 id="-2"><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_11.png" alt="" /></h2>
-
-<h1 id="ohms-law">Ohm’s Law</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_12.png" alt="" /></p>
-
-<ul>
-  <li>German physicist Georg Simon Ohm (1789–1854)</li>
-  <li>Showed relationship between voltage, current, and resistance.</li>
-  <li>
-    <h2 id="experimented-with-metal-circuits-pioneered-by-volta">Experimented with metal circuits (pioneered by Volta).</h2>
-  </li>
-</ul>
-
-<h1 id="resistance-and-resistors">Resistance and Resistors</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_13.png" alt="" /></p>
-
-<ul>
-  <li><strong>Resistance</strong>: How much a material opposes current flow.</li>
-  <li><strong>Resistors</strong>: Components designed to introduce resistance.</li>
-  <li>
-    <h2 id="visualize-resistance-as-a-narrow-pipe-or-thumb-over-a-hose">Visualize resistance as a narrow pipe or thumb over a hose.</h2>
-  </li>
-</ul>
-
-<h1 id="measuring-resistance">Measuring Resistance</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_14.png" alt="" /></p>
-
-<ul>
-  <li><strong>Resistance (R)</strong> is measured in <strong>ohms (Ω)</strong></li>
-  <li>$R = \frac{V}{I}$</li>
-  <li>$1~\Omega = \frac{1~V}{1~A}$</li>
-  <li>$resistance = \frac{voltage~drop}{current}$</li>
-</ul>
-
-<h2 id="one-ohm-1-amp-of-current-with-a-voltage-drop-of-1-v">One ohm: 1 amp of current with a voltage drop of 1 V.</h2>
-
-<h1 id="ohms-law-in-circuits">Ohm’s Law in Circuits</h1>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_16.png" alt="" /></p>
-
-<ul>
-  <li>When current flows through a resistor, a voltage drop is experienced.</li>
-  <li>The voltage drop can be calculated using <strong>Ohm’s Law</strong>:</li>
-</ul>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_17.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_18.png" alt="" />
-—</p>
-
-<h1 id="crashcourse-physics">CrashCourse: Physics</h1>
-
-<h2 id="-3"><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_19.jpg" alt="" /></h2>
-
-<h1 id="electrical-power">Electrical Power</h1>
-
-<ul>
-  <li>Electrical power is the rate at which electrical energy is transferred or converted.</li>
-</ul>
-
-<p><strong>Formulas:</strong></p>
-<ul>
-  <li>$P = V \cdot I$</li>
-  <li>$P = I^2 \cdot R$</li>
-  <li>
-    <p>$P = \frac{V^2}{R}$</p>
-  </li>
-  <li>Power is measured in <strong>watts (W)</strong></li>
-  <li>
-    <h2 id="1w--1v-cdot-1a--1fracjs">$1~W = 1~V \cdot 1~A = 1~\frac{J}{s}$</h2>
-  </li>
-</ul>
-
-<h1 id="energy-power-current">Energy, Power, Current</h1>
-
-<p>Power is measured in <strong>watts (W)</strong></p>
-
-<p><img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_24.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_25.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_26.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_27.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_28.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_29.png" alt="" />
-<img src="assets\images\9_electricity\0_Lecture_11_Electrodynamics_30.png" alt="" />
-—</p>
-
-<h1 id="problem-1">Problem 1</h1>
-
-<p><strong>Holt, Sample A, p. 565</strong></p>
-
-<ul>
-  <li>Force: $8.2 \times 10^{-8}$ N</li>
-  <li>
-    <h2 id="wavelength-131-m">Wavelength: 1.31 m</h2>
-  </li>
-</ul>
-
-<h1 id="example-1-a-charge-in-a-field">Example 1: A Charge in a Field</h1>
-
-<p>A charge moves a distance of 2.0 cm in the direction of a uniform electric field (215 N/C). Its electric potential energy decreases by $6.9 \times 10^{-19}$ J.</p>
-
-<h2 id="find-the-charge-on-the-moving-particle"><strong>Find:</strong> The charge on the moving particle.</h2>
-
-<h1 id="formula-summary">Formula Summary</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Concept</th>
-      <th>Formula</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ohm’s Law</td>
-      <td>$V = I \cdot R$</td>
-      <td>Voltage = Current × Resistance</td>
-    </tr>
-    <tr>
-      <td>Resistance</td>
-      <td>$R = \frac{V}{I}$</td>
-      <td>Resistance = Voltage / Current</td>
-    </tr>
-    <tr>
-      <td>Power</td>
-      <td>$P = V \cdot I$</td>
-      <td>Power = Voltage × Current</td>
-    </tr>
-    <tr>
-      <td>Power (alternate)</td>
-      <td>$P = I^2 \cdot R$</td>
-      <td>Power = Current² × Resistance</td>
-    </tr>
-    <tr>
-      <td>Power (alternate)</td>
-      <td>$P = \frac{V^2}{R}$</td>
-      <td>Power = Voltage² / Resistance</td>
-    </tr>
-    <tr>
-      <td>Electric Potential</td>
-      <td>$V = \frac{PE}{q}$</td>
-      <td>Potential = Potential Energy / Charge</td>
-    </tr>
-    <tr>
-      <td>Potential Energy Change</td>
-      <td>$\Delta PE = q \cdot E \cdot d$</td>
-      <td>Change in PE = Charge × Electric Field × Distance</td>
-    </tr>
-    <tr>
-      <td>Resistance (unit)</td>
-      <td>$1~\Omega = \frac{1~V}{1~A}$</td>
-      <td>1 Ohm = 1 Volt / 1 Ampere</td>
-    </tr>
-    <tr>
-      <td>Power (unit)</td>
-      <td>$1~W = 1~V \cdot 1~A$</td>
-      <td>1 Watt = 1 Volt × 1 Ampere</td>
-    </tr>
-    <tr>
-      <td>Power (unit)</td>
-      <td>$1~W = 1~\frac{J}{s}$</td>
-      <td>1 Watt = 1 Joule per second</td>
-    </tr>
-  </tbody>
-</table>
-
-
-        </textarea>
-      </section>
-    </div>
   </div>
-  <script src="/slides/reveal.js/dist/reveal.js"></script>
-  <script src="/slides/reveal.js/plugin/markdown/markdown.js"></script>
-  <script src="/slides/reveal.js/plugin/highlight/highlight.js"></script>
-  <script src="/slides/reveal.js/plugin/notes/notes.js"></script>
-  <script src="/slides/reveal.js/plugin/math/math.js"></script>
-  <script>
-    Reveal.initialize({
-      hash: true, // Enable URL hash for navigation
-      slideNumber: true, // Show slide numbers
-      controls: true, // Show navigation controls
-      progress: true, // Show progress bar
-      transition: 'slide', // Slide transition effect
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ],
-      math: {
-        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js',
-        config: 'TeX-AMS_HTML-full'
-      }
-    });
-  </script>
-</body>
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_1.png" alt="" />
+<img src="assets/images/9_electricity/galvani_frog_experiment.png" alt="Galvani frog experiment" />
+<!-- Caption: "Galvani's experiment with frog legs and electricity." --></p>
+
+  <ul>
+    <li>Twitching also induced by metals.</li>
+    <li>Metals thought to conduct the animal’s “life force”.</li>
+  </ul>
+
+  <p><strong>Luigi Galvani (1737–1798)</strong></p>
+
+  <hr />
+
+  <h1 id="skeptical-interrogation">Skeptical Interrogation</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_2.png" alt="" />
+<img src="assets/images/9_electricity/voltaic_pile_diagram.png" alt="Voltaic pile diagram" />
+<!-- Caption: "Volta's voltaic pile: the first battery." --></p>
+
+  <ul>
+    <li>Galvani’s “life force” claim questioned.</li>
+    <li>Experiments showed metals were the source of electricity, conducted by frog tissue.</li>
+    <li>First battery: zinc and silver disks.</li>
+    <li>Debunked idea that electricity is only in living things.</li>
+  </ul>
+
+  <p><strong>Alessandro Volta (1745–1827)</strong></p>
+
+  <hr />
+  <p><img src="assets/images/9_electricity/volta.png" alt="Portrait of Volta" />
+<img src="assets/images/9_electricity/vola-pile.jpg" alt="Volta pile photo" /></p>
+
+  <hr />
+
+  <h1 id="volta-pile">Volta Pile</h1>
+
+  <p><img src="assets/images/9_electricity/voltaic_pile_photo.png" alt="Voltaic pile photo" />
+<!-- Caption: "A real voltaic pile, the first battery." --></p>
+
+  <hr />
+
+  <h1 id="electric-batteries">Electric Batteries</h1>
+
+  <ul>
+    <li>Batteries convert chemical energy into electrical energy.</li>
+    <li>Provide a constant voltage (EMF) to a circuit.</li>
+    <li><strong>Parts:</strong> Anode (−), Cathode (+), Electrolyte.</li>
+    <li><strong>Diagram:</strong><br />
+<img src="assets/images/9_electricity/battery_diagram.png" alt="Battery diagram" /></li>
+    <li><strong>Key Point:</strong> Batteries “push” electrons through the circuit.</li>
+  </ul>
+
+  <hr />
+
+  <h1 id="electric-current">Electric Current</h1>
+
+  <ul>
+    <li>Electric current (<strong>I</strong>) is the flow of electric charge.</li>
+    <li>Measured in <strong>amperes (A)</strong>.</li>
+    <li>$I = \frac{Q}{t}$ (charge per time)</li>
+    <li><strong>Conventional current:</strong> Direction positive charges would flow (from + to −).</li>
+    <li><strong>Analogy:</strong> Like water flowing through a pipe.</li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_8.png" alt="" />
+<img src="assets/images/9_electricity/current_in_wire.png" alt="Current in a wire" />
+<img src="assets/images/8_electromagnetism/8_electromagnetism_2_magnet_and_wire.png" alt="Current in a wire can create a magnetic field." />
+<!-- Caption: "Current in a wire can create a magnetic field." --></p>
+
+  <hr />
+
+  <h1 id="electric-current-analogy">Electric Current Analogy</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_10.png" alt="" />
+<img src="assets/images/9_electricity/water_pipe_analogy.png" alt="Water pipe analogy for current" /></p>
+
+  <ul>
+    <li>Current is measured in <strong>amperes (A)</strong></li>
+    <li>Charge flow in a conductor is like water in a pipe.</li>
+  </ul>
+
+  <hr />
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_11.png" alt="" />
+<img src="assets/images/9_electricity/electron_flow_vs_conventional.png" alt="Electron flow vs conventional current" /></p>
+
+  <hr />
+
+  <h1 id="ohms-law">Ohm’s Law</h1>
+
+  <ul>
+    <li>Relationship between voltage, current, and resistance.</li>
+    <li>$V = I \cdot R$</li>
+    <li><strong>Example:</strong><br />
+If $V = 9$ V and $R = 3~\Omega$, then $I = 3$ A.</li>
+    <li><strong>Diagram:</strong><br />
+<img src="assets/images/9_electricity/ohms_law_circuit.png" alt="Ohm's Law circuit" />
+<img src="assets/images/8_electromagnetism/8_electromagnetism_1_field_lines.png" alt="Electric field lines in a circuit." />
+<img src="assets/images/9_electricity/ohms_law_triangle.png" alt="Ohm's law triangle" />
+<!-- Caption: "Electric field lines in a circuit." --></li>
+  </ul>
+
+  <hr />
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_12.png" alt="" />
+<img src="assets/images/9_electricity/ohm_experiment.png" alt="Ohm's experiment" /></p>
+
+  <ul>
+    <li>German physicist Georg Simon Ohm (1789–1854)</li>
+    <li>Showed relationship between voltage, current, and resistance.</li>
+    <li>Experimented with metal circuits (pioneered by Volta).</li>
+  </ul>
+
+  <hr />
+
+  <h1 id="resistivity">Resistivity</h1>
+
+  <ul>
+    <li>Resistance depends on material, length, and area.</li>
+    <li>$R = \rho \frac{L}{A}$
+      <ul>
+        <li>$\rho$ = resistivity (Ω·m)</li>
+        <li>$L$ = length (m)</li>
+        <li>$A$ = cross-sectional area (m²)</li>
+      </ul>
+    </li>
+    <li><strong>Table:</strong><br />
+| Material | Resistivity (Ω·m) |
+|———-|——————|
+| Copper   | $1.7 \times 10^{-8}$ |
+| Glass    | $10^{10}$        |</li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/resistivity_wire.png" alt="Resistivity in a wire" /></p>
+
+  <hr />
+
+  <h1 id="resistance-and-resistors">Resistance and Resistors</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_13.png" alt="" />
+<img src="assets/images/9_electricity/resistor_symbol.png" alt="Resistor symbol" /></p>
+
+  <ul>
+    <li><strong>Resistance</strong>: How much a material opposes current flow.</li>
+    <li><strong>Resistors</strong>: Components designed to introduce resistance.</li>
+    <li>Visualize resistance as a narrow pipe or thumb over a hose.</li>
+  </ul>
+
+  <hr />
+
+  <h1 id="measuring-resistance">Measuring Resistance</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_14.png" alt="" />
+<img src="assets/images/9_electricity/multimeter_resistance.png" alt="Measuring resistance with a multimeter" /></p>
+
+  <ul>
+    <li><strong>Resistance (R)</strong> is measured in <strong>ohms (Ω)</strong></li>
+    <li>$R = \frac{V}{I}$</li>
+    <li>$1~\Omega = \frac{1~V}{1~A}$</li>
+    <li>$resistance = \frac{voltage~drop}{current}$</li>
+  </ul>
+
+  <p>One ohm: 1 amp of current with a voltage drop of 1 V.</p>
+
+  <hr />
+
+  <h1 id="ohms-law-in-circuits">Ohm’s Law in Circuits</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_16.png" alt="" />
+<img src="assets/images/9_electricity/simple_circuit_diagram.png" alt="Simple circuit diagram" /></p>
+
+  <ul>
+    <li>When current flows through a resistor, a voltage drop is experienced.</li>
+    <li>The voltage drop can be calculated using <strong>Ohm’s Law</strong>:</li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_17.png" alt="" />
+<img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_18.png" alt="" /></p>
+
+  <hr />
+
+  <h1 id="emf-and-terminal-voltage">EMF and Terminal Voltage</h1>
+
+  <ul>
+    <li><strong>EMF (Electromotive Force):</strong> The ideal voltage a battery provides.</li>
+    <li><strong>Terminal Voltage:</strong> Actual voltage across battery terminals (can be less than EMF due to internal resistance).</li>
+    <li>$V_{terminal} = \text{EMF} - I r$
+      <ul>
+        <li>$r$ = internal resistance</li>
+      </ul>
+    </li>
+    <li><strong>Diagram:</strong><br />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/emf_internal_resistance.png" alt="EMF and internal resistance" />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/battery_internal_resistance.png" alt="Battery with internal resistance" /></li>
+  </ul>
+
+  <hr />
+
+  <h1 id="resistors-in-series">Resistors in Series</h1>
+
+  <ul>
+    <li>Total resistance: $R_{eq} = R_1 + R_2 + \dots$</li>
+    <li>Same current flows through each resistor.</li>
+    <li>Voltage divides among resistors.</li>
+    <li><strong>Diagram:</strong><br />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/series_resistors.png" alt="Series resistors" />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/series_circuit_example.png" alt="Series circuit example" /></li>
+  </ul>
+
+  <hr />
+
+  <h1 id="resistors-in-parallel">Resistors in Parallel</h1>
+
+  <ul>
+    <li>Total resistance: $\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$</li>
+    <li>Same voltage across each resistor.</li>
+    <li>Current divides among branches.</li>
+    <li><strong>Diagram:</strong><br />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/parallel_resistors.png" alt="Parallel resistors" />
+<img src="https://raw.githubusercontent.com/cosmosclassroom/cosmosintheclassroom/main/assets/images/9_electricity/parallel_circuit_example.png" alt="Parallel circuit example" /></li>
+  </ul>
+
+  <hr />
+
+  <h1 id="practice-problem">Practice Problem</h1>
+
+  <p><strong>A 12 V battery is connected to two resistors in series: $R_1 = 2~\Omega$, $R_2 = 4~\Omega$.</strong></p>
+  <ul>
+    <li>What is the total resistance?</li>
+    <li>What is the current in the circuit?</li>
+    <li>What is the voltage drop across each resistor?</li>
+  </ul>
+
+  <p><img src="assets/images/8_electromagnetism/8_electromagnetism_6_generator.png" alt="Generators convert mechanical energy to electrical energy." />
+<!-- Caption: "Generators convert mechanical energy to electrical energy." --></p>
+
+  <hr />
+
+  <h1 id="gravitational-vs-electric-potential-energy">Gravitational vs. Electric Potential Energy</h1>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_5.png" alt="" />
+<img src="assets/images/9_electricity/gravitational_vs_electric.png" alt="Gravitational vs electric potential energy" /></p>
+
+  <hr />
+
+  <h1 id="understanding-voltage">Understanding Voltage</h1>
+
+  <p>Voltage (electric potential difference) is the potential energy difference per unit charge between two points in an electric field.</p>
+
+  <ul>
+    <li>Represents the work needed to move a charge from one point to another against an electric field.</li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_6.png" alt="" />
+<img src="assets/images/9_electricity/voltage_drop_example.png" alt="Voltage drop example" /></p>
+
+  <ul>
+    <li>Measured in <strong>volts (V)</strong></li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_7.png" alt="" />
+<img src="assets/images/9_electricity/voltmeter_in_circuit.png" alt="Voltmeter in circuit" /></p>
+
+  <hr />
+
+  <h1 id="sample-problems">Sample Problems</h1>
+
+  <p><strong>Problem 1: Current and Charge</strong>
+A current of 2.5 A flows through a wire for 30 seconds. How much charge passes through the wire?</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Using $I = \frac{Q}{t}$</li>
+    <li>$Q = I \cdot t = 2.5~\text{A} \times 30~\text{s} = 75~\text{C}$</li>
+  </ul>
+
+  <p><strong>Problem 2: Ohm’s Law</strong>
+A 12 V battery is connected to a resistor. If the current in the circuit is 3 A, what is the resistance?</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Using $V = I \cdot R$</li>
+    <li>$R = \frac{V}{I} = \frac{12~\text{V}}{3~\text{A}} = 4~\Omega$</li>
+  </ul>
+
+  <p><strong>Problem 3: Electrical Power</strong>
+A toaster operating at 120 V draws 5 A of current. What is its power consumption?</p>
+
+  <p><strong>Solution:</strong></p>
+  <ul>
+    <li>Using $P = V \cdot I$</li>
+    <li>$P = 120~\text{V} \times 5~\text{A} = 600~\text{W}$</li>
+  </ul>
+
+  <p><img src="assets/images/9_electricity/sample_problem_circuit.png" alt="Sample problem circuit" /></p>
+
+  <hr />
+
+  <h1 id="formula-summary">Formula Summary</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Concept</th>
+        <th>Formula</th>
+        <th>Units</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Current</td>
+        <td>$I = \frac{Q}{t}$</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>Ohm’s Law</td>
+        <td>$V = I R$</td>
+        <td>V, A, Ω</td>
+      </tr>
+      <tr>
+        <td>Resistivity</td>
+        <td>$R = \rho \frac{L}{A}$</td>
+        <td>Ω·m</td>
+      </tr>
+      <tr>
+        <td>Power</td>
+        <td>$P = V I$</td>
+        <td>W</td>
+      </tr>
+      <tr>
+        <td>Series</td>
+        <td>$R_{eq} = R_1 + R_2$</td>
+        <td>Ω</td>
+      </tr>
+      <tr>
+        <td>Parallel</td>
+        <td>$\frac{1}{R_{eq}} = …$</td>
+        <td>Ω</td>
+      </tr>
+      <tr>
+        <td>Terminal Voltage</td>
+        <td>$V = \text{EMF} - I r$</td>
+        <td>V</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <table>
+    <thead>
+      <tr>
+        <th>Concept</th>
+        <th>Formula</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ohm’s Law</td>
+        <td>$V = I \cdot R$</td>
+        <td>Voltage = Current × Resistance</td>
+      </tr>
+      <tr>
+        <td>Resistance</td>
+        <td>$R = \frac{V}{I}$</td>
+        <td>Resistance = Voltage / Current</td>
+      </tr>
+      <tr>
+        <td>Power</td>
+        <td>$P = V \cdot I$</td>
+        <td>Power = Voltage × Current</td>
+      </tr>
+      <tr>
+        <td>Power (alternate)</td>
+        <td>$P = I^2 \cdot R$</td>
+        <td>Power = Current² × Resistance</td>
+      </tr>
+      <tr>
+        <td>Power (alternate)</td>
+        <td>$P = \frac{V^2}{R}$</td>
+        <td>Power = Voltage² / Resistance</td>
+      </tr>
+      <tr>
+        <td>Electric Potential</td>
+        <td>$V = \frac{PE}{q}$</td>
+        <td>Potential = Potential Energy / Charge</td>
+      </tr>
+      <tr>
+        <td>Potential Energy Change</td>
+        <td>$\Delta PE = q \cdot E \cdot d$</td>
+        <td>Change in PE = Charge × Electric Field × Distance</td>
+      </tr>
+      <tr>
+        <td>Resistance (unit)</td>
+        <td>$1~\Omega = \frac{1~V}{1~A}$</td>
+        <td>1 Ohm = 1 Volt / 1 Ampere</td>
+      </tr>
+      <tr>
+        <td>Power (unit)</td>
+        <td>$1~W = 1~V \cdot 1~A$</td>
+        <td>1 Watt = 1 Volt × 1 Ampere</td>
+      </tr>
+      <tr>
+        <td>Power (unit)</td>
+        <td>$1~W = 1~\frac{J}{s}$</td>
+        <td>1 Watt = 1 Joule per second</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <p><img src="assets/images/8_electromagnetism/8_electromagnetism_7_transformer.png" alt="Transformers change voltage and current in AC circuits." /></p>
+
+  <!-- Caption: "Transformers change voltage and current in AC circuits." -->
+
+</div>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
 </html>

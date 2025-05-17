@@ -4,30 +4,8 @@ marp: true
 title: 9 Electrical Circuits
 author: Jonathan Corbett
 date: 17 May 2025
+theme: themes/default
 ---
-
-<!-- /* import slides.css */ -->
-@import 'default';
-
-section {
-    font-family: "Georgia", serif;
-    padding: 2em;
-}
-
-<!-- /* float-like image stylng /* -->
-.flex-row {
-    display: flex;
-    gap: 1em;
-    algin-items: center;
-}
-
-.flex-row img {
-    max-width: 30%;
-    height: auto;
-    padding: 1em;
-}
-
-
 
 
 # 11 Electrodynamics
@@ -105,7 +83,6 @@ section {
 
 ---
 
-
 # Electric Current
 
 - Electric current (**I**) is the flow of electric charge.
@@ -130,8 +107,6 @@ section {
 - Charge flow in a conductor is like water in a pipe.
 
 ---
-
-
 
 <img src="assets/images/9_electricity/0_Lecture_11_Electrodynamics_11.png" alt="" />
 <img src="assets/images/9_electricity/electron_flow_vs_conventional.png" alt="Electron flow vs conventional current" />
