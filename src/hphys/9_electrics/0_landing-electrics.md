@@ -1,7 +1,45 @@
-# Electrics Module
+---
+layout: default
+title: Unit 9 Electricity Landing Page
+author: Jonathan Corbett
+permalink: /9-electricity/
+---
+# Chapter 9: Electricity
 
-Below is a list of all related Markdown files in this folder:
+Welcome to our exploration of electricity! This unit will help you understand the fundamental concepts of electrical forces, fields, and circuits that power our modern world.
 
-- [0_landing-electrics.md](0_landing-electrics.md)
-- [ps_electrostatics-1.md](ps_electrostatics-1.md)
-- [tabletest.md](tabletest.md)
+> In this chapter, you'll learn about electric charges, currents, power, and how electrical circuits work. Each section builds upon the previous one, so it's recommended to follow them in order.
+
+## 1. Core Concepts
+
+- [Electrostatics Lecture](0 Lecture _ 10 Electrostatics.md)
+- [Electrical Energy and Current](9.1_electrical-energy-current.md)
+- [Electrical Power](9.2_electrical-power.md)
+
+## 2. Practice Materials
+
+- [Electrical Current Practice](ps_9.1_electrical-current.md)
+- [Simple Circuits Practice](ps9.2_simple_circuits.md)
+- [Electric Power Practice](ps_9.3_electric-power.md)
+- [Power Worksheet](electrical_power_worksheet.md)
+
+## 3. Labs and Simulations
+
+- [PhET Circuit Construction Lab](simlab_9.1_phet-circuit-construction.md)
+
+## Additional Resources
+
+- [Electric Current Transcript](scishow-xscript-electric-current.md)
+- [Series and Parallel Circuits Transcript](scishow-xscript-series-parallel.md)
+- [Giancoli Problems](giancoli problems.md)
+- [Electrodynamics Overview](gdoc_overview_electrodynamics.md)
+
+## Teacher Resources
+
+- [Electrical Current Answer Key](ps_9.1_electrical-current-key.md)
+- [Electrodynamics Teacher Notes](tn_9.2_electrodynamics.md)
+- [Unit Storyline](hphys_electrics_storyline.md)
+
+---
+
+[← Previous Chapter: Waves](../8_waves/0_landing-waves.md) | [Next Chapter: Modern Physics →](../10_modern/0_landing-modern.md)

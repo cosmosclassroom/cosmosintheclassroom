@@ -12,10 +12,10 @@ css: /assets/css/worksheets.css
 | **Concept**                        | **Formula**                                         | **Description**                                 |
 |---------------------------------|-------------------------------------------------|---------------------------------------------|
 | Coulomb's Law                  | $F = k \frac{q_1 q_2}{r^2}$                   | Force between two point charges             |
+|Electrical Potential Energy|$PE_{electrical}=k_C \frac{q \cdot Q}{r}$| Potential Energy of charge q in field Q at distance r
+| Electric Field (point charge)  | $E = k \frac{Q}{r^2}$                         | Field strength from a point charge Q                  |
+| Force in Electric Field        | $F = qE$                                        | Force on a charge q in an electric field strength E      |
 | Charge Redistribution          | $q_{final} = \frac{q_1 + q_2}{2}$               | Final charge after contact (identical spheres) |
-| Electric Field (point charge)  | $E = k \frac{q}{r^2}$                         | Field from a point charge                   |
-| Force in Electric Field        | $F = qE$                                        | Force on a charge in an electric field      |
-
 
 ## Problems
 

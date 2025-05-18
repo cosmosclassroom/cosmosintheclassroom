@@ -69,3 +69,5 @@ css: /assets/css/worksheets.css
 
 8. a) $2.5~\Omega$  
    b) $7200~\mathrm{C}$
+
+

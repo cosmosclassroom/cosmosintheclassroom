@@ -27,7 +27,7 @@ style: |
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
+    min-width: 300px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   }
 
@@ -67,6 +67,42 @@ style: |
 - Electric Currents
 - Ohm’s Law
 - Electric Power
+
+---
+# Key Points from Electrostatics
+
+<div class='flexbox'>
+<div>
+
+**Charge**  Unit: Coulomb (C)
+
+* **Electric Fields**
+  - Region where charges experience force
+  - Field strength: $E = \frac{F}{q}$
+  - Charges in fields have $PE_{electrical}$
+  <center>
+
+  |Movement|+q|-q|
+  |-:|:-:|:-:|
+  |Along Field|$PE ↓$|$PE ↑$|
+  |Against Field|$PE ↑$|$PE ↓$|
+
+</div>
+<div>
+
+* **Electric Potential Energy**
+  - Energy stored in *charge* within fields
+  - Depends on charge separation
+  - Measured in Joules (J)
+  - $PE = kq_1q_2/r$
+
+* **Electric Potential**
+  - Energy stored in *fields* themselves
+  - Energy per unit charge (V)
+  - $V = \frac{PE}{q}$
+
+</div>
+</div>
 
 ---
 
@@ -306,7 +342,7 @@ $$
   $$R = \rho \frac{L}{A}$$
 
   Where 
-    - $\rho$ = resistivity (Ω·m)
+    - $\rho$ = resistivity ($\Omega$·m)
     - $L$ = length (m)
     - $A$ = cross-sectional area (m²)
 
@@ -316,7 +352,7 @@ $$
 <div class='flexbox'>
 <div>
  
-  | Material | Resistivity (Ω·m) |
+  | Material | Resistivity ($\Omega$·m) |
   |----------|------------------|
   | Wood (dry) | $10^{14}$ |
   | Rubber | $10^{13}$ |
@@ -596,7 +632,7 @@ c) What is the voltage drop across each resistor?
 ---
 
 ## Problem 2: Power Consumption
-A circuit has a 9 V battery connected to a 3 Ω resistor:
+A circuit has a 9 V battery connected to a 3 $\Omega$ resistor:
 
 a) What is the current in the circuit?
 b) What is the power dissipated by the resistor?
@@ -628,27 +664,32 @@ c) What is the current through each resistor?
 
 # Formula Summary
 
-<center>
+<div class='flexbox'>
+<div>
 
 | Concept         | Formula                        | Units      |
 |-----------------|:-------------------------------:|------------|
 | Current         | $I = \frac{Q}{t}$             | A          |
-| Ohm's Law       | $V = I R$                     | V, A, Ω    |
+| Ohm's Law       | $V = I R$                     | V, A, $\Omega$    |
 | Power           | $P = V I$                     | W          |
-| Series          | $R_{eq} = R_1 + R_2...$          | Ω          |
-| Parallel        | $\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}...$      | Ω          |
+| Series          | $R_{eq} = R_1 + R_2...$          | $\Omega$          |
+| Parallel        | $\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}...$      | $\Omega$          |
 <!-- | Terminal Voltage| $V = \text{EMF} - I r$        | V          | -->
-<!-- | Resistivity     | $R = \rho \frac{L}{A}$       | Ω·m        | -->
+<!-- | Resistivity     | $R = \rho \frac{L}{A}$       | $\Omega$·m        | -->
+</div>
 
----
 <!-- fit -->
+<div>
 
-| Concept                | Formula                                   | Description                                      |
-|------------------------:|:---------------------:|:-----------------:|
-| Ohm's Law              | $V = I \cdot R$                           | Voltage = Current × Resistance                   |
-| Resistance             | $R = \frac{V}{I}$                         | Resistance = Voltage / Current                   |
-| Power                  | $P = V \cdot I$    <br> $P = I^2 \cdot R$ <br>  $P = \frac{V^2}{R}$                       | Power = Voltage × Current <br> Power = Current² × Resistance <br> Power = Voltage² / Resistance |
-| Electric Potential     | $V = \frac{PE}{q}$                        | Potential = Potential Energy / Charge            |
+| Concept                | Formula                                   | Units |
+|------------------------:|:---------------------:|:--------|
+| Ohm's Law              | $V = I \cdot R$                           | V, A, $\Omega$ |
+| Resistance             | $R = \frac{V}{I}$                         | $\Omega$ |
+| Power                  | $P = V \cdot I$    <br> $P = I^2 \cdot R$ <br>  $P = \frac{V^2}{R}$                       | W |
+| Electric Potential     | $V = \frac{PE}{q}$                        | V |
+
+</div>
+</div>
 
 ---
 

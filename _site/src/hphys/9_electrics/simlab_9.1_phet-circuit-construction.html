@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>simlab_9.1_phet-circuit-construction.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///d%3A/python/cosmosintheclassroom/assets/css/worksheets.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="circuit-construction-lab-activity">Circuit Construction Lab Activity</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In this lab, you will use the <strong>PhET Circuit Construction Kit</strong> simulation to build and analyze simple circuits. You will learn how to measure voltage and current (amperage) in different circuit configurations while exploring the relationship between circuit components.</p>
+<p><strong>Simulation Link:</strong> <a href="https://phet.colorado.edu/en/simulation/circuit-construction-kit-dc">PhET Circuit Construction Kit</a></p>
+<hr>
+<h2 id="materials-in-simulation">Materials (in simulation)</h2>
+<ul>
+<li>Wires</li>
+<li>Battery (DC voltage source)</li>
+<li>AC voltage source</li>
+<li>Light bulbs</li>
+<li>Resistors</li>
+<li>Capacitors</li>
+<li>Switches</li>
+<li>Ammeter (for measuring current)</li>
+<li>Voltmeter (for measuring voltage)</li>
+</ul>
+<hr>
+<h2 id="safety-guidelines">Safety Guidelines</h2>
+<ul>
+<li>This is a computer simulation, so there is no risk of electrical shock.</li>
+<li>In real circuits, always follow proper safety precautions.</li>
+<li>Document your findings carefully.</li>
+</ul>
+<hr>
+<h2 id="part-1-simple-dc-circuits">Part 1: Simple DC Circuits</h2>
+<h3 id="activity-11-building-a-basic-circuit">Activity 1.1: Building a Basic Circuit</h3>
+<ol>
+<li>Open the simulation and clear the workspace if needed.</li>
+<li>Drag a <strong>battery (9V)</strong> onto the workspace.</li>
+<li>Connect wires to both terminals of the battery.</li>
+<li>Add a <strong>light bulb</strong> and connect it to complete the circuit.</li>
+<li>Observe what happens to the light bulb.</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>Is the circuit complete? How do you know?</li>
+<li>What direction do you think the electrons are flowing?</li>
+</ul>
+<hr>
+<h3 id="activity-12-measuring-current">Activity 1.2: Measuring Current</h3>
+<ol>
+<li>Using the same circuit from Activity 1.1, add an <strong>ammeter</strong> in series with the light bulb.
+<ul>
+<li>To add the ammeter, break the circuit at one point and insert the ammeter.</li>
+</ul>
+</li>
+<li>Record the current reading: <strong>_______ A</strong></li>
+<li>Replace the light bulb with a <strong>resistor (10 Ω)</strong>.</li>
+<li>Record the new current reading: <strong>_______ A</strong></li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How did changing from a light bulb to a resistor affect the current?</li>
+<li>What do you think would happen if you used a <strong>100 Ω</strong> resistor instead?</li>
+<li>Try it and record your observation: <strong>_______ A</strong></li>
+</ul>
+<hr>
+<h3 id="activity-13-measuring-voltage">Activity 1.3: Measuring Voltage</h3>
+<ol>
+<li>Build a new circuit with a <strong>battery</strong> and <strong>two resistors (10 Ω each) in series</strong>.</li>
+<li>Use the voltmeter to measure:
+<ul>
+<li>Voltage across the entire circuit: <strong>_______ V</strong></li>
+<li>Voltage across the first resistor: <strong>_______ V</strong></li>
+<li>Voltage across the second resistor: <strong>_______ V</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How do the individual voltage measurements compare to the total voltage?</li>
+<li>Can you formulate a rule about voltage in series circuits?</li>
+</ul>
+<hr>
+<h2 id="part-2-switches-and-parallel-circuits">Part 2: Switches and Parallel Circuits</h2>
+<h3 id="activity-21-adding-a-switch">Activity 2.1: Adding a Switch</h3>
+<ol>
+<li>Build a circuit with a <strong>battery</strong>, a <strong>light bulb</strong>, and a <strong>switch</strong>.</li>
+<li>Test the switch by clicking on it to open and close the circuit.</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>What happens when the switch is open?</li>
+<li>What happens when the switch is closed?</li>
+<li>In a real-world application, what is the purpose of a switch?</li>
+</ul>
+<hr>
+<h3 id="activity-22-parallel-vs-series">Activity 2.2: Parallel vs. Series</h3>
+<ol>
+<li>Build a circuit with a <strong>battery</strong> and <strong>two light bulbs in series</strong>.
+<ul>
+<li>Observe the brightness of the bulbs.</li>
+</ul>
+</li>
+<li>Rebuild the circuit with the <strong>two light bulbs in parallel</strong>.
+<ul>
+<li>Observe the brightness again.</li>
+</ul>
+</li>
+<li>Use the ammeter to measure:
+<ul>
+<li>Current in the series circuit: <strong>_______ A</strong></li>
+<li>Current through each branch in the parallel circuit: <strong>_______ A</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How does the brightness compare between the two configurations?</li>
+<li>What happens to the current in parallel circuits compared to series?</li>
+<li>If one bulb burns out in each configuration, would the other still work? Test your hypothesis.</li>
+</ul>
+<hr>
+<h2 id="part-3-ac-circuits-and-capacitors">Part 3: AC Circuits and Capacitors</h2>
+<h3 id="activity-31-ac-voltage-source">Activity 3.1: AC Voltage Source</h3>
+<ol>
+<li>Remove all components and build a new circuit with:
+<ul>
+<li>An <strong>AC voltage source</strong> (set to default values)</li>
+<li>A <strong>light bulb</strong></li>
+</ul>
+</li>
+<li>Observe what happens to the light bulb.</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How does the light bulb behave differently with AC compared to DC?</li>
+<li>Why do you think this happens?</li>
+</ul>
+<hr>
+<h3 id="activity-32-capacitors">Activity 3.2: Capacitors</h3>
+<ol>
+<li>Build a DC circuit with a <strong>battery</strong>, a <strong>switch</strong>, and a <strong>capacitor</strong>.</li>
+<li>Close the switch and observe for a few seconds.</li>
+<li>Open the switch and observe what happens.</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>What is the capacitor doing when the switch is closed?</li>
+<li>What happens after the switch is opened?</li>
+<li>How would you describe the function of a capacitor based on this observation?</li>
+</ul>
+<hr>
+<h3 id="activity-33-rc-circuit">Activity 3.3: RC Circuit</h3>
+<ol>
+<li>Build a circuit with:
+<ul>
+<li>A <strong>battery</strong></li>
+<li>A <strong>resistor (100 Ω)</strong></li>
+<li>A <strong>capacitor</strong></li>
+<li>A <strong>switch</strong></li>
+</ul>
+</li>
+<li>Close the switch and use the voltmeter to measure voltage across the capacitor over time:
+<ul>
+<li>Initial voltage: <strong>_______ V</strong></li>
+<li>After 5 seconds: <strong>_______ V</strong></li>
+<li>After 10 seconds: <strong>_______ V</strong></li>
+</ul>
+</li>
+<li>Open the switch and measure voltage again:
+<ul>
+<li>Initial voltage: <strong>_______ V</strong></li>
+<li>After 5 seconds: <strong>_______ V</strong></li>
+<li>After 10 seconds: <strong>_______ V</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>Questions:</strong></p>
+<ul>
+<li>How does the voltage across the capacitor change over time when charging?</li>
+<li>How does it change when discharging?</li>
+<li>What do you think would happen if you increased the resistance? Try it!</li>
+</ul>
+<hr>
+<h2 id="challenge-activities">Challenge Activities</h2>
+<h3 id="challenge-1-light-switch-circuit">Challenge 1: Light Switch Circuit</h3>
+<p>Design a circuit that uses a single switch to control two light bulbs, where:</p>
+<ul>
+<li>When the switch is in position <strong>A</strong>, only light bulb 1 is on.</li>
+<li>When the switch is in position <strong>B</strong>, only light bulb 2 is on.</li>
+</ul>
+<p><em>Draw your circuit diagram before building it.</em></p>
+<hr>
+<h3 id="challenge-2-voltage-divider">Challenge 2: Voltage Divider</h3>
+<p>Create a voltage divider circuit that produces <strong>exactly half the battery voltage</strong>. Use the voltmeter to verify your design works correctly.</p>
+<p><em>Explain how your circuit works.</em></p>
+
+</body>
+</html>
