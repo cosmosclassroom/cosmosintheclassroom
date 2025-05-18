@@ -3,29 +3,29 @@
 ## Part I
 
 ### 4. Dynamics (Chapter 4)
-   - Newton's Laws of Motion (3)
-   - Frictional force
-   - Inertia
-   - Free-body diagrams
-   - Mass, weight and the normal force
-   - Equilibrium and net force equations
-   - Inclined plane problems
-   - Tension
+- Newton's Laws of Motion (3)
+- Frictional force
+- Inertia
+- Free-body diagrams
+- Mass, weight and the normal force
+- Equilibrium and net force equations
+- Inclined plane problems
+- Tension
 
 ### 5. Circular Motion and Gravitation (Chapter 5)
-   - Uniform circular motion
-   - Centripetal force/acceleration
-   - Tangential velocity/acceleration
-   - Period and frequency
-   - Newton's Law of Universal Gravitation
-   - Kepler's Laws of Planetary Motion (3)
+- Uniform circular motion
+- Centripetal force/acceleration
+- Tangential velocity/acceleration
+- Period and frequency
+- Newton's Law of Universal Gravitation
+- Kepler's Laws of Planetary Motion (3)
 
 ### 6. Work and Energy (Chapter 6)
-   - Conservation of Energy
-   - Kinetic Energy
-   - Potential Energy (gravitational and spring)
-   - Positive and negative Work (work done *on*, work done *by*)
-   - Power 
+- Conservation of Energy
+- Kinetic Energy
+- Potential Energy (gravitational and spring)
+- Positive and negative Work (work done *on*, work done *by*)
+- Power 
 
 ## Part II
 <!--
@@ -36,29 +36,29 @@
 
 -->
 ### 7. Harmonics (Chapter 11)
-    - Simple harmonic motion
-   - Pendula
-   - Springs
-   - Period and frequency
-   - Waves (mechanical and electromagnetic)
-   - Particle displacement/motion versus wave motion/displacement
-   - Wavelength, frequency, velocity
-   - Superposition
-   - Interference (constructive/destructive)
+- Simple harmonic motion
+- Pendula
+- Springs
+- Period and frequency
+- Waves (mechanical and electromagnetic)
+- Particle displacement/motion versus wave motion/displacement
+- Wavelength, frequency, velocity
+- Superposition
+- Interference (constructive/destructive)
   
 ### 8. Electromagnetism (Chapter 16)
-    - Electric charge
-   - Quantization
-   - Conductors, insulators, semiconductors, superconductors
-   - Charge by induction
-   - Electric force
-   - Coulomb’s Law
-   - Electric fields
-   - Test charges
-   - Field diagrams (interpreting only)
-   - Electric potential
-   - Equipotential
-   - Capacitance (simple)
+- Electric charge
+- Quantization
+- Conductors, insulators, semiconductors, superconductors
+- Charge by induction
+- Electric force
+- Coulomb’s Law
+- Electric fields
+- Test charges
+- Field diagrams (interpreting only)
+- Electric potential
+- Equipotential
+- Capacitance (simple)
    
 
 ### 9. Electricity (Chapters 18 and 19)
@@ -79,7 +79,7 @@
  - Virtual and real images
  - Concave and convex thin lenses
  - Mirror equation
- - Magnification
+ - Magnification 
 
 
 Giancoli Sections
