@@ -15,17 +15,17 @@ permalink: /8-quiz-study-guide/
 - That electric forces are conservative and charge is conserved
 - Charging by induction/friction
 - The units of electric potential energy (joules, J)
-- That like charges (+/+ or -/-) have positive potential energy (repulsion)
-- That unlike charges (+/-) have negative potential energy (attraction)
+  - That like charges (+/+ or -/-) have positive potential energy (repulsion)
+  - That unlike charges (+/-) have negative potential energy (attraction)
 - The definition of electric potential as electric potential energy per unit charge
   - That electric potential describes the electric "pressure" at a point in space
   - That electric potential is independent of test charge/charge in field
 - The units of electric potential (volts, V, where 1 V = 1 J/C)
-- That positive charges are positive, infinitely small, and carry a charge of +1e
 - That electric field points in the direction of force exerted on a positive test charge
+  - That positive charges are positive, infinitely small, and carry a charge of +1e
 - The definition of a capacitor as a device that stores electric charge
-- That a basic capacitor consists of two conductors separated by an insulator
-- The units of capacitance (farads, F, where 1 F = 1 C/V)
+  - That a basic capacitor consists of two conductors separated by an insulator
+  - The units of capacitance (farads, F, where 1 F = 1 C/V)
 
 ### Students should be able to:
 
@@ -51,3 +51,71 @@ permalink: /8-quiz-study-guide/
 - Capacitance
 - Farad
 
+<!--
+## Study Guide JSON
+
+```json
+{
+  "major_concepts": {
+    "electric_potential_energy": {
+      "definition": "Energy stored in system of electric charges due to position",
+      "analogy": "Similar to gravitational potential energy",
+      "units": "Joules (J)"
+    },
+    "electric_potential": {
+      "definition": "Electric potential energy per unit charge",
+      "description": "Electric 'pressure' at a point in space",
+      "units": "Volts (V)"
+    },
+    "electric_field": {
+      "definition": "Force per unit charge in space",
+      "direction": "Points in direction of force on positive test charge"
+    },
+    "capacitors": {
+      "definition": "Device that stores electric charge",
+      "structure": "Two conductors separated by insulator",
+      "units": "Farads (F)"
+    }
+  },
+  "key_formulae": {
+    "coulombs_law": "F = k(q₁q₂)/r²",
+    "electric_field_point": "E = kq/r²",
+    "net_electric_field": "E_{net} = E_1 + E_2 + ...",
+    "electric_potential": "V = kq/r",
+    "potential_energy": "ΔPE = qV",
+    "work_in_field": "W = qEd",
+    "capacitance": "C = Q/V",
+    "capacitor_energy_v": "U = ½CV²",
+    "capacitor_energy_q": "U = ½Q²/C"
+  },
+  "principles_of_charge": {
+    "properties": {
+      "quantization": "Charge exists in discrete multiples of elementary charge (e)",
+      "conservation": "Cannot be created or destroyed, only transferred",
+      "two_types": "Positive and negative charges exist"
+    },
+    "interactions": {
+      "like_charges": {
+        "behavior": "Repel each other",
+        "potential_energy": "Positive"
+      },
+      "unlike_charges": {
+        "behavior": "Attract each other",
+        "potential_energy": "Negative"
+      }
+    },
+    "conductors_insulators": {
+      "conductors": "Materials where charges move freely",
+      "insulators": "Materials where charges are fixed",
+      "semiconductors": "Materials with properties between conductors and insulators"
+    },
+    "charging_processes": {
+      "conduction": "Direct transfer through physical contact",
+      "induction": "Charge separation without contact",
+      "grounding": "Connecting to Earth to transfer charge"
+    }
+  },
+  }
+}
+
+-->

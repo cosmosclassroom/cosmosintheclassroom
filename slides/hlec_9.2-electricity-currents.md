@@ -616,6 +616,8 @@ a) What is the equivalent resistance?
 b) What is the total current from the battery?
 c) What is the current through each resistor?
 
+---
+
 **Solution:**
 - a) $\frac{1}{R_{eq}} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$; $R_{eq} = 2.4~\Omega$
 - b) $I_{total} = \frac{V}{R_{eq}} = \frac{12~\text{V}}{2.4~\Omega} = 5~\text{A}$
@@ -625,6 +627,8 @@ c) What is the current through each resistor?
 ---
 
 # Formula Summary
+
+<center>
 
 | Concept         | Formula                        | Units      |
 |-----------------|:-------------------------------:|------------|
@@ -645,7 +649,6 @@ c) What is the current through each resistor?
 | Resistance             | $R = \frac{V}{I}$                         | Resistance = Voltage / Current                   |
 | Power                  | $P = V \cdot I$    <br> $P = I^2 \cdot R$ <br>  $P = \frac{V^2}{R}$                       | Power = Voltage × Current <br> Power = Current² × Resistance <br> Power = Voltage² / Resistance |
 | Electric Potential     | $V = \frac{PE}{q}$                        | Potential = Potential Energy / Charge            |
-<!-- | Potential Energy Change| $\Delta PE = q \cdot E \cdot d$           | Change in PE = Charge × Electric Field × Distance| -->
 
 ---
 
