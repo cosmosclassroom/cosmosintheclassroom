@@ -7,6 +7,16 @@ css: /assets/css/worksheets.css
 
 # PS 9.2 | Simple Circuit Resistance
 
+| Concept                        | Formula                                         | Variables/Symbols                | Description                                 |
+|--------------------------------|-------------------------------------------------|----------------------------------|---------------------------------------------|
+| Current                        | $I = \frac{Q}{t}$                               | $I$ (current), $Q$ (charge), $t$ (time) | Current as charge per time                  |
+| Ohm's Law                      | $V = IR$                                        | $V$ (voltage), $I$ (current), $R$ (resistance) | Voltage, current, resistance relationship   |
+| Resistance (series)            | $R_{series} = R_1 + R_2 + \dots$                | $R_{series}$, $R_1$, $R_2$, ...  | Total resistance in series                  |
+| Resistance (parallel)          | $R_{parallel} = \left( \frac{1}{R_1} + \frac{1}{R_2} + \dots \right)^{-1}$ | $R_{parallel}$, $R_1$, $R_2$, ... | Total resistance in parallel      |
+| Charge                         | $Q = It$                                        | $Q$ (charge), $I$ (current), $t$ (time) | Charge transferred                          |
+| Power                          | $P = IV$, $P = I^2R$, $P = \frac{V^2}{R}$       | $P$ (power), $I$ (current), $V$ (voltage), $R$ (resistance) | Power in electric circuits                  |
+
+
 **Formulas:**
 - Series resistance: $R_{total} = R_1 + R_2 + \ldots$
 - Parallel resistance: $\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots$
