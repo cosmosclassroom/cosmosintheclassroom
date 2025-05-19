@@ -1,3 +1,7 @@
+---
+marp: true
+---
+<!-- headingDivider: 1 -->
 # 10 Electrostatics
 
 # What is the nature of charge?
