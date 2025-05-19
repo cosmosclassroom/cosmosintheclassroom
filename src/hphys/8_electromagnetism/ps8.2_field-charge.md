@@ -11,7 +11,8 @@ permalink: hphys/ps_8.2/
 
 | Concept    | Formula  | Description                                 |
 |------------------------|:------------------------------:|---------------------------|
-| Electric Field (point) | $E = k \frac{q}{r^2}$                        | Field from a point charge                   |
+| Electric Field (point) | $E = k \frac{q}{r^2}$                        | Field from a point charge at distance       |
+| Electric Field (force) | $E = F \cdot q$                              | Field from charge and force                 |
 | Electric Potential     | $V = k \frac{q}{r}$                          | Potential from a point charge               |
 | Net Electric Field     | $E_{net} = E_1 + E_2 + \dots$                | Vector sum of fields                        |
 | Potential Energy       | $\Delta PE = qV$                             | Work to bring charge to potential $V$       |
