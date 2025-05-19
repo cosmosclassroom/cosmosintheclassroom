@@ -301,16 +301,19 @@ Q6. Explain the difference between electrical energy and electrical power. Inclu
 <details>
 <div class="solution-grid">
 <div class="givens">
+
 Electrical energy: capacity to do work<br>
 Units: joules (J), kilowatt-hours (kWh)<br>
 Electrical power: rate of energy transfer<br>
 Units: watts (W)
 </div>
 <div class="calculations">
+
 Power equals energy divided by time:<br>
 $P = E/t$
 </div>
 <div class="sigfig">
+
 Example: $1~\text{kWh} = 3.60 \times 10^6~\text{J}$<br>
 $1~\text{W} = 1~\text{J/s}$
 </div>
@@ -325,11 +328,13 @@ Q7. Two light bulbs are labeled 75 W and 40 W respectively, and both are designe
 <details>
 <div class="solution-grid">
 <div class="givens">
+
 $P_{75W} = 75~\text{W}$<br>
 $P_{40W} = 40~\text{W}$<br>
 $V = 120~\text{V}$
 </div>
 <div class="calculations">
+
 (a) $R = V^2/P$<br>
 $R_{40W} = (120~\text{V})^2/40~\text{W} = 360~\Omega$<br>
 $R_{75W} = (120~\text{V})^2/75~\text{W} = 192~\Omega$<br>
@@ -339,6 +344,7 @@ $I_{40W} = 40~\text{W}/120~\text{V} = 0.333~\text{A}$<br>
 (c) Higher power means more energy converted to light and heat per unit time, so the 75 W bulb is brighter.
 </div>
 <div class="sigfig">
+
 $R_{40W} = 360~\Omega$<br>
 $R_{75W} = 192~\Omega$<br>
 $I_{75W} = 0.625~\text{A}$<br>
