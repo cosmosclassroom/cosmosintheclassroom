@@ -6,6 +6,15 @@ permalink: /9-electricity/
 ---
 # Chapter 9: Electricity
 
+<style>
+    ul {
+        /* hide bullets in lists */
+        list-style-type: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+</style>
+
 Welcome to our exploration of electricity! This unit will help you understand the fundamental concepts of electrical forces, fields, and circuits that power our modern world.
 
 > In this chapter, you'll learn about electric charges, currents, power, and how electrical circuits work. Each section builds upon the previous one, so it's recommended to follow them in order.
@@ -49,6 +58,3 @@ Welcome to our exploration of electricity! This unit will help you understand th
 - [Electrodynamics Teacher Notes](tn_9.2_electrodynamics.md)
 - [Unit Storyline](hphys_electrics_storyline.md) -->
 
----
-
-[← Previous Chapter: Waves](../8_waves/0_landing-waves.md) | [Next Chapter: Modern Physics →](../10_modern/0_landing-modern.md)
