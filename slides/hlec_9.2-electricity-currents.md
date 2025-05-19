@@ -519,8 +519,8 @@ Total resistance: $R_{eq} = R_1 + R_2 + \dots$
 
 </div>
 <div>
-<br>
 
+* Solving resistors in parallel requires taking the reciprocal of the sum of the reciprocals.
 <div class='important-info'>
 
 **Resistance in Parallel Circuits**
@@ -528,6 +528,9 @@ Total resistance: $\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$
 
 </div>
 
+* This is because the current can take multiple paths, and the total current is the sum of the currents through each path.
+* When solving, remember to take the reciprocal of the **final** answer to find the equivalent resistance. 
+    * Adding the fractions requires a **common denominator**.
 </div>
 
 ---
