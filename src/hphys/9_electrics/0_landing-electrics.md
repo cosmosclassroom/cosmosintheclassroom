@@ -18,10 +18,10 @@ Welcome to our exploration of electricity! This unit will help you understand th
 
 ## 2. Practice Materials
 
-- [Electrical Current Practice](ps_9.1_electrical-current.md)
-- [Simple Circuits Practice](ps9.2_simple_circuits.md)
-- [Electric Power Practice](ps_9.3_electric-power.md)
-- [Power Worksheet](electrical_power_worksheet.md)
+- [PS 9.1 Electric Current](ps_9.1_electrical-current.md)
+- [PS 9.2 Circuits and Resistance](ps9.2_simple_circuits.md)
+- [PS 9.3 Electrical Power](ps_9.3_electric-power.md)
+
 
 ## 3. Labs and Simulations
 

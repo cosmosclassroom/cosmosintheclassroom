@@ -55,21 +55,22 @@ style: |
   }
 ---
 <!-- paginate: skip -->
-# 11 Electrodynamics
+# 9 Electricity
 
+![bg left](../assets/images/9_electricity/charge-cage.png)
 ## How can charges move?
 
 ---
 
 # Contents
 <!-- paginate: skip -->
-- Electric Potential
-- Electric Currents
+- Electric Potential and Circuits
+- Electric Currents and Circuits
 - Ohm’s Law
-- Electric Power
+- Electric Power and Energy Conversion
 
 ---
-# Key Points from Electrostatics
+# Key Points from Electromagnetism
 
 <div class='flexbox'>
 <div>
@@ -94,9 +95,9 @@ style: |
   - Energy stored in *charge* within fields
   - Depends on charge separation
   - Measured in Joules (J)
-  - $PE = kq_1q_2/r$
+  - $PE = k_C \frac{q_1 \cdot q_2}{r}$
 
-* **Electric Potential**
+* **Electric Potential (Voltage)**
   - Energy stored in *fields* themselves
   - Energy per unit charge (V)
   - $V = \frac{PE}{q}$
@@ -443,8 +444,8 @@ Where
 
 |||
 |-|:-:|
-|- All resistors align in a single circuit <br> - Same current exists throughout <br> - Voltage divides across components <br> - Higher total resistance|![height:100px](../assets/images/9_electricity/resistor-series-only.jpg)|
-|- Multiple paths for current <br> - Current divides between paths <br> - Same voltage across brances <br> - Lower total resistance|![height:300px](../assets/images/9_electricity/resistor-parallel-only.jpg)|
+|- All resistors are aligned in a single circuit <br> - The same current exists throughout <br> - Voltage divides across components <br> - Higher total resistance|![height:100px](../assets/images/9_electricity/resistor-series-only.jpg)|
+|- Multiple paths for current <br> - Current divides between paths <br> - The same voltage across branches <br> - Lower total resistance|![height:300px](../assets/images/9_electricity/resistor-parallel-only.jpg)|
 
 ---
 
@@ -600,10 +601,10 @@ Three equivalent formulae for electrical power:
 <center>
 
 | Device | Voltage (V) | Power (W) | Notes |
-|--------|------------|-----------|--------|
-| Refrigerator | 120 | 150 | Energy-efficient model |
+|--------|:------------:|:-----------:|--------|
 | iPhone Charger | 5 | 20 | USB-C Power Delivery |
 | MacBook Pro | 20 | 140 | Via USB-C/MagSafe |
+| Refrigerator | 120 | 150 | Energy-efficient model |
 | Gaming PC | 120 | 750 | Under full load |
 | Microwave | 120 | 1,000 | Standard household unit |
 | Electric Kettle | 120 | 1,500 | Boils water in ~4 minutes |

@@ -44,7 +44,7 @@ Galvani believed he had discovered "animal electricity" - an electrical fluid in
 - Set the stage for later discoveries about the electrical nature of nerve signals
 - Inspired further investigation into the connection between electricity and chemistry
   
-![Galvani's experiments with frogs and electricity](Galvani,_De_viribus_electricitatis_in_motu_musculari..._Wellcome_L0029687.jpg){: style="display: block; width:500px"}
+
 
 *Illustration of Galvani's famous experiment showing frog legs twitching when connected to different metals*
 

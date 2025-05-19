@@ -179,7 +179,7 @@
       <style>
 .solution-grid {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: auto auto;
   gap: 10px;
   margin: 15px 0;
@@ -196,7 +196,8 @@
   text-align: right;
 }
 .parent-formula {
-  grid-column: 1;
+  grid-column: 2;
+  text-align: right;
   grid-row: 1;
   background-color: #e9ecef;
   padding: 8px;
@@ -204,6 +205,7 @@
 }
 .givens {
   grid-column: 1;
+  text-align: right;
   grid-row: 2;
   background-color: #e9ecef;
   padding: 8px;
@@ -245,27 +247,36 @@ details[open] summary {
 
 <details>
   <div class="solution-grid">
+
     <div class="parent-formula">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
-$P = IV$&lt;br&gt;
-$E = P \times t$
-</code></pre></div>      </div>
+      <p><b>Parent formula:</b><br /></p>
+
+      <p>$P = IV$
+$E = P \times t$</p>
     </div>
+
     <div class="givens">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 8.0~\text{A}$&lt;br&gt;
-$V = 120~\text{V}$&lt;br&gt;
-$t = 5.0~\text{min/day} \times 30~\text{days}$
-</code></pre></div>      </div>
+
+      <p>$I = 8.0~\text{A}$<br />
+$V = 120~\text{V}$<br />
+$t = 5.0~\text{min/day} \times 30~\text{days}$</p>
     </div>
+
     <div class="calculations">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
-$P = (8.0~\text{A})(120~\text{V})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$P = 960~\text{W}$&lt;/div&gt;
-&lt;br&gt;
-(b)&lt;br&gt;
-$E = (0.96~\text{kW}) \times (5.0~\text{min/day}) \times (1~\text{hr}/60~\text{min}) \times (30~\text{days})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$E = 2.4~\text{kWh}$&lt;/div&gt;
-</code></pre></div>      </div>
+      <p>(a)<br /></p>
+
+      <p>$P = (8.0~\text{A})(120~\text{V})$<br /></p>
+      <div class="sigfig">
+        <p>$P = 960~\text{W}$</p>
+      </div>
+      <p><br />
+(b)<br /></p>
+
+      <p>$E = (0.96~\text{kW}) \times (5.0~\text{min/day}) \times (1~\text{hr}/60~\text{min}) \times (30~\text{days})$<br /></p>
+      <div class="sigfig">
+
+        <p>$E = 2.4~\text{kWh}$</p>
+      </div>
     </div>
   </div>
 </details>
@@ -274,64 +285,87 @@ $E = (0.96~\text{kW}) \times (5.0~\text{min/day}) \times (1~\text{hr}/60~\text{m
 
 <details>
   <div class="solution-grid">
+
     <div class="parent-formula">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+      <p><b>Parent formula:</b><br /></p>
 
-$P_\text{max} = IV$&lt;br&gt;
-
-$\text{Number of bulbs} = P_\text{max} / P_\text{bulb}$
-</code></pre></div>      </div>
+      <p>$P_\text{max} = IV$<br />
+$\text{Number of bulbs} = P_\text{max} / P_\text{bulb}$</p>
     </div>
+
     <div class="givens">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 15~\text{A}$&lt;br&gt;
-$V = 120~\text{V}$&lt;br&gt;
-$P_\text{bulb} = 60~\text{W}$
-</code></pre></div>      </div>
+
+      <p>$I = 15~\text{A}$<br />
+$V = 120~\text{V}$<br />
+$P_\text{bulb} = 60~\text{W}$</p>
     </div>
+
     <div class="calculations">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$P_\text{max} = (15~\text{A})(120~\text{V})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$P_\text{max} = 1800~\text{W}$&lt;/div&gt;
-&lt;br&gt;
-$\text{Number of bulbs} = 1800~\text{W} \div 60~\text{W}$&lt;br&gt;
-&lt;div class="sigfig"&gt;30 bulbs&lt;/div&gt;
-</code></pre></div>      </div>
+
+      <p>$P_\text{max} = (15~\text{A})(120~\text{V})$<br /></p>
+      <div class="sigfig">
+
+        <p>$P_\text{max} = 1800~\text{W}$</p>
+      </div>
+      <p><br /></p>
+
+      <p>$\text{Number of bulbs} = 1800~\text{W} \div 60~\text{W}$<br /></p>
+      <div class="sigfig">
+        <p>30 bulbs</p>
+      </div>
     </div>
   </div>
 </details>
 
-<p>Q3. A hair dryer has a resistance of 10 Ω when operating.<br />
-(a) If it is connected to a 120 V outlet, what current will it draw?<br />
-(b) What is the power consumption of the hair dryer?<br />
-(c) How much electrical energy in joules does it consume when used for 8.0 minutes?</p>
+<p>Q3. A hair dryer has a resistance of 10 Ω when operating.</p>
+<ul>
+  <li>(a) If it is connected to a 120 V outlet, what current will it draw?</li>
+  <li>(b) What is the power consumption of the hair dryer?</li>
+  <li>(c) How much electrical energy in joules does it consume when used for 8.0 minutes?</li>
+</ul>
 
 <details>
   <div class="solution-grid">
+
     <div class="parent-formula">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
-$I = V/R$&lt;br&gt;
-$P = VI$&lt;br&gt;
-$E = Pt$
-</code></pre></div>      </div>
+      <p><b>Parent formula:</b><br /></p>
+
+      <p>$I = V/R$<br />
+$P = VI$<br />
+$E = Pt$</p>
     </div>
+
     <div class="givens">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$R = 10~\Omega$&lt;br&gt;
-$V = 120~\text{V}$&lt;br&gt;
-$t = 8.0~\text{min} \times 60~\text{s/min}$
-</code></pre></div>      </div>
+
+      <p>$R = 10~\Omega$<br />
+$V = 120~\text{V}$<br />
+$t = 8.0~\text{min} \times 60~\text{s/min}$</p>
     </div>
+
     <div class="calculations">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
-$I = 120~\text{V} / 10~\Omega$&lt;br&gt;
-&lt;div class="sigfig"&gt;$I = 12~\text{A}$&lt;/div&gt;
-&lt;br&gt;
-(b)&lt;br&gt;
-$P = (120~\text{V})(12~\text{A})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$P = 1440~\text{W}$&lt;/div&gt;
-&lt;br&gt;
-(c)&lt;br&gt;
-$E = (1440~\text{W})(8.0~\text{min})(60~\text{s/min})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$E = 691,200~\text{J}$&lt;/div&gt;
-</code></pre></div>      </div>
+      <p>(a)<br /></p>
+
+      <p>$I = 120~\text{V} / 10~\Omega$<br /></p>
+      <div class="sigfig">
+
+        <p>$I = 12~\text{A}$</p>
+      </div>
+      <p><br />
+(b)<br /></p>
+
+      <p>$P = (120~\text{V})(12~\text{A})$<br /></p>
+      <div class="sigfig">
+
+        <p>$P = 1440~\text{W}$</p>
+      </div>
+      <p><br />
+(c)<br /></p>
+
+      <p>$E = (1440~\text{W})(8.0~\text{min})(60~\text{s/min})$<br /></p>
+      <div class="sigfig">
+
+        <p>$E = 691,200~\text{J}$</p>
+      </div>
     </div>
   </div>
 </details>
@@ -344,35 +378,51 @@ $E = (1440~\text{W})(8.0~\text{min})(60~\text{s/min})$&lt;br&gt;
 
 <details>
   <div class="solution-grid">
+
     <div class="parent-formula">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
-$R = V^2/P$&lt;br&gt;
-$I = V/R$&lt;br&gt;
-$P = VI$
-</code></pre></div>      </div>
+      <p><b>Parent formula:</b><br /></p>
+
+      <p>$R = V^2/P$<br />
+$I = V/R$<br />
+$P = VI$</p>
     </div>
+
     <div class="givens">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V_\text{normal} = 3.0~\text{V}$&lt;br&gt;
-$P_\text{normal} = 0.50~\text{W}$&lt;br&gt;
-$V_\text{battery} = 6.0~\text{V}$
-</code></pre></div>      </div>
+
+      <p>$V_\text{normal} = 3.0~\text{V}$<br />
+$P_\text{normal} = 0.50~\text{W}$<br />
+$V_\text{battery} = 6.0~\text{V}$</p>
     </div>
+
     <div class="calculations">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
-$R = (3.0~\text{V})^2 / 0.50~\text{W}$&lt;br&gt;
-&lt;div class="sigfig"&gt;$R = 18~\Omega$&lt;/div&gt;
-&lt;br&gt;
-(b)&lt;br&gt;
-$I = 6.0~\text{V} / 18~\Omega$&lt;br&gt;
-&lt;div class="sigfig"&gt;$I = 0.33~\text{A}$&lt;/div&gt;
-&lt;br&gt;
-(c)&lt;br&gt;
-$P = (6.0~\text{V})(0.33~\text{A})$&lt;br&gt;
-&lt;div class="sigfig"&gt;$P = 2.0~\text{W}$&lt;/div&gt;
-</code></pre></div>      </div>
+      <p>(a)<br /></p>
+
+      <p>$R = (3.0~\text{V})^2 / 0.50~\text{W}$<br /></p>
+      <div class="sigfig">
+
+        <p>$R = 18~\Omega$</p>
+      </div>
+      <p><br />
+(b)<br /></p>
+
+      <p>$I = 6.0~\text{V} / 18~\Omega$<br /></p>
+      <div class="sigfig">
+
+        <p>$I = 0.33~\text{A}$</p>
+      </div>
+      <p><br />
+(c)<br /></p>
+
+      <p>$P = (6.0~\text{V})(0.33~\text{A})$<br /></p>
+      <div class="sigfig">
+
+        <p>$P = 2.0~\text{W}$</p>
+      </div>
     </div>
   </div>
-  <p>(d) The bulb will dissipate 4 times more power than its rating, causing excessive heating and likely failure.</p>
+  <div class="calculations">
+    <p>(d) The bulb will dissipate 4 times more power than its rating, causing excessive heating and likely failure.</p>
+  </div>
 </details>
 
 <p>Q5. The electrical energy cost is $0.14 per kilowatt-hour. A refrigerator with a power rating of 350 W operates with a duty cycle where it runs 40% of the time.<br />
@@ -381,28 +431,38 @@ $P = (6.0~\text{V})(0.33~\text{A})$&lt;br&gt;
 
 <details>
   <div class="solution-grid">
+
     <div class="parent-formula">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
-$E = P \times t \times (\text{duty cycle})$&lt;br&gt;
-$\text{Cost} = E \times \text{rate}$
-</code></pre></div>      </div>
+      <p><b>Parent formula:</b><br /></p>
+
+      <p>$E = P \times t \times (\text{duty cycle})$<br />
+$\text{Cost} = E \times \text{rate}$</p>
     </div>
+
     <div class="givens">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$P = 0.350~\text{kW}$&lt;br&gt;
-$t = 24~\text{h}$&lt;br&gt;
-$\text{duty cycle} = 0.40$&lt;br&gt;
-$\text{rate} = \$0.14/\text{kWh}$
-</code></pre></div>      </div>
+
+      <p>$P = 0.350~\text{kW}$<br />
+$t = 24~\text{h}$<br />
+$\text{duty cycle} = 0.40$<br />
+$\text{rate} = $0.14/\text{kWh}$</p>
     </div>
+
     <div class="calculations">
-      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(a)&lt;br&gt;
-$E = (0.350~\text{kW})(24~\text{h})(0.40)$&lt;br&gt;
-&lt;div class="sigfig"&gt;$E = 3.36~\text{kWh}$&lt;/div&gt;
-&lt;br&gt;
-(b)&lt;br&gt;
-$\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&gt;
-&lt;div class="sigfig"&gt;\$14.11&lt;/div&gt;
-</code></pre></div>      </div>
+      <p>(a)<br /></p>
+
+      <p>$E = (0.350~\text{kW})(24~\text{h})(0.40)$<br /></p>
+      <div class="sigfig">
+
+        <p>$E = 3.36~\text{kWh}$</p>
+      </div>
+      <p><br />
+(b)<br /></p>
+
+      <p>$\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})($0.14/\text{kWh})$<br /></p>
+      <div class="sigfig">
+
+        <p>$14.11</p>
+      </div>
     </div>
   </div>
 </details>
@@ -412,7 +472,22 @@ $\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&g
 <p>Q6. Explain the difference between electrical energy and electrical power. Include the units for each and explain how they are related.</p>
 
 <details>
-  <p>Electrical energy is the capacity to do work, measured in joules (J) or kilowatt-hours (kWh), while electrical power is the rate at which energy is transferred, measured in watts (W). Power equals energy divided by time: $P = E/t$.</p>
+  <div class="solution-grid">
+    <div class="givens">
+      <p>Electrical energy: capacity to do work<br />
+Units: joules (J), kilowatt-hours (kWh)<br />
+Electrical power: rate of energy transfer<br />
+Units: watts (W)</p>
+    </div>
+    <div class="calculations">
+      <p>Power equals energy divided by time:<br />
+$P = E/t$</p>
+    </div>
+    <div class="sigfig">
+      <p>Example: $1~\text{kWh} = 3.60 \times 10^6~\text{J}$<br />
+$1~\text{W} = 1~\text{J/s}$</p>
+    </div>
+  </div>
 </details>
 
 <p>Q7. Two light bulbs are labeled 75 W and 40 W respectively, and both are designed to operate at 120 V.<br />
@@ -421,9 +496,28 @@ $\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&g
 (c) Explain why the power rating is related to the brightness of the bulb.</p>
 
 <details>
-  <p>(a) The 40 W bulb has higher resistance ($R = V^2/P$: $R_{40W} = (120~\text{V})^2/40~\text{W} = 360~\Omega$; $R_{75W} = (120~\text{V})^2/75~\text{W} = 192~\Omega$)<br />
-(b) The 75 W bulb draws more current ($I = P/V$: $I_{75W} = 75~\text{W}/120~\text{V} = 0.625~\text{A}$; $I_{40W} = 40~\text{W}/120~\text{V} = 0.333~\text{A}$)<br />
-(c) Higher power means more electrical energy converted to light and heat per unit time, resulting in greater brightness.</p>
+  <div class="solution-grid">
+    <div class="givens">
+      <p>$P_{75W} = 75~\text{W}$<br />
+$P_{40W} = 40~\text{W}$<br />
+$V = 120~\text{V}$</p>
+    </div>
+    <div class="calculations">
+      <p>(a) $R = V^2/P$<br />
+$R_{40W} = (120~\text{V})^2/40~\text{W} = 360~\Omega$<br />
+$R_{75W} = (120~\text{V})^2/75~\text{W} = 192~\Omega$<br />
+(b) $I = P/V$<br />
+$I_{75W} = 75~\text{W}/120~\text{V} = 0.625~\text{A}$<br />
+$I_{40W} = 40~\text{W}/120~\text{V} = 0.333~\text{A}$<br />
+(c) Higher power means more energy converted to light and heat per unit time, so the 75 W bulb is brighter.</p>
+    </div>
+    <div class="sigfig">
+      <p>$R_{40W} = 360~\Omega$<br />
+$R_{75W} = 192~\Omega$<br />
+$I_{75W} = 0.625~\text{A}$<br />
+$I_{40W} = 0.333~\text{A}$</p>
+    </div>
+  </div>
 </details>
 
 <p>Q8. A space heater can be operated at either 1000 W or 1500 W settings.<br />
@@ -431,8 +525,30 @@ $\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&g
 (b) How does the resistance of the heater element change when switching from the lower to the higher setting?</p>
 
 <details>
-  <p>(a) $I_{1000W} = 1000~\text{W}/120~\text{V} = 8.33~\text{A}$; $I_{1500W} = 1500~\text{W}/120~\text{V} = 12.5~\text{A}$; Current increases by 50%.<br />
-(b) $R_{1000W} = (120~\text{V})^2/1000~\text{W} = 14.4~\Omega$; $R_{1500W} = (120~\text{V})^2/1500~\text{W} = 9.6~\Omega$; Resistance decreases.</p>
+  <div class="solution-grid">
+    <div class="givens">
+
+      <p>$P_1 = 1000~\text{W}$<br />
+$P_2 = 1500~\text{W}$<br />
+$V = 120~\text{V}$</p>
+    </div>
+    <div class="calculations">
+
+      <p>(a) $I_1 = 1000~\text{W}/120~\text{V} = 8.33~\text{A}$<br />
+$I_2 = 1500~\text{W}/120~\text{V} = 12.5~\text{A}$<br />
+Current increases by 50%.<br />
+(b) $R_1 = (120~\text{V})^2/1000~\text{W} = 14.4~\Omega$<br />
+$R_2 = (120~\text{V})^2/1500~\text{W} = 9.60~\Omega$<br />
+Resistance decreases.</p>
+    </div>
+    <div class="sigfig">
+
+      <p>$I_1 = 8.33~\text{A}$<br />
+$I_2 = 12.5~\text{A}$<br />
+$R_1 = 14.4~\Omega$<br />
+$R_2 = 9.60~\Omega$</p>
+    </div>
+  </div>
 </details>
 
 <p>Q9. A power transmission line delivers electrical energy from a generating station to a city. The same amount of power can be transmitted using either high voltage and low current, or low voltage and high current.<br />
@@ -440,10 +556,29 @@ $\text{Cost} = (3.36~\text{kWh/day})(30~\text{days})(\$0.14/\text{kWh})$&lt;br&g
 (b) If the resistance of the transmission line is 5.0 Ω, compare the power lost when transmitting 100 kW at 20,000 V versus transmitting 100 kW at 4,000 V.</p>
 
 <details>
-  <p>(a) High voltage and low current would result in less energy lost as heat because power loss is proportional to the square of current ($P = I^2R$).<br />
-(b) $P_{20,000V} = I^2R = (P/V)^2R = (100,000~\text{W}/20,000~\text{V})^2(5.0~\Omega) = (5~\text{A})^2(5.0~\Omega) = 125~\text{W}$<br />
-$P_{4,000V} = (100,000~\text{W}/4,000~\text{V})^2(5.0~\Omega) = (25~\text{A})^2(5.0~\Omega) = 3,125~\text{W}$<br />
-The power loss is 25 times greater at the lower voltage.</p>
+  <div class="solution-grid">
+    <div class="givens">
+
+      <p>$P = 100,000~\text{W}$<br />
+$V_1 = 20,000~\text{V}$<br />
+$V_2 = 4,000~\text{V}$<br />
+$R = 5.0~\Omega$</p>
+    </div>
+    <div class="calculations">
+
+      <p>(a) High voltage and low current result in less energy lost as heat because $P_\text{loss} = I^2R$.<br />
+(b) $I_1 = 100,000~\text{W}/20,000~\text{V} = 5.00~\text{A}$<br />
+$P_{1,\text{loss}} = (5.00~\text{A})^2 \times 5.0~\Omega = 125~\text{W}$<br />
+$I_2 = 100,000~\text{W}/4,000~\text{V} = 25.0~\text{A}$<br />
+$P_{2,\text{loss}} = (25.0~\text{A})^2 \times 5.0~\Omega = 3,130~\text{W}$<br />
+Power loss is 25 times greater at the lower voltage.</p>
+    </div>
+    <div class="sigfig">
+
+      <p>$P_{1,\text{loss}} = 125~\text{W}$<br />
+$P_{2,\text{loss}} = 3,130~\text{W}$</p>
+    </div>
+  </div>
 </details>
 
 <p>Q10. Three resistors of 3.0 Ω, 6.0 Ω, and 9.0 Ω are connected in the following configurations:<br />
@@ -452,9 +587,26 @@ The power loss is 25 times greater at the lower voltage.</p>
 (c) For which configuration (series or parallel) will the battery deliver more total power? Explain.</p>
 
 <details>
-  <p>(a) In series, all resistors have the same current. Since $P = I^2R$, the 9.0 Ω resistor will dissipate the most power and the 3.0 Ω resistor will dissipate the least power.<br />
-(b) In parallel, all resistors have the same voltage. Since $P = V^2/R$, the 3.0 Ω resistor will dissipate the most power and the 9.0 Ω resistor will dissipate the least power.<br />
-(c) The parallel configuration will deliver more total power because the equivalent resistance is lower, allowing more current from the battery.</p>
+  <div class="solution-grid">
+    <div class="givens">
+
+      <p>$R_1 = 3.0~\Omega$<br />
+$R_2 = 6.0~\Omega$<br />
+$R_3 = 9.0~\Omega$<br />
+$V = 12~\text{V}$</p>
+    </div>
+    <div class="calculations">
+
+      <p>(a) In series, all resistors have the same current. $P = I^2R$; the 9.0 Ω resistor dissipates the most power, 3.0 Ω the least.<br />
+(b) In parallel, all resistors have the same voltage. $P = V^2/R$; the 3.0 Ω resistor dissipates the most power, 9.0 Ω the least.<br />
+(c) The parallel configuration delivers more total power because the equivalent resistance is lower, allowing more current from the battery.</p>
+    </div>
+    <div class="sigfig">
+
+      <p>Series: $P_{9\Omega} &gt; P_{6\Omega} &gt; P_{3\Omega}$<br />
+Parallel: $P_{3\Omega} &gt; P_{6\Omega} &gt; P_{9\Omega}$</p>
+    </div>
+  </div>
 </details>
 
 <!--  COPIED FROM AI EXPORT - FOR FUTURE REFERENCE
