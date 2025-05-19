@@ -112,7 +112,7 @@ style: |
 
 **Luigi Galvani (1737–1798)**
 
-![bg contain left](../assets/images/9_electricity/galvani-life-force.jpg)
+![bg contain left drop-shadow](../assets/images/9_electricity/galvani-life-force.jpg)
 
 - **1791:** Static electricity causes a frog leg to twitch.
 * Twitching also induced by metals.
@@ -157,20 +157,6 @@ Galvani’s "life force" claim questioned.
 
 ---
 
-# Circuit Diagram Norms
-
-- Use standardized symbols (battery, resistor, capacitor etc.)
-- Draw straight lines with 90° angles for wires
-- Avoid wire crossings where possible; use dots for connections
-- Label components with values (V, $\Omega$, etc.)
-- Show conventional current flow (+ to -)
-- Keep diagrams simple and uncluttered
-- Represent resistors and consumers with appropriate symbols:
-  - Resistors: zigzag lines for pure resistance
-  - Consumers (lamps, motors): specific symbols showing energy conversion
-
----
-
 # Current Diagram Symbols
 
 ![30%](../assets/images/9_electricity/diagram-wire.png)![50%](../assets/images/9_electricity/diagram-battery.png)![alt text](../assets/images/9_electricity/diagram-switch.png)
@@ -185,6 +171,20 @@ Galvani’s "life force" claim questioned.
 * Capacitors work as batteries except release charge instantly and must be charged again
 * Fuses are designed as deliberate fault points to prevent permanent system damage
 * Resistors can be anything that consume energy; almost always loss as heat
+
+---
+
+# Circuit Diagram Norms
+
+- Use standardized symbols (battery, resistor, capacitor etc.)
+- Draw straight lines with 90° angles for wires
+- Avoid wire crossings where possible; use dots for connections
+- Label components with values (V, $\Omega$, etc.)
+- Show conventional current flow (+ to -)
+- Keep diagrams simple and uncluttered
+- Represent resistors and consumers with appropriate symbols:
+  - Resistors: zigzag lines for pure resistance
+  - Consumers (lamps, motors): specific symbols showing energy conversion
 
 ---
 
@@ -273,17 +273,33 @@ The ampere was defined relative to the force between parallel current-carrying c
 * Electrons bump into each other, transferring energy
 * Like pushing water in a full pipe: instant flow at other end
 
+<!--
+# Kirchhoff's Laws
+<div class='flexbox'>
+<div>
+1. **Kirchhoff's Current Law (KCL)**: The total current entering a junction equals the total current leaving it.
+   - $$\sum I_{in} = \sum I_{out}$$
+ - * Conservation of charge: charge cannot be created or destroyed.
+2. **Kirchhoff's Voltage Law (KVL)**: The sum of the potential differences (voltage) around any closed loop in a circuit is zero.
+   - $$\sum V = 0$$
+ - * Conservation of energy: energy supplied equals energy consumed.
+ - *Voltage drop across resistors equals voltage rise across sources (batteries).**
+3. 
+-->
 ---
 
 # Ohm’s Law
 <div class='flexbox'>
 <div>
 
-![100% drop-shadow](../assets/images/9_electricity/george-ohm.png)
+![width:400px drop-shadow](../assets/images/9_electricity/george-ohm.png)
 
 </div>
 <div>
-Mathematical relationship between voltage, current, and resistance:
+
+**Georg Simon Ohm (1789-1854)**
+- Discovered the relationship between voltage, current, and resistance.
+- **Ohm's Law**: The current through a conductor is directly proportional to the voltage across it, provided temperature remains constant.
 
 <div class='important-info'>
 
