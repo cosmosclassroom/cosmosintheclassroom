@@ -76,14 +76,18 @@ A parallel circuit diagram should show a battery connected so that two resistors
 
 <details>
 <summary>Solution</summary>
-$R_{total} = R_1 + R_2 = 12\,\Omega + 8\,\Omega = 20\,\Omega$
+$R_{total} = R_1 + R_2$<br>
+$R_{total} = 12\,\Omega + 8\,\Omega$<br>
+$R_{total} = 20\,\Omega$
 </details>
 
 4. Calculate the total resistance in a parallel circuit with $R_1 = 10\,\Omega$ and $R_2 = 20\,\Omega$.
 
 <details>
 <summary>Solution</summary>
-$\frac{1}{R_{total}} = \frac{1}{10\,\Omega} + \frac{1}{20\,\Omega} = \frac{2}{20} + \frac{1}{20} = \frac{3}{20}$  
+$\frac{1}{R_{total}} = \frac{1}{10\,\Omega} + \frac{1}{20\,\Omega}$<br>
+$\frac{1}{R_{total}} = \frac{2}{20} + \frac{1}{20}$<br>
+$\frac{1}{R_{total}} = \frac{3}{20}$<br>
 $R_{total} = \frac{20}{3}\,\Omega \approx 6.67\,\Omega$
 </details>
 
@@ -91,26 +95,37 @@ $R_{total} = \frac{20}{3}\,\Omega \approx 6.67\,\Omega$
 
 <details>
 <summary>Solution</summary>
-$R_{total} = 6\,\Omega + 6\,\Omega = 12\,\Omega$  
-$I = \frac{V}{R_{total}} = \frac{24\,\mathrm{V}}{12\,\Omega} = 2\,\mathrm{A}$
+$R_{total} = 6\,\Omega + 6\,\Omega$<br>
+$R_{total} = 12\,\Omega$<br>
+$I = \frac{V}{R_{total}}$<br>
+$I = \frac{24\,\mathrm{V}}{12\,\Omega}$<br>
+$I = 2\,\mathrm{A}$
 </details>
 
 6. A $12\,\mathrm{V}$ battery is connected to a parallel circuit with $R_1 = 4\,\Omega$ and $R_2 = 12\,\Omega$. Find the current through each resistor.
 
 <details>
 <summary>Solution</summary>
-$I_1 = \frac{12\,\mathrm{V}}{4\,\Omega} = 3\,\mathrm{A}$  
-$I_2 = \frac{12\,\mathrm{V}}{12\,\Omega} = 1\,\mathrm{A}$
+$I_1 = \frac{12\,\mathrm{V}}{4\,\Omega}$<br>
+$I_1 = 3\,\mathrm{A}$<br>
+$I_2 = \frac{12\,\mathrm{V}}{12\,\Omega}$<br>
+$I_2 = 1\,\mathrm{A}$
 </details>
 
 7. In a series circuit with a $9\,\mathrm{V}$ battery and two resistors ($R_1 = 2\,\Omega$, $R_2 = 4\,\Omega$), what is the voltage drop across each resistor?
 
 <details>
 <summary>Solution</summary>
-$R_{total} = 2\,\Omega + 4\,\Omega = 6\,\Omega$  
-$I = \frac{9\,\mathrm{V}}{6\,\Omega} = 1.5\,\mathrm{A}$  
-$V_1 = I \times R_1 = 1.5\,\mathrm{A} \times 2\,\Omega = 3\,\mathrm{V}$  
-$V_2 = I \times R_2 = 1.5\,\mathrm{A} \times 4\,\Omega = 6\,\mathrm{V}$
+$R_{total} = 2\,\Omega + 4\,\Omega$<br>
+$R_{total} = 6\,\Omega$<br>
+$I = \frac{9\,\mathrm{V}}{6\,\Omega}$<br>
+$I = 1.5\,\mathrm{A}$<br>
+$V_1 = I \times R_1$<br>
+$V_1 = 1.5\,\mathrm{A} \times 2\,\Omega$<br>
+$V_1 = 3\,\mathrm{V}$<br>
+$V_2 = I \times R_2$<br>
+$V_2 = 1.5\,\mathrm{A} \times 4\,\Omega$<br>
+$V_2 = 6\,\mathrm{V}$
 </details>
 
 8. Explain why the total resistance in a parallel circuit is always less than the smallest individual resistor.
@@ -138,8 +153,12 @@ c) If two such lamps are connected in parallel to a $120\,\mathrm{V}$ source, wh
 <details>
 <summary>Solution</summary>
 
-a) $I = \frac{P}{V} = \frac{60\,\mathrm{W}}{120\,\mathrm{V}} = 0.5\,\mathrm{A}$  
-b) $R = \frac{V}{I} = \frac{120\,\mathrm{V}}{0.5\,\mathrm{A}} = 240\,\Omega$  
+a) $I = \frac{P}{V}$<br>
+$I = \frac{60\,\mathrm{W}}{120\,\mathrm{V}}$<br>
+$I = 0.5\,\mathrm{A}$<br>
+b) $R = \frac{V}{I}$<br>
+$R = \frac{120\,\mathrm{V}}{0.5\,\mathrm{A}}$<br>
+$R = 240\,\Omega$<br>
 c) Each lamp draws $0.5\,\mathrm{A}$, so total current is $0.5\,\mathrm{A} + 0.5\,\mathrm{A} = 1.0\,\mathrm{A}$
 
 </details>

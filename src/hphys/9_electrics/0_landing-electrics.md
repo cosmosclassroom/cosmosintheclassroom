@@ -27,18 +27,18 @@ Welcome to our exploration of electricity! This unit will help you understand th
 
 - [PhET Circuit Construction Lab](simlab_9.1_phet-circuit-construction.md)
 
-## Additional Resources
+<!-- ## Additional Resources
 
 - [Electric Current Transcript](scishow-xscript-electric-current.md)
 - [Series and Parallel Circuits Transcript](scishow-xscript-series-parallel.md)
 - [Giancoli Problems](giancoli problems.md)
-- [Electrodynamics Overview](gdoc_overview_electrodynamics.md)
+- [Electrodynamics Overview](gdoc_overview_electrodynamics.md) -->
 
 ## Teacher Resources
 
-- [Electrical Current Answer Key](ps_9.1_electrical-current-key.md)
+<!-- - [Electrical Current Answer Key](ps_9.1_electrical-current-key.md)
 - [Electrodynamics Teacher Notes](tn_9.2_electrodynamics.md)
-- [Unit Storyline](hphys_electrics_storyline.md)
+- [Unit Storyline](hphys_electrics_storyline.md) -->
 
 ---
 

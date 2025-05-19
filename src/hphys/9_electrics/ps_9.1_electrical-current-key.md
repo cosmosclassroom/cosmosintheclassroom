@@ -17,7 +17,7 @@ css: /assets/css/worksheets.css
   border-radius: 5px;
 }
 .sigfig {
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 1;
   background-color: #e9ecef;
   padding: 8px;
@@ -50,166 +50,205 @@ css: /assets/css/worksheets.css
 </style>
 
 # PS 9.1 | Electric Current and Ohm's Law
+### Student Solution Key
+
+---
 
 ## Solutions
 
 1. **Conceptual Explanation:**
-<details>
-<summary>Solution</summary>
-<div class="solution-grid">
-<div class="givens">
-$I = \frac{Q}{t}$<br>
-$V = \frac{W}{Q}$<br>
-$R = \frac{V}{I}$
-</div>
-<div class="calculations">
-Electric current ($I$): rate of charge flow through a conductor.<br>
-Voltage ($V$): electric potential difference or "pressure" driving the current.<br>
-Resistance ($R$): opposition to current flow in the conductor.
-</div>
-<div class="sigfig">
-Units: $I$ (A = C/s), $V$ (V = J/C), $R$ ($\Omega$ = V/A)
-</div>
-</div>
-</details>
+
+- Electric current ($I$): rate of charge flow through a conductor.<br>
+- Voltage ($V$): electric potential difference or "pressure" driving the current.<br>
+- Resistance ($R$): opposition to current flow in the conductor.
+- Units: $I$ (A = C/s), $V$ (V = J/C), $R$ ($\Omega$ = V/A)
 
 2. a) Calculate the resistance in the circuit.<br>
    b) Explain why doubling the voltage would double the current.
-<details>
-<summary>Solution</summary>
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+
+$V = IR$ (Ohm's Law)
+</div>
 <div class="givens">
-$V = 12.0~\mathrm{V}$<br>
-$I = 2.00~\mathrm{A}$
+
+$V = 230~\text{V}$<br>
+$I = 1.75~\text{A}$
 </div>
 <div class="calculations">
-a) $R = \frac{V}{I} = \frac{12.0}{2.00} = 6.00~\Omega$<br>
-b) Ohm's Law: $I = \frac{V}{R}$. If $R$ is constant, doubling $V$ doubles $I$.
+
+a) $R = \frac{V}{I}$<br>
+$R = \frac{230}{1.75}$<br>
+$R = 131~\Omega$<br>
 </div>
 <div class="sigfig">
-$R = 6.00~\Omega$
+
+$R = 131~\Omega$
 </div>
 </div>
-</details>
+
+- b) Ohm's Law: $I = \frac{V}{R}$. If $R$ is constant, doubling $V$ doubles $I$.
 
 3. a) What is the current flowing through the circuit?<br>
-   b) If the resistor is replaced with a $200\,\Omega$ resistor, how does the current change?
-<details>
-<summary>Solution</summary>
+   b) If the resistor is replaced with a $1.00~\text{k}\Omega$ resistor, how does the current change?
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$I = \frac{V}{R}$ (Ohm's Law)
+</div>
 <div class="givens">
-$V = 9.00~\mathrm{V}$<br>
-$R_1 = 100~\Omega$<br>
-$R_2 = 200~\Omega$
+
+$V = 9.00~\text{V}$<br>
+$R_1 = 470~\Omega$<br>
+$R_2 = 1.00~\text{k}\Omega$
 </div>
 <div class="calculations">
-a) $I_1 = \frac{9.00}{100} = 0.0900~\mathrm{A}$<br>
-b) $I_2 = \frac{9.00}{200} = 0.0450~\mathrm{A}$<br>
-Current is inversely proportional to resistance.
+
+a) $I_1 = \frac{9.00}{470}$<br>
+$I_1 = 0.0191~\text{A}$<br>
+b) $I_2 = \frac{9.00}{1000}$<br>
+$I_2 = 0.00900~\text{A}$<br>
+Current decreases as resistance increases.
 </div>
 <div class="sigfig">
-$I_1 = 0.0900~\mathrm{A}$<br>
-$I_2 = 0.0450~\mathrm{A}$
-</div>
-</div>
-</details>
 
-4. What is the resistance of an appliance drawing $3.00\,\mathrm{A}$ at $120\,\mathrm{V}$?
-<details>
-<summary>Solution</summary>
+$I_1 = 0.0191~\text{A}$<br>
+$I_2 = 0.00900~\text{A}$
+</div>
+</div>
+
+4. What is the resistance of a microwave drawing $12.5~\text{A}$ at $120~\text{V}$?
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$R = \frac{V}{I}$ (Ohm's Law)
+</div>
 <div class="givens">
-$V = 120~\mathrm{V}$<br>
-$I = 3.00~\mathrm{A}$
+
+$V = 120~\text{V}$<br>
+$I = 12.5~\text{A}$
 </div>
 <div class="calculations">
-$R = \frac{V}{I} = \frac{120}{3.00} = 40.0~\Omega$
+
+$R = \frac{V}{I}$<br>
+$R = \frac{120}{12.5}$<br>
+$R = 9.60~\Omega$
 </div>
 <div class="sigfig">
-$R = 40.0~\Omega$
-</div>
-</div>
-</details>
 
-5. a) What voltage must be applied across a $15.0\,\Omega$ LED requiring $20.0\,\mathrm{mA}$?<br>
+$R = 9.60~\Omega$
+</div>
+</div>
+
+5. a) What voltage must be applied across a $33.0~\Omega$ LED requiring $15.0~\text{mA}$?<br>
    b) Why is the direction of current flow important for LEDs?
-<details>
-<summary>Solution</summary>
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$V = IR$ (Ohm's Law)
+</div>
 <div class="givens">
-$R = 15.0~\Omega$<br>
-$I = 20.0~\mathrm{mA} = 0.0200~\mathrm{A}$
+
+$R = 33.0~\Omega$<br>
+$I = 15.0~\text{mA} = 0.0150~\text{A}$
 </div>
 <div class="calculations">
-a) $V = IR = (0.0200)(15.0) = 0.300~\mathrm{V}$<br>
+
+a) $V = IR$<br>
+$V = (0.0150)(33.0)$<br>
+$V = 0.495~\text{V}$<br>
 b) LEDs only allow current flow in one direction due to their semiconductor properties. Reverse current can damage the device.
 </div>
 <div class="sigfig">
-$V = 0.300~\mathrm{V}$
-</div>
-</div>
-</details>
 
-6. A battery supplies $6.00\,\mathrm{V}$ to a circuit with two identical resistors. If the total current is $0.500\,\mathrm{A}$, what is the resistance of each resistor?
-<details>
-<summary>Solution</summary>
+$V = 0.495~\text{V}$
+</div>
+</div>
+
+6. A battery supplies $24.0~\text{V}$ to a circuit with two identical resistors. If the total current is $0.800~\text{A}$, what is the resistance of each resistor?
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$R_{total} = \frac{V}{I}$<br>
+$R_{series} = R_1 + R_2$<br>
+$\frac{1}{R_{parallel}} = \frac{1}{R_1} + \frac{1}{R_2}$
+</div>
 <div class="givens">
-$V = 6.00~\mathrm{V}$<br>
-$I = 0.500~\mathrm{A}$
+
+$V = 24.0~\text{V}$<br>
+$I = 0.800~\text{A}$
 </div>
 <div class="calculations">
-$R_{total} = \frac{V}{I} = 12.0~\Omega$<br>
-If series: $R_{each} = 6.00~\Omega$<br>
-If parallel: $R_{each} = 24.0~\Omega$
+
+$R_{total} = \frac{V}{I}$<br>
+$R_{total} = 30.0~\Omega$<br>
+If series: $R_{each} = 15.0~\Omega$<br>
+If parallel: $R_{each} = 60.0~\Omega$
 </div>
 <div class="sigfig">
-$R_{total} = 12.0~\Omega$<br>
-$R_{each,series} = 6.00~\Omega$<br>
-$R_{each,parallel} = 24.0~\Omega$
-</div>
-</div>
-</details>
 
-7. a) Calculate the resistance of a car starter motor ($12.0\,\mathrm{V}$, $120\,\mathrm{A}$).<br>
-   b) How much charge flows through it in $2.00\,\mathrm{s}$?
-<details>
-<summary>Solution</summary>
+$R_{total} = 30.0~\Omega$<br>
+$R_{each,series} = 15.0~\Omega$<br>
+$R_{each,parallel} = 60.0~\Omega$
+</div>
+</div>
+
+7. a) Calculate the resistance of a car starter motor ($12.6~\text{V}$, $185~\text{A}$).<br>
+   b) How much charge flows through it in $3.00~\text{s}$?
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$R = \frac{V}{I}$<br>
+$Q = I \times t$
+</div>
 <div class="givens">
-$V = 12.0~\mathrm{V}$<br>
-$I = 120~\mathrm{A}$<br>
-$t = 2.00~\mathrm{s}$
+
+$V = 12.6~\text{V}$<br>
+$I = 185~\text{A}$<br>
+$t = 3.00~\text{s}$
 </div>
 <div class="calculations">
-a) $R = \frac{V}{I} = \frac{12.0}{120} = 0.100~\Omega$<br>
-b) $Q = It = (120)(2.00) = 240~\mathrm{C}$
+a) $R = \frac{V}{I}$<br>
+$R = \frac{12.6}{185}$<br>
+$R = 0.0681~\Omega$<br>
+b) $Q = It$<br>
+$Q = (185)(3.00)$<br>
+$Q = 555~\text{C}$
 </div>
 <div class="sigfig">
-$R = 0.100~\Omega$<br>
-$Q = 240~\mathrm{C}$
-</div>
-</div>
-</details>
 
-8. a) What is the effective resistance of a phone charging circuit ($5.00\,\mathrm{V}$, $2.00\,\mathrm{A}$)?<br>
-   b) How much charge is transferred in $1.00\,\mathrm{hr}$?
-<details>
-<summary>Solution</summary>
+$R = 0.0681~\Omega$<br>
+$Q = 555~\text{C}$
+</div>
+</div>
+
+8. a) What is the effective resistance of a laptop charging circuit ($19.5~\text{V}$, $3.33~\text{A}$)?<br>
+   b) How much charge is transferred in $2.00~\text{hours}$?
 <div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$R = \frac{V}{I}$<br>
+$Q = I \times t$
+</div>
 <div class="givens">
-$V = 5.00~\mathrm{V}$<br>
-$I = 2.00~\mathrm{A}$<br>
-$t = 1.00~\mathrm{hr} = 3600~\mathrm{s}$
+
+$V = 19.5~\text{V}$<br>
+$I = 3.33~\text{A}$<br>
+$t = 2.00~\text{hr} = 7200~\text{s}$
 </div>
 <div class="calculations">
-a) $R = \frac{V}{I} = \frac{5.00}{2.00} = 2.50~\Omega$<br>
-b) $Q = It = (2.00)(3600) = 7200~\mathrm{C}$
+a) $R = \frac{V}{I}$<br>
+$R = \frac{19.5}{3.33}$<br>
+$R = 5.86~\Omega$<br>
+b) $Q = It$<br>
+$Q = (3.33)(7200)$<br>
+$Q = 24000~\text{C}$
 </div>
 <div class="sigfig">
-$R = 2.50~\Omega$<br>
-$Q = 7200~\mathrm{C}$
+
+$R = 5.86~\Omega$<br>
+$Q = 24000~\text{C}$
 </div>
 </div>
-</details>
 
