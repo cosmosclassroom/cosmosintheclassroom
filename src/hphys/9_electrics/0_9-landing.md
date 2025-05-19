@@ -10,13 +10,17 @@ Welcome to our exploration of electricity! This unit will help you understand th
 
 > In this chapter, you'll learn about electric charges, currents, power, and how electrical circuits work. Each section builds upon the previous one, so it's recommended to follow them in order.
 
-## 1. Core Concepts
+## 1. Materials
 
+[Lecture 9 | Electricity and Currents](../../../slides/hlec_9.2-electricity-currents.html)
+<!-- 
 - [Electrostatics Lecture](0 Lecture _ 10 Electrostatics.md)
 - [Electrical Energy and Current](9.1_electrical-energy-current.md)
-- [Electrical Power](9.2_electrical-power.md)
+- [Electrical Power](9.2_electrical-power.md) -->
 
-## 2. Practice Materials
+
+
+## 2. Problem Sets
 
 - [PS 9.1 Electric Current](ps_9.1_electrical-current.md)
 - [PS 9.2 Simple Circuits](ps_9.2_circuit-practice.md)

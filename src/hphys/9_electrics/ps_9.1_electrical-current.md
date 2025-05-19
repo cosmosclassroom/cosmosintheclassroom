@@ -4,15 +4,24 @@ title: PS 9.1 Electric Current
 author: Jonathan Corbett
 css: /assets/css/worksheets.css
 ---
+
+<style>
+/* Control the size of inline LaTeX equations */
+.MathJax, .MathJax_Display, .katex, .katex-display {
+  font-size: 1em !important;
+}
+</style>
+
 # Problem Set 9.1 | Electric Current and Ohm's Law
 
+<!-- 
 ## Formula Summary
 
 | Concept                        | Formula                                         | Variables/Symbols                | Description                                 |
 |--------------------------------|-------------------------------------------------|----------------------------------|---------------------------------------------|
 | Current                        | $I = \frac{Q}{t}$                               | $I$ (current), $Q$ (charge), $t$ (time) | Current as charge per time                  |
 | Ohm's Law                      | $V = IR$                                        | $V$ (voltage), $I$ (current), $R$ (resistance) | Voltage, current, resistance relationship   |
-
+ -->
 
 ## Problems
 
