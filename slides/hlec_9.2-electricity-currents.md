@@ -567,36 +567,47 @@ $$P = V \cdot I$$
 
 # Converting Units to Energy and Power
 
-<div class='important-info'>
-
-$$\text{W} = \text{Volts} \cdot \text{Amperes} = \frac{\text{Joules}}{\text{Coulomb}} \cdot \frac{\text{C}}{\text{second}} = \frac{\text{J}}{\text{s}}$$
-
-</div>
+<div class='flexbox'>
+<div>
 
 * Power (watts) is a measure of energy per second
 * 1 watt = 1 joule per second
-* Voltage × Current = Power
-* Example: A 60W bulb uses 60 joules of energy per second
 
----
+$$\text{W} = \text{Volts} \cdot \text{Amperes} = \frac{\text{Joules}}{\text{Coulomb}} \cdot \frac{\text{C}}{\text{second}} = \frac{\text{J}}{\text{s}}$$
+- $$1 \mathrm{watt} = 1 \frac{\mathrm{Joule}}{\mathrm{second}}$$
 
-# Power Equations
+
+
+- A 100W device uses 100 joules of energy each second
+- Total energy = power × time (joules = watts × seconds)
+
+</div>
+<div>
 
 Three equivalent formulae for electrical power:
+
 
 <div class='important-info'>
 
 - $$P = V \cdot I$$
 - $$P = I^2 \cdot R$$
 - $$P = \frac{V^2}{R}$$
+</div>
+<div>
+
 
 </div>
 
-* Choose the formula based on known values
-* All give power in watts (W)
 
+<div>
+
+<!-- ![width:500px drop-shadow](../assets/images/9_electricity/step-up-transformer-real.jpg) -->
+
+</div>
+</div>
 
 ---
+
 # Common Electrical Power Requirements
 <center>
 
@@ -622,13 +633,16 @@ c) What is the voltage drop across each resistor?
 
 ---
 
-**Solution:**
-- a) $R_{total} = R_1 + R_2 + R_3 = 18~\Omega$
-- b) Using $I = \frac{V}{R}$: $I = \frac{12~\text{V}}{18~\Omega} = 0.67~\text{A}$
-- c) Using $V = IR$:
-  - $V_1 = 0.67~\text{A} \times 3~\Omega = 2~\text{V}$
-  - $V_2 = 0.67~\text{A} \times 6~\Omega = 4~\text{V}$
-  - $V_3 = 0.67~\text{A} \times 9~\Omega = 6~\text{V}$
+- a) **Approach**: For resistors in series, add individual resistances.
+  $R_{total} = R_1 + R_2 + R_3 = 18~\Omega$
+
+- b) **Approach**: With total resistance known, apply Ohm's law to find current.
+  $I = \frac{V}{R} = \frac{12~\text{V}}{18~\Omega} = 0.67~\text{A}$
+
+- c) **Approach**: In series circuits, use Ohm's law to find voltage drop across each resistor.
+  $V_1 = 0.67~\text{A} \times 3~\Omega = 2~\text{V}$
+  $V_2 = 0.67~\text{A} \times 6~\Omega = 4~\text{V}$
+  $V_3 = 0.67~\text{A} \times 9~\Omega = 6~\text{V}$
 
 ---
 
@@ -639,10 +653,19 @@ a) What is the current in the circuit?
 b) What is the power dissipated by the resistor?
 c) How much energy is converted to heat in 5 minutes?
 
+---
+
+
 **Solution:**
-- a) $I = \frac{V}{R} = \frac{9~\text{V}}{3~\Omega} = 3~\text{A}$
-- b) $P = I^2R = (3~\text{A})^2 \times 3~\Omega = 27~\text{W}$
-- c) $E = P \times t = 27~\text{W} \times 300~\text{s} = 8100~\text{J}$
+- a) **Approach**: Apply Ohm's law directly to find current.
+  $I = \frac{V}{R} = \frac{9~\text{V}}{3~\Omega} = 3~\text{A}$
+
+- b) **Approach**: Use power formula with known current and resistance.
+  $P = I^2R = (3~\text{A})^2 \times 3~\Omega = 27~\text{W}$
+
+- c) **Approach**: Convert power to energy by multiplying by time in seconds.
+  $E = P \times t = 27~\text{W} \times 300~\text{s} = 8100~\text{J}$
+
 
 ---
 
@@ -656,9 +679,14 @@ c) What is the current through each resistor?
 ---
 
 **Solution:**
-- a) $\frac{1}{R_{eq}} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$; $R_{eq} = 2.4~\Omega$
-- b) $I_{total} = \frac{V}{R_{eq}} = \frac{12~\text{V}}{2.4~\Omega} = 5~\text{A}$
-- c) $I_1 = \frac{12~\text{V}}{4~\Omega} = 3~\text{A}$; $I_2 = \frac{12~\text{V}}{6~\Omega} = 2~\text{A}$
+- a) **Approach**: For parallel circuits, add the reciprocals of individual resistances, then take the reciprocal of that sum.
+  $\frac{1}{R_{eq}} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$; $R_{eq} = 2.4~\Omega$
+
+- b) **Approach**: Once you have the equivalent resistance, apply Ohm's law with the total voltage to find total current.
+  $I_{total} = \frac{V}{R_{eq}} = \frac{12~\text{V}}{2.4~\Omega} = 5~\text{A}$
+
+- c) **Approach**: In parallel circuits, each component receives the full voltage. Apply Ohm's law to each resistor separately.
+  $I_1 = \frac{12~\text{V}}{4~\Omega} = 3~\text{A}$; $I_2 = \frac{12~\text{V}}{6~\Omega} = 2~\text{A}$
 
 
 ---
@@ -690,21 +718,12 @@ c) What is the current through each resistor?
 | Electric Potential     | $V = \frac{PE}{q}$                        | V |
 
 </div>
-</div>
 
----
 
-<div>
-
-|Unit|Unit Relationships|
+<!-- |Unit|Unit Relationships|
 |-|-|
 | Resistance (unit)      | $1~\Omega = \frac{1~V}{1~A}$              | 1 Ohm = 1 Volt / 1 Ampere                        |
 | Power (unit)           | $1~W = 1~V \cdot 1~A$                     | 1 Watt = 1 Volt × 1 Ampere                       |
-| Power (unit)           | $1~W = 1~\frac{J}{s}$                     | 1 Watt = 1 Joule per second                      |
-
-</div>
-<div>
-Text Text text
-</div>
+| Power (unit)           | $1~W = 1~\frac{J}{s}$                     | 1 Watt = 1 Joule per second                      | -->
 
 

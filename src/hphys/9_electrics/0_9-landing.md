@@ -15,13 +15,12 @@ permalink: /9-electricity/
     }
 </style>
 
-Welcome to our exploration of electricity! This unit will help you understand the fundamental concepts of electrical forces, fields, and circuits that power our modern world.
-
-> In this chapter, you'll learn about electric charges, currents, power, and how electrical circuits work. Each section builds upon the previous one, so it's recommended to follow them in order.
+# Overview
 
 ## 1. Materials
 
 [Lecture 9 | Electricity and Currents](../../../slides/hlec_9.2-electricity-currents.html)
+
 <!-- 
 - [Electrostatics Lecture](0 Lecture _ 10 Electrostatics.md)
 - [Electrical Energy and Current](9.1_electrical-energy-current.md)
