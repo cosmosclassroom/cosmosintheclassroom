@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PS 9.4 Circuit Practice Problems
+title: PS 9.2 Circuit Practice Problems
 author: Jonathan Corbett
 css: /assets/css/worksheets.css
 ---
@@ -75,8 +75,14 @@ details[open] summary {
 | Ohm's Law                      | $V = IR$                                        | Voltage, current, resistance relationship   |
 | Resistance (series)            | $R_{total} = R_1 + R_2 + \dots$                | Total resistance in series                  |
 | Resistance (parallel)          | $\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$ | Total resistance in parallel      |
+| Power                          | $P = IV$                                       | Power as product of current and voltage     |
+| Power from resistance          | $P = I^2R$                                     | Power dissipated by a resistor              |
+| Power from voltage             | $P = \frac{V^2}{R}$                            | Alternative power formula using voltage     |
+
+<!-- These concepts are not covered this year:
 | Current Division (parallel)    | $I_n = \frac{R_{total}}{R_n} \times I_{total}$ | Current through a branch in parallel circuit |
 | Voltage Division (series)      | $V_n = \frac{R_n}{R_{total}} \times V_{total}$ | Voltage across a resistor in series circuit |
+-->
 
 ## Basic Current and Resistance Problems
 
@@ -153,36 +159,58 @@ $I_{parallel} = 5.00~\text{A}$
    (c) What is the voltage across each resistor?
 
 
+<div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
+$R_{total} = R_1 + R_2 + R_3$
+</div>
+<div class="givens">
+$R_1 = 6.00~\Omega$<br>
+$R_2 = 12.0~\Omega$<br>
+$R_3 = 18.0~\Omega$
+</div>
+<div class="calculations">
+(a) $R_{total} = 6.00~\Omega + 12.0~\Omega + 18.0~\Omega = 36.0~\Omega$
+</div>
+<div class="sigfig">
+$R_{total} = 36.0~\Omega$
+</div>
+</div>
 
 <div class="solution-grid">
 <div class="parent-formula">
 <b>Parent formula:</b><br>
+$I = \frac{V}{R_{total}}$
+</div>
+<div class="givens">
+$V_{battery} = 36.0~\text{V}$<br>
+$R_{total} = 36.0~\Omega$
+</div>
+<div class="calculations">
+(b) $I = \frac{36.0~\text{V}}{36.0~\Omega} = 1.00~\text{A}$
+</div>
+<div class="sigfig">
+$I = 1.00~\text{A}$
+</div>
+</div>
 
-$R_{total} = R_1 + R_2 + R_3$<br>
-$I = \frac{V}{R_{total}}$<br>
+<div class="solution-grid">
+<div class="parent-formula">
+<b>Parent formula:</b><br>
 $V_n = IR_n$
 </div>
 <div class="givens">
-
+$I = 1.00~\text{A}$<br>
 $R_1 = 6.00~\Omega$<br>
 $R_2 = 12.0~\Omega$<br>
-$R_3 = 18.0~\Omega$<br>
-$V_{battery} = 36.0~\text{V}$
+$R_3 = 18.0~\Omega$
 </div>
 <div class="calculations">
-
-(a) $R_{total} = 6.00~\Omega + 12.0~\Omega + 18.0~\Omega = 36.0~\Omega$<br>
-
-(b) $I = \frac{V}{R_{total}} = \frac{36.0~\text{V}}{36.0~\Omega} = 1.00~\text{A}$<br>
-
-(c) $V_1 = IR_1 = (1.00~\text{A})(6.00~\Omega) = 6.00~\text{V}$<br>
-$V_2 = IR_2 = (1.00~\text{A})(12.0~\Omega) = 12.0~\text{V}$<br>
-$V_3 = IR_3 = (1.00~\text{A})(18.0~\Omega) = 18.0~\text{V}$
+(c) $V_1 = 1.00~\text{A} \times 6.00~\Omega = 6.00~\text{V}$<br>
+$V_2 = 1.00~\text{A} \times 12.0~\Omega = 12.0~\text{V}$<br>
+$V_3 = 1.00~\text{A} \times 18.0~\Omega = 18.0~\text{V}$
 </div>
 <div class="sigfig">
-
-$R_{total} = 36.0~\Omega$<br>
-$I = 1.00~\text{A}$<br>
 $V_1 = 6.00~\text{V}$<br>
 $V_2 = 12.0~\text{V}$<br>
 $V_3 = 18.0~\text{V}$

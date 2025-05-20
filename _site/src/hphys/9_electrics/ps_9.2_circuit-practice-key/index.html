@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>PS 9.4 Circuit Practice Problems | Cosmos in the Classroom</title>
+    <title>PS 9.2 Circuit Practice Problems | Cosmos in the Classroom</title>
     
     
     <!-- KaTeX Dependencies -->
@@ -266,17 +266,27 @@ details[open] summary {
       <td>Total resistance in parallel</td>
     </tr>
     <tr>
-      <td>Current Division (parallel)</td>
-      <td>$I_n = \frac{R_{total}}{R_n} \times I_{total}$</td>
-      <td>Current through a branch in parallel circuit</td>
+      <td>Power</td>
+      <td>$P = IV$</td>
+      <td>Power as product of current and voltage</td>
     </tr>
     <tr>
-      <td>Voltage Division (series)</td>
-      <td>$V_n = \frac{R_n}{R_{total}} \times V_{total}$</td>
-      <td>Voltage across a resistor in series circuit</td>
+      <td>Power from resistance</td>
+      <td>$P = I^2R$</td>
+      <td>Power dissipated by a resistor</td>
+    </tr>
+    <tr>
+      <td>Power from voltage</td>
+      <td>$P = \frac{V^2}{R}$</td>
+      <td>Alternative power formula using voltage</td>
     </tr>
   </tbody>
 </table>
+
+<!-- These concepts are not covered this year:
+| Current Division (parallel)    | $I_n = \frac{R_{total}}{R_n} \times I_{total}$ | Current through a branch in parallel circuit |
+| Voltage Division (series)      | $V_n = \frac{R_n}{R_{total}} \times V_{total}$ | Voltage across a resistor in series circuit |
+-->
 
 <h2 id="basic-current-and-resistance-problems">Basic Current and Resistance Problems</h2>
 
@@ -356,34 +366,57 @@ $I_{parallel} = 5.00~\text{A}$</p>
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <p><b>Parent formula:</b><br /></p>
+    <p><b>Parent formula:</b><br />
+$R_{total} = R_1 + R_2 + R_3$</p>
+  </div>
+  <div class="givens">
+    <p>$R_1 = 6.00~\Omega$<br />
+$R_2 = 12.0~\Omega$<br />
+$R_3 = 18.0~\Omega$</p>
+  </div>
+  <div class="calculations">
+    <p>(a) $R_{total} = 6.00~\Omega + 12.0~\Omega + 18.0~\Omega = 36.0~\Omega$</p>
+  </div>
+  <div class="sigfig">
+    <p>$R_{total} = 36.0~\Omega$</p>
+  </div>
+</div>
 
-    <p>$R_{total} = R_1 + R_2 + R_3$<br />
-$I = \frac{V}{R_{total}}$<br />
+<div class="solution-grid">
+  <div class="parent-formula">
+    <p><b>Parent formula:</b><br />
+$I = \frac{V}{R_{total}}$</p>
+  </div>
+  <div class="givens">
+    <p>$V_{battery} = 36.0~\text{V}$<br />
+$R_{total} = 36.0~\Omega$</p>
+  </div>
+  <div class="calculations">
+    <p>(b) $I = \frac{36.0~\text{V}}{36.0~\Omega} = 1.00~\text{A}$</p>
+  </div>
+  <div class="sigfig">
+    <p>$I = 1.00~\text{A}$</p>
+  </div>
+</div>
+
+<div class="solution-grid">
+  <div class="parent-formula">
+    <p><b>Parent formula:</b><br />
 $V_n = IR_n$</p>
   </div>
   <div class="givens">
-
-    <p>$R_1 = 6.00~\Omega$<br />
+    <p>$I = 1.00~\text{A}$<br />
+$R_1 = 6.00~\Omega$<br />
 $R_2 = 12.0~\Omega$<br />
-$R_3 = 18.0~\Omega$<br />
-$V_{battery} = 36.0~\text{V}$</p>
+$R_3 = 18.0~\Omega$</p>
   </div>
   <div class="calculations">
-
-    <p>(a) $R_{total} = 6.00~\Omega + 12.0~\Omega + 18.0~\Omega = 36.0~\Omega$<br /></p>
-
-    <p>(b) $I = \frac{V}{R_{total}} = \frac{36.0~\text{V}}{36.0~\Omega} = 1.00~\text{A}$<br /></p>
-
-    <p>(c) $V_1 = IR_1 = (1.00~\text{A})(6.00~\Omega) = 6.00~\text{V}$<br />
-$V_2 = IR_2 = (1.00~\text{A})(12.0~\Omega) = 12.0~\text{V}$<br />
-$V_3 = IR_3 = (1.00~\text{A})(18.0~\Omega) = 18.0~\text{V}$</p>
+    <p>(c) $V_1 = 1.00~\text{A} \times 6.00~\Omega = 6.00~\text{V}$<br />
+$V_2 = 1.00~\text{A} \times 12.0~\Omega = 12.0~\text{V}$<br />
+$V_3 = 1.00~\text{A} \times 18.0~\Omega = 18.0~\text{V}$</p>
   </div>
   <div class="sigfig">
-
-    <p>$R_{total} = 36.0~\Omega$<br />
-$I = 1.00~\text{A}$<br />
-$V_1 = 6.00~\text{V}$<br />
+    <p>$V_1 = 6.00~\text{V}$<br />
 $V_2 = 12.0~\text{V}$<br />
 $V_3 = 18.0~\text{V}$</p>
   </div>
