@@ -187,7 +187,7 @@ permalink: /9-electricity/
 <h3><span class="card-icon">📊</span>Lecture Slides</h3>
 <p>Comprehensive slides covering electricity concepts, circuit analysis, and electrical applications</p>
 <div class="card-footer">
-<a href="https://cosmosintheclassroom.org/slides/hlec_9.2-electricity-currents.html" target="_blank" class="button">View Electricity Slides</a>
+<a href="hlec_9.2-electricity-currents.html" class="button">View Electricity Slides</a>
 </div>
 </div>
 </div>
@@ -199,8 +199,8 @@ permalink: /9-electricity/
 <h3><span class="card-icon">🔌</span>Electric Current</h3>
 <p>Practice problems on current flow, Ohm's law, and resistance calculations</p>
 <div class="card-footer">
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.1_electrical-current" class="button" target="blank">PS 9.1</a>
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.1_electrical-current-key" class="button" target="blank">Answer Key</a>
+<a href="ps_9.1_electrical-current.md" class="button">PS 9.1</a>
+<a href="ps_9.1_electrical-current-key.md" class="button">Answer Key</a>
 </div>
 </div>
 
@@ -208,8 +208,8 @@ permalink: /9-electricity/
 <h3><span class="card-icon">🔄</span>Circuit Analysis</h3>
 <p>Work through problems involving series and parallel circuits</p>
 <div class="card-footer">
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.2_circuit-practice" class="button" target="blank">PS 9.2</a>
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.2_circuit-practice-key" class="button" target="blank">Answer Key</a>
+<a href="ps_9.2_circuit-practice.md" class="button">PS 9.2</a>
+<a href="ps_9.2_circuit-practice-key.md" class="button">Answer Key</a>
 </div>
 </div>
 
@@ -217,8 +217,8 @@ permalink: /9-electricity/
 <h3><span class="card-icon">💡</span>Electric Power</h3>
 <p>Calculate power in electrical systems and energy consumption</p>
 <div class="card-footer">
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.3_electric-power" class="button" target="blank">PS 9.3</a>
-<a href="https://cosmosintheclassroom.org/src/hphys/9_electrics/ps_9.3_electric-power-key" class="button" target="blank">Answer Key</a>
+<a href="ps_9.3_electric-power.md" class="button">PS 9.3</a>
+<a href="ps_9.3_electric-power-key.md" class="button">Answer Key</a>
 </div>
 </div>
 </div>

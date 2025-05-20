@@ -1,8 +1,9 @@
 ---
-layout: default
+layout: solutions
 title: PS 9.3 Electrical Power Key
 author: Jonathan Corbett
-css: /assets/css/worksheets.css
+css: /assets/css/solutions.css
+permalink: /9-electricity/ps_9.3_electric-power-key/
 ---
 
 <style>

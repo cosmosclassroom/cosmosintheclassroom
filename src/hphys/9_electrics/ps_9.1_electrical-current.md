@@ -63,9 +63,9 @@ css: /assets/css/worksheets.css
     
     b) Doubling voltage doubles current when resistance is constant (Ohm's Law)
 
-3. a) $I = 0.0192~\mathrm{A}$
+3. a) $I = 0.0191~\mathrm{A}$
     
-    b) $I = 0.0090~\mathrm{A}$
+    b) $I = 0.00900~\mathrm{A}$
 
 4. $R = 9.60~\Omega$
 
@@ -73,12 +73,13 @@ css: /assets/css/worksheets.css
     
     b) LEDs are diodes that only conduct in one direction
 
-6. $R = 30.0~\Omega$ (total)
+6. If series: $R_{each} = 15.0~\Omega$
+   If parallel: $R_{each} = 60.0~\Omega$
 
-7. a) $R = 0.068~\Omega$
+7. a) $R = 0.0681~\Omega$
     
     b) $Q = 555~\mathrm{C}$
 
-8. a) $R = 5.85~\Omega$
+8. a) $R = 5.86~\Omega$
     
     b) $Q = 24000~\mathrm{C}$

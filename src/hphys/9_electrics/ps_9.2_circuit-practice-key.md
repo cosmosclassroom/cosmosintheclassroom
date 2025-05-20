@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: solutions
 title: PS 9.2 Circuit Practice Problems
 author: Jonathan Corbett
+permalink: /9-electricity/ps_9.2_circuit-practice-key/
 css: /assets/css/worksheets.css
 ---
 
