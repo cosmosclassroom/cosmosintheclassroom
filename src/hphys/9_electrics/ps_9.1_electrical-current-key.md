@@ -5,50 +5,6 @@ author: Jonathan Corbett
 css: /assets/css/solutions.css
 ---
 
-<style>
-.solution-grid {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: auto auto;
-  gap: 10px;
-  margin: 15px 0;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-}
-.sigfig {
-  grid-column: 1;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-  text-align: right;
-}
-.parent-formula {
-  grid-column: 2;
-  text-align: right;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.givens {
-  grid-column: 1;
-  text-align: right;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.calculations {
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-</style>
-
 # PS 9.1 | Electric Current and Ohm's Law
 ### Student Solution Key
 
@@ -80,11 +36,13 @@ $I = 1.75~\text{A}$
 
 a) $R = \frac{V}{I}$<br>
 $R = \frac{230}{1.75}$<br>
-$R = 131~\Omega$<br>
+$R = 131.428...\Omega$<br>
+<b>Answer:</b> $R = 131~\Omega$
 </div>
 <div class="sigfig">
 
-$R = 131~\Omega$
+<b>Sig Figs:</b> 3<br>
+($230$ has 3 sig figs)
 </div>
 </div>
 
@@ -106,15 +64,16 @@ $R_2 = 1.00~\text{k}\Omega$
 <div class="calculations">
 
 a) $I_1 = \frac{9.00}{470}$<br>
-$I_1 = 0.0191~\text{A}$<br>
+$I_1 = 0.01914...\text{A}$<br>
+<b>Answer:</b> $I_1 = 0.0191~\text{A}$<br><br>
 b) $I_2 = \frac{9.00}{1000}$<br>
 $I_2 = 0.00900~\text{A}$<br>
 Current decreases as resistance increases.
 </div>
 <div class="sigfig">
 
-$I_1 = 0.0191~\text{A}$<br>
-$I_2 = 0.00900~\text{A}$
+<b>Sig Figs:</b> 3<br>
+(Limited by $9.00$ V)
 </div>
 </div>
 
@@ -133,11 +92,12 @@ $I = 12.5~\text{A}$
 
 $R = \frac{V}{I}$<br>
 $R = \frac{120}{12.5}$<br>
-$R = 9.60~\Omega$
+$R = 9.6~\Omega$
 </div>
 <div class="sigfig">
 
-$R = 9.60~\Omega$
+<b>Sig Figs:</b> 3<br>
+(Limited by $12.5$ A)
 </div>
 </div>
 
@@ -158,11 +118,13 @@ $I = 15.0~\text{mA} = 0.0150~\text{A}$
 a) $V = IR$<br>
 $V = (0.0150)(33.0)$<br>
 $V = 0.495~\text{V}$<br>
+<b>Answer:</b> $V = 0.495~\text{V}$<br><br>
 b) LEDs only allow current flow in one direction due to their semiconductor properties. Reverse current can damage the device.
 </div>
 <div class="sigfig">
 
-$V = 0.495~\text{V}$
+<b>Sig Figs:</b> 3<br>
+(Matches input values)
 </div>
 </div>
 
@@ -188,9 +150,8 @@ If parallel: $R_{each} = 60.0~\Omega$
 </div>
 <div class="sigfig">
 
-$R_{total} = 30.0~\Omega$<br>
-$R_{each,series} = 15.0~\Omega$<br>
-$R_{each,parallel} = 60.0~\Omega$
+<b>Sig Figs:</b> 3<br>
+(Matches given values)
 </div>
 </div>
 
@@ -211,15 +172,16 @@ $t = 3.00~\text{s}$
 <div class="calculations">
 a) $R = \frac{V}{I}$<br>
 $R = \frac{12.6}{185}$<br>
-$R = 0.0681~\Omega$<br>
+$R = 0.0681...\Omega$<br>
+<b>Answer:</b> $R = 0.0681~\Omega$<br><br>
 b) $Q = It$<br>
 $Q = (185)(3.00)$<br>
 $Q = 555~\text{C}$
 </div>
 <div class="sigfig">
 
-$R = 0.0681~\Omega$<br>
-$Q = 555~\text{C}$
+<b>Sig Figs:</b> 3 (part a)<br>
+<b>Sig Figs:</b> 3 (part b)
 </div>
 </div>
 
@@ -240,15 +202,17 @@ $t = 2.00~\text{hr} = 7200~\text{s}$
 <div class="calculations">
 a) $R = \frac{V}{I}$<br>
 $R = \frac{19.5}{3.33}$<br>
-$R = 5.86~\Omega$<br>
+$R = 5.8558...\Omega$<br>
+<b>Answer:</b> $R = 5.86~\Omega$<br><br>
 b) $Q = It$<br>
 $Q = (3.33)(7200)$<br>
-$Q = 24000~\text{C}$
+$Q = 23976~\text{C}$<br>
+<b>Answer:</b> $Q = 24000~\text{C}$
 </div>
 <div class="sigfig">
 
-$R = 5.86~\Omega$<br>
-$Q = 24000~\text{C}$
+<b>Sig Figs:</b> 3 (part a)<br>
+<b>Sig Figs:</b> 3 (part b)
 </div>
 </div>
 
