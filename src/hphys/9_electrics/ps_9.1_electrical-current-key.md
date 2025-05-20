@@ -3,6 +3,7 @@ layout: default
 title: PS 9.1 Electric Current Key
 author: Jonathan Corbett
 css: /assets/css/solutions.css
+permalink: /9-electricity/ps_9.1_electric-current-key/
 ---
 
 # PS 9.1 | Electric Current and Ohm's Law
