@@ -19,7 +19,9 @@ permalink: /9-electricity/
 
 ## 1. Materials
 
-[Lecture 9 | Electricity and Currents](../../../slides/hlec_9.2-electricity-currents.html)
+[Lecture 9 Slides | Electricity](../../../slides/hlec_9.2-electricity-currents.html)
+
+<a href="https://cosmosintheclassroom.org/slides/hlec_9.2-electricity-currents.html" target="_blank">Lecture 9 Slides | Electricity</a>
 
 <!-- 
 - [Electrostatics Lecture](0 Lecture _ 10 Electrostatics.md)
