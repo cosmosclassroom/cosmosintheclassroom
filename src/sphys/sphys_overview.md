@@ -4,6 +4,7 @@ Title: Standard Physics Course Overview
 Author: Jonathan Corbett
 Date: 23 March 2025
 mathjax: true
+permalink: /sphys/
 markdown: kandown
 ---
 # Welcome to Standard Physics
