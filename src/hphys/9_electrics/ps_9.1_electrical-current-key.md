@@ -23,7 +23,7 @@ permalink: /9-electricity/ps_9.1_electrical-current-key/
 2. a) Calculate the resistance in the circuit.
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
+
 
 $V = IR$ (Ohm's Law)
 </div>
@@ -42,7 +42,7 @@ $R = 131.428...~\Omega$<br>
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 ($230$ has 3 sig figs)
 </div>
 </div>
@@ -54,7 +54,7 @@ b) Explain why doubling the voltage would double the current.
 3. a) What is the current flowing through the circuit?
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
+
 $V = IR$ (Ohm's Law)
 </div>
 <div class="givens">
@@ -72,7 +72,7 @@ $I = 0.01914...~\text{A}$<br>
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 (Limited by $9.00$ V)
 </div>
 </div>
@@ -80,7 +80,7 @@ $I = 0.01914...~\text{A}$<br>
 b) If the resistor is replaced with a $1.00~\text{k}\Omega$ resistor, how does the current change?
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
+
 $V = IR$ (Ohm's Law)
 </div>
 <div class="givens">
@@ -99,41 +99,43 @@ Current decreases as resistance increases.
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 (Limited by $9.00$ V)
 </div>
 </div>
 
 4. What is the resistance of a microwave drawing $12.5~\text{A}$ at $120~\text{V}$?
+   <div class="solution-grid">
+   <div class="parent-formula">
+
+   $V = IR$ (Ohm's Law)
+   </div>
+   <div class="givens">
+
+   $V = 120~\text{V}$<br>
+   $I = 12.5~\text{A}$
+   </div>
+   <div class="calculations">
+
+   $V = IR$ &nbsp; (rearrange to solve for $R$)<br>
+   $R = \frac{V}{I}$<br>
+   $R = \frac{120~\text{V}}{12.5~\text{A}}$<br>
+   $R = 9.600~\Omega$<br>
+   <b>Answer:</b> $R = 9.60~\Omega$
+   </div>
+   <div class="sigfig">
+
+    3<br>
+   (Limited by $12.5$ A)
+   </div>
+   </div>
+
+5. Six
+6. 
+7. a) What voltage must be applied across a $33.0~\Omega$ LED requiring $15.0~\text{mA}$?
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
-$V = IR$ (Ohm's Law)
-</div>
-<div class="givens">
 
-$V = 120~\text{V}$<br>
-$I = 12.5~\text{A}$
-</div>
-<div class="calculations">
-
-$V = IR$ &nbsp; (rearrange to solve for $R$)<br>
-$R = \frac{V}{I}$<br>
-$R = \frac{120~\text{V}}{12.5~\text{A}}$<br>
-$R = 9.600~\Omega$<br>
-<b>Answer:</b> $R = 9.60~\Omega$
-</div>
-<div class="sigfig">
-
-<b>Sig Figs:</b> 3<br>
-(Limited by $12.5$ A)
-</div>
-</div>
-
-5. a) What voltage must be applied across a $33.0~\Omega$ LED requiring $15.0~\text{mA}$?
-<div class="solution-grid">
-<div class="parent-formula">
-<b>Parent formula:</b><br>
 $V = IR$ (Ohm's Law)
 </div>
 <div class="givens">
@@ -150,7 +152,7 @@ $V = 0.495~\text{V}$<br>
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 (Matches input values)
 </div>
 </div>
@@ -163,7 +165,7 @@ b) Why is the direction of current flow important for LEDs?
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <b>Parent formula:</b><br>
+    
     $R_\text{total} = \frac{V}{I}$
   </div>
   <div class="givens">
@@ -175,14 +177,14 @@ b) Why is the direction of current flow important for LEDs?
     <b>Answer:</b> $R_\text{total} = 30.0~\Omega$
   </div>
   <div class="sigfig">
-    <b>Sig Figs:</b> 3<br>
+     3<br>
     (Matches given values)
   </div>
 </div>
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <b>Parent formula:</b><br>
+    
     $R_\text{series} = \frac{R_\text{total}}{2}$
   </div>
   <div class="givens">
@@ -193,13 +195,13 @@ b) Why is the direction of current flow important for LEDs?
     <b>Answer:</b> $R_\text{each} = 15.0~\Omega$
   </div>
   <div class="sigfig">
-    <b>Sig Figs:</b> 3
+     3
   </div>
 </div>
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <b>Parent formula:</b><br>
+    
     $R_\text{parallel} = 2 \times R_\text{total}$
   </div>
   <div class="givens">
@@ -210,14 +212,14 @@ b) Why is the direction of current flow important for LEDs?
     <b>Answer:</b> $R_\text{each} = 60.0~\Omega$
   </div>
   <div class="sigfig">
-    <b>Sig Figs:</b> 3
+     3
   </div>
 </div>
 
 7. a) Calculate the resistance of a car starter motor ($12.6~\text{V}$, $185~\text{A}$).
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
+
 $V = IR$ (Ohm's Law)
 </div>
 <div class="givens">
@@ -235,7 +237,7 @@ $R = 0.0681...\Omega$<br>
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 (Matches given values)
 </div>
 </div>
@@ -243,7 +245,7 @@ $R = 0.0681...\Omega$<br>
 b) How much charge flows through it in $3.00~\text{s}$?
 <div class="solution-grid">
 <div class="parent-formula">
-<b>Parent formula:</b><br>
+
 $Q = I \times t$
 </div>
 <div class="givens">
@@ -259,7 +261,7 @@ $Q = 555~\text{C}$
 </div>
 <div class="sigfig">
 
-<b>Sig Figs:</b> 3<br>
+ 3<br>
 (Limited by $3.00$ s)
 </div>
 </div>
@@ -268,7 +270,7 @@ $Q = 555~\text{C}$
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <b>Parent formula:</b><br>
+    
     $R = \frac{V}{I}$
   </div>
   <div class="givens">
@@ -282,7 +284,7 @@ $Q = 555~\text{C}$
     <b>Answer:</b> $R = 5.86~\Omega$
   </div>
   <div class="sigfig">
-    <b>Sig Figs:</b> 3<br>
+     3<br>
     (Matches input values)
   </div>
 </div>
@@ -291,7 +293,7 @@ b) How much charge is transferred in $2.00~\text{hours}$?
 
 <div class="solution-grid">
   <div class="parent-formula">
-    <b>Parent formula:</b><br>
+    
     $Q = I \times t$
   </div>
   <div class="givens">
@@ -305,7 +307,7 @@ b) How much charge is transferred in $2.00~\text{hours}$?
     <b>Answer:</b> $Q = 2.40\times10^{4}~\text{C}$
   </div>
   <div class="sigfig">
-    <b>Sig Figs:</b> 3<br>
+     3<br>
     (Limited by $2.00$ hr)
   </div>
 </div>
