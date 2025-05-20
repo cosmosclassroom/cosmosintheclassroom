@@ -68,7 +68,7 @@ permalink: /9-electricity/
     }
     
     .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     

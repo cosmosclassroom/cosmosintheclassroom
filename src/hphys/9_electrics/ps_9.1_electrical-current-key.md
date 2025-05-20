@@ -2,7 +2,7 @@
 layout: default
 title: PS 9.1 Electric Current Key
 author: Jonathan Corbett
-css: /assets/css/worksheets.css
+css: /assets/css/solutions.css
 ---
 
 <style>
