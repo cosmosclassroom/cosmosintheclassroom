@@ -38,17 +38,6 @@ p {
     text-emphasis: justify;
 }
 
-img {
-    box-shadow: 1px 1px 5px var(--earth-green);
-    display: block;
-    /* float: inline-end; */
-    height: auto;
-    margin: 2rem auto;
-    width: auto;
-    max-width: 90%;
-    padding: 0.5em;
-}
-
 blockquote {
     background-color: var(--parchment-light);
     border-left: 4px solid var(--primary-color);
@@ -58,36 +47,21 @@ blockquote {
     margin: 1rem 0;
 }
 
-hr{
-    border-top: 1px solid var(--primnary-color);
-}
-
-h4,
-h5,
-h6 {
-    color: var(--text-color);
-    font-family: inherit;
-    font-size: inherit;
-    margin: 0.5em 0;
-}
-
-h1 {
-    font-size: 2em;
-    font-weight: bold;
-    border-bottom: 1px solid var(--primary-color);
-    padding-bottom: 0.5em;
-}
-
-.button {
+button {
     background-color: var(--primary-color);
+    display: inline-block;
+    text-align: center;
+    text-align: center;
     border: 1px solid var(--primary-color);
     border-radius: 4px;
-    max-height: 50px;
     color: white;
     cursor: pointer;
-    font-size: 2rem;
-    margin: 0.5em;
-    padding: 3rem;
+    font-size: 1.1rem;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+}
+button:hover {
+    background-color: var(--earth-green);
 }
 
 /* Instruction Box - For worksheets and assignments */
@@ -213,13 +187,45 @@ h1 {
     padding: 5px;
     margin: 5px;
     border: 1pt black solid;
-    div{
-        flex: 1;
-        margin: 5px;
-        padding: 5px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
 }
+
+.flex-container div {
+    flex: 0 1 auto;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+hr{
+    border-top: 1px solid var(--primary-color);
+}
+
+
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0.5em 0;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 0.5em;
+}
+img {
+    box-shadow: 1px 1px 5px var(--earth-green);
+    display: block;
+    /* float: inline-end; */
+    height: auto;
+    margin: 2rem auto;
+    width: auto;
+    max-width: 90%;
+    padding: 0.5em;
+}
+
 
 iframe{
     display: block;
