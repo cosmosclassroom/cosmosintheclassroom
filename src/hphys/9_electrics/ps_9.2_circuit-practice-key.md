@@ -3,71 +3,11 @@ layout: solutions
 title: PS 9.2 Circuit Practice Problems
 author: Jonathan Corbett
 permalink: /9-electricity/ps_9.2_circuit-practice-key/
-css: /assets/css/worksheets.css
+css: /assets/css/solutions.css
 ---
 
-<style>
-.solution-grid {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: auto auto;
-  gap: 10px;
-  margin: 15px 0;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-}
-.sigfig {
-  grid-column: 2;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-  text-align: right;
-}
-.parent-formula {
-  grid-column: 2;
-  text-align: right;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.givens {
-  grid-column: 1;
-  text-align: right;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.calculations {
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-details {
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border-left: 5px solid #007bff;
-}
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-details[open] summary {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-  padding-left: 8px;
-}
-</style>
 
-# PS 9.4 | Circuit Practice Problems
+# PS 9.2 | Circuit Practice Problems
 
 ## Formula Summary
 
@@ -114,41 +54,70 @@ $I = 3.00 \times 10^{-25}~\text{A}$
 </div>
 
 
-2. A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\text{A}$.  
-   a) What is the voltage of the battery?  
-   b) If a second identical resistor is added in series, what will be the new current?  
-   c) If instead the second resistor is added in parallel with the first, what will be the new current?
+2. A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\text{A}$.
 
-
+a) What is the voltage of the battery?  
 <div class="solution-grid">
-<div class="parent-formula">
-<b>Parent formula:</b><br>
-
-$V = IR$<br>
-$R_{series} = R_1 + R_2$<br>
-$\frac{1}{R_{parallel}} = \frac{1}{R_1} + \frac{1}{R_2}$
+  <div class="parent-formula">
+    <b>Parent formula:</b><br>
+    $V = IR$
+  </div>
+  <div class="givens">
+    $I = 2.50~\text{A}$<br>
+    $R = 5.00~\Omega$
+  </div>
+  <div class="calculations">
+    $V = IR$<br>
+    $V = (2.50~\text{A})(5.00~\Omega)$<br>
+    $V = 12.5~\text{V}$
+  </div>
+  <div class="sigfig">
+    $V = 12.5~\text{V}$
+  </div>
 </div>
-<div class="givens">
 
-$R_1 = R_2 = 5.00~\Omega$<br>
-$I_{initial} = 2.50~\text{A}$
+b) If a second identical resistor is added in series, what will be the new current?  
+<div class="solution-grid">
+  <div class="parent-formula">
+    <b>Parent formula:</b><br>
+    $V = IR$<br>
+    $R_{\text{series}} = R_1 + R_2$
+  </div>
+  <div class="givens">
+    $V = 12.5~\text{V}$<br>
+    $R_1 = 5.00~\Omega$, $R_2 = 5.00~\Omega$
+  </div>
+  <div class="calculations">
+    $R_{\text{total}} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega$<br>
+    $I = \frac{V}{R_{\text{total}}}$<br>
+    $I = \frac{12.5~\text{V}}{10.0~\Omega}$<br>
+    $I = 1.25~\text{A}$
+  </div>
+  <div class="sigfig">
+    $I = 1.25~\text{A}$
+  </div>
 </div>
-<div class="calculations">
 
-a) $V = IR_1 = (2.50~\text{A})(5.00~\Omega) = 12.5~\text{V}$<br>
-
-b) In series: $R_{total} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega$<br>
-$I_{series} = \frac{V}{R_{total}} = \frac{12.5~\text{V}}{10.0~\Omega} = 1.25~\text{A}$<br>
-
-c) In parallel: $R_{total} = \frac{5.00~\Omega \times 5.00~\Omega}{5.00~\Omega + 5.00~\Omega} = 2.50~\Omega$<br>
-$I_{parallel} = \frac{V}{R_{total}} = \frac{12.5~\text{V}}{2.50~\Omega} = 5.00~\text{A}$
-</div>
-<div class="sigfig">
-
-$V = 12.5~\text{V}$<br>
-$I_{series} = 1.25~\text{A}$<br>
-$I_{parallel} = 5.00~\text{A}$
-</div>
+c) If instead the second resistor is added in parallel with the first, what will be the new current?  
+<div class="solution-grid">
+  <div class="parent-formula">
+    <b>Parent formula:</b><br>
+    $V = IR$<br>
+    $\frac{1}{R_{\text{parallel}}} = \frac{1}{R_1} + \frac{1}{R_2}$
+  </div>
+  <div class="givens">
+    $V = 12.5~\text{V}$<br>
+    $R_1 = 5.00~\Omega$, $R_2 = 5.00~\Omega$
+  </div>
+  <div class="calculations">
+    $R_{\text{parallel}} = \frac{1}{\frac{1}{5.00} + \frac{1}{5.00}} = 2.50~\Omega$<br>
+    $I = \frac{V}{R_{\text{parallel}}}$<br>
+    $I = \frac{12.5~\text{V}}{2.50~\Omega}$<br>
+    $I = 5.00~\text{A}$
+  </div>
+  <div class="sigfig">
+    $I = 5.00~\text{A}$
+  </div>
 </div>
 
 

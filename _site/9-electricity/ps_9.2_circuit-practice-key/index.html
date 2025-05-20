@@ -24,68 +24,7 @@
 </head>
 <body>
     <div class="solutions-container">
-        <style>
-.solution-grid {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: auto auto;
-  gap: 10px;
-  margin: 15px 0;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-radius: 5px;
-}
-.sigfig {
-  grid-column: 2;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-  text-align: right;
-}
-.parent-formula {
-  grid-column: 2;
-  text-align: right;
-  grid-row: 1;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.givens {
-  grid-column: 1;
-  text-align: right;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-.calculations {
-  grid-column: 2;
-  grid-row: 2;
-  background-color: #e9ecef;
-  padding: 8px;
-  border-radius: 4px;
-}
-details {
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border-left: 5px solid #007bff;
-}
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-details[open] summary {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
-  padding-left: 8px;
-}
-</style>
-
-<h1 id="ps-94--circuit-practice-problems">PS 9.4 | Circuit Practice Problems</h1>
+        <h1 id="ps-92--circuit-practice-problems">PS 9.2 | Circuit Practice Problems</h1>
 
 <h2 id="formula-summary">Formula Summary</h2>
 
@@ -166,40 +105,82 @@ $I = 3.00 \times 10^{-25}~\text{A}$</p>
 </div>
 
 <ol>
-  <li>A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\text{A}$.<br />
-a) What is the voltage of the battery?<br />
-b) If a second identical resistor is added in series, what will be the new current?<br />
-c) If instead the second resistor is added in parallel with the first, what will be the new current?</li>
+  <li>A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\text{A}$.</li>
 </ol>
 
+<p>a) What is the voltage of the battery?</p>
 <div class="solution-grid">
   <div class="parent-formula">
-    <p><b>Parent formula:</b><br /></p>
-
-    <p>$V = IR$<br />
-$R_{series} = R_1 + R_2$<br />
-$\frac{1}{R_{parallel}} = \frac{1}{R_1} + \frac{1}{R_2}$</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$V = IR$
+</code></pre></div>    </div>
   </div>
   <div class="givens">
-
-    <p>$R_1 = R_2 = 5.00~\Omega$<br />
-$I_{initial} = 2.50~\text{A}$</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 2.50~\text{A}$&lt;br&gt;
+$R = 5.00~\Omega$
+</code></pre></div>    </div>
   </div>
   <div class="calculations">
-
-    <p>a) $V = IR_1 = (2.50~\text{A})(5.00~\Omega) = 12.5~\text{V}$<br /></p>
-
-    <p>b) In series: $R_{total} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega$<br />
-$I_{series} = \frac{V}{R_{total}} = \frac{12.5~\text{V}}{10.0~\Omega} = 1.25~\text{A}$<br /></p>
-
-    <p>c) In parallel: $R_{total} = \frac{5.00~\Omega \times 5.00~\Omega}{5.00~\Omega + 5.00~\Omega} = 2.50~\Omega$<br />
-$I_{parallel} = \frac{V}{R_{total}} = \frac{12.5~\text{V}}{2.50~\Omega} = 5.00~\text{A}$</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V = IR$&lt;br&gt;
+$V = (2.50~\text{A})(5.00~\Omega)$&lt;br&gt;
+$V = 12.5~\text{V}$
+</code></pre></div>    </div>
   </div>
   <div class="sigfig">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V = 12.5~\text{V}$
+</code></pre></div>    </div>
+  </div>
+</div>
 
-    <p>$V = 12.5~\text{V}$<br />
-$I_{series} = 1.25~\text{A}$<br />
-$I_{parallel} = 5.00~\text{A}$</p>
+<p>b) If a second identical resistor is added in series, what will be the new current?</p>
+<div class="solution-grid">
+  <div class="parent-formula">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$V = IR$&lt;br&gt;
+$R_{\text{series}} = R_1 + R_2$
+</code></pre></div>    </div>
+  </div>
+  <div class="givens">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V = 12.5~\text{V}$&lt;br&gt;
+$R_1 = 5.00~\Omega$, $R_2 = 5.00~\Omega$
+</code></pre></div>    </div>
+  </div>
+  <div class="calculations">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$R_{\text{total}} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega$&lt;br&gt;
+$I = \frac{V}{R_{\text{total}}}$&lt;br&gt;
+$I = \frac{12.5~\text{V}}{10.0~\Omega}$&lt;br&gt;
+$I = 1.25~\text{A}$
+</code></pre></div>    </div>
+  </div>
+  <div class="sigfig">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 1.25~\text{A}$
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<p>c) If instead the second resistor is added in parallel with the first, what will be the new current?</p>
+<div class="solution-grid">
+  <div class="parent-formula">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;b&gt;Parent formula:&lt;/b&gt;&lt;br&gt;
+$V = IR$&lt;br&gt;
+$\frac{1}{R_{\text{parallel}}} = \frac{1}{R_1} + \frac{1}{R_2}$
+</code></pre></div>    </div>
+  </div>
+  <div class="givens">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$V = 12.5~\text{V}$&lt;br&gt;
+$R_1 = 5.00~\Omega$, $R_2 = 5.00~\Omega$
+</code></pre></div>    </div>
+  </div>
+  <div class="calculations">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$R_{\text{parallel}} = \frac{1}{\frac{1}{5.00} + \frac{1}{5.00}} = 2.50~\Omega$&lt;br&gt;
+$I = \frac{V}{R_{\text{parallel}}}$&lt;br&gt;
+$I = \frac{12.5~\text{V}}{2.50~\Omega}$&lt;br&gt;
+$I = 5.00~\text{A}$
+</code></pre></div>    </div>
+  </div>
+  <div class="sigfig">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$I = 5.00~\text{A}$
+</code></pre></div>    </div>
   </div>
 </div>
 

@@ -23,3 +23,17 @@ pagination:
   - L4 Speed and Collision Outcomes
   - L5 Mass, Speed, and Force
   - L6 Momentum and Impulse Carts
+
+
+<div class='mermaid'>
+    graph LR;
+    A[Decide to Study Physics] --> B{Choose Approach}
+    B -- "Self-Study" --> C[Use Books & Videos]
+    B -- "Formal Education" --> D[Attend Courses]
+    C --> E[Practice Problems]
+    D --> F[Lab Experiments]
+    E --> G[Deeper Understanding]
+    F --> G[Deeper Understanding]
+    G --> H[Physics Mastery]
+
+</div>
