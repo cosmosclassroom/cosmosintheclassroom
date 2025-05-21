@@ -116,44 +116,58 @@ details[open] summary {
 
 ## Conceptual Questions
 
-8. For each of the following statements, identify whether it applies to series circuits, parallel circuits, or both:
-  a. Series: The current through each component is the same
-  b. Parallel: The voltage across each component is the same
-  c. Series: If one component fails and becomes an open circuit, all other components stop working
-  d. Parallel: Adding more components decreases the total resistance
-  e. Series: The total resistance is always greater than the largest individual resistance
+7. For each of the following statements, identify whether it applies to series circuits, parallel circuits, or both:
+a. The current through each component is the same  
+b. The voltage across each component is the same  
+c. If one component fails and becomes an open circuit, all other components stop working  
+d. Adding more components decreases the total resistance  
+e. The total resistance is always greater than the largest individual resistance
 
 
 
-9. Consider two lightbulbs, one rated at 60 W and another at 100 W, both designed for use with 120 V.
+8. Consider two lightbulbs, one rated at 60 W and another at 100 W, both designed for use with 120 V.
   a. Which bulb has higher resistance?
   b. If these bulbs are connected in series to a 120 V source, which bulb will be brighter? Explain.
   c. If these bulbs are connected in parallel to a 120 V source, which bulb will be brighter? Explain.
 
   ## Solutions
+It seems #7 is a conceptual question that may not require a numeric solution. Here is the content:
 
-  1. $3.0 \times 10^{-25}~\text{A}$
+1. \(3.0 \times 10^{-25}\,\text{A}\)
 
-  2. a) $12.5~\text{V}$  
-     b) $1.25~\text{A}$  
-     c) $5.00~\text{A}$
+2.  A circuit with a \(5.00\,\Omega\) resistor:
+   a) \(12.5\,\text{V}\)  
+   b) \(1.25\,\text{A}\)  
+   c) \(5.00\,\text{A}\)
 
-  3. a) $36.0~\Omega$  
-     b) $1.00~\text{A}$  
-     c) $V_1 = 6.00~\text{V}$, $V_2 = 12.0~\text{V}$, $V_3 = 18.0~\text{V}$
+3.  Three resistors in series:
+   a) \(36.0\,\Omega\)  
+   b) \(1.00\,\text{A}\)  
+   c) \(V_1 = 6.00\,\text{V},\; V_2 = 12.0\,\text{V},\; V_3 = 18.0\,\text{V}\)
 
-  4. a) $1200~\Omega$  
-     b) $0.100~\text{A}$  
-     c) $2.40~\text{V}$  
-     d) All bulbs go out
+4. A string of Christmas lights
+   a) \(1200\,\Omega\)  
+   b) \(0.100\,\text{A}\)  
+   c) \(2.40\,\text{V}\)  
+   d) All bulbs go out
 
-  5. a) $7.50~\Omega$  
-     b) $1.60~\text{A}$  
-     c) $I_1 = 0.800~\text{A}$, $I_2 = 0.400~\text{A}$, $I_3 = 0.267~\text{A}$
+5.  Three resistors in parallel:
+   a) \(7.50\,\Omega\)  
+   b) \(1.60\,\text{A}\)  
+   c) \(I_1 = 0.800\,\text{A},\; I_2 = 0.400\,\text{A},\; I_3 = 0.267\,\text{A}\)
 
-  6. a) $6.00~\Omega$  
-     b) $900~\text{W}$
+6. Circuit breaker in a home
+   a) \(6.00\,\Omega\)  
+   b) \(900\,\text{W}\)
 
-  9. a) $R_{60W} = 240~\Omega$, $R_{100W} = 144~\Omega$  
-     b) 60 W bulb brighter in series  
-     c) 100 W bulb brighter in parallel
+7. Comparing series and parallel circuits:
+   a) Series  
+   b) Parallel  
+   c) Series  
+   d) Parallel  
+   e) Series
+
+7.  Two Lightbulbs
+   a) \(R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega\)  
+   b) 60 W bulb brighter in series  
+   c) 100 W bulb brighter in parallel

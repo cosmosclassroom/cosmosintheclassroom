@@ -65,35 +65,49 @@ button:hover {
     
 }
 
-/* Instruction Box - For worksheets and assignments */
+/* CHECKPOINTS - For worksheets and assignments */
 .checkpoint {
     display: block;
-    border: 0.5px solid var(--primary-color);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 1rem;
-    color: var(--secondary-color);
-    box-shadow: 5px;
-    margin: 5% 2%;
-    padding: 1%;
-    padding-left: 15pt;
+    background-color: var(--primary-color);
+    margin-top: 1em;
+    /* border: 1px solid var(--primary-color); */
+    /* border-left: 4px solid var(--primary-color); */
+    /* border-radius: 1rem; */
+    /* color: var(--secondary-color); */
+    /* box-shadow: 5px; */
+    /* padding: 1%; */
+}
+.checkpoint:hover {
+    translate: 0.2em 0.2em;
+    transition: translate 0.5s ease-in-out;
+    
 }
 
 .checkpoint h1 {
     display: block;
+    font-size: 1.2rem;
     color: var(--parchment-light);
-    background: var(--primary-color);
-    border-radius: 1rem;
-    text-align: center;
-    margin: 1rem;
+    border-radius: 0.2rem;
+    text-align: left;
+    margin: 0.2rem;
+}
+.checkpoint p {
+    border-radius: 0.2rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: var(--parchment-light);
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0.5em 0;
+    padding: 0.5em;
 }
 
 .checkpoint li {
-    color: var(--primary-color);
+    color: var(--parchment-light);
     font-size: 1em;
     list-style-position: outside;
     text-align: left;
-    margin: 1em 0;
-    padding-left: 1em;
+    margin: 0;
 }
 
 .container {
@@ -101,6 +115,17 @@ button:hover {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+}
+.contents{
+    background-color: var(--parchment-light);
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1em auto;
+    max-width: 100%;
+    padding: 1em;
 }
 
 /* Data Presentation Table - Clean, scientific paper style */
@@ -230,6 +255,9 @@ img {
 
 iframe{
     display: block;
+    background-color: var(--earth-green);
+    max-width: 100%;
+    padding: 0.5em;
     margin: auto;
     margin-top: 2em;
     border: 1pt black solid;
@@ -359,26 +387,22 @@ table {
 /* Add a wrapper for tables to handle overflow */
 .table-wrapper {
     margin: 0 auto;
-    overflow-x: auto;
+    display: inline-block;
+    width: 100%;
 }
 
 /* Template Table - For student notebooks */
 .template-table {
-    border: 1px solid var(--text-color);
-    border-collapse: collapse;
-    padding: 6px 13px;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 1em;
-    max-width: 100%;
-    table-layout: auto;
+    table-layout: fixed;
     font-weight: 600;
     width: 100%;
+    border-top: 4px solid var(--primary-color);
 }
 
 .template-table th,
 .template-table td {
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--primary-color);
     padding: 8px;
     text-align: left;
     word-wrap: break-word;
@@ -386,7 +410,8 @@ table {
 
 .template-table td {
     empty-cells: show;
-    min-height: 10em;
+    height: 5em;
+    min-width: 10em;
 }
 
 /* Hover effects for better visibility */
