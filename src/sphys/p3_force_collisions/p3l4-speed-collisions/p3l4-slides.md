@@ -1,3 +1,77 @@
+---
+permalink: /tabs
+---
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      this.classList.add('active');
+      document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+});
+</script>
+<style>
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.tab-button {
+  background-color: var(--parchment-light);
+  border: 1px solid var(--primary-color);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 5px;
+  margin-bottom: -2px;
+  padding: 0.5rem 1rem;
+}
+
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  background-color: var(--parchment-light);
+  border: 1px solid var(--primary-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 1rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+</style>
+
+<div class="tab-container">
+  <ul class="tabs">
+    <li><button class="tab-button active" data-tab="tab1">Tab 1</button></li>
+    <li><button class="tab-button" data-tab="tab2">Tab 2</button></li>
+    <li><button class="tab-button" data-tab="tab3">Tab 3</button></li>
+  </ul>
+
+<div id="tab1" class="tab-content active">
+
+    
 # Slide A
 
 # Navigate
@@ -132,6 +206,25 @@ Say, A smaller section of the graphs you saw being produced by the sensors on th
 Analyze Data with a partner using the prompt on slide F. Encourage students to annotate the handout to highlight any pattern they uncover in the data. Give students 7 minutes for this analysis.  
 
 # Slide G
+
+  </div>
+
+  <div id="tab2" class="tab-content">
+    
+    What in tarnation is this??
+    Why would anyone put this here?
+    Who didn't clean up after themselves?
+    
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <h3>Content for Tab 3</h3>
+    <p>This is the content for the third tab.</p>
+  </div>
+</div>
+
+
+
 
 # Analyze and interpret data
 

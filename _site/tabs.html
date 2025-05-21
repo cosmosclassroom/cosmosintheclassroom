@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>Slide A | Cosmos in the Classroom</title>
+    <title> | Cosmos in the Classroom</title>
     
     
     <!-- KaTeX Dependencies -->
@@ -20,7 +20,17 @@
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     
@@ -180,139 +190,228 @@
     
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
-      <h1 id="slide-a">Slide A</h1>
+      <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      this.classList.add('active');
+      document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+});
+</script>
 
-<h1 id="navigate">Navigate</h1>
+<style>
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
 
-<p><span style="color:#304852">Even when you cannot prevent a collision\, braking can help slow your car down before it collides with another car.</span></p>
+.tab-button {
+  background-color: var(--parchment-light);
+  border: 1px solid var(--primary-color);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 5px;
+  margin-bottom: -2px;
+  padding: 0.5rem 1rem;
+}
 
-<p><span style="color:#304852"> <strong>With your class</strong> </span></p>
+.tab-button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
 
-<p><span style="color:#304852">How will the speed of a vehicle at the moment of first contact in a collision affect the outcomes?</span></p>
+.tab-content {
+  display: none;
+  background-color: var(--parchment-light);
+  border: 1px solid var(--primary-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 1rem;
+}
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_0.png" alt="" /></p>
+.tab-content.active {
+  display: block;
+}
+</style>
 
-<hr />
+<div class="tab-container">
+  <ul class="tabs">
+    <li><button class="tab-button active" data-tab="tab1">Tab 1</button></li>
+    <li><button class="tab-button" data-tab="tab2">Tab 2</button></li>
+    <li><button class="tab-button" data-tab="tab3">Tab 3</button></li>
+  </ul>
 
-<p>Navigate. Display slide A. Say, Even when you can’t prevent a collision, braking can help slow your car down some before it collides with another car. How do you predict the speed of your vehicle at the moment of first contact in a collision will affect the outcomes?</p>
+  <div id="tab1" class="tab-content active">
 
-<p>Give students half a minute to consider the question on their own and then ask for ideas. Accept all responses. Some anticipated student responses include:
+    <h1 id="slide-a">Slide A</h1>
+
+    <h1 id="navigate">Navigate</h1>
+
+    <p><span style="color:#304852">Even when you cannot prevent a collision\, braking can help slow your car down before it collides with another car.</span></p>
+
+    <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
+
+    <p><span style="color:#304852">How will the speed of a vehicle at the moment of first contact in a collision affect the outcomes?</span></p>
+
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_0.png" alt="" /></p>
+
+    <hr />
+
+    <p>Navigate. Display slide A. Say, Even when you can’t prevent a collision, braking can help slow your car down some before it collides with another car. How do you predict the speed of your vehicle at the moment of first contact in a collision will affect the outcomes?</p>
+
+    <p>Give students half a minute to consider the question on their own and then ask for ideas. Accept all responses. Some anticipated student responses include:
 It will be more severe if you don’t slow down.
 There will be more damage to the car if you don’t slow down, and less if you do.
 There will be a higher chance of injury (or death) to the person the faster you are going.
 Maybe it depends on how fast the other car is moving too.
 The car that is moving faster will have more (kinetic) energy and therefore more energy will be transferred to all parts of the system (all car parts and all people).</p>
 
-<p>Navigate to looking at a scale model of the system. Say, We can’t use real cars to test out all our ideas. But we can use a model of a system of two cars that has been scaled down. Some people call these carts, because they do not have engines. They have to be pushed, like a shopping cart.</p>
+    <p>Navigate to looking at a scale model of the system. Say, We can’t use real cars to test out all our ideas. But we can use a model of a system of two cars that has been scaled down. Some people call these carts, because they do not have engines. They have to be pushed, like a shopping cart.</p>
 
-<h1 id="slide-b">Slide B</h1>
+    <h1 id="slide-b">Slide B</h1>
 
-<h1 id="analyze-data">Analyze Data</h1>
+    <h1 id="analyze-data">Analyze Data</h1>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_1.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_1.png" alt="" /></p>
 
-<p><span style="color:#304852">Make some initial observations of what happens when two carts collide together in three different collisions.</span></p>
+    <p><span style="color:#304852">Make some initial observations of what happens when two carts collide together in three different collisions.</span></p>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_2.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_2.png" alt="" /></p>
 
-<hr />
+    <hr />
 
-<p>Make initial observations. Display slide B. Say, Let’s take a look at a short video showing three different collisions between two carts and see what we notice happening as a result of the collision in each case. Show video. Students may feel that the videos went too quickly. Do not spend time replaying them right now, rather validate students’ complaints, and ask them to describe what they noticed happened to the speed of each cart. Take under two minutes for this brief discussion. See the prompts in the teacher guide for support.</p>
+    <p>Make initial observations. Display slide B. Say, Let’s take a look at a short video showing three different collisions between two carts and see what we notice happening as a result of the collision in each case. Show video. Students may feel that the videos went too quickly. Do not spend time replaying them right now, rather validate students’ complaints, and ask them to describe what they noticed happened to the speed of each cart. Take under two minutes for this brief discussion. See the prompts in the teacher guide for support.</p>
 
-<h1 id="slide-c">Slide C</h1>
+    <h1 id="slide-c">Slide C</h1>
 
-<h1 id="construct-initial-explanations">Construct Initial Explanations</h1>
+    <h1 id="construct-initial-explanations">Construct Initial Explanations</h1>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_3.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_3.png" alt="" /></p>
 
-<p><span style="color:#304852">What is happening during these collisions that is </span>  <span style="color:#304852"> <em>causing</em> </span>  <span style="color:#304852"> the yellow-green cart (left) to slow down and the blue cart (right) to speed up?</span></p>
+    <p><span style="color:#304852">What is happening during these collisions that is </span>  <span style="color:#304852"> <em>causing</em> </span>  <span style="color:#304852"> the yellow-green cart (left) to slow down and the blue cart (right) to speed up?</span></p>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_4.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_4.png" alt="" /></p>
 
-<p><span style="color:#304852">Be ready to share your ideas with the whole class.</span></p>
+    <p><span style="color:#304852">Be ready to share your ideas with the whole class.</span></p>
 
-<hr />
+    <hr />
 
-<p>Share Initial Explanations. Display slide C. Give students 1 minute to discuss the question on the side with a partner (in the prompt response table below). After 2 minutes, discuss this question as a class for another 2 minutes to generate a few different initial ideas. See the prompts in the teacher guide for support.</p>
+    <p>Share Initial Explanations. Display slide C. Give students 1 minute to discuss the question on the side with a partner (in the prompt response table below). After 2 minutes, discuss this question as a class for another 2 minutes to generate a few different initial ideas. See the prompts in the teacher guide for support.</p>
 
-<p>Connect to student sense making from their prior unit. Say, We’ve heard a few different ways we could try to explain what is causing the changes occuring in the system. Many of these are similar to the ways in which we attempted to explain other types of phenomena in our previous unit, [material:pf.n]. In that unit we developed a model that showed how energy transfer from one object/system to another was the result of force interactions.</p>
+    <p>Connect to student sense making from their prior unit. Say, We’ve heard a few different ways we could try to explain what is causing the changes occuring in the system. Many of these are similar to the ways in which we attempted to explain other types of phenomena in our previous unit, [material:pf.n]. In that unit we developed a model that showed how energy transfer from one object/system to another was the result of force interactions.</p>
 
-<p>Reference the M-E-F triangle . Remind students that we developed this M-E-F triangle in our prior unit ([material:PF.n]). Ask for a quick show of hands about which perspective might be helpful for thinking about collisions.</p>
+    <p>Reference the M-E-F triangle . Remind students that we developed this M-E-F triangle in our prior unit ([material:PF.n]). Ask for a quick show of hands about which perspective might be helpful for thinking about collisions.</p>
 
-<p>Discuss the time scale over which these interactions appear to be happening. Use the following prompt to elicit student ideas. See the prompts in the teacher guide for support.</p>
+    <p>Discuss the time scale over which these interactions appear to be happening. Use the following prompt to elicit student ideas. See the prompts in the teacher guide for support.</p>
 
-<p>Say, Since we are claiming that the carts make contact for a relatively brief period of time during a collision, let’s consider a forces perspective and think about how the contact forces between the two cars during that time could help explain the outcomes we observed.</p>
+    <p>Say, Since we are claiming that the carts make contact for a relatively brief period of time during a collision, let’s consider a forces perspective and think about how the contact forces between the two cars during that time could help explain the outcomes we observed.</p>
 
-<h1 id="slide-d">Slide D</h1>
+    <h1 id="slide-d">Slide D</h1>
 
-<h1 id="make-predictions">Make Predictions</h1>
+    <h1 id="make-predictions">Make Predictions</h1>
 
-<p><span style="color:#304852"> <strong>With your class</strong> </span></p>
+    <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_5.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_5.png" alt="" /></p>
 
-<p><span style="color:#304852"> __Take a poll:  __ </span>  <span style="color:#304852">If we could measure the contact force(s) between the carts during the collision how would we expect they would compare?  </span></p>
+    <p><span style="color:#304852"> __Take a poll:  __ </span>  <span style="color:#304852">If we could measure the contact force(s) between the carts during the collision how would we expect they would compare?  </span></p>
 
-<p><span style="color:#304852">Only cart A would be pushed on by the other cart.</span></p>
+    <p><span style="color:#304852">Only cart A would be pushed on by the other cart.</span></p>
 
-<p><span style="color:#304852">Only cart B would be pushed on by the other cart</span></p>
+    <p><span style="color:#304852">Only cart B would be pushed on by the other cart</span></p>
 
-<p><span style="color:#304852">Both carts A and B would be pushed on\, but the strength of the forces on each would be different. </span></p>
+    <p><span style="color:#304852">Both carts A and B would be pushed on\, but the strength of the forces on each would be different. </span></p>
 
-<p><span style="color:#304852">Both carts A and B  would be pushed on\, and the strength of the forces on each would be the same. </span></p>
+    <p><span style="color:#304852">Both carts A and B  would be pushed on\, and the strength of the forces on each would be the same. </span></p>
 
-<hr />
+    <hr />
 
-<p>Make Predictions. Display slide D. Say, Let’s make some predictions about how the forces would compare on both carts during the brief period of time contact occurs during the collision. Read the question for the poll and all four possible responses.</p>
+    <p>Make Predictions. Display slide D. Say, Let’s make some predictions about how the forces would compare on both carts during the brief period of time contact occurs during the collision. Read the question for the poll and all four possible responses.</p>
 
-<p>Only cart A would be pushed on by the other cart.
+    <p>Only cart A would be pushed on by the other cart.
 Only cart B would be pushed on by the other cart
 Both carts A and B would be pushed on, but the strength of the forces on each would be different. 
 Both carts A and B  would be pushed on, and the strength of the forces on each would be the same.</p>
 
-<p>Give students half a minute to consider what their own response would be on their own. Then take the poll as a class.
+    <p>Give students half a minute to consider what their own response would be on their own. Then take the poll as a class.
 You will likely find that the majority of responses are either for predictions #3 or #4, though you may also have a few responses for #2. Use the differences in predictions to emphasize that our different thinking on this is interesting, and that this seems like an important area of competing ideas to resolve in order to make progress on the questions on our driving question board. Suggest that we will need to investigate this further in order to get the data we need to resolve this. 
 In the less likely possibility that there is no controversy in predictions, frame the next step as us (as a class) needing to get some evidence to help support our thinking, so we can build evidence based arguments and design solutions related to what we wanted to figure out on our Driving Question Board.</p>
 
-<h1 id="slide-e">Slide E</h1>
+    <h1 id="slide-e">Slide E</h1>
 
-<h1 id="analyze-and-interpret-data">Analyze and Interpret Data</h1>
+    <h1 id="analyze-and-interpret-data">Analyze and Interpret Data</h1>
 
-<p><span style="color:#304852"> <strong>With your class</strong> </span></p>
+    <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_6.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_6.png" alt="" /></p>
 
-<p><em><a href="https://www.youtube.com/watch?v=oU7cI4sSMbQ&amp;list=PLSLDxqPb5NQmc9aOPrh0SjG_BRiZsVdWA&amp;index=3">Watch the short video</a></em>  <span style="color:#304852"> to orient to the how sensors these carts collect force and velocity data before\, during\, and after a collision. </span></p>
+    <p><em><a href="https://www.youtube.com/watch?v=oU7cI4sSMbQ&amp;list=PLSLDxqPb5NQmc9aOPrh0SjG_BRiZsVdWA&amp;index=3">Watch the short video</a></em>  <span style="color:#304852"> to orient to the how sensors these carts collect force and velocity data before\, during\, and after a collision. </span></p>
 
-<hr />
+    <hr />
 
-<p>Foreground ideas about scale as a cross-cutting concept. Show slide E. Say, In our prior unit, we discovered that if we observe what is happening in a system at a much smaller or much larger scale then we can directly observe, it helped us see different patterns, which then helped us explain cause and effect relationships for what we could see. In this collision cart system we couldn’t see what was happening during the collision, because of the relatively short time scale over which the carts make contact. Let’s learn more about how different sensors were used in this system to collect force measurements during the collision between the two carts and speed of the carts before, during, and after they make contact.</p>
+    <p>Foreground ideas about scale as a cross-cutting concept. Show slide E. Say, In our prior unit, we discovered that if we observe what is happening in a system at a much smaller or much larger scale then we can directly observe, it helped us see different patterns, which then helped us explain cause and effect relationships for what we could see. In this collision cart system we couldn’t see what was happening during the collision, because of the relatively short time scale over which the carts make contact. Let’s learn more about how different sensors were used in this system to collect force measurements during the collision between the two carts and speed of the carts before, during, and after they make contact.</p>
 
-<p>Orient to the Detectors Used in the Collision Cart System. Play video.</p>
+    <p>Orient to the Detectors Used in the Collision Cart System. Play video.</p>
 
-<h1 id="slide-f">Slide F</h1>
+    <h1 id="slide-f">Slide F</h1>
 
-<h1 id="analyze-and-interpret-data-1">Analyze and interpret data</h1>
+    <h1 id="analyze-and-interpret-data-1">Analyze and interpret data</h1>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_7.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_7.png" alt="" /></p>
 
-<p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_8.png" alt="" /></p>
+    <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_8.png" alt="" /></p>
 
-<p><span style="color:#304852">Annotate your handout to help identify any patterns you notice across the three collisions.</span></p>
+    <p><span style="color:#304852">Annotate your handout to help identify any patterns you notice across the three collisions.</span></p>
 
-<p><span style="color:#304852">Be to share with the whole class.</span></p>
+    <p><span style="color:#304852">Be to share with the whole class.</span></p>
 
-<hr />
+    <hr />
 
-<p>Prepare to analyze data. Show slide F. Distribute a copy of the handout to each student. Project a digital version of the handout to provide a color reference.</p>
+    <p>Prepare to analyze data. Show slide F. Distribute a copy of the handout to each student. Project a digital version of the handout to provide a color reference.</p>
 
-<p>Say, A smaller section of the graphs you saw being produced by the sensors on the carts in the video for collision A, B, and C are included on your handout. These graphs are all for a 0.8 second period of time that includes the data collected from right before, during, and right after the collisions.</p>
+    <p>Say, A smaller section of the graphs you saw being produced by the sensors on the carts in the video for collision A, B, and C are included on your handout. These graphs are all for a 0.8 second period of time that includes the data collected from right before, during, and right after the collisions.</p>
 
-<p>Analyze Data with a partner using the prompt on slide F. Encourage students to annotate the handout to highlight any pattern they uncover in the data. Give students 7 minutes for this analysis.</p>
+    <p>Analyze Data with a partner using the prompt on slide F. Encourage students to annotate the handout to highlight any pattern they uncover in the data. Give students 7 minutes for this analysis.</p>
 
-<h1 id="slide-g">Slide G</h1>
+    <h1 id="slide-g">Slide G</h1>
 
-<h1 id="analyze-and-interpret-data-2">Analyze and interpret data</h1>
+  </div>
+
+  <div id="tab2" class="tab-content">
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What in tarnation is this??
+Why would anyone put this here?
+Who didn't clean up after themselves?
+</code></pre></div>    </div>
+
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h3&gt;Content for Tab 3&lt;/h3&gt;
+&lt;p&gt;This is the content for the third tab.&lt;/p&gt;
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<h1 id="analyze-and-interpret-data">Analyze and interpret data</h1>
 
 <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
@@ -370,7 +469,7 @@ forces acting in opposite directions are assigned opposite signs.</p>
 
 <h1 id="slide-i">Slide I</h1>
 
-<h1 id="analyze-and-interpret-data-3">Analyze and interpret data</h1>
+<h1 id="analyze-and-interpret-data-1">Analyze and interpret data</h1>
 
 <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
@@ -473,7 +572,7 @@ Opposite directions are assigned opposite signs.</p>
 
 <h1 id="slide-n">Slide N</h1>
 
-<h1 id="analyze-data-1">Analyze data</h1>
+<h1 id="analyze-data">Analyze data</h1>
 
 <p><span style="color:#304852"> __With your class __ </span></p>
 
@@ -526,7 +625,7 @@ They weigh the same</p>
 
 <h1 id="slide-p">Slide P</h1>
 
-<h1 id="make-predictions-1">Make Predictions</h1>
+<h1 id="make-predictions">Make Predictions</h1>
 
 <p><img src="p3l3_images%5C00%20P3%20Lesson%204%20Slides_22.png" alt="" /></p>
 
@@ -554,7 +653,7 @@ They weigh the same</p>
 
 <h1 id="slide-q">Slide Q</h1>
 
-<h1 id="analyze-data-2">Analyze Data</h1>
+<h1 id="analyze-data-1">Analyze Data</h1>
 
 <p><span style="color:#304852"> <strong>With A Partner</strong> </span></p>
 
@@ -670,7 +769,7 @@ How does mass affect the change in velocity of each object in a collision?</p>
 
 <h1 id="slide-v">Slide V</h1>
 
-<h1 id="navigate-1">Navigate</h1>
+<h1 id="navigate">Navigate</h1>
 
 <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
@@ -698,7 +797,7 @@ How does mass affect the change in velocity of each object in a collision?</p>
 
 <h1 id="slide-w">Slide W</h1>
 
-<h1 id="navigate-2">Navigate</h1>
+<h1 id="navigate-1">Navigate</h1>
 
 <p><span style="color:#304852"> <strong>With your class</strong> </span></p>
 
@@ -733,6 +832,8 @@ How does mass affect the change in velocity of each object in a collision?</p>
             });
         });
     </script>
+    
+
     
   </body>
 </html>
