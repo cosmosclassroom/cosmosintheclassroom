@@ -70,9 +70,9 @@ css: ["_site/assets/css/worksheets.css"]
    - Electric current
    - Ohm's Law
    - Resistivity
+   - Resistors (in series and parallel)
    - Electric Power
    - EMF and terminal voltage
-   - Resistors (in series and parallel)
 
 <!--
 ### 10. Optics
