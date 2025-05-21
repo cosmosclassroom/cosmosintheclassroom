@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PS 9.4 Circuit Practice Problems
+title: PS 9.2 Circuit Practice Problems
 author: Jonathan Corbett
 css: /assets/css/worksheets.css
 ---
