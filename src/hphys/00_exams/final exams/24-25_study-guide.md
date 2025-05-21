@@ -5,8 +5,6 @@ css: ["_site/assets/css/worksheets.css"]
 ---
 # Study Guide for Final Exams 2024-2025
 
-## Part I
-
 ### 4. Dynamics (Chapter 4)
    - Newton's Laws of Motion (3)
    - Frictional force
