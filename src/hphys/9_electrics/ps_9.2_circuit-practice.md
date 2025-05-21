@@ -66,7 +66,7 @@ details[open] summary {
 }
 </style>
 
-# PS 9.4 | Circuit Practice Problems
+# PS 9.2| Circuit Practice Problems
 
 ## Formula Summary
 
