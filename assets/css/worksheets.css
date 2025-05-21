@@ -68,46 +68,45 @@ button:hover {
 /* CHECKPOINTS - For worksheets and assignments */
 .checkpoint {
     display: block;
-    background-color: var(--primary-color);
-    margin-top: 1em;
-    /* border: 1px solid var(--primary-color); */
-    /* border-left: 4px solid var(--primary-color); */
-    /* border-radius: 1rem; */
-    /* color: var(--secondary-color); */
-    /* box-shadow: 5px; */
-    /* padding: 1%; */
+    margin: 1.5em 0;
+    border: 2px solid var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
+
 .checkpoint:hover {
-    translate: 0.2em 0.2em;
-    transition: translate 0.5s ease-in-out;
-    
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
 .checkpoint h1 {
+    background-color: var(--primary-color);
+    color: white;
     display: block;
     font-size: 1.2rem;
-    color: var(--parchment-light);
-    border-radius: 0.2rem;
+    margin: 0;
+    padding: 0.8rem 1rem;
     text-align: left;
-    margin: 0.2rem;
 }
+
 .checkpoint p {
-    border-radius: 0.2rem;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    background-color: var(--parchment-light);
+    color: var(--text-color);
     font-size: 1em;
     line-height: 1.5;
-    margin: 0.5em 0;
-    padding: 0.5em;
+    margin: 0;
+    padding: 1em;
 }
 
 .checkpoint li {
-    color: var(--parchment-light);
+    color: var(--text-color);
     font-size: 1em;
     list-style-position: outside;
     text-align: left;
-    margin: 0;
+    margin: 0.5em 0;
+    padding-right: 1em;
+}
 }
 
 .container {
@@ -389,6 +388,7 @@ table {
     margin: 0 auto;
     display: inline-block;
     width: 100%;
+    overflow-x: none;
 }
 
 /* Template Table - For student notebooks */
@@ -411,7 +411,7 @@ table {
 .template-table td {
     empty-cells: show;
     height: 5em;
-    min-width: 10em;
+    min-width: 8em;
 }
 
 /* Hover effects for better visibility */
