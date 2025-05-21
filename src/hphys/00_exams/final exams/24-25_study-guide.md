@@ -2,6 +2,7 @@
 title: "Study Guide for Final Exams 2024-2025"
 layout: default
 css: ["_site/assets/css/worksheets.css"]
+permalink: hphys/final-exam
 ---
 # Study Guide for Final Exams 2024-2025
 
