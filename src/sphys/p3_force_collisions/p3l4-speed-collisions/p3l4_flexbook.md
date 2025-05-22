@@ -48,13 +48,36 @@ Let's observe three different collisions between two carts and notice what happe
 > Copy the table below into your science notebook. In the table, make quick before and after sketches of the three collision scenarios A, B, and C. An example "before" sketch is provided for you.
 > Use labelled arrows to show velocities before and after. Direction can be shown for final/"after" velocities even if the values are not known.
 
-<div class='template-table'>
+<div class="template-table">
+
+<style>
+.template-table td {
+   vertical-align: top;
+   width: 20%;
+   text-align: center;
+   background-color: #f0f0f0;
+   border: 1px solid black;
+}
+.template-table td img {
+    max-width: 175px;
+    background-color: #f0f0f0;
+    height: 5em;
+    margin: 0 auto;
+    display: block;
+}
+.template-table td img:hover {
+    transform: scale(4);
+    transition: transform 0.2s;
+}
+</style>
 
 |Collision|Before|After| Notes|
-|---------:|:------:|-----|-|
-|A|![Collision Carts A before](../../../../assets/images/p3_collisions/p3l4_images/collision-carts.png)|||
+|---------:|:------:|:-----:|:-:|
+|A|![Yellow and blue track cart before collision, each 0.3 kg and the yellow cart has a rightward velocity vector](../../../../assets/images/p3_collisions/p3l4_images/collision-carts.png) ||
 |B||||
 |C||||
+
+
 
 </div>
 
@@ -237,9 +260,11 @@ Now let's see what actually happens in these different mass scenarios.
 <a href="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" target="_blank" alt="Collisions D-F - Click image to view full size">
    <img src="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" alt="Collisions D-F">
 
-Based on our data analysis, we can make two key observations:
-1. Increases in mass in the system resulted in increases in the magnitude of the forces
-2. When masses are unequal in a collision, the smaller mass changes velocity more than the bigger mass
+> Complete the statements below with factual statements.
+
+> Based on our data analysis, we can make two key observations:
+> 1. Increases in mass in the system resulted in ______________________ in the magnitude of the forces
+> 2. When masses are unequal in a collision, the ____________________ mass changes velocity more than the ____________________ mass
 
 ## Part 4 Mathematical Relationships
 
@@ -260,11 +285,11 @@ These data shows us how changing mass affects the velocity outcomes in collision
 
 
 **Mathematical Relationship**
-The data reveals that:
+The data reveal that:
 
 $$\frac{m_1}{m_2} = -\frac{\Delta v_2}{\Delta v_1}$$
 
-In other words, the ratio of masses equals the negative reciprocal of the ratio of velocity changes.
+In other words, the ratio of masses equals the **negative reciprocal** of the ratio of velocity changes.
 
 This means when one object has twice the mass of another, its velocity change will be half as large (and in the opposite direction).
 
@@ -284,11 +309,11 @@ Ratio of masses:
 $$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = \frac{2m}{m} = 2$$
 
 Checking our relationship:
-$\frac{m_{yellow}}{m_{blue}} = \frac{0.6 \mathrm{kg}}{0.3 \mathrm{kg}$
+$\frac{m_{yellow}}{m_{blue}} = \frac{0.6 \mathrm{kg}}{0.3 \mathrm{kg}}$ = 2
 
-$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = \frac{\Delta v_{\text{blue}}}{\Delta v_{\text{yellow}}}$
+$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = 2$
 
-$2 = -\frac{0.92}{-0.46} = 2$$
+$\frac{\Delta v_{\text{blue}}}{\Delta v_{\text{yellow}}} = -\frac{0.92}{-0.46} = 2$
 
 The relationship is verified!
 
