@@ -66,7 +66,7 @@ Let's observe three different collisions between two carts and notice what happe
     display: block;
 }
 .template-table td img:hover {
-    transform: scale(4);
+    transform: scale(3);
     transition: transform 0.2s;
 }
 </style>
