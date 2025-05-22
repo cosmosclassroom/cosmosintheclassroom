@@ -236,20 +236,17 @@ Now let's explore how changing the mass of the carts affects collision outcomes.
 
 > Copy the table below int your Science Notebook. Draw the experimental setup (as before) in the "before" column but for the new situations. Sketch your predictions in the middle column. Finally, record your observations in the final column after viewing the collisions.
 
+**Make Predictions:** For each scenario, predict how changing mass will affect the force and velocity outcomes:
+
 <div class="template-table">
 
-|Collision|Before|Prediction|After|
-|-|-|-|-|
-|D||||
-|E||||
-|F||||
+|Collision|Before|After <br> (Prediction)|After <br> (Observed)|
+|-:|:-:|:-:|:-:|
+|D <br> Double the mass of both carts||||
+|E <br> Double the mass of the yellow (left) cart only||||
+|F <br> Double the mass of the blue (right) cart only||||
 
 </div>
-
-**Make Predictions:** For each scenario, predict how changing mass will affect the force and velocity outcomes:
-1. **Collision D:** Double the mass of both carts
-2. **Collision E:** Double the mass of the yellow (left) cart only
-3. **Collision F:** Double the mass of the blue (right) cart only
 
 
 ## Analyzing Different Mass Scenarios {#analyze-4}
@@ -272,8 +269,7 @@ Now let's see what actually happens in these different mass scenarios.
 <a href="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" target="_blank" alt="Collisions D-F - Click image to view full size">
    <img src="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" alt="Collisions D-F">
 
-> Complete the statements below with factual statements.
-
+> **Complete the statements below with factual statements.**
 > Based on our data analysis, we can make two key observations:
 > 1. Increases in mass in the system resulted in ______________________ in the magnitude of the forces
 > 2. When masses are unequal in a collision, the ____________________ mass changes velocity more than the ____________________ mass
