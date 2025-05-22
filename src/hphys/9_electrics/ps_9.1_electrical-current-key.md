@@ -78,31 +78,31 @@ $I = 0.01914...~\text{A}$<br>
 </div>
 
 b) If the resistor is replaced with a $1.00~\text{k}\Omega$ resistor, how does the current change?
-<div class="solution-grid">
-<div class="parent-formula">
-
-$V = IR$ (Ohm's Law)
-</div>
-<div class="givens">
-
-$V = 9.00~\text{V}$<br>
-$R_2 = 1.00~\text{k}\Omega = 1000~\Omega$
-</div>
-<div class="calculations">
-
-$V = IR$ &nbsp; (rearrange to solve for $I$)<br>
-$I = \frac{V}{R}$<br>
-$I = \frac{9.00~\text{V}}{1000~\Omega}$<br>
-$I = 0.00900~\text{A}$<br>
-<b>Answer:</b> $I = 0.00900~\text{A}$<br>
-Current decreases as resistance increases.
-</div>
-<div class="sigfig">
-
+ <div class="solution-grid">
+ <div class="parent-formula">
+ 
+ $V = IR$ (Ohm's Law)
+ </div>
+ <div class="givens">
+ 
+ $V = 9.00~\text{V}$<br>
+ $R_2 = 1.00~\text{k}\Omega = 1000~\Omega$
+ </div>
+ <div class="calculations">
+ 
+ $V = IR$ &nbsp; (rearrange to solve for $I$)<br>
+ $I = \frac{V}{R}$<br>
+ $I = \frac{9.00~\text{V}}{1000~\Omega}$<br>
+ $I = 0.00900~\text{A}$<br>
+ <b>Answer:</b> $I = 0.00900~\text{A}$<br>
+ Current decreases as resistance increases.
+ </div>
+ <div class="sigfig">
+ 
  3<br>
-(Limited by $9.00$ V)
-</div>
-</div>
+ (Limited by $9.00$ V)
+ </div>
+ </div>
 
 4. What is the resistance of a microwave drawing $12.5~\text{A}$ at $120~\text{V}$?
    <div class="solution-grid">
@@ -271,20 +271,23 @@ $Q = 555~\text{C}$
 <div class="solution-grid">
   <div class="parent-formula">
     
-    $R = \frac{V}{I}$
+   $R = \frac{V}{I}$
   </div>
   <div class="givens">
-    $V = 19.5~\text{V}$<br>
+   
+   $V = 19.5~\text{V}$<br>
     $I = 3.33~\text{A}$
   </div>
   <div class="calculations">
-    $R = \frac{V}{I}$<br>
+   
+   $R = \frac{V}{I}$<br>
     $R = \frac{19.5~\text{V}}{3.33~\text{A}}$<br>
     $R = 5.8558...\Omega$<br>
     <b>Answer:</b> $R = 5.86~\Omega$
   </div>
   <div class="sigfig">
-     3<br>
+     
+   3<br>
     (Matches input values)
   </div>
 </div>
@@ -297,17 +300,20 @@ b) How much charge is transferred in $2.00~\text{hours}$?
     $Q = I \times t$
   </div>
   <div class="givens">
-    $I = 3.33~\text{A}$<br>
+    
+   $I = 3.33~\text{A}$<br>
     $t = 2.00~\text{hr} = 7200~\text{s}$
   </div>
   <div class="calculations">
-    $Q = It$<br>
+    
+   $Q = It$<br>
     $Q = (3.33)(7200)$<br>
     $Q = 23976~\text{C}$<br>
     <b>Answer:</b> $Q = 2.40\times10^{4}~\text{C}$
   </div>
   <div class="sigfig">
-     3<br>
+     
+   3<br>
     (Limited by $2.00$ hr)
   </div>
 </div>
