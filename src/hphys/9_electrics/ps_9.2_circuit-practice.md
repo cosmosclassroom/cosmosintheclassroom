@@ -83,33 +83,33 @@ details[open] summary {
 1. The electron and proton in a hydrogen atom are separated by approximately $5.3 \times 10^{-11}$ m. If we could create a minuscule resistor between these particles with a resistance of $1.0 \times 10^6~\Omega$, what would be the current flow if the potential difference is $3.0 \times 10^{-19}$ V?
 
 
-2. A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\text{A}$.  
+2. A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\mathrm{A}$.  
    a) What is the voltage of the battery?  
    b) If a second identical resistor is added in series, what will be the new current?  
    c) If instead the second resistor is added in parallel with the first, what will be the new current?
 
 
-3. Three resistors with values $6.00~\Omega$, $12.0~\Omega$, and $18.0~\Omega$ are connected in series with a $36.0~\text{V}$ battery. 
+3. Three resistors with values $6.00~\Omega$, $12.0~\Omega$, and $18.0~\Omega$ are connected in series with a $36.0~\mathrm{V}$ battery. 
    (a) Calculate the total resistance of the circuit.
    (b) What is the current in the circuit?
    (c) What is the voltage across each resistor?
 
-4. In a string of 50 identical Christmas lights connected in series, each bulb has a resistance of $24~\Omega$. If the string is connected to a $120~\text{V}$ outlet:
+4. In a string of 50 identical Christmas lights connected in series, each bulb has a resistance of $24~\Omega$. If the string is connected to a $120~\mathrm{V}$ outlet:
    (a) What is the total resistance of the circuit?
    (b) What is the current through the circuit?
    (c) What is the voltage across each bulb?
    (d) What happens to the brightness of the remaining bulbs if one bulb burns out? Explain.
 
-5. Three resistors with values $15.0~\Omega$, $30.0~\Omega$, and $45.0~\Omega$ are connected in parallel with a $12.0~\text{V}$ battery.
+5. Three resistors with values $15.0~\Omega$, $30.0~\Omega$, and $45.0~\Omega$ are connected in parallel with a $12.0~\mathrm{V}$ battery.
    (a) Calculate the total resistance of the circuit.
    (b) What is the current drawn from the battery?
    (c) What is the current through each resistor?
 
 
 
-6. In a modern home, many outlets are connected in parallel to a $120~\text{V}$ source. If a circuit has a circuit breaker rated at $20~\text{A}$, calculate:
+6. In a modern home, many outlets are connected in parallel to a $120~\mathrm{V}$ source. If a circuit has a circuit breaker rated at $20~\mathrm{A}$, calculate:
    (a) The minimum total resistance the circuit can have before the breaker trips.
-   (b) If you are already running a $1500~\text{W}$ heater on this circuit, what is the maximum power rating of an additional appliance you can connect without tripping the breaker?
+   (b) If you are already running a $1500~\mathrm{W}$ heater on this circuit, what is the maximum power rating of an additional appliance you can connect without tripping the breaker?
 
 
 <!-- 7. In the cir BROKEN BROKEN BROKEN BROKEN BROKEN -->
@@ -133,32 +133,32 @@ e. The total resistance is always greater than the largest individual resistance
   ## Solutions
 It seems #7 is a conceptual question that may not require a numeric solution. Here is the content:
 
-1. \(3.0 \times 10^{-25}\,\text{A}\)
+1. 3.0 \times 10^{-25}\,\mathrm{A}
 
-2.  A circuit with a \(5.00\,\Omega\) resistor:
-   a) \(12.5\,\text{V}\)  
-   b) \(1.25\,\text{A}\)  
-   c) \(5.00\,\text{A}\)
+2.  A circuit with a 5.00\,\Omega resistor:
+   a) $ 12.5\,\mathrm{V}  $
+   b) $ 1.25\,\mathrm{A}  $
+   c) $ 5.00\,\mathrm{A} $
 
 3.  Three resistors in series:
-   a) $\(36.0\,\Omega\)$  
-   b) $\(1.00\,\text{A}\)$  
-   c) $\(V_1 = 6.00\,\text{V},\; V_2 = 12.0\,\text{V},\; V_3 = 18.0\,\text{V}\)$
+   a) $36.0\,\Omega$  
+   b) $1.00\,\mathrm{A}$  
+   c) $V_1 = 6.00\,\mathrm{V},\; V_2 = 12.0\,\mathrm{V},\; V_3 = 18.0\,\mathrm{V}$
 
 4. A string of Christmas lights
-   a) $ \(1200\,\Omega\)  $
-   b) $ \(0.100\,\text{A}\)  $
-   c) $ \(2.40\,\text{V}\)  $
+   a) $ 1200\,\Omega  $
+   b) $ 0.100\,\mathrm{A}  $
+   c) $ 2.40\,\mathrm{V}  $
    d) All bulbs go out
 
 5.  Three resistors in parallel:
-   a) $\(7.50\,\Omega\)  $
-   b) $\(1.60\,\text{A}\)  $
-   c) $\(I_1 = 0.800\,\text{A},\; I_2 = 0.400\,\text{A},\; I_3 = 0.267\,\text{A}\)$
+   a) $7.50\,\Omega  $
+   b) $1.60\,\mathrm{A}  $
+   c) $I_1 = 0.800\,\mathrm{A},\; I_2 = 0.400\,\mathrm{A},\; I_3 = 0.267\,\mathrm{A}$
 
 6. Circuit breaker in a home
-   a) $\(6.00\,\Omega\)  $
-   b) $\(900\,\text{W}\)$
+   a) $6.00\,\Omega  $
+   b) $900\,\mathrm{W}$
 
 7. Comparing series and parallel circuits:
    a) Series  
@@ -168,6 +168,6 @@ It seems #7 is a conceptual question that may not require a numeric solution. He
    e) Series
 
 8.  Two Lightbulbs
-   a) $\(R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega\)$
+   a) $R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega$
    b) 60 W bulb brighter in series  
    c) 100 W bulb brighter in parallel
