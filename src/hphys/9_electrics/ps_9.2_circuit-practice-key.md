@@ -57,18 +57,18 @@ The electron and proton in a hydrogen atom are separated by approximately  $5.3 
   <div class="parent-formula">
   <b>Parent formula:</b><br>
 
- $I = \frac{V}{R} $ (Ohm's Law)
+  $I = \frac{V}{R} $ (Ohm's Law)
   </div>
   <div class="givens">
 
- $V = 3.00 \times 10^{-19}~\text{V} $<br>
- $R = 1.00 \times 10^{6}~\Omega $
+  $V = 3.00 \times 10^{-19}~\text{V} $<br>
+  $R = 1.00 \times 10^{6}~\Omega $
   </div>
   <div class="calculations">
 
- $I = \frac{V}{R} $<br>
- $I = \frac{3.00 \times 10^{-19}~\text{V}}{1.00 \times 10^{6}~\Omega} $<br>
- $I = 3.00 \times 10^{-25}~\text{A} $
+  $I = \frac{V}{R} $<br>
+  $I = \frac{3.00 \times 10^{-19}~\text{V}}{1.00 \times 10^{6}~\Omega} $<br>
+  $I = 3.00 \times 10^{-25}~\text{A} $
   </div>
   <div class="sigfig">
   
@@ -85,54 +85,54 @@ The electron and proton in a hydrogen atom are separated by approximately  $5.3 
 A circuit contains a resistor of $5.00~\Omega $. When connected to a battery, it draws a current of $2.50~\text{A} $.
 
 a) What is the voltage of the battery?  
-<div class="solution-grid">
-<div class="parent-formula">
-<b>Parent formula:</b><br>
-
- $V = IR $
-</div>
-<div class="givens">
-    
- $I = 2.50~\text{A} $<br>
- $R = 5.00~\Omega $
-  </div>
-  <div class="calculations">
-    
- $V = IR $<br>
- $V = (2.50~\text{A})(5.00~\Omega) $<br>
- $V = 12.5~\text{V} $
-  </div>
-  <div class="sigfig">
-    
-  Sig Figs: 3<br>
-  </div>
-</div>
-
-b) If a second identical resistor is added in series, what will be the new current?  
-<div class="solution-grid">
+  <div class="solution-grid">
   <div class="parent-formula">
   <b>Parent formula:</b><br>
 
- $V = IR $<br>
- $R_{\text{series}} = R_1 + R_2 $
+  $V = IR $
   </div>
   <div class="givens">
-
- $V = 12.5~\text{V} $<br>
- $R_1 = 5.00~\Omega $, $R_2 = 5.00~\Omega $
+      
+  $I = 2.50~\text{A} $<br>
+  $R = 5.00~\Omega $
+    </div>
+    <div class="calculations">
+      
+  $V = IR $<br>
+  $V = (2.50~\text{A})(5.00~\Omega) $<br>
+  $V = 12.5~\text{V} $
+    </div>
+    <div class="sigfig">
+      
+    Sig Figs: 3<br>
+    </div>
   </div>
-  <div class="calculations">
 
- $R_{\text{total}} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega $<br>
- $I = \frac{V}{R_{\text{total}}} $<br>
- $I = \frac{12.5~\text{V}}{10.0~\Omega} $<br>
- $I = 1.25~\text{A} $
-  </div>
-  <div class="sigfig">
+b) If a second identical resistor is added in series, what will be the new current?  
+  <div class="solution-grid">
+    <div class="parent-formula">
+    <b>Parent formula:</b><br>
+      
+    $V = IR $<br>
+  $R_{\text{series}} = R_1 + R_2 $
+    </div>
+    <div class="givens">
 
- $I = 1.25~\text{A} $
+  $V = 12.5~\text{V} $<br>
+  $R_1 = 5.00~\Omega $, $R_2 = 5.00~\Omega $
+    </div>
+    <div class="calculations">
+
+  $R_{\text{total}} = 5.00~\Omega + 5.00~\Omega = 10.0~\Omega $<br>
+  $I = \frac{V}{R_{\text{total}}} $<br>
+  $I = \frac{12.5~\text{V}}{10.0~\Omega} $<br>
+  $I = 1.25~\text{A} $
+    </div>
+    <div class="sigfig">
+
+  $I = 1.25~\text{A} $
+    </div>
   </div>
-</div>
 
 c) If instead the second resistor is added in parallel with the first, what will be the new current?  
 <div class="solution-grid">
