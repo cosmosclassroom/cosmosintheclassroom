@@ -281,3 +281,10 @@ Q7. A small test charge is placed near a large, positively charged *conducting* 
 <p>
 <b>Conceptual explanation:</b> In electrostatic equilibrium, any excess charge on a conductor resides on its surface, and the charges arrange themselves so that the electric field inside is zero. This is why a test charge inside a conductor feels no force.
 </p>
+
+@media print {
+  .solution-grid {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  }
+}
