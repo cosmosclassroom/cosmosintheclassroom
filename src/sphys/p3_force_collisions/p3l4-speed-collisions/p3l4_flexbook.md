@@ -269,7 +269,7 @@ Now let's see what actually happens in these different mass scenarios.
 <a href="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" target="_blank" alt="Collisions D-F - Click image to view full size">
    <img src="../../../../assets/images/p3_collisions/p3l4_images/collisions_d-f.png" alt="Collisions D-F">
 
-> **Complete the statements below with factual statements.**
+> **Add terms below to make statements based on the data.**
 > Based on our data analysis, we can make two key observations:
 > 1. Increases in mass in the system resulted in ______________________ in the magnitude of the forces
 > 2. When masses are unequal in a collision, the ____________________ mass changes velocity more than the ____________________ mass
@@ -280,51 +280,95 @@ Let's examine the precise mathematical relationship between mass and velocity ch
 
 ### Velocity Data for Different Mass Scenarios
 
-Let's organize the velocity measurements for Collisions E and F:
+Let's organize the velocity measurements for Collisions E and F.
 
-| Collision | Cart | Mass | Initial Velocity (m/s) | Final Velocity (m/s) | Change in Velocity (m/s) |
+<div class="Contents">
+
+> Copy the table below into your science notebook. Then, add the mathematical relationship shown beneath it.
+
+| Collision | Cart | Mass (kg)| Initial Velocity (m/s) | Final Velocity (m/s) | Change in Velocity (m/s) |
 |:---------:|:----:|:----:|:---------------------:|:--------------------:|:------------------------:|
-| E | Yellow | 0.6 kg | 0.79 | 0.33 | -0.46 |
-| E | Blue | 0.3 kg | 0 | 0.92 | 0.92 |
-| F | Yellow | 0.3 kg | 0.8 | -0.12 | -0.92 |
-| F | Blue | 0.6 kg | 0 | 0.46 | 0.46 |
+| E | Yellow | 0.6 | 0.79 | 0.33 | -0.46 |
+| E | Blue | 0.3 | 0 | 0.92 | 0.92 |
+| F | Yellow | 0.3 | 0.8 | -0.12 | -0.92 |
+| F | Blue | 0.6 | 0 | 0.46 | 0.46 |
 
-These data shows us how changing mass affects the velocity outcomes in collisions, which we'll analyze mathematically below.
+These data show us how changing mass affects the velocity outcomes in collisions, which we'll analyze mathematically below.
 
-
-**Mathematical Relationship**
+### **Mathematical Relationship**
 The data reveal that:
 
-$$\frac{m_1}{m_2} = -\frac{\Delta v_2}{\Delta v_1}$$
+$\frac{m_1}{m_2} = -\frac{\Delta v_2}{\Delta v_1}$
 
-In other words, the ratio of masses equals the **negative reciprocal** of the ratio of velocity changes.
+In other words, the ratio of masses equals the **negative reciprocal** of the ratio of velocity changes. This means when one object has twice the mass of another, its velocity change will be half as large (and in the opposite direction).
 
-This means when one object has twice the mass of another, its velocity change will be half as large (and in the opposite direction).
+---
 
-**Example Calculation**
+### **Example Calculation**
+
 Let's calculate the velocity changes for Collision E:
 
 For the yellow cart (double mass):
-$$\Delta v_{\text{yellow}} = v_{\text{final}} - v_{\text{initial}} = 0.33 \text{ m/s} - 0.79 \text{ m/s} = -0.46 \text{ m/s}$$
+
+<div class='contents'>
+
+$\Delta v_{\text{yellow}} = v_{\text{final}} - v_{\text{initial}} = 0.33 \text{ m/s} - 0.79 \text{ m/s} = -0.46 \text{ m/s}$
+
+
+</div>
+<div class='contents'>
 
 For the blue cart (normal mass):
-$$\Delta v_{\text{blue}} = v_{\text{final}} - v_{\text{initial}} = 0.92 \text{ m/s} - 0 \text{ m/s} = 0.92 \text{ m/s}$$
 
-Ratio of velocity changes:
-$$\frac{\Delta v_{\text{yellow}}}{\Delta v_{\text{blue}}} = \frac{-0.46 \text{ m/s}}{0.92 \text{ m/s}} = -0.5$$
+$\Delta v_{\text{blue}} = v_{\text{final}} - v_{\text{initial}} = 0.92 \text{ m/s} - 0 \text{ m/s} = 0.92 \text{ m/s}$
+
+</div>
+
+
+ <div class='contents'>
+ <div>
+   Ratio of velocity changes:
+
+  $\frac{\Delta v_{\text{yellow}}}{\Delta v_{\text{blue}}} = \frac{-0.46 \text{ m/s}}{0.92 \text{ m/s}} = -0.5$
+</div>
+<div>
 
 Ratio of masses:
-$$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = \frac{2m}{m} = 2$$
+$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = \frac{2m}{m} = 2$
 
+</div>
+</div>
 Checking our relationship:
-$\frac{m_{yellow}}{m_{blue}} = \frac{0.6 \mathrm{kg}}{0.3 \mathrm{kg}}$ = 2
+<div class='flexbox'>
+   <style>
+      .flexbox {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         margin: 2px 0;
+         background-color: var(--parchment-light);
+         border-radius: 1rem;
+         padding: 2rem;
+         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);;
+      }
+      flex-direction: column;
+      justify-content: center;
+   </style>
 
-$\frac{m_{\text{yellow}}}{m_{\text{blue}}} = 2$
+<div>
 
-$\frac{\Delta v_{\text{blue}}}{\Delta v_{\text{yellow}}} = -\frac{0.92}{-0.46} = 2$
+$\frac{m_{yellow}}{m_{blue}} = \frac{0.6 \mathrm{kg}}{0.3 \mathrm{kg}} = 2$
+</div>
+<div>
+
+</div>
+<div>
+
+$-\frac{\Delta v_{\text{blue}}}{\Delta v_{\text{yellow}}} = -\frac{0.92}{-0.46} = 2$
+</div>
+</div>
 
 The relationship is verified!
-
 
 ## Part 5: Applications & Assessment
 
@@ -334,7 +378,7 @@ The relationship is verified!
 
 Let's apply our mathematical relationship to real-world situations. Copy these sample problems into your science notebook and solve them as reference examples.
 
-**A large truck (20,000 kg) collides with a stationary shopping cart (20 kg). How will their velocity changes compare?**
+Example 1: A large truck (20,000 kg) collides with a stationary shopping cart (20 kg). How will their velocity changes compare?
 
 Using our relationship $\frac{m_1}{m_2} = -\frac{\Delta v_2}{\Delta v_1}$, calculate:
 1. The ratio of masses between the truck and shopping cart
