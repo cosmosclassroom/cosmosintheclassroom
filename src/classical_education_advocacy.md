@@ -3,6 +3,7 @@ layout: default
 title: Reclaiming Educational Greatness: A Case for Classical Learning
 author: Jonathan Corbett and Claude 3.7 Sonnet
 date: 2025-05-22
+permalink: /classical
 ---
 
 # Reclaiming Educational Greatness: A Case for Classical Learning
