@@ -2,10 +2,9 @@
 title: "Study Guide for Final Exams 2024-2025"
 layout: default
 css: ["_site/assets/css/worksheets.css"]
+permalink: hphys/final-exam
 ---
 # Study Guide for Final Exams 2024-2025
-
-## Part I
 
 ### 4. Dynamics (Chapter 4)
    - Newton's Laws of Motion (3)
@@ -52,7 +51,6 @@ css: ["_site/assets/css/worksheets.css"]
   
 ### 8. Electromagnetism (Chapters 16 and 17)
    - Electric charge
-   - Quantization
    - Conductors, insulators, semiconductors, superconductors
    - Charge by induction
    - Electric force
@@ -70,9 +68,9 @@ css: ["_site/assets/css/worksheets.css"]
    - Electric current
    - Ohm's Law
    - Resistivity
+   - Resistors (in series and parallel)
    - Electric Power
    - EMF and terminal voltage
-   - Resistors (in series and parallel)
 
 <!--
 ### 10. Optics
@@ -89,7 +87,9 @@ css: ["_site/assets/css/worksheets.css"]
 
 ### Giancoli Sections
 
-Recall that each chapter has a very concise summary at the end. The "Questions" section immediately following each summary is a good way to evaluate your conceptual understanding of the material. Re-attempting prior practice problems is also an excellent way to prepare for the exam. Generally speaking, you should be able to complete any of the level (I) problems 
+Recall that each chapter has a very concise summary at the end. The "Questions" section immediately following each summary is a good way to evaluate your conceptual understanding of the material. Re-attempting prior practice problems is also an excellent way to prepare for the exam. Generally speaking, you should be able to complete any of the level (I) problems at the end of each section.
+
+It is also advised that you ask a trustworthy LLM (ChatGPT or Claude) to generate practice problems for you. Be sure to tell it that you are (a) a high school student (b) studying physics in only algebra and (c) working from Giancoli's 7th Edition textbook; these should ensure you are given practice problems appropriate for your level.
 
 | Topic | Chapter | Sections | Pages |
 |-------|---------|----------|--------|

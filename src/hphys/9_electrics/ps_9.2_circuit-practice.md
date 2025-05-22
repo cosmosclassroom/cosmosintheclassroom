@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PS 9.4 Circuit Practice Problems
+title: PS 9.2 Circuit Practice Problems
 author: Jonathan Corbett
 css: /assets/css/worksheets.css
 ---
@@ -66,7 +66,7 @@ details[open] summary {
 }
 </style>
 
-# PS 9.4 | Circuit Practice Problems
+# PS 9.2| Circuit Practice Problems
 
 ## Formula Summary
 
