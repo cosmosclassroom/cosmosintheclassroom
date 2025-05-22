@@ -141,24 +141,24 @@ It seems #7 is a conceptual question that may not require a numeric solution. He
    c) \(5.00\,\text{A}\)
 
 3.  Three resistors in series:
-   a) \(36.0\,\Omega\)  
-   b) \(1.00\,\text{A}\)  
-   c) \(V_1 = 6.00\,\text{V},\; V_2 = 12.0\,\text{V},\; V_3 = 18.0\,\text{V}\)
+   a) $\(36.0\,\Omega\)$  
+   b) $\(1.00\,\text{A}\)$  
+   c) $\(V_1 = 6.00\,\text{V},\; V_2 = 12.0\,\text{V},\; V_3 = 18.0\,\text{V}\)$
 
 4. A string of Christmas lights
-   a) \(1200\,\Omega\)  
-   b) \(0.100\,\text{A}\)  
-   c) \(2.40\,\text{V}\)  
+   a) $ \(1200\,\Omega\)  $
+   b) $ \(0.100\,\text{A}\)  $
+   c) $ \(2.40\,\text{V}\)  $
    d) All bulbs go out
 
 5.  Three resistors in parallel:
-   a) \(7.50\,\Omega\)  
-   b) \(1.60\,\text{A}\)  
-   c) \(I_1 = 0.800\,\text{A},\; I_2 = 0.400\,\text{A},\; I_3 = 0.267\,\text{A}\)
+   a) $\(7.50\,\Omega\)  $
+   b) $\(1.60\,\text{A}\)  $
+   c) $\(I_1 = 0.800\,\text{A},\; I_2 = 0.400\,\text{A},\; I_3 = 0.267\,\text{A}\)$
 
 6. Circuit breaker in a home
-   a) \(6.00\,\Omega\)  
-   b) \(900\,\text{W}\)
+   a) $\(6.00\,\Omega\)  $
+   b) $\(900\,\text{W}\)$
 
 7. Comparing series and parallel circuits:
    a) Series  
@@ -167,7 +167,7 @@ It seems #7 is a conceptual question that may not require a numeric solution. He
    d) Parallel  
    e) Series
 
-7.  Two Lightbulbs
-   a) \(R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega\)  
+8.  Two Lightbulbs
+   a) $\(R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega\)$
    b) 60 W bulb brighter in series  
    c) 100 W bulb brighter in parallel
