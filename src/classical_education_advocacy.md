@@ -1,3 +1,10 @@
+---
+layout: default
+title: Reclaiming Educational Greatness: A Case for Classical Learning
+author: Jonathan Corbett and Claude 3.7 Sonnet
+date: 2025-05-22
+---
+
 # Reclaiming Educational Greatness: A Case for Classical Learning
 
 The democratization of education represented one of humanity's greatest achievements, opening the doors of learning to all students regardless of background or station. But somewhere in our well-intentioned efforts to make education accessible, we made a tragic miscalculation. Instead of asking "How do we help all students engage with Plato, Shakespeare, and Euclid?" we began asking "Are these works too difficult for most students?" This subtle shift in questioning led us away from our fundamental mission: introducing young minds to the best that human civilization has produced. We replaced intellectual challenge with therapeutic comfort, mistaking difficulty for harm rather than recognizing it as the very mechanism through which minds grow stronger.
