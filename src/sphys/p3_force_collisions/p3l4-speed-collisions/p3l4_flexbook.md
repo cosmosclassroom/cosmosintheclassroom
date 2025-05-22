@@ -327,13 +327,14 @@ $\Delta v_{\text{blue}} = v_{\text{final}} - v_{\text{initial}} = 0.92 \text{ m/
 
  <div class='contents'>
  <div>
-   Ratio of velocity changes:
-
+   Ratio of velocity changes: <br>
+    
   $\frac{\Delta v_{\text{yellow}}}{\Delta v_{\text{blue}}} = \frac{-0.46 \text{ m/s}}{0.92 \text{ m/s}} = -0.5$
 </div>
 <div>
 
-Ratio of masses:
+Ratio of masses: <br>
+
 $\frac{m_{\text{yellow}}}{m_{\text{blue}}} = \frac{2m}{m} = 2$
 
 </div>
