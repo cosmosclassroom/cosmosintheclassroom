@@ -9,6 +9,21 @@ mathjax: true
 pagination:
     enabled: false
 ---
+<style>
+  .flexbox{
+    display: flex;
+    padding: 2px;
+  }
+  .card {
+    margin: 2px;
+    padding: 2px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 1rem;
+
+
+  }
+  </style>
 
 # Honors Physics
 
