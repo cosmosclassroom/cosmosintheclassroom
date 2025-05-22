@@ -163,6 +163,17 @@ Now let's analyze how the speeds of the carts changed during the collisions.
 
 <div class='contents'>
 
+<style>
+   img {
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+      cursor: zoom-in;
+   }
+
+</style>
+
 <a href="../../../../assets/images/p3_collisions/p3l4_images/collisions_a-c.png" target="_blank" alt="Collisions A-C - Click image to view full size">
    <img src="../../../../assets/images/p3_collisions/p3l4_images/collisions_a-c.png" alt="Collisions A-C">
 
