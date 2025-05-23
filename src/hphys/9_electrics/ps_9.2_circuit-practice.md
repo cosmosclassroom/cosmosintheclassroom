@@ -152,8 +152,8 @@ It seems #7 is a conceptual question that may not require a numeric solution. He
    d) All bulbs go out
 
 5.  Three resistors in parallel:
-   a) $7.50\,\Omega  $
-   b) $1.60\,\mathrm{A}  $
+   a) $8.18\,\Omega  $
+   b) $1.47\,\mathrm{A}  $
    c) $I_1 = 0.800\,\mathrm{A},\; I_2 = 0.400\,\mathrm{A},\; I_3 = 0.267\,\mathrm{A}$
 
 6. Circuit breaker in a home
