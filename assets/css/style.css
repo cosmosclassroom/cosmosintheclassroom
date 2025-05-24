@@ -1,4 +1,4 @@
-/* Scientific Paper CSS - Modern and Professional Styling */
+Scientific Paper CSS - Modern and Professional Styling
 
 /* Import a modern, readable font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap'); /* Import a serif font for a classic academic feel */
@@ -13,7 +13,11 @@
     --earth-brown: #8b7355;
     --earth-green: #718355;
 }
-
+* {
+    box-sizing: border-box; /* Ensure consistent box sizing */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+}
 /* Table with clear borders for empty cells */
 .bordered-table {
     width: 100%;
@@ -52,11 +56,7 @@
 
 /* Navbar styling for a clean, professional look */
 nav {
-<<<<<<< HEAD
-    background-color: var(--secondary-color); /* Secondary blue */
-=======
     background-color: var(--secondary-color); /* Earthy green for a natural look */
->>>>>>> 8cfd9bf1f76fea6fa2d1ab5e7069707415b3f701
     padding: 1rem 2rem; /* Padding for the navbar */
     color: var(--background-color);
     border: var(--primary-color); /* Border for the navbar */
@@ -82,7 +82,7 @@ body {
     font-weight: 100;
     
     /* Responsive max-width to mimic academic paper layout */
-    max-width: 80%;
+    max-width: 95%;
     margin: 0 auto;
     line-height: 1.6;
     color: var(--text-color);
@@ -174,10 +174,34 @@ blockquote {
     color: var(--secondary-color);
 }
 
-/* Lists with academic-style spacing */
-ul, ol {
-    padding-left: 2rem;
-    margin-bottom: 1rem;
+
+/* Figure caption styling with hanging indent */
+figcaption {
+    text-align: left;
+    margin-top: 0.5rem;
+    padding-left: 2em;
+    text-indent: -2em;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    line-height: 1.4;
+}
+
+.figure-caption {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: var(--secondary-color);
+}
+/* Responsive images for better scaling */
+img {
+    max-width: 40%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+    object-fit: contain;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Table styling for data presentation */
@@ -230,36 +254,11 @@ th {
     position: relative;
 }
 
-/* Responsive images for better scaling */
-img {
-    max-width: 40%;
-    width: auto;
-    height: auto;
-    display: block;
-    margin: 2rem auto;
-    object-fit: contain;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Lists with academic-style spacing */
+ul, ol {
+    padding-left: 2rem;
+    margin-bottom: 1rem;
 }
-
-/* Figure caption styling with hanging indent */
-figcaption {
-    text-align: left;
-    margin-top: 0.5rem;
-    padding-left: 2em;
-    text-indent: -2em;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    line-height: 1.4;
-}
-
-.figure-caption {
-    text-align: center;
-    font-style: italic;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    color: var(--secondary-color);
-}
-
 /* Responsive design for various screen sizes */
 @media screen and (max-width: 600px) {
     body {
