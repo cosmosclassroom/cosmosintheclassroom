@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Problem Set 10.1: Wave Properties and Interference | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="problem-set-101-wave-properties-and-interference">Problem Set 10.1: Wave Properties and Interference</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>This problem set explores the fundamental wave nature of light, including wave properties, interference patterns, and the relationship between wavelength, frequency, and the speed of light.</p>
+
+<h2 id="key-equations">Key Equations</h2>
+<ul>
+  <li>Wave relation: c = λf</li>
+  <li>Wave equation: v = fλ</li>
+  <li>Double-slit interference: d sin θ = mλ (constructive), d sin θ = (m+1/2)λ (destructive)</li>
+  <li>Single-slit diffraction: a sin θ = mλ</li>
+  <li>Speed of light constant: c = 3 × 10^8 m/s</li>
+  <li>Maxwell’s equation: c = 1/√(μ₀ε₀)</li>
+</ul>
+
+<h2 id="problems">Problems</h2>
+
+<h3 id="1-wave-basics">1. Wave Basics</h3>
+<p>a) A light wave has a wavelength of 550 nm. Calculate its frequency.</p>
+
+<p>b) Radio waves with a frequency of 100 MHz travel through air. What is their wavelength?</p>
+
+<p>c) Explain why the speed of light is constant in a vacuum but changes when light enters different media.</p>
+
+<h3 id="2-double-slit-interference">2. Double-Slit Interference</h3>
+<p>a) Light of wavelength 480 nm passes through two slits separated by 0.15 mm. Calculate the angular position of the third bright fringe on a screen.</p>
+
+<p>b) In a double-slit experiment, the distance between adjacent bright fringes on a screen 2 m away is 8 mm. If the slit separation is 0.3 mm, what is the wavelength of the light?</p>
+
+<p>c) How would the interference pattern change if:
+   i. The wavelength of light increases?
+   ii. The distance between the slits decreases?
+   iii. The experiment is performed underwater instead of in air?</p>
+
+<h3 id="3-single-slit-diffraction">3. Single-Slit Diffraction</h3>
+<p>a) Light of wavelength 620 nm passes through a single slit of width 0.2 mm. Find the angle to the first minimum in the diffraction pattern.</p>
+
+<p>b) A laser with wavelength 632.8 nm creates a diffraction pattern through a single slit. If the first minimum occurs at an angle of 0.1°, what is the width of the slit?</p>
+
+<p>c) Compare and contrast the patterns produced by single-slit diffraction and double-slit interference. Include diagrams in your answer.</p>
+
+<h3 id="4-diffraction-gratings">4. Diffraction Gratings</h3>
+<p>a) Light passes through a diffraction grating with 500 lines/mm. If the first-order maximum for violet light (wavelength 410 nm) is observed at angle θ, at what angle would you observe the first-order maximum for red light (wavelength 660 nm)?</p>
+
+<p>b) A diffraction grating has 300 lines/mm. Calculate the angular separation between the second-order maxima of wavelengths 480 nm and 620 nm.</p>
+
+<h3 id="5-speed-of-light-and-maxwells-equations">5. Speed of Light and Maxwell’s Equations</h3>
+<p>a) Using Maxwell’s equation c = 1/√(μ₀ε₀), calculate the speed of light given that μ₀ = 4π × 10^-7 H/m and ε₀ = 8.85 × 10^-12 F/m.</p>
+
+<p>b) If the index of refraction of water is 1.33, what is the speed of light in water?</p>
+
+<p>c) Briefly explain the historical significance of Maxwell’s discovery that light is an electromagnetic wave.</p>
+
+<h3 id="6-integrated-problem">6. Integrated Problem</h3>
+<p>A physics student performs a Young’s double-slit experiment using light with wavelength λ = 550 nm. The slits are separated by distance d = 0.2 mm, and the screen is placed L = 1.5 m away.</p>
+
+<p>a) Calculate the distance between adjacent bright fringes on the screen.</p>
+
+<p>b) If a thin film of plastic (n = 1.4) is placed over one of the slits, how does this affect the interference pattern? Explain quantitatively.</p>
+
+<p>c) If the entire apparatus is now submerged in water (n = 1.33), how would the pattern change compared to the original setup in air?</p>
+
+<h2 id="challenge-problem">Challenge Problem</h2>
+<p>Light of wavelength 600 nm passes through a combination of a single slit of width 0.05 mm followed by two narrow slits separated by 0.2 mm. Describe and sketch the resulting pattern on a distant screen. How does this pattern differ from either pure single-slit diffraction or pure double-slit interference?</p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+<ul>
+  <li>Calculate relationships between wavelength, frequency, and speed of light</li>
+  <li>Predict and analyze interference patterns from multiple sources</li>
+  <li>Apply wave principles to explain diffraction phenomena</li>
+  <li>Understand the electromagnetic nature of light</li>
+  <li>Connect theoretical principles to experimental setups</li>
+</ul>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="1-wave-basics-1">1. Wave Basics</h3>
+<p>a) Using c = λf, where c = 3 × 10^8 m/s and λ = 550 × 10^-9 m:
+   f = c/λ = (3 × 10^8)/(550 × 10^-9) = 5.45 × 10^14 Hz</p>
+
+<p>b) Using c = λf, where c = 3 × 10^8 m/s and f = 100 × 10^6 Hz:
+   λ = c/f = (3 × 10^8)/(100 × 10^6) = 3 m</p>
+
+<p>c) The speed of light is constant in vacuum because it depends only on fundamental electromagnetic properties of free space (permittivity and permeability). In a medium, light interacts with atoms and molecules, which causes delays in light propagation, effectively reducing its speed. The index of refraction n = c/v quantifies this change in speed.</p>
+
+<h3 id="2-double-slit-interference-1">2. Double-Slit Interference</h3>
+<p>a) For constructive interference, d sin θ = mλ
+   For the third bright fringe, m = 3:
+   sin θ = mλ/d = 3 × (480 × 10^-9)/(0.15 × 10^-3) = 0.00960
+   θ = sin^-1(0.00960) ≈ 0.550°</p>
+
+<p>b) For adjacent bright fringes, the spacing y = Lλ/d
+   Rearranging: λ = yd/L = (8 × 10^-3 m × 0.3 × 10^-3 m)/(2 m) = 1.2 × 10^-6 m = 1200 nm</p>
+
+<p>c) i. If wavelength increases: The angular separation between fringes increases (sin θ = mλ/d), making the fringe pattern wider.
+   ii. If slit distance decreases: The angular separation increases (sin θ = mλ/d), making the fringe pattern wider.
+   iii. In water: The effective wavelength decreases (λ_water = λ_air/n), making the fringe pattern narrower.</p>
+
+<h3 id="3-single-slit-diffraction-1">3. Single-Slit Diffraction</h3>
+<p>a) For the first minimum in single-slit diffraction: a sin θ = λ
+   sin θ = λ/a = (620 × 10^-9)/(0.2 × 10^-3) = 0.00310
+   θ = sin^-1(0.00310) ≈ 0.178°</p>
+
+<p>b) a sin θ = λ
+   a = λ/sin θ = (632.8 × 10^-9)/(sin(0.1°)) = (632.8 × 10^-9)/(0.00175) = 0.362 mm</p>
+
+<p>c) Double-slit interference produces equally spaced bright and dark fringes of equal width. Single-slit diffraction produces a bright central maximum that’s twice as wide as the other maxima, with minima of zero intensity. In double-slit, intensity alternates evenly; in single-slit, intensity decreases for higher-order maxima.</p>
+
+<h3 id="4-diffraction-gratings-1">4. Diffraction Gratings</h3>
+<p>a) For diffraction grating: d sin θ = mλ, where d = 1/(500 lines/mm) = 2 × 10^-6 m
+   For violet light (first-order, m = 1): sin θ_violet = λ_violet/d = (410 × 10^-9)/(2 × 10^-6) = 0.205
+   θ_violet = sin^-1(0.205) ≈ 11.8°</p>
+
+<p>For red light (first-order, m = 1): sin θ_red = λ_red/d = (660 × 10^-9)/(2 × 10^-6) = 0.330
+   θ_red = sin^-1(0.330) ≈ 19.3°</p>
+
+<p>b) For second-order (m = 2): sin θ = mλ/d, where d = 1/(300 lines/mm) = 3.33 × 10^-6 m
+   For λ_1 = 480 nm: sin θ_1 = 2(480 × 10^-9)/(3.33 × 10^-6) = 0.288
+   θ_1 = sin^-1(0.288) ≈ 16.7°</p>
+
+<p>For λ_2 = 620 nm: sin θ_2 = 2(620 × 10^-9)/(3.33 × 10^-6) = 0.372
+   θ_2 = sin^-1(0.372) ≈ 21.9°</p>
+
+<p>Angular separation = θ_2 - θ_1 = 21.9° - 16.7° = 5.2°</p>
+
+<h3 id="5-speed-of-light-and-maxwells-equations-1">5. Speed of Light and Maxwell’s Equations</h3>
+<p>a) c = 1/√(μ₀ε₀) = 1/√((4π × 10^-7)(8.85 × 10^-12)) = 1/√(1.11 × 10^-17) = 3.00 × 10^8 m/s</p>
+
+<p>b) v = c/n = (3 × 10^8)/(1.33) = 2.26 × 10^8 m/s</p>
+
+<p>c) Maxwell’s discovery unified electricity, magnetism, and optics by showing that light is an electromagnetic wave. This explained the wave-like properties of light and predicted the existence of other electromagnetic waves with different wavelengths (radio waves, X-rays, etc.). It was a major scientific breakthrough that led to wireless communication and modern physics.</p>
+
+<h3 id="6-integrated-problem-1">6. Integrated Problem</h3>
+<p>a) The distance between adjacent bright fringes: y = Lλ/d
+   y = (1.5 m × 550 × 10^-9 m)/(0.2 × 10^-3 m) = 4.125 × 10^-3 m = 4.13 mm</p>
+
+<p>b) With plastic over one slit, the light through that slit travels through a medium with index n = 1.4, causing a phase shift.
+   The path difference is: Δx = t × (n - 1) where t is thickness
+   This shifts the central maximum and changes the interference pattern. If the film thickness causes a phase shift of π, the central maximum becomes a minimum. The specific pattern depends on the plastic thickness.</p>
+
+<p>c) In water (n = 1.33), the wavelength of light becomes: λ_water = λ_air/1.33 = 550/1.33 = 413.5 nm
+   The new fringe spacing would be: y_water = Lλ_water/d = (1.5 × 413.5 × 10^-9)/(0.2 × 10^-3) = 3.10 mm
+   The fringe pattern becomes narrower by a factor of 1.33 compared to the original pattern in air.</p>
+
+<h3 id="challenge-problem-solution">Challenge Problem Solution</h3>
+<p>The single slit of width 0.05 mm creates a diffraction pattern that modulates the intensity of the double-slit interference pattern. The single slit creates a broad diffraction envelope while the double slits create closely spaced interference fringes within this envelope.</p>
+
+<p>The central maximum from the single-slit diffraction has angular width approximately 2λ/a ≈ 2(600 × 10^-9)/(0.05 × 10^-3) ≈ 0.024 rad ≈ 1.4°</p>
+
+<p>Within this envelope, the double-slit interference creates fringes separated by angular spacing λ/d = (600 × 10^-9)/(0.2 × 10^-3) = 0.003 rad ≈ 0.17°</p>
+
+<p>This means approximately 8 interference maxima fit within the central diffraction maximum. The pattern shows bright and dark bands (from double-slit) modulated by an intensity envelope (from single-slit) that decreases away from the center.</p>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Honors Physics - Electrics Storyline | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="honors-physics---electrics-storyline">Honors Physics - Electrics Storyline</h1>
+
+<p>Firstly, we must acknowledge the foundational observations. The ancient Greeks, notably <strong>Thales of Miletus</strong>, were among the first to note the curious attraction of amber when rubbed with cloth. While their understanding was rudimentary, it represents the genesis of our exploration. I would suggest, for your standard class, a brief discussion of this initial observation, emphasizing the spirit of inquiry that drove it. For your honors students, we might delve into the limitations of their understanding, contrasting it with our modern perspective.</p>
+
+<p>Next, we arrive at the era of <strong>William Gilbert</strong>, in the late 16th century. Gilbert, a physician and natural philosopher, coined the term “electricus” from the Greek word for amber, and systematically investigated the phenomena of attraction and repulsion. He distinguished between electrical and magnetic effects, a crucial step in the development of our understanding. I believe a demonstration of Gilbert’s experiments, perhaps using a simple electrostatic generator, would be quite engaging.</p>
+
+<p>Then, of course, we have <strong>Benjamin Franklin</strong> and his famous kite experiment. While the veracity of the full account has been debated – one must always maintain a degree of scholarly skepticism, sir – the story itself serves as a powerful illustration of scientific curiosity and the willingness to test hypotheses, even in the face of potential peril. It provides a splendid opportunity to discuss the importance of controlled experimentation and the dangers of hasty conclusions.</p>
+
+<p>Moving into the 18th century, <strong>Charles-Augustin de Coulomb’s</strong> work is paramount. His law, which quantifies the force between electric charges, is the cornerstone of our understanding of electrostatics. I would suggest a discussion of Coulomb’s torsion balance and the meticulousness required to obtain accurate measurements. For your honors students, we might explore the mathematical derivation of Coulomb’s law, emphasizing the role of calculus.</p>
+
+<p>Finally, we arrive at the work of <strong>Alessandro Volta</strong> and the invention of the voltaic pile – the first true battery. This invention, sir, was revolutionary, allowing for a continuous flow of electric current and paving the way for countless subsequent discoveries. It provides a fitting conclusion to our storyline, demonstrating the transformative power of scientific innovation.</p>
+
+<h4 id="unit-electrostatics--a-historical-and-mathematical-exploration">Unit: Electrostatics – A Historical and Mathematical Exploration</h4>
+
+<p>I. Foundations: The Dawn of Electric Understanding (Historical Narrative)</p>
+<ul>
+  <li>A. Ancient Observations (Thales of Miletes) – <em>Introduction to the phenomenon</em></li>
+  <li>B. William Gilbert and the Term “Electricus” – <em>Distinguishing electrical and magnetic effects</em></li>
+  <li>C. Benjamin Franklin’s Kite Experiment – <em>Discussion of experimental methodology and potential pitfalls</em></li>
+</ul>
+
+<p>II. Quantifying the Force: Coulomb’s Law (Mathematical Concept/Formula)</p>
+
+<ul>
+  <li>A. Coulomb’s Experiment and the Torsion Balance – <em>Detailed explanation of the experimental setup</em></li>
+  <li>B. Formulation of Coulomb’s Law: F = k - q1 - q2 / r² – <em>Mathematical derivation and explanation of variables</em></li>
+  <li>C. Constant k: Relationship to permittivity of free space – <em>Connecting the constant to fundamental physical properties</em></li>
+</ul>
+
+<p>III. Evidence and Validation: Experimental Verification (Observational Evidence &amp; Experiment)</p>
+<ul>
+  <li>A. Replicating Coulomb’s Experiment – <em>Demonstration of the torsion balance and measurement of electrostatic force</em></li>
+  <li>B. Cavendish’s Determination of ‘k’ – <em>Highlighting the precision required for accurate measurements</em></li>
+  <li>C. Modern Applications: Electrostatic Painting &amp; Xerography – <em>Illustrating the practical relevance of Coulomb’s Law</em></li>
+</ul>
+
+<p>IV. Application and Mastery: Problem Solving (Problem Sets/Practice Calculations)</p>
+<ul>
+  <li>A. Basic Calculations: Force between two point charges – <em>Reinforcing the application of Coulomb’s Law</em></li>
+  <li>B. Superposition Principle: Calculating net force on a charge – <em>Introducing vector addition and complex scenarios</em></li>
+  <li>C. Electric Field: Calculating the field due to point charges – <em>Bridging the concept of force and field</em></li>
+  <li>D. Challenging Problems: Applying principles to real-world scenarios – <em>Encouraging critical thinking and problem-solving skills</em></li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

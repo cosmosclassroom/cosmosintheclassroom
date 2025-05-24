@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>HTML Reference | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style>
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <toc></toc>
+
+<h1 id="reference--html">Reference | HTML</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Document Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+<h3 id="body-would-then-be">Body would then be</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;html&gt;
+&lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<h2 id="section-types">Section Types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt;</code></td>
+      <td>: Declares the document type.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;html lang="en"&gt;</code></td>
+      <td>: The root element, specifies the document language.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;head&gt;</code></td>
+      <td>: Contains meta-information about the HTML document (title, character set, etc.).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;meta charset="UTF-8"&gt;</code></td>
+      <td>: Sets the character encoding for proper display of various symbols.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;meta name="viewport" ...&gt;</code></td>
+      <td>: Configures the viewport for responsive design.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;title&gt;</code></td>
+      <td>Your Document Title&lt;/title&gt;: The title that appears in the browser tab.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;body&gt;</code></td>
+      <td>: Contains the visible page content.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="semantic-sectioning">Semantic Sectioning:</h2>
+
+<p>Use these elements to structure your content logically:
+Element|Layout</p>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;header&gt;</code></td>
+          <td>Introductory content for a section or the entire document (e.g., title, author, abstract).</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code></td>
+          <td>Contains navigation links (less common for typical academic papers, but useful for online versions or supplementary materials).</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;main&gt;</code></td>
+          <td>The primary content of the document.</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;article&gt;</code></td>
+          <td>A self-contained composition in a document, page, application, or site (e.g., a chapter, a section with a specific focus).</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;section&gt;</code></td>
+          <td>A thematic grouping of content within an &lt;article&gt; or &lt;main&gt;. Use when content forms a related set.</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;aside&gt;</code></td>
+          <td>Content tangentially related to the main content (e.g., sidebars, supplementary notes).</td>
+        </tr>
+        <tr>
+          <td><code class="language-plaintext highlighter-rouge">&lt;footer&gt;</code></td>
+          <td>Contains footer information for a section or the entire document (e.g., copyright, acknowledgments, contact info).</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTML
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Research Paper Title&lt;/h1&gt;
+        &lt;p&gt;Authors: John Doe, Jane Smith&lt;/p&gt;
+        &lt;p&gt;Abstract: A brief summary of the research.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;section id="introduction"&gt;
+                &lt;h2&gt;Introduction&lt;/h2&gt;
+                &lt;p&gt;Background information and research question.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section id="methods"&gt;
+                &lt;h2&gt;Methods&lt;/h2&gt;
+                &lt;p&gt;Description of the experimental setup and procedures.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section id="results"&gt;
+                &lt;h2&gt;Results&lt;/h2&gt;
+                &lt;p&gt;Presentation of the findings.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section id="discussion"&gt;
+                &lt;h2&gt;Discussion&lt;/h2&gt;
+                &lt;p&gt;Interpretation of the results and their significance.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section id="conclusion"&gt;
+                &lt;h2&gt;Conclusion&lt;/h2&gt;
+                &lt;p&gt;Summary of the main findings and future directions.&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;© 2025 John Doe and Jane Smith&lt;/p&gt;
+        &lt;p&gt;Contact: john.doe@email.com&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+
+<h3 id="figures-and-tables">Figures and Tables:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;figure&gt;</code></td>
+      <td>Represents self-contained content, often with a caption (e.g., images, `diagrams, code snippets).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;img&gt;</code></td>
+      <td>Embeds an image. Use the src attribute for the image path and alt for `alternative text.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;figcaption&gt;</code></td>
+      <td>Provides a caption for the <code class="language-plaintext highlighter-rouge">&lt;figure&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;table&gt;</code></td>
+      <td>Creates a table for presenting data.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;thead&gt;</code></td>
+      <td>Contains the table header rows (<code class="language-plaintext highlighter-rouge">&lt;th&gt;</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;tbody&gt;</code></td>
+      <td>Contains the main table data rows (<code class="language-plaintext highlighter-rouge">&lt;tr&gt;</code>) with data cells (<code class="language-plaintext highlighter-rouge">&lt;td&gt;</code>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;tfoot&gt;</code></td>
+      <td>Contains the table footer rows (optional).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;caption&gt;</code></td>
+      <td>Provides a title for the <code class="language-plaintext highlighter-rouge">&lt;table&gt;</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h5 id="example">Example:</h5>
+
+<p>Example of an html code for a table</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTML
+&lt;figure&gt;
+    &lt;img src="figure1.png" alt="Graph showing experimental results"&gt;
+    &lt;figcaption&gt;Figure 1: Experimental results over time.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;table&gt;
+    &lt;caption&gt;Table 1: Summary of Statistical Analysis&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Variable&lt;/th&gt;
+            &lt;th&gt;Mean&lt;/th&gt;
+            &lt;th&gt;Standard Deviation&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Group A&lt;/td&gt;
+            &lt;td&gt;10.5&lt;/td&gt;
+            &lt;td&gt;2.1&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Group B&lt;/td&gt;
+            &lt;td&gt;12.3&lt;/td&gt;
+            &lt;td&gt;1.8&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+</code></pre></div></div>
+<p>HTML</p>
+<figure>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="figure1.png" alt="Graph showing experimental results"&gt;
+&lt;figcaption&gt;Figure 1: Experimental results over time.&lt;/figcaption&gt;
+</code></pre></div>  </div>
+</figure>
+
+<table>
+    <caption>Table 1: Summary of Statistical Analysis</caption>
+    <thead>
+        <tr>
+            <th>Variable</th>
+            <th>Mean</th>
+            <th>Standard Deviation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Group A</td>
+            <td>10.5</td>
+            <td>2.1</td>
+        </tr>
+        <tr>
+            <td>Group B</td>
+            <td>12.3</td>
+            <td>1.8</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="mathematical-content">Mathematical Content:</h3>
+
+<p>While HTML itself doesn’t render complex mathematical notation, you can integrate it using:</p>
+
+<p><em>MathML</em>: A markup language for describing mathematical notation within HTML. Requires browser support or JavaScript libraries for rendering.
+LaTeX via JavaScript Libraries: Libraries like MathJax or KaTeX can render LaTeX equations within your HTML. This is a common approach in scientific writing.</p>
+
+<p>Example (using MathJax - requires including the library in your <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>):</p>
+<pre><code class="language-HTML">&lt;p&gt;The equation for Einstein's theory of relativity is:&lt;/p&gt;
+&lt;p&gt;$$E = mc^2$$&lt;/p&gt;
+</code></pre>
+
+<html>
+<p>The equation for Einstein's theory of relativity is:</p>
+<p>$$E = mc^2$$</p>
+</html>
+
+<h4 id="citations-and-references">Citations and References:</h4>
+
+<p>While HTML doesn’t have specific citation elements, you can use standard text and potentially link to a bibliography section.
+Consider using JavaScript libraries or server-side processing for more sophisticated citation management.
+A simple approach is to have a dedicated &lt;section&gt; for “References” at the end.</p>
+
+<p>Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTML
+&lt;p&gt;As demonstrated in previous research [Doe et al., 2020]...&lt;/p&gt;
+
+&lt;section id="references"&gt;
+    &lt;h2&gt;References&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Doe, J., Smith, J., &amp; Brown, K. (2020). Title of the Research Paper. &lt;em&gt;Journal Name&lt;/em&gt;, &lt;em&gt;Volume&lt;/em&gt;(Issue), pages.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre></div></div>
+
+<ol>
+  <li>Metadata (within &lt;head&gt;):</li>
+</ol>
+
+<meta name="author" content="Your Name" />
+<p>: Specifies the author of the document.</p>
+<meta name="keywords" content="keywords, relevant, to, your, research" />
+<p>: Keywords for search engines.</p>
+<meta name="description" content="A brief description of your document." />
+<p>: Description for search engine results.</p>
+
+<ol>
+  <li>Tips for Academic/Scientific Style:</li>
+</ol>
+
+<p>Prioritize Semantic Markup: Use elements that accurately describe the content’s meaning.
+Keep it Clean and Simple: Avoid excessive styling in the HTML itself. Use CSS for visual presentation.
+Accessibility: Ensure your content is accessible to everyone by using appropriate alt text for images and clear semantic structure.
+Validation: Validate your HTML to ensure it is well-formed.</p>
+
+<p>This cheat sheet provides a foundation for structuring your academic and scientific writing in HTML. Remember to adapt it to the specific requirements of your document and consider using CSS for styling and JavaScript for enhanced functionality.</p>
+
+<h1 id="html-formatting-reference-for-academic-writing-markdown-friendly">HTML Formatting Reference for Academic Writing (Markdown-Friendly)</h1>
+
+<p>This reference guide covers HTML elements that are useful for academic writing and compatible with Markdown documents. These HTML elements can be embedded directly within Markdown files to enhance layout and formatting options.</p>
+
+<h2 id="document-structure-elements">Document Structure Elements</h2>
+
+<h3 id="article">Article</h3>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>Section Title<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Content goes here. Useful for self-contained compositions like papers or reports.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</code></pre></div></div>
+
+<h3 id="section">Section</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Subsection Heading<span class="nt">&lt;/h3&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Groups related content together. Good for organizing chapters or major divisions.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h2 id="layout-elements">Layout Elements</h2>
+
+<h3 id="columns">Columns</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display: flex; gap: 20px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Column 1<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>First column content here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"flex: 1;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Column 2<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Second column content here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="grid-layout">Grid Layout</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div&gt;</span>Item 4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="academic-elements">Academic Elements</h2>
+
+<h3 id="figure-with-caption">Figure with Caption</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"image.jpg"</span> <span class="na">alt=</span><span class="s">"Description of image"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;figcaption&gt;</span>Figure 1: Detailed description of the figure. (Source: Citation)<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div></div>
+
+<h3 id="block-quote-with-citation">Block Quote with Citation</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;blockquote&gt;</span>
+  <span class="nt">&lt;p&gt;</span>The quoted text goes here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;cite&gt;</span>— Author Name, <span class="nt">&lt;i&gt;</span>Publication Title<span class="nt">&lt;/i&gt;</span>, Year<span class="nt">&lt;/cite&gt;</span>
+<span class="nt">&lt;/blockquote&gt;</span>
+</code></pre></div></div>
+
+<h3 id="table-with-caption">Table with Caption</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;figure&gt;</span>
+  <span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;caption&gt;</span>Table 1: Description of data presented<span class="nt">&lt;/caption&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Column 1<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>Column 2<span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Data 1<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>Data 2<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+  <span class="nt">&lt;figcaption&gt;</span>Note: Additional information about the table data or methodology.<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div></div>
+
+<h2 id="footnotes--references">Footnotes &amp; References</h2>
+
+<h3 id="footnote">Footnote</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>This sentence needs a footnote<span class="nt">&lt;sup</span> <span class="na">id=</span><span class="s">"fnref1"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#fn1"</span><span class="nt">&gt;</span>1<span class="nt">&lt;/a&gt;&lt;/sup&gt;</span>.<span class="nt">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- At the end of the document: --&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"footnotes"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ol&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">"fn1"</span><span class="nt">&gt;</span>Footnote content here. <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#fnref1"</span><span class="nt">&gt;</span>↩<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</code></pre></div></div>
+
+<h3 id="definition-list-glossary">Definition List (Glossary)</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;dl&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>Term<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>Definition or explanation of the term.<span class="nt">&lt;/dd&gt;</span>
+  
+  <span class="nt">&lt;dt&gt;</span>Another Term<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>Its definition.<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+</code></pre></div></div>
+
+<h2 id="styling--semantic-elements">Styling &amp; Semantic Elements</h2>
+
+<h3 id="text-highlighting">Text Highlighting</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;mark&gt;</span>Highlighted text<span class="nt">&lt;/mark&gt;</span> for emphasis or to indicate relevance.
+</code></pre></div></div>
+
+<h3 id="subscript--superscript">Subscript &amp; Superscript</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>H<span class="nt">&lt;sub&gt;</span>2<span class="nt">&lt;/sub&gt;</span>O (subscript)
+E = mc<span class="nt">&lt;sup&gt;</span>2<span class="nt">&lt;/sup&gt;</span> (superscript)
+</code></pre></div></div>
+
+<h3 id="code-or-variable">Code or Variable</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;code&gt;</span>var = function()<span class="nt">&lt;/code&gt;</span> for inline code
+<span class="nt">&lt;var&gt;</span>x<span class="nt">&lt;/var&gt;</span> for mathematical variables
+</code></pre></div></div>
+
+<h3 id="abbreviation-with-full-form">Abbreviation with Full Form</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;abbr</span> <span class="na">title=</span><span class="s">"Full form of the abbreviation"</span><span class="nt">&gt;</span>Abbr<span class="nt">&lt;/abbr&gt;</span>
+</code></pre></div></div>
+
+<h2 id="accessibility-elements">Accessibility Elements</h2>
+
+<h3 id="details--summary-expandable-content">Details &amp; Summary (Expandable Content)</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;details&gt;</span>
+  <span class="nt">&lt;summary&gt;</span>Click to expand for additional information<span class="nt">&lt;/summary&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Extended content that appears when expanded. Good for supplementary material.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/details&gt;</span>
+</code></pre></div></div>
+
+<h3 id="keyboard-navigation">Keyboard Navigation</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">tabindex=</span><span class="s">"0"</span> <span class="na">role=</span><span class="s">"button"</span><span class="nt">&gt;</span>Interactive element<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h1 id="html-div-and-containers-reference-guide">HTML Div and Containers Reference Guide</h1>
+
+<h2 id="what-is-a-div">What is a &lt;div&gt;?</h2>
+<ul>
+  <li>A &lt;div&gt; is a block-level container element used to group and structure content</li>
+  <li>Stands for “division” and provides a way to create logical sections in HTML</li>
+  <li>By default, takes up the full width of its parent container</li>
+  <li>Primarily used for layout and styling purposes</li>
+</ul>
+
+<h2 id="basic-usage">Basic Usage</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"section"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Content inside nested divs<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="key-attributes">Key Attributes</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">class</code>: Assign CSS classes for styling</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code>: Unique identifier for specific targeting</li>
+  <li><code class="language-plaintext highlighter-rouge">style</code>: Inline styling (use sparingly)</li>
+</ul>
+
+<h2 id="container-types">Container Types</h2>
+<ol>
+  <li><strong>Block Containers</strong>
+    <ul>
+      <li>Full-width elements that stack vertically</li>
+      <li>Examples: <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;article&gt;</code></li>
+    </ul>
+  </li>
+  <li><strong>Inline Containers</strong>
+    <ul>
+      <li>Content flows inline</li>
+      <li>Examples: <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;label&gt;</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="common-container-patterns">Common Container Patterns</h2>
+<h3 id="flexbox-container">Flexbox Container</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-between</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="grid-container">Grid Container</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-item"</span><span class="nt">&gt;</span>Grid Cell 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-item"</span><span class="nt">&gt;</span>Grid Cell 2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.grid-container</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+  <li>Use semantic HTML5 elements when possible (e.g., <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;article&gt;</code>)</li>
+  <li>Keep divs meaningful and avoid excessive nesting</li>
+  <li>Use classes for styling, IDs for unique JavaScript interactions</li>
+  <li>Prioritize accessibility and meaningful structure</li>
+</ul>
+
+<h2 id="performance-tips">Performance Tips</h2>
+<ul>
+  <li>Minimize unnecessary div wrappers</li>
+  <li>Use CSS Grid or Flexbox for efficient layouts</li>
+  <li>Consider using CSS <code class="language-plaintext highlighter-rouge">display</code> properties for advanced structuring</li>
+</ul>
+
+<h1 id="html-div-and-containers-reference-guide-1">HTML Div and Containers Reference Guide</h1>
+
+<h2 id="what-is-a-div-1">What is a &lt;div&gt;?</h2>
+<ul>
+  <li>A &lt;div&gt; is a block-level container element used to group and structure content</li>
+  <li>Stands for “division” and provides a way to create logical sections in HTML</li>
+  <li>By default, takes up the full width of its parent container</li>
+  <li>Primarily used for layout and styling purposes</li>
+</ul>
+
+<h2 id="basic-usage-1">Basic Usage</h2>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"section"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Content inside nested divs<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="key-attributes-1">Key Attributes</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">class</code>: Assign CSS classes for styling</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code>: Unique identifier for specific targeting</li>
+  <li><code class="language-plaintext highlighter-rouge">style</code>: Inline styling (use sparingly)</li>
+</ul>
+
+<h2 id="container-types-1">Container Types</h2>
+<ol>
+  <li><strong>Block Containers</strong>
+    <ul>
+      <li>Full-width elements that stack vertically</li>
+      <li>Examples: <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;article&gt;</code></li>
+    </ul>
+  </li>
+  <li><strong>Inline Containers</strong>
+    <ul>
+      <li>Content flows inline</li>
+      <li>Examples: <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;label&gt;</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="common-container-patterns-1">Common Container Patterns</h2>
+<h3 id="flexbox-container-1">Flexbox Container</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-item"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"flex-item"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.flex-container</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+    <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-between</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="grid-container-1">Grid Container</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-item"</span><span class="nt">&gt;</span>Grid Cell 1<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"grid-item"</span><span class="nt">&gt;</span>Grid Cell 2<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.grid-container</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">grid</span><span class="p">;</span>
+    <span class="py">grid-template-columns</span><span class="p">:</span> <span class="m">1</span><span class="n">fr</span> <span class="m">1</span><span class="n">fr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="best-practices-1">Best Practices</h2>
+<ul>
+  <li>Use semantic HTML5 elements when possible (e.g., <code class="language-plaintext highlighter-rouge">&lt;section&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;article&gt;</code>)</li>
+  <li>Keep divs meaningful and avoid excessive nesting</li>
+  <li>Use classes for styling, IDs for unique JavaScript interactions</li>
+  <li>Prioritize accessibility and meaningful structure</li>
+</ul>
+
+<h2 id="performance-tips-1">Performance Tips</h2>
+<ul>
+  <li>Minimize unnecessary div wrappers</li>
+  <li>Use CSS Grid or Flexbox for efficient layouts</li>
+  <li>Consider using CSS <code class="language-plaintext highlighter-rouge">display</code> properties for advanced structuring</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
