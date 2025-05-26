@@ -232,12 +232,52 @@
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
       <style>
+  body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .header {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 600% 600%;
+    animation: gradientBG 30s ease infinite;
+    border-radius: 0 0 1rem 1rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
   .flexbox {
     display: flex;
     padding: 16px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 3rem;
+  }
+  button {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
   }
   .card {
     margin: 0;
@@ -248,6 +288,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-width: 300px;
     background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .card.honors {
+    border-top: 4px solid #4285F4;
+  }
+  .card.standard {
+    border-top: 4px solid #34A853;
   }
   .card h1 {
     font-size: 1.5em;
@@ -257,6 +308,14 @@
     border-radius: 0.5rem;
     background-color: var(--color-primary, #f0f0f0);
     color: #333;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-top: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eaeaea;
   }
   .card ul {
     list-style-type: none;
@@ -284,35 +343,54 @@
     color: #1c4b70;
     text-decoration: underline;
   }
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #eaeaea;
+  }
 </style>
 
-<div class="flexbox">
-  <div class="card">
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h1&gt;Honors Physics&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href="src/hphys/q4_flexbook.md"&gt;Q4 Flexbook - Honors Physics&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</code></pre></div>    </div>
-  </div>
+<!-- 
+<div class="header" role="banner">
+  <h1>Cosmos in the Classroom</h1>
+  <p>Exploring the universe through physics education</p>
+</div>
 
-  <div class="card">
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h1&gt;Standard Physics&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;P5 Waves and Information&lt;/li&gt;
-  &lt;li&gt;P3 Force, Motion, and Collisions
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href="src/sphys/p3_force_collisions/p3l1-safety-statistics/p3l1_flexbook.md"&gt;L1 Historical Data&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="src/sphys/p3_force_collisions/p3l2-distracted-driving/p3l2_flexbook.md"&gt;L2 Motion, Position-Time Graphs&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="src/sphys/p3_force_collisions/p3l3-speed-avoiding/p3l3_flexbook.md"&gt;L3 Speed, Velocity-Time Graphs&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href="src/sphys/p3_force_collisions/p3l4-speed-collisions/p3l4_flexbook.md"&gt;L4 Mass, Velocity, and Force&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;L5 Mass, Speed, and Force&lt;/li&gt;
-      &lt;li&gt;L6 Momentum and Impulse Carts&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</code></pre></div>    </div>
+<div class='flexbox'>
+  <div class='card honors' role="region" aria-label="Honors Physics Resources">
+    <h1>Honors Physics</h1>
+    <p class="section-title">Course Materials</p>
+    <ul>
+      <li><a href="src/hphys/q4_flexbook.md">Q4 Flexbook - Honors Physics</a></li>
+    </ul>
+  </div>
+  
+  <div class='card standard' role="region" aria-label="Standard Physics Resources">
+    <h1>Standard Physics</h1>
+    <p class="section-title">Course Units</p>
+    <ul>
+      <li>P5 Waves and Information</li>
+      <li>P3 Force, Motion, and Collisions
+        <ul>
+          <li><button href="src/sphys/p3_force_collisions/p3l1-safety-statistics/p3l1_flexbook.md">L1 Historical Data</button></li>
+          <li><button href="src/sphys/p3_force_collisions/p3l2-distracted-driving/p3l2_flexbook.md">L2 Motion, Position-Time Graphs</button></li>
+          <li><button href="src/sphys/p3_force_collisions/p3l3-speed-avoiding/p3l3_flexbook.md">L3 Speed, Velocity-Time Graphs</button></li>
+          <li><button href="src/sphys/p3_force_collisions/p3l4-speed-collisions/p3l4_flexbook.md">L4 Mass, Velocity, and Force</button></li>
+          <li>L5 Mass, Speed, and Force</li>
+          <li>L6 Momentum and Impulse Carts</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>
+
+<div class="footer" role="contentinfo">
+  <p>© 2025 Cosmos in the Classroom | Created by Jonathan Corbett</p>
+  <p>Last updated: March 23, 2025</p>
+</div> -->
 
     
     </div>

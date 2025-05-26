@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore the relationship between mass, speed, and force in collisions. Understand how these factors influence the outcomes of collisions in physics.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>P3L5 Mass, Speed, and Force | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="p3l5-mass-speed-and-force">P3L5: Mass, Speed, and Force</h1>
+<p><em>Is there a similar mathematical relationship between the masses and the changes in velocity for two objects in any other collision conditions?</em></p>
+
+<hr />
+
+<h2 id="part-i-testing-our-mathematical-model">Part I: Testing Our Mathematical Model</h2>
+
+<h3 id="investigation-question">Investigation Question</h3>
+<p>In our previous lesson, we discovered a mathematical relationship between mass and velocity changes in collisions:</p>
+
+\[\frac{m_A}{m_B} = -\frac{\Delta v_B}{\Delta v_A}\]
+
+<p>But does this relationship hold for different collision conditions beyond what we’ve tested?</p>
+
+<div class="checkpoint">
+
+  <h1 id="checkpoint-1-make-a-prediction">Checkpoint 1: Make a Prediction</h1>
+
+  <p>Based on our previous findings, predict whether you think this mathematical relationship will work for:</p>
+  <ul>
+    <li>Elastic collisions (where objects bounce apart)</li>
+    <li>Inelastic collisions (where objects stick together)</li>
+    <li>Collisions where both objects are moving initially</li>
+  </ul>
+
+  <p>Write your prediction and reasoning in your notebook.</p>
+
+</div>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-sim-main.png" alt="Collision Simulation Interface" style="width: 80%; height: auto; display: block; margin: 20px auto; border: 1px solid #ccc; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);" /></p>
+
+<h3 id="testing-with-simulation">Testing with Simulation</h3>
+<p>We’ll use a collision simulation to test our mathematical model systematically under various conditions:</p>
+<ul>
+  <li>Different mass ratios</li>
+  <li>Different initial velocities</li>
+  <li>Both elastic and inelastic collisions</li>
+</ul>
+
+<p><strong>Lab Activity</strong>: Complete the <a href="/sphys/p3l5/simulation-lab">P3L5 Collision Simulation Lab</a> to systematically test our mathematical relationship. The lab guide provides step-by-step instructions for:</p>
+<ul>
+  <li>Setting up different collision scenarios</li>
+  <li>Collecting accurate data using proper experimental design</li>
+  <li>Testing the mathematical relationship</li>
+  <li>Analyzing your results</li>
+</ul>
+
+<p>Follow the lab guide to conduct your investigation, then return here to learn about the deeper meaning of your discoveries.</p>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-before-after-collisions.png" alt="Before and after collision scenarios showing elastic vs inelastic collisions" style="width: 100%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<hr />
+
+<h2 id="part-ii-discovering-conservation">Part II: Discovering Conservation</h2>
+
+<h3 id="simplifying-our-equation">Simplifying Our Equation</h3>
+<p>When we cross-multiply our ratio equation, something important emerges:</p>
+
+<p>From: $\frac{m_A}{m_B} = -\frac{\Delta v_B}{\Delta v_A}$</p>
+
+<p>Cross-multiplying: $m_A \Delta v_A = -m_B \Delta v_B$</p>
+
+<p>Rearranging: $m_A \Delta v_A + m_B \Delta v_B = 0$</p>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-algebra-steps.png" alt="Visual representation of algebraic cross-multiplication steps" style="width: 70%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<div class="checkpoint">
+
+  <h1 id="checkpoint-2-understanding-conservation">Checkpoint 2: Understanding Conservation</h1>
+
+  <p>Look at the equation $m_A \Delta v_A + m_B \Delta v_B = 0$</p>
+
+  <p>What does this tell us about the quantity $m \times \Delta v$ in collisions? If the sum equals zero, what must be happening to this quantity for each object?</p>
+
+  <p>Discuss with your partner and be ready to share your thinking.</p>
+
+</div>
+
+<h3 id="the-conserved-quantity">The Conserved Quantity</h3>
+<p>The equation tells us that the quantity $m \times \Delta v$ appears to be <strong>conserved</strong> in collisions - what one object loses, the other gains exactly.</p>
+
+<p>This means that in any collision:</p>
+<ul>
+  <li>The total amount of $m \times \Delta v$ in the system remains constant</li>
+  <li>When one object’s $m \times \Delta v$ increases, the other’s decreases by the same amount</li>
+  <li>The overall change in the system is zero</li>
+</ul>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-conservation-balance.png" alt="Balance scale showing momentum change conservation between objects" style="width: 60%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<hr />
+
+<h2 id="part-iii-visualizing-with-geometry">Part III: Visualizing with Geometry</h2>
+
+<h3 id="rectangle-model">Rectangle Model</h3>
+<p>We can visualize the conserved quantity using rectangles where:</p>
+<ul>
+  <li><strong>Width</strong> = mass (kg)</li>
+  <li><strong>Height</strong> = change in velocity (m/s)</li>
+  <li><strong>Area</strong> = mass × change in velocity</li>
+</ul>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-rectangle-model.png" alt="Rectangle model showing mass times velocity change as area" style="width: 90%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<h3 id="example-3-kg-cart-collision">Example: 3 kg Cart Collision</h3>
+
+<p>A 3 kg cart is stationary before a collision and has a speed of 4 m/s after the collision.</p>
+
+<p><strong>Rectangle representation:</strong></p>
+<ul>
+  <li>Width = 3 kg</li>
+  <li>Height = 4 m/s</li>
+  <li>Area = 12 kg⋅m/s</li>
+</ul>
+
+<p>If this cart collides with a 6 kg cart, what would the second cart’s velocity change be?</p>
+
+<p>Using conservation: The second cart must have an area of -12 kg⋅m/s</p>
+<ul>
+  <li>Width = 6 kg</li>
+  <li>Height = -12 ÷ 6 = -2 m/s</li>
+</ul>
+
+<div class="checkpoint">
+
+  <h1 id="checkpoint-3-geometric-model-practice">Checkpoint 3: Geometric Model Practice</h1>
+
+  <p>Try this problem using the rectangle model:</p>
+
+  <p>A 2 kg cart changes velocity by +6 m/s in a collision. If it collides with a 4 kg cart, what must the 4 kg cart’s velocity change be?</p>
+
+  <p>Draw rectangles to represent both carts and verify that conservation is satisfied.</p>
+
+</div>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-rectangle-examples.png" alt="Multiple rectangle examples showing different mass ratios and conservation" style="width: 85%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<hr />
+
+<h2 id="part-iv-understanding-momentum">Part IV: Understanding Momentum</h2>
+
+<div class="contents">
+
+  <h3 id="notes-on-momentum-and-collisions">Notes on Momentum and Collisions</h3>
+  <p>Copy the following definitions and concepts into your science notebook for future reference.</p>
+
+  <p><strong>Key Definitions:</strong></p>
+
+  <ul>
+    <li><strong>Momentum (p)</strong>: The quantity of motion an object has
+      <ul>
+        <li>Formula: $p = mv$ (momentum = mass × velocity)</li>
+        <li>Units: kg⋅m/s</li>
+        <li>Momentum is a vector quantity (has both magnitude and direction)</li>
+      </ul>
+    </li>
+    <li><strong>Change in momentum (Δp)</strong>: How much an object’s momentum changes
+      <ul>
+        <li>Formula: $\Delta p = m \Delta v$ (mass × change in velocity)</li>
+        <li>This is the conserved quantity we discovered</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><strong>Types of Collisions:</strong></p>
+
+  <ul>
+    <li><strong>Elastic collision</strong>: Objects bounce apart after collision
+      <ul>
+        <li>Examples: billiard balls, bouncing superballs</li>
+        <li>Objects separate after impact</li>
+        <li>Both momentum and kinetic energy are conserved</li>
+      </ul>
+    </li>
+    <li><strong>Inelastic collision</strong>: Objects stick together or deform during collision
+      <ul>
+        <li>Examples: car crashes, putty balls hitting a wall</li>
+        <li>Objects may stick together or remain in contact</li>
+        <li>Momentum is conserved, but kinetic energy is not</li>
+      </ul>
+    </li>
+  </ul>
+
+</div>
+
+<h3 id="defining-momentum">Defining Momentum</h3>
+<p>The conserved quantity we discovered has a name: <strong>momentum</strong></p>
+
+<ul>
+  <li><strong>Momentum</strong> = mass × velocity (p = mv)</li>
+  <li><strong>Change in momentum</strong> = mass × change in velocity (Δp = mΔv)</li>
+</ul>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-momentum-definition.png" alt="Visual definition of momentum with example objects and calculations" style="width: 75%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<h3 id="conservation-of-momentum">Conservation of Momentum</h3>
+<p>Our equation can be rewritten to show momentum conservation:</p>
+
+<p><strong>Before collision:</strong> $p_A + p_B = m_A v_A + m_B v_B$</p>
+
+<p><strong>After collision:</strong> $p_A’ + p_B’ = m_A v_A’ + m_B v_B’$</p>
+
+<p><strong>Conservation principle:</strong> $p_A + p_B = p_A’ + p_B’$</p>
+
+<p>This tells us that the total momentum before a collision equals the total momentum after the collision.</p>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-momentum-conservation.png" alt="Before and after collision diagram with momentum vectors and calculations" style="width: 100%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<div class="checkpoint">
+
+  <h1 id="checkpoint-4-momentum-conservation">Checkpoint 4: Momentum Conservation</h1>
+
+  <p>Consider a 1500 kg car traveling at 20 m/s that collides with a stationary 1000 kg car.</p>
+
+  <ol>
+    <li>Calculate the total momentum before the collision</li>
+    <li>If the cars stick together after collision, what would their combined velocity be?</li>
+    <li>Verify that momentum is conserved in your answer</li>
+  </ol>
+
+  <p>Show all work in your notebook.</p>
+
+</div>
+
+<hr />
+
+<h2 id="part-v-applying-momentum-conservation">Part V: Applying Momentum Conservation</h2>
+
+<h3 id="real-world-predictions">Real-World Predictions</h3>
+<p>Using our momentum equations, we can predict outcomes in real collisions, such as:</p>
+<ul>
+  <li>Vehicle crashes and safety design</li>
+  <li>Sports impacts (football tackles, baseball collisions)</li>
+  <li>Spacecraft docking procedures</li>
+  <li>Any collision between two objects</li>
+</ul>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-real-world-examples.png" alt="Collection of real-world collision examples with momentum calculations" style="width: 100%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<h3 id="problem-solving-steps">Problem-Solving Steps</h3>
+<ol>
+  <li><strong>Identify</strong> the masses and initial velocities of both objects</li>
+  <li><strong>Apply</strong> conservation of momentum: $p_{before} = p_{after}$</li>
+  <li><strong>Solve</strong> for the unknown quantity using algebra</li>
+  <li><strong>Check</strong> if the answer makes physical sense</li>
+</ol>
+
+<p><img src="../../../../assets/images/p3_collisions/p3l5_images/p3l5-problem-solving-steps.png" alt="Step-by-step problem solution flowchart with worked example" style="width: 80%; height: auto; display: block; margin: 20px auto;" /></p>
+
+<h3 id="example-problem">Example Problem</h3>
+<p>A 6000 kg truck traveling at 30 m/s rear-ends a 1000 kg car traveling at 3 m/s.</p>
+
+<p><strong>Given:</strong></p>
+<ul>
+  <li>Truck: $m_1 = 6000$ kg, $v_1 = 30$ m/s</li>
+  <li>Car: $m_2 = 1000$ kg, $v_2 = 3$ m/s</li>
+  <li>After collision: truck velocity = 23 m/s ($v_1’ = 23$ m/s)</li>
+</ul>
+
+<p><strong>Find:</strong> Car’s final velocity ($v_2’$)</p>
+
+<p><strong>Solution:</strong>
+\(m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'\)</p>
+
+\[(6000)(30) + (1000)(3) = (6000)(23) + (1000)v_2'\]
+
+\[180,000 + 3,000 = 138,000 + 1000v_2'\]
+
+\[183,000 = 138,000 + 1000v_2'\]
+
+\[v_2' = 45 \text{ m/s}\]
+
+<div class="checkpoint">
+
+  <h1 id="checkpoint-5-real-world-application">Checkpoint 5: Real-World Application</h1>
+
+  <p>A hockey puck (0.16 kg) traveling at 25 m/s collides elastically with a stationary puck of the same mass.</p>
+
+  <p>Using momentum conservation and the fact that in elastic collisions between equal masses, the moving object stops and the stationary object takes on all the velocity:</p>
+
+  <ol>
+    <li>What will be the final velocity of each puck?</li>
+    <li>Calculate the momentum before and after to verify conservation</li>
+    <li>Explain why this result makes sense physically</li>
+  </ol>
+
+</div>
+
+<hr />
+
+<h2 id="key-vocabulary">Key Vocabulary</h2>
+
+<p><strong>Mathematical Symbols:</strong></p>
+<ul>
+  <li><strong>Delta (Δ)</strong>: Symbol representing “change in”</li>
+  <li><strong>p</strong>: Symbol for momentum</li>
+</ul>
+
+<p><strong>Collision Types:</strong></p>
+<ul>
+  <li><strong>Elastic collision</strong>: Objects bounce apart after collision</li>
+  <li><strong>Inelastic collision</strong>: Objects stick together or deform during collision</li>
+</ul>
+
+<p><strong>Physical Quantities:</strong></p>
+<ul>
+  <li><strong>Momentum</strong>: The product of mass and velocity (p = mv)</li>
+  <li><strong>Conservation</strong>: A physical quantity that remains constant in a closed system</li>
+</ul>
+
+<hr />
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+
+<p>Our discovery of momentum conservation raises new questions:</p>
+<ul>
+  <li>How does the <strong>force</strong> applied during a collision relate to momentum change?</li>
+  <li>How does the <strong>time duration</strong> of the collision affect the outcome?</li>
+  <li>Can we predict the forces involved if we know the momentum changes?</li>
+</ul>
+
+<p>These questions will guide our next investigation into the relationship between force, time, and momentum change - leading us to discover the <strong>impulse-momentum theorem</strong>.</p>
+
+<div class="checkpoint">
+
+  <h1 id="exit-ticket-momentum-conservation">Exit Ticket: Momentum Conservation</h1>
+
+  <p>Answer these questions on a half sheet of paper and turn it in at the end of class.</p>
+
+  <ol>
+    <li>What is momentum and how is it calculated?</li>
+    <li>State the law of conservation of momentum in your own words.</li>
+    <li>A 2 kg ball moving at 5 m/s collides with a 3 kg ball at rest. If they stick together, what is their final velocity?</li>
+    <li>How might understanding momentum conservation help engineers design safer vehicles?</li>
+  </ol>
+
+</div>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
