@@ -1,141 +1,50 @@
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
 import numpy as np
 
-def create_momentum_diagram(scenarios, title="Momentum Conservation", figsize=(12, 8)):
-    """
-    Create momentum conservation diagrams using rectangles.
+def create_emergency_braking_from_data():
+    """Create graph using the actual provided dataset"""
     
-    Parameters:
-    scenarios: list of dicts with 'mass', 'delta_v', 'label', 'color' keys
-    title: overall title for the figure
-    figsize: figure size tuple
-    """
+    fig, ax = plt.subplots(figsize=(10, 8))
     
-    fig, ax = plt.subplots(figsize=figsize)
+    # Use key data points from the provided dataset
+    # Reaction phase: 0 to 1.5s, linear from 0 to 30m
+    time_reaction = np.array([0.0, 0.5, 1.0, 1.5])
+    pos_reaction = np.array([0.0, 10.0, 20.0, 30.0])
     
-    # Calculate positions for rectangles
-    x_start = 0
-    x_spacing = 1.5
-    max_height = max([scenario['delta_v'] for scenario in scenarios])
-    max_width = max([scenario['mass'] for scenario in scenarios])
+    # Braking phase: 1.5 to 2.6s, from 30m to 42.1m
+    time_braking = np.array([1.5, 1.8, 2.0, 2.2, 2.4, 2.6])
+    pos_braking = np.array([30.0, 34.5, 37.0, 39.1, 40.8, 42.1])
     
-    rectangles = []
+    # Stopped phase: 2.6s onward at 42.1m
+    time_stopped = np.array([2.6, 3.0, 4.0, 5.0])
+    pos_stopped = np.array([42.1, 42.1, 42.1, 42.1])
     
-    for i, scenario in enumerate(scenarios):
-        mass = scenario['mass']
-        delta_v = scenario['delta_v']
-        label = scenario['label']
-        color = scenario.get('color', 'lightblue')
-        
-        # Create rectangle
-        x_pos = x_start + i * (max_width + x_spacing)
-        rect = patches.Rectangle((x_pos, 0), mass, delta_v, 
-                               linewidth=2, edgecolor='black', 
-                               facecolor=color, alpha=0.7)
-        ax.add_patch(rect)
-        rectangles.append(rect)
-        
-        # Add labels
-        # Mass label (width)
-        ax.annotate(f'{mass} kg', 
-                   xy=(x_pos + mass/2, -max_height*0.1), 
-                   ha='center', va='top', fontsize=12, fontweight='bold')
-        
-        # Delta-v label (height)
-        ax.annotate(f'Δv = {delta_v} m/s', 
-                   xy=(x_pos - 0.2, delta_v/2), 
-                   ha='right', va='center', fontsize=12, fontweight='bold',
-                   rotation=90)
-        
-        # Area label (momentum)
-        momentum = mass * delta_v
-        ax.text(x_pos + mass/2, delta_v/2, f'Area = {momentum}\nkg⋅m/s', 
-                ha='center', va='center', fontsize=11, 
-                bbox=dict(boxstyle="round,pad=0.3", facecolor='white', alpha=0.8))
-        
-        # Object label
-        ax.text(x_pos + mass/2, delta_v + max_height*0.05, label,
-                ha='center', va='bottom', fontsize=14, fontweight='bold')
+    # Plot the three phases
+    ax.plot(time_reaction, pos_reaction, 'b-', linewidth=3, label='Motion')
+    ax.plot(time_braking, pos_braking, 'b-', linewidth=3)
+    ax.plot(time_stopped, pos_stopped, 'b-', linewidth=3)
     
-    # Set axis properties
-    ax.set_xlim(-0.5, x_start + len(scenarios) * (max_width + x_spacing))
-    ax.set_ylim(-max_height*0.2, max_height*1.2)
+    # Mark key points
+    ax.plot(0, 0, 'ro', markersize=8)
+    ax.plot(1.5, 30, 'ro', markersize=8)  
+    ax.plot(2.6, 42.1, 'ro', markersize=8)
     
-    # Labels and title
-    ax.set_xlabel('Mass (kg)', fontsize=14, fontweight='bold')
-    ax.set_ylabel('Change in Velocity, Δv (m/s)', fontsize=14, fontweight='bold')
-    ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
+    # Labels
+    ax.text(0, 5, 'A: (0, 0)', ha='center', va='bottom', fontsize=12, fontweight='bold')
+    ax.text(1.5, 35, 'B: (1.5, 30)', ha='center', va='bottom', fontsize=12, fontweight='bold')
+    ax.text(2.6, 47, 'C: (2.6, 42.1)', ha='center', va='bottom', fontsize=12, fontweight='bold')
     
-    # Grid
-    ax.grid(True, alpha=0.3)
-    ax.set_axisbelow(True)
+    # Styling
+    ax.set_xlim(0, 5)
+    ax.set_ylim(0, 50)
+    ax.set_xlabel('Time (s)', fontsize=14, fontweight='bold')
+    ax.set_ylabel('Position (m)', fontsize=14, fontweight='bold')
+    ax.set_title('Emergency Braking Scenario', fontsize=16, fontweight='bold')
+    ax.grid(True, alpha=0.4)
     
     plt.tight_layout()
-    return fig, ax
+    return fig
 
-def conservation_example():
-    """Example showing momentum conservation between two objects"""
-    
-    # Before collision
-    fig1, ax1 = create_momentum_diagram([
-        {'mass': 3, 'delta_v': 4, 'label': 'Cart A', 'color': 'lightcoral'},
-        {'mass': 6, 'delta_v': 2, 'label': 'Cart B', 'color': 'lightblue'}
-    ], title="Before Collision - Individual Momentums")
-    
-    # After collision (conservation)
-    fig2, ax2 = create_momentum_diagram([
-        {'mass': 9, 'delta_v': 8/3, 'label': 'Combined System', 'color': 'lightgreen'}
-    ], title="After Collision - Combined Momentum (Conservation)")
-    
-    return fig1, fig2
-
-def multiple_examples():
-    """Show multiple conservation scenarios"""
-    
-    examples = [
-        [
-            {'mass': 2, 'delta_v': 6, 'label': 'Object 1', 'color': 'lightcoral'},
-            {'mass': 4, 'delta_v': 3, 'label': 'Object 2', 'color': 'lightblue'}
-        ],
-        [
-            {'mass': 1, 'delta_v': 12, 'label': 'Light Object', 'color': 'lightyellow'},
-            {'mass': 12, 'delta_v': 1, 'label': 'Heavy Object', 'color': 'lightgray'}
-        ],
-        [
-            {'mass': 5, 'delta_v': 2.4, 'label': 'Medium Mass', 'color': 'lightpink'},
-            {'mass': 3, 'delta_v': 4, 'label': 'Smaller Mass', 'color': 'lightcyan'}
-        ]
-    ]
-    
-    figures = []
-    for i, scenario in enumerate(examples):
-        fig, ax = create_momentum_diagram(scenario, 
-                                        title=f"Conservation Example {i+1} - Equal Total Momentum")
-        figures.append(fig)
-    
-    return figures
-
-# Create the diagrams
 if __name__ == "__main__":
-    # Simple conservation example
-    print("Creating conservation example...")
-    fig1, fig2 = conservation_example()
-    
-    # Multiple examples
-    print("Creating multiple examples...")
-    example_figs = multiple_examples()
-    
-    # Single diagram example
-    print("Creating single diagram...")
-    single_fig, _ = create_momentum_diagram([
-        {'mass': 3, 'delta_v': 4, 'label': '3kg Cart', 'color': 'lightblue'}
-    ], title="Single Object - Momentum Visualization")
-    
-    # Show all plots
+    fig = create_emergency_braking_from_data()
     plt.show()
-    
-    # Optional: Save figures
-    # fig1.savefig('before_collision.png', dpi=300, bbox_inches='tight')
-    # fig2.savefig('after_collision.png', dpi=300, bbox_inches='tight')
-    # single_fig.savefig('single_object.png', dpi=300, bbox_inches='tight')

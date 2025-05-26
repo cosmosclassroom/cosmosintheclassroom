@@ -231,7 +231,10 @@
     
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
-      <h1 id="p3l5-collision-simulation-lab-guide">P3L5 Collision Simulation Lab Guide</h1>
+      <style>
+</style>
+
+<h1 id="p3l5-collision-simulation-lab-guide">P3L5 Collision Simulation Lab Guide</h1>
 <h2 id="testing-our-mathematical-model-with-different-collision-conditions">Testing Our Mathematical Model with Different Collision Conditions</h2>
 
 <h3 id="materials-needed">Materials Needed</h3>
@@ -256,36 +259,54 @@
 
 <h2 id="part-1-getting-started-with-the-simulation">Part 1: Getting Started with the Simulation</h2>
 
-<h3 id="step-1-access-the-simulation">Step 1: Access the Simulation</h3>
-<p>Go to: <a href="https://openscied-static.s3.amazonaws.com/HTML+Files/Inelastic+and+Elastic+Collisions.html">https://openscied-static.s3.amazonaws.com/HTML+Files/Inelastic+and+Elastic+Collisions.html</a></p>
+<h5 id="step-1-familiarize-yourself-with-the-controls">Step 1: Familiarize Yourself with the Controls</h5>
 
-<h3 id="step-2-familiarize-yourself-with-the-controls">Step 2: Familiarize Yourself with the Controls</h3>
+<p><img src="/assets/images/p3_collisions/p3l5_images/p3l5-sim-main.png" alt="Simulation main view" /></p>
 
-<p><strong>Mass Sliders</strong>:</p>
-<ul>
-  <li>Adjust the mass of each cart (Cart A and Cart B)</li>
-  <li>Range: typically 1-10 kg</li>
-</ul>
+<p><a href="https://openscied-static.s3.amazonaws.com/HTML+Files/Inelastic+and+Elastic+Collisions.html" target="_blank" class="button" style="margin: 2rem;">Open Collision Simulation</a></p>
 
-<p><strong>Velocity Sliders</strong>:</p>
-<ul>
-  <li>Set the initial velocity of each cart</li>
-  <li>Positive values = moving right</li>
-  <li>Negative values = moving left</li>
-  <li>Zero = stationary</li>
-</ul>
+<div class="simulation-controls" style="display: flex; gap: 1rem; flex-wrap: wrap;">
 
-<p><strong>Collision Type Selector</strong>:</p>
-<ul>
-  <li><strong>Elastic</strong>: Carts bounce apart (like billiard balls)</li>
-  <li><strong>Inelastic</strong>: Carts stick together after collision</li>
-</ul>
+  <div>
 
-<p><strong>Control Buttons</strong>:</p>
-<ul>
-  <li><strong>SETUP/RESET</strong>: Apply your chosen settings</li>
-  <li><strong>GO/PAUSE</strong>: Run the simulation</li>
-</ul>
+    <h5 id="mass-sliders">Mass Sliders:</h5>
+    <ul>
+      <li>Adjust the mass of each cart (Cart A and Cart B)</li>
+      <li>Range: typically 1-10 kg</li>
+    </ul>
+
+  </div>
+
+  <div>
+
+    <h4 id="velocity-sliders">Velocity Sliders:</h4>
+    <ul>
+      <li>Set the initial velocity of each cart</li>
+      <li>Positive values = moving right</li>
+      <li>Negative values = moving left</li>
+      <li>Zero = stationary</li>
+    </ul>
+  </div>
+
+  <div>
+
+    <h4 id="collision-type-selector">Collision Type Selector:</h4>
+    <ul>
+      <li>Elastic: Carts bounce apart (like billiard balls)</li>
+      <li>Inelastic: Carts stick together after collision</li>
+    </ul>
+
+  </div>
+
+  <div>
+
+    <h5 id="control-buttons">Control Buttons:</h5>
+    <ul>
+      <li>SETUP/RESET: Apply your chosen settings</li>
+      <li>GO/PAUSE: Run the simulation</li>
+    </ul>
+  </div>
+</div>
 
 <h3 id="step-3-practice-run">Step 3: Practice Run</h3>
 <p>Before collecting data, try one practice run:</p>
@@ -301,7 +322,7 @@
 
 <h2 id="part-2-data-collection">Part 2: Data Collection</h2>
 
-<h3 id="your-mission">Your Mission</h3>
+<h3 id="your-objective">Your Objective</h3>
 <p>Test our mathematical relationship systematically with <strong>at least 6 different collision scenarios</strong> that follow proper experimental design:</p>
 
 <p><strong>Required Test Categories:</strong></p>
@@ -334,10 +355,10 @@
       <th>Collision Type</th>
       <th>Mass A (kg)</th>
       <th>Mass B (kg)</th>
-      <th>Initial v_A (m/s)</th>
-      <th>Initial v_B (m/s)</th>
-      <th>Final v_A’ (m/s)</th>
-      <th>Final v_B’ (m/s)</th>
+      <th>Initial $v_A$ (m/s)</th>
+      <th>Initial $v_B$ (m/s)</th>
+      <th>Final $v_A’$ (m/s)</th>
+      <th>Final $v_B’$ (m/s)</th>
       <th>Purpose/Variable Tested</th>
     </tr>
   </thead>
@@ -446,18 +467,18 @@
 
 <p><strong>Step 1: Find the change in velocity (Δv) for each cart</strong></p>
 <ul>
-  <li>Δv_A = Final v_A - Initial v_A</li>
-  <li>Δv_B = Final v_B - Initial v_B</li>
+  <li>$\Delta v_A = v_A’ - v_A$ (Final velocity - Initial velocity)</li>
+  <li>$\Delta v_B = v_B’ - v_B$ (Final velocity - Initial velocity)</li>
 </ul>
 
 <p><strong>Step 2: Calculate the ratio of velocity changes</strong></p>
 <ul>
-  <li>Velocity change ratio = Δv_B ÷ Δv_A</li>
+  <li>Velocity change ratio = $\frac{\Delta v_B}{\Delta v_A}$</li>
 </ul>
 
 <p><strong>Step 3: Test our relationship</strong></p>
 <ul>
-  <li>Does: m_A/m_B = -Δv_B/Δv_A ?</li>
+  <li>Does: $\frac{m_A}{m_B} = -\frac{\Delta v_B}{\Delta v_A}$ ?</li>
   <li>(Note the negative sign!)</li>
 </ul>
 
@@ -465,29 +486,69 @@
 <p>If Cart A (2 kg) goes from 3 m/s to 1 m/s, and Cart B (1 kg) goes from 0 m/s to 4 m/s:</p>
 
 <ul>
-  <li>Δv_A = 1 - 3 = -2 m/s</li>
-  <li>Δv_B = 4 - 0 = +4 m/s</li>
-  <li>Mass ratio: 2/1 = 2</li>
-  <li>Velocity change ratio: 4/(-2) = -2</li>
+  <li>$\Delta v_A = 1 - 3 = -2$ m/s</li>
+  <li>$\Delta v_B = 4 - 0 = +4$ m/s</li>
+  <li>Mass ratio: $\frac{m_A}{m_B} = \frac{2}{1} = 2$</li>
+  <li>Velocity change ratio: $\frac{\Delta v_B}{\Delta v_A} = \frac{4}{-2} = -2$</li>
 </ul>
 
-<p><strong>Test</strong>: Does 2 = -(-2)? <strong>YES!</strong> ✓</p>
+<p><strong>Test</strong>: Does $2 = -(-2)$? <strong>YES!</strong> ✓</p>
 
 <h3 id="calculation-template">Calculation Template</h3>
 
-<p>For each trial, use this format:</p>
+<p>For each trial, complete these calculations:</p>
 
-<p><strong>Trial #___ Calculations:</strong></p>
-<ul>
-  <li>Initial: Cart A (__ kg) at __ m/s, Cart B (__ kg) at __ m/s</li>
-  <li>Final: Cart A at __ m/s, Cart B at __ m/s</li>
-  <li>Δv_A = __ - __ = __ m/s</li>
-  <li>Δv_B = __ - __ = __ m/s</li>
-  <li>Mass ratio: <strong>/</strong> = __</li>
-  <li>Velocity ratio: <strong>/</strong> = __</li>
-  <li><strong>Test</strong>: Does __ = -(__) ? <strong>YES/NO</strong></li>
-</ul>
+<div class="trial-calculation" style="border: 1px solid #ccc; padding: 1rem; margin: 1rem 0; background-color: #f9f9f9; display: flex; flex-direction: column; gap: 1rem;">
 
+  <h4 id="trial--calculations">Trial #_____ Calculations</h4>
+  <div>
+
+    <h5 id="initial-conditions">Initial Conditions:</h5>
+    <ul>
+      <li>Cart A: mass = <strong>___ kg, velocity = __</strong>_ m/s</li>
+      <li>Cart B: mass = <strong>___ kg, velocity = __</strong>_ m/s</li>
+    </ul>
+
+    <h5 id="final-velocities">Final Velocities:</h5>
+    <ul>
+      <li>Cart A final velocity = _____ m/s</li>
+      <li>Cart B final velocity = _____ m/s</li>
+    </ul>
+
+  </div>
+  <div>
+
+    <h5 id="velocity-changes">Velocity Changes:</h5>
+    <ul>
+      <li>$\Delta v_A = v_A’ - v_A  = $ _____ m/s</li>
+      <li>$\Delta v_B = v_B’ - v_B  = $ _____ m/s</li>
+    </ul>
+
+    <h5 id="ratios">Ratios:</h5>
+    <ul>
+      <li>Mass ratio: $\frac{m_A}{m_B} = $ _____</li>
+      <li>Velocity change ratio: $-\frac{\Delta v_B}{\Delta v_A}  = $ _____</li>
+    </ul>
+
+    <h5 id="testing-the-relationship">Testing the Relationship:</h5>
+    <ul>
+      <li>Does $\frac{m_A}{m_B} = -\frac{\Delta v_B}{\Delta v_A}$ ?</li>
+    </ul>
+
+    <h5 id="percent-error-optional">Percent Error (optional):</h5>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>$\text{Error} = \left</td>
+          <td>\frac{\text{experimental - theoretical}}{\text{theoretical}}\right</td>
+          <td>\times 100\% = $ _____%</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
 <hr />
 
 <h2 id="part-4-analysis-questions">Part 4: Analysis Questions</h2>
@@ -516,25 +577,21 @@
 </ol>
 
 <hr />
+<!--
+## Part 5: Prepare for Class Discussion
 
-<h2 id="part-5-prepare-for-class-discussion">Part 5: Prepare for Class Discussion</h2>
+### On Your Whiteboard, Show:
+- Your best example of the math working
+- All your calculation steps clearly labeled
+- A clear conclusion about whether the relationship holds
+- One example where you tested a specific variable
 
-<h3 id="on-your-whiteboard-show">On Your Whiteboard, Show:</h3>
-<ul>
-  <li>Your best example of the math working</li>
-  <li>All your calculation steps clearly labeled</li>
-  <li>A clear conclusion about whether the relationship holds</li>
-  <li>One example where you tested a specific variable</li>
-</ul>
-
-<h3 id="be-ready-to-share">Be Ready to Share:</h3>
-<ul>
-  <li>Which collision scenarios you tested and why</li>
-  <li>Whether the math worked for all cases</li>
-  <li>Any surprising results or difficulties you encountered</li>
-  <li>How your experimental design helped you draw conclusions</li>
-</ul>
-
+### Be Ready to Share:
+- Which collision scenarios you tested and why
+- Whether the math worked for all cases
+- Any surprising results or difficulties you encountered
+- How your experimental design helped you draw conclusions
+-->
 <hr />
 
 <h2 id="extension-challenge">Extension Challenge</h2>
