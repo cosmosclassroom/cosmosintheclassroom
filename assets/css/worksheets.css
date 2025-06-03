@@ -5,7 +5,7 @@
 :root {
     margin: 0 auto;
     max-width: 100%;
-    --border-color: #dddddd;
+    --border-color: #849fc7;
     --font-family: 'Arial', sans-serif;
     --font-size: 2em;
     --instruction-color: #916122;
@@ -37,7 +37,14 @@ p {
     line-height: 1.5;
     text-emphasis: justify;
 }
+strong, b {
+    font-weight: bold;
+    color: (var--primary-color)!important;
+}
 
+em, i {
+    font-style: italic;
+}
 blockquote {
     background-color: var(--parchment-light);
     border-left: 4px solid var(--primary-color);
@@ -97,7 +104,7 @@ button:hover {
     background-color: var(--parchment-light);
     font-size: 1em;
     line-height: 1.5;
-    margin: 0;
+    margin: 1rem 0;
     padding: 1em;
 }
 
@@ -133,14 +140,11 @@ button:hover {
 /* Data Presentation Table - Clean, scientific paper style */
 .data-table {
     border: 1px solid var(--border-color);
-    display: block;
-    flex-direction: column;
-    margin: 5px 0;
+    display: table;
+    margin: 5px auto;
     max-width: 85rem;
-    margin-left: auto;
-    margin-right: auto;
     padding: 1%;
-    table-layout: fixed;
+    table-layout: auto;
     width: 95%;
 }
 
@@ -148,7 +152,7 @@ button:hover {
     background-color: var(--secondary-color);
     border-bottom: 2px solid var(--border-color);
     border-top: 2px solid var(--border-color);
-    color: var(--border-color);
+    color: var(--primary-color);
     display: table-cell;
     font-size: 1em;
     font-weight: 600;
@@ -158,11 +162,10 @@ button:hover {
 
 .data-table td {
     border-bottom: 1px solid var(--border-color);
-    top: 0;
     font-size: 1em;
     padding: 5px;
     text-align: center;
-    width: fit-content;
+    vertical-align: middle;
 }
 
 /* Figure styles for images and captions */
@@ -245,13 +248,13 @@ h1 {
 }
 img {
     box-shadow: 1px 1px 5px var(--earth-green);
-    display: block;
-    /* float: inline-end; */
+    float: inline-start;
+    padding: 0;
+    margin: 0.5em;
+    max-width: 100%;
     height: auto;
-    margin: 2rem auto;
-    width: auto;
-    max-width: 90%;
-    padding: 0.5em;
+    border-radius: 0.5rem;
+    border: 1px solid var(--earth-brown);
 }
 
 
@@ -444,6 +447,35 @@ table {
         float: none;
         margin: 0 auto;
         width: 90%;
+    }
+    
+    /* Stack solution grid vertically on mobile */
+    .solution-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        max-width: 100%;
+    }
+    
+    .sigfig {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+    }
+    
+    .parent-formula {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .givens {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: left;
+    }
+    
+    .calculations {
+        grid-column: 1;
+        grid-row: 4;
     }
 }
 
