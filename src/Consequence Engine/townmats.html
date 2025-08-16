@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Mats</title>
+    <!-- Use the Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family for a modern look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* A light, neutral background */
+        }
+        .card-container {
+            /* Create a grid for desktop, stacking for mobile */
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 1024px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .card-bg {
+            background-image: linear-gradient(135deg, #f9fafb, #e5e7eb);
+        }
+        .highlight {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="p-4 lg:p-10">
+
+    <!-- Main Title Section -->
+    <header class="text-center mb-10 lg:mb-16">
+        <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-2">
+            The Consequence Engine
+        </h1>
+        <p class="text-xl text-gray-600 font-medium">
+            Community Play Mats
+        </p>
+    </header>
+
+    <!-- Cards Container -->
+    <main class="card-container">
+
+        <!-- Havenwood Card -->
+        <div class="card-bg rounded-2xl shadow-xl border border-gray-200 p-6 space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800">Havenwood</h2>
+                <p class="text-lg font-medium text-gray-600">The Legacy Community</p>
+            </div>
+            <p class="text-gray-700 italic text-sm">
+                Havenwood is a town with deep historical roots and a close-knit population. Many residents trust in traditional knowledge and their neighbors more than they trust outside experts or government intervention. The town's infrastructure is old, but so is its history of overcoming challenges through self-reliance. Your challenge is to navigate these deep-seated beliefs and physical vulnerabilities to protect a town that values its past above all else.
+            </p>
+            <div class="space-y-2 text-center text-gray-700 font-semibold text-sm">
+                <p><strong>Solution Slots:</strong> 2</p>
+                <p><strong>Modifier Slots:</strong> 3</p>
+            </div>
+            
+            <!-- Matrix Table -->
+            <div class="rounded-lg overflow-hidden border border-gray-300">
+                <table class="w-full text-sm text-gray-700">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="p-2 text-left font-bold text-gray-800">Disaster Type</th>
+                            <th class="p-2 font-bold text-gray-800">Resilience</th>
+                            <th class="p-2 font-bold text-gray-800">Trust</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Earthquake</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.9</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.7</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Tsunami/Flooding</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.8</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.1</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Fire</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.0</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.9</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Coastal Storms</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.8</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Justification Section -->
+            <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-700 space-y-2">
+                <h4 class="font-semibold text-gray-800">Rationale Summary</h4>
+                <p><strong>Earthquake:</strong> Old, un-retrofitted buildings and resistance to costly, mandated upgrades.</p>
+                <p><strong>Tsunami/Flooding:</strong> Unmaintained river embankments, but strong community cohesion.</p>
+                <p><strong>Fire:</strong> Low-risk geography leads to a lack of awareness and investment.</p>
+                <p><strong>Coastal Storms:</strong> Vulnerable embankments, but a history of survival builds trust.</p>
+            </div>
+        </div>
+
+        <!-- Port St. Jude Card -->
+        <div class="card-bg rounded-2xl shadow-xl border border-gray-200 p-6 space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800">Port St. Jude</h2>
+                <p class="text-lg font-medium text-gray-600">The Economic Engine</p>
+            </div>
+            <p class="text-gray-700 italic text-sm">
+                Port St. Jude is a bustling and diverse coastal metropolis. Its high-tech port and thriving economy give it a large tax base, allowing for ambitious infrastructure projects and rapid response. However, the dense and transient population makes it difficult to build a unified sense of community, and the city's diverse interests often lead to political gridlock. Your challenge is to unite a divided populace and spend its wealth wisely to ensure its future.
+            </p>
+            <div class="space-y-2 text-center text-gray-700 font-semibold text-sm">
+                <p><strong>Solution Slots:</strong> 3</p>
+                <p><strong>Modifier Slots:</strong> 2</p>
+            </div>
+
+            <!-- Matrix Table -->
+            <div class="rounded-lg overflow-hidden border border-gray-300">
+                <table class="w-full text-sm text-gray-700">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="p-2 text-left font-bold text-gray-800">Disaster Type</th>
+                            <th class="p-2 font-bold text-gray-800">Resilience</th>
+                            <th class="p-2 font-bold text-gray-800">Trust</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Earthquake</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.2</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.6</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Tsunami/Flooding</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.3</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.7</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Fire</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.1</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.2</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Coastal Storms</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.2</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Justification Section -->
+            <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-700 space-y-2">
+                <h4 class="font-semibold text-gray-800">Rationale Summary</h4>
+                <p><strong>Earthquake:</strong> Modern codes, but urban density and competing interests lead to low trust.</p>
+                <p><strong>Tsunami/Flooding:</strong> High tax base for investment, but urban planning is contentious.</p>
+                <p><strong>Fire:</strong> High density acts as a fire break, and a proactive government builds high trust.</p>
+                <p><strong>Coastal Storms:</strong> Public funds are available, but a transient population creates low trust.</p>
+            </div>
+        </div>
+
+        <!-- Whispering Pines Card -->
+        <div class="card-bg rounded-2xl shadow-xl border border-gray-200 p-6 space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800">Whispering Pines</h2>
+                <p class="text-lg font-medium text-gray-600">The Expanding Suburb</p>
+            </div>
+            <p class="text-gray-700 italic text-sm">
+                Whispering Pines is a new, rapidly growing suburb built on a scenic bluff overlooking the coast and a forested estuary. The community is full of young families who have chosen the area for its natural beauty. While they have a strong sense of collective purpose, they are new to the area's natural risks and are unprepared for the unique challenges of living at the intersection of land and sea.
+            </p>
+            <div class="space-y-2 text-center text-gray-700 font-semibold text-sm">
+                <p><strong>Solution Slots:</strong> 2</p>
+                <p><strong>Modifier Slots:</strong> 2</p>
+            </div>
+
+            <!-- Matrix Table -->
+            <div class="rounded-lg overflow-hidden border border-gray-300">
+                <table class="w-full text-sm text-gray-700">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="p-2 text-left font-bold text-gray-800">Disaster Type</th>
+                            <th class="p-2 font-bold text-gray-800">Resilience</th>
+                            <th class="p-2 font-bold text-gray-800">Trust</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Earthquake</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.1</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.0</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Tsunami/Flooding</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.7</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.9</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors">
+                            <td class="p-2 font-medium">Fire</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.6</td>
+                            <td class="p-2 text-center font-bold text-green-600">x1.1</td>
+                        </tr>
+                        <tr class="hover:bg-gray-100 transition-colors highlight">
+                            <td class="p-2 font-medium">Coastal Storms</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.7</td>
+                            <td class="p-2 text-center font-bold text-red-600">x0.8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Justification Section -->
+            <div class="bg-gray-100 p-4 rounded-lg text-sm text-gray-700 space-y-2">
+                <h4 class="font-semibold text-gray-800">Rationale Summary</h4>
+                <p><strong>Earthquake:</strong> New construction is a plus, and a unified populace supports new solutions.</p>
+                <p><strong>Tsunami/Flooding:</strong> Vulnerable bluffs and resident resistance to policies that affect property values.</p>
+                <p><strong>Fire:</strong> High vulnerability in the WUI, but proactive homeowners support mitigation efforts.</p>
+                <p><strong>Coastal Storms:</strong> New homes are on vulnerable land and residents' trust is untested by a major storm.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
