@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <p>V# Physics Curriculum Formula Summary</p>
+
+<p>This document provides a comprehensive collection of all formulas covered in the 6-Week Honors Physics Curriculum, organized by topic.</p>
+
+<h2 id="electromagnetism">Electromagnetism</h2>
+
+<h3 id="magnetic-fields-and-forces">Magnetic Fields and Forces</h3>
+<ul>
+  <li>Magnetic Force on Moving Charge: $\vec{F} = q\vec{v} \times \vec{B}$</li>
+  <li>Magnetic Force on Current: $\vec{F} = I(\vec{L} \times \vec{B})$</li>
+  <li>Magnetic Field of Long Wire: $B = \frac{\mu_0 I}{2\pi r}$</li>
+  <li>Magnitude of Magnetic Force: $F = qvB\sin\theta$</li>
+  <li>Magnetic Force on Current-Carrying Wire: $F = ILB\sin\theta$</li>
+</ul>
+
+<h3 id="electromagnetic-induction">Electromagnetic Induction</h3>
+<ul>
+  <li>Faraday’s Law: $\varepsilon = -\frac{d\Phi}{dt}$</li>
+  <li>Magnetic Flux: $\Phi = BA\cos\theta$</li>
+  <li>Induced EMF in Multi-turn Coil: $\varepsilon = -N\frac{d\Phi}{dt}$</li>
+</ul>
+
+<h3 id="electromagnetic-waves">Electromagnetic Waves</h3>
+<ul>
+  <li>Wave Speed: $c = f\lambda$</li>
+  <li>Speed of Light: $c = 3 \times 10^8 \text{ m/s}$</li>
+  <li>Speed of Light from Maxwell’s Equations: $c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$</li>
+  <li>Photon Energy: $E = hf = \frac{hc}{\lambda}$</li>
+  <li>Index of Refraction: $n = \frac{c}{v}$</li>
+</ul>
+
+<h2 id="electricity">Electricity</h2>
+
+<h3 id="electric-forces-and-fields">Electric Forces and Fields</h3>
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Coulomb’s Law: $F = k\frac{</td>
+          <td>q_1 q_2</td>
+          <td>}{r^2}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Coulomb Constant: $k = \frac{1}{4\pi\varepsilon_0} = 9 \times 10^9 \text{ N}\cdot\text{m}^2/\text{C}^2$</li>
+  <li>Electric Field Definition: $\vec{E} = \frac{\vec{F}}{q}$</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Electric Field of Point Charge: $E = k\frac{</td>
+          <td>q</td>
+          <td>}{r^2}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Gauss’s Law: $\oint\vec{E}\cdot d\vec{A} = \frac{Q}{\varepsilon_0}$</li>
+</ul>
+
+<h3 id="electric-potential-and-capacitance">Electric Potential and Capacitance</h3>
+<ul>
+  <li>Electric Potential Definition: $V = \frac{U}{q}$</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Electric Potential of Point Charge: $V = k\frac{</td>
+          <td>q</td>
+          <td>}{r}$</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Relationship Between Field and Potential: $\vec{E} = -\nabla V$</li>
+  <li>Potential Difference: $\Delta V = -\int \vec{E} \cdot d\vec{l}$</li>
+  <li>Capacitance Definition: $C = \frac{Q}{V}$</li>
+  <li>Parallel Plate Capacitor: $C = \frac{\varepsilon_0 A}{d}$</li>
+  <li>Energy in Capacitor: $U = \frac{1}{2}CV^2 = \frac{1}{2}QV$</li>
+</ul>
+
+<h3 id="electric-circuits">Electric Circuits</h3>
+<ul>
+  <li>Current Definition: $I = \frac{dQ}{dt}$</li>
+  <li>Current in Terms of Drift Velocity: $I = nqvA$</li>
+  <li>Ohm’s Law: $V = IR$</li>
+  <li>Resistance of Wire: $R = \rho\frac{L}{A}$</li>
+  <li>Series Resistance: $R_{\text{series}} = R_1 + R_2 + \ldots$</li>
+  <li>Parallel Resistance: $\frac{1}{R_{\text{parallel}}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots$</li>
+  <li>Kirchhoff’s Current Law: $\sum I = 0$</li>
+  <li>Kirchhoff’s Voltage Law: $\sum V = 0$</li>
+  <li>Power in Circuit: $P = IV = I^2R = \frac{V^2}{R}$</li>
+  <li>Energy Transfer: $E = Pt$</li>
+</ul>
+
+<h2 id="optics">Optics</h2>
+
+<h3 id="geometric-optics">Geometric Optics</h3>
+<ul>
+  <li>Law of Reflection: $\theta_i = \theta_r$</li>
+  <li>Snell’s Law: $n_1\sin\theta_1 = n_2\sin\theta_2$</li>
+  <li>Index of Refraction: $n = \frac{c}{v}$</li>
+  <li>Critical Angle for Total Internal Reflection: $\sin\theta_c = \frac{n_2}{n_1}$</li>
+  <li>Thin Lens/Mirror Equation: $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</li>
+  <li>Linear Magnification: $M = -\frac{d_i}{d_o}$</li>
+  <li>Focal Length of Spherical Mirror: $f = \frac{R}{2}$</li>
+</ul>
+
+<h3 id="wave-optics">Wave Optics</h3>
+<ul>
+  <li>Double Slit Constructive Interference: $d\sin\theta = m\lambda$</li>
+  <li>Double Slit Destructive Interference: $d\sin\theta = (m+\frac{1}{2})\lambda$</li>
+  <li>Diffraction Grating: $d\sin\theta = m\lambda$</li>
+  <li>Single Slit First Minimum: $\sin\theta = \frac{\lambda}{a}$</li>
+  <li>Malus’ Law for Polarization: $I = I_0\cos^2\theta$</li>
+  <li>Wave Equation: $c = f\lambda$</li>
+</ul>
+
+<h2 id="cross-chapter-relationships">Cross-Chapter Relationships</h2>
+
+<h3 id="wave-particle-duality">Wave-Particle Duality</h3>
+<ul>
+  <li>Photon Energy: $E = hf = \frac{hc}{\lambda}$</li>
+  <li>Photoelectric Effect: $KE_{max} = hf - \phi$</li>
+  <li>Wave Equation: $\lambda f = c$</li>
+</ul>
+
+<h3 id="electromagnetic-energy">Electromagnetic Energy</h3>
+<ul>
+  <li>Electric Field Energy: $U_E = \frac{1}{2}CV^2$</li>
+  <li>Magnetic Field Energy: $U_B = \frac{1}{2}LI^2$</li>
+  <li>Relationship Between Fields: $c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$</li>
+</ul>
+
+<p>This formula summary provides a comprehensive reference for all mathematical relationships covered in the 6-week honors physics curriculum.</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

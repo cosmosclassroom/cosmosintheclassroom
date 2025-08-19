@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Physics Practice Exam | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="physics-practice-exam">Physics Practice Exam</h1>
+<p>Based on Giancoli Physics 7th Edition - Difficulty Level (I)</p>
+
+<p><strong>Name:</strong> <strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong>  <strong>Date:</strong> <strong>__</strong><strong>__</strong><em>__</em></p>
+
+<p><strong>Instructions:</strong> Show all work for calculation problems. Circle your final answers.</p>
+
+<h2 id="section-1-dynamics-chapter-4">Section 1: Dynamics (Chapter 4)</h2>
+
+<ol>
+  <li>
+    <p>A 5.0-kg object is subject to a net force of 15 N to the east. What is the magnitude and direction of its acceleration?</p>
+  </li>
+  <li>
+    <p>A 75-kg skier is going down a slope that makes an angle of 20° with the horizontal. If the coefficient of kinetic friction between the skis and the snow is 0.12, determine the acceleration of the skier down the slope.</p>
+  </li>
+  <li>
+    <p>A 2.0-kg block is at rest on a rough horizontal surface. The coefficient of static friction between the block and the surface is 0.30. What is the minimum horizontal force needed to start the block moving?</p>
+  </li>
+  <li>
+    <p>Which of Newton’s laws explains why passengers tend to lean to the right when a car makes a sharp left turn?
+a) First law
+b) Second law
+c) Third law
+d) None of Newton’s laws explain this phenomenon</p>
+  </li>
+  <li>
+    <p>A 50-kg crate rests on a horizontal floor. If the coefficient of static friction is 0.40, what horizontal force is required to start moving the crate?</p>
+  </li>
+</ol>
+
+<h2 id="section-2-circular-motion-and-gravitation-chapter-5">Section 2: Circular Motion and Gravitation (Chapter 5)</h2>
+
+<ol>
+  <li>
+    <p>A satellite orbits Earth at a height of 3600 km above the surface. Given that Earth’s radius is 6400 km and its mass is 6.0 × 10²⁴ kg, calculate the orbital speed of the satellite. (G = 6.67 × 10⁻¹¹ N·m²/kg²)</p>
+  </li>
+  <li>
+    <p>A car travels around a circular track with a radius of 50 m at a constant speed of 15 m/s. What is the centripetal acceleration experienced by the car?</p>
+  </li>
+  <li>
+    <p>Which of Kepler’s laws states that planets sweep out equal areas in equal times?
+a) First law
+b) Second law
+c) Third law
+d) None of Kepler’s laws state this</p>
+  </li>
+  <li>
+    <p>A 0.15-kg ball at the end of a string is rotated in a horizontal circle of radius 1.2 m. If the ball makes 2.0 revolutions per second, what is the tension in the string?</p>
+  </li>
+  <li>
+    <p>The Moon orbits Earth at an average distance of 3.84 × 10⁸ m with a period of 27.3 days. Using this information, estimate the mass of Earth. (G = 6.67 × 10⁻¹¹ N·m²/kg²)</p>
+  </li>
+</ol>
+
+<h2 id="section-3-work-and-energy-chapter-6">Section 3: Work and Energy (Chapter 6)</h2>
+
+<ol>
+  <li>
+    <p>A 2.0-kg object initially at rest is pushed 5.0 m along a frictionless horizontal surface by a constant 8.0-N force. What is the final kinetic energy of the object?</p>
+  </li>
+  <li>
+    <p>A 60-kg hiker climbs a mountain, increasing her elevation by 400 m. How much gravitational potential energy does she gain? (g = 9.8 m/s²)</p>
+  </li>
+  <li>
+    <p>A spring with spring constant 200 N/m is compressed 15 cm from its equilibrium position. How much elastic potential energy is stored in the spring?</p>
+  </li>
+  <li>
+    <p>A 1500-kg car accelerates from rest to 25 m/s in 10 seconds. What is the average power delivered by the engine during this time?</p>
+  </li>
+  <li>
+    <p>When is the work done on an object negative?
+a) When force and displacement are in opposite directions
+b) When force and displacement are in the same direction
+c) When the force is perpendicular to the displacement
+d) When the object is not moving</p>
+  </li>
+</ol>
+
+<h2 id="section-4-harmonics-chapter-11">Section 4: Harmonics (Chapter 11)</h2>
+
+<ol>
+  <li>
+    <p>A simple pendulum has a period of 2.0 s. What is its length? (g = 9.8 m/s²)</p>
+  </li>
+  <li>
+    <p>A 0.50-kg mass attached to a spring oscillates with a frequency of 2.0 Hz. If the total energy of the system is 6.0 J, what is the amplitude of the oscillation?</p>
+  </li>
+  <li>
+    <p>Two waves with the same frequency, wavelength, and amplitude travel in the same direction. If they have a phase difference of 180°, what type of interference occurs?
+a) Constructive interference
+b) Destructive interference
+c) No interference
+d) Resonance</p>
+  </li>
+  <li>
+    <p>A wave travels at 340 m/s with a frequency of 680 Hz. What is its wavelength?</p>
+  </li>
+  <li>
+    <p>A mass-spring system oscillates with an amplitude of 10 cm. At what position(s) is the speed of the mass maximum?
+a) At the equilibrium position
+b) At the maximum displacement
+c) At one-half the maximum displacement
+d) At one-quarter the maximum displacement</p>
+  </li>
+</ol>
+
+<h2 id="section-5-electromagnetism-chapters-16-and-17">Section 5: Electromagnetism (Chapters 16 and 17)</h2>
+
+<ol>
+  <li>
+    <p>Two point charges, +5.0 μC and -3.0 μC, are separated by 40 cm. What is the magnitude of the electric force between them? (k = 9.0 × 10⁹ N·m²/C²)</p>
+  </li>
+  <li>
+    <p>An electron enters a uniform electric field of 4.0 × 10³ N/C. What is the magnitude of the electric force on the electron? (Charge of electron = 1.6 × 10⁻¹⁹ C)</p>
+  </li>
+  <li>
+    <p>Which of the following is NOT a method of charging an object?
+a) Friction
+b) Contact
+c) Induction
+d) Nuclear decay</p>
+  </li>
+  <li>
+    <p>A point charge creates an electric potential of 600 V at a distance of 0.20 m. What is the electric potential at a distance of 0.40 m from the charge?</p>
+  </li>
+  <li>
+    <p>A parallel plate capacitor has plates of area 4.0 × 10⁻² m² separated by 2.0 mm. If the capacitance is 1.77 × 10⁻¹⁰ F, what dielectric material fills the space between the plates? (ε₀ = 8.85 × 10⁻¹² F/m)</p>
+  </li>
+</ol>
+
+<h2 id="section-6-electricity-chapters-18-and-19">Section 6: Electricity (Chapters 18 and 19)</h2>
+
+<ol>
+  <li>
+    <p>A wire with a resistance of 5.0 Ω carries a current of 3.0 A. What is the voltage across the wire?</p>
+  </li>
+  <li>
+    <p>A toaster draws 8.0 A when connected to a 120-V outlet. What is the resistance of the toaster?</p>
+  </li>
+  <li>
+    <p>Three resistors with resistances of 3.0 Ω, 6.0 Ω, and 9.0 Ω are connected in series. What is their equivalent resistance?</p>
+  </li>
+  <li>
+    <p>The same three resistors from the previous problem (3.0 Ω, 6.0 Ω, and 9.0 Ω) are now connected in parallel. What is their equivalent resistance?</p>
+  </li>
+  <li>
+    <p>A battery with an emf of 12 V and internal resistance of 0.50 Ω is connected to a 5.5 Ω resistor. What is the terminal voltage of the battery?</p>
+  </li>
+</ol>
+
+<hr />
+
+<h1 id="answer-key">Answer Key</h1>
+
+<h2 id="section-1-dynamics">Section 1: Dynamics</h2>
+<ol>
+  <li>
+    <p>a = F/m = 15 N / 5.0 kg = 3.0 m/s² to the east</p>
+  </li>
+  <li>
+    <p>Forces along the slope:
+Fₓ = mg sin(20°) - μₖmg cos(20°)
+a = g[sin(20°) - μₖcos(20°)]
+a = 9.8[sin(20°) - 0.12cos(20°)]
+a = 9.8[0.342 - 0.12(0.940)]
+a = 9.8[0.342 - 0.113]
+a = 9.8(0.229) = 2.24 m/s²</p>
+  </li>
+  <li>
+    <p>Minimum force = μₛN = μₛmg = 0.30 × 2.0 kg × 9.8 m/s² = 5.88 N</p>
+  </li>
+  <li>
+    <p>a) First law (inertia)</p>
+  </li>
+  <li>
+    <p>F = μₛN = μₛmg = 0.40 × 50 kg × 9.8 m/s² = 196 N</p>
+  </li>
+</ol>
+
+<h2 id="section-2-circular-motion-and-gravitation">Section 2: Circular Motion and Gravitation</h2>
+<ol>
+  <li>
+    <p>v = √(GM/r) where r = Earth radius + height = 6400 km + 3600 km = 10000 km = 1.0 × 10⁷ m
+v = √[(6.67 × 10⁻¹¹ N·m²/kg²)(6.0 × 10²⁴ kg)/(1.0 × 10⁷ m)]
+v = √[(4.0 × 10¹⁴)] = 6.3 × 10⁶ m/s</p>
+  </li>
+  <li>
+    <p>aₑ = v²/r = (15 m/s)²/50 m = 4.5 m/s²</p>
+  </li>
+  <li>
+    <p>b) Second law</p>
+  </li>
+  <li>
+    <p>T = m × aₑ = m × ω²r
+ω = 2πf = 2π × 2.0 rev/s = 4π rad/s
+T = 0.15 kg × (4π rad/s)² × 1.2 m
+T = 0.15 kg × 16π² rad²/s² × 1.2 m
+T = 0.15 kg × 16 × 9.87 × 1.2 m/s²
+T = 28.4 N</p>
+  </li>
+  <li>
+    <p>M = 4π²r³/(GT²)
+T = 27.3 days = 27.3 × 24 × 3600 s = 2.36 × 10⁶ s
+M = 4π²(3.84 × 10⁸ m)³/[(6.67 × 10⁻¹¹ N·m²/kg²)(2.36 × 10⁶ s)²]
+M = 4π²(5.66 × 10²⁵)/(6.67 × 10⁻¹¹ × 5.57 × 10¹²)
+M = 6.0 × 10²⁴ kg</p>
+  </li>
+</ol>
+
+<h2 id="section-3-work-and-energy">Section 3: Work and Energy</h2>
+<ol>
+  <li>
+    <p>W = F × d = 8.0 N × 5.0 m = 40 J
+KE = W = 40 J</p>
+  </li>
+  <li>
+    <p>PE = mgh = 60 kg × 9.8 m/s² × 400 m = 235,200 J = 2.35 × 10⁵ J</p>
+  </li>
+  <li>
+    <p>PE = ½kx² = ½ × 200 N/m × (0.15 m)² = ½ × 200 × 0.0225 = 2.25 J</p>
+  </li>
+  <li>
+    <p>P = ΔKE/Δt = ½mv²/t = ½ × 1500 kg × (25 m/s)²/10 s = 46,875 W = 4.7 × 10⁴ W</p>
+  </li>
+  <li>
+    <p>a) When force and displacement are in opposite directions</p>
+  </li>
+</ol>
+
+<h2 id="section-4-harmonics">Section 4: Harmonics</h2>
+<ol>
+  <li>
+    <p>T = 2π√(L/g)
+L = g(T/2π)² = 9.8 m/s² × (2.0 s/2π)² = 9.8 × (0.318)² = 9.8 × 0.101 = 0.99 m</p>
+  </li>
+  <li>
+    <p>E = ½kA² = 6.0 J
+For a simple harmonic oscillator, k = m(2πf)²
+k = 0.50 kg × (2π × 2.0 Hz)² = 0.50 kg × (4π)² Hz² = 0.50 × 16π² = 79 N/m
+A² = 2E/k = 2 × 6.0 J / 79 N/m = 0.152 m²
+A = 0.39 m</p>
+  </li>
+  <li>
+    <p>b) Destructive interference</p>
+  </li>
+  <li>
+    <p>λ = v/f = 340 m/s / 680 Hz = 0.50 m</p>
+  </li>
+  <li>
+    <p>a) At the equilibrium position</p>
+  </li>
+</ol>
+
+<h2 id="section-5-electromagnetism">Section 5: Electromagnetism</h2>
+<ol>
+  <li>
+    <p>F = k|q₁q₂|/r² = (9.0 × 10⁹ N·m²/C²) × |5.0 × 10⁻⁶ C × (-3.0 × 10⁻⁶ C)|/(0.40 m)²
+F = 9.0 × 10⁹ × 15 × 10⁻¹² / 0.16
+F = 9.0 × 15 × 10⁻³ / 0.16 = 0.84 N</p>
+  </li>
+  <li>
+    <p>F = qE = (1.6 × 10⁻¹⁹ C) × (4.0 × 10³ N/C) = 6.4 × 10⁻¹⁶ N</p>
+  </li>
+  <li>
+    <p>d) Nuclear decay</p>
+  </li>
+  <li>
+    <p>V ∝ 1/r, so V(0.40 m) = V(0.20 m) × (0.20 m/0.40 m) = 600 V × 0.5 = 300 V</p>
+  </li>
+  <li>
+    <p>C = κε₀A/d where κ is the dielectric constant
+κ = Cd/(ε₀A) = (1.77 × 10⁻¹⁰ F)(2.0 × 10⁻³ m)/[(8.85 × 10⁻¹² F/m)(4.0 × 10⁻² m²)]
+κ = 3.54 × 10⁻¹³ / 3.54 × 10⁻¹³ = 1.0 (vacuum or air)</p>
+  </li>
+</ol>
+
+<h2 id="section-6-electricity">Section 6: Electricity</h2>
+<ol>
+  <li>
+    <p>V = IR = 3.0 A × 5.0 Ω = 15 V</p>
+  </li>
+  <li>
+    <p>R = V/I = 120 V / 8.0 A = 15 Ω</p>
+  </li>
+  <li>
+    <p>Rₑq = R₁ + R₂ + R₃ = 3.0 Ω + 6.0 Ω + 9.0 Ω = 18 Ω</p>
+  </li>
+  <li>
+    <p>1/Rₑq = 1/R₁ + 1/R₂ + 1/R₃ = 1/3.0 + 1/6.0 + 1/9.0 = 0.333 + 0.167 + 0.111 = 0.611
+Rₑq = 1/0.611 = 1.64 Ω</p>
+  </li>
+  <li>
+    <p>Vₜ = ε - Ir = 12 V - (I × 0.50 Ω)
+I = ε/(R + r) = 12 V / (5.5 Ω + 0.50 Ω) = 12 V / 6.0 Ω = 2.0 A
+Vₜ = 12 V - (2.0 A × 0.50 Ω) = 12 V - 1.0 V = 11 V</p>
+  </li>
+</ol>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
