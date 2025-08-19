@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit 2 Problem Set: The Trajectory of a Sounding Rocket</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(60, 90, 120, 0.18);
+            padding: 32px 24px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            color: #2a3d66;
+        }
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin: 24px 0 32px 0;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .step:before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 8px auto;
+            border-radius: 50%;
+            background: #b3c6e6;
+            border: 2px solid #2a3d66;
+            transition: background 0.3s;
+        }
+        .step.active:before, .step.completed:before {
+            background: #2a3d66;
+        }
+        .step.completed:before {
+            background: #4bb543;
+        }
+        .step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: -50%;
+            width: 100%;
+            height: 4px;
+            background: #b3c6e6;
+            z-index: 0;
+        }
+        .step.active:not(:last-child):after, .step.completed:not(:last-child):after {
+            background: #2a3d66;
+        }
+        .card {
+            background: #f7faff;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(60, 90, 120, 0.08);
+            margin-bottom: 24px;
+            padding: 24px 20px;
+            transition: box-shadow 0.2s;
+            display: none;
+        }
+        .card.active {
+            display: block;
+            box-shadow: 0 4px 24px rgba(60, 90, 120, 0.12);
+        }
+        .card h2 {
+            color: #2a3d66;
+            margin-top: 0;
+        }
+        .segment-meta {
+            font-size: 0.95em;
+            color: #5a6d8a;
+            margin-bottom: 12px;
+        }
+        .segment-content {
+            margin-bottom: 18px;
+        }
+        .segment-synthesis, .segment-meta-prompt {
+            background: #eaf3fc;
+            border-left: 4px solid #2a3d66;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .segment-meta-prompt {
+            border-left-color: #4bb543;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+        }
+        button {
+            background: #2a3d66;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 24px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:disabled {
+            background: #b3c6e6;
+            cursor: not-allowed;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 12px 4px; }
+            .card { padding: 12px 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Unit 2 Problem Set: The Trajectory of a Sounding Rocket</h1>
+        <div class="progress-bar" id="progressBar">
+            <div class="step active">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+            <div class="step">5</div>
+            <div class="step">6</div>
+        </div>
+        <!-- Segment Cards -->
+        <div class="card active" id="segment1">
+            <h2>Segment 1: Reading the Launch Data</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> Our primary data source for understanding the launch of the sounding rocket is its velocity-time (v-t) graph. This graph tells the story of the rocket's vertical motion, and our first task is to interpret the initial, most critical phase: the powered ascent.
+                <br><br>
+                <strong>Core Practice:</strong>
+                <ul>
+                    <li>Plot the two data points for the powered ascent on a graph. Draw a straight line connecting them.</li>
+                    <li>Calculate the slope of the line you drew. The formula for slope is <code>m = (y₂ - y₁)/(x₂ - x₁)</code>.</li>
+                    <li>What physical quantity does the slope of a velocity-time graph represent? What is the rocket's average acceleration during its powered ascent?</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Patterns):</strong> The straight, upward-sloping line on your graph is a <em>pattern</em>. What does this specific pattern tell you about the force exerted by the rocket's engine during this 10-second period?
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> To find the acceleration, you divided a change in velocity (in m/s) by a change in time (in s). How do the units of your answer (m/s²) confirm that you performed the correct calculation for acceleration?
+            </div>
+            <div class="nav-buttons">
+                <button disabled>Previous</button>
+                <button onclick="nextSegment()">Next</button>
+            </div>
+        </div>
+        <div class="card" id="segment2">
+            <h2>Segment 2: Motion After Engine Cutoff</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> The rocket's engine provides the initial thrust, but it shuts off at t = 10 seconds. Now, we must analyze the rocket's motion as it coasts upward against the pull of gravity.
+                <br><br>
+                <strong>Core Practice:</strong>
+                <ul>
+                    <li>How does the acceleration during powered ascent compare to the acceleration after the engine cuts off? Is the rocket still speeding up or is it slowing down?</li>
+                    <li>Calculate the additional time to apogee using <code>v_f = v_i + at</code>.</li>
+                    <li>What is the total time elapsed from launch to apogee?</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Cause and Effect):</strong> Explain the <em>cause</em> for the dramatic change in acceleration at t = 10 seconds. What fundamental interaction is now the primary <em>effect</em> governing the rocket's motion?
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> How does rearranging a single kinematic equation allow you to answer both of these very different questions?
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevSegment()">Previous</button>
+                <button onclick="nextSegment()">Next</button>
+            </div>
+        </div>
+        <div class="card" id="segment3">
+            <h2>Segment 3: Calculating Altitude (Part 1)</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> We have analyzed the rocket's acceleration, but a crucial question remains: how high did it go? We can determine the altitude gained during the powered ascent directly from our graph.
+                <br><br>
+                <strong>Core Practice:</strong>
+                <ul>
+                    <li>Identify the geometric shape under the v-t graph from t = 0 s to t = 10 s.</li>
+                    <li>Calculate the area of that shape. Use <code>A = ½bh</code>.</li>
+                    <li>What was the rocket's altitude at MECO? Ensure your answer has the correct units.</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Patterns):</strong> Compare the area accumulated between t=0 and t=1s with t=9 and t=10s. What does this <em>pattern</em> tell you about how the rocket's speed affects the distance it travels each second?
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> What would multiplying the final velocity by time incorrectly assume about the rocket's motion during the first 10 seconds?
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevSegment()">Previous</button>
+                <button onclick="nextSegment()">Next</button>
+            </div>
+        </div>
+        <div class="card" id="segment4">
+            <h2>Segment 4: Calculating Altitude (Part 2)</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> To find the rocket's maximum height (apogee), we must add the altitude gained during the powered ascent to the additional height it gained while coasting upward.
+                <br><br>
+                <strong>Core Practice:</strong>
+                <ul>
+                    <li>Sketch the line representing the rocket's velocity from MECO until apogee. What geometric shape is formed?</li>
+                    <li>Calculate the area of this second shape for coasting altitude.</li>
+                    <li>Add the altitudes to determine the rocket's maximum altitude.</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Cause and Effect):</strong> What is the ultimate <em>cause</em> of the rocket stopping at apogee? What is the subsequent <em>effect</em> on its direction?
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> Write a plain-language, step-by-step "recipe" for finding the rocket's maximum height using only the launch data.
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevSegment()">Previous</button>
+                <button onclick="nextSegment()">Next</button>
+            </div>
+        </div>
+        <div class="card" id="segment5">
+            <h2>Segment 5: Synthesis: The Incident Report</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> Mission control has lost contact with the rocket. The final telemetry data received is an incomplete v-t graph that looks... anomalous. Your team must analyze the graph and write a brief incident report explaining what the data tells you happened to the mission.
+                <br><br>
+                <strong>Core Practice (The Incident Report):</strong>
+                <ul>
+                    <li>Calculate acceleration during the initial burn.</li>
+                    <li>Find the altitude reached when the anomaly occurred at t = 5 s.</li>
+                    <li>Conclude what happened to the rocket at t = 5 s.</li>
+                    <li>Calculate the maximum height the rocket achieved.</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Patterns & Cause and Effect):</strong> How did the sudden <em>break</em> in the expected <em>pattern</em> of the graph allow you to infer the <em>cause</em> of the mission failure?
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> How did breaking the successful launch into two stages prepare you to analyze this more complex, multi-stage failure scenario?
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevSegment()">Previous</button>
+                <button onclick="nextSegment()">Next</button>
+            </div>
+        </div>
+        <div class="card" id="segment6">
+            <h2>Segment 6: Metacognition & Review</h2>
+            <div class="segment-meta">Estimated Time: 20 minutes</div>
+            <div class="segment-content">
+                <strong>Context & Phenomenon Link:</strong> We have used a simplified v-t graph as a model to understand the complex reality of a rocket launch. This final segment is for reflecting on the connection between our model and the real-world phenomenon.
+                <br><br>
+                <strong>Core Practice (Conceptual Review):</strong>
+                <ul>
+                    <li>Explain how the slope of the v-t graph relates to acceleration, and how the area under the graph relates to altitude.</li>
+                    <li>How would the v-t graph for the coasting phase be different if we included atmospheric drag? Would the rocket reach a higher or lower apogee?</li>
+                    <li>What additional information would you need to describe the rocket's trajectory if launched at a 75-degree angle?</li>
+                </ul>
+            </div>
+            <div class="segment-synthesis">
+                <strong>Synthesis & Cross-Cutting Lens (Cause and Effect):</strong> List two key <em>cause-and-effect</em> relationships that governed the rocket's motion from launchpad to apogee.
+            </div>
+            <div class="segment-meta-prompt">
+                <strong>Metacognitive Prompt:</strong> What aspect of the rocket's story was made clearest by using the velocity-time graph? What important information was invisible in the data we analyzed?
+            </div>
+            <div class="nav-buttons">
+                <button onclick="prevSegment()">Previous</button>
+                <button disabled>Next</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Simple stepper navigation
+        let current = 1;
+        const total = 6;
+        function showSegment(n) {
+            for (let i = 1; i <= total; i++) {
+                document.getElementById('segment' + i).classList.remove('active');
+                document.querySelectorAll('.step')[i-1].classList.remove('active', 'completed');
+                if (i < n) document.querySelectorAll('.step')[i-1].classList.add('completed');
+            }
+            document.getElementById('segment' + n).classList.add('active');
+            document.querySelectorAll('.step')[n-1].classList.add('active');
+            current = n;
+        }
+        function nextSegment() {
+            if (current < total) showSegment(current + 1);
+        }
+        function prevSegment() {
+            if (current > 1) showSegment(current - 1);
+        }
+        // Keyboard navigation (optional)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') nextSegment();
+            if (e.key === 'ArrowLeft') prevSegment();
+        });
+    </script>
+</body>
+</html>
