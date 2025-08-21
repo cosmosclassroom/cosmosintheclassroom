@@ -136,6 +136,25 @@
         #key-dates-sidebar {
             transition: transform 0.3s ease;
         }
+        
+        /* Period Color Classes */
+        .period-1 { background-color: #FEF3C7; color: #92400E; border: 1px solid #F59E0B; }
+        .period-2 { background-color: #FECACA; color: #991B1B; border: 1px solid #EF4444; }
+        .period-3 { background-color: #C7D2FE; color: #3730A3; border: 1px solid #6366F1; }
+        .period-4 { background-color: #D1FAE5; color: #047857; border: 1px solid #10B981; }
+        .period-5 { background-color: #E0E7FF; color: #4338CA; border: 1px solid #8B5CF6; }
+        .period-6 { background-color: #FCE7F3; color: #BE185D; border: 1px solid #EC4899; }
+        .period-7 { background-color: #F0FDF4; color: #166534; border: 1px solid #22C55E; }
+        .period-8 { background-color: #FFF7ED; color: #C2410C; border: 1px solid #F97316; }
+        
+        .period-1-dropped { background-color: #FDE68A; color: #78350F; border: 1px solid #D97706; }
+        .period-2-dropped { background-color: #FCA5A5; color: #7F1D1D; border: 1px solid #DC2626; }
+        .period-3-dropped { background-color: #A5B4FC; color: #312E81; border: 1px solid #4F46E5; }
+        .period-4-dropped { background-color: #A7F3D0; color: #064E3B; border: 1px solid #059669; }
+        .period-5-dropped { background-color: #C7D2FE; color: #3730A3; border: 1px solid #7C3AED; }
+        .period-6-dropped { background-color: #F9A8D4; color: #9D174D; border: 1px solid #DB2777; }
+        .period-7-dropped { background-color: #BBF7D0; color: #14532D; border: 1px solid #16A34A; }
+        .period-8-dropped { background-color: #FED7AA; color: #9A3412; border: 1px solid #EA580C; }
     </style>
 </head>
 <body>
@@ -162,6 +181,7 @@
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Main Content -->
             <main class="flex-grow">
+<<<<<<< HEAD
                 <!-- Daily Schedule Row: Make schedule viewer and daily schedule side-by-side on desktop, stacked on mobile -->
                 <div class="flex flex-col md:flex-row gap-6 mb-12 items-start w-full">
                     <!-- Section 1: Interactive Schedule Viewer (left) -->
@@ -174,6 +194,23 @@
                                 <button data-day="2" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 2</button>
                                 <button data-day="3" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 3</button>
                                 <button data-day="4" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 4</button>
+=======
+                <!-- Section 1: Interactive Schedule Viewer -->
+                <section id="schedule-viewer" class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-[#D6CFCB] pb-2">Interactive Schedule Viewer</h2>
+                    <p class="text-gray-600 mb-6">The BHS schedule is an "8 drop 2" model on a 4-day rotation. This means each class meets 3 times per cycle. Use the buttons below to see which periods meet on each day of the rotation.</p>
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="day-buttons">
+                            <button data-day="A" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 active-day-btn">Day A</button>
+                            <button data-day="B" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day B</button>
+                            <button data-day="C" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day C</button>
+                            <button data-day="D" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day D</button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h3 class="font-bold text-lg mb-2 text-center">Meeting Periods</h3>
+                                <ul id="meeting-periods" class="space-y-2 text-center"></ul>
+>>>>>>> refs/remotes/origin/main
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -250,7 +287,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // --- DATA ---
             const periods = [1, 2, 3, 4, 5, 6, 7, 8];
-            const dropSchedule = { 1: [7, 8], 2: [5, 6], 3: [3, 4], 4: [1, 2] };
+            const dropSchedule = { A: [7, 8], B: [5, 6], C: [3, 4], D: [1, 2] };
             const keyDates = [
                 { date: '2025-09-01', event: 'Labor Day', type: 'holiday' },
                 { date: '2025-09-24', event: 'PD Day (Early Release)', type: 'pd' },
@@ -305,8 +342,8 @@
             function updateScheduleView(day, noteText = "") {
                 const dropped = dropSchedule[day];
                 const meeting = periods.filter(p => !dropped.includes(p));
-                meetingPeriodsList.innerHTML = meeting.map(p => `<li class="bg-green-100 text-green-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
-                droppedPeriodsList.innerHTML = dropped.map(p => `<li class="bg-red-100 text-red-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
+                meetingPeriodsList.innerHTML = meeting.map(p => `<li class="period-${p} font-semibold py-2 px-3 rounded-md">Period ${p}</li>`).join('');
+                droppedPeriodsList.innerHTML = dropped.map(p => `<li class="period-${p}-dropped font-semibold py-2 px-3 rounded-md">Period ${p}</li>`).join('');
                 document.querySelectorAll('.day-btn').forEach(btn => {
                     btn.classList.toggle('active-day-btn', btn.dataset.day == day);
                     btn.classList.toggle('inactive-day-btn', btn.dataset.day != day);
@@ -332,6 +369,7 @@
                 if (e.target.classList.contains('day-btn')) updateScheduleView(e.target.dataset.day);
             });
 
+<<<<<<< HEAD
             // --- MODAL LOGIC ---
             function openDayScheduleModal(dateString) {
                 const rotationDay = rotationMap.get(dateString);
@@ -367,6 +405,158 @@
                     updateScheduleView(1, "No school or no rotation on this date. Please choose a calendar day below to see its daily schedule.");
                     inlineDaySchedule.classList.add('hidden');
                 }
+=======
+            // --- CALENDAR LOGIC ---
+            const rotationColors = { A: 'bg-blue-100', B: 'bg-indigo-100', C: 'bg-purple-100', D: 'bg-pink-100' };
+            const rotationMap = generateRotationMap();
+
+            function generateRotationMap() {
+                const map = new Map();
+                let rotationDay = 'A';
+                const rotationDays = ['A', 'B', 'C', 'D'];
+                const startDate = new Date('2025-08-28T12:00:00Z');
+                const endDate = new Date('2026-06-10T12:00:00Z');
+                let dayIndex = 0;
+                for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+                    const dayOfWeek = d.getUTCDay();
+                    const dateString = d.toISOString().split('T')[0];
+                    if (dayOfWeek !== 0 && dayOfWeek !== 6 && !nonInstructionalDates.has(dateString)) {
+                        map.set(dateString, rotationDays[dayIndex]);
+                        dayIndex = (dayIndex + 1) % 4;
+                    }
+                }
+                return map;
+            }
+
+            function generateCalendar(year, month) {
+                const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
+                let header = `<h3 class="font-bold text-center mb-2">${monthName} ${year}</h3>`;
+                let daysOfWeek = `<div class="grid grid-cols-7 text-center text-xs font-semibold text-gray-500 mb-1"><div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div></div>`;
+                let calendarDays = `<div class="grid grid-cols-7 text-center text-sm">`;
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                for (let j = 0; j < firstDay; j++) { calendarDays += `<div></div>`; }
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const date = new Date(year, month, day);
+                    const dateString = date.toISOString().split('T')[0];
+                    const rotation = rotationMap.get(dateString);
+                    let cellClass = 'py-1';
+                    let dataAttr = '';
+                    if (rotation) {
+                        cellClass += ` ${rotationColors[rotation]} font-bold rounded-full cursor-pointer hover:ring-2 ring-offset-1 ring-blue-400`;
+                        dataAttr = `data-date="${dateString}"`;
+                    } else if (nonInstructionalDates.has(dateString)) {
+                        cellClass += ' bg-gray-300 text-white rounded-full';
+                    }
+                    calendarDays += `<div class="${cellClass}" ${dataAttr}>${day}</div>`;
+                }
+                calendarDays += `</div>`;
+                calendarContainer.innerHTML = header + daysOfWeek + calendarDays;
+            }
+
+            function populateMonthSelector() {
+                const months = [{year: 2025, month: 7, name: "August 2025"}, {year: 2025, month: 8, name: "September 2025"}, {year: 2025, month: 9, name: "October 2025"}, {year: 2025, month: 10, name: "November 2025"}, {year: 2025, month: 11, name: "December 2025"}, {year: 2026, month: 0, name: "January 2026"}, {year: 2026, month: 1, name: "February 2026"}, {year: 2026, month: 2, name: "March 2026"}, {year: 2026, month: 3, name: "April 2026"}, {year: 2026, month: 4, name: "May 2026"}, {year: 2026, month: 5, name: "June 2026"}];
+                months.forEach(m => {
+                    const option = document.createElement('option');
+                    option.value = `${m.year}-${m.month}`;
+                    option.textContent = m.name;
+                    monthSelector.appendChild(option);
+                });
+            }
+            monthSelector.addEventListener('change', (e) => {
+                const [year, month] = e.target.value.split('-').map(Number);
+                generateCalendar(year, month);
+            });
+
+            // --- MONTH ARROW CLICKERS ---
+            const monthsArr = [
+                {year: 2025, month: 7, name: "August 2025"},
+                {year: 2025, month: 8, name: "September 2025"},
+                {year: 2025, month: 9, name: "October 2025"},
+                {year: 2025, month: 10, name: "November 2025"},
+                {year: 2025, month: 11, name: "December 2025"},
+                {year: 2026, month: 0, name: "January 2026"},
+                {year: 2026, month: 1, name: "February 2026"},
+                {year: 2026, month: 2, name: "March 2026"},
+                {year: 2026, month: 3, name: "April 2026"},
+                {year: 2026, month: 4, name: "May 2026"},
+                {year: 2026, month: 5, name: "June 2026"}
+            ];
+
+            function getMonthIndex(value) {
+                return monthsArr.findIndex(m => `${m.year}-${m.month}` === value);
+            }
+
+            document.getElementById('prev-month').addEventListener('click', function() {
+                const idx = getMonthIndex(monthSelector.value);
+                if (idx > 0) {
+                    monthSelector.value = `${monthsArr[idx - 1].year}-${monthsArr[idx - 1].month}`;
+                    const [year, month] = monthSelector.value.split('-').map(Number);
+                    generateCalendar(year, month);
+                }
+            });
+
+            document.getElementById('next-month').addEventListener('click', function() {
+                const idx = getMonthIndex(monthSelector.value);
+                if (idx < monthsArr.length - 1) {
+                    monthSelector.value = `${monthsArr[idx + 1].year}-${monthsArr[idx + 1].month}`;
+                    const [year, month] = monthSelector.value.split('-').map(Number);
+                    generateCalendar(year, month);
+                }
+            });
+
+            // --- KEY DATES LOGIC ---
+            function renderDates(filter = 'all') {
+                const uniqueEvents = Array.from(new Map(keyDates.map(item => [item.event, item])).values());
+                const filteredDates = (filter === 'all') ? uniqueEvents : uniqueEvents.filter(d => d.type === filter);
+                datesList.innerHTML = filteredDates.map(date => {
+                    const formattedDate = new Date(date.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+                    let displayEvent = date.event;
+                    let dateRange = '';
+                    if (displayEvent.includes('(')) {
+                        const parts = displayEvent.split('(');
+                        displayEvent = parts[0].trim();
+                        dateRange = parts[1].replace(')', '');
+                    } else {
+                        dateRange = formattedDate;
+                    }
+                    return `<li class="flex justify-between items-center p-2 rounded-md" data-type="${date.type}"><span>${displayEvent}</span><span class="font-semibold text-gray-600">${dateRange}</span></li>`;
+                }).join('');
+            }
+            filterButtons.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.toggle('bg-[#4A5568]', e.target === btn);
+                        btn.classList.toggle('text-white', e.target === btn);
+                        btn.classList.toggle('bg-gray-200', e.target !== btn);
+                        btn.classList.toggle('text-gray-700', e.target !== btn);
+                    });
+                    renderDates(e.target.dataset.filter);
+                }
+            });
+
+            // --- MODAL LOGIC ---
+            function openDayScheduleModal(dateString) {
+                const rotationDay = rotationMap.get(dateString);
+                if (!rotationDay) return;
+                const dropped = dropSchedule[rotationDay];
+                const meeting = periods.filter(p => !dropped.includes(p));
+                const formattedDate = new Date(dateString + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+                
+                modalDate.textContent = `${formattedDate} (Day ${rotationDay})`;
+                modalContent.innerHTML = `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-bold text-center mb-2">Meeting Periods</h4>
+                            <ul class="space-y-1 text-center">${meeting.map(p => `<li class="period-${p} py-1 rounded">${p}</li>`).join('')}</ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-center mb-2">Dropped Periods</h4>
+                            <ul class="space-y-1 text-center">${dropped.map(p => `<li class="period-${p}-dropped py-1 rounded">${p}</li>`).join('')}</ul>
+                        </div>
+                    </div>`;
+                modal.classList.remove('hidden');
+>>>>>>> refs/remotes/origin/main
             }
 
             // Calendar click opens inline schedule and syncs viewer
@@ -381,7 +571,11 @@
             });
 
             // --- INITIALIZE APP ---
+<<<<<<< HEAD
             updateScheduleView(1, "Please choose a calendar day below to see its daily schedule.");
+=======
+            updateScheduleView('A');
+>>>>>>> refs/remotes/origin/main
             populateMonthSelector();
 
             // Default to current month if available, otherwise first available
