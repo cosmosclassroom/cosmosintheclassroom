@@ -229,12 +229,20 @@
         border-left: 4px solid #9333ea;
       }
       
+      .course-card.disasters {
+        border-left: 4px solid #dc2626;
+      }
+      
       .honors-theme {
         color: #2980b9;
       }
       
       .standard-theme {
         color: #7c3aed;
+      }
+      
+      .disasters-theme {
+        color: #dc2626;
       }
       
       .btn-honors {
@@ -251,6 +259,14 @@
       
       .btn-standard:hover {
         background: #7c3aed;
+      }
+      
+      .btn-disasters {
+        background: #dc2626;
+      }
+      
+      .btn-disasters:hover {
+        background: #b91c1c;
       }
       
       /* Student name input area */
@@ -540,7 +556,6 @@
         }
       }
 
-      // Course loading and display functions
       async function loadCourses() {
         try {
           const courses = [
@@ -559,6 +574,14 @@
               dataFile: './sphysics/osephys/osephysics3.json',
               portalLink: './sphysics/osephys/portal.html',
               theme: 'standard'
+            },
+            { 
+              id: 'natdis', 
+              title: 'Natural Disasters', 
+              desc: 'Exploring natural hazards, engineering mitigation strategies, and policy decisions to protect communities',
+              dataFile: './natdis/course.json',
+              portalLink: './natdis/portal.html',
+              theme: 'disasters'
             }
           ];
           
@@ -605,7 +628,12 @@
           const studentName = localStorage.getItem('studentName') || 'Anonymous';
           
           // Show course started popup
-          showPopup('course', 'Course Started!', `${studentName} started: ${courseId === 'hphysics' ? 'The Story of Physics (Honors)' : 'Science Physics Integrated Curriculum (Standard)'}`);
+          const courseNames = {
+            'hphysics': 'The Story of Physics (Honors)',
+            'sphysics': 'Science Physics Integrated Curriculum (Standard)',
+            'natdis': 'Natural Disasters: Science, Engineering, and Policy'
+          };
+          showPopup('course', 'Course Started!', `${studentName} started: ${courseNames[courseId] || 'Unknown Course'}`);
           
           // Log course access
           logEvent("course_access", {
@@ -775,6 +803,8 @@
           alert('The Story of Physics (Honors)\n\nA comprehensive honors physics course exploring:\n• Part I: The Rules of the Game\n• Part II: The Great Unification\n• Part III: The Unseen World\n\n180 instructional days, 10 core units across 4 quarters.');
         } else if (courseId === 'sphysics') {
           alert('Science Physics Integrated Curriculum (Standard)\n\nAn integrated physics curriculum exploring:\n• Part I: Energy and Earth Systems\n• Part II: Motion and Collisions\n• Part III: Waves and Electromagnetic Radiation\n\n181 instructional days, 5 core units on 8-drop-2 schedule.');
+        } else if (courseId === 'natdis') {
+          alert('Natural Disasters: Science, Engineering, and Policy\n\nAn elective course exploring natural hazards through multiple perspectives:\n• ND1: Earthquakes - Earth\'s Engine\n• ND2: Severe Weather - When the Sky Attacks\n• ND3: Fire and Water - Wildfires and Floods\n• ND4: Community Resilience - Building Back Better\n\nSemester course, 4 thematic units with Scientist-Engineer-Policymaker roles.');
         }
       }
 
@@ -854,6 +884,7 @@
       function getTotalUnits(courseId) {
         if (courseId === 'hphysics') return 10;
         if (courseId === 'sphysics') return 5;
+        if (courseId === 'natdis') return 4;
         return 0;
       }
 

@@ -2,12 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Honors Physics Portal</title>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   <meta name="viewport" content="width=device-width, initial-scale=1">
->>>>>>> refs/remotes/origin/main
+  <title>Honors Physics Portal</title>
   <style>
     body { 
       font-family: 'Inter', Arial, sans-serif; 
@@ -94,127 +90,18 @@
   </style>
 </head>
 <body>
-<<<<<<< HEAD
-  <h1 id="course-title">Loading...</h1>
-=======
-</head>
-<body>
-  <h1 id="course-title"></h1>
->>>>>>> 265aa91 (rebase attempt 1)
-  <div id="units-container"></div>
-
-  <script>
-    fetch('admin/course.json')
-<<<<<<< HEAD
-      .then(res => {
-        if (!res.ok) throw new Error('Could not load course.json');
-        return res.json();
-      })
-      .then(course => {
-        document.getElementById('course-title').textContent = course.name;
-        const container = document.getElementById('units-container');
-
-        course.units.forEach(unit => {
-          const unitDiv = document.createElement('div');
-          unitDiv.classList.add('unit');
-
-=======
-      .then(res => res.json())
-      .then(course => {
-        document.getElementById('course-title').textContent = course.name;
-
-        const container = document.getElementById('units-container');
-        course.units.forEach(unit => {
-          const unitDiv = document.createElement('div');
->>>>>>> 265aa91 (rebase attempt 1)
-          const unitHeader = document.createElement('h2');
-          unitHeader.textContent = unit.name;
-          unitDiv.appendChild(unitHeader);
-
-          const chapterUl = document.createElement('ul');
-          unit.chapters.forEach(chapter => {
-            const chapterLi = document.createElement('li');
-<<<<<<< HEAD
-            const chapterTitle = document.createElement('strong');
-            chapterTitle.textContent = chapter.title;
-            chapterLi.appendChild(chapterTitle);
-
-            const linksDiv = document.createElement('div');
-            linksDiv.classList.add('chapter-links');
-
-            // Flexbook
-            if (chapter.flexbookPath) {
-              const flexLink = document.createElement('a');
-              flexLink.href = chapter.flexbookPath;
-              flexLink.textContent = 'Textbook';
-              linksDiv.appendChild(flexLink);
-            }
-
-            // Slides
-            if (chapter.slidesPath) {
-              const slidesLink = document.createElement('a');
-              slidesLink.href = chapter.slidesPath;
-              slidesLink.textContent = 'Slides';
-              linksDiv.appendChild(slidesLink);
-            }
-
-            // Notes
-            if (chapter.notesPath) {
-              const notesLink = document.createElement('a');
-              notesLink.href = chapter.notesPath;
-              notesLink.textContent = 'Notes';
-              linksDiv.appendChild(notesLink);
-            }
-
-            // Briefs
-            if (chapter.briefsPath) {
-              const briefsLink = document.createElement('a');
-              briefsLink.href = chapter.briefsPath;
-              briefsLink.textContent = 'Briefs';
-              linksDiv.appendChild(briefsLink);
-            }
-
-            chapterLi.appendChild(linksDiv);
-=======
-            chapterLi.innerHTML = `<a href="${chapter.flexbookPath}">${chapter.title}</a>`;
->>>>>>> 265aa91 (rebase attempt 1)
-            chapterUl.appendChild(chapterLi);
-          });
-
-          unitDiv.appendChild(chapterUl);
-          container.appendChild(unitDiv);
-        });
-<<<<<<< HEAD
-      })
-      .catch(err => {
-        const container = document.getElementById('units-container');
-        container.textContent = 'Error loading course data: ' + err;
-        console.error(err);
-=======
->>>>>>> 265aa91 (rebase attempt 1)
-      });
-  </script>
-=======
-  <!-- Component placeholders -->
-  <div id="header-placeholder">
-    <!-- Fallback content while loading -->
-    <div class="nav-header">
-      <a href="../index.html">← Back to Main Portal</a> | 
-      <a href="../sphysics/osephys/portal.html">🔬 Standard Physics</a> |
-      <a href="../../index.html">🏠 Home</a>
-    </div>
+  <!-- Navigation Header -->
+  <div class="nav-header">
+    <a href="../index.html">← Back to Main Portal</a> | 
+    <a href="../sphysics/osephys/portal.html">🔬 Standard Physics</a> |
+    <a href="../../index.html">🏠 Home</a>
   </div>
-  
-  <div id="nav-placeholder"></div>
   
   <main>
     <h1 id="course-title">Loading course...</h1>
     <div id="units-container">Loading course data...</div>
   </main>
-  
-  <div id="footer-placeholder"></div>
 
-  <script src="../script.js"></script>
->>>>>>> refs/remotes/origin/main
+  <script src="../scripts/portal-manager.js"></script>
 </body>
 </html>

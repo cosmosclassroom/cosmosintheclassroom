@@ -1,4 +1,6 @@
-<<<<<<< HEAD
+// Course Structure Generator
+// Node.js script to automatically generate course folder structures based on course.json files
+
 const fs = require('fs');
 const path = require('path');
 
@@ -7,7 +9,6 @@ const courseFiles = [
   './sphysics/course.json',
   './natdis/course.json'
 ];
-
 
 // Helper to create folder if it doesn't exist
 function createFolder(folderPath) {
@@ -90,53 +91,38 @@ function generateCourseStructure(course) {
     console.log(`Course folder structure for ${course.courseId} generated successfully!`);
 }
 
-// Loop through all course files and generate structure
-courseFiles.forEach(file => {
-  const course = JSON.parse(fs.readFileSync(file, 'utf8'));
-  generateCourseStructure(course);
-});
-=======
-function loadCourse(courseJsonPath, container) {
-  fetch(courseJsonPath)
-    .then(res => {
-      if (!res.ok) throw new Error('Failed to load course JSON');
-      return res.json();
-    })
-    .then(course => {
-      container.innerHTML = ''; // clear loading text
-
-      if (!course || !Array.isArray(course.units)) {
-        container.textContent = 'Error: Course JSON is missing "units" array.';
-        return;
-      }
-
-      course.units.forEach(unit => {
-        const unitDiv = document.createElement('div');
-        const unitHeader = document.createElement('h2');
-        unitHeader.textContent = unit.name;
-        unitDiv.appendChild(unitHeader);
-
-        const chapterUl = document.createElement('ul');
-        if (unit.chapters && Array.isArray(unit.chapters)) {
-          unit.chapters.forEach(chapter => {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="${chapter.flexbookPath}" target="_blank">${chapter.title}</a>`;
-            chapterUl.appendChild(li);
-          });
-        } else {
-          const li = document.createElement('li');
-          li.textContent = 'No chapters found.';
-          chapterUl.appendChild(li);
+// Main execution
+function main() {
+    console.log('🏗️  Course Structure Generator');
+    console.log('==================================');
+    
+    courseFiles.forEach((file, index) => {
+        console.log(`\n📁 Processing course file ${index + 1}/${courseFiles.length}: ${file}`);
+        
+        try {
+            if (!fs.existsSync(file)) {
+                console.warn(`⚠️  Course file not found: ${file}`);
+                return;
+            }
+            
+            const course = JSON.parse(fs.readFileSync(file, 'utf8'));
+            generateCourseStructure(course);
+            console.log(`✅ Successfully generated structure for ${course.courseId}`);
+        } catch (error) {
+            console.error(`❌ Error processing ${file}:`, error.message);
         }
-
-        unitDiv.appendChild(chapterUl);
-        container.appendChild(unitDiv);
-      });
-    })
-    .catch(err => {
-      console.error(err);
-      container.textContent = 'Error loading course: ' + err;
     });
+    
+    console.log('\n🎉 Course structure generation complete!');
 }
 
->>>>>>> refs/remotes/origin/main
+// Run the script if called directly
+if (require.main === module) {
+    main();
+}
+
+module.exports = {
+    generateCourseStructure,
+    createFolder,
+    createFile
+};
