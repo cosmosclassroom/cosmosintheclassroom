@@ -16,6 +16,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     {% endif %}
+<<<<<<< HEAD
     <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
     {% if page.stylesheet %}
     <link rel="stylesheet" href="{{ '/assets/css/' | append: page.stylesheet | append: '.css' | relative_url }}" />
@@ -40,6 +41,47 @@
         {{ content }}
       </div>  
   </body>
+=======
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/worksheets.css' | relative_url }}">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        {% include header.html %}
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      {{ content }}
+    
+    </div>
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     {% if page.math != false %}
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -56,5 +98,10 @@
         });
     </script>
     {% endif %}
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>PS 8.2 Electric Field and Charge | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="ps-82--electric-field-and-charge">PS 8.2 | Electric Field and Charge</h1>
+
+<h2 id="formula-summary">Formula Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th style="text-align: center">Formula</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Electric Field (point)</td>
+      <td style="text-align: center">$E = k \frac{q}{r^2}$</td>
+      <td>Field from a point charge at distance</td>
+    </tr>
+    <tr>
+      <td>Electric Field (force)</td>
+      <td style="text-align: center">$E = \frac{F}{q} $</td>
+      <td>Field from charge and force</td>
+    </tr>
+    <tr>
+      <td>Electric Potential</td>
+      <td style="text-align: center">$V = k \frac{q}{r}$</td>
+      <td>Potential from a point charge</td>
+    </tr>
+    <tr>
+      <td>Net Electric Field</td>
+      <td style="text-align: center">$E_{net} = E_1 + E_2 + \dots$</td>
+      <td>Vector sum of fields</td>
+    </tr>
+    <tr>
+      <td>Potential Energy</td>
+      <td style="text-align: center">$\Delta PE = qV$</td>
+      <td>Work to bring charge to potential $V$</td>
+    </tr>
+    <tr>
+      <td>Capacitance</td>
+      <td style="text-align: center">$C = \frac{Q}{V}$</td>
+      <td>Capacitance definition</td>
+    </tr>
+    <tr>
+      <td>Capacitor Energy</td>
+      <td style="text-align: center">$U = \frac{1}{2}CV^2$</td>
+      <td>Energy stored in a capacitor</td>
+    </tr>
+    <tr>
+      <td>Capacitor Energy (Q)</td>
+      <td style="text-align: center">$U = \frac{1}{2}\frac{Q^2}{C}$</td>
+      <td>Energy in terms of charge and capacitance</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="problems">Problems</h2>
+
+<ol>
+  <li>
+    <p>A point charge of +3.0 μC is placed at the origin.<br />
+ a. What is the magnitude and direction of the electric field 25 cm away from the charge along the x-axis?<br />
+ b. Explain what the direction of the electric field tells you about the force a positive test charge would experience at that point.</p>
+  </li>
+  <li>
+    <p>Two charges, +2.0 μC and -2.0 μC, are placed 40 cm apart on the x-axis.<br />
+ a. Calculate the net electric field at a point exactly midway between them.<br />
+ b. If both charges were positive, how would the direction and magnitude of the net electric field at the midpoint change? Explain.</p>
+  </li>
+  <li>
+    <p>A charge of −6.0 μC is located 30 cm from a point P.<br />
+ a. What is the electric potential at point P due to this charge?<br />
+ b. How much work is required to bring a +1.0 μC charge from infinity (zero potential energy) to point P?<br />
+ c. Is electric potential a vector or a scalar? How does this affect how you combine potentials from multiple charges?</p>
+  </li>
+  <li>
+    <p>A charge of -6.0 μC is located 30 cm from a point P.<br />
+ a. What is the electric potential at point P due to this charge?<br />
+ b. How much work is required to bring a +1.0 μC charge from infinity to point P?<br />
+ c. Is electric potential a vector or a scalar? How does this affect how you combine potentials from multiple charges?</p>
+  </li>
+  <li>
+    <p>A parallel plate capacitor has a capacitance of 8.0 μF and is charged to a potential difference of 15 V.<br />
+ a. Calculate the energy stored in the capacitor.<br />
+ b. What happens to the energy stored in a capacitor if the voltage is doubled? Explain why.</p>
+  </li>
+  <li>
+    <p>The plates of a parallel plate capacitor are moved farther apart while keeping the charge constant.<br />
+ a. Using the formula $U = \frac{1}{2}\frac{Q^2}{C}$, explain what happens to the energy stored in the capacitor as the plates are moved farther apart (with $Q$ constant). Show your reasoning.<br />
+ b. Why does the electric field between the plates remain constant even as the plates are moved apart (with constant charge)?</p>
+  </li>
+  <li>
+    <p>Sketch the electric field lines and equipotential surfaces for a system of two equal but opposite charges separated by a small distance (an electric dipole).<br />
+ a. Describe the pattern and explain the relationship between field lines and equipotentials.<br />
+ b. How would the field pattern change if both charges were positive?</p>
+  </li>
+  <li>
+    <p>A small test charge is placed near a large, positively charged <em>conducting</em> sphere.<br />
+ a. Describe and explain the direction of the electric field and the force experienced by the test charge both outside and inside the sphere.<br />
+ b. Why is the electric field inside a conductor zero in electrostatic equilibrium?</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="solutions">Solutions</h2>
+
+<ol>
+  <li>
+    <p>Field of a point charge<br />
+  a. $E = 4.3 \times 10^5~\text{N/C}$<br />
+  b. Away from positive charge along x-axis</p>
+  </li>
+  <li>
+    <p>Net field between two charges<br />
+  a. $E_{net} = 0~\text{N/C}$ (fields equal and opposite; $E_1 = E_2 = 4.5 \times 10^5~\text{N/C}$)<br />
+  b. If both charges were positive, the fields would add at the midpoint, pointing away from the charges.</p>
+  </li>
+  <li>
+    <p>Electric potential and work for a point charge<br />
+  a. $V = -1.8 \times 10^5~\text{V}$<br />
+  b. $-0.18~\text{J}$<br />
+  c. Scalar; potentials add algebraically</p>
+  </li>
+  <li>
+    <p>Electric potential and work (duplicate, alternate phrasing)<br />
+  a. $V = -1.8 \times 10^5~\text{V}$<br />
+  b. $-0.18~\text{J}$<br />
+  c. Scalar; potentials add algebraically</p>
+  </li>
+  <li>
+    <p>Energy stored in a capacitor<br />
+  a. $U = 9.0 \times 10^{-4}~\text{J}$<br />
+  b. Energy increases by a factor of four if voltage is doubled ($U \propto V^2$)</p>
+  </li>
+  <li>
+    <p>Changing plate separation with constant charge<br />
+  a. $U$ increases as $C$ decreases (with $Q$ constant)<br />
+  b. $E$ remains constant (depends only on charge and area)</p>
+  </li>
+  <li>
+    <p>Field and equipotentials for a dipole<br />
+  a. Field lines go from positive to negative; equipotentials are perpendicular to field lines<br />
+  b. For two positive charges, field lines repel and do not connect</p>
+  </li>
+  <li>
+    <p>Field near a conducting sphere<br />
+  a. Outside: field and force point radially outward; inside: both are zero<br />
+  b. Field inside a conductor is zero because charges redistribute to cancel any internal field</p>
+  </li>
+</ol>
+
+<blockquote>
+  <p><b>Conceptual explanation:</b> In electrostatic equilibrium, any excess charge on a conductor resides distributed on its surface, and the charges arrange themselves so that the electric field inside is zero. This is why a test charge inside a conductor feels no force.</p>
+</blockquote>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

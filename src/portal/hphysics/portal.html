@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Honors Physics Portal</title>
+<<<<<<< HEAD
   <style>
     body { font-family: sans-serif; margin: 2em; }
     h1 { font-family: serif; }
@@ -14,10 +15,16 @@
 </head>
 <body>
   <h1 id="course-title">Loading...</h1>
+=======
+</head>
+<body>
+  <h1 id="course-title"></h1>
+>>>>>>> 265aa91 (rebase attempt 1)
   <div id="units-container"></div>
 
   <script>
     fetch('admin/course.json')
+<<<<<<< HEAD
       .then(res => {
         if (!res.ok) throw new Error('Could not load course.json');
         return res.json();
@@ -30,6 +37,15 @@
           const unitDiv = document.createElement('div');
           unitDiv.classList.add('unit');
 
+=======
+      .then(res => res.json())
+      .then(course => {
+        document.getElementById('course-title').textContent = course.name;
+
+        const container = document.getElementById('units-container');
+        course.units.forEach(unit => {
+          const unitDiv = document.createElement('div');
+>>>>>>> 265aa91 (rebase attempt 1)
           const unitHeader = document.createElement('h2');
           unitHeader.textContent = unit.name;
           unitDiv.appendChild(unitHeader);
@@ -37,6 +53,7 @@
           const chapterUl = document.createElement('ul');
           unit.chapters.forEach(chapter => {
             const chapterLi = document.createElement('li');
+<<<<<<< HEAD
             const chapterTitle = document.createElement('strong');
             chapterTitle.textContent = chapter.title;
             chapterLi.appendChild(chapterTitle);
@@ -77,17 +94,23 @@
             }
 
             chapterLi.appendChild(linksDiv);
+=======
+            chapterLi.innerHTML = `<a href="${chapter.flexbookPath}">${chapter.title}</a>`;
+>>>>>>> 265aa91 (rebase attempt 1)
             chapterUl.appendChild(chapterLi);
           });
 
           unitDiv.appendChild(chapterUl);
           container.appendChild(unitDiv);
         });
+<<<<<<< HEAD
       })
       .catch(err => {
         const container = document.getElementById('units-container');
         container.textContent = 'Error loading course data: ' + err;
         console.error(err);
+=======
+>>>>>>> 265aa91 (rebase attempt 1)
       });
   </script>
 </body>

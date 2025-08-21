@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NGSS-style assessment covering historical collision data analysis and position-time graph interpretation">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>P3L1-L2 Assessment - Historical Data and Motion Analysis | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="p3l1-l2-assessment-historical-data-and-motion-analysis">P3L1-L2 Assessment: Historical Data and Motion Analysis</h1>
+
+<p><strong>Time:</strong> 45 minutes<br />
+<strong>Instructions:</strong> Answer all questions completely. Show all work for calculations. Use data from graphs and tables to support your reasoning.</p>
+
+<hr />
+
+<h3 id="question-1-5-points">Question 1 (5 points)</h3>
+<p>A traffic safety engineer notices that pedestrian fatalities have increased in urban areas over the past decade, despite overall vehicle safety improvements.</p>
+
+<p><strong>a)</strong> Select TWO possible explanations NOT related to vehicle design: (4 points)</p>
+<ul>
+  <li>A) Vehicles have become less safe</li>
+  <li>B) Increased use of smartphones while walking</li>
+  <li>C) More pedestrians in urban areas due to population growth</li>
+  <li>D) Vehicles are traveling faster</li>
+  <li>E) Improved emergency medical response</li>
+  <li>F) Better road lighting</li>
+</ul>
+
+<p><strong>b)</strong> To test these explanations, which data would be MOST useful? (2 points)</p>
+<ul>
+  <li>A) Vehicle sales figures</li>
+  <li>B) Pedestrian smartphone usage and foot traffic patterns</li>
+  <li>C) Weather data</li>
+  <li>D) Gas prices over time</li>
+</ul>
+
+<p><strong>c)</strong> How can understanding historical safety trends help engineers design better systems? (2 points)</p>
+<ul>
+  <li>A) It provides entertainment value</li>
+  <li>B) It identifies which past solutions worked and failed</li>
+  <li>C) It predicts exact future outcomes</li>
+  <li>D) It reduces the need for new testing</li>
+</ul>
+
+<hr />
+
+<h2 id="part-b-motion-analysis-and-position-time-graphs-25-points">Part B: Motion Analysis and Position-Time Graphs (25 points)</h2>
+
+<h3 id="question-4-12-points">Question 4 (12 points)</h3>
+<p>A driver education instructor tests student reaction times. The position-time graph below shows a car during emergency braking:</p>
+
+<p><img src="/assets/images/p3_collisions/p3l5_images/p-t_emergency-stop.png" alt="emergency braking p-t graph" /></p>
+
+<p><strong>a)</strong> Calculate the reaction distance. Show your work. (3 points)</p>
+
+<p>Reaction distance = <strong>__</strong>_ meters</p>
+
+<p><strong>b)</strong> Calculate the braking distance. Show your work. (3 points)</p>
+
+<p>Braking distance = <strong>__</strong>_ meters</p>
+
+<p><strong>c)</strong> Calculate the car’s velocity during reaction time. Show your work. (3 points)</p>
+
+<p>Velocity = <strong>__</strong>_ m/s</p>
+
+<p><strong>d)</strong> Why is the line from A to B straight while B to D is curved? (3 points)</p>
+<ul>
+  <li>A) The car was broken during braking</li>
+  <li>B) During reaction time velocity is constant; during braking velocity decreases</li>
+  <li>C) The driver was accelerating, then decelerating</li>
+  <li>D) The graph is drawn incorrectly</li>
+</ul>
+
+<h3 id="question-5-8-points">Question 5 (8 points)</h3>
+<p>Two students conducted the same braking experiment. Student A was focused; Student B was texting.</p>
+
+<!-- AI FIGURE NEEDED: Two position-time graphs on same axes
+- X-axis: Time (s) from 0 to 5 seconds  
+- Y-axis: Position (m) from 0 to 100 meters
+- Student A (focused): reaction time 1.5s, starts braking at (1.5, 30), stops at (4, 80)
+- Student B (distracted): reaction time 3.0s, starts braking at (3.0, 60), stops at (5.5, 100)
+- Both have same initial velocity and braking capability
+- Legend showing Student A and Student B
+- Title: "Comparison: Focused vs Distracted Driver" -->
+
+<p><strong>a)</strong> Based on the graphs, which student had the longer total stopping distance? (4 points)</p>
+<ul>
+  <li>A) Student A (focused driver)</li>
+  <li>B) Student B (distracted driver)</li>
+  <li>C) Both had the same stopping distance</li>
+  <li>D) Cannot be determined from the graph</li>
+</ul>
+
+<p><strong>b)</strong> Explain why distraction affects stopping distance using physics concepts: (4 points)</p>
+<ul>
+  <li>A) Distraction makes brakes work poorly</li>
+  <li>B) Distraction increases reaction time, so the car travels farther at constant speed before braking begins</li>
+  <li>C) Distracted drivers brake harder</li>
+  <li>D) Distraction only affects steering, not stopping</li>
+</ul>
+
+<h3 id="question-6-5-points">Question 6 (5 points)</h3>
+<p>Position-time graph interpretation:</p>
+
+<p><strong>a)</strong> When velocity is constant on a P-T graph, the line appears: (2 points)</p>
+<ul>
+  <li>A) Curved upward</li>
+  <li>B) Curved downward</li>
+  <li>C) Straight and sloped</li>
+  <li>D) Horizontal (flat)</li>
+</ul>
+
+<p><strong>b)</strong> When velocity is decreasing on a P-T graph, the line appears: (2 points)</p>
+<ul>
+  <li>A) Curved with decreasing slope</li>
+  <li>B) Straight with constant slope</li>
+  <li>C) Horizontal</li>
+  <li>D) Vertical</li>
+</ul>
+
+<p><strong>c)</strong> A horizontal line on a P-T graph indicates: (1 point)</p>
+<ul>
+  <li>A) Constant velocity</li>
+  <li>B) The object is not moving (velocity = 0)</li>
+  <li>C) Increasing velocity</li>
+  <li>D) Decreasing velocity</li>
+</ul>
+
+<hr />
+
+<h2 id="part-c-connecting-concepts-15-points">Part C: Connecting Concepts (15 points)</h2>
+
+<h3 id="question-7-8-points">Question 7 (8 points)</h3>
+<p>Modern vehicle safety features and their physics applications:</p>
+
+<p><strong>a)</strong> How would Anti-lock Braking Systems (ABS) most likely affect the braking portion of a position-time graph? (3 points)</p>
+<ul>
+  <li>A) Make the braking line perfectly straight</li>
+  <li>B) Allow for more controlled deceleration, potentially reducing braking distance</li>
+  <li>C) Increase the braking time significantly</li>
+  <li>D) Have no effect on the graph</li>
+</ul>
+
+<p><strong>b)</strong> Automatic emergency braking systems detect obstacles and brake faster than human reaction time. This technology would: (3 points)</p>
+<ul>
+  <li>A) Only affect the braking distance</li>
+  <li>B) Reduce the reaction distance portion of stopping distance</li>
+  <li>C) Increase total stopping distance</li>
+  <li>D) Only work at high speeds</li>
+</ul>
+
+<p><strong>c)</strong> How could P-T graphs help engineers design collision avoidance systems? (2 points)</p>
+<ul>
+  <li>A) They show pretty pictures of motion</li>
+  <li>B) They help calculate minimum safe distances and required reaction times</li>
+  <li>C) They are required by law</li>
+  <li>D) They predict weather conditions</li>
+</ul>
+
+<h3 id="question-8-7-points">Question 8 (7 points)</h3>
+<p>Research design for studying distracted driving:</p>
+
+<p><strong>a)</strong> To study how different distractions affect reaction time, identify: (3 points)</p>
+
+<p><strong>Independent variable:</strong></p>
+<ul>
+  <li>A) Age of driver</li>
+  <li>B) Type of distraction (texting, talking, etc.)</li>
+  <li>C) Reaction time measured</li>
+  <li>D) Weather conditions</li>
+</ul>
+
+<p><strong>Dependent variable:</strong></p>
+<ul>
+  <li>A) Type of distraction</li>
+  <li>B) Time of day</li>
+  <li>C) Reaction time measured</li>
+  <li>D) Vehicle type</li>
+</ul>
+
+<p><strong>b)</strong> Position-time graphs could analyze this data by: (2 points)</p>
+<ul>
+  <li>A) Showing how reaction distance changes with different distractions</li>
+  <li>B) Predicting future accidents</li>
+  <li>C) Measuring vehicle speeds only</li>
+  <li>D) Calculating fuel efficiency</li>
+</ul>
+
+<p><strong>c)</strong> An important ethical consideration for this research would be: (2 points)</p>
+<ul>
+  <li>A) Using the fastest cars available</li>
+  <li>B) Ensuring participant safety during controlled testing</li>
+  <li>C) Testing only professional drivers</li>
+  <li>D) Conducting tests during rush hour</li>
+</ul>
+
+<hr />
+
+<h2 id="part-d-mathematical-application-10-points">Part D: Mathematical Application (10 points)</h2>
+
+<h3 id="question-9-10-points">Question 9 (10 points)</h3>
+<p>A driver traveling at 25 m/s (about 56 mph) sees an obstacle ahead.</p>
+
+<p><strong>Given:</strong></p>
+<ul>
+  <li>Initial speed: 25 m/s</li>
+  <li>Reaction time: 1.2 seconds</li>
+  <li>Braking deceleration: 8 m/s² (constant)</li>
+  <li>Time to stop after braking begins: 3.1 seconds</li>
+</ul>
+
+<p><strong>a)</strong> Calculate the reaction distance. (2 points)</p>
+
+<p>Reaction distance = speed × time = <strong>__</strong>_ meters</p>
+
+<p><strong>b)</strong> Calculate the braking distance using: distance = initial velocity × time + ½ × acceleration × time²
+    (Note: acceleration is negative for braking) (4 points)</p>
+
+<p>Braking distance = <strong>__</strong>_ meters</p>
+
+<p><strong>c)</strong> Calculate the total stopping distance. (2 points)</p>
+
+<p>Total stopping distance = <strong>__</strong>_ meters</p>
+
+<p><strong>d)</strong> If the obstacle was 75 meters away when first spotted, will the driver avoid collision? (2 points)</p>
+<ul>
+  <li>A) Yes, stopping distance is less than 75 meters</li>
+  <li>B) No, stopping distance exceeds 75 meters</li>
+  <li>C) Exactly equal - will barely stop in time</li>
+  <li>D) Cannot determine from given information</li>
+</ul>
+
+<p><strong>Show reasoning:</strong> <strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong>___</p>
+
+<hr />
+
+<h2 id="answer-key">Answer Key</h2>
+
+<h3 id="part-a">Part A</h3>
+<ol>
+  <li>a) C  b) Period 1: C, Period 2: B  c) B</li>
+  <li>a) 1925: 0.001095 fatalities/vehicle; 2020: 0.000138 fatalities/vehicle  b) B  c) A, B, C, F</li>
+  <li>a) B, C  b) B  c) B</li>
+</ol>
+
+<h3 id="part-b">Part B</h3>
+<ol>
+  <li>a) 30 meters  b) 50 meters  c) 20 m/s  d) B</li>
+  <li>a) B  b) B</li>
+  <li>a) C  b) A  c) B</li>
+</ol>
+
+<h3 id="part-c">Part C</h3>
+<ol>
+  <li>a) B  b) B  c) B</li>
+  <li>a) Independent: B, Dependent: C  b) A  c) B</li>
+</ol>
+
+<h3 id="part-d">Part D</h3>
+<ol>
+  <li>a) 30 meters  b) 38.5 meters  c) 68.5 meters  d) B (total &gt; 75m, collision will occur)</li>
+</ol>
+
+<hr />
+
+<h2 id="required-ai-generated-figures-summary">Required AI-Generated Figures Summary</h2>
+
+<ol>
+  <li><strong>Historical fatality rates line graph</strong> (1920-2020)</li>
+  <li><strong>Transportation safety data table</strong> (1925 vs 2020 comparison)</li>
+  <li><strong>Emergency braking P-T graph</strong> (single scenario with labeled points)</li>
+  <li><strong>Comparison P-T graphs</strong> (focused vs distracted driver on same axes)</li>
+</ol>
+
+<p>Each figure should be generated using Python matplotlib with clear labels, appropriate scales, and professional formatting suitable for a physics assessment.</p>
+
+<h2 id="scoring-rubric">Scoring Rubric</h2>
+
+<h3 id="part-a---historical-data-analysis-25-points">Part A - Historical Data Analysis (25 points)</h3>
+<ul>
+  <li><strong>Exemplary (23-25):</strong> Accurately interprets trends, provides detailed explanations with evidence, makes sophisticated connections between data and safety factors</li>
+  <li><strong>Proficient (18-22):</strong> Correctly interprets most trends, provides reasonable explanations, makes basic connections</li>
+  <li><strong>Developing (13-17):</strong> Some accurate interpretation, explanations lack detail or evidence</li>
+  <li><strong>Beginning (0-12):</strong> Limited accuracy in interpretation, minimal explanations</li>
+</ul>
+
+<h3 id="part-b---motion-analysis-25-points">Part B - Motion Analysis (25 points)</h3>
+<ul>
+  <li><strong>Exemplary (23-25):</strong> Accurate calculations with proper units, clear understanding of P-T graphs, sophisticated explanations</li>
+  <li><strong>Proficient (18-22):</strong> Most calculations correct, good understanding of graphs, adequate explanations</li>
+  <li><strong>Developing (13-17):</strong> Some calculation errors, basic understanding of graphs</li>
+  <li><strong>Beginning (0-12):</strong> Significant calculation errors, limited graph interpretation</li>
+</ul>
+
+<h3 id="part-c---connecting-concepts-15-points">Part C - Connecting Concepts (15 points)</h3>
+<ul>
+  <li><strong>Exemplary (14-15):</strong> Makes sophisticated connections between physics and technology, demonstrates deep understanding</li>
+  <li><strong>Proficient (11-13):</strong> Makes appropriate connections, shows good understanding</li>
+  <li><strong>Developing (8-10):</strong> Makes basic connections, shows developing understanding</li>
+  <li><strong>Beginning (0-7):</strong> Limited connections, minimal understanding</li>
+</ul>
+
+<h3 id="part-d---mathematical-application-10-points">Part D - Mathematical Application (10 points)</h3>
+<ul>
+  <li><strong>Exemplary (9-10):</strong> All calculations correct with proper units and clear reasoning</li>
+  <li><strong>Proficient (7-8):</strong> Most calculations correct with minor errors</li>
+  <li><strong>Developing (5-6):</strong> Some calculation errors but shows understanding of process</li>
+  <li><strong>Beginning (0-4):</strong> Significant calculation errors, limited understanding</li>
+</ul>
+
+<h3 id="overall-grade-scale">Overall Grade Scale:</h3>
+<ul>
+  <li>A: 68-75 points (91-100%)</li>
+  <li>B: 60-67 points (80-90%)</li>
+  <li>C: 53-59 points (70-79%)</li>
+  <li>D: 45-52 points (60-69%)</li>
+  <li>F: Below 45 points (&lt;60%)</li>
+</ul>
+
+<hr />
+
+<h2 id="ngss-alignment">NGSS Alignment</h2>
+
+<p><strong>Performance Expectations:</strong></p>
+<ul>
+  <li>HS-PS2-1: Analyze data to support the claim that Newton’s second law of motion describes the mathematical relationship among the net force on a macroscopic object, its mass, and its acceleration.</li>
+</ul>
+
+<p><strong>Disciplinary Core Ideas (DCIs):</strong></p>
+<ul>
+  <li>PS2.A: Forces and Motion - Objects in motion stay in motion unless acted upon by forces</li>
+  <li>ETS1.A: Defining and Delimiting Engineering Problems - Criteria and constraints for solutions</li>
+</ul>
+
+<p><strong>Science and Engineering Practices (SEPs):</strong></p>
+<ul>
+  <li>Analyzing and Interpreting Data</li>
+  <li>Using Mathematics and Computational Thinking</li>
+  <li>Constructing Explanations and Designing Solutions</li>
+</ul>
+
+<p><strong>Crosscutting Concepts (CCCs):</strong></p>
+<ul>
+  <li>Patterns in historical safety data</li>
+  <li>Cause and Effect relationships between technology and safety</li>
+  <li>Systems and System Models in transportation safety</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

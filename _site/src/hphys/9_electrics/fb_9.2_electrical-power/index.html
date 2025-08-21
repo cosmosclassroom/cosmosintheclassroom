@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <style>
+  body{
+    text-align: justify;
+  }
+  .important-info{
+      padding: 1rem;
+      border: 0.1pt black solid;
+      box-shadow: 5pt grey solid;
+  }
+  img{
+      max-height: 400px;
+      float: left;
+      padding: 2rem;
+  }
+  
+</style>
+
+<h1 id="the-principles-of-electricity-modern-applications-and-power">The Principles of Electricity: Modern Applications and Power</h1>
+
+<h2 id="i-electrical-power-p">I. Electrical Power (P)</h2>
+
+<p>Electrical power is the rate at which electrical energy is transferred or converted. It measures how quickly energy is being used or supplied in an electrical system.</p>
+
+<div class="important-info">
+
+  <p><strong>Electrical Power</strong></p>
+  <ul>
+    <li>Definition: The rate of electrical energy transfer or conversion</li>
+    <li>Formula: $P = V \times I$ (Power = Voltage × Current)</li>
+    <li>Alternative forms using Ohm’s Law:
+      <ul>
+        <li>$P = I^2 \times R$ (Power = Current² × Resistance)</li>
+        <li>$P = \frac{V^2}{R}$ (Power = Voltage² / Resistance)</li>
+      </ul>
+    </li>
+    <li>Power as rate of work: $P = \frac{W}{\Delta t} = \frac{\Delta PE}{\Delta t}$ (Power = Work/Time = Change in energy/Time)</li>
+    <li>Measurement unit: Watts ($W$)</li>
+    <li>$1 \text{ watt} = 1 \text{ joule per second}$ ($1 \text{ W} = 1 \text{ J/s}$)</li>
+  </ul>
+
+</div>
+
+<h3 id="connecting-power-current-and-potential-energy">Connecting Power, Current, and Potential Energy</h3>
+
+<p>The power equation ($P = V \times I$) directly links the concepts of electric potential (voltage) and current (amperes):</p>
+
+<ul>
+  <li>The voltage ($V$) represents the electrical potential energy per unit charge</li>
+  <li>The current ($I$) represents the rate of charge flow</li>
+  <li>Their product ($V \times I$) gives the rate of energy conversion, or power</li>
+</ul>
+
+<p>For example, in a circuit with a 12V source drawing 2A of current:</p>
+<ul>
+  <li>The power is $P = V \times I = 12V \times 2A = 24W$</li>
+  <li>This means 24 joules of electrical energy are being converted to other forms each second</li>
+</ul>
+
+<p>In terms of potential energy:</p>
+<ul>
+  <li>Energy converted over time: $E = P \times t = I \times V \times t$</li>
+  <li>This can be rewritten as: $E = \Delta PE_{electric} = Q \times V = I \times t \times V$</li>
+</ul>
+
+<p>These relationships show that increasing either the voltage or the current will increase the power and the rate at which electrical potential energy is converted.</p>
+
+<h2 id="ii-function-of-a-resistor">II. Function of a Resistor</h2>
+
+<p>Resistors are fundamental components in electrical circuits that convert electrical energy into heat through resistance. They serve several essential functions in circuit design:</p>
+
+<h3 id="regulation-and-current-limiting">Regulation and Current Limiting</h3>
+
+<p>The most basic function of resistors is to limit or control the current in a circuit. According to Ohm’s Law, for a given voltage, increasing resistance decreases current. This property is crucial for:</p>
+
+<ul>
+  <li>Protecting sensitive components from excess current</li>
+  <li>Ensuring LEDs and other components receive appropriate current</li>
+  <li>Establishing proper operating conditions for various devices</li>
+</ul>
+
+<p><img src="0 Lecture _ 11 Electrodynamics_13.png" alt="Resistor Circuit" />
+<em>Circuit showing a resistor used to limit current through an LED</em></p>
+
+<h3 id="voltage-division">Voltage Division</h3>
+
+<p>When resistors are connected in series, they divide the voltage in proportion to their resistance values. This voltage division principle is used to:</p>
+
+<ul>
+  <li>Create reference voltages for circuits</li>
+  <li>Build analog interfaces like volume controls</li>
+  <li>Measure unknown resistances using known reference resistors</li>
+  <li>Enable sensors to provide readable voltage outputs</li>
+</ul>
+
+<h2 id="iii-capacitance">III. Capacitance</h2>
+
+<p>Another important concept in electrical circuits is capacitance, which complements resistance in circuit design.</p>
+
+<div class="important-info">
+
+  <p><strong>Capacitance</strong></p>
+  <ul>
+    <li>Definition: The ability of a conductor to store electrical charge</li>
+    <li>Formula: $C = \frac{Q}{\Delta V}$ (Capacitance = Charge / Potential Difference)</li>
+    <li>Measurement unit: Farads ($F$)</li>
+    <li>$1 \text{ Farad} = \frac{1 \text{ coulomb}}{1 \text{ Volt}}$</li>
+    <li>Electrical potential energy stored in a capacitor: $PE_{electric} = \frac{1}{2} \cdot Q \cdot \Delta V$</li>
+  </ul>
+
+</div>
+
+<p>Capacitors are components designed specifically to provide capacitance in circuits. Unlike resistors, which impede current flow, capacitors store energy in an electric field between two conductive plates. They serve critical functions in:</p>
+
+<ul>
+  <li>Filtering signals and removing noise</li>
+  <li>Storing energy for quick discharge</li>
+  <li>Blocking DC voltage while allowing AC signals to pass</li>
+  <li>Creating timing circuits when paired with resistors</li>
+  <li>Smoothing power supply outputs</li>
+</ul>
+
+<p>The relationship between potential difference and charge stored makes capacitors essential for many electronic applications, from simple timing circuits to complex power conditioning systems.</p>
+
+<h2 id="iv-appliance-operation--power-consumption">IV. Appliance Operation &amp; Power Consumption</h2>
+
+<p>Electrical appliances convert electricity into useful forms of energy like light, heat, motion, or sound. Understanding their power consumption helps in efficient design and use.</p>
+
+<h3 id="energy-conversion-in-common-appliances">Energy Conversion in Common Appliances</h3>
+
+<p>Different appliances convert electrical energy into different forms:</p>
+
+<ul>
+  <li><strong>Heating appliances</strong> (toasters, electric heaters) convert electricity directly into heat through resistive elements</li>
+  <li><strong>Lighting devices</strong> convert electricity into light, often with some heat as a byproduct</li>
+  <li><strong>Motors</strong> convert electricity into mechanical motion in fans, pumps, and compressors</li>
+  <li><strong>Electronic devices</strong> use electricity to process and transmit information</li>
+</ul>
+
+<p>The efficiency of this energy conversion varies greatly. Incandescent bulbs convert only about 5% of energy to light, while LED bulbs convert more than 40%. Modern appliances are designed to maximize useful output while minimizing wasted energy.</p>
+
+<h3 id="power-ratings-and-consumption">Power Ratings and Consumption</h3>
+
+<p>The power rating of an appliance indicates how much electrical energy it converts per second during operation. This is typically measured in watts ($W$) or kilowatts ($kW$).</p>
+
+<p>High-power appliances include:</p>
+<ul>
+  <li>Electric water heaters ($3,000-5,000 \text{W}$)</li>
+  <li>Clothes dryers ($1,800-5,000 \text{W}$)</li>
+  <li>Air conditioners ($1,000-4,000 \text{W}$)</li>
+  <li>Electric ovens ($2,000-5,000 \text{W}$)</li>
+</ul>
+
+<p>Low-power appliances include:</p>
+<ul>
+  <li>LED light bulbs ($5-15 \text{W}$)</li>
+  <li>Cell phone chargers ($5-10 \text{W}$)</li>
+  <li>Wi-Fi routers ($5-20 \text{W}$)</li>
+  <li>Modern televisions ($100-400 \text{W}$)</li>
+</ul>
+
+<p>The total energy consumption depends on both the power rating and usage time. Energy used is calculated as:</p>
+
+<p>$\text{Energy (watt-hours)} = \text{Power (watts)} \times \text{Time (hours)}$</p>
+
+<p>For example, a $2000\text{W}$ electric heater running for 3 hours consumes $6000$ watt-hours (6 kilowatt-hours) of energy.</p>
+
+<h3 id="understanding-power-consumption-through-current-and-voltage">Understanding Power Consumption Through Current and Voltage</h3>
+
+<p>We can analyze power consumption by looking at the relationship between current (amperes) and voltage:</p>
+
+<ol>
+  <li><strong>Standard household circuit</strong> (120V in the US):
+    <ul>
+      <li>A 1200W hair dryer draws: $I = \frac{P}{V} = \frac{1200W}{120V} = 10A$</li>
+      <li>This is a significant portion of a typical 15A household circuit</li>
+    </ul>
+  </li>
+  <li><strong>High-power appliance</strong> (240V circuit):
+    <ul>
+      <li>A 4800W electric water heater draws: $I = \frac{P}{V} = \frac{4800W}{240V} = 20A$</li>
+      <li>Requires a dedicated high-amperage circuit</li>
+    </ul>
+  </li>
+  <li><strong>Battery-powered device</strong> (3.7V lithium battery):
+    <ul>
+      <li>A 5W smartphone draws: $I = \frac{P}{V} = \frac{5W}{3.7V} = 1.35A$</li>
+      <li>This high current draw explains why batteries drain quickly during intensive use</li>
+    </ul>
+  </li>
+</ol>
+
+<p>This analysis shows why high-power devices require:</p>
+<ul>
+  <li>Heavier gauge wiring to carry larger currents safely</li>
+  <li>Appropriate circuit breakers to prevent overheating</li>
+  <li>Sometimes dedicated circuits to avoid overloading</li>
+  <li>In some cases, special higher-voltage circuits (like $240\text{V}$ for electric ovens and dryers)</li>
+</ul>
+
+<h2 id="v-real-world-applications-of-electrical-concepts">V. Real-World Applications of Electrical Concepts</h2>
+
+<h3 id="battery-selection-and-performance">Battery Selection and Performance</h3>
+
+<p>Understanding amperes and electrical potential energy helps in selecting appropriate power sources for devices:</p>
+
+<ul>
+  <li>A digital watch requires very little current (microamperes) but needs stable voltage over a long time</li>
+  <li>A power drill requires high current (several amperes) to provide sufficient mechanical energy</li>
+  <li>An electric vehicle requires both high voltage and high current capacity to deliver significant power to its motors</li>
+</ul>
+
+<p>Battery specifications typically include:</p>
+<ul>
+  <li>Voltage (V): The electrical potential difference provided</li>
+  <li>Capacity (mAh or Ah): The total charge the battery can deliver</li>
+  <li>Maximum discharge rate: The highest current the battery can safely provide</li>
+</ul>
+
+<p>For example, a 3000mAh smartphone battery at 3.7V stores approximately:
+$E = Q \times V = 3 \text{ Ah} \times 3.7 \text{ V} = 11.1 \text{ Wh}$ of energy</p>
+
+<h3 id="safety-considerations-and-circuit-protection">Safety Considerations and Circuit Protection</h3>
+
+<p>The relationship between current, voltage, and power has important safety implications:</p>
+
+<ul>
+  <li>Even relatively low currents (&gt;0.1A) through the body can be fatal</li>
+  <li>Higher voltages more easily overcome skin resistance, increasing shock risk</li>
+  <li>Circuit breakers and fuses are rated in amperes because heating and fire risks are determined by current</li>
+  <li>Ground fault circuit interrupters (GFCIs) detect small current imbalances (typically 5mA) to prevent shock hazards</li>
+</ul>
+
+<p>Understanding these concepts is essential for designing safe electrical systems and using electricity responsibly.</p>
+
+<h2 id="vi-summary-of-formulas">VI. Summary of Formulas</h2>
+
+<p>The key formulas that govern electrical behavior are:</p>
+
+<div class="important-info">
+
+  <p><strong>Core Electrical Formulas</strong></p>
+  <ul>
+    <li>Electric Potential Energy: $PE_{electric} = q \times V$ (Potential Energy = Charge × Voltage)</li>
+    <li>Electric Potential: $V = \frac{PE_{electric}}{q}$ (Voltage = Potential Energy / Charge)</li>
+    <li>Potential Difference: $\Delta V = \frac{\Delta PE_{electric}}{q}$</li>
+    <li>Potential Difference in Field: $\Delta V = -E \cdot d$</li>
+    <li>Electric Current: $I = \frac{\Delta Q}{\Delta t}$ (Current = Change in charge / Change in time)</li>
+    <li>Charge and Current: $Q = I \times t$ (Charge = Current × Time)</li>
+    <li>Ohm’s Law: $V = I \times R$ (Voltage = Current × Resistance)</li>
+    <li>Resistance: $R = \frac{V}{I}$ (Resistance = Voltage / Current)</li>
+    <li>Power: $P = V \times I$ (Power = Voltage × Current)</li>
+    <li>Power as rate of work: $P = \frac{W}{\Delta t} = \frac{\Delta PE}{\Delta t}$</li>
+    <li>Power (alternative): $P = I^2 \times R$ or $P = \frac{V^2}{R}$</li>
+    <li>Capacitance: $C = \frac{Q}{\Delta V}$ (Capacitance = Charge / Voltage)</li>
+    <li>Energy stored in capacitor: $PE_{electric} = \frac{1}{2} \cdot Q \cdot \Delta V$</li>
+    <li>Energy consumption: $E = P \times t$ (Energy = Power × Time)</li>
+  </ul>
+
+</div>
+
+<h2 id="vii-key-takeaways">VII. Key Takeaways</h2>
+
+<ul>
+  <li>
+    <p><strong>Historical Foundation</strong>: The pioneering work of Galvani, Volta, Ampère, and Ohm established the fundamental principles of electricity and created the first practical electrical devices.</p>
+  </li>
+  <li>
+    <p><strong>Core Relationships</strong>: Ohm’s Law ($V = I \times R$) and the power equation ($P = V \times I$) are the cornerstones of electrical circuit analysis.</p>
+  </li>
+  <li>
+    <p><strong>Electrical Potential Energy</strong>: The potential energy that charges possess in electric fields is the fundamental source of energy in electrical systems.</p>
+  </li>
+  <li>
+    <p><strong>Current and Amperes</strong>: The ampere measures the rate at which charge flows, which directly relates to how quickly electrical potential energy is converted to other forms.</p>
+  </li>
+  <li>
+    <p><strong>Component Functionality</strong>: Resistors and capacitors play complementary roles in circuits, with resistors controlling current flow and capacitors storing electrical potential energy.</p>
+  </li>
+  <li>
+    <p><strong>Power Management</strong>: Effective electrical system design requires understanding the power requirements of devices and ensuring circuits can safely provide the necessary current.</p>
+  </li>
+</ul>
+
+<p>The principles discovered by early electrical pioneers continue to guide our modern technological world. From simple circuits to complex electronic devices, the fundamental relationships between voltage, current, resistance, and power remain unchanged, forming the foundation upon which our electrical and electronic infrastructure is built.</p>
+
+<h2 id="practice-problems-section-2">Practice Problems: Section 2</h2>
+
+<ol>
+  <li>
+    <p>A 100W light bulb is connected to a 120V outlet. Calculate:
+a) The current drawn by the bulb
+b) The amount of charge that flows through the bulb in one minute
+c) The electrical potential energy converted in one hour</p>
+  </li>
+  <li>
+    <p>Two identical circuits are connected to different batteries: Circuit A to a 1.5V battery and Circuit B to a 9V battery. If Circuit B draws 6 times more current than Circuit A, compare the resistances of the two circuits.</p>
+  </li>
+  <li>A household uses the following appliances simultaneously for 2 hours:
+    <ul>
+      <li>Three 60W LED light bulbs</li>
+      <li>One 2000W electric heater</li>
+      <li>One 200W television
+Calculate the total energy consumed in kilowatt-hours.</li>
+    </ul>
+  </li>
+  <li>A 4700μF capacitor is charged to 12V. Calculate:
+a) The charge stored in the capacitor
+b) The electrical potential energy stored in the capacitor</li>
+</ol>
+
+<p>[Solutions will be provided separately]</p>
+
+<h2 id="practice-problems-section-3">Practice Problems: Section 3</h2>
+
+<ol>
+  <li>
+    <p>Calculate the electric field at a point 0.3m from a +5μC charge. How would the field strength change if the distance was doubled?</p>
+  </li>
+  <li>
+    <p>Two point charges, +2μC and -3μC, are separated by 4cm. Find:
+ a) The electric field at the midpoint between them
+ b) The electric potential energy of this configuration
+ c) The force between the charges</p>
+  </li>
+  <li>
+    <p>Sketch the electric field lines for:
+ a) Two equal positive charges
+ b) A positive and negative charge of equal magnitude
+ Explain the key differences in these patterns.</p>
+  </li>
+  <li>
+    <p>A parallel plate capacitor has plates of area 0.02m² separated by 2mm. If the potential difference is 12V:
+ a) Calculate the capacitance
+ b) Find the stored charge if the dielectric constant is 2.1</p>
+  </li>
+  <li>
+    <p>An electron moves between two points in an electric field where ΔV = 500V. Calculate:
+ a) The change in electric potential energy
+ b) The work done by the electric field</p>
+  </li>
+  <li>Three charges form an equilateral triangle with side length 0.1m:
+    <ul>
+      <li>Vertex 1: +2μC</li>
+      <li>Vertex 2: -3μC</li>
+      <li>Vertex 3: +2μC
+ Find the electric potential at the triangle’s center.</li>
+    </ul>
+  </li>
+  <li>
+    <p>A spherical conductor of radius 5cm is charged to +8μC. Calculate:
+ a) The electric field just outside its surface
+ b) The electric potential at a point 15cm from its center
+ c) The work required to bring a +1μC charge from infinity to this point</p>
+  </li>
+  <li>Two parallel plates form a capacitor. If the plate separation is halved and the plate area is doubled:
+ a) How does the capacitance change?
+ b) If the voltage remains constant, how does the stored energy change?</li>
+</ol>
+
+<h2 id="solutions-to-practice-problems-section-3">Solutions to Practice Problems: Section 3</h2>
+
+<div class="important-info">
+
+  <p><strong>Problem 1</strong></p>
+  <ul>
+    <li>Using Coulomb’s law for electric field: $E = \frac{k \cdot q}{r^2}$</li>
+    <li>$k = 9 \times 10^9 \text{ N} \cdot \text{m}^2/\text{C}^2$</li>
+    <li>$q = 5 \times 10^{-6} \text{ C}$</li>
+    <li>$r = 0.3 \text{ m}$</li>
+    <li>$E = \frac{9 \times 10^9 \times 5 \times 10^{-6}}{(0.3)^2} = \frac{45 \times 10^3}{0.09} = 5 \times 10^5 \text{ N/C}$</li>
+    <li>If distance doubles to 0.6m, $E_{new} = \frac{5 \times 10^5}{4} = 1.25 \times 10^5 \text{ N/C}$ (field strength decreases by a factor of 4)</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 2</strong></p>
+  <ul>
+    <li>$q_1 = +2 \times 10^{-6} \text{ C}$, $q_2 = -3 \times 10^{-6} \text{ C}$, separation = 0.04m</li>
+  </ul>
+
+  <p>a) Electric field at midpoint:</p>
+  <ul>
+    <li>Field due to $q_1$: $E_1 = \frac{k \cdot q_1}{(d/2)^2} = \frac{9 \times 10^9 \times 2 \times 10^{-6}}{(0.02)^2} = \frac{18 \times 10^3}{4 \times 10^{-4}} = 4.5 \times 10^7 \text{ N/C}$ (rightward)</li>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>Field due to $q_2$: $E_2 = \frac{k \cdot</td>
+            <td>q_2</td>
+            <td>}{(d/2)^2} = \frac{9 \times 10^9 \times 3 \times 10^{-6}}{(0.02)^2} = \frac{27 \times 10^3}{4 \times 10^{-4}} = 6.75 \times 10^7 \text{ N/C}$ (rightward)</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Total field: $E_{total} = E_1 + E_2 = 1.125 \times 10^8 \text{ N/C}$ (rightward)</li>
+  </ul>
+
+  <p>b) Electric potential energy:</p>
+  <ul>
+    <li>$PE = \frac{k \cdot q_1 \cdot q_2}{r} = \frac{9 \times 10^9 \times 2 \times 10^{-6} \times (-3 \times 10^{-6})}{0.04} = \frac{-54 \times 10^{-3}}{0.04} = -1.35 \text{ J}$</li>
+  </ul>
+
+  <p>c) Force between charges:</p>
+  <ul>
+    <li>
+      <table>
+        <tbody>
+          <tr>
+            <td>$F = \frac{k \cdot</td>
+            <td>q_1</td>
+            <td>\cdot</td>
+            <td>q_2</td>
+            <td>}{r^2} = \frac{9 \times 10^9 \times 2 \times 10^{-6} \times 3 \times 10^{-6}}{(0.04)^2} = \frac{54 \times 10^{-3}}{16 \times 10^{-4}} = 33.75 \text{ N}$ (attractive)</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 3</strong>
+a) Two equal positive charges:</p>
+  <ul>
+    <li>Field lines radiate outward from each charge</li>
+    <li>Lines curve away from each other in the region between charges</li>
+    <li>No field lines directly connect the two charges</li>
+    <li>There’s a neutral point (zero field) between the charges where fields cancel</li>
+  </ul>
+
+  <p>b) Positive and negative charge:</p>
+  <ul>
+    <li>Field lines go from positive to negative charge</li>
+    <li>Lines form a dipole pattern</li>
+    <li>No neutral points in the field</li>
+    <li>Field lines are densest in the region directly between charges</li>
+  </ul>
+
+  <p>Key differences:</p>
+  <ul>
+    <li>Like charges have repulsive fields; opposite charges have attractive fields</li>
+    <li>Only like-charge configurations produce null points in the field</li>
+    <li>Opposite charges create more concentrated field lines between them</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 4</strong></p>
+  <ul>
+    <li>For parallel plate capacitor: $C = \frac{\epsilon_0 \epsilon_r A}{d}$</li>
+  </ul>
+
+  <p>a) Calculate capacitance:</p>
+  <ul>
+    <li>$\epsilon_0 = 8.85 \times 10^{-12} \text{ F/m}$</li>
+    <li>$\epsilon_r = 2.1$</li>
+    <li>$A = 0.02 \text{ m}^2$</li>
+    <li>$d = 0.002 \text{ m}$</li>
+    <li>$C = \frac{8.85 \times 10^{-12} \times 2.1 \times 0.02}{0.002} = \frac{3.717 \times 10^{-13}}{0.002} = 1.86 \times 10^{-10} \text{ F} = 186 \text{ pF}$</li>
+  </ul>
+
+  <p>b) Stored charge:</p>
+  <ul>
+    <li>$Q = C \times V = 1.86 \times 10^{-10} \times 12 = 2.23 \times 10^{-9} \text{ C} = 2.23 \text{ nC}$</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 5</strong>
+For an electron (charge = $-1.6 \times 10^{-19} \text{ C}$):</p>
+
+  <p>a) Change in electric potential energy:</p>
+  <ul>
+    <li>$\Delta PE = q \times \Delta V = -1.6 \times 10^{-19} \times 500 = -8 \times 10^{-17} \text{ J}$</li>
+    <li>The negative sign indicates the electron gains kinetic energy</li>
+  </ul>
+
+  <p>b) Work done by electric field:</p>
+  <ul>
+    <li>$W = -\Delta PE = -(-8 \times 10^{-17}) = 8 \times 10^{-17} \text{ J}$</li>
+    <li>The positive work means the field does work on the electron, accelerating it</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 6</strong>
+For an equilateral triangle with charges:</p>
+
+  <ul>
+    <li>Use superposition principle: $V = \frac{k \cdot q_1}{r_1} + \frac{k \cdot q_2}{r_2} + \frac{k \cdot q_3}{r_3}$</li>
+    <li>For an equilateral triangle, the center is at equal distances from all vertices</li>
+    <li>Distance from center to vertex = $\frac{a}{\sqrt{3}}$ where $a = 0.1\text{ m}$</li>
+    <li>
+      <p>$r = \frac{0.1}{\sqrt{3}} \approx 0.0577 \text{ m}$</p>
+    </li>
+    <li>$V = \frac{9 \times 10^9 \times 2 \times 10^{-6}}{0.0577} + \frac{9 \times 10^9 \times (-3) \times 10^{-6}}{0.0577} + \frac{9 \times 10^9 \times 2 \times 10^{-6}}{0.0577}$</li>
+    <li>$V = \frac{9 \times 10^9 \times (2-3+2) \times 10^{-6}}{0.0577} = \frac{9 \times 10^9 \times 1 \times 10^{-6}}{0.0577} = 156 \times 10^3 = 156 \text{ kV}$</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 7</strong>
+For a spherical conductor with charge $q = 8 \times 10^{-6} \text{ C}$ and radius $R = 0.05 \text{ m}$:</p>
+
+  <p>a) Electric field just outside:</p>
+  <ul>
+    <li>$E = \frac{k \cdot q}{R^2} = \frac{9 \times 10^9 \times 8 \times 10^{-6}}{(0.05)^2} = \frac{72 \times 10^3}{25 \times 10^{-4}} = 2.88 \times 10^7 \text{ N/C}$</li>
+  </ul>
+
+  <p>b) Electric potential at 15cm:</p>
+  <ul>
+    <li>$V = \frac{k \cdot q}{r} = \frac{9 \times 10^9 \times 8 \times 10^{-6}}{0.15} = \frac{72 \times 10^3}{0.15} = 4.8 \times 10^5 \text{ V}$</li>
+  </ul>
+
+  <p>c) Work to bring charge from infinity:</p>
+  <ul>
+    <li>$W = \frac{k \cdot q \cdot q’}{r} = \frac{9 \times 10^9 \times 8 \times 10^{-6} \times 1 \times 10^{-6}}{0.15} = \frac{72 \times 10^{-3}}{0.15} = 0.48 \text{ J}$</li>
+  </ul>
+
+</div>
+
+<div class="important-info">
+
+  <p><strong>Problem 8</strong>
+For parallel plate capacitor with:</p>
+  <ul>
+    <li>Initial capacitance $C_1 = \frac{\epsilon_0 A_1}{d_1}$</li>
+    <li>Final capacitance $C_2 = \frac{\epsilon_0 A_2}{d_2}$</li>
+    <li>Where $A_2 = 2A_1$ and $d_2 = \frac{d_1}{2}$</li>
+  </ul>
+
+  <p>a) Capacitance change:</p>
+  <ul>
+    <li>$C_2 = \frac{\epsilon_0 \cdot 2A_1}{\frac{d_1}{2}} = \frac{2\epsilon_0 A_1}{\frac{d_1}{2}} = \frac{4\epsilon_0 A_1}{d_1} = 4 \cdot \frac{\epsilon_0 A_1}{d_1} = 4C_1$</li>
+    <li>The capacitance increases by a factor of 4</li>
+  </ul>
+
+  <p>b) Energy change at constant voltage:</p>
+  <ul>
+    <li>Energy stored: $E = \frac{1}{2}CV^2$</li>
+    <li>If $C$ increases by factor of 4 and $V$ is constant, then:</li>
+    <li>$E_2 = \frac{1}{2} \cdot 4C_1 \cdot V^2 = 4 \cdot \frac{1}{2}C_1V^2 = 4E_1$</li>
+    <li>The energy increases by a factor of 4</li>
+  </ul>
+
+</div>
+
+<p>[End of solutions]</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

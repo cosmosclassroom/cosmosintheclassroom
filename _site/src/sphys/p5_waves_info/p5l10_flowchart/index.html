@@ -16,6 +16,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
+<<<<<<< HEAD
     <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
     
     <link rel="stylesheet" href="/assets/css/worksheets.css" />
@@ -62,6 +63,328 @@ flowchart TD
 
       </div>  
   </body>
+=======
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <<<<<<< HEAD
+<!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content">
+        <img src="/www.cosmosintheclassroom.org/assets/images/aristotle.png" alt="Aristotle" width="2.5rem" height="auto">
+        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+        border-bottom: 3px double #8b7355;
+        border-top: 3px double #8b7355;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+
+    .header-content {
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2.5rem;
+        margin: 0;
+        color: #2c4a3e;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <pre><code class="language-mermaid">%% Sample Mermaid Flowchart showcasing different structures and styles
+graph TD
+    A[Start] --&gt;|Process 1| B{Decision?}
+    B --&gt;|Yes| C[Action 1]
+    B --&gt;|No| D[Action 2]
+    C --&gt; E[End]
+    D --&gt; E
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+</code></pre>
+
+<p><code class="language-plaintext highlighter-rouge">mermaid
+flowchart TD
+    A[Evidence for Interactions: Amplitude &amp; Frequency] --&gt; B[Wave Model Evidence]
+    B --&gt; C[Particle Model Evidence]
+    C --&gt; || Wave-Particle Duality || --&gt; D[Wave-Particle Duality]
+    C --&gt; D[Wave-Particle Duality]
+    D --&gt; E[Conclusion: X-ray Imaging]
+    E --&gt; F[Transfer Task Practice]
+   </code></p>
+
+    
+    </div>
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -78,5 +401,10 @@ flowchart TD
         });
     </script>
     
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>
