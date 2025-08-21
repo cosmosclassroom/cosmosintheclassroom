@@ -3,376 +3,325 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cosmos in the Classroom | Home</title>
+    <meta name="description" content="Cosmos in the Classroom - Interactive Physics Learning Portal">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500&display=swap">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <title>Cosmos in the Classroom | Student Portal</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500,600&display=swap">
+    
     <style>
       :root {
         --primary: #2c3e50;
         --secondary: #34495e;
         --accent: #3498db;
-        --background: #f9f9f6;
-        --card-bg: #fff;
-        --card-border: #e0e0e0;
-        --header-bg: #ecebe4;
-        --nav-bg: #f5f5fa;
-        --nav-active: #3498db;
-        --text: #222;
-        --muted: #888;
+        --success: #27ae60;
+        --warning: #f39c12;
+        --background: #f8fafc;
+        --card-bg: #ffffff;
+        --text: #2d3748;
+        --text-light: #718096;
+        --border: #e2e8f0;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
       }
-      body {
-        background: var(--background);
-        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-        margin: 0;
-        color: var(--text);
-      }
-      header {
-        background: var(--header-bg);
-        border-bottom: 2px solid var(--card-border);
-        padding: 0.5rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .site-title {
-        font-family: 'Libre Baskerville', Georgia, serif;
-        font-size: 2rem;
-        margin: 0;
-        padding-left: 2rem;
-        color: var(--primary);
-        letter-spacing: 1px;
-      }
-      nav {
-        background: var(--nav-bg);
-        margin-top: 0.5rem;
-        padding: 0.5rem 2rem;
-      }
-      nav ul {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
+
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
-      nav a {
-        text-decoration: none;
-        color: var(--primary);
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: background 0.2s, color 0.2s;
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        line-height: 1.6;
       }
-      nav a.active, nav a:hover {
-        background: var(--nav-active);
-        color: #fff;
-      }
-      main {
-        max-width: 700px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      .intro {
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+        color: white;
+        padding: 4rem 2rem;
         text-align: center;
-        margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
       }
-      .intro h1 {
-        font-family: 'Libre Baskerville', Georgia, serif;
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-        color: var(--primary);
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="white" opacity="0.1"/><circle cx="800" cy="300" r="1.5" fill="white" opacity="0.1"/><circle cx="400" cy="600" r="1" fill="white" opacity="0.1"/><circle cx="600" cy="100" r="2.5" fill="white" opacity="0.1"/><circle cx="100" cy="700" r="1.8" fill="white" opacity="0.1"/></svg>');
+        animation: starfield 20s linear infinite;
       }
-      .intro p {
-        color: var(--muted);
-        font-size: 1.1rem;
+
+      @keyframes starfield {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-100px); }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
         margin: 0 auto;
-        max-width: 600px;
       }
-      .course-list {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        margin-top: 2rem;
+
+      .hero h1 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
       }
-      .course-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 1rem;
-        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-        padding: 1.5rem 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        transition: box-shadow 0.2s;
+
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
       }
-      .course-card:hover {
-        box-shadow: 0 4px 16px rgba(44,62,80,0.12);
-      }
-      .course-title {
-        font-size: 1.3rem;
-        font-family: 'Libre Baskerville', Georgia, serif;
-        color: var(--primary);
-        margin: 0;
-      }
-      .course-desc {
-        color: var(--muted);
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-      .course-actions {
-        margin-top: 0.5rem;
-      }
-      .course-actions a {
-        background: var(--accent);
-        color: #fff;
+
+      .cta-button {
+        display: inline-block;
+        background: var(--success);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
         text-decoration: none;
-        padding: 0.5rem 1.2rem;
-        border-radius: 0.5rem;
-        font-weight: 500;
-        transition: background 0.2s;
-        margin-right: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: var(--shadow);
       }
-      .course-actions a:hover {
-        background: var(--primary);
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3);
       }
-      footer {
+
+      .main-content {
+        max-width: 1200px;
+        margin: -2rem auto 0;
+        padding: 0 2rem 4rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .portal-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 3rem;
+        box-shadow: var(--shadow);
         text-align: center;
-        color: var(--muted);
+        margin-bottom: 3rem;
+        border: 1px solid var(--border);
+      }
+
+      .portal-card h2 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .portal-card p {
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .course-preview {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .course-preview:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.2);
+      }
+
+      .course-preview h3 {
+        font-family: 'Libre Baskerville', serif;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .course-preview p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+      }
+
+      .course-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
         font-size: 0.95rem;
-        margin: 3rem 0 1rem 0;
-        padding-top: 1rem;
-        border-top: 1px solid var(--card-border);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #2980b9;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+
+      .btn-secondary:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .feature {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .feature p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .portal-card {
+          padding: 2rem;
+        }
+
+        .main-content {
+          padding: 0 1rem 2rem;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="site-title">Cosmos in the Classroom</div>
-      <nav>
-        <ul>
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
-          <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
-          <li><a href="/src/ref/ref_lib">Library</a></li>
-        </ul>
-      </nav>
-    </header>
-    <!-- Breadcrumb placeholder for navigation context -->
-    <nav aria-label="Breadcrumb" style="max-width:700px;margin:1rem auto 0;padding:0 1rem;">
-      <ol id="breadcrumb" style="list-style:none;display:flex;gap:0.5rem;padding:0;margin:0;color:var(--muted);font-size:0.95rem;">
-        <!-- JS will populate breadcrumbs here -->
-      </ol>
-    </nav>
-    <main>
-      <section class="intro">
-        <h1>Welcome to Cosmos in the Classroom</h1>
-        <p>
-          A scalable portal for science courses, lessons, slides, and problem sets.<br>
-          Choose your course below to get started.
-        </p>
-      </section>
-      <section class="course-list">
-        <div class="course-card">
-          <div class="course-title">Honors Physics</div>
-          <div class="course-desc">Core principles of motion, forces, and energy for advanced learners.</div>
-          <div class="course-actions">
-            <a href="/src/hphys/hphys_landing">Enter Course</a>
-            <a href="#">Overview</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-title">Standard Physics</div>
-          <div class="course-desc">Foundational physics concepts for all students.</div>
-          <div class="course-actions">
-            <a href="/src/sphys/sphys_overview">Enter Course</a>
-            <a href="#">Overview</a>
-          </div>
-        </div>
-        <div class="course-card">
-          <div class="course-title">Library</div>
-          <div class="course-desc">Reference materials, glossaries, and supporting resources.</div>
-          <div class="course-actions">
-            <a href="/src/ref/ref_lib">Browse Library</a>
-          </div>
-        </div>
-      </section>
-      <!-- Container for dynamic course list (future JS) -->
-      <section id="dynamic-course-list" class="course-list" style="display:none;">
-        <!-- JS will inject course cards here -->
-      </section>
-    </main>
-    <footer>
-      &copy; 2024 Cosmos in the Classroom. All rights reserved.
-    </footer>
-  </body>
-</html>
-    gap: 2rem;
-  }
-
-  .site-nav a {
-    display: block;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    background-color: var(--background-color);
-    font-family: "Libre Baskerville", Georgia, serif;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-  }
-
-  .site-nav a:hover {
-    color: #e9ba74;
-    background-color: var(--accent-color);
-  } */ */
-</style>
-
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Cosmos in the Classroom</h1>
+        <p>Explore the universe through interactive physics learning. From ancient measurements to modern technology, discover the story of physics through engaging phenomena and hands-on problem solving.</p>
+        <a href="/src/portal/index.html" class="cta-button">
+          🚀 Enter Learning Portal
+        </a>
       </div>
-    </header>
-    
-    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
-    
-      <style>
-  body {
-    background-color: #f5f7fa;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .header {
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-size: 600% 600%;
-    animation: gradientBG 30s ease infinite;
-    border-radius: 0 0 1rem 1rem;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  .header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .header p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    opacity: 0.9;
-  }
-  .flexbox {
-    display: flex;
-    padding: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-  }
-  button {
-    background-color: #4285F4;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  .card {
-    margin: 0;
-    padding: 16px 24px;
-    text-align: justify;
-    border: 2px solid #333;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 300px;
-    background-color: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  .card.honors {
-    border-top: 4px solid #4285F4;
-  }
-  .card.standard {
-    border-top: 4px solid #34A853;
-  }
-  .card h1 {
-    font-size: 1.5em;
-    text-align: center;
-    margin: 0.5rem 0 1rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    background-color: var(--color-primary, #f0f0f0);
-    color: #333;
-  }
-  .section-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #555;
-    margin-top: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #eaeaea;
-  }
-  .card ul {
-    list-style-type: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
-  }
-  .card ul li {
-    margin: 0.75rem 0;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    background-color: #f8f8f8;
-    transition: background-color 0.2s;
-  }
-  .card ul li:hover {
-    background-color: #e8e8e8;
-  }
-  .card a {
-    color: #2c6ba0;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  .card a:hover {
-    color: #1c4b70;
-    text-decoration: underline;
-  }
-  .footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-    color: #666;
-    font-size: 0.9rem;
-    border-top: 1px solid #eaeaea;
-  }
-</style>
+    </section>
 
-    </div>
-    
-    
-    <!-- Initialize KaTeX rendering -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\[", right: "\\]", display: true},
-                    {left: "\\(", right: "\\)", display: false}
-                ],
-                throwOnError: false
-            });
-        });
-    </script>
-    
+    <main class="main-content">
+      <div class="portal-card">
+        <h2>Your Physics Journey Awaits</h2>
+        <p>Access your courses, track your progress, and explore the fundamental laws that govern our universe through our interactive learning portal.</p>
+        <a href="/src/portal/index.html" class="btn btn-primary">Access Full Portal</a>
+        <a href="/src/portal/hphysics/portal.html" class="btn btn-secondary">Go Directly to Honors Physics</a>
+      </div>
 
-    
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h4>Track Your Progress</h4>
+          <p>Monitor your learning journey through each unit and celebrate your achievements.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🧪</div>
+          <h4>Interactive Learning</h4>
+          <p>Engage with real-world phenomena and solve problems that shaped history.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌟</div>
+          <h4>Comprehensive Content</h4>
+          <p>From measurements to electromagnetism, explore all aspects of physics.</p>
+        </div>
+      </div>
+
+      <div class="course-grid">
+        <div class="course-preview">
+          <h3>🏆 The Story of Physics</h3>
+          <p>Honors Physics course exploring universal laws through historical phenomena and modern applications.</p>
+          <div class="course-stats">
+            <span>📚 10 Units</span>
+            <span>⏱️ 180 Days</span>
+            <span>🎯 4 Quarters</span>
+          </div>
+          <a href="/src/portal/hphysics/portal.html" class="btn btn-primary">Start Course</a>
+        </div>
+
+        <div class="course-preview">
+          <h3>📖 Reference Library</h3>
+          <p>Access equations, constants, derivations, and supporting materials for all physics concepts.</p>
+          <div class="course-stats">
+            <span>📋 Equations</span>
+            <span>🔬 Labs</span>
+            <span>📐 Tools</span>
+          </div>
+          <a href="/src/ref/ref_lib.html" class="btn btn-primary">Browse Library</a>
+        </div>
+
+        <div class="course-preview">
+          <h3>⚙️ Success Tools</h3>
+          <p>Strategic guidance and success criteria to help you excel in your physics studies.</p>
+          <div class="course-stats">
+            <span>📈 Strategies</span>
+            <span>✅ Criteria</span>
+            <span>🎯 Goals</span>
+          </div>
+          <a href="/Consequence Engine/consequenceegine.html" class="btn btn-primary">Get Guidance</a>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

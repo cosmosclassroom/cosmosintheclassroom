@@ -177,6 +177,10 @@
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
+        align-items: center;
+      }
+      .course-actions a {
+        text-decoration: none;
       }
       .btn {
         background: var(--accent);
@@ -214,6 +218,39 @@
         margin: 3rem 0 1rem 0;
         padding-top: 1rem;
         border-top: 1px solid var(--card-border);
+      }
+      
+      /* Theme-specific styling */
+      .course-card.honors {
+        border-left: 4px solid #3498db;
+      }
+      
+      .course-card.standard {
+        border-left: 4px solid #9333ea;
+      }
+      
+      .honors-theme {
+        color: #2980b9;
+      }
+      
+      .standard-theme {
+        color: #7c3aed;
+      }
+      
+      .btn-honors {
+        background: #3498db;
+      }
+      
+      .btn-honors:hover {
+        background: #2980b9;
+      }
+      
+      .btn-standard {
+        background: #9333ea;
+      }
+      
+      .btn-standard:hover {
+        background: #7c3aed;
       }
     </style>
   </head>
@@ -300,8 +337,18 @@
             { 
               id: 'hphysics', 
               title: 'The Story of Physics', 
-              desc: 'Establishing fundamental language and exploring universal laws',
-              dataFile: './hphysics/admin/physics.json'
+              desc: 'Honors Physics: Establishing fundamental language and exploring universal laws',
+              dataFile: './hphysics/admin/physics.json',
+              portalLink: './hphysics/portal.html',
+              theme: 'honors'
+            },
+            { 
+              id: 'sphysics', 
+              title: 'Science Physics Integrated Curriculum', 
+              desc: 'Standard Physics: Energy systems, motion, and electromagnetic radiation in real-world contexts',
+              dataFile: './sphysics/osephys/osephysics3.json',
+              portalLink: './sphysics/osephys/portal.html',
+              theme: 'standard'
             }
           ];
           
@@ -319,9 +366,13 @@
         courses.forEach(course => {
           const progress = getProgress(course.id);
           const card = document.createElement('div');
-          card.className = 'course-card';
+          card.className = `course-card ${course.theme}`;
+          
+          // Add theme-specific styling
+          const themeClass = course.theme === 'honors' ? 'honors-theme' : 'standard-theme';
+          
           card.innerHTML = `
-            <div class="course-title">${course.title}</div>
+            <div class="course-title ${themeClass}">${course.title}</div>
             <div class="course-desc">${course.desc}</div>
             <div class="course-progress">
               <div class="progress-bar">
@@ -330,7 +381,8 @@
               <div class="progress-text">${progress}% Complete (${getCompletedUnits(course.id)} of ${getTotalUnits(course.id)} units)</div>
             </div>
             <div class="course-actions">
-              <button class="btn" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
+              <button class="btn ${course.theme === 'honors' ? 'btn-honors' : 'btn-standard'}" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
+              <a href="${course.portalLink}" class="btn secondary">Direct Portal</a>
               <button class="btn secondary" onclick="viewCourseInfo('${course.id}')">Overview</button>
             </div>
           `;
@@ -487,7 +539,9 @@
 
       function viewCourseInfo(courseId) {
         if (courseId === 'hphysics') {
-          alert('The Story of Physics\n\nA comprehensive honors physics course exploring:\n• Part I: The Rules of the Game\n• Part II: The Great Unification\n• Part III: The Unseen World\n\n180 instructional days, 10 core units across 4 quarters.');
+          alert('The Story of Physics (Honors)\n\nA comprehensive honors physics course exploring:\n• Part I: The Rules of the Game\n• Part II: The Great Unification\n• Part III: The Unseen World\n\n180 instructional days, 10 core units across 4 quarters.');
+        } else if (courseId === 'sphysics') {
+          alert('Science Physics Integrated Curriculum (Standard)\n\nAn integrated physics curriculum exploring:\n• Part I: Energy and Earth Systems\n• Part II: Motion and Collisions\n• Part III: Waves and Electromagnetic Radiation\n\n181 instructional days, 5 core units on 8-drop-2 schedule.');
         }
       }
 
@@ -538,6 +592,7 @@
 
       function getTotalUnits(courseId) {
         if (courseId === 'hphysics') return 10;
+        if (courseId === 'sphysics') return 5;
         return 0;
       }
 

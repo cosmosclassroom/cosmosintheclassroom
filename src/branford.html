@@ -37,6 +37,25 @@
         .sidebar-hidden {
             transform: translateX(100%);
         }
+        
+        /* Period Color Classes */
+        .period-1 { background-color: #FEF3C7; color: #92400E; border: 1px solid #F59E0B; }
+        .period-2 { background-color: #FECACA; color: #991B1B; border: 1px solid #EF4444; }
+        .period-3 { background-color: #C7D2FE; color: #3730A3; border: 1px solid #6366F1; }
+        .period-4 { background-color: #D1FAE5; color: #047857; border: 1px solid #10B981; }
+        .period-5 { background-color: #E0E7FF; color: #4338CA; border: 1px solid #8B5CF6; }
+        .period-6 { background-color: #FCE7F3; color: #BE185D; border: 1px solid #EC4899; }
+        .period-7 { background-color: #F0FDF4; color: #166534; border: 1px solid #22C55E; }
+        .period-8 { background-color: #FFF7ED; color: #C2410C; border: 1px solid #F97316; }
+        
+        .period-1-dropped { background-color: #FDE68A; color: #78350F; border: 1px solid #D97706; }
+        .period-2-dropped { background-color: #FCA5A5; color: #7F1D1D; border: 1px solid #DC2626; }
+        .period-3-dropped { background-color: #A5B4FC; color: #312E81; border: 1px solid #4F46E5; }
+        .period-4-dropped { background-color: #A7F3D0; color: #064E3B; border: 1px solid #059669; }
+        .period-5-dropped { background-color: #C7D2FE; color: #3730A3; border: 1px solid #7C3AED; }
+        .period-6-dropped { background-color: #F9A8D4; color: #9D174D; border: 1px solid #DB2777; }
+        .period-7-dropped { background-color: #BBF7D0; color: #14532D; border: 1px solid #16A34A; }
+        .period-8-dropped { background-color: #FED7AA; color: #9A3412; border: 1px solid #EA580C; }
     </style>
 </head>
 <body>
@@ -69,10 +88,10 @@
                     <p class="text-gray-600 mb-6">The BHS schedule is an "8 drop 2" model on a 4-day rotation. This means each class meets 3 times per cycle. Use the buttons below to see which periods meet on each day of the rotation.</p>
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="day-buttons">
-                            <button data-day="1" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 active-day-btn">Day 1</button>
-                            <button data-day="2" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 2</button>
-                            <button data-day="3" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 3</button>
-                            <button data-day="4" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 4</button>
+                            <button data-day="A" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 active-day-btn">Day A</button>
+                            <button data-day="B" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day B</button>
+                            <button data-day="C" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day C</button>
+                            <button data-day="D" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day D</button>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
@@ -140,7 +159,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // --- DATA ---
             const periods = [1, 2, 3, 4, 5, 6, 7, 8];
-            const dropSchedule = { 1: [7, 8], 2: [5, 6], 3: [3, 4], 4: [1, 2] };
+            const dropSchedule = { A: [7, 8], B: [5, 6], C: [3, 4], D: [1, 2] };
             const keyDates = [
                 { date: '2025-09-01', event: 'Labor Day', type: 'holiday' },
                 { date: '2025-09-24', event: 'PD Day (Early Release)', type: 'pd' },
@@ -191,8 +210,8 @@
             function updateScheduleView(day) {
                 const dropped = dropSchedule[day];
                 const meeting = periods.filter(p => !dropped.includes(p));
-                meetingPeriodsList.innerHTML = meeting.map(p => `<li class="bg-green-100 text-green-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
-                droppedPeriodsList.innerHTML = dropped.map(p => `<li class="bg-red-100 text-red-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
+                meetingPeriodsList.innerHTML = meeting.map(p => `<li class="period-${p} font-semibold py-2 px-3 rounded-md">Period ${p}</li>`).join('');
+                droppedPeriodsList.innerHTML = dropped.map(p => `<li class="period-${p}-dropped font-semibold py-2 px-3 rounded-md">Period ${p}</li>`).join('');
                 document.querySelectorAll('.day-btn').forEach(btn => {
                     btn.classList.toggle('active-day-btn', btn.dataset.day == day);
                     btn.classList.toggle('inactive-day-btn', btn.dataset.day != day);
@@ -203,20 +222,22 @@
             });
 
             // --- CALENDAR LOGIC ---
-            const rotationColors = { 1: 'bg-blue-100', 2: 'bg-indigo-100', 3: 'bg-purple-100', 4: 'bg-pink-100' };
+            const rotationColors = { A: 'bg-blue-100', B: 'bg-indigo-100', C: 'bg-purple-100', D: 'bg-pink-100' };
             const rotationMap = generateRotationMap();
 
             function generateRotationMap() {
                 const map = new Map();
-                let rotationDay = 1;
+                let rotationDay = 'A';
+                const rotationDays = ['A', 'B', 'C', 'D'];
                 const startDate = new Date('2025-08-28T12:00:00Z');
                 const endDate = new Date('2026-06-10T12:00:00Z');
+                let dayIndex = 0;
                 for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
                     const dayOfWeek = d.getUTCDay();
                     const dateString = d.toISOString().split('T')[0];
                     if (dayOfWeek !== 0 && dayOfWeek !== 6 && !nonInstructionalDates.has(dateString)) {
-                        map.set(dateString, rotationDay);
-                        rotationDay = rotationDay % 4 + 1;
+                        map.set(dateString, rotationDays[dayIndex]);
+                        dayIndex = (dayIndex + 1) % 4;
                     }
                 }
                 return map;
@@ -342,11 +363,11 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <h4 class="font-bold text-center mb-2">Meeting Periods</h4>
-                            <ul class="space-y-1 text-center">${meeting.map(p => `<li class="bg-green-100 text-green-800 py-1 rounded">${p}</li>`).join('')}</ul>
+                            <ul class="space-y-1 text-center">${meeting.map(p => `<li class="period-${p} py-1 rounded">${p}</li>`).join('')}</ul>
                         </div>
                         <div>
                             <h4 class="font-bold text-center mb-2">Dropped Periods</h4>
-                            <ul class="space-y-1 text-center">${dropped.map(p => `<li class="bg-red-100 text-red-800 py-1 rounded">${p}</li>`).join('')}</ul>
+                            <ul class="space-y-1 text-center">${dropped.map(p => `<li class="period-${p}-dropped py-1 rounded">${p}</li>`).join('')}</ul>
                         </div>
                     </div>`;
                 modal.classList.remove('hidden');
@@ -362,7 +383,7 @@
             });
 
             // --- INITIALIZE APP ---
-            updateScheduleView(1);
+            updateScheduleView('A');
             populateMonthSelector();
             const today = new Date();
             // Find today's date in rotation calendar

@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <p>when you study Physics you can start to
+see it everywhere even here as an
+engineer who studied physics I have to
+say one of the most interesting parts of
+the holidays is the lights just think of
+all the crazy displays that you see and
+what it would take to figure out the
+current required to power all of the
+tiny light bulbs that make them glow so
+many resistors now I’m not going to ask
+you to diagram the holiday lights on
+your neighbor’s house but one of the
+best ways to understand how electricity
+works in a system like that is through
+circuit analysis the process of breaking
+down a circuit in to its key components
+and studying each one to see what it can
+tell you about the others so far you’ve
+learned about the key components of
+every electrical circuit namely voltage
+resistance and current these properties
+are all related to one another through
+own’s law this means that if you know
+two out of the three variables you can
+solve for the remaining one for example
+you can take a bunch of resistors in a
+circuit find their equivalent resistance
+and then use the voltage to figure out
+what the current is and when you know
+the current you can get even more
+important information like the voltage
+across a particular component component
+or the current through a specific wire
+so if nothing else today’s lesson in
+circuit analysis will help you
+appreciate holiday lights on a whole new
+[Music]
+level let’s keep things simple there’s
+an enormous number of circuit building
+methods that I’d love to go over with
+you but we’re going to stick to the
+basics which you’ll use in every circuit
+problem you’ll encounter the these are
+DC circuits with resistors in series and
+parallel formations you’ll recall that
+series formations occur when resistors
+are connected along the same path so
+they have the same current passing
+through each one and parallel
+connections are when resistors are
+placed on wires that Branch out from a
+single point all having the same voltage
+drop across them and to find the
+equivalent resistance of resistors in
+series you just add the resistances
+together for resistors in parallel
+meanwhile you use a different method one
+that gives you a resistor with an
+equivalent resistance that’s smaller
+than any of the individual resistors in
+the branches now let’s put these
+equations to work here’s an example of a
+circuit with resistors in both series
+and parallel formations they have a 20vt
+battery immediately followed by a
+resistor of 10 ohms following that
+there’s a parallel formation of more
+resistors one branch consists of two
+resistors in series one of 15 ohms and
+one of 2 ohms the other branch has a 6
+ohm resistor and then another parallel
+formation of resistors 3 and 5 ohms each
+our goal is to simplify everything down
+to one resistor which will have the
+equivalent resistance of all these
+resistors combined with that equivalent
+resistance you can then know what the
+resulting current is in the circuit then
+using Ohm’s law you can calculate the
+voltage across and the current through
+each resistor okay let’s do the easiest
+steps first start by finding the
+resistors in a series you can collapse
+these down into a single resistor by
+simply adding their resistances together
+in this case you add the 15 and the 2
+ohm resistors into a single 17 ohm
+equivalent resistor now that Branch
+contains a single single resistor let’s
+look at the other Branch this one has a
+single resistor and then two in parallel
+so let’s start by turning the parallel
+connection of the 3 ohm and 5 ohm
+resistors into one equivalent resistor
+using our equation for resistors in
+parallel you find that they simplify to
+a single resistor of about 1.88 ohms
+then you can add the newly formed
+resistor to the 6 ohm1 and the branch
+simplifies even more to a single
+resistor of 7.88 ohms all right you’re
+almost there now let’s combine the 17
+ohm and the 7.88 ohm with resistors
+which are in parallel into one resistor
+and its resistance turns out to be 5.38
+ohms and with that you’re left with only
+two resistors in series which you can
+combine to form a single resistor with
+the equivalent resistance of
+15.38% just pause for a moment and
+appreciate what you’ve done so far you
+were able to take what you knew about
+the power source and the number and
+configuration of the resistors to figure
+out the current that runs through the
+circuit and it wasn’t that hard was it
+and now that you’ve determined the
+current you can learn so much more with
+the total current in the system you can
+expand the equivalent circuit back to
+its original form and while you’re doing
+that you can determine both the current
+through and the voltage drop across
+every single resistor just go back one
+step to the 10 ohm resistor and the 5.38
+ohm resistor nothing has changed about
+the current through the circuit and the
+two resistors are in series so the
+current flowing through them is the same
+but the voltage drop across each
+resistor is different you can calculate
+the voltage drop across each resistor by
+using Ohm’s law v = i * R you know the
+current I and you know each resistance R
+so you simply use them to find the
+distinct voltage drop V across each
+resistor the voltage drop across the 10
+ohm resistor turns out to be 13 volts
+which leaves the remaining voltage drop
+across the rest of the circuit to be 7
+volts and you don’t have to do anything
+with the 10 Ohm resistor since that’s
+not a combination of resistors so the
+current through and the voltage across
+that circuit element doesn’t change in
+order to complete the rest of the
+circuit let’s expand the 5.38 ohm
+resistor back out again to those two
+resistors in parallel now you know that
+any two resistors in parallel have the
+same voltage drop so both the 17 ohm
+resistor and the 7.88 ohm resistor have
+a voltage drop of 7 volts just like when
+they were collapsed into one but the
+current through each branch is not the
+same since you know the resistance of
+and the voltage across each resistor you
+just use Ohm’s law again to calculate
+the current through each wire the 17 Ohm
+resistor with a voltage drop of 7 volts
+will have a current of 0.41 amp and the
+7.88 ohm resistor with the same voltage
+drop of 7 volts will have a current of
+0.89 amp and look at this if you add
+these two currents together they equal
+the 1.3 amp that’s the same value for
+the current that enters the junction
+where the wires split this must be true
+to satisfy conservation of charge
+because remember what goes in must come
+out now let’s expand the resistor on the
+right into its two components a 6 ohm
+and a 1.88 Ohm resistor the current
+through these two is still 0.89 amp but
+the voltage drop of 7 volts is now split
+across the two resistors all you have to
+do is Implement Ohm’s law yet again
+multiplying current and resistance in
+order to find the voltage drop so 0.89
+ampers * 6 ohms equals a 5.33 volt drop
+and 0.89 ampers * 1.88 ohms equals the
+remaining 1.67 volt drop now it’s good
+to check that you’re on the right track
+by looking at the relationships of all
+these values keep in mind that for
+resistors in series the larger the
+resistance is the larger the voltage
+drop that’s required think of a big
+light bulb and a tiny light bulb on the
+same wire of Holiday Lights using the
+same current the little light bulb
+doesn’t draw nearly as much power so it
+uses less voltage for the same amount of
+current passing through it okay back to
+work our 1.88 ohm resistor is a
+combination of a 3 ohm and a 5 ohm power
+resistors in parallel so the voltage
+drop across each resistor is still 1.67
+volts but the current passing through
+each will be different using Ohm’s law
+you can divide the voltage across each
+resistor by its respective resistance
+giving you the current through each
+branch 1.67 volts divided by 3 ohms
+gives you a current of 0.56 ampers
+through the 3 ohm resistor and 1.67
+volts divided by 5 ohms gives you a
+current of 0.33 ampers and since 0.56
+plus 0.33 ampers equals the 0.89 ampers
+that enters the wire at the split you
+know you’re on the right track one last
+step the 17 Ohm resistor is a series
+combination of a 15 ohm and 2 ohm
+resistor here the current through them
+0.41 ampers stays the same while the
+voltage drop across each one can be
+found using ohms law 0.41 ampers * 15
+ohms equals 6.17 volts across the 15 ohm
+resistor and 0.41 ampers * 2 ohms equals
+the remaining 0.82 volts across the 2
+ohm resistor to check your work you can
+go back and see that the two voltage
+drops equal the total voltage drop
+across each branch after the 10 Ohm
+resistor and you’ve done it congrats
+you’ve taken a whole circuit simplified
+it down to the bare minimum then
+expanded it again discovering the
+current and voltage values for every
+single resistor but even though we all
+love math what if that’s not enough for
+you what if you physically constructed
+the circuit yourself and you wanted to
+measure the value so that you knew your
+math checked out to measure voltage you
+just need a tool known as a volt pretty
+creative I know now you want to way to
+measure voltage without altering the
+actual circuit no solution is perfect
+but you can get a pretty accurate
+reading by attaching the voltmeter on
+either side of the device that you want
+to measure and you do it that way
+because you know that any components
+connected in parallel will have the same
+voltage but even if you measure the
+voltage you still want to avoid changing
+the resulting circuit so what you do is
+give the voltmeter a resistance that’s
+so high is considered infinite relative
+to the rest of the circuit with an
+infinite resistance the same voltage is
+readed across both both the voltmeter
+and the device you’re measuring and a
+tiny amount of current ends up running
+through the voltmeter okay you’re a
+stickler and even though you’ve
+confirmed your voltage you want to do
+the same thing with the current this
+time you’ll use the fact that devices
+connected in series share the same
+current so you need a device that can
+measure current in series with another
+component without changing the current
+this is known as an ameter and it
+measures the current in ampers by
+connecting in series with the circuit it
+doesn’t affect the circuit because the
+device has a near zero resistance but
+here’s a pro tip when you use these
+devices in the lab be very careful not
+to mix up the methods of connection
+attaching the Amer a device with a near
+zero resistance in parallel with another
+resistor will cause nearly all the
+current to run through the amiter
+possibly damaging it and if a voltmeter
+is attached in series you’re not going
+to see any current flowing because the
+resistance is so large but used
+correctly these devices can not only
+allow you to confirm your maths but they
+can also give you a hands on way to
+measure the basic principles of Oh’s law
+in action and they might just help you
+raise your holiday lighting game to a a
+whole new level today we saw how circuit
+analysis can be used on any series and
+parallel configuration of resistors in a
+DC circuit we use OHS law to go from an
+equivalent circuit to solving for every
+current value and voltage drop in the
+system finally we saw how to measure
+voltage and current in a rail circuit
+using volt meters and amers crash course
+physics is produced in association with
+PBS digital Studios you can head over to
+their Channel and check out a playlist
+of the latest episodes from shows like
+PBS SpaceTime the good stuff and India
+Alaska this episode of Crash Course
+films in the Dr Cheryl C kiny crash call
+Studio with the help of these amazing
+people and our equally amazing Graphics
+team is thought
+Cafe</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

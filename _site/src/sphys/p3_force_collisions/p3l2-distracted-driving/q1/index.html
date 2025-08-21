@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <p>Student Name,Question (a) Response,Question (b) Response,Question (c) Response,Question (d) Response
+Barros, Giuliana,”A) Frequency/wavelength ✓, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna”,”Frequencies can carry more energy. More energy can mean that there is a higher chance of damaging tissue in the human body. Amplitude/Intensity: This could be important when determining whether 5G radiation is dangerous or not because having a very strong signal could cause the phone to heat and create more radiation to the human body. Even if the wave has a safe frequency, if the wave is too strong it can still cause harm to the human body. Duration of Exposure: This could be important when determining whether 5G radiation is dangerous or not because the longer you are exposed to something, the more of a chance you can be effected by it. Even if the wave has a low intensity, if you are exposed to it all day long, it can still cause damage.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 39 GHz or 3.9×10¹⁰ Hz”,”5G, 4G and 3G all use microwave radiation that all work the same in the sense that they all send signals by sending electromagnetic waves through the air. The main difference between these pieces of technology is that 5G uses higher frequencies and shorter wavelengths. This allows for it to send information faster. However, this makes its range weak so more towers need to be closer to it.”
+Booth, Ryan,”A) Frequency/wavelength ✓, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna”,”Waves with high frequencies have a high radiation exposure rate. This means they produce more radiation than a wave with a lower frequency and a higher amplitude. The duration of exposure can be dangerous too because just like the high frequency waves, the longer you are being exposed to radiation, the more you are going to consume into your body. All waves have photons. High frequency waves have a regular amount of photons but each photon has more energy. This means there is more radiation per photon. A high amplitude wave has a larger amount of photons. Which is also bad because that is also a lot of radiation you are being exposed to.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 39×10⁹ Hz”,”Just like 3G and 4G, 5G produces radiowaves. 5G has a higher frequency than 3G and 4G. All three of them have high frequencies but 5G has the highest frequency. This is caused from its usage of the electromagnetic radiation spectrum.”
+Buckley, David,”A) Frequency/wavelength, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna”,”High Frequency could possibly be dangerous for human cells. And high amplitude could damage technology. Also if you are exposed to the radiation for a long time that could cause damage as well.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 1.4×10⁻¹m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.8×10¹⁰ Hz”,”5G and 4G and 3G all have microwave radiation. They are microwaves because the frequency is higher than 10 to the power of 8.”
+Cast, Noah,”A) Frequency/wavelength X, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna ✓”,”Higher frequency means that the EM waves are hitting more often. And if you combine that with high amplitude waves that hit harder, there are high chances of the EM radiation carrying lots of energy and possibly causing damage. The electric and magnetic fields move creating an electromagnetic wave carrying electromagnetic radiation through the air. Because the electromagnetic radiation reaches the electron in the cell phone causing it to move down the antenna. This shows how the antenna length is important because if the antenna length is too long releasing too much EM radiation there is even more risk than there already is.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.32m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 5.6 Hz”,”5G is a low wavelength and higher frequency EM radiation. its lower in average wavelength than 3G and 4G but has a higher frequency than both of those making it more reliable in speed than the others but not as reliable in distance.”
+DiMassa, Joseph,”A) Frequency/wavelength ✓, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna”,”The frequency/ wavelength determines how much energy the 5g radiation produces. If it has high frequency the energy is high and this can cause damage to human biological cells. The amplitude/intensity means a stronger signal, this does not affect humans as much as frequency and wavelength do, but it can still promote negative effects if the intensity is higher. The duration of exposure matters because when you are exposed to this strong energy and radiation, overtime it can cause more and more cells to break down and ionization can occur which can lead into cancer.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 39×10⁹ Hz”,”5g is a radio wave, this is similar to 3g and 4g because they are both radio waves as well. But the 5g has a higher frequency than 3g and 4g, which means it carries more energy. So the energy is more reliable and can transfer faster to your devices.”
+Earnshaw, Finnegan,”A) Frequency/wavelength, B) amplitude/intensity ✓, C) duration of exposure ✓, D) length of antenna”,”The frequency and amplitude of the waves decide how much total energy that wave has and how much energy it can transfer to matter it interacts with. If the frequency of the waves puts them at UV or higher, the waves are dangerous to living tissue. The amplitude of the wave also increases the amount of damage a wave can do. The exposure time is important because the more time someone is exposed to the waves, the more waves they are hit by and the higher the chance of damage to their cells and DNA is.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”5G radiation appears to fall in the Microwave radiation category, close to FM radio waves. It is similar to 3G and 4G in the fact that the waves travel at the same speed, just like all light, so 5G’s increase in data transfer speed can not come from the waves moving faster.”
+Esposito, Dominic,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”This information is important to ensure we keep ourselves as safe as possible. It helps us balance the risks of 5g radiation on how it affects our bodies. Wavelength and frequency can affect the body in different ways. A higher frequency can ionize atoms and can be harmful to our DNA. But lower frequencies are not ionizing. The amplitude demonstrates the total strength of the wave, the higher the intensity the more the body absorbs the energy. Duration of exposure is important because even if the radiation is low intensity, it still could affect the body if you are exposed a lot.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 1.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”5g is a type of microwave radiation that is similar to 3g, and 4g. It is similar because all their radiation is non ionizing which means it cannot negatively affect DNA. The main difference is that 5g has higher frequencies and smaller wavelengths than 3g and 4g. This allows 5g to be way faster than 3g and 4g.”
+Hackley, Morgan,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”This information is important because frequency and duration are related to the dangers associated with EM radiation. Frequency is how much energy is in a wave, with there being more energy per particle and the higher the energy, the more dangerous it is. But the duration of exposure is also important because how long / often radiation is occurring can cause negative side effects.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 2”,”EM radiation uses Radio waves instead of long radio waves like 3g and 4g, this making them more powerful.”
+Hall, Benjamin,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”When it comes to humans and waves, waves that have a much higher frequency are more dangerous because they have the ability to knock electrons out of an atom. This is bad for humans because when this happens this kills healthy cells inside of our bodies. We also want to know the kind of exposure that we would be experiencing from 5G and if exposure over a long period of time would be harmful. This relates to radiography and x-rays, exposure for a longer period of time with a wave with a very high frequency is harmful to the patient.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”It is microwave radiation it has a frequency of 10 to the 10th power this puts it in the Microwave category. 5G is similar to 3 and 4G because even though it has a slightly higher frequency they are all still Microwaves because 10 to the 9th power and 10 to the 10th power are both frequencies of microwaves.”
+Hawley, Cole,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”All of this information is important, I will start off by explaining why frequency is important. The frequency of the 5G wave is important because if the wave is being sent out at a higher frequency, there will be more waves, compared to a lower frequency. The amplitude/intensity is important because this affects how strong/how big the waves are, the bigger the waves are the more harmful they are. Finally, the duration of exposure matters because if you are being exposed to these waves for a short period of time, you will most likely be fine. But, if you are spending a lot of time absorbing these waves, they will cause harm to your body.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 39 GHz”,”5G is a kind of microwave radiation, and so are 3G and 4G. These three types of networks all work in similar ways, 5G is simply just the fastest because 5G networks use a portion of the EM radiation spectrum to transmit information that isn’t being used by any other devices.”
+Morocho, Adrianna,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”It is important because depending on the frequency is how their signals are being sent and how strong it is. Based on how strong the electromagnet is determines how fast/strong the energy transfer through the space to reach the antennas in our phones.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 2.1m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3 Hz”,”5G has a higher EM wave compared to 3G and 4G. 3G has the lowest wavelength and frequency, then 4G is a little bit higher.”
+Owusu-Boateng, Romeo,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”The frequency or wavelength of 5G can show us the type of EM wave it is, the amplitude could show the levels of radiation it emits and whether it could be harmful towards us, and if the duration of exposure to 5G could lead to health risk. Depending on if its constant exposure at low intensity radiation or vice versa.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”5G uses Microwaves while 3G and 4G use radio waves. 5G uses higher frequencies for faster data rates and has a shorter wavelength.”
+Paleski, Payton,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”Because the level of exposure proves how long the radiation is affecting a person. Also if it has higher amplitude that means the intensity of the radiation will grow and emit off of the phone to its surroundings and even to the people using or talking on a cell phone.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 1.43m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.8×10¹⁰ Hz”,”5G is a radio wave radiation to be able to send signals to far places and all of the G’s are around the same area and place showing that they are all the same type of radiation. They all have the same purpose and work the same way.”
+Parsons, Wynter,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”This information is important because High Frequency is what is bad for our bodies and Duration because more exposure to the high frequency waves causes more harms us. High frequency means more waves and higher energy per particle, which would have and expose us to more energy. Duration means how long we are being hit with these harmful waves, the longer the time the more damage.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”3G, 4G and 5G are all microwave radiation. 5G has a very low average wavelength and and a higher frequency. Both 3G and 4G have frequencies multiplied to the power of 9 but 5G is multiplied to the power of 10. 5G has over 10 times more energy than 3G and 4G meaning that it can cause more damage.”
+Resendes, Leighton,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”This information is important because EM waves with larger frequency can pose danger to humans. For example, Gamma Rays with the largest frequency in an EM wave is very dangerous to humans. But Radio waves which is still a type of EM radiation won’t cause much harm to humans. Secondly, the longer a human is exposed to the EM wave can determine whether they will be harmed. Which is why you don’t want to get an X- ray unless it’s necessary because you don’t want unnecessary exposure.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”5G on the EM radiation scale falls under the Radio wave category. 3G and 4G fall under the Radio wave category as well. The reason 5G is different from 3G and 4G is that it has a slightly increased frequency.”
+Solano, Zander,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”This shows what in the 5G radiation could be dangerous and what to be more cautious about when dealing with it”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”They are microwaves you can see the major increase from the 3 and 4G but they all move at the same velocity (speed of light)”
+Talalas, Abigail,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”The higher the frequency the more energy the waves have. Some waves have high enough frequencies and thus enough energy to ionize and knock electrons out of atoms, this can cause damage to human cells and cancer risks.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 1.4×10⁻¹m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.9×10¹⁰ Hz”,”5G is Microwave radiation. 5G is similar to 3G and 4G in that they are all microwave radiation but 3G and 4G have slightly lower frequencies being closer to the low frequency radio waves than 5G is.”
+Thapa, Shriya,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”Finding information about frequency/wavelength, amplitude, intensity, and duration of exposure is essential to determining whether 5G radiation is dangerous for our bodies. When measuring the frequency/wavelength, you can decide if the wireless technology has a higher frequency, and then we would know that there is a higher energy particle. When the frequency wavelength is higher than 15, that is when you know the 5G radiation is dangerous. The duration of exposure is necessary, too. Because if you are exposed to something harmful for too long, it could lead to negative effects.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 11.87m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.8 Hz”,”5G is a high EM radiation. It is near the microwave. It is sort of similar to 3G and 4G because it falls between microwave.”
+Torre, Luke,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”Frequency/wavelength is important because higher frequencies can have more energy which can affect your skin. Amplitude/intensity is important because stronger signals can cause more harm. Duration of exposure is important because the signal being around longer can increase the risk of getting cancer depending on the Frequency/wavelength and the Amplitude/intensity. However even if both of those are low you still would not want that lingering around because you never know how long it can take to get cancer.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.14m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 3.86×10¹⁰ Hz”,”5G is a type of radio wave radiation just like 3G and 4G, but instead spreads at higher frequencies which means it spreads faster.”
+Volpe, Noah,”A) Frequency/wavelength, B) amplitude/intensity, C) duration of exposure, D) length of antenna”,”To figure out if 5G radiation is dangerous we could look at the frequency or how fast the waves move, the intensity or how strong the waves are, and how long people are exposed. These things can help us understand how the radiation might affect the body. We have been researching all of these components and whether or not they are safe for the body. However, the length of the antenna has nothing to do with safety hazards.”,”Cell Phone Network: 3G, 4G, 5G; Average Wavelength: 0.16m, 0.143m, 0.0077m; Average Frequency: 1.9 GHz or 1.9×10⁹ Hz, 2.1 GHz or 2.1×10⁹ Hz, 39 GHz or 3.9×10¹⁰ Hz”,”5G is a type of microwave radiation like 3G and 4G. 5G networks use a portion of the electromagnetic (EM) radiation spectrum to transmit digital information that isn’t currently being used by other wireless communication devices. 5G is similar to 3G and 4G because it does the same thing but 5G just works faster. This is</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

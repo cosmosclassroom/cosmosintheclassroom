@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Possible Solutions</title>
+    <!-- Use the Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family for a modern look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background for an immersive feel */
+            color: #e2e8f0;
+        }
+        .solution-card {
+            background-color: #2d3748; /* Slightly lighter dark background for the cards */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .select-button {
+            background-color: #38bdf8; /* Sky blue */
+            color: #1a202c;
+            transition: background-color 0.2s;
+        }
+        .select-button:hover {
+            background-color: #0ea5e9; /* Darker sky blue */
+        }
+        .select-button:disabled {
+            background-color: #4a5568; /* Grayish background for disabled state */
+            color: #a0aec0;
+            cursor: not-allowed;
+        }
+        .cost-badge {
+            background-color: #f6ad55; /* Orange */
+            color: #1a202c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="p-6 lg:p-12">
+
+    <!-- Header Section -->
+    <header class="text-center mb-10 lg:mb-16">
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-2 text-white">
+            Choose Your Solutions
+        </h1>
+        <p class="text-lg lg:text-xl text-gray-400 font-medium max-w-2xl mx-auto">
+            These are the possible investments your community can make to improve its resilience and rebuild trust. Select the best options to mitigate the impact of the disaster.
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto">
+
+        <!-- Design Solutions Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 border-b-2 border-gray-600 pb-2 text-white">Design Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Seismic Retrofitting -->
+                <!-- Base values for Resilience and Trust are assigned here -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="8" data-trust="5">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Seismic Retrofitting</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 20M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Strengthens existing buildings and infrastructure to withstand seismic activity, reducing structural damage and saving lives.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 2: Levee & Floodwall Upgrades -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="9" data-trust="4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Levee & Floodwall Upgrades</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 15M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Reinforces riverbanks and coastal defenses to protect against storm surges and large-scale flooding events.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 3: Defensible Space Program -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="5" data-trust="8">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Defensible Space Program</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 5M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Clears vegetation around homes and uses fire-resistant materials to create a buffer zone against wildfires.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 4: Utility Grid Hardening -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="7" data-trust="3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Utility Grid Hardening</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 10M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Buries power lines and reinforces critical infrastructure to withstand extreme weather and maintain power during a disaster.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 5: Smart Building Codes -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="6" data-trust="2">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Smart Building Codes</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 3M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Updates local construction codes to require modern materials and design principles that enhance resilience to specific natural disasters.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Response Solutions Section -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6 border-b-2 border-gray-600 pb-2 text-white">Response Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Public Safety Campaign -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="2" data-trust="9">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Public Safety Campaign</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 2M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Educates citizens on preparedness, evacuation routes, and what to do during and after a disaster.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 2: Modern Early Warning System -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="8" data-trust="8">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Modern Early Warning System</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 8M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Installs sensors and sirens to provide real-time alerts about impending floods, fires, or seismic events.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 3: Emergency Supply Stockpile -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="6" data-trust="7">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Emergency Supply Stockpile</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 4M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Builds and maintains a secure cache of food, water, medical supplies, and generators for post-disaster use.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+                <!-- Card 4: Post-Disaster Relief Funds -->
+                <div class="solution-card rounded-2xl p-6 space-y-4" data-resilience="3" data-trust="9">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-white">Post-Disaster Relief Funds</h3>
+                        <span class="cost-badge px-3 py-1 text-sm rounded-full">Cost: 1M</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Establishes a fund to provide immediate financial aid to residents and small businesses affected by a disaster.
+                    </p>
+                    <button class="select-button w-full py-3 rounded-lg font-semibold">
+                        Select
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all the select buttons on the page
+            const selectButtons = document.querySelectorAll('.select-button');
+
+            // Add a click event listener to each button
+            selectButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    // Find the parent solution card
+                    const card = event.target.closest('.solution-card');
+
+                    // Check if the card exists and has data attributes
+                    if (card) {
+                        const resilience = card.dataset.resilience;
+                        const trust = card.dataset.trust;
+                        const cost = card.querySelector('.cost-badge').textContent.split(': ')[1];
+
+                        // Update the button's text to show the values
+                        event.target.textContent = `Selected! R: ${resilience} | T: ${trust} | ${cost}`;
+
+                        // Disable the button to prevent multiple selections
+                        event.target.disabled = true;
+
+                        // You can also add logic here to store the selected values
+                        // or trigger other game functions.
+                        console.log(`Solution selected: Resilience=${resilience}, Trust=${trust}, Cost=${cost}`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

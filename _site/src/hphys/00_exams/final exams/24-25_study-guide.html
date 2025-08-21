@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>24-25_study-guide.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+<link rel="stylesheet" href="file:///d%3A/python/cosmosintheclassroom/assets/css/worksheets.css" type="text/css">
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="study-guide-for-final-exams-2024-2025">Study Guide for Final Exams 2024-2025</h1>
+<h2 id="part-i">Part I</h2>
+<h3 id="4-dynamics-chapter-4">4. Dynamics (Chapter 4)</h3>
+<ul>
+<li>Newton's Laws of Motion (3)</li>
+<li>Frictional force</li>
+<li>Inertia</li>
+<li>Free-body diagrams</li>
+<li>Mass, weight and the normal force</li>
+<li>Equilibrium and net force equations</li>
+<li>Inclined plane problems</li>
+<li>Tension</li>
+</ul>
+<h3 id="5-circular-motion-and-gravitation-chapter-5">5. Circular Motion and Gravitation (Chapter 5)</h3>
+<ul>
+<li>Uniform circular motion</li>
+<li>Centripetal force/acceleration</li>
+<li>Tangential velocity/acceleration</li>
+<li>Period and frequency</li>
+<li>Newton's Law of Universal Gravitation</li>
+<li>Kepler's Laws of Planetary Motion (3)</li>
+</ul>
+<h3 id="6-work-and-energy-chapter-6">6. Work and Energy (Chapter 6)</h3>
+<ul>
+<li>Conservation of Energy</li>
+<li>Kinetic Energy</li>
+<li>Potential Energy (gravitational and spring)</li>
+<li>Positive and negative Work (work done <em>on</em>, work done <em>by</em>)</li>
+<li>Power</li>
+</ul>
+<h2 id="part-ii">Part II</h2>
+<!--
+### 7. Collisions and Momentum (Chapter 7)
+   - Momentum and Impulse
+   - Conservation of Momentum
+   - Elastic and Inelastic Collisions
+
+-->
+<h3 id="7-harmonics-chapter-11">7. Harmonics (Chapter 11)</h3>
+<ul>
+<li>Simple harmonic motion</li>
+<li>Pendula</li>
+<li>Springs</li>
+<li>Period and frequency</li>
+<li>Waves (mechanical and electromagnetic)</li>
+<li>Particle displacement/motion versus wave motion/displacement</li>
+<li>Wavelength, frequency, velocity</li>
+<li>Superposition</li>
+<li>Interference (constructive/destructive)</li>
+</ul>
+<h3 id="8-electromagnetism-chapter-16">8. Electromagnetism (Chapter 16)</h3>
+<ul>
+<li>Electric charge</li>
+<li>Quantization</li>
+<li>Conductors, insulators, semiconductors, superconductors</li>
+<li>Charge by induction</li>
+<li>Electric force</li>
+<li>Coulomb’s Law</li>
+<li>Electric fields</li>
+<li>Test charges</li>
+<li>Field diagrams (interpreting only)</li>
+<li>Electric potential</li>
+<li>Equipotential</li>
+<li>Capacitance (simple)</li>
+</ul>
+<h3 id="9-electricity-chapters-18-and-19">9. Electricity (Chapters 18 and 19)</h3>
+<ul>
+<li>Electric batteries</li>
+<li>Electric current</li>
+<li>Ohm's Law</li>
+<li>Resistivity</li>
+<li>Electric Power</li>
+<li>EMF and terminal voltage</li>
+<li>Resistors (in series and parallel)</li>
+<li></li>
+</ul>
+<h3 id="10-optics">10. Optics</h3>
+<ul>
+<li>The Ray Model of Light</li>
+<li>Angle of incidence/reflection</li>
+<li>Snell's Law</li>
+<li>Plane mirrors</li>
+<li>Virtual and real images</li>
+<li>Concave and convex thin lenses</li>
+<li>Mirror equation</li>
+<li>Magnification</li>
+</ul>
+<p>Giancoli Sections</p>
+<ul>
+<li>Chapter 16 - Electric Charge and Fields
+<ul>
+<li>16-1 to 16-5, pp. 443-450</li>
+<li>16-6 to 16-9, pp. 450-459</li>
+</ul>
+</li>
+<li>Chapter 17 - Electric Potential
+<ul>
+<li>17-1 to 17-5, pp. 474-481</li>
+</ul>
+</li>
+<li>Chapter 18 - Electric Currents
+<ul>
+<li>18-1 to 18-5, pp. 501-512</li>
+</ul>
+</li>
+<li>Chapter 19 - Simple DC Circuits
+<ul>
+<li>19-1 to 19-2, pp. 526-532</li>
+</ul>
+</li>
+<li>Chapter 23 - Geometric Optics
+<ul>
+<li>23-1 to 23-5, pp. 644-658</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
