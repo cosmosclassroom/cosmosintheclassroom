@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cosmos in the Classroom">
+    <meta name="description" content="">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Mermaid Markdown Reference Sheet | Cosmos in the Classroom</title>
     
@@ -16,333 +16,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
-<<<<<<< HEAD
-    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
-    
-    <link rel="stylesheet" href="/assets/css/worksheets.css" />
-    
-
-  
-  </head>
-  <body>
-    <div class='nav'>
-    
-      <a href="/" class="button">Homepage</a>
-      
-      </div>
-      
-    <div class="navbar">
-      </div>
-    </div>
-    <body>
-      <div class="markdown-body">
-        <h1 id="mermaid-markdown-reference-sheet">Mermaid Markdown Reference Sheet</h1>
-
-<p>Mermaid is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create diagrams dynamically.</p>
-
-<h2 id="basic-syntax">Basic Syntax</h2>
-
-<p>Mermaid diagrams in Markdown are created using code blocks with the <code class="language-plaintext highlighter-rouge">mermaid</code> language identifier:</p>
-
-<p>«««&lt; HEAD</p>
-
-<p>&lt;li style: |
-        font-family: Garamond;
-        padding: 20px
-        &gt;&lt;/style&gt;</p>
-
-<pre><code class="language-mermaid">diagram-code-here
-</code></pre>
-
-<h1 id="li">&lt;/li&gt;</h1>
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
-</span><span class="sb">diagram-code-here</span>
-<span class="p">```</span>
-<span class="gt">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dc5a0029036a026be2d39707af0287e3daccba02</span>
-</code></pre></div></div>
-
-<h2 id="diagram-types">Diagram Types</h2>
-
-<h3 id="flowchart">Flowchart</h3>
-
-<pre><code class="language-mermaid">graph TD
-    A[Start] --&gt; B{Decision}
-    B --&gt;|Yes| C[Do Something]
-    B --&gt;|No| D[Do Nothing]
-    C --&gt; E[End]
-    D --&gt; E
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>graph [direction]
-    node1[Text] --&gt; node2[Text]
-</code></pre></div></div>
-
-<p><strong>Directions:</strong> TB (top-bottom), TD (same as TB), BT (bottom-top), RL (right-left), LR (left-right)</p>
-
-<p><strong>Node Shapes:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">[]</code> Rectangle: <code class="language-plaintext highlighter-rouge">A[Text]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">()</code> Rounded: <code class="language-plaintext highlighter-rouge">B(Text)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">{}</code> Diamond: <code class="language-plaintext highlighter-rouge">C{Text}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[[]]</code> Subroutine: <code class="language-plaintext highlighter-rouge">D[[Text]]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[()]</code> Stadium: <code class="language-plaintext highlighter-rouge">E[(Text)]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[()] Cylinder: </code>F[(Database)]`</li>
-  <li><code class="language-plaintext highlighter-rouge">&gt;]</code> Asymmetric: <code class="language-plaintext highlighter-rouge">G&gt;Text]</code></li>
-</ul>
-
-<p><strong>Connections:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;</code> Arrow: <code class="language-plaintext highlighter-rouge">A --&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">---</code> Line: <code class="language-plaintext highlighter-rouge">A --- B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-.-&gt;</code> Dotted arrow: <code class="language-plaintext highlighter-rouge">A -.-&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">==&gt;</code> Thick arrow: <code class="language-plaintext highlighter-rouge">A ==&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;|text|</code> Labeled arrow: <code class="language-plaintext highlighter-rouge">A --&gt;|Yes| B</code></li>
-</ul>
-
-<h3 id="sequence-diagram">Sequence Diagram</h3>
-
-<pre><code class="language-mermaid">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!
-    Alice-)John: See you later!
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sequenceDiagram
-    participant A
-    participant B
-    A-&gt;&gt;B: Message
-</code></pre></div></div>
-
-<p><strong>Arrows:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">-&gt;&gt;</code> Solid arrow: <code class="language-plaintext highlighter-rouge">A-&gt;&gt;B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;&gt;</code> Dotted arrow: <code class="language-plaintext highlighter-rouge">A--&gt;&gt;B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-x</code> Lost arrow: <code class="language-plaintext highlighter-rouge">A-xB</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-)</code> Open arrow: <code class="language-plaintext highlighter-rouge">A-)B</code></li>
-</ul>
-
-<p><strong>Notes:</strong></p>
-
-<p>`
-Note over A: Note Text
-Note over A,B: Note spanning actors
-`</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Note over A: Note text
-Note over A,B: Note spanning actors
-</code></pre></div></div>
-
-<h3 id="class-diagram">Class Diagram</h3>
-
-<pre><code class="language-mermaid">classDiagram
-    Animal &lt;|-- Duck
-    Animal &lt;|-- Fish
-    Animal : +int age
-    Animal : +String gender
-    class Duck{
-      +String beakColor
-      +swim()
-      +quack()
-    }
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>classDiagram
-    class ClassName
-    ClassName : +attribute
-    ClassName : +method()
-</code></pre></div></div>
-
-<p><strong>Relationships:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;|--</code> Inheritance: <code class="language-plaintext highlighter-rouge">Parent &lt;|-- Child</code></li>
-  <li><code class="language-plaintext highlighter-rouge">*--</code> Composition: <code class="language-plaintext highlighter-rouge">Car *-- Engine</code></li>
-  <li><code class="language-plaintext highlighter-rouge">o--</code> Aggregation: <code class="language-plaintext highlighter-rouge">Department o-- Employee</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;</code> Association: <code class="language-plaintext highlighter-rouge">Student --&gt; Course</code></li>
-  <li><code class="language-plaintext highlighter-rouge">..|&gt;</code> Realization: <code class="language-plaintext highlighter-rouge">Interface ..|&gt; Class</code></li>
-  <li><code class="language-plaintext highlighter-rouge">..&gt;</code> Dependency: <code class="language-plaintext highlighter-rouge">Class ..&gt; Helper</code></li>
-</ul>
-
-<h3 id="gantt-chart">Gantt Chart</h3>
-
-<pre><code class="language-mermaid">gantt
-    title Project Schedule
-    dateFormat  YYYY-MM-DD
-    section Phase 1
-    Task 1          :a1, 2023-01-01, 7d
-    Task 2          :after a1, 5d
-    section Phase 2
-    Task 3          :2023-01-15, 10d
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gantt
-    title Title
-    dateFormat YYYY-MM-DD
-    section Section
-    Task name  :id, start-date, duration
-</code></pre></div></div>
-
-<h3 id="entity-relationship-diagram">Entity Relationship Diagram</h3>
-
-<pre><code class="language-mermaid">erDiagram
-    CUSTOMER {
-        string id PK
-        string name
-        string email
-    }
-    CUSTOMER ||--o{ ORDER : places
-    ORDER {
-        int id PK
-        date created_at
-        float total
-    }
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>erDiagram
-    ENTITY_A {
-        type attribute PK
-    }
-    ENTITY_A |o--|| ENTITY_B : relationship
-</code></pre></div></div>
-
-<p><strong>Relationships:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">||--||</code> One-to-one</li>
-  <li><code class="language-plaintext highlighter-rouge">||--o{</code> One-to-many</li>
-  <li><code class="language-plaintext highlighter-rouge">}o--o{</code> Many-to-many</li>
-</ul>
-
-<h3 id="pie-chart">Pie Chart</h3>
-
-<pre><code class="language-mermaid">pie title Product Distribution
-    "Product A" : 42.5
-    "Product B" : 27.8
-    "Product C" : 29.7
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pie title Title
-    "Slice 1" : value1
-    "Slice 2" : value2
-</code></pre></div></div>
-
-<h3 id="state-diagram">State Diagram</h3>
-
-<pre><code class="language-mermaid">stateDiagram-v2
-    [*] --&gt; Still
-    Still --&gt; Moving : Start
-    Moving --&gt; Still : Stop
-    Moving --&gt; [*] : Crash
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stateDiagram-v2
-    s1 --&gt; s2 : transition
-    s2 --&gt; [*] : end
-</code></pre></div></div>
-
-<h2 id="tips--best-practices">Tips &amp; Best Practices</h2>
-
-<ol>
-  <li>Keep diagrams simple and focused</li>
-  <li>Use clear, descriptive labels</li>
-  <li>Maintain consistent styling</li>
-  <li>Use appropriate diagram type for the content</li>
-  <li>Add comments to complex sections: <code class="language-plaintext highlighter-rouge">%% Comment text %%</code></li>
-  <li>Test diagrams in a Mermaid Live Editor for complex structures</li>
-  <li>Limit node count to maintain readability</li>
-</ol>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="https://mermaid.js.org/intro/">Mermaid Official Documentation</a></li>
-  <li><a href="https://mermaid.live/">Mermaid Live Editor</a></li>
-</ul>
-
-<p>Yes, you can customize colors and styles in Mermaid diagrams using built-in styling options. While it’s not CSS in the traditional sense, Mermaid provides several ways to style your diagrams:</p>
-
-<h3 id="1-inline-styling">1. Inline Styling</h3>
-
-<p>You can apply styles directly to nodes and connections:</p>
-
-<pre><code class="language-mermaid">graph LR
-    A[Start] --&gt;|Go| B[Process]
-    B --&gt; C[End]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:4px
-    style B fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
-    style C fill:#9f6,stroke:#333,stroke-width:2px
-</code></pre>
-
-<h3 id="2-classes">2. Classes</h3>
-
-<p>You can define classes and apply them to multiple elements:</p>
-
-<pre><code class="language-mermaid">graph TD
-    A[Start] --&gt; B{Decision}
-    B --&gt;|Yes| C[Action]
-    B --&gt;|No| D[Alternative]
-    
-    classDef green fill:#9f6,stroke:#333,stroke-width:2px
-    classDef orange fill:#f96,stroke:#333,stroke-width:4px
-    
-    class A,C green
-    class B,D orange
-</code></pre>
-
-<h3 id="3-default-styling">3. Default Styling</h3>
-
-<p>You can set default styles for all nodes:</p>
-
-<pre><code class="language-mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
-graph TD
-    A[Start] --&gt; B[Process]
-    B --&gt; C[End]
-</code></pre>
-
-<h3 id="4-theme-selection">4. Theme Selection</h3>
-
-<p>Mermaid supports several built-in themes:</p>
-
-<pre><code class="language-mermaid">%%{init: { 'theme': 'forest' }}%%
-graph TD
-    A[Start] --&gt; B[End]
-</code></pre>
-
-<p>Available themes include: default, neutral, dark, forest, and base.</p>
-
-<h3 id="key-style-properties">Key Style Properties</h3>
-
-<p>For individual elements, you can set:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">fill</code>: Background color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke</code>: Border color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke-width</code>: Border thickness</li>
-  <li><code class="language-plaintext highlighter-rouge">color</code>: Text color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke-dasharray</code>: For dashed lines</li>
-  <li><code class="language-plaintext highlighter-rouge">font-size</code>: Text size</li>
-  <li><code class="language-plaintext highlighter-rouge">font-family</code>: Font type</li>
-</ul>
-
-<h3 id="notes-on-css-integration">Notes on CSS Integration</h3>
-
-<ul>
-  <li>Mermaid doesn’t directly use external CSS files</li>
-  <li>Styles are contained within the diagram definition</li>
-  <li>You can use HTML color codes (#RGB) or color names</li>
-  <li>For web applications, you can style the container div that holds the Mermaid diagram using regular CSS</li>
-</ul>
-
-<p>Would you like me to demonstrate any specific styling technique in more detail?</p>
-
-      </div>  
-  </body>
-=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -372,86 +45,10 @@ graph TD
   <body>
     <header>
       <div class="site-header">
-        <<<<<<< HEAD
-<!-- _includes/header.html -->
-<header class="site-header">
-    <div class="header-content">
-        <img src="/www.cosmosintheclassroom.org/assets/images/aristotle.png" alt="Aristotle" width="2.5rem" height="auto">
-        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-        </ul>
-    </nav>
-</header>
-
-<style>
-    .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
-        border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
-        margin-bottom: 1rem;
-    }
-
-    .header-content {
-        text-align: center;
-        margin-bottom: 1rem;
-        padding: 1rem;
-    }
-
-    .site-title {
-        font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 2.5rem;
-        margin: 0;
-        color: #2c4a3e;
-    }
-
-    .site-title a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .site-subtitle {
-        font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 1.2rem;
-        color: #695d46;
-        margin: 0.5rem 0 0 0;
-        font-style: italic;
-    }
-
-    .site-nav {
-        display: flex;
-        justify-content: center;
-    }
-
-    .site-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 2rem;
-    }
-
-    .site-nav a {
-        font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.2s;
-    }
-
-    .site-nav a:hover {
-        color: #7b6340;
-    }
-</style>
-=======
-<!-- <header class="site-header">
+        <!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -628,7 +225,6 @@ graph TD
     background-color: var(--accent-color);
   } */ */
 </style> -->
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
 
       </div>
     </header>
@@ -643,21 +239,9 @@ graph TD
 
 <p>Mermaid diagrams in Markdown are created using code blocks with the <code class="language-plaintext highlighter-rouge">mermaid</code> language identifier:</p>
 
-<p>«««&lt; HEAD</p>
-
-<p>&lt;li style: |
-        font-family: Garamond;
-        padding: 20px
-        &gt;&lt;/style&gt;</p>
-
-<pre><code class="language-mermaid">diagram-code-here
-</code></pre>
-
-<h1 id="li">&lt;/li&gt;</h1>
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
 </span><span class="sb">diagram-code-here</span>
 <span class="p">```</span>
-<span class="gt">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dc5a0029036a026be2d39707af0287e3daccba02</span>
 </code></pre></div></div>
 
 <h2 id="diagram-types">Diagram Types</h2>
@@ -942,7 +526,6 @@ graph TD
     
     </div>
     
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -959,10 +542,7 @@ graph TD
         });
     </script>
     
-<<<<<<< HEAD
-=======
 
     
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

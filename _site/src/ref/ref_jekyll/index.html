@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cosmos in the Classroom">
+    <meta name="description" content="">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Jekyll Quick Reference Guide | Cosmos in the Classroom</title>
     
@@ -16,109 +16,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
-<<<<<<< HEAD
-    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
-    
-    <link rel="stylesheet" href="/assets/css/worksheets.css" />
-    
-
-  
-  </head>
-  <body>
-    <div class='nav'>
-    
-      <a href="/" class="button">Homepage</a>
-      
-      </div>
-      
-    <div class="navbar">
-      </div>
-    </div>
-    <body>
-      <div class="markdown-body">
-        <h1 id="jekyll-quick-reference-guide">Jekyll Quick Reference Guide</h1>
-
-<h2 id="basic-jekyll-commands">Basic Jekyll Commands</h2>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">jekyll new site-name</code> - Create a new Jekyll site</li>
-  <li><code class="language-plaintext highlighter-rouge">jekyll serve</code> or <code class="language-plaintext highlighter-rouge">jekyll s</code> - Start local server</li>
-  <li><code class="language-plaintext highlighter-rouge">jekyll build</code> or <code class="language-plaintext highlighter-rouge">jekyll b</code> - Build the site</li>
-  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> - Run with Bundler</li>
-</ul>
-
-<h2 id="front-matter">Front Matter</h2>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">Post"</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2023-01-01</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">blog</span><span class="pi">,</span> <span class="nv">tutorial</span><span class="pi">]</span>
-<span class="na">math</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># Enable LaTeX support</span>
-<span class="na">marp</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># Enable Marp slides</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-
-<h2 id="directory-structure">Directory Structure</h2>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
-├── _config.yml    # Configuration
-├── _posts/        # Blog posts
-├── _layouts/      # Templates
-├── _includes/     # Reusable components
-└── assets/        # Static files
-</code></pre></div></div>
-
-<h2 id="latex-integration">LaTeX Integration</h2>
-<ul>
-  <li>Inline math: <code class="language-plaintext highlighter-rouge">$formula$</code></li>
-  <li>Display math: <code class="language-plaintext highlighter-rouge">$$formula$$</code>
-Example:
-$E = mc^2$
-\(\frac{d}{dx}(x^n) = nx^{n-1}\)</li>
-</ul>
-
-<h2 id="marp-compatibility">Marp Compatibility</h2>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">marp</span><span class="pi">:</span> <span class="no">true</span>
-<span class="na">theme</span><span class="pi">:</span> <span class="s">default</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-<ul>
-  <li>Slide separator: <code class="language-plaintext highlighter-rouge">---</code></li>
-  <li>Page number: <code class="language-plaintext highlighter-rouge">&lt;!-- paginate: true --&gt;</code></li>
-  <li>Background: <code class="language-plaintext highlighter-rouge">&lt;!-- _backgroundColor: color --&gt;</code></li>
-</ul>
-
-<h2 id="common-liquid-tags">Common Liquid Tags</h2>
-
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>          # Page variable
-<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>file.html<span class="w"> </span><span class="p">%}</span>   # Include component
-<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">condition</span><span class="w"> </span><span class="p">%}</span>        # Conditional
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">items</span><span class="w"> </span><span class="p">%}</span>   # Loop
-</code></pre></div></div>
-
-<h2 id="code-highlighting">Code Highlighting</h2>
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Code block with syntax highlighting</span>
-<span class="k">def</span> <span class="nf">hello</span>
-  <span class="nb">puts</span> <span class="s2">"Hello, Jekyll!"</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h2 id="collections">Collections</h2>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In _config.yml</span>
-<span class="na">collections</span><span class="pi">:</span>
-  <span class="na">my_collection</span><span class="pi">:</span>
-    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
-</code></pre></div></div>
-
-<h2 id="additional-tips">Additional Tips</h2>
-<ul>
-  <li>Use <code class="language-plaintext highlighter-rouge">baseurl</code> in <code class="language-plaintext highlighter-rouge">_config.yml</code> for project pages</li>
-  <li>Enable incremental builds: <code class="language-plaintext highlighter-rouge">jekyll serve --incremental</code></li>
-  <li>Draft posts go in <code class="language-plaintext highlighter-rouge">_drafts/</code> folder</li>
-</ul>
-
-      </div>  
-  </body>
-=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -148,86 +45,10 @@ $E = mc^2$
   <body>
     <header>
       <div class="site-header">
-        <<<<<<< HEAD
-<!-- _includes/header.html -->
-<header class="site-header">
-    <div class="header-content">
-        <img src="/www.cosmosintheclassroom.org/assets/images/aristotle.png" alt="Aristotle" width="2.5rem" height="auto">
-        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav">
-        <ul>
-            <li><a href="/">Home</a></li>
-        </ul>
-    </nav>
-</header>
-
-<style>
-    .site-header {
-        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
-        border-bottom: 3px double #8b7355;
-        border-top: 3px double #8b7355;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
-        margin-bottom: 1rem;
-    }
-
-    .header-content {
-        text-align: center;
-        margin-bottom: 1rem;
-        padding: 1rem;
-    }
-
-    .site-title {
-        font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 2.5rem;
-        margin: 0;
-        color: #2c4a3e;
-    }
-
-    .site-title a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .site-subtitle {
-        font-family: "Libre Baskerville", Georgia, serif;
-        font-size: 1.2rem;
-        color: #695d46;
-        margin: 0.5rem 0 0 0;
-        font-style: italic;
-    }
-
-    .site-nav {
-        display: flex;
-        justify-content: center;
-    }
-
-    .site-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        gap: 2rem;
-    }
-
-    .site-nav a {
-        font-family: "Libre Baskerville", Georgia, serif;
-        color: #4a4236;
-        text-decoration: none;
-        font-size: 1.1rem;
-        transition: color 0.2s;
-    }
-
-    .site-nav a:hover {
-        color: #7b6340;
-    }
-</style>
-=======
-<!-- <header class="site-header">
+        <!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -404,7 +225,6 @@ $E = mc^2$
     background-color: var(--accent-color);
   } */ */
 </style> -->
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
 
       </div>
     </header>
@@ -494,7 +314,6 @@ $E = mc^2$
     
     </div>
     
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -511,10 +330,7 @@ $E = mc^2$
         });
     </script>
     
-<<<<<<< HEAD
-=======
 
     
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>
