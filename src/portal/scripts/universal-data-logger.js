@@ -17,15 +17,43 @@ function logEvent(eventType, data = {}) {
     ...data
   };
 
+  console.log('Sending data to logger:', payload); // Debug log
+
+  // Try both POST and GET methods to ensure compatibility
+  const params = new URLSearchParams();
+  Object.keys(payload).forEach(key => {
+    params.append(key, typeof payload[key] === 'object' ? JSON.stringify(payload[key]) : payload[key]);
+  });
+
+  // Method 1: POST request
   fetch(LOGGER_ENDPOINT, {
     method: "POST",
-    mode: "no-cors", // prevents CORS errors; server won’t return a response
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: JSON.stringify(payload)
+    body: params.toString()
+  }).then(response => {
+    console.log('POST response status:', response.status);
+    return response.text();
+  }).then(text => {
+    console.log('POST response text:', text);
   }).catch(err => {
-    console.warn("Logging failed:", err);
+    console.warn("POST logging failed:", err);
+    
+    // Method 2: GET request as fallback
+    const getUrl = `${LOGGER_ENDPOINT}?${params.toString()}`;
+    console.log('Trying GET fallback:', getUrl);
+    
+    fetch(getUrl, {
+      method: "GET"
+    }).then(response => {
+      console.log('GET response status:', response.status);
+      return response.text();
+    }).then(text => {
+      console.log('GET response text:', text);
+    }).catch(getErr => {
+      console.error("Both POST and GET logging failed:", getErr);
+    });
   });
 }
 

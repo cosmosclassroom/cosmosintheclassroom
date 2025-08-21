@@ -252,11 +252,126 @@
       .btn-standard:hover {
         background: #7c3aed;
       }
+      
+      /* Student name input area */
+      .student-info {
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        z-index: 200;
+      }
+      
+      .student-info label {
+        font-size: 0.9rem;
+        color: var(--primary);
+        font-weight: 500;
+      }
+      
+      .student-info input {
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--card-border);
+        border-radius: 0.4rem;
+        font-size: 0.9rem;
+        background: var(--card-bg);
+        color: var(--text);
+        min-width: 150px;
+      }
+      
+      .student-info input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+      }
+      
+      /* Popup notification styles */
+      .popup-notification {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--card-bg);
+        border: 2px solid var(--accent);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        max-width: 400px;
+        text-align: center;
+        animation: popupSlideIn 0.3s ease-out;
+      }
+      
+      .popup-notification.success {
+        border-color: var(--success);
+      }
+      
+      .popup-notification.warning {
+        border-color: #f39c12;
+      }
+      
+      .popup-notification h3 {
+        margin: 0 0 1rem 0;
+        color: var(--primary);
+        font-family: 'Libre Baskerville', Georgia, serif;
+      }
+      
+      .popup-notification p {
+        margin: 0 0 1.5rem 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      
+      .popup-notification .popup-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      
+      .popup-notification .popup-actions {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+      }
+      
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        opacity: 0;
+        animation: fadeIn 0.3s ease-out forwards;
+      }
+      
+      @keyframes popupSlideIn {
+        from {
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
     <header>
       <div class="site-title">Cosmos in the Classroom</div>
+      <div class="student-info">
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" placeholder="Enter your name" onchange="updateStudentName()">
+      </div>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -318,6 +433,9 @@
       &copy; 2024 Cosmos in the Classroom. All rights reserved.
     </footer>
 
+    <!-- Universal Data Logger -->
+    <script src="./scripts/universal-data-logger.js"></script>
+    
     <!-- Placeholder for future JS -->
     <script>
       // Course data and navigation management
@@ -325,12 +443,89 @@
       let currentCourse = null;
 
       document.addEventListener('DOMContentLoaded', function() {
+        loadStudentName();
         loadCourses();
         setupNavigation();
         loadRecentActivity();
         loadQuickAccess();
       });
 
+      // Student name management
+      function loadStudentName() {
+        const savedName = localStorage.getItem('studentName');
+        if (savedName) {
+          document.getElementById('student-name').value = savedName;
+          // Also update userId for logging
+          localStorage.setItem('userId', savedName);
+        }
+      }
+
+      function updateStudentName() {
+        const name = document.getElementById('student-name').value.trim();
+        if (name) {
+          localStorage.setItem('studentName', name);
+          localStorage.setItem('userId', name);
+          showPopup('success', '👤 Name Updated', `Student name set to: ${name}`);
+        } else {
+          localStorage.removeItem('studentName');
+          localStorage.setItem('userId', 'anon');
+        }
+      }
+
+      // Popup notification system
+      function showPopup(type, title, message, duration = 3000) {
+        // Create overlay
+        const overlay = document.createElement('div');
+        overlay.className = 'popup-overlay';
+        
+        // Create popup
+        const popup = document.createElement('div');
+        popup.className = `popup-notification ${type}`;
+        
+        const iconMap = {
+          success: '✅',
+          warning: '⚠️',
+          info: 'ℹ️',
+          course: '📚',
+          unit: '🎯'
+        };
+        
+        popup.innerHTML = `
+          <div class="popup-icon">${iconMap[type] || iconMap.info}</div>
+          <h3>${title}</h3>
+          <p>${message}</p>
+          <div class="popup-actions">
+            <button class="btn secondary" onclick="closePopup()">OK</button>
+          </div>
+        `;
+        
+        // Add to page
+        document.body.appendChild(overlay);
+        document.body.appendChild(popup);
+        
+        // Store references for closing
+        window.currentPopup = popup;
+        window.currentOverlay = overlay;
+        
+        // Auto-close after duration
+        if (duration > 0) {
+          setTimeout(closePopup, duration);
+        }
+        
+        // Close on overlay click
+        overlay.addEventListener('click', closePopup);
+      }
+
+      function closePopup() {
+        if (window.currentPopup) {
+          document.body.removeChild(window.currentPopup);
+          document.body.removeChild(window.currentOverlay);
+          window.currentPopup = null;
+          window.currentOverlay = null;
+        }
+      }
+
+      // Course loading and display functions
       async function loadCourses() {
         try {
           const courses = [
@@ -392,6 +587,18 @@
 
       async function loadCourse(courseId, dataFile) {
         try {
+          const studentName = localStorage.getItem('studentName') || 'Anonymous';
+          
+          // Show course started popup
+          showPopup('course', 'Course Started!', `${studentName} started: ${courseId === 'hphysics' ? 'The Story of Physics (Honors)' : 'Science Physics Integrated Curriculum (Standard)'}`);
+          
+          // Log course access
+          logEvent("course_access", {
+            courseId: courseId,
+            dataFile: dataFile,
+            studentName: studentName
+          });
+
           const response = await fetch(dataFile);
           if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
           
@@ -406,7 +613,7 @@
           document.getElementById('quick-access-section').style.display = 'none';
         } catch (error) {
           console.error('Error loading course data:', error);
-          alert(`Error loading course data: ${error.message}`);
+          showPopup('warning', 'Error', `Failed to load course: ${error.message}`, 5000);
         }
       }
 
@@ -480,6 +687,22 @@
       }
 
       function enterUnit(unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('studentName') || 'Anonymous';
+        
+        // Show unit started popup
+        showPopup('unit', 'Unit Started!', `${studentName} started Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
+        
+        // Log the unit start event
+        logEvent("unit_start", {
+          courseId: currentCourse,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          coreIdea: unit ? unit.coreIdea : null,
+          anchoringPhenomenon: unit ? unit.anchoringPhenomenon : null,
+          studentName: studentName
+        });
+
         // For now, just mark as visited and show details
         markUnitVisited(currentCourse, unitNumber);
         viewUnitDetails(unitNumber);
@@ -489,7 +712,14 @@
       }
 
       function viewUnitDetails(unitNumber) {
+        // Log unit details view
         const unit = findUnit(unitNumber);
+        logEvent("unit_details_view", {
+          courseId: currentCourse,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`
+        });
+
         const quarterlyData = getQuarterlyUnitData(unitNumber);
         
         if (unit) {
@@ -507,18 +737,6 @@
           
           alert(details);
         }
-      }
-
-      function getQuarterlyUnitData(unitNumber) {
-        if (!courseData || !courseData.quarterly_breakdown) return null;
-        
-        for (const quarter of courseData.quarterly_breakdown) {
-          const unit = quarter.units_covered.find(u => 
-            u.unit_name.includes(`Chapter ${unitNumber}`)
-          );
-          if (unit) return unit;
-        }
-        return null;
       }
 
       function findUnit(unitNumber) {
@@ -563,6 +781,20 @@
       }
 
       function markUnitComplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('studentName') || 'Anonymous';
+        
+        // Show completion popup
+        showPopup('success', 'Unit Completed!', `${studentName} completed Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
+        
+        // Log unit completion
+        logEvent("unit_complete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
         let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
         progress.units[unitNumber] = true;
         localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
@@ -570,6 +802,20 @@
       }
 
       function markUnitIncomplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('studentName') || 'Anonymous';
+        
+        // Show incomplete popup
+        showPopup('warning', 'Unit Marked Incomplete', `${studentName} marked Unit ${unitNumber} as incomplete: ${unit ? unit.title : 'Unknown Unit'}`);
+        
+        // Log unit marked incomplete
+        logEvent("unit_incomplete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
         let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
         progress.units[unitNumber] = false;
         localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
