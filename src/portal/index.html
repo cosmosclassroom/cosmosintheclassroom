@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Course Portal | Cosmos in the Classroom</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500&display=swap">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --background: #f9f9f6;
+        --card-bg: #fff;
+        --card-border: #e0e0e0;
+        --header-bg: #ecebe4;
+        --nav-bg: #f5f5fa;
+        --nav-active: #3498db;
+        --text: #222;
+        --muted: #888;
+        --success: #27ae60;
+      }
+      body {
+        background: var(--background);
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        color: var(--text);
+      }
+      header {
+        background: var(--header-bg);
+        border-bottom: 2px solid var(--card-border);
+        padding: 0.5rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .site-title {
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-size: 2rem;
+        margin: 0;
+        padding-left: 2rem;
+        color: var(--primary);
+        letter-spacing: 1px;
+      }
+      nav {
+        background: var(--nav-bg);
+        margin-top: 0.5rem;
+        padding: 0.5rem 2rem;
+      }
+      nav ul {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a.active, nav a:hover {
+        background: var(--nav-active);
+        color: #fff;
+      }
+      .breadcrumb {
+        max-width: 800px;
+        margin: 1rem auto 0;
+        padding: 0 1rem;
+      }
+      .breadcrumb ol {
+        list-style: none;
+        display: flex;
+        gap: 0.5rem;
+        padding: 0;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      .breadcrumb li:not(:last-child)::after {
+        content: "›";
+        margin-left: 0.5rem;
+        color: var(--card-border);
+      }
+      .breadcrumb a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      .breadcrumb a:hover {
+        text-decoration: underline;
+      }
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .portal-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .portal-header h1 {
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+      .portal-header p {
+        color: var(--muted);
+        font-size: 1.1rem;
+      }
+      .dynamic-section {
+        margin: 2rem 0;
+      }
+      .section-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--card-border);
+      }
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .course-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+        padding: 1.5rem;
+        transition: box-shadow 0.2s, transform 0.2s;
+      }
+      .course-card:hover {
+        box-shadow: 0 4px 16px rgba(44,62,80,0.12);
+        transform: translateY(-2px);
+      }
+      .course-title {
+        font-size: 1.2rem;
+        font-family: 'Libre Baskerville', Georgia, serif;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+      .course-desc {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+      }
+      .course-progress {
+        margin-bottom: 1rem;
+      }
+      .progress-bar {
+        background: var(--card-border);
+        border-radius: 1rem;
+        height: 6px;
+        overflow: hidden;
+      }
+      .progress-fill {
+        background: var(--success);
+        height: 100%;
+        border-radius: inherit;
+        transition: width 0.3s;
+      }
+      .progress-text {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-top: 0.25rem;
+      }
+      .course-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .btn {
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: background 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: var(--primary);
+      }
+      .btn.secondary {
+        background: var(--card-bg);
+        color: var(--primary);
+        border: 1px solid var(--card-border);
+      }
+      .btn.secondary:hover {
+        background: var(--nav-bg);
+      }
+      .loading {
+        text-align: center;
+        color: var(--muted);
+        font-style: italic;
+        padding: 2rem;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 3rem 0 1rem 0;
+        padding-top: 1rem;
+        border-top: 1px solid var(--card-border);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-title">Cosmos in the Classroom</div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/src/portal/" class="active">Portal</a></li>
+          <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
+          <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
+          <li><a href="/src/ref/ref_lib">Library</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Breadcrumb navigation -->
+    <nav aria-label="Breadcrumb" class="breadcrumb">
+      <ol id="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li>Portal</li>
+      </ol>
+    </nav>
+
+    <main>
+      <section class="portal-header">
+        <h1>Course Portal</h1>
+        <p>Access your courses, track progress, and jump to lessons or problem sets.</p>
+      </section>
+
+      <!-- Dynamic course list container -->
+      <section id="courses-section" class="dynamic-section">
+        <h2 class="section-title">Your Courses</h2>
+        <div id="course-list" class="course-grid">
+          <div class="loading">Loading courses...</div>
+        </div>
+      </section>
+
+      <!-- Course units container (shows when a course is selected) -->
+      <section id="units-section" class="dynamic-section" style="display:none;">
+        <h2 class="section-title" id="course-title">Course Units</h2>
+        <div id="units-list" class="course-grid">
+        </div>
+      </section>
+
+      <!-- Recent activity container -->
+      <section id="recent-section" class="dynamic-section">
+        <h2 class="section-title">Recent Activity</h2>
+        <div id="recent-list">
+          <div class="loading">Loading recent activity...</div>
+        </div>
+      </section>
+
+      <!-- Quick access container -->
+      <section id="quick-access-section" class="dynamic-section">
+        <h2 class="section-title">Quick Access</h2>
+        <div id="quick-access" class="course-grid">
+          <div class="loading">Loading quick access...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2024 Cosmos in the Classroom. All rights reserved.
+    </footer>
+
+    <!-- Placeholder for future JS -->
+    <script>
+      // Course data and navigation management
+      let courseData = null;
+      let currentCourse = null;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        loadCourses();
+        setupNavigation();
+        loadRecentActivity();
+        loadQuickAccess();
+      });
+
+      async function loadCourses() {
+        try {
+          const courses = [
+            { 
+              id: 'hphysics', 
+              title: 'The Story of Physics', 
+              desc: 'Establishing fundamental language and exploring universal laws',
+              dataFile: './hphysics/admin/physics.json'
+            }
+          ];
+          
+          displayCourses(courses);
+        } catch (error) {
+          console.error('Error loading courses:', error);
+          document.getElementById('course-list').innerHTML = '<div class="loading">Error loading courses</div>';
+        }
+      }
+
+      function displayCourses(courses) {
+        const container = document.getElementById('course-list');
+        container.innerHTML = '';
+
+        courses.forEach(course => {
+          const progress = getProgress(course.id);
+          const card = document.createElement('div');
+          card.className = 'course-card';
+          card.innerHTML = `
+            <div class="course-title">${course.title}</div>
+            <div class="course-desc">${course.desc}</div>
+            <div class="course-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: ${progress}%"></div>
+              </div>
+              <div class="progress-text">${progress}% Complete (${getCompletedUnits(course.id)} of ${getTotalUnits(course.id)} units)</div>
+            </div>
+            <div class="course-actions">
+              <button class="btn" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
+              <button class="btn secondary" onclick="viewCourseInfo('${course.id}')">Overview</button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      }
+
+      async function loadCourse(courseId, dataFile) {
+        try {
+          const response = await fetch(dataFile);
+          if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          
+          courseData = await response.json();
+          currentCourse = courseId;
+          
+          displayCourseUnits();
+          updateBreadcrumb(['Home', 'Portal', courseData.curriculumTitle]);
+          
+          // Hide other sections
+          document.getElementById('recent-section').style.display = 'none';
+          document.getElementById('quick-access-section').style.display = 'none';
+        } catch (error) {
+          console.error('Error loading course data:', error);
+          alert(`Error loading course data: ${error.message}`);
+        }
+      }
+
+      function displayCourseUnits() {
+        const container = document.getElementById('units-list');
+        const courseTitle = document.getElementById('course-title');
+        
+        courseTitle.textContent = courseData.curriculumTitle;
+        document.getElementById('courses-section').style.display = 'none';
+        document.getElementById('units-section').style.display = 'block';
+        
+        container.innerHTML = '';
+
+        // Group units by parts
+        courseData.parts.forEach(part => {
+          // Add part header
+          const partHeader = document.createElement('div');
+          partHeader.className = 'course-card';
+          partHeader.style.backgroundColor = 'var(--nav-bg)';
+          partHeader.innerHTML = `
+            <div class="course-title">Part ${part.partNumber}: ${part.partTitle}</div>
+            <div class="course-desc">${part.partSubtitle}</div>
+          `;
+          container.appendChild(partHeader);
+
+          // Add units for this part
+          part.units.forEach(unit => {
+            const isCompleted = isUnitCompleted(currentCourse, unit.unitNumber);
+            const unitData = getUnitQuarterlyData(unit.unitNumber);
+            const card = document.createElement('div');
+            card.className = 'course-card';
+            card.innerHTML = `
+              <div class="course-title">
+                Unit ${unit.unitNumber}: ${unit.title}
+                ${isCompleted ? ' ✅' : ''}
+              </div>
+              <div class="course-desc"><strong>Core Idea:</strong> ${unit.coreIdea}</div>
+              <div class="course-desc"><strong>Key Skills:</strong> ${unit.keySkills.join(', ')}</div>
+              <div class="course-desc"><strong>Phenomenon:</strong> ${unit.anchoringPhenomenon}</div>
+              ${unitData ? `<div class="course-desc"><strong>Duration:</strong> ${unitData.days} days</div>` : ''}
+              <div class="course-actions">
+                <button class="btn" onclick="enterUnit(${unit.unitNumber})">Start Unit</button>
+                <button class="btn secondary" onclick="viewUnitDetails(${unit.unitNumber})">Details</button>
+                ${isCompleted ? 
+                  `<button class="btn secondary" onclick="markUnitIncomplete('${currentCourse}', ${unit.unitNumber})">Mark Incomplete</button>` :
+                  `<button class="btn secondary" onclick="markUnitComplete('${currentCourse}', ${unit.unitNumber})">Mark Complete</button>`
+                }
+              </div>
+            `;
+            container.appendChild(card);
+          });
+        });
+
+        // Add back button
+        const backCard = document.createElement('div');
+        backCard.className = 'course-card';
+        backCard.style.borderStyle = 'dashed';
+        backCard.innerHTML = `
+          <div class="course-actions">
+            <button class="btn secondary" onclick="backToCourses()">← Back to Courses</button>
+          </div>
+        `;
+        container.appendChild(backCard);
+      }
+
+      function getUnitQuarterlyData(unitNumber) {
+        if (!courseData || !courseData.unit_pacing_by_days) return null;
+        return courseData.unit_pacing_by_days.find(unit => 
+          unit.unit_name.includes(`Chapter ${unitNumber}`)
+        );
+      }
+
+      function enterUnit(unitNumber) {
+        // For now, just mark as visited and show details
+        markUnitVisited(currentCourse, unitNumber);
+        viewUnitDetails(unitNumber);
+        
+        // TODO: Navigate to actual unit page when created
+        // window.location.href = `/src/courses/${currentCourse}/unit${unitNumber}/`;
+      }
+
+      function viewUnitDetails(unitNumber) {
+        const unit = findUnit(unitNumber);
+        const quarterlyData = getQuarterlyUnitData(unitNumber);
+        
+        if (unit) {
+          let details = `Unit ${unit.unitNumber}: ${unit.title}\n\n`;
+          details += `Core Idea: ${unit.coreIdea}\n\n`;
+          details += `Key Skills: ${unit.keySkills.join(', ')}\n\n`;
+          details += `Anchoring Phenomenon: ${unit.anchoringPhenomenon}\n\n`;
+          details += `Cross-cutting Concepts: ${unit.crosscuttingLenses.join(', ')}\n`;
+          
+          if (quarterlyData) {
+            details += `\n--- Curriculum Details ---\n`;
+            details += `Key Equations: ${quarterlyData.key_equations.join(', ') || 'None listed'}\n`;
+            details += `Problem: ${quarterlyData.anchoring_phenomenon.problem_description}\n`;
+          }
+          
+          alert(details);
+        }
+      }
+
+      function getQuarterlyUnitData(unitNumber) {
+        if (!courseData || !courseData.quarterly_breakdown) return null;
+        
+        for (const quarter of courseData.quarterly_breakdown) {
+          const unit = quarter.units_covered.find(u => 
+            u.unit_name.includes(`Chapter ${unitNumber}`)
+          );
+          if (unit) return unit;
+        }
+        return null;
+      }
+
+      function findUnit(unitNumber) {
+        for (const part of courseData.parts) {
+          const unit = part.units.find(u => u.unitNumber === unitNumber);
+          if (unit) return unit;
+        }
+        return null;
+      }
+
+      function backToCourses() {
+        document.getElementById('courses-section').style.display = 'block';
+        document.getElementById('units-section').style.display = 'none';
+        document.getElementById('recent-section').style.display = 'block';
+        document.getElementById('quick-access-section').style.display = 'block';
+        updateBreadcrumb(['Home', 'Portal']);
+      }
+
+      function viewCourseInfo(courseId) {
+        if (courseId === 'hphysics') {
+          alert('The Story of Physics\n\nA comprehensive honors physics course exploring:\n• Part I: The Rules of the Game\n• Part II: The Great Unification\n• Part III: The Unseen World\n\n180 instructional days, 10 core units across 4 quarters.');
+        }
+      }
+
+      // Progress tracking functions
+      function getProgress(courseId) {
+        const saved = localStorage.getItem(`progress_${courseId}`);
+        if (!saved) return 0;
+        const progress = JSON.parse(saved);
+        const totalUnits = getTotalUnits(courseId);
+        const completedUnits = Object.keys(progress.units || {}).filter(unit => progress.units[unit]).length;
+        return totalUnits > 0 ? Math.round((completedUnits / totalUnits) * 100) : 0;
+      }
+
+      function isUnitCompleted(courseId, unitNumber) {
+        const saved = localStorage.getItem(`progress_${courseId}`);
+        if (!saved) return false;
+        const progress = JSON.parse(saved);
+        return progress.units && progress.units[unitNumber];
+      }
+
+      function markUnitComplete(courseId, unitNumber) {
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = true;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+      function markUnitIncomplete(courseId, unitNumber) {
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = false;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+      function markUnitVisited(courseId, unitNumber) {
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{},"visited":{}}');
+        if (!progress.visited) progress.visited = {};
+        progress.visited[unitNumber] = new Date().toISOString();
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+      }
+
+      function getCompletedUnits(courseId) {
+        const saved = localStorage.getItem(`progress_${courseId}`);
+        if (!saved) return 0;
+        const progress = JSON.parse(saved);
+        return Object.keys(progress.units || {}).filter(unit => progress.units[unit]).length;
+      }
+
+      function getTotalUnits(courseId) {
+        if (courseId === 'hphysics') return 10;
+        return 0;
+      }
+
+      function loadRecentActivity() {
+        const container = document.getElementById('recent-list');
+        // For now, show placeholder
+        container.innerHTML = '<div class="course-desc">No recent activity to display.</div>';
+      }
+
+      function loadQuickAccess() {
+        const container = document.getElementById('quick-access');
+        container.innerHTML = `
+          <div class="course-card">
+            <div class="course-title">Physics Reference</div>
+            <div class="course-desc">Quick access to equations, constants, and formulas</div>
+            <div class="course-actions">
+              <button class="btn secondary">View Reference</button>
+            </div>
+          </div>
+        `;
+      }
+
+      function updateBreadcrumb(items) {
+        const breadcrumb = document.getElementById('breadcrumb');
+        breadcrumb.innerHTML = '';
+        
+        items.forEach((item, index) => {
+          const li = document.createElement('li');
+          if (index === items.length - 1) {
+            li.textContent = item;
+          } else {
+            const link = document.createElement('a');
+            link.href = index === 0 ? '/' : '/src/portal/';
+            link.textContent = item;
+            li.appendChild(link);
+          }
+          breadcrumb.appendChild(li);
+        });
+      }
+
+      function setupNavigation() {
+        // Handle browser back/forward
+        window.addEventListener('popstate', function(event) {
+          if (event.state && event.state.course) {
+            loadCourse(event.state.course.id, event.state.course.dataFile);
+          } else {
+            backToCourses();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
