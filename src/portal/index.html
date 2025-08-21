@@ -442,6 +442,21 @@
       let courseData = null;
       let currentCourse = null;
 
+      // Add fallback logEvent function in case the external script fails to load
+      if (typeof logEvent === 'undefined') {
+        window.logEvent = function(eventType, data) {
+          console.log('Event logged:', eventType, data);
+          // Store in localStorage as fallback
+          const events = JSON.parse(localStorage.getItem('events') || '[]');
+          events.push({
+            timestamp: new Date().toISOString(),
+            type: eventType,
+            data: data
+          });
+          localStorage.setItem('events', JSON.stringify(events.slice(-100))); // Keep last 100 events
+        };
+      }
+
       document.addEventListener('DOMContentLoaded', function() {
         loadStudentName();
         loadCourses();
@@ -720,7 +735,7 @@
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`
         });
 
-        const quarterlyData = getQuarterlyUnitData(unitNumber);
+        const quarterlyData = getUnitQuarterlyData(unitNumber); // Fixed function name
         
         if (unit) {
           let details = `Unit ${unit.unitNumber}: ${unit.title}\n\n`;
@@ -731,8 +746,8 @@
           
           if (quarterlyData) {
             details += `\n--- Curriculum Details ---\n`;
-            details += `Key Equations: ${quarterlyData.key_equations.join(', ') || 'None listed'}\n`;
-            details += `Problem: ${quarterlyData.anchoring_phenomenon.problem_description}\n`;
+            details += `Key Equations: ${quarterlyData.key_equations ? quarterlyData.key_equations.join(', ') : 'None listed'}\n`;
+            details += `Problem: ${quarterlyData.anchoring_phenomenon ? quarterlyData.anchoring_phenomenon.problem_description : 'No problem description'}\n`;
           }
           
           alert(details);
