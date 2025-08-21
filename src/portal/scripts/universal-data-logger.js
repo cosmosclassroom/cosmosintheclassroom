@@ -17,34 +17,34 @@ function logEvent(eventType, data = {}) {
     ...data
   };
 
-  console.log('Sending data to logger:', payload); // Debug log
+  console.log('Sending JSON data to logger:', JSON.stringify(payload, null, 2)); // Debug log
 
-  // Try both POST and GET methods to ensure compatibility
-  const params = new URLSearchParams();
-  Object.keys(payload).forEach(key => {
-    params.append(key, typeof payload[key] === 'object' ? JSON.stringify(payload[key]) : payload[key]);
-  });
-
-  // Method 1: POST request
   fetch(LOGGER_ENDPOINT, {
     method: "POST",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
+      "Content-Type": "application/json"
     },
-    body: params.toString()
+    body: JSON.stringify(payload)
   }).then(response => {
-    console.log('POST response status:', response.status);
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
     return response.text();
   }).then(text => {
-    console.log('POST response text:', text);
+    console.log('Response body:', text);
+    if (text.includes('error') || text.includes('Error')) {
+      console.error('Server returned error:', text);
+    } else {
+      console.log('Data logged successfully');
+    }
   }).catch(err => {
-    console.warn("POST logging failed:", err);
-    
-    // Method 2: GET request as fallback
-    const getUrl = `${LOGGER_ENDPOINT}?${params.toString()}`;
-    console.log('Trying GET fallback:', getUrl);
-    
-    fetch(getUrl, {
+    console.error("Logging failed:", err);
+  });
+}
+
+// Example: auto-log page views when a portal loads
+document.addEventListener("DOMContentLoaded", () => {
+  logEvent("page_view", { title: document.title });
+});
       method: "GET"
     }).then(response => {
       console.log('GET response status:', response.status);
