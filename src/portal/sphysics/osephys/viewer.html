@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Curriculum Visualizer</title>
+    <!-- Use Tailwind CSS for a modern, responsive design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        /* * Styles for the 3D flip card effect.
+         * The card container has a perspective and manages the rotation.
+         * The inner card element is what actually rotates.
+         */
+        .card-container {
+            perspective: 1000px;
+        }
+
+        .card-flipper {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Trigger the flip on hover and focus (for accessibility) */
+        .card-container:hover .card-flipper,
+        .card-container:focus-within .card-flipper {
+            transform: rotateY(180deg);
+        }
+
+        /* Hide the backface of the card when it's not flipped */
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+        }
+
+        .card-back {
+            background-color: #1f2937;
+            color: #f3f4f6;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                The Story of Physics
+            </h1>
+            <p class="mt-4 text-xl text-gray-600">
+                A visual overview of the curriculum units. Hover over a card to see the details.
+            </p>
+        </div>
+        <div id="curriculum-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Cards will be dynamically added here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // The curriculum data, manually structured from the user's text input.
+        const curriculumData = [
+            {
+                unitNumber: "P.1",
+                title: "Energy Flow from Earth's Systems",
+                overarchingQuestion: "How can we design more reliable systems to meet our communities’ energy needs?",
+                anchoringPhenomenon: "The Texas power crisis of February 2021",
+                keySkills: ["Modeling electrical infrastructure", "using simulations to investigate variables affecting energy transfer", "analyzing data to identify causes of supply drops", "evaluating tradeoffs for energy sources"],
+                crosscuttingConcepts: ["Energy and Matter", "Systems and System Models", "Stability and Change", "Cause and Effect"],
+                practices: ["Analyzing articles and experiences", "developing physical and conceptual models", "using simulations", "analyzing data", "building generators", "developing computational models", "interviewing", "analyzing tradeoffs"]
+            },
+            {
+                unitNumber: "P.2",
+                title: "Energy, Forces, & Earth's Crust",
+                overarchingQuestion: "How do forces in Earth’s interior determine what will happen to the surface we see?",
+                anchoringPhenomenon: "A sudden rip in Earth's crust in the Afar Triangle in Ethiopia in 2005",
+                keySkills: ["Working with manipulatives and simulations to establish the role of unbalanced forces", "analyzing seismography and tomography data", "modeling mantle convection", "using mathematical thinking to determine rock age", "simulating plate interactions"],
+                crosscuttingConcepts: ["Cause and Effect", "Scale, Proportion, and Quantity", "Stability and Change", "Energy and Matter"],
+                practices: ["Observing changes in Earth's crust", "working with manipulatives and simulations", "analyzing data", "reading about radioactivity", "using mathematical thinking", "developing free-body diagrams", "investigating relationships"]
+            },
+            {
+                unitNumber: "P.3",
+                title: "Vehicle Collisions",
+                overarchingQuestion: "What can we do to make driving safer for everyone?",
+                anchoringPhenomenon: "Puzzling patterns in traffic collision data",
+                keySkills: ["Analyzing traffic data to identify trends", "developing mathematical representations of motion", "investigating the relationship between net force, time, and change in momentum", "researching community-relevant issues", "engaging in argumentation from evidence"],
+                crosscuttingConcepts: ["Cause and Effect", "Systems and System Models", "Patterns"],
+                practices: ["Analyzing traffic data", "analyzing video", "using mathematical models", "developing mathematical representations", "investigating relationships", "using simulations", "engaging in argumentation"]
+            },
+            {
+                unitNumber: "P.4",
+                title: "Meteors, Orbits, and Gravity",
+                overarchingQuestion: "How have collisions with objects from space changed Earth in the past, and how could they affect our future?",
+                anchoringPhenomenon: "The Chelyabinsk meteor fireball over Siberia in 2013",
+                keySkills: ["Investigating which meteor property has a larger effect on damage", "analyzing data on how small objects burn up in Earth's atmosphere", "exploring geological processes that explain the lack of large craters", "investigating field forces through magnets", "developing models for orbital energy transfer"],
+                crosscuttingConcepts: ["Scale, Proportion, and Quantity", "Cause and Effect"],
+                practices: ["Analyzing data", "investigating properties", "analyzing evidence", "exploring geological processes", "reading", "investigating field forces", "exploring and modeling orbits", "hands-on labs", "using simulations", "developing models"]
+            },
+            {
+                unitNumber: "P.5",
+                title: "Microwave Unit",
+                overarchingQuestion: "How do we use radiation in our lives, and is it safe for humans?",
+                anchoringPhenomenon: "People using microwave ovens to store electronics",
+                keySkills: ["Observing demonstrations with a microwave oven", "investigating physical waves", "using computer simulations to model EM waves", "reading and evaluating texts about EM radiation", "constructing the electromagnetic spectrum", "analyzing data and arguments"],
+                crosscuttingConcepts: ["Energy and Matter", "Cause and Effect", "Structure and Function"],
+                practices: ["Hands-on demonstrations", "observing dissections", "investigating physical waves", "using simulations", "reading and evaluating texts", "constructing the EM spectrum", "analyzing data", "evaluating social media posts", "planning and conducting investigations"]
+            }
+        ];
+
+        window.onload = function() {
+            const container = document.getElementById('curriculum-container');
+
+            // Function to create a list of items
+            const createList = (title, items) => `
+                <div class="mt-4">
+                    <h3 class="font-bold text-lg mb-2">${title}</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm">
+                        ${items.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+
+            // Function to generate a card's HTML
+            const createCard = (unit) => {
+                const frontContent = `
+                    <div class="card-front">
+                        <span class="text-sm font-semibold text-gray-500">${unit.unitNumber}</span>
+                        <h2 class="text-xl font-bold mt-2">${unit.title}</h2>
+                        <p class="text-gray-500 mt-2 italic flex-grow">${unit.overarchingQuestion}</p>
+                        <hr class="my-4 border-gray-200" />
+                        <div class="mt-auto">
+                            <p class="font-semibold text-sm">Anchoring Phenomenon:</p>
+                            <p class="text-sm">${unit.anchoringPhenomenon}</p>
+                            ${createList('Practices', unit.practices)}
+                        </div>
+                    </div>
+                `;
+
+                const backContent = `
+                    <div class="card-back">
+                        <h2 class="text-xl font-bold">${unit.title}</h2>
+                        <hr class="my-4 border-gray-600" />
+                        <div class="flex-grow overflow-y-auto">
+                            ${createList('Crosscutting Concepts', unit.crosscuttingConcepts)}
+                            ${createList('Key Investigations & Skills', unit.keySkills)}
+                        </div>
+                    </div>
+                `;
+
+                return `
+                    <div class="card-container h-96">
+                        <div class="card-flipper">
+                            ${frontContent}
+                            ${backContent}
+                        </div>
+                    </div>
+                `;
+            };
+
+            // Loop through the data and add each card to the container
+            curriculumData.forEach(unit => {
+                const cardHtml = createCard(unit);
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        };
+    </script>
+</body>
+</html>
