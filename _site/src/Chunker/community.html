@@ -91,6 +91,8 @@
                 </div>
                 <!-- Chunk grid overlay -->
                 <div id="chunk-grid" class="absolute inset-0 flex"></div>
+                <!-- Blok grid overlay (for higher-level time blocks) -->
+                <div id="blok-grid" class="absolute inset-y-0 left-0 flex items-center h-full w-full pointer-events-none" style="top: 110%;"></div>
                 <!-- Actual progress fill -->
                 <div id="year-progress-fill" class="absolute left-0 top-0 h-full bg-gradient-to-r from-orange-400 via-blue-400 via-green-400 to-green-500 transition-all duration-1000 ease-out" style="width: 0%;">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
@@ -778,15 +780,43 @@
                 daysRemainingElement.textContent = remainingDays;
             }
             
-            // Create chunk grid (like XP bar segments)
+            // Enhanced chunk tank visualization
             const chunkGrid = document.getElementById('chunk-grid');
             if (chunkGrid && chunkGrid.children.length === 0) {
                 const numChunks = 36; // 36 chunks across the year (about 5 school days per chunk)
+                const filledChunks = Math.floor((elapsedDays / totalDays) * numChunks);
                 for (let i = 0; i < numChunks; i++) {
-                    const chunk = document.createElement('div');
-                    chunk.className = 'flex-1 border-r border-white/30 h-full';
-                    if (i === numChunks - 1) chunk.className = 'flex-1 h-full'; // No border on last chunk
-                    chunkGrid.appendChild(chunk);
+                    // SVG tank widget
+                    const tank = document.createElement('div');
+                    tank.className = 'flex items-center justify-center h-full';
+                    tank.innerHTML = `
+                        <svg width="28" height="28" viewBox="0 0 28 28" class="mx-0.5" style="display:inline-block">
+                            <ellipse cx="14" cy="14" rx="12" ry="12" fill="#e5e7eb" stroke="#d1d5db" stroke-width="2" />
+                            <ellipse cx="14" cy="14" rx="11" ry="11" fill="${i < filledChunks ? '#2563eb' : '#f3f4f6'}" opacity="${i < filledChunks ? '0.85' : '0.5'}" />
+                        </svg>
+                    `;
+                    tank.title = `Chunk ${i + 1}: ${i < filledChunks ? 'Complete' : 'Upcoming'}`;
+                    chunkGrid.appendChild(tank);
+                }
+            }
+
+            // Blok widget system (e.g., 9 Bloks for 4-week periods)
+            const blokGrid = document.getElementById('blok-grid');
+            if (blokGrid && blokGrid.children.length === 0) {
+                const numBloks = 9;
+                const blokLength = numChunks / numBloks;
+                const filledBloks = Math.floor(filledChunks / blokLength);
+                for (let i = 0; i < numBloks; i++) {
+                    const blok = document.createElement('div');
+                    blok.className = 'flex items-center justify-center h-full';
+                    blok.innerHTML = `
+                        <svg width="36" height="36" viewBox="0 0 36 36" class="mx-1" style="display:inline-block">
+                            <ellipse cx="18" cy="18" rx="16" ry="16" fill="#fef3c7" stroke="#f59e42" stroke-width="2" />
+                            <ellipse cx="18" cy="18" rx="15" ry="15" fill="${i < filledBloks ? '#f59e42' : '#fef3c7'}" opacity="${i < filledBloks ? '0.85' : '0.5'}" />
+                        </svg>
+                    `;
+                    blok.title = `Blok ${i + 1}: ${i < filledBloks ? 'Complete' : 'Upcoming'}`;
+                    blokGrid.appendChild(blok);
                 }
             }
         }
