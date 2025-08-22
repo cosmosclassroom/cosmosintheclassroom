@@ -321,7 +321,9 @@
             margin-left: 1rem;
         }
     </style>
-    <script src="/src/shared/components/universal-header.js"></script>
+    <!-- Cosmos Configuration System -->
+    <script src="src/js/cosmos-config.js"></script>
+    <script src="src/shared/components/universal-header.js"></script>
 </head>
 <body>
     <!-- Universal Header -->
@@ -432,9 +434,16 @@
     </footer>
 
     <script>
-        // Personalization functionality
+        // Personalization functionality using CosmosConfig
         function loadPersonalization() {
-            const savedName = localStorage.getItem('cosmosUserName');
+            // Wait for CosmosConfig to be available
+            if (typeof CosmosConfig === 'undefined') {
+                setTimeout(loadPersonalization, 100);
+                return;
+            }
+            
+            const config = new CosmosConfig();
+            const savedName = config.get('user.name');
             const greeting = document.getElementById('greeting');
             const nameInputSection = document.getElementById('nameInputSection');
             const nameChange = document.getElementById('nameChange');
@@ -468,8 +477,9 @@
             const nameInput = document.getElementById('nameInput');
             const name = nameInput.value.trim();
             
-            if (name) {
-                localStorage.setItem('cosmosUserName', name);
+            if (name && typeof CosmosConfig !== 'undefined') {
+                const config = new CosmosConfig();
+                config.set('user.name', name);
                 showGreeting(name);
                 document.getElementById('nameChange').style.display = 'inline';
             }
@@ -481,7 +491,11 @@
             const nameInput = document.getElementById('nameInput');
             const nameChange = document.getElementById('nameChange');
             
-            localStorage.removeItem('cosmosUserName');
+            if (typeof CosmosConfig !== 'undefined') {
+                const config = new CosmosConfig();
+                config.set('user.name', '');
+            }
+            
             greeting.classList.remove('show');
             nameChange.style.display = 'none';
             

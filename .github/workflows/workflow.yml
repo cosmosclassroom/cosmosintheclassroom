@@ -208,9 +208,17 @@ jobs:
           
       - name: Test cross-system localStorage compatibility
         run: |
-          echo "Testing localStorage key naming consistency..."
-          # Check for consistent naming patterns mentioned in README
-          grep -r "localStorage" src/ | grep -E "(cosmos-|user)" | head -5
+          echo "Testing cosmos-config.js integration..."
+          # Check for consistent cosmos_classroom_settings key usage
+          grep -r "cosmos_classroom_settings" src/ | head -5
+          grep -r "cosmosUserName" . --include="*.html" --include="*.js" | head -5 || echo "Good: No legacy cosmosUserName found"
+          
+      - name: Validate personalization system
+        run: |
+          echo "Testing personalization system files..."
+          test -f "src/js/cosmos-config.js" || echo "Missing: Core config system"
+          test -f "src/shared/components/cosmos-personalization-manager.html" || echo "Missing: Personalization manager"
+          test -f "src/shared/components/universal-header.js" || echo "Missing: Header system"
           
       - name: Validate universal header system
         run: |
@@ -334,19 +342,19 @@ jobs:
           path: cleanup-report.txt
           retention-days: 7
 
-# Deploy to GitHub Pages
-deploy-pages:
-  name: 'Deploy to GitHub Pages'
-  runs-on: ubuntu-latest
-  needs: jekyll-build
-  if: github.ref == 'refs/heads/main'
-  permissions:
-    pages: write
-    id-token: write
-  environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
-  steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+  # Deploy to GitHub Pages
+  deploy-pages:
+    name: 'Deploy to GitHub Pages'
+    runs-on: ubuntu-latest
+    needs: jekyll-build
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -92,7 +92,7 @@ main                           # Stable, classroom-ready content
 1. Clone repository: `git clone [repository-url]`
 2. Install dependencies (if using Jekyll): `bundle install`
 3. Start local server: `bundle exec jekyll serve`
-4. Access demo at: `/src/shared/components/header-demo.html`
+4. Access personalization manager at: `/src/shared/components/cosmos-personalization-manager.html`
 
 ## Current Implementation Status
 
