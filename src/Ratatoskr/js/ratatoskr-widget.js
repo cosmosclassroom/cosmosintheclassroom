@@ -352,6 +352,43 @@ class RatatoskrWidget {
         // Theme updates are handled by CSS custom properties
         // This method can be used for theme-specific JavaScript updates if needed
     }
+
+    /**
+     * Public API: Get current school day status for integration with other systems (e.g., Chunker)
+     * Returns: {
+     *   time: string (current time, e.g. '8:42 AM'),
+     *   progressPercent: number (0-100),
+     *   currentChunk: object (id, title, time, status)
+     * }
+     */
+    getSchoolDayStatus() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString('en-US', { hour12: true, hour: 'numeric', minute: '2-digit' });
+
+        // School day progress calculation
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const totalMinutes = (hours * 60) + minutes;
+        const schoolStart = 8 * 60;
+        const schoolEnd = 15 * 60;
+        let progressPercent = 0;
+        if (totalMinutes >= schoolStart && totalMinutes <= schoolEnd) {
+            progressPercent = Math.round(((totalMinutes - schoolStart) / (schoolEnd - schoolStart)) * 100);
+        } else if (totalMinutes > schoolEnd) {
+            progressPercent = 100;
+        }
+        progressPercent = Math.min(Math.max(progressPercent, 0), 100);
+
+        // Determine current chunk
+        const chunkIndex = Math.floor((progressPercent / 100) * this.sampleChunks.length);
+        const currentChunk = this.sampleChunks[Math.min(chunkIndex, this.sampleChunks.length - 1)];
+
+        return {
+            time: timeString,
+            progressPercent,
+            currentChunk
+        };
+    }
 }
 
 // Initialize when DOM is ready

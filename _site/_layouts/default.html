@@ -49,10 +49,9 @@
     <script src="{{ '/src/js/theme-manager.js' | relative_url }}" defer></script>
     
     <!-- Ratatoskr Widget (only on curriculum pages) -->
-    {% if page.layout == 'lesson' or page.layout == 'unit' or page.title contains 'Test Lesson' or page.course %}
-    <script src="{{ '/src/Ratatoskr/js/ratatoskr-widget.js' | relative_url }}" defer></script>
-    <link rel="stylesheet" href="{{ '/src/Ratatoskr/css/ratatoskr.css' | relative_url }}">
-    {% endif %}
+  <!-- Ratatoskr Widget (now loaded on all pages) -->
+  <script src="{{ '/src/Ratatoskr/js/ratatoskr-widget.js' | relative_url }}" defer></script>
+  <link rel="stylesheet" href="{{ '/src/Ratatoskr/css/ratatoskr.css' | relative_url }}">
   </head>
   <body>
     <header>

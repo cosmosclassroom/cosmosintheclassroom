@@ -1,0 +1,1984 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Cosmos in the Classroom - Development Minutes | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    
+    <!-- Cosmos Configuration System -->
+    <script src="/src/js/cosmos-config.js" defer></script>
+    
+    <!-- Theme Management -->
+    <script src="/src/js/theme-manager.js" defer></script>
+    
+    <!-- Ratatoskr Widget (only on curriculum pages) -->
+  <!-- Ratatoskr Widget (now loaded on all pages) -->
+  <script src="/src/Ratatoskr/js/ratatoskr-widget.js" defer></script>
+  <link rel="stylesheet" href="/src/Ratatoskr/css/ratatoskr.css">
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="cosmos-in-the-classroom---development-minutes">Cosmos in the Classroom - Development Minutes</h1>
+
+<h2 id="january-27-2025---system-optimization--cleanup">January 27, 2025 - System Optimization &amp; Cleanup</h2>
+
+<h3 id="issues-addressed">Issues Addressed</h3>
+<ul>
+  <li><strong>Root Directory Pollution</strong>: Multiple JSON, HTML, and CSS files cluttering project root</li>
+  <li><strong>CSS Dependency Problems</strong>: index.html loading Chunker CSS from inconsistent paths</li>
+  <li><strong>Development Workflow</strong>: Need for systematic approach to prevent future clutter</li>
+</ul>
+
+<h3 id="solutions-implemented">Solutions Implemented</h3>
+<ol>
+  <li><strong>Automated Cleanup Script</strong>: Enhanced <code class="language-plaintext highlighter-rouge">build-restructure.bat</code> with:
+    <ul>
+      <li>JSON files → <code class="language-plaintext highlighter-rouge">data/</code> directory</li>
+      <li>Legacy HTML files → <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code></li>
+      <li>CSS files → <code class="language-plaintext highlighter-rouge">src/shared/styles/</code></li>
+      <li>Dependency analysis and documentation</li>
+    </ul>
+  </li>
+  <li><strong>Git Workflow Strategy</strong>: Established feature branch methodology:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">feature/ui-*</code> for interface experiments</li>
+      <li><code class="language-plaintext highlighter-rouge">feature/content-*</code> for curriculum development</li>
+      <li><code class="language-plaintext highlighter-rouge">hotfix/*</code> for cleanup and quick fixes</li>
+      <li>Prevents root directory pollution from experiments</li>
+    </ul>
+  </li>
+  <li><strong>CSS Architecture</strong>: Centralized styling system:
+    <ul>
+      <li>Consolidated CSS in <code class="language-plaintext highlighter-rouge">src/shared/styles/</code></li>
+      <li>Documented dependencies in <code class="language-plaintext highlighter-rouge">css-dependencies.txt</code></li>
+      <li>Clear path management for cross-system integration</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="technical-decisions">Technical Decisions</h3>
+<ul>
+  <li><strong>Branching over dev folders</strong>: Cleaner history, better collaboration, safer experiments</li>
+  <li><strong>Centralized CSS</strong>: Single source of truth for styling across all systems</li>
+  <li><strong>Automated documentation</strong>: Script-generated dependency analysis for maintenance</li>
+</ul>
+
+<h3 id="next-session-priorities">Next Session Priorities</h3>
+<ol>
+  <li>Fix CSS paths in index.html</li>
+  <li>Test all system integrations post-cleanup</li>
+  <li>Complete Standard Physics content migration</li>
+  <li>Document cross-system dependencies</li>
+</ol>
+
+<hr />
+
+<h2 id="january-25-2025---universal-header-implementation">January 25, 2025 - Universal Header Implementation</h2>
+
+<h3 id="accomplished">Accomplished</h3>
+<ul>
+  <li>Implemented universal header system across Portal, Chunker, and shared components</li>
+  <li>Established 144-chunk progress tracking visualization</li>
+  <li>Created consistent user identity and course selection system</li>
+  <li>Responsive design implementation with mobile-first approach</li>
+</ul>
+
+<h3 id="technical-implementation">Technical Implementation</h3>
+<ul>
+  <li>Universal header component in <code class="language-plaintext highlighter-rouge">src/shared/components/</code></li>
+  <li>localStorage-based user data persistence</li>
+  <li>TailwindCSS for responsive design framework</li>
+  <li>Integration points for Portal, Chunker, Library, and Socrates systems</li>
+</ul>
+
+<hr />
+
+<h2 id="august-2025---major-physics-content-reorganization">August 2025 - Major Physics Content Reorganization</h2>
+
+<h3 id="accomplished-1">Accomplished</h3>
+<ul>
+  <li>
+    <h2 id="organized-130-physics-files-into-logical-unit-structure">Organized 130+ physics files into logical unit structure</h2>
+  </li>
+</ul>
+
+<h2 id="august-22-2025---chunker-ui-overhaul--navigation-improvements">August 22, 2025 - Chunker UI Overhaul &amp; Navigation Improvements</h2>
+
+<h3 id="accomplished-2">Accomplished</h3>
+<ul>
+  <li>Replaced Quick Reference Dashboard with prominent center date and navigation arrows</li>
+  <li>Added header UI with left/right arrows for day cycling</li>
+  <li>Updated JavaScript to remove obsolete event listeners and support new navigation</li>
+  <li>Improved progress visualization with chunk and Blok widgets</li>
+  <li>Ensured real-time updates and maintainable code structure</li>
+</ul>
+
+<h3 id="technical-decisions-1">Technical Decisions</h3>
+<ul>
+  <li>Prioritized clarity and maintainability in UI and JS event handling</li>
+  <li>Centralized date display logic for both header and center sections</li>
+  <li>Removed legacy dashboard cards and quick actions for a cleaner interface</li>
+</ul>
+
+<h3 id="next-steps">Next Steps</h3>
+<ol>
+  <li>Continue UI polish and accessibility improvements</li>
+  <li>Integrate additional interactive features as needed</li>
+  <li>Document further system integrations and user feedback
+    <ul>
+      <li>Archived Q4 2025 experimental content while preserving useful materials</li>
+      <li>Established naming conventions for maintainable content structure</li>
+      <li>Created migration tools for future reorganizations</li>
+      <li>Centralized slide management with consistent Marp theming</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="structure-established">Structure Established</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/units/     # 10 sequential units (01_principles → 10_optics)
+├── standard/units/   # Parallel structure for accessible curriculum
+└── shared/           # Common resources, themes, and archived content
+</code></pre></div></div>
+
+<h3 id="migration-process">Migration Process</h3>
+<ul>
+  <li>Content analysis for educational value</li>
+  <li>Elimination of duplicates and outdated materials</li>
+  <li>Preservation of historical content in archive system</li>
+  <li>Documentation of migration decisions and rationale</li>
+</ul>
+
+<hr />
+
+<h2 id="development-principles-established">Development Principles Established</h2>
+
+<h3 id="content-quality">Content Quality</h3>
+<ul>
+  <li>Scientific accuracy verification for all physics content</li>
+  <li>Progressive difficulty building from basic to advanced concepts</li>
+  <li>Clear learning objectives and measurable goals</li>
+  <li>Real-world applications connecting physics to practical examples</li>
+</ul>
+
+<h3 id="technical-standards">Technical Standards</h3>
+<ul>
+  <li>Clean, readable code with proper commenting</li>
+  <li>Mobile-first responsive design approach</li>
+  <li>WCAG compliance for educational accessibility</li>
+  <li>Performance optimization for classroom internet speeds</li>
+</ul>
+
+<h3 id="workflow-management">Workflow Management</h3>
+<ul>
+  <li>Structured commit messages with detailed explanations</li>
+  <li>Feature branch strategy for major additions</li>
+  <li>Documentation updates for significant changes</li>
+  <li>Regular cleanup and optimization cycles
+    <ul>
+      <li>Built Python management tool (<code class="language-plaintext highlighter-rouge">scripts/socrates-brief-manager.py</code>)</li>
+      <li>Added automatic relationship mapping between briefs, units, and concepts</li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Frontend Integration</strong>: Dynamic portal components
+    <ul>
+      <li>JavaScript research brief manager (<code class="language-plaintext highlighter-rouge">src/portal/scripts/research-brief-manager.js</code>)</li>
+      <li>Portal UI integration (<code class="language-plaintext highlighter-rouge">src/portal/scripts/portal-brief-integration.js</code>)</li>
+      <li>Complete responsive CSS styling (<code class="language-plaintext highlighter-rouge">src/portal/styles/research-briefs.css</code>)</li>
+      <li>Interactive Socratic questioning interface</li>
+    </ul>
+  </li>
+  <li><strong>Sample Content Created</strong>:
+    <ul>
+      <li><strong>Phenomena Brief</strong>: “The Physics Behind Athletic Performance” (projectile motion)</li>
+      <li><strong>Applications Brief</strong>: “Newton’s Laws in Action: Why Do Cars Need Seatbelts?” (safety physics)</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="portal-integration-features"><strong>Portal Integration Features</strong></h4>
+<ul>
+  <li>✅ <strong>Dynamic Content Discovery</strong>: Search, filtering, and categorization</li>
+  <li>✅ <strong>Context-Aware Recommendations</strong>: Unit-specific brief suggestions</li>
+  <li>✅ <strong>Interactive Socratic Interface</strong>: Multi-level questioning system</li>
+  <li>✅ <strong>Mobile Optimization</strong>: Responsive design across all devices</li>
+  <li>✅ <strong>Cross-Referenced Content</strong>: Automatic linking between briefs and curriculum</li>
+</ul>
+
+<h4 id="technical-architecture"><strong>Technical Architecture</strong></h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── data/research-briefs-config.json      # System configuration
+├── data/research-briefs-index.json       # Searchable content index
+├── library/research-briefs/               # Content hierarchy
+│   ├── phenomena/                         # Anchoring phenomena
+│   ├── applications/                      # Real-world applications
+│   ├── historical/                        # Historical context
+│   └── connections/                       # Cross-curricular links
+├── src/portal/scripts/                    # JavaScript modules
+└── src/portal/styles/research-briefs.css # Complete styling
+</code></pre></div></div>
+
+<h4 id="next-priority-actions"><strong>Next Priority Actions</strong></h4>
+<ol>
+  <li>🎯 <strong>UI Deployment</strong>: Get portal interface online and functional</li>
+  <li>🔍 <strong>System Scanning</strong>: Portal → Chunker → Socrates → Library integration testing</li>
+  <li>🔧 <strong>Navigation Fixes</strong>: Resolve broken links and UI issues</li>
+  <li>📱 <strong>Mobile Testing</strong>: Verify responsive functionality across devices</li>
+</ol>
+
+<hr />
+
+<h2 id="august-22-2025---project-cleanup--maintenance">August 22, 2025 - Project Cleanup &amp; Maintenance</h2>
+
+<h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>AI Development Standards</strong>: Create comprehensive AI integration workflow</li>
+  <li><strong>Development Quality Gates</strong>: Establish consistent development practices</li>
+  <li><strong>Context Management</strong>: Implement AI assistant project state tracking</li>
+  <li><strong>Prompt Template Library</strong>: Standardize AI interactions for common tasks</li>
+</ol>
+
+<h3 id="-ai-development-infrastructure">🤖 <strong>AI Development Infrastructure</strong></h3>
+
+<h4 id="core-implementation"><strong>Core Implementation</strong></h4>
+<ul>
+  <li><strong>Development Standards</strong>: <code class="language-plaintext highlighter-rouge">.ai/development-checklist.md</code> - Comprehensive workflow checklist</li>
+  <li><strong>Project Context</strong>: <code class="language-plaintext highlighter-rouge">.ai/context.md</code> - Real-time project state for AI assistants</li>
+  <li><strong>Prompt Library</strong>: <code class="language-plaintext highlighter-rouge">.ai/prompts/templates.md</code> - Standardized AI interaction patterns</li>
+  <li><strong>Quality Assurance</strong>: Integrated educational and technical validation gates</li>
+</ul>
+
+<h4 id="key-features"><strong>Key Features</strong></h4>
+<ul>
+  <li><strong>Educational Quality</strong>: Scientific accuracy validation and pedagogical coherence checks</li>
+  <li><strong>Technical Standards</strong>: Accessibility compliance, mobile responsiveness, performance optimization</li>
+  <li><strong>AI Integration</strong>: Robust prompt templates and schema validation workflows</li>
+  <li><strong>Development Workflow</strong>: Session planning, code review, and documentation standards</li>
+</ul>
+
+<h4 id="files-created"><strong>Files Created</strong></h4>
+<p><strong>Directory</strong>: <code class="language-plaintext highlighter-rouge">.ai/</code> (AI Assistant Development Resources)</p>
+<ul>
+  <li><strong>development-checklist.md</strong>: Comprehensive development workflow standards</li>
+  <li><strong>context.md</strong>: Real-time project state and architectural documentation</li>
+  <li><strong>prompts/templates.md</strong>: Standardized AI interaction templates</li>
+  <li><strong>Integration with existing</strong>: Updated README.md with AI development section</li>
+</ul>
+
+<h3 id="-documentation-updates">📚 <strong>Documentation Updates</strong></h3>
+<ul>
+  <li><strong>README.md</strong>: Added AI development workflow section and directory structure</li>
+  <li><strong>Integration Standards</strong>: Established patterns for AI-assisted development</li>
+  <li><strong>Quality Framework</strong>: Defined educational and technical validation criteria</li>
+</ul>
+
+<hr />
+
+<h2 id="august-22-2025---ai-powered-curriculum-extraction-system">August 22, 2025 - AI-Powered Curriculum Extraction System</h2>
+
+<h3 id="-session-objectives-1">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>AI Integration</strong>: Develop comprehensive curriculum extraction system</li>
+  <li><strong>Teacher Workflow</strong>: Create guided interface for document-to-JSON conversion</li>
+  <li><strong>Cognitive Load Framework</strong>: Implement research-based learning intensity metrics</li>
+  <li><strong>Schema Development</strong>: Design machine-readable curriculum specification</li>
+</ol>
+
+<h3 id="-ai-system-implementation">🤖 <strong>AI System Implementation</strong></h3>
+
+<h4 id="core-architecture"><strong>Core Architecture</strong></h4>
+<ul>
+  <li><strong>Multi-Phase Workflow</strong>: Document Analysis → Clarification → JSON Generation → Validation</li>
+  <li><strong>Teacher-Friendly Interface</strong>: 5-step guided process with visual progress indicators</li>
+  <li><strong>Educational Logic Engine</strong>: Automated validation for pedagogical coherence</li>
+  <li><strong>Cognitive Load Quantification</strong>: Low (1 unit), Medium (2 units), High (3 units) with 2-4 daily maximum</li>
+</ul>
+
+<h4 id="files-created-1"><strong>Files Created</strong></h4>
+<p><strong>Directory</strong>: <code class="language-plaintext highlighter-rouge">src/Chunker/ai/</code> (Complete AI system)</p>
+<ul>
+  <li><strong>curriculum-extractor.html</strong>: Teacher-facing interface with drag-drop document upload</li>
+  <li><strong>extraction-workflow.js</strong>: JavaScript workflow management and validation engine</li>
+  <li><strong>chunker-schema.json</strong>: Complete JSON specification for AI-generated configurations</li>
+  <li><strong>config-validator.js</strong>: Educational logic validation with cognitive load checking</li>
+  <li><strong>curriculum-extraction-prompt.md</strong>: AI prompt templates for extraction workflow</li>
+  <li><strong>teacher-prompts.md</strong>: Copy-paste prompts for immediate AI service use</li>
+  <li><strong>README.md</strong>: Comprehensive system documentation and implementation guide</li>
+</ul>
+
+<h4 id="integration-enhancements"><strong>Integration Enhancements</strong></h4>
+<p><strong>Updated Files</strong>: <code class="language-plaintext highlighter-rouge">src/Chunker/README.md</code></p>
+<ul>
+  <li><strong>AI Section Added</strong>: Documentation for curriculum extraction capabilities</li>
+  <li><strong>Directory Structure</strong>: Clean organization with production vs development separation</li>
+  <li><strong>Teacher Guidance</strong>: Step-by-step workflow for non-technical users</li>
+</ul>
+
+<h3 id="-key-innovations">✅ <strong>Key Innovations</strong></h3>
+
+<h4 id="1-cognitive-load-framework"><strong>1. Cognitive Load Framework</strong></h4>
+<ul>
+  <li><strong>Quantified Approach</strong>: Research-based metrics for daily lesson intensity</li>
+  <li><strong>AI Integration</strong>: Automatic validation prevents cognitive overload</li>
+  <li><strong>Teacher Planning</strong>: Concrete guidelines for sustainable learning progressions</li>
+</ul>
+
+<h4 id="2-educational-logic-validation"><strong>2. Educational Logic Validation</strong></h4>
+<ul>
+  <li><strong>Schema Compliance</strong>: Ensures machine-readable output format</li>
+  <li><strong>Pedagogical Coherence</strong>: Validates learning objective progression</li>
+  <li><strong>Assessment Alignment</strong>: Verifies content coverage before testing</li>
+  <li><strong>Realistic Pacing</strong>: Accounts for varying difficulty and student capacity</li>
+</ul>
+
+<h4 id="3-teacher-workflow-optimization"><strong>3. Teacher Workflow Optimization</strong></h4>
+<ul>
+  <li><strong>Document Processing</strong>: Handles academic calendars, scope &amp; sequence, pacing guides</li>
+  <li><strong>Clarification System</strong>: AI asks targeted questions to resolve ambiguities</li>
+  <li><strong>Quality Assurance</strong>: Comprehensive validation with teacher-friendly error messages</li>
+</ul>
+
+<h3 id="-system-impact">🔄 <strong>System Impact</strong></h3>
+<p><strong>Bridge Achievement</strong>: Successfully connects traditional curriculum planning with AI-powered optimization while maintaining pedagogical integrity and teacher autonomy.</p>
+
+<p><strong>Production Ready</strong>: Complete system ready for classroom pilot programs with comprehensive documentation for teachers, developers, and administrators.</p>
+
+<p><strong>Community Resources</strong>: Restored inspirational quotes calendar system in <code class="language-plaintext highlighter-rouge">community.html</code> with 36 curated quotes rotating weekly through academic year themes.</p>
+
+<hr />
+
+<h2 id="august-21-2025-evening---classical-design-system-implementation">August 21, 2025 (Evening) - Classical Design System Implementation</h2>
+
+<h3 id="-session-objectives-2">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>File Cleanup</strong>: Remove obsolete shell scripts and dependencies</li>
+  <li><strong>Design System Creation</strong>: Develop unified classical aesthetic theme</li>
+  <li><strong>Portal Redesign</strong>: Apply consistent design to main navigation page</li>
+  <li><strong>CSS Optimization</strong>: Consolidate inline styles into main framework</li>
+</ol>
+
+<h3 id="-design-philosophy-classical-antiquity-meets-ai-chic">🎨 <strong>Design Philosophy: “Classical Antiquity Meets AI Chic”</strong></h3>
+<p><strong>Visual Identity</strong>: Elegant serif typography, marble textures, gold accents, deep blues
+<strong>User Experience</strong>: Personalized greetings, time-aware interactions, consistent navigation</p>
+
+<h3 id="-technical-accomplishments">✅ <strong>Technical Accomplishments</strong></h3>
+
+<h4 id="1-homepage-redesign">1. <strong>Homepage Redesign</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">index.html</code></p>
+<ul>
+  <li><strong>Classical Typography</strong>: Implemented Cormorant Garamond serif fonts</li>
+  <li><strong>Personalization System</strong>: localStorage-based name persistence with time-aware greetings</li>
+  <li><strong>Marble Aesthetic</strong>: CSS gradients and textures for classical appearance</li>
+  <li><strong>Interactive Navigation</strong>: Dropdown menus with elegant hover effects</li>
+</ul>
+
+<h4 id="2-css-framework-creation">2. <strong>CSS Framework Creation</strong></h4>
+<p><strong>File Created</strong>: <code class="language-plaintext highlighter-rouge">assets/css/cosmos-theme.css</code> (461 lines)</p>
+<ul>
+  <li><strong>CSS Variables</strong>: Centralized color palette (marble, gold, deep-blue, charcoal)</li>
+  <li><strong>Component Library</strong>: Buttons, cards, navigation, typography systems</li>
+  <li><strong>Responsive Design</strong>: Mobile-first approach with proper breakpoints</li>
+  <li><strong>Animation System</strong>: Subtle transitions and hover effects</li>
+</ul>
+
+<h4 id="3-portal-page-transformation">3. <strong>Portal Page Transformation</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">src/portal/index.html</code></p>
+<ul>
+  <li><strong>Header Consistency</strong>: Applied same navigation structure as homepage</li>
+  <li><strong>Personalization Integration</strong>: Name input with greeting system</li>
+  <li><strong>Course Grid Redesign</strong>: Classical styling for course cards with theme variations</li>
+  <li><strong>CSS Optimization</strong>: Removed 394 lines of inline CSS (42% file size reduction)</li>
+</ul>
+
+<h4 id="4-infrastructure-cleanup">4. <strong>Infrastructure Cleanup</strong></h4>
+<p><strong>Files Removed</strong>: Obsolete shell scripts (<code class="language-plaintext highlighter-rouge">fix-package.sh</code>)
+<strong>Issue Resolution</strong>:</p>
+<ul>
+  <li>Git authentication (Windows Credential Manager, Personal Access Tokens)</li>
+  <li>Jekyll dependency conflicts (github-pages gem version management)</li>
+  <li>Gemfile optimization (removed explicit Jekyll version)</li>
+</ul>
+
+<h3 id="️-technical-architecture-decisions">🏗️ <strong>Technical Architecture Decisions</strong></h3>
+
+<h4 id="css-organization-strategy"><strong>CSS Organization Strategy</strong></h4>
+<p><strong>Decision</strong>: Single centralized CSS framework vs. component-specific files
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces HTTP requests and improves caching</li>
+  <li>Eliminates style conflicts and duplication</li>
+  <li>Enables consistent design language across site</li>
+  <li>Simplifies maintenance and updates</li>
+</ul>
+
+<h4 id="personalization-system-design"><strong>Personalization System Design</strong></h4>
+<p><strong>Decision</strong>: localStorage-based name persistence with consistent variable naming
+<strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos-userName</code> key with time-aware greeting functions
+<strong>Benefits</strong>:</p>
+<ul>
+  <li>No server dependency for personalization</li>
+  <li>Privacy-focused (local storage only)</li>
+  <li>Consistent experience across site pages</li>
+</ul>
+
+<h4 id="portal-course-management"><strong>Portal Course Management</strong></h4>
+<p><strong>Technical Stack</strong>: Vanilla JavaScript with event logging
+<strong>Features</strong>: Progress tracking, course enrollment, unit completion markers
+<strong>Data Architecture</strong>: JSON-based course definitions with localStorage progress</p>
+
+<h3 id="-design-system-components">🎯 <strong>Design System Components</strong></h3>
+
+<h4 id="color-palette"><strong>Color Palette</strong></h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--marble</span><span class="o">:</span> <span class="nf">#f8f6f0</span>        <span class="c">/* Background base */</span>
+<span class="nt">--gold</span><span class="o">:</span> <span class="nf">#c9a96e</span>          <span class="c">/* Accent highlights */</span>
+<span class="nt">--deep-blue</span><span class="o">:</span> <span class="err">#1</span><span class="nt">a365d</span>     <span class="c">/* Primary text/headers */</span>
+<span class="nt">--charcoal</span><span class="o">:</span> <span class="err">#2</span><span class="nt">d3748</span>      <span class="c">/* Body text */</span>
+<span class="nt">--silver</span><span class="o">:</span> <span class="nf">#a0aec0</span>        <span class="c">/* Secondary text */</span>
+</code></pre></div></div>
+
+<h4 id="typography-hierarchy"><strong>Typography Hierarchy</strong></h4>
+<ul>
+  <li><strong>Headlines</strong>: Cormorant Garamond (serif, classical elegance)</li>
+  <li><strong>Body</strong>: Inter (sans-serif, modern readability)</li>
+  <li><strong>Interactive</strong>: Proper focus states and hover feedback</li>
+</ul>
+
+<h4 id="component-patterns"><strong>Component Patterns</strong></h4>
+<ul>
+  <li><strong>Cards</strong>: White backgrounds, gold borders, subtle shadows</li>
+  <li><strong>Buttons</strong>: Theme-specific colors (honors blue, standard purple)</li>
+  <li><strong>Navigation</strong>: Fixed header with backdrop blur effect</li>
+</ul>
+
+<h3 id="-performance-metrics">📊 <strong>Performance Metrics</strong></h3>
+<ul>
+  <li><strong>Portal HTML</strong>: 993 lines → 581 lines (42% reduction)</li>
+  <li><strong>CSS Consolidation</strong>: ~400 lines moved from inline to framework</li>
+  <li><strong>Load Performance</strong>: Single CSS file improves caching and reduces requests</li>
+  <li><strong>Maintainability</strong>: Centralized styles enable site-wide consistency</li>
+</ul>
+
+<h3 id="-git--deployment-resolution">🔧 <strong>Git &amp; Deployment Resolution</strong></h3>
+<p><strong>Authentication</strong>: Updated to Personal Access Token workflow
+<strong>Jekyll Build</strong>: Resolved gem dependency conflicts with github-pages
+<strong>Workflow</strong>: Established clean commit practices with descriptive messages</p>
+
+<h3 id="-next-steps--considerations">🎯 <strong>Next Steps &amp; Considerations</strong></h3>
+<ol>
+  <li><strong>Extend Design System</strong>: Apply classical theme to physics course pages</li>
+  <li><strong>Navigation Enhancement</strong>: Complete dropdown menu functionality</li>
+  <li><strong>Assessment Integration</strong>: Apply theme to quiz and testing interfaces</li>
+  <li><strong>Mobile Optimization</strong>: Test and refine responsive breakpoints</li>
+</ol>
+
+<hr />
+
+<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+
+<h3 id="-session-objectives-3">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>Organizational Streamlining</strong>: Address the “messy” file structure from Q4 2025 AI experiments</li>
+  <li><strong>Infrastructure Standardization</strong>: Create unified build systems and configuration management</li>
+  <li><strong>Content Validation</strong>: Eliminate all structural warnings and establish quality assurance</li>
+  <li><strong>Workflow Optimization</strong>: Implement automated tools for maintainable development</li>
+</ol>
+
+<h3 id="-initial-state-analysis">📊 <strong>Initial State Analysis</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong>: Missing directories, inconsistent naming, incomplete structure</li>
+  <li><strong>Scattered Tools</strong>: Experimental utilities (Chunker, Consequence Engine) in <code class="language-plaintext highlighter-rouge">src/</code></li>
+  <li><strong>Duplicate Directories</strong>: Multiple naming conventions (01_unit1 vs 01_principles)</li>
+  <li><strong>No Quality Assurance</strong>: No automated validation or content checking systems</li>
+  <li><strong>Fragmented Build Process</strong>: Multiple uncoordinated build scripts</li>
+</ul>
+
+<h3 id="-major-accomplishments">✅ <strong>Major Accomplishments</strong></h3>
+
+<h4 id="1-complete-physics-structure-reorganization">1. <strong>Complete Physics Structure Reorganization</strong></h4>
+<p><strong>Design Rationale</strong>: Consistent, predictable organization reduces cognitive load for developers and enables automated tooling.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/units/    # 10 standardized units (01_principles → 10_electromagnetism)
+├── standard/units/  # Parallel structure for accessibility
+└── shared/          # Common resources, themes, archives
+</code></pre></div></div>
+
+<p><strong>Infrastructure Decisions</strong>:</p>
+<ul>
+  <li><strong>Naming Convention</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format ensures proper sorting and readability</li>
+  <li><strong>Parallel Structure</strong>: Honors/Standard separation allows differentiated content while maintaining consistency</li>
+  <li><strong>Centralized Themes</strong>: Shared Marp CSS themes in <code class="language-plaintext highlighter-rouge">physics/shared/themes/</code> for visual consistency</li>
+</ul>
+
+<h4 id="2-experimental-tools-organization">2. <strong>Experimental Tools Organization</strong></h4>
+<p><strong>Design Rationale</strong>: Separate experimental tools from core content to maintain clean production environment while preserving development utilities.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tools/
+├── schedule-chunker/     # Academic calendar management (moved from src/Chunker)
+├── consequence-engine/   # Educational simulations (moved from src/Consequence Engine)
+└── physics-structure-organizer.ipynb  # Jupyter notebook for systematic organization
+</code></pre></div></div>
+
+<p><strong>Workflow Benefits</strong>:</p>
+<ul>
+  <li>Clean separation of concerns</li>
+  <li>Preserved experimental value</li>
+  <li>Maintained development history</li>
+</ul>
+
+<h4 id="3-unified-configuration-system">3. <strong>Unified Configuration System</strong></h4>
+<p><strong>Design Rationale</strong>: Centralized configuration eliminates duplication and provides single source of truth for system settings.</p>
+
+<p><strong>New Configuration Files</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings, course definitions, build targets</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Unified build system configuration for all tools</li>
+  <li>Enhanced <code class="language-plaintext highlighter-rouge">package.json</code> - Streamlined npm scripts for development workflow</li>
+</ul>
+
+<p><strong>Infrastructure Benefits</strong>:</p>
+<ul>
+  <li>Reduced configuration drift</li>
+  <li>Easier maintenance and updates</li>
+  <li>Consistent development experience</li>
+</ul>
+
+<h4 id="4-automated-quality-assurance">4. <strong>Automated Quality Assurance</strong></h4>
+<p><strong>Design Rationale</strong>: Automated validation catches issues early and maintains system integrity as content grows.</p>
+
+<p><strong>New Quality Tools</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scripts/validate-content.js</code> - Comprehensive structure and link validation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/build-slides.js</code> - Automated Marp slide generation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/simple-validate.js</code> - Dependency-free validation for CI/CD</li>
+</ul>
+
+<p><strong>Workflow Integration</strong>:</p>
+<ul>
+  <li>Pre-commit validation prevents structural issues</li>
+  <li>Automated slide building reduces manual work</li>
+  <li>Content validation scales with curriculum growth</li>
+</ul>
+
+<h4 id="5-directory-structure-cleanup">5. <strong>Directory Structure Cleanup</strong></h4>
+<p><strong>Systematic Approach</strong>: Python notebook (<code class="language-plaintext highlighter-rouge">physics-structure-organizer.ipynb</code>) for reproducible organization:</p>
+
+<p><strong>Completed Tasks</strong>:</p>
+<ul>
+  <li>✅ <strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution)</li>
+  <li>✅ <strong>14 Duplicate Directories</strong> removed (old naming conventions)</li>
+  <li>✅ <strong>20 README.md Files</strong> generated with comprehensive unit documentation</li>
+  <li>✅ <strong>Content Templates</strong> created for lessons, labs, and problem sets</li>
+  <li>✅ <strong>Git History</strong> preserved with detailed commit messages</li>
+</ul>
+
+<h3 id="️-infrastructure-design-decisions--rationale">🏗️ <strong>Infrastructure Design Decisions &amp; Rationale</strong></h3>
+
+<h4 id="organizational-philosophy"><strong>Organizational Philosophy</strong></h4>
+<p><strong>Decision</strong>: Three-tier separation (physics/ → tools/ → scripts/)
+<strong>Rationale</strong>: Clear boundaries between educational content, development tools, and build automation prevent coupling and enable independent evolution.</p>
+
+<h4 id="content-structure-strategy"><strong>Content Structure Strategy</strong></h4>
+<p><strong>Decision</strong>: Parallel honors/standard structure with shared resources
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces duplication while allowing differentiated content</li>
+  <li>Enables consistent navigation patterns across difficulty levels</li>
+  <li>Simplifies portal development and maintenance</li>
+</ul>
+
+<h4 id="build-system-architecture"><strong>Build System Architecture</strong></h4>
+<p><strong>Decision</strong>: Unified configuration with modular build tasks
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Single <code class="language-plaintext highlighter-rouge">npm run dev</code> command for entire development workflow</li>
+  <li>Modular tasks allow selective building (CSS, slides, validation)</li>
+  <li>Configuration centralization reduces maintenance overhead</li>
+</ul>
+
+<h4 id="quality-assurance-framework"><strong>Quality Assurance Framework</strong></h4>
+<p><strong>Decision</strong>: Multi-layered validation (simple → comprehensive → notebook-based)
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Simple validation works in CI/CD environments (no dependencies)</li>
+  <li>Comprehensive validation catches complex structural issues</li>
+  <li>Notebook-based organization enables reproducible large-scale changes</li>
+</ul>
+
+<h4 id="git-workflow-strategy"><strong>Git Workflow Strategy</strong></h4>
+<p><strong>Decision</strong>: Detailed commit messages with bullet-point summaries
+<strong>Rationale</strong>: Large-scale reorganizations require clear historical context for future maintenance and debugging.</p>
+
+<h3 id="-quantified-results">📈 <strong>Quantified Results</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution rate)</li>
+  <li><strong>20 Physics Units</strong> fully structured (10 honors + 10 standard)</li>
+  <li><strong>20 README.md files</strong> generated with comprehensive documentation</li>
+  <li><strong>14 Duplicate directories</strong> removed and consolidated</li>
+  <li><strong>6 Configuration files</strong> created for unified system management</li>
+  <li><strong>4 New automation scripts</strong> for quality assurance and building</li>
+  <li><strong>100% Git tracking</strong> of all changes with detailed commit history</li>
+</ul>
+
+<h3 id="-next-phase-priorities">🔄 <strong>Next Phase Priorities</strong></h3>
+<p><strong>Immediate</strong> (Next 7 days):</p>
+<ol>
+  <li><strong>Content Migration</strong>: Transfer existing lessons from <code class="language-plaintext highlighter-rouge">src/hphys/</code> and <code class="language-plaintext highlighter-rouge">src/sphys/</code> to new structure</li>
+  <li><strong>Portal Integration</strong>: Update navigation JSON files to reference new physics/ structure</li>
+  <li><strong>Link Validation</strong>: Run comprehensive validation to catch any broken references</li>
+</ol>
+
+<p><strong>Short-term</strong> (Next 30 days):</p>
+<ol>
+  <li><strong>Template Implementation</strong>: Use generated templates to create actual lesson content</li>
+  <li><strong>Slide Integration</strong>: Move remaining Marp presentations to centralized location</li>
+  <li><strong>Assessment Migration</strong>: Organize existing quizzes and tests into proper assessment structure</li>
+</ol>
+
+<p><strong>Strategic</strong> (Next Quarter):</p>
+<ol>
+  <li><strong>Standard Physics Completion</strong>: Fully populate standard course parallel to honors</li>
+  <li><strong>Interactive Elements</strong>: Integrate PhET simulations and interactive content</li>
+  <li><strong>Portal Enhancement</strong>: Implement progress tracking and student dashboard features</li>
+</ol>
+
+<h3 id="-key-design-decisions-documented">📋 <strong>Key Design Decisions Documented</strong></h3>
+
+<h4 id="file-organization-strategy"><strong>File Organization Strategy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format for units</li>
+  <li><strong>Rationale</strong>: Ensures proper alphabetical sorting while maintaining human readability</li>
+  <li><strong>Implementation</strong>: Applied consistently across honors and standard courses</li>
+</ul>
+
+<h4 id="tool-organization-philosophy"><strong>Tool Organization Philosophy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Separate <code class="language-plaintext highlighter-rouge">tools/</code> directory for experimental utilities</li>
+  <li><strong>Rationale</strong>: Prevents experimental code from cluttering production environment</li>
+  <li><strong>Implementation</strong>: Chunker and Consequence Engine moved with full history preservation</li>
+</ul>
+
+<h4 id="configuration-management-approach"><strong>Configuration Management Approach</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Centralized configuration with inheritance</li>
+  <li><strong>Rationale</strong>: Reduces duplication, ensures consistency, simplifies maintenance</li>
+  <li><strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos.config.json</code> as single source of truth</li>
+</ul>
+
+<h4 id="quality-assurance-framework-1"><strong>Quality Assurance Framework</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Multi-tier validation system</li>
+  <li><strong>Rationale</strong>: Different validation needs for development vs CI/CD vs large-scale changes</li>
+  <li><strong>Implementation</strong>: Simple, comprehensive, and notebook-based validation tools</li>
+</ul>
+
+<h4 id="git-workflow-standards"><strong>Git Workflow Standards</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Detailed commit messages with structured bullet points</li>
+  <li><strong>Rationale</strong>: Large reorganizations require clear historical context</li>
+  <li><strong>Implementation</strong>: All commits include rationale and quantified changes</li>
+</ul>
+
+<hr />
+
+<h2 id="system-architecture-status-post-reorganization">System Architecture Status (Post-Reorganization)</h2>
+
+<h3 id="-current-system-state">🎯 <strong>Current System State</strong></h3>
+<ul>
+  <li><strong>Physics Curriculum</strong>: Complete structural foundation with 20 fully organized units</li>
+  <li><strong>Portal System</strong>: Established course navigation framework</li>
+  <li><strong>Build Infrastructure</strong>: Unified system with automated quality checks</li>
+  <li><strong>Content Development</strong>: Template-driven approach for consistent materials</li>
+  <li><strong>Quality Assurance</strong>: Automated validation preventing structural degradation</li>
+</ul>
+
+<h3 id="-course-development-status">📚 <strong>Course Development Status</strong></h3>
+
+<h4 id="honors-physics--structure-complete">Honors Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>All 10 Units</strong>: Fully organized with comprehensive README files</li>
+  <li><strong>Directory Structure</strong>: lessons/, labs/, problemsets/, resources/ for each unit</li>
+  <li><strong>Content Templates</strong>: Available for systematic lesson development</li>
+  <li><strong>Assessment Integration</strong>: Ready for existing content migration</li>
+</ul>
+
+<h4 id="standard-physics--structure-complete">Standard Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>Parallel Organization</strong>: Identical structure to honors for consistency</li>
+  <li><strong>Differentiated Content</strong>: Framework ready for appropriate-level materials</li>
+  <li><strong>OpenStax Integration</strong>: Structure supports textbook alignment</li>
+</ul>
+
+<h4 id="natural-disasters--existing-framework">Natural Disasters 🔄 <strong>Existing Framework</strong></h4>
+<ul>
+  <li><strong>4-Unit Structure</strong>: Established and functional</li>
+  <li><strong>Portal Integration</strong>: Connected to main navigation system</li>
+  <li><strong>Content Development</strong>: Ongoing enhancement</li>
+</ul>
+
+<h3 id="️-technical-infrastructure">🛠️ <strong>Technical Infrastructure</strong></h3>
+<ul>
+  <li>✅ <strong>Unified Build System</strong> - Single command development workflow (<code class="language-plaintext highlighter-rouge">npm run dev</code>)</li>
+  <li>✅ <strong>Marp Integration</strong> - Automated slide generation with shared themes</li>
+  <li>✅ <strong>Quality Assurance</strong> - Multi-tier validation system operational</li>
+  <li>✅ <strong>Configuration Management</strong> - Centralized settings in <code class="language-plaintext highlighter-rouge">cosmos.config.json</code></li>
+  <li>✅ <strong>Git Workflow</strong> - Structured commits with detailed change tracking</li>
+  <li>✅ <strong>Development Tools</strong> - Jupyter notebook for large-scale organization tasks</li>
+</ul>
+
+<h3 id="-system-metrics">📊 <strong>System Metrics</strong></h3>
+<ul>
+  <li><strong>Validation Success Rate</strong>: 100% (40 warnings resolved)</li>
+  <li><strong>Directory Organization</strong>: 20 physics units + 10+ tool/script directories</li>
+  <li><strong>Documentation Coverage</strong>: README.md files for all major components</li>
+  <li><strong>Build Automation</strong>: 4 automated scripts for development workflow</li>
+  <li><strong>Configuration Consolidation</strong>: 6 unified config files replacing scattered settings</li>
+</ul>
+
+<hr />
+
+<h2 id="technical-architecture-evolution">Technical Architecture Evolution</h2>
+
+<h3 id="pre-reorganization-challenges"><strong>Pre-Reorganization Challenges</strong></h3>
+<ul>
+  <li>Scattered experimental content from Q4 2025 AI experiments</li>
+  <li>40+ validation warnings indicating structural problems</li>
+  <li>No unified build or validation systems</li>
+  <li>Inconsistent naming and organization patterns</li>
+</ul>
+
+<h3 id="post-reorganization-benefits"><strong>Post-Reorganization Benefits</strong></h3>
+<ul>
+  <li><strong>Predictable Structure</strong>: Enables automation and tooling development</li>
+  <li><strong>Scalable Organization</strong>: New courses can follow established patterns</li>
+  <li><strong>Quality Assurance</strong>: Automated validation prevents regression</li>
+  <li><strong>Developer Experience</strong>: Single-command workflows reduce friction</li>
+  <li><strong>Maintainability</strong>: Clear separation of concerns and centralized configuration</li>
+</ul>
+
+<hr />
+
+<h2 id="historical-context--learning">Historical Context &amp; Learning</h2>
+
+<h3 id="q4-2025-experimental-period---lessons-learned">Q4 2025 Experimental Period - Lessons Learned</h3>
+<p><strong>What Happened</strong>: Extensive AI-assisted experimentation led to valuable content but created organizational debt
+<strong>Key Issues</strong>:</p>
+<ul>
+  <li>Multiple JSON curriculum versions without consolidation</li>
+  <li>Experimental tools scattered in production directories</li>
+  <li>Mixed naming conventions without standards</li>
+  <li>No automated quality checking</li>
+</ul>
+
+<p><strong>Value Preserved</strong>: All useful experimental content archived in <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code> with full context</p>
+
+<h3 id="august-2025-reorganization---design-principles-applied">August 2025 Reorganization - Design Principles Applied</h3>
+<p><strong>Systematic Approach</strong>: Used Jupyter notebook for reproducible, documented organization
+<strong>Quality First</strong>: Implemented validation before proceeding with content development
+<strong>Future-Proofing</strong>: Structure designed to accommodate growth and new courses
+<strong>Developer Experience</strong>: Prioritized workflow efficiency and maintainability</p>
+
+<h3 id="technology-evolution-path">Technology Evolution Path</h3>
+<ul>
+  <li><strong>Phase 1</strong>: Basic HTML/CSS structure</li>
+  <li><strong>Phase 2</strong>: Markdown integration and dynamic content</li>
+  <li><strong>Phase 3</strong>: Marp slide system and Jekyll builds</li>
+  <li><strong>Phase 4</strong>: Portal system and course management</li>
+  <li><strong>Phase 5</strong> (Current): Unified infrastructure with automated quality assurance</li>
+</ul>
+
+<hr />
+
+<h2 id="strategic-planning--future-roadmap">Strategic Planning &amp; Future Roadmap</h2>
+
+<h3 id="immediate-implementation-next-2-weeks">Immediate Implementation (Next 2 weeks)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Content Migration</strong>: Transfer existing <code class="language-plaintext highlighter-rouge">src/hphys/</code> materials to new structure</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Portal Updates</strong>: Modify navigation JSON to reference physics/ directories</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Link Auditing</strong>: Comprehensive validation of all internal references</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Template Utilization</strong>: Create first lessons using generated templates</li>
+</ul>
+
+<h3 id="development-cycle-next-quarter">Development Cycle (Next Quarter)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Standard Physics Population</strong>: Complete parallel content development</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Assessment System</strong>: Organize and enhance existing quizzes/tests</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Interactive Integration</strong>: Embed PhET simulations and dynamic content</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mobile Optimization</strong>: Ensure responsive design across all components</li>
+</ul>
+
+<h3 id="platform-enhancement-next-year">Platform Enhancement (Next Year)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Multi-Course Expansion</strong>: Apply organizational patterns to new subjects</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Student Analytics</strong>: Implement progress tracking and learning insights</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Collaborative Tools</strong>: Enable teacher customization and sharing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Performance Optimization</strong>: Advanced caching and delivery systems</li>
+</ul>
+
+<hr />
+
+<h2 id="development-standards--best-practices">Development Standards &amp; Best Practices</h2>
+
+<h3 id="code-organization-philosophy">Code Organization Philosophy</h3>
+<p><strong>Principle</strong>: Separation of concerns with clear boundaries
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">physics/</code> - Educational content only</li>
+  <li><code class="language-plaintext highlighter-rouge">tools/</code> - Development and experimental utilities</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/</code> - Build automation and quality assurance</li>
+  <li><code class="language-plaintext highlighter-rouge">src/portal/</code> - User interface and navigation</li>
+</ul>
+
+<h3 id="configuration-management-strategy">Configuration Management Strategy</h3>
+<p><strong>Principle</strong>: Single source of truth with inheritance
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings and course definitions</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Development workflow and build targets</li>
+  <li>Unit-level configuration inherits from global settings</li>
+</ul>
+
+<h3 id="quality-assurance-framework-2">Quality Assurance Framework</h3>
+<p><strong>Principle</strong>: Automated prevention better than manual correction
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>Pre-commit validation hooks</li>
+  <li>Comprehensive structural checking</li>
+  <li>Notebook-based large-scale organization tools</li>
+  <li>Git workflow standards with detailed change documentation</li>
+</ul>
+
+<h3 id="documentation-requirements">Documentation Requirements</h3>
+<p><strong>Principle</strong>: Code and decisions must be self-documenting
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>README.md for every major directory</li>
+  <li>Inline rationale for infrastructure decisions</li>
+  <li>Commit messages explaining both what and why</li>
+  <li>Template files demonstrating expected patterns</li>
+</ul>
+
+<hr />
+
+<p><em>Last Updated: August 21, 2025 (Evening Session)</em><br />
+<em>Design System Implementation: ✅</em><br />
+<em>Major Reorganization Completed: ✅</em><br />
+<em>Next Review: September 2025</em></p>
+
+<hr />
+
+<h2 id="january-27-2025---universal-header-system-implementation">January 27, 2025 - Universal Header System Implementation</h2>
+
+<h3 id="major-changes">Major Changes</h3>
+<ul>
+  <li><strong>Universal Header Standardization</strong>: Implemented consistent navigation across all Cosmos systems</li>
+  <li><strong>Component Architecture</strong>: Created shared header component system (<code class="language-plaintext highlighter-rouge">/src/shared/components/</code>)</li>
+  <li><strong>User Tracking</strong>: Added persistent user identity and course/period management</li>
+  <li><strong>Progress Visualization</strong>: Integrated chunk-based academic year progress tracking (144 total chunks)</li>
+</ul>
+
+<h3 id="technical-implementation-1">Technical Implementation</h3>
+<ul>
+  <li><strong>Header Component</strong>: <code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.html</code> - Main UI component</li>
+  <li><strong>Header Manager</strong>: <code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.js</code> - JavaScript functionality</li>
+  <li><strong>Schedule Config</strong>: <code class="language-plaintext highlighter-rouge">/data/schedule-config.json</code> - Academic calendar and course configuration</li>
+  <li><strong>Demo System</strong>: <code class="language-plaintext highlighter-rouge">/src/shared/components/header-demo.html</code> - Interactive testing environment</li>
+</ul>
+
+<h3 id="system-integration-status">System Integration Status</h3>
+<ul>
+  <li>✅ <strong>Portal</strong>: Universal header integrated and functional</li>
+  <li>🔄 <strong>Library</strong>: Ready for header integration</li>
+  <li>🔄 <strong>Socrates</strong>: Ready for header integration</li>
+  <li>🔄 <strong>Chunker</strong>: Ready for header integration</li>
+  <li>✅ <strong>Demo Page</strong>: Fully functional testing environment</li>
+</ul>
+
+<h3 id="key-features-deployed">Key Features Deployed</h3>
+<ul>
+  <li><strong>Consistent Navigation</strong>: Site title, user greeting, main menu across all pages</li>
+  <li><strong>Course Management</strong>: Dynamic course/period selection with 6 physics courses</li>
+  <li><strong>Rotation Display</strong>: 4-day rotation cycle (A, B, C, D) with period drop rules</li>
+  <li><strong>Progress Tracking</strong>: Visual chunk progress bar (36 chunks per quarter × 4 quarters)</li>
+  <li><strong>User Settings</strong>: Persistent localStorage-based user configuration</li>
+  <li><strong>Responsive Design</strong>: Mobile-friendly interface with collapsible navigation</li>
+</ul>
+
+<h3 id="next-implementation-steps">Next Implementation Steps</h3>
+<ol>
+  <li>Deploy header to remaining systems (Library, Socrates, Chunker)</li>
+  <li>Connect chunk progress to actual lesson completion tracking</li>
+  <li>Implement role-based content filtering</li>
+  <li>Add backend synchronization for multi-device support</li>
+</ol>
+
+<h3 id="breaking-changes">Breaking Changes</h3>
+<ul>
+  <li><strong>HTML Files</strong>: Removed frontmatter from HTML components to prevent parsing issues</li>
+  <li><strong>Navigation Structure</strong>: Replaced individual page headers with universal component system</li>
+  <li><strong>User Data</strong>: Introduced localStorage-based user tracking across all systems</li>
+</ul>
+
+<h3 id="files-modified">Files Modified</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.html</code> - Main header component</li>
+  <li><code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.js</code> - Header management system</li>
+  <li><code class="language-plaintext highlighter-rouge">/src/shared/components/header-demo.html</code> - Demo and testing page</li>
+  <li><code class="language-plaintext highlighter-rouge">/src/shared/components/README.md</code> - Implementation documentation</li>
+  <li><code class="language-plaintext highlighter-rouge">/data/schedule-config.json</code> - Academic schedule configuration
+<strong>Principle</strong>: Single source of truth with inheritance
+<strong>Implementation</strong>:</li>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings and course definitions</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Development workflow and build targets</li>
+  <li>Unit-level configuration inherits from global settings</li>
+</ul>
+
+<h3 id="quality-assurance-framework-3">Quality Assurance Framework</h3>
+<p><strong>Principle</strong>: Automated prevention better than manual correction
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>Pre-commit validation hooks</li>
+  <li>Comprehensive structural checking</li>
+  <li>Notebook-based large-scale organization tools</li>
+  <li>Git workflow standards with detailed change documentation</li>
+</ul>
+
+<h3 id="documentation-requirements-1">Documentation Requirements</h3>
+<p><strong>Principle</strong>: Code and decisions must be self-documenting
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>README.md for every major directory</li>
+  <li>Inline rationale for infrastructure decisions</li>
+  <li>Commit messages explaining both what and why</li>
+  <li>Template files demonstrating expected patterns</li>
+</ul>
+
+<hr />
+
+<p><em>Last Updated: August 21, 2025 (Evening Session)</em><br />
+<em>Design System Implementation: ✅</em><br />
+<em>Major Reorganization Completed: ✅</em><br />
+<em>Next Review: September 2025</em></p>
+
+    
+    </div>
+    
+    <!-- Settings Panel (global) -->
+    <!-- Global Settings Panel for Cosmos in the Classroom -->
+<div class="settings-overlay" id="settingsOverlay">
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <div class="settings-title">
+                <span class="settings-icon">⚙️</span>
+                <span>Cosmos Settings</span>
+            </div>
+            <button class="settings-close" onclick="toggleSettings()" aria-label="Close Settings">
+                <span>×</span>
+            </button>
+        </div>
+        
+        <div class="settings-content">
+            <!-- Theme Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🎨</span>
+                    Theme
+                </div>
+                <div class="setting-description">Choose your preferred color scheme</div>
+                <div class="theme-buttons" id="themeButtons">
+                    <button class="theme-btn" data-theme="light">
+                        <span class="theme-icon">☀️</span>
+                        <span>Light</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark">
+                        <span class="theme-icon">🌙</span>
+                        <span>Dark</span>
+                    </button>
+                    <button class="theme-btn" data-theme="auto">
+                        <span class="theme-icon">🔄</span>
+                        <span>Auto</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- User Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">👤</span>
+                    User Preferences
+                </div>
+                <div class="setting-row">
+                    <label for="usernameInput">Name:</label>
+                    <input type="text" id="usernameInput" placeholder="Enter your name..." 
+                           class="setting-input">
+                </div>
+                <div class="setting-row">
+                    <label for="courseLevelSelect">Course Level:</label>
+                    <select id="courseLevelSelect" class="setting-select">
+                        <option value="honors">Honors Physics</option>
+                        <option value="standard">Standard Physics</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Ratatoskr Widget Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🐿️</span>
+                    Ratatoskr Widget
+                </div>
+                <div class="setting-description">Progress tracking widget settings</div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrEnabled">
+                        <span class="checkmark"></span>
+                        Enable Ratatoskr widget
+                    </label>
+                </div>
+                
+                <div class="setting-row" id="ratatoskrSettings">
+                    <label for="chunkCountSlider">Chunks to display:</label>
+                    <div class="slider-container">
+                        <input type="range" id="chunkCountSlider" min="2" max="6" step="1" 
+                               class="setting-slider">
+                        <span id="chunkCountValue" class="slider-value">4</span>
+                    </div>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrAnimations">
+                        <span class="checkmark"></span>
+                        Enable animations
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Learning Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">📚</span>
+                    Learning Preferences
+                </div>
+                
+                <div class="setting-row">
+                    <label for="mathNotationSelect">Math notation:</label>
+                    <select id="mathNotationSelect" class="setting-select">
+                        <option value="latex">LaTeX (recommended)</option>
+                        <option value="ascii">ASCII text</option>
+                    </select>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="showHints">
+                        <span class="checkmark"></span>
+                        Show problem hints
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="accessibilityMode">
+                        <span class="checkmark"></span>
+                        Enhanced accessibility
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Privacy Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🔒</span>
+                    Privacy & Data
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="storeProgress">
+                        <span class="checkmark"></span>
+                        Store learning progress locally
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="analyticsEnabled">
+                        <span class="checkmark"></span>
+                        Anonymous usage analytics
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="settings-actions">
+                <button class="settings-btn settings-btn-secondary" onclick="resetSettings()">
+                    Reset to Defaults
+                </button>
+                <button class="settings-btn settings-btn-primary" onclick="exportSettings()">
+                    Export Settings
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Trigger Button -->
+<button class="settings-trigger" onclick="toggleSettings()" aria-label="Open Settings">
+    <span class="settings-trigger-icon">⚙️</span>
+</button>
+
+<style>
+/* Settings Panel Styles */
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.settings-panel {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: var(--panel-bg-solid, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px var(--shadow-heavy, rgba(0,0,0,0.3));
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-overlay.visible .settings-panel {
+    transform: scale(1) translateY(0);
+}
+
+.settings-header {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.settings-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.settings-content {
+    padding: 20px;
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+}
+
+.setting-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.setting-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    margin-bottom: 5px;
+}
+
+.setting-description {
+    font-size: 14px;
+    color: var(--text-secondary, #666);
+    margin-bottom: 15px;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.setting-row label {
+    font-size: 14px;
+    color: var(--text-primary, #333);
+    min-width: 120px;
+}
+
+.setting-input, .setting-select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--input-border, #ddd);
+    border-radius: 6px;
+    background: var(--input-bg, #fff);
+    color: var(--input-text, #333);
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.setting-input:focus, .setting-select:focus {
+    outline: none;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.theme-btn {
+    padding: 12px 8px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    background: var(--input-bg, #fff);
+    color: var(--text-primary, #333);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-btn.active {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-primary, #333);
+}
+
+.setting-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: var(--accent-color, #8B4513);
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.setting-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color, #ddd);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.setting-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-color, #8B4513);
+    cursor: pointer;
+}
+
+.slider-value {
+    min-width: 20px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+}
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-btn-primary {
+    background: var(--accent-color, #8B4513);
+    color: white;
+}
+
+.settings-btn-primary:hover {
+    background: var(--accent-hover, #A0522D);
+}
+
+.settings-btn-secondary {
+    background: transparent;
+    color: var(--text-secondary, #666);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.settings-btn-secondary:hover {
+    background: var(--border-color, #ddd);
+}
+
+/* Settings Trigger Button */
+.settings-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--panel-bg, rgba(255,255,255,0.9));
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px var(--shadow-light, rgba(0,0,0,0.1));
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.settings-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px var(--shadow-medium, rgba(0,0,0,0.2));
+}
+
+.settings-trigger-icon {
+    font-size: 20px;
+    color: var(--text-primary, #333);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-panel {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .theme-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .setting-row label {
+        min-width: auto;
+    }
+    
+    .setting-input, .setting-select {
+        width: 100%;
+    }
+    
+    .settings-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+// Settings Panel JavaScript
+let settingsVisible = false;
+
+function toggleSettings() {
+    const overlay = document.getElementById('settingsOverlay');
+    settingsVisible = !settingsVisible;
+    
+    if (settingsVisible) {
+        overlay.classList.add('visible');
+        loadSettings();
+        document.body.style.overflow = 'hidden';
+    } else {
+        overlay.classList.remove('visible');
+        document.body.style.overflow = '';
+    }
+}
+
+function loadSettings() {
+    if (!window.CosmosConfig) return;
+    
+    const config = window.CosmosConfig;
+    
+    // Theme buttons
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === config.get('ui.theme'));
+        btn.onclick = () => {
+            config.set('ui.theme', btn.dataset.theme);
+            loadSettings(); // Refresh UI
+        };
+    });
+    
+    // User preferences
+    document.getElementById('usernameInput').value = config.get('user.name') || '';
+    document.getElementById('usernameInput').onchange = (e) => 
+        config.set('user.name', e.target.value);
+    
+    document.getElementById('courseLevelSelect').value = config.get('user.preferredLevel') || 'honors';
+    document.getElementById('courseLevelSelect').onchange = (e) => 
+        config.set('user.preferredLevel', e.target.value);
+    
+    // Ratatoskr settings
+    const ratatoskrEnabled = document.getElementById('ratatoskrEnabled');
+    ratatoskrEnabled.checked = config.get('ratatoskr.enabled');
+    ratatoskrEnabled.onchange = (e) => {
+        config.set('ratatoskr.enabled', e.target.checked);
+        document.getElementById('ratatoskrSettings').style.display = 
+            e.target.checked ? 'flex' : 'none';
+    };
+    
+    const chunkCountSlider = document.getElementById('chunkCountSlider');
+    const chunkCountValue = document.getElementById('chunkCountValue');
+    chunkCountSlider.value = config.get('ratatoskr.chunkDisplayCount') || 4;
+    chunkCountValue.textContent = chunkCountSlider.value;
+    chunkCountSlider.oninput = () => {
+        chunkCountValue.textContent = chunkCountSlider.value;
+        config.set('ratatoskr.chunkDisplayCount', parseInt(chunkCountSlider.value));
+    };
+    
+    const ratatoskrAnimations = document.getElementById('ratatoskrAnimations');
+    ratatoskrAnimations.checked = config.get('ratatoskr.animationsEnabled');
+    ratatoskrAnimations.onchange = (e) => 
+        config.set('ratatoskr.animationsEnabled', e.target.checked);
+    
+    // Learning preferences
+    document.getElementById('mathNotationSelect').value = config.get('learning.mathNotation') || 'latex';
+    document.getElementById('mathNotationSelect').onchange = (e) => 
+        config.set('learning.mathNotation', e.target.value);
+    
+    document.getElementById('showHints').checked = config.get('learning.showHints');
+    document.getElementById('showHints').onchange = (e) => 
+        config.set('learning.showHints', e.target.checked);
+    
+    document.getElementById('accessibilityMode').checked = config.get('learning.accessibilityMode');
+    document.getElementById('accessibilityMode').onchange = (e) => 
+        config.set('learning.accessibilityMode', e.target.checked);
+    
+    // Privacy settings
+    document.getElementById('storeProgress').checked = config.get('privacy.storeProgress');
+    document.getElementById('storeProgress').onchange = (e) => 
+        config.set('privacy.storeProgress', e.target.checked);
+    
+    document.getElementById('analyticsEnabled').checked = config.get('privacy.analyticsEnabled');
+    document.getElementById('analyticsEnabled').onchange = (e) => 
+        config.set('privacy.analyticsEnabled', e.target.checked);
+    
+    // Show/hide Ratatoskr settings based on enabled state
+    document.getElementById('ratatoskrSettings').style.display = 
+        config.get('ratatoskr.enabled') ? 'flex' : 'none';
+}
+
+function resetSettings() {
+    if (window.CosmosConfig && confirm('Reset all settings to defaults? This cannot be undone.')) {
+        window.CosmosConfig.reset();
+        loadSettings();
+    }
+}
+
+function exportSettings() {
+    if (window.CosmosConfig) {
+        const settingsData = window.CosmosConfig.export();
+        const blob = new Blob([settingsData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'cosmos-settings.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+}
+
+// Close settings when clicking outside
+document.addEventListener('click', (e) => {
+    const overlay = document.getElementById('settingsOverlay');
+    const panel = document.getElementById('settingsPanel');
+    const trigger = document.querySelector('.settings-trigger');
+    
+    if (settingsVisible && overlay && !panel.contains(e.target) && !trigger.contains(e.target)) {
+        toggleSettings();
+    }
+});
+
+// Close settings with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsVisible) {
+        toggleSettings();
+    }
+});
+
+// Load settings when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.CosmosConfig) {
+        // Small delay to ensure config is initialized
+        setTimeout(loadSettings, 100);
+    }
+});
+</script>
+
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

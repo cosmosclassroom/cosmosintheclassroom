@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title> | Cosmos in the Classroom</title>
+    <title>Cosmos in the Classroom | Cosmos in the Classroom</title>
     
     
     <!-- KaTeX Dependencies -->
@@ -49,7 +49,9 @@
     <script src="/src/js/theme-manager.js" defer></script>
     
     <!-- Ratatoskr Widget (only on curriculum pages) -->
-    
+  <!-- Ratatoskr Widget (now loaded on all pages) -->
+  <script src="/src/Ratatoskr/js/ratatoskr-widget.js" defer></script>
+  <link rel="stylesheet" href="/src/Ratatoskr/css/ratatoskr.css">
   </head>
   <body>
     <header>
@@ -371,19 +373,292 @@
     
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
-      <p>This document defines cosmosintheclassroom.org</p>
+      <h1 id="cosmos-in-the-classroom">Cosmos in the Classroom</h1>
+<p><em>Comprehensive High School Physics Education Platform</em></p>
 
-<p>It is the instructional website of Jonathan Corbett</p>
+<h2 id="project-overview">Project Overview</h2>
 
-<p>It is the host of Socrates’ Library and the Portal</p>
+<p><strong>Cosmos in the Classroom</strong> delivers structured physics curricula for both Honors and Standard level high school students. The platform emphasizes scientific accuracy, progressive learning, and modern web technologies to create an engaging educational experience.</p>
 
-<p>Socrates’ library imagines a wealth of knowledge spanning time, space, place, biology and technology.</p>
+<h3 id="core-systems">Core Systems</h3>
 
-<p>The Portal helps students and educators have access to quality science curriculum content.</p>
+<ul>
+  <li><strong>Ratatoskr</strong> (<code class="language-plaintext highlighter-rouge">/src/Ratatoskr/</code>) - Modular progress tracking widget for curriculum chunks, completion status, and user preference integration</li>
+</ul>
 
-<p>I hope you like it.</p>
+<h3 id="current-status-system-integration--optimization">Current Status: System Integration &amp; Optimization</h3>
 
-<p>Jonathan</p>
+<p><strong>August 2025</strong>: Major UI and system improvements:</p>
+
+<ul>
+  <li><strong>Chunker UI Overhaul</strong>: New date navigation, prominent date display, and interactive progress visualization</li>
+  <li><strong>Obsolete Listeners Removed</strong>: Cleaned up JavaScript event listeners for maintainability</li>
+  <li><strong>Header Navigation</strong>: Added left/right arrows for cycling days</li>
+  <li><strong>Quick Reference Dashboard Replaced</strong>: Centered date display with navigation controls</li>
+  <li><strong>Root Directory Cleanup</strong>: Systematic organization of JSON, HTML, and CSS files</li>
+  <li><strong>CSS Dependency Resolution</strong>: Consolidated styling system with proper path management</li>
+  <li><strong>Git Workflow Implementation</strong>: Feature branch strategy for sustainable development</li>
+  <li><strong>Universal Header System</strong>: Consistent navigation and user tracking across all systems</li>
+  <li><strong>Progress Visualization</strong>: Real-time academic year progress (144-chunk system)</li>
+</ul>
+
+<h2 id="academic-structure">Academic Structure</h2>
+
+<h3 id="physics-curriculum-organization">Physics Curriculum Organization</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/          # Advanced curriculum (10 units)
+│   ├── units/       # Sequential units (01_principles → 10_optics)
+│   ├── slides/      # Marp presentation files
+│   ├── assessments/ # Tests, quizzes, problem sets
+│   └── resources/   # Labs, references, supplementary materials
+├── standard/        # Accessible curriculum (10 units)
+│   └── units/       # Parallel structure to honors
+└── shared/          # Common resources, themes, and archived content
+</code></pre></div></div>
+
+<h3 id="the-chunker-system">The Chunker System</h3>
+<ul>
+  <li><strong>144 Total Chunks</strong> per academic year</li>
+  <li><strong>4 Chunks per Class</strong> × <strong>4 Day Rotation</strong> × <strong>6 Periods</strong> (dropping 2)</li>
+  <li><strong>36 Chunks per Quarter</strong> × <strong>4 Quarters</strong></li>
+  <li><strong>Real-time Progress Tracking</strong> across all systems</li>
+</ul>
+
+<h3 id="course-offerings">Course Offerings</h3>
+<ul>
+  <li><strong>Honors Physics</strong>: Periods 1, 3, 7 (advanced mathematical rigor)</li>
+  <li><strong>Standard Physics</strong>: Periods 2, 4, 6 (accessible to all learners)</li>
+</ul>
+
+<h2 id="technology-stack">Technology Stack</h2>
+
+<ul>
+  <li><strong>Frontend</strong>: HTML5, CSS3, JavaScript ES6+, TailwindCSS</li>
+  <li><strong>Content</strong>: Markdown with YAML frontmatter</li>
+  <li><strong>Presentations</strong>: Marp (Markdown → HTML slides)</li>
+  <li><strong>Math Rendering</strong>: KaTeX for LaTeX equations</li>
+  <li><strong>User Data</strong>: localStorage with sync capability</li>
+  <li><strong>Development</strong>: Git feature branch workflow</li>
+  <li><strong>Site Generation</strong>: Jekyll + GitHub Pages ready</li>
+</ul>
+
+<h2 id="development-workflow">Development Workflow</h2>
+
+<h3 id="git-branching-strategy">Git Branching Strategy</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>main                           <span class="c"># Stable, classroom-ready content</span>
+├── feature/ui-<span class="k">*</span>              <span class="c"># Interface experiments and improvements</span>
+├── feature/content-<span class="k">*</span>         <span class="c"># Curriculum development and migration</span>
+├── feature/system-<span class="k">*</span>          <span class="c"># Major system additions and integrations</span>
+└── hotfix/<span class="k">*</span>                  <span class="c"># Quick fixes and cleanup tasks</span>
+</code></pre></div></div>
+
+<h3 id="current-development-priorities">Current Development Priorities</h3>
+<ol>
+  <li><strong>Root Directory Optimization</strong>: Clean separation of concerns</li>
+  <li><strong>CSS Dependency Management</strong>: Centralized styling in <code class="language-plaintext highlighter-rouge">src/shared/styles/</code></li>
+  <li><strong>Standard Physics Migration</strong>: Complete content structure</li>
+  <li><strong>System Integration</strong>: Seamless data flow between Portal, Chunker, and Socrates</li>
+</ol>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="for-students">For Students</h3>
+<ol>
+  <li>Visit the <strong>Portal</strong> to explore course content</li>
+  <li>Use <strong>Socrates</strong> for concept clarification</li>
+  <li>Track progress with <strong>Chunker</strong></li>
+  <li>Reference materials in <strong>Library</strong></li>
+</ol>
+
+<h3 id="for-educators">For Educators</h3>
+<ol>
+  <li>Navigate course structure in <strong>Portal</strong></li>
+  <li>Access teaching resources in <strong>Library</strong></li>
+  <li>Monitor student progress via <strong>Chunker</strong></li>
+  <li>Customize content for course level</li>
+</ol>
+
+<h3 id="for-developers">For Developers</h3>
+<ol>
+  <li>Clone repository: <code class="language-plaintext highlighter-rouge">git clone [repository-url]</code></li>
+  <li>Install dependencies (if using Jekyll): <code class="language-plaintext highlighter-rouge">bundle install</code></li>
+  <li>Start local server: <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
+  <li>Access personalization manager at: <code class="language-plaintext highlighter-rouge">/src/shared/components/cosmos-personalization-manager.html</code></li>
+</ol>
+
+<h2 id="current-implementation-status">Current Implementation Status</h2>
+
+<h3 id="-recently-completed">✅ Recently Completed</h3>
+<ul>
+  <li><strong>Universal header system</strong> with user tracking across all platforms</li>
+  <li><strong>Root directory cleanup</strong> strategy and automation scripts</li>
+  <li><strong>CSS dependency consolidation</strong> for maintainable styling</li>
+  <li><strong>Git workflow optimization</strong> with feature branch methodology</li>
+  <li><strong>Portal course navigation</strong> with honors physics content</li>
+  <li><strong>144-chunk academic progress</strong> tracking system</li>
+</ul>
+
+<h3 id="-active-development">🔄 Active Development</h3>
+<ul>
+  <li><strong>CSS path resolution</strong> in index.html and system integration</li>
+  <li><strong>Standard Physics content</strong> migration and organization</li>
+  <li><strong>Cross-system data synchronization</strong> between Portal and Chunker</li>
+  <li><strong>Library system integration</strong> with contextual resource access</li>
+</ul>
+
+<h3 id="-upcoming-features">📋 Upcoming Features</h3>
+<ul>
+  <li><strong>Socrates AI integration</strong> with curriculum-aware questioning</li>
+  <li><strong>Advanced progress analytics</strong> with learning pattern recognition</li>
+  <li><strong>Mobile-optimized interfaces</strong> for all core systems</li>
+  <li><strong>Backend synchronization</strong> for multi-device user experience</li>
+</ul>
+
+<h2 id="file-structure-overview">File Structure Overview</h2>
+
+<p>cosmosintheclassroom/
+├── data/                          # Configuration and user data (relocated from root)
+├── config/                        # System configuration files
+├── src/
+│   ├── portal/                    # Central hub and primary user interface
+│   ├── Chunker/                   # Temporal organization of educational content
+│   └── shared/
+│       ├── components/            # Universal header and reusable UI elements
+│       ├── styles/                # Consolidated CSS from root cleanup
+│       ├── utils/                 # Common functions and utilities
+│       └── templates/             # Structural foundation for all views
+├── physics/                       # Content repository accessed by all systems
+│   ├── honors/                    # Advanced curriculum with complete unit structure
+│   ├── standard/                  # Accessible curriculum (migration in progress)
+│   └── shared/
+│       ├── themes/                # Marp CSS themes for presentations
+│       └── archive/               # Historical content and migration artifacts
+├── ref/                           # Library system extending core curriculum
+├── socrates/                      # AI learning companion (integration pending)
+└── docs/                          # Project documentation and system architecture</p>
+
+<h2 id="system-optimization--cleanup">System Optimization &amp; Cleanup</h2>
+
+<h3 id="recent-cleanup-achievements">Recent Cleanup Achievements</h3>
+<ul>
+  <li><strong>Root directory organization</strong>: JSON, HTML, and CSS files properly relocated</li>
+  <li><strong>CSS dependency mapping</strong>: Centralized styling with clear path management</li>
+  <li><strong>Archive system</strong>: Historical content preserved without cluttering active development</li>
+  <li><strong>Development workflow</strong>: Feature branch strategy preventing root directory pollution</li>
+</ul>
+
+<h3 id="cleanup-automation">Cleanup Automation</h3>
+<p>The <code class="language-plaintext highlighter-rouge">build-restructure.bat</code> script provides:</p>
+<ul>
+  <li>Systematic file relocation with safety checks</li>
+  <li>CSS dependency analysis and path documentation</li>
+  <li>Git status integration for tracking changes</li>
+  <li>Guided next steps for manual review</li>
+</ul>
+
+<h3 id="quality-assurance-process">Quality Assurance Process</h3>
+<ol>
+  <li><strong>Automated cleanup</strong> with <code class="language-plaintext highlighter-rouge">build-restructure.bat</code></li>
+  <li><strong>CSS path verification</strong> in all HTML files</li>
+  <li><strong>System functionality testing</strong> across Portal, Chunker, and shared components</li>
+  <li><strong>Git branch management</strong> for safe experimentation and rollback</li>
+</ol>
+
+<h2 id="information-flow-between-systems">Information Flow Between Systems</h2>
+
+<ul>
+  <li><strong>Portal → Chunker</strong>: User identity, course selection, and navigation context</li>
+  <li><strong>Chunker → Portal</strong>: Progress data, curriculum position, and next content recommendations</li>
+  <li><strong>Portal → Library</strong>: Resource requests based on current lesson context</li>
+  <li><strong>Shared Styles → All Systems</strong>: Consistent visual experience with centralized CSS management</li>
+  <li><strong>Universal Header → All Systems</strong>: User context, progress visualization, and navigation state</li>
+</ul>
+
+<h2 id="support--documentation">Support &amp; Documentation</h2>
+
+<ul>
+  <li><strong>Development Guide</strong>: <code class="language-plaintext highlighter-rouge">build-restructure.bat</code> and workflow documentation</li>
+  <li><strong>System Architecture</strong>: <code class="language-plaintext highlighter-rouge">/docs/architecture/</code> (planned)</li>
+  <li><strong>API Documentation</strong>: Cross-system integration specifications (planned)</li>
+  <li><strong>Teacher Resources</strong>: <code class="language-plaintext highlighter-rouge">/ref/teaching-guides/</code></li>
+  <li><strong>Student Help</strong>: <code class="language-plaintext highlighter-rouge">/ref/student-guides/</code></li>
+</ul>
+
+<h2 id="next-steps--roadmap">Next Steps &amp; Roadmap</h2>
+
+<h3 id="immediate-priorities-next-2-weeks">Immediate Priorities (Next 2 weeks)</h3>
+<ol>
+  <li><strong>Complete CSS path resolution</strong> in index.html</li>
+  <li><strong>Test all system integrations</strong> after cleanup</li>
+  <li><strong>Finalize Standard Physics</strong> content migration</li>
+  <li><strong>Document system dependencies</strong> and integration points</li>
+</ol>
+
+<h3 id="short-term-goals-next-month">Short-term Goals (Next month)</h3>
+<ol>
+  <li><strong>Socrates AI integration</strong> with Portal context awareness</li>
+  <li><strong>Mobile interface optimization</strong> across all systems</li>
+  <li><strong>Advanced progress analytics</strong> with learning pattern insights</li>
+  <li><strong>Cross-device synchronization</strong> for seamless user experience</li>
+</ol>
+
+<h3 id="long-term-vision-next-quarter">Long-term Vision (Next quarter)</h3>
+<ol>
+  <li><strong>Complete curriculum coverage</strong> for both Honors and Standard tracks</li>
+  <li><strong>Adaptive learning pathways</strong> based on student progress data</li>
+  <li><strong>Teacher dashboard</strong> with class-wide analytics and insights</li>
+  <li><strong>Open-source community</strong> for physics education collaboration</li>
+</ol>
+
+<hr />
+
+<p><strong>Last Updated</strong>: January 27, 2025<br />
+<strong>Version</strong>: 2.1.0 (System Optimization &amp; Cleanup)<br />
+<strong>Maintained by</strong>: Cosmos in the Classroom Development Team</p>
+
+<h2 id="recent-accomplishments">Recent Accomplishments</h2>
+<ul>
+  <li>✅ <strong>Root directory optimization</strong> with systematic file organization</li>
+  <li>✅ <strong>CSS dependency resolution</strong> for maintainable styling architecture</li>
+  <li>✅ <strong>Git workflow implementation</strong> with feature branch development strategy</li>
+  <li>✅ <strong>Universal header system</strong> providing consistent user experience</li>
+  <li>✅ <strong>Progress tracking integration</strong> with 144-chunk academic calendar</li>
+  <li>✅ <strong>Cleanup automation</strong> with comprehensive restructure tooling</li>
+</ul>
+
+<h2 id="documentation--change-log">Documentation &amp; Change Log</h2>
+<ul>
+  <li><strong>Current session</strong>: Root cleanup, CSS optimization, workflow establishment</li>
+  <li><strong>Previous session</strong>: Universal header implementation and user tracking</li>
+  <li><strong>Ongoing</strong>: Standard Physics migration and cross-system integration</li>
+  <li><strong>Migration history</strong>: Preserved in <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code> with full documentation
+    <h2 id="documentation">Documentation</h2>
+  </li>
+  <li>See <code class="language-plaintext highlighter-rouge">MINUTES.md</code> for ongoing project updates and decisions</li>
+  <li>Course-specific documentation in each <code class="language-plaintext highlighter-rouge">physics/*/</code> directory</li>
+  <li>Migration history preserved in <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code></li>
+</ul>
+
+<h2 id="configuration--customizability">Configuration &amp; Customizability</h2>
+
+<p>Cosmos in the Classroom uses key-value pair configuration files (JSON/YAML) to enable flexible customization for:</p>
+
+<ul>
+  <li><strong>Portal:</strong> User preferences (theme, font size, navigation bookmarks)</li>
+  <li><strong>Socrates Engine:</strong> AI assistant settings (response length, feedback mode)</li>
+  <li><strong>Chunker Engine:</strong> Content chunking parameters (chunk size, overlap)</li>
+  <li><strong>Library:</strong> Feature toggles and resource management</li>
+</ul>
+
+<h3 id="how-it-works">How It Works</h3>
+
+<ul>
+  <li>Default settings are stored in config files</li>
+  <li>User-specific settings are merged at runtime (localStorage or database)</li>
+  <li>All major systems read their configuration from these files for easy updates and personalization</li>
+</ul>
+
+<p>See <code class="language-plaintext highlighter-rouge">config/</code> directory for examples and documentation.</p>
 
     
     </div>
