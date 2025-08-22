@@ -75,8 +75,12 @@
       }
     }
   </style>
+  <script src="/src/shared/components/universal-header.js"></script>
 </head>
 <body>
+  <!-- Universal Header -->
+  <div id="universalHeader"></div>
+  
   <header>
     <!-- Add your site header/navigation here if needed -->
   </header>
@@ -122,5 +126,25 @@
       </div>
     </div>
   </main>
+  
+  <script>
+    // Load universal header
+    async function loadUniversalHeader() {
+        try {
+            const response = await fetch('/src/shared/components/universal-header.html');
+            if (response.ok) {
+                const headerHtml = await response.text();
+                document.getElementById('universalHeader').innerHTML = headerHtml;
+            }
+        } catch (error) {
+            console.error('Failed to load universal header:', error);
+        }
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        loadUniversalHeader();
+    });
+  </script>
 </body>
 </html>

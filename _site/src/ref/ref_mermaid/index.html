@@ -16,333 +16,6 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
-<<<<<<< HEAD
-    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
-    
-    <link rel="stylesheet" href="/assets/css/worksheets.css" />
-    
-
-  
-  </head>
-  <body>
-    <div class='nav'>
-    
-      <a href="/" class="button">Homepage</a>
-      
-      </div>
-      
-    <div class="navbar">
-      </div>
-    </div>
-    <body>
-      <div class="markdown-body">
-        <h1 id="mermaid-markdown-reference-sheet">Mermaid Markdown Reference Sheet</h1>
-
-<p>Mermaid is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create diagrams dynamically.</p>
-
-<h2 id="basic-syntax">Basic Syntax</h2>
-
-<p>Mermaid diagrams in Markdown are created using code blocks with the <code class="language-plaintext highlighter-rouge">mermaid</code> language identifier:</p>
-
-<p>«««&lt; HEAD</p>
-
-<p>&lt;li style: |
-        font-family: Garamond;
-        padding: 20px
-        &gt;&lt;/style&gt;</p>
-
-<pre><code class="language-mermaid">diagram-code-here
-</code></pre>
-
-<h1 id="li">&lt;/li&gt;</h1>
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
-</span><span class="sb">diagram-code-here</span>
-<span class="p">```</span>
-<span class="gt">&gt;&gt;&gt;&gt;&gt;&gt;&gt; dc5a0029036a026be2d39707af0287e3daccba02</span>
-</code></pre></div></div>
-
-<h2 id="diagram-types">Diagram Types</h2>
-
-<h3 id="flowchart">Flowchart</h3>
-
-<pre><code class="language-mermaid">graph TD
-    A[Start] --&gt; B{Decision}
-    B --&gt;|Yes| C[Do Something]
-    B --&gt;|No| D[Do Nothing]
-    C --&gt; E[End]
-    D --&gt; E
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>graph [direction]
-    node1[Text] --&gt; node2[Text]
-</code></pre></div></div>
-
-<p><strong>Directions:</strong> TB (top-bottom), TD (same as TB), BT (bottom-top), RL (right-left), LR (left-right)</p>
-
-<p><strong>Node Shapes:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">[]</code> Rectangle: <code class="language-plaintext highlighter-rouge">A[Text]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">()</code> Rounded: <code class="language-plaintext highlighter-rouge">B(Text)</code></li>
-  <li><code class="language-plaintext highlighter-rouge">{}</code> Diamond: <code class="language-plaintext highlighter-rouge">C{Text}</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[[]]</code> Subroutine: <code class="language-plaintext highlighter-rouge">D[[Text]]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[()]</code> Stadium: <code class="language-plaintext highlighter-rouge">E[(Text)]</code></li>
-  <li><code class="language-plaintext highlighter-rouge">[()] Cylinder: </code>F[(Database)]`</li>
-  <li><code class="language-plaintext highlighter-rouge">&gt;]</code> Asymmetric: <code class="language-plaintext highlighter-rouge">G&gt;Text]</code></li>
-</ul>
-
-<p><strong>Connections:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;</code> Arrow: <code class="language-plaintext highlighter-rouge">A --&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">---</code> Line: <code class="language-plaintext highlighter-rouge">A --- B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-.-&gt;</code> Dotted arrow: <code class="language-plaintext highlighter-rouge">A -.-&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">==&gt;</code> Thick arrow: <code class="language-plaintext highlighter-rouge">A ==&gt; B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;|text|</code> Labeled arrow: <code class="language-plaintext highlighter-rouge">A --&gt;|Yes| B</code></li>
-</ul>
-
-<h3 id="sequence-diagram">Sequence Diagram</h3>
-
-<pre><code class="language-mermaid">sequenceDiagram
-    Alice-&gt;&gt;John: Hello John, how are you?
-    John--&gt;&gt;Alice: Great!
-    Alice-)John: See you later!
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sequenceDiagram
-    participant A
-    participant B
-    A-&gt;&gt;B: Message
-</code></pre></div></div>
-
-<p><strong>Arrows:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">-&gt;&gt;</code> Solid arrow: <code class="language-plaintext highlighter-rouge">A-&gt;&gt;B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;&gt;</code> Dotted arrow: <code class="language-plaintext highlighter-rouge">A--&gt;&gt;B</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-x</code> Lost arrow: <code class="language-plaintext highlighter-rouge">A-xB</code></li>
-  <li><code class="language-plaintext highlighter-rouge">-)</code> Open arrow: <code class="language-plaintext highlighter-rouge">A-)B</code></li>
-</ul>
-
-<p><strong>Notes:</strong></p>
-
-<p>`
-Note over A: Note Text
-Note over A,B: Note spanning actors
-`</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Note over A: Note text
-Note over A,B: Note spanning actors
-</code></pre></div></div>
-
-<h3 id="class-diagram">Class Diagram</h3>
-
-<pre><code class="language-mermaid">classDiagram
-    Animal &lt;|-- Duck
-    Animal &lt;|-- Fish
-    Animal : +int age
-    Animal : +String gender
-    class Duck{
-      +String beakColor
-      +swim()
-      +quack()
-    }
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>classDiagram
-    class ClassName
-    ClassName : +attribute
-    ClassName : +method()
-</code></pre></div></div>
-
-<p><strong>Relationships:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">&lt;|--</code> Inheritance: <code class="language-plaintext highlighter-rouge">Parent &lt;|-- Child</code></li>
-  <li><code class="language-plaintext highlighter-rouge">*--</code> Composition: <code class="language-plaintext highlighter-rouge">Car *-- Engine</code></li>
-  <li><code class="language-plaintext highlighter-rouge">o--</code> Aggregation: <code class="language-plaintext highlighter-rouge">Department o-- Employee</code></li>
-  <li><code class="language-plaintext highlighter-rouge">--&gt;</code> Association: <code class="language-plaintext highlighter-rouge">Student --&gt; Course</code></li>
-  <li><code class="language-plaintext highlighter-rouge">..|&gt;</code> Realization: <code class="language-plaintext highlighter-rouge">Interface ..|&gt; Class</code></li>
-  <li><code class="language-plaintext highlighter-rouge">..&gt;</code> Dependency: <code class="language-plaintext highlighter-rouge">Class ..&gt; Helper</code></li>
-</ul>
-
-<h3 id="gantt-chart">Gantt Chart</h3>
-
-<pre><code class="language-mermaid">gantt
-    title Project Schedule
-    dateFormat  YYYY-MM-DD
-    section Phase 1
-    Task 1          :a1, 2023-01-01, 7d
-    Task 2          :after a1, 5d
-    section Phase 2
-    Task 3          :2023-01-15, 10d
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gantt
-    title Title
-    dateFormat YYYY-MM-DD
-    section Section
-    Task name  :id, start-date, duration
-</code></pre></div></div>
-
-<h3 id="entity-relationship-diagram">Entity Relationship Diagram</h3>
-
-<pre><code class="language-mermaid">erDiagram
-    CUSTOMER {
-        string id PK
-        string name
-        string email
-    }
-    CUSTOMER ||--o{ ORDER : places
-    ORDER {
-        int id PK
-        date created_at
-        float total
-    }
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>erDiagram
-    ENTITY_A {
-        type attribute PK
-    }
-    ENTITY_A |o--|| ENTITY_B : relationship
-</code></pre></div></div>
-
-<p><strong>Relationships:</strong></p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">||--||</code> One-to-one</li>
-  <li><code class="language-plaintext highlighter-rouge">||--o{</code> One-to-many</li>
-  <li><code class="language-plaintext highlighter-rouge">}o--o{</code> Many-to-many</li>
-</ul>
-
-<h3 id="pie-chart">Pie Chart</h3>
-
-<pre><code class="language-mermaid">pie title Product Distribution
-    "Product A" : 42.5
-    "Product B" : 27.8
-    "Product C" : 29.7
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pie title Title
-    "Slice 1" : value1
-    "Slice 2" : value2
-</code></pre></div></div>
-
-<h3 id="state-diagram">State Diagram</h3>
-
-<pre><code class="language-mermaid">stateDiagram-v2
-    [*] --&gt; Still
-    Still --&gt; Moving : Start
-    Moving --&gt; Still : Stop
-    Moving --&gt; [*] : Crash
-</code></pre>
-
-<p><strong>Basic Syntax:</strong></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stateDiagram-v2
-    s1 --&gt; s2 : transition
-    s2 --&gt; [*] : end
-</code></pre></div></div>
-
-<h2 id="tips--best-practices">Tips &amp; Best Practices</h2>
-
-<ol>
-  <li>Keep diagrams simple and focused</li>
-  <li>Use clear, descriptive labels</li>
-  <li>Maintain consistent styling</li>
-  <li>Use appropriate diagram type for the content</li>
-  <li>Add comments to complex sections: <code class="language-plaintext highlighter-rouge">%% Comment text %%</code></li>
-  <li>Test diagrams in a Mermaid Live Editor for complex structures</li>
-  <li>Limit node count to maintain readability</li>
-</ol>
-
-<h2 id="resources">Resources</h2>
-
-<ul>
-  <li><a href="https://mermaid.js.org/intro/">Mermaid Official Documentation</a></li>
-  <li><a href="https://mermaid.live/">Mermaid Live Editor</a></li>
-</ul>
-
-<p>Yes, you can customize colors and styles in Mermaid diagrams using built-in styling options. While it’s not CSS in the traditional sense, Mermaid provides several ways to style your diagrams:</p>
-
-<h3 id="1-inline-styling">1. Inline Styling</h3>
-
-<p>You can apply styles directly to nodes and connections:</p>
-
-<pre><code class="language-mermaid">graph LR
-    A[Start] --&gt;|Go| B[Process]
-    B --&gt; C[End]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:4px
-    style B fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5 5
-    style C fill:#9f6,stroke:#333,stroke-width:2px
-</code></pre>
-
-<h3 id="2-classes">2. Classes</h3>
-
-<p>You can define classes and apply them to multiple elements:</p>
-
-<pre><code class="language-mermaid">graph TD
-    A[Start] --&gt; B{Decision}
-    B --&gt;|Yes| C[Action]
-    B --&gt;|No| D[Alternative]
-    
-    classDef green fill:#9f6,stroke:#333,stroke-width:2px
-    classDef orange fill:#f96,stroke:#333,stroke-width:4px
-    
-    class A,C green
-    class B,D orange
-</code></pre>
-
-<h3 id="3-default-styling">3. Default Styling</h3>
-
-<p>You can set default styles for all nodes:</p>
-
-<pre><code class="language-mermaid">%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcccc', 'edgeLabelBackground':'#ffffee', 'tertiaryColor': '#fff0f0'}}}%%
-graph TD
-    A[Start] --&gt; B[Process]
-    B --&gt; C[End]
-</code></pre>
-
-<h3 id="4-theme-selection">4. Theme Selection</h3>
-
-<p>Mermaid supports several built-in themes:</p>
-
-<pre><code class="language-mermaid">%%{init: { 'theme': 'forest' }}%%
-graph TD
-    A[Start] --&gt; B[End]
-</code></pre>
-
-<p>Available themes include: default, neutral, dark, forest, and base.</p>
-
-<h3 id="key-style-properties">Key Style Properties</h3>
-
-<p>For individual elements, you can set:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">fill</code>: Background color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke</code>: Border color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke-width</code>: Border thickness</li>
-  <li><code class="language-plaintext highlighter-rouge">color</code>: Text color</li>
-  <li><code class="language-plaintext highlighter-rouge">stroke-dasharray</code>: For dashed lines</li>
-  <li><code class="language-plaintext highlighter-rouge">font-size</code>: Text size</li>
-  <li><code class="language-plaintext highlighter-rouge">font-family</code>: Font type</li>
-</ul>
-
-<h3 id="notes-on-css-integration">Notes on CSS Integration</h3>
-
-<ul>
-  <li>Mermaid doesn’t directly use external CSS files</li>
-  <li>Styles are contained within the diagram definition</li>
-  <li>You can use HTML color codes (#RGB) or color names</li>
-  <li>For web applications, you can style the container div that holds the Mermaid diagram using regular CSS</li>
-</ul>
-
-<p>Would you like me to demonstrate any specific styling technique in more detail?</p>
-
-      </div>  
-  </body>
-=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -368,6 +41,15 @@ graph TD
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+    
+    <!-- Cosmos Configuration System -->
+    <script src="/src/js/cosmos-config.js" defer></script>
+    
+    <!-- Theme Management -->
+    <script src="/src/js/theme-manager.js" defer></script>
+    
+    <!-- Ratatoskr Widget (only on curriculum pages) -->
+    
   </head>
   <body>
     <header>
@@ -996,7 +678,650 @@ graph TD
     
     </div>
     
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+    <!-- Settings Panel (global) -->
+    <!-- Global Settings Panel for Cosmos in the Classroom -->
+<div class="settings-overlay" id="settingsOverlay">
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <div class="settings-title">
+                <span class="settings-icon">⚙️</span>
+                <span>Cosmos Settings</span>
+            </div>
+            <button class="settings-close" onclick="toggleSettings()" aria-label="Close Settings">
+                <span>×</span>
+            </button>
+        </div>
+        
+        <div class="settings-content">
+            <!-- Theme Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🎨</span>
+                    Theme
+                </div>
+                <div class="setting-description">Choose your preferred color scheme</div>
+                <div class="theme-buttons" id="themeButtons">
+                    <button class="theme-btn" data-theme="light">
+                        <span class="theme-icon">☀️</span>
+                        <span>Light</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark">
+                        <span class="theme-icon">🌙</span>
+                        <span>Dark</span>
+                    </button>
+                    <button class="theme-btn" data-theme="auto">
+                        <span class="theme-icon">🔄</span>
+                        <span>Auto</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- User Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">👤</span>
+                    User Preferences
+                </div>
+                <div class="setting-row">
+                    <label for="usernameInput">Name:</label>
+                    <input type="text" id="usernameInput" placeholder="Enter your name..." 
+                           class="setting-input">
+                </div>
+                <div class="setting-row">
+                    <label for="courseLevelSelect">Course Level:</label>
+                    <select id="courseLevelSelect" class="setting-select">
+                        <option value="honors">Honors Physics</option>
+                        <option value="standard">Standard Physics</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Ratatoskr Widget Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🐿️</span>
+                    Ratatoskr Widget
+                </div>
+                <div class="setting-description">Progress tracking widget settings</div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrEnabled">
+                        <span class="checkmark"></span>
+                        Enable Ratatoskr widget
+                    </label>
+                </div>
+                
+                <div class="setting-row" id="ratatoskrSettings">
+                    <label for="chunkCountSlider">Chunks to display:</label>
+                    <div class="slider-container">
+                        <input type="range" id="chunkCountSlider" min="2" max="6" step="1" 
+                               class="setting-slider">
+                        <span id="chunkCountValue" class="slider-value">4</span>
+                    </div>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrAnimations">
+                        <span class="checkmark"></span>
+                        Enable animations
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Learning Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">📚</span>
+                    Learning Preferences
+                </div>
+                
+                <div class="setting-row">
+                    <label for="mathNotationSelect">Math notation:</label>
+                    <select id="mathNotationSelect" class="setting-select">
+                        <option value="latex">LaTeX (recommended)</option>
+                        <option value="ascii">ASCII text</option>
+                    </select>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="showHints">
+                        <span class="checkmark"></span>
+                        Show problem hints
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="accessibilityMode">
+                        <span class="checkmark"></span>
+                        Enhanced accessibility
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Privacy Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🔒</span>
+                    Privacy & Data
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="storeProgress">
+                        <span class="checkmark"></span>
+                        Store learning progress locally
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="analyticsEnabled">
+                        <span class="checkmark"></span>
+                        Anonymous usage analytics
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="settings-actions">
+                <button class="settings-btn settings-btn-secondary" onclick="resetSettings()">
+                    Reset to Defaults
+                </button>
+                <button class="settings-btn settings-btn-primary" onclick="exportSettings()">
+                    Export Settings
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Trigger Button -->
+<button class="settings-trigger" onclick="toggleSettings()" aria-label="Open Settings">
+    <span class="settings-trigger-icon">⚙️</span>
+</button>
+
+<style>
+/* Settings Panel Styles */
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.settings-panel {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: var(--panel-bg-solid, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px var(--shadow-heavy, rgba(0,0,0,0.3));
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-overlay.visible .settings-panel {
+    transform: scale(1) translateY(0);
+}
+
+.settings-header {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.settings-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.settings-content {
+    padding: 20px;
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+}
+
+.setting-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.setting-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    margin-bottom: 5px;
+}
+
+.setting-description {
+    font-size: 14px;
+    color: var(--text-secondary, #666);
+    margin-bottom: 15px;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.setting-row label {
+    font-size: 14px;
+    color: var(--text-primary, #333);
+    min-width: 120px;
+}
+
+.setting-input, .setting-select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--input-border, #ddd);
+    border-radius: 6px;
+    background: var(--input-bg, #fff);
+    color: var(--input-text, #333);
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.setting-input:focus, .setting-select:focus {
+    outline: none;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.theme-btn {
+    padding: 12px 8px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    background: var(--input-bg, #fff);
+    color: var(--text-primary, #333);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-btn.active {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-primary, #333);
+}
+
+.setting-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: var(--accent-color, #8B4513);
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.setting-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color, #ddd);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.setting-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-color, #8B4513);
+    cursor: pointer;
+}
+
+.slider-value {
+    min-width: 20px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+}
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-btn-primary {
+    background: var(--accent-color, #8B4513);
+    color: white;
+}
+
+.settings-btn-primary:hover {
+    background: var(--accent-hover, #A0522D);
+}
+
+.settings-btn-secondary {
+    background: transparent;
+    color: var(--text-secondary, #666);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.settings-btn-secondary:hover {
+    background: var(--border-color, #ddd);
+}
+
+/* Settings Trigger Button */
+.settings-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--panel-bg, rgba(255,255,255,0.9));
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px var(--shadow-light, rgba(0,0,0,0.1));
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.settings-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px var(--shadow-medium, rgba(0,0,0,0.2));
+}
+
+.settings-trigger-icon {
+    font-size: 20px;
+    color: var(--text-primary, #333);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-panel {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .theme-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .setting-row label {
+        min-width: auto;
+    }
+    
+    .setting-input, .setting-select {
+        width: 100%;
+    }
+    
+    .settings-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+// Settings Panel JavaScript
+let settingsVisible = false;
+
+function toggleSettings() {
+    const overlay = document.getElementById('settingsOverlay');
+    settingsVisible = !settingsVisible;
+    
+    if (settingsVisible) {
+        overlay.classList.add('visible');
+        loadSettings();
+        document.body.style.overflow = 'hidden';
+    } else {
+        overlay.classList.remove('visible');
+        document.body.style.overflow = '';
+    }
+}
+
+function loadSettings() {
+    if (!window.CosmosConfig) return;
+    
+    const config = window.CosmosConfig;
+    
+    // Theme buttons
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === config.get('ui.theme'));
+        btn.onclick = () => {
+            config.set('ui.theme', btn.dataset.theme);
+            loadSettings(); // Refresh UI
+        };
+    });
+    
+    // User preferences
+    document.getElementById('usernameInput').value = config.get('user.name') || '';
+    document.getElementById('usernameInput').onchange = (e) => 
+        config.set('user.name', e.target.value);
+    
+    document.getElementById('courseLevelSelect').value = config.get('user.preferredLevel') || 'honors';
+    document.getElementById('courseLevelSelect').onchange = (e) => 
+        config.set('user.preferredLevel', e.target.value);
+    
+    // Ratatoskr settings
+    const ratatoskrEnabled = document.getElementById('ratatoskrEnabled');
+    ratatoskrEnabled.checked = config.get('ratatoskr.enabled');
+    ratatoskrEnabled.onchange = (e) => {
+        config.set('ratatoskr.enabled', e.target.checked);
+        document.getElementById('ratatoskrSettings').style.display = 
+            e.target.checked ? 'flex' : 'none';
+    };
+    
+    const chunkCountSlider = document.getElementById('chunkCountSlider');
+    const chunkCountValue = document.getElementById('chunkCountValue');
+    chunkCountSlider.value = config.get('ratatoskr.chunkDisplayCount') || 4;
+    chunkCountValue.textContent = chunkCountSlider.value;
+    chunkCountSlider.oninput = () => {
+        chunkCountValue.textContent = chunkCountSlider.value;
+        config.set('ratatoskr.chunkDisplayCount', parseInt(chunkCountSlider.value));
+    };
+    
+    const ratatoskrAnimations = document.getElementById('ratatoskrAnimations');
+    ratatoskrAnimations.checked = config.get('ratatoskr.animationsEnabled');
+    ratatoskrAnimations.onchange = (e) => 
+        config.set('ratatoskr.animationsEnabled', e.target.checked);
+    
+    // Learning preferences
+    document.getElementById('mathNotationSelect').value = config.get('learning.mathNotation') || 'latex';
+    document.getElementById('mathNotationSelect').onchange = (e) => 
+        config.set('learning.mathNotation', e.target.value);
+    
+    document.getElementById('showHints').checked = config.get('learning.showHints');
+    document.getElementById('showHints').onchange = (e) => 
+        config.set('learning.showHints', e.target.checked);
+    
+    document.getElementById('accessibilityMode').checked = config.get('learning.accessibilityMode');
+    document.getElementById('accessibilityMode').onchange = (e) => 
+        config.set('learning.accessibilityMode', e.target.checked);
+    
+    // Privacy settings
+    document.getElementById('storeProgress').checked = config.get('privacy.storeProgress');
+    document.getElementById('storeProgress').onchange = (e) => 
+        config.set('privacy.storeProgress', e.target.checked);
+    
+    document.getElementById('analyticsEnabled').checked = config.get('privacy.analyticsEnabled');
+    document.getElementById('analyticsEnabled').onchange = (e) => 
+        config.set('privacy.analyticsEnabled', e.target.checked);
+    
+    // Show/hide Ratatoskr settings based on enabled state
+    document.getElementById('ratatoskrSettings').style.display = 
+        config.get('ratatoskr.enabled') ? 'flex' : 'none';
+}
+
+function resetSettings() {
+    if (window.CosmosConfig && confirm('Reset all settings to defaults? This cannot be undone.')) {
+        window.CosmosConfig.reset();
+        loadSettings();
+    }
+}
+
+function exportSettings() {
+    if (window.CosmosConfig) {
+        const settingsData = window.CosmosConfig.export();
+        const blob = new Blob([settingsData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'cosmos-settings.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+}
+
+// Close settings when clicking outside
+document.addEventListener('click', (e) => {
+    const overlay = document.getElementById('settingsOverlay');
+    const panel = document.getElementById('settingsPanel');
+    const trigger = document.querySelector('.settings-trigger');
+    
+    if (settingsVisible && overlay && !panel.contains(e.target) && !trigger.contains(e.target)) {
+        toggleSettings();
+    }
+});
+
+// Close settings with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsVisible) {
+        toggleSettings();
+    }
+});
+
+// Load settings when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.CosmosConfig) {
+        // Small delay to ensure config is initialized
+        setTimeout(loadSettings, 100);
+    }
+});
+</script>
+
+    
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -1013,10 +1338,5 @@ graph TD
         });
     </script>
     
-<<<<<<< HEAD
-=======
-
-    
->>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

@@ -1,5 +1,5 @@
 # The Voice of This Framework
-
+# Use this voice when constructing student-facing NARRATIVE content (not task instructions).
 This educational approach speaks with four unified voices:
 
 **Carl Sagan's Wonder**: "We are a way for the cosmos to know itself." Physics concepts become windows into the universe discovering its own nature through human curiosity.

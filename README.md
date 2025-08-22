@@ -1,113 +1,148 @@
-## August 22, 2025 – Directory Reconfiguration
-
-- Confirmed top-level organization for major subjects: `physics/`, `natural-disasters/`, and future `biology/` directories are parallel at root
-- Archived legacy homepage HTML files to `physics/shared/archive/`
-- Centralized curriculum design and planning documents in `src/docs/`
-- Relocated research brief examples to `src/socrates/`
-- Updated navigation and cross-references to reflect new locations
-
 # Cosmos in the Classroom
+*Comprehensive High School Physics Education Platform*
 
-Educational physics platform by Jonathan Corbett - Structured curricula with AI-enhanced content extraction.
+## Project Overview
 
-## 🎯 **Mission**
-Modern physics education for high school students (Honors & Standard levels) using web technologies.
+**Cosmos in the Classroom** delivers structured physics curricula for both Honors and Standard level high school students. The platform emphasizes scientific accuracy, progressive learning, and modern web technologies to create an engaging educational experience.
 
-## 📚 **Courses**
-- **Honors Physics**: 10-unit advanced curriculum (calculus-based)
-- **Standard Physics**: Accessible curriculum with OpenStax integration
-- **Natural Disasters**: 4-unit specialized course
+### Core Systems
 
-## 🏗️ **Structure** (Post-August 2025 Reorganization)
+- **🌟 Portal** (`/src/portal/`) - Interactive course navigation and content discovery
+- **📚 Library** (`/ref/`) - Comprehensive physics reference materials and resources
+- **🤔 Socrates** (`/socrates/`) - AI-powered Socratic questioning for concept exploration
+- **⚡ Chunker** (`/src/Chunker/`) - Time-based learning management and progress tracking
+
+### Recent Major Update: Universal Header System ✨
+
+**January 2025**: Implemented consistent navigation and user tracking across all systems:
+
+- **Standardized Navigation**: Unified site title, user greeting, and main menu
+- **User Management**: Persistent identity and course/period selection
+- **Progress Visualization**: Real-time academic year progress (144-chunk system)
+- **Responsive Design**: Mobile-friendly interface across all platforms
+
+## Academic Structure
+
+### Physics Curriculum Organization
 ```
-
-## Curriculum Organization
-
-- Each major subject area (e.g., physics, natural-disasters, biology) is a top-level directory.
-- Each subject contains its own units, lessons, labs, assessments, and resources.
-- Shared resources and themes are organized within each subject’s `shared/` directory.
-- Core engines and portal systems live in `src/` (not in subject directories).
-
-**Example:**
-```
-cosmosintheclassroom/
-├── physics/
-├── natural-disasters/
-├── biology/
-├── src/
-```
-
 physics/
-├── honors/units/       # 10 units: Principles → Optics
-├── standard/units/     # Parallel accessible curriculum  
-└── shared/themes/      # Marp slide themes
-
-src/
-├── Chunker/           # AI curriculum extraction system
-├── portal/            # Course navigation interface
-└── .ai/               # AI development resources
-
-.ai/
-├── development-checklist.md  # Workflow standards
-├── context.md               # Project state tracking
-└── prompts/                 # AI interaction templates
+├── honors/          # Advanced curriculum (10 units)
+│   ├── units/       # Sequential units (01_principles → 10_optics)
+│   ├── slides/      # Marp presentation files
+│   ├── assessments/ # Tests, quizzes, problem sets
+│   └── resources/   # Labs, references, supplementary materials
+├── standard/        # Accessible curriculum (10 units)
+│   └── units/       # Parallel structure to honors
+└── shared/          # Common resources and themes
 ```
 
-## 🛠️ **Technology**
-- **Content**: Markdown + frontmatter, Marp slides, KaTeX math
-- **Build**: Jekyll + TailwindCSS + npm
-- **AI Integration**: Chunker system with cognitive load optimization
-- **Portal**: Interactive navigation and assessment tools
+### The Chunker System
+- **144 Total Chunks** per academic year
+- **4 Chunks per Class** × **4 Day Rotation** × **6 Periods** (dropping 2)
+- **36 Chunks per Quarter** × **4 Quarters**
+- **Real-time Progress Tracking** across all systems
 
-## 🤖 **AI Features**
-- **Curriculum Extraction**: Document → structured JSON conversion
-- **Quality Assurance**: Educational logic validation and review
-- **Cognitive Load**: 2-4 learning units per day optimization
-- **Token Efficiency**: 80%+ reduction in prompt costs
+### Course Offerings
+- **Honors Physics**: Periods 1, 3, 7 (advanced mathematical rigor)
+- **Standard Physics**: Periods 2, 4, 6 (accessible to all learners)
 
-## 🚀 **Quick Start**
-- **Students**: `src/portal/index.html` → select course → navigate units
-- **Educators**: Browse `physics/honors/` or `physics/standard/` for content
-- **Developers**: Follow `.ai/development-checklist.md` for standards
+## Technology Stack
 
-## � **Recent Updates**
-- ✅ Organized 130+ physics files into logical structure
-- ✅ AI-powered curriculum extraction system
-- ✅ Token-optimized prompt templates (80% efficiency gain)
-- ✅ Community hub with 36 weekly inspirational quotes
-- `.ai/`: AI assistant development resources and documentation
-- `slides/`: Legacy slides (being migrated to `physics/*/slides/`)
-- `assets/`: Shared CSS, JavaScript, and media files
-- `_site/`: Jekyll build output
+- **Frontend**: HTML5, CSS3, JavaScript ES6+, TailwindCSS
+- **Content**: Markdown with YAML frontmatter
+- **Presentations**: Marp (Markdown → HTML slides)
+- **Math Rendering**: KaTeX for LaTeX equations
+- **User Data**: localStorage with sync capability
+- **Site Generation**: Jekyll + GitHub Pages ready
 
-## 🚀 Quick Start
+## Getting Started
 
 ### For Students
-1. Visit the course portal: `src/portal/index.html`
-2. Select your course (Honors Physics, Standard Physics, Natural Disasters)
-3. Navigate through units and lessons
+1. Visit the **Portal** to explore course content
+2. Use **Socrates** for concept clarification
+3. Track progress with **Chunker**
+4. Reference materials in **Library**
 
 ### For Educators
-1. **Content**: Browse `physics/honors/units/` or `physics/standard/units/`
-2. **Slides**: Use Marp files in `physics/*/slides/` directories
-3. **Assessments**: Find quizzes and tests in `physics/*/assessments/`
+1. Navigate course structure in **Portal**
+2. Access teaching resources in **Library**
+3. Monitor student progress via **Chunker**
+4. Customize content for course level
 
 ### For Developers
-1. **AI Development**: Follow `.ai/development-checklist.md` for workflow standards
-2. **Migration Tools**: Check `physics/shared/archive/migration-tools/`
-3. **Build**: Use Jekyll for site generation
-4. **Slides**: Use the Marp CLI for slide compilation
-5. **AI Integration**: See `.ai/context.md` for project state and guidelines
+1. Clone repository: `git clone [repository-url]`
+2. Install dependencies (if using Jekyll): `bundle install`
+3. Start local server: `bundle exec jekyll serve`
+4. Access demo at: `/src/shared/components/header-demo.html`
 
-## 🤖 AI-Enhanced Development
+## Current Implementation Status
 
-### AI Assistant Resources
-- **Development Standards**: `.ai/development-checklist.md` - Quality gates and workflow
-- **Project Context**: `.ai/context.md` - Current state and architectural decisions  
-- **Prompt Templates**: `.ai/prompts/templates.md` - Standardized AI interactions
-- **Chunker System**: `src/Chunker/` - AI curriculum extraction and optimization
+### ✅ Completed Features
+- Universal header system with user tracking
+- Portal course navigation
+- Honors Physics content (Units 1-10)
+- Marp slide generation system
+- Responsive design framework
+- Academic progress visualization
 
-### AI Integration Points
+### 🔄 In Progress
+- Standard Physics content migration
+- Library system integration
+- Socrates AI integration
+- Cross-system progress synchronization
+
+### 📋 Planned Features
+- Backend user synchronization
+- Role-based content access
+- Advanced analytics dashboard
+- Mobile app companion
+
+## Contributing
+
+### Content Guidelines
+- **Scientific Accuracy**: All physics content must be scientifically correct
+- **Progressive Difficulty**: Build concepts logically from basic to advanced
+- **Clear Objectives**: Include measurable learning goals
+- **Real-World Applications**: Connect physics to practical examples
+
+### Technical Standards
+- **Clean Code**: Readable variable names and commenting
+- **Responsive Design**: Mobile-first approach
+- **Accessibility**: WCAG compliance for educational content
+- **Performance**: Optimize for classroom internet speeds
+
+## File Structure Overview
+
+```
+cosmosintheclassroom/
+├── src/
+│   ├── portal/              # Course navigation system
+│   ├── Chunker/             # Progress tracking system
+│   └── shared/
+│       └── components/      # Universal header system
+├── physics/                 # Curriculum content
+├── ref/                     # Library system
+├── socrates/               # AI questioning system
+├── data/                   # Configuration files
+└── docs/                   # Project documentation
+```
+
+## Support & Documentation
+
+- **Implementation Guide**: `/src/shared/components/README.md`
+- **API Documentation**: Coming soon
+- **Teacher Resources**: `/ref/teaching-guides/`
+- **Student Help**: `/ref/student-guides/`
+
+## License & Usage
+
+This educational platform is designed for high school physics education. Please ensure proper attribution when using or adapting content.
+
+---
+
+**Last Updated**: January 27, 2025  
+**Version**: 2.0.0 (Universal Header Implementation)  
+**Maintained by**: Cosmos in the Classroom Development Team
 - **Curriculum Extraction**: Automated content structuring from educational materials
 - **Quality Assurance**: AI-assisted content validation and pedagogical review
 - **Development Workflow**: Context-aware code review and optimization suggestions

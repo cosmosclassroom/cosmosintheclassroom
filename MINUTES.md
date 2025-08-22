@@ -1,22 +1,3 @@
-## August 22, 2025 – Curriculum Directory Reconfiguration & File Moves
-
-- Archived legacy homepage HTML files to `physics/shared/archive/`
-    - `index_mockup.html`
-    - `index_original.html`
-    - `index_current_backup.html`
-    - `index_complex_backup.html`
-- Centralized curriculum design and planning documents in `src/docs/`
-    - `PORTAL_REDESIGN_PROPOSAL.md`
-    - `HOMEPAGE_OPTIMIZATION.md`
-    - `HOMEPAGE_SIMPLIFICATION.md`
-    - `IMPLEMENTATION_SUMMARY.md`
-- Relocated research brief examples to `src/socrates/`
-    - `RESEARCH_BRIEF_EXAMPLES.md`
-- Confirmed top-level organization for major subjects:
-    - `physics/`, `natural-disasters/`, and future `biology/` directories are parallel at root
-- Updated navigation and cross-references to reflect new locations
-- All changes documented for maintainability and future expansion
-
 # Project Minutes - Cosmos in the Classroom
 
 ## Meeting Notes & Project Updates
@@ -647,6 +628,83 @@ tools/
 - `src/portal/` - User interface and navigation
 
 ### Configuration Management Strategy
+**Principle**: Single source of truth with inheritance
+**Implementation**:
+- `cosmos.config.json` - Site-wide settings and course definitions
+- `build.config.js` - Development workflow and build targets
+- Unit-level configuration inherits from global settings
+
+### Quality Assurance Framework
+**Principle**: Automated prevention better than manual correction
+**Implementation**:
+- Pre-commit validation hooks
+- Comprehensive structural checking
+- Notebook-based large-scale organization tools
+- Git workflow standards with detailed change documentation
+
+### Documentation Requirements
+**Principle**: Code and decisions must be self-documenting
+**Implementation**:
+- README.md for every major directory
+- Inline rationale for infrastructure decisions
+- Commit messages explaining both what and why
+- Template files demonstrating expected patterns
+
+---
+
+*Last Updated: August 21, 2025 (Evening Session)*  
+*Design System Implementation: ✅*  
+*Major Reorganization Completed: ✅*  
+*Next Review: September 2025*
+
+---
+
+## January 27, 2025 - Universal Header System Implementation
+
+### Major Changes
+- **Universal Header Standardization**: Implemented consistent navigation across all Cosmos systems
+- **Component Architecture**: Created shared header component system (`/src/shared/components/`)
+- **User Tracking**: Added persistent user identity and course/period management
+- **Progress Visualization**: Integrated chunk-based academic year progress tracking (144 total chunks)
+
+### Technical Implementation
+- **Header Component**: `/src/shared/components/universal-header.html` - Main UI component
+- **Header Manager**: `/src/shared/components/universal-header.js` - JavaScript functionality
+- **Schedule Config**: `/data/schedule-config.json` - Academic calendar and course configuration
+- **Demo System**: `/src/shared/components/header-demo.html` - Interactive testing environment
+
+### System Integration Status
+- ✅ **Portal**: Universal header integrated and functional
+- 🔄 **Library**: Ready for header integration
+- 🔄 **Socrates**: Ready for header integration  
+- 🔄 **Chunker**: Ready for header integration
+- ✅ **Demo Page**: Fully functional testing environment
+
+### Key Features Deployed
+- **Consistent Navigation**: Site title, user greeting, main menu across all pages
+- **Course Management**: Dynamic course/period selection with 6 physics courses
+- **Rotation Display**: 4-day rotation cycle (A, B, C, D) with period drop rules
+- **Progress Tracking**: Visual chunk progress bar (36 chunks per quarter × 4 quarters)
+- **User Settings**: Persistent localStorage-based user configuration
+- **Responsive Design**: Mobile-friendly interface with collapsible navigation
+
+### Next Implementation Steps
+1. Deploy header to remaining systems (Library, Socrates, Chunker)
+2. Connect chunk progress to actual lesson completion tracking
+3. Implement role-based content filtering
+4. Add backend synchronization for multi-device support
+
+### Breaking Changes
+- **HTML Files**: Removed frontmatter from HTML components to prevent parsing issues
+- **Navigation Structure**: Replaced individual page headers with universal component system
+- **User Data**: Introduced localStorage-based user tracking across all systems
+
+### Files Modified
+- `/src/shared/components/universal-header.html` - Main header component
+- `/src/shared/components/universal-header.js` - Header management system
+- `/src/shared/components/header-demo.html` - Demo and testing page
+- `/src/shared/components/README.md` - Implementation documentation
+- `/data/schedule-config.json` - Academic schedule configuration
 **Principle**: Single source of truth with inheritance
 **Implementation**:
 - `cosmos.config.json` - Site-wide settings and course definitions
