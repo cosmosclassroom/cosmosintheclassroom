@@ -433,21 +433,24 @@
       &copy; 2024 Cosmos in the Classroom. All rights reserved.
     </footer>
 
-    <!-- Universal Data Logger -->
+    <!-- Universal Data Logger - Load before main script -->
     <script src="./scripts/universal-data-logger.js"></script>
     
-    <!-- Placeholder for future JS -->
+    <!-- Main Portal Script -->
     <script>
       // Course data and navigation management
       let courseData = null;
       let currentCourse = null;
 
       document.addEventListener('DOMContentLoaded', function() {
-        loadStudentName();
-        loadCourses();
-        setupNavigation();
-        loadRecentActivity();
-        loadQuickAccess();
+        // Wait a bit to ensure logger script is loaded
+        setTimeout(() => {
+          loadStudentName();
+          loadCourses();
+          setupNavigation();
+          loadRecentActivity();
+          loadQuickAccess();
+        }, 100);
       });
 
       // Student name management
@@ -525,6 +528,15 @@
         }
       }
 
+      // Safe logging function that checks if logEvent exists
+      function safeLogEvent(eventType, data = {}) {
+        if (typeof logEvent === 'function') {
+          logEvent(eventType, data);
+        } else {
+          console.log('Logger not available, would log:', eventType, data);
+        }
+      }
+
       // Course loading and display functions
       async function loadCourses() {
         try {
@@ -593,7 +605,7 @@
           showPopup('course', 'Course Started!', `${studentName} started: ${courseId === 'hphysics' ? 'The Story of Physics (Honors)' : 'Science Physics Integrated Curriculum (Standard)'}`);
           
           // Log course access
-          logEvent("course_access", {
+          safeLogEvent("course_access", {
             courseId: courseId,
             dataFile: dataFile,
             studentName: studentName
@@ -694,7 +706,7 @@
         showPopup('unit', 'Unit Started!', `${studentName} started Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
         
         // Log the unit start event
-        logEvent("unit_start", {
+        safeLogEvent("unit_start", {
           courseId: currentCourse,
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
@@ -714,7 +726,7 @@
       function viewUnitDetails(unitNumber) {
         // Log unit details view
         const unit = findUnit(unitNumber);
-        logEvent("unit_details_view", {
+        safeLogEvent("unit_details_view", {
           courseId: currentCourse,
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`
@@ -788,7 +800,7 @@
         showPopup('success', 'Unit Completed!', `${studentName} completed Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
         
         // Log unit completion
-        logEvent("unit_complete", {
+        safeLogEvent("unit_complete", {
           courseId: courseId,
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
@@ -809,7 +821,7 @@
         showPopup('warning', 'Unit Marked Incomplete', `${studentName} marked Unit ${unitNumber} as incomplete: ${unit ? unit.title : 'Unknown Unit'}`);
         
         // Log unit marked incomplete
-        logEvent("unit_incomplete", {
+        safeLogEvent("unit_incomplete", {
           courseId: courseId,
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
