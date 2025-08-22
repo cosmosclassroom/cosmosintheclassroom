@@ -163,6 +163,11 @@ difficulty: "beginner" | "intermediate" | "advanced"
 
 ## AI Assistant Responsibilities
 
+### Content Style Guidelines
+- **No Emojis**: Do not use emojis in any content creation or responses
+- **Professional Tone**: Maintain academic and educational language standards
+- **Clear Communication**: Use descriptive text instead of symbolic representations
+
 ### When Working with Content
 1. **Maintain Scientific Accuracy**: Verify all physics content for correctness
 2. **Follow Naming Conventions**: Use established file and directory naming

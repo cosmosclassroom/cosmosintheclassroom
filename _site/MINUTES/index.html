@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Project Minutes - Cosmos in the Classroom | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="project-minutes---cosmos-in-the-classroom">Project Minutes - Cosmos in the Classroom</h1>
+
+<h2 id="meeting-notes--project-updates">Meeting Notes &amp; Project Updates</h2>
+
+<hr />
+
+<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+
+<h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>Organizational Streamlining</strong>: Address the “messy” file structure from Q4 2025 AI experiments</li>
+  <li><strong>Infrastructure Standardization</strong>: Create unified build systems and configuration management</li>
+  <li><strong>Content Validation</strong>: Eliminate all structural warnings and establish quality assurance</li>
+  <li><strong>Workflow Optimization</strong>: Implement automated tools for maintainable development</li>
+</ol>
+
+<h3 id="-initial-state-analysis">📊 <strong>Initial State Analysis</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong>: Missing directories, inconsistent naming, incomplete structure</li>
+  <li><strong>Scattered Tools</strong>: Experimental utilities (Chunker, Consequence Engine) in <code class="language-plaintext highlighter-rouge">src/</code></li>
+  <li><strong>Duplicate Directories</strong>: Multiple naming conventions (01_unit1 vs 01_principles)</li>
+  <li><strong>No Quality Assurance</strong>: No automated validation or content checking systems</li>
+  <li><strong>Fragmented Build Process</strong>: Multiple uncoordinated build scripts</li>
+</ul>
+
+<h3 id="-major-accomplishments">✅ <strong>Major Accomplishments</strong></h3>
+
+<h4 id="1-complete-physics-structure-reorganization">1. <strong>Complete Physics Structure Reorganization</strong></h4>
+<p><strong>Design Rationale</strong>: Consistent, predictable organization reduces cognitive load for developers and enables automated tooling.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/units/    # 10 standardized units (01_principles → 10_electromagnetism)
+├── standard/units/  # Parallel structure for accessibility
+└── shared/          # Common resources, themes, archives
+</code></pre></div></div>
+
+<p><strong>Infrastructure Decisions</strong>:</p>
+<ul>
+  <li><strong>Naming Convention</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format ensures proper sorting and readability</li>
+  <li><strong>Parallel Structure</strong>: Honors/Standard separation allows differentiated content while maintaining consistency</li>
+  <li><strong>Centralized Themes</strong>: Shared Marp CSS themes in <code class="language-plaintext highlighter-rouge">physics/shared/themes/</code> for visual consistency</li>
+</ul>
+
+<h4 id="2-experimental-tools-organization">2. <strong>Experimental Tools Organization</strong></h4>
+<p><strong>Design Rationale</strong>: Separate experimental tools from core content to maintain clean production environment while preserving development utilities.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tools/
+├── schedule-chunker/     # Academic calendar management (moved from src/Chunker)
+├── consequence-engine/   # Educational simulations (moved from src/Consequence Engine)
+└── physics-structure-organizer.ipynb  # Jupyter notebook for systematic organization
+</code></pre></div></div>
+
+<p><strong>Workflow Benefits</strong>:</p>
+<ul>
+  <li>Clean separation of concerns</li>
+  <li>Preserved experimental value</li>
+  <li>Maintained development history</li>
+</ul>
+
+<h4 id="3-unified-configuration-system">3. <strong>Unified Configuration System</strong></h4>
+<p><strong>Design Rationale</strong>: Centralized configuration eliminates duplication and provides single source of truth for system settings.</p>
+
+<p><strong>New Configuration Files</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings, course definitions, build targets</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Unified build system configuration for all tools</li>
+  <li>Enhanced <code class="language-plaintext highlighter-rouge">package.json</code> - Streamlined npm scripts for development workflow</li>
+</ul>
+
+<p><strong>Infrastructure Benefits</strong>:</p>
+<ul>
+  <li>Reduced configuration drift</li>
+  <li>Easier maintenance and updates</li>
+  <li>Consistent development experience</li>
+</ul>
+
+<h4 id="4-automated-quality-assurance">4. <strong>Automated Quality Assurance</strong></h4>
+<p><strong>Design Rationale</strong>: Automated validation catches issues early and maintains system integrity as content grows.</p>
+
+<p><strong>New Quality Tools</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scripts/validate-content.js</code> - Comprehensive structure and link validation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/build-slides.js</code> - Automated Marp slide generation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/simple-validate.js</code> - Dependency-free validation for CI/CD</li>
+</ul>
+
+<p><strong>Workflow Integration</strong>:</p>
+<ul>
+  <li>Pre-commit validation prevents structural issues</li>
+  <li>Automated slide building reduces manual work</li>
+  <li>Content validation scales with curriculum growth</li>
+</ul>
+
+<h4 id="5-directory-structure-cleanup">5. <strong>Directory Structure Cleanup</strong></h4>
+<p><strong>Systematic Approach</strong>: Python notebook (<code class="language-plaintext highlighter-rouge">physics-structure-organizer.ipynb</code>) for reproducible organization:</p>
+
+<p><strong>Completed Tasks</strong>:</p>
+<ul>
+  <li>✅ <strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution)</li>
+  <li>✅ <strong>14 Duplicate Directories</strong> removed (old naming conventions)</li>
+  <li>✅ <strong>20 README.md Files</strong> generated with comprehensive unit documentation</li>
+  <li>✅ <strong>Content Templates</strong> created for lessons, labs, and problem sets</li>
+  <li>✅ <strong>Git History</strong> preserved with detailed commit messages</li>
+</ul>
+
+<h3 id="️-infrastructure-design-decisions--rationale">🏗️ <strong>Infrastructure Design Decisions &amp; Rationale</strong></h3>
+
+<h4 id="organizational-philosophy"><strong>Organizational Philosophy</strong></h4>
+<p><strong>Decision</strong>: Three-tier separation (physics/ → tools/ → scripts/)
+<strong>Rationale</strong>: Clear boundaries between educational content, development tools, and build automation prevent coupling and enable independent evolution.</p>
+
+<h4 id="content-structure-strategy"><strong>Content Structure Strategy</strong></h4>
+<p><strong>Decision</strong>: Parallel honors/standard structure with shared resources
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces duplication while allowing differentiated content</li>
+  <li>Enables consistent navigation patterns across difficulty levels</li>
+  <li>Simplifies portal development and maintenance</li>
+</ul>
+
+<h4 id="build-system-architecture"><strong>Build System Architecture</strong></h4>
+<p><strong>Decision</strong>: Unified configuration with modular build tasks
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Single <code class="language-plaintext highlighter-rouge">npm run dev</code> command for entire development workflow</li>
+  <li>Modular tasks allow selective building (CSS, slides, validation)</li>
+  <li>Configuration centralization reduces maintenance overhead</li>
+</ul>
+
+<h4 id="quality-assurance-framework"><strong>Quality Assurance Framework</strong></h4>
+<p><strong>Decision</strong>: Multi-layered validation (simple → comprehensive → notebook-based)
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Simple validation works in CI/CD environments (no dependencies)</li>
+  <li>Comprehensive validation catches complex structural issues</li>
+  <li>Notebook-based organization enables reproducible large-scale changes</li>
+</ul>
+
+<h4 id="git-workflow-strategy"><strong>Git Workflow Strategy</strong></h4>
+<p><strong>Decision</strong>: Detailed commit messages with bullet-point summaries
+<strong>Rationale</strong>: Large-scale reorganizations require clear historical context for future maintenance and debugging.</p>
+
+<h3 id="-quantified-results">📈 <strong>Quantified Results</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution rate)</li>
+  <li><strong>20 Physics Units</strong> fully structured (10 honors + 10 standard)</li>
+  <li><strong>20 README.md files</strong> generated with comprehensive documentation</li>
+  <li><strong>14 Duplicate directories</strong> removed and consolidated</li>
+  <li><strong>6 Configuration files</strong> created for unified system management</li>
+  <li><strong>4 New automation scripts</strong> for quality assurance and building</li>
+  <li><strong>100% Git tracking</strong> of all changes with detailed commit history</li>
+</ul>
+
+<h3 id="-next-phase-priorities">🔄 <strong>Next Phase Priorities</strong></h3>
+<p><strong>Immediate</strong> (Next 7 days):</p>
+<ol>
+  <li><strong>Content Migration</strong>: Transfer existing lessons from <code class="language-plaintext highlighter-rouge">src/hphys/</code> and <code class="language-plaintext highlighter-rouge">src/sphys/</code> to new structure</li>
+  <li><strong>Portal Integration</strong>: Update navigation JSON files to reference new physics/ structure</li>
+  <li><strong>Link Validation</strong>: Run comprehensive validation to catch any broken references</li>
+</ol>
+
+<p><strong>Short-term</strong> (Next 30 days):</p>
+<ol>
+  <li><strong>Template Implementation</strong>: Use generated templates to create actual lesson content</li>
+  <li><strong>Slide Integration</strong>: Move remaining Marp presentations to centralized location</li>
+  <li><strong>Assessment Migration</strong>: Organize existing quizzes and tests into proper assessment structure</li>
+</ol>
+
+<p><strong>Strategic</strong> (Next Quarter):</p>
+<ol>
+  <li><strong>Standard Physics Completion</strong>: Fully populate standard course parallel to honors</li>
+  <li><strong>Interactive Elements</strong>: Integrate PhET simulations and interactive content</li>
+  <li><strong>Portal Enhancement</strong>: Implement progress tracking and student dashboard features</li>
+</ol>
+
+<h3 id="-key-design-decisions-documented">📋 <strong>Key Design Decisions Documented</strong></h3>
+
+<h4 id="file-organization-strategy"><strong>File Organization Strategy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format for units</li>
+  <li><strong>Rationale</strong>: Ensures proper alphabetical sorting while maintaining human readability</li>
+  <li><strong>Implementation</strong>: Applied consistently across honors and standard courses</li>
+</ul>
+
+<h4 id="tool-organization-philosophy"><strong>Tool Organization Philosophy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Separate <code class="language-plaintext highlighter-rouge">tools/</code> directory for experimental utilities</li>
+  <li><strong>Rationale</strong>: Prevents experimental code from cluttering production environment</li>
+  <li><strong>Implementation</strong>: Chunker and Consequence Engine moved with full history preservation</li>
+</ul>
+
+<h4 id="configuration-management-approach"><strong>Configuration Management Approach</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Centralized configuration with inheritance</li>
+  <li><strong>Rationale</strong>: Reduces duplication, ensures consistency, simplifies maintenance</li>
+  <li><strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos.config.json</code> as single source of truth</li>
+</ul>
+
+<h4 id="quality-assurance-framework-1"><strong>Quality Assurance Framework</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Multi-tier validation system</li>
+  <li><strong>Rationale</strong>: Different validation needs for development vs CI/CD vs large-scale changes</li>
+  <li><strong>Implementation</strong>: Simple, comprehensive, and notebook-based validation tools</li>
+</ul>
+
+<h4 id="git-workflow-standards"><strong>Git Workflow Standards</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Detailed commit messages with structured bullet points</li>
+  <li><strong>Rationale</strong>: Large reorganizations require clear historical context</li>
+  <li><strong>Implementation</strong>: All commits include rationale and quantified changes</li>
+</ul>
+
+<hr />
+
+<h2 id="system-architecture-status-post-reorganization">System Architecture Status (Post-Reorganization)</h2>
+
+<h3 id="-current-system-state">🎯 <strong>Current System State</strong></h3>
+<ul>
+  <li><strong>Physics Curriculum</strong>: Complete structural foundation with 20 fully organized units</li>
+  <li><strong>Portal System</strong>: Established course navigation framework</li>
+  <li><strong>Build Infrastructure</strong>: Unified system with automated quality checks</li>
+  <li><strong>Content Development</strong>: Template-driven approach for consistent materials</li>
+  <li><strong>Quality Assurance</strong>: Automated validation preventing structural degradation</li>
+</ul>
+
+<h3 id="-course-development-status">📚 <strong>Course Development Status</strong></h3>
+
+<h4 id="honors-physics--structure-complete">Honors Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>All 10 Units</strong>: Fully organized with comprehensive README files</li>
+  <li><strong>Directory Structure</strong>: lessons/, labs/, problemsets/, resources/ for each unit</li>
+  <li><strong>Content Templates</strong>: Available for systematic lesson development</li>
+  <li><strong>Assessment Integration</strong>: Ready for existing content migration</li>
+</ul>
+
+<h4 id="standard-physics--structure-complete">Standard Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>Parallel Organization</strong>: Identical structure to honors for consistency</li>
+  <li><strong>Differentiated Content</strong>: Framework ready for appropriate-level materials</li>
+  <li><strong>OpenStax Integration</strong>: Structure supports textbook alignment</li>
+</ul>
+
+<h4 id="natural-disasters--existing-framework">Natural Disasters 🔄 <strong>Existing Framework</strong></h4>
+<ul>
+  <li><strong>4-Unit Structure</strong>: Established and functional</li>
+  <li><strong>Portal Integration</strong>: Connected to main navigation system</li>
+  <li><strong>Content Development</strong>: Ongoing enhancement</li>
+</ul>
+
+<h3 id="️-technical-infrastructure">🛠️ <strong>Technical Infrastructure</strong></h3>
+<ul>
+  <li>✅ <strong>Unified Build System</strong> - Single command development workflow (<code class="language-plaintext highlighter-rouge">npm run dev</code>)</li>
+  <li>✅ <strong>Marp Integration</strong> - Automated slide generation with shared themes</li>
+  <li>✅ <strong>Quality Assurance</strong> - Multi-tier validation system operational</li>
+  <li>✅ <strong>Configuration Management</strong> - Centralized settings in <code class="language-plaintext highlighter-rouge">cosmos.config.json</code></li>
+  <li>✅ <strong>Git Workflow</strong> - Structured commits with detailed change tracking</li>
+  <li>✅ <strong>Development Tools</strong> - Jupyter notebook for large-scale organization tasks</li>
+</ul>
+
+<h3 id="-system-metrics">📊 <strong>System Metrics</strong></h3>
+<ul>
+  <li><strong>Validation Success Rate</strong>: 100% (40 warnings resolved)</li>
+  <li><strong>Directory Organization</strong>: 20 physics units + 10+ tool/script directories</li>
+  <li><strong>Documentation Coverage</strong>: README.md files for all major components</li>
+  <li><strong>Build Automation</strong>: 4 automated scripts for development workflow</li>
+  <li><strong>Configuration Consolidation</strong>: 6 unified config files replacing scattered settings</li>
+</ul>
+
+<hr />
+
+<h2 id="technical-architecture-evolution">Technical Architecture Evolution</h2>
+
+<h3 id="pre-reorganization-challenges"><strong>Pre-Reorganization Challenges</strong></h3>
+<ul>
+  <li>Scattered experimental content from Q4 2025 AI experiments</li>
+  <li>40+ validation warnings indicating structural problems</li>
+  <li>No unified build or validation systems</li>
+  <li>Inconsistent naming and organization patterns</li>
+</ul>
+
+<h3 id="post-reorganization-benefits"><strong>Post-Reorganization Benefits</strong></h3>
+<ul>
+  <li><strong>Predictable Structure</strong>: Enables automation and tooling development</li>
+  <li><strong>Scalable Organization</strong>: New courses can follow established patterns</li>
+  <li><strong>Quality Assurance</strong>: Automated validation prevents regression</li>
+  <li><strong>Developer Experience</strong>: Single-command workflows reduce friction</li>
+  <li><strong>Maintainability</strong>: Clear separation of concerns and centralized configuration</li>
+</ul>
+
+<hr />
+
+<h2 id="historical-context--learning">Historical Context &amp; Learning</h2>
+
+<h3 id="q4-2025-experimental-period---lessons-learned">Q4 2025 Experimental Period - Lessons Learned</h3>
+<p><strong>What Happened</strong>: Extensive AI-assisted experimentation led to valuable content but created organizational debt
+<strong>Key Issues</strong>:</p>
+<ul>
+  <li>Multiple JSON curriculum versions without consolidation</li>
+  <li>Experimental tools scattered in production directories</li>
+  <li>Mixed naming conventions without standards</li>
+  <li>No automated quality checking</li>
+</ul>
+
+<p><strong>Value Preserved</strong>: All useful experimental content archived in <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code> with full context</p>
+
+<h3 id="august-2025-reorganization---design-principles-applied">August 2025 Reorganization - Design Principles Applied</h3>
+<p><strong>Systematic Approach</strong>: Used Jupyter notebook for reproducible, documented organization
+<strong>Quality First</strong>: Implemented validation before proceeding with content development
+<strong>Future-Proofing</strong>: Structure designed to accommodate growth and new courses
+<strong>Developer Experience</strong>: Prioritized workflow efficiency and maintainability</p>
+
+<h3 id="technology-evolution-path">Technology Evolution Path</h3>
+<ul>
+  <li><strong>Phase 1</strong>: Basic HTML/CSS structure</li>
+  <li><strong>Phase 2</strong>: Markdown integration and dynamic content</li>
+  <li><strong>Phase 3</strong>: Marp slide system and Jekyll builds</li>
+  <li><strong>Phase 4</strong>: Portal system and course management</li>
+  <li><strong>Phase 5</strong> (Current): Unified infrastructure with automated quality assurance</li>
+</ul>
+
+<hr />
+
+<h2 id="strategic-planning--future-roadmap">Strategic Planning &amp; Future Roadmap</h2>
+
+<h3 id="immediate-implementation-next-2-weeks">Immediate Implementation (Next 2 weeks)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Content Migration</strong>: Transfer existing <code class="language-plaintext highlighter-rouge">src/hphys/</code> materials to new structure</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Portal Updates</strong>: Modify navigation JSON to reference physics/ directories</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Link Auditing</strong>: Comprehensive validation of all internal references</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Template Utilization</strong>: Create first lessons using generated templates</li>
+</ul>
+
+<h3 id="development-cycle-next-quarter">Development Cycle (Next Quarter)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Standard Physics Population</strong>: Complete parallel content development</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Assessment System</strong>: Organize and enhance existing quizzes/tests</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Interactive Integration</strong>: Embed PhET simulations and dynamic content</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mobile Optimization</strong>: Ensure responsive design across all components</li>
+</ul>
+
+<h3 id="platform-enhancement-next-year">Platform Enhancement (Next Year)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Multi-Course Expansion</strong>: Apply organizational patterns to new subjects</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Student Analytics</strong>: Implement progress tracking and learning insights</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Collaborative Tools</strong>: Enable teacher customization and sharing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Performance Optimization</strong>: Advanced caching and delivery systems</li>
+</ul>
+
+<hr />
+
+<h2 id="development-standards--best-practices">Development Standards &amp; Best Practices</h2>
+
+<h3 id="code-organization-philosophy">Code Organization Philosophy</h3>
+<p><strong>Principle</strong>: Separation of concerns with clear boundaries
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">physics/</code> - Educational content only</li>
+  <li><code class="language-plaintext highlighter-rouge">tools/</code> - Development and experimental utilities</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/</code> - Build automation and quality assurance</li>
+  <li><code class="language-plaintext highlighter-rouge">src/portal/</code> - User interface and navigation</li>
+</ul>
+
+<h3 id="configuration-management-strategy">Configuration Management Strategy</h3>
+<p><strong>Principle</strong>: Single source of truth with inheritance
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings and course definitions</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Development workflow and build targets</li>
+  <li>Unit-level configuration inherits from global settings</li>
+</ul>
+
+<h3 id="quality-assurance-framework-2">Quality Assurance Framework</h3>
+<p><strong>Principle</strong>: Automated prevention better than manual correction
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>Pre-commit validation hooks</li>
+  <li>Comprehensive structural checking</li>
+  <li>Notebook-based large-scale organization tools</li>
+  <li>Git workflow standards with detailed change documentation</li>
+</ul>
+
+<h3 id="documentation-requirements">Documentation Requirements</h3>
+<p><strong>Principle</strong>: Code and decisions must be self-documenting
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>README.md for every major directory</li>
+  <li>Inline rationale for infrastructure decisions</li>
+  <li>Commit messages explaining both what and why</li>
+  <li>Template files demonstrating expected patterns</li>
+</ul>
+
+<hr />
+
+<p><em>Last Updated: August 21, 2025</em><br />
+<em>Major Reorganization Completed: ✅</em><br />
+<em>Next Review: September 2025</em></p>
+
+      </div>  
+  </body>
+=======
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <<<<<<< HEAD
+<!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-content">
+        <img src="/www.cosmosintheclassroom.org/assets/images/aristotle.png" alt="Aristotle" width="2.5rem" height="auto">
+        <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .site-header {
+        background: linear-gradient(to right, #f4f1ea, #e8e4d8);
+        border-bottom: 3px double #8b7355;
+        border-top: 3px double #8b7355;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+
+    .header-content {
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .site-title {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 2.5rem;
+        margin: 0;
+        color: #2c4a3e;
+    }
+
+    .site-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-subtitle {
+        font-family: "Libre Baskerville", Georgia, serif;
+        font-size: 1.2rem;
+        color: #695d46;
+        margin: 0.5rem 0 0 0;
+        font-style: italic;
+    }
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="project-minutes---cosmos-in-the-classroom">Project Minutes - Cosmos in the Classroom</h1>
+
+<h2 id="meeting-notes--project-updates">Meeting Notes &amp; Project Updates</h2>
+
+<hr />
+
+<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+
+<h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>Organizational Streamlining</strong>: Address the “messy” file structure from Q4 2025 AI experiments</li>
+  <li><strong>Infrastructure Standardization</strong>: Create unified build systems and configuration management</li>
+  <li><strong>Content Validation</strong>: Eliminate all structural warnings and establish quality assurance</li>
+  <li><strong>Workflow Optimization</strong>: Implement automated tools for maintainable development</li>
+</ol>
+
+<h3 id="-initial-state-analysis">📊 <strong>Initial State Analysis</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong>: Missing directories, inconsistent naming, incomplete structure</li>
+  <li><strong>Scattered Tools</strong>: Experimental utilities (Chunker, Consequence Engine) in <code class="language-plaintext highlighter-rouge">src/</code></li>
+  <li><strong>Duplicate Directories</strong>: Multiple naming conventions (01_unit1 vs 01_principles)</li>
+  <li><strong>No Quality Assurance</strong>: No automated validation or content checking systems</li>
+  <li><strong>Fragmented Build Process</strong>: Multiple uncoordinated build scripts</li>
+</ul>
+
+<h3 id="-major-accomplishments">✅ <strong>Major Accomplishments</strong></h3>
+
+<h4 id="1-complete-physics-structure-reorganization">1. <strong>Complete Physics Structure Reorganization</strong></h4>
+<p><strong>Design Rationale</strong>: Consistent, predictable organization reduces cognitive load for developers and enables automated tooling.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/units/    # 10 standardized units (01_principles → 10_electromagnetism)
+├── standard/units/  # Parallel structure for accessibility
+└── shared/          # Common resources, themes, archives
+</code></pre></div></div>
+
+<p><strong>Infrastructure Decisions</strong>:</p>
+<ul>
+  <li><strong>Naming Convention</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format ensures proper sorting and readability</li>
+  <li><strong>Parallel Structure</strong>: Honors/Standard separation allows differentiated content while maintaining consistency</li>
+  <li><strong>Centralized Themes</strong>: Shared Marp CSS themes in <code class="language-plaintext highlighter-rouge">physics/shared/themes/</code> for visual consistency</li>
+</ul>
+
+<h4 id="2-experimental-tools-organization">2. <strong>Experimental Tools Organization</strong></h4>
+<p><strong>Design Rationale</strong>: Separate experimental tools from core content to maintain clean production environment while preserving development utilities.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tools/
+├── schedule-chunker/     # Academic calendar management (moved from src/Chunker)
+├── consequence-engine/   # Educational simulations (moved from src/Consequence Engine)
+└── physics-structure-organizer.ipynb  # Jupyter notebook for systematic organization
+</code></pre></div></div>
+
+<p><strong>Workflow Benefits</strong>:</p>
+<ul>
+  <li>Clean separation of concerns</li>
+  <li>Preserved experimental value</li>
+  <li>Maintained development history</li>
+</ul>
+
+<h4 id="3-unified-configuration-system">3. <strong>Unified Configuration System</strong></h4>
+<p><strong>Design Rationale</strong>: Centralized configuration eliminates duplication and provides single source of truth for system settings.</p>
+
+<p><strong>New Configuration Files</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings, course definitions, build targets</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Unified build system configuration for all tools</li>
+  <li>Enhanced <code class="language-plaintext highlighter-rouge">package.json</code> - Streamlined npm scripts for development workflow</li>
+</ul>
+
+<p><strong>Infrastructure Benefits</strong>:</p>
+<ul>
+  <li>Reduced configuration drift</li>
+  <li>Easier maintenance and updates</li>
+  <li>Consistent development experience</li>
+</ul>
+
+<h4 id="4-automated-quality-assurance">4. <strong>Automated Quality Assurance</strong></h4>
+<p><strong>Design Rationale</strong>: Automated validation catches issues early and maintains system integrity as content grows.</p>
+
+<p><strong>New Quality Tools</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scripts/validate-content.js</code> - Comprehensive structure and link validation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/build-slides.js</code> - Automated Marp slide generation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/simple-validate.js</code> - Dependency-free validation for CI/CD</li>
+</ul>
+
+<p><strong>Workflow Integration</strong>:</p>
+<ul>
+  <li>Pre-commit validation prevents structural issues</li>
+  <li>Automated slide building reduces manual work</li>
+  <li>Content validation scales with curriculum growth</li>
+</ul>
+
+<h4 id="5-directory-structure-cleanup">5. <strong>Directory Structure Cleanup</strong></h4>
+<p><strong>Systematic Approach</strong>: Python notebook (<code class="language-plaintext highlighter-rouge">physics-structure-organizer.ipynb</code>) for reproducible organization:</p>
+
+<p><strong>Completed Tasks</strong>:</p>
+<ul>
+  <li>✅ <strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution)</li>
+  <li>✅ <strong>14 Duplicate Directories</strong> removed (old naming conventions)</li>
+  <li>✅ <strong>20 README.md Files</strong> generated with comprehensive unit documentation</li>
+  <li>✅ <strong>Content Templates</strong> created for lessons, labs, and problem sets</li>
+  <li>✅ <strong>Git History</strong> preserved with detailed commit messages</li>
+</ul>
+
+<h3 id="️-infrastructure-design-decisions--rationale">🏗️ <strong>Infrastructure Design Decisions &amp; Rationale</strong></h3>
+
+<h4 id="organizational-philosophy"><strong>Organizational Philosophy</strong></h4>
+<p><strong>Decision</strong>: Three-tier separation (physics/ → tools/ → scripts/)
+<strong>Rationale</strong>: Clear boundaries between educational content, development tools, and build automation prevent coupling and enable independent evolution.</p>
+
+<h4 id="content-structure-strategy"><strong>Content Structure Strategy</strong></h4>
+<p><strong>Decision</strong>: Parallel honors/standard structure with shared resources
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces duplication while allowing differentiated content</li>
+  <li>Enables consistent navigation patterns across difficulty levels</li>
+  <li>Simplifies portal development and maintenance</li>
+</ul>
+
+<h4 id="build-system-architecture"><strong>Build System Architecture</strong></h4>
+<p><strong>Decision</strong>: Unified configuration with modular build tasks
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Single <code class="language-plaintext highlighter-rouge">npm run dev</code> command for entire development workflow</li>
+  <li>Modular tasks allow selective building (CSS, slides, validation)</li>
+  <li>Configuration centralization reduces maintenance overhead</li>
+</ul>
+
+<h4 id="quality-assurance-framework"><strong>Quality Assurance Framework</strong></h4>
+<p><strong>Decision</strong>: Multi-layered validation (simple → comprehensive → notebook-based)
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Simple validation works in CI/CD environments (no dependencies)</li>
+  <li>Comprehensive validation catches complex structural issues</li>
+  <li>Notebook-based organization enables reproducible large-scale changes</li>
+</ul>
+
+<h4 id="git-workflow-strategy"><strong>Git Workflow Strategy</strong></h4>
+<p><strong>Decision</strong>: Detailed commit messages with bullet-point summaries
+<strong>Rationale</strong>: Large-scale reorganizations require clear historical context for future maintenance and debugging.</p>
+
+<h3 id="-quantified-results">📈 <strong>Quantified Results</strong></h3>
+<ul>
+  <li><strong>40 Validation Warnings</strong> → <strong>0 Warnings</strong> (100% resolution rate)</li>
+  <li><strong>20 Physics Units</strong> fully structured (10 honors + 10 standard)</li>
+  <li><strong>20 README.md files</strong> generated with comprehensive documentation</li>
+  <li><strong>14 Duplicate directories</strong> removed and consolidated</li>
+  <li><strong>6 Configuration files</strong> created for unified system management</li>
+  <li><strong>4 New automation scripts</strong> for quality assurance and building</li>
+  <li><strong>100% Git tracking</strong> of all changes with detailed commit history</li>
+</ul>
+
+<h3 id="-next-phase-priorities">🔄 <strong>Next Phase Priorities</strong></h3>
+<p><strong>Immediate</strong> (Next 7 days):</p>
+<ol>
+  <li><strong>Content Migration</strong>: Transfer existing lessons from <code class="language-plaintext highlighter-rouge">src/hphys/</code> and <code class="language-plaintext highlighter-rouge">src/sphys/</code> to new structure</li>
+  <li><strong>Portal Integration</strong>: Update navigation JSON files to reference new physics/ structure</li>
+  <li><strong>Link Validation</strong>: Run comprehensive validation to catch any broken references</li>
+</ol>
+
+<p><strong>Short-term</strong> (Next 30 days):</p>
+<ol>
+  <li><strong>Template Implementation</strong>: Use generated templates to create actual lesson content</li>
+  <li><strong>Slide Integration</strong>: Move remaining Marp presentations to centralized location</li>
+  <li><strong>Assessment Migration</strong>: Organize existing quizzes and tests into proper assessment structure</li>
+</ol>
+
+<p><strong>Strategic</strong> (Next Quarter):</p>
+<ol>
+  <li><strong>Standard Physics Completion</strong>: Fully populate standard course parallel to honors</li>
+  <li><strong>Interactive Elements</strong>: Integrate PhET simulations and interactive content</li>
+  <li><strong>Portal Enhancement</strong>: Implement progress tracking and student dashboard features</li>
+</ol>
+
+<h3 id="-key-design-decisions-documented">📋 <strong>Key Design Decisions Documented</strong></h3>
+
+<h4 id="file-organization-strategy"><strong>File Organization Strategy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: <code class="language-plaintext highlighter-rouge">##_descriptive-name</code> format for units</li>
+  <li><strong>Rationale</strong>: Ensures proper alphabetical sorting while maintaining human readability</li>
+  <li><strong>Implementation</strong>: Applied consistently across honors and standard courses</li>
+</ul>
+
+<h4 id="tool-organization-philosophy"><strong>Tool Organization Philosophy</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Separate <code class="language-plaintext highlighter-rouge">tools/</code> directory for experimental utilities</li>
+  <li><strong>Rationale</strong>: Prevents experimental code from cluttering production environment</li>
+  <li><strong>Implementation</strong>: Chunker and Consequence Engine moved with full history preservation</li>
+</ul>
+
+<h4 id="configuration-management-approach"><strong>Configuration Management Approach</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Centralized configuration with inheritance</li>
+  <li><strong>Rationale</strong>: Reduces duplication, ensures consistency, simplifies maintenance</li>
+  <li><strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos.config.json</code> as single source of truth</li>
+</ul>
+
+<h4 id="quality-assurance-framework-1"><strong>Quality Assurance Framework</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Multi-tier validation system</li>
+  <li><strong>Rationale</strong>: Different validation needs for development vs CI/CD vs large-scale changes</li>
+  <li><strong>Implementation</strong>: Simple, comprehensive, and notebook-based validation tools</li>
+</ul>
+
+<h4 id="git-workflow-standards"><strong>Git Workflow Standards</strong></h4>
+<ul>
+  <li><strong>Decision</strong>: Detailed commit messages with structured bullet points</li>
+  <li><strong>Rationale</strong>: Large reorganizations require clear historical context</li>
+  <li><strong>Implementation</strong>: All commits include rationale and quantified changes</li>
+</ul>
+
+<hr />
+
+<h2 id="system-architecture-status-post-reorganization">System Architecture Status (Post-Reorganization)</h2>
+
+<h3 id="-current-system-state">🎯 <strong>Current System State</strong></h3>
+<ul>
+  <li><strong>Physics Curriculum</strong>: Complete structural foundation with 20 fully organized units</li>
+  <li><strong>Portal System</strong>: Established course navigation framework</li>
+  <li><strong>Build Infrastructure</strong>: Unified system with automated quality checks</li>
+  <li><strong>Content Development</strong>: Template-driven approach for consistent materials</li>
+  <li><strong>Quality Assurance</strong>: Automated validation preventing structural degradation</li>
+</ul>
+
+<h3 id="-course-development-status">📚 <strong>Course Development Status</strong></h3>
+
+<h4 id="honors-physics--structure-complete">Honors Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>All 10 Units</strong>: Fully organized with comprehensive README files</li>
+  <li><strong>Directory Structure</strong>: lessons/, labs/, problemsets/, resources/ for each unit</li>
+  <li><strong>Content Templates</strong>: Available for systematic lesson development</li>
+  <li><strong>Assessment Integration</strong>: Ready for existing content migration</li>
+</ul>
+
+<h4 id="standard-physics--structure-complete">Standard Physics ✅ <strong>Structure Complete</strong></h4>
+<ul>
+  <li><strong>Parallel Organization</strong>: Identical structure to honors for consistency</li>
+  <li><strong>Differentiated Content</strong>: Framework ready for appropriate-level materials</li>
+  <li><strong>OpenStax Integration</strong>: Structure supports textbook alignment</li>
+</ul>
+
+<h4 id="natural-disasters--existing-framework">Natural Disasters 🔄 <strong>Existing Framework</strong></h4>
+<ul>
+  <li><strong>4-Unit Structure</strong>: Established and functional</li>
+  <li><strong>Portal Integration</strong>: Connected to main navigation system</li>
+  <li><strong>Content Development</strong>: Ongoing enhancement</li>
+</ul>
+
+<h3 id="️-technical-infrastructure">🛠️ <strong>Technical Infrastructure</strong></h3>
+<ul>
+  <li>✅ <strong>Unified Build System</strong> - Single command development workflow (<code class="language-plaintext highlighter-rouge">npm run dev</code>)</li>
+  <li>✅ <strong>Marp Integration</strong> - Automated slide generation with shared themes</li>
+  <li>✅ <strong>Quality Assurance</strong> - Multi-tier validation system operational</li>
+  <li>✅ <strong>Configuration Management</strong> - Centralized settings in <code class="language-plaintext highlighter-rouge">cosmos.config.json</code></li>
+  <li>✅ <strong>Git Workflow</strong> - Structured commits with detailed change tracking</li>
+  <li>✅ <strong>Development Tools</strong> - Jupyter notebook for large-scale organization tasks</li>
+</ul>
+
+<h3 id="-system-metrics">📊 <strong>System Metrics</strong></h3>
+<ul>
+  <li><strong>Validation Success Rate</strong>: 100% (40 warnings resolved)</li>
+  <li><strong>Directory Organization</strong>: 20 physics units + 10+ tool/script directories</li>
+  <li><strong>Documentation Coverage</strong>: README.md files for all major components</li>
+  <li><strong>Build Automation</strong>: 4 automated scripts for development workflow</li>
+  <li><strong>Configuration Consolidation</strong>: 6 unified config files replacing scattered settings</li>
+</ul>
+
+<hr />
+
+<h2 id="technical-architecture-evolution">Technical Architecture Evolution</h2>
+
+<h3 id="pre-reorganization-challenges"><strong>Pre-Reorganization Challenges</strong></h3>
+<ul>
+  <li>Scattered experimental content from Q4 2025 AI experiments</li>
+  <li>40+ validation warnings indicating structural problems</li>
+  <li>No unified build or validation systems</li>
+  <li>Inconsistent naming and organization patterns</li>
+</ul>
+
+<h3 id="post-reorganization-benefits"><strong>Post-Reorganization Benefits</strong></h3>
+<ul>
+  <li><strong>Predictable Structure</strong>: Enables automation and tooling development</li>
+  <li><strong>Scalable Organization</strong>: New courses can follow established patterns</li>
+  <li><strong>Quality Assurance</strong>: Automated validation prevents regression</li>
+  <li><strong>Developer Experience</strong>: Single-command workflows reduce friction</li>
+  <li><strong>Maintainability</strong>: Clear separation of concerns and centralized configuration</li>
+</ul>
+
+<hr />
+
+<h2 id="historical-context--learning">Historical Context &amp; Learning</h2>
+
+<h3 id="q4-2025-experimental-period---lessons-learned">Q4 2025 Experimental Period - Lessons Learned</h3>
+<p><strong>What Happened</strong>: Extensive AI-assisted experimentation led to valuable content but created organizational debt
+<strong>Key Issues</strong>:</p>
+<ul>
+  <li>Multiple JSON curriculum versions without consolidation</li>
+  <li>Experimental tools scattered in production directories</li>
+  <li>Mixed naming conventions without standards</li>
+  <li>No automated quality checking</li>
+</ul>
+
+<p><strong>Value Preserved</strong>: All useful experimental content archived in <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code> with full context</p>
+
+<h3 id="august-2025-reorganization---design-principles-applied">August 2025 Reorganization - Design Principles Applied</h3>
+<p><strong>Systematic Approach</strong>: Used Jupyter notebook for reproducible, documented organization
+<strong>Quality First</strong>: Implemented validation before proceeding with content development
+<strong>Future-Proofing</strong>: Structure designed to accommodate growth and new courses
+<strong>Developer Experience</strong>: Prioritized workflow efficiency and maintainability</p>
+
+<h3 id="technology-evolution-path">Technology Evolution Path</h3>
+<ul>
+  <li><strong>Phase 1</strong>: Basic HTML/CSS structure</li>
+  <li><strong>Phase 2</strong>: Markdown integration and dynamic content</li>
+  <li><strong>Phase 3</strong>: Marp slide system and Jekyll builds</li>
+  <li><strong>Phase 4</strong>: Portal system and course management</li>
+  <li><strong>Phase 5</strong> (Current): Unified infrastructure with automated quality assurance</li>
+</ul>
+
+<hr />
+
+<h2 id="strategic-planning--future-roadmap">Strategic Planning &amp; Future Roadmap</h2>
+
+<h3 id="immediate-implementation-next-2-weeks">Immediate Implementation (Next 2 weeks)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Content Migration</strong>: Transfer existing <code class="language-plaintext highlighter-rouge">src/hphys/</code> materials to new structure</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Portal Updates</strong>: Modify navigation JSON to reference physics/ directories</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Link Auditing</strong>: Comprehensive validation of all internal references</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Template Utilization</strong>: Create first lessons using generated templates</li>
+</ul>
+
+<h3 id="development-cycle-next-quarter">Development Cycle (Next Quarter)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Standard Physics Population</strong>: Complete parallel content development</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Assessment System</strong>: Organize and enhance existing quizzes/tests</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Interactive Integration</strong>: Embed PhET simulations and dynamic content</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Mobile Optimization</strong>: Ensure responsive design across all components</li>
+</ul>
+
+<h3 id="platform-enhancement-next-year">Platform Enhancement (Next Year)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Multi-Course Expansion</strong>: Apply organizational patterns to new subjects</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Student Analytics</strong>: Implement progress tracking and learning insights</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Collaborative Tools</strong>: Enable teacher customization and sharing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Performance Optimization</strong>: Advanced caching and delivery systems</li>
+</ul>
+
+<hr />
+
+<h2 id="development-standards--best-practices">Development Standards &amp; Best Practices</h2>
+
+<h3 id="code-organization-philosophy">Code Organization Philosophy</h3>
+<p><strong>Principle</strong>: Separation of concerns with clear boundaries
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">physics/</code> - Educational content only</li>
+  <li><code class="language-plaintext highlighter-rouge">tools/</code> - Development and experimental utilities</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/</code> - Build automation and quality assurance</li>
+  <li><code class="language-plaintext highlighter-rouge">src/portal/</code> - User interface and navigation</li>
+</ul>
+
+<h3 id="configuration-management-strategy">Configuration Management Strategy</h3>
+<p><strong>Principle</strong>: Single source of truth with inheritance
+<strong>Implementation</strong>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cosmos.config.json</code> - Site-wide settings and course definitions</li>
+  <li><code class="language-plaintext highlighter-rouge">build.config.js</code> - Development workflow and build targets</li>
+  <li>Unit-level configuration inherits from global settings</li>
+</ul>
+
+<h3 id="quality-assurance-framework-2">Quality Assurance Framework</h3>
+<p><strong>Principle</strong>: Automated prevention better than manual correction
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>Pre-commit validation hooks</li>
+  <li>Comprehensive structural checking</li>
+  <li>Notebook-based large-scale organization tools</li>
+  <li>Git workflow standards with detailed change documentation</li>
+</ul>
+
+<h3 id="documentation-requirements">Documentation Requirements</h3>
+<p><strong>Principle</strong>: Code and decisions must be self-documenting
+<strong>Implementation</strong>:</p>
+<ul>
+  <li>README.md for every major directory</li>
+  <li>Inline rationale for infrastructure decisions</li>
+  <li>Commit messages explaining both what and why</li>
+  <li>Template files demonstrating expected patterns</li>
+</ul>
+
+<hr />
+
+<p><em>Last Updated: August 21, 2025</em><br />
+<em>Major Reorganization Completed: ✅</em><br />
+<em>Next Review: September 2025</em></p>
+
+    
+    </div>
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+  </body>
+</html>

@@ -16,6 +16,11 @@ The Cosmos in the Classroom portal system provides interactive navigation and co
 
 ## Development Principles
 
+### Content Style Guidelines
+- **No Emojis**: Do not use emojis in any portal content, documentation, or user interfaces
+- **Professional Interface Design**: Use descriptive text, icons, or visual elements instead of emojis
+- **Clear Navigation Labels**: Use explicit text labels for all interactive elements
+
 ### Code Quality Standards
 - **Clean, Semantic HTML**: Use proper HTML5 elements and ARIA labels
 - **Modular CSS**: Leverage TailwindCSS utility classes with custom components
