@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>Project Minutes - Cosmos in the Classroom | Cosmos in the Classroom</title>
+    <title>Cosmos in the Classroom - Development Minutes | Cosmos in the Classroom</title>
     
     
     <!-- KaTeX Dependencies -->
@@ -371,140 +371,141 @@
     
     <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
     
-      <h1 id="project-minutes---cosmos-in-the-classroom">Project Minutes - Cosmos in the Classroom</h1>
+      <h1 id="cosmos-in-the-classroom---development-minutes">Cosmos in the Classroom - Development Minutes</h1>
 
-<h2 id="meeting-notes--project-updates">Meeting Notes &amp; Project Updates</h2>
+<h2 id="january-27-2025---system-optimization--cleanup">January 27, 2025 - System Optimization &amp; Cleanup</h2>
 
-<hr />
-
-<h2 id="august-22-2025--key-value-config-system-adopted">August 22, 2025 – Key-Value Config System Adopted</h2>
-
+<h3 id="issues-addressed">Issues Addressed</h3>
 <ul>
-  <li>Key-value pair configuration implemented for Portal, Socrates engine, Chunker engine, and Library.</li>
-  <li>Enables user customization and feature toggling via config files (JSON/YAML).</li>
-  <li>Planning and README updated; config structure documented.</li>
-  <li>Next: Integrate config loading in all modules and update docs.</li>
+  <li><strong>Root Directory Pollution</strong>: Multiple JSON, HTML, and CSS files cluttering project root</li>
+  <li><strong>CSS Dependency Problems</strong>: index.html loading Chunker CSS from inconsistent paths</li>
+  <li><strong>Development Workflow</strong>: Need for systematic approach to prevent future clutter</li>
 </ul>
 
-<hr />
-
-<h2 id="august-22-2025--miscellanea-files-migration">August 22, 2025 – Miscellanea Files Migration</h2>
-
-<ul>
-  <li>Miscellanea <code class="language-plaintext highlighter-rouge">.md</code> files not yet moved to <code class="language-plaintext highlighter-rouge">library/</code> as planned.</li>
-  <li>Action: Locate and transfer all relevant miscellanea Markdown files into the <code class="language-plaintext highlighter-rouge">library/</code> directory.</li>
-  <li>Update README and documentation to reflect new file locations.</li>
-</ul>
-
-<hr />
-
-<h2 id="august-22-2025---homepage-redesign--nodejs-fixes">August 22, 2025 - Homepage Redesign &amp; Node.js Fixes</h2>
-
-<h3 id="-homepage-architecture-refocus">🌟 <strong>Homepage Architecture Refocus</strong></h3>
-
-<p><strong>Objective</strong>: Streamline navigation around core systems: Portal, Chunker, Socrates, Library</p>
-
-<h4 id="actions-completed"><strong>Actions Completed</strong></h4>
+<h3 id="solutions-implemented">Solutions Implemented</h3>
 <ol>
-  <li><strong>Homepage Redesign</strong>: Complete UI overhaul with modern card-based system navigation
+  <li><strong>Automated Cleanup Script</strong>: Enhanced <code class="language-plaintext highlighter-rouge">build-restructure.bat</code> with:
     <ul>
-      <li>Clean 4-system grid: Portal, Chunker, Socrates, Library</li>
-      <li>Responsive design with personalization features</li>
-      <li>Simplified navigation with About/Teachers pages tucked in footer</li>
+      <li>JSON files → <code class="language-plaintext highlighter-rouge">data/</code> directory</li>
+      <li>Legacy HTML files → <code class="language-plaintext highlighter-rouge">physics/shared/archive/</code></li>
+      <li>CSS files → <code class="language-plaintext highlighter-rouge">src/shared/styles/</code></li>
+      <li>Dependency analysis and documentation</li>
     </ul>
   </li>
-  <li><strong>Site-Wide Navigation</strong>: Created consistent header/footer components
+  <li><strong>Git Workflow Strategy</strong>: Established feature branch methodology:
     <ul>
-      <li>Sticky header with main navigation links</li>
-      <li>Unified footer with course links and resources</li>
-      <li>Mobile-responsive navigation system</li>
+      <li><code class="language-plaintext highlighter-rouge">feature/ui-*</code> for interface experiments</li>
+      <li><code class="language-plaintext highlighter-rouge">feature/content-*</code> for curriculum development</li>
+      <li><code class="language-plaintext highlighter-rouge">hotfix/*</code> for cleanup and quick fixes</li>
+      <li>Prevents root directory pollution from experiments</li>
     </ul>
   </li>
-  <li><strong>Missing Content Resolution</strong>: Fixed critical 404 errors
+  <li><strong>CSS Architecture</strong>: Centralized styling system:
     <ul>
-      <li>Created <code class="language-plaintext highlighter-rouge">src/portal/hphysics/course.json</code> with complete 10-unit honors physics structure</li>
-      <li>Resolved syntax error in <code class="language-plaintext highlighter-rouge">universal-data-logger.js</code> (line 49 unexpected token)</li>
-      <li>Updated package.json dependencies and removed broken script references</li>
-    </ul>
-  </li>
-  <li><strong>Node.js Environment</strong>: Restored full functionality
-    <ul>
-      <li>Installed missing <code class="language-plaintext highlighter-rouge">glob</code> dependency</li>
-      <li>Fixed all JavaScript syntax errors</li>
-      <li>Validated build pipeline: <code class="language-plaintext highlighter-rouge">npm test</code>, <code class="language-plaintext highlighter-rouge">npm run build-slides</code> all working</li>
+      <li>Consolidated CSS in <code class="language-plaintext highlighter-rouge">src/shared/styles/</code></li>
+      <li>Documented dependencies in <code class="language-plaintext highlighter-rouge">css-dependencies.txt</code></li>
+      <li>Clear path management for cross-system integration</li>
     </ul>
   </li>
 </ol>
 
-<h4 id="system-status"><strong>System Status</strong></h4>
+<h3 id="technical-decisions">Technical Decisions</h3>
 <ul>
-  <li>✅ <strong>Portal</strong>: Fully operational with working navigation and research brief integration</li>
-  <li>✅ <strong>Homepage</strong>: Modern, focused design centered on 4 core systems</li>
-  <li>✅ <strong>Node.js</strong>: All scripts working, dependencies resolved, validation passing</li>
-  <li>✅ <strong>Course Structure</strong>: Both honors and standard physics configurations complete</li>
+  <li><strong>Branching over dev folders</strong>: Cleaner history, better collaboration, safer experiments</li>
+  <li><strong>Centralized CSS</strong>: Single source of truth for styling across all systems</li>
+  <li><strong>Automated documentation</strong>: Script-generated dependency analysis for maintenance</li>
+</ul>
+
+<h3 id="next-session-priorities">Next Session Priorities</h3>
+<ol>
+  <li>Fix CSS paths in index.html</li>
+  <li>Test all system integrations post-cleanup</li>
+  <li>Complete Standard Physics content migration</li>
+  <li>Document cross-system dependencies</li>
+</ol>
+
+<hr />
+
+<h2 id="january-25-2025---universal-header-implementation">January 25, 2025 - Universal Header Implementation</h2>
+
+<h3 id="accomplished">Accomplished</h3>
+<ul>
+  <li>Implemented universal header system across Portal, Chunker, and shared components</li>
+  <li>Established 144-chunk progress tracking visualization</li>
+  <li>Created consistent user identity and course selection system</li>
+  <li>Responsive design implementation with mobile-first approach</li>
+</ul>
+
+<h3 id="technical-implementation">Technical Implementation</h3>
+<ul>
+  <li>Universal header component in <code class="language-plaintext highlighter-rouge">src/shared/components/</code></li>
+  <li>localStorage-based user data persistence</li>
+  <li>TailwindCSS for responsive design framework</li>
+  <li>Integration points for Portal, Chunker, Library, and Socrates systems</li>
 </ul>
 
 <hr />
 
-<h2 id="august-22-2025---project-cleanup--maintenance">August 22, 2025 - Project Cleanup &amp; Maintenance</h2>
+<h2 id="august-2025---major-physics-content-reorganization">August 2025 - Major Physics Content Reorganization</h2>
 
-<h3 id="-legacy-content-cleanup">🧹 <strong>Legacy Content Cleanup</strong></h3>
-
-<p><strong>Objective</strong>: Clean up legacy <code class="language-plaintext highlighter-rouge">src/portal/hphysics/</code> directory and resolve validation warnings</p>
-
-<h4 id="actions-completed-1"><strong>Actions Completed</strong></h4>
-<ol>
-  <li><strong>Legacy Archive</strong>: Moved <code class="language-plaintext highlighter-rouge">src/portal/hphysics/</code> → <code class="language-plaintext highlighter-rouge">physics/shared/archive/legacy-hphysics-portal/</code>
-    <ul>
-      <li>Preserved historical course content and navigation systems</li>
-      <li>Eliminated duplicate content from current physics structure</li>
-      <li>Maintained git history for reference</li>
-    </ul>
-  </li>
-  <li><strong>Validation System Update</strong>: Fixed <code class="language-plaintext highlighter-rouge">scripts/validate-content.js</code>
-    <ul>
-      <li>Removed hardcoded search for non-existent <code class="language-plaintext highlighter-rouge">05_waves</code> unit</li>
-      <li>Updated to validate actual 10-unit physics curriculum structure</li>
-      <li>Added comprehensive structure checking for all units</li>
-    </ul>
-  </li>
-</ol>
-
-<h4 id="results"><strong>Results</strong></h4>
+<h3 id="accomplished-1">Accomplished</h3>
 <ul>
-  <li>✅ <strong>Validation Status</strong>: 2 warnings → 0 warnings (100% resolution)</li>
-  <li>✅ <strong>File Organization</strong>: Clean separation of current vs legacy content</li>
-  <li>✅ <strong>System Integrity</strong>: All structural validation now passes</li>
-  <li>📄 <strong>Documentation</strong>: Created <code class="language-plaintext highlighter-rouge">physics/shared/archive/CLEANUP_LOG.md</code></li>
+  <li>Organized 130+ physics files into logical unit structure</li>
+  <li>Archived Q4 2025 experimental content while preserving useful materials</li>
+  <li>Established naming conventions for maintainable content structure</li>
+  <li>Created migration tools for future reorganizations</li>
+  <li>Centralized slide management with consistent Marp theming</li>
 </ul>
 
-<h4 id="curriculum-structure-confirmed"><strong>Curriculum Structure Confirmed</strong></h4>
-<p><strong>10-Unit Physics Sequence</strong>:</p>
-<ol>
-  <li>Principles → 2. Kinematics → 3. Forces → 4. Dynamics → 5. Energy</li>
-  <li>Circular/Gravity → 7. Momentum → 8. Rotation → 9. Oscillations/Waves → 10. Electromagnetism</li>
-</ol>
+<h3 id="structure-established">Structure Established</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>physics/
+├── honors/units/     # 10 sequential units (01_principles → 10_optics)
+├── standard/units/   # Parallel structure for accessible curriculum
+└── shared/           # Common resources, themes, and archived content
+</code></pre></div></div>
 
-<p><strong>Note</strong>: Wave content properly integrated in Unit 9 (Oscillations), matching standard physics pedagogy.</p>
+<h3 id="migration-process">Migration Process</h3>
+<ul>
+  <li>Content analysis for educational value</li>
+  <li>Elimination of duplicates and outdated materials</li>
+  <li>Preservation of historical content in archive system</li>
+  <li>Documentation of migration decisions and rationale</li>
+</ul>
 
 <hr />
 
-<h2 id="august-22-2025---portal-redesign--research-brief-integration">August 22, 2025 - Portal Redesign &amp; Research Brief Integration</h2>
+<h2 id="development-principles-established">Development Principles Established</h2>
 
-<h3 id="-portal-architecture-overhaul">🔧 <strong>Portal Architecture Overhaul</strong></h3>
+<h3 id="content-quality">Content Quality</h3>
+<ul>
+  <li>Scientific accuracy verification for all physics content</li>
+  <li>Progressive difficulty building from basic to advanced concepts</li>
+  <li>Clear learning objectives and measurable goals</li>
+  <li>Real-world applications connecting physics to practical examples</li>
+</ul>
 
-<p><strong>Objective</strong>: Fix broken portal navigation and integrate Socrates-generated research briefs</p>
+<h3 id="technical-standards">Technical Standards</h3>
+<ul>
+  <li>Clean, readable code with proper commenting</li>
+  <li>Mobile-first responsive design approach</li>
+  <li>WCAG compliance for educational accessibility</li>
+  <li>Performance optimization for classroom internet speeds</li>
+</ul>
 
-<h4 id="research-brief-system-implementation"><strong>Research Brief System Implementation</strong></h4>
-<ol>
-  <li><strong>Backend Infrastructure</strong>: Complete JSON-based research brief management
+<h3 id="workflow-management">Workflow Management</h3>
+<ul>
+  <li>Structured commit messages with detailed explanations</li>
+  <li>Feature branch strategy for major additions</li>
+  <li>Documentation updates for significant changes</li>
+  <li>Regular cleanup and optimization cycles
     <ul>
-      <li>Created hierarchical content structure: <code class="language-plaintext highlighter-rouge">library/research-briefs/</code></li>
-      <li>Implemented searchable index with concept mapping</li>
       <li>Built Python management tool (<code class="language-plaintext highlighter-rouge">scripts/socrates-brief-manager.py</code>)</li>
       <li>Added automatic relationship mapping between briefs, units, and concepts</li>
     </ul>
   </li>
+</ul>
+
+<ol>
   <li><strong>Frontend Integration</strong>: Dynamic portal components
     <ul>
       <li>JavaScript research brief manager (<code class="language-plaintext highlighter-rouge">src/portal/scripts/research-brief-manager.js</code>)</li>
@@ -552,7 +553,7 @@
 
 <hr />
 
-<h2 id="august-22-2025---project-cleanup--maintenance-1">August 22, 2025 - Project Cleanup &amp; Maintenance</h2>
+<h2 id="august-22-2025---project-cleanup--maintenance">August 22, 2025 - Project Cleanup &amp; Maintenance</h2>
 
 <h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
 <ol>
@@ -1201,7 +1202,7 @@
   <li><strong>Progress Visualization</strong>: Integrated chunk-based academic year progress tracking (144 total chunks)</li>
 </ul>
 
-<h3 id="technical-implementation">Technical Implementation</h3>
+<h3 id="technical-implementation-1">Technical Implementation</h3>
 <ul>
   <li><strong>Header Component</strong>: <code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.html</code> - Main UI component</li>
   <li><strong>Header Manager</strong>: <code class="language-plaintext highlighter-rouge">/src/shared/components/universal-header.js</code> - JavaScript functionality</li>

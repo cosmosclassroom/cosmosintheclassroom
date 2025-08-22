@@ -1,103 +1,103 @@
-# Project Minutes - Cosmos in the Classroom
+# Cosmos in the Classroom - Development Minutes
 
-## Meeting Notes & Project Updates
+## January 27, 2025 - System Optimization & Cleanup
 
----
+### Issues Addressed
+- **Root Directory Pollution**: Multiple JSON, HTML, and CSS files cluttering project root
+- **CSS Dependency Problems**: index.html loading Chunker CSS from inconsistent paths
+- **Development Workflow**: Need for systematic approach to prevent future clutter
 
-## August 22, 2025 – Key-Value Config System Adopted
+### Solutions Implemented
+1. **Automated Cleanup Script**: Enhanced `build-restructure.bat` with:
+   - JSON files → `data/` directory
+   - Legacy HTML files → `physics/shared/archive/`
+   - CSS files → `src/shared/styles/`
+   - Dependency analysis and documentation
 
-- Key-value pair configuration implemented for Portal, Socrates engine, Chunker engine, and Library.
-- Enables user customization and feature toggling via config files (JSON/YAML).
-- Planning and README updated; config structure documented.
-- Next: Integrate config loading in all modules and update docs.
+2. **Git Workflow Strategy**: Established feature branch methodology:
+   - `feature/ui-*` for interface experiments
+   - `feature/content-*` for curriculum development
+   - `hotfix/*` for cleanup and quick fixes
+   - Prevents root directory pollution from experiments
 
----
+3. **CSS Architecture**: Centralized styling system:
+   - Consolidated CSS in `src/shared/styles/`
+   - Documented dependencies in `css-dependencies.txt`
+   - Clear path management for cross-system integration
 
-## August 22, 2025 – Miscellanea Files Migration
+### Technical Decisions
+- **Branching over dev folders**: Cleaner history, better collaboration, safer experiments
+- **Centralized CSS**: Single source of truth for styling across all systems
+- **Automated documentation**: Script-generated dependency analysis for maintenance
 
-- Miscellanea `.md` files not yet moved to `library/` as planned.
-- Action: Locate and transfer all relevant miscellanea Markdown files into the `library/` directory.
-- Update README and documentation to reflect new file locations.
-
----
-
-## August 22, 2025 - Homepage Redesign & Node.js Fixes
-
-### 🌟 **Homepage Architecture Refocus**
-
-**Objective**: Streamline navigation around core systems: Portal, Chunker, Socrates, Library
-
-#### **Actions Completed**
-1. **Homepage Redesign**: Complete UI overhaul with modern card-based system navigation
-   - Clean 4-system grid: Portal, Chunker, Socrates, Library
-   - Responsive design with personalization features
-   - Simplified navigation with About/Teachers pages tucked in footer
-
-2. **Site-Wide Navigation**: Created consistent header/footer components
-   - Sticky header with main navigation links
-   - Unified footer with course links and resources
-   - Mobile-responsive navigation system
-
-3. **Missing Content Resolution**: Fixed critical 404 errors
-   - Created `src/portal/hphysics/course.json` with complete 10-unit honors physics structure
-   - Resolved syntax error in `universal-data-logger.js` (line 49 unexpected token)
-   - Updated package.json dependencies and removed broken script references
-
-4. **Node.js Environment**: Restored full functionality
-   - Installed missing `glob` dependency
-   - Fixed all JavaScript syntax errors
-   - Validated build pipeline: `npm test`, `npm run build-slides` all working
-
-#### **System Status**
-- ✅ **Portal**: Fully operational with working navigation and research brief integration
-- ✅ **Homepage**: Modern, focused design centered on 4 core systems
-- ✅ **Node.js**: All scripts working, dependencies resolved, validation passing
-- ✅ **Course Structure**: Both honors and standard physics configurations complete
+### Next Session Priorities
+1. Fix CSS paths in index.html
+2. Test all system integrations post-cleanup
+3. Complete Standard Physics content migration
+4. Document cross-system dependencies
 
 ---
 
-## August 22, 2025 - Project Cleanup & Maintenance
+## January 25, 2025 - Universal Header Implementation
 
-### 🧹 **Legacy Content Cleanup**
+### Accomplished
+- Implemented universal header system across Portal, Chunker, and shared components
+- Established 144-chunk progress tracking visualization
+- Created consistent user identity and course selection system
+- Responsive design implementation with mobile-first approach
 
-**Objective**: Clean up legacy `src/portal/hphysics/` directory and resolve validation warnings
-
-#### **Actions Completed**
-1. **Legacy Archive**: Moved `src/portal/hphysics/` → `physics/shared/archive/legacy-hphysics-portal/`
-   - Preserved historical course content and navigation systems
-   - Eliminated duplicate content from current physics structure
-   - Maintained git history for reference
-
-2. **Validation System Update**: Fixed `scripts/validate-content.js`
-   - Removed hardcoded search for non-existent `05_waves` unit  
-   - Updated to validate actual 10-unit physics curriculum structure
-   - Added comprehensive structure checking for all units
-
-#### **Results**
-- ✅ **Validation Status**: 2 warnings → 0 warnings (100% resolution)
-- ✅ **File Organization**: Clean separation of current vs legacy content
-- ✅ **System Integrity**: All structural validation now passes
-- 📄 **Documentation**: Created `physics/shared/archive/CLEANUP_LOG.md`
-
-#### **Curriculum Structure Confirmed**
-**10-Unit Physics Sequence**:
-1. Principles → 2. Kinematics → 3. Forces → 4. Dynamics → 5. Energy
-6. Circular/Gravity → 7. Momentum → 8. Rotation → 9. Oscillations/Waves → 10. Electromagnetism
-
-**Note**: Wave content properly integrated in Unit 9 (Oscillations), matching standard physics pedagogy.
+### Technical Implementation
+- Universal header component in `src/shared/components/`
+- localStorage-based user data persistence
+- TailwindCSS for responsive design framework
+- Integration points for Portal, Chunker, Library, and Socrates systems
 
 ---
 
-## August 22, 2025 - Portal Redesign & Research Brief Integration
+## August 2025 - Major Physics Content Reorganization
 
-### 🔧 **Portal Architecture Overhaul**
+### Accomplished
+- Organized 130+ physics files into logical unit structure
+- Archived Q4 2025 experimental content while preserving useful materials
+- Established naming conventions for maintainable content structure
+- Created migration tools for future reorganizations
+- Centralized slide management with consistent Marp theming
 
-**Objective**: Fix broken portal navigation and integrate Socrates-generated research briefs
+### Structure Established
+```
+physics/
+├── honors/units/     # 10 sequential units (01_principles → 10_optics)
+├── standard/units/   # Parallel structure for accessible curriculum
+└── shared/           # Common resources, themes, and archived content
+```
 
-#### **Research Brief System Implementation**
-1. **Backend Infrastructure**: Complete JSON-based research brief management
-   - Created hierarchical content structure: `library/research-briefs/`
-   - Implemented searchable index with concept mapping
+### Migration Process
+- Content analysis for educational value
+- Elimination of duplicates and outdated materials
+- Preservation of historical content in archive system
+- Documentation of migration decisions and rationale
+
+---
+
+## Development Principles Established
+
+### Content Quality
+- Scientific accuracy verification for all physics content
+- Progressive difficulty building from basic to advanced concepts
+- Clear learning objectives and measurable goals
+- Real-world applications connecting physics to practical examples
+
+### Technical Standards
+- Clean, readable code with proper commenting
+- Mobile-first responsive design approach
+- WCAG compliance for educational accessibility
+- Performance optimization for classroom internet speeds
+
+### Workflow Management
+- Structured commit messages with detailed explanations
+- Feature branch strategy for major additions
+- Documentation updates for significant changes
+- Regular cleanup and optimization cycles
    - Built Python management tool (`scripts/socrates-brief-manager.py`)
    - Added automatic relationship mapping between briefs, units, and concepts
 

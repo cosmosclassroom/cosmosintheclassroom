@@ -7,19 +7,20 @@
 
 ### Core Systems
 
-- **🌟 Portal** (`/src/portal/`) - Interactive course navigation and content discovery
-- **📚 Library** (`/ref/`) - Comprehensive physics reference materials and resources
-- **🤔 Socrates** (`/socrates/`) - AI-powered Socratic questioning for concept exploration
-- **⚡ Chunker** (`/src/Chunker/`) - Time-based learning management and progress tracking
+- **Portal** (`/src/portal/`) - Interactive course navigation and content discovery
+- **Library** (`/ref/`) - Comprehensive physics reference materials and resources
+- **Socrates** (`/socrates/`) - AI-powered Socratic questioning for concept exploration
+- **Chunker** (`/src/Chunker/`) - Time-based learning management and progress tracking
 
-### Recent Major Update: Universal Header System ✨
+### Current Status: System Integration & Optimization
 
-**January 2025**: Implemented consistent navigation and user tracking across all systems:
+**January 2025**: Major cleanup and optimization phase:
 
-- **Standardized Navigation**: Unified site title, user greeting, and main menu
-- **User Management**: Persistent identity and course/period selection
+- **Root Directory Cleanup**: Systematic organization of JSON, HTML, and CSS files
+- **CSS Dependency Resolution**: Consolidated styling system with proper path management
+- **Git Workflow Implementation**: Feature branch strategy for sustainable development
+- **Universal Header System**: Consistent navigation and user tracking across all systems
 - **Progress Visualization**: Real-time academic year progress (144-chunk system)
-- **Responsive Design**: Mobile-friendly interface across all platforms
 
 ## Academic Structure
 
@@ -33,7 +34,7 @@ physics/
 │   └── resources/   # Labs, references, supplementary materials
 ├── standard/        # Accessible curriculum (10 units)
 │   └── units/       # Parallel structure to honors
-└── shared/          # Common resources and themes
+└── shared/          # Common resources, themes, and archived content
 ```
 
 ### The Chunker System
@@ -53,7 +54,25 @@ physics/
 - **Presentations**: Marp (Markdown → HTML slides)
 - **Math Rendering**: KaTeX for LaTeX equations
 - **User Data**: localStorage with sync capability
+- **Development**: Git feature branch workflow
 - **Site Generation**: Jekyll + GitHub Pages ready
+
+## Development Workflow
+
+### Git Branching Strategy
+```bash
+main                           # Stable, classroom-ready content
+├── feature/ui-*              # Interface experiments and improvements
+├── feature/content-*         # Curriculum development and migration
+├── feature/system-*          # Major system additions and integrations
+└── hotfix/*                  # Quick fixes and cleanup tasks
+```
+
+### Current Development Priorities
+1. **Root Directory Optimization**: Clean separation of concerns
+2. **CSS Dependency Management**: Centralized styling in `src/shared/styles/`
+3. **Standard Physics Migration**: Complete content structure
+4. **System Integration**: Seamless data flow between Portal, Chunker, and Socrates
 
 ## Getting Started
 
@@ -77,144 +96,125 @@ physics/
 
 ## Current Implementation Status
 
-### ✅ Completed Features
-- Universal header system with user tracking
-- Portal course navigation
-- Honors Physics content (Units 1-10)
-- Marp slide generation system
-- Responsive design framework
-- Academic progress visualization
+### ✅ Recently Completed
+- **Universal header system** with user tracking across all platforms
+- **Root directory cleanup** strategy and automation scripts
+- **CSS dependency consolidation** for maintainable styling
+- **Git workflow optimization** with feature branch methodology
+- **Portal course navigation** with honors physics content
+- **144-chunk academic progress** tracking system
 
-### 🔄 In Progress
-- Standard Physics content migration
-- Library system integration
-- Socrates AI integration
-- Cross-system progress synchronization
+### 🔄 Active Development
+- **CSS path resolution** in index.html and system integration
+- **Standard Physics content** migration and organization
+- **Cross-system data synchronization** between Portal and Chunker
+- **Library system integration** with contextual resource access
 
-### 📋 Planned Features
-- Backend user synchronization
-- Role-based content access
-- Advanced analytics dashboard
-- Mobile app companion
-
-## Contributing
-
-### Content Guidelines
-- **Scientific Accuracy**: All physics content must be scientifically correct
-- **Progressive Difficulty**: Build concepts logically from basic to advanced
-- **Clear Objectives**: Include measurable learning goals
-- **Real-World Applications**: Connect physics to practical examples
-
-### Technical Standards
-- **Clean Code**: Readable variable names and commenting
-- **Responsive Design**: Mobile-first approach
-- **Accessibility**: WCAG compliance for educational content
-- **Performance**: Optimize for classroom internet speeds
+### 📋 Upcoming Features
+- **Socrates AI integration** with curriculum-aware questioning
+- **Advanced progress analytics** with learning pattern recognition
+- **Mobile-optimized interfaces** for all core systems
+- **Backend synchronization** for multi-device user experience
 
 ## File Structure Overview
 
 cosmosintheclassroom/
+├── data/                          # Configuration and user data (relocated from root)
+├── config/                        # System configuration files
 ├── src/
 │   ├── portal/                    # Central hub and primary user interface
-│   │   ├── components/            # Reusable UI elements → consumed by all systems
-│   │   ├── courses/               # Course configuration → feeds content to Chunker
-│   │   ├── navigation/            # Routes users between systems with context preservation
-│   │   ├── user/                  # Identity and authentication → shared across systems
-│   │   └── views/                 # Integrates content from all systems into unified experience
 │   ├── Chunker/                   # Temporal organization of educational content
-│   │   ├── calendar/              # Provides scheduling constraints to all systems
-│   │   ├── progress/              # Feeds Portal for visualization and Socrates for personalization
-│   │   ├── reporting/             # Aggregates data from all systems for analytics
-│   │   └── scheduler/             # 144-chunk sequencing logic → referenced by all systems
 │   └── shared/
-│       ├── components/            # Universal header system → maintains context across boundaries
-│       ├── styles/                # Visual consistency layer across all interfaces
-│       ├── utils/                 # Common functions for data transformation and validation
-│       └── templates/             # Structural foundation for all user-facing views
+│       ├── components/            # Universal header and reusable UI elements
+│       ├── styles/                # Consolidated CSS from root cleanup
+│       ├── utils/                 # Common functions and utilities
+│       └── templates/             # Structural foundation for all views
 ├── physics/                       # Content repository accessed by all systems
-│   ├── honors/                    # Selected and sequenced by Chunker, delivered via Portal
-│   ├── standard/                  # Alternative content path managed by same systems
-│   └── shared/                    # Cross-referenced by both tracks and all systems
-├── ref/                           # Library system - Knowledge base extending core curriculum
-│   ├── archive/                   # Contextual information → feeds Socrates responses
-│   ├── teaching-guides/           # Referenced by Portal based on user role
-│   ├── student-guides/            # Surfaced contextually based on Chunker progress
-│   ├── references/                # Verification sources for Socrates and content accuracy
-│   └── media/                     # Rich content shared across all interfaces
-├── socrates/                      # AI learning companion integrated throughout platform
-│   ├── engine/                    # Receives context from Chunker and Portal → generates questions
-│   ├── models/                    # Dynamically adjusted based on user progress data
-│   ├── interfaces/                # Embedded in Portal views with consistent styling
-│   ├── feedback/                  # Reports comprehension metrics → updates Chunker progress
-│   └── content/                   # Aligned with physics/ structure for seamless integration
-├── data/                          # Central data layer connecting all systems
-│   ├── user/                      # Synchronized settings affecting all experiences
-│   ├── system/                    # Global parameters governing all subsystems
-│   ├── courses/                   # Structural information used by Portal, Chunker, and Socrates
-│   └── sync/                      # Ensures consistent state across system boundaries
-└── docs/                          # Project documentation and system understanding
-    ├── api/                       # Interface specifications for system integration
-    ├── development/               # Extension patterns for each system
-    ├── implementation/            # Deployment and configuration instructions
-    └── architecture/              # Formal documentation of system relationships
+│   ├── honors/                    # Advanced curriculum with complete unit structure
+│   ├── standard/                  # Accessible curriculum (migration in progress)
+│   └── shared/
+│       ├── themes/                # Marp CSS themes for presentations
+│       └── archive/               # Historical content and migration artifacts
+├── ref/                           # Library system extending core curriculum
+├── socrates/                      # AI learning companion (integration pending)
+└── docs/                          # Project documentation and system architecture
+
+## System Optimization & Cleanup
+
+### Recent Cleanup Achievements
+- **Root directory organization**: JSON, HTML, and CSS files properly relocated
+- **CSS dependency mapping**: Centralized styling with clear path management
+- **Archive system**: Historical content preserved without cluttering active development
+- **Development workflow**: Feature branch strategy preventing root directory pollution
+
+### Cleanup Automation
+The `build-restructure.bat` script provides:
+- Systematic file relocation with safety checks
+- CSS dependency analysis and path documentation
+- Git status integration for tracking changes
+- Guided next steps for manual review
+
+### Quality Assurance Process
+1. **Automated cleanup** with `build-restructure.bat`
+2. **CSS path verification** in all HTML files
+3. **System functionality testing** across Portal, Chunker, and shared components
+4. **Git branch management** for safe experimentation and rollback
 
 ## Information Flow Between Systems
 
 - **Portal → Chunker**: User identity, course selection, and navigation context
-- **Chunker → Portal**: Progress data, current position in curriculum, next content
-- **Portal → Socrates**: Current lesson context, user history, and learning objectives
-- **Socrates → Chunker**: Comprehension metrics and knowledge assessment results
-- **Library → All Systems**: Reference materials, media assets, and documentation
-- **All Systems → Universal Header**: Current user context, progress, and system state
-
-## Project Cleanup Guidelines
-
-### Common Locations for Extraneous Files
-- **Root directory**: Temporary files, old config files, test files
-- **physics/shared/archive/**: Historical content that may need final cleanup
-- **Backup directories**: Any `*_backup/`, `*_old/`, or `temp/` folders
-- **Generated files**: Build artifacts, temporary HTML files, cached content
-- **IDE files**: `.vscode/`, editor temporary files, swap files
-
-### Cleanup Commands
-```bash
-# Find large files that might be artifacts
-find . -type f -size +10M -not -path "./.git/*"
-
-# Find temporary or backup files
-find . -name "*.tmp" -o -name "*.bak" -o -name "*~" -o -name "*.swp"
-
-# Find empty directories
-find . -type d -empty -not -path "./.git/*"
-
-# Find duplicate files by name pattern
-find . -name "*copy*" -o -name "*backup*" -o -name "*old*"
-```
+- **Chunker → Portal**: Progress data, curriculum position, and next content recommendations
+- **Portal → Library**: Resource requests based on current lesson context
+- **Shared Styles → All Systems**: Consistent visual experience with centralized CSS management
+- **Universal Header → All Systems**: User context, progress visualization, and navigation state
 
 ## Support & Documentation
 
-- **Implementation Guide**: `/src/shared/components/README.md`
-- **API Documentation**: Coming soon
+- **Development Guide**: `build-restructure.bat` and workflow documentation
+- **System Architecture**: `/docs/architecture/` (planned)
+- **API Documentation**: Cross-system integration specifications (planned)
 - **Teacher Resources**: `/ref/teaching-guides/`
 - **Student Help**: `/ref/student-guides/`
 
-## License & Usage
+## Next Steps & Roadmap
 
-This educational platform is designed for high school physics education. Please ensure proper attribution when using or adapting content.
+### Immediate Priorities (Next 2 weeks)
+1. **Complete CSS path resolution** in index.html
+2. **Test all system integrations** after cleanup
+3. **Finalize Standard Physics** content migration
+4. **Document system dependencies** and integration points
+
+### Short-term Goals (Next month)
+1. **Socrates AI integration** with Portal context awareness
+2. **Mobile interface optimization** across all systems
+3. **Advanced progress analytics** with learning pattern insights
+4. **Cross-device synchronization** for seamless user experience
+
+### Long-term Vision (Next quarter)
+1. **Complete curriculum coverage** for both Honors and Standard tracks
+2. **Adaptive learning pathways** based on student progress data
+3. **Teacher dashboard** with class-wide analytics and insights
+4. **Open-source community** for physics education collaboration
 
 ---
 
 **Last Updated**: January 27, 2025  
-**Version**: 2.0.0 (Universal Header Implementation)  
+**Version**: 2.1.0 (System Optimization & Cleanup)  
 **Maintained by**: Cosmos in the Classroom Development Team
 
 ## Recent Accomplishments
-- ✅ **Organized 130+ physics files** into logical unit structure
-- ✅ **Archived Q4 2025 experiments** while preserving useful content  
-- ✅ **Centralized slide management** with consistent theming
-- ✅ **Created migration tools** for future reorganizations
-- ✅ **Established naming conventions** for maintainable content
+- ✅ **Root directory optimization** with systematic file organization
+- ✅ **CSS dependency resolution** for maintainable styling architecture
+- ✅ **Git workflow implementation** with feature branch development strategy
+- ✅ **Universal header system** providing consistent user experience
+- ✅ **Progress tracking integration** with 144-chunk academic calendar
+- ✅ **Cleanup automation** with comprehensive restructure tooling
 
+## Documentation & Change Log
+- **Current session**: Root cleanup, CSS optimization, workflow establishment
+- **Previous session**: Universal header implementation and user tracking
+- **Ongoing**: Standard Physics migration and cross-system integration
+- **Migration history**: Preserved in `physics/shared/archive/` with full documentation
 ## Documentation
 - See `MINUTES.md` for ongoing project updates and decisions
 - Course-specific documentation in each `physics/*/` directory
