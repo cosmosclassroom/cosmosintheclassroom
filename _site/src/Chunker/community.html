@@ -42,35 +42,46 @@
     </style>
 </head>
 <body class="min-h-screen">
-    <!-- Hero Section -->
-    <header class="hero-gradient text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">BHS Community Hub</h1>
-            <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto">
-                Tools and resources for Branford High School educators
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-8">
-                <button class="bg-white bg-opacity-90 text-amber-800 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    Explore Today's Schedule
-                </button>
-                <a href="teacher-dashboard.html" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-20 transition-all flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                    </svg>
-                    Teacher Dashboard
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Universal Header and Personalizer -->
+    <div id="universalHeader"></div>
+    <div id="personalizer"></div>
+    <script>
+        // Load universal header
+        async function loadUniversalHeader() {
+            try {
+                const response = await fetch('/src/shared/components/universal-header.html');
+                if (response.ok) {
+                    document.getElementById('universalHeader').innerHTML = await response.text();
+                }
+            } catch (error) {
+                console.error('Failed to load universal header:', error);
+            }
+        }
+        // Load personalizer
+        async function loadPersonalizer() {
+            try {
+                const response = await fetch('/src/shared/components/cosmos-personalization-manager.html');
+                if (response.ok) {
+                    document.getElementById('personalizer').innerHTML = await response.text();
+                }
+            } catch (error) {
+                console.error('Failed to load personalizer:', error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUniversalHeader();
+            loadPersonalizer();
+        });
+    </script>
 
     <!-- School Year Progress Header Bar -->
     <div class="w-full bg-white shadow-sm border-b" style="border-color: #e8dcc0;">
-        <div class="max-w-7xl mx-auto px-6 py-3">
-            <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center justify-center mb-2">
+                <button id="prev-day-header" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-lg mr-4" aria-label="Previous Day">&#8592;</button>
+                <span id="prominent-date" class="text-2xl font-bold text-blue-800 mx-4">Loading...</span>
+                <button id="next-day-header" class="px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-lg ml-4" aria-label="Next Day">&#8594;</button>
+            </div>
+            <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
                     <span class="text-sm font-medium text-gray-700">2025-2026 Academic Year</span>
                     <span id="year-progress-percent" class="text-xs text-gray-500">Loading...</span>
@@ -121,117 +132,17 @@
                         <div class="rotation-badge day-a">A</div>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Meeting Periods:</span>
-                            <span class="font-semibold">1, 2, 3, 4, 5, 6</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Dropped Periods:</span>
-                            <span class="font-semibold text-red-600">7, 8</span>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-sm text-gray-500">Wednesday, August 21, 2025</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Current Period Card -->
-                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">Current Period</h3>
-                        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-                            Period 3
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Time:</span>
-                            <span class="font-semibold">10:05 - 11:05 AM</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-600">Next Period:</span>
-                            <span class="font-semibold">Period 4 (11:10 AM)</span>
-                        </div>
-                        <div class="mt-4">
-                            <div class="flex justify-between text-sm text-gray-500 mb-1">
-                                <span>Period Progress</span>
-                                <span>25 min remaining</span>
+                        <section class="py-16">
+                            <div class="container mx-auto px-4">
+                                <div class="flex flex-col items-center justify-center">
+                                    <span id="center-date" class="text-4xl font-extrabold text-blue-900 mb-4">Loading...</span>
+                                    <div class="flex items-center space-x-6">
+                                        <button id="prev-day-center" class="px-4 py-2 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold text-xl" aria-label="Previous Day">&#8592; Previous</button>
+                                        <button id="next-day-center" class="px-4 py-2 rounded-full bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold text-xl" aria-label="Next Day">Next &#8594;</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2">
-                                <div class="bg-blue-600 h-2 rounded-full" style="width: 58%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- This Week's Rotation Preview -->
-                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 id="week-title" class="text-xl font-bold text-gray-800">This Week's Rotation</h3>
-                        <button id="week-toggle" class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold transition-colors">
-                            Next Week →
-                        </button>
-                    </div>
-                    <div id="weekly-rotation-container" class="space-y-3">
-                        <!-- Content will be populated by JavaScript -->
-                    </div>
-                </div>
-
-                <!-- Weekly Inspiration Card -->
-                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Weekly Inspiration</h3>
-                    <div class="space-y-4">
-                        <div class="bg-amber-50 rounded-lg p-4 border-l-4 border-amber-400">
-                            <div id="weekly-quote" class="text-lg italic text-gray-700 mb-2 leading-relaxed">
-                                "Loading weekly inspiration..."
-                            </div>
-                            <div id="quote-author" class="text-sm font-medium text-amber-700">
-                                
-                            </div>
-                        </div>
-                        <div class="flex justify-between text-sm text-gray-500">
-                            <span>Week <span id="current-week">1</span> of 36</span>
-                            <span id="quote-theme" class="italic">Theme: Beginning</span>
-                        </div>
-                        <button id="next-quote" class="w-full text-sm bg-amber-100 hover:bg-amber-200 text-amber-800 py-2 px-4 rounded-lg transition-colors">
-                            Preview Next Week's Quote
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Quick Actions Card -->
-                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Quick Actions</h3>
-                    <div class="space-y-3">
-                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
-                            View Full Calendar
-                        </button>
-                        <button class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
-                            Check Next Meeting
-                        </button>
-                        <button class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
-                            Emergency Sub Plans
-                        </button>
-                        <button class="w-full border-2 border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                            Report Issue
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Upcoming Events Card -->
-                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Upcoming Events</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
-                            <div>
-                                <p class="font-semibold text-sm">Unit 1 Assessment</p>
-                                <p class="text-xs text-gray-500">Friday, Aug 30</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-                            <div>
+                        </section>
                                 <p class="font-semibold text-sm">Labor Day (No School)</p>
                                 <p class="text-xs text-gray-500">Monday, Sep 2</p>
                             </div>
@@ -782,7 +693,8 @@
             
             // Enhanced chunk tank visualization
             const chunkGrid = document.getElementById('chunk-grid');
-            if (chunkGrid && chunkGrid.children.length === 0) {
+            if (chunkGrid) {
+                chunkGrid.innerHTML = '';
                 const numChunks = 36; // 36 chunks across the year (about 5 school days per chunk)
                 const filledChunks = Math.floor((elapsedDays / totalDays) * numChunks);
                 for (let i = 0; i < numChunks; i++) {
@@ -802,7 +714,8 @@
 
             // Blok widget system (e.g., 9 Bloks for 4-week periods)
             const blokGrid = document.getElementById('blok-grid');
-            if (blokGrid && blokGrid.children.length === 0) {
+            if (blokGrid) {
+                blokGrid.innerHTML = '';
                 const numBloks = 9;
                 const blokLength = numChunks / numBloks;
                 const filledBloks = Math.floor(filledChunks / blokLength);
@@ -957,17 +870,17 @@
         function getWeekData(weekOffset = 0) {
             const today = new Date();
             const startOfWeek = new Date(today);
-            startOfWeek.setDate(today.getDate() - today.getDay() + 1 + (weekOffset * 7)); // Monday
-            
-            const weekDays = [];
-            const rotationDays = ['A', 'B', 'C', 'D'];
-            
-            for (let i = 0; i < 5; i++) { // Monday to Friday
-                const currentDay = new Date(startOfWeek);
-                currentDay.setDate(startOfWeek.getDate() + i);
-                
-                // Calculate rotation day for this date
-                const startDate = new Date('2025-08-28'); // First day of school (Day A)
+            // Update prominent date displays
+            const prominentDate = document.getElementById('prominent-date');
+            const centerDate = document.getElementById('center-date');
+            const formattedDate = displayDate.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            if (prominentDate) prominentDate.textContent = formattedDate;
+            if (centerDate) centerDate.textContent = formattedDate;
                 const diffTime = Math.abs(currentDay - startDate);
                 const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
                 const schoolDays = Math.floor(diffDays * (5/7)); // Rough estimate
@@ -1262,16 +1175,31 @@
 
         // Button interactions
         document.addEventListener('DOMContentLoaded', function() {
+            // Add event listeners for new date navigation buttons
+            function changeDay(offset) {
+                selectedDashboardDate.setDate(selectedDashboardDate.getDate() + offset);
+                isShowingCurrentDay = false;
+                updateCurrentTime();
+                addTodayButton();
+            }
+            const prevDayHeader = document.getElementById('prev-day-header');
+            const nextDayHeader = document.getElementById('next-day-header');
+            const prevDayCenter = document.getElementById('prev-day-center');
+            const nextDayCenter = document.getElementById('next-day-center');
+            if (prevDayHeader) prevDayHeader.addEventListener('click', () => changeDay(-1));
+            if (nextDayHeader) nextDayHeader.addEventListener('click', () => changeDay(1));
+            if (prevDayCenter) prevDayCenter.addEventListener('click', () => changeDay(-1));
+            if (nextDayCenter) nextDayCenter.addEventListener('click', () => changeDay(1));
             updateCurrentTime();
             updateWeeklyRotation();
             updateYearProgress();
             updateWeeklyQuote();
             
-            // Update every 30 seconds for real-time period tracking
+            // Update every 60 seconds for real-time period tracking
             setInterval(() => {
                 updateCurrentTime();
                 updateYearProgress();
-            }, 30000);
+            }, 60000);
 
             // Week toggle functionality
             document.getElementById('week-toggle').addEventListener('click', function() {
@@ -1286,103 +1214,7 @@
 
             // Quick Actions button handlers
             const quickActionButtons = document.querySelectorAll('.bg-blue-600, .bg-green-600, .bg-purple-600');
-            quickActionButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const action = this.textContent.trim();
-                    const currentPeriod = getCurrentPeriod();
-                    const rotationDay = getCurrentRotationDay();
-                    
-                    switch(action) {
-                        case 'View Full Calendar':
-                            document.getElementById('calendar-modal').classList.remove('hidden');
-                            renderCalendar();
-                            break;
-                        case 'Check Next Meeting':
-                            if (currentPeriod.nextPeriod) {
-                                const nextMeets = rotationSchedule[rotationDay].meeting.includes(currentPeriod.nextPeriod.period);
-                                alert(`Next Period: ${currentPeriod.nextPeriod.period} at ${currentPeriod.nextPeriod.start}\nStatus: ${nextMeets ? 'MEETS' : 'DROPPED'} on Day ${rotationDay}`);
-                            } else {
-                                alert('No more periods today');
-                            }
-                            break;
-                        case 'Emergency Sub Plans':
-                            alert(`Current Period: ${currentPeriod.period || 'None'}\nStatus: ${currentPeriod.status}\nEmergency plans would be displayed here`);
-                            break;
-                        default:
-                            alert(`${action} functionality coming soon!`);
-                    }
-                });
-            });
-
-            // Hero button functionality
-            document.querySelector('.bg-white.bg-opacity-90').addEventListener('click', function() {
-                const rotationDay = getCurrentRotationDay(selectedDashboardDate);
-                const currentPeriod = getCurrentPeriod();
-                const schedule = rotationSchedule[rotationDay];
-                
-                let message = `${isShowingCurrentDay ? 'TODAY' : 'SELECTED DAY'}: Day ${rotationDay}\n\n`;
-                message += `Meeting Periods: ${schedule.meeting.join(', ')}\n`;
-                message += `Dropped Periods: ${schedule.dropped.join(', ')}\n\n`;
-                
-                if (isShowingCurrentDay && currentPeriod.period) {
-                    message += `Current Period: ${currentPeriod.period} (${currentPeriod.status})\n`;
-                    message += `Progress: ${currentPeriod.progress}% complete\n`;
-                    message += `Time Remaining: ${currentPeriod.remaining} minutes`;
-                } else if (isShowingCurrentDay) {
-                    message += `Current Status: ${currentPeriod.status}`;
-                    if (currentPeriod.nextPeriod) {
-                        message += `\nNext Period: ${currentPeriod.nextPeriod.period} at ${currentPeriod.nextPeriod.start}`;
-                    }
-                } else {
-                    message += `Date: ${selectedDashboardDate.toLocaleDateString('en-US', { 
-                        weekday: 'long', 
-                        month: 'long', 
-                        day: 'numeric' 
-                    })}`;
-                }
-                
-                alert(message);
-            });
-
-            // Calendar modal controls
-            document.getElementById('calendar-close-btn').addEventListener('click', function() {
-                document.getElementById('calendar-modal').classList.add('hidden');
-            });
-
-            document.getElementById('day-detail-close-btn').addEventListener('click', function() {
-                document.getElementById('day-detail-modal').classList.add('hidden');
-            });
-
-            // Day navigation arrows
-            document.getElementById('prev-day-btn').addEventListener('click', function() {
-                navigateDay(-1);
-            });
-
-            document.getElementById('next-day-btn').addEventListener('click', function() {
-                navigateDay(1);
-            });
-
-            document.getElementById('prev-month').addEventListener('click', function() {
-                currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
-                renderCalendar();
-            });
-
-            document.getElementById('next-month').addEventListener('click', function() {
-                currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
-                renderCalendar();
-            });
-
-            document.getElementById('month-selector').addEventListener('change', function() {
-                const [year, month] = this.value.split('-').map(Number);
-                currentCalendarDate = new Date(year, month, 1);
-                renderCalendar();
-            });
-
-            // Close modals when clicking outside
-            document.getElementById('calendar-modal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.add('hidden');
-                }
+            // ...existing code for new date navigation and UI...
             });
 
             document.getElementById('day-detail-modal').addEventListener('click', function(e) {
