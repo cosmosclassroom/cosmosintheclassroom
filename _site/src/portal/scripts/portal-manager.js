@@ -2,6 +2,33 @@
 // Frontend JavaScript for managing course portal functionality
 
 /**
+ * Dynamically discover and load course configurations
+ * @returns {Promise<Array>} Array of course objects
+ */
+async function discoverCourses() {
+    const courseDirectories = ['hphysics', 'sphysics', 'natdis'];
+    const courses = [];
+    
+    for (const courseDir of courseDirectories) {
+        try {
+            const response = await fetch(`./${courseDir}/course.json`);
+            if (response.ok) {
+                const courseData = await response.json();
+                courses.push({
+                    id: courseDir,
+                    ...courseData,
+                    portalUrl: `./${courseDir}/portal.html`
+                });
+            }
+        } catch (error) {
+            console.warn(`Failed to load course ${courseDir}:`, error);
+        }
+    }
+    
+    return courses;
+}
+
+/**
  * Loads course data from a JSON file and renders it in the portal
  * @param {string} courseJsonPath - Path to the course JSON file
  * @param {HTMLElement} container - DOM element to render the course into
@@ -241,6 +268,96 @@ function initializePortal() {
     }
 }
 
+/**
+ * Generate course card HTML from course data
+ * @param {Object} course - Course data object
+ * @returns {string} HTML string for course card
+ */
+function generateCourseCard(course) {
+    const progress = getProgress ? getProgress(course.id) : 0;
+    const completedUnits = getCompletedUnits ? getCompletedUnits(course.id) : 0;
+    const totalUnits = course.units ? course.units.length : (getTotalUnits ? getTotalUnits(course.id) : 0);
+    
+    // Determine theme class based on course ID
+    let themeClass = 'standard';
+    if (course.id === 'hphysics') themeClass = 'honors';
+    else if (course.id === 'natdis') themeClass = 'disasters';
+    
+    // Determine course level display
+    const courseLevel = course.id === 'hphysics' ? 'Honors' : 
+                       course.id === 'natdis' ? 'Elective' : 'Standard';
+    
+    return `
+        <div class="course-card ${themeClass}" data-course="${course.id}">
+            <div class="course-header">
+                <div>
+                    <h3 class="course-title">${course.title || course.curriculumTitle || course.courseName}</h3>
+                    <div class="course-level ${themeClass}-theme">${courseLevel}</div>
+                </div>
+            </div>
+            <div class="course-description">
+                ${course.description || course.courseDescription || 'Course description not available.'}
+            </div>
+            <div class="course-progress">
+                <div class="progress-label">
+                    <span>Progress</span>
+                    <span>${completedUnits}/${totalUnits} units</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: ${progress}%"></div>
+                </div>
+            </div>
+            <div class="course-actions">
+                <button onclick="window.location.href='${course.portalUrl}'" class="btn-primary">
+                    Enter Course
+                </button>
+                <button onclick="viewCourseInfo('${course.id}')" class="btn-secondary">
+                    Course Info
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Load and render all courses dynamically
+ * @param {HTMLElement} container - Container to render courses into
+ */
+async function loadAllCourses(container) {
+    try {
+        container.innerHTML = '<div class="loading">Loading courses...</div>';
+        
+        const courses = await discoverCourses();
+        
+        if (courses.length === 0) {
+            container.innerHTML = `
+                <div class="error-message">
+                    <h3>No Courses Found</h3>
+                    <p>No course configurations could be loaded.</p>
+                </div>
+            `;
+            return;
+        }
+        
+        container.innerHTML = '';
+        
+        courses.forEach(course => {
+            const courseCard = document.createElement('div');
+            courseCard.innerHTML = generateCourseCard(course);
+            container.appendChild(courseCard.firstElementChild);
+        });
+        
+    } catch (error) {
+        console.error('Error loading courses:', error);
+        container.innerHTML = `
+            <div class="error-message">
+                <h3>Error Loading Courses</h3>
+                <p>${error.message}</p>
+            </div>
+        `;
+    }
+}
+
 // Auto-initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePortal);
@@ -253,5 +370,8 @@ window.PortalManager = {
     loadCourse,
     renderCourse,
     createChapterContent,
-    initializePortal
+    initializePortal,
+    discoverCourses,
+    generateCourseCard,
+    loadAllCourses
 };
