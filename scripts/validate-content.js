@@ -137,20 +137,48 @@ class ContentValidator {
   checkMissingContent() {
     console.log('📋 Checking for missing content...');
     
-    // Check for incomplete units (Units 3 and 5 mentioned in docs)
-    const incompleteUnits = ['03_forces', '05_waves'];
+    // Check for standard 10-unit physics curriculum structure
+    const expectedUnits = [
+      '01_principles',
+      '02_kinematics', 
+      '03_forces',
+      '04_dynamics',
+      '05_energy',
+      '06_circular_gravity',
+      '07_momentum',
+      '08_rotation',
+      '09_oscillations',
+      '10_electromagnetism'
+    ];
     
-    incompleteUnits.forEach(unit => {
-      const honorsPath = path.join(this.physicsDir, 'honors', 'units', unit);
-      const standardPath = path.join(this.physicsDir, 'standard', 'units', unit);
-      
-      if (!fs.existsSync(honorsPath)) {
-        this.warnings.push(`Incomplete content: Missing honors/${unit}`);
-      }
-      
-      if (!fs.existsSync(standardPath)) {
-        this.warnings.push(`Incomplete content: Missing standard/${unit}`);
-      }
+    const courses = ['honors', 'standard'];
+    
+    courses.forEach(course => {
+      expectedUnits.forEach(unit => {
+        const unitPath = path.join(this.physicsDir, course, 'units', unit);
+        
+        if (!fs.existsSync(unitPath)) {
+          this.warnings.push(`Missing unit: ${course}/${unit}`);
+        } else {
+          // Check if unit has basic structure
+          const requiredFiles = ['README.md'];
+          const requiredDirs = ['lessons', 'labs', 'problemsets'];
+          
+          requiredFiles.forEach(file => {
+            const filePath = path.join(unitPath, file);
+            if (!fs.existsSync(filePath)) {
+              this.warnings.push(`Missing ${file} in ${course}/${unit}`);
+            }
+          });
+          
+          requiredDirs.forEach(dir => {
+            const dirPath = path.join(unitPath, dir);
+            if (!fs.existsSync(dirPath)) {
+              this.warnings.push(`Missing ${dir} directory in ${course}/${unit}`);
+            }
+          });
+        }
+      });
     });
   }
 

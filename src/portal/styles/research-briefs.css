@@ -1,0 +1,455 @@
+/* Research Brief Styles */
+
+/* Brief Cards */
+.research-brief-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid #2c3e50;
+}
+
+.research-brief-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.brief-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.brief-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #2c3e50;
+}
+
+.brief-new-badge {
+    background: #e74c3c;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.level-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.level-badge.exploratory { background: #d4edda; color: #155724; }
+.level-badge.standard { background: #cce5ff; color: #004085; }
+.level-badge.honors { background: #fff3cd; color: #856404; }
+.level-badge.advanced { background: #f8d7da; color: #721c24; }
+
+.brief-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.brief-summary {
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.brief-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.brief-concepts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.concept-tag {
+    background: #f8f9fa;
+    color: #495057;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+}
+
+.brief-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-read-brief {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-read-brief:hover {
+    background: #34495e;
+}
+
+/* Brief Modal */
+.brief-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.brief-modal-content {
+    background: white;
+    border-radius: 16px;
+    max-width: 800px;
+    max-height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.brief-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+}
+
+.brief-modal-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.brief-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.brief-modal-close:hover {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.brief-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    max-height: calc(90vh - 4rem);
+}
+
+/* Brief Content Sections */
+.brief-content h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.75rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.brief-content h3:first-child {
+    margin-top: 0;
+}
+
+.brief-content p {
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+.brief-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.brief-content li {
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+/* Socratic Questions */
+.socratic-questions-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.socratic-level {
+    margin-bottom: 1rem;
+}
+
+.socratic-toggle {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+
+.socratic-toggle:hover {
+    background: #34495e;
+}
+
+.socratic-questions {
+    background: white;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50;
+}
+
+.socratic-questions ul {
+    margin: 0;
+}
+
+.socratic-questions li {
+    font-style: italic;
+    color: #495057;
+}
+
+/* Related Links */
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.related-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.unit-link {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.assessment-link {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+/* Research Brief Sections in Portal */
+.research-briefs-section {
+    margin: 2rem 0;
+}
+
+.research-briefs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.research-briefs-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.research-briefs-filters {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    background: white;
+    color: #495057;
+}
+
+.research-briefs-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .brief-modal-content {
+        margin: 0.5rem;
+        max-height: 95vh;
+    }
+
+    .brief-modal-header {
+        padding: 1rem;
+    }
+
+    .brief-modal-body {
+        padding: 1rem;
+        max-height: calc(95vh - 3rem);
+    }
+
+    .brief-metadata {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .research-briefs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-briefs-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .research-briefs-filters {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Loading States */
+.briefs-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.briefs-empty {
+    text-align: center;
+    padding: 3rem;
+    color: #6c757d;
+}
+
+.briefs-empty h3 {
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation for new content */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.research-brief-card {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Search and Filter Styling */
+.briefs-search-container {
+    margin-bottom: 1.5rem;
+}
+
+.briefs-search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+}
+
+.briefs-search-input:focus {
+    outline: none;
+    border-color: #2c3e50;
+}
+
+.briefs-filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 0.5rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: white;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.filter-tab.active {
+    background: #2c3e50;
+    border-color: #2c3e50;
+    color: white;
+}
+
+.filter-tab:hover:not(.active) {
+    border-color: #2c3e50;
+    color: #2c3e50;
+}
