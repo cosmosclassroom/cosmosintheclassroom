@@ -1,52 +1,56 @@
 # Cosmos in the Classroom
 
-An educational platform by Jonathan Corbett featuring comprehensive physics curricula and interactive learning tools.
+Educational physics platform by Jonathan Corbett - Structured curricula with AI-enhanced content extraction.
 
-## 🎯 Mission
-Delivering structured, engaging physics education through modern web technologies, with courses designed for both Honors and Standard level high school students.
+## 🎯 **Mission**
+Modern physics education for high school students (Honors & Standard levels) using web technologies.
 
-## 🏗️ Recent Major Update (August 2025)
-**Physics Content Reorganization Complete** - The scattered Q4 2025 experimental content has been consolidated into a clean, maintainable structure.
+## 📚 **Courses**
+- **Honors Physics**: 10-unit advanced curriculum (calculus-based)
+- **Standard Physics**: Accessible curriculum with OpenStax integration
+- **Natural Disasters**: 4-unit specialized course
 
-## 📚 Course Offerings
-
-### Physics Courses
-- **Honors Physics** - Advanced curriculum with 10 comprehensive units
-- **Standard Physics** - Accessible physics education with OpenStax integration
-- **Natural Disasters** - 4-unit course covering earthquakes, hurricanes, wildfires, and landslides
-
-### 🔬 Physics Curriculum Structure
+## 🏗️ **Structure** (Post-August 2025 Reorganization)
 ```
 physics/
-├── honors/          # Honors Physics Course
-│   ├── units/       # 10 units: Principles → Optics
-│   ├── slides/      # Marp presentation files  
-│   ├── assessments/ # Tests, quizzes, problem sets
-│   └── resources/   # Labs, references, tools
-├── standard/        # Standard Physics Course
-│   └── units/       # Parallel structure to honors
-└── shared/          # Common resources
-    ├── themes/      # Marp slide themes
-    └── archive/     # Historical content & tools
+├── honors/units/       # 10 units: Principles → Optics
+├── standard/units/     # Parallel accessible curriculum  
+└── shared/themes/      # Marp slide themes
+
+src/
+├── Chunker/           # AI curriculum extraction system
+├── portal/            # Course navigation interface
+└── .ai/               # AI development resources
+
+.ai/
+├── development-checklist.md  # Workflow standards
+├── context.md               # Project state tracking
+└── prompts/                 # AI interaction templates
 ```
 
-## 🛠️ Technology Stack
+## 🛠️ **Technology**
+- **Content**: Markdown + frontmatter, Marp slides, KaTeX math
+- **Build**: Jekyll + TailwindCSS + npm
+- **AI Integration**: Chunker system with cognitive load optimization
+- **Portal**: Interactive navigation and assessment tools
 
-### Content Creation & Delivery
-- **Slides**: [Marp](https://marp.app/) Markdown → [Reveal.js](https://revealjs.com/) presentations
-- **Content**: Markdown files with [Marked.js](https://marked.js.org/) rendering
-- **Math**: LaTeX support via KaTeX
-- **Styling**: TailwindCSS + custom themes
-- **Portal System**: Interactive course navigation
+## 🤖 **AI Features**
+- **Curriculum Extraction**: Document → structured JSON conversion
+- **Quality Assurance**: Educational logic validation and review
+- **Cognitive Load**: 2-4 learning units per day optimization
+- **Token Efficiency**: 80%+ reduction in prompt costs
 
-### Development Tools
-- **Build System**: Jekyll + npm
-- **Version Control**: Git with structured commit history
-- **Migration Tools**: Python scripts for content organization
+## 🚀 **Quick Start**
+- **Students**: `src/portal/index.html` → select course → navigate units
+- **Educators**: Browse `physics/honors/` or `physics/standard/` for content
+- **Developers**: Follow `.ai/development-checklist.md` for standards
 
-## 📁 Key Directory Structure
-- `physics/`: **NEW** - Organized physics curriculum (August 2025)
-- `src/portal/`: Course portal and navigation system
+## � **Recent Updates**
+- ✅ Organized 130+ physics files into logical structure
+- ✅ AI-powered curriculum extraction system
+- ✅ Token-optimized prompt templates (80% efficiency gain)
+- ✅ Community hub with 36 weekly inspirational quotes
+- `.ai/`: AI assistant development resources and documentation
 - `slides/`: Legacy slides (being migrated to `physics/*/slides/`)
 - `assets/`: Shared CSS, JavaScript, and media files
 - `_site/`: Jekyll build output
@@ -64,9 +68,25 @@ physics/
 3. **Assessments**: Find quizzes and tests in `physics/*/assessments/`
 
 ### For Developers
-1. **Migration Tools**: Check `physics/shared/archive/migration-tools/`
-2. **Build**: Use Jekyll for site generation
-3. **Slides**: Use the Marp CLI for slide compilation
+1. **AI Development**: Follow `.ai/development-checklist.md` for workflow standards
+2. **Migration Tools**: Check `physics/shared/archive/migration-tools/`
+3. **Build**: Use Jekyll for site generation
+4. **Slides**: Use the Marp CLI for slide compilation
+5. **AI Integration**: See `.ai/context.md` for project state and guidelines
+
+## 🤖 AI-Enhanced Development
+
+### AI Assistant Resources
+- **Development Standards**: `.ai/development-checklist.md` - Quality gates and workflow
+- **Project Context**: `.ai/context.md` - Current state and architectural decisions  
+- **Prompt Templates**: `.ai/prompts/templates.md` - Standardized AI interactions
+- **Chunker System**: `src/Chunker/` - AI curriculum extraction and optimization
+
+### AI Integration Points
+- **Curriculum Extraction**: Automated content structuring from educational materials
+- **Quality Assurance**: AI-assisted content validation and pedagogical review
+- **Development Workflow**: Context-aware code review and optimization suggestions
+- **Educational Logic**: Cognitive load optimization and prerequisite flow validation
 
 ## 📈 Recent Accomplishments
 - ✅ **Organized 130+ physics files** into logical unit structure

@@ -1,0 +1,112 @@
+{
+  "courseId": "honors-physics",
+  "name": "Honors Physics",
+  "description": "Calculus-based physics with mathematical modeling emphasis",
+  "level": "honors",
+  "subject": "physics",
+  "availableStructures": [
+    {
+      "structureId": "matter-energy-force",
+      "name": "Matter-Energy-Force Investigation",
+      "enabled": true,
+      "customizations": {
+        "voiceOverride": {
+          "primary": "feynman",
+          "secondary": ["socrates"],
+          "tone": "playful",
+          "complexity": "college"
+        },
+        "fieldOverrides": {
+          "energy-transfers": {
+            "helpText": "Consider both macroscopic and microscopic energy perspectives. Include mathematical relationships where appropriate."
+          }
+        }
+      }
+    },
+    {
+      "structureId": "model-predict-test",
+      "name": "Mathematical Modeling Cycle",
+      "enabled": true,
+      "prerequisites": ["unit-1-kinematics"]
+    }
+  ],
+  "defaultVoice": {
+    "primary": "feynman",
+    "secondary": ["sagan"],
+    "tone": "playful",
+    "complexity": "college",
+    "customPhrases": {
+      "welcomeMessage": "Physics is like taking apart a watch to see what makes it tick - except the universe is the watch!",
+      "encouragementPhrases": [
+        "Now you're thinking like a physicist!",
+        "That's exactly the kind of question Einstein would ask.",
+        "Your mathematical insight is spot-on."
+      ],
+      "transitionPhrases": [
+        "Now let's see what happens when we add some math to this picture...",
+        "The beauty of physics is how it all connects - watch this...",
+        "Here's where the mathematics really starts to sing..."
+      ]
+    }
+  },
+  "chunkingDefaults": {
+    "enabled": true,
+    "defaultSize": "large",
+    "allowStudentControl": true,
+    "adaptiveSettings": {
+      "enabled": false
+    }
+  },
+  "integrations": {
+    "chunker": {
+      "endpoint": "http://localhost:3001/api/chunker",
+      "config": {
+        "strategy": "concept-boundaries",
+        "targetDuration": "20-25min",
+        "preserveMathematicalFlow": true,
+        "allowEquationBreaks": false
+      }
+    },
+    "contentSources": {
+      "primary": "markdown-files",
+      "paths": {
+        "markdown-files": "./content/honors-physics/"
+      }
+    },
+    "export": {
+      "formats": ["google-docs", "pdf", "html"],
+      "templates": {
+        "google-docs": "./templates/physics-brief.docx",
+        "pdf": "./templates/physics-brief-print.html"
+      }
+    }
+  },
+  "navigation": {
+    "breadcrumbStyle": "contextual",
+    "progressDisplay": "percentage",
+    "phaseNavigation": true,
+    "elementNavigation": true,
+    "helpResources": true,
+    "timeAwareness": "elapsed"
+  },
+  "branding": {
+    "colors": {
+      "primary": "#7C3AED",
+      "secondary": "#F59E0B",
+      "accent": "#EF4444"
+    },
+    "courseName": "Honors Physics",
+    "instructor": "Mr. James Rodriguez"
+  },
+  "metadata": {
+    "version": "1.1.5",
+    "created": "2025-08-10T08:00:00Z",
+    "lastModified": "2025-08-22T11:15:00Z",
+    "author": "Mr. James Rodriguez",
+    "institution": "Lincoln Academy",
+    "academicYear": "2025-2026",
+    "semester": "year-long",
+    "estimatedEnrollment": 22,
+    "tags": ["honors", "calculus-based", "mathematical-modeling"]
+  }
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week-Centric Chunker Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            50: '#fefdf8', 100: '#fdf9e7', 200: '#fbf1c7', 300: '#f7e6a3',
+                            400: '#f1d97d', 500: '#e9c665', 600: '#d4a944', 700: '#b8903a',
+                            800: '#967135', 900: '#7a5c30'
+                        },
+                        sage: {
+                            50: '#f6f7f6', 100: '#e3e7e3', 200: '#c7d2c7', 300: '#9fb09f',
+                            400: '#728a72', 500: '#566e56', 600: '#435943', 700: '#374637',
+                            800: '#2e3a2e', 900: '#273027'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #fefdf8 0%, #fdf9e7 100%); }
+        .serif { font-family: 'Crimson Text', serif; }
+        
+        .week-nav-button {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .week-nav-button:hover {
+            border-color: #566e56;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(86, 110, 86, 0.2);
+        }
+        .week-nav-button.active {
+            background: linear-gradient(135deg, #566e56 0%, #435943 100%);
+            color: #fefdf8;
+            border-color: #435943;
+        }
+        
+        .chunk-indicator {
+            width: 12px; height: 12px; border-radius: 3px; transition: all 0.2s ease;
+        }
+        .chunk-indicator:hover { transform: scale(1.3); }
+        .chunk-complete { background-color: #566e56; }
+        .chunk-current { background-color: #e9c665; animation: pulse 2s infinite; }
+        .chunk-pending { background-color: #c7d2c7; }
+        .chunk-planned { background-color: #e3e7e3; }
+        
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        
+        .day-card {
+            transition: all 0.3s ease;
+            border: 2px solid #e3e7e3;
+        }
+        .day-card:hover {
+            border-color: #c7d2c7;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+        .day-card.today {
+            border-color: #566e56;
+            box-shadow: 0 4px 16px rgba(86, 110, 86, 0.3);
+        }
+        
+        .elegant-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fefdf8 100%);
+            border: 2px solid #e3e7e3;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6">
+    
+    <!-- Header with Week Navigation -->
+    <header class="elegant-card p-6 mb-6">
+        <div class="flex items-center justify-between mb-6">
+            <div>
+                <h1 class="text-3xl font-bold serif text-sage-800">Week-Centric Physics Chunker</h1>
+                <p class="text-sage-600 mt-2">Natural teacher planning with AI-optimized data structure</p>
+            </div>
+            <div class="text-right text-sm">
+                <div class="text-sage-800 font-semibold">Today: Wednesday, October 16, 2025</div>
+                <div class="text-sage-600">Day C • Period 1 & 7 • Week 8</div>
+                <div class="text-sage-600">Unit 6: Circular Motion & Gravity</div>
+            </div>
+        </div>
+        
+        <!-- Week Navigation -->
+        <div class="flex items-center justify-center space-x-4">
+            <button class="week-nav-button bg-sage-100 hover:bg-sage-200 px-6 py-3 rounded-xl" onclick="navigateWeek(-1)">
+                ← Last Week
+                <div class="text-xs text-sage-600">Week 7 • Oct 7-11</div>
+            </button>
+            
+            <button class="week-nav-button active px-8 py-3 rounded-xl">
+                This Week
+                <div class="text-xs opacity-80">Week 8 • Oct 14-18</div>
+            </button>
+            
+            <button class="week-nav-button bg-sage-100 hover:bg-sage-200 px-6 py-3 rounded-xl" onclick="navigateWeek(1)">
+                Next Week →
+                <div class="text-xs text-sage-600">Week 9 • Oct 21-25</div>
+            </button>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        
+        <!-- Last Week Summary -->
+        <div class="elegant-card p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold serif text-sage-800">Last Week Recap</h3>
+                <span class="text-sm text-sage-600 bg-sage-100 px-3 py-1 rounded-full">Week 7</span>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Theme:</span>
+                    <span class="text-sm font-medium">Centripetal Force Lab</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Chunks Completed:</span>
+                    <span class="text-sm font-bold text-sage-800">20 of 20 ✅</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Efficiency:</span>
+                    <span class="text-sm font-bold text-sage-800">100%</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Key Achievement:</span>
+                    <span class="text-sm">Lab data analysis complete</span>
+                </div>
+                
+                <!-- Weekly chunk visualization -->
+                <div class="mt-4">
+                    <div class="text-xs text-sage-600 mb-2">Daily Progress:</div>
+                    <div class="grid grid-cols-5 gap-2">
+                        <div class="text-center">
+                            <div class="text-xs text-sage-600 mb-1">Mon</div>
+                            <div class="flex flex-col gap-1">
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xs text-sage-600 mb-1">Tue</div>
+                            <div class="flex flex-col gap-1">
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xs text-sage-600 mb-1">Wed</div>
+                            <div class="flex flex-col gap-1">
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xs text-sage-600 mb-1">Thu</div>
+                            <div class="flex flex-col gap-1">
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-xs text-sage-600 mb-1">Fri</div>
+                            <div class="flex flex-col gap-1">
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                                <div class="chunk-indicator chunk-complete mx-auto"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- This Week (Primary Focus) -->
+        <div class="elegant-card p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold serif text-sage-800">This Week Progress</h3>
+                <span class="text-sm text-parchment-600 bg-parchment-200 px-3 py-1 rounded-full">Week 8 • Active</span>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Theme:</span>
+                    <span class="text-sm font-medium">Universal Gravitation</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Progress:</span>
+                    <span class="text-sm font-bold text-sage-800">12 of 20 chunks</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">On Track:</span>
+                    <span class="text-sm font-bold text-parchment-600">60% (Wed midpoint)</span>
+                </div>
+                
+                <!-- This week's daily breakdown -->
+                <div class="mt-4">
+                    <div class="text-xs text-sage-600 mb-2">Daily Breakdown:</div>
+                    <div class="space-y-2">
+                        
+                        <!-- Monday -->
+                        <div class="day-card bg-sage-50 p-3 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium">Monday 14 (Day A)</span>
+                                <div class="flex gap-1">
+                                    <div class="chunk-indicator chunk-complete" title="Gravity intro"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Newton's law"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Basic problems"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Wrap-up"></div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-sage-600">Universal gravitation introduction</div>
+                        </div>
+                        
+                        <!-- Tuesday -->
+                        <div class="day-card bg-sage-50 p-3 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium">Tuesday 15 (Day B)</span>
+                                <div class="flex gap-1">
+                                    <div class="chunk-indicator chunk-complete" title="Gravity calculations"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Advanced problems"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Real-world examples"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Assessment prep"></div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-sage-600">Gravitational force calculations</div>
+                        </div>
+                        
+                        <!-- Wednesday (Today) -->
+                        <div class="day-card today bg-parchment-100 p-3 rounded-lg border-l-4 border-parchment-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-bold">Wednesday 16 (Day C) • TODAY</span>
+                                <div class="flex gap-1">
+                                    <div class="chunk-indicator chunk-complete" title="Warmup completed"></div>
+                                    <div class="chunk-indicator chunk-complete" title="Orbital mechanics"></div>
+                                    <div class="chunk-indicator chunk-current" title="Satellite calculations (current)"></div>
+                                    <div class="chunk-indicator chunk-pending" title="GPS applications"></div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-parchment-700">Orbital mechanics & satellite calculations</div>
+                            <div class="text-xs text-parchment-600 mt-1">Periods 1 & 7 • 2 of 4 chunks complete</div>
+                        </div>
+                        
+                        <!-- Thursday -->
+                        <div class="day-card bg-gray-50 p-3 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Thursday 17 (Day D)</span>
+                                <div class="flex gap-1">
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-gray-600">Advanced satellite applications</div>
+                        </div>
+                        
+                        <!-- Friday -->
+                        <div class="day-card bg-gray-50 p-3 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Friday 18 (Day A)</span>
+                                <div class="flex gap-1">
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                    <div class="chunk-indicator chunk-planned"></div>
+                                </div>
+                            </div>
+                            <div class="text-xs text-gray-600">Unit 6 assessment preparation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Next Week Planning -->
+        <div class="elegant-card p-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold serif text-sage-800">Next Week Preview</h3>
+                <span class="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">Week 9</span>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Theme:</span>
+                    <span class="text-sm font-medium">Unit 6 Assessment</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Unit:</span>
+                    <span class="text-sm">6 (completion) → 7 (preview)</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-sage-600">Planned Chunks:</span>
+                    <span class="text-sm font-bold text-sage-800">20 chunks</span>
+                </div>
+                
+                <!-- Next week preview -->
+                <div class="mt-4">
+                    <div class="text-xs text-sage-600 mb-2">Tentative Schedule:</div>
+                    <div class="space-y-2">
+                        <div class="bg-gray-50 p-2 rounded text-xs">
+                            <div class="font-medium">Mon 21: Advanced gravity applications</div>
+                            <div class="text-gray-600">Complex orbital systems, energy methods</div>
+                        </div>
+                        <div class="bg-gray-50 p-2 rounded text-xs">
+                            <div class="font-medium">Wed 23: Unit 6 Test</div>
+                            <div class="text-gray-600">Comprehensive assessment</div>
+                        </div>
+                        <div class="bg-gray-50 p-2 rounded text-xs">
+                            <div class="font-medium">Fri 25: Unit 7 Preview</div>
+                            <div class="text-gray-600">Introduction to oscillations</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI extraction note -->
+                <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                    <div class="flex items-center">
+                        <svg class="w-4 h-4 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-xs text-blue-700 font-medium">AI-Generated from Curriculum Docs</span>
+                    </div>
+                    <div class="text-xs text-blue-600 mt-1">Confidence: 94% • Last updated: Aug 22</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Multi-Week Calendar View -->
+    <div class="elegant-card mt-6 p-6">
+        <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold serif text-sage-800">Multi-Week Calendar View</h3>
+            <div class="flex items-center space-x-3">
+                <button class="px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">← Earlier</button>
+                <button class="px-4 py-2 bg-parchment-500 text-white rounded-lg hover:bg-parchment-600 transition-colors">Today</button>
+                <button class="px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">Later →</button>
+            </div>
+        </div>
+        
+        <!-- Calendar grid showing 5 weeks -->
+        <div class="space-y-3">
+            
+            <!-- Week 6 (completed) -->
+            <div class="grid grid-cols-6 gap-2 p-3 bg-sage-50 rounded-lg border border-sage-200">
+                <div class="text-center p-2">
+                    <div class="text-sm font-semibold text-sage-800">Week 6</div>
+                    <div class="text-xs text-sage-600">Sep 29 - Oct 3</div>
+                    <div class="text-xs text-sage-600">Unit 5 → 6</div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">30 (Mon)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">1 (Tue)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">2 (Wed)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">3 (Thu)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">4 (Fri)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+            </div>
+            
+            <!-- Week 7 (completed) -->
+            <div class="grid grid-cols-6 gap-2 p-3 bg-sage-50 rounded-lg border border-sage-200">
+                <div class="text-center p-2">
+                    <div class="text-sm font-semibold text-sage-800">Week 7</div>
+                    <div class="text-xs text-sage-600">Oct 7 - 11</div>
+                    <div class="text-xs text-sage-600">Unit 6 Lab</div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">7 (Mon)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">8 (Tue)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">9 (Wed)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">10 (Thu)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">11 (Fri)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+            </div>
+            
+            <!-- Week 8 (current, highlighted) -->
+            <div class="grid grid-cols-6 gap-2 p-3 bg-parchment-100 rounded-lg border-2 border-parchment-400">
+                <div class="text-center p-2">
+                    <div class="text-sm font-bold text-parchment-800">Week 8</div>
+                    <div class="text-xs text-parchment-700">Oct 14 - 18</div>
+                    <div class="text-xs text-parchment-700">CURRENT</div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">14 (Mon)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">15 (Tue)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div></div>
+                </div>
+                <div class="mini-day bg-parchment-200 p-2 rounded border-2 border-parchment-500">
+                    <div class="text-xs font-bold mb-1">16 (Wed)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-complete"></div><div class="chunk-indicator chunk-current"></div><div class="chunk-indicator chunk-pending"></div></div>
+                    <div class="text-xs text-parchment-700 mt-1">TODAY</div>
+                </div>
+                <div class="mini-day bg-gray-100 p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">17 (Thu)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+                <div class="mini-day bg-gray-100 p-2 rounded border">
+                    <div class="text-xs font-bold mb-1">18 (Fri)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+            </div>
+            
+            <!-- Week 9 (upcoming) -->
+            <div class="grid grid-cols-6 gap-2 p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div class="text-center p-2">
+                    <div class="text-sm font-semibold text-gray-700">Week 9</div>
+                    <div class="text-xs text-gray-600">Oct 21 - 25</div>
+                    <div class="text-xs text-gray-600">Assessment</div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border opacity-75">
+                    <div class="text-xs font-bold mb-1">21 (Mon)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border opacity-75">
+                    <div class="text-xs font-bold mb-1">22 (Tue)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border opacity-75">
+                    <div class="text-xs font-bold mb-1">23 (Wed)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                    <div class="text-xs text-gray-600 mt-1">TEST</div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border opacity-75">
+                    <div class="text-xs font-bold mb-1">24 (Thu)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+                <div class="mini-day bg-white p-2 rounded border opacity-75">
+                    <div class="text-xs font-bold mb-1">25 (Fri)</div>
+                    <div class="flex gap-1"><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div><div class="chunk-indicator chunk-planned"></div></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function navigateWeek(offset) {
+            console.log(`Navigating to week with offset: ${offset}`);
+            // This would update the display to show a different week
+            // In the real implementation, this would call the WeekCentricChunkerEngine
+            // const targetWeek = chunkerEngine.getWeek(offset);
+            // updateWeekDisplay(targetWeek);
+        }
+        
+        // Simulate chunk status updates
+        document.querySelectorAll('.chunk-indicator').forEach(indicator => {
+            indicator.addEventListener('click', function() {
+                console.log('Chunk clicked:', this.title || 'Unnamed chunk');
+                // This would call chunkerEngine.updateChunkStatus(chunkId, newStatus)
+            });
+        });
+        
+        // Simulate real-time updates
+        setInterval(() => {
+            const currentTime = new Date().toLocaleTimeString();
+            // Update any time-sensitive displays
+        }, 60000);
+    </script>
+</body>
+</html>
