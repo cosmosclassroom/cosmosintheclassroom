@@ -57,6 +57,36 @@
       <!-- Quick Access Section -->
       <section class="quick-access">
         <h2 class="section-title">Quick Access</h2>
+<<<<<<< HEAD
+        <div id="quick-access" class="course-grid">
+          <div class="loading">Loading quick access...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      &copy; 2024 Cosmos in the Classroom. All rights reserved.
+    </footer>
+
+    <!-- Universal Data Logger - Load before main script -->
+    <script src="./scripts/universal-data-logger.js"></script>
+    
+    <!-- Main Portal Script -->
+    <script>
+      // Course data and navigation management
+      let courseData = null;
+      let currentCourse = null;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit to ensure logger script is loaded
+        setTimeout(() => {
+          loadStudentName();
+          loadCourses();
+          setupNavigation();
+          loadRecentActivity();
+          loadQuickAccess();
+        }, 100);
+=======
         <div class="quick-grid">
           <div class="quick-card" onclick="window.location.href='/physics/honors/'">
             <div class="quick-icon physics-icon">Physics</div>
@@ -102,6 +132,7 @@
         loadRecentActivity();
         loadQuickAccess();
         setupEventListeners();
+>>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       });
 
       // Personalization functions (matching homepage)
@@ -180,7 +211,29 @@
         }
       });
 
+<<<<<<< HEAD
+      function closePopup() {
+        if (window.currentPopup) {
+          document.body.removeChild(window.currentPopup);
+          document.body.removeChild(window.currentOverlay);
+          window.currentPopup = null;
+          window.currentOverlay = null;
+        }
+      }
+
+      // Safe logging function that checks if logEvent exists
+      function safeLogEvent(eventType, data = {}) {
+        if (typeof logEvent === 'function') {
+          logEvent(eventType, data);
+        } else {
+          console.log('Logger not available, would log:', eventType, data);
+        }
+      }
+
+      // Course loading and display functions
+=======
       // Course loading and management
+>>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       async function loadCourses() {
         try {
           const container = document.getElementById('course-list');
@@ -239,7 +292,7 @@
           };
           
           // Log course access
-          logEvent("course_access", {
+          safeLogEvent("course_access", {
             courseId: courseId,
             dataFile: dataFile,
             studentName: studentName
@@ -331,7 +384,7 @@
         const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
         
         // Log the unit start event
-        logEvent("unit_start", {
+        safeLogEvent("unit_start", {
           courseId: currentCourse,
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
@@ -350,11 +403,16 @@
 
       function markUnitComplete(courseId, unitNumber) {
         const unit = findUnit(unitNumber);
+<<<<<<< HEAD
+        safeLogEvent("unit_details_view", {
+          courseId: currentCourse,
+=======
         const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
         
         // Log unit completion
         logEvent("unit_complete", {
           courseId: courseId,
+>>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
           studentName: studentName
@@ -461,6 +519,51 @@
         return progress.units && progress.units[unitNumber];
       }
 
+<<<<<<< HEAD
+      function markUnitComplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('studentName') || 'Anonymous';
+        
+        // Show completion popup
+        showPopup('success', 'Unit Completed!', `${studentName} completed Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
+        
+        // Log unit completion
+        safeLogEvent("unit_complete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = true;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+      function markUnitIncomplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('studentName') || 'Anonymous';
+        
+        // Show incomplete popup
+        showPopup('warning', 'Unit Marked Incomplete', `${studentName} marked Unit ${unitNumber} as incomplete: ${unit ? unit.title : 'Unknown Unit'}`);
+        
+        // Log unit marked incomplete
+        safeLogEvent("unit_incomplete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = false;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+=======
+>>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       function markUnitVisited(courseId, unitNumber) {
         let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{},"visited":{}}');
         if (!progress.visited) progress.visited = {};

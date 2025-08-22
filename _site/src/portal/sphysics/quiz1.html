@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning Preferences Quiz | Cosmos in the Classroom</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500&display=swap">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --background: #f9f9f6;
+        --card-bg: #fff;
+        --card-border: #e0e0e0;
+        --text: #222;
+        --muted: #888;
+        --success: #27ae60;
+        --warning: #f39c12;
+      }
+      
+      body {
+        background: var(--background);
+        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        color: var(--text);
+        line-height: 1.6;
+      }
+      
+      .container {
+        max-width: 700px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      
+      .quiz-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        background: var(--card-bg);
+        border-radius: 1rem;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+      }
+      
+      .quiz-header h1 {
+        font-family: 'Libre Baskerville', Georgia, serif;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary);
+      }
+      
+      .quiz-header p {
+        color: var(--muted);
+        font-size: 1.1rem;
+        margin: 0;
+      }
+      
+      .quiz-form {
+        background: var(--card-bg);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+        margin-bottom: 2rem;
+      }
+      
+      .form-group {
+        margin-bottom: 2rem;
+      }
+      
+      .form-label {
+        display: block;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid var(--card-border);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: border-color 0.2s;
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+      }
+      
+      .form-select {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid var(--card-border);
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        font-family: inherit;
+        background: var(--card-bg);
+        cursor: pointer;
+      }
+      
+      .question-group {
+        margin-bottom: 2.5rem;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 0.8rem;
+        border-left: 4px solid var(--accent);
+      }
+      
+      .question-title {
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+      
+      .radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      
+      .radio-option {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem;
+        background: var(--card-bg);
+        border-radius: 0.5rem;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      
+      .radio-option:hover {
+        border-color: var(--accent);
+        background: #f0f8ff;
+      }
+      
+      .radio-option input[type="radio"] {
+        margin-right: 0.8rem;
+        transform: scale(1.2);
+      }
+      
+      .radio-option.selected {
+        border-color: var(--accent);
+        background: #e8f4f8;
+      }
+      
+      .submit-btn {
+        background: var(--success);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      
+      .submit-btn:hover {
+        background: #229954;
+      }
+      
+      .submit-btn:disabled {
+        background: var(--muted);
+        cursor: not-allowed;
+      }
+      
+      .validation-message {
+        color: var(--warning);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        display: none;
+      }
+      
+      .success-message {
+        background: var(--success);
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin-top: 1rem;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-header">
+        <h1>Learning Preferences Quiz</h1>
+        <p>Help us understand how you learn best! This quick survey will help personalize your physics learning experience.</p>
+      </div>
+      
+      <form id="learning-quiz" class="quiz-form">
+        <!-- Student Information -->
+        <div class="form-group">
+          <label for="student-name" class="form-label">Your Name *</label>
+          <input type="text" id="student-name" name="studentName" class="form-input" required placeholder="Enter your full name">
+          <div class="validation-message" id="name-error">Please enter your name</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="class-period" class="form-label">Class Period *</label>
+          <select id="class-period" name="classPeriod" class="form-select" required>
+            <option value="">Select your class period</option>
+            <option value="1">Period 1</option>
+            <option value="2">Period 2</option>
+            <option value="3">Period 3</option>
+            <option value="4">Period 4</option>
+            <option value="5">Period 5</option>
+            <option value="6">Period 6</option>
+            <option value="7">Period 7</option>
+            <option value="8">Period 8</option>
+          </select>
+          <div class="validation-message" id="period-error">Please select your class period</div>
+        </div>
+        
+        <!-- Question 1 -->
+        <div class="question-group">
+          <div class="question-title">1. When learning new physics concepts, I prefer to:</div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="question1" value="visual" required>
+              <span>See diagrams, graphs, and visual representations</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question1" value="hands-on" required>
+              <span>Do hands-on experiments and activities</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question1" value="discussion" required>
+              <span>Discuss concepts with classmates and teachers</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question1" value="reading" required>
+              <span>Read detailed explanations and take notes</span>
+            </label>
+          </div>
+          <div class="validation-message" id="q1-error">Please select an answer for question 1</div>
+        </div>
+        
+        <!-- Question 2 -->
+        <div class="question-group">
+          <div class="question-title">2. When solving physics problems, I work best:</div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="question2" value="alone" required>
+              <span>Working alone at my own pace</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question2" value="pairs" required>
+              <span>Working with a partner</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question2" value="small-groups" required>
+              <span>Working in small groups (3-4 people)</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question2" value="whole-class" required>
+              <span>Working through problems as a whole class</span>
+            </label>
+          </div>
+          <div class="validation-message" id="q2-error">Please select an answer for question 2</div>
+        </div>
+        
+        <!-- Question 3 -->
+        <div class="question-group">
+          <div class="question-title">3. I understand physics concepts best when:</div>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="question3" value="real-world" required>
+              <span>I can connect them to real-world examples</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question3" value="step-by-step" required>
+              <span>They are broken down into step-by-step processes</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question3" value="patterns" required>
+              <span>I can see patterns and relationships between concepts</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="question3" value="practice" required>
+              <span>I have lots of practice problems to work through</span>
+            </label>
+          </div>
+          <div class="validation-message" id="q3-error">Please select an answer for question 3</div>
+        </div>
+        
+        <button type="submit" id="submit-btn" class="submit-btn">
+          Submit Learning Preferences
+        </button>
+        
+        <div class="success-message" id="success-message">
+          Thank you! Your learning preferences have been recorded successfully.
+        </div>
+      </form>
+    </div>
+    
+    <!-- Universal Data Logger -->
+    <script src="../scripts/universal-data-logger.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('learning-quiz');
+        const radioOptions = document.querySelectorAll('.radio-option');
+        
+        // Add visual feedback for radio selections
+        radioOptions.forEach(option => {
+          const radio = option.querySelector('input[type="radio"]');
+          radio.addEventListener('change', function() {
+            // Remove selected class from all options in this group
+            const groupName = this.name;
+            document.querySelectorAll(`input[name="${groupName}"]`).forEach(r => {
+              r.closest('.radio-option').classList.remove('selected');
+            });
+            // Add selected class to this option
+            option.classList.add('selected');
+          });
+        });
+        
+        // Form submission handler
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          if (validateForm()) {
+            submitQuizData();
+          }
+        });
+        
+        function validateForm() {
+          let isValid = true;
+          
+          // Validate name
+          const name = document.getElementById('student-name').value.trim();
+          if (!name) {
+            showError('name-error');
+            isValid = false;
+          } else {
+            hideError('name-error');
+          }
+          
+          // Validate period
+          const period = document.getElementById('class-period').value;
+          if (!period) {
+            showError('period-error');
+            isValid = false;
+          } else {
+            hideError('period-error');
+          }
+          
+          // Validate questions
+          for (let i = 1; i <= 3; i++) {
+            const question = document.querySelector(`input[name="question${i}"]:checked`);
+            if (!question) {
+              showError(`q${i}-error`);
+              isValid = false;
+            } else {
+              hideError(`q${i}-error`);
+            }
+          }
+          
+          return isValid;
+        }
+        
+        function showError(elementId) {
+          document.getElementById(elementId).style.display = 'block';
+        }
+        
+        function hideError(elementId) {
+          document.getElementById(elementId).style.display = 'none';
+        }
+        
+        function submitQuizData() {
+          // Collect form data
+          const formData = {
+            studentName: document.getElementById('student-name').value.trim(),
+            classPeriod: document.getElementById('class-period').value,
+            question1: document.querySelector('input[name="question1"]:checked').value,
+            question2: document.querySelector('input[name="question2"]:checked').value,
+            question3: document.querySelector('input[name="question3"]:checked').value,
+            submissionTime: new Date().toISOString(),
+            quizType: 'learning_preferences'
+          };
+          
+          // Store in localStorage for future reference
+          localStorage.setItem('studentName', formData.studentName);
+          localStorage.setItem('userId', formData.studentName);
+          localStorage.setItem('classPeriod', formData.classPeriod);
+          
+          // Log the quiz submission using universal data logger
+          if (typeof logEvent === 'function') {
+            logEvent('quiz_submission', formData);
+          } else {
+            console.log('Logger not available, quiz data:', formData);
+          }
+          
+          // Show success message
+          document.getElementById('submit-btn').disabled = true;
+          document.getElementById('submit-btn').textContent = 'Submitted Successfully!';
+          document.getElementById('success-message').style.display = 'block';
+          
+          // Scroll to success message
+          document.getElementById('success-message').scrollIntoView({ 
+            behavior: 'smooth' 
+          });
+          
+          console.log('Quiz data submitted:', formData);
+        }
+      });
+    </script>
+  </body>
+</html>

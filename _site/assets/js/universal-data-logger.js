@@ -1,48 +1,48 @@
-/**
- * Universal Data Logger
- * Collects various data points from the user's session and sends them
- */
+// Replace this with your Google Apps Script Web App endpoint
+const LOGGER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzHxXrwCH2mOpLtOEbi-UMeS1YG9SjFZv3MdrqDtZ5BI0WWe5fXVkt2TSn_jQfueZrU/exec";
 
-function initiateDataLogger() {
-    try {
-        // Collect user data
-        const userData = collectUserData();
-        
-        // Send data
-        sendDataReport(userData);
-        
-        // Show confirmation to user
-        showConfirmation();
-        
-    } catch (error) {
-        console.error('Data logger error:', error);
-        alert('Error sending data report. Please try again.');
+/**
+ * Send a log event to the backend
+ * @param {string} eventType - e.g. "page_view", "lesson_open", "quiz_submit"
+ * @param {object} data - extra data about the event {lesson: "Chapter 1", user: "studentA"}
+ */
+function logEvent(eventType, data = {}) {
+  const payload = {
+    timestamp: new Date().toISOString(),
+    eventType: eventType,
+    userId: localStorage.getItem("userId") || "anon",
+    page: window.location.pathname,
+    ...data
+  };
+
+  console.log('Sending JSON data to logger:', JSON.stringify(payload, null, 2)); // Debug log
+
+  fetch(LOGGER_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  }).then(response => {
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
+    return response.text();
+  }).then(text => {
+    console.log('Response body:', text);
+    if (text.includes('error') || text.includes('Error')) {
+      console.error('Server returned error:', text);
+    } else {
+      console.log('Data logged successfully');
     }
+  }).catch(err => {
+    console.error("Logging failed:", err);
+  });
 }
 
-function collectUserData() {
-    const data = {
-        timestamp: new Date().toISOString(),
-        page: {
-            url: window.location.href,
-            title: document.title,
-            referrer: document.referrer
-        },
-        browser: {
-            userAgent: navigator.userAgent,
-            language: navigator.language,
-            platform: navigator.platform,
-            cookieEnabled: navigator.cookieEnabled,
-            onLine: navigator.onLine
-        },
-        screen: {
-            width: screen.width,
-            height: screen.height,
-            colorDepth: screen.colorDepth,
-            pixelDepth: screen.pixelDepth
-        },
-        viewport: {
-            width: window.innerWidth,
+// Example: auto-log page views when a portal loads
+document.addEventListener("DOMContentLoaded", () => {
+  logEvent("page_view", { title: document.title });
+});
             height: window.innerHeight
         },
         performance: {

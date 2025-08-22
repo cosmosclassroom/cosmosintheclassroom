@@ -113,18 +113,82 @@ physics/
 
 ## File Structure Overview
 
-```
 cosmosintheclassroom/
 ├── src/
-│   ├── portal/              # Course navigation system
-│   ├── Chunker/             # Progress tracking system
+│   ├── portal/                    # Central hub and primary user interface
+│   │   ├── components/            # Reusable UI elements → consumed by all systems
+│   │   ├── courses/               # Course configuration → feeds content to Chunker
+│   │   ├── navigation/            # Routes users between systems with context preservation
+│   │   ├── user/                  # Identity and authentication → shared across systems
+│   │   └── views/                 # Integrates content from all systems into unified experience
+│   ├── Chunker/                   # Temporal organization of educational content
+│   │   ├── calendar/              # Provides scheduling constraints to all systems
+│   │   ├── progress/              # Feeds Portal for visualization and Socrates for personalization
+│   │   ├── reporting/             # Aggregates data from all systems for analytics
+│   │   └── scheduler/             # 144-chunk sequencing logic → referenced by all systems
 │   └── shared/
-│       └── components/      # Universal header system
-├── physics/                 # Curriculum content
-├── ref/                     # Library system
-├── socrates/               # AI questioning system
-├── data/                   # Configuration files
-└── docs/                   # Project documentation
+│       ├── components/            # Universal header system → maintains context across boundaries
+│       ├── styles/                # Visual consistency layer across all interfaces
+│       ├── utils/                 # Common functions for data transformation and validation
+│       └── templates/             # Structural foundation for all user-facing views
+├── physics/                       # Content repository accessed by all systems
+│   ├── honors/                    # Selected and sequenced by Chunker, delivered via Portal
+│   ├── standard/                  # Alternative content path managed by same systems
+│   └── shared/                    # Cross-referenced by both tracks and all systems
+├── ref/                           # Library system - Knowledge base extending core curriculum
+│   ├── archive/                   # Contextual information → feeds Socrates responses
+│   ├── teaching-guides/           # Referenced by Portal based on user role
+│   ├── student-guides/            # Surfaced contextually based on Chunker progress
+│   ├── references/                # Verification sources for Socrates and content accuracy
+│   └── media/                     # Rich content shared across all interfaces
+├── socrates/                      # AI learning companion integrated throughout platform
+│   ├── engine/                    # Receives context from Chunker and Portal → generates questions
+│   ├── models/                    # Dynamically adjusted based on user progress data
+│   ├── interfaces/                # Embedded in Portal views with consistent styling
+│   ├── feedback/                  # Reports comprehension metrics → updates Chunker progress
+│   └── content/                   # Aligned with physics/ structure for seamless integration
+├── data/                          # Central data layer connecting all systems
+│   ├── user/                      # Synchronized settings affecting all experiences
+│   ├── system/                    # Global parameters governing all subsystems
+│   ├── courses/                   # Structural information used by Portal, Chunker, and Socrates
+│   └── sync/                      # Ensures consistent state across system boundaries
+└── docs/                          # Project documentation and system understanding
+    ├── api/                       # Interface specifications for system integration
+    ├── development/               # Extension patterns for each system
+    ├── implementation/            # Deployment and configuration instructions
+    └── architecture/              # Formal documentation of system relationships
+
+## Information Flow Between Systems
+
+- **Portal → Chunker**: User identity, course selection, and navigation context
+- **Chunker → Portal**: Progress data, current position in curriculum, next content
+- **Portal → Socrates**: Current lesson context, user history, and learning objectives
+- **Socrates → Chunker**: Comprehension metrics and knowledge assessment results
+- **Library → All Systems**: Reference materials, media assets, and documentation
+- **All Systems → Universal Header**: Current user context, progress, and system state
+
+## Project Cleanup Guidelines
+
+### Common Locations for Extraneous Files
+- **Root directory**: Temporary files, old config files, test files
+- **physics/shared/archive/**: Historical content that may need final cleanup
+- **Backup directories**: Any `*_backup/`, `*_old/`, or `temp/` folders
+- **Generated files**: Build artifacts, temporary HTML files, cached content
+- **IDE files**: `.vscode/`, editor temporary files, swap files
+
+### Cleanup Commands
+```bash
+# Find large files that might be artifacts
+find . -type f -size +10M -not -path "./.git/*"
+
+# Find temporary or backup files
+find . -name "*.tmp" -o -name "*.bak" -o -name "*~" -o -name "*.swp"
+
+# Find empty directories
+find . -type d -empty -not -path "./.git/*"
+
+# Find duplicate files by name pattern
+find . -name "*copy*" -o -name "*backup*" -o -name "*old*"
 ```
 
 ## Support & Documentation
@@ -143,19 +207,15 @@ This educational platform is designed for high school physics education. Please 
 **Last Updated**: January 27, 2025  
 **Version**: 2.0.0 (Universal Header Implementation)  
 **Maintained by**: Cosmos in the Classroom Development Team
-- **Curriculum Extraction**: Automated content structuring from educational materials
-- **Quality Assurance**: AI-assisted content validation and pedagogical review
-- **Development Workflow**: Context-aware code review and optimization suggestions
-- **Educational Logic**: Cognitive load optimization and prerequisite flow validation
 
-## 📈 Recent Accomplishments
+## Recent Accomplishments
 - ✅ **Organized 130+ physics files** into logical unit structure
 - ✅ **Archived Q4 2025 experiments** while preserving useful content  
 - ✅ **Centralized slide management** with consistent theming
 - ✅ **Created migration tools** for future reorganizations
 - ✅ **Established naming conventions** for maintainable content
 
-## 📋 Documentation
+## Documentation
 - See `MINUTES.md` for ongoing project updates and decisions
 - Course-specific documentation in each `physics/*/` directory
 - Migration history preserved in `physics/shared/archive/`
@@ -164,15 +224,15 @@ This educational platform is designed for high school physics education. Please 
 
 Cosmos in the Classroom uses key-value pair configuration files (JSON/YAML) to enable flexible customization for:
 
-- **Portal:** User preferences (theme, font size, navigation bookmarks).
-- **Socrates Engine:** AI assistant settings (response length, feedback mode).
-- **Chunker Engine:** Content chunking parameters (chunk size, overlap).
-- **Library:** Feature toggles and resource management.
+- **Portal:** User preferences (theme, font size, navigation bookmarks)
+- **Socrates Engine:** AI assistant settings (response length, feedback mode)
+- **Chunker Engine:** Content chunking parameters (chunk size, overlap)
+- **Library:** Feature toggles and resource management
 
 ### How It Works
 
-- Default settings are stored in config files.
-- User-specific settings are merged at runtime (localStorage or database).
-- All major systems read their configuration from these files for easy updates and personalization.
+- Default settings are stored in config files
+- User-specific settings are merged at runtime (localStorage or database)
+- All major systems read their configuration from these files for easy updates and personalization
 
 See `config/` directory for examples and documentation.
