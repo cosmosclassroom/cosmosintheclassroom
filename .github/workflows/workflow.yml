@@ -123,9 +123,12 @@ jobs:
             grep -n "\.css" index.html || echo "No CSS links found in index.html"
           fi
           
-          # Validate TailwindCSS build if config exists
-          if [ -f "tailwind.config.js" ]; then
-            npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --dry-run
+          # Create TailwindCSS output if input exists
+          if [ -f "tailwind.config.js" ] && [ -f "assets/css/input.css" ]; then
+            npx tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind-output.css --minify
+            echo "TailwindCSS build completed successfully"
+          else
+            echo "TailwindCSS configuration or input file not found - skipping build"
           fi
           
       - name: Optimize images for classroom bandwidth
