@@ -1,8 +1,12 @@
 source "https://rubygems.org"
 
+# Ruby version requirement
+ruby ">= 3.2.0"
+
 # Core Gems
 gem "webrick", "~> 1.8"
 # Jekyll version is managed by github-pages gem
+gem "activesupport", "~> 7.0" # Pin to version compatible with Ruby 3.2
 gem "rake", "~> 13.0"
 gem "highline"
 gem "kramdown-math-katex"
