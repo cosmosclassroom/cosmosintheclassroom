@@ -5,392 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cosmos in the Classroom</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/cosmos-theme.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --marble: #f8f6f0;
-            --gold: #c9a96e;
-            --deep-blue: #1a365d;
-            --charcoal: #2d3748;
-            --silver: #a0aec0;
-            --white: #ffffff;
-            --shadow: rgba(0, 0, 0, 0.1);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--marble) 0%, #f0ebe5 100%);
-            color: var(--charcoal);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Classical background elements */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(201, 169, 110, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(26, 54, 93, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .container {
+        /* Homepage-specific styles */
+        .homepage-container {
             text-align: center;
             max-width: 600px;
             padding: 3rem 2rem;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
+            min-height: calc(100vh - 5rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: var(--deep-blue);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-            position: relative;
-        }
-
-        .subtitle {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--silver);
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-
-        .navigation {
+        .homepage-navigation {
             display: flex;
             gap: 2rem;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin: 2rem 0;
             flex-wrap: wrap;
-        }
-
-        .nav-button {
-            background: linear-gradient(135deg, var(--white), var(--marble));
-            border: 1px solid var(--gold);
-            color: var(--charcoal);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .nav-button:hover::before {
-            left: 100%;
-        }
-
-        .nav-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px var(--shadow);
-            border-color: var(--deep-blue);
-        }
-
-        .nav-button.primary {
-            background: linear-gradient(135deg, var(--deep-blue), var(--charcoal));
-            color: var(--white);
-            border-color: var(--deep-blue);
-        }
-
-        .more-nav {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-toggle {
-            background: transparent;
-            border: 1px solid var(--silver);
-            color: var(--silver);
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-toggle:hover {
-            border-color: var(--gold);
-            color: var(--gold);
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--white);
-            border: 1px solid var(--gold);
-            border-radius: 8px;
-            box-shadow: 0 8px 25px var(--shadow);
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 10;
-            margin-top: 0.5rem;
-        }
-
-        .dropdown-menu.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .dropdown-item {
-            display: block;
-            padding: 0.75rem 1.5rem;
-            color: var(--charcoal);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-item:hover {
-            background: linear-gradient(135deg, var(--marble), #f0ebe5);
-        }
-
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: var(--silver);
-            font-size: 0.9rem;
-            margin-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* Personalization Section */
-        .greeting {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-
-        .greeting.show {
-            opacity: 1;
-        }
-
-        .name-input-section {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--gold);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.5s ease;
-        }
-
-        .name-input-section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .name-input-section h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--charcoal);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .name-form {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .name-input {
-            flex: 1;
-            padding: 0.75rem;
-            border: 1px solid var(--silver);
-            border-radius: 6px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .name-input:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .name-submit {
-            background: var(--deep-blue);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease;
-        }
-
-        .name-submit:hover {
-            background: var(--charcoal);
-        }
-
-        .name-options {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--silver);
-        }
-
-        .name-change {
-            color: var(--gold);
-            cursor: pointer;
-            text-decoration: underline;
-            font-size: 0.8rem;
-            margin-left: 0.5rem;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .name-change:hover {
-            opacity: 1;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 640px) {
-            .logo {
-                font-size: 2.5rem;
-            }
-            
-            .navigation {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .nav-button {
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            .container {
-                padding: 2rem 1rem;
-            }
-        }
-
-        /* AI Chic subtle animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
-        }
-
-        .logo {
-            animation: float 6s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo">Cosmos in the Classroom</h1>
-        <p class="subtitle">Physics Learning</p>
-        
-        <!-- Personalized Greeting -->
-        <div class="greeting" id="greeting"></div>
-        
-        <!-- Name Input Section (shown for new users) -->
-        <div class="name-input-section" id="nameInputSection">
-            <h3>Welcome</h3>
-            <p>What should I call you?</p>
-            <div class="name-form">
-                <input type="text" id="nameInput" class="name-input" placeholder="Your name..." maxlength="30">
-                <button onclick="saveName()" class="name-submit">Enter</button>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="header-nav">
+            <div class="user-greeting" id="headerGreeting"></div>
+            <div class="nav-dropdown">
+                <button class="nav-toggle" onclick="toggleNavDropdown()">
+                    Navigation ▾
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-item">Home</a>
+                    <a href="src/portal/" class="nav-item">The Portal</a>
+                    <a href="ref/" class="nav-item">Socrates' Library</a>
+                    <a href="physics/honors/" class="nav-item">Honors Physics</a>
+                    <a href="physics/standard/" class="nav-item">Standard Physics</a>
+                    <a href="slides/" class="nav-item">Lesson Slides</a>
+                    <a href="solutions/" class="nav-item">Problem Solutions</a>
+                    <a href="#" class="nav-item">Assessment Tools</a>
+                    <a href="#" class="nav-item">About & Contact</a>
+                </div>
             </div>
-            <div class="name-options">
-                <small>Stored locally in your browser</small>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="homepage-container">
+            <h1 class="logo-large">Cosmos in the Classroom</h1>
+            <p class="subtitle">Physics Learning</p>
+            
+            <!-- Personalized Greeting -->
+            <div class="greeting" id="greeting"></div>
+            
+            <!-- Name Input Section (shown for new users) -->
+            <div class="name-input-section" id="nameInputSection">
+                <h3>Welcome</h3>
+                <p>What should I call you?</p>
+                <div class="name-form">
+                    <input type="text" id="nameInput" class="name-input" placeholder="Your name..." maxlength="30">
+                    <button onclick="saveName()" class="name-submit">Enter</button>
+                </div>
+                <div class="name-options">
+                    <small>Stored locally in your browser</small>
+                </div>
             </div>
-        </div>
-        
-        <div class="navigation">
-            <a href="src/portal/" class="nav-button primary">The Portal</a>
-            <a href="ref/" class="nav-button">Socrates' Library</a>
-        </div>
-        
-        <div class="more-nav">
-            <button class="dropdown-toggle" onclick="toggleDropdown()">
-                More Resources ▾
-            </button>
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="physics/honors/" class="dropdown-item">Honors Physics</a>
-                <a href="physics/standard/" class="dropdown-item">Standard Physics</a>
-                <a href="slides/" class="dropdown-item">Lesson Slides</a>
-                <a href="solutions/" class="dropdown-item">Problem Solutions</a>
-                <a href="#" class="dropdown-item">Assessment Tools</a>
-                <a href="#" class="dropdown-item">About & Contact</a>
+            
+            <div class="homepage-navigation">
+                <a href="src/portal/" class="btn btn-primary">The Portal</a>
+                <a href="ref/" class="btn btn-secondary">Socrates' Library</a>
             </div>
+            
+            <div class="dropdown">
+                <button class="dropdown-toggle" onclick="toggleDropdown()">
+                    Resources ▾
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="physics/honors/" class="dropdown-item">Honors Physics</a>
+                    <a href="physics/standard/" class="dropdown-item">Standard Physics</a>
+                    <a href="slides/" class="dropdown-item">Lesson Slides</a>
+                    <a href="solutions/" class="dropdown-item">Problem Solutions</a>
+                    <a href="#" class="dropdown-item">Assessment Tools</a>
+                    <a href="#" class="dropdown-item">About & Contact</a>
+                </div>
+            </div>
+            
+            <p class="signature">
+                "I hope you like it." — Jonathan
+                <span class="name-change" onclick="changeName()" id="nameChange" style="display: none;">Change name</span>
+            </p>
         </div>
-        
-        <p class="signature">
-            "I hope you like it." — Jonathan
-            <span class="name-change" onclick="changeName()" id="nameChange" style="display: none;">Change name</span>
-        </p>
-    </div>
+    </main>
 
     <script>
         // Personalization functionality
         function loadPersonalization() {
             const savedName = localStorage.getItem('cosmosUserName');
             const greeting = document.getElementById('greeting');
+            const headerGreeting = document.getElementById('headerGreeting');
             const nameInputSection = document.getElementById('nameInputSection');
             const nameChange = document.getElementById('nameChange');
             
             if (savedName) {
                 // Show personalized greeting
                 showGreeting(savedName);
+                updateHeaderGreeting(savedName);
                 nameChange.style.display = 'inline';
             } else {
                 // Show name input for new users
                 setTimeout(() => {
                     nameInputSection.classList.add('show');
                 }, 500);
+            }
+        }
+
+        function updateHeaderGreeting(name) {
+            const headerGreeting = document.getElementById('headerGreeting');
+            if (headerGreeting) {
+                headerGreeting.textContent = `Welcome, ${name}`;
             }
         }
 
@@ -416,12 +154,14 @@
             if (name) {
                 localStorage.setItem('cosmosUserName', name);
                 showGreeting(name);
+                updateHeaderGreeting(name);
                 document.getElementById('nameChange').style.display = 'inline';
             }
         }
 
         function changeName() {
             const greeting = document.getElementById('greeting');
+            const headerGreeting = document.getElementById('headerGreeting');
             const nameInputSection = document.getElementById('nameInputSection');
             const nameInput = document.getElementById('nameInput');
             const nameChange = document.getElementById('nameChange');
@@ -429,6 +169,7 @@
             // Clear current name
             localStorage.removeItem('cosmosUserName');
             greeting.classList.remove('show');
+            headerGreeting.textContent = '';
             nameChange.style.display = 'none';
             
             // Show input form
@@ -436,6 +177,17 @@
             setTimeout(() => {
                 nameInputSection.classList.add('show');
             }, 300);
+        }
+
+        // Navigation functionality
+        function toggleNavDropdown() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('show');
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('show');
         }
 
         // Handle Enter key in name input
@@ -451,17 +203,20 @@
             loadPersonalization();
         });
 
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdownMenu');
-            dropdown.classList.toggle('show');
-        }
-
-        // Close dropdown when clicking outside
+        // Close dropdowns when clicking outside
         document.addEventListener('click', function(event) {
+            const navDropdown = document.getElementById('navMenu');
+            const navToggle = document.querySelector('.nav-toggle');
             const dropdown = document.getElementById('dropdownMenu');
-            const toggle = document.querySelector('.dropdown-toggle');
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
             
-            if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+            // Close nav dropdown
+            if (!navToggle.contains(event.target) && !navDropdown.contains(event.target)) {
+                navDropdown.classList.remove('show');
+            }
+            
+            // Close resources dropdown
+            if (!dropdownToggle.contains(event.target) && !dropdown.contains(event.target)) {
                 dropdown.classList.remove('show');
             }
         });
