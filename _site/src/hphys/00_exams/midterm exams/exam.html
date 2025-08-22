@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photosynthesis Quiz</title>
+    <style>
+        body, html {
+            margin: 1rem;
+            padding: 1px;
+            height: 100%;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 0.9rem;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .panel {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        .left-panel {
+            background-color: #f0f8ff;
+            border-right: 1px solid #ccc;
+        }
+        .right-panel {
+            background-color: #f5f5f5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        form {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Panel: Photosynthesis Information -->
+        <div class="panel left-panel">
+            <h1>Photosynthesis</h1>
+            
+            <h2>What is Photosynthesis?</h2>
+            <p>Photosynthesis is the process by which green plants, algae, and some bacteria convert light energy, usually from the sun, into chemical energy in the form of glucose or other sugars.</p>
+            
+            <h2>Chemical Equation</h2>
+            <p>The overall balanced equation for photosynthesis is:</p>
+            <div style="text-align: center; font-weight: bold;">
+                6 CO<sub>2</sub> + 6 H<sub>2</sub>O + Light Energy → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6 O<sub>2</sub>
+            </div>
+            
+            <h2>Key Components</h2>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Role in Photosynthesis</th>
+                </tr>
+                <tr>
+                    <td>Chlorophyll</td>
+                    <td>Captures light energy</td>
+                </tr>
+                <tr>
+                    <td>Chloroplasts</td>
+                    <td>Site of photosynthesis in plants</td>
+                </tr>
+                <tr>
+                    <td>Carbon Dioxide (CO<sub>2</sub>)</td>
+                    <td>Raw material for glucose production</td>
+                </tr>
+                <tr>
+                    <td>Water (H<sub>2</sub>O)</td>
+                    <td>Electron source and raw material</td>
+                </tr>
+            </table>
+            
+            <h2>Stages of Photosynthesis</h2>
+            <ol>
+                <li><strong>Light Reactions (Light-Dependent Reactions)</strong>
+                    <ul>
+                        <li>Takes place in thylakoid membranes</li>
+                        <li>Converts light energy to ATP and NADPH</li>
+                        <li>Produces oxygen as a byproduct</li>
+                    </ul>
+                </li>
+                <li><strong>Calvin Cycle (Light-Independent Reactions)</strong>
+                    <ul>
+                        <li>Takes place in the stroma</li>
+                        <li>Uses ATP and NADPH from light reactions</li>
+                        <li>Converts CO<sub>2</sub> to glucose</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <h2>Factors Affecting Photosynthesis</h2>
+            <ul>
+                <li><strong>Light intensity</strong> - Higher intensity increases rate up to a certain point</li>
+                <li><strong>Carbon dioxide concentration</strong> - Higher CO<sub>2</sub> levels increase rate</li>
+                <li><strong>Temperature</strong> - Optimal temperature range is typically 25-30°C</li>
+                <li><strong>Water availability</strong> - Drought reduces photosynthetic rate</li>
+                <li><strong>Chlorophyll content</strong> - More chlorophyll allows more light absorption</li>
+            </ul>
+            
+            <h2>Importance of Photosynthesis</h2>
+            <p>Photosynthesis is crucial for life on Earth because it:</p>
+            <ul>
+                <li>Produces oxygen for respiration</li>
+                <li>Removes carbon dioxide from the atmosphere</li>
+                <li>Creates food for plants and indirectly for animals</li>
+                <li>Provides the basis for most food chains</li>
+                <li>Contributes to fossil fuel formation over millions of years</li>
+            </ul>
+        </div>
+        
+        <!-- Right Panel: Quiz -->
+        <div class="panel right-panel">
+            <h1>Photosynthesis Quiz</h1>
+            <form id="quiz-form">
+                <div class="question">
+                    <h3>Question 1: What is the primary pigment that absorbs light energy during photosynthesis?</h3>
+                    <input type="radio" name="q1" id="q1a" value="a">
+                    <label for="q1a">Melanin</label><br>
+                    <input type="radio" name="q1" id="q1b" value="b">
+                    <label for="q1b">Chlorophyll</label><br>
+                    <input type="radio" name="q1" id="q1c" value="c">
+                    <label for="q1c">Carotene</label><br>
+                    <input type="radio" name="q1" id="q1d" value="d">
+                    <label for="q1d">Hemoglobin</label>
+                </div>
+
+                <div class="question">
+                    <h3>Question 2: Which of the following is a product of the light-dependent reactions of photosynthesis?</h3>
+                    <select name="q2">
+                        <option value="">Select your answer</option>
+                        <option value="a">Glucose</option>
+                        <option value="b">Carbon dioxide</option>
+                        <option value="c">Oxygen</option>
+                        <option value="d">Chlorophyll</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <h3>Question 3: Write the balanced chemical equation for photosynthesis:</h3>
+                    <input type="text" name="q3" placeholder="Enter the balanced equation">
+                </div>
+
+                <div class="question">
+                    <h3>Question 4: Match the following components with their functions in photosynthesis:</h3>
+                    <p>1. Chloroplasts</p>
+                    <select name="q4a">
+                        <option value="">Select your answer</option>
+                        <option value="a">Site of photosynthesis in plants</option>
+                        <option value="b">Captures light energy</option>
+                        <option value="c">Raw material for glucose</option>
+                    </select>
+                    
+                    <p>2. Carbon Dioxide</p>
+                    <select name="q4b">
+                        <option value="">Select your answer</option>
+                        <option value="a">Site of photosynthesis in plants</option>
+                        <option value="b">Captures light energy</option>
+                        <option value="c">Raw material for glucose</option>
+                    </select>
+                </div>
+                    
+
+                <button type="submit">Submit Quiz</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html></div>

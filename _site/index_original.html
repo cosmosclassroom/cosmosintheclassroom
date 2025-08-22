@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmos in the Classroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #8b7355;
+        --secondary: #6f4c3e;
+        --accent: #e9ba74;
+        --text-light: #f5f5dc;
+        --bg-dark: #2c3e50;
+        --success: #27ae60;
+      }
+
+      body {
+        font-family: 'Libre Baskerville', serif;
+        line-height: 1.6;
+        color: white;
+        background: linear-gradient(135deg, #2c3e50, #34495e, #8b7355);
+        min-height: 100vh;
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #2c3e50, #34495e, #8b7355);
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="white" opacity="0.3"/><circle cx="80" cy="30" r="0.5" fill="white" opacity="0.5"/><circle cx="40" cy="70" r="1.5" fill="white" opacity="0.2"/><circle cx="90" cy="80" r="0.8" fill="white" opacity="0.4"/><circle cx="10" cy="90" r="1.2" fill="white" opacity="0.3"/></svg>') repeat;
+        animation: twinkle 10s infinite linear;
+      }
+
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+      }
+
+      .hero-content {
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, var(--accent), var(--text-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .hero-subtitle {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        font-style: italic;
+        color: var(--text-light);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Name Input Styling */
+      #greeting-section {
+        margin: 1.5rem 0 2rem;
+      }
+
+      .name-input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .name-input-container {
+          flex-direction: row;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        #user-name {
+          min-width: 250px;
+        }
+      }
+
+      #user-name {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+        min-width: 250px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      #user-name::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      #user-name:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px rgba(233, 186, 116, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      #save-name-btn {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      #save-name-btn:hover {
+        background: linear-gradient(135deg, var(--secondary), #5a3d2e);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+      }
+
+      .personalized-welcome {
+        font-size: 1.4rem;
+        color: var(--accent);
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+      }
+
+      #user-name-display {
+        color: var(--text-light);
+        font-weight: 700;
+      }
+
+      .change-name-link {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .change-name-link:hover {
+        color: var(--accent);
+      }
+
+      /* Main Navigation */
+      .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: var(--success);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        margin: 0.5rem;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .socratic-link {
+        background: var(--primary);
+        border: 2px solid var(--text-light);
+      }
+
+      .socratic-link:hover {
+        background: var(--secondary);
+        border-color: var(--accent);
+      }
+
+      /* Navigation Dropdown */
+      .nav-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-btn {
+        background: linear-gradient(135deg, var(--secondary), var(--primary));
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dropdown-btn:hover {
+        background: linear-gradient(135deg, #5a3d2e, var(--secondary));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.95);
+        min-width: 200px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+        border-radius: 6px;
+        margin: 4px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: rgba(139, 115, 85, 0.1);
+        color: var(--secondary);
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .name-input-container {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        #user-name {
+          min-width: 200px;
+          font-size: 0.9rem;
+        }
+
+        #save-name-btn {
+          padding: 0.6rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .personalized-welcome {
+          font-size: 1.2rem;
+        }
+
+        .main-nav {
+          flex-direction: column;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .main-nav {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Name Input JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const nameInputForm = document.getElementById('name-input-form');
+        const personalizedGreeting = document.getElementById('personalized-greeting');
+        const userNameInput = document.getElementById('user-name');
+        const saveNameBtn = document.getElementById('save-name-btn');
+        const changeNameBtn = document.getElementById('change-name-btn');
+        const userNameDisplay = document.getElementById('user-name-display');
+        
+        // Check if user name is already stored
+        const storedName = localStorage.getItem('cosmosUserName');
+        if (storedName) {
+          showPersonalizedGreeting(storedName);
+        }
+        
+        // Save name functionality
+        function saveName() {
+          const name = userNameInput.value.trim();
+          if (name && name.length > 0) {
+            localStorage.setItem('cosmosUserName', name);
+            showPersonalizedGreeting(name);
+          }
+        }
+        
+        // Show personalized greeting
+        function showPersonalizedGreeting(name) {
+          userNameDisplay.textContent = name;
+          
+          // Get time-based greeting
+          const hour = new Date().getHours();
+          let timeGreeting = 'Welcome back';
+          if (hour < 12) {
+            timeGreeting = 'Good morning';
+          } else if (hour < 17) {
+            timeGreeting = 'Good afternoon';
+          } else {
+            timeGreeting = 'Good evening';
+          }
+          
+          // Update greeting text
+          const welcomeText = personalizedGreeting.querySelector('.personalized-welcome');
+          welcomeText.innerHTML = `${timeGreeting}, <span id="user-name-display">${name}</span>!`;
+          
+          nameInputForm.style.display = 'none';
+          personalizedGreeting.style.display = 'block';
+          
+          // Store last visit time
+          localStorage.setItem('cosmosLastVisit', new Date().toISOString());
+        }
+        
+        // Show name input form
+        function showNameInput() {
+          nameInputForm.style.display = 'block';
+          personalizedGreeting.style.display = 'none';
+          userNameInput.focus();
+        }
+        
+        // Event listeners
+        saveNameBtn.addEventListener('click', saveName);
+        
+        userNameInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            saveName();
+          }
+        });
+        
+        changeNameBtn.addEventListener('click', function() {
+          localStorage.removeItem('cosmosUserName');
+          userNameInput.value = '';
+          showNameInput();
+        });
+        
+        // Focus on input when form is shown
+        if (!storedName) {
+          userNameInput.focus();
+        }
+      });
+
+      // Dropdown functionality
+      function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.classList.toggle('show');
+      }
+
+      // Close dropdown when clicking outside
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-btn')) {
+          const dropdowns = document.getElementsByClassName('dropdown-content');
+          for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove('show');
+          }
+        }
+      }
+    </script>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Cosmos in the Classroom</h1>
+        
+        <!-- Personalized Greeting Section -->
+        <div id="greeting-section">
+          <div id="name-input-form">
+            <p>Welcome to your physics journey!</p>
+            <div class="name-input-container">
+              <input 
+                type="text" 
+                id="user-name" 
+                placeholder="Enter your name"
+                maxlength="50"
+              >
+              <button id="save-name-btn">Let's Begin</button>
+            </div>
+          </div>
+          
+          <div id="personalized-greeting" style="display: none;">
+            <p class="personalized-welcome">
+              Welcome back, <span id="user-name-display"></span>!
+            </p>
+            <button id="change-name-btn" class="change-name-link">Change name</button>
+          </div>
+        </div>
+        
+        <p>Explore the universe through interactive physics learning. From ancient measurements to modern technology, discover the story of physics through engaging phenomena and hands-on problem solving.</p>
+        <p class="hero-subtitle">Following the wisdom of Socrates: "The only true wisdom is in knowing you know nothing" — begin your journey of inquiry into the fundamental laws of nature.</p>
+        
+        <!-- Main Navigation -->
+        <div class="main-nav">
+          <a href="/src/portal/index.html" class="cta-button">
+            🚀 Enter Learning Portal
+          </a>
+          <a href="/src/ref/ref_socrates_program/" class="cta-button socratic-link">
+            🏛️ Explore Socratic Learning
+          </a>
+          
+          <!-- Additional Options Dropdown -->
+          <div class="nav-dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+              ⚙️ More Options
+            </button>
+            <div class="dropdown-content" id="dropdown-menu">
+              <a href="/src/ref/ref_lib.html">📖 Reference Library</a>
+              <a href="/Consequence Engine/consequenceegine.html">📈 Success Tools</a>
+              <a href="/src/portal/hphysics/portal.html">🏆 Honors Physics</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>

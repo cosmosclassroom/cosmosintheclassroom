@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHS Chunker - Enhanced Progress Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        parchment: {
+                            50: '#fefdf8',
+                            100: '#fdf9e7',
+                            200: '#fbf1c7',
+                            300: '#f7e6a3',
+                            400: '#f1d97d',
+                            500: '#e9c665',
+                            600: '#d4a944',
+                            700: '#b8903a',
+                            800: '#967135',
+                            900: '#7a5c30'
+                        },
+                        sage: {
+                            50: '#f6f7f6',
+                            100: '#e3e7e3',
+                            200: '#c7d2c7',
+                            300: '#9fb09f',
+                            400: '#728a72',
+                            500: '#566e56',
+                            600: '#435943',
+                            700: '#374637',
+                            800: '#2e3a2e',
+                            900: '#273027'
+                        },
+                        burgundy: {
+                            50: '#fdf2f2',
+                            100: '#fce7e7',
+                            200: '#f8d1d1',
+                            300: '#f1a9a9',
+                            400: '#e57373',
+                            500: '#d32f2f',
+                            600: '#c62828',
+                            700: '#b71c1c',
+                            800: '#8c1a1a',
+                            900: '#6d1616'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fefdf8 0%, #fdf9e7 100%);
+        }
+        .serif { font-family: 'Crimson Text', serif; }
+        
+        /* Enhanced Chunk Visualization */
+        .chunk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+            gap: 3px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .chunk-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .chunk-dot:hover {
+            transform: scale(1.3);
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .chunk-complete { 
+            background: linear-gradient(135deg, #566e56 0%, #728a72 100%);
+            box-shadow: 0 2px 6px rgba(86, 110, 86, 0.4);
+        }
+        
+        .chunk-current { 
+            background: linear-gradient(135deg, #e9c665 0%, #f1d97d 100%);
+            box-shadow: 0 2px 6px rgba(233, 198, 101, 0.4);
+            animation: pulse 2s infinite;
+            border-color: #d4a944;
+        }
+        
+        .chunk-pending { 
+            background: linear-gradient(135deg, #e3e7e3 0%, #f6f7f6 100%);
+            border: 1px solid #c7d2c7;
+        }
+        
+        .chunk-future {
+            background: #f6f7f6;
+            border: 1px dashed #c7d2c7;
+            opacity: 0.6;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        /* Navigation Pills */
+        .nav-pills {
+            display: flex;
+            gap: 2px;
+            background-color: #c7d2c7;
+            border-radius: 12px;
+            padding: 3px;
+        }
+        
+        .nav-pill {
+            padding: 10px 20px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            color: #566e56;
+            border: none;
+        }
+        
+        .nav-pill.active {
+            background: linear-gradient(135deg, #566e56 0%, #435943 100%);
+            color: #fefdf8;
+            box-shadow: 0 3px 8px rgba(86, 110, 86, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .nav-pill:hover:not(.active) {
+            background-color: #e3e7e3;
+            transform: translateY(-1px);
+        }
+        
+        /* Week Timeline */
+        .week-timeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            margin: 20px 0;
+        }
+        
+        .day-column {
+            background: linear-gradient(135deg, #ffffff 0%, #fefdf8 100%);
+            border: 2px solid #e3e7e3;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .day-column:hover {
+            border-color: #c7d2c7;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .day-column.today {
+            border-color: #566e56;
+            box-shadow: 0 4px 16px rgba(86, 110, 86, 0.3);
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, #f6f7f6 0%, #e3e7e3 100%);
+            padding: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #566e56;
+        }
+        
+        .day-column.today .day-header {
+            background: linear-gradient(135deg, #566e56 0%, #435943 100%);
+            color: #fefdf8;
+        }
+        
+        .day-chunks {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-height: 100px;
+        }
+        
+        /* Progress Indicators */
+        .progress-ring {
+            transform: rotate(-90deg);
+            width: 80px;
+            height: 80px;
+        }
+        
+        .progress-ring__circle {
+            stroke: #e3e7e3;
+            fill: transparent;
+            stroke-width: 6;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.5s ease;
+        }
+        
+        .progress-ring__circle--progress {
+            stroke: url(#progressGradient);
+        }
+        
+        /* Stats Cards */
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f6f7f6 100%);
+            border: 2px solid #e3e7e3;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: #c7d2c7;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #566e56;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: #728a72;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        
+        /* Unit Timeline */
+        .unit-timeline {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            padding: 16px 0;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        
+        .unit-block {
+            min-width: 140px;
+            padding: 12px 16px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .unit-block:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .unit-block.completed {
+            background: linear-gradient(135deg, #566e56 0%, #435943 100%);
+            color: #fefdf8;
+            box-shadow: 0 2px 8px rgba(86, 110, 86, 0.3);
+        }
+        
+        .unit-block.current {
+            background: linear-gradient(135deg, #e9c665 0%, #d4a944 100%);
+            color: #2e3a2e;
+            border: 2px solid #b8903a;
+            box-shadow: 0 3px 10px rgba(233, 198, 101, 0.4);
+        }
+        
+        .unit-block.upcoming {
+            background: linear-gradient(135deg, #e3e7e3 0%, #c7d2c7 100%);
+            color: #566e56;
+        }
+        
+        /* Elegant Cards */
+        .elegant-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fefdf8 100%);
+            border: 2px solid #e3e7e3;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .elegant-card:hover {
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+            border-color: #c7d2c7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .week-timeline {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+            }
+            
+            .day-chunks {
+                min-height: 80px;
+                padding: 8px;
+            }
+            
+            .chunk-dot {
+                width: 16px;
+                height: 16px;
+            }
+        }
+        
+        /* Scrollable Calendar */
+        .calendar-scroll {
+            max-height: 600px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+        
+        .calendar-week {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 1px;
+            margin-bottom: 1px;
+        }
+        
+        .week-label {
+            background: linear-gradient(135deg, #f6f7f6 0%, #e3e7e3 100%);
+            padding: 16px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: #566e56;
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .week-days {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1px;
+        }
+        
+        .mini-day {
+            background: linear-gradient(135deg, #fefdf8 0%, #f6f7f6 100%);
+            padding: 8px;
+            min-height: 70px;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .mini-day:last-child {
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .mini-day:hover {
+            background: linear-gradient(135deg, #e3e7e3 0%, #c7d2c7 100%);
+        }
+        
+        .mini-day.today {
+            background: linear-gradient(135deg, #566e56 0%, #435943 100%);
+            color: #fefdf8;
+        }
+        
+        .mini-day.has-class {
+            border-left: 4px solid #728a72;
+        }
+        
+        .mini-day.today.has-class {
+            border-left: 4px solid #e9c665;
+        }
+        
+        .mini-chunks {
+            display: flex;
+            gap: 1px;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+        
+        .mini-chunk {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+        
+        .mini-chunk.complete { background-color: #566e56; }
+        .mini-chunk.current { background-color: #e9c665; }
+        .mini-chunk.pending { background-color: #c7d2c7; }
+    </style>
+</head>
+<body class="min-h-screen">
+    
+    <!-- Header with enhanced navigation -->
+    <header class="elegant-card mx-6 mt-6 mb-6">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold serif text-sage-800">Physics Progress Chunker</h1>
+                    <p class="text-sage-600 mt-2">Visual progress tracking across all time scales</p>
+                </div>
+                <div class="text-right text-sm">
+                    <div class="text-sage-800 font-semibold">Today: Day A, Period 3</div>
+                    <div class="text-sage-600">October 16, 2025 • 9:23 AM</div>
+                    <div class="text-sage-600">Week 8 of Q2 • Unit 6</div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Time Scale Navigation -->
+            <div class="nav-pills">
+                <button class="nav-pill active" data-view="daily">Today & Week</button>
+                <button class="nav-pill" data-view="unit">Unit Progress</button>
+                <button class="nav-pill" data-view="calendar">Calendar View</button>
+                <button class="nav-pill" data-view="quarter">Quarter</button>
+                <button class="nav-pill" data-view="year">Full Year</button>
+            </div>
+        </div>
+        
+        <!-- Unit Progress Timeline -->
+        <div class="px-6 pb-6 border-t border-sage-200">
+            <div class="unit-timeline">
+                <div class="unit-block completed">Unit 1<br><span class="text-xs">Principles</span></div>
+                <div class="unit-block completed">Unit 2<br><span class="text-xs">Kinematics</span></div>
+                <div class="unit-block completed">Unit 3<br><span class="text-xs">Forces</span></div>
+                <div class="unit-block completed">Unit 4<br><span class="text-xs">Work & Energy</span></div>
+                <div class="unit-block completed">Unit 5<br><span class="text-xs">Momentum</span></div>
+                <div class="unit-block current">Unit 6<br><span class="text-xs">Circular & Gravity</span></div>
+                <div class="unit-block upcoming">Unit 7<br><span class="text-xs">Oscillations</span></div>
+                <div class="unit-block upcoming">Unit 8<br><span class="text-xs">Waves</span></div>
+                <div class="unit-block upcoming">Unit 9<br><span class="text-xs">Thermodynamics</span></div>
+                <div class="unit-block upcoming">Unit 10<br><span class="text-xs">Optics</span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="px-6 space-y-6">
+        
+        <!-- Daily & Weekly View (Primary Focus) -->
+        <div id="daily-view">
+            <!-- Last Week Summary -->
+            <div class="elegant-card p-6 mb-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold serif text-sage-800">Last Week Performance</h3>
+                    <span class="text-sm text-sage-600 bg-sage-100 px-3 py-1 rounded-full">October 7-11</span>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="stat-card">
+                        <span class="stat-number">18</span>
+                        <div class="stat-label">Chunks Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">4.5h</span>
+                        <div class="stat-label">Total Teaching Time</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">94%</span>
+                        <div class="stat-label">Schedule Adherence</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Unit 5</span>
+                        <div class="stat-label">Completed Successfully</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- This Week Enhanced View -->
+            <div class="elegant-card p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold serif text-sage-800">This Week: Unit 6 - Circular Motion & Gravity</h3>
+                    <div class="flex items-center space-x-4">
+                        <div class="relative">
+                            <svg class="progress-ring">
+                                <defs>
+                                    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#566e56;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#728a72;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <circle class="progress-ring__circle" stroke-width="6" fill="transparent" r="30" cx="40" cy="40"/>
+                                <circle class="progress-ring__circle progress-ring__circle--progress" stroke-width="6" fill="transparent" r="30" cx="40" cy="40" stroke-dasharray="113 75"/>
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <span class="text-lg font-bold text-sage-800 transform rotate-90">60%</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-semibold text-sage-800">12 of 20 chunks</div>
+                            <div class="text-xs text-sage-600">3h completed this week</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Enhanced Week Grid -->
+                <div class="week-timeline">
+                    <!-- Monday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <div class="font-bold">Mon 14</div>
+                            <div class="text-xs opacity-75">Day A</div>
+                        </div>
+                        <div class="day-chunks">
+                            <div class="chunk-dot chunk-complete" title="Warmup: Review centripetal force (15 min)"></div>
+                            <div class="chunk-dot chunk-complete" title="Concept: Universal gravitation intro (20 min)"></div>
+                            <div class="chunk-dot chunk-complete" title="Practice: Basic gravity problems (15 min)"></div>
+                            <div class="chunk-dot chunk-complete" title="Wrap: Key takeaways (10 min)"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tuesday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <div class="font-bold">Tue 15</div>
+                            <div class="text-xs opacity-75">Day B</div>
+                        </div>
+                        <div class="day-chunks">
+                            <div class="chunk-dot chunk-complete" title="Lab: Measuring gravitational acceleration"></div>
+                            <div class="chunk-dot chunk-complete" title="Lab: Data collection and analysis"></div>
+                            <div class="chunk-dot chunk-complete" title="Discussion: Results interpretation"></div>
+                            <div class="chunk-dot chunk-complete" title="Connection: Real-world applications"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wednesday (Today) -->
+                    <div class="day-column today">
+                        <div class="day-header">
+                            <div class="font-bold">Wed 16</div>
+                            <div class="text-xs opacity-75">Day A • Today</div>
+                        </div>
+                        <div class="day-chunks">
+                            <div class="chunk-dot chunk-complete" title="Warmup: Lab review and questions"></div>
+                            <div class="chunk-dot chunk-complete" title="Concept: Orbital mechanics basics"></div>
+                            <div class="chunk-dot chunk-current" title="Practice: Satellite orbit calculations (Current)"></div>
+                            <div class="chunk-dot chunk-pending" title="Applications: GPS and satellites"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Thursday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <div class="font-bold">Thu 17</div>
+                            <div class="text-xs opacity-75">Day B</div>
+                        </div>
+                        <div class="day-chunks">
+                            <div class="chunk-dot chunk-pending" title="Advanced: Planetary motion"></div>
+                            <div class="chunk-dot chunk-pending" title="Problem solving: Complex scenarios"></div>
+                            <div class="chunk-dot chunk-pending" title="Assessment prep: Key concepts"></div>
+                            <div class="chunk-dot chunk-pending" title="Review: Unit summary"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Friday -->
+                    <div class="day-column">
+                        <div class="day-header">
+                            <div class="font-bold">Fri 18</div>
+                            <div class="text-xs opacity-75">Day A</div>
+                        </div>
+                        <div class="day-chunks">
+                            <div class="chunk-dot chunk-pending" title="Assessment: Unit 6 test"></div>
+                            <div class="chunk-dot chunk-pending" title="Assessment: Problem solving portion"></div>
+                            <div class="chunk-dot chunk-pending" title="Reflection: Unit learnings"></div>
+                            <div class="chunk-dot chunk-pending" title="Preview: Unit 7 oscillations"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Today's Detail Panel -->
+                <div class="mt-6 p-5 bg-gradient-to-r from-parchment-100 to-sage-50 rounded-xl border-l-4 border-sage-500">
+                    <h4 class="font-bold text-sage-800 mb-4 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        Today's Progress (Period 3: 9:20-10:10 AM)
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-2 bg-sage-100 rounded-lg">
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-sage-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm font-medium">Warmup: Lab review and Q&A</span>
+                            </div>
+                            <span class="text-xs text-sage-600 bg-sage-200 px-2 py-1 rounded">15 min • 9:20-9:35</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 bg-sage-100 rounded-lg">
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-sage-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm font-medium">Concept: Orbital mechanics fundamentals</span>
+                            </div>
+                            <span class="text-xs text-sage-600 bg-sage-200 px-2 py-1 rounded">20 min • 9:35-9:55</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 bg-parchment-200 rounded-lg border-l-4 border-parchment-500">
+                            <div class="flex items-center">
+                                <svg class="w-4 h-4 text-parchment-700 mr-2 animate-spin" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-sm font-bold text-parchment-800">Practice: Satellite orbit calculations (In Progress)</span>
+                            </div>
+                            <span class="text-xs text-parchment-700 bg-parchment-300 px-2 py-1 rounded">15 min • 9:55-10:10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Calendar View (Scrollable Timeline) -->
+        <div id="calendar-view" class="hidden">
+            <div class="elegant-card">
+                <div class="p-6 border-b border-sage-200">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-semibold serif text-sage-800">Multi-Week Calendar View</h3>
+                        <div class="flex items-center space-x-3">
+                            <button class="px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">← Previous</button>
+                            <button class="px-4 py-2 bg-parchment-500 text-white rounded-lg hover:bg-parchment-600 transition-colors">Today</button>
+                            <button class="px-4 py-2 bg-sage-600 text-white rounded-lg hover:bg-sage-700 transition-colors">Next →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calendar-scroll p-6">
+                    <!-- Week 1 -->
+                    <div class="calendar-week mb-2">
+                        <div class="week-label">
+                            <div class="font-bold">Week 6</div>
+                            <div class="text-xs">Sep 29 - Oct 3</div>
+                        </div>
+                        <div class="week-days">
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">30</div>
+                                <div class="text-xs text-gray-600">Unit 5 Final</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">1</div>
+                                <div class="text-xs text-gray-600">Unit 6 Intro</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">2</div>
+                                <div class="text-xs text-gray-600">Circular Motion</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">3</div>
+                                <div class="text-xs text-gray-600">Centripetal Force</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">4</div>
+                                <div class="text-xs text-gray-600">Lab Setup</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Week 2 -->
+                    <div class="calendar-week mb-2">
+                        <div class="week-label">
+                            <div class="font-bold">Week 7</div>
+                            <div class="text-xs">Oct 7 - 11</div>
+                        </div>
+                        <div class="week-days">
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">7</div>
+                                <div class="text-xs text-gray-600">Centripetal Lab</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">8</div>
+                                <div class="text-xs text-gray-600">Data Analysis</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">9</div>
+                                <div class="text-xs text-gray-600">Applications</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">10</div>
+                                <div class="text-xs text-gray-600">Problem Solving</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">11</div>
+                                <div class="text-xs text-gray-600">Review</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Week 3 (Current) -->
+                    <div class="calendar-week mb-2" style="border: 2px solid #e9c665; border-radius: 12px; padding: 4px;">
+                        <div class="week-label" style="background: linear-gradient(135deg, #e9c665 0%, #d4a944 100%); color: #2e3a2e;">
+                            <div class="font-bold">Week 8</div>
+                            <div class="text-xs">Oct 14 - 18</div>
+                        </div>
+                        <div class="week-days">
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">14</div>
+                                <div class="text-xs text-gray-600">Universal Gravity</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">15</div>
+                                <div class="text-xs text-gray-600">Gravity Equations</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class today">
+                                <div class="text-xs font-bold mb-1">16</div>
+                                <div class="text-xs">Orbital Mechanics</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk complete"></div>
+                                    <div class="mini-chunk current"></div>
+                                    <div class="mini-chunk pending"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">17</div>
+                                <div class="text-xs text-gray-600">Satellites</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                </div>
+                            </div>
+                            <div class="mini-day has-class">
+                                <div class="text-xs font-bold mb-1">18</div>
+                                <div class="text-xs text-gray-600">Assessment</div>
+                                <div class="mini-chunks">
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                    <div class="mini-chunk pending"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional weeks continue... -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unit View -->
+        <div id="unit-view" class="hidden">
+            <div class="elegant-card p-6">
+                <h3 class="text-xl font-semibold serif text-sage-800 mb-6">Unit 6: Detailed Progress Timeline</h3>
+                
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-sage-600">Unit 6 Progress</span>
+                        <span class="text-sm font-medium text-sage-600">48 of 80 chunks (60%)</span>
+                    </div>
+                    <div class="w-full bg-sage-200 rounded-full h-3">
+                        <div class="bg-gradient-to-r from-sage-500 to-sage-600 h-3 rounded-full transition-all duration-500" style="width: 60%"></div>
+                    </div>
+                </div>
+                
+                <!-- Detailed chunk grid for entire unit -->
+                <div class="chunk-grid">
+                    <!-- This would show all 80 chunks for Unit 6 -->
+                    <!-- Week 1 chunks (16 chunks) -->
+                    <div class="chunk-dot chunk-complete" title="6.1 Introduction to circular motion"></div>
+                    <div class="chunk-dot chunk-complete" title="6.1 Uniform circular motion"></div>
+                    <div class="chunk-dot chunk-complete" title="6.1 Centripetal acceleration"></div>
+                    <div class="chunk-dot chunk-complete" title="6.1 Practice problems"></div>
+                    <!-- ... continue for all chunks -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quarter and Year views would follow similar patterns -->
+        <div id="quarter-view" class="hidden">
+            <!-- Quarter view implementation -->
+        </div>
+        
+        <div id="year-view" class="hidden">
+            <!-- Year view implementation -->
+        </div>
+        
+    </div>
+
+    <script>
+        // Enhanced view management
+        let currentView = 'daily';
+        
+        function showView(viewName) {
+            // Hide all views
+            document.querySelectorAll('[id$="-view"]').forEach(view => {
+                view.classList.add('hidden');
+            });
+            
+            // Remove active state from all pills
+            document.querySelectorAll('.nav-pill').forEach(pill => {
+                pill.classList.remove('active');
+            });
+            
+            // Show selected view
+            document.getElementById(viewName + '-view').classList.remove('hidden');
+            
+            // Set active pill
+            document.querySelector(`[data-view="${viewName}"]`).classList.add('active');
+            currentView = viewName;
+        }
+        
+        // Initialize navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    const view = this.dataset.view;
+                    showView(view);
+                });
+            });
+            
+            // Enhanced chunk interactions
+            document.querySelectorAll('.chunk-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    // Show detailed chunk information
+                    const title = this.title || 'Chunk details';
+                    showChunkDetail(title);
+                });
+            });
+            
+            // Unit block interactions
+            document.querySelectorAll('.unit-block').forEach(block => {
+                block.addEventListener('click', function() {
+                    if (this.classList.contains('current') || this.classList.contains('completed')) {
+                        showView('unit');
+                    }
+                });
+            });
+        });
+        
+        function showChunkDetail(title) {
+            // This would show a detailed popup or sidebar with chunk information
+            console.log('Showing details for:', title);
+            // Could integrate with content generation system
+        }
+        
+        // Time management functions
+        function updateCurrentTime() {
+            const now = new Date();
+            // Update time displays and current chunk highlighting
+            // This would integrate with scheduler.js
+        }
+        
+        // Update time every minute
+        setInterval(updateCurrentTime, 60000);
+    </script>
+</body>
+</html>

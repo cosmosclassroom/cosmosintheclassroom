@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>BHS Week-Centric Chunker v2.0 | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="bhs-week-centric-chunker-v20">BHS Week-Centric Chunker v2.0</h1>
+
+<p>AI-optimized curriculum planning using week-based organization and 15-minute “chunks” as atomic learning units.</p>
+
+<h2 id="-quick-start">🚀 <strong>Quick Start</strong></h2>
+
+<h3 id="teachers"><strong>Teachers</strong></h3>
+<ul>
+  <li><strong><a href="/src/Chunker/ui/chunker.html">Week-Centric Chunker</a></strong> - Main interface with week navigation</li>
+  <li><strong><a href="/src/Chunker/ai/curriculum-extractor.html">AI Curriculum Extractor</a></strong> - Convert documents to Chunker format</li>
+  <li><strong><a href="/src/Chunker/community.html">Community Hub</a></strong> - BHS resources &amp; weekly inspirational quotes</li>
+</ul>
+
+<h3 id="developers"><strong>Developers</strong></h3>
+<ul>
+  <li><strong><a href="/src/Chunker/ui/index.html">Original Interface</a></strong> - Legacy period-centric interface</li>
+  <li><strong><a href="/src/Chunker/tools/config-tester.html">Config Tester</a></strong> - Test configurations</li>
+  <li><strong><a href="docs/">Documentation</a></strong> - Technical specifications</li>
+</ul>
+
+<h2 id="-ai-curriculum-creation">🤖 <strong>AI Curriculum Creation</strong></h2>
+
+<h3 id="teacher-workflow"><strong>Teacher Workflow</strong></h3>
+<ol>
+  <li>Upload curriculum documents (calendar, scope &amp; sequence)</li>
+  <li>AI analyzes and extracts course structure</li>
+  <li>Guided clarification questions</li>
+  <li>AI generates Chunker-compatible JSON</li>
+  <li>Validation and download</li>
+</ol>
+
+<h3 id="ai-features"><strong>AI Features</strong></h3>
+<ul>
+  <li>Multi-document processing (various formats)</li>
+  <li>Educational logic validation (pacing &amp; structure)</li>
+  <li>Schema-compliant JSON output</li>
+  <li>Teacher-friendly interface (no technical skills needed)</li>
+  <li>Automatic quality checking</li>
+</ul>
+
+<h2 id="-directory-structure">📁 <strong>Directory Structure</strong></h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/Chunker/
+├── ui/                    # User interfaces
+│   ├── chunker.html      # Main week-centric interface
+│   └── index.html        # Legacy interface
+├── ai/                   # AI curriculum extraction
+│   ├── curriculum-extractor.html
+│   └── README.md
+├── community.html        # BHS Community Hub
+├── chunker-schema.json   # Configuration validation
+└── configs/             # Sample configurations
+</code></pre></div></div>
+
+<h2 id="-core-concepts">🎯 <strong>Core Concepts</strong></h2>
+<ul>
+  <li><strong>Chunk</strong>: 15-minute atomic learning unit</li>
+  <li><strong>Weekly Organization</strong>: Cognitive load optimization (2-4 units/day)</li>
+  <li><strong>AI Integration</strong>: Document → structured curriculum conversion</li>
+  <li><strong>Educational Validation</strong>: Prerequisite flow &amp; pacing verification
+├── 📱 ui/                          # User Interfaces
+│   ├── chunker.html                # Primary week-centric teacher interface
+│   ├── index.html                  # Legacy period-centric interface
+│   ├── views/
+│   │   └── calendar.html          # Calendar view component
+│   └── styles/                     # Shared styles
+│       └── main.css
+│
+├── 🏘️ community.html               # BHS Community Hub with inspirational quotes
+│
+├── ⚙️ engine/                      # Core Processing Engines
+│   ├── chunker-engine.js           # Week-centric processing engine
+│   └── week-centric-scheduler.js   # Development version
+│
+├── 📋 configs/                     # Configuration Files
+│   ├── chunker-config.json         # Primary week-centric configuration
+│   ├── week-centric-v2.json        # Development version
+│   └── templates/                  # Pre-built schedule templates
+│       ├── traditional.json        # Standard 6-period schedule
+│       └── block.json              # A/B block alternating schedule
+│
+├── 🤖 ai/                          # AI-Powered Curriculum Extraction
+│   ├── curriculum-extractor.html   # Teacher-facing interface
+│   ├── extraction-workflow.js      # AI workflow management
+│   ├── config-validator.js         # JSON validation tool
+│   ├── chunker-schema.json         # Complete JSON schema specification
+│   ├── curriculum-extraction-prompt.md  # AI prompt templates
+│   ├── teacher-prompts.md          # Copy-paste prompts for teachers
+│   └── README.md                   # AI system documentation
+│
+├── 🔧 tools/                       # Development &amp; Testing Tools
+│   └── config-tester.html          # Configuration testing interface
+│
+├── 📚 docs/                        # Documentation
+│   ├── wireframe.md                # Original engineering spec
+│   ├── planner.md                  # Chunk planning wireframe
+│   ├── architecture.md             # AI integration architecture
+│   └── configuration.md            # Configuration system docs
+│
+├── 🗃️ legacy/                      # Deprecated Files (Keep for Reference)
+│   ├── 24-25.html                  # Old academic year schedules
+│   ├── 25-26-schedule.html
+│   ├── index.html                  # Original teacher planner
+│   ├── config.json                 # Legacy configuration format
+│   └── physics.json                # Old physics-specific data
+│
+└── 📦 archive/                     # Development Iterations
+  ├── ui-iterations/              # UI development versions
+  │   ├── redesigned-index.html
+  │   ├── multi-scale-calendar.html
+  │   └── enhanced-chunker.html
+  ├── old-configs/                # Previous config versions
+  │   ├── bhs.json
+  │   └── test.json
+  └── scheduler.js                # Original period-centric engine
+```</li>
+</ul>
+
+<h2 id="-core-features">🎯 Core Features</h2>
+
+<h3 id="chunk-based-planning"><strong>Chunk-Based Planning</strong></h3>
+<ul>
+  <li><strong>15-minute atomic units</strong> that can be rearranged, moved, or redistributed</li>
+  <li><strong>Sticky vs. Slippery chunks</strong> - some content is more flexible than others</li>
+  <li><strong>Real-time adaptation</strong> when classroom disruptions occur</li>
+  <li><strong>Intelligent time adjustment</strong> with homework transfer capabilities</li>
+</ul>
+
+<h3 id="universal-schedule-support"><strong>Universal Schedule Support</strong></h3>
+<ul>
+  <li><strong>Configuration-driven</strong> - works with any bell schedule</li>
+  <li><strong>Pre-built templates</strong> for common schedule types</li>
+  <li><strong>JSON-based configuration</strong> for easy sharing between schools</li>
+  <li><strong>Real-time validation</strong> of configuration files</li>
+</ul>
+
+<h3 id="smart-time-management"><strong>Smart Time Management</strong></h3>
+<ul>
+  <li><strong>Admin time reserves</strong> - always keep buffer time for unexpected tasks</li>
+  <li><strong>Assessment protection</strong> - critical content gets priority</li>
+  <li><strong>Emergency modes</strong> - relaxed constraints for crisis days</li>
+  <li><strong>Substitute-friendly</strong> - simplified planning for substitutes</li>
+</ul>
+
+<h2 id="-supported-schedule-types">🏫 Supported Schedule Types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Schedule Type</th>
+      <th>Template Available</th>
+      <th>Example Schools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>8-Period Drop-2 Rotation</strong></td>
+      <td>✅ BHS Production</td>
+      <td>Branford High School</td>
+    </tr>
+    <tr>
+      <td><strong>Traditional 6-Period</strong></td>
+      <td>✅ Template</td>
+      <td>Most US high schools</td>
+    </tr>
+    <tr>
+      <td><strong>A/B Block Schedule</strong></td>
+      <td>✅ Template</td>
+      <td>Many modern high schools</td>
+    </tr>
+    <tr>
+      <td><strong>Custom Rotation</strong></td>
+      <td>🔧 Configurable</td>
+      <td>Any school with JSON config</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="️-technical-architecture">⚙️ Technical Architecture</h2>
+
+<h3 id="configuration-engine-engineschedulerjs"><strong>Configuration Engine</strong> (<code class="language-plaintext highlighter-rouge">engine/scheduler.js</code>)</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Universal schedule support</span>
+<span class="kd">const</span> <span class="nx">engine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChunkerEngine</span><span class="p">(</span><span class="dl">'</span><span class="s1">configs/your-school.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dailyChunks</span> <span class="o">=</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">calculateDailyChunks</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">completion</span> <span class="o">=</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">projectCompletionDate</span><span class="p">(</span><span class="nx">totalChunks</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="flexibility-engine"><strong>Flexibility Engine</strong></h3>
+<ul>
+  <li><strong>Chunk Types</strong>: warmup, concept, practice, lab, assessment, review</li>
+  <li><strong>Flexibility Levels</strong>: rigid, sticky, slippery</li>
+  <li><strong>Cost Calculations</strong>: automatic penalty/bonus system for adjustments</li>
+  <li><strong>Constraint Satisfaction</strong>: optimal chunk placement with teacher preferences</li>
+</ul>
+
+<h3 id="calendar-integration"><strong>Calendar Integration</strong></h3>
+<ul>
+  <li><strong>Rotation day calculation</strong> based on school start date</li>
+  <li><strong>Non-instructional day handling</strong> - holidays, professional development</li>
+  <li><strong>Special schedule support</strong> - early release, late start, emergency schedules</li>
+  <li><strong>Real-time period tracking</strong> with current period display</li>
+</ul>
+
+<h2 id="-getting-started-for-new-schools">🚀 Getting Started for New Schools</h2>
+
+<h3 id="1-choose-your-template">1. <strong>Choose Your Template</strong></h3>
+<p>Start with the closest match to your schedule:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">configs/templates/traditional.json</code> - Standard schedule</li>
+  <li><code class="language-plaintext highlighter-rouge">configs/templates/block.json</code> - Block scheduling</li>
+  <li><code class="language-plaintext highlighter-rouge">configs/bhs.json</code> - Complex rotation example</li>
+</ul>
+
+<h3 id="2-customize-configuration">2. <strong>Customize Configuration</strong></h3>
+<p>Edit the JSON file to match your school:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"school"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your School Name"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-26"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rotation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="3-test-configuration">3. <strong>Test Configuration</strong></h3>
+<p>Use <code class="language-plaintext highlighter-rouge">tools/config-tester.html</code> to validate your configuration and see chunk calculations.</p>
+
+<h3 id="4-deploy">4. <strong>Deploy</strong></h3>
+<p>Upload your configuration and start using the chunker tools!</p>
+
+<h2 id="-educational-philosophy">🎓 Educational Philosophy</h2>
+
+<h3 id="why-chunks-work"><strong>Why Chunks Work</strong></h3>
+<p>Traditional lesson planning thinks in “days” or “periods” but reality is messier:</p>
+<ul>
+  <li>✅ <strong>Some concepts need 45 minutes, others need 90</strong></li>
+  <li>✅ <strong>Pop quizzes steal time</strong></li>
+  <li>✅ <strong>Fire drills happen</strong></li>
+  <li>✅ <strong>Students need different pacing</strong></li>
+  <li>✅ <strong>Assessment prep requires flexibility</strong></li>
+</ul>
+
+<h3 id="the-chunker-solution"><strong>The Chunker Solution</strong></h3>
+<p>15-minute “chunks” as atomic planning units that can be:</p>
+<ul>
+  <li><strong>Added</strong> (+) when concepts need more time</li>
+  <li><strong>Removed</strong> (-) when you’re ahead of schedule</li>
+  <li><strong>Redistributed</strong> across different days/periods</li>
+  <li><strong>Auto-calculated</strong> to show new end dates</li>
+</ul>
+
+<h2 id="-success-metrics">📊 Success Metrics</h2>
+
+<h3 id="for-teachers"><strong>For Teachers</strong></h3>
+<ul>
+  <li><strong>Reduced planning stress</strong> - adaptive system handles disruptions</li>
+  <li><strong>Better time awareness</strong> - see exactly where lessons stand</li>
+  <li><strong>Improved pacing</strong> - data-driven completion projections</li>
+  <li><strong>Flexible assessment</strong> - protect critical content automatically</li>
+</ul>
+
+<h3 id="for-students"><strong>For Students</strong></h3>
+<ul>
+  <li><strong>Consistent progress</strong> - less time lost to schedule disruptions</li>
+  <li><strong>Better preparation</strong> - teachers know exactly what’s been covered</li>
+  <li><strong>Clearer expectations</strong> - visual progress tracking</li>
+  <li><strong>Reduced anxiety</strong> - predictable lesson progression</li>
+</ul>
+
+<h3 id="for-schools"><strong>For Schools</strong></h3>
+<ul>
+  <li><strong>Universal adoption</strong> - works with any bell schedule</li>
+  <li><strong>Professional development</strong> - common framework for teacher training</li>
+  <li><strong>Data insights</strong> - real completion rates vs. planned progression</li>
+  <li><strong>Collaboration</strong> - shareable configurations and best practices</li>
+</ul>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<h3 id="for-educators"><strong>For Educators</strong></h3>
+<ul>
+  <li>Share your schedule configurations</li>
+  <li>Report bugs or suggest improvements</li>
+  <li>Create documentation for your use cases</li>
+</ul>
+
+<h3 id="for-developers"><strong>For Developers</strong></h3>
+<ul>
+  <li>Extend the configuration engine for new schedule types</li>
+  <li>Add new chunk types and flexibility rules</li>
+  <li>Improve the user interface and experience</li>
+</ul>
+
+<h2 id="-support">📞 Support</h2>
+
+<h3 id="documentation"><strong>Documentation</strong></h3>
+<ul>
+  <li><strong>Technical Specs</strong>: See <code class="language-plaintext highlighter-rouge">docs/</code> directory</li>
+  <li><strong>Configuration Help</strong>: Use <code class="language-plaintext highlighter-rouge">tools/config-tester.html</code></li>
+  <li><strong>User Guides</strong>: Start with <code class="language-plaintext highlighter-rouge">ui/index.html</code></li>
+</ul>
+
+<h3 id="issues"><strong>Issues</strong></h3>
+<ul>
+  <li><strong>Configuration Problems</strong>: Validate with demo tool first</li>
+  <li><strong>Schedule Integration</strong>: Check your JSON configuration format</li>
+  <li><strong>Feature Requests</strong>: Consider if it’s schedule-specific or universal</li>
+</ul>
+
+<hr />
+
+<p><strong>🎉 LOGICAL NAMING SYSTEM IMPLEMENTED</strong></p>
+
+<p>This codebase follows a consistent, intuitive naming convention:</p>
+
+<ul>
+  <li><strong>UI Files</strong>: Clear purpose-based names (<code class="language-plaintext highlighter-rouge">index.html</code>, <code class="language-plaintext highlighter-rouge">tracker.html</code>, <code class="language-plaintext highlighter-rouge">calendar.html</code>)</li>
+  <li><strong>Configuration</strong>: Simple, hierarchical naming (<code class="language-plaintext highlighter-rouge">bhs.json</code>, <code class="language-plaintext highlighter-rouge">traditional.json</code>, <code class="language-plaintext highlighter-rouge">block.json</code>)</li>
+  <li><strong>Engine</strong>: Descriptive functionality (<code class="language-plaintext highlighter-rouge">scheduler.js</code>)</li>
+  <li><strong>Documentation</strong>: Readable, lowercase names (<code class="language-plaintext highlighter-rouge">wireframe.md</code>, <code class="language-plaintext highlighter-rouge">planner.md</code>, <code class="language-plaintext highlighter-rouge">architecture.md</code>)</li>
+  <li><strong>Tools</strong>: Purpose-driven names (<code class="language-plaintext highlighter-rouge">config-tester.html</code>)</li>
+</ul>
+
+<p><strong>Built for Branford High School • Extended for Universal Use • Part of Cosmos in the Classroom</strong></p>
+
+      </div>  
+  </body>
+=======
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="bhs-week-centric-chunker-v20">BHS Week-Centric Chunker v2.0</h1>
+
+<p>AI-optimized curriculum planning using week-based organization and 15-minute “chunks” as atomic learning units.</p>
+
+<h2 id="-quick-start">🚀 <strong>Quick Start</strong></h2>
+
+<h3 id="teachers"><strong>Teachers</strong></h3>
+<ul>
+  <li><strong><a href="/src/Chunker/ui/chunker.html">Week-Centric Chunker</a></strong> - Main interface with week navigation</li>
+  <li><strong><a href="/src/Chunker/ai/curriculum-extractor.html">AI Curriculum Extractor</a></strong> - Convert documents to Chunker format</li>
+  <li><strong><a href="/src/Chunker/community.html">Community Hub</a></strong> - BHS resources &amp; weekly inspirational quotes</li>
+</ul>
+
+<h3 id="developers"><strong>Developers</strong></h3>
+<ul>
+  <li><strong><a href="/src/Chunker/ui/index.html">Original Interface</a></strong> - Legacy period-centric interface</li>
+  <li><strong><a href="/src/Chunker/tools/config-tester.html">Config Tester</a></strong> - Test configurations</li>
+  <li><strong><a href="docs/">Documentation</a></strong> - Technical specifications</li>
+</ul>
+
+<h2 id="-ai-curriculum-creation">🤖 <strong>AI Curriculum Creation</strong></h2>
+
+<h3 id="teacher-workflow"><strong>Teacher Workflow</strong></h3>
+<ol>
+  <li>Upload curriculum documents (calendar, scope &amp; sequence)</li>
+  <li>AI analyzes and extracts course structure</li>
+  <li>Guided clarification questions</li>
+  <li>AI generates Chunker-compatible JSON</li>
+  <li>Validation and download</li>
+</ol>
+
+<h3 id="ai-features"><strong>AI Features</strong></h3>
+<ul>
+  <li>Multi-document processing (various formats)</li>
+  <li>Educational logic validation (pacing &amp; structure)</li>
+  <li>Schema-compliant JSON output</li>
+  <li>Teacher-friendly interface (no technical skills needed)</li>
+  <li>Automatic quality checking</li>
+</ul>
+
+<h2 id="-directory-structure">📁 <strong>Directory Structure</strong></h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/Chunker/
+├── ui/                    # User interfaces
+│   ├── chunker.html      # Main week-centric interface
+│   └── index.html        # Legacy interface
+├── ai/                   # AI curriculum extraction
+│   ├── curriculum-extractor.html
+│   └── README.md
+├── community.html        # BHS Community Hub
+├── chunker-schema.json   # Configuration validation
+└── configs/             # Sample configurations
+</code></pre></div></div>
+
+<h2 id="-core-concepts">🎯 <strong>Core Concepts</strong></h2>
+<ul>
+  <li><strong>Chunk</strong>: 15-minute atomic learning unit</li>
+  <li><strong>Weekly Organization</strong>: Cognitive load optimization (2-4 units/day)</li>
+  <li><strong>AI Integration</strong>: Document → structured curriculum conversion</li>
+  <li><strong>Educational Validation</strong>: Prerequisite flow &amp; pacing verification
+├── 📱 ui/                          # User Interfaces
+│   ├── chunker.html                # Primary week-centric teacher interface
+│   ├── index.html                  # Legacy period-centric interface
+│   ├── views/
+│   │   └── calendar.html          # Calendar view component
+│   └── styles/                     # Shared styles
+│       └── main.css
+│
+├── 🏘️ community.html               # BHS Community Hub with inspirational quotes
+│
+├── ⚙️ engine/                      # Core Processing Engines
+│   ├── chunker-engine.js           # Week-centric processing engine
+│   └── week-centric-scheduler.js   # Development version
+│
+├── 📋 configs/                     # Configuration Files
+│   ├── chunker-config.json         # Primary week-centric configuration
+│   ├── week-centric-v2.json        # Development version
+│   └── templates/                  # Pre-built schedule templates
+│       ├── traditional.json        # Standard 6-period schedule
+│       └── block.json              # A/B block alternating schedule
+│
+├── 🤖 ai/                          # AI-Powered Curriculum Extraction
+│   ├── curriculum-extractor.html   # Teacher-facing interface
+│   ├── extraction-workflow.js      # AI workflow management
+│   ├── config-validator.js         # JSON validation tool
+│   ├── chunker-schema.json         # Complete JSON schema specification
+│   ├── curriculum-extraction-prompt.md  # AI prompt templates
+│   ├── teacher-prompts.md          # Copy-paste prompts for teachers
+│   └── README.md                   # AI system documentation
+│
+├── 🔧 tools/                       # Development &amp; Testing Tools
+│   └── config-tester.html          # Configuration testing interface
+│
+├── 📚 docs/                        # Documentation
+│   ├── wireframe.md                # Original engineering spec
+│   ├── planner.md                  # Chunk planning wireframe
+│   ├── architecture.md             # AI integration architecture
+│   └── configuration.md            # Configuration system docs
+│
+├── 🗃️ legacy/                      # Deprecated Files (Keep for Reference)
+│   ├── 24-25.html                  # Old academic year schedules
+│   ├── 25-26-schedule.html
+│   ├── index.html                  # Original teacher planner
+│   ├── config.json                 # Legacy configuration format
+│   └── physics.json                # Old physics-specific data
+│
+└── 📦 archive/                     # Development Iterations
+  ├── ui-iterations/              # UI development versions
+  │   ├── redesigned-index.html
+  │   ├── multi-scale-calendar.html
+  │   └── enhanced-chunker.html
+  ├── old-configs/                # Previous config versions
+  │   ├── bhs.json
+  │   └── test.json
+  └── scheduler.js                # Original period-centric engine
+```</li>
+</ul>
+
+<h2 id="-core-features">🎯 Core Features</h2>
+
+<h3 id="chunk-based-planning"><strong>Chunk-Based Planning</strong></h3>
+<ul>
+  <li><strong>15-minute atomic units</strong> that can be rearranged, moved, or redistributed</li>
+  <li><strong>Sticky vs. Slippery chunks</strong> - some content is more flexible than others</li>
+  <li><strong>Real-time adaptation</strong> when classroom disruptions occur</li>
+  <li><strong>Intelligent time adjustment</strong> with homework transfer capabilities</li>
+</ul>
+
+<h3 id="universal-schedule-support"><strong>Universal Schedule Support</strong></h3>
+<ul>
+  <li><strong>Configuration-driven</strong> - works with any bell schedule</li>
+  <li><strong>Pre-built templates</strong> for common schedule types</li>
+  <li><strong>JSON-based configuration</strong> for easy sharing between schools</li>
+  <li><strong>Real-time validation</strong> of configuration files</li>
+</ul>
+
+<h3 id="smart-time-management"><strong>Smart Time Management</strong></h3>
+<ul>
+  <li><strong>Admin time reserves</strong> - always keep buffer time for unexpected tasks</li>
+  <li><strong>Assessment protection</strong> - critical content gets priority</li>
+  <li><strong>Emergency modes</strong> - relaxed constraints for crisis days</li>
+  <li><strong>Substitute-friendly</strong> - simplified planning for substitutes</li>
+</ul>
+
+<h2 id="-supported-schedule-types">🏫 Supported Schedule Types</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Schedule Type</th>
+      <th>Template Available</th>
+      <th>Example Schools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>8-Period Drop-2 Rotation</strong></td>
+      <td>✅ BHS Production</td>
+      <td>Branford High School</td>
+    </tr>
+    <tr>
+      <td><strong>Traditional 6-Period</strong></td>
+      <td>✅ Template</td>
+      <td>Most US high schools</td>
+    </tr>
+    <tr>
+      <td><strong>A/B Block Schedule</strong></td>
+      <td>✅ Template</td>
+      <td>Many modern high schools</td>
+    </tr>
+    <tr>
+      <td><strong>Custom Rotation</strong></td>
+      <td>🔧 Configurable</td>
+      <td>Any school with JSON config</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="️-technical-architecture">⚙️ Technical Architecture</h2>
+
+<h3 id="configuration-engine-engineschedulerjs"><strong>Configuration Engine</strong> (<code class="language-plaintext highlighter-rouge">engine/scheduler.js</code>)</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Universal schedule support</span>
+<span class="kd">const</span> <span class="nx">engine</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ChunkerEngine</span><span class="p">(</span><span class="dl">'</span><span class="s1">configs/your-school.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">dailyChunks</span> <span class="o">=</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">calculateDailyChunks</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="kd">const</span> <span class="nx">completion</span> <span class="o">=</span> <span class="nx">engine</span><span class="p">.</span><span class="nx">projectCompletionDate</span><span class="p">(</span><span class="nx">totalChunks</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="flexibility-engine"><strong>Flexibility Engine</strong></h3>
+<ul>
+  <li><strong>Chunk Types</strong>: warmup, concept, practice, lab, assessment, review</li>
+  <li><strong>Flexibility Levels</strong>: rigid, sticky, slippery</li>
+  <li><strong>Cost Calculations</strong>: automatic penalty/bonus system for adjustments</li>
+  <li><strong>Constraint Satisfaction</strong>: optimal chunk placement with teacher preferences</li>
+</ul>
+
+<h3 id="calendar-integration"><strong>Calendar Integration</strong></h3>
+<ul>
+  <li><strong>Rotation day calculation</strong> based on school start date</li>
+  <li><strong>Non-instructional day handling</strong> - holidays, professional development</li>
+  <li><strong>Special schedule support</strong> - early release, late start, emergency schedules</li>
+  <li><strong>Real-time period tracking</strong> with current period display</li>
+</ul>
+
+<h2 id="-getting-started-for-new-schools">🚀 Getting Started for New Schools</h2>
+
+<h3 id="1-choose-your-template">1. <strong>Choose Your Template</strong></h3>
+<p>Start with the closest match to your schedule:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">configs/templates/traditional.json</code> - Standard schedule</li>
+  <li><code class="language-plaintext highlighter-rouge">configs/templates/block.json</code> - Block scheduling</li>
+  <li><code class="language-plaintext highlighter-rouge">configs/bhs.json</code> - Complex rotation example</li>
+</ul>
+
+<h3 id="2-customize-configuration">2. <strong>Customize Configuration</strong></h3>
+<p>Edit the JSON file to match your school:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"school"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your School Name"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2025-08-26"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"schedule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rotation"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"periods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="3-test-configuration">3. <strong>Test Configuration</strong></h3>
+<p>Use <code class="language-plaintext highlighter-rouge">tools/config-tester.html</code> to validate your configuration and see chunk calculations.</p>
+
+<h3 id="4-deploy">4. <strong>Deploy</strong></h3>
+<p>Upload your configuration and start using the chunker tools!</p>
+
+<h2 id="-educational-philosophy">🎓 Educational Philosophy</h2>
+
+<h3 id="why-chunks-work"><strong>Why Chunks Work</strong></h3>
+<p>Traditional lesson planning thinks in “days” or “periods” but reality is messier:</p>
+<ul>
+  <li>✅ <strong>Some concepts need 45 minutes, others need 90</strong></li>
+  <li>✅ <strong>Pop quizzes steal time</strong></li>
+  <li>✅ <strong>Fire drills happen</strong></li>
+  <li>✅ <strong>Students need different pacing</strong></li>
+  <li>✅ <strong>Assessment prep requires flexibility</strong></li>
+</ul>
+
+<h3 id="the-chunker-solution"><strong>The Chunker Solution</strong></h3>
+<p>15-minute “chunks” as atomic planning units that can be:</p>
+<ul>
+  <li><strong>Added</strong> (+) when concepts need more time</li>
+  <li><strong>Removed</strong> (-) when you’re ahead of schedule</li>
+  <li><strong>Redistributed</strong> across different days/periods</li>
+  <li><strong>Auto-calculated</strong> to show new end dates</li>
+</ul>
+
+<h2 id="-success-metrics">📊 Success Metrics</h2>
+
+<h3 id="for-teachers"><strong>For Teachers</strong></h3>
+<ul>
+  <li><strong>Reduced planning stress</strong> - adaptive system handles disruptions</li>
+  <li><strong>Better time awareness</strong> - see exactly where lessons stand</li>
+  <li><strong>Improved pacing</strong> - data-driven completion projections</li>
+  <li><strong>Flexible assessment</strong> - protect critical content automatically</li>
+</ul>
+
+<h3 id="for-students"><strong>For Students</strong></h3>
+<ul>
+  <li><strong>Consistent progress</strong> - less time lost to schedule disruptions</li>
+  <li><strong>Better preparation</strong> - teachers know exactly what’s been covered</li>
+  <li><strong>Clearer expectations</strong> - visual progress tracking</li>
+  <li><strong>Reduced anxiety</strong> - predictable lesson progression</li>
+</ul>
+
+<h3 id="for-schools"><strong>For Schools</strong></h3>
+<ul>
+  <li><strong>Universal adoption</strong> - works with any bell schedule</li>
+  <li><strong>Professional development</strong> - common framework for teacher training</li>
+  <li><strong>Data insights</strong> - real completion rates vs. planned progression</li>
+  <li><strong>Collaboration</strong> - shareable configurations and best practices</li>
+</ul>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<h3 id="for-educators"><strong>For Educators</strong></h3>
+<ul>
+  <li>Share your schedule configurations</li>
+  <li>Report bugs or suggest improvements</li>
+  <li>Create documentation for your use cases</li>
+</ul>
+
+<h3 id="for-developers"><strong>For Developers</strong></h3>
+<ul>
+  <li>Extend the configuration engine for new schedule types</li>
+  <li>Add new chunk types and flexibility rules</li>
+  <li>Improve the user interface and experience</li>
+</ul>
+
+<h2 id="-support">📞 Support</h2>
+
+<h3 id="documentation"><strong>Documentation</strong></h3>
+<ul>
+  <li><strong>Technical Specs</strong>: See <code class="language-plaintext highlighter-rouge">docs/</code> directory</li>
+  <li><strong>Configuration Help</strong>: Use <code class="language-plaintext highlighter-rouge">tools/config-tester.html</code></li>
+  <li><strong>User Guides</strong>: Start with <code class="language-plaintext highlighter-rouge">ui/index.html</code></li>
+</ul>
+
+<h3 id="issues"><strong>Issues</strong></h3>
+<ul>
+  <li><strong>Configuration Problems</strong>: Validate with demo tool first</li>
+  <li><strong>Schedule Integration</strong>: Check your JSON configuration format</li>
+  <li><strong>Feature Requests</strong>: Consider if it’s schedule-specific or universal</li>
+</ul>
+
+<hr />
+
+<p><strong>🎉 LOGICAL NAMING SYSTEM IMPLEMENTED</strong></p>
+
+<p>This codebase follows a consistent, intuitive naming convention:</p>
+
+<ul>
+  <li><strong>UI Files</strong>: Clear purpose-based names (<code class="language-plaintext highlighter-rouge">index.html</code>, <code class="language-plaintext highlighter-rouge">tracker.html</code>, <code class="language-plaintext highlighter-rouge">calendar.html</code>)</li>
+  <li><strong>Configuration</strong>: Simple, hierarchical naming (<code class="language-plaintext highlighter-rouge">bhs.json</code>, <code class="language-plaintext highlighter-rouge">traditional.json</code>, <code class="language-plaintext highlighter-rouge">block.json</code>)</li>
+  <li><strong>Engine</strong>: Descriptive functionality (<code class="language-plaintext highlighter-rouge">scheduler.js</code>)</li>
+  <li><strong>Documentation</strong>: Readable, lowercase names (<code class="language-plaintext highlighter-rouge">wireframe.md</code>, <code class="language-plaintext highlighter-rouge">planner.md</code>, <code class="language-plaintext highlighter-rouge">architecture.md</code>)</li>
+  <li><strong>Tools</strong>: Purpose-driven names (<code class="language-plaintext highlighter-rouge">config-tester.html</code>)</li>
+</ul>
+
+<p><strong>Built for Branford High School • Extended for Universal Use • Part of Cosmos in the Classroom</strong></p>
+
+    
+    </div>
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+  </body>
+</html>

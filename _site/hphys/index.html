@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Honors Physics Landing Page | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <!-- src/hphys/h_phys_landing -->
+<style>
+  h2 {
+    margin: 10px;
+    box-shadow: 5px solid black;
+    
+  }
+</style>
+
+<p><a href="#unit-8--electromagnetism">8 Electromagnetism</a>
+<a href="#unit-9--electricity">9 Electricity</a>
+<a href="#unit-10--optics">10 Optics</a></p>
+
+<h1 id="honors-physics">Honors Physics</h1>
+<h2 id="branford-high-school---2025">Branford High School - 2025</h2>
+
+<hr />
+<section>
+
+  <h2 id="unit-1--principles-of-physics">Unit 1 | Principles of Physics</h2>
+
+  <h2 id="unit-3--kinematics-2">Unit 3 | Kinematics 2</h2>
+
+  <h2 id="unit-4--dynamics">Unit 4 | Dynamics</h2>
+
+  <h2 id="unit-5--work-and-energy">Unit 5 | Work and Energy</h2>
+
+  <h2 id="unit-6--rotational-motion-and-gravitation">Unit 6 | Rotational Motion and Gravitation</h2>
+
+  <h2 id="unit-7--waves-and-harmonics">Unit 7 | Waves and Harmonics</h2>
+
+  <h2 id="unit-8--electromagnetism">Unit 8 | Electromagnetism</h2>
+
+  <h2 id="unit-8--electromagnetism-1">Unit 8 | Electromagnetism</h2>
+
+  <h3 id="wave-particle-energies">8.1 Wave-Particle Energies</h3>
+  <p><a href="/slides/hlec_8.1_wave-particle-energies.html">Slides 8.1 Wave Particle Energies</a></p>
+
+  <ul>
+    <li>Electromagnetic waves and photons</li>
+    <li>Wave-particle duality</li>
+    <li>Energy quantization</li>
+    <li>Planck’s constant and photoelectric effect</li>
+  </ul>
+
+  <h3 id="electric-charges-and-fields">8.2 Electric Charges and Fields</h3>
+
+  <p><a href="/slides/hlec_8.2_electric-charges.html">Slides 8.2 Electric Charges</a></p>
+
+  <ul>
+    <li>Electric charge and Coulomb’s law</li>
+    <li>Electric field lines and flux</li>
+    <li>Gauss’s law</li>
+    <li>Electric potential</li>
+  </ul>
+
+  <h3 id="electromagnetic-power-and-energy">8.3 Electromagnetic Power and Energy</h3>
+
+  <p><a href="/slides/hlec_8.3_electromagnetic-power-energy.html">Slides 8.3 EM Power and Energy</a></p>
+
+  <ul>
+    <li>Electromagnetic induction</li>
+    <li>Power transmission</li>
+    <li>Energy in electromagnetic fields</li>
+    <li>Maxwell’s equations</li>
+  </ul>
+
+  <h2 id="unit-9--electricity">Unit 9 | Electricity</h2>
+
+  <h3 id="electrostatics">9.1 Electrostatics</h3>
+
+  <p><a href="/slides/hlec_9.1_electrostatics.html">Slides 9.1 Electrostatics</a></p>
+
+  <ul>
+    <li>Static electricity principles</li>
+    <li>Charge distribution</li>
+    <li>Electric potential difference</li>
+    <li>Capacitance</li>
+  </ul>
+
+  <h3 id="electric-circuits">9.2 Electric Circuits</h3>
+
+  <p><a href="/slides/hlec_9.2-electricity-currents.html">Slides 9.2 Electric Currents</a></p>
+
+  <ul>
+    <li>Current and voltage</li>
+    <li>Series and parallel circuits</li>
+    <li>Resistance and Ohm’s law</li>
+    <li>Kirchhoff’s laws</li>
+    <li>Power and energy in circuits</li>
+  </ul>
+
+  <h2 id="unit-10--optics">Unit 10 | Optics</h2>
+
+  <h3 id="geometric-optics">10.1 Geometric Optics</h3>
+
+  <p><a href="/slides/hlec_10.1_geometic-optics.html">Slides 10.1 Geometric Optics</a></p>
+
+  <p><a href="../q4-2025/ps10.1_geometric_optics">Problem Set 10.1 Geometric Optics</a></p>
+
+  <ul>
+    <li>Reflection and refraction</li>
+    <li>Mirrors and lenses</li>
+    <li>Image formation</li>
+    <li>Optical instruments</li>
+  </ul>
+
+  <h3 id="wave-optics">10.2 Wave Optics</h3>
+
+  <p><a href="/slides/hlec_10.1b_light-optics.html">Slides 10.2 Wave Optics</a></p>
+
+  <p><a href="../q4-2025/ps10.2_wave_optics">Problem Set 10.2 Wave Optics</a></p>
+
+  <ul>
+    <li>Wave nature of light</li>
+    <li>Interference</li>
+    <li>Diffraction</li>
+    <li>Polarization</li>
+  </ul>
+
+</section>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

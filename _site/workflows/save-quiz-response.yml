@@ -1,0 +1,32 @@
+name: Process Quiz Submission
+
+on:
+  repository_dispatch:
+    types: [quiz_submission]
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Socrates repo
+      uses: actions/checkout@v3
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Process quiz submission
+      env:
+        QUIZ_DATA: ${{ github.event.client_payload.quiz_data }}
+      run: |
+        python scripts/save_quiz_response.py
+    
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "actions@github.com"
+        git add _data/
+        git diff --quiet && git diff --staged --quiet || git commit -m "Quiz submission from ${{ github.event.client_payload.student_id || 'student' }}"
+        git push

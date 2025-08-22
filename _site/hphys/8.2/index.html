@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Understanding Wave-Particle Energies - The Dual Nature of Light | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <style>
+    .important-info{
+        padding: 1rem;
+        border: 0.1 pt black solid;
+        box-shadow: 5pt grey solid;
+    }
+</style>
+
+<h1 id="82-the-dual-nature-of-light-waves-particles-and-energy">8.2 The Dual Nature of Light: Waves, Particles, and Energy</h1>
+
+<p>Light is one of the most fascinating phenomena in physics, exhibiting both wave-like and particle-like properties. In this section, you’ll learn how experiments reveal the wave nature of light, how energy is quantized in photons, and how to calculate the energy of light.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IRBfpBPELmE?si=v2C181QCQLh5bnDQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+
+<hr />
+
+<h2 id="1-light-as-a-wave">1. Light as a Wave</h2>
+
+<p>Light travels through space as an electromagnetic wave—oscillating electric and magnetic fields that propagate at the speed of light ($c \approx 3.00 \times 10^8$ m/s in a vacuum).</p>
+
+<h3 id="key-properties-of-waves">Key Properties of Waves</h3>
+
+<ul>
+  <li><strong>Wavelength ($\lambda$):</strong> Distance between consecutive peaks or troughs.</li>
+  <li><strong>Frequency ($f$):</strong> Number of wave cycles passing a point per second (Hz).</li>
+  <li><strong>Amplitude ($A$):</strong> Maximum displacement from equilibrium (related to brightness).</li>
+</ul>
+
+<p>The relationship between wavelength and frequency is:
+\(c = \lambda f\)</p>
+
+<hr />
+
+<h2 id="2-evidence-for-the-wave-nature-of-light">2. Evidence for the Wave Nature of Light</h2>
+
+<h3 id="huygens-principle">Huygens’ Principle</h3>
+
+<p>Christian Huygens proposed that every point on a wavefront acts as a source of tiny wavelets. The new position of the wavefront is found by drawing a surface tangent to all these wavelets. This principle explains how waves propagate, bend, and interfere.</p>
+
+<h3 id="diffraction-and-interference">Diffraction and Interference</h3>
+
+<p>When light passes through narrow slits or around obstacles, it bends and spreads out—a phenomenon called <strong>diffraction</strong>. When two or more light waves overlap, they combine to form patterns of constructive and destructive <strong>interference</strong>.</p>
+
+<h4 id="the-double-slit-experiment">The Double-Slit Experiment</h4>
+
+<div class="figure-right">
+
+  <p><img src="/assets/images/10_optics/Double-slit.svg.png" alt="Young's Double Slit Experiment Schematic" /></p>
+
+</div>
+
+<p>In the famous double-slit experiment, light passing through two closely spaced slits creates an interference pattern of bright and dark bands on a screen. This pattern can only be explained if light behaves as a wave.</p>
+
+<ul>
+  <li><strong>Constructive interference:</strong> Crests of two waves align, producing a bright fringe.</li>
+  <li><strong>Destructive interference:</strong> Crest of one wave aligns with the trough of another, producing a dark fringe.</li>
+</ul>
+
+<h4 id="single-slit-diffraction">Single-Slit Diffraction</h4>
+
+<p>Light passing through a single slit also produces a diffraction pattern, with a bright central maximum and dimmer bands to the sides. The pattern depends on the slit width and the wavelength of light.</p>
+
+<h4 id="the-coin-shadow-phenomenon">The Coin Shadow Phenomenon</h4>
+
+<p>If you shine a light on a coin suspended in air, you’ll see a bright spot at the center of its shadow. This surprising result is due to diffraction and constructive interference of light waves bending around the coin’s edge.</p>
+
+<hr />
+
+<h2 id="3-light-as-a-particle-photons-and-energy-quantization">3. Light as a Particle: Photons and Energy Quantization</h2>
+
+<p>While light behaves as a wave in many experiments, it also acts as a stream of particles called <strong>photons</strong>. Each photon carries a discrete amount of energy.</p>
+
+<h3 id="photon-energy">Photon Energy</h3>
+
+<div class="important-info">
+
+  <p><strong>Photon Energy Equation</strong></p>
+
+\[E = hf\]
+
+  <p>Where:</p>
+  <ul>
+    <li>$E$ = energy of a photon (joules, J)</li>
+    <li>$h$ = Planck’s constant ($6.626 \times 10^{-34}$ J·s)</li>
+    <li>$f$ = frequency of the light (Hz)</li>
+  </ul>
+
+</div>
+
+<p>Since $c = \lambda f$, photon energy can also be written as:
+\(E = \frac{hc}{\lambda}\)</p>
+
+<ul>
+  <li>$\lambda$ = wavelength (meters)</li>
+  <li>$c$ = speed of light ($3.00 \times 10^8$ m/s)</li>
+</ul>
+
+<hr />
+
+<h2 id="4-the-photoelectric-effect">4. The Photoelectric Effect</h2>
+
+<p>When light shines on certain metals, it can eject electrons from the surface—a phenomenon called the <strong>photoelectric effect</strong>. This effect provided strong evidence for the particle nature of light.</p>
+
+<ul>
+  <li>The kinetic energy of ejected electrons depends on the frequency (not intensity) of the light.</li>
+  <li>There is a threshold frequency below which no electrons are ejected, regardless of intensity.</li>
+</ul>
+
+<p>Einstein explained this by proposing that light consists of photons, each with energy $E = hf$. The photoelectric effect equation is:</p>
+
+\[KE_{max} = hf - \phi\]
+
+<p>Where:</p>
+<ul>
+  <li>$KE_{max}$ = maximum kinetic energy of ejected electrons</li>
+  <li>$hf$ = energy of the incident photon</li>
+  <li>$\phi$ = work function (minimum energy needed to remove an electron)</li>
+</ul>
+
+<p>This simple and elegant formula solidified a very curious aspect of reality: light can exist with two separate characters <strong>simultaneously</strong>.</p>
+
+<hr />
+
+<h2 id="5-applications-and-modern-technology">5. Applications and Modern Technology</h2>
+
+<p>Understanding the wave-particle duality of light has led to many technologies:</p>
+
+<ul>
+  <li><strong>Solar cells:</strong> Convert light energy to electrical energy using the photoelectric effect.</li>
+  <li><strong>Lasers:</strong> Generate coherent light beams through stimulated emission of photons.</li>
+  <li><strong>Photodiodes:</strong> Detect light by converting photons to electrical signals.</li>
+</ul>
+
+<hr />
+
+<h2 id="6-sample-calculations">6. Sample Calculations</h2>
+
+<!-- Leave space for sample calculations as requested -->
+<!-- Example: Calculating photon energy for a given wavelength or frequency -->
+<h3 id="problem-1-violet-light">Problem 1: Violet Light</h3>
+<p>A beam of violet light has a wavelength of 400 nm. 
+a) Calculate the energy of a single photon of this light.
+b) How does this photon’s wave nature explain why you can see diffraction patterns with violet light?</p>
+
+<p><strong>Solution:</strong>
+Using $E = \frac{hc}{\lambda}$</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>E = (6.626 × 10⁻³⁴ J·s)(3.00 × 10⁸ m/s)/(400 × 10⁻⁹ m)
+E = 4.97 × 10⁻¹⁹ J
+</code></pre></div></div>
+<p>The wave nature allows violet light to interfere with itself, creating bright and dark bands in diffraction patterns. The short wavelength creates finer, more closely spaced patterns than red light.</p>
+
+<h3 id="problem-2-radio-waves">Problem 2: Radio Waves</h3>
+<p>A radio station broadcasts at 88.5 MHz. 
+a) What is the wavelength of these radio waves?
+b) Why can radio waves diffract around buildings but still behave like particles?</p>
+
+<p><strong>Solution:</strong>
+Using $c = \lambda f$</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>λ = c/f
+λ = (3.00 × 10⁸ m/s)/(88.5 × 10⁶ Hz)
+λ = 3.39 m
+</code></pre></div></div>
+<p>Radio waves exhibit wave behavior at large scales (diffraction around buildings) while still consisting of discrete photons. This demonstrates wave-particle duality across the electromagnetic spectrum.</p>
+
+<h3 id="problem-3-photoelectric-effect">Problem 3: Photoelectric Effect</h3>
+<p>Light with frequency 7.0 × 10¹⁴ Hz strikes a metal surface with work function 2.0 eV.
+a) Will electrons be ejected?
+b) How does this demonstrate light’s particle nature?</p>
+
+<p><strong>Solution:</strong>
+Using $E = hf$</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>E = (6.626 × 10⁻³⁴ J·s)(7.0 × 10¹⁴ Hz)
+E = 4.64 × 10⁻¹⁹ J = 2.9 eV
+</code></pre></div></div>
+<p>Since photon energy (2.9 eV) &gt; work function (2.0 eV), electrons will be ejected with 0.9 eV kinetic energy. This shows light delivers energy in discrete packets (photons), not as a continuous wave.</p>
+
+<hr />
+
+<h2 id="7-summary">7. Summary</h2>
+
+<ul>
+  <li>Light exhibits both wave and particle properties.</li>
+  <li>Wave phenomena such as diffraction and interference provide strong evidence for the wave nature of light.</li>
+  <li>The energy of light is quantized in photons, with $E = hf$ or $E = \frac{hc}{\lambda}$.</li>
+  <li>The photoelectric effect demonstrates the particle nature of light.</li>
+  <li>Understanding these concepts allows us to predict and calculate the behavior and energy of light in various situations.</li>
+</ul>
+
+<p><strong>Key Equations:</strong></p>
+<ul>
+  <li>$c = \lambda f$ (wave equation)</li>
+  <li>$E = hf$ (photon energy)</li>
+  <li>$E = \frac{hc}{\lambda}$ (photon energy in terms of wavelength)</li>
+  <li>$KE_{max} = hf - \phi$ (photoelectric effect)</li>
+</ul>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

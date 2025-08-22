@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Socrates: Research Brief Generator | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="socrates-research-brief-generator">Socrates: Research Brief Generator</h1>
+
+<p><em>An AI-powered curriculum design tool for phenomenon-driven NGSS science education</em></p>
+
+<h2 id="-overview">🎯 Overview</h2>
+
+<p>Socrates transforms the way educators create inquiry-based science curricula by bridging pedagogical philosophy with practical AI-assisted content generation. Built on the <strong>four-voice narrative synthesis</strong> (Socratic questioning, Burkean storytelling, Saganesque wonder, Feynmanesque playfulness), Socrates generates complete Research Briefs that maintain intellectual rigor while being perfectly aligned with NGSS 3D framework.</p>
+
+<h2 id="-key-features">✨ Key Features</h2>
+
+<h3 id="-ngss-3d-visual-framework">🎨 <strong>NGSS 3D Visual Framework</strong></h3>
+<ul>
+  <li><strong>🔵 Blue</strong>: Science &amp; Engineering Practices</li>
+  <li><strong>🟠 Orange</strong>: Disciplinary Core Ideas (DCI)</li>
+  <li><strong>🟢 Green</strong>: Crosscutting Concepts</li>
+  <li><strong>🟣 Purple</strong>: Metacognitive Connections</li>
+</ul>
+
+<h3 id="-three-step-workflow">🔬 <strong>Three-Step Workflow</strong></h3>
+<ol>
+  <li><strong>Design Your Unit</strong> - Input phenomenon, select NGSS practices, configure elements</li>
+  <li><strong>Generate AI Prompts</strong> - Create structured JSON + optimized AI prompts</li>
+  <li><strong>Create Materials</strong> - Use prompts with AI to generate complete research briefs</li>
+</ol>
+
+<h3 id="-flexible-structure-systems">🧩 <strong>Flexible Structure Systems</strong></h3>
+<ul>
+  <li><strong>Physics</strong>: Matter → Energy → Force</li>
+  <li><strong>Biology</strong>: Structure → Function → Growth/Evolution</li>
+  <li><strong>Narrative</strong>: Beginning → Middle → End</li>
+  <li><strong>Roles</strong>: Scientist → Engineer → Policymaker</li>
+  <li><strong>Custom</strong>: User-defined three-part progression</li>
+</ul>
+
+<h2 id="️-architecture">🏗️ Architecture</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>socrates/
+├── frontend/           # React-based UI with TailwindCSS
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Main application pages
+│   └── styles/        # NGSS 3D color system
+├── backend/           # Node.js API server
+│   ├── api/           # REST endpoints
+│   ├── generators/    # AI prompt builders
+│   └── validators/    # JSON schema validation
+├── data/              # Templates and schemas
+│   ├── schemas/       # JSON schema definitions
+│   ├── templates/     # Element templates
+│   └── examples/      # Sample outputs
+└── docs/              # Documentation
+</code></pre></div></div>
+
+<h2 id="-quick-start">🚀 Quick Start</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li>Node.js 18+</li>
+  <li>npm or yarn</li>
+  <li>Modern web browser</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repository</span>
+git clone https://github.com/cosmosclassroom/cosmosintheclassroom.git
+<span class="nb">cd </span>cosmosintheclassroom/src/socrates
+
+<span class="c"># Install dependencies</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Start development server</span>
+npm run dev
+
+<span class="c"># Open browser to http://localhost:3000</span>
+</code></pre></div></div>
+
+<h3 id="basic-usage">Basic Usage</h3>
+<ol>
+  <li><strong>Select Framework</strong>: Choose your three-part structure (e.g., Matter-Energy-Force)</li>
+  <li><strong>Input Phenomenon</strong>: Describe your anchoring phenomenon</li>
+  <li><strong>Configure Elements</strong>: Select NGSS practices and crosscutting concepts</li>
+  <li><strong>Generate</strong>: Create AI prompts and JSON output</li>
+  <li><strong>Create</strong>: Use prompts with your preferred AI assistant</li>
+</ol>
+
+<h2 id="-generated-output">📋 Generated Output</h2>
+
+<h3 id="json-structure">JSON Structure</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"courseMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"narrativeVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Story of Matter, Energy, and Force"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"threePartStructure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"physics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phase1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matter"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"socratic"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"phase2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"feynmanesque"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"phase3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Force"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saganesque"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"anchoringPhenomenon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightning and Thunder Time Delay"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable phenomenon description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realWorldApplications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"meteorology"</span><span class="p">,</span><span class="w"> </span><span class="s2">"emergency preparedness"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"researchBriefStructure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"phase1_matter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"phase2_energy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"phase3_force"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="ai-prompts">AI Prompts</h3>
+<ul>
+  <li>Framework-specific system prompts</li>
+  <li>Element-by-element instructions</li>
+  <li>Metacognitive integration guidance</li>
+  <li>Assessment alignment protocols</li>
+</ul>
+
+<h2 id="-design-system">🎨 Design System</h2>
+
+<h3 id="color-coding">Color Coding</h3>
+<p>All interface elements follow the NGSS 3D color system:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--practice-primary</span><span class="p">:</span> <span class="m">#2563EB</span><span class="p">;</span>    <span class="c">/* Blue */</span>
+  <span class="py">--dci-primary</span><span class="p">:</span> <span class="m">#EA580C</span><span class="p">;</span>         <span class="c">/* Orange */</span>
+  <span class="py">--crosscutting-primary</span><span class="p">:</span> <span class="m">#16A34A</span><span class="p">;</span> <span class="c">/* Green */</span>
+  <span class="py">--metacognitive-primary</span><span class="p">:</span> <span class="m">#8B5CF6</span><span class="p">;</span> <span class="c">/* Purple */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="component-examples">Component Examples</h3>
+<ul>
+  <li><strong>Element Cards</strong>: Multi-color border strips showing all 3D components</li>
+  <li><strong>Progress Bars</strong>: Color-coded completion tracking</li>
+  <li><strong>Navigation Tabs</strong>: Component-specific themes</li>
+  <li><strong>Badges</strong>: NGSS dimension indicators</li>
+</ul>
+
+<h2 id="-pedagogical-framework">🧠 Pedagogical Framework</h2>
+
+<h3 id="four-voice-narrative-synthesis">Four-Voice Narrative Synthesis</h3>
+<ol>
+  <li><strong>Socratic</strong>: Guided questioning and intellectual humility</li>
+  <li><strong>Burkean</strong>: Historical connections and storytelling</li>
+  <li><strong>Saganesque</strong>: Cosmic perspective and wonder</li>
+  <li><strong>Feynmanesque</strong>: Playful inquiry and joy in discovery</li>
+</ol>
+
+<h3 id="ngss-3d-integration">NGSS 3D Integration</h3>
+<ul>
+  <li><strong>Practices</strong>: What students do with phenomena</li>
+  <li><strong>DCI</strong>: Core disciplinary knowledge</li>
+  <li><strong>Crosscutting Concepts</strong>: Thinking lenses across domains</li>
+  <li><strong>Metacognitive</strong>: Reflection on learning process</li>
+</ul>
+
+<h2 id="-documentation">📚 Documentation</h2>
+
+<h3 id="for-educators">For Educators</h3>
+<ul>
+  <li><a href="docs/getting-started.md">Getting Started Guide</a></li>
+  <li><a href="docs/frameworks.md">Framework Selection Guide</a></li>
+  <li><a href="docs/ai-prompts.md">AI Prompt Usage</a></li>
+  <li><a href="docs/assessment.md">Assessment Integration</a></li>
+</ul>
+
+<h3 id="for-developers">For Developers</h3>
+<ul>
+  <li><a href="docs/api.md">API Documentation</a></li>
+  <li><a href="docs/components.md">Component Library</a></li>
+  <li><a href="docs/colors.md">Color System</a></li>
+  <li><a href="docs/contributing.md">Contributing Guide</a></li>
+</ul>
+
+<h2 id="-use-cases">🎯 Use Cases</h2>
+
+<h3 id="primary-education">Primary Education</h3>
+<ul>
+  <li><strong>Elementary</strong>: Observe-Wonder-Share framework</li>
+  <li><strong>Middle School</strong>: Question-Explore-Explain progression</li>
+  <li><strong>High School</strong>: Analyze-Design-Evaluate structure</li>
+</ul>
+
+<h3 id="discipline-specific">Discipline-Specific</h3>
+<ul>
+  <li><strong>Physics</strong>: Fundamental interactions and forces</li>
+  <li><strong>Biology</strong>: Structure-function-evolution relationships</li>
+  <li><strong>Chemistry</strong>: Atomic-molecular-reaction progressions</li>
+  <li><strong>Earth Science</strong>: Systems-cycles-deep time</li>
+</ul>
+
+<h3 id="cross-curricular">Cross-Curricular</h3>
+<ul>
+  <li><strong>STEAM Integration</strong>: Scientist-Engineer-Artist-Mathematician roles</li>
+  <li><strong>Environmental Science</strong>: Local-Regional-Global perspectives</li>
+  <li><strong>History of Science</strong>: Discovery-Context-Impact narratives</li>
+</ul>
+
+<h2 id="-integration">🤝 Integration</h2>
+
+<h3 id="platform-compatibility">Platform Compatibility</h3>
+<ul>
+  <li><strong>Google Classroom</strong>: Direct export to three-document Research Brief system</li>
+  <li><strong>Canvas/Moodle</strong>: LTI integration support</li>
+  <li><strong>Jekyll/GitHub Pages</strong>: Static site generation for curriculum websites</li>
+  <li><strong>Marp</strong>: Automatic slide deck generation</li>
+</ul>
+
+<h3 id="ai-platforms">AI Platforms</h3>
+<ul>
+  <li><strong>OpenAI GPT</strong>: Optimized prompt templates</li>
+  <li><strong>Claude</strong>: Anthropic-specific formatting</li>
+  <li><strong>Google Bard</strong>: Structured conversation starters</li>
+  <li><strong>Custom Models</strong>: Flexible prompt architecture</li>
+</ul>
+
+<h2 id="-configuration">🔧 Configuration</h2>
+
+<h3 id="environment-variables">Environment Variables</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># API Configuration</span>
+<span class="nv">REACT_APP_API_URL</span><span class="o">=</span>http://localhost:3001
+<span class="nv">REACT_APP_AI_PROVIDER</span><span class="o">=</span>openai
+
+<span class="c"># Feature Flags</span>
+<span class="nv">REACT_APP_ENABLE_CUSTOM_FRAMEWORKS</span><span class="o">=</span><span class="nb">true
+</span><span class="nv">REACT_APP_ENABLE_COLLABORATION</span><span class="o">=</span><span class="nb">false
+</span><span class="nv">REACT_APP_ENABLE_ANALYTICS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></div>
+
+<h3 id="customization">Customization</h3>
+<ul>
+  <li><strong>Color Themes</strong>: Modify CSS custom properties</li>
+  <li><strong>Framework Templates</strong>: Add new three-part structures</li>
+  <li><strong>Element Library</strong>: Extend NGSS practice templates</li>
+  <li><strong>Voice Profiles</strong>: Customize narrative approaches</li>
+</ul>
+
+<h2 id="-roadmap">📈 Roadmap</h2>
+
+<h3 id="phase-1-foundation-fall-2025">Phase 1: Foundation (Fall 2025)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Core three-step workflow</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />NGSS 3D color system</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Basic framework templates</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />AI prompt generation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JSON export functionality</li>
+</ul>
+
+<h3 id="phase-2-enhancement-spring-2026">Phase 2: Enhancement (Spring 2026)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Collaboration features</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Advanced analytics</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Custom framework builder</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Assessment integration</li>
+</ul>
+
+<h3 id="phase-3-ecosystem-fall-2026">Phase 3: Ecosystem (Fall 2026)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />LTI platform integration</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Advanced AI model support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cross-institutional sharing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mobile application</li>
+</ul>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<p>We welcome contributions from educators, developers, and curriculum designers!</p>
+
+<h3 id="getting-started">Getting Started</h3>
+<ol>
+  <li>Fork the repository</li>
+  <li>Create a feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b feature/amazing-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -m 'Add amazing feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin feature/amazing-feature</code>)</li>
+  <li>Open a Pull Request</li>
+</ol>
+
+<h3 id="development-guidelines">Development Guidelines</h3>
+<ul>
+  <li>Follow the NGSS 3D color system</li>
+  <li>Maintain pedagogical authenticity</li>
+  <li>Include comprehensive tests</li>
+  <li>Update documentation</li>
+</ul>
+
+<h2 id="-license">📄 License</h2>
+
+<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details.</p>
+
+<h2 id="-acknowledgments">🙏 Acknowledgments</h2>
+
+<ul>
+  <li><strong>NGSS</strong>: Next Generation Science Standards framework</li>
+  <li><strong>Cosmos in the Classroom</strong>: Educational platform foundation</li>
+  <li><strong>Four-Voice Philosophy</strong>: Socrates, Burke, Sagan, Feynman inspirations</li>
+  <li><strong>Open Source Community</strong>: React, TailwindCSS, and Node.js ecosystems</li>
+</ul>
+
+<h2 id="-support">📞 Support</h2>
+
+<ul>
+  <li><strong>Documentation</strong>: <a href="https://cosmosintheclassroom.org/socrates">Full docs</a></li>
+  <li><strong>Issues</strong>: <a href="https://github.com/cosmosclassroom/cosmosintheclassroom/issues">GitHub Issues</a></li>
+  <li><strong>Discussions</strong>: <a href="https://github.com/cosmosclassroom/cosmosintheclassroom/discussions">GitHub Discussions</a></li>
+  <li><strong>Email</strong>: support@cosmosintheclassroom.org</li>
+</ul>
+
+<hr />
+
+<p><em>“The unexamined lesson is not worth teaching.”</em> - Socrates (probably)</p>
+
+<p>Built with ❤️ for educators who believe in the power of inquiry-driven learning.</p>
+
+      </div>  
+  </body>
+=======
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="socrates-research-brief-generator">Socrates: Research Brief Generator</h1>
+
+<p><em>An AI-powered curriculum design tool for phenomenon-driven NGSS science education</em></p>
+
+<h2 id="-overview">🎯 Overview</h2>
+
+<p>Socrates transforms the way educators create inquiry-based science curricula by bridging pedagogical philosophy with practical AI-assisted content generation. Built on the <strong>four-voice narrative synthesis</strong> (Socratic questioning, Burkean storytelling, Saganesque wonder, Feynmanesque playfulness), Socrates generates complete Research Briefs that maintain intellectual rigor while being perfectly aligned with NGSS 3D framework.</p>
+
+<h2 id="-key-features">✨ Key Features</h2>
+
+<h3 id="-ngss-3d-visual-framework">🎨 <strong>NGSS 3D Visual Framework</strong></h3>
+<ul>
+  <li><strong>🔵 Blue</strong>: Science &amp; Engineering Practices</li>
+  <li><strong>🟠 Orange</strong>: Disciplinary Core Ideas (DCI)</li>
+  <li><strong>🟢 Green</strong>: Crosscutting Concepts</li>
+  <li><strong>🟣 Purple</strong>: Metacognitive Connections</li>
+</ul>
+
+<h3 id="-three-step-workflow">🔬 <strong>Three-Step Workflow</strong></h3>
+<ol>
+  <li><strong>Design Your Unit</strong> - Input phenomenon, select NGSS practices, configure elements</li>
+  <li><strong>Generate AI Prompts</strong> - Create structured JSON + optimized AI prompts</li>
+  <li><strong>Create Materials</strong> - Use prompts with AI to generate complete research briefs</li>
+</ol>
+
+<h3 id="-flexible-structure-systems">🧩 <strong>Flexible Structure Systems</strong></h3>
+<ul>
+  <li><strong>Physics</strong>: Matter → Energy → Force</li>
+  <li><strong>Biology</strong>: Structure → Function → Growth/Evolution</li>
+  <li><strong>Narrative</strong>: Beginning → Middle → End</li>
+  <li><strong>Roles</strong>: Scientist → Engineer → Policymaker</li>
+  <li><strong>Custom</strong>: User-defined three-part progression</li>
+</ul>
+
+<h2 id="️-architecture">🏗️ Architecture</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>socrates/
+├── frontend/           # React-based UI with TailwindCSS
+│   ├── components/     # Reusable UI components
+│   ├── pages/         # Main application pages
+│   └── styles/        # NGSS 3D color system
+├── backend/           # Node.js API server
+│   ├── api/           # REST endpoints
+│   ├── generators/    # AI prompt builders
+│   └── validators/    # JSON schema validation
+├── data/              # Templates and schemas
+│   ├── schemas/       # JSON schema definitions
+│   ├── templates/     # Element templates
+│   └── examples/      # Sample outputs
+└── docs/              # Documentation
+</code></pre></div></div>
+
+<h2 id="-quick-start">🚀 Quick Start</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li>Node.js 18+</li>
+  <li>npm or yarn</li>
+  <li>Modern web browser</li>
+</ul>
+
+<h3 id="installation">Installation</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone the repository</span>
+git clone https://github.com/cosmosclassroom/cosmosintheclassroom.git
+<span class="nb">cd </span>cosmosintheclassroom/src/socrates
+
+<span class="c"># Install dependencies</span>
+npm <span class="nb">install</span>
+
+<span class="c"># Start development server</span>
+npm run dev
+
+<span class="c"># Open browser to http://localhost:3000</span>
+</code></pre></div></div>
+
+<h3 id="basic-usage">Basic Usage</h3>
+<ol>
+  <li><strong>Select Framework</strong>: Choose your three-part structure (e.g., Matter-Energy-Force)</li>
+  <li><strong>Input Phenomenon</strong>: Describe your anchoring phenomenon</li>
+  <li><strong>Configure Elements</strong>: Select NGSS practices and crosscutting concepts</li>
+  <li><strong>Generate</strong>: Create AI prompts and JSON output</li>
+  <li><strong>Create</strong>: Use prompts with your preferred AI assistant</li>
+</ol>
+
+<h2 id="-generated-output">📋 Generated Output</h2>
+
+<h3 id="json-structure">JSON Structure</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"courseMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"narrativeVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A Story of Matter, Energy, and Force"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"threePartStructure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"framework"</span><span class="p">:</span><span class="w"> </span><span class="s2">"physics"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"phase1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matter"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"socratic"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"phase2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Energy"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"feynmanesque"</span><span class="w"> </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"phase3"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Force"</span><span class="p">,</span><span class="w"> </span><span class="nl">"primaryVoice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"saganesque"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"anchoringPhenomenon"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lightning and Thunder Time Delay"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable phenomenon description"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"realWorldApplications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"meteorology"</span><span class="p">,</span><span class="w"> </span><span class="s2">"emergency preparedness"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"researchBriefStructure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"phase1_matter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"phase2_energy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"phase3_force"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">/*</span><span class="w"> </span><span class="err">detailed</span><span class="w"> </span><span class="err">element</span><span class="w"> </span><span class="err">configuration</span><span class="w"> </span><span class="err">*/</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="ai-prompts">AI Prompts</h3>
+<ul>
+  <li>Framework-specific system prompts</li>
+  <li>Element-by-element instructions</li>
+  <li>Metacognitive integration guidance</li>
+  <li>Assessment alignment protocols</li>
+</ul>
+
+<h2 id="-design-system">🎨 Design System</h2>
+
+<h3 id="color-coding">Color Coding</h3>
+<p>All interface elements follow the NGSS 3D color system:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+  <span class="py">--practice-primary</span><span class="p">:</span> <span class="m">#2563EB</span><span class="p">;</span>    <span class="c">/* Blue */</span>
+  <span class="py">--dci-primary</span><span class="p">:</span> <span class="m">#EA580C</span><span class="p">;</span>         <span class="c">/* Orange */</span>
+  <span class="py">--crosscutting-primary</span><span class="p">:</span> <span class="m">#16A34A</span><span class="p">;</span> <span class="c">/* Green */</span>
+  <span class="py">--metacognitive-primary</span><span class="p">:</span> <span class="m">#8B5CF6</span><span class="p">;</span> <span class="c">/* Purple */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="component-examples">Component Examples</h3>
+<ul>
+  <li><strong>Element Cards</strong>: Multi-color border strips showing all 3D components</li>
+  <li><strong>Progress Bars</strong>: Color-coded completion tracking</li>
+  <li><strong>Navigation Tabs</strong>: Component-specific themes</li>
+  <li><strong>Badges</strong>: NGSS dimension indicators</li>
+</ul>
+
+<h2 id="-pedagogical-framework">🧠 Pedagogical Framework</h2>
+
+<h3 id="four-voice-narrative-synthesis">Four-Voice Narrative Synthesis</h3>
+<ol>
+  <li><strong>Socratic</strong>: Guided questioning and intellectual humility</li>
+  <li><strong>Burkean</strong>: Historical connections and storytelling</li>
+  <li><strong>Saganesque</strong>: Cosmic perspective and wonder</li>
+  <li><strong>Feynmanesque</strong>: Playful inquiry and joy in discovery</li>
+</ol>
+
+<h3 id="ngss-3d-integration">NGSS 3D Integration</h3>
+<ul>
+  <li><strong>Practices</strong>: What students do with phenomena</li>
+  <li><strong>DCI</strong>: Core disciplinary knowledge</li>
+  <li><strong>Crosscutting Concepts</strong>: Thinking lenses across domains</li>
+  <li><strong>Metacognitive</strong>: Reflection on learning process</li>
+</ul>
+
+<h2 id="-documentation">📚 Documentation</h2>
+
+<h3 id="for-educators">For Educators</h3>
+<ul>
+  <li><a href="docs/getting-started.md">Getting Started Guide</a></li>
+  <li><a href="docs/frameworks.md">Framework Selection Guide</a></li>
+  <li><a href="docs/ai-prompts.md">AI Prompt Usage</a></li>
+  <li><a href="docs/assessment.md">Assessment Integration</a></li>
+</ul>
+
+<h3 id="for-developers">For Developers</h3>
+<ul>
+  <li><a href="docs/api.md">API Documentation</a></li>
+  <li><a href="docs/components.md">Component Library</a></li>
+  <li><a href="docs/colors.md">Color System</a></li>
+  <li><a href="docs/contributing.md">Contributing Guide</a></li>
+</ul>
+
+<h2 id="-use-cases">🎯 Use Cases</h2>
+
+<h3 id="primary-education">Primary Education</h3>
+<ul>
+  <li><strong>Elementary</strong>: Observe-Wonder-Share framework</li>
+  <li><strong>Middle School</strong>: Question-Explore-Explain progression</li>
+  <li><strong>High School</strong>: Analyze-Design-Evaluate structure</li>
+</ul>
+
+<h3 id="discipline-specific">Discipline-Specific</h3>
+<ul>
+  <li><strong>Physics</strong>: Fundamental interactions and forces</li>
+  <li><strong>Biology</strong>: Structure-function-evolution relationships</li>
+  <li><strong>Chemistry</strong>: Atomic-molecular-reaction progressions</li>
+  <li><strong>Earth Science</strong>: Systems-cycles-deep time</li>
+</ul>
+
+<h3 id="cross-curricular">Cross-Curricular</h3>
+<ul>
+  <li><strong>STEAM Integration</strong>: Scientist-Engineer-Artist-Mathematician roles</li>
+  <li><strong>Environmental Science</strong>: Local-Regional-Global perspectives</li>
+  <li><strong>History of Science</strong>: Discovery-Context-Impact narratives</li>
+</ul>
+
+<h2 id="-integration">🤝 Integration</h2>
+
+<h3 id="platform-compatibility">Platform Compatibility</h3>
+<ul>
+  <li><strong>Google Classroom</strong>: Direct export to three-document Research Brief system</li>
+  <li><strong>Canvas/Moodle</strong>: LTI integration support</li>
+  <li><strong>Jekyll/GitHub Pages</strong>: Static site generation for curriculum websites</li>
+  <li><strong>Marp</strong>: Automatic slide deck generation</li>
+</ul>
+
+<h3 id="ai-platforms">AI Platforms</h3>
+<ul>
+  <li><strong>OpenAI GPT</strong>: Optimized prompt templates</li>
+  <li><strong>Claude</strong>: Anthropic-specific formatting</li>
+  <li><strong>Google Bard</strong>: Structured conversation starters</li>
+  <li><strong>Custom Models</strong>: Flexible prompt architecture</li>
+</ul>
+
+<h2 id="-configuration">🔧 Configuration</h2>
+
+<h3 id="environment-variables">Environment Variables</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># API Configuration</span>
+<span class="nv">REACT_APP_API_URL</span><span class="o">=</span>http://localhost:3001
+<span class="nv">REACT_APP_AI_PROVIDER</span><span class="o">=</span>openai
+
+<span class="c"># Feature Flags</span>
+<span class="nv">REACT_APP_ENABLE_CUSTOM_FRAMEWORKS</span><span class="o">=</span><span class="nb">true
+</span><span class="nv">REACT_APP_ENABLE_COLLABORATION</span><span class="o">=</span><span class="nb">false
+</span><span class="nv">REACT_APP_ENABLE_ANALYTICS</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></div>
+
+<h3 id="customization">Customization</h3>
+<ul>
+  <li><strong>Color Themes</strong>: Modify CSS custom properties</li>
+  <li><strong>Framework Templates</strong>: Add new three-part structures</li>
+  <li><strong>Element Library</strong>: Extend NGSS practice templates</li>
+  <li><strong>Voice Profiles</strong>: Customize narrative approaches</li>
+</ul>
+
+<h2 id="-roadmap">📈 Roadmap</h2>
+
+<h3 id="phase-1-foundation-fall-2025">Phase 1: Foundation (Fall 2025)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Core three-step workflow</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />NGSS 3D color system</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Basic framework templates</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />AI prompt generation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />JSON export functionality</li>
+</ul>
+
+<h3 id="phase-2-enhancement-spring-2026">Phase 2: Enhancement (Spring 2026)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Collaboration features</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Advanced analytics</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Custom framework builder</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Assessment integration</li>
+</ul>
+
+<h3 id="phase-3-ecosystem-fall-2026">Phase 3: Ecosystem (Fall 2026)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />LTI platform integration</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Advanced AI model support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cross-institutional sharing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mobile application</li>
+</ul>
+
+<h2 id="-contributing">🤝 Contributing</h2>
+
+<p>We welcome contributions from educators, developers, and curriculum designers!</p>
+
+<h3 id="getting-started">Getting Started</h3>
+<ol>
+  <li>Fork the repository</li>
+  <li>Create a feature branch (<code class="language-plaintext highlighter-rouge">git checkout -b feature/amazing-feature</code>)</li>
+  <li>Commit your changes (<code class="language-plaintext highlighter-rouge">git commit -m 'Add amazing feature'</code>)</li>
+  <li>Push to the branch (<code class="language-plaintext highlighter-rouge">git push origin feature/amazing-feature</code>)</li>
+  <li>Open a Pull Request</li>
+</ol>
+
+<h3 id="development-guidelines">Development Guidelines</h3>
+<ul>
+  <li>Follow the NGSS 3D color system</li>
+  <li>Maintain pedagogical authenticity</li>
+  <li>Include comprehensive tests</li>
+  <li>Update documentation</li>
+</ul>
+
+<h2 id="-license">📄 License</h2>
+
+<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details.</p>
+
+<h2 id="-acknowledgments">🙏 Acknowledgments</h2>
+
+<ul>
+  <li><strong>NGSS</strong>: Next Generation Science Standards framework</li>
+  <li><strong>Cosmos in the Classroom</strong>: Educational platform foundation</li>
+  <li><strong>Four-Voice Philosophy</strong>: Socrates, Burke, Sagan, Feynman inspirations</li>
+  <li><strong>Open Source Community</strong>: React, TailwindCSS, and Node.js ecosystems</li>
+</ul>
+
+<h2 id="-support">📞 Support</h2>
+
+<ul>
+  <li><strong>Documentation</strong>: <a href="https://cosmosintheclassroom.org/socrates">Full docs</a></li>
+  <li><strong>Issues</strong>: <a href="https://github.com/cosmosclassroom/cosmosintheclassroom/issues">GitHub Issues</a></li>
+  <li><strong>Discussions</strong>: <a href="https://github.com/cosmosclassroom/cosmosintheclassroom/discussions">GitHub Discussions</a></li>
+  <li><strong>Email</strong>: support@cosmosintheclassroom.org</li>
+</ul>
+
+<hr />
+
+<p><em>“The unexamined lesson is not worth teaching.”</em> - Socrates (probably)</p>
+
+<p>Built with ❤️ for educators who believe in the power of inquiry-driven learning.</p>
+
+    
+    </div>
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+<<<<<<< HEAD
+=======
+
+    
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+  </body>
+</html>

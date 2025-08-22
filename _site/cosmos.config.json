@@ -1,0 +1,112 @@
+{
+  "site": {
+    "title": "Cosmos in the Classroom",
+    "description": "Comprehensive physics education platform",
+    "author": "Jonathan Corbett",
+    "url": "https://cosmosintheclassroom.org",
+    "version": "2.0.0"
+  },
+  
+  "physics": {
+    "courses": {
+      "honors": {
+        "title": "Honors Physics",
+        "code": "HPHYS",
+        "level": "advanced",
+        "units": 10,
+        "path": "/physics/honors"
+      },
+      "standard": {
+        "title": "Standard Physics", 
+        "code": "SPHYS",
+        "level": "standard",
+        "units": 10,
+        "path": "/physics/standard"
+      }
+    },
+    
+    "structure": {
+      "unit_format": "##_descriptive-name",
+      "lesson_format": "lesson##_topic-name.md",
+      "problemset_format": "ps##.#_topic-name.md",
+      "lab_format": "lab##_topic-name.md"
+    }
+  },
+
+  "portal": {
+    "navigation": {
+      "breadcrumbs": true,
+      "search": true,
+      "progress_tracking": true
+    },
+    
+    "courses": [
+      {
+        "id": "hphysics",
+        "title": "Honors Physics",
+        "path": "/src/portal/hphysics",
+        "config": "/src/portal/hphysics/course.json"
+      },
+      {
+        "id": "sphysics", 
+        "title": "Standard Physics",
+        "path": "/src/portal/sphysics",
+        "config": "/src/portal/sphysics/course.json"
+      },
+      {
+        "id": "natdis",
+        "title": "Natural Disasters",
+        "path": "/src/portal/natdis", 
+        "config": "/src/portal/natdis/course.json"
+      }
+    ]
+  },
+
+  "tools": {
+    "schedule_chunker": {
+      "path": "/tools/schedule-chunker",
+      "config": "/tools/schedule-chunker/config.json",
+      "description": "Academic calendar and schedule management"
+    },
+    
+    "consequence_engine": {
+      "path": "/tools/consequence-engine", 
+      "description": "Educational simulation and decision-making tool"
+    }
+  },
+
+  "build": {
+    "css": {
+      "framework": "tailwindcss",
+      "input": "./src/input.css",
+      "output": "./src/portal/tailwind-output.css"
+    },
+    
+    "slides": {
+      "engine": "marp",
+      "themes": "./physics/shared/themes",
+      "input": "./physics/*/slides/*.md",
+      "output": "./_site/slides"
+    },
+    
+    "jekyll": {
+      "source": ".",
+      "destination": "./_site",
+      "plugins": ["jekyll-feed", "jekyll-sitemap"]
+    }
+  },
+
+  "development": {
+    "server": {
+      "port": 4000,
+      "host": "localhost",
+      "livereload": true
+    },
+    
+    "watch": [
+      "./physics/**/*.md",
+      "./src/portal/**/*",
+      "./themes/**/*.css"
+    ]
+  }
+}
