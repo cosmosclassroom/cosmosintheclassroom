@@ -6,15 +6,36 @@ applyTo: 'src/portal/**'
 
 ## Core Principles
 - **Professional Design**: No emojis, use descriptive text and clear navigation
-- **Responsive-First**: Mobile, tablet, desktop optimization
-- **Performance**: <3s load time, classroom-friendly
+- **Responsive-First**: Mobile, tablet, desktop optimization with TailwindCSS v4
+- **Performance**: <3s load time, classroom-friendly bandwidth optimization
 - **Accessibility**: WCAG 2.1 AA compliance, keyboard navigation
+- **Personalization**: Integrated cosmos-config.js for consistent user experience
 
-## Architecture
-**Components**: Main portal, course portals, data logger, TailwindCSS styling
-**Data**: JSON configuration, local/session storage, progress tracking
+## Architecture (Updated August 2025)
+**Central Config**: `CosmosConfig` class manages all user data and preferences
+**Cross-System Integration**: Portal ↔ Chunker ↔ Socrates ↔ Library data sharing
+**GitHub Actions**: Automated testing and deployment validation
+**Modern CSS**: TailwindCSS v4 with utility-first approach
 
-## File Structure
+## Required Integration Pattern
+```javascript
+// REQUIRED in all Portal JavaScript files:
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof CosmosConfig === 'undefined') {
+        console.error('CosmosConfig required for Portal functionality');
+        return;
+    }
+    
+    const config = new CosmosConfig();
+    const userName = config.get('user.name');
+    const courseLevel = config.get('user.preferredLevel');
+    
+    // Initialize Portal with user context
+    initializePortal(userName, courseLevel);
+});
+```
+
+## File Structure (Current)
 ```
 src/portal/
 ├── index.html              # Main entry

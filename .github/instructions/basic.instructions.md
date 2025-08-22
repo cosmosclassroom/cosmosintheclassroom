@@ -14,6 +14,12 @@ applyTo: '**'
 - **Maintainability**: Organize content for long-term sustainability
 - **Modern Technology**: Leverage web technologies for interactive learning
 
+### System Integration (Updated August 2025)
+- **Personalization Foundation**: All systems depend on `cosmos-config.js` for user data
+- **Cross-System Compatibility**: Portal ↔ Chunker ↔ Socrates ↔ Library integration
+- **Automated Quality Assurance**: GitHub Actions workflow validates all changes
+- **Performance Optimization**: TailwindCSS v4, classroom bandwidth considerations
+
 ## Architecture Understanding
 
 ### Content Organization (Post-August 2025 Reorganization)
@@ -32,12 +38,28 @@ physics/
 ```
 
 ### Technology Stack
-- **Content**: Markdown files with frontmatter
-- **Slides**: Marp (Markdown → HTML presentations)
-- **Site Generation**: Jekyll + TailwindCSS
+- **Content**: Markdown files with YAML frontmatter
+- **Slides**: Marp (Markdown → HTML presentations) with shared themes
+- **Site Generation**: Jekyll + TailwindCSS v4 + GitHub Pages
 - **Math Rendering**: KaTeX for LaTeX equations
-- **Portal System**: Interactive course navigation
-- **Version Control**: Git with structured commit messages
+- **Personalization**: cosmos-config.js central configuration system
+- **Portal System**: Interactive course navigation with localStorage integration
+- **CI/CD**: Comprehensive GitHub Actions workflow for quality assurance
+- **Version Control**: Git with structured commit messages and feature branching
+
+## Development Workflow (Updated August 2025)
+
+### GitHub Actions Integration
+- **Automated Testing**: Content validation, CSS optimization, system integration
+- **Educational Quality**: Physics curriculum standards, learning objectives validation
+- **Performance Monitoring**: Classroom bandwidth optimization, accessibility compliance
+- **Daily Maintenance**: Cleanup reports, dependency updates, security scanning
+
+### Personalization System Requirements
+- **Central Configuration**: All systems MUST use `CosmosConfig` class from `src/js/cosmos-config.js`
+- **Consistent Storage**: Use `cosmos_classroom_settings` localStorage key (NOT legacy keys)
+- **Cross-System Data**: User preferences, course selection, progress tracking shared between Portal, Chunker, Socrates, Library
+- **Error Handling**: Always check for `CosmosConfig` availability before use
 
 ## Content Guidelines
 
