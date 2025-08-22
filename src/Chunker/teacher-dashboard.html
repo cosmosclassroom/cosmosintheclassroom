@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHS Adaptive Chunker - Teacher Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chunk-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #E5E7EB;
+            outline: none;
+        }
+        .chunk-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3B82F6;
+            cursor: pointer;
+        }
+        .chunk-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3B82F6;
+            cursor: pointer;
+            border: none;
+        }
+        .lesson-card {
+            transition: all 0.3s ease;
+        }
+        .lesson-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .ai-panel {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .calendar-day {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .calendar-day:hover {
+            background-color: #EBF4FF;
+        }
+        .calendar-day.meets {
+            background-color: #DBEAFE;
+            border: 2px solid #3B82F6;
+        }
+        .calendar-day.dropped {
+            background-color: #FEF2F2;
+            border: 2px solid #EF4444;
+            opacity: 0.6;
+        }
+        .calendar-day.selected {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .chunk-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+        }
+        .chunk-used { background-color: #10B981; }
+        .chunk-available { background-color: #E5E7EB; }
+        .sidebar-transition {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <div id="sidebar" class="w-80 bg-white shadow-xl flex flex-col sidebar-transition">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-xl font-bold">Teacher Dashboard</h1>
+                    <p class="text-blue-100 text-sm">Eleanor Ainsworth</p>
+                </div>
+                <button id="sidebar-toggle" class="lg:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Course Selector -->
+        <div class="p-4 border-b border-gray-200">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Current Course</label>
+            <select id="course-selector" class="w-full p-3 border border-gray-300 rounded-lg bg-white">
+                <option value="honors-physics-p3">Honors Physics - Period 3</option>
+                <option value="honors-physics-p5">Honors Physics - Period 5</option>
+                <option value="standard-physics-p7">Standard Physics - Period 7</option>
+            </select>
+        </div>
+
+        <!-- AI Content Generator -->
+        <div class="ai-panel text-white p-4">
+            <h3 class="font-bold mb-3 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.5 2A1.5 1.5 0 008 3.5v1A1.5 1.5 0 009.5 6h1A1.5 1.5 0 0012 4.5v-1A1.5 1.5 0 0010.5 2h-1zM11 7v4a2 2 0 002 2h4v2a2 2 0 01-2 2H9a2 2 0 01-2-2V9a2 2 0 012-2h2z"/>
+                </svg>
+                AI Content Generator
+            </h3>
+            <textarea id="ai-prompt" 
+                class="w-full p-3 rounded-lg text-gray-800 text-sm resize-none" 
+                rows="4" 
+                placeholder="Describe your lesson or unit...&#10;&#10;Example: 'Create a 3-day introduction to waves, including wave properties, types of waves, and wave equations. Include a lab activity.'"></textarea>
+            <div class="flex space-x-2 mt-3">
+                <button id="generate-content" class="flex-1 bg-white bg-opacity-20 text-white py-2 px-4 rounded-lg hover:bg-opacity-30 transition-all font-semibold">
+                    Generate
+                </button>
+                <button id="upload-json" class="bg-white bg-opacity-20 text-white py-2 px-4 rounded-lg hover:bg-opacity-30 transition-all">
+                    Upload JSON
+                </button>
+            </div>
+        </div>
+
+        <!-- Unit Overview -->
+        <div class="p-4 border-b border-gray-200">
+            <h3 class="font-bold text-gray-800 mb-3">Current Unit</h3>
+            <div class="bg-blue-50 rounded-lg p-3">
+                <h4 class="font-semibold text-blue-900">Unit 1: Physics Principles</h4>
+                <p class="text-blue-700 text-sm mb-2">Day 4 of 8 planned</p>
+                <div class="flex justify-between text-xs text-blue-600 mb-1">
+                    <span>Progress</span>
+                    <span>50%</span>
+                </div>
+                <div class="w-full bg-blue-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 50%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="p-4 flex-1 overflow-y-auto">
+            <h3 class="font-bold text-gray-800 mb-3">Quick Stats</h3>
+            <div class="space-y-3">
+                <div class="bg-green-50 rounded-lg p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-green-800 font-semibold">Chunks Used Today</span>
+                        <span class="text-green-600 font-bold">3/4</span>
+                    </div>
+                    <div class="flex mt-2">
+                        <div class="chunk-indicator chunk-used"></div>
+                        <div class="chunk-indicator chunk-used"></div>
+                        <div class="chunk-indicator chunk-used"></div>
+                        <div class="chunk-indicator chunk-available"></div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-lg p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-yellow-800 font-semibold">Next Assessment</span>
+                        <span class="text-yellow-600 font-bold">6 days</span>
+                    </div>
+                    <p class="text-yellow-700 text-xs mt-1">Unit 1 Test - Friday 8/30</p>
+                </div>
+
+                <div class="bg-purple-50 rounded-lg p-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-purple-800 font-semibold">Standards Coverage</span>
+                        <span class="text-purple-600 font-bold">85%</span>
+                    </div>
+                    <p class="text-purple-700 text-xs mt-1">On track for year</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+        <!-- Top Bar -->
+        <header class="bg-white shadow-sm border-b border-gray-200 p-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <button id="mobile-sidebar-toggle" class="lg:hidden p-2 text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                    <h2 class="text-2xl font-bold text-gray-800">Lesson Planner</h2>
+                    <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+                        Day A - Period 3 meets today
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Save Changes
+                    </button>
+                    <button class="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+                        Export Plans
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="flex-1 overflow-hidden flex">
+            <!-- Calendar & Lessons Panel -->
+            <div class="flex-1 p-6 overflow-y-auto">
+                <!-- Calendar View -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">August 2025</h3>
+                        <div class="flex space-x-2">
+                            <button class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200">‹</button>
+                            <button class="p-2 rounded-lg bg-gray-100 hover:bg-gray-200">›</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Mini Calendar -->
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div class="font-semibold text-gray-500 p-2">S</div>
+                        <div class="font-semibold text-gray-500 p-2">M</div>
+                        <div class="font-semibold text-gray-500 p-2">T</div>
+                        <div class="font-semibold text-gray-500 p-2">W</div>
+                        <div class="font-semibold text-gray-500 p-2">T</div>
+                        <div class="font-semibold text-gray-500 p-2">F</div>
+                        <div class="font-semibold text-gray-500 p-2">S</div>
+                        
+                        <!-- Calendar days (simplified for demo) -->
+                        <div class="calendar-day p-2 rounded-lg dropped">18</div>
+                        <div class="calendar-day p-2 rounded-lg meets">19</div>
+                        <div class="calendar-day p-2 rounded-lg dropped">20</div>
+                        <div class="calendar-day p-2 rounded-lg selected">21</div>
+                        <div class="calendar-day p-2 rounded-lg meets">22</div>
+                        <div class="calendar-day p-2 rounded-lg meets">23</div>
+                        <div class="calendar-day p-2 rounded-lg">24</div>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-center space-x-4 text-sm">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded mr-2"></div>
+                            <span>Meets Today</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-red-500 rounded mr-2"></div>
+                            <span>Dropped</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Lesson Plan -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-gray-800">Today's Lesson - August 21</h3>
+                        <div class="flex space-x-2">
+                            <button class="text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                </svg>
+                            </button>
+                            <button class="text-gray-600 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Topic & Objectives -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h4 class="font-bold text-gray-800 mb-2">Measurement & Units</h4>
+                            <p class="text-gray-600 mb-3">Perform basic metric conversions and record measurements to the correct precision.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">NGSS-HS-PS1-1</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Mathematical Practices</span>
+                            </div>
+                        </div>
+
+                        <!-- Chunk Breakdown -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h5 class="font-semibold text-gray-800 mb-3">Time Allocation (45 min instruction)</h5>
+                            <div class="space-y-3">
+                                <!-- Chunk 1 -->
+                                <div class="lesson-card bg-white rounded-lg p-4 border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">Chunk 1: Warm-up Review</span>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm text-gray-500">15 min</span>
+                                            <input type="range" min="1" max="4" value="1" class="chunk-slider w-20">
+                                            <button class="text-red-600 hover:bg-red-50 p-1 rounded">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Quick review of significant figures from yesterday</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Whiteboards</span>
+                                        <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Practice problems</span>
+                                    </div>
+                                </div>
+
+                                <!-- Chunk 2 -->
+                                <div class="lesson-card bg-white rounded-lg p-4 border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">Chunk 2: Mini-lab Setup</span>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm text-gray-500">15 min</span>
+                                            <input type="range" min="1" max="4" value="1" class="chunk-slider w-20">
+                                            <button class="text-red-600 hover:bg-red-50 p-1 rounded">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Explain lab procedure and distribute materials</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Rulers</span>
+                                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Calipers</span>
+                                        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Lab handout</span>
+                                    </div>
+                                </div>
+
+                                <!-- Chunk 3 -->
+                                <div class="lesson-card bg-white rounded-lg p-4 border border-gray-200">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-semibold text-gray-800">Chunk 3: Measurement Activity</span>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm text-gray-500">15 min</span>
+                                            <input type="range" min="1" max="4" value="1" class="chunk-slider w-20">
+                                            <button class="text-red-600 hover:bg-red-50 p-1 rounded">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm mb-2">Students measure various classroom objects</p>
+                                    <div class="flex flex-wrap gap-1">
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Hands-on</span>
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Collaborative</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Add Chunk Button -->
+                            <button class="w-full mt-4 border-2 border-dashed border-gray-300 text-gray-600 py-3 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-colors">
+                                + Add Chunk
+                            </button>
+                        </div>
+
+                        <!-- Assignment & Notes -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-blue-800 mb-2">Today's Assignment</h5>
+                                <p class="text-blue-700 text-sm">Finish lab calculations (due tomorrow)</p>
+                            </div>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h5 class="font-semibold text-green-800 mb-2">Teacher Notes</h5>
+                                <p class="text-green-700 text-sm">Remind students about safety contract signatures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Upcoming Lessons -->
+            <div class="w-80 bg-white shadow-lg p-6 overflow-y-auto">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Upcoming Lessons</h3>
+                
+                <div class="space-y-4">
+                    <!-- Next Lesson -->
+                    <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-semibold text-gray-800">Tomorrow (Day D)</h4>
+                            <span class="text-xs text-red-600 font-semibold">Dropped</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">Period 3 does not meet</p>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-semibold text-gray-800">Friday (Day C)</h4>
+                            <span class="text-xs text-blue-600 font-semibold">Meets</span>
+                        </div>
+                        <p class="text-gray-800 font-medium text-sm mb-1">Energy Systems</p>
+                        <p class="text-gray-600 text-sm mb-2">Define and identify different forms of energy</p>
+                        <div class="flex">
+                            <div class="chunk-indicator chunk-used"></div>
+                            <div class="chunk-indicator chunk-used"></div>
+                            <div class="chunk-indicator chunk-available"></div>
+                            <div class="chunk-indicator chunk-available"></div>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-semibold text-gray-800">Monday (Day A)</h4>
+                            <span class="text-xs text-blue-600 font-semibold">Meets</span>
+                        </div>
+                        <p class="text-gray-800 font-medium text-sm mb-1">Unit 1 Review</p>
+                        <p class="text-gray-600 text-sm mb-2">Preparation for assessment</p>
+                        <div class="flex">
+                            <div class="chunk-indicator chunk-used"></div>
+                            <div class="chunk-indicator chunk-used"></div>
+                            <div class="chunk-indicator chunk-used"></div>
+                            <div class="chunk-indicator chunk-available"></div>
+                        </div>
+                    </div>
+
+                    <div class="border border-yellow-300 bg-yellow-50 rounded-lg p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-semibold text-yellow-800">Friday 8/30</h4>
+                            <span class="text-xs text-yellow-600 font-semibold">Assessment</span>
+                        </div>
+                        <p class="text-yellow-800 font-medium text-sm mb-1">Unit 1 Test</p>
+                        <p class="text-yellow-700 text-sm">Principles of Physics</p>
+                    </div>
+                </div>
+
+                <!-- Impact Analysis -->
+                <div class="mt-6 bg-amber-50 border border-amber-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-amber-800 mb-2">⚠️ Schedule Impact</h4>
+                    <p class="text-amber-700 text-sm">If you add 1 chunk to today's lesson, it will push the Unit 1 assessment back by 1 day.</p>
+                    <button class="mt-2 text-amber-800 text-sm underline hover:no-underline">
+                        View detailed analysis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.getElementById('mobile-sidebar-toggle').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.style.transform = sidebar.style.transform === 'translateX(-100%)' ? 'translateX(0)' : 'translateX(-100%)';
+        });
+
+        // Chunk sliders
+        document.querySelectorAll('.chunk-slider').forEach(slider => {
+            slider.addEventListener('input', function() {
+                const value = this.value;
+                const timeDisplay = this.parentElement.querySelector('.text-sm');
+                timeDisplay.textContent = (value * 15) + ' min';
+                
+                // Trigger impact analysis
+                console.log('Chunk adjustment:', value);
+            });
+        });
+
+        // AI Content Generator
+        document.getElementById('generate-content').addEventListener('click', function() {
+            const prompt = document.getElementById('ai-prompt').value;
+            if (prompt.trim()) {
+                // Simulate AI processing
+                this.textContent = 'Generating...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.textContent = 'Generate';
+                    this.disabled = false;
+                    alert('AI content generated! (This is a demo)');
+                }, 2000);
+            }
+        });
+
+        // Calendar day clicks
+        document.querySelectorAll('.calendar-day').forEach(day => {
+            day.addEventListener('click', function() {
+                document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                // Load lesson for selected day
+                console.log('Loading lesson for day:', this.textContent);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHS Adaptive Chunker - Quick Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f2e8 0%, #e8dcc0 100%);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #8b7355 0%, #6b5b47 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .rotation-badge {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            margin: 0 8px;
+        }
+        .day-a { background-color: #3B82F6; }
+        .day-b { background-color: #10B981; }
+        .day-c { background-color: #F59E0B; }
+        .day-d { background-color: #EF4444; }
+        .chunk-bar {
+            height: 8px;
+            border-radius: 4px;
+            margin: 2px 0;
+        }
+        .chunk-filled { background-color: #10B981; }
+        .chunk-empty { background-color: #E5E7EB; }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Hero Section -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4">
+            <!-- Weekly Quote Header -->
+            <div class="text-center">
+                <div class="max-w-4xl mx-auto mb-8">
+                    <div id="weekly-quote" class="text-2xl italic opacity-95 mb-4 leading-relaxed">
+                        "Loading weekly inspiration..."
+                    </div>
+                    <div id="quote-author" class="text-lg opacity-80">
+                        
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-6 mt-8">
+                    <button class="bg-white bg-opacity-90 text-amber-800 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        Explore Today's Schedule
+                    </button>
+                    <a href="teacher-dashboard.html" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:bg-opacity-20 transition-all flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                        Teacher Inquiry Dashboard
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- School Year Progress Header Bar -->
+    <div class="w-full bg-white shadow-sm border-b" style="border-color: #e8dcc0;">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm font-medium text-gray-700">2025-2026 Academic Year</span>
+                    <span id="year-progress-percent" class="text-xs text-gray-500">Loading...</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span id="days-remaining" class="text-sm font-bold text-gray-800">Loading...</span>
+                    <span class="text-xs text-gray-500">days to summer</span>
+                </div>
+            </div>
+            <!-- Progress Bar with Chunks -->
+            <div class="relative w-full h-6 bg-gray-100 rounded-lg overflow-hidden" style="background-color: #f5f5f0;">
+                <!-- Quarter background segments -->
+                <div class="absolute inset-0 flex">
+                    <div class="flex-1 bg-orange-50 border-r border-white"></div>
+                    <div class="flex-1 bg-blue-50 border-r border-white"></div>
+                    <div class="flex-1 bg-green-50 border-r border-white"></div>
+                    <div class="flex-1 bg-green-100"></div>
+                </div>
+                <!-- Chunk grid overlay -->
+                <div id="chunk-grid" class="absolute inset-0 flex"></div>
+                <!-- Actual progress fill -->
+                <div id="year-progress-fill" class="absolute left-0 top-0 h-full bg-gradient-to-r from-orange-400 via-blue-400 via-green-400 to-green-500 transition-all duration-1000 ease-out" style="width: 0%;">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                </div>
+                <!-- Quarter labels -->
+                <div class="absolute inset-0 flex items-center text-xs font-medium text-gray-600 pointer-events-none">
+                    <div class="flex-1 text-center">Fall</div>
+                    <div class="flex-1 text-center">Winter</div>
+                    <div class="flex-1 text-center">Spring</div>
+                    <div class="flex-1 text-center">Summer Prep</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Reference Cards -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Quick Reference Dashboard</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Today's Rotation Card -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Today's Rotation</h3>
+                        <div class="rotation-badge day-a">A</div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Meeting Periods:</span>
+                            <span class="font-semibold">1, 2, 3, 4, 5, 6</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Dropped Periods:</span>
+                            <span class="font-semibold text-red-600">7, 8</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <p class="text-sm text-gray-500">Wednesday, August 21, 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Period Card -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Current Period</h3>
+                        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            Period 3
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Time:</span>
+                            <span class="font-semibold">10:05 - 11:05 AM</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Next Period:</span>
+                            <span class="font-semibold">Period 4 (11:10 AM)</span>
+                        </div>
+                        <div class="mt-4">
+                            <div class="flex justify-between text-sm text-gray-500 mb-1">
+                                <span>Period Progress</span>
+                                <span>25 min remaining</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 58%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- This Week's Rotation Preview -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 id="week-title" class="text-xl font-bold text-gray-800">This Week's Rotation</h3>
+                        <button id="week-toggle" class="bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold transition-colors">
+                            Next Week →
+                        </button>
+                    </div>
+                    <div id="weekly-rotation-container" class="space-y-3">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Unit Progress Card -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Current Unit Progress</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-gray-700">Unit 1: Physics Principles</span>
+                                <span class="text-sm text-gray-500">Day 4 of 8</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full" style="width: 50%"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="text-sm text-gray-600">Today's Chunks Used:</div>
+                            <div class="flex space-x-1">
+                                <div class="chunk-bar chunk-filled w-8"></div>
+                                <div class="chunk-bar chunk-filled w-8"></div>
+                                <div class="chunk-bar chunk-filled w-8"></div>
+                                <div class="chunk-bar chunk-empty w-8"></div>
+                            </div>
+                            <div class="text-xs text-gray-500">3 of 4 chunks (45 min instruction)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Card -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                            View Full Calendar
+                        </button>
+                        <button class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                            Check Next Meeting
+                        </button>
+                        <button class="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors">
+                            Emergency Sub Plans
+                        </button>
+                        <button class="w-full border-2 border-gray-300 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                            Report Issue
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events Card -->
+                <div class="bg-parchment rounded-xl shadow-lg p-6 card-hover" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Upcoming Events</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-sm">Unit 1 Assessment</p>
+                                <p class="text-xs text-gray-500">Friday, Aug 30</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-sm">Labor Day (No School)</p>
+                                <p class="text-xs text-gray-500">Monday, Sep 2</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
+                            <div>
+                                <p class="font-semibold text-sm">PD Day (Early Release)</p>
+                                <p class="text-xs text-gray-500">Tuesday, Sep 24</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rotation Schedule Reference -->
+    <section class="py-16" style="background-color: #f2ede0;">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">BHS Rotation Schedule Reference</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Day A -->
+                <div class="rounded-xl shadow-lg p-6 border-l-4 border-blue-500" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="text-center mb-4">
+                        <div class="rotation-badge day-a mx-auto mb-2">A</div>
+                        <h3 class="text-xl font-bold text-gray-800">Day A</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-center">
+                            <p class="font-semibold text-green-600">Meeting: 1, 2, 3, 4, 5, 6</p>
+                            <p class="font-semibold text-red-600">Dropped: 7, 8</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day B -->
+                <div class="rounded-xl shadow-lg p-6 border-l-4 border-green-500" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="text-center mb-4">
+                        <div class="rotation-badge day-b mx-auto mb-2">B</div>
+                        <h3 class="text-xl font-bold text-gray-800">Day B</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-center">
+                            <p class="font-semibold text-green-600">Meeting: 1, 2, 3, 4, 7, 8</p>
+                            <p class="font-semibold text-red-600">Dropped: 5, 6</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day C -->
+                <div class="rounded-xl shadow-lg p-6 border-l-4 border-yellow-500" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="text-center mb-4">
+                        <div class="rotation-badge day-c mx-auto mb-2">C</div>
+                        <h3 class="text-xl font-bold text-gray-800">Day C</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-center">
+                            <p class="font-semibold text-green-600">Meeting: 1, 2, 5, 6, 7, 8</p>
+                            <p class="font-semibold text-red-600">Dropped: 3, 4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day D -->
+                <div class="rounded-xl shadow-lg p-6 border-l-4 border-red-500" style="background-color: #faf8f3; border: 1px solid #e8dcc0;">
+                    <div class="text-center mb-4">
+                        <div class="rotation-badge day-d mx-auto mb-2">D</div>
+                        <h3 class="text-xl font-bold text-gray-800">Day D</h3>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-center">
+                            <p class="font-semibold text-green-600">Meeting: 3, 4, 5, 6, 7, 8</p>
+                            <p class="font-semibold text-red-600">Dropped: 1, 2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">© 2025 Branford High School - Adaptive Chunker System</p>
+            <div class="mt-4 space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Support</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Feedback</a>
+                <a href="teacher-dashboard.html" class="text-gray-400 hover:text-white transition-colors">Teacher Portal</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendar Modal -->
+    <div id="calendar-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl mx-4 max-h-[90vh] overflow-y-auto" style="background-color: #faf8f3; border: 2px solid #e8dcc0;">
+            <div class="flex justify-between items-center p-6 border-b border-gray-200">
+                <h3 class="text-2xl font-bold text-gray-800">BHS Rotation Calendar</h3>
+                <button id="calendar-close-btn" class="text-gray-500 hover:text-gray-800 text-3xl font-bold">×</button>
+            </div>
+            <div class="p-6">
+                <div class="mb-4 flex items-center gap-2">
+                    <button id="prev-month" class="p-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800" title="Previous Month">
+                        &#8592;
+                    </button>
+                    <select id="month-selector" class="w-full p-3 border border-amber-300 rounded-md font-semibold" style="background-color: #f9f6f0; color: #8b7355;">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                    <button id="next-month" class="p-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800" title="Next Month">
+                        &#8594;
+                    </button>
+                </div>
+                <div id="calendar-container" class="mb-6">
+                    <!-- Calendar grid will be populated by JavaScript -->
+                </div>
+                <div class="flex justify-center space-x-6 text-sm">
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-blue-500 rounded mr-2"></div>
+                        <span class="text-gray-700">Day A</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-green-500 rounded mr-2"></div>
+                        <span class="text-gray-700">Day B</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-yellow-500 rounded mr-2"></div>
+                        <span class="text-gray-700">Day C</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-red-500 rounded mr-2"></div>
+                        <span class="text-gray-700">Day D</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-gray-300 rounded mr-2"></div>
+                        <span class="text-gray-700">No School</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Day Detail Modal -->
+    <div id="day-detail-modal" class="fixed inset-0 bg-black bg-opacity-50 z-60 hidden flex items-center justify-center">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-md mx-4" style="background-color: #faf8f3; border: 2px solid #e8dcc0;">
+            <div class="flex justify-between items-center p-4 border-b border-gray-200">
+                <button id="prev-day-btn" class="p-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800 transition-colors" title="Previous Day">
+                    ←
+                </button>
+                <h3 id="day-detail-date" class="text-xl font-bold text-gray-800 text-center flex-1"></h3>
+                <button id="next-day-btn" class="p-2 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800 transition-colors" title="Next Day">
+                    →
+                </button>
+                <button id="day-detail-close-btn" class="text-gray-500 hover:text-gray-800 text-2xl font-bold ml-2">×</button>
+            </div>
+            <div id="day-detail-content" class="p-4">
+                <!-- Day details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Real-time date and rotation calculation
+        const rotationSchedule = {
+            A: { meeting: [1, 2, 3, 4, 5, 6], dropped: [7, 8] },
+            B: { meeting: [1, 2, 3, 4, 7, 8], dropped: [5, 6] },
+            C: { meeting: [1, 2, 5, 6, 7, 8], dropped: [3, 4] },
+            D: { meeting: [3, 4, 5, 6, 7, 8], dropped: [1, 2] }
+        };
+
+        // Bell schedule (typical high school times)
+        const bellSchedule = [
+            { period: 1, start: '7:30', end: '8:30' },
+            { period: 2, start: '8:35', end: '9:35' },
+            { period: 3, start: '10:05', end: '11:05' },
+            { period: 4, start: '11:10', end: '12:10' },
+            { period: 'Lunch', start: '12:10', end: '12:40' },
+            { period: 5, start: '12:45', end: '1:45' },
+            { period: 6, start: '1:50', end: '2:50' },
+            { period: 7, start: '2:55', end: '3:55' },
+            { period: 8, start: '4:00', end: '5:00' }
+        ];
+
+        // Non-instructional dates (holidays, PD days, etc.)
+        const nonInstructionalDates = new Set([
+            '2025-09-01', '2025-09-24', '2025-10-13', '2025-10-29', '2025-11-04', 
+            '2025-11-27', '2025-11-28', '2025-12-23', '2025-12-24', '2025-12-25', 
+            '2025-12-26', '2025-12-29', '2025-12-30', '2025-12-31', '2026-01-01', 
+            '2026-01-02', '2026-01-19', '2026-01-28', '2026-02-16', '2026-02-17', 
+            '2026-03-13', '2026-03-25', '2026-04-03', '2026-04-13', '2026-04-14', 
+            '2026-04-15', '2026-04-16', '2026-04-17', '2026-04-29', '2026-05-20', 
+            '2026-05-25', '2026-06-10'
+        ]);
+
+        // Calendar state
+        let currentCalendarDate = new Date();
+        let selectedDashboardDate = new Date(); // Date being displayed on dashboard
+        let isShowingCurrentDay = true;
+        let currentDetailDate = new Date(); // Date being shown in detail modal
+
+        function isSchoolDay(date) {
+            const dayOfWeek = date.getDay();
+            const dateString = date.toISOString().split('T')[0];
+            return dayOfWeek !== 0 && dayOfWeek !== 6 && !nonInstructionalDates.has(dateString);
+        }
+
+        function getRotationForDate(date) {
+            if (!isSchoolDay(date)) return null;
+            
+            const startDate = new Date('2025-08-28'); // First day of school (Day A)
+            const diffTime = Math.abs(date - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            // Count only school days
+            let schoolDays = 0;
+            const tempDate = new Date(startDate);
+            while (tempDate <= date) {
+                if (isSchoolDay(tempDate)) {
+                    schoolDays++;
+                }
+                tempDate.setDate(tempDate.getDate() + 1);
+            }
+            
+            const rotationDays = ['A', 'B', 'C', 'D'];
+            return rotationDays[(schoolDays - 1) % 4];
+        }
+
+        // Simple rotation logic - starting from a known date
+        function getCurrentRotationDay(date = new Date()) {
+            const startDate = new Date('2025-08-28'); // First day of school (Day A)
+            const diffTime = Math.abs(date - startDate);
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            // Skip weekends and holidays (simplified)
+            const schoolDays = Math.floor(diffDays * (5/7)); // Rough estimate
+            const rotationDays = ['A', 'B', 'C', 'D'];
+            return rotationDays[schoolDays % 4];
+        }
+
+        function timeToMinutes(timeStr) {
+            const [time, period] = timeStr.split(' ');
+            let [hours, minutes] = time.split(':').map(Number);
+            if (period === 'PM' && hours !== 12) hours += 12;
+            if (period === 'AM' && hours === 12) hours = 0;
+            return hours * 60 + minutes;
+        }
+
+        function getCurrentPeriod(date = new Date()) {
+            // If we're showing a different day, don't show period progress
+            if (!isShowingCurrentDay) {
+                return { 
+                    period: null, 
+                    status: 'Selected Date View', 
+                    progress: 0, 
+                    nextPeriod: null,
+                    isHistorical: true
+                };
+            }
+
+            const now = date;
+            const currentMinutes = now.getHours() * 60 + now.getMinutes();
+            const rotationDay = getCurrentRotationDay(now);
+            const meetingPeriods = rotationSchedule[rotationDay].meeting;
+            
+            // Check if school is in session (weekday)
+            const dayOfWeek = now.getDay();
+            if (dayOfWeek === 0 || dayOfWeek === 6) {
+                return { period: null, status: 'Weekend', progress: 0, nextPeriod: null };
+            }
+
+            for (let i = 0; i < bellSchedule.length; i++) {
+                const schedule = bellSchedule[i];
+                const startMinutes = timeToMinutes(schedule.start);
+                const endMinutes = timeToMinutes(schedule.end);
+                
+                if (currentMinutes >= startMinutes && currentMinutes < endMinutes) {
+                    // Currently in this period
+                    const elapsed = currentMinutes - startMinutes;
+                    const total = endMinutes - startMinutes;
+                    const progress = Math.round((elapsed / total) * 100);
+                    const remaining = total - elapsed;
+                    
+                    // Check if this period meets today
+                    const meets = schedule.period === 'Lunch' || meetingPeriods.includes(schedule.period);
+                    
+                    return {
+                        period: schedule.period,
+                        status: meets ? 'Meeting' : 'Dropped',
+                        progress: progress,
+                        remaining: remaining,
+                        nextPeriod: i < bellSchedule.length - 1 ? bellSchedule[i + 1] : null,
+                        startTime: schedule.start,
+                        endTime: schedule.end
+                    };
+                }
+            }
+            
+            // Between periods or after school
+            const schoolStart = timeToMinutes('7:30');
+            const schoolEnd = timeToMinutes('5:00');
+            
+            if (currentMinutes < schoolStart) {
+                return { period: null, status: 'Before School', progress: 0, nextPeriod: bellSchedule[0] };
+            } else if (currentMinutes > schoolEnd) {
+                return { period: null, status: 'After School', progress: 0, nextPeriod: null };
+            } else {
+                return { period: null, status: 'Passing Period', progress: 0, nextPeriod: null };
+            }
+        }
+
+        function updateWeeklyQuote() {
+            // Curated quotes from great thinkers, indexed by week of school year
+            const weeklyQuotes = [
+                // Week 1-4: Beginning with wonder and curiosity
+                {
+                    quote: "And all at once, summer collapsed into fall.",
+                    author: "Oscar Wilde"
+                },
+                {
+                    quote: "The real question is not whether machines think but whether men do.",
+                    author: "B.F. Skinner"
+                },
+                {
+                    quote: "I prefer the company of peasants because they have not been educated sufficiently to reason incorrectly.",
+                    author: "Michel de Montaigne"
+                },
+                {
+                    quote: "Under every stone sleeps a scorpion.",
+                    author: "Wisława Szymborska"
+                },
+                // Week 5-8: Connections and patterns
+                {
+                    quote: "Everything is connected to everything else.",
+                    author: "James Burke"
+                },
+                {
+                    quote: "Nothing that I can discover, not the smallest thing, is ever lost or forgotten.",
+                    author: "Walt Whitman"
+                },
+                {
+                    quote: "The beginning of knowledge is the discovery of something we do not understand.",
+                    author: "Frank Herbert"
+                },
+                {
+                    quote: "Every new beginning comes from some other beginning's end.",
+                    author: "Seneca"
+                },
+                // Week 9-12: Deep autumn questions
+                {
+                    quote: "The only true wisdom is in knowing you know nothing.",
+                    author: "Socrates"
+                },
+                {
+                    quote: "In every walk with nature, one receives far more than they seek.",
+                    author: "John Muir"
+                },
+                {
+                    quote: "Life is not a problem to be solved, but a reality to be experienced.",
+                    author: "Søren Kierkegaard"
+                },
+                {
+                    quote: "Even the smallest person can change the course of the future.",
+                    author: "J.R.R. Tolkien"
+                },
+                // Week 13-16: Winter contemplation
+                {
+                    quote: "In the depth of winter, I finally learned that there was in me an invincible summer.",
+                    author: "Albert Camus"
+                },
+                {
+                    quote: "The cure for anything is salt water: sweat, tears, or the sea.",
+                    author: "Isak Dinesen"
+                },
+                {
+                    quote: "Wonder is the beginning of wisdom.",
+                    author: "Socrates"
+                },
+                {
+                    quote: "Poetry is when an emotion has found its thought and the thought has found words.",
+                    author: "Robert Frost"
+                },
+                // Week 17-20: Mid-year reflection
+                {
+                    quote: "Between stimulus and response there is a space. In that space is our power to choose our response.",
+                    author: "Viktor Frankl"
+                },
+                {
+                    quote: "The important thing is not to stop questioning.",
+                    author: "Albert Einstein"
+                },
+                {
+                    quote: "What we plant in the soil of contemplation, we shall reap in the harvest of action.",
+                    author: "Meister Eckhart"
+                },
+                {
+                    quote: "Any new discovery is bound to be uncertain, but that's no reason not to make it.",
+                    author: "Wisława Szymborska"
+                },
+                // Week 21-24: Spring awakening
+                {
+                    quote: "In every gardener there is a child who believes in The Seed Fairy.",
+                    author: "Robert Brault"
+                },
+                {
+                    quote: "The world is full of magic things, patiently waiting for our senses to grow sharper.",
+                    author: "W.B. Yeats"
+                },
+                {
+                    quote: "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+                    author: "Ralph Waldo Emerson"
+                },
+                {
+                    quote: "I could not, at any age, be content to take my place by the fireside and simply look on.",
+                    author: "Eleanor Roosevelt"
+                },
+                // Week 25-28: Growth and possibility
+                {
+                    quote: "The best way to find out if you can trust somebody is to trust them.",
+                    author: "Ernest Hemingway"
+                },
+                {
+                    quote: "Reality demands continuous choosing.",
+                    author: "Wisława Szymborska"
+                },
+                {
+                    quote: "What we know is a drop, what we don't know is an ocean.",
+                    author: "Isaac Newton"
+                },
+                {
+                    quote: "The future belongs to those who believe in the beauty of their dreams.",
+                    author: "Eleanor Roosevelt"
+                },
+                // Week 29-32: Late spring energy
+                {
+                    quote: "Tell me, what else should I have done? Doesn't everything die at last, and too soon?",
+                    author: "Mary Oliver"
+                },
+                {
+                    quote: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+                    author: "Aristotle"
+                },
+                {
+                    quote: "The most beautiful thing we can experience is the mysterious.",
+                    author: "Albert Einstein"
+                },
+                {
+                    quote: "Every day is a journey, and the journey itself is home.",
+                    author: "Matsuo Bashō"
+                },
+                // Week 33-36: Approaching summer
+                {
+                    quote: "Summer afternoon—summer afternoon; to me those have always been the two most beautiful words in the English language.",
+                    author: "Henry James"
+                },
+                {
+                    quote: "What is life? It is the flash of a firefly in the night, it is the breath of a buffalo in the wintertime.",
+                    author: "Crowfoot"
+                },
+                {
+                    quote: "The only way to make sense out of change is to plunge into it, move with it, and join the dance.",
+                    author: "Alan Watts"
+                },
+                {
+                    quote: "We are a way for the cosmos to know itself.",
+                    author: "Carl Sagan"
+                }
+            ];
+            
+            // Calculate which week of the school year we're in
+            const schoolYearStart = new Date(2025, 7, 26); // August 26, 2025
+            const today = new Date();
+            const daysSinceStart = Math.max(0, (today - schoolYearStart) / (1000 * 60 * 60 * 24));
+            const weekOfYear = Math.floor(daysSinceStart / 7);
+            
+            // Get the appropriate quote (cycle through if we exceed the array)
+            const quoteIndex = weekOfYear % weeklyQuotes.length;
+            const currentQuote = weeklyQuotes[quoteIndex];
+            
+            // Update the display
+            const quoteElement = document.getElementById('weekly-quote');
+            const authorElement = document.getElementById('quote-author');
+            
+            if (quoteElement && authorElement && currentQuote) {
+                quoteElement.textContent = `"${currentQuote.quote}"`;
+                authorElement.textContent = `— ${currentQuote.author}`;
+            }
+        }
+
+        function updateYearProgress() {
+            const today = new Date();
+            
+            // School year dates for 2025-2026
+            const schoolYearStart = new Date(2025, 7, 26); // August 26, 2025
+            const schoolYearEnd = new Date(2026, 5, 15);   // June 15, 2026
+            
+            // Calculate total days and elapsed days
+            const totalDays = (schoolYearEnd - schoolYearStart) / (1000 * 60 * 60 * 24);
+            const elapsedDays = Math.max(0, (today - schoolYearStart) / (1000 * 60 * 60 * 24));
+            const remainingDays = Math.max(0, Math.ceil((schoolYearEnd - today) / (1000 * 60 * 60 * 24)));
+            
+            // Calculate progress percentage
+            const progressPercent = Math.min(100, Math.max(0, (elapsedDays / totalDays) * 100));
+            
+            // Update progress bar
+            const progressFill = document.getElementById('year-progress-fill');
+            const progressPercentElement = document.getElementById('year-progress-percent');
+            const daysRemainingElement = document.getElementById('days-remaining');
+            
+            if (progressFill && progressPercentElement && daysRemainingElement) {
+                progressFill.style.width = progressPercent.toFixed(1) + '%';
+                progressPercentElement.textContent = progressPercent.toFixed(1) + '% complete';
+                daysRemainingElement.textContent = remainingDays;
+            }
+            
+            // Create chunk grid (like XP bar segments)
+            const chunkGrid = document.getElementById('chunk-grid');
+            if (chunkGrid && chunkGrid.children.length === 0) {
+                const numChunks = 36; // 36 chunks across the year (about 5 school days per chunk)
+                for (let i = 0; i < numChunks; i++) {
+                    const chunk = document.createElement('div');
+                    chunk.className = 'flex-1 border-r border-white/30 h-full';
+                    if (i === numChunks - 1) chunk.className = 'flex-1 h-full'; // No border on last chunk
+                    chunkGrid.appendChild(chunk);
+                }
+            }
+        }
+
+        function updateCurrentTime() {
+            const now = new Date();
+            const displayDate = selectedDashboardDate;
+            const rotationDay = getCurrentRotationDay(displayDate);
+            const currentPeriod = getCurrentPeriod(now); // Always use real time for period calculation
+            
+            // Update rotation badge
+            const rotationBadge = document.querySelector('.rotation-badge');
+            if (rotationBadge) {
+                rotationBadge.textContent = rotationDay;
+                rotationBadge.className = `rotation-badge day-${rotationDay.toLowerCase()}`;
+            }
+            
+            // Update meeting/dropped periods display for selected date
+            const schedule = rotationSchedule[rotationDay];
+            const meetingPeriods = document.querySelectorAll('.font-semibold')[0];
+            const droppedPeriods = document.querySelectorAll('.font-semibold')[1];
+            
+            if (meetingPeriods && droppedPeriods) {
+                meetingPeriods.textContent = schedule.meeting.join(', ');
+                droppedPeriods.textContent = schedule.dropped.join(', ');
+            }
+
+            // Update current period card
+            const periodCard = document.querySelector('.bg-green-100');
+            const periodSection = periodCard?.closest('.card-hover');
+            
+            if (periodSection) {
+                const statusText = periodSection.querySelector('.bg-green-100');
+                const timeDisplay = periodSection.querySelector('.font-semibold');
+                const nextPeriodDisplay = periodSection.querySelectorAll('.font-semibold')[1];
+                const progressBar = periodSection.querySelector('.bg-blue-600');
+                const progressText = periodSection.querySelector('.text-gray-500');
+                
+                if (isShowingCurrentDay && currentPeriod.period) {
+                    // Currently in a period (real-time view)
+                    statusText.textContent = `Period ${currentPeriod.period}`;
+                    statusText.className = currentPeriod.status === 'Meeting' 
+                        ? 'bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold'
+                        : 'bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold';
+                    
+                    if (timeDisplay) {
+                        timeDisplay.textContent = `${currentPeriod.startTime} - ${currentPeriod.endTime}`;
+                    }
+                    
+                    if (nextPeriodDisplay && currentPeriod.nextPeriod) {
+                        nextPeriodDisplay.textContent = `Next: Period ${currentPeriod.nextPeriod.period} (${currentPeriod.nextPeriod.start})`;
+                    }
+                    
+                    if (progressBar && progressText) {
+                        progressBar.style.width = `${currentPeriod.progress}%`;
+                        progressText.innerHTML = `
+                            <span>Period Progress</span>
+                            <span>${currentPeriod.remaining} min remaining</span>
+                        `;
+                    }
+                } else if (isShowingCurrentDay) {
+                    // Not in a period (real-time view)
+                    statusText.textContent = currentPeriod.status;
+                    statusText.className = 'bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold';
+                    
+                    if (timeDisplay) {
+                        timeDisplay.textContent = now.toLocaleTimeString('en-US', { 
+                            hour: 'numeric', 
+                            minute: '2-digit',
+                            hour12: true 
+                        });
+                    }
+                    
+                    if (nextPeriodDisplay && currentPeriod.nextPeriod) {
+                        nextPeriodDisplay.textContent = `Next: Period ${currentPeriod.nextPeriod.period} (${currentPeriod.nextPeriod.start})`;
+                    } else if (nextPeriodDisplay) {
+                        nextPeriodDisplay.textContent = currentPeriod.status === 'After School' ? 'School Day Complete' : 'Schedule Loading...';
+                    }
+                    
+                    if (progressBar && progressText) {
+                        progressBar.style.width = '0%';
+                        progressText.innerHTML = `
+                            <span>Current Status</span>
+                            <span>${currentPeriod.status}</span>
+                        `;
+                    }
+                } else {
+                    // Historical/future date view
+                    const isSchoolDay = displayDate.getDay() !== 0 && displayDate.getDay() !== 6 && 
+                                       !nonInstructionalDates.has(displayDate.toISOString().split('T')[0]);
+                    
+                    statusText.textContent = isSchoolDay ? `Day ${rotationDay}` : 'No School';
+                    statusText.className = isSchoolDay 
+                        ? 'bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold'
+                        : 'bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold';
+                    
+                    if (timeDisplay) {
+                        timeDisplay.textContent = displayDate.toLocaleDateString('en-US', { 
+                            weekday: 'short',
+                            month: 'short', 
+                            day: 'numeric' 
+                        });
+                    }
+                    
+                    if (nextPeriodDisplay) {
+                        if (isSchoolDay) {
+                            nextPeriodDisplay.textContent = `Periods ${schedule.meeting.join(', ')} meet`;
+                        } else {
+                            nextPeriodDisplay.textContent = 'No classes scheduled';
+                        }
+                    }
+                    
+                    if (progressBar && progressText) {
+                        progressBar.style.width = '0%';
+                        progressText.innerHTML = `
+                            <span>Selected Date View</span>
+                            <span>Click "Today" to return to live view</span>
+                        `;
+                    }
+                }
+            }
+
+            // Update current date display
+            const dateEl = document.querySelector('.text-gray-500');
+            if (dateEl && dateEl.textContent.includes(',')) {
+                dateEl.textContent = displayDate.toLocaleDateString('en-US', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            }
+        }
+
+        // Update weekly rotation preview
+        let showingThisWeek = true;
+        
+        function getWeekData(weekOffset = 0) {
+            const today = new Date();
+            const startOfWeek = new Date(today);
+            startOfWeek.setDate(today.getDate() - today.getDay() + 1 + (weekOffset * 7)); // Monday
+            
+            const weekDays = [];
+            const rotationDays = ['A', 'B', 'C', 'D'];
+            
+            for (let i = 0; i < 5; i++) { // Monday to Friday
+                const currentDay = new Date(startOfWeek);
+                currentDay.setDate(startOfWeek.getDate() + i);
+                
+                // Calculate rotation day for this date
+                const startDate = new Date('2025-08-28'); // First day of school (Day A)
+                const diffTime = Math.abs(currentDay - startDate);
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+                const schoolDays = Math.floor(diffDays * (5/7)); // Rough estimate
+                const rotationDay = rotationDays[schoolDays % 4];
+                
+                const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+                const isToday = currentDay.toDateString() === today.toDateString();
+                
+                weekDays.push({
+                    day: dayNames[currentDay.getDay()],
+                    date: `${currentDay.getMonth() + 1}/${currentDay.getDate()}`,
+                    rotation: rotationDay,
+                    isToday: isToday
+                });
+            }
+            
+            return weekDays;
+        }
+
+        function renderCalendar() {
+            const container = document.getElementById('calendar-container');
+            const monthSelector = document.getElementById('month-selector');
+            
+            if (!container) return;
+            
+            const year = currentCalendarDate.getFullYear();
+            const month = currentCalendarDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const firstDayOfWeek = firstDay.getDay(); // 0 = Sunday
+            const daysInMonth = lastDay.getDate();
+            const today = new Date();
+            
+            // Update month selector
+            if (monthSelector) {
+                const monthNames = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                monthSelector.value = `${year}-${month}`;
+                
+                // Populate month options if empty
+                if (monthSelector.children.length === 0) {
+                    for (let y = 2025; y <= 2026; y++) {
+                        for (let m = 0; m < 12; m++) {
+                            if (y === 2025 && m < 7) continue; // Start from August 2025
+                            if (y === 2026 && m > 5) continue; // End at June 2026
+                            
+                            const option = document.createElement('option');
+                            option.value = `${y}-${m}`;
+                            option.textContent = `${monthNames[m]} ${y}`;
+                            monthSelector.appendChild(option);
+                        }
+                    }
+                }
+            }
+            
+            // Create calendar grid
+            container.innerHTML = `
+                <div class="grid grid-cols-7 gap-1 text-center">
+                    <div class="font-semibold text-gray-600 p-2">Sun</div>
+                    <div class="font-semibold text-gray-600 p-2">Mon</div>
+                    <div class="font-semibold text-gray-600 p-2">Tue</div>
+                    <div class="font-semibold text-gray-600 p-2">Wed</div>
+                    <div class="font-semibold text-gray-600 p-2">Thu</div>
+                    <div class="font-semibold text-gray-600 p-2">Fri</div>
+                    <div class="font-semibold text-gray-600 p-2">Sat</div>
+                </div>
+                <div id="calendar-days" class="grid grid-cols-7 gap-1 mt-2"></div>
+            `;
+            
+            const daysContainer = document.getElementById('calendar-days');
+            
+            // Add empty cells for days before the first day of the month
+            for (let i = 0; i < firstDayOfWeek; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'p-3';
+                daysContainer.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(year, month, day);
+                const dateString = date.toISOString().split('T')[0];
+                const dayEl = document.createElement('div');
+                
+                dayEl.className = 'p-3 rounded-lg cursor-pointer text-center font-medium transition-all hover:bg-gray-100';
+                dayEl.textContent = day;
+                
+                // Styling based on date type
+                if (date.toDateString() === today.toDateString()) {
+                    dayEl.classList.add('ring-2', 'ring-blue-500', 'bg-blue-50');
+                }
+                
+                if (isSchoolDay(date)) {
+                    const rotation = getRotationForDate(date);
+                    switch (rotation) {
+                        case 'A':
+                            dayEl.classList.add('bg-blue-100', 'text-blue-800', 'hover:bg-blue-200');
+                            break;
+                        case 'B':
+                            dayEl.classList.add('bg-green-100', 'text-green-800', 'hover:bg-green-200');
+                            break;
+                        case 'C':
+                            dayEl.classList.add('bg-yellow-100', 'text-yellow-800', 'hover:bg-yellow-200');
+                            break;
+                        case 'D':
+                            dayEl.classList.add('bg-red-100', 'text-red-800', 'hover:bg-red-200');
+                            break;
+                    }
+                    
+                    // Add rotation letter
+                    const rotationBadge = document.createElement('div');
+                    rotationBadge.className = 'text-xs font-bold mt-1';
+                    rotationBadge.textContent = rotation;
+                    dayEl.appendChild(rotationBadge);
+                } else {
+                    dayEl.classList.add('bg-gray-100', 'text-gray-500');
+                }
+                
+                // Add click handler
+                dayEl.addEventListener('click', () => {
+                    currentDetailDate = new Date(date);
+                    showDayDetail(date);
+                    // Auto-close the main calendar
+                    document.getElementById('calendar-modal').classList.add('hidden');
+                });
+                
+                daysContainer.appendChild(dayEl);
+            }
+        }
+
+        function showDayDetail(date) {
+            const modal = document.getElementById('day-detail-modal');
+            const dateHeader = document.getElementById('day-detail-date');
+            const content = document.getElementById('day-detail-content');
+            
+            if (!modal || !dateHeader || !content) return;
+            
+            currentDetailDate = new Date(date);
+            
+            const dateString = date.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            dateHeader.textContent = dateString;
+            
+            if (isSchoolDay(date)) {
+                const rotation = getRotationForDate(date);
+                const schedule = rotationSchedule[rotation];
+                
+                content.innerHTML = `
+                    <div class="text-center mb-4">
+                        <div class="rotation-badge day-${rotation.toLowerCase()} mx-auto mb-2">${rotation}</div>
+                        <h4 class="text-lg font-bold text-gray-800">Rotation Day ${rotation}</h4>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <h5 class="font-semibold text-green-700 mb-2">Meeting Periods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                ${schedule.meeting.map(p => `<span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">${p}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold text-red-700 mb-2">Dropped Periods:</h5>
+                            <div class="flex flex-wrap gap-2">
+                                ${schedule.dropped.map(p => `<span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">${p}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200">
+                            <button id="view-this-day" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                                View This Day on Dashboard
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Add event listener for the view button
+                document.getElementById('view-this-day').addEventListener('click', function() {
+                    selectedDashboardDate = new Date(date);
+                    isShowingCurrentDay = false;
+                    updateCurrentTime();
+                    addTodayButton();
+                    modal.classList.add('hidden');
+                });
+            } else {
+                const dayOfWeek = date.getDay();
+                if (dayOfWeek === 0 || dayOfWeek === 6) {
+                    content.innerHTML = `
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">📅</div>
+                            <h4 class="text-lg font-bold text-gray-800">Weekend</h4>
+                            <p class="text-gray-600">No school today</p>
+                            <div class="pt-4 border-t border-gray-200 mt-4">
+                                <button id="view-this-day" class="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors font-semibold">
+                                    View This Day on Dashboard
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    content.innerHTML = `
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🏫</div>
+                            <h4 class="text-lg font-bold text-gray-800">No School</h4>
+                            <p class="text-gray-600">Holiday or Professional Development Day</p>
+                            <div class="pt-4 border-t border-gray-200 mt-4">
+                                <button id="view-this-day" class="w-full bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors font-semibold">
+                                    View This Day on Dashboard
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                // Add event listener for non-school days too
+                document.getElementById('view-this-day').addEventListener('click', function() {
+                    selectedDashboardDate = new Date(date);
+                    isShowingCurrentDay = false;
+                    updateCurrentTime();
+                    addTodayButton();
+                    modal.classList.add('hidden');
+                });
+            }
+            
+            modal.classList.remove('hidden');
+        }
+
+        function navigateDay(direction) {
+            const newDate = new Date(currentDetailDate);
+            newDate.setDate(newDate.getDate() + direction);
+            showDayDetail(newDate);
+        }
+
+        function addTodayButton() {
+            // Check if "Today" button already exists
+            if (document.getElementById('today-reset-btn')) return;
+            
+            // Add a "Today" button to reset to current day
+            const heroButtons = document.querySelector('.mt-8.flex.justify-center.space-x-4');
+            if (heroButtons) {
+                const todayButton = document.createElement('button');
+                todayButton.id = 'today-reset-btn';
+                todayButton.className = 'bg-green-600 bg-opacity-90 text-white px-6 py-2 rounded-lg font-semibold hover:bg-opacity-100 transition-all shadow-lg';
+                todayButton.textContent = '📍 Today';
+                todayButton.addEventListener('click', function() {
+                    selectedDashboardDate = new Date();
+                    isShowingCurrentDay = true;
+                    updateCurrentTime();
+                    this.remove(); // Remove the button when returning to today
+                });
+                heroButtons.appendChild(todayButton);
+            }
+        }
+
+        function updateWeeklyRotation() {
+            const weekData = getWeekData(showingThisWeek ? 0 : 1);
+            const container = document.getElementById('weekly-rotation-container');
+            const title = document.getElementById('week-title');
+            const button = document.getElementById('week-toggle');
+            
+            if (container) {
+                container.innerHTML = '';
+                weekData.forEach(day => {
+                    const dayEl = document.createElement('div');
+                    dayEl.className = 'flex items-center justify-between';
+                    
+                    const spanClass = day.isToday && showingThisWeek ? 'text-gray-600 font-semibold' : 'text-gray-600';
+                    
+                    dayEl.innerHTML = `
+                        <span class="${spanClass}">${day.day} ${day.date}</span>
+                        <div class="rotation-badge day-${day.rotation.toLowerCase()}">${day.rotation}</div>
+                    `;
+                    container.appendChild(dayEl);
+                });
+            }
+            
+            if (title) {
+                title.textContent = showingThisWeek ? "This Week's Rotation" : "Next Week's Rotation";
+            }
+            
+            if (button) {
+                button.textContent = showingThisWeek ? "Next Week →" : "← This Week";
+                button.className = showingThisWeek 
+                    ? "bg-blue-100 hover:bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold transition-colors"
+                    : "bg-green-100 hover:bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm font-semibold transition-colors";
+            }
+        }
+
+        // Button interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCurrentTime();
+            updateWeeklyRotation();
+            updateYearProgress();
+            updateWeeklyQuote();
+            
+            // Update every 30 seconds for real-time period tracking
+            setInterval(() => {
+                updateCurrentTime();
+                updateYearProgress();
+            }, 30000);
+
+            // Week toggle functionality
+            document.getElementById('week-toggle').addEventListener('click', function() {
+                showingThisWeek = !showingThisWeek;
+                updateWeeklyRotation();
+            });
+
+            // Quick Actions button handlers
+            const quickActionButtons = document.querySelectorAll('.bg-blue-600, .bg-green-600, .bg-purple-600');
+            quickActionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.textContent.trim();
+                    const currentPeriod = getCurrentPeriod();
+                    const rotationDay = getCurrentRotationDay();
+                    
+                    switch(action) {
+                        case 'View Full Calendar':
+                            document.getElementById('calendar-modal').classList.remove('hidden');
+                            renderCalendar();
+                            break;
+                        case 'Check Next Meeting':
+                            if (currentPeriod.nextPeriod) {
+                                const nextMeets = rotationSchedule[rotationDay].meeting.includes(currentPeriod.nextPeriod.period);
+                                alert(`Next Period: ${currentPeriod.nextPeriod.period} at ${currentPeriod.nextPeriod.start}\nStatus: ${nextMeets ? 'MEETS' : 'DROPPED'} on Day ${rotationDay}`);
+                            } else {
+                                alert('No more periods today');
+                            }
+                            break;
+                        case 'Emergency Sub Plans':
+                            alert(`Current Period: ${currentPeriod.period || 'None'}\nStatus: ${currentPeriod.status}\nEmergency plans would be displayed here`);
+                            break;
+                        default:
+                            alert(`${action} functionality coming soon!`);
+                    }
+                });
+            });
+
+            // Hero button functionality
+            document.querySelector('.bg-white.bg-opacity-90').addEventListener('click', function() {
+                const rotationDay = getCurrentRotationDay(selectedDashboardDate);
+                const currentPeriod = getCurrentPeriod();
+                const schedule = rotationSchedule[rotationDay];
+                
+                let message = `${isShowingCurrentDay ? 'TODAY' : 'SELECTED DAY'}: Day ${rotationDay}\n\n`;
+                message += `Meeting Periods: ${schedule.meeting.join(', ')}\n`;
+                message += `Dropped Periods: ${schedule.dropped.join(', ')}\n\n`;
+                
+                if (isShowingCurrentDay && currentPeriod.period) {
+                    message += `Current Period: ${currentPeriod.period} (${currentPeriod.status})\n`;
+                    message += `Progress: ${currentPeriod.progress}% complete\n`;
+                    message += `Time Remaining: ${currentPeriod.remaining} minutes`;
+                } else if (isShowingCurrentDay) {
+                    message += `Current Status: ${currentPeriod.status}`;
+                    if (currentPeriod.nextPeriod) {
+                        message += `\nNext Period: ${currentPeriod.nextPeriod.period} at ${currentPeriod.nextPeriod.start}`;
+                    }
+                } else {
+                    message += `Date: ${selectedDashboardDate.toLocaleDateString('en-US', { 
+                        weekday: 'long', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    })}`;
+                }
+                
+                alert(message);
+            });
+
+            // Calendar modal controls
+            document.getElementById('calendar-close-btn').addEventListener('click', function() {
+                document.getElementById('calendar-modal').classList.add('hidden');
+            });
+
+            document.getElementById('day-detail-close-btn').addEventListener('click', function() {
+                document.getElementById('day-detail-modal').classList.add('hidden');
+            });
+
+            // Day navigation arrows
+            document.getElementById('prev-day-btn').addEventListener('click', function() {
+                navigateDay(-1);
+            });
+
+            document.getElementById('next-day-btn').addEventListener('click', function() {
+                navigateDay(1);
+            });
+
+            document.getElementById('prev-month').addEventListener('click', function() {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+                renderCalendar();
+            });
+
+            document.getElementById('next-month').addEventListener('click', function() {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+                renderCalendar();
+            });
+
+            document.getElementById('month-selector').addEventListener('change', function() {
+                const [year, month] = this.value.split('-').map(Number);
+                currentCalendarDate = new Date(year, month, 1);
+                renderCalendar();
+            });
+
+            // Close modals when clicking outside
+            document.getElementById('calendar-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('day-detail-modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
