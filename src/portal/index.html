@@ -3,444 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Course Portal | Cosmos in the Classroom</title>
+    <title>The Portal | Cosmos in the Classroom</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500&display=swap">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <style>
-      :root {
-        --primary: #2c3e50;
-        --secondary: #34495e;
-        --accent: #3498db;
-        --background: #f9f9f6;
-        --card-bg: #fff;
-        --card-border: #e0e0e0;
-        --header-bg: #ecebe4;
-        --nav-bg: #f5f5fa;
-        --nav-active: #3498db;
-        --text: #222;
-        --muted: #888;
-        --success: #27ae60;
-      }
-      body {
-        background: var(--background);
-        font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-        margin: 0;
-        color: var(--text);
-      }
-      header {
-        background: var(--header-bg);
-        border-bottom: 2px solid var(--card-border);
-        padding: 0.5rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .site-title {
-        font-family: 'Libre Baskerville', Georgia, serif;
-        font-size: 2rem;
-        margin: 0;
-        padding-left: 2rem;
-        color: var(--primary);
-        letter-spacing: 1px;
-      }
-      nav {
-        background: var(--nav-bg);
-        margin-top: 0.5rem;
-        padding: 0.5rem 2rem;
-      }
-      nav ul {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      nav a {
-        text-decoration: none;
-        color: var(--primary);
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: background 0.2s, color 0.2s;
-      }
-      nav a.active, nav a:hover {
-        background: var(--nav-active);
-        color: #fff;
-      }
-      .breadcrumb {
-        max-width: 800px;
-        margin: 1rem auto 0;
-        padding: 0 1rem;
-      }
-      .breadcrumb ol {
-        list-style: none;
-        display: flex;
-        gap: 0.5rem;
-        padding: 0;
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-      .breadcrumb li:not(:last-child)::after {
-        content: "›";
-        margin-left: 0.5rem;
-        color: var(--card-border);
-      }
-      .breadcrumb a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-      .breadcrumb a:hover {
-        text-decoration: underline;
-      }
-      main {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      .portal-header {
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-      .portal-header h1 {
-        font-family: 'Libre Baskerville', Georgia, serif;
-        font-size: 2.2rem;
-        margin-bottom: 0.5rem;
-        color: var(--primary);
-      }
-      .portal-header p {
-        color: var(--muted);
-        font-size: 1.1rem;
-      }
-      .dynamic-section {
-        margin: 2rem 0;
-      }
-      .section-title {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid var(--card-border);
-      }
-      .course-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-top: 1rem;
-      }
-      .course-card {
-        background: var(--card-bg);
-        border: 1px solid var(--card-border);
-        border-radius: 1rem;
-        box-shadow: 0 2px 8px rgba(44,62,80,0.06);
-        padding: 1.5rem;
-        transition: box-shadow 0.2s, transform 0.2s;
-      }
-      .course-card:hover {
-        box-shadow: 0 4px 16px rgba(44,62,80,0.12);
-        transform: translateY(-2px);
-      }
-      .course-title {
-        font-size: 1.2rem;
-        font-family: 'Libre Baskerville', Georgia, serif;
-        color: var(--primary);
-        margin-bottom: 0.5rem;
-      }
-      .course-desc {
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin-bottom: 1rem;
-      }
-      .course-progress {
-        margin-bottom: 1rem;
-      }
-      .progress-bar {
-        background: var(--card-border);
-        border-radius: 1rem;
-        height: 6px;
-        overflow: hidden;
-      }
-      .progress-fill {
-        background: var(--success);
-        height: 100%;
-        border-radius: inherit;
-        transition: width 0.3s;
-      }
-      .progress-text {
-        font-size: 0.85rem;
-        color: var(--muted);
-        margin-top: 0.25rem;
-      }
-      .course-actions {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        align-items: center;
-      }
-      .course-actions a {
-        text-decoration: none;
-      }
-      .btn {
-        background: var(--accent);
-        color: #fff;
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-weight: 500;
-        font-size: 0.9rem;
-        transition: background 0.2s;
-        border: none;
-        cursor: pointer;
-      }
-      .btn:hover {
-        background: var(--primary);
-      }
-      .btn.secondary {
-        background: var(--card-bg);
-        color: var(--primary);
-        border: 1px solid var(--card-border);
-      }
-      .btn.secondary:hover {
-        background: var(--nav-bg);
-      }
-      .loading {
-        text-align: center;
-        color: var(--muted);
-        font-style: italic;
-        padding: 2rem;
-      }
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.95rem;
-        margin: 3rem 0 1rem 0;
-        padding-top: 1rem;
-        border-top: 1px solid var(--card-border);
-      }
-      
-      /* Theme-specific styling */
-      .course-card.honors {
-        border-left: 4px solid #3498db;
-      }
-      
-      .course-card.standard {
-        border-left: 4px solid #9333ea;
-      }
-      
-      .course-card.disasters {
-        border-left: 4px solid #dc2626;
-      }
-      
-      .honors-theme {
-        color: #2980b9;
-      }
-      
-      .standard-theme {
-        color: #7c3aed;
-      }
-      
-      .disasters-theme {
-        color: #dc2626;
-      }
-      
-      .btn-honors {
-        background: #3498db;
-      }
-      
-      .btn-honors:hover {
-        background: #2980b9;
-      }
-      
-      .btn-standard {
-        background: #9333ea;
-      }
-      
-      .btn-standard:hover {
-        background: #7c3aed;
-      }
-      
-      .btn-disasters {
-        background: #dc2626;
-      }
-      
-      .btn-disasters:hover {
-        background: #b91c1c;
-      }
-      
-      /* Student name input area */
-      .student-info {
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        z-index: 200;
-      }
-      
-      .student-info label {
-        font-size: 0.9rem;
-        color: var(--primary);
-        font-weight: 500;
-      }
-      
-      .student-info input {
-        padding: 0.4rem 0.8rem;
-        border: 1px solid var(--card-border);
-        border-radius: 0.4rem;
-        font-size: 0.9rem;
-        background: var(--card-bg);
-        color: var(--text);
-        min-width: 150px;
-      }
-      
-      .student-info input:focus {
-        outline: none;
-        border-color: var(--accent);
-        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
-      }
-      
-      /* Popup notification styles */
-      .popup-notification {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--card-bg);
-        border: 2px solid var(--accent);
-        border-radius: 1rem;
-        padding: 2rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        max-width: 400px;
-        text-align: center;
-        animation: popupSlideIn 0.3s ease-out;
-      }
-      
-      .popup-notification.success {
-        border-color: var(--success);
-      }
-      
-      .popup-notification.warning {
-        border-color: #f39c12;
-      }
-      
-      .popup-notification h3 {
-        margin: 0 0 1rem 0;
-        color: var(--primary);
-        font-family: 'Libre Baskerville', Georgia, serif;
-      }
-      
-      .popup-notification p {
-        margin: 0 0 1.5rem 0;
-        color: var(--muted);
-        line-height: 1.5;
-      }
-      
-      .popup-notification .popup-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-      
-      .popup-notification .popup-actions {
-        display: flex;
-        gap: 0.5rem;
-        justify-content: center;
-      }
-      
-      .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-        opacity: 0;
-        animation: fadeIn 0.3s ease-out forwards;
-      }
-      
-      @keyframes popupSlideIn {
-        from {
-          transform: translate(-50%, -50%) scale(0.8);
-          opacity: 0;
-        }
-        to {
-          transform: translate(-50%, -50%) scale(1);
-          opacity: 1;
-        }
-      }
-      
-      @keyframes fadeIn {
-        to {
-          opacity: 1;
-        }
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/cosmos-theme.css">
   </head>
   <body>
-    <header>
-      <div class="site-title">Cosmos in the Classroom</div>
-      <div class="student-info">
-        <label for="student-name">Student Name:</label>
-        <input type="text" id="student-name" placeholder="Enter your name" onchange="updateStudentName()">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/src/portal/" class="active">Portal</a></li>
-          <li><a href="/src/hphys/hphys_landing">Honors Physics</a></li>
-          <li><a href="/src/sphys/sphys_overview">Standard Physics</a></li>
-          <li><a href="/src/ref/ref_lib">Library</a></li>
-        </ul>
-      </nav>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="header-nav">
+            <div class="user-greeting" id="headerGreeting"></div>
+            <div class="nav-dropdown">
+                <button class="nav-toggle" onclick="toggleNavDropdown()">
+                    Navigation ▾
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-item">Home</a>
+                    <a href="/src/portal/" class="nav-item">The Portal</a>
+                    <a href="/ref/" class="nav-item">Socrates' Library</a>
+                    <a href="/physics/honors/" class="nav-item">Honors Physics</a>
+                    <a href="/physics/standard/" class="nav-item">Standard Physics</a>
+                    <a href="/slides/" class="nav-item">Lesson Slides</a>
+                    <a href="/solutions/" class="nav-item">Problem Solutions</a>
+                    <a href="#" class="nav-item">Assessment Tools</a>
+                    <a href="#" class="nav-item">About & Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Breadcrumb navigation -->
-    <nav aria-label="Breadcrumb" class="breadcrumb">
-      <ol id="breadcrumb">
-        <li><a href="/">Home</a></li>
-        <li>Portal</li>
-      </ol>
-    </nav>
-
-    <main>
-      <section class="portal-header">
-        <h1>Course Portal</h1>
-        <p>Access your courses, track progress, and jump to lessons or problem sets.</p>
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="portal-hero">
+        <h1 class="portal-title">The Portal</h1>
+        
+        <!-- Personalized Greeting -->
+        <div class="greeting" id="greeting"></div>
+        
+        <!-- Name Input Section (shown for new users) -->
+        <div class="name-input-section" id="nameInputSection">
+            <h3>Welcome to The Portal</h3>
+            <p>What should I call you?</p>
+            <div class="name-form">
+                <input type="text" id="nameInput" class="name-input" placeholder="Your name..." maxlength="30">
+                <button onclick="saveName()" class="name-submit">Enter</button>
+            </div>
+            <div class="name-options">
+                <small>Stored locally in your browser</small>
+            </div>
+        </div>
+        
+        <p class="portal-subtitle">Access your courses, track progress, and continue your physics journey</p>
       </section>
 
-      <!-- Dynamic course list container -->
-      <section id="courses-section" class="dynamic-section">
+      <!-- Course Section -->
+      <section class="course-section">
         <h2 class="section-title">Your Courses</h2>
         <div id="course-list" class="course-grid">
           <div class="loading">Loading courses...</div>
         </div>
       </section>
 
-      <!-- Course units container (shows when a course is selected) -->
-      <section id="units-section" class="dynamic-section" style="display:none;">
-        <h2 class="section-title" id="course-title">Course Units</h2>
-        <div id="units-list" class="course-grid">
-        </div>
-      </section>
-
-      <!-- Recent activity container -->
-      <section id="recent-section" class="dynamic-section">
-        <h2 class="section-title">Recent Activity</h2>
-        <div id="recent-list">
-          <div class="loading">Loading recent activity...</div>
-        </div>
-      </section>
-
-      <!-- Quick access container -->
-      <section id="quick-access-section" class="dynamic-section">
+      <!-- Quick Access Section -->
+      <section class="quick-access">
         <h2 class="section-title">Quick Access</h2>
-        <div id="quick-access" class="course-grid">
-          <div class="loading">Loading quick access...</div>
+        <div class="quick-grid">
+          <div class="quick-card" onclick="window.location.href='/physics/honors/'">
+            <div class="quick-icon">⚛️</div>
+            <div class="quick-title">Honors Physics</div>
+            <div class="quick-desc">Advanced curriculum with mathematical rigor</div>
+          </div>
+          <div class="quick-card" onclick="window.location.href='/physics/standard/'">
+            <div class="quick-icon">🌍</div>
+            <div class="quick-title">Standard Physics</div>
+            <div class="quick-desc">Accessible physics with visual learning</div>
+          </div>
+          <div class="quick-card" onclick="window.location.href='/slides/'">
+            <div class="quick-icon">🎭</div>
+            <div class="quick-title">Lesson Slides</div>
+            <div class="quick-desc">Interactive presentations and materials</div>
+          </div>
+          <div class="quick-card" onclick="window.location.href='/ref/'">
+            <div class="quick-icon">📚</div>
+            <div class="quick-title">Reference Library</div>
+            <div class="quick-desc">Equations, constants, and concepts</div>
+          </div>
+          <div class="quick-card" onclick="window.location.href='/solutions/'">
+            <div class="quick-icon">✓</div>
+            <div class="quick-title">Problem Solutions</div>
+            <div class="quick-desc">Worked examples and answer keys</div>
+          </div>
+          <div class="quick-card" onclick="showComingSoon()">
+            <div class="quick-icon">📊</div>
+            <div class="quick-title">Assessment Tools</div>
+            <div class="quick-desc">Quizzes and practice exercises</div>
+          </div>
         </div>
       </section>
     </main>
@@ -452,7 +110,7 @@
     <!-- Universal Data Logger -->
     <script src="./scripts/universal-data-logger.js"></script>
     
-    <!-- Placeholder for future JS -->
+    <!-- Personalization and Navigation JavaScript -->
     <script>
       // Course data and navigation management
       let courseData = null;
@@ -474,88 +132,91 @@
       }
 
       document.addEventListener('DOMContentLoaded', function() {
-        loadStudentName();
+        loadPersonalization();
         loadCourses();
         setupNavigation();
         loadRecentActivity();
         loadQuickAccess();
+        setupEventListeners();
       });
 
-      // Student name management
-      function loadStudentName() {
-        const savedName = localStorage.getItem('studentName');
-        if (savedName) {
-          document.getElementById('student-name').value = savedName;
-          // Also update userId for logging
-          localStorage.setItem('userId', savedName);
+      // Personalization functions (matching homepage)
+      function loadPersonalization() {
+        const userName = localStorage.getItem('cosmos-userName');
+        if (userName) {
+          document.getElementById('nameInput').value = userName;
+          updateGreeting(userName);
+          document.getElementById('nameInputSection').style.display = 'none';
+          document.getElementById('greeting').style.display = 'block';
         }
       }
 
-      function updateStudentName() {
-        const name = document.getElementById('student-name').value.trim();
+      function saveName() {
+        const nameInput = document.getElementById('nameInput');
+        const name = nameInput.value.trim();
+        
         if (name) {
-          localStorage.setItem('studentName', name);
-          localStorage.setItem('userId', name);
-          showPopup('success', '👤 Name Updated', `Student name set to: ${name}`);
+          localStorage.setItem('cosmos-userName', name);
+          localStorage.setItem('userId', name); // For logging
+          updateGreeting(name);
+          document.getElementById('nameInputSection').style.display = 'none';
+          document.getElementById('greeting').style.display = 'block';
+        }
+      }
+
+      function updateGreeting(name) {
+        const hour = new Date().getHours();
+        let timeGreeting;
+        
+        if (hour < 12) timeGreeting = 'Good morning';
+        else if (hour < 17) timeGreeting = 'Good afternoon';
+        else timeGreeting = 'Good evening';
+        
+        document.getElementById('greeting').textContent = `${timeGreeting}, ${name}!`;
+      }
+
+      function changeName() {
+        document.getElementById('nameInputSection').style.display = 'block';
+        document.getElementById('greeting').style.display = 'none';
+        document.getElementById('nameInput').focus();
+      }
+
+      function setupEventListeners() {
+        // Name input enter key
+        document.getElementById('nameInput').addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            saveName();
+          }
+        });
+      }
+
+      // Quick Access function for coming soon features
+      function showComingSoon() {
+        alert('🚧 Coming Soon!\n\nThis feature is currently under development. Check back soon for updates!');
+      }
+
+      // Navigation dropdown toggle function
+      function toggleNavDropdown() {
+        const navMenu = document.getElementById('navMenu');
+        const isVisible = navMenu.classList.contains('show');
+        
+        if (isVisible) {
+          navMenu.classList.remove('show');
         } else {
-          localStorage.removeItem('studentName');
-          localStorage.setItem('userId', 'anon');
+          navMenu.classList.add('show');
         }
       }
 
-      // Popup notification system
-      function showPopup(type, title, message, duration = 3000) {
-        // Create overlay
-        const overlay = document.createElement('div');
-        overlay.className = 'popup-overlay';
-        
-        // Create popup
-        const popup = document.createElement('div');
-        popup.className = `popup-notification ${type}`;
-        
-        const iconMap = {
-          success: '✅',
-          warning: '⚠️',
-          info: 'ℹ️',
-          course: '📚',
-          unit: '🎯'
-        };
-        
-        popup.innerHTML = `
-          <div class="popup-icon">${iconMap[type] || iconMap.info}</div>
-          <h3>${title}</h3>
-          <p>${message}</p>
-          <div class="popup-actions">
-            <button class="btn secondary" onclick="closePopup()">OK</button>
-          </div>
-        `;
-        
-        // Add to page
-        document.body.appendChild(overlay);
-        document.body.appendChild(popup);
-        
-        // Store references for closing
-        window.currentPopup = popup;
-        window.currentOverlay = overlay;
-        
-        // Auto-close after duration
-        if (duration > 0) {
-          setTimeout(closePopup, duration);
+      // Close navigation when clicking outside
+      document.addEventListener('click', function(e) {
+        const navDropdown = e.target.closest('.nav-dropdown');
+        if (!navDropdown) {
+          const navMenu = document.getElementById('navMenu');
+          navMenu.classList.remove('show');
         }
-        
-        // Close on overlay click
-        overlay.addEventListener('click', closePopup);
-      }
+      });
 
-      function closePopup() {
-        if (window.currentPopup) {
-          document.body.removeChild(window.currentPopup);
-          document.body.removeChild(window.currentOverlay);
-          window.currentPopup = null;
-          window.currentOverlay = null;
-        }
-      }
-
+      // Course loading and management
       async function loadCourses() {
         try {
           const courses = [
@@ -564,7 +225,7 @@
               title: 'The Story of Physics', 
               desc: 'Honors Physics: Establishing fundamental language and exploring universal laws',
               dataFile: './hphysics/admin/physics.json',
-              portalLink: './hphysics/portal.html',
+              portalLink: '../../hphys/',
               theme: 'honors'
             },
             { 
@@ -572,7 +233,7 @@
               title: 'Science Physics Integrated Curriculum', 
               desc: 'Standard Physics: Energy systems, motion, and electromagnetic radiation in real-world contexts',
               dataFile: './sphysics/osephys/osephysics3.json',
-              portalLink: './sphysics/osephys/portal.html',
+              portalLink: '../../sphys/',
               theme: 'standard'
             },
             { 
@@ -582,6 +243,22 @@
               dataFile: './natdis/course.json',
               portalLink: './natdis/portal.html',
               theme: 'disasters'
+            },
+            { 
+              id: 'hphys_new', 
+              title: 'Honors Physics (New Curriculum)', 
+              desc: 'Advanced physics curriculum with modern organization and enhanced content structure',
+              dataFile: './physics/honors/course.json',
+              portalLink: '../../physics/honors/',
+              theme: 'honors'
+            },
+            { 
+              id: 'sphys_new', 
+              title: 'Standard Physics (New Curriculum)', 
+              desc: 'Comprehensive physics curriculum designed for accessibility and practical applications',
+              dataFile: './physics/standard/course.json',
+              portalLink: '../../physics/standard/',
+              theme: 'standard'
             }
           ];
           
@@ -614,7 +291,7 @@
               <div class="progress-text">${progress}% Complete (${getCompletedUnits(course.id)} of ${getTotalUnits(course.id)} units)</div>
             </div>
             <div class="course-actions">
-              <button class="btn ${course.theme === 'honors' ? 'btn-honors' : 'btn-standard'}" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
+              <button class="btn btn-${course.theme}" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
               <a href="${course.portalLink}" class="btn secondary">Direct Portal</a>
               <button class="btn secondary" onclick="viewCourseInfo('${course.id}')">Overview</button>
             </div>
@@ -625,15 +302,14 @@
 
       async function loadCourse(courseId, dataFile) {
         try {
-          const studentName = localStorage.getItem('studentName') || 'Anonymous';
+          const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
           
-          // Show course started popup
+          // Show course started notification
           const courseNames = {
             'hphysics': 'The Story of Physics (Honors)',
             'sphysics': 'Science Physics Integrated Curriculum (Standard)',
             'natdis': 'Natural Disasters: Science, Engineering, and Policy'
           };
-          showPopup('course', 'Course Started!', `${studentName} started: ${courseNames[courseId] || 'Unknown Course'}`);
           
           // Log course access
           logEvent("course_access", {
@@ -652,11 +328,10 @@
           updateBreadcrumb(['Home', 'Portal', courseData.curriculumTitle]);
           
           // Hide other sections
-          document.getElementById('recent-section').style.display = 'none';
-          document.getElementById('quick-access-section').style.display = 'none';
+          document.querySelector('.quick-access').style.display = 'none';
         } catch (error) {
           console.error('Error loading course data:', error);
-          showPopup('warning', 'Error', `Failed to load course: ${error.message}`, 5000);
+          alert(`Failed to load course: ${error.message}`);
         }
       }
 
@@ -731,10 +406,7 @@
 
       function enterUnit(unitNumber) {
         const unit = findUnit(unitNumber);
-        const studentName = localStorage.getItem('studentName') || 'Anonymous';
-        
-        // Show unit started popup
-        showPopup('unit', 'Unit Started!', `${studentName} started Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
+        const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
         
         // Log the unit start event
         logEvent("unit_start", {
@@ -754,6 +426,64 @@
         // window.location.href = `/src/courses/${currentCourse}/unit${unitNumber}/`;
       }
 
+      function markUnitComplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
+        
+        // Log unit completion
+        logEvent("unit_complete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = true;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+      function markUnitIncomplete(courseId, unitNumber) {
+        const unit = findUnit(unitNumber);
+        const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
+        
+        // Log unit marked incomplete
+        logEvent("unit_incomplete", {
+          courseId: courseId,
+          unitNumber: unitNumber,
+          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
+          studentName: studentName
+        });
+
+        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
+        progress.units[unitNumber] = false;
+        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
+        displayCourseUnits(); // Refresh display
+      }
+
+      function backToCourses() {
+        document.getElementById('courses-section').style.display = 'block';
+        document.getElementById('units-section').style.display = 'none';
+        document.querySelector('.quick-access').style.display = 'block';
+        updateBreadcrumb(['Home', 'Portal']);
+      }
+
+      function getUnitQuarterlyData(unitNumber) {
+        if (!courseData || !courseData.unit_pacing_by_days) return null;
+        return courseData.unit_pacing_by_days.find(unit => 
+          unit.unit_name.includes(`Chapter ${unitNumber}`)
+        );
+      }
+
+      function findUnit(unitNumber) {
+        for (const part of courseData.parts) {
+          const unit = part.units.find(u => u.unitNumber === unitNumber);
+          if (unit) return unit;
+        }
+        return null;
+      }
+
       function viewUnitDetails(unitNumber) {
         // Log unit details view
         const unit = findUnit(unitNumber);
@@ -763,7 +493,7 @@
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`
         });
 
-        const quarterlyData = getUnitQuarterlyData(unitNumber); // Fixed function name
+        const quarterlyData = getUnitQuarterlyData(unitNumber);
         
         if (unit) {
           let details = `Unit ${unit.unitNumber}: ${unit.title}\n\n`;
@@ -780,22 +510,6 @@
           
           alert(details);
         }
-      }
-
-      function findUnit(unitNumber) {
-        for (const part of courseData.parts) {
-          const unit = part.units.find(u => u.unitNumber === unitNumber);
-          if (unit) return unit;
-        }
-        return null;
-      }
-
-      function backToCourses() {
-        document.getElementById('courses-section').style.display = 'block';
-        document.getElementById('units-section').style.display = 'none';
-        document.getElementById('recent-section').style.display = 'block';
-        document.getElementById('quick-access-section').style.display = 'block';
-        updateBreadcrumb(['Home', 'Portal']);
       }
 
       function viewCourseInfo(courseId) {
@@ -825,48 +539,6 @@
         return progress.units && progress.units[unitNumber];
       }
 
-      function markUnitComplete(courseId, unitNumber) {
-        const unit = findUnit(unitNumber);
-        const studentName = localStorage.getItem('studentName') || 'Anonymous';
-        
-        // Show completion popup
-        showPopup('success', 'Unit Completed!', `${studentName} completed Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
-        
-        // Log unit completion
-        logEvent("unit_complete", {
-          courseId: courseId,
-          unitNumber: unitNumber,
-          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
-          studentName: studentName
-        });
-
-        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
-        progress.units[unitNumber] = true;
-        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
-        displayCourseUnits(); // Refresh display
-      }
-
-      function markUnitIncomplete(courseId, unitNumber) {
-        const unit = findUnit(unitNumber);
-        const studentName = localStorage.getItem('studentName') || 'Anonymous';
-        
-        // Show incomplete popup
-        showPopup('warning', 'Unit Marked Incomplete', `${studentName} marked Unit ${unitNumber} as incomplete: ${unit ? unit.title : 'Unknown Unit'}`);
-        
-        // Log unit marked incomplete
-        logEvent("unit_incomplete", {
-          courseId: courseId,
-          unitNumber: unitNumber,
-          unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
-          studentName: studentName
-        });
-
-        let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{}}');
-        progress.units[unitNumber] = false;
-        localStorage.setItem(`progress_${courseId}`, JSON.stringify(progress));
-        displayCourseUnits(); // Refresh display
-      }
-
       function markUnitVisited(courseId, unitNumber) {
         let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{},"visited":{}}');
         if (!progress.visited) progress.visited = {};
@@ -889,44 +561,20 @@
       }
 
       function loadRecentActivity() {
-        const container = document.getElementById('recent-list');
-        // For now, show placeholder
-        container.innerHTML = '<div class="course-desc">No recent activity to display.</div>';
+        // Placeholder for future implementation
       }
 
       function loadQuickAccess() {
-        const container = document.getElementById('quick-access');
-        container.innerHTML = `
-          <div class="course-card">
-            <div class="course-title">Physics Reference</div>
-            <div class="course-desc">Quick access to equations, constants, and formulas</div>
-            <div class="course-actions">
-              <button class="btn secondary">View Reference</button>
-            </div>
-          </div>
-        `;
+        // Quick access grid is now in HTML, no dynamic loading needed
       }
 
       function updateBreadcrumb(items) {
-        const breadcrumb = document.getElementById('breadcrumb');
-        breadcrumb.innerHTML = '';
-        
-        items.forEach((item, index) => {
-          const li = document.createElement('li');
-          if (index === items.length - 1) {
-            li.textContent = item;
-          } else {
-            const link = document.createElement('a');
-            link.href = index === 0 ? '/' : '/src/portal/';
-            link.textContent = item;
-            li.appendChild(link);
-          }
-          breadcrumb.appendChild(li);
-        });
+        // Breadcrumb functionality for when we implement course navigation
+        console.log('Breadcrumb:', items.join(' > '));
       }
 
       function setupNavigation() {
-        // Handle browser back/forward
+        // Handle browser back/forward for future course navigation
         window.addEventListener('popstate', function(event) {
           if (event.state && event.state.course) {
             loadCourse(event.state.course.id, event.state.course.dataFile);

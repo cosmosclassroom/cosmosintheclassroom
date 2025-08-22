@@ -42,9 +42,135 @@
 
 <hr />
 
-<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+<h2 id="august-21-2025-evening---classical-design-system-implementation">August 21, 2025 (Evening) - Classical Design System Implementation</h2>
 
 <h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>File Cleanup</strong>: Remove obsolete shell scripts and dependencies</li>
+  <li><strong>Design System Creation</strong>: Develop unified classical aesthetic theme</li>
+  <li><strong>Portal Redesign</strong>: Apply consistent design to main navigation page</li>
+  <li><strong>CSS Optimization</strong>: Consolidate inline styles into main framework</li>
+</ol>
+
+<h3 id="-design-philosophy-classical-antiquity-meets-ai-chic">🎨 <strong>Design Philosophy: “Classical Antiquity Meets AI Chic”</strong></h3>
+<p><strong>Visual Identity</strong>: Elegant serif typography, marble textures, gold accents, deep blues
+<strong>User Experience</strong>: Personalized greetings, time-aware interactions, consistent navigation</p>
+
+<h3 id="-technical-accomplishments">✅ <strong>Technical Accomplishments</strong></h3>
+
+<h4 id="1-homepage-redesign">1. <strong>Homepage Redesign</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">index.html</code></p>
+<ul>
+  <li><strong>Classical Typography</strong>: Implemented Cormorant Garamond serif fonts</li>
+  <li><strong>Personalization System</strong>: localStorage-based name persistence with time-aware greetings</li>
+  <li><strong>Marble Aesthetic</strong>: CSS gradients and textures for classical appearance</li>
+  <li><strong>Interactive Navigation</strong>: Dropdown menus with elegant hover effects</li>
+</ul>
+
+<h4 id="2-css-framework-creation">2. <strong>CSS Framework Creation</strong></h4>
+<p><strong>File Created</strong>: <code class="language-plaintext highlighter-rouge">assets/css/cosmos-theme.css</code> (461 lines)</p>
+<ul>
+  <li><strong>CSS Variables</strong>: Centralized color palette (marble, gold, deep-blue, charcoal)</li>
+  <li><strong>Component Library</strong>: Buttons, cards, navigation, typography systems</li>
+  <li><strong>Responsive Design</strong>: Mobile-first approach with proper breakpoints</li>
+  <li><strong>Animation System</strong>: Subtle transitions and hover effects</li>
+</ul>
+
+<h4 id="3-portal-page-transformation">3. <strong>Portal Page Transformation</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">src/portal/index.html</code></p>
+<ul>
+  <li><strong>Header Consistency</strong>: Applied same navigation structure as homepage</li>
+  <li><strong>Personalization Integration</strong>: Name input with greeting system</li>
+  <li><strong>Course Grid Redesign</strong>: Classical styling for course cards with theme variations</li>
+  <li><strong>CSS Optimization</strong>: Removed 394 lines of inline CSS (42% file size reduction)</li>
+</ul>
+
+<h4 id="4-infrastructure-cleanup">4. <strong>Infrastructure Cleanup</strong></h4>
+<p><strong>Files Removed</strong>: Obsolete shell scripts (<code class="language-plaintext highlighter-rouge">fix-package.sh</code>)
+<strong>Issue Resolution</strong>:</p>
+<ul>
+  <li>Git authentication (Windows Credential Manager, Personal Access Tokens)</li>
+  <li>Jekyll dependency conflicts (github-pages gem version management)</li>
+  <li>Gemfile optimization (removed explicit Jekyll version)</li>
+</ul>
+
+<h3 id="️-technical-architecture-decisions">🏗️ <strong>Technical Architecture Decisions</strong></h3>
+
+<h4 id="css-organization-strategy"><strong>CSS Organization Strategy</strong></h4>
+<p><strong>Decision</strong>: Single centralized CSS framework vs. component-specific files
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces HTTP requests and improves caching</li>
+  <li>Eliminates style conflicts and duplication</li>
+  <li>Enables consistent design language across site</li>
+  <li>Simplifies maintenance and updates</li>
+</ul>
+
+<h4 id="personalization-system-design"><strong>Personalization System Design</strong></h4>
+<p><strong>Decision</strong>: localStorage-based name persistence with consistent variable naming
+<strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos-userName</code> key with time-aware greeting functions
+<strong>Benefits</strong>:</p>
+<ul>
+  <li>No server dependency for personalization</li>
+  <li>Privacy-focused (local storage only)</li>
+  <li>Consistent experience across site pages</li>
+</ul>
+
+<h4 id="portal-course-management"><strong>Portal Course Management</strong></h4>
+<p><strong>Technical Stack</strong>: Vanilla JavaScript with event logging
+<strong>Features</strong>: Progress tracking, course enrollment, unit completion markers
+<strong>Data Architecture</strong>: JSON-based course definitions with localStorage progress</p>
+
+<h3 id="-design-system-components">🎯 <strong>Design System Components</strong></h3>
+
+<h4 id="color-palette"><strong>Color Palette</strong></h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--marble</span><span class="o">:</span> <span class="nf">#f8f6f0</span>        <span class="c">/* Background base */</span>
+<span class="nt">--gold</span><span class="o">:</span> <span class="nf">#c9a96e</span>          <span class="c">/* Accent highlights */</span>
+<span class="nt">--deep-blue</span><span class="o">:</span> <span class="err">#1</span><span class="nt">a365d</span>     <span class="c">/* Primary text/headers */</span>
+<span class="nt">--charcoal</span><span class="o">:</span> <span class="err">#2</span><span class="nt">d3748</span>      <span class="c">/* Body text */</span>
+<span class="nt">--silver</span><span class="o">:</span> <span class="nf">#a0aec0</span>        <span class="c">/* Secondary text */</span>
+</code></pre></div></div>
+
+<h4 id="typography-hierarchy"><strong>Typography Hierarchy</strong></h4>
+<ul>
+  <li><strong>Headlines</strong>: Cormorant Garamond (serif, classical elegance)</li>
+  <li><strong>Body</strong>: Inter (sans-serif, modern readability)</li>
+  <li><strong>Interactive</strong>: Proper focus states and hover feedback</li>
+</ul>
+
+<h4 id="component-patterns"><strong>Component Patterns</strong></h4>
+<ul>
+  <li><strong>Cards</strong>: White backgrounds, gold borders, subtle shadows</li>
+  <li><strong>Buttons</strong>: Theme-specific colors (honors blue, standard purple)</li>
+  <li><strong>Navigation</strong>: Fixed header with backdrop blur effect</li>
+</ul>
+
+<h3 id="-performance-metrics">📊 <strong>Performance Metrics</strong></h3>
+<ul>
+  <li><strong>Portal HTML</strong>: 993 lines → 581 lines (42% reduction)</li>
+  <li><strong>CSS Consolidation</strong>: ~400 lines moved from inline to framework</li>
+  <li><strong>Load Performance</strong>: Single CSS file improves caching and reduces requests</li>
+  <li><strong>Maintainability</strong>: Centralized styles enable site-wide consistency</li>
+</ul>
+
+<h3 id="-git--deployment-resolution">🔧 <strong>Git &amp; Deployment Resolution</strong></h3>
+<p><strong>Authentication</strong>: Updated to Personal Access Token workflow
+<strong>Jekyll Build</strong>: Resolved gem dependency conflicts with github-pages
+<strong>Workflow</strong>: Established clean commit practices with descriptive messages</p>
+
+<h3 id="-next-steps--considerations">🎯 <strong>Next Steps &amp; Considerations</strong></h3>
+<ol>
+  <li><strong>Extend Design System</strong>: Apply classical theme to physics course pages</li>
+  <li><strong>Navigation Enhancement</strong>: Complete dropdown menu functionality</li>
+  <li><strong>Assessment Integration</strong>: Apply theme to quiz and testing interfaces</li>
+  <li><strong>Mobile Optimization</strong>: Test and refine responsive breakpoints</li>
+</ol>
+
+<hr />
+
+<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+
+<h3 id="-session-objectives-1">🎯 <strong>Session Objectives</strong></h3>
 <ol>
   <li><strong>Organizational Streamlining</strong>: Address the “messy” file structure from Q4 2025 AI experiments</li>
   <li><strong>Infrastructure Standardization</strong>: Create unified build systems and configuration management</li>
@@ -429,7 +555,8 @@
 
 <hr />
 
-<p><em>Last Updated: August 21, 2025</em><br />
+<p><em>Last Updated: August 21, 2025 (Evening Session)</em><br />
+<em>Design System Implementation: ✅</em><br />
 <em>Major Reorganization Completed: ✅</em><br />
 <em>Next Review: September 2025</em></p>
 
@@ -544,7 +671,7 @@
 <!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('http://0.0.0.0:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -734,9 +861,135 @@
 
 <hr />
 
-<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+<h2 id="august-21-2025-evening---classical-design-system-implementation">August 21, 2025 (Evening) - Classical Design System Implementation</h2>
 
 <h3 id="-session-objectives">🎯 <strong>Session Objectives</strong></h3>
+<ol>
+  <li><strong>File Cleanup</strong>: Remove obsolete shell scripts and dependencies</li>
+  <li><strong>Design System Creation</strong>: Develop unified classical aesthetic theme</li>
+  <li><strong>Portal Redesign</strong>: Apply consistent design to main navigation page</li>
+  <li><strong>CSS Optimization</strong>: Consolidate inline styles into main framework</li>
+</ol>
+
+<h3 id="-design-philosophy-classical-antiquity-meets-ai-chic">🎨 <strong>Design Philosophy: “Classical Antiquity Meets AI Chic”</strong></h3>
+<p><strong>Visual Identity</strong>: Elegant serif typography, marble textures, gold accents, deep blues
+<strong>User Experience</strong>: Personalized greetings, time-aware interactions, consistent navigation</p>
+
+<h3 id="-technical-accomplishments">✅ <strong>Technical Accomplishments</strong></h3>
+
+<h4 id="1-homepage-redesign">1. <strong>Homepage Redesign</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">index.html</code></p>
+<ul>
+  <li><strong>Classical Typography</strong>: Implemented Cormorant Garamond serif fonts</li>
+  <li><strong>Personalization System</strong>: localStorage-based name persistence with time-aware greetings</li>
+  <li><strong>Marble Aesthetic</strong>: CSS gradients and textures for classical appearance</li>
+  <li><strong>Interactive Navigation</strong>: Dropdown menus with elegant hover effects</li>
+</ul>
+
+<h4 id="2-css-framework-creation">2. <strong>CSS Framework Creation</strong></h4>
+<p><strong>File Created</strong>: <code class="language-plaintext highlighter-rouge">assets/css/cosmos-theme.css</code> (461 lines)</p>
+<ul>
+  <li><strong>CSS Variables</strong>: Centralized color palette (marble, gold, deep-blue, charcoal)</li>
+  <li><strong>Component Library</strong>: Buttons, cards, navigation, typography systems</li>
+  <li><strong>Responsive Design</strong>: Mobile-first approach with proper breakpoints</li>
+  <li><strong>Animation System</strong>: Subtle transitions and hover effects</li>
+</ul>
+
+<h4 id="3-portal-page-transformation">3. <strong>Portal Page Transformation</strong></h4>
+<p><strong>File Modified</strong>: <code class="language-plaintext highlighter-rouge">src/portal/index.html</code></p>
+<ul>
+  <li><strong>Header Consistency</strong>: Applied same navigation structure as homepage</li>
+  <li><strong>Personalization Integration</strong>: Name input with greeting system</li>
+  <li><strong>Course Grid Redesign</strong>: Classical styling for course cards with theme variations</li>
+  <li><strong>CSS Optimization</strong>: Removed 394 lines of inline CSS (42% file size reduction)</li>
+</ul>
+
+<h4 id="4-infrastructure-cleanup">4. <strong>Infrastructure Cleanup</strong></h4>
+<p><strong>Files Removed</strong>: Obsolete shell scripts (<code class="language-plaintext highlighter-rouge">fix-package.sh</code>)
+<strong>Issue Resolution</strong>:</p>
+<ul>
+  <li>Git authentication (Windows Credential Manager, Personal Access Tokens)</li>
+  <li>Jekyll dependency conflicts (github-pages gem version management)</li>
+  <li>Gemfile optimization (removed explicit Jekyll version)</li>
+</ul>
+
+<h3 id="️-technical-architecture-decisions">🏗️ <strong>Technical Architecture Decisions</strong></h3>
+
+<h4 id="css-organization-strategy"><strong>CSS Organization Strategy</strong></h4>
+<p><strong>Decision</strong>: Single centralized CSS framework vs. component-specific files
+<strong>Rationale</strong>:</p>
+<ul>
+  <li>Reduces HTTP requests and improves caching</li>
+  <li>Eliminates style conflicts and duplication</li>
+  <li>Enables consistent design language across site</li>
+  <li>Simplifies maintenance and updates</li>
+</ul>
+
+<h4 id="personalization-system-design"><strong>Personalization System Design</strong></h4>
+<p><strong>Decision</strong>: localStorage-based name persistence with consistent variable naming
+<strong>Implementation</strong>: <code class="language-plaintext highlighter-rouge">cosmos-userName</code> key with time-aware greeting functions
+<strong>Benefits</strong>:</p>
+<ul>
+  <li>No server dependency for personalization</li>
+  <li>Privacy-focused (local storage only)</li>
+  <li>Consistent experience across site pages</li>
+</ul>
+
+<h4 id="portal-course-management"><strong>Portal Course Management</strong></h4>
+<p><strong>Technical Stack</strong>: Vanilla JavaScript with event logging
+<strong>Features</strong>: Progress tracking, course enrollment, unit completion markers
+<strong>Data Architecture</strong>: JSON-based course definitions with localStorage progress</p>
+
+<h3 id="-design-system-components">🎯 <strong>Design System Components</strong></h3>
+
+<h4 id="color-palette"><strong>Color Palette</strong></h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--marble</span><span class="o">:</span> <span class="nf">#f8f6f0</span>        <span class="c">/* Background base */</span>
+<span class="nt">--gold</span><span class="o">:</span> <span class="nf">#c9a96e</span>          <span class="c">/* Accent highlights */</span>
+<span class="nt">--deep-blue</span><span class="o">:</span> <span class="err">#1</span><span class="nt">a365d</span>     <span class="c">/* Primary text/headers */</span>
+<span class="nt">--charcoal</span><span class="o">:</span> <span class="err">#2</span><span class="nt">d3748</span>      <span class="c">/* Body text */</span>
+<span class="nt">--silver</span><span class="o">:</span> <span class="nf">#a0aec0</span>        <span class="c">/* Secondary text */</span>
+</code></pre></div></div>
+
+<h4 id="typography-hierarchy"><strong>Typography Hierarchy</strong></h4>
+<ul>
+  <li><strong>Headlines</strong>: Cormorant Garamond (serif, classical elegance)</li>
+  <li><strong>Body</strong>: Inter (sans-serif, modern readability)</li>
+  <li><strong>Interactive</strong>: Proper focus states and hover feedback</li>
+</ul>
+
+<h4 id="component-patterns"><strong>Component Patterns</strong></h4>
+<ul>
+  <li><strong>Cards</strong>: White backgrounds, gold borders, subtle shadows</li>
+  <li><strong>Buttons</strong>: Theme-specific colors (honors blue, standard purple)</li>
+  <li><strong>Navigation</strong>: Fixed header with backdrop blur effect</li>
+</ul>
+
+<h3 id="-performance-metrics">📊 <strong>Performance Metrics</strong></h3>
+<ul>
+  <li><strong>Portal HTML</strong>: 993 lines → 581 lines (42% reduction)</li>
+  <li><strong>CSS Consolidation</strong>: ~400 lines moved from inline to framework</li>
+  <li><strong>Load Performance</strong>: Single CSS file improves caching and reduces requests</li>
+  <li><strong>Maintainability</strong>: Centralized styles enable site-wide consistency</li>
+</ul>
+
+<h3 id="-git--deployment-resolution">🔧 <strong>Git &amp; Deployment Resolution</strong></h3>
+<p><strong>Authentication</strong>: Updated to Personal Access Token workflow
+<strong>Jekyll Build</strong>: Resolved gem dependency conflicts with github-pages
+<strong>Workflow</strong>: Established clean commit practices with descriptive messages</p>
+
+<h3 id="-next-steps--considerations">🎯 <strong>Next Steps &amp; Considerations</strong></h3>
+<ol>
+  <li><strong>Extend Design System</strong>: Apply classical theme to physics course pages</li>
+  <li><strong>Navigation Enhancement</strong>: Complete dropdown menu functionality</li>
+  <li><strong>Assessment Integration</strong>: Apply theme to quiz and testing interfaces</li>
+  <li><strong>Mobile Optimization</strong>: Test and refine responsive breakpoints</li>
+</ol>
+
+<hr />
+
+<h2 id="august-21-2025---complete-system-reorganization--infrastructure-overhaul">August 21, 2025 - Complete System Reorganization &amp; Infrastructure Overhaul</h2>
+
+<h3 id="-session-objectives-1">🎯 <strong>Session Objectives</strong></h3>
 <ol>
   <li><strong>Organizational Streamlining</strong>: Address the “messy” file structure from Q4 2025 AI experiments</li>
   <li><strong>Infrastructure Standardization</strong>: Create unified build systems and configuration management</li>
@@ -1121,7 +1374,8 @@
 
 <hr />
 
-<p><em>Last Updated: August 21, 2025</em><br />
+<p><em>Last Updated: August 21, 2025 (Evening Session)</em><br />
+<em>Design System Implementation: ✅</em><br />
 <em>Major Reorganization Completed: ✅</em><br />
 <em>Next Review: September 2025</em></p>
 
