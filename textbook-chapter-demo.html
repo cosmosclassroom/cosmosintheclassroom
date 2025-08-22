@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbook Chapter Manager - Cosmos Physics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .textbook-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .textbook-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .textbook-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .demo-layout {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .config-panel {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .config-panel h2 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .config-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .config-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .config-section h3 {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+
+        .form-group select,
+        .form-group input[type="number"],
+        .form-group input[type="text"],
+        .form-group input[type="range"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: #f7fafc;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .checkbox-item:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .range-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .range-group input[type="range"] {
+            flex: 1;
+        }
+
+        .range-value {
+            min-width: 2rem;
+            text-align: center;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .stats-dashboard {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .progress-overview {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .progress-overview h3 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .overall-progress {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 12px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .overall-progress-fill {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .progress-stat {
+            text-align: center;
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .progress-stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .progress-stat-label {
+            font-size: 0.75rem;
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+
+        .content-display {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            min-height: 600px;
+        }
+
+        .content-display h2 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .view-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .view-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e2e8f0;
+            background: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .content-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn.btn-secondary {
+            background: #718096;
+        }
+
+        .btn.btn-secondary:hover {
+            background: #4a5568;
+        }
+
+        .btn.btn-success {
+            background: #48bb78;
+        }
+
+        .btn.btn-success:hover {
+            background: #38a169;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            color: #718096;
+        }
+
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            margin-left: 0.5rem;
+            border: 2px solid #e2e8f0;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .recommendations-panel {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+
+        .recommendations-panel h3 {
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .recommendation-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 0.75rem;
+        }
+
+        .recommendation-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .recommendation-title {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+
+        .recommendation-desc {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+
+        @media (max-width: 1200px) {
+            .demo-layout {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .sidebar {
+                order: 2;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .main-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .progress-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .textbook-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Cosmos Physics Textbook</h1>
+            <p>Interactive Chapter Management System</p>
+        </div>
+
+        <div class="textbook-info">
+            <div class="textbook-title">Cosmos Physics: A Comprehensive Guide - 2nd Edition</div>
+            <div class="textbook-meta">
+                <span>8 Chapters</span>
+                <span>345 Pages</span>
+                <span>Updated August 2025</span>
+            </div>
+        </div>
+
+        <div class="demo-layout">
+            <div class="sidebar">
+                <div class="progress-overview">
+                    <h3>📊 Your Progress</h3>
+                    <div class="overall-progress">
+                        <div class="overall-progress-fill" id="overall-progress-fill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-stats">
+                        <div class="progress-stat">
+                            <div class="progress-stat-value" id="completed-chapters">0</div>
+                            <div class="progress-stat-label">Completed</div>
+                        </div>
+                        <div class="progress-stat">
+                            <div class="progress-stat-value" id="pages-read">0</div>
+                            <div class="progress-stat-label">Pages Read</div>
+                        </div>
+                        <div class="progress-stat">
+                            <div class="progress-stat-value" id="reading-time">0</div>
+                            <div class="progress-stat-label">Minutes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-panel">
+                    <h2>⚙️ Display Options</h2>
+                    
+                    <div class="config-section">
+                        <h3>Sorting & Layout</h3>
+                        
+                        <div class="form-group">
+                            <label for="sort-method">Sort By:</label>
+                            <select id="sort-method">
+                                <option value="number">Chapter Number</option>
+                                <option value="title">Title (A-Z)</option>
+                                <option value="difficulty">Difficulty Level</option>
+                                <option value="readingTime">Reading Time</option>
+                                <option value="pages">Page Count</option>
+                                <option value="progress">Progress</option>
+                                <option value="lastUpdated">Last Updated</option>
+                                <option value="assessmentWeight">Assessment Weight</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="card-size-select">Card Size:</label>
+                            <select id="card-size-select">
+                                <option value="medium">Medium</option>
+                                <option value="large" selected>Large</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="items-per-row">Columns:</label>
+                            <div class="range-group">
+                                <input type="range" id="items-per-row" min="1" max="3" value="2">
+                                <span class="range-value" id="items-per-row-value">2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Content Display</h3>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="show-descriptions" checked>
+                                Show Sections
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="show-prerequisites" checked>
+                                Show Prerequisites
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="show-progress" checked>
+                                Show Progress Bars
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-panel">
+                    <h2>🔍 Filters</h2>
+                    
+                    <div class="config-section">
+                        <h3>Search</h3>
+                        <div class="form-group">
+                            <label for="search-filter">Search Chapters:</label>
+                            <input type="text" id="search-filter" placeholder="Title, author, keywords...">
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Categories</h3>
+                        <div class="form-group">
+                            <label>Physics Topics:</label>
+                            <div class="checkbox-group" id="category-filters">
+                                <!-- Categories will be populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Difficulty</h3>
+                        <div class="form-group">
+                            <label>Difficulty Levels:</label>
+                            <div class="checkbox-group" id="difficulty-filters">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="diff-beginner" value="beginner" checked>
+                                    <label for="diff-beginner">Beginner</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="diff-intermediate" value="intermediate" checked>
+                                    <label for="diff-intermediate">Intermediate</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="diff-advanced" value="advanced" checked>
+                                    <label for="diff-advanced">Advanced</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Reading Time</h3>
+                        <div class="form-group">
+                            <label for="reading-time-max">Max Reading Time (minutes):</label>
+                            <div class="range-group">
+                                <input type="range" id="reading-time-max" min="30" max="120" value="120">
+                                <span class="range-value" id="reading-time-max-value">120</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="config-section">
+                        <h3>Progress</h3>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="show-only-available">
+                                Show Only Available
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="hide-completed">
+                                Hide Completed
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recommendations-panel">
+                    <h3>💡 Recommendations</h3>
+                    <div id="recommendations-content">
+                        <div class="loading">Loading recommendations...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="stats-dashboard">
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-chapters">8</div>
+                        <div class="stat-label">Total Chapters</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="visible-chapters">8</div>
+                        <div class="stat-label">Visible</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-pages">345</div>
+                        <div class="stat-label">Total Pages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-problems">330</div>
+                        <div class="stat-label">Problems</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="total-labs">20</div>
+                        <div class="stat-label">Lab Activities</div>
+                    </div>
+                    <div class="stat-item" id="additional-stats">
+                        <!-- Additional stats will be populated here -->
+                    </div>
+                </div>
+
+                <div class="content-display">
+                    <h2>
+                        📖 Chapter Browser
+                        <div class="view-controls">
+                            <button class="view-btn active" onclick="setView('grid')">Grid</button>
+                            <button class="view-btn" onclick="setView('list')">List</button>
+                            <button class="view-btn" onclick="setView('timeline')">Timeline</button>
+                        </div>
+                    </h2>
+                    <div class="content-grid" id="content-grid">
+                        <div class="loading">Loading chapters...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="textbook-chapter-manager.js"></script>
+    <script>
+        // Global variables
+        let configManager, chapterManager, textbookUI;
+
+        // Initialize the textbook interface
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Initialize managers with textbook-specific files
+                configManager = new ConfigManager('textbook-config.json');
+                chapterManager = new TextbookChapterManager('textbook-chapters.json');
+                textbookUI = new TextbookUIController(configManager, chapterManager);
+
+                // Make globally available
+                window.configManager = configManager;
+                window.chapterManager = chapterManager;
+                window.textbookUI = textbookUI;
+
+                // Initialize the UI
+                await textbookUI.initialize();
+
+                // Load chapter data
+                await chapterManager.loadChapters();
+
+                // Set up additional event listeners
+                setupTextbookEventListeners();
+
+                // Initialize recommendations
+                updateRecommendations();
+
+                console.log('Textbook Chapter Manager initialized successfully');
+            } catch (error) {
+                console.error('Error initializing textbook interface:', error);
+                document.getElementById('content-grid').innerHTML = 
+                    '<div style="text-align: center; color: #e53e3e; padding: 2rem;">Error loading textbook data</div>';
+            }
+        });
+
+        // Set up textbook-specific event listeners
+        function setupTextbookEventListeners() {
+            // Range input value displays
+            const rangeInputs = document.querySelectorAll('input[type="range"]');
+            rangeInputs.forEach(input => {
+                const valueDisplay = document.getElementById(input.id + '-value');
+                if (valueDisplay) {
+                    input.addEventListener('input', () => {
+                        valueDisplay.textContent = input.value;
+                        
+                        // Update configuration
+                        if (input.id === 'items-per-row') {
+                            configManager.updateConfig('displaySettings.itemsPerRow', parseInt(input.value));
+                        } else if (input.id === 'reading-time-max') {
+                            configManager.updateConfig('filterSettings.readingTimeRange.max', parseInt(input.value));
+                        }
+                    });
+                }
+            });
+
+            // Difficulty filter listeners
+            const difficultyFilters = document.getElementById('difficulty-filters');
+            if (difficultyFilters) {
+                difficultyFilters.addEventListener('change', (e) => {
+                    if (e.target.type === 'checkbox') {
+                        const difficulty = e.target.value;
+                        const currentLevels = configManager.getConfig('filterSettings.difficultyLevels') || [];
+                        let newLevels;
+
+                        if (e.target.checked) {
+                            newLevels = [...currentLevels, difficulty];
+                        } else {
+                            newLevels = currentLevels.filter(level => level !== difficulty);
+                        }
+
+                        configManager.updateConfig('filterSettings.difficultyLevels', newLevels);
+                    }
+                });
+            }
+
+            // Progress filter listeners
+            const showOnlyAvailable = document.getElementById('show-only-available');
+            if (showOnlyAvailable) {
+                showOnlyAvailable.addEventListener('change', (e) => {
+                    configManager.updateConfig('filterSettings.showOnlyAvailable', e.target.checked);
+                });
+            }
+
+            const hideCompleted = document.getElementById('hide-completed');
+            if (hideCompleted) {
+                hideCompleted.addEventListener('change', (e) => {
+                    configManager.updateConfig('progressSettings.hideCompleted', e.target.checked);
+                });
+            }
+
+            // Subscribe to progress updates
+            chapterManager.subscribe((event, data) => {
+                if (event === 'progressUpdated') {
+                    updateProgressDisplay();
+                    updateRecommendations();
+                }
+            });
+        }
+
+        // Update progress display
+        function updateProgressDisplay() {
+            const stats = chapterManager.getTextbookStatistics();
+            
+            // Update progress overview
+            document.getElementById('overall-progress-fill').style.width = `${stats.textbook.overallProgress}%`;
+            document.getElementById('completed-chapters').textContent = stats.textbook.completedChapters;
+            document.getElementById('pages-read').textContent = stats.textbook.pagesRead;
+            document.getElementById('reading-time').textContent = stats.textbook.readingTimeSpent;
+
+            // Update main stats
+            document.getElementById('total-chapters').textContent = stats.textbook.totalChapters;
+            document.getElementById('visible-chapters').textContent = stats.visible;
+            document.getElementById('total-pages').textContent = stats.textbook.totalPages;
+            document.getElementById('total-problems').textContent = stats.textbook.totalProblems;
+            document.getElementById('total-labs').textContent = stats.textbook.totalLabs;
+        }
+
+        // Update recommendations
+        function updateRecommendations() {
+            const recommendedChapter = chapterManager.getRecommendations();
+            const studyPlan = chapterManager.generateStudyPlan('2025-12-31');
+            
+            const container = document.getElementById('recommendations-content');
+            
+            if (recommendedChapter) {
+                container.innerHTML = `
+                    <div class="recommendation-item">
+                        <div class="recommendation-title">📚 Continue Reading</div>
+                        <div class="recommendation-desc">Chapter ${recommendedChapter.number}: ${recommendedChapter.title}</div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommendation-title">📅 Study Plan</div>
+                        <div class="recommendation-desc">${studyPlan.length} weeks to complete remaining chapters</div>
+                    </div>
+                    <div class="recommendation-item">
+                        <div class="recommendation-title">⏱️ Next Session</div>
+                        <div class="recommendation-desc">${recommendedChapter.estimatedReadingTime} minutes estimated</div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="recommendation-item">
+                        <div class="recommendation-title">🎉 Congratulations!</div>
+                        <div class="recommendation-desc">You've completed all available chapters</div>
+                    </div>
+                `;
+            }
+        }
+
+        // View control functions
+        function setView(viewType) {
+            const buttons = document.querySelectorAll('.view-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const grid = document.getElementById('content-grid');
+            switch (viewType) {
+                case 'list':
+                    grid.style.gridTemplateColumns = '1fr';
+                    break;
+                case 'timeline':
+                    grid.style.gridTemplateColumns = '1fr';
+                    // Could implement timeline view here
+                    break;
+                default: // grid
+                    const itemsPerRow = configManager.getConfig('displaySettings.itemsPerRow') || 2;
+                    grid.style.gridTemplateColumns = `repeat(${itemsPerRow}, 1fr)`;
+                    break;
+            }
+        }
+
+        // Export functions for global access
+        window.exportConfig = () => textbookUI.exportConfig();
+        window.importConfig = () => textbookUI.importConfig();
+        window.resetToDefaults = () => textbookUI.resetToDefaults();
+        window.setView = setView;
+    </script>
+</body>
+</html>
