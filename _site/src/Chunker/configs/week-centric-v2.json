@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "version": "2.0",
+    "lastUpdated": "2025-08-22",
+    "dataSource": "ai-curriculum-extraction",
+    "description": "Week-centric chunker data optimized for teacher planning and AI extraction"
+  },
+
+  "course": {
+    "title": "Physics Honors",
+    "level": "honors",
+    "subject": "physics",
+    "periods": [1, 3, 7],
+    "teacher": "Mr. Physics",
+    "academicYear": "2025-2026",
+    "semester": "fall"
+  },
+
+  "schedule": {
+    "schoolName": "Branford High School",
+    "scheduleType": "rotation",
+    "rotationDays": ["A", "B", "C", "D"],
+    "periodsPerRotation": {
+      "A": [1, 2, 3, 4, 5, 6],
+      "B": [1, 2, 3, 4, 7, 8], 
+      "C": [1, 2, 5, 6, 7, 8],
+      "D": [2, 3, 4, 5, 7, 8]
+    },
+    "periodDurations": {
+      "1": 60, "2": 55, "3": 45, "4": 55,
+      "5": 60, "6": 60, "7": 55, "8": 50
+    }
+  },
+
+  "chunking": {
+    "baseChunkSize": 15,
+    "adminTimePerPeriod": 5,
+    "maxChunksPerPeriod": 4,
+    "chunkTypes": {
+      "warmup": { "typical": 15, "color": "#9fb09f", "icon": "🔥" },
+      "concept": { "typical": 20, "color": "#566e56", "icon": "💡" },
+      "practice": { "typical": 15, "color": "#728a72", "icon": "✏️" },
+      "lab": { "typical": 45, "color": "#435943", "icon": "🔬" },
+      "assessment": { "typical": 30, "color": "#d32f2f", "icon": "📝" },
+      "review": { "typical": 20, "color": "#e9c665", "icon": "🔄" }
+    }
+  },
+
+  "curriculum": {
+    "currentUnit": 6,
+    "currentWeek": 8,
+    "units": {
+      "5": {
+        "title": "Energy & Momentum",
+        "status": "completed",
+        "totalChunks": 72,
+        "completedChunks": 72,
+        "startDate": "2025-09-15",
+        "endDate": "2025-10-11"
+      },
+      "6": {
+        "title": "Circular Motion & Gravity", 
+        "status": "active",
+        "totalChunks": 80,
+        "completedChunks": 48,
+        "startDate": "2025-10-14",
+        "projectedEndDate": "2025-11-08"
+      },
+      "7": {
+        "title": "Oscillations",
+        "status": "planned", 
+        "totalChunks": 64,
+        "completedChunks": 0,
+        "startDate": "2025-11-11",
+        "projectedEndDate": "2025-12-13"
+      }
+    }
+  },
+
+  "weeks": {
+    "6": {
+      "startDate": "2025-09-29",
+      "endDate": "2025-10-03",
+      "unit": 5,
+      "theme": "Unit 5 Assessment & Unit 6 Introduction",
+      "status": "completed",
+      "totalChunks": 20,
+      "completedChunks": 20,
+      "days": {
+        "2025-09-30": {
+          "dayOfWeek": "monday",
+          "rotationDay": "A",
+          "periods": [1, 3],
+          "chunks": [
+            {
+              "id": "5.final.1",
+              "type": "assessment",
+              "title": "Unit 5 Final Assessment",
+              "duration": 30,
+              "period": 1,
+              "timeSlot": "7:30-8:00",
+              "status": "completed",
+              "learningObjectives": ["Apply energy conservation", "Solve momentum problems"]
+            },
+            {
+              "id": "5.final.2", 
+              "type": "assessment",
+              "title": "Unit 5 Final Assessment (continued)",
+              "duration": 30,
+              "period": 1,
+              "timeSlot": "8:00-8:30",
+              "status": "completed"
+            },
+            {
+              "id": "6.intro.1",
+              "type": "concept",
+              "title": "Introduction to Circular Motion",
+              "duration": 20,
+              "period": 3,
+              "timeSlot": "9:35-9:55",
+              "status": "completed",
+              "learningObjectives": ["Define circular motion", "Identify examples in nature"],
+              "materials": ["circular_motion_intro.md", "real_world_examples.jpg"],
+              "aiNotes": "Students struggled with velocity vs speed distinction in circular motion"
+            },
+            {
+              "id": "6.intro.2",
+              "type": "practice",
+              "title": "Circular Motion Problem Set",
+              "duration": 20,
+              "period": 3,
+              "timeSlot": "9:55-10:15",
+              "status": "completed",
+              "prerequisites": ["6.intro.1"],
+              "commonMisconceptions": ["Confusing centripetal with centrifugal force"]
+            }
+          ]
+        },
+        "2025-10-01": {
+          "dayOfWeek": "tuesday",
+          "rotationDay": "B", 
+          "periods": [3, 7],
+          "chunks": [
+            {
+              "id": "6.motion.1",
+              "type": "warmup",
+              "title": "Review Circular Motion Basics",
+              "duration": 15,
+              "period": 3,
+              "timeSlot": "9:35-9:50",
+              "status": "completed"
+            },
+            {
+              "id": "6.motion.2",
+              "type": "concept", 
+              "title": "Uniform Circular Motion",
+              "duration": 25,
+              "period": 3,
+              "timeSlot": "9:50-10:15",
+              "status": "completed",
+              "learningObjectives": ["Calculate angular velocity", "Relate linear and angular motion"]
+            }
+          ]
+        }
+      }
+    },
+
+    "7": {
+      "startDate": "2025-10-07",
+      "endDate": "2025-10-11", 
+      "unit": 6,
+      "theme": "Centripetal Force & Laboratory Investigation",
+      "status": "completed",
+      "totalChunks": 20,
+      "completedChunks": 20,
+      "days": {
+        "2025-10-07": {
+          "dayOfWeek": "monday",
+          "rotationDay": "A",
+          "periods": [1, 3],
+          "chunks": [
+            {
+              "id": "6.lab.1",
+              "type": "lab",
+              "title": "Centripetal Force Lab Setup",
+              "duration": 45,
+              "period": 1,
+              "timeSlot": "7:30-8:15",
+              "status": "completed",
+              "materials": ["centripetal_force_apparatus", "stopwatches", "mass_sets"],
+              "safetyNotes": ["Eye protection required", "Secure all rotating equipment"]
+            }
+          ]
+        }
+      }
+    },
+
+    "8": {
+      "startDate": "2025-10-14", 
+      "endDate": "2025-10-18",
+      "unit": 6,
+      "theme": "Universal Gravitation & Orbital Mechanics",
+      "status": "active",
+      "totalChunks": 20,
+      "completedChunks": 12,
+      "days": {
+        "2025-10-14": {
+          "dayOfWeek": "monday",
+          "rotationDay": "A",
+          "periods": [1, 3],
+          "chunks": [
+            {
+              "id": "6.gravity.1",
+              "type": "warmup",
+              "title": "Review Centripetal Force Lab Results",
+              "duration": 15,
+              "period": 3,
+              "timeSlot": "9:35-9:50",
+              "status": "completed"
+            },
+            {
+              "id": "6.gravity.2",
+              "type": "concept",
+              "title": "Newton's Law of Universal Gravitation",
+              "duration": 25,
+              "period": 3,
+              "timeSlot": "9:50-10:15",
+              "status": "completed",
+              "learningObjectives": ["State Newton's law of universal gravitation", "Apply inverse square law"],
+              "keyEquations": ["F = G(m1*m2)/r²"],
+              "realWorldConnections": ["Planetary motion", "Tides", "Satellite orbits"]
+            }
+          ]
+        },
+        "2025-10-15": {
+          "dayOfWeek": "tuesday", 
+          "rotationDay": "B",
+          "periods": [3, 7],
+          "chunks": [
+            {
+              "id": "6.gravity.3",
+              "type": "practice",
+              "title": "Gravitational Force Calculations",
+              "duration": 40,
+              "period": 3,
+              "timeSlot": "9:35-10:15",
+              "status": "completed",
+              "problemTypes": ["Earth-moon system", "Planetary masses", "Gravitational field strength"]
+            }
+          ]
+        },
+        "2025-10-16": {
+          "dayOfWeek": "wednesday",
+          "rotationDay": "C", 
+          "periods": [1, 7],
+          "chunks": [
+            {
+              "id": "6.orbital.1",
+              "type": "warmup",
+              "title": "Gravity Review & Q&A", 
+              "duration": 15,
+              "period": 1,
+              "timeSlot": "7:30-7:45",
+              "status": "completed"
+            },
+            {
+              "id": "6.orbital.2", 
+              "type": "concept",
+              "title": "Orbital Mechanics Fundamentals",
+              "duration": 25,
+              "period": 1,
+              "timeSlot": "7:45-8:10",
+              "status": "completed",
+              "learningObjectives": ["Explain orbital velocity", "Relate gravity to circular motion"]
+            },
+            {
+              "id": "6.orbital.3",
+              "type": "practice", 
+              "title": "Satellite Orbit Calculations",
+              "duration": 15,
+              "period": 1,
+              "timeSlot": "8:10-8:25",
+              "status": "current",
+              "aiExtracted": {
+                "source": "physics_honors_unit_06_lesson_12.md",
+                "extractionDate": "2025-08-22",
+                "confidence": 0.94,
+                "suggestedAdaptations": ["Add visual orbital simulation", "Include ISS example"]
+              }
+            }
+          ]
+        },
+        "2025-10-17": {
+          "dayOfWeek": "thursday",
+          "rotationDay": "D",
+          "periods": [3, 7],
+          "chunks": [
+            {
+              "id": "6.satellites.1",
+              "type": "concept",
+              "title": "GPS and Communication Satellites",
+              "duration": 30,
+              "period": 3,
+              "timeSlot": "9:35-10:05",
+              "status": "planned",
+              "learningObjectives": ["Explain geostationary orbits", "Calculate orbital periods"],
+              "realWorldConnections": ["GPS navigation", "Weather satellites", "Communication networks"]
+            },
+            {
+              "id": "6.satellites.2",
+              "type": "practice",
+              "title": "Advanced Orbital Problems",
+              "duration": 15,
+              "period": 3,
+              "timeSlot": "10:05-10:20",
+              "status": "planned"
+            }
+          ]
+        },
+        "2025-10-18": {
+          "dayOfWeek": "friday",
+          "rotationDay": "A", 
+          "periods": [1, 3],
+          "chunks": [
+            {
+              "id": "6.assessment.prep",
+              "type": "review",
+              "title": "Unit 6 Assessment Preparation",
+              "duration": 45,
+              "period": 3,
+              "timeSlot": "9:35-10:20",
+              "status": "planned",
+              "reviewTopics": ["Circular motion basics", "Centripetal force", "Universal gravitation", "Orbital mechanics"]
+            }
+          ]
+        }
+      }
+    },
+
+    "9": {
+      "startDate": "2025-10-21",
+      "endDate": "2025-10-25",
+      "unit": 6,
+      "theme": "Unit 6 Assessment & Unit 7 Preview",
+      "status": "planned",
+      "totalChunks": 20,
+      "completedChunks": 0,
+      "days": {
+        "2025-10-21": {
+          "dayOfWeek": "monday",
+          "rotationDay": "B",
+          "periods": [1, 3],
+          "chunks": [
+            {
+              "id": "6.advanced.1",
+              "type": "concept",
+              "title": "Advanced Gravitational Applications",
+              "duration": 30,
+              "period": 3,
+              "timeSlot": "9:35-10:05",
+              "status": "planned",
+              "learningObjectives": ["Analyze complex orbital systems", "Apply energy methods to orbits"]
+            }
+          ]
+        },
+        "2025-10-23": {
+          "dayOfWeek": "wednesday", 
+          "rotationDay": "D",
+          "periods": [3, 7],
+          "chunks": [
+            {
+              "id": "6.unit.test",
+              "type": "assessment",
+              "title": "Unit 6 Comprehensive Assessment",
+              "duration": 40,
+              "period": 3,
+              "timeSlot": "9:35-10:15",
+              "status": "planned",
+              "assessmentSections": ["Conceptual understanding", "Problem solving", "Applications"]
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "analytics": {
+    "weeklyProgress": {
+      "6": { "planned": 20, "completed": 20, "efficiency": 1.0 },
+      "7": { "planned": 20, "completed": 20, "efficiency": 1.0 },
+      "8": { "planned": 20, "completed": 12, "efficiency": 0.6 }
+    },
+    "chunkTypeDistribution": {
+      "warmup": 18, "concept": 35, "practice": 28, "lab": 8, "assessment": 6, "review": 5
+    },
+    "averageChunksPerDay": 3.2,
+    "projectedCompletionBuffer": 2.5,
+    "lastUpdated": "2025-08-22T14:30:00Z"
+  },
+
+  "aiExtraction": {
+    "lastRun": "2025-08-22T10:00:00Z",
+    "sourceDocuments": [
+      "physics_honors_curriculum_guide.pdf",
+      "unit_06_circular_motion_gravity.md", 
+      "bhs_pacing_guide_2025-26.xlsx"
+    ],
+    "extractionMetrics": {
+      "chunksAutoGenerated": 156,
+      "chunksManuallyAdjusted": 23,
+      "averageConfidenceScore": 0.87,
+      "flaggedForReview": 8
+    },
+    "nextScheduledRun": "2025-08-29T10:00:00Z"
+  }
+}

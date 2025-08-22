@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 # Core Gems
 gem "webrick", "~> 1.8"
-gem "jekyll", "~> 3.9.3"
+# Jekyll version is managed by github-pages gem
 gem "rake", "~> 13.0"
 gem "highline"
 gem "kramdown-math-katex"

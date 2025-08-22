@@ -1,39 +1,84 @@
-/* Define a custom color palette that blends classic and modern tones */
+/* Portal-inspired professional color palette */
 :root {
-    --parchment: #fcf9f2;
-    --sage: #7a9172;
-    --terracotta: #b56557;
-    --deep-blue: #2c3e50;
-    --gilding: #d4af37;
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --background: #f9f9f6;
+    --card-bg: #fff;
+    --card-border: #e0e0e0;
+    --header-bg: #ecebe4;
+    --nav-bg: #f5f5fa;
+    --nav-active: #3498db;
+    --text: #222;
+    --muted: #888;
+    --success: #27ae60;
+    --warm-accent: #e74c3c;
+    --gold-accent: #f39c12;
 }
 
-/* Set a custom font for a classic, academic feel */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;700&display=swap');
+/* Set a custom font for a professional, modern feel */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
 body {
-    font-family: 'Merriweather', serif;
-    background-color: var(--parchment);
-    color: var(--deep-blue);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Custom utility classes using our defined colors */
-.bg-parchment { background-color: var(--parchment); }
-.text-sage { color: var(--sage); }
-.text-terracotta { color: var(--terracotta); }
-.bg-terracotta { background-color: var(--terracotta); }
-.text-deep-blue { color: var(--deep-blue); }
-.bg-deep-blue { background-color: var(--deep-blue); }
-.text-gilding { color: var(--gilding); }
-.border-gilding { border-color: var(--gilding); }
+.bg-background { background-color: var(--background); }
+.bg-card { background-color: var(--card-bg); }
+.bg-header { background-color: var(--header-bg); }
+.bg-nav { background-color: var(--nav-bg); }
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-accent { background-color: var(--accent); }
+.bg-success { background-color: var(--success); }
+.bg-warm { background-color: var(--warm-accent); }
+.bg-gold { background-color: var(--gold-accent); }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-accent { color: var(--accent); }
+.text-muted { color: var(--muted); }
+.text-success { color: var(--success); }
+.text-warm { color: var(--warm-accent); }
+.text-gold { color: var(--gold-accent); }
+.text-white { color: #fff; }
+
+.border-primary { border-color: var(--primary); }
+.border-accent { border-color: var(--accent); }
+
+/* Quick Access Icon Styling */
+.quick-icon {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.physics-icon { color: #3b82f6; }
+.earth-icon { color: #10b981; }
+.presentation-icon { color: #8b5cf6; }
+.library-icon { color: #f59e0b; }
+.check-icon { color: #059669; }
+.chart-icon { color: #dc2626; }
+.border-card { border-color: var(--card-border); }
+.border-success { border-color: var(--success); }
 .progress-bar-container {
     height: 8px;
-    background-color: #e5e7eb;
+    background-color: var(--card-border);
     border-radius: 9999px;
     overflow: hidden;
 }
+
 .progress-bar {
     height: 100%;
-    background-color: var(--sage);
+    background-color: var(--success);
     transition: width 0.5s ease-in-out;
     border-radius: 9999px;
 }
-.rounded-3xl { border-radius: 1.5rem; }
+
+.rounded-3xl { 
+    border-radius: 1.5rem; 
+}

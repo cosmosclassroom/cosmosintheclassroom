@@ -1,0 +1,39 @@
+/* Define a custom color palette that blends classic and modern tones */
+:root {
+    --parchment: #fcf9f2;
+    --sage: #7a9172;
+    --terracotta: #b56557;
+    --deep-blue: #2c3e50;
+    --gilding: #d4af37;
+}
+
+/* Set a custom font for a classic, academic feel */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;700&display=swap');
+body {
+    font-family: 'Merriweather', serif;
+    background-color: var(--parchment);
+    color: var(--deep-blue);
+}
+
+/* Custom utility classes using our defined colors */
+.bg-parchment { background-color: var(--parchment); }
+.text-sage { color: var(--sage); }
+.text-terracotta { color: var(--terracotta); }
+.bg-terracotta { background-color: var(--terracotta); }
+.text-deep-blue { color: var(--deep-blue); }
+.bg-deep-blue { background-color: var(--deep-blue); }
+.text-gilding { color: var(--gilding); }
+.border-gilding { border-color: var(--gilding); }
+.progress-bar-container {
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 100%;
+    background-color: var(--sage);
+    transition: width 0.5s ease-in-out;
+    border-radius: 9999px;
+}
+.rounded-3xl { border-radius: 1.5rem; }

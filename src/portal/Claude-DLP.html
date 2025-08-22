@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Learning Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-separator {
+            opacity: 0.6;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: conic-gradient(white 0deg, white var(--progress-angle), rgba(255,255,255,0.3) var(--progress-angle));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .progress-circle::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #667eea;
+            position: absolute;
+        }
+        
+        .progress-text {
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .progress-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 320px;
+            height: calc(100vh - 70px);
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            z-index: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-280px);
+        }
+        
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            right: -40px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-content {
+            padding: 24px;
+        }
+        
+        .unit-section {
+            margin-bottom: 32px;
+        }
+        
+        .unit-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        
+        .unit-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        
+        .unit-progress {
+            font-size: 0.8rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+        
+        .chapter-list {
+            margin-left: 16px;
+            max-height: 400px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .chapter-list.collapsed {
+            max-height: 0;
+        }
+        
+        .chapter-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 4px 0;
+            position: relative;
+        }
+        
+        .chapter-item:hover {
+            background: #f8fafc;
+        }
+        
+        .chapter-item.active {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            padding-left: 13px;
+        }
+        
+        .chapter-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .chapter-icon.completed {
+            background: #10b981;
+            color: white;
+        }
+        
+        .chapter-icon.current {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .chapter-icon.locked {
+            background: #e2e8f0;
+            color: #94a3b8;
+        }
+        
+        .chapter-info {
+            flex: 1;
+        }
+        
+        .chapter-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 2px;
+        }
+        
+        .chapter-subtitle {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        .chapter-resources {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        
+        .resource-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+        }
+        
+        .resource-textbook { background: #7c3aed; }
+        .resource-slides { background: #f59e0b; }
+        .resource-video { background: #ef4444; }
+        .resource-research { background: #10b981; }
+        .resource-quiz { background: #3b82f6; }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 320px;
+            margin-top: 70px;
+            padding: 32px;
+            min-height: calc(100vh - 70px);
+            transition: margin-left 0.3s ease;
+        }
+        
+        .main-content.expanded {
+            margin-left: 40px;
+        }
+        
+        .content-header {
+            margin-bottom: 32px;
+        }
+        
+        .content-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .content-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        
+        .content-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            border: none;
+            background: #f1f5f9;
+            color: #64748b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .tab-button.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .tab-button:hover:not(.active) {
+            background: #e2e8f0;
+        }
+        
+        .content-area {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            min-height: 600px;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f1f5f9;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Welcome Screen */
+        .welcome-screen {
+            text-align: center;
+            padding: 48px 24px;
+        }
+        
+        .welcome-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        
+        .welcome-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        
+        .welcome-description {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .action-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .action-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+        
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .action-title {
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+        
+        .action-description {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(-280px);
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-left .breadcrumb {
+                display: none;
+            }
+            
+            .progress-container {
+                padding: 6px 12px;
+            }
+            
+            .progress-label {
+                display: none;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 16px;
+            }
+            
+            .sidebar {
+                width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="course-title">AP Biology</div>
+            <div class="breadcrumb">
+                <span>Unit 1</span>
+                <span class="breadcrumb-separator">›</span>
+                <span>Chemistry of Life</span>
+                <span class="breadcrumb-separator">›</span>
+                <span id="current-chapter">Welcome</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="progress-container">
+                <div class="progress-circle" style="--progress-angle: 108deg;">
+                    <div class="progress-text" id="progress-percentage">30%</div>
+                </div>
+                <div class="progress-label">Course Progress</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-toggle" id="sidebarToggle">
+            <span id="toggleIcon">‹</span>
+        </div>
+        <div class="sidebar-content">
+            <!-- Unit 1 -->
+            <div class="unit-section">
+                <div class="unit-header" onclick="toggleUnit('unit1')">
+                    <div class="unit-title">Unit 1: Chemistry of Life</div>
+                    <div class="unit-progress">3/5</div>
+                </div>
+                <div class="chapter-list" id="unit1">
+                    <div class="chapter-item completed" onclick="loadContent('chapter1', 'The Phenomenon of Color')">
+                        <div class="chapter-icon completed">✓</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 1: The Phenomenon of Color</div>
+                            <div class="chapter-subtitle">Why do leaves change color?</div>
+                            <div class="chapter-resources">
+                                <div class="resource-icon resource-textbook" title="Textbook">📖</div>
+                                <div class="resource-icon resource-slides" title="Slides">📊</div>
+                                <div class="resource-icon resource-video" title="Video">🎥</div>
+                                <div class="resource-icon resource-research" title="Research Brief">📋</div>
+                                <div class="resource-icon resource-quiz" title="Quiz">❓</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-item completed" onclick="loadContent('chapter2', 'Molecular Structure & Function')">
+                        <div class="chapter-icon completed">✓</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 2: Molecular Structure & Function</div>
+                            <div class="chapter-subtitle">How structure determines properties</div>
+                            <div class="chapter-resources">
+                                <div class="resource-icon resource-textbook">📖</div>
+                                <div class="resource-icon resource-slides">📊</div>
+                                <div class="resource-icon resource-research">📋</div>
+                                <div class="resource-icon resource-quiz">❓</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-item current active" onclick="loadContent('chapter3', 'Chromatography Investigation')">
+                        <div class="chapter-icon current">3</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 3: Chromatography Investigation</div>
+                            <div class="chapter-subtitle">Separating the hidden colors</div>
+                            <div class="chapter-resources">
+                                <div class="resource-icon resource-textbook">📖</div>
+                                <div class="resource-icon resource-slides">📊</div>
+                                <div class="resource-icon resource-video">🎥</div>
+                                <div class="resource-icon resource-research">📋</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-item locked" onclick="loadContent('chapter4', 'Energy & Matter')">
+                        <div class="chapter-icon locked">🔒</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 4: Energy & Matter</div>
+                            <div class="chapter-subtitle">Why plants change strategies</div>
+                            <div class="chapter-resources">
+                                <div class="resource-icon resource-textbook">📖</div>
+                                <div class="resource-icon resource-research">📋</div>
+                                <div class="resource-icon resource-quiz">❓</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chapter-item locked" onclick="loadContent('chapter5', 'Synthesis & Application')">
+                        <div class="chapter-icon locked">🔒</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 5: Synthesis & Application</div>
+                            <div class="chapter-subtitle">Connecting to the bigger picture</div>
+                            <div class="chapter-resources">
+                                <div class="resource-icon resource-research">📋</div>
+                                <div class="resource-icon resource-quiz">❓</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit 2 -->
+            <div class="unit-section">
+                <div class="unit-header" onclick="toggleUnit('unit2')">
+                    <div class="unit-title">Unit 2: Cell Structure & Function</div>
+                    <div class="unit-progress">0/4</div>
+                </div>
+                <div class="chapter-list collapsed" id="unit2">
+                    <div class="chapter-item locked">
+                        <div class="chapter-icon locked">🔒</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 6: Cell Membranes</div>
+                            <div class="chapter-subtitle">Selective barriers</div>
+                        </div>
+                    </div>
+                    <div class="chapter-item locked">
+                        <div class="chapter-icon locked">🔒</div>
+                        <div class="chapter-info">
+                            <div class="chapter-title">Chapter 7: Organelles</div>
+                            <div class="chapter-subtitle">Specialized structures</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="content-header">
+            <h1 class="content-title" id="contentTitle">Welcome to AP Biology</h1>
+            <p class="content-subtitle" id="contentSubtitle">Select a chapter from the sidebar to begin your learning journey</p>
+            
+            <div class="content-tabs" id="contentTabs" style="display: none;">
+                <button class="tab-button active" onclick="switchTab('textbook')">📖 Textbook</button>
+                <button class="tab-button" onclick="switchTab('slides')">📊 Slides</button>
+                <button class="tab-button" onclick="switchTab('video')">🎥 Video</button>
+                <button class="tab-button" onclick="switchTab('research')">📋 Research Brief</button>
+                <button class="tab-button" onclick="switchTab('quiz')">❓ Quiz</button>
+            </div>
+        </div>
+        
+        <div class="content-area" id="contentArea">
+            <div class="welcome-screen">
+                <div class="welcome-icon">🧬</div>
+                <h2 class="welcome-title">A Story of Life, Energy, and Information</h2>
+                <p class="welcome-description">
+                    Welcome to your biology learning portal! This is where you'll explore the fascinating world of living systems 
+                    through hands-on investigations, interactive content, and research-based discovery.
+                </p>
+                
+                <div class="quick-actions">
+                    <div class="action-card" onclick="loadContent('chapter1', 'The Phenomenon of Color')">
+                        <div class="action-icon">🍂</div>
+                        <div class="action-title">Start Chapter 1</div>
+                        <div class="action-description">Begin with the phenomenon of changing leaf colors</div>
+                    </div>
+                    
+                    <div class="action-card" onclick="loadContent('chapter3', 'Chromatography Investigation')">
+                        <div class="action-icon">🔬</div>
+                        <div class="action-title">Current Chapter</div>
+                        <div class="action-description">Continue with the chromatography investigation</div>
+                    </div>
+                    
+                    <div class="action-card" onclick="showResources()">
+                        <div class="action-icon">📚</div>
+                        <div class="action-title">Browse Resources</div>
+                        <div class="action-description">Explore textbook chapters, videos, and research briefs</div>
+                    </div>
+                    
+                    <div class="action-card" onclick="showProgress()">
+                        <div class="action-icon">📈</div>
+                        <div class="action-title">Track Progress</div>
+                        <div class="action-description">See your learning journey and next steps</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Sample content for different chapters and resource types
+        const contentLibrary = {
+            chapter1: {
+                title: "The Phenomenon of Color",
+                subtitle: "Why do leaves change color while others stay green?",
+                textbook: `
+                    <h2>Chapter 1: The Phenomenon of Color</h2>
+                    <p><strong>Driving Question:</strong> What chemical reactions control the colors we see in living things?</p>
+                    
+                    <h3>🍂 The Mystery</h3>
+                    <p>Every autumn, something remarkable happens in forests around the world. Some trees burst into brilliant reds, oranges, and yellows, while others remain stubbornly green. Why do leaves change color? And more intriguingly, why do some leaves change while others don't?</p>
+                    
+                    <h3>🔬 What We'll Discover</h3>
+                    <p>In this chapter, we'll investigate the hidden world of leaf pigments. You'll discover that what we call "green" is actually a complex mixture of molecules, each with its own story to tell about plant survival strategies.</p>
+                    
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h4>🎯 Learning Objectives</h4>
+                        <ul>
+                            <li>Explain how molecular structure determines function in biological systems</li>
+                            <li>Analyze the relationship between pigment molecules and light absorption</li>
+                            <li>Construct explanations for seasonal changes in plant pigmentation</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>🌱 The Science Behind the Beauty</h3>
+                    <p>Plants don't change colors for our enjoyment—they're responding to environmental pressures in sophisticated ways that have evolved over millions of years...</p>
+                `,
+                slides: `
+                    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSampleSlideID/embed?start=false&loop=false&delayms=3000" 
+                            frameborder="0" width="100%" height="500" 
+                            allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
+                    </iframe>
+                    <p style="margin-top: 16px; color: #64748b;">
+                        <strong>Slide Navigation:</strong> Use the controls in the presentation to navigate through the content. 
+                        Key concepts are highlighted in blue boxes.
+                    </p>
+                `,
+                video: `
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                                frameborder="0" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div style="margin-top: 20px; background: #f8f9fa; padding: 16px; border-radius: 8px;">
+                        <h4>🎥 Video Guide</h4>
+                        <p><strong>Duration:</strong> 12 minutes</p>
+                        <p><strong>Key Timestamps:</strong></p>
+                        <ul>
+                            <li>2:30 - Chlorophyll structure and function</li>
+                            <li>5:45 - Carotenoid pigments revealed</li>
+                            <li>8:20 - Anthocyanin production in fall</li>
+                            <li>10:15 - Evolutionary advantages of color change</li>
+                        </ul>
+                    </div>
+                `,
+                research: `
+                    <h2>📋 Research Brief: The Color Investigation</h2>
+                    
+                    <div style="background: #ecfdf5; border-left: 4px solid #10b981; padding: 20px; margin: 20px 0;">
+                        <h3>🔍 Your Mission</h3>
+                        <p>You're a botanical researcher investigating why maple trees in the same park show different color patterns. Your job is to figure out what's happening at the molecular level.</p>
+                    </div>
+                    
+                    <h3>📝 Task Checklist</h3>
+                    <div style="background: #f8f9fa; padding: 16px; border-radius: 8px;">
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Complete initial observations (15 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Generate testable questions (10 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Plan chromatography investigation (20 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Create initial model (15 min)
+                        </label>
+                    </div>
+                    
+                    <h3>🧪 Investigation Protocol</h3>
+                    <p>Follow the structured investigation process to uncover the molecular basis of leaf color changes...</p>
+                `,
+                quiz: `
+                    <h2>❓ Chapter 1 Quiz</h2>
+                    <p><strong>Instructions:</strong> Answer all questions based on your reading and investigations.</p>
+                    
+                    <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 20px 0;">
+                        <h4>Question 1 of 5</h4>
+                        <p><strong>Which statement best explains why leaves appear green?</strong></p>
+                        <label style="display: block; margin: 8px 0;">
+                            <input type="radio" name="q1" value="a"> A) They contain only green pigments
+                        </label>
+                        <label style="display: block; margin: 8px 0;">
+                            <input type="radio" name="q1" value="b"> B) They reflect green light and absorb other wavelengths
+                        </label>
+                        <label style="display: block; margin: 8px 0;">
+                            <input type="radio" name="q1" value="c"> C) They emit green light through photosynthesis
+                        </label>
+                        <label style="display: block; margin: 8px 0;">
+                            <input type="radio" name="q1" value="d"> D) They filter out all colors except green
+                        </label>
+                    </div>
+                    
+                    <button style="background: #3b82f6; color: white; padding: 10px 20px; border: none; border-radius: 6px; margin-top: 16px;">
+                        Next Question →
+                    </button>
+                `
+            },
+            chapter3: {
+                title: "Chromatography Investigation",
+                subtitle: "Separating the hidden colors in leaves",
+                textbook: `
+                    <h2>Chapter 3: Chromatography Investigation</h2>
+                    <p><strong>Driving Question:</strong> What pigments are hidden in green leaves?</p>
+                    
+                    <h3>🎨 Unveiling Hidden Colors</h3>
+                    <p>Paper chromatography is like a molecular detective tool. It separates mixtures based on how different molecules interact with paper and solvents. When we apply this technique to leaves, we reveal a hidden rainbow of pigments.</p>
+                    
+                    <div style="background: #fff3cd; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <h4>⚠️ Safety First</h4>
+                        <ul>
+                            <li>Use proper ventilation when working with solvents</li>
+                            <li>Wear safety goggles at all times</li>
+                            <li>Handle chromatography paper by edges only</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>🔬 The Science of Separation</h3>
+                    <p>Different pigments have different polarities and molecular sizes. This causes them to travel at different rates up the chromatography paper...</p>
+                `,
+                research: `
+                    <h2>📋 Research Brief: Chromatography Lab</h2>
+                    
+                    <h3>📝 Lab Procedure Checklist</h3>
+                    <div style="background: #f8f9fa; padding: 16px; border-radius: 8px;">
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Collect fresh leaf samples (5 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Prepare chromatography strips (10 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Extract pigments from leaves (15 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Run chromatography separation (30 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Measure and record Rf values (15 min)
+                        </label>
+                        <label style="display: block; margin-bottom: 8px;">
+                            <input type="checkbox"> ☐ Analyze patterns in data (20 min)
+                        </label>
+                    </div>
+                    
+                    <h3>🧪 Materials Needed</h3>
+                    <ul>
+                        <li>Fresh green leaves (spinach, maple, or local trees)</li>
+                        <li>Chromatography paper strips</li>
+                        <li>Isopropyl alcohol or acetone</li>
+                        <li>Small beakers or test tubes</li>
+                        <li>Rulers for measurements</li>
+                    </ul>
+                    
+                    <h3>📊 Data Collection</h3>
+                    <p>Record your observations and measurements in the data table provided. Pay special attention to the number of pigments separated and their relative positions...</p>
+                `
+            }
+        };
+
+        let currentChapter = null;
+        let currentTab = 'textbook';
+        let sidebarCollapsed = false;
+
+        // UI Control Functions
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            sidebarCollapsed = !sidebarCollapsed;
+            
+            if (sidebarCollapsed) {
+                sidebar.classList.add('collapsed');
+                mainContent.classList.add('expanded');
+                toggleIcon.textContent = '›';
+            } else {
+                sidebar.classList.remove('collapsed');
+                mainContent.classList.remove('expanded');
+                toggleIcon.textContent = '‹';
+            }
+        }
+
+        function toggleUnit(unitId) {
+            const unitList = document.getElementById(unitId);
+            unitList.classList.toggle('collapsed');
+        }
+
+        function loadContent(chapter, title) {
+            // Update UI state
+            document.querySelectorAll('.chapter-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Update breadcrumb
+            document.getElementById('current-chapter').textContent = title;
+            
+            // Update content header
+            const content = contentLibrary[chapter];
+            if (content) {
+                document.getElementById('contentTitle').textContent = content.title;
+                document.getElementById('contentSubtitle').textContent = content.subtitle;
+                
+                // Show tabs
+                document.getElementById('contentTabs').style.display = 'flex';
+                
+                // Load content
+                currentChapter = chapter;
+                switchTab('textbook');
+            }
+        }
+
+        function switchTab(tabType) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Show loading
+            const contentArea = document.getElementById('contentArea');
+            contentArea.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading ${tabType} content...</p>
+                </div>
+            `;
+            
+            // Simulate loading delay
+            setTimeout(() => {
+                const content = contentLibrary[currentChapter];
+                if (content && content[tabType]) {
+                    contentArea.innerHTML = content[tabType];
+                } else {
+                    contentArea.innerHTML = `
+                        <div style="text-align: center; padding: 48px;">
+                            <div style="font-size: 3rem; margin-bottom: 16px;">🚧</div>
+                            <h3>Content Coming Soon</h3>
+                            <p>The ${tabType} content for this chapter is being prepared.</p>
+                        </div>
+                    `;
+                }
+                currentTab = tabType;
+            }, 800);
+        }
+
+        function showResources() {
+            document.getElementById('contentTitle').textContent = 'Resource Library';
+            document.getElementById('contentSubtitle').textContent = 'Browse all available learning materials';
+            document.getElementById('contentTabs').style.display = 'none';
+            
+            document.getElementById('contentArea').innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                    <div class="action-card">
+                        <div class="action-icon">📖</div>
+                        <div class="action-title">Textbook Chapters</div>
+                        <div class="action-description">Interactive digital textbook with embedded questions and animations</div>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">📊</div>
+                        <div class="action-title">Lecture Slides</div>
+                        <div class="action-description">Comprehensive slide decks for each chapter with key concepts</div>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">🎥</div>
+                        <div class="action-title">Video Library</div>
+                        <div class="action-description">Curated videos explaining complex biological processes</div>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">📋</div>
+                        <div class="action-title">Research Briefs</div>
+                        <div class="action-description">Structured investigation guides for hands-on learning</div>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">❓</div>
+                        <div class="action-title">Assessment Center</div>
+                        <div class="action-description">Quizzes, practice problems, and self-assessment tools</div>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">🔬</div>
+                        <div class="action-title">Virtual Labs</div>
+                        <div class="action-description">Interactive simulations and virtual experiments</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function showProgress() {
+            document.getElementById('contentTitle').textContent = 'Learning Progress';
+            document.getElementById('contentSubtitle').textContent = 'Track your journey through the course';
+            document.getElementById('contentTabs').style.display = 'none';
+            
+            document.getElementById('contentArea').innerHTML = `
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px;">
+                    <div style="background: #f0f9ff; padding: 24px; border-radius: 12px;">
+                        <h3 style="color: #1e40af; margin-bottom: 16px;">📈 Overall Progress</h3>
+                        <div style="font-size: 3rem; font-weight: bold; color: #3b82f6;">30%</div>
+                        <p>3 of 10 chapters completed</p>
+                    </div>
+                    <div style="background: #f0fdf4; padding: 24px; border-radius: 12px;">
+                        <h3 style="color: #166534; margin-bottom: 16px;">⏱️ Time Invested</h3>
+                        <div style="font-size: 3rem; font-weight: bold; color: #10b981;">12.5</div>
+                        <p>hours of active learning</p>
+                    </div>
+                </div>
+                
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px;">
+                    <h3 style="margin-bottom: 20px;">📊 Chapter Progress</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 150px;">Chapter 1</div>
+                            <div style="flex: 1; background: #e2e8f0; height: 8px; border-radius: 4px;">
+                                <div style="width: 100%; height: 100%; background: #10b981; border-radius: 4px;"></div>
+                            </div>
+                            <div style="width: 60px; text-align: right;">100%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 150px;">Chapter 2</div>
+                            <div style="flex: 1; background: #e2e8f0; height: 8px; border-radius: 4px;">
+                                <div style="width: 100%; height: 100%; background: #10b981; border-radius: 4px;"></div>
+                            </div>
+                            <div style="width: 60px; text-align: right;">100%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 150px;">Chapter 3</div>
+                            <div style="flex: 1; background: #e2e8f0; height: 8px; border-radius: 4px;">
+                                <div style="width: 60%; height: 100%; background: #3b82f6; border-radius: 4px;"></div>
+                            </div>
+                            <div style="width: 60px; text-align: right;">60%</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 150px;">Chapter 4</div>
+                            <div style="flex: 1; background: #e2e8f0; height: 8px; border-radius: 4px;"></div>
+                            <div style="width: 60px; text-align: right;">0%</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Event Listeners
+        document.getElementById('sidebarToggle').addEventListener('click', toggleSidebar);
+
+        // Auto-collapse sidebar on mobile
+        function checkScreenSize() {
+            if (window.innerWidth <= 1024) {
+                if (!sidebarCollapsed) {
+                    toggleSidebar();
+                }
+            }
+        }
+
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize(); // Check on load
+
+        // Initialize progress circle
+        function updateProgressCircle(percentage) {
+            const circle = document.querySelector('.progress-circle');
+            const text = document.getElementById('progress-percentage');
+            const angle = (percentage / 100) * 360;
+            
+            circle.style.setProperty('--progress-angle', `${angle}deg`);
+            text.textContent = `${percentage}%`;
+        }
+
+        // Simulate progress updates
+        updateProgressCircle(30);
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case '1':
+                        e.preventDefault();
+                        if (currentChapter) switchTab('textbook');
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        if (currentChapter) switchTab('slides');
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        if (currentChapter) switchTab('video');
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        if (currentChapter) switchTab('research');
+                        break;
+                    case '5':
+                        e.preventDefault();
+                        if (currentChapter) switchTab('quiz');
+                        break;
+                }
+            }
+        });
+
+        console.log('Learning Portal initialized successfully! 🚀');
+    </script>
+</body>
+</html>

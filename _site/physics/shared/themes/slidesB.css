@@ -1,0 +1,166 @@
+/* @theme slidesB */
+/* @author Jonathan */
+
+@import 'default';
+
+:root {
+  --color-background: #dfd9d1;
+  --color-foreground: #111fe9;
+  --color-highlight: #cc0066;
+  --color-dimmed: #888888;
+  
+  /* Set font families */
+  --font-header: 'Garamond', serif;
+  --font-body: 'Open Sans', sans-serif;
+  
+  /* Set base sizes */
+  --base-font-size: 28px;
+  --header-font-size: 48px;
+  --footer-font-size: 16px;
+}
+
+section {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  font-size: var(--base-font-size);
+  padding: 40px;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  color: var(--color-highlight);
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: var(--header-font-size);
+}
+
+/* Cover slide */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-highlight);
+  color: white;
+}
+
+section.title h1 {
+  color: white;
+  font-size: 64px;
+}
+
+/* Links */
+a {
+  color: var(--color-highlight);
+  text-decoration: none;
+}
+
+/* Code blocks */
+code {
+  background-color: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+}
+
+pre {
+  background-color: #f0f0f0;
+  padding: 1em;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: var(--base-font-size);
+  font-family: var(--font-body);
+  color: var(--color-foreground);
+}
+
+th, td {
+  border: 1px solid var(--color-dimmed);
+  padding: 0.5em;
+}
+
+th {
+  background-color: #cc8181;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid var(--color-dimmed);
+  border-top: 2px solid var(--color-dimmed);
+
+}
+
+/* Footer */
+section::after {
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  font-size: var(--footer-font-size);
+  color: var(--color-dimmed);
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Custom backgrounds and formatting */
+section.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+section.dark h1, section.dark h2, section.dark h3 {
+  color: #4dabf7;
+}
+
+section.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Two-column layout */
+.columns {
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-dimmed);
+}

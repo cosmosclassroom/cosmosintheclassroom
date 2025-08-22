@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Socrates Research Brief Generator - Development Minutes | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    
+    <!-- Cosmos Configuration System -->
+    <script src="/src/js/cosmos-config.js" defer></script>
+    
+    <!-- Theme Management -->
+    <script src="/src/js/theme-manager.js" defer></script>
+    
+    <!-- Ratatoskr Widget (only on curriculum pages) -->
+    
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="socrates-research-brief-generator---development-minutes">Socrates Research Brief Generator - Development Minutes</h1>
+
+<h2 id="meeting-august-22-2025">Meeting: August 22, 2025</h2>
+<p><strong>Participants</strong>: Development Team<br />
+<strong>Duration</strong>: Extended development session<br />
+<strong>Status</strong>: ✅ Implementation Complete - Ready for Production Testing</p>
+
+<hr />
+
+<h2 id="-meeting-objective">🎯 Meeting Objective</h2>
+<p>Correct the architectural understanding of Socrates and implement it as an <strong>AI Prompt Generator</strong> for physics research briefs.</p>
+
+<h2 id="-critical-architecture-correction">🔄 Critical Architecture Correction</h2>
+
+<h3 id="previous-misunderstanding-corrected">Previous Misunderstanding (CORRECTED)</h3>
+<ul>
+  <li>❌ Socrates was being built as a <strong>navigation system</strong> for students</li>
+  <li>❌ Complex portal-like interface with interactive elements</li>
+  <li>❌ Student-facing curriculum browsing functionality</li>
+</ul>
+
+<h3 id="corrected-understanding-implemented">Corrected Understanding (IMPLEMENTED)</h3>
+<ul>
+  <li>✅ <strong>Socrates is an AI Prompt Generator</strong> for teachers</li>
+  <li>✅ Transforms teacher input into optimized prompts for Claude/GPT</li>
+  <li>✅ Generates structured research brief templates</li>
+  <li>✅ Teacher-facing tool, not student navigation</li>
+</ul>
+
+<h2 id="-implementation-completed">📋 Implementation Completed</h2>
+
+<h3 id="core-components-built">Core Components Built</h3>
+<ol>
+  <li><strong>Template Library</strong> (<code class="language-plaintext highlighter-rouge">template-library.ts</code>)
+    <ul>
+      <li>All 8 NGSS Science and Engineering Practices</li>
+      <li>Scaffolding, timing estimates, dependencies</li>
+      <li>Assessment criteria and flexibility ratings</li>
+    </ul>
+  </li>
+  <li><strong>Prompt Builder</strong> (<code class="language-plaintext highlighter-rouge">prompt-builder.ts</code>)
+    <ul>
+      <li>AI-specific prompt generation (Claude, GPT, generic)</li>
+      <li>Four-voice synthesis integration</li>
+      <li>Chunk allocation in 15-minute units</li>
+      <li>Model-specific optimization</li>
+    </ul>
+  </li>
+  <li><strong>Structure Manager</strong> (<code class="language-plaintext highlighter-rouge">structure-manager.ts</code>)
+    <ul>
+      <li>Main ResearchBriefGenerator class</li>
+      <li>Input validation with detailed error handling</li>
+      <li>Processing status tracking</li>
+      <li>Research brief structure creation</li>
+    </ul>
+  </li>
+  <li><strong>Type System</strong> (<code class="language-plaintext highlighter-rouge">types/index.ts</code>)
+    <ul>
+      <li>Comprehensive TypeScript interfaces</li>
+      <li>Validation types and error handling</li>
+      <li>Processing stages and status tracking</li>
+      <li>Voice configuration types</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="key-features-implemented">Key Features Implemented</h3>
+<ul>
+  <li>✅ <strong>Input Validation</strong>: Topic, grade, duration, NGSS practices</li>
+  <li>✅ <strong>Template Selection</strong>: Automatic NGSS practice matching</li>
+  <li>✅ <strong>Chunk Calculation</strong>: 15-minute atomic units with scaling</li>
+  <li>✅ <strong>AI Prompt Generation</strong>: Optimized for different AI models</li>
+  <li>✅ <strong>Voice Synthesis</strong>: Socrates/Burke/Sagan/Feynman integration</li>
+  <li>✅ <strong>Export Functionality</strong>: Ready-to-use prompts for AI tools</li>
+</ul>
+
+<h2 id="-four-voice-synthesis-system">🧠 Four-Voice Synthesis System</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Voice</th>
+      <th>Percentage</th>
+      <th>Purpose</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Socrates</strong></td>
+      <td>30%</td>
+      <td>Questioning approach</td>
+      <td>Discovery-led learning</td>
+    </tr>
+    <tr>
+      <td><strong>Burke</strong></td>
+      <td>20%</td>
+      <td>Storytelling/narrative</td>
+      <td>Human context &amp; history</td>
+    </tr>
+    <tr>
+      <td><strong>Sagan</strong></td>
+      <td>25%</td>
+      <td>Wonder &amp; awe</td>
+      <td>Natural phenomena inspiration</td>
+    </tr>
+    <tr>
+      <td><strong>Feynman</strong></td>
+      <td>25%</td>
+      <td>Playful analogies</td>
+      <td>Clear explanations</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-technical-implementation">📊 Technical Implementation</h2>
+
+<h3 id="architecture-stack">Architecture Stack</h3>
+<ul>
+  <li><strong>Language</strong>: TypeScript with comprehensive type safety</li>
+  <li><strong>Structure</strong>: Modular design with clear separation of concerns</li>
+  <li><strong>Templates</strong>: 8 NGSS practices with educational scaffolding</li>
+  <li><strong>Output</strong>: JSON specifications + AI-ready text prompts</li>
+  <li><strong>Integration</strong>: Compatible with existing Portal/Chunker systems</li>
+</ul>
+
+<h3 id="file-structure">File Structure</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/socrates/
+├── core/
+│   ├── structure-manager.ts     # Main orchestrator
+│   ├── template-library.ts      # NGSS practice templates  
+│   └── prompt-builder.ts        # AI prompt generation
+├── types/
+│   └── index.ts                 # TypeScript definitions
+├── demo.ts                      # Working example
+├── MINUTES.md                   # This file
+├── IMPLEMENTATION_COMPLETE.md   # Full documentation
+└── CORRECTED_ARCHITECTURE.md   # Architecture explanation
+</code></pre></div></div>
+
+<h2 id="-current-status-ready-for-production">🚀 Current Status: READY FOR PRODUCTION</h2>
+
+<h3 id="what-works-now">What Works Now</h3>
+<ol>
+  <li><strong>Teacher Input Processing</strong>: Validates and processes all required inputs</li>
+  <li><strong>Template Selection</strong>: Automatically selects appropriate NGSS templates</li>
+  <li><strong>Chunk Calculation</strong>: Optimizes timing for 15-minute learning units</li>
+  <li><strong>AI Prompt Generation</strong>: Creates ready-to-use prompts for Claude/GPT</li>
+  <li><strong>Error Handling</strong>: Comprehensive validation with helpful error messages</li>
+  <li><strong>Status Tracking</strong>: Real-time progress updates for UI integration</li>
+</ol>
+
+<h3 id="example-workflow">Example Workflow</h3>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">generator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ResearchBriefGenerator</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">teacherInput</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">topic</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Electromagnetic Induction</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">grade</span><span class="p">:</span> <span class="dl">"</span><span class="s2">10</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">duration</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span>
+  <span class="na">selectedPractices</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">asking-questions</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">developing-models</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">voicePreferences</span><span class="p">:</span> <span class="p">{</span> <span class="na">socrates</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">burke</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">sagan</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="na">feynman</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Generate AI prompt for Claude/GPT</span>
+<span class="kd">const</span> <span class="nx">aiPrompt</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">generator</span><span class="p">.</span><span class="nx">generateAIPrompt</span><span class="p">(</span><span class="nx">teacherInput</span><span class="p">);</span>
+
+<span class="c1">// Export ready-to-paste prompt</span>
+<span class="kd">const</span> <span class="nx">claudePrompt</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">generator</span><span class="p">.</span><span class="nx">exportPromptForAI</span><span class="p">(</span><span class="nx">teacherInput</span><span class="p">,</span> <span class="dl">'</span><span class="s1">claude</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="-integration-points">🔗 Integration Points</h2>
+
+<h3 id="portal-system">Portal System</h3>
+<ul>
+  <li><strong>Relationship</strong>: Portal stores generated research briefs</li>
+  <li><strong>Workflow</strong>: Socrates → AI → Research Brief → Portal Library</li>
+  <li><strong>Compatibility</strong>: JSON output format matches Portal expectations</li>
+</ul>
+
+<h3 id="chunker-system">Chunker System</h3>
+<ul>
+  <li><strong>Compatibility</strong>: 15-minute chunk format aligns with Chunker</li>
+  <li><strong>Integration</strong>: Generated briefs can be imported into Chunker</li>
+  <li><strong>Timing</strong>: Automatic scaling for different session durations</li>
+</ul>
+
+<h2 id="-action-items--next-steps">📝 Action Items &amp; Next Steps</h2>
+
+<h3 id="immediate-ready-now">Immediate (Ready Now)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />✅ Core TypeScript implementation complete</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />✅ All 8 NGSS practices templated</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />✅ AI prompt generation working</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />✅ Validation and error handling implemented</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />✅ GitHub compatibility confirmed</li>
+</ul>
+
+<h3 id="short-term-development-sprint">Short Term (Development Sprint)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Frontend UI</strong>: Teacher input form for web interface</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>API Endpoints</strong>: REST API for prompt generation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Portal Integration</strong>: Store generated briefs in Portal library</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Testing</strong>: Real teacher scenarios and feedback</li>
+</ul>
+
+<h3 id="medium-term-production-rollout">Medium Term (Production Rollout)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>AI Model Testing</strong>: Optimize prompts for different AI tools</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Template Expansion</strong>: Additional NGSS practices if needed</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>User Training</strong>: Teacher guides and documentation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><strong>Analytics</strong>: Track usage patterns and success metrics</li>
+</ul>
+
+<h2 id="-meeting-outcomes">🎉 Meeting Outcomes</h2>
+
+<h3 id="successful-resolution">Successful Resolution</h3>
+<ol>
+  <li><strong>Architecture Corrected</strong>: From navigation system to AI prompt generator</li>
+  <li><strong>Implementation Complete</strong>: Fully functional TypeScript system</li>
+  <li><strong>Integration Ready</strong>: Compatible with existing Portal/Chunker</li>
+  <li><strong>Production Ready</strong>: No blockers for teacher testing</li>
+</ol>
+
+<h3 id="development-quality">Development Quality</h3>
+<ul>
+  <li><strong>Type Safety</strong>: Comprehensive TypeScript interfaces</li>
+  <li><strong>Error Handling</strong>: Detailed validation with helpful messages</li>
+  <li><strong>Modularity</strong>: Clean separation of concerns</li>
+  <li><strong>Documentation</strong>: Complete implementation guides</li>
+  <li><strong>Testing</strong>: Working demo with realistic examples</li>
+</ul>
+
+<h2 id="-technical-specifications">📋 Technical Specifications</h2>
+
+<h3 id="input-requirements">Input Requirements</h3>
+<ul>
+  <li><strong>Topic</strong>: Physics concept/phenomenon (5+ characters)</li>
+  <li><strong>Grade</strong>: 6-12 or ranges (6-8, 9-12)</li>
+  <li><strong>Duration</strong>: 15-300 minutes</li>
+  <li><strong>NGSS Practices</strong>: 1+ selected from 8 available</li>
+  <li><strong>Voice Balance</strong>: Percentages totaling 100%</li>
+</ul>
+
+<h3 id="output-formats">Output Formats</h3>
+<ul>
+  <li><strong>AI Prompts</strong>: Optimized for Claude, GPT, or generic models</li>
+  <li><strong>Research Briefs</strong>: Structured JSON with educational scaffolding</li>
+  <li><strong>Status Updates</strong>: Real-time progress for UI feedback</li>
+</ul>
+
+<h3 id="performance-targets">Performance Targets</h3>
+<ul>
+  <li><strong>Prompt Generation</strong>: &lt; 2 seconds</li>
+  <li><strong>Validation</strong>: Immediate feedback</li>
+  <li><strong>Error Recovery</strong>: Helpful suggestions for fixes</li>
+  <li><strong>Memory Usage</strong>: Minimal overhead for web deployment</li>
+</ul>
+
+<hr />
+
+<h2 id="-conclusion">🏁 Conclusion</h2>
+
+<p><strong>Socrates Research Brief Generator is now architecturally correct and implementation-complete.</strong> The system successfully transforms teacher input into high-quality AI prompts that generate physics research briefs aligned with NGSS standards and educational best practices.</p>
+
+<p><strong>Ready for teacher testing and production deployment.</strong></p>
+
+<hr />
+
+<p><em>Next Meeting: Schedule production testing session with physics teachers</em><br />
+<em>Priority: Frontend UI development and API integration</em></p>
+
+    
+    </div>
+    
+    <!-- Settings Panel (global) -->
+    <!-- Global Settings Panel for Cosmos in the Classroom -->
+<div class="settings-overlay" id="settingsOverlay">
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <div class="settings-title">
+                <span class="settings-icon">⚙️</span>
+                <span>Cosmos Settings</span>
+            </div>
+            <button class="settings-close" onclick="toggleSettings()" aria-label="Close Settings">
+                <span>×</span>
+            </button>
+        </div>
+        
+        <div class="settings-content">
+            <!-- Theme Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🎨</span>
+                    Theme
+                </div>
+                <div class="setting-description">Choose your preferred color scheme</div>
+                <div class="theme-buttons" id="themeButtons">
+                    <button class="theme-btn" data-theme="light">
+                        <span class="theme-icon">☀️</span>
+                        <span>Light</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark">
+                        <span class="theme-icon">🌙</span>
+                        <span>Dark</span>
+                    </button>
+                    <button class="theme-btn" data-theme="auto">
+                        <span class="theme-icon">🔄</span>
+                        <span>Auto</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- User Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">👤</span>
+                    User Preferences
+                </div>
+                <div class="setting-row">
+                    <label for="usernameInput">Name:</label>
+                    <input type="text" id="usernameInput" placeholder="Enter your name..." 
+                           class="setting-input">
+                </div>
+                <div class="setting-row">
+                    <label for="courseLevelSelect">Course Level:</label>
+                    <select id="courseLevelSelect" class="setting-select">
+                        <option value="honors">Honors Physics</option>
+                        <option value="standard">Standard Physics</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Ratatoskr Widget Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🐿️</span>
+                    Ratatoskr Widget
+                </div>
+                <div class="setting-description">Progress tracking widget settings</div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrEnabled">
+                        <span class="checkmark"></span>
+                        Enable Ratatoskr widget
+                    </label>
+                </div>
+                
+                <div class="setting-row" id="ratatoskrSettings">
+                    <label for="chunkCountSlider">Chunks to display:</label>
+                    <div class="slider-container">
+                        <input type="range" id="chunkCountSlider" min="2" max="6" step="1" 
+                               class="setting-slider">
+                        <span id="chunkCountValue" class="slider-value">4</span>
+                    </div>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="ratatoskrAnimations">
+                        <span class="checkmark"></span>
+                        Enable animations
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Learning Preferences -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">📚</span>
+                    Learning Preferences
+                </div>
+                
+                <div class="setting-row">
+                    <label for="mathNotationSelect">Math notation:</label>
+                    <select id="mathNotationSelect" class="setting-select">
+                        <option value="latex">LaTeX (recommended)</option>
+                        <option value="ascii">ASCII text</option>
+                    </select>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="showHints">
+                        <span class="checkmark"></span>
+                        Show problem hints
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="accessibilityMode">
+                        <span class="checkmark"></span>
+                        Enhanced accessibility
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Privacy Settings -->
+            <div class="setting-group">
+                <div class="setting-label">
+                    <span class="setting-icon">🔒</span>
+                    Privacy & Data
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="storeProgress">
+                        <span class="checkmark"></span>
+                        Store learning progress locally
+                    </label>
+                </div>
+                
+                <div class="setting-row">
+                    <label class="setting-checkbox">
+                        <input type="checkbox" id="analyticsEnabled">
+                        <span class="checkmark"></span>
+                        Anonymous usage analytics
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="settings-actions">
+                <button class="settings-btn settings-btn-secondary" onclick="resetSettings()">
+                    Reset to Defaults
+                </button>
+                <button class="settings-btn settings-btn-primary" onclick="exportSettings()">
+                    Export Settings
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Trigger Button -->
+<button class="settings-trigger" onclick="toggleSettings()" aria-label="Open Settings">
+    <span class="settings-trigger-icon">⚙️</span>
+</button>
+
+<style>
+/* Settings Panel Styles */
+.settings-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.settings-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.settings-panel {
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: var(--panel-bg-solid, #ffffff);
+    border-radius: 15px;
+    box-shadow: 0 10px 40px var(--shadow-heavy, rgba(0,0,0,0.3));
+    transform: scale(0.9) translateY(20px);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-overlay.visible .settings-panel {
+    transform: scale(1) translateY(0);
+}
+
+.settings-header {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.settings-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.settings-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.settings-content {
+    padding: 20px;
+    max-height: calc(90vh - 80px);
+    overflow-y: auto;
+}
+
+.setting-group {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.setting-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    margin-bottom: 5px;
+}
+
+.setting-description {
+    font-size: 14px;
+    color: var(--text-secondary, #666);
+    margin-bottom: 15px;
+}
+
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.setting-row label {
+    font-size: 14px;
+    color: var(--text-primary, #333);
+    min-width: 120px;
+}
+
+.setting-input, .setting-select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--input-border, #ddd);
+    border-radius: 6px;
+    background: var(--input-bg, #fff);
+    color: var(--input-text, #333);
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.setting-input:focus, .setting-select:focus {
+    outline: none;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.theme-btn {
+    padding: 12px 8px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    background: var(--input-bg, #fff);
+    color: var(--text-primary, #333);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+}
+
+.theme-btn:hover {
+    border-color: var(--accent-color, #8B4513);
+}
+
+.theme-btn.active {
+    background: var(--accent-color, #8B4513);
+    color: white;
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-primary, #333);
+}
+
+.setting-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: var(--accent-color, #8B4513);
+    border-color: var(--accent-color, #8B4513);
+}
+
+.setting-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.setting-slider {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border-color, #ddd);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.setting-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-color, #8B4513);
+    cursor: pointer;
+}
+
+.slider-value {
+    min-width: 20px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+}
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.settings-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-btn-primary {
+    background: var(--accent-color, #8B4513);
+    color: white;
+}
+
+.settings-btn-primary:hover {
+    background: var(--accent-hover, #A0522D);
+}
+
+.settings-btn-secondary {
+    background: transparent;
+    color: var(--text-secondary, #666);
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.settings-btn-secondary:hover {
+    background: var(--border-color, #ddd);
+}
+
+/* Settings Trigger Button */
+.settings-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: var(--panel-bg, rgba(255,255,255,0.9));
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 50%;
+    box-shadow: 0 4px 20px var(--shadow-light, rgba(0,0,0,0.1));
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.settings-trigger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px var(--shadow-medium, rgba(0,0,0,0.2));
+}
+
+.settings-trigger-icon {
+    font-size: 20px;
+    color: var(--text-primary, #333);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .settings-panel {
+        width: 95%;
+        max-height: 95vh;
+    }
+    
+    .theme-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .setting-row label {
+        min-width: auto;
+    }
+    
+    .setting-input, .setting-select {
+        width: 100%;
+    }
+    
+    .settings-actions {
+        flex-direction: column;
+    }
+}
+</style>
+
+<script>
+// Settings Panel JavaScript
+let settingsVisible = false;
+
+function toggleSettings() {
+    const overlay = document.getElementById('settingsOverlay');
+    settingsVisible = !settingsVisible;
+    
+    if (settingsVisible) {
+        overlay.classList.add('visible');
+        loadSettings();
+        document.body.style.overflow = 'hidden';
+    } else {
+        overlay.classList.remove('visible');
+        document.body.style.overflow = '';
+    }
+}
+
+function loadSettings() {
+    if (!window.CosmosConfig) return;
+    
+    const config = window.CosmosConfig;
+    
+    // Theme buttons
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.theme === config.get('ui.theme'));
+        btn.onclick = () => {
+            config.set('ui.theme', btn.dataset.theme);
+            loadSettings(); // Refresh UI
+        };
+    });
+    
+    // User preferences
+    document.getElementById('usernameInput').value = config.get('user.name') || '';
+    document.getElementById('usernameInput').onchange = (e) => 
+        config.set('user.name', e.target.value);
+    
+    document.getElementById('courseLevelSelect').value = config.get('user.preferredLevel') || 'honors';
+    document.getElementById('courseLevelSelect').onchange = (e) => 
+        config.set('user.preferredLevel', e.target.value);
+    
+    // Ratatoskr settings
+    const ratatoskrEnabled = document.getElementById('ratatoskrEnabled');
+    ratatoskrEnabled.checked = config.get('ratatoskr.enabled');
+    ratatoskrEnabled.onchange = (e) => {
+        config.set('ratatoskr.enabled', e.target.checked);
+        document.getElementById('ratatoskrSettings').style.display = 
+            e.target.checked ? 'flex' : 'none';
+    };
+    
+    const chunkCountSlider = document.getElementById('chunkCountSlider');
+    const chunkCountValue = document.getElementById('chunkCountValue');
+    chunkCountSlider.value = config.get('ratatoskr.chunkDisplayCount') || 4;
+    chunkCountValue.textContent = chunkCountSlider.value;
+    chunkCountSlider.oninput = () => {
+        chunkCountValue.textContent = chunkCountSlider.value;
+        config.set('ratatoskr.chunkDisplayCount', parseInt(chunkCountSlider.value));
+    };
+    
+    const ratatoskrAnimations = document.getElementById('ratatoskrAnimations');
+    ratatoskrAnimations.checked = config.get('ratatoskr.animationsEnabled');
+    ratatoskrAnimations.onchange = (e) => 
+        config.set('ratatoskr.animationsEnabled', e.target.checked);
+    
+    // Learning preferences
+    document.getElementById('mathNotationSelect').value = config.get('learning.mathNotation') || 'latex';
+    document.getElementById('mathNotationSelect').onchange = (e) => 
+        config.set('learning.mathNotation', e.target.value);
+    
+    document.getElementById('showHints').checked = config.get('learning.showHints');
+    document.getElementById('showHints').onchange = (e) => 
+        config.set('learning.showHints', e.target.checked);
+    
+    document.getElementById('accessibilityMode').checked = config.get('learning.accessibilityMode');
+    document.getElementById('accessibilityMode').onchange = (e) => 
+        config.set('learning.accessibilityMode', e.target.checked);
+    
+    // Privacy settings
+    document.getElementById('storeProgress').checked = config.get('privacy.storeProgress');
+    document.getElementById('storeProgress').onchange = (e) => 
+        config.set('privacy.storeProgress', e.target.checked);
+    
+    document.getElementById('analyticsEnabled').checked = config.get('privacy.analyticsEnabled');
+    document.getElementById('analyticsEnabled').onchange = (e) => 
+        config.set('privacy.analyticsEnabled', e.target.checked);
+    
+    // Show/hide Ratatoskr settings based on enabled state
+    document.getElementById('ratatoskrSettings').style.display = 
+        config.get('ratatoskr.enabled') ? 'flex' : 'none';
+}
+
+function resetSettings() {
+    if (window.CosmosConfig && confirm('Reset all settings to defaults? This cannot be undone.')) {
+        window.CosmosConfig.reset();
+        loadSettings();
+    }
+}
+
+function exportSettings() {
+    if (window.CosmosConfig) {
+        const settingsData = window.CosmosConfig.export();
+        const blob = new Blob([settingsData], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'cosmos-settings.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+}
+
+// Close settings when clicking outside
+document.addEventListener('click', (e) => {
+    const overlay = document.getElementById('settingsOverlay');
+    const panel = document.getElementById('settingsPanel');
+    const trigger = document.querySelector('.settings-trigger');
+    
+    if (settingsVisible && overlay && !panel.contains(e.target) && !trigger.contains(e.target)) {
+        toggleSettings();
+    }
+});
+
+// Close settings with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && settingsVisible) {
+        toggleSettings();
+    }
+});
+
+// Load settings when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.CosmosConfig) {
+        // Small delay to ensure config is initialized
+        setTimeout(loadSettings, 100);
+    }
+});
+</script>
+
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+  </body>
+</html>

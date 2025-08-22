@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Portal | Cosmos in the Classroom</title>
+    <link rel="stylesheet" href="/assets/css/cosmos-theme.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .header.honors {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        
+        .header.standard {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+        
+        .header.natdis {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .course-selector {
+            position: relative;
+        }
+        
+        .course-selector select {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 180px;
+        }
+        
+        .course-selector select:focus {
+            outline: none;
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .course-selector select option {
+            background: #1e293b;
+            color: white;
+        }
+        
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-separator {
+            opacity: 0.6;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+        
+        .progress-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: conic-gradient(white 0deg, white var(--progress-angle), rgba(255,255,255,0.3) var(--progress-angle));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .progress-circle::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: inherit;
+            position: absolute;
+        }
+        
+        .progress-text {
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .progress-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 360px;
+            height: calc(100vh - 70px);
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            overflow-y: auto;
+            z-index: 900;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(-320px);
+        }
+        
+        .sidebar-toggle {
+            position: absolute;
+            top: 20px;
+            right: -40px;
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-content {
+            padding: 24px;
+        }
+        
+        .unit-section {
+            margin-bottom: 32px;
+        }
+        
+        .unit-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        
+        .unit-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #334155;
+        }
+        
+        .unit-progress {
+            font-size: 0.8rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 4px 8px;
+            border-radius: 12px;
+        }
+        
+        .chapter-list {
+            margin-left: 16px;
+            max-height: 400px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .chapter-list.collapsed {
+            max-height: 0;
+        }
+        
+        .chapter-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 4px 0;
+            position: relative;
+        }
+        
+        .chapter-item:hover {
+            background: #f8fafc;
+        }
+        
+        .chapter-item.active {
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            padding-left: 13px;
+        }
+        
+        .chapter-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .chapter-icon.completed {
+            background: #10b981;
+            color: white;
+        }
+        
+        .chapter-icon.current {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .chapter-icon.locked {
+            background: #e2e8f0;
+            color: #94a3b8;
+        }
+        
+        .chapter-info {
+            flex: 1;
+        }
+        
+        .chapter-title {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #334155;
+            margin-bottom: 2px;
+        }
+        
+        .chapter-subtitle {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        
+        .ngss-tags {
+            display: flex;
+            gap: 4px;
+            margin-top: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .ngss-tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        
+        .ngss-tag.dci {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .ngss-tag.sep {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .ngss-tag.ccc {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .chapter-resources {
+            display: flex;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        
+        .resource-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .resource-flexbook { background: #7c3aed; }
+        .resource-slides { background: #f59e0b; }
+        .resource-notes { background: #ef4444; }
+        .resource-brief { background: #10b981; }
+        .resource-problems { background: #3b82f6; }
+        
+        /* Main Content */
+        .main-content {
+            margin-left: 360px;
+            margin-top: 70px;
+            padding: 32px;
+            min-height: calc(100vh - 70px);
+            transition: margin-left 0.3s ease;
+        }
+        
+        .main-content.expanded {
+            margin-left: 40px;
+        }
+        
+        .content-header {
+            margin-bottom: 32px;
+        }
+        
+        .content-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        
+        .content-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+        
+        .content-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 10px 20px;
+            border: none;
+            background: #f1f5f9;
+            color: #64748b;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+        
+        .tab-button.active {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .tab-button:hover:not(.active) {
+            background: #e2e8f0;
+        }
+        
+        .content-area {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            min-height: 400px;
+        }
+        
+        .welcome-screen {
+            text-align: center;
+            padding: 48px 24px;
+        }
+        
+        .welcome-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        
+        .welcome-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        
+        .welcome-description {
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        
+        .action-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+        
+        .action-card:hover {
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .action-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+        
+        .action-description {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+        
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 48px;
+            color: #64748b;
+        }
+        
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid #f1f5f9;
+            border-top: 3px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                transform: translateX(-100%);
+            }
+            
+            .sidebar.collapsed {
+                transform: translateX(-100%);
+            }
+            
+            .sidebar:not(.collapsed) {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+            }
+            
+            .main-content.expanded {
+                margin-left: 0;
+            }
+            
+            .header-left .course-title {
+                font-size: 1.2rem;
+            }
+            
+            .breadcrumb {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="course-selector">
+                <select id="courseSelector" onchange="switchCourse(this.value)">
+                    <option value="">Select Course...</option>
+                    <option value="honors">Honors Physics</option>
+                    <option value="standard">Standard Physics</option>
+                    <option value="natdis">Natural Disasters</option>
+                </select>
+            </div>
+            <h1 class="course-title" id="courseTitle">Physics Portal</h1>
+            <nav class="breadcrumb">
+                <span>Home</span>
+                <span class="breadcrumb-separator">›</span>
+                <span id="current-unit">Select Unit</span>
+                <span class="breadcrumb-separator">›</span>
+                <span id="current-chapter">Select Chapter</span>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="progress-container">
+                <div class="progress-circle" id="progressCircle" style="--progress-angle: 0deg;">
+                    <span class="progress-text" id="progressText">0%</span>
+                </div>
+                <div class="progress-label">Overall Progress</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+            <span id="toggleIcon">‹</span>
+        </button>
+        <div class="sidebar-content" id="sidebarContent">
+            <!-- Units will be loaded dynamically -->
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <div class="content-header">
+            <h1 class="content-title" id="contentTitle">Welcome to Physics</h1>
+            <p class="content-subtitle" id="contentSubtitle">Select a unit from the sidebar to begin your learning journey</p>
+            
+            <div class="content-tabs" id="contentTabs" style="display: none;">
+                <button class="tab-button active" onclick="switchTab('flexbook')">Flexbook</button>
+                <button class="tab-button" onclick="switchTab('slides')">Slides</button>
+                <button class="tab-button" onclick="switchTab('notes')">Notes</button>
+                <button class="tab-button" onclick="switchTab('brief')">Research Brief</button>
+                <button class="tab-button" onclick="switchTab('problems')">Problems</button>
+            </div>
+        </div>
+        
+        <div class="content-area" id="contentArea">
+            <div class="welcome-screen">
+                <div class="welcome-icon">⚛</div>
+                <h2 class="welcome-title">The Story of Physics</h2>
+                <p class="welcome-description">
+                    Welcome to your physics learning portal! This is where you'll explore the fundamental principles 
+                    that govern our universe through hands-on investigations, interactive content, and research-based discovery.
+                </p>
+                
+                <div class="quick-actions" id="quickActions">
+                    <!-- Quick action cards will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Global variables
+        let currentCourse = null;
+        let currentChapter = null;
+        let currentTab = 'flexbook';
+        let sidebarCollapsed = false;
+        let courseData = null;
+        let availableCourses = {
+            'honors': {
+                name: 'Honors Physics',
+                path: '/physics/honors/course.json',
+                theme: 'honors'
+            },
+            'standard': {
+                name: 'Standard Physics', 
+                path: '/physics/standard/course.json',
+                theme: 'standard'
+            },
+            'natdis': {
+                name: 'Natural Disasters',
+                path: '/src/portal/natdis/course.json',
+                theme: 'natdis'
+            }
+        };
+        
+        // Initialize portal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to detect course from URL or default to first available
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseParam = urlParams.get('course');
+            
+            if (courseParam && availableCourses[courseParam]) {
+                document.getElementById('courseSelector').value = courseParam;
+                switchCourse(courseParam);
+            } else {
+                showCourseSelection();
+            }
+        });
+        
+        // Switch between courses
+        async function switchCourse(courseId) {
+            if (!courseId || !availableCourses[courseId]) {
+                showCourseSelection();
+                return;
+            }
+            
+            currentCourse = courseId;
+            const course = availableCourses[courseId];
+            
+            // Update URL
+            const url = new URL(window.location);
+            url.searchParams.set('course', courseId);
+            window.history.pushState({}, '', url);
+            
+            // Show loading
+            showLoading('Loading course data...');
+            
+            try {
+                const response = await fetch(course.path);
+                if (!response.ok) throw new Error(`Failed to load ${course.name}`);
+                
+                courseData = await response.json();
+                setupCourse();
+                loadUnits();
+                updateProgress();
+            } catch (error) {
+                console.error('Error loading course:', error);
+                showErrorMessage(`Failed to load ${course.name}. Please check that course data exists.`);
+            }
+        }
+        
+        // Show course selection screen
+        function showCourseSelection() {
+            document.getElementById('courseSelector').value = '';
+            document.getElementById('courseTitle').textContent = 'Physics Portal';
+            document.getElementById('sidebarContent').innerHTML = '';
+            document.getElementById('contentArea').innerHTML = `
+                <div class="welcome-screen">
+                    <div class="welcome-icon">⚛</div>
+                    <h2 class="welcome-title">Select Your Physics Course</h2>
+                    <p class="welcome-description">
+                        Choose a course from the dropdown above to access your learning materials and track your progress.
+                    </p>
+                    <div class="quick-actions">
+                        <div class="action-card" onclick="switchCourse('honors')">
+                            <div class="action-icon">🏆</div>
+                            <div class="action-title">Honors Physics</div>
+                            <div class="action-description">Advanced curriculum with mathematical rigor and in-depth analysis</div>
+                        </div>
+                        <div class="action-card" onclick="switchCourse('standard')">
+                            <div class="action-icon">🌍</div>
+                            <div class="action-title">Standard Physics</div>
+                            <div class="action-description">Conceptual approach with real-world applications and visual learning</div>
+                        </div>
+                        <div class="action-card" onclick="switchCourse('natdis')">
+                            <div class="action-icon">🌪</div>
+                            <div class="action-title">Natural Disasters</div>
+                            <div class="action-description">Interdisciplinary study of Earth's hazards and community resilience</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Reset header theme
+            const header = document.getElementById('header');
+            header.className = 'header';
+            
+            // Reset progress
+            document.getElementById('progressCircle').style.setProperty('--progress-angle', '0deg');
+            document.getElementById('progressText').textContent = '0%';
+            
+            // Hide tabs
+            document.getElementById('contentTabs').style.display = 'none';
+        }
+        
+        // Show loading screen
+        function showLoading(message) {
+            document.getElementById('contentArea').innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>${message}</p>
+                </div>
+            `;
+        }
+        
+        // Setup course theme and title
+        function setupCourse() {
+            if (!courseData || !currentCourse) return;
+            
+            const header = document.getElementById('header');
+            const courseTitle = document.getElementById('courseTitle');
+            const course = availableCourses[currentCourse];
+            
+            // Set course title
+            courseTitle.textContent = courseData.courseName || courseData.title || course.name;
+            
+            // Set theme based on course
+            header.className = 'header';
+            if (course.theme) {
+                header.classList.add(course.theme);
+            }
+        }
+        
+        // Load units into sidebar
+        function loadUnits() {
+            if (!courseData || !courseData.units) return;
+            
+            const sidebarContent = document.getElementById('sidebarContent');
+            sidebarContent.innerHTML = '';
+            
+            courseData.units.forEach((unit, unitIndex) => {
+                const unitSection = document.createElement('div');
+                unitSection.className = 'unit-section';
+                
+                const completed = getCompletedChapters(unit.unitId);
+                const total = unit.chapters ? unit.chapters.length : 0;
+                
+                unitSection.innerHTML = `
+                    <div class="unit-header" onclick="toggleUnit('unit-${unitIndex}')">
+                        <div class="unit-title">${unit.unitName || unit.name}</div>
+                        <div class="unit-progress">${completed}/${total}</div>
+                    </div>
+                    <div class="chapter-list" id="unit-${unitIndex}">
+                        ${unit.chapters ? unit.chapters.map((chapter, chapterIndex) => 
+                            createChapterItem(chapter, chapterIndex, unit.unitId)
+                        ).join('') : ''}
+                    </div>
+                `;
+                
+                sidebarContent.appendChild(unitSection);
+            });
+            
+            loadQuickActions();
+        }
+        
+        // Create chapter item HTML
+        function createChapterItem(chapter, index, unitId) {
+            const isCompleted = isChapterCompleted(unitId, chapter.chapterId || `chapter-${index}`);
+            const isCurrent = false; // TODO: Implement current chapter logic
+            const isLocked = false; // TODO: Implement prerequisite logic
+            
+            let statusClass, statusContent;
+            if (isCompleted) {
+                statusClass = 'completed';
+                statusContent = '✓';
+            } else if (isCurrent) {
+                statusClass = 'current';
+                statusContent = index + 1;
+            } else if (isLocked) {
+                statusClass = 'locked';
+                statusContent = '🔒';
+            } else {
+                statusClass = 'current';
+                statusContent = index + 1;
+            }
+            
+            // Extract NGSS components
+            const ngssTagsHTML = createNGSSTags(chapter);
+            const resourceIconsHTML = createResourceIcons(chapter);
+            
+            return `
+                <div class="chapter-item" onclick="loadContent('${chapter.chapterId || `chapter-${index}`}', '${chapter.chapterName || chapter.title}', '${unitId}')">
+                    <div class="chapter-icon ${statusClass}">${statusContent}</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">${chapter.chapterName || chapter.title}</div>
+                        <div class="chapter-subtitle">${chapter.description || chapter.subtitle || ''}</div>
+                        ${ngssTagsHTML}
+                        ${resourceIconsHTML}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Create NGSS tags
+        function createNGSSTags(chapter) {
+            const tags = [];
+            
+            // Add DCI tags
+            if (chapter.dci || chapter.disciplinaryCoreIdeas) {
+                const dcis = chapter.dci || chapter.disciplinaryCoreIdeas;
+                if (Array.isArray(dcis)) {
+                    dcis.forEach(dci => tags.push(`<span class="ngss-tag dci">DCI: ${dci}</span>`));
+                } else {
+                    tags.push(`<span class="ngss-tag dci">DCI: ${dcis}</span>`);
+                }
+            }
+            
+            // Add SEP tags
+            if (chapter.practices || chapter.scienceAndEngineeringPractices) {
+                const practices = chapter.practices || chapter.scienceAndEngineeringPractices;
+                if (Array.isArray(practices)) {
+                    practices.slice(0, 1).forEach(practice => tags.push(`<span class="ngss-tag sep">SEP: ${practice}</span>`));
+                } else {
+                    tags.push(`<span class="ngss-tag sep">SEP: ${practices}</span>`);
+                }
+            }
+            
+            // Add CCC tags
+            if (chapter.crosscuttingConcepts || chapter.ccc) {
+                const cccs = chapter.crosscuttingConcepts || chapter.ccc;
+                if (Array.isArray(cccs)) {
+                    cccs.slice(0, 1).forEach(ccc => tags.push(`<span class="ngss-tag ccc">CCC: ${ccc}</span>`));
+                } else {
+                    tags.push(`<span class="ngss-tag ccc">CCC: ${cccs}</span>`);
+                }
+            }
+            
+            return tags.length > 0 ? `<div class="ngss-tags">${tags.join('')}</div>` : '';
+        }
+        
+        // Create resource icons
+        function createResourceIcons(chapter) {
+            const resources = [];
+            
+            if (chapter.flexbookPath) resources.push('<div class="resource-icon resource-flexbook" title="Flexbook">FB</div>');
+            if (chapter.slidesPath) resources.push('<div class="resource-icon resource-slides" title="Slides">SL</div>');
+            if (chapter.notesPath) resources.push('<div class="resource-icon resource-notes" title="Notes">NT</div>');
+            if (chapter.briefsPath) resources.push('<div class="resource-icon resource-brief" title="Research Brief">RB</div>');
+            if (chapter.problemsPath) resources.push('<div class="resource-icon resource-problems" title="Problems">PR</div>');
+            
+            return resources.length > 0 ? `<div class="chapter-resources">${resources.join('')}</div>` : '';
+        }
+        
+        // Load quick actions
+        function loadQuickActions() {
+            if (!courseData || !courseData.units) return;
+            
+            const quickActions = document.getElementById('quickActions');
+            quickActions.innerHTML = '';
+            
+            // Add quick action for first unit
+            if (courseData.units.length > 0) {
+                const firstUnit = courseData.units[0];
+                const firstChapter = firstUnit.chapters ? firstUnit.chapters[0] : null;
+                
+                if (firstChapter) {
+                    quickActions.innerHTML += `
+                        <div class="action-card" onclick="loadContent('${firstChapter.chapterId || 'chapter-0'}', '${firstChapter.chapterName || firstChapter.title}', '${firstUnit.unitId}')">
+                            <div class="action-icon">🚀</div>
+                            <div class="action-title">Start First Chapter</div>
+                            <div class="action-description">Begin with ${firstChapter.chapterName || firstChapter.title}</div>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Add progress tracking action
+            quickActions.innerHTML += `
+                <div class="action-card" onclick="showProgress()">
+                    <div class="action-icon">📊</div>
+                    <div class="action-title">Track Progress</div>
+                    <div class="action-description">View your learning journey and achievements</div>
+                </div>
+            `;
+            
+            // Add resources action
+            quickActions.innerHTML += `
+                <div class="action-card" onclick="showAllResources()">
+                    <div class="action-icon">📚</div>
+                    <div class="action-title">Browse Resources</div>
+                    <div class="action-description">Explore flexbooks, slides, notes, and research briefs</div>
+                </div>
+            `;
+        }
+        
+        // UI Control Functions
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+            
+            sidebarCollapsed = !sidebarCollapsed;
+            
+            if (sidebarCollapsed) {
+                sidebar.classList.add('collapsed');
+                mainContent.classList.add('expanded');
+                toggleIcon.textContent = '›';
+            } else {
+                sidebar.classList.remove('collapsed');
+                mainContent.classList.remove('expanded');
+                toggleIcon.textContent = '‹';
+            }
+        }
+        
+        function toggleUnit(unitId) {
+            const unitList = document.getElementById(unitId);
+            if (unitList) {
+                unitList.classList.toggle('collapsed');
+            }
+        }
+        
+        function loadContent(chapterId, chapterTitle, unitId) {
+            // Update UI state
+            document.querySelectorAll('.chapter-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            // Update breadcrumb
+            const unit = courseData.units.find(u => u.unitId === unitId);
+            document.getElementById('current-unit').textContent = unit ? unit.unitName : 'Unknown Unit';
+            document.getElementById('current-chapter').textContent = chapterTitle;
+            
+            // Update content header
+            document.getElementById('contentTitle').textContent = chapterTitle;
+            document.getElementById('contentSubtitle').textContent = 'Explore the content using the tabs below';
+            
+            // Show tabs
+            document.getElementById('contentTabs').style.display = 'flex';
+            
+            // Load content
+            currentChapter = chapterId;
+            currentUnit = unitId;
+            switchTab('flexbook');
+        }
+        
+        function switchTab(tabType) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+            
+            currentTab = tabType;
+            
+            // Show loading
+            const contentArea = document.getElementById('contentArea');
+            contentArea.innerHTML = `
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading ${tabType} content...</p>
+                </div>
+            `;
+            
+            // Load actual content
+            setTimeout(() => {
+                loadTabContent(tabType);
+            }, 500);
+        }
+        
+        function loadTabContent(tabType) {
+            const contentArea = document.getElementById('contentArea');
+            
+            // Find current chapter data
+            const chapter = findChapter(currentChapter);
+            
+            if (chapter && chapter[tabType + 'Path']) {
+                // Load from external file
+                const path = chapter[tabType + 'Path'];
+                contentArea.innerHTML = `
+                    <iframe src="${path}" width="100%" height="600" frameborder="0">
+                        <p>Unable to load content. <a href="${path}" target="_blank">Open in new window</a></p>
+                    </iframe>
+                `;
+            } else {
+                // Show placeholder content
+                contentArea.innerHTML = `
+                    <div style="text-align: center; padding: 48px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">🚧</div>
+                        <h3>Content Coming Soon</h3>
+                        <p>The ${tabType} content for this chapter is being prepared.</p>
+                        <p style="margin-top: 16px; color: #64748b;">
+                            Expected path: <code>${chapter ? (chapter[tabType + 'Path'] || 'Not specified') : 'Chapter not found'}</code>
+                        </p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Helper Functions
+        function findChapter(chapterId) {
+            if (!courseData || !courseData.units) return null;
+            
+            for (const unit of courseData.units) {
+                if (unit.chapters) {
+                    const chapter = unit.chapters.find(ch => (ch.chapterId || `chapter-${unit.chapters.indexOf(ch)}`) === chapterId);
+                    if (chapter) return chapter;
+                }
+            }
+            return null;
+        }
+        
+        function getCompletedChapters(unitId) {
+            const progress = JSON.parse(localStorage.getItem(`progress_${courseData?.courseId}`) || '{"chapters":{}}');
+            let completed = 0;
+            
+            const unit = courseData?.units?.find(u => u.unitId === unitId);
+            if (unit && unit.chapters) {
+                unit.chapters.forEach(chapter => {
+                    const chapterId = chapter.chapterId || `chapter-${unit.chapters.indexOf(chapter)}`;
+                    if (progress.chapters[chapterId]) completed++;
+                });
+            }
+            
+            return completed;
+        }
+        
+        function isChapterCompleted(unitId, chapterId) {
+            const progress = JSON.parse(localStorage.getItem(`progress_${courseData?.courseId}`) || '{"chapters":{}}');
+            return progress.chapters[chapterId] || false;
+        }
+        
+        function updateProgress() {
+            if (!courseData) return;
+            
+            let totalChapters = 0;
+            let completedChapters = 0;
+            
+            courseData.units?.forEach(unit => {
+                if (unit.chapters) {
+                    totalChapters += unit.chapters.length;
+                    completedChapters += getCompletedChapters(unit.unitId);
+                }
+            });
+            
+            const percentage = totalChapters > 0 ? Math.round((completedChapters / totalChapters) * 100) : 0;
+            const angle = (percentage / 100) * 360;
+            
+            document.getElementById('progressCircle').style.setProperty('--progress-angle', `${angle}deg`);
+            document.getElementById('progressText').textContent = `${percentage}%`;
+        }
+        
+        function showProgress() {
+            alert('Progress tracking feature - detailed progress view coming soon!');
+        }
+        
+        function showAllResources() {
+            alert('Resource browser feature - comprehensive resource view coming soon!');
+        }
+        
+        function showErrorMessage(message) {
+            const contentArea = document.getElementById('contentArea');
+            contentArea.innerHTML = `
+                <div style="text-align: center; padding: 48px;">
+                    <div style="font-size: 3rem; margin-bottom: 16px; color: #ef4444;">⚠</div>
+                    <h3 style="color: #ef4444;">Error</h3>
+                    <p style="color: #64748b;">${message}</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

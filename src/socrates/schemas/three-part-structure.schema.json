@@ -1,0 +1,355 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Three-Part Structure Schema",
+  "description": "Defines the structure and validation rules for customizable three-part research brief frameworks",
+  "type": "object",
+  "properties": {
+    "structureId": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$",
+      "description": "Unique identifier for this three-part structure"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "description": "Human-readable name for this structure"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Brief description of when and how to use this structure"
+    },
+    "parts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "The three parts that make up this structure",
+      "items": {
+        "$ref": "#/definitions/structurePart"
+      }
+    },
+    "voiceProfile": {
+      "$ref": "#/definitions/voiceProfile"
+    },
+    "ngssAlignment": {
+      "$ref": "#/definitions/ngssAlignment"
+    },
+    "chunkingStrategy": {
+      "$ref": "#/definitions/chunkingStrategy"
+    },
+    "metadata": {
+      "$ref": "#/definitions/metadata"
+    }
+  },
+  "required": ["structureId", "name", "parts", "voiceProfile"],
+  "additionalProperties": false,
+  
+  "definitions": {
+    "structurePart": {
+      "type": "object",
+      "properties": {
+        "partId": {
+          "type": "string",
+          "enum": ["part1", "part2", "part3"]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50,
+          "description": "Name for this part (e.g., 'Matter Phase', 'Forecast', 'Analysis')"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Brief description of this part's purpose"
+        },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$",
+          "description": "Hex color code for this part"
+        },
+        "icon": {
+          "type": "string",
+          "description": "Icon identifier for visual representation"
+        },
+        "elements": {
+          "type": "array",
+          "minItems": 1,
+          "description": "The elements/sections within this part",
+          "items": {
+            "$ref": "#/definitions/partElement"
+          }
+        },
+        "expectedDuration": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 120,
+          "description": "Expected duration in minutes for this part"
+        }
+      },
+      "required": ["partId", "name", "elements"],
+      "additionalProperties": false
+    },
+    
+    "partElement": {
+      "type": "object",
+      "properties": {
+        "elementId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "observation",
+            "question-generation", 
+            "hypothesis-formation",
+            "data-collection",
+            "analysis",
+            "reflection",
+            "prediction",
+            "comparison",
+            "synthesis",
+            "evaluation"
+          ]
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/fieldDefinition"
+          }
+        },
+        "ngssTag": {
+          "type": "string",
+          "enum": ["practices", "dci", "crosscutting", "metacognitive"]
+        },
+        "chunkable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether this element can be broken into chunks"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Element IDs that must be completed before this one"
+        }
+      },
+      "required": ["elementId", "title", "type", "fields"],
+      "additionalProperties": false
+    },
+    
+    "fieldDefinition": {
+      "type": "object",
+      "properties": {
+        "fieldId": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "text-short",
+            "text-long", 
+            "number",
+            "multiple-choice",
+            "checkbox-list",
+            "file-upload",
+            "drawing-canvas",
+            "structured-list"
+          ]
+        },
+        "required": {
+          "type": "boolean",
+          "default": false
+        },
+        "validation": {
+          "$ref": "#/definitions/fieldValidation"
+        },
+        "helpText": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "placeholder": {
+          "type": "string",
+          "maxLength": 200
+        }
+      },
+      "required": ["fieldId", "label", "type"],
+      "additionalProperties": false
+    },
+    
+    "fieldValidation": {
+      "type": "object",
+      "properties": {
+        "minLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "maxLength": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pattern": {
+          "type": "string",
+          "description": "Regular expression pattern for validation"
+        },
+        "customRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Custom validation rule identifiers"
+        }
+      },
+      "additionalProperties": false
+    },
+    
+    "voiceProfile": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string",
+          "enum": ["socrates", "burke", "sagan", "feynman"],
+          "description": "Primary narrative voice for this structure"
+        },
+        "secondary": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["socrates", "burke", "sagan", "feynman"]
+          },
+          "maxItems": 2,
+          "description": "Secondary voices to blend in"
+        },
+        "tone": {
+          "type": "string",
+          "enum": ["inquiry", "discovery", "analytical", "playful", "contemplative"],
+          "description": "Overall tone for generated navigation text"
+        },
+        "complexity": {
+          "type": "string",
+          "enum": ["middle-school", "high-school", "college", "graduate"],
+          "description": "Language complexity level"
+        }
+      },
+      "required": ["primary", "tone", "complexity"],
+      "additionalProperties": false
+    },
+    
+    "ngssAlignment": {
+      "type": "object",
+      "properties": {
+        "practices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Science and Engineering Practices codes"
+        },
+        "dci": {
+          "type": "array", 
+          "items": {
+            "type": "string"
+          },
+          "description": "Disciplinary Core Ideas codes"
+        },
+        "crosscutting": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Crosscutting Concepts codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    
+    "chunkingStrategy": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "chunkSize": {
+          "type": "string",
+          "enum": ["small", "medium", "large", "adaptive"],
+          "default": "medium",
+          "description": "Default chunk size for this structure"
+        },
+        "breakpoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Natural breaking points for chunking"
+        },
+        "integration": {
+          "type": "object",
+          "properties": {
+            "chunkerEndpoint": {
+              "type": "string",
+              "format": "uri"
+            },
+            "chunkerConfig": {
+              "type": "object",
+              "description": "Configuration passed to Chunker system"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "author": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastModified": {
+          "type": "string", 
+          "format": "date-time"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"]
+        },
+        "estimatedTime": {
+          "type": "integer",
+          "minimum": 10,
+          "maximum": 300,
+          "description": "Total estimated time in minutes"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

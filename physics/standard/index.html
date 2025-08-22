@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Standard Physics | Cosmos in the Classroom</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/cosmos-theme.css">
+    <style>
+        .course-hero {
+            background: linear-gradient(135deg, var(--standard-purple), var(--deep-navy));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .course-title {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+        .course-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .unit-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+        }
+        .unit-card:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-2px);
+        }
+        .unit-title {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--standard-purple);
+            margin-bottom: 0.5rem;
+        }
+        .unit-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="header-nav">
+            <div class="nav-dropdown">
+                <button class="nav-toggle" onclick="toggleNavDropdown()">
+                    Navigation ▾
+                </button>
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-item">Home</a>
+                    <a href="/src/portal/" class="nav-item">The Portal</a>
+                    <a href="/ref/" class="nav-item">Socrates' Library</a>
+                    <a href="/physics/honors/" class="nav-item">Honors Physics</a>
+                    <a href="/physics/standard/" class="nav-item">Standard Physics</a>
+                    <a href="/slides/" class="nav-item">Lesson Slides</a>
+                    <a href="/solutions/" class="nav-item">Problem Solutions</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+        <h1 class="course-title">Standard Physics</h1>
+        <p class="course-description">
+            Comprehensive physics curriculum designed for all learners, emphasizing conceptual understanding, 
+            practical applications, and accessible mathematical approaches to fundamental physics principles.
+        </p>
+    </section>
+
+    <!-- Units Overview -->
+    <main class="main-content">
+        <div class="units-grid">
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 1: Principles of Physics</h3>
+                <p class="unit-description">Introduction to physics, scientific method, measurement, and basic mathematical tools.</p>
+                <a href="units/01_principles/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 2: Motion</h3>
+                <p class="unit-description">Understanding motion in one and two dimensions with practical applications.</p>
+                <a href="units/02_motion/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 3: Forces</h3>
+                <p class="unit-description">Newton's laws of motion and their applications in everyday situations.</p>
+                <a href="units/03_forces/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 4: Energy & Work</h3>
+                <p class="unit-description">Energy conservation, work, and power in mechanical systems.</p>
+                <a href="units/04_energy/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 5: Momentum</h3>
+                <p class="unit-description">Momentum conservation and its applications in collisions and interactions.</p>
+                <a href="units/05_momentum/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 6: Circular Motion</h3>
+                <p class="unit-description">Circular motion, gravity, and celestial mechanics at an accessible level.</p>
+                <a href="units/06_circular/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 7: Waves & Sound</h3>
+                <p class="unit-description">Wave properties, sound waves, and acoustic phenomena.</p>
+                <a href="units/07_waves/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 8: Rotation</h3>
+                <p class="unit-description">Rotational motion and its applications in everyday objects.</p>
+                <a href="units/08_rotation/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 9: Oscillations</h3>
+                <p class="unit-description">Simple harmonic motion, pendulums, and springs.</p>
+                <a href="units/09_oscillations/" class="btn primary">Explore Unit</a>
+            </div>
+            
+            <div class="unit-card">
+                <h3 class="unit-title">Unit 10: Electricity & Magnetism</h3>
+                <p class="unit-description">Basic electrical and magnetic phenomena with practical applications.</p>
+                <a href="units/10_electromagnetism/" class="btn primary">Explore Unit</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleNavDropdown() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const navDropdown = document.querySelector('.nav-dropdown');
+            const navMenu = document.getElementById('navMenu');
+            if (!navDropdown.contains(event.target)) {
+                navMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

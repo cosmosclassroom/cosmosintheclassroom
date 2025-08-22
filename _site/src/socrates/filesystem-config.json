@@ -1,0 +1,180 @@
+{
+  "name": "Socrates Research Brief Generator",
+  "version": "1.0.0",
+  "description": "Filesystem configuration for scalable course and structure management",
+  
+  "directories": {
+    "root": "./src/socrates",
+    "config": "./src/socrates/config",
+    "schemas": "./src/socrates/schemas", 
+    "core": "./src/socrates/core",
+    "components": "./src/socrates/components",
+    "integrations": "./src/socrates/integrations",
+    "templates": "./src/socrates/templates",
+    "content": "./content"
+  },
+
+  "configurationPaths": {
+    "courses": "./src/socrates/config/courses",
+    "structures": "./src/socrates/config/structures",
+    "voices": "./src/socrates/config/voices",
+    "themes": "./src/socrates/config/themes"
+  },
+
+  "schemaValidation": {
+    "enabled": true,
+    "schemas": {
+      "threePartStructure": "./src/socrates/schemas/three-part-structure.schema.json",
+      "courseConfig": "./src/socrates/schemas/course-config.schema.json",
+      "voiceProfile": "./src/socrates/schemas/voice-profile.schema.json",
+      "chunkingStrategy": "./src/socrates/schemas/chunking-strategy.schema.json"
+    }
+  },
+
+  "autoDiscovery": {
+    "courses": {
+      "enabled": true,
+      "pattern": "./src/socrates/config/courses/*.json",
+      "watchForChanges": true
+    },
+    "structures": {
+      "enabled": true,
+      "pattern": "./src/socrates/config/structures/*.json",
+      "watchForChanges": true
+    }
+  },
+
+  "integrations": {
+    "chunker": {
+      "defaultEndpoint": "http://localhost:3001/api/chunker",
+      "fallbackEnabled": true,
+      "cacheEnabled": true,
+      "cacheDuration": "1h"
+    },
+    "contentSources": {
+      "supportedTypes": ["markdown-files", "json-arrays", "external-api", "database"],
+      "defaultType": "markdown-files",
+      "basePaths": {
+        "markdown-files": "./content",
+        "json-arrays": "./content/data"
+      }
+    }
+  },
+
+  "scalabilityPlanning": {
+    "estimatedCourses": 15,
+    "structuresPerCourse": 5,
+    "averageElementsPerStructure": 8,
+    "expectedConcurrentUsers": 100,
+    "cachingStrategy": "memory + disk",
+    "loadBalancing": "round-robin"
+  },
+
+  "fileNamingConventions": {
+    "courses": {
+      "pattern": "{subject}-{level}.json",
+      "examples": ["ap-biology.json", "honors-physics.json", "standard-chemistry.json"]
+    },
+    "structures": {
+      "pattern": "{structure-name}.json", 
+      "examples": ["matter-energy-force.json", "forecast-blueprint-reflection.json"]
+    },
+    "voices": {
+      "pattern": "{voice-name}-{complexity}.json",
+      "examples": ["socrates-high-school.json", "feynman-college.json"]
+    }
+  },
+
+  "expansionPaths": {
+    "newCourses": [
+      "ap-chemistry.json",
+      "ap-physics-1.json", 
+      "ap-physics-2.json",
+      "ap-physics-c.json",
+      "honors-chemistry.json",
+      "standard-biology.json",
+      "standard-chemistry.json",
+      "standard-physics.json",
+      "environmental-science.json",
+      "earth-science.json",
+      "anatomy-physiology.json",
+      "astronomy.json",
+      "marine-biology.json",
+      "forensic-science.json",
+      "biotechnology.json"
+    ],
+    "newStructures": [
+      "structure-function-growth.json",
+      "cause-effect-solution.json", 
+      "hypothesis-test-conclude.json",
+      "observe-model-predict.json",
+      "question-investigate-communicate.json",
+      "claim-evidence-reasoning.json"
+    ]
+  },
+
+  "developmentGuidelines": {
+    "addingNewCourse": {
+      "steps": [
+        "1. Create course config JSON in ./config/courses/",
+        "2. Validate against course-config.schema.json",
+        "3. Define available structures for the course",
+        "4. Set up content source paths",
+        "5. Configure voice and branding customizations",
+        "6. Test navigation framework generation"
+      ]
+    },
+    "addingNewStructure": {
+      "steps": [
+        "1. Create structure definition JSON in ./config/structures/",
+        "2. Validate against three-part-structure.schema.json", 
+        "3. Define all three parts with elements and fields",
+        "4. Set NGSS alignments and voice profile",
+        "5. Configure chunking strategy",
+        "6. Test with multiple courses"
+      ]
+    },
+    "testingProcedure": {
+      "steps": [
+        "1. Run schema validation on all config files",
+        "2. Test structure loading and navigation generation",
+        "3. Verify chunker integration with sample content",
+        "4. Test voice narrative generation",
+        "5. Validate responsive design across devices",
+        "6. Performance test with concurrent users"
+      ]
+    }
+  },
+
+  "monitoring": {
+    "healthChecks": {
+      "configValidation": "every 5 minutes",
+      "chunkerAvailability": "every 1 minute", 
+      "contentSourceAccess": "every 10 minutes"
+    },
+    "metrics": {
+      "courseLoadTimes": true,
+      "structureGenerationTimes": true,
+      "chunkerResponseTimes": true,
+      "userEngagementMetrics": true
+    },
+    "alerting": {
+      "configValidationFailures": "immediate",
+      "chunkerDowntime": "5 minutes",
+      "highErrorRates": "15 minutes"
+    }
+  },
+
+  "security": {
+    "configFilePermissions": "read-only for web server",
+    "apiKeyManagement": "environment variables only",
+    "inputValidation": "strict schema enforcement",
+    "rateLimiting": "100 requests per minute per user"
+  },
+
+  "backupStrategy": {
+    "configFiles": "daily backup to git repository",
+    "userGeneratedContent": "real-time backup to cloud storage",
+    "systemLogs": "7-day retention, compressed archives"
+  }
+}

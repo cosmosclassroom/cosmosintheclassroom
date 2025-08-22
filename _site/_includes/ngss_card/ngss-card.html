@@ -1,0 +1,57 @@
+<div id="ngss-cards-container"></div>
+<script>
+function renderNgssCard(practice, size = 'medium') {
+    // Card size options: tiny, small, medium, large
+    let cardHtml = '';
+    switch(size) {
+        case 'tiny':
+            cardHtml = `
+                <div class="system-card" style="width:60px;height:60px;display:flex;align-items:center;justify-content:center;">
+                    <img src="assets/icons/${practice.icon}" alt="" style="width:32px;height:32px;">
+                </div>`;
+            break;
+        case 'small':
+            cardHtml = `
+                <div class="system-card" style="width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="assets/icons/${practice.icon}" alt="" style="width:40px;height:40px;">
+                    <span style="font-size:0.95rem;color:#2c3e50;margin-top:0.5rem;">${practice.name.split('&')[0]}</span>
+                </div>`;
+            break;
+        case 'medium':
+            cardHtml = `
+                <div class="system-card" style="width:220px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                    <img src="assets/icons/${practice.icon}" alt="" style="width:48px;height:48px;">
+                    <span style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#2c3e50;margin-top:0.5rem;">${practice.name}</span>
+                    <span style="font-size:0.95rem;color:#666;margin-top:0.5rem;">Context: ${practice.context}</span>
+                </div>`;
+            break;
+        case 'large':
+            cardHtml = `
+                <div class="system-card" style="width:340px;min-height:220px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;">
+                    <img src="assets/icons/${practice.icon}" alt="" style="width:56px;height:56px;">
+                    <span style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#2c3e50;margin-top:0.5rem;">${practice.name}</span>
+                    <span style="font-size:1rem;color:#666;margin-top:0.5rem;">Context: ${practice.context}</span>
+                    <span style="font-size:0.95rem;color:#666;margin-top:0.5rem;">Short Description: ${practice.short_description}</span>
+                    <span style="font-size:0.95rem;color:#666;margin-top:0.5rem;">${practice.definition}</span>
+                </div>`;
+            break;
+    }
+    return cardHtml;
+}
+
+fetch('assets/data/ngss_practices.json')
+    .then(response => response.json())
+    .then(data => {
+        // Example: render all sizes for the first practice
+        const container = document.getElementById('ngss-cards-container');
+        const practice = data[0];
+        container.innerHTML = `
+            <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;">
+                ${renderNgssCard(practice, 'tiny')}
+                ${renderNgssCard(practice, 'small')}
+                ${renderNgssCard(practice, 'medium')}
+                ${renderNgssCard(practice, 'large')}
+            </div>
+        `;
+    });
+</script>

@@ -7,49 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4; /* Warm Neutral Background */
-        }
-        .active-day-btn {
-            background-color: #4A5568; /* Slate Gray */
-            color: #FFFFFF;
-        }
-        .inactive-day-btn {
-            background-color: #E2E8F0;
-            color: #4A5568;
-        }
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%234A5568%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E');
-            background-repeat: no-repeat;
-            background-position: right 0.7rem center;
-            background-size: 0.65em auto;
-            padding-right: 2.5rem;
-        }
-        .sidebar {
-            transition: transform 0.3s ease-in-out;
-        }
-        .sidebar-hidden {
-            transform: translateX(100%);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="branford.css">
 </head>
 <body>
-    <!-- 
-    Chosen Palette: Soothing Neutrals
-    Application Structure Plan: The SPA is designed as a three-part interactive dashboard. 1) An "Interactive Schedule Viewer" allows teachers to click a rotation day (1-4) and instantly see which periods meet and which are dropped, providing immediate clarity for daily planning. 2) A "Full-Year Rotation Calendar" dynamically generates the entire school year, mapping the correct rotation number to each instructional day, which is crucial for long-term pacing. 3) A "Filterable Key Dates" section allows users to quickly isolate specific event types (like PD days or holidays). This task-oriented structure was chosen to transform the static source document into a functional planning tool.
-    Visualization & Content Choices: 
-    - Report Info: Schedule Mechanics (8 drop 2, 3 meetings/cycle) -> Goal: Inform -> Viz/Method: Large stat cards -> Interaction: None -> Justification: Provides immediate, high-level understanding of the core concepts. Method: Styled HTML. (CONFIRM: NO SVG/Mermaid)
-    - Report Info: Daily Bell & Drop Schedules -> Goal: Organize/Explore -> Viz/Method: Interactive Toggle -> Interaction: User clicks a button for Day 1-4 to dynamically update a list, highlighting which periods meet and which are dropped. -> Justification: Far more intuitive and less error-prone than cross-referencing static tables. Method: JS DOM Manipulation. (CONFIRM: NO SVG/Mermaid)
-    - Report Info: Year Calendar & Key Dates -> Goal: Organize/Change -> Viz/Method: Dynamically Generated Calendar Grid & Filterable List -> Interaction: Calendar visually maps the rotation; list has buttons to filter dates by category. -> Justification: Creates a comprehensive, error-free long-range planning tool that is superior to a static, partial calendar. Method: JS DOM manipulation, structured HTML/CSS. (CONFIRM: NO SVG/Mermaid)
-    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. 
-    -->
-
     <div class="container mx-auto p-4 md:p-8 max-w-7xl text-[#2D3748] relative">
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-bold text-[#2D3748] mb-2">BHS Interactive Planning Guide</h1>
@@ -63,30 +24,42 @@
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Main Content -->
             <main class="flex-grow">
-                <!-- Section 1: Interactive Schedule Viewer -->
-                <section id="schedule-viewer" class="mb-12">
-                    <h2 class="text-2xl font-bold mb-4 border-b-2 border-[#D6CFCB] pb-2">Interactive Schedule Viewer</h2>
-                    <p class="text-gray-600 mb-6">The BHS schedule is an "8 drop 2" model on a 4-day rotation. This means each class meets 3 times per cycle. Use the buttons below to see which periods meet on each day of the rotation.</p>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="day-buttons">
-                            <button data-day="1" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 active-day-btn">Day 1</button>
-                            <button data-day="2" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 2</button>
-                            <button data-day="3" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 3</button>
-                            <button data-day="4" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day 4</button>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="font-bold text-lg mb-2 text-center">Meeting Periods</h3>
-                                <ul id="meeting-periods" class="space-y-2 text-center"></ul>
+                <!-- Daily Schedule Row -->
+                <div class="flex flex-col md:flex-row gap-6 mb-12 items-start w-full">
+                    <!-- Section 1: Interactive Schedule Viewer (left) -->
+                    <section id="schedule-viewer" class="w-full md:w-1/2">
+                        <h2 class="text-2xl font-bold mb-4 border-b-2 border-[#D6CFCB] pb-2 w-full">Interactive Schedule Viewer</h2>
+                        <p class="text-gray-600 mb-6">The BHS schedule is an "8 drop 2" model on a 4-day rotation. This means each class meets 3 times per cycle. Use the buttons below to see which periods meet on each day of the rotation.</p>
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="day-buttons">
+                                <button data-day="A" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 active-day-btn">Day A</button>
+                                <button data-day="B" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day B</button>
+                                <button data-day="C" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day C</button>
+                                <button data-day="D" class="day-btn flex-1 py-2 px-4 rounded-md font-semibold transition-colors duration-200 inactive-day-btn">Day D</button>
                             </div>
-                            <div>
-                                <h3 class="font-bold text-lg mb-2 text-center">Dropped Periods</h3>
-                                <ul id="dropped-periods" class="space-y-2 text-center"></ul>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h3 class="font-bold text-lg mb-2 text-center">Meeting Periods</h3>
+                                    <ul id="meeting-periods" class="space-y-2 text-center"></ul>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-lg mb-2 text-center">Dropped Periods</h3>
+                                    <ul id="dropped-periods" class="space-y-2 text-center"></ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-
+                    </section>
+                    <!-- Inline daily schedule (right) -->
+                    <section id="inline-day-schedule" class="w-full md:w-1/2 hidden">
+                        <div class="bg-white rounded-lg shadow-xl p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 id="inline-modal-date" class="text-xl font-bold"></h3>
+                            </div>
+                            <div id="inline-modal-content"></div>
+                            <div id="inline-modal-note" class="mt-4 text-sm text-blue-600 font-semibold"></div>
+                        </div>
+                    </section>
+                </div>
                 <!-- Section 2: Full-Year Rotation Calendar -->
                 <section id="calendar-view" class="mb-12">
                     <h2 class="text-2xl font-bold mb-4 border-b-2 border-[#D6CFCB] pb-2">Monthly Rotation Calendar</h2>
@@ -105,9 +78,8 @@
                     </div>
                 </section>
             </main>
-
             <!-- Sidebar for Key Dates -->
-            <aside id="key-dates-sidebar" class="w-full lg:w-96 flex-shrink-0 fixed top-0 right-0 h-full bg-white shadow-2xl p-6 z-20 sidebar sidebar-hidden overflow-y-auto">
+            <aside id="key-dates-sidebar" class="w-full lg:w-96 flex-shrink-0 fixed top-0 right-0 h-full bg-white shadow-2xl p-6 z-20 sidebar overflow-y-auto sidebar-hidden">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold">Key Academic Dates</h2>
                     <button id="sidebar-close-btn" class="text-gray-500 hover:text-gray-800">
@@ -136,255 +108,6 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- DATA ---
-            const periods = [1, 2, 3, 4, 5, 6, 7, 8];
-            const dropSchedule = { 1: [7, 8], 2: [5, 6], 3: [3, 4], 4: [1, 2] };
-            const keyDates = [
-                { date: '2025-09-01', event: 'Labor Day', type: 'holiday' },
-                { date: '2025-09-24', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2025-10-13', event: 'Fall Recess', type: 'holiday' },
-                { date: '2025-10-29', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2025-10-31', event: 'End of First Quarter', type: 'quarter' },
-                { date: '2025-11-04', event: 'Election Day (PD - No Students)', type: 'pd' },
-                { date: '2025-11-27', event: 'Thanksgiving Recess (Nov 27-28)', type: 'holiday' },
-                { date: '2025-12-23', event: 'Early Release Day', type: 'holiday' },
-                { date: '2025-12-24', event: 'Winter Recess (Dec 24 - Jan 2)', type: 'holiday' },
-                { date: '2026-01-19', event: 'Martin Luther King Jr. Day', type: 'holiday' },
-                { date: '2026-01-23', event: 'End of Second Quarter', type: 'quarter' },
-                { date: '2026-01-28', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2026-02-16', event: 'February Recess (Feb 16-17)', type: 'holiday' },
-                { date: '2026-03-13', event: 'PD Day (No Students)', type: 'pd' },
-                { date: '2026-03-25', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2026-03-28', event: 'End of Third Quarter', type: 'quarter' },
-                { date: '2026-04-03', event: 'Holiday', type: 'holiday' },
-                { date: '2026-04-13', event: 'Spring Recess (Apr 13-17)', type: 'holiday' },
-                { date: '2026-04-29', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2026-05-20', event: 'PD Day (Early Release)', type: 'pd' },
-                { date: '2026-05-25', event: 'Memorial Day', type: 'holiday' },
-                { date: '2026-06-10', event: 'End of Fourth Quarter / Last Day', type: 'quarter' },
-            ];
-            const nonInstructionalDates = new Set(['2025-09-01', '2025-09-24', '2025-10-13', '2025-10-29', '2025-11-04', '2025-11-27', '2025-11-28', '2025-12-23', '2025-12-24', '2025-12-25', '2025-12-26', '2025-12-29', '2025-12-30', '2025-12-31', '2026-01-01', '2026-01-02', '2026-01-19', '2026-01-28', '2026-02-16', '2026-02-17', '2026-03-13', '2026-03-25', '2026-04-03', '2026-04-13', '2026-04-14', '2026-04-15', '2026-04-16', '2026-04-17', '2026-04-29', '2026-05-20', '2026-05-25', '2026-06-10']);
-
-            // --- ELEMENTS ---
-            const dayButtons = document.getElementById('day-buttons');
-            const meetingPeriodsList = document.getElementById('meeting-periods');
-            const droppedPeriodsList = document.getElementById('dropped-periods');
-            const calendarContainer = document.getElementById('calendar-container');
-            const monthSelector = document.getElementById('month-selector');
-            const datesList = document.getElementById('dates-list');
-            const filterButtons = document.getElementById('filter-buttons');
-            const sidebar = document.getElementById('key-dates-sidebar');
-            const sidebarToggle = document.getElementById('sidebar-toggle');
-            const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
-            const modal = document.getElementById('day-schedule-modal');
-            const modalDate = document.getElementById('modal-date');
-            const modalContent = document.getElementById('modal-content');
-            const modalCloseBtn = document.getElementById('modal-close-btn');
-
-            // --- SIDEBAR LOGIC ---
-            sidebarToggle.addEventListener('click', () => sidebar.classList.remove('sidebar-hidden'));
-            sidebarCloseBtn.addEventListener('click', () => sidebar.classList.add('sidebar-hidden'));
-
-            // --- SCHEDULE VIEWER LOGIC ---
-            function updateScheduleView(day) {
-                const dropped = dropSchedule[day];
-                const meeting = periods.filter(p => !dropped.includes(p));
-                meetingPeriodsList.innerHTML = meeting.map(p => `<li class="bg-green-100 text-green-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
-                droppedPeriodsList.innerHTML = dropped.map(p => `<li class="bg-red-100 text-red-800 font-semibold py-1 px-3 rounded-md">Period ${p}</li>`).join('');
-                document.querySelectorAll('.day-btn').forEach(btn => {
-                    btn.classList.toggle('active-day-btn', btn.dataset.day == day);
-                    btn.classList.toggle('inactive-day-btn', btn.dataset.day != day);
-                });
-            }
-            dayButtons.addEventListener('click', (e) => {
-                if (e.target.classList.contains('day-btn')) updateScheduleView(e.target.dataset.day);
-            });
-
-            // --- CALENDAR LOGIC ---
-            const rotationColors = { 1: 'bg-blue-100', 2: 'bg-indigo-100', 3: 'bg-purple-100', 4: 'bg-pink-100' };
-            const rotationMap = generateRotationMap();
-
-            function generateRotationMap() {
-                const map = new Map();
-                let rotationDay = 1;
-                const startDate = new Date('2025-08-28T12:00:00Z');
-                const endDate = new Date('2026-06-10T12:00:00Z');
-                for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
-                    const dayOfWeek = d.getUTCDay();
-                    const dateString = d.toISOString().split('T')[0];
-                    if (dayOfWeek !== 0 && dayOfWeek !== 6 && !nonInstructionalDates.has(dateString)) {
-                        map.set(dateString, rotationDay);
-                        rotationDay = rotationDay % 4 + 1;
-                    }
-                }
-                return map;
-            }
-
-            function generateCalendar(year, month) {
-                const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
-                let header = `<h3 class="font-bold text-center mb-2">${monthName} ${year}</h3>`;
-                let daysOfWeek = `<div class="grid grid-cols-7 text-center text-xs font-semibold text-gray-500 mb-1"><div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div></div>`;
-                let calendarDays = `<div class="grid grid-cols-7 text-center text-sm">`;
-                const firstDay = new Date(year, month, 1).getDay();
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                for (let j = 0; j < firstDay; j++) { calendarDays += `<div></div>`; }
-                for (let day = 1; day <= daysInMonth; day++) {
-                    const date = new Date(year, month, day);
-                    const dateString = date.toISOString().split('T')[0];
-                    const rotation = rotationMap.get(dateString);
-                    let cellClass = 'py-1';
-                    let dataAttr = '';
-                    if (rotation) {
-                        cellClass += ` ${rotationColors[rotation]} font-bold rounded-full cursor-pointer hover:ring-2 ring-offset-1 ring-blue-400`;
-                        dataAttr = `data-date="${dateString}"`;
-                    } else if (nonInstructionalDates.has(dateString)) {
-                        cellClass += ' bg-gray-300 text-white rounded-full';
-                    }
-                    calendarDays += `<div class="${cellClass}" ${dataAttr}>${day}</div>`;
-                }
-                calendarDays += `</div>`;
-                calendarContainer.innerHTML = header + daysOfWeek + calendarDays;
-            }
-
-            function populateMonthSelector() {
-                const months = [{year: 2025, month: 7, name: "August 2025"}, {year: 2025, month: 8, name: "September 2025"}, {year: 2025, month: 9, name: "October 2025"}, {year: 2025, month: 10, name: "November 2025"}, {year: 2025, month: 11, name: "December 2025"}, {year: 2026, month: 0, name: "January 2026"}, {year: 2026, month: 1, name: "February 2026"}, {year: 2026, month: 2, name: "March 2026"}, {year: 2026, month: 3, name: "April 2026"}, {year: 2026, month: 4, name: "May 2026"}, {year: 2026, month: 5, name: "June 2026"}];
-                months.forEach(m => {
-                    const option = document.createElement('option');
-                    option.value = `${m.year}-${m.month}`;
-                    option.textContent = m.name;
-                    monthSelector.appendChild(option);
-                });
-            }
-            monthSelector.addEventListener('change', (e) => {
-                const [year, month] = e.target.value.split('-').map(Number);
-                generateCalendar(year, month);
-            });
-
-            // --- MONTH ARROW CLICKERS ---
-            const monthsArr = [
-                {year: 2025, month: 7, name: "August 2025"},
-                {year: 2025, month: 8, name: "September 2025"},
-                {year: 2025, month: 9, name: "October 2025"},
-                {year: 2025, month: 10, name: "November 2025"},
-                {year: 2025, month: 11, name: "December 2025"},
-                {year: 2026, month: 0, name: "January 2026"},
-                {year: 2026, month: 1, name: "February 2026"},
-                {year: 2026, month: 2, name: "March 2026"},
-                {year: 2026, month: 3, name: "April 2026"},
-                {year: 2026, month: 4, name: "May 2026"},
-                {year: 2026, month: 5, name: "June 2026"}
-            ];
-
-            function getMonthIndex(value) {
-                return monthsArr.findIndex(m => `${m.year}-${m.month}` === value);
-            }
-
-            document.getElementById('prev-month').addEventListener('click', function() {
-                const idx = getMonthIndex(monthSelector.value);
-                if (idx > 0) {
-                    monthSelector.value = `${monthsArr[idx - 1].year}-${monthsArr[idx - 1].month}`;
-                    const [year, month] = monthSelector.value.split('-').map(Number);
-                    generateCalendar(year, month);
-                }
-            });
-
-            document.getElementById('next-month').addEventListener('click', function() {
-                const idx = getMonthIndex(monthSelector.value);
-                if (idx < monthsArr.length - 1) {
-                    monthSelector.value = `${monthsArr[idx + 1].year}-${monthsArr[idx + 1].month}`;
-                    const [year, month] = monthSelector.value.split('-').map(Number);
-                    generateCalendar(year, month);
-                }
-            });
-
-            // --- KEY DATES LOGIC ---
-            function renderDates(filter = 'all') {
-                const uniqueEvents = Array.from(new Map(keyDates.map(item => [item.event, item])).values());
-                const filteredDates = (filter === 'all') ? uniqueEvents : uniqueEvents.filter(d => d.type === filter);
-                datesList.innerHTML = filteredDates.map(date => {
-                    const formattedDate = new Date(date.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
-                    let displayEvent = date.event;
-                    let dateRange = '';
-                    if (displayEvent.includes('(')) {
-                        const parts = displayEvent.split('(');
-                        displayEvent = parts[0].trim();
-                        dateRange = parts[1].replace(')', '');
-                    } else {
-                        dateRange = formattedDate;
-                    }
-                    return `<li class="flex justify-between items-center p-2 rounded-md" data-type="${date.type}"><span>${displayEvent}</span><span class="font-semibold text-gray-600">${dateRange}</span></li>`;
-                }).join('');
-            }
-            filterButtons.addEventListener('click', (e) => {
-                if (e.target.classList.contains('filter-btn')) {
-                    document.querySelectorAll('.filter-btn').forEach(btn => {
-                        btn.classList.toggle('bg-[#4A5568]', e.target === btn);
-                        btn.classList.toggle('text-white', e.target === btn);
-                        btn.classList.toggle('bg-gray-200', e.target !== btn);
-                        btn.classList.toggle('text-gray-700', e.target !== btn);
-                    });
-                    renderDates(e.target.dataset.filter);
-                }
-            });
-
-            // --- MODAL LOGIC ---
-            function openDayScheduleModal(dateString) {
-                const rotationDay = rotationMap.get(dateString);
-                if (!rotationDay) return;
-                const dropped = dropSchedule[rotationDay];
-                const meeting = periods.filter(p => !dropped.includes(p));
-                const formattedDate = new Date(dateString + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-                
-                modalDate.textContent = `${formattedDate} (Day ${rotationDay})`;
-                modalContent.innerHTML = `
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <h4 class="font-bold text-center mb-2">Meeting Periods</h4>
-                            <ul class="space-y-1 text-center">${meeting.map(p => `<li class="bg-green-100 text-green-800 py-1 rounded">${p}</li>`).join('')}</ul>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-center mb-2">Dropped Periods</h4>
-                            <ul class="space-y-1 text-center">${dropped.map(p => `<li class="bg-red-100 text-red-800 py-1 rounded">${p}</li>`).join('')}</ul>
-                        </div>
-                    </div>`;
-                modal.classList.remove('hidden');
-            }
-            
-            calendarContainer.addEventListener('click', (e) => {
-                if (e.target.dataset.date) openDayScheduleModal(e.target.dataset.date);
-            });
-            
-            modalCloseBtn.addEventListener('click', () => modal.classList.add('hidden'));
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.classList.add('hidden');
-            });
-
-            // --- INITIALIZE APP ---
-            updateScheduleView(1);
-            populateMonthSelector();
-            const today = new Date();
-            // Find today's date in rotation calendar
-            const todayString = today.toISOString().split('T')[0];
-            let defaultMonthValue = `${today.getFullYear()}-${today.getMonth()}`;
-            if(monthSelector.querySelector(`[value="${defaultMonthValue}"]`)) {
-                monthSelector.value = defaultMonthValue;
-            } else {
-                monthSelector.value = "2025-7"; // Default to Aug 2025
-            }
-            const [initialYear, initialMonth] = monthSelector.value.split('-').map(Number);
-            generateCalendar(initialYear, initialMonth);
-            renderDates();
-
-            // --- NEW: Auto-load today's schedule modal if today is an instructional day ---
-            setTimeout(() => {
-                if (rotationMap.has(todayString)) {
-                    openDayScheduleModal(todayString);
-                }
-            }, 100); // Wait for calendar to render
-
-        });
-    </script>
+    <script src="branford.js"></script>
 </body>
 </html>

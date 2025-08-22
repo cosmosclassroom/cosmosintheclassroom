@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Cosmos in the Classroom - Interactive Physics Learning Portal">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Cosmos in the Classroom | Student Portal</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Inter:400,500,600&display=swap">
+    
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #34495e;
+        --accent: #3498db;
+        --success: #27ae60;
+        --warning: #f39c12;
+        --background: #f8fafc;
+        --card-bg: #ffffff;
+        --text: #2d3748;
+        --text-light: #718096;
+        --border: #e2e8f0;
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --socratic-parchment: #f5f5dc;
+        --socratic-brown: #8b7355;
+        --socratic-green: #718355;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(135deg, var(--background) 0%, var(--socratic-parchment) 100%);
+        color: var(--text);
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="white" opacity="0.1"/><circle cx="800" cy="300" r="1.5" fill="white" opacity="0.1"/><circle cx="400" cy="600" r="1" fill="white" opacity="0.1"/><circle cx="600" cy="100" r="2.5" fill="white" opacity="0.1"/><circle cx="100" cy="700" r="1.8" fill="white" opacity="0.1"/></svg>');
+        animation: starfield 20s linear infinite;
+      }
+
+      @keyframes starfield {
+        from { transform: translateY(0px); }
+        to { transform: translateY(-100px); }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .hero-subtitle {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+        font-style: italic;
+        color: #f5f5dc;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .cta-button {
+        display: inline-block;
+        background: var(--success);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: var(--shadow);
+        margin: 0.5rem;
+      }
+
+      .socratic-link {
+        background: #8b7355;
+        border: 2px solid #f5f5dc;
+      }
+
+      .socratic-link:hover {
+        background: #6f4c3e;
+        border-color: #e9ba74;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3);
+      }
+
+      .main-content {
+        max-width: 1200px;
+        margin: -2rem auto 0;
+        padding: 0 2rem 4rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .portal-card {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 3rem;
+        box-shadow: var(--shadow);
+        text-align: center;
+        margin-bottom: 3rem;
+        border: 1px solid var(--border);
+      }
+
+      .portal-card h2 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .portal-card p {
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+      }
+
+      .course-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .course-preview {
+        background: var(--card-bg);
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .course-preview:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.2);
+      }
+
+      .course-preview h3 {
+        font-family: 'Libre Baskerville', serif;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .course-preview p {
+        color: var(--text-light);
+        margin-bottom: 1.5rem;
+      }
+
+      .course-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+        border: none;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #2980b9;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 1px solid var(--accent);
+      }
+
+      .btn-secondary:hover {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-socratic {
+        background: #8b7355;
+        color: #f5f5dc;
+        border: 1px solid #f5f5dc;
+      }
+
+      .btn-socratic:hover {
+        background: #6f4c3e;
+        color: #e9ba74;
+        border-color: #e9ba74;
+      }
+
+      .socratic-quote {
+        font-family: 'Libre Baskerville', serif;
+        font-style: italic;
+        color: var(--text-light);
+        background: #f5f5dc;
+        padding: 1rem;
+        border-left: 4px solid #8b7355;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      /* Name Input Styling */
+      #greeting-section {
+        margin: 1.5rem 0 2rem;
+      }
+
+      .name-input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .name-input-container {
+          flex-direction: row;
+          justify-content: center;
+          gap: 1rem;
+        }
+
+        #user-name {
+          min-width: 250px;
+        }
+      }
+
+      #user-name {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+        min-width: 250px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      #user-name::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      #user-name:focus {
+        outline: none;
+        border-color: #e9ba74;
+        box-shadow: 0 0 0 3px rgba(233, 186, 116, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      #save-name-btn {
+        background: linear-gradient(135deg, #8b7355, #6f4c3e);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.75rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      #save-name-btn:hover {
+        background: linear-gradient(135deg, #6f4c3e, #5a3d2e);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+      }
+
+      .personalized-welcome {
+        font-size: 1.4rem;
+        color: #e9ba74;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+      }
+
+      #user-name-display {
+        color: #f5f5dc;
+        font-weight: 700;
+      }
+
+      .change-name-link {
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+      }
+
+      .change-name-link:hover {
+        color: #e9ba74;
+      }
+
+      /* Navigation Dropdown Styling */
+      .main-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .nav-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-btn {
+        background: linear-gradient(135deg, #6f4c3e, #8b7355);
+        color: white;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .dropdown-btn:hover {
+        background: linear-gradient(135deg, #5a3d2e, #6f4c3e);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.95);
+        min-width: 200px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 0.5rem;
+      }
+
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+        border-radius: 6px;
+        margin: 4px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: rgba(139, 115, 85, 0.1);
+        color: #6f4c3e;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .feature {
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .feature p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .hero p {
+          font-size: 1.1rem;
+        }
+
+        .portal-card {
+          padding: 2rem;
+        }
+
+        .main-content {
+          padding: 0 1rem 2rem;
+        }
+
+        .name-input-container {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        #user-name {
+          min-width: 200px;
+          font-size: 0.9rem;
+        }
+
+        #save-name-btn {
+          padding: 0.6rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        .personalized-welcome {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Name Input JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const nameInputForm = document.getElementById('name-input-form');
+        const personalizedGreeting = document.getElementById('personalized-greeting');
+        const userNameInput = document.getElementById('user-name');
+        const saveNameBtn = document.getElementById('save-name-btn');
+        const changeNameBtn = document.getElementById('change-name-btn');
+        const userNameDisplay = document.getElementById('user-name-display');
+        
+        // Check if user name is already stored
+        const storedName = localStorage.getItem('cosmosUserName');
+        if (storedName) {
+          showPersonalizedGreeting(storedName);
+        }
+        
+        // Save name functionality
+        function saveName() {
+          const name = userNameInput.value.trim();
+          if (name && name.length > 0) {
+            localStorage.setItem('cosmosUserName', name);
+            showPersonalizedGreeting(name);
+          }
+        }
+        
+        // Show personalized greeting
+        function showPersonalizedGreeting(name) {
+          userNameDisplay.textContent = name;
+          
+          // Get time-based greeting
+          const hour = new Date().getHours();
+          let timeGreeting = 'Welcome back';
+          if (hour < 12) {
+            timeGreeting = 'Good morning';
+          } else if (hour < 17) {
+            timeGreeting = 'Good afternoon';
+          } else {
+            timeGreeting = 'Good evening';
+          }
+          
+          // Update greeting text
+          const welcomeText = personalizedGreeting.querySelector('.personalized-welcome');
+          welcomeText.innerHTML = `${timeGreeting}, <span id="user-name-display">${name}</span>!`;
+          
+          nameInputForm.style.display = 'none';
+          personalizedGreeting.style.display = 'block';
+          
+          // Store last visit time
+          localStorage.setItem('cosmosLastVisit', new Date().toISOString());
+        }
+        
+        // Show name input form
+        function showNameInput() {
+          nameInputForm.style.display = 'block';
+          personalizedGreeting.style.display = 'none';
+          userNameInput.focus();
+        }
+        
+        // Event listeners
+        saveNameBtn.addEventListener('click', saveName);
+        
+        userNameInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            saveName();
+          }
+        });
+        
+        changeNameBtn.addEventListener('click', function() {
+          localStorage.removeItem('cosmosUserName');
+          userNameInput.value = '';
+          showNameInput();
+        });
+        
+        // Focus on input when form is shown
+        if (!storedName) {
+          userNameInput.focus();
+        }
+      });
+
+      // Dropdown functionality
+      function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.classList.toggle('show');
+      }
+
+      // Close dropdown when clicking outside
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-btn')) {
+          const dropdowns = document.getElementsByClassName('dropdown-content');
+          for (let i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove('show');
+          }
+        }
+      }
+    </script>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Cosmos in the Classroom</h1>
+        
+        <!-- Personalized Greeting Section -->
+        <div id="greeting-section">
+          <div id="name-input-form">
+            <p>Welcome to your physics journey!</p>
+            <div class="name-input-container">
+              <input 
+                type="text" 
+                id="user-name" 
+                placeholder="Enter your name"
+                maxlength="50"
+              >
+              <button id="save-name-btn">Let's Begin</button>
+            </div>
+          </div>
+          
+          <div id="personalized-greeting" style="display: none;">
+            <p class="personalized-welcome">
+              Welcome back, <span id="user-name-display"></span>!
+            </p>
+            <button id="change-name-btn" class="change-name-link">Change name</button>
+          </div>
+        </div>
+        
+        <p>Explore the universe through interactive physics learning. From ancient measurements to modern technology, discover the story of physics through engaging phenomena and hands-on problem solving.</p>
+        <p class="hero-subtitle">Following the wisdom of Socrates: "The only true wisdom is in knowing you know nothing" — begin your journey of inquiry into the fundamental laws of nature.</p>
+        
+        <!-- Main Navigation -->
+        <div class="main-nav">
+          <a href="/src/portal/index.html" class="cta-button">
+            🚀 Enter Learning Portal
+          </a>
+          <a href="/src/ref/ref_socrates_program/" class="cta-button socratic-link">
+            🏛️ Explore Socratic Learning
+          </a>
+          
+          <!-- Additional Options Dropdown -->
+          <div class="nav-dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()">
+              ⚙️ More Options
+            </button>
+            <div class="dropdown-content" id="dropdown-menu">
+              <a href="/src/ref/ref_lib.html">📖 Reference Library</a>
+              <a href="/Consequence Engine/consequenceegine.html">📈 Success Tools</a>
+              <a href="/src/portal/hphysics/portal.html">🏆 Honors Physics</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="main-content">
+      <div class="portal-card">
+        <h2>Your Physics Journey Awaits</h2>
+        <p>Access your courses, track your progress, and explore the fundamental laws that govern our universe through our interactive learning portal.</p>
+        <p class="socratic-quote">"The unexamined life is not worth living" — Socrates<br>
+        <em>Embrace inquiry, question assumptions, and discover truth through systematic investigation.</em></p>
+        <a href="/src/portal/index.html" class="btn btn-primary">Access Full Portal</a>
+        <a href="/src/portal/hphysics/portal.html" class="btn btn-secondary">Go Directly to Honors Physics</a>
+        <a href="/src/ref/ref_socrates_program/" class="btn btn-socratic">Socratic Learning Method</a>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🏛️</div>
+          <h4>Socratic Method</h4>
+          <p>Learn through guided questioning and discovery, following the ancient Greek tradition of seeking truth through inquiry.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h4>Track Your Progress</h4>
+          <p>Monitor your learning journey through each unit and celebrate your achievements.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🧪</div>
+          <h4>Interactive Learning</h4>
+          <p>Engage with real-world phenomena and solve problems that shaped history.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌟</div>
+          <h4>Comprehensive Content</h4>
+          <p>From measurements to electromagnetism, explore all aspects of physics.</p>
+        </div>
+      </div>
+
+      <div class="course-grid">
+        <div class="course-preview">
+          <h3>�️ Socratic Learning Program</h3>
+          <p>Embrace the classical tradition of learning through inquiry, questioning, and guided discovery in the spirit of ancient Greek philosophy.</p>
+          <div class="course-stats">
+            <span>🤔 Inquiry</span>
+            <span>❓ Questions</span>
+            <span>💡 Discovery</span>
+          </div>
+          <a href="/src/ref/ref_socrates_program/" class="btn btn-primary">Begin Inquiry</a>
+        </div>
+
+        <div class="course-preview">
+          <h3>�🏆 The Story of Physics</h3>
+          <p>Honors Physics course exploring universal laws through historical phenomena and modern applications.</p>
+          <div class="course-stats">
+            <span>📚 10 Units</span>
+            <span>⏱️ 180 Days</span>
+            <span>🎯 4 Quarters</span>
+          </div>
+          <a href="/src/portal/hphysics/portal.html" class="btn btn-primary">Start Course</a>
+        </div>
+
+        <div class="course-preview">
+          <h3>📖 Reference Library</h3>
+          <p>Access equations, constants, derivations, and supporting materials for all physics concepts.</p>
+          <div class="course-stats">
+            <span>📋 Equations</span>
+            <span>🔬 Labs</span>
+            <span>📐 Tools</span>
+          </div>
+          <a href="/src/ref/ref_lib.html" class="btn btn-primary">Browse Library</a>
+        </div>
+
+        <div class="course-preview">
+          <h3>⚙️ Success Tools</h3>
+          <p>Strategic guidance and success criteria to help you excel in your physics studies.</p>
+          <div class="course-stats">
+            <span>📈 Strategies</span>
+            <span>✅ Criteria</span>
+            <span>🎯 Goals</span>
+          </div>
+          <a href="/Consequence Engine/consequenceegine.html" class="btn btn-primary">Get Guidance</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

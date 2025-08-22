@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resilience & Trust</title>
+    <!-- Use the Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family for a modern look -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Dark background */
+            color: #e2e8f0;
+        }
+        .container-card {
+            background-color: #2d3748; /* Slightly lighter card background */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .start-button {
+            background-color: #38bdf8; /* Sky blue */
+            color: #1a202c;
+            transition: background-color 0.2s;
+        }
+        .start-button:hover {
+            background-color: #0ea5e9; /* Darker sky blue */
+        }
+    </style>
+</head>
+<body class="p-6 lg:p-12 flex items-center justify-center min-h-screen">
+
+    <main class="max-w-4xl w-full mx-auto container-card rounded-2xl p-8 lg:p-12 space-y-8">
+
+        <!-- Title Section -->
+        <header class="text-center">
+            <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-2 text-white">
+                Welcome, City Planner!
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 font-medium">
+                Your community is counting on you.
+            </p>
+        </header>
+
+        <!-- Game Objective Section -->
+        <section class="prose max-w-none text-gray-300">
+            <h2 class="text-2xl font-bold mb-4 text-white">The Game's Objective</h2>
+            <p class="mb-4">
+                In this simulation, you are responsible for managing a community's <strong>resilience</strong> and <strong>public trust</strong>. A disaster has struck, and your job is to propose solutions to mitigate the damage and strengthen the city against future events.
+            </p>
+            <p>
+                Your final score will be a combination of how well your solutions improve both these variables:
+            </p>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+                <li><strong class="text-blue-400">Resilience:</strong> The physical ability of your town to withstand and recover from a disaster. This includes structural integrity, operational functionality, and resource availability.</li>
+                <li><strong class="text-purple-400">Trust:</strong> The faith your citizens have in their leaders and institutions. A high trust score means citizens feel safe, informed, and confident in the community's future.</li>
+            </ul>
+        </section>
+        
+        <!-- Game Mechanics Section -->
+        <section class="prose max-w-none text-gray-300">
+            <h2 class="text-2xl font-bold mb-4 text-white">How to Play</h2>
+            <p class="mb-4">
+                The game follows a simple three-step process:
+            </p>
+            <ol class="list-decimal list-inside space-y-2 ml-4">
+                <li><strong>Choose Your Town:</strong> Select a community and read about its unique characteristics and vulnerabilities.</li>
+                <li><strong>Face a Disaster:</strong> A random disaster will occur, impacting your town's resilience and trust scores.</li>
+                <li><strong>Propose Solutions:</strong> You will be presented with a list of solutions. Each solution has a **cost** and will improve your town's scores in different ways. Choose wisely to rebuild your community.</li>
+            </ol>
+            <p class="mt-4">
+                Be aware of **random modifiers**! After you propose a solution, a chance event might occur—like a labor strike or an unexpected state investment—that will alter the final outcome of your choice.
+            </p>
+        </section>
+
+        <!-- Your Roles Section -->
+        <section class="prose max-w-none text-gray-300">
+            <h2 class="text-2xl font-bold mb-4 text-white">Your Roles</h2>
+            <p class="mb-4">
+                You will act as a combination of three critical roles to make your decisions:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-gray-700 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">The Scientist</h3>
+                    <p class="text-sm mt-1 text-gray-400">Analyzes data and understands the fundamental forces at play, predicting potential disasters.</p>
+                </div>
+                <div class="p-4 bg-gray-700 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">The Engineer</h3>
+                    <p class="text-sm mt-1 text-gray-400">Translates scientific data into practical design solutions and builds resilient infrastructure.</p>
+                </div>
+                <div class="p-4 bg-gray-700 rounded-lg">
+                    <h3 class="font-semibold text-lg text-white">The Policymaker</h3>
+                    <p class="text-sm mt-1 text-gray-400">Creates and implements plans and campaigns to protect the public and rebuild community trust.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Start Button -->
+        <div class="pt-4 text-center">
+            <a href="run.html">
+                <button class="start-button py-3 px-8 rounded-lg font-semibold text-lg">
+                    Start Your Planning
+                </button>
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>

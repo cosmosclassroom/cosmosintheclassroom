@@ -1,0 +1,187 @@
+{
+  "structureId": "forecast-blueprint-reflection",
+  "name": "Forecast-Blueprint-Reflection",
+  "description": "Classic three-part structure for predictive investigation and analysis",
+  "parts": [
+    {
+      "partId": "part1",
+      "name": "Forecast",
+      "description": "Predict what will happen and why",
+      "color": "#8B5CF6",
+      "icon": "crystal-ball",
+      "elements": [
+        {
+          "elementId": "prediction",
+          "title": "Initial Predictions",
+          "type": "prediction",
+          "ngssTag": "practices",
+          "fields": [
+            {
+              "fieldId": "what-will-happen",
+              "label": "What do you predict will happen?",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 75,
+                "maxLength": 500
+              }
+            },
+            {
+              "fieldId": "reasoning",
+              "label": "What evidence or reasoning supports your prediction?",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 50,
+                "maxLength": 400
+              }
+            }
+          ]
+        }
+      ],
+      "expectedDuration": 15
+    },
+    {
+      "partId": "part2",
+      "name": "Blueprint",
+      "description": "Design and execute your investigation plan",
+      "color": "#0EA5E9",
+      "icon": "blueprint",
+      "elements": [
+        {
+          "elementId": "design-plan",
+          "title": "Investigation Design",
+          "type": "hypothesis-formation",
+          "ngssTag": "practices",
+          "fields": [
+            {
+              "fieldId": "methodology",
+              "label": "How will you test your prediction?",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 100,
+                "maxLength": 600
+              }
+            },
+            {
+              "fieldId": "variables",
+              "label": "What variables will you measure or control?",
+              "type": "structured-list",
+              "required": true
+            }
+          ]
+        },
+        {
+          "elementId": "data-collection",
+          "title": "Data Collection",
+          "type": "data-collection",
+          "ngssTag": "practices",
+          "dependencies": ["design-plan"],
+          "fields": [
+            {
+              "fieldId": "observations",
+              "label": "Record your observations and data",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 100
+              }
+            },
+            {
+              "fieldId": "data-table",
+              "label": "Upload data table or measurements",
+              "type": "file-upload",
+              "required": false
+            }
+          ]
+        }
+      ],
+      "expectedDuration": 35
+    },
+    {
+      "partId": "part3",
+      "name": "Reflection",
+      "description": "Analyze results and reflect on learning",
+      "color": "#10B981",
+      "icon": "mirror",
+      "elements": [
+        {
+          "elementId": "analysis",
+          "title": "Results Analysis",
+          "type": "analysis",
+          "ngssTag": "crosscutting",
+          "dependencies": ["prediction", "data-collection"],
+          "fields": [
+            {
+              "fieldId": "results-summary",
+              "label": "What were your key findings?",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 75,
+                "maxLength": 600
+              }
+            },
+            {
+              "fieldId": "prediction-accuracy",
+              "label": "How accurate was your initial prediction?",
+              "type": "text-short",
+              "required": true
+            }
+          ]
+        },
+        {
+          "elementId": "reflection",
+          "title": "Learning Reflection",
+          "type": "reflection",
+          "ngssTag": "metacognitive",
+          "dependencies": ["analysis"],
+          "fields": [
+            {
+              "fieldId": "learning-insights",
+              "label": "What did you learn from this investigation?",
+              "type": "text-long",
+              "required": true,
+              "validation": {
+                "minLength": 100,
+                "maxLength": 800
+              }
+            },
+            {
+              "fieldId": "future-questions",
+              "label": "What questions do you have now?",
+              "type": "structured-list",
+              "required": false
+            }
+          ]
+        }
+      ],
+      "expectedDuration": 25
+    }
+  ],
+  "voiceProfile": {
+    "primary": "burke",
+    "secondary": ["feynman"],
+    "tone": "discovery",
+    "complexity": "high-school"
+  },
+  "ngssAlignment": {
+    "practices": ["SEP-1", "SEP-3", "SEP-4", "SEP-7"],
+    "dci": ["varies-by-context"],
+    "crosscutting": ["CCC-1", "CCC-2", "CCC-6"]
+  },
+  "chunkingStrategy": {
+    "enabled": true,
+    "chunkSize": "medium",
+    "breakpoints": ["after-prediction", "between-phases", "before-final-reflection"]
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "author": "Socrates Development Team",
+    "created": "2025-08-22T00:00:00Z",
+    "tags": ["prediction", "investigation", "reflection"],
+    "difficulty": "beginner",
+    "estimatedTime": 75
+  }
+}
