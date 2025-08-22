@@ -1,3 +1,11 @@
+## August 22, 2025 – Directory Reconfiguration
+
+- Confirmed top-level organization for major subjects: `physics/`, `natural-disasters/`, and future `biology/` directories are parallel at root
+- Archived legacy homepage HTML files to `physics/shared/archive/`
+- Centralized curriculum design and planning documents in `src/docs/`
+- Relocated research brief examples to `src/socrates/`
+- Updated navigation and cross-references to reflect new locations
+
 # Cosmos in the Classroom
 
 Educational physics platform by Jonathan Corbett - Structured curricula with AI-enhanced content extraction.
@@ -12,6 +20,23 @@ Modern physics education for high school students (Honors & Standard levels) usi
 
 ## 🏗️ **Structure** (Post-August 2025 Reorganization)
 ```
+
+## Curriculum Organization
+
+- Each major subject area (e.g., physics, natural-disasters, biology) is a top-level directory.
+- Each subject contains its own units, lessons, labs, assessments, and resources.
+- Shared resources and themes are organized within each subject’s `shared/` directory.
+- Core engines and portal systems live in `src/` (not in subject directories).
+
+**Example:**
+```
+cosmosintheclassroom/
+├── physics/
+├── natural-disasters/
+├── biology/
+├── src/
+```
+
 physics/
 ├── honors/units/       # 10 units: Principles → Optics
 ├── standard/units/     # Parallel accessible curriculum  
@@ -99,3 +124,20 @@ src/
 - See `MINUTES.md` for ongoing project updates and decisions
 - Course-specific documentation in each `physics/*/` directory
 - Migration history preserved in `physics/shared/archive/`
+
+## Configuration & Customizability
+
+Cosmos in the Classroom uses key-value pair configuration files (JSON/YAML) to enable flexible customization for:
+
+- **Portal:** User preferences (theme, font size, navigation bookmarks).
+- **Socrates Engine:** AI assistant settings (response length, feedback mode).
+- **Chunker Engine:** Content chunking parameters (chunk size, overlap).
+- **Library:** Feature toggles and resource management.
+
+### How It Works
+
+- Default settings are stored in config files.
+- User-specific settings are merged at runtime (localStorage or database).
+- All major systems read their configuration from these files for easy updates and personalization.
+
+See `config/` directory for examples and documentation.

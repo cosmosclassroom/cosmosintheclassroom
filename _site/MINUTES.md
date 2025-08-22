@@ -1,6 +1,42 @@
+## August 22, 2025 – Curriculum Directory Reconfiguration & File Moves
+
+- Archived legacy homepage HTML files to `physics/shared/archive/`
+    - `index_mockup.html`
+    - `index_original.html`
+    - `index_current_backup.html`
+    - `index_complex_backup.html`
+- Centralized curriculum design and planning documents in `src/docs/`
+    - `PORTAL_REDESIGN_PROPOSAL.md`
+    - `HOMEPAGE_OPTIMIZATION.md`
+    - `HOMEPAGE_SIMPLIFICATION.md`
+    - `IMPLEMENTATION_SUMMARY.md`
+- Relocated research brief examples to `src/socrates/`
+    - `RESEARCH_BRIEF_EXAMPLES.md`
+- Confirmed top-level organization for major subjects:
+    - `physics/`, `natural-disasters/`, and future `biology/` directories are parallel at root
+- Updated navigation and cross-references to reflect new locations
+- All changes documented for maintainability and future expansion
+
 # Project Minutes - Cosmos in the Classroom
 
 ## Meeting Notes & Project Updates
+
+---
+
+## August 22, 2025 – Key-Value Config System Adopted
+
+- Key-value pair configuration implemented for Portal, Socrates engine, Chunker engine, and Library.
+- Enables user customization and feature toggling via config files (JSON/YAML).
+- Planning and README updated; config structure documented.
+- Next: Integrate config loading in all modules and update docs.
+
+---
+
+## August 22, 2025 – Miscellanea Files Migration
+
+- Miscellanea `.md` files not yet moved to `library/` as planned.
+- Action: Locate and transfer all relevant miscellanea Markdown files into the `library/` directory.
+- Update README and documentation to reflect new file locations.
 
 ---
 

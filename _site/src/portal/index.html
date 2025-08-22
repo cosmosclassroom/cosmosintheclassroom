@@ -23,8 +23,8 @@
                     <a href="/" class="nav-item">Home</a>
                     <a href="/src/portal/" class="nav-item">The Portal</a>
                     <a href="/ref/" class="nav-item">Socrates' Library</a>
-                    <a href="/physics/honors/" class="nav-item">Honors Physics</a>
-                    <a href="/physics/standard/" class="nav-item">Standard Physics</a>
+                    <a href="/physics/honors/portal.html" class="nav-item">Honors Physics</a>
+                    <a href="/physics/standard/portal.html" class="nav-item">Standard Physics</a>
                     <a href="/slides/" class="nav-item">Lesson Slides</a>
                     <a href="/solutions/" class="nav-item">Problem Solutions</a>
                     <a href="#" class="nav-item">Assessment Tools</a>
@@ -58,13 +58,21 @@
         <p class="portal-subtitle">Access your courses, track progress, and continue your physics journey</p>
       </section>
 
+        <!-- Courses Section (for course cards) -->
+        <section id="courses-section" class="course-section">
+          <h2 class="section-title">Your Courses</h2>
+          <div id="course-list" class="course-grid">
+            <div class="loading">Loading courses...</div>
+          </div>
+        </section>
+
+        <!-- Units Section (hidden by default, shown when a course is loaded) -->
+        <section id="units-section" class="units-section" style="display:none;">
+          <h2 id="course-title" class="section-title"></h2>
+          <div id="units-list" class="units-grid"></div>
+        </section>
+
       <!-- Course Section -->
-      <section class="course-section">
-        <h2 class="section-title">Your Courses</h2>
-        <div id="course-list" class="course-grid">
-          <div class="loading">Loading courses...</div>
-        </div>
-      </section>
 
       <!-- Quick Access Section -->
       <section class="quick-access">
@@ -99,43 +107,6 @@
             <div class="quick-icon chart-icon">Assessment</div>
             <div class="quick-title">Assessment Tools</div>
             <div class="quick-desc">Quizzes and practice exercises</div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      &copy; 2024 Cosmos in the Classroom. All rights reserved.
-    </footer>
-
-    <!-- Universal Data Logger -->
-    <script src="./scripts/universal-data-logger.js"></script>
-    
-    <!-- Research Brief Management -->
-    <script src="./scripts/research-brief-manager.js"></script>
-    
-    <!-- Portal Brief Integration -->
-    <script src="./scripts/portal-brief-integration.js"></script>
-    
-    <!-- Portal Manager for Dynamic Course Loading -->
-    <script src="./scripts/portal-manager.js"></script>
-    
-    <!-- Portal Diagnostic Tool -->
-    <script src="./scripts/portal-diagnostic.js"></script>
-    
-    <!-- Personalization and Navigation JavaScript -->
-    <script>
-      // Course data and navigation management
-      let courseData = null;
-      let currentCourse = null;
-
-      // Add fallback logEvent function in case the external script fails to load
-      if (typeof logEvent === 'undefined') {
-        window.logEvent = function(eventType, data) {
-          console.log('Event logged:', eventType, data);
-          // Store in localStorage as fallback
-          const events = JSON.parse(localStorage.getItem('events') || '[]');
-          events.push({
             timestamp: new Date().toISOString(),
             type: eventType,
             data: data
@@ -259,21 +230,19 @@
           // Add theme-specific styling
           const themeClass = course.theme === 'honors' ? 'honors-theme' : 'standard-theme';
           
-          card.innerHTML = `
-            <div class="course-title ${themeClass}">${course.title}</div>
-            <div class="course-desc">${course.desc}</div>
-            <div class="course-progress">
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: ${progress}%"></div>
-              </div>
-              <div class="progress-text">${progress}% Complete (${getCompletedUnits(course.id)} of ${getTotalUnits(course.id)} units)</div>
-            </div>
-            <div class="course-actions">
-              <button class="btn btn-${course.theme}" onclick="loadCourse('${course.id}', '${course.dataFile}')">Enter Course</button>
-              <a href="${course.portalLink}" class="btn secondary">Direct Portal</a>
-              <button class="btn secondary" onclick="viewCourseInfo('${course.id}')">Overview</button>
-            </div>
-          `;
+          card.innerHTML = '<div class="course-title ' + themeClass + '">' + course.title + '</div>' +
+            '<div class="course-desc">' + course.desc + '</div>' +
+            '<div class="course-progress">' +
+              '<div class="progress-bar">' +
+                '<div class="progress-fill" style="width: ' + progress + '%"></div>' +
+              '</div>' +
+              '<div class="progress-text">' + progress + '% Complete (' + getCompletedUnits(course.id) + ' of ' + getTotalUnits(course.id) + ' units)</div>' +
+            '</div>' +
+            '<div class="course-actions">' +
+              '<button class="btn btn-' + course.theme + '" onclick="loadCourse(\'' + course.id + '\', \'' + course.dataFile + '\')">Enter Course</button>' +
+              '<a href="' + course.portalLink + '" class="btn secondary">Direct Portal</a>' +
+              '<button class="btn secondary" onclick="viewCourseInfo(\'' + course.id + '\')">Overview</button>' +
+            '</div>';
           container.appendChild(card);
         });
       }
@@ -341,24 +310,21 @@
             const unitData = getUnitQuarterlyData(unit.unitNumber);
             const card = document.createElement('div');
             card.className = 'course-card';
-            card.innerHTML = `
-              <div class="course-title">
-                Unit ${unit.unitNumber}: ${unit.title}
-                ${isCompleted ? ' ✅' : ''}
-              </div>
-              <div class="course-desc"><strong>Core Idea:</strong> ${unit.coreIdea}</div>
-              <div class="course-desc"><strong>Key Skills:</strong> ${unit.keySkills.join(', ')}</div>
-              <div class="course-desc"><strong>Phenomenon:</strong> ${unit.anchoringPhenomenon}</div>
-              ${unitData ? `<div class="course-desc"><strong>Duration:</strong> ${unitData.days} days</div>` : ''}
-              <div class="course-actions">
-                <button class="btn" onclick="enterUnit(${unit.unitNumber})">Start Unit</button>
-                <button class="btn secondary" onclick="viewUnitDetails(${unit.unitNumber})">Details</button>
-                ${isCompleted ? 
-                  `<button class="btn secondary" onclick="markUnitIncomplete('${currentCourse}', ${unit.unitNumber})">Mark Incomplete</button>` :
-                  `<button class="btn secondary" onclick="markUnitComplete('${currentCourse}', ${unit.unitNumber})">Mark Complete</button>`
-                }
-              </div>
-            `;
+            card.innerHTML = '<div class="course-title">' +
+                'Unit ' + unit.unitNumber + ': ' + unit.title + (isCompleted ? ' ✅' : '') +
+              '</div>' +
+              '<div class="course-desc"><strong>Core Idea:</strong> ' + unit.coreIdea + '</div>' +
+              '<div class="course-desc"><strong>Key Skills:</strong> ' + unit.keySkills.join(', ') + '</div>' +
+              '<div class="course-desc"><strong>Phenomenon:</strong> ' + unit.anchoringPhenomenon + '</div>' +
+              (unitData ? '<div class="course-desc"><strong>Duration:</strong> ' + unitData.days + ' days</div>' : '') +
+              '<div class="course-actions">' +
+                '<button class="btn" onclick="enterUnit(' + unit.unitNumber + ')">Start Unit</button>' +
+                '<button class="btn secondary" onclick="viewUnitDetails(' + unit.unitNumber + ')">Details</button>' +
+                (isCompleted ?
+                  '<button class="btn secondary" onclick="markUnitIncomplete(\'' + currentCourse + '\', ' + unit.unitNumber + ')">Mark Incomplete</button>' :
+                  '<button class="btn secondary" onclick="markUnitComplete(\'' + currentCourse + '\', ' + unit.unitNumber + ')">Mark Complete</button>'
+                ) +
+              '</div>';
             container.appendChild(card);
           });
         });
@@ -367,11 +333,9 @@
         const backCard = document.createElement('div');
         backCard.className = 'course-card';
         backCard.style.borderStyle = 'dashed';
-        backCard.innerHTML = `
-          <div class="course-actions">
-            <button class="btn secondary" onclick="backToCourses()">← Back to Courses</button>
-          </div>
-        `;
+        backCard.innerHTML = '<div class="course-actions">' +
+            '<button class="btn secondary" onclick="backToCourses()">← Back to Courses</button>' +
+          '</div>';
         container.appendChild(backCard);
       }
 

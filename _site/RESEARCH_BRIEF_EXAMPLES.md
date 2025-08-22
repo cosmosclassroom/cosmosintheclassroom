@@ -92,15 +92,6 @@ Once briefs are created, they automatically appear in the portal:
 
 Each brief includes:
 
-- **Summary**: Overview paragraph
-- **Key Questions**: Driving inquiry questions
-- **Historical Context**: Background and development
-- **Mathematical Framework**: Core equations and relationships
-- **Real-World Applications**: Practical connections
-- **Socratic Prompts**: Multi-level questioning for deeper exploration
-- **Assessment Connections**: Links to problem sets and labs
-- **Library Resources**: Related reference materials
-- **Multimedia**: Diagrams, simulations, videos
 
 ## Socratic Questioning Levels
 
@@ -111,16 +102,6 @@ Each brief includes:
 
 ## Integration Points
 
-- **Course Units**: Briefs linked to specific physics units
-- **Concepts**: Tagged with physics concepts for discovery
-- **Assessments**: Connected to problem sets and labs
-- **Library**: Linked to Socrates' Library resources
-- **Search**: Full-text searchable across all content
 
 ## Future Enhancements
 
-- **AI Generation**: Direct Socrates AI integration for brief creation
-- **Collaborative Editing**: Teacher and student contributions
-- **Analytics**: Learning analytics and engagement tracking
-- **Adaptive Recommendations**: Personalized brief suggestions
-- **Assessment Integration**: Dynamic quiz generation from briefs

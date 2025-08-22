@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title> | Cosmos in the Classroom</title>
     
@@ -16,6 +16,103 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <p>Certainly! Here is your customized five-question quiz focusing on Uniform Circular Motion within an accelerating frame such as a rotating space station:</p>
+
+<hr />
+
+<h3 id="quiz-uniform-circular-motion-and-rotating-space-stations">Quiz: Uniform Circular Motion and Rotating Space Stations</h3>
+
+<p><strong>1. Artificial Gravity Calculation</strong></p>
+
+<p><strong>Question: What should be the angular velocity (ω) of a rotating space station section with radius ( r=25m) to produce an artificial gravity equivalent to Earth’s gravitational acceleration?</strong></p>
+<ul>
+  <li>A) 0.50 rad/s</li>
+  <li>B) 0.63 rad/s</li>
+  <li>C) 1.00 rad/s</li>
+  <li>D) 2.00 rad/s</li>
+</ul>
+
+<p><strong>Correct Answer: (B)</strong></p>
+
+<hr />
+
+<p><strong>2. Tangential Velocity Calculation</strong></p>
+
+<p><strong>Question: What is the required tangential velocity to match Earth’s gravity for a rotating space station section with radius (r=25m)?</strong></p>
+<ul>
+  <li>A) 10.00 m/s</li>
+  <li>B) 12.50 m/s</li>
+  <li>C) 15.71 m/s</li>
+  <li>D) 20.00 m/s</li>
+</ul>
+
+<p><strong>Correct Answer: (C)</strong></p>
+
+<hr />
+
+<p><strong>3. Centripetal Acceleration Calculation</strong></p>
+
+<p><strong>Question: What is the required centripetal acceleration for an artificial gravity matching Earth’s gravitational force at (r=25m)?</strong></p>
+<ul>
+  <li>A) 5.00 m/s^2</li>
+  <li>B) 7.50 m/s^2</li>
+  <li>C) 9.80 m/s^2</li>
+  <li>D) 12.50 m/s^2</li>
+</ul>
+
+<p><strong>Correct Answer: (C)</strong></p>
+
+<hr />
+
+<p><strong>4. Rotational Period Calculation</strong></p>
+
+<p><strong>Question: How long is the rotational cycle of a space station section with radius (r=25m) to simulate Earth’s gravity?</strong></p>
+<ul>
+  <li>A) About 5 seconds</li>
+  <li>B) Exactly 7 seconds</li>
+  <li>C) Approximately 9.54 seconds</li>
+  <li>D) Roughly 10 s</li>
+</ul>
+
+<p><strong>Correct Answer: (D)</strong></p>
+
+<hr />
+
+<p><strong>5. Rotational Kinetic Energy Calculation</strong></p>
+
+<p><strong>Question: What is the rotational kinetic energy of a rotating space station section with mass (m=1000kg), radius ((r=25 m)) and angular velocity (ω) approximately equal to Earth’s gravity?</strong></p>
+<ul>
+  <li>A) About 15.63 kJ</li>
+  <li>B) Approximately 61.24 kJ</li>
+  <li>C) Roughly 62,500 J (or about 68.03 kg*m^2/s^2)</li>
+  <li>D) Nearly 25000 W</li>
+</ul>
+
+<p><strong>Correct Answer: (B)</strong></p>
+
+      </div>  
+  </body>
+=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -45,10 +142,140 @@
   <body>
     <header>
       <div class="site-header">
-        <!-- <header class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -225,6 +452,7 @@
     background-color: var(--accent-color);
   } */ */
 </style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
 
       </div>
     </header>
@@ -308,6 +536,7 @@
     
     </div>
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -324,7 +553,10 @@
         });
     </script>
     
+<<<<<<< HEAD
+=======
 
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

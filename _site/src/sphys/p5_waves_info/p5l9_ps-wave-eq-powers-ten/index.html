@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title>Wave Equation Practice Problems | Cosmos in the Classroom</title>
     
@@ -16,6 +16,113 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <h1 id="wave-equation-practice-problems">Wave Equation Practice Problems</h1>
+
+<p>The general wave equation relates the velocity, ($v$), frequency ($f$), and wavelength ($\lambda$) of a wave:</p>
+
+\[v = f \cdot \lambda\]
+
+<p>For electromagnetic waves (in a vaccuum), the speed of light is constant (given as $c = 3.0 \times 10^8 \, m/s$) and the equation becomes:</p>
+
+\[c = f \cdot \lambda\]
+
+<p>Use these equation to solve the following problems. Express your answers in scientific notation where appropriate.</p>
+
+<p><strong>Problems:</strong></p>
+
+<ol>
+  <li>
+    <p>A wave has a frequency of $2.5 \times 10^3$ Hz and a wavelength of $0.4$ meters. What is the speed of the wave?</p>
+  </li>
+  <li>
+    <p>A sound wave travels at a speed of 343 m/s and has a frequency of 500 Hz. What is its wavelength?</p>
+  </li>
+  <li>
+    <p>A radio wave has a wavelength of 300 meters and travels at the speed of light. What is the frequency of the radio wave?</p>
+  </li>
+  <li>
+    <p>A wave on a string has a speed of 50 m/s and a wavelength of 2.0 meters. What is the frequency of the wave?</p>
+  </li>
+  <li>
+    <p>An electromagnetic wave has a frequency of 100 MHz. What is its wavelength in a vacuum?</p>
+  </li>
+  <li>
+    <p>A wave has a wavelength of $5.0 \times 10^{-7}$ meters and a speed of $3.0 \times 10^8$ m/s. What is its frequency?</p>
+  </li>
+  <li>
+    <p>A sound wave in water has a frequency of 1 kHz and a wavelength of 1.43 meters. What is the speed of sound in water?</p>
+  </li>
+  <li>
+    <p>A seismic wave travels at a speed of $7.2 \times 10^3$ m/s and has a frequency of 20 Hz. What is its wavelength?</p>
+  </li>
+  <li>
+    <p>A light wave has a wavelength of 450 nm. What is its frequency in a vacuum?</p>
+  </li>
+  <li>
+    <p>A wave has a speed of $2.0 \times 10^7$ m/s and a frequency of 4.0 MHz. What is its wavelength?</p>
+  </li>
+</ol>
+
+<hr />
+
+<p><strong>Solutions:</strong></p>
+
+<ol>
+  <li>
+    <p>$1.0 \times 10^3 \text{ m/s}$</p>
+  </li>
+  <li>
+    <p>$6.86 \times 10^{-1} \text{ m}$</p>
+  </li>
+  <li>
+    <p>$1.0 \times 10^6 \text{ Hz}$</p>
+  </li>
+  <li>
+    <p>$2.5 \times 10^1 \text{ Hz}$</p>
+  </li>
+  <li>
+    <p>$3.0 \text{ m}$</p>
+  </li>
+  <li>
+    <p>$6.0 \times 10^{14} \text{ Hz}$</p>
+  </li>
+  <li>
+    <p>$1.43 \times 10^3 \text{ m/s}$</p>
+  </li>
+  <li>
+    <p>$3.6 \times 10^2 \text{ m}$</p>
+  </li>
+  <li>
+    <p>$\approx 6.67 \times 10^{14} \text{ Hz}$</p>
+  </li>
+  <li>
+    <p>$5.0 \text{ m}$</p>
+  </li>
+</ol>
+
+      </div>  
+  </body>
+=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -45,10 +152,140 @@
   <body>
     <header>
       <div class="site-header">
-        <!-- <header class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -225,6 +462,7 @@
     background-color: var(--accent-color);
   } */ */
 </style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
 
       </div>
     </header>
@@ -318,6 +556,7 @@
     
     </div>
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -334,7 +573,10 @@
         });
     </script>
     
+<<<<<<< HEAD
+=======
 
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

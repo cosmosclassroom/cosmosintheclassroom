@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Cosmos in the Classroom">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <title> | Cosmos in the Classroom</title>
     
@@ -16,6 +16,130 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
     
+<<<<<<< HEAD
+    <!-- Conditional render: if specified css in markdown, use that stylesheet; else: use style.css-->
+    
+    <link rel="stylesheet" href="/assets/css/worksheets.css" />
+    
+
+  
+  </head>
+  <body>
+    <div class='nav'>
+    
+      <a href="/" class="button">Homepage</a>
+      
+      </div>
+      
+    <div class="navbar">
+      </div>
+    </div>
+    <body>
+      <div class="markdown-body">
+        <!-- These slides were drafted by Ainsworth v1.0 
+
+-->
+
+<h1 id="wave-functions--phenomena">Wave Functions &amp; Phenomena</h1>
+
+<p>A Lecture on the Mathematical Description of Waves</p>
+
+<hr />
+
+<h2 id="wave-functions-the-language-of-motion">Wave Functions: The Language of Motion</h2>
+
+<ul>
+  <li>A wave function, denoted by <em>ψ(x, t)</em>, describes the amplitude of a wave at a specific position <em>x</em> and time <em>t</em>.</li>
+  <li>
+    <p>For a sinusoidal wave traveling in the positive x-direction:</p>
+
+    <p><em>ψ(x, t) = A sin(kx - ωt + φ)</em></p>
+
+    <p>Where:</p>
+    <ul>
+      <li><em>A</em> = Amplitude</li>
+      <li><em>k</em> = Wave number (2π/λ)</li>
+      <li><em>ω</em> = Angular frequency (2πf)</li>
+      <li><em>φ</em> = Phase constant</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="superposition-and-interference">Superposition and Interference</h2>
+
+<ul>
+  <li>The principle of superposition states that when two or more waves overlap, the resultant displacement is the algebraic sum of the individual displacements.</li>
+  <li><strong>Constructive Interference:</strong>  Occurs when waves are in phase, resulting in a larger amplitude.</li>
+  <li>
+    <p><strong>Destructive Interference:</strong> Occurs when waves are out of phase, resulting in a smaller amplitude (or cancellation).</p>
+
+    <p><em>Example: Two waves with the same amplitude and wavelength, but with a phase difference of π/2 will result in destructive interference.</em></p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="diffraction-bending-around-obstacles">Diffraction: Bending Around Obstacles</h2>
+
+<ul>
+  <li>Diffraction is the spreading of waves as they pass through an opening or around an obstacle.</li>
+  <li>The amount of diffraction depends on the wavelength of the wave and the size of the opening/obstacle.</li>
+  <li><em>Larger wavelength relative to the obstacle size = greater diffraction.</em></li>
+</ul>
+
+<hr />
+
+<h2 id="the-doppler-effect-a-change-in-frequency">The Doppler Effect: A Change in Frequency</h2>
+
+<ul>
+  <li>The Doppler effect is the apparent change in frequency of a wave due to the relative motion between the source and the observer.</li>
+  <li><strong>Moving Source:</strong>  The observed frequency is lower than the emitted frequency.</li>
+  <li><strong>Moving Observer:</strong> The observed frequency is higher than the emitted frequency.</li>
+  <li>
+    <hr />
+    <h2 id="calculating-the-doppler-effect">Calculating the Doppler Effect</h2>
+  </li>
+  <li><em>Formula (for sound): f’ = f (v ± vo) / (v ± vs)</em>
+    <ul>
+      <li><em>f’</em> = observed frequency</li>
+      <li><em>f</em> = emitted frequency</li>
+      <li><em>v</em> = speed of sound</li>
+      <li><em>vo</em> = observer’s velocity</li>
+      <li><em>vs</em> = source’s velocity</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="intensity-of-waves">Intensity of Waves</h2>
+
+<ul>
+  <li>Intensity (I) is the power per unit area carried by a wave.</li>
+  <li>For a sinusoidal wave: <em>I ∝ A²</em></li>
+  <li>In simpler terms, the intensity of a wave is proportional to the square of its amplitude.</li>
+  <li><em>Higher amplitude = higher intensity.</em></li>
+</ul>
+
+<hr />
+
+<h2 id="summary">Summary</h2>
+
+<ul>
+  <li>Wave functions provide a mathematical description of wave behavior.</li>
+  <li>Superposition leads to interference (constructive and destructive).</li>
+  <li>Diffraction explains the bending of waves.</li>
+  <li>The Doppler effect alters the perceived frequency.</li>
+  <li>Intensity reflects the wave’s power.</li>
+</ul>
+
+<hr />
+
+      </div>  
+  </body>
+=======
     
     <!-- Highlight.js for code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
@@ -45,10 +169,140 @@
   <body>
     <header>
       <div class="site-header">
-        <!-- <header class="site-header">
+        <!-- _includes/header.html -->
+<header class="site-header">
+    <div class="header-container">
+        <a href="/" class="site-logo">Cosmos in the Classroom</a>
+        <nav class="main-nav">
+            <a href="/src/portal/" class="nav-link">Portal</a>
+            <a href="/src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+            <a href="/src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+            <a href="/ref/" class="nav-link">Library</a>
+            <a href="/about.html" class="nav-link">About</a>
+        </nav>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </div>
+</header>
+
+<style>
+    /* Global Site Header Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .site-header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+
+    .site-logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #2c3e50;
+        text-decoration: none;
+    }
+
+    .main-nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .nav-link {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(52, 152, 219, 0.1);
+        color: #3498db;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+
+        .header-container {
+            padding: 0 1rem;
+        }
+    }
+</style>
+
+    .site-nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 2rem;
+    }
+
+    .site-nav a {
+        font-family: "Libre Baskerville", Georgia, serif;
+        color: #4a4236;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.2s;
+    }
+
+    .site-nav a:hover {
+        color: #7b6340;
+    }
+</style>
+=======
+<!-- <header class="site-header">
   <div
     class="header-content"
-    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+    style="background-image: url('http://localhost:4000/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
   >
     <h1
       class="site-title"
@@ -225,6 +479,7 @@
     background-color: var(--accent-color);
   } */ */
 </style> -->
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
 
       </div>
     </header>
@@ -335,6 +590,7 @@
     
     </div>
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
     
     <!-- Initialize KaTeX rendering -->
     <script>
@@ -351,7 +607,10 @@
         });
     </script>
     
+<<<<<<< HEAD
+=======
 
     
+>>>>>>> dc5a0029036a026be2d39707af0287e3daccba02
   </body>
 </html>

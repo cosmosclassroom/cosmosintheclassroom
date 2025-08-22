@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratatoskr - Progress Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Floating Ratatoskr Widget */
+        .ratatoskr-widget {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 3px solid #D2691E;
+        }
+
+        .ratatoskr-widget:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+
+        .ratatoskr-icon {
+            font-size: 28px;
+            color: #FFE4B5;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Expanded Progress Panel */
+        .progress-panel {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            width: 320px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            transform: translateX(350px);
+            transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            z-index: 999;
+            overflow: hidden;
+        }
+
+        .progress-panel.visible {
+            transform: translateX(0);
+        }
+
+        .panel-header {
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            color: white;
+            padding: 15px 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .panel-content {
+            padding: 20px;
+        }
+
+        .current-time {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Progress Bar Container */
+        .daily-progress {
+            margin-bottom: 25px;
+        }
+
+        .progress-label {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #8BC34A);
+            border-radius: 6px;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Chunk Display */
+        .chunks-container {
+            display: grid;
+            gap: 10px;
+        }
+
+        .chunk {
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .chunk.completed {
+            background: #e8f5e8;
+            border-color: #4CAF50;
+            color: #2E7D32;
+        }
+
+        .chunk.current {
+            background: #fff3e0;
+            border-color: #FF9800;
+            color: #E65100;
+            box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+        }
+
+        .chunk.upcoming {
+            background: #f3e5f5;
+            border-color: #9C27B0;
+            color: #6A1B9A;
+        }
+
+        .chunk-time {
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        .chunk-title {
+            flex: 1;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        .chunk-status {
+            font-size: 18px;
+        }
+
+        /* Demo Background Content */
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .demo-content h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .demo-content p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .progress-panel {
+                width: calc(100vw - 40px);
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Ratatoskr Widget -->
+    <div class="ratatoskr-widget" onclick="togglePanel()">
+        <div class="ratatoskr-icon">🐿️</div>
+    </div>
+
+    <!-- Expandable Progress Panel -->
+    <div class="progress-panel" id="progressPanel">
+        <div class="panel-header">
+            <span>🌳</span>
+            <span>Ratatoskr's Journey</span>
+        </div>
+        <div class="panel-content">
+            <div class="current-time" id="currentTime">8:42 AM</div>
+            
+            <div class="daily-progress">
+                <div class="progress-label">
+                    <span>Daily Progress</span>
+                    <span id="progressPercent">32%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 32%"></div>
+                </div>
+            </div>
+
+            <div class="chunks-container" id="chunksContainer">
+                <!-- Chunks will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <h1>Welcome to Ratatoskr</h1>
+        <p>This floating widget represents your academic progress tracker, inspired by the Norse squirrel who carries messages between the roots and crown of Yggdrasil.</p>
+        <p>Click the squirrel icon in the top right to see your daily chunk progression. The widget shows your current position in the academic day, with completed tasks in green, your current focus in orange, and upcoming chunks in purple.</p>
+        <p>The progress bar fills throughout the day, and the shimmer effect represents Ratatoskr scurrying along the tree of time, carrying your academic progress from root to branch.</p>
+        <p>This prototype demonstrates the core concept - a non-intrusive floating widget that expands to show detailed progress when needed. The real version would integrate with your WeekCentricChunkerEngine to display actual curriculum data.</p>
+    </div>
+
+    <script>
+        let panelVisible = false;
+        let currentChunkIndex = 1;
+
+        // Sample chunk data - in real app this comes from WeekCentricChunkerEngine
+        const sampleChunks = [
+            { id: 1, title: "Kinematic Equations Review", time: "8:15-8:30", status: "completed" },
+            { id: 2, title: "Projectile Motion Lab Setup", time: "8:30-8:45", status: "current" },
+            { id: 3, title: "Vector Decomposition Practice", time: "8:45-9:00", status: "upcoming" },
+            { id: 4, title: "Historical Context: Cannons", time: "9:00-9:15", status: "upcoming" }
+        ];
+
+        function togglePanel() {
+            const panel = document.getElementById('progressPanel');
+            panelVisible = !panelVisible;
+            
+            if (panelVisible) {
+                panel.classList.add('visible');
+                updateChunks();
+            } else {
+                panel.classList.remove('visible');
+            }
+        }
+
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { 
+                hour: 'numeric', 
+                minute: '2-digit',
+                hour12: true 
+            });
+            document.getElementById('currentTime').textContent = timeString;
+        }
+
+        function updateProgress() {
+            // Simulate progress based on time of day
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const totalMinutes = (hours * 60) + minutes;
+            
+            // School day from 8:00 AM to 3:00 PM (7 hours = 420 minutes)
+            const schoolStart = 8 * 60; // 8:00 AM in minutes
+            const schoolEnd = 15 * 60;   // 3:00 PM in minutes
+            
+            let progressPercent = 0;
+            if (totalMinutes >= schoolStart && totalMinutes <= schoolEnd) {
+                progressPercent = Math.round(((totalMinutes - schoolStart) / (schoolEnd - schoolStart)) * 100);
+            } else if (totalMinutes > schoolEnd) {
+                progressPercent = 100;
+            }
+            
+            progressPercent = Math.min(Math.max(progressPercent, 0), 100);
+            
+            document.getElementById('progressPercent').textContent = `${progressPercent}%`;
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+            
+            // Update current chunk based on progress
+            const chunkIndex = Math.floor((progressPercent / 100) * sampleChunks.length);
+            updateCurrentChunk(chunkIndex);
+        }
+
+        function updateCurrentChunk(newIndex) {
+            if (newIndex !== currentChunkIndex && newIndex < sampleChunks.length) {
+                // Update chunk statuses
+                sampleChunks.forEach((chunk, index) => {
+                    if (index < newIndex) {
+                        chunk.status = 'completed';
+                    } else if (index === newIndex) {
+                        chunk.status = 'current';
+                    } else {
+                        chunk.status = 'upcoming';
+                    }
+                });
+                
+                currentChunkIndex = newIndex;
+                if (panelVisible) {
+                    updateChunks();
+                }
+            }
+        }
+
+        function updateChunks() {
+            const container = document.getElementById('chunksContainer');
+            container.innerHTML = '';
+            
+            sampleChunks.forEach(chunk => {
+                const chunkElement = document.createElement('div');
+                chunkElement.className = `chunk ${chunk.status}`;
+                
+                const statusIcon = chunk.status === 'completed' ? '✅' : 
+                                 chunk.status === 'current' ? '⏳' : '⏰';
+                
+                chunkElement.innerHTML = `
+                    <div class="chunk-time">${chunk.time}</div>
+                    <div class="chunk-title">${chunk.title}</div>
+                    <div class="chunk-status">${statusIcon}</div>
+                `;
+                
+                container.appendChild(chunkElement);
+            });
+        }
+
+        // Close panel when clicking outside
+        document.addEventListener('click', (e) => {
+            const panel = document.getElementById('progressPanel');
+            const widget = document.querySelector('.ratatoskr-widget');
+            
+            if (panelVisible && !panel.contains(e.target) && !widget.contains(e.target)) {
+                togglePanel();
+            }
+        });
+
+        // Initialize
+        updateTime();
+        updateProgress();
+        
+        // Update every minute
+        setInterval(() => {
+            updateTime();
+            updateProgress();
+        }, 60000);
+
+        // Update time more frequently for smooth display
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Honors Physics Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/cosmos-theme.css">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; margin: 0; background: #f9f9f6; color: #333; }
+    .progress-bar { width: 100%; height: 18px; background: #e0e0e0; border-radius: 9px; margin: 1rem 0; overflow: hidden; }
+    .progress-fill { height: 100%; background: #3b82f6; border-radius: 9px; transition: width 0.4s; }
+    .layout { display: flex; gap: 2rem; }
+    .nav-col { min-width: 220px; background: #fff; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 1rem; }
+    .nav-col h2 { font-size: 1.1rem; margin-top: 0; }
+    .nav-list { list-style: none; padding: 0; margin: 0; }
+    .nav-list li { margin: 0.5rem 0; }
+    .nav-list a { color: #3b82f6; text-decoration: none; }
+    .main-content { flex: 1; }
+    .unit-card { background: #fff; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 1.5rem; padding: 1rem; }
+    .unit-title { font-size: 1.2rem; color: #1e293b; margin: 0; }
+    .unit-desc { color: #64748b; font-size: 0.95rem; margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>Honors Physics</h1>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+  <div class="layout">
+    <nav class="nav-col">
+      <h2>Units</h2>
+      <ul class="nav-list" id="unitNav"></ul>
+    </nav>
+    <main class="main-content" id="mainContent"></main>
+  </div>
+  <script>
+    async function loadCourse() {
+      const response = await fetch('course.json');
+      const course = await response.json();
+      const units = course.units || [];
+      const unitNav = document.getElementById('unitNav');
+      const mainContent = document.getElementById('mainContent');
+      unitNav.innerHTML = '';
+      mainContent.innerHTML = '';
+      let completed = 0;
+      units.forEach((unit, idx) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="#" onclick="showUnit(${idx});return false;">${unit.unitName}</a>`;
+        unitNav.appendChild(li);
+        // Progress calculation (placeholder: mark first unit as complete)
+        if(idx === 0) completed++;
+      });
+      document.getElementById('progressFill').style.width = `${Math.round((completed/units.length)*100)}%`;
+      showUnit(0);
+    }
+    function showUnit(idx) {
+      fetch('course.json').then(r=>r.json()).then(course => {
+        const unit = course.units[idx];
+        const mainContent = document.getElementById('mainContent');
+        let html = `<div class="unit-card"><h2 class="unit-title">${unit.unitName}</h2><div class="unit-desc">${unit.description}</div><ul>`;
+        unit.chapters.forEach(ch => {
+          html += `<li><strong>${ch.chapterName}</strong> - <a href='${ch.flexbookPath}' target='_blank'>Flexbook</a> | <a href='${ch.slidesPath}' target='_blank'>Slides</a> | <a href='${ch.notesPath}' target='_blank'>Notes</a> | <a href='${ch.briefsPath}' target='_blank'>Brief</a></li>`;
+        });
+        html += '</ul></div>';
+        mainContent.innerHTML = html;
+      });
+    }
+    loadCourse();
+  </script>
+</body>
+</html>
