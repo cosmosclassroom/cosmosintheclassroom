@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Group 3: Quantum Optics and Modern Physics | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <h1 id="group-3-quantum-optics-and-modern-physics">Group 3: Quantum Optics and Modern Physics</h1>
+<p>This group addresses the particle nature of light and related concepts:</p>
+
+<p>Photon energy (E = hf = hc/λ)
+Einstein’s equation (E = mc²)
+Planck’s constant (h = 6.63 × 10⁻³⁴ J·s)
+Wave-particle duality (combining E = hf with c = λf)</p>
+
+<p>Learning focus: Understanding the quantum nature of light, photon energy, and connections to modern physics.</p>
+
+<h2 id="problem-set-103-quantum-optics-and-modern-physics">Problem Set 10.3: Quantum Optics and Modern Physics</h2>
+
+<h3 id="basic-problems">Basic Problems</h3>
+
+<ol>
+  <li>
+    <p><strong>Photon Energy Calculation</strong><br />
+Calculate the energy of a single photon of green light with a wavelength of 550 nm.</p>
+  </li>
+  <li>
+    <p><strong>Frequency Determination</strong><br />
+If a photon has an energy of 3.0 × 10⁻¹⁹ J, what is its frequency?</p>
+  </li>
+  <li>
+    <p><strong>Energy-Wavelength Relationship</strong><br />
+X-rays have wavelengths around 0.1 nm. Calculate the energy of an X-ray photon.</p>
+  </li>
+  <li>
+    <p><strong>Basic Mass-Energy Conversion</strong><br />
+Using Einstein’s equation, calculate the energy equivalent of 1 gram of matter.</p>
+  </li>
+</ol>
+
+<h3 id="intermediate-problems">Intermediate Problems</h3>
+
+<ol>
+  <li>
+    <p><strong>Photoelectric Effect Analysis</strong><br />
+The work function of sodium is 2.75 eV. If light with a wavelength of 400 nm strikes a sodium surface:
+a) Will electrons be emitted?
+b) If yes, what is the maximum kinetic energy of the emitted electrons?
+(Note: 1 eV = 1.602 × 10⁻¹⁹ J)</p>
+  </li>
+  <li>
+    <p><strong>Photon Count Determination</strong><br />
+A laser pointer emits red light (wavelength 650 nm) with a power of 5 mW. How many photons does it emit per second?</p>
+  </li>
+  <li>
+    <p><strong>Wave-Particle Conversion</strong><br />
+Radio waves with a frequency of 97.1 MHz are detected by a receiver. Determine:
+a) The wavelength of these waves
+b) The energy of a single photon of this radiation</p>
+  </li>
+  <li>
+    <p><strong>Solar Cell Physics</strong><br />
+A solar cell receives sunlight with an intensity of 1000 W/m². If the average wavelength of sunlight is 550 nm, how many photons strike each square meter of the cell per second?</p>
+  </li>
+</ol>
+
+<h3 id="challenge-problems">Challenge Problems</h3>
+
+<ol>
+  <li>
+    <p><strong>Compton Effect Calculation</strong><br />
+An X-ray photon with wavelength λ = 0.025 nm scatters off an electron at rest, emerging at an angle of 45° from its original direction. Calculate:
+a) The change in the photon’s wavelength
+b) The energy transferred to the electron
+(Compton wavelength of electron = 2.43 × 10⁻¹² m)</p>
+  </li>
+  <li>
+    <p><strong>Relativistic Energy Analysis</strong><br />
+A particle accelerator produces electrons moving at 0.85c.
+a) Calculate the relativistic kinetic energy of these electrons
+b) Compare this to the classical kinetic energy calculation
+c) Determine the rest energy of the electron (mass = 9.11 × 10⁻³¹ kg)</p>
+  </li>
+  <li>
+    <p><strong>Quantum Efficiency Problem</strong><br />
+A photodetector responds to light with wavelengths between 400 nm and 700 nm with an average quantum efficiency of 65% (percentage of incident photons that generate electrons). If the detector receives light with a power of 25 μW at 550 nm, calculate:
+a) The number of photons striking the detector per second
+b) The electric current generated by the detector</p>
+  </li>
+  <li>
+    <p><strong>Integrated Quantum Analysis</strong><br />
+The Northern Lights (aurora borealis) display occurs when charged particles from the sun excite atoms in the upper atmosphere. Green light at 557.7 nm is emitted when oxygen atoms transition from an excited state to a lower energy state.
+a) Calculate the energy difference between these states
+b) If 5 × 10¹⁵ photons are emitted per second in a small region of the aurora, what is the power output at this wavelength?
+c) Explain why the aurora displays multiple colors in terms of quantum transitions</p>
+  </li>
+</ol>
+
+<h3 id="conceptual-questions">Conceptual Questions</h3>
+
+<ol>
+  <li>
+    <p>Explain how the photoelectric effect provides evidence for the particle nature of light.</p>
+  </li>
+  <li>
+    <p>Describe how Einstein’s equation E = mc² relates to nuclear reactions and explain why nuclear reactions can release such enormous amounts of energy.</p>
+  </li>
+  <li>
+    <p>How does wave-particle duality challenge our classical understanding of physics? Provide examples of phenomena that demonstrate both the wave and particle nature of light.</p>
+  </li>
+  <li>
+    <p>Discuss how quantum optics has led to technological innovations in at least two different fields.</p>
+  </li>
+</ol>
+
+<hr />
+<p>layout: default
+title: Problem Set - Wave-Particle Duality Bridge
+author: Jonathan Corbett
+—</p>
+
+<h1 id="problem-set--wave-particle-bridge">Problem Set | Wave-Particle Bridge</h1>
+
+<h2 id="formula-reference-table">Formula Reference Table</h2>
+
+<h2 id="problems">Problems</h2>
+
+<ol>
+  <li>
+    <p>The energy of a photon is given by E = hf, where h is Planck’s constant (6.63 × 10⁻³⁴ J·s) and f is the frequency of light.
+a) Calculate the energy of a photon of blue light with frequency 7.5 × 10¹⁴ Hz.
+b) Compare this to the energy of a photon of red light with frequency 4.3 × 10¹⁴ Hz.</p>
+  </li>
+  <li>
+    <p>A radio station broadcasts at a frequency of 98.6 MHz with a power of 50 kW.
+a) Calculate the wavelength of these radio waves.
+b) How many photons per second does this station emit?
+c) Compare the energy of one radio wave photon to that of a visible light photon.</p>
+  </li>
+  <li>
+    <p>In a double-slit experiment, coherent light of wavelength 630 nm passes through two slits separated by 0.300 mm.
+If a screen is placed 2.0 m from the slits, what is the distance between the central maximum and the first bright fringe?</p>
+  </li>
+  <li>
+    <p>An electron with kinetic energy of 50 eV has a de Broglie wavelength given by λ = h/p.
+a) Calculate this wavelength.
+b) Would this electron show significant diffraction effects passing through an opening of 1.0 nm? Explain.</p>
+  </li>
+  <li>
+    <p>A sensitive light detector can register individual photons. If the detector is exposed to green light (wavelength 520 nm) with an intensity of 1.0 × 10⁻¹² W/m², and has a surface area of 1.0 mm²:
+a) How many photons per second will hit the detector?
+b) If the detector can register a signal when at least 100 photons arrive within a 1.0 ms interval, will this light be detectable?</p>
+  </li>
+  <li>
+    <p>A microwave oven operates at 2.45 GHz.
+a) Calculate the wavelength of these microwaves.
+b) Many microwave ovens have a wavelength that matches the resonant absorption of water molecules. How does this relate to the cooking process?
+c) If the microwave delivers 900 W of power to the food, how many photons per second are absorbed?</p>
+  </li>
+  <li>
+    <p>The human eye can detect as few as 5-10 photons of light. If the wavelength of light is 550 nm (green light):
+a) Calculate the energy carried by 7 photons.
+b) If this energy were converted to thermal energy, by how much would it raise the temperature of 1.0 × 10⁻¹⁵ g of water?</p>
+  </li>
+  <li>
+    <p>X-rays used in medical imaging typically have wavelengths around 0.1 nm.
+a) Calculate the frequency and energy (in eV) of these X-ray photons.
+b) How many of these X-ray photons would carry a total energy of 1.0 J?
+c) Compare the energy of one X-ray photon to that of a visible light photon (550 nm). What implications does this have for biological safety?</p>
+  </li>
+  <li>
+    <p>An electron microscope accelerates electrons through a potential difference of 50 kV.
+a) Calculate the kinetic energy of these electrons in joules.
+b) Calculate the momentum and de Broglie wavelength of these electrons.
+c) Why can electron microscopes achieve much higher resolution than light microscopes?</p>
+  </li>
+  <li>
+    <p>The photoelectric effect demonstrates the particle nature of light. When light with a frequency of 1.0 × 10¹⁵ Hz strikes a cesium surface (work function 1.9 eV):
+a) Will electrons be emitted? If so, calculate their maximum kinetic energy in eV.
+b) What is the threshold frequency for electron emission from this surface?
+c) If the intensity of the light is doubled but the frequency remains the same, how does this affect the maximum kinetic energy and the number of emitted electrons?</p>
+  </li>
+</ol>
+
+<h2 id="answers">Answers</h2>
+
+<ol>
+  <li>
+    <p>a) 4.97 × 10⁻¹⁹ J (3.11 eV)
+b) 2.85 × 10⁻¹⁹ J (1.78 eV); blue photons have about 1.75 times the energy of red photons</p>
+  </li>
+  <li>
+    <p>a) 3.04 m
+b) 1.52 × 10²⁸ photons/s
+c) A radio photon has approximately 10⁻⁶ times the energy of a visible photon</p>
+  </li>
+  <li>
+    <p>4.2 mm</p>
+  </li>
+  <li>
+    <p>a) 1.7 × 10⁻¹⁰ m (0.17 nm)
+b) Yes, significant diffraction would occur because the wavelength is on the same order of magnitude as the opening size</p>
+  </li>
+  <li>
+    <p>a) 2.6 × 10⁴ photons/s
+b) No, only about 26 photons would arrive in 1 ms, below the detection threshold</p>
+  </li>
+  <li>
+    <p>a) 0.122 m (12.2 cm)
+b) The wavelength creates standing waves in the oven; water molecules rotate in response to the oscillating electric field, generating heat through molecular friction
+c) 1.8 × 10²⁶ photons/s</p>
+  </li>
+  <li>
+    <p>a) 2.52 × 10⁻¹⁸ J
+b) Approximately 6.0 × 10⁻⁴ K (negligible temperature increase)</p>
+  </li>
+  <li>
+    <p>a) f = 3.0 × 10¹⁸ Hz; E = 12.4 keV
+b) Approximately 5.0 × 10¹⁴ photons
+c) An X-ray photon has about 22,000 times more energy than a visible light photon, which is why X-rays can cause ionization and damage to biological tissues</p>
+  </li>
+  <li>
+    <p>a) 8.0 × 10⁻¹⁵ J (50 keV)
+b) p = 1.2 × 10⁻²² kg·m/s; λ = 5.5 × 10⁻¹² m (0.0055 nm)
+c) Electron microscopes can achieve higher resolution because the de Broglie wavelength of accelerated electrons is much smaller than the wavelength of visible light, allowing smaller structures to be resolved</p>
+  </li>
+  <li>
+    <p>a) Yes; KE_max = 4.1 - 1.9 = 2.2 eV
+b) $f_{threshold}$ = 4.6 × 10¹⁴ Hz
+c) The maximum kinetic energy remains unchanged; the number of emitted electrons doubles (demonstrates that energy depends on frequency, not intensity)</p>
+  </li>
+</ol>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

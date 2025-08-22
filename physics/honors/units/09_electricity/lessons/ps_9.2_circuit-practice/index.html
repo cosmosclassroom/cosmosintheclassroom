@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>PS 9.2 Circuit Practice Problems | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/worksheets.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!-- <header class="site-header">
+  <div
+    class="header-content"
+    style="background-image: url('https://cosmosintheclassroom.github.io/_includes/cosmos_00001_.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100px;"
+  >
+    <h1
+      class="site-title"
+      style="color: var(--parchment); text-align: left; padding-left: 20px"
+    >
+      <a href="/" style="color: inherit"
+        >Cosmos in the Classroom</a
+      >
+    </h1>
+  </div>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li>
+        <a href="/src/hphys/hphys_landing"
+          >Honors Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/sphys/sphys_overview"
+          >Standard Physics</a
+        >
+      </li>
+      <li>
+        <a href="/src/ref/ref_lib" type="button"
+          >Library</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  :root {
+    --primary-color: #2c3e50; /* Nice blue primary */
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --background-color: #cecfc9;
+    --text-color: #202f3d;
+    --text-color-light: #201f2d;
+    --earth-brown: #8b7355;
+    --eggplant: #6f4c3e;
+    --royal-purple: #7851a9;
+    --dark-purple: #4b2c91;
+    --dark-green: #2f4f4f;
+    --earth-green: #718355;
+    --parchment: #f5f5dc;
+    --parchment-light: #f9f9e6;
+  }
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--parchment);
+    border-bottom: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+  }
+  .site-header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 0;
+    background-color: var(--earth-green);
+  }
+  .site-header a {
+    text-decoration: bold;
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    border-top-left-radius: 3rem;
+    color: var(--text-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.1rem;
+  }
+  .site-header a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  }
+  body {
+    background-color: var(--parchment);
+    /* padding-top: 10px; Add padding to push content below the fixed header */
+  }
+
+  /* border-bottom: 3px double var(--earth-brown);
+    border-top: 3px double var(--earth-brown);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .header-content {
+    background-image: url('/_includes/cosmos_00001_.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    height: 100px;
+  }
+
+  .header-content img {
+    position: fixed;
+    top: 0;
+    max-height: 50px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .site-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 2rem;
+    margin: 0;
+    color: var(--background-color);
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .site-title a {
+    text-decoration: none;
+    color: #bebeb1;
+  }
+
+  .site-subtitle {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: 1.2rem;
+    color: #695d46;
+    margin: 0.5rem 0 0 0;
+    font-style: italic;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: block;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    border-bottom: 2px solid var(--earth-brown);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 2px 2px;
+    gap: 2rem;
+  }
+
+  .site-nav a {
+    display: block;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    font-family: "Libre Baskerville", Georgia, serif;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .site-nav a:hover {
+    color: #e9ba74;
+    background-color: var(--accent-color);
+  } */ */
+</style> -->
+
+      </div>
+    </header>
+    
+    <div class="markdown-body" style="box-shadow: inset; margin-top: 120px;">
+    
+      <style>
+.solution-grid {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+.sigfig {
+  grid-column: 2;
+  grid-row: 1;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+  text-align: right;
+}
+.parent-formula {
+  grid-column: 2;
+  text-align: right;
+  grid-row: 1;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+.givens {
+  grid-column: 1;
+  text-align: right;
+  grid-row: 2;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+.calculations {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: #e9ecef;
+  padding: 8px;
+  border-radius: 4px;
+}
+details {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border-left: 5px solid #007bff;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+details[open] summary {
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+</style>
+
+<h1 id="ps-92-circuit-practice-problems">PS 9.2| Circuit Practice Problems</h1>
+
+<h2 id="formula-summary">Formula Summary</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Concept</th>
+      <th>Formula</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ohm’s Law</td>
+      <td>$V = IR$</td>
+      <td>Voltage, current, resistance relationship</td>
+    </tr>
+    <tr>
+      <td>Resistance (series)</td>
+      <td>$R_{total} = R_1 + R_2 + \dots$</td>
+      <td>Total resistance in series</td>
+    </tr>
+    <tr>
+      <td>Resistance (parallel)</td>
+      <td>$\frac{1}{R_{total}} = \frac{1}{R_1} + \frac{1}{R_2} + \dots$</td>
+      <td>Total resistance in parallel</td>
+    </tr>
+    <tr>
+      <td>Current Division (parallel)</td>
+      <td>$I_n = \frac{R_{total}}{R_n} \times I_{total}$</td>
+      <td>Current through a branch in parallel circuit</td>
+    </tr>
+    <tr>
+      <td>Voltage Division (series)</td>
+      <td>$V_n = \frac{R_n}{R_{total}} \times V_{total}$</td>
+      <td>Voltage across a resistor in series circuit</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="basic-current-and-resistance-problems">Basic Current and Resistance Problems</h2>
+
+<ol>
+  <li>
+    <p>The electron and proton in a hydrogen atom are separated by approximately $5.3 \times 10^{-11}$ m. If we could create a minuscule resistor between these particles with a resistance of $1.0 \times 10^6~\Omega$, what would be the current flow if the potential difference is $3.0 \times 10^{-19}$ V?</p>
+  </li>
+  <li>
+    <p>A circuit contains a resistor of $5.00~\Omega$. When connected to a battery, it draws a current of $2.50~\mathrm{A}$.<br />
+a) What is the voltage of the battery?<br />
+b) If a second identical resistor is added in series, what will be the new current?<br />
+c) If instead the second resistor is added in parallel with the first, what will be the new current?</p>
+  </li>
+  <li>
+    <p>Three resistors with values $6.00~\Omega$, $12.0~\Omega$, and $18.0~\Omega$ are connected in series with a $36.0~\mathrm{V}$ battery. 
+(a) Calculate the total resistance of the circuit.
+(b) What is the current in the circuit?
+(c) What is the voltage across each resistor?</p>
+  </li>
+  <li>
+    <p>In a string of 50 identical Christmas lights connected in series, each bulb has a resistance of $24~\Omega$. If the string is connected to a $120~\mathrm{V}$ outlet:
+(a) What is the total resistance of the circuit?
+(b) What is the current through the circuit?
+(c) What is the voltage across each bulb?
+(d) What happens to the brightness of the remaining bulbs if one bulb burns out? Explain.</p>
+  </li>
+  <li>
+    <p>Three resistors with values $15.0~\Omega$, $30.0~\Omega$, and $45.0~\Omega$ are connected in parallel with a $12.0~\mathrm{V}$ battery.
+(a) Calculate the total resistance of the circuit.
+(b) What is the current drawn from the battery?
+(c) What is the current through each resistor?</p>
+  </li>
+  <li>
+    <p>In a modern home, many outlets are connected in parallel to a $120~\mathrm{V}$ source. If a circuit has a circuit breaker rated at $20~\mathrm{A}$, calculate:
+(a) The minimum total resistance the circuit can have before the breaker trips.
+(b) If you are already running a $1500~\mathrm{W}$ heater on this circuit, what is the maximum power rating of an additional appliance you can connect without tripping the breaker?</p>
+  </li>
+</ol>
+
+<!-- 7. In the cir BROKEN BROKEN BROKEN BROKEN BROKEN -->
+
+<h2 id="conceptual-questions">Conceptual Questions</h2>
+
+<ol>
+  <li>
+    <p>For each of the following statements, identify whether it applies to series circuits, parallel circuits, or both:
+a. The current through each component is the same<br />
+b. The voltage across each component is the same<br />
+c. If one component fails and becomes an open circuit, all other components stop working<br />
+d. Adding more components decreases the total resistance<br />
+e. The total resistance is always greater than the largest individual resistance</p>
+  </li>
+  <li>
+    <p>Consider two lightbulbs, one rated at 60 W and another at 100 W, both designed for use with 120 V.
+  a. Which bulb has higher resistance?
+  b. If these bulbs are connected in series to a 120 V source, which bulb will be brighter? Explain.
+  c. If these bulbs are connected in parallel to a 120 V source, which bulb will be brighter? Explain.</p>
+  </li>
+</ol>
+
+<p>## Solutions
+It seems #7 is a conceptual question that may not require a numeric solution. Here is the content:</p>
+
+<ol>
+  <li>
+    <p>3.0 \times 10^{-25}\,\mathrm{A}</p>
+  </li>
+  <li>
+    <p>A circuit with a 5.00\,\Omega resistor:
+   a) $ 12.5\,\mathrm{V}  $
+   b) $ 1.25\,\mathrm{A}  $
+   c) $ 5.00\,\mathrm{A} $</p>
+  </li>
+  <li>
+    <p>Three resistors in series:
+   a) $36.0\,\Omega$<br />
+   b) $1.00\,\mathrm{A}$<br />
+   c) $V_1 = 6.00\,\mathrm{V},\; V_2 = 12.0\,\mathrm{V},\; V_3 = 18.0\,\mathrm{V}$</p>
+  </li>
+  <li>
+    <p>A string of Christmas lights
+a) $ 1200\,\Omega  $
+b) $ 0.100\,\mathrm{A}  $
+c) $ 2.40\,\mathrm{V}  $
+d) All bulbs go out</p>
+  </li>
+  <li>
+    <p>Three resistors in parallel:
+   a) $8.18\,\Omega  $
+   b) $1.47\,\mathrm{A}  $
+   c) $I_1 = 0.800\,\mathrm{A},\; I_2 = 0.400\,\mathrm{A},\; I_3 = 0.267\,\mathrm{A}$</p>
+  </li>
+  <li>
+    <p>Circuit breaker in a home
+a) $6.00\,\Omega  $
+b) $900\,\mathrm{W}$</p>
+  </li>
+  <li>
+    <p>Comparing series and parallel circuits:
+a) Series<br />
+b) Parallel<br />
+c) Series<br />
+d) Parallel<br />
+e) Series</p>
+  </li>
+  <li>
+    <p>Two Lightbulbs
+   a) $R_{60W} = 240\,\Omega,\; R_{100W} = 144\,\Omega$
+   b) 60 W bulb brighter in series<br />
+   c) 100 W bulb brighter in parallel</p>
+  </li>
+</ol>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
