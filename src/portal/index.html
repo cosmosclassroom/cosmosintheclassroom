@@ -57,7 +57,6 @@
       <!-- Quick Access Section -->
       <section class="quick-access">
         <h2 class="section-title">Quick Access</h2>
-<<<<<<< HEAD
         <div id="quick-access" class="course-grid">
           <div class="loading">Loading quick access...</div>
         </div>
@@ -86,44 +85,12 @@
           loadRecentActivity();
           loadQuickAccess();
         }, 100);
-=======
-        <div class="quick-grid">
-          <div class="quick-card" onclick="window.location.href='/physics/honors/'">
-            <div class="quick-icon physics-icon">Physics</div>
-            <div class="quick-title">Honors Physics</div>
-            <div class="quick-desc">Advanced curriculum with mathematical rigor</div>
-          </div>
-          <div class="quick-card" onclick="window.location.href='/physics/standard/'">
-            <div class="quick-icon earth-icon">Earth</div>
-            <div class="quick-title">Standard Physics</div>
-            <div class="quick-desc">Accessible physics with visual learning</div>
-          </div>
-          <div class="quick-card" onclick="window.location.href='/slides/'">
-            <div class="quick-icon presentation-icon">Slides</div>
-            <div class="quick-title">Lesson Slides</div>
-            <div class="quick-desc">Interactive presentations and materials</div>
-          </div>
-          <div class="quick-card" onclick="window.location.href='/ref/'">
-            <div class="quick-icon library-icon">Library</div>
-            <div class="quick-title">Reference Library</div>
-            <div class="quick-desc">Equations, constants, and concepts</div>
-          </div>
-          <div class="quick-card" onclick="window.location.href='/solutions/'">
-            <div class="quick-icon check-icon">Solutions</div>
-            <div class="quick-title">Problem Solutions</div>
-            <div class="quick-desc">Worked examples and answer keys</div>
-          </div>
-          <div class="quick-card" onclick="showComingSoon()">
-            <div class="quick-icon chart-icon">Assessment</div>
-            <div class="quick-title">Assessment Tools</div>
-            <div class="quick-desc">Quizzes and practice exercises</div>
-            timestamp: new Date().toISOString(),
-            type: eventType,
-            data: data
-          });
-          localStorage.setItem('events', JSON.stringify(events.slice(-100))); // Keep last 100 events
-        };
-      }
+  loadPersonalization();
+  loadCourses();
+  setupNavigation();
+  loadRecentActivity();
+  loadQuickAccess();
+  setupEventListeners();
 
       document.addEventListener('DOMContentLoaded', function() {
         loadPersonalization();
@@ -132,7 +99,6 @@
         loadRecentActivity();
         loadQuickAccess();
         setupEventListeners();
->>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       });
 
       // Personalization functions (matching homepage)
@@ -211,7 +177,6 @@
         }
       });
 
-<<<<<<< HEAD
       function closePopup() {
         if (window.currentPopup) {
           document.body.removeChild(window.currentPopup);
@@ -231,9 +196,7 @@
       }
 
       // Course loading and display functions
-=======
       // Course loading and management
->>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       async function loadCourses() {
         try {
           const container = document.getElementById('course-list');
@@ -403,16 +366,12 @@
 
       function markUnitComplete(courseId, unitNumber) {
         const unit = findUnit(unitNumber);
-<<<<<<< HEAD
-        safeLogEvent("unit_details_view", {
-          courseId: currentCourse,
-=======
         const studentName = localStorage.getItem('cosmos-userName') || 'Anonymous';
-        
+        // Show completion popup
+        showPopup('success', 'Unit Completed!', `${studentName} completed Unit ${unitNumber}: ${unit ? unit.title : 'Unknown Unit'}`);
         // Log unit completion
-        logEvent("unit_complete", {
+        safeLogEvent("unit_complete", {
           courseId: courseId,
->>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
           unitNumber: unitNumber,
           unitTitle: unit ? unit.title : `Unit ${unitNumber}`,
           studentName: studentName
@@ -519,7 +478,6 @@
         return progress.units && progress.units[unitNumber];
       }
 
-<<<<<<< HEAD
       function markUnitComplete(courseId, unitNumber) {
         const unit = findUnit(unitNumber);
         const studentName = localStorage.getItem('studentName') || 'Anonymous';
@@ -562,8 +520,6 @@
         displayCourseUnits(); // Refresh display
       }
 
-=======
->>>>>>> b8e6dc29de0a5ec6e96c29a5d5628a6ba524acd8
       function markUnitVisited(courseId, unitNumber) {
         let progress = JSON.parse(localStorage.getItem(`progress_${courseId}`) || '{"units":{},"visited":{}}');
         if (!progress.visited) progress.visited = {};

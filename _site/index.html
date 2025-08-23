@@ -14,503 +14,234 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
 
-        /* Site Header */
-        .site-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .site-logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        .main-nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: #555;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(52, 152, 219, 0.1);
-            color: #3498db;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-        }
-
-        .mobile-nav.show {
-            display: block;
-        }
-
-        .mobile-nav .nav-link {
-            display: block;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        /* Main Content */
-        .main-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .homepage-container {
-            text-align: center;
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .hero-section {
-            margin-bottom: 3rem;
-        }
-
-        .logo-large {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #7f8c8d;
-            margin-bottom: 2rem;
-        }
-
-        /* Core Systems Grid */
-        .systems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .system-card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .system-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .system-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .system-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .system-description {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Site Footer */
-        .site-footer {
-            background: rgba(255, 255, 255, 0.95);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 2rem 0;
-            margin-top: auto;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-link:hover {
-            color: #3498db;
-        }
-
-        .footer-copyright {
-            color: #999;
-            font-size: 0.85rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-nav {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .logo-large {
-                font-size: 2.5rem;
-            }
-
-            .systems-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .header-container {
-                padding: 0 1rem;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Personalization Styles */
-        .greeting {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        .greeting.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .name-input-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-
-        .name-input-section.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .name-form {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .name-input {
-            padding: 0.75rem 1rem;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            min-width: 200px;
-        }
-
-        .name-submit {
-            padding: 0.75rem 1.5rem;
-            background: #3498db;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .name-submit:hover {
-            background: #2980b9;
-        }
-
-        .name-change {
-            color: #3498db;
-            cursor: pointer;
-            text-decoration: underline;
-            font-size: 0.9rem;
-            margin-left: 1rem;
-        }
-    </style>
-    <!-- Cosmos Configuration System -->
-    <script src="src/js/cosmos-config.js"></script>
-    <script src="src/shared/components/universal-header.js"></script>
-</head>
-<body>
-    <!-- Universal Header -->
-    <div id="universalHeader"></div>
-
-    <!-- Site Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <a href="/" class="site-logo">Cosmos in the Classroom</a>
-            <nav class="main-nav">
-                <a href="src/portal/" class="nav-link">Portal</a>
-                <a href="src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
-                <a href="src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
-                <a href="ref/" class="nav-link">Library</a>
-                <a href="about.html" class="nav-link">About</a>
-            </nav>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </div>
-        <!-- Mobile Navigation Menu -->
-        <nav class="mobile-nav" id="mobileNav">
-            <a href="src/portal/" class="nav-link">Portal</a>
-            <a href="src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
-            <a href="src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
-            <a href="ref/" class="nav-link">Library</a>
-            <a href="about.html" class="nav-link">About</a>
-        </nav>
-    </header>
-                    <a href="#" class="nav-item">Assessment Tools</a>
-                    <a href="#" class="nav-item">About & Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="homepage-container">
-            <!-- Hero Section -->
-            <div class="hero-section">
-                <h1 class="logo-large">Cosmos in the Classroom</h1>
-                <p class="subtitle">Explore Physics Through Interactive Learning</p>
-                
-                <!-- Personalized Greeting -->
-                <div class="greeting" id="greeting"></div>
-                
-                <!-- Name Input Section (shown for new users) -->
-                <div class="name-input-section" id="nameInputSection">
-                    <h3>Welcome to Your Learning Journey</h3>
-                    <p>What should I call you?</p>
-                    <div class="name-form">
-                        <input type="text" id="nameInput" class="name-input" placeholder="Your name..." maxlength="30">
-                        <button onclick="saveName()" class="name-submit">Get Started</button>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Cosmos in the Classroom</title>
+            <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="assets/css/cosmos-theme.css">
+            <style>
+                body { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #222; margin: 0; }
+                .site-header { background: #fff; border-bottom: 1px solid #e0e0e0; position: sticky; top: 0; z-index: 100; }
+                .header-container { display: flex; justify-content: space-between; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; }
+                .site-logo { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: #1a365d; text-decoration: none; }
+                .personalization-header { display: flex; flex-direction: column; align-items: flex-start; margin-top: 0.5rem; }
+                .user-greeting { font-size: 1.1rem; color: #2d3748; margin-bottom: 0.5rem; }
+                #courseSelector { padding: 0.5rem; border-radius: 6px; border: 1px solid #ddd; font-size: 1rem; }
+                .main-nav { display: flex; gap: 1.5rem; align-items: center; margin-left: auto; }
+                .nav-link { color: #555; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 6px; transition: all 0.3s ease; }
+                .nav-link:hover { background: #eaf6ff; color: #2563eb; }
+                .mobile-menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+                .main-content { flex: 1; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+                .homepage-container { text-align: center; max-width: 800px; width: 100%; margin: 0 auto; }
+                .hero-section { margin-bottom: 3rem; }
+                .logo-large { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 600; color: #1a365d; margin-bottom: 0.5rem; }
+                .subtitle { font-size: 1.2rem; color: #7f8c8d; margin-bottom: 2rem; }
+                .systems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 3rem 0; }
+                .system-card { background: #fff; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: all 0.3s ease; text-decoration: none; color: inherit; }
+                .system-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+                .system-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+                .system-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; color: #1a365d; }
+                .system-description { color: #666; font-size: 0.95rem; line-height: 1.5; }
+                .site-footer { background: #fff; border-top: 1px solid #e0e0e0; padding: 2rem 0; margin-top: auto; }
+                .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+                .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+                .footer-link { color: #666; text-decoration: none; font-size: 0.9rem; }
+                .footer-link:hover { color: #2563eb; }
+                .footer-copyright { color: #999; font-size: 0.85rem; }
+                @media (max-width: 768px) { .main-nav { display: none; } .mobile-menu-toggle { display: block; } .logo-large { font-size: 2.5rem; } .systems-grid { grid-template-columns: 1fr; gap: 1.5rem; } .header-container { padding: 0 1rem; } .footer-container { flex-direction: column; text-align: center; } }
+            </style>
+            <script src="src/js/cosmos-config.js"></script>
+        </head>
+        <body>
+            <header class="site-header">
+                <div class="header-container">
+                    <a href="/" class="site-logo">Cosmos in the Classroom</a>
+                    <div class="personalization-header">
+                        <span id="personalGreeting" class="user-greeting"></span>
+                        <select id="courseSelector">
+                            <option value="honors">Honors Physics</option>
+                            <option value="standard">Standard Physics</option>
+                        </select>
                     </div>
-                    <div class="name-options">
-                        <small>Stored locally in your browser for personalization</small>
+                    <nav class="main-nav">
+                        <a href="src/portal/" class="nav-link">Portal</a>
+                        <a href="src/Chunker/ui/chunker.html" class="nav-link">Chunker</a>
+                        <a href="src/socrates/socratic-kitchen.html" class="nav-link">Socrates</a>
+                        <a href="ref/" class="nav-link">Library</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="teachers.html" class="nav-link">Teachers</a>
+                    </nav>
+                </div>
+            </header>
+            <main class="main-content">
+                <div class="homepage-container">
+                    <noscript>
+                        <div style="background:#fff3cd;color:#856404;padding:1rem;border-radius:8px;margin-bottom:2rem;">
+                            <strong>Note:</strong> This site works best with JavaScript enabled for personalization and interactive features.
+                        </div>
+                    </noscript>
+                    <div class="hero-section">
+                        <h1 class="logo-large">Cosmos in the Classroom</h1>
+                        <p class="subtitle">Explore Physics Through Interactive Learning</p>
+                        <div class="greeting" id="greeting"></div>
+                        <div class="name-input-section" id="nameInputSection" style="display:none;">
+                            <h3>Welcome to Your Learning Journey</h3>
+                            <p>What should I call you?</p>
+                            <div class="name-form">
+                                <input type="text" id="nameInput" class="name-input" placeholder="Your name..." maxlength="30" autocomplete="name">
+                                <button onclick="saveName()" class="name-submit">Get Started</button>
+                            </div>
+                            <div class="name-options">
+                                <small>Stored locally in your browser for personalization. You can change it anytime.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="systems-grid">
+                        <a href="src/portal/" class="system-card">
+                            <span class="system-icon" aria-label="Portal">🌌</span>
+                            <h3 class="system-title">Portal</h3>
+                            <p class="system-description">Your gateway to physics courses, research briefs, and interactive learning experiences.</p>
+                        </a>
+                        <a href="src/Chunker/ui/chunker.html" class="system-card">
+                            <span class="system-icon" aria-label="Chunker">⚡</span>
+                            <h3 class="system-title">Chunker</h3>
+                            <p class="system-description">Break down complex content into digestible learning chunks with AI-powered analysis.</p>
+                        </a>
+                        <a href="src/socrates/socratic-kitchen.html" class="system-card">
+                            <span class="system-icon" aria-label="Socrates">🧠</span>
+                            <h3 class="system-title">Socrates</h3>
+                            <p class="system-description">Generate research briefs and engage in Socratic questioning for deeper understanding.</p>
+                        </a>
+                        <a href="ref/" class="system-card">
+                            <span class="system-icon" aria-label="Library">📚</span>
+                            <h3 class="system-title">Library</h3>
+                            <p class="system-description">Access comprehensive physics resources, references, and curated learning materials.</p>
+                        </a>
+                    </div>
+                    <p style="margin-top: 2rem; color: #7f8c8d; font-style: italic;">
+                        "I hope you like it." — Jonathan
+                        <span class="name-change" onclick="changeName()" id="nameChange" style="display: none;">Change name</span>
+                    </p>
+                </div>
+            </main>
+            <footer class="site-footer">
+                <div class="footer-container">
+                    <div class="footer-links">
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="teachers.html" class="footer-link">For Teachers</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                        <a href="physics/honors/" class="footer-link">Honors Physics</a>
+                        <a href="physics/standard/" class="footer-link">Standard Physics</a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2025 Cosmos in the Classroom. Built for curious minds.
                     </div>
                 </div>
-            </div>
-            
-            <!-- Core Systems Grid -->
-            <div class="systems-grid">
-                <a href="src/portal/" class="system-card">
-                    <span class="system-icon">🌌</span>
-                    <h3 class="system-title">Portal</h3>
-                    <p class="system-description">Your gateway to physics courses, research briefs, and interactive learning experiences.</p>
-                </a>
-                
-                <a href="src/Chunker/ui/chunker.html" class="system-card">
-                    <span class="system-icon">⚡</span>
-                    <h3 class="system-title">Chunker</h3>
-                    <p class="system-description">Break down complex content into digestible learning chunks with AI-powered analysis.</p>
-                </a>
-                
-                <a href="src/socrates/socratic-kitchen.html" class="system-card">
-                    <span class="system-icon">🧠</span>
-                    <h3 class="system-title">Socrates</h3>
-                    <p class="system-description">Generate research briefs and engage in Socratic questioning for deeper understanding.</p>
-                </a>
-                
-                <a href="ref/" class="system-card">
-                    <span class="system-icon">📚</span>
-                    <h3 class="system-title">Library</h3>
-                    <p class="system-description">Access comprehensive physics resources, references, and curated learning materials.</p>
-                </a>
-            </div>
-            
-            <p style="margin-top: 2rem; color: #7f8c8d; font-style: italic;">
-                "I hope you like it." — Jonathan
-                <span class="name-change" onclick="changeName()" id="nameChange" style="display: none;">Change name</span>
-            </p>
-        </div>
-    </main>
-
-    <!-- Site Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="about.html" class="footer-link">About</a>
-                <a href="teachers.html" class="footer-link">For Teachers</a>
-                <a href="#contact" class="footer-link">Contact</a>
-                <a href="physics/honors/" class="footer-link">Honors Physics</a>
-                <a href="physics/standard/" class="footer-link">Standard Physics</a>
-            </div>
-            <div class="footer-copyright">
-                © 2025 Cosmos in the Classroom. Built for curious minds.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Personalization functionality using CosmosConfig
-        function loadPersonalization() {
-            // Wait for CosmosConfig to be available
-            if (typeof CosmosConfig === 'undefined') {
-                setTimeout(loadPersonalization, 100);
-                return;
-            }
-            
-            const config = new CosmosConfig();
-            const savedName = config.get('user.name');
-            const greeting = document.getElementById('greeting');
-            const nameInputSection = document.getElementById('nameInputSection');
-            const nameChange = document.getElementById('nameChange');
-            
-            if (savedName) {
-                showGreeting(savedName);
-                nameChange.style.display = 'inline';
-            } else {
-                setTimeout(() => {
-                    nameInputSection.classList.add('show');
-                }, 500);
-            }
-        }
-
-        function showGreeting(name) {
-            const greeting = document.getElementById('greeting');
-            const nameInputSection = document.getElementById('nameInputSection');
-            const hour = new Date().getHours();
-            
-            let timeGreeting;
-            if (hour < 12) timeGreeting = "Good morning";
-            else if (hour < 17) timeGreeting = "Good afternoon";
-            else timeGreeting = "Good evening";
-            
-            greeting.innerHTML = `${timeGreeting}, ${name}. Ready to explore physics?`;
-            greeting.classList.add('show');
-            nameInputSection.classList.remove('show');
-        }
-
-        function saveName() {
-            const nameInput = document.getElementById('nameInput');
-            const name = nameInput.value.trim();
-            
-            if (name && typeof CosmosConfig !== 'undefined') {
-                const config = new CosmosConfig();
-                config.set('user.name', name);
-                showGreeting(name);
-                document.getElementById('nameChange').style.display = 'inline';
-            }
-        }
-
-        function changeName() {
-            const greeting = document.getElementById('greeting');
-            const nameInputSection = document.getElementById('nameInputSection');
-            const nameInput = document.getElementById('nameInput');
-            const nameChange = document.getElementById('nameChange');
-            
-            if (typeof CosmosConfig !== 'undefined') {
-                const config = new CosmosConfig();
-                config.set('user.name', '');
-            }
-            
-            greeting.classList.remove('show');
-            nameChange.style.display = 'none';
-            
-            nameInput.value = '';
+            </footer>
+            <script>
+                function loadPersonalization() {
+                    if (typeof CosmosConfig === 'undefined') {
+                        setTimeout(loadPersonalization, 100);
+                        return;
+                    }
+                    const config = new CosmosConfig();
+                    const username = config.config.username || config.get('user.name') || '';
+                    const personalGreeting = document.getElementById('personalGreeting');
+                    if (username) {
+                        personalGreeting.textContent = `Welcome, ${username}`;
+                    } else {
+                        personalGreeting.textContent = '';
+                    }
+                    const courseSelector = document.getElementById('courseSelector');
+                    if (courseSelector) {
+                        courseSelector.value = config.get('chunker.currentClass.level') || 'honors';
+                        courseSelector.onchange = function() {
+                            config.set('chunker.currentClass.level', this.value);
+                        };
+                    }
+                    const savedName = config.get('user.name');
+                    const greeting = document.getElementById('greeting');
+                    const nameInputSection = document.getElementById('nameInputSection');
+                    const nameChange = document.getElementById('nameChange');
+                    if (savedName) {
+                        showGreeting(savedName);
+                        nameChange.style.display = 'inline';
+                    } else {
+                        nameInputSection.style.display = 'block';
+                        document.getElementById('nameInput').focus();
+                    }
+                }
+                function showGreeting(name) {
+                    const greeting = document.getElementById('greeting');
+                    const nameInputSection = document.getElementById('nameInputSection');
+                    const hour = new Date().getHours();
+                    let timeGreeting;
+                    if (hour < 12) timeGreeting = "Good morning";
+                    else if (hour < 17) timeGreeting = "Good afternoon";
+                    else timeGreeting = "Good evening";
+                    greeting.innerHTML = `${timeGreeting}, ${name}. Ready to explore physics?`;
+                    greeting.classList.add('show');
+                    nameInputSection.style.display = 'none';
+                }
+                function saveName() {
+                    const nameInput = document.getElementById('nameInput');
+                    const name = nameInput.value.trim();
+                    if (name && typeof CosmosConfig !== 'undefined') {
+                        const config = new CosmosConfig();
+                        config.set('user.name', name);
+                        config.config.username = name;
+                        config.saveConfig();
+                        showGreeting(name);
+                        document.getElementById('personalGreeting').textContent = `Welcome, ${name}`;
+                        document.getElementById('nameChange').style.display = 'inline';
+                    }
+                }
+                function changeName() {
+                    const greeting = document.getElementById('greeting');
+                    const nameInputSection = document.getElementById('nameInputSection');
+                    const nameInput = document.getElementById('nameInput');
+                    const nameChange = document.getElementById('nameChange');
+                    if (typeof CosmosConfig !== 'undefined') {
+                        const config = new CosmosConfig();
+                        config.set('user.name', '');
+                        config.config.username = '';
+                        config.saveConfig();
+                    }
+                    greeting.classList.remove('show');
+                    nameChange.style.display = 'none';
+                    nameInput.value = '';
+                    nameInputSection.style.display = 'block';
+                    nameInput.focus();
+                    document.getElementById('personalGreeting').textContent = '';
+                }
+                document.addEventListener('DOMContentLoaded', function() {
+                    loadPersonalization();
+                    const nameInput = document.getElementById('nameInput');
+                    if (nameInput) {
+                        nameInput.addEventListener('keypress', function(e) {
+                            if (e.key === 'Enter') {
+                                saveName();
+                            }
+                        });
+                    }
+                });
+            </script>
+        </body>
+        </html>
             setTimeout(() => {
                 nameInputSection.classList.add('show');
+                nameInput.focus();
             }, 300);
+            document.getElementById('personalGreeting').textContent = '';
         }
-
         function toggleMobileMenu() {
-            // Mobile menu functionality for future implementation
-            console.log('Mobile menu toggled');
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('show');
         }
-
-        // Load universal header
         async function loadUniversalHeader() {
             try {
                 const response = await fetch('/src/shared/components/universal-header.html');
@@ -522,11 +253,8 @@
                 console.error('Failed to load universal header:', error);
             }
         }
-
-        // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
             loadUniversalHeader();
-            
             const nameInput = document.getElementById('nameInput');
             if (nameInput) {
                 nameInput.addEventListener('keypress', function(e) {
@@ -535,7 +263,6 @@
                     }
                 });
             }
-            
             loadPersonalization();
         });
     </script>

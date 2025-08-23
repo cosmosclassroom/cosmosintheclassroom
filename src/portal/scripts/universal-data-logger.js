@@ -1,7 +1,34 @@
-// /portal/scripts/universal-data-logger.js
+
+/**
+ * Universal Data Logger - Google Apps Script Integration
+ * -----------------------------------------------------
+ * Endpoint: https://script.google.com/macros/s/AKfycbz0yyH_uzZBft2Vz6WaYOYD_LPHILsqKRjerWATmJ4Ofarm6WZBwjD57Q5TpWYExqLJ/exec
+ * Deployment ID: AKfycbz0yyH_uzZBft2Vz6WaYOYD_LPHILsqKRjerWATmJ4Ofarm6WZBwjD57Q5TpWYExqLJ
+ * Deployment Date: August 22, 2025 (Version 2)
+ * Access: Anyone (public logging)
+ *
+ * Usage:
+ *   - All log events are sent via POST (JSON) to the endpoint above.
+ *   - If POST fails, a GET fallback is attempted.
+ *   - Apps Script must handle CORS and parse JSON correctly.
+ *
+ * Apps Script Example:
+ *   function doPost(e) {
+ *     var data = JSON.parse(e.postData.contents);
+ *     // ... handle data ...
+ *     return ContentService.createTextOutput("OK")
+ *       .setMimeType(ContentService.MimeType.TEXT)
+ *       .setHeaders({ "Access-Control-Allow-Origin": "*" });
+ *   }
+ *   function doGet(e) {
+ *     return ContentService.createTextOutput("OK")
+ *       .setMimeType(ContentService.MimeType.TEXT)
+ *       .setHeaders({ "Access-Control-Allow-Origin": "*" });
+ *   }
+ */
 
 // Replace this with your Google Apps Script Web App endpoint
-const LOGGER_ENDPOINT = "https://script.google.com/macros/s/AKfycbzHxXrwCH2mOpLtOEbi-UMeS1YG9SjFZv3MdrqDtZ5BI0WWe5fXVkt2TSn_jQfueZrU/exec";
+const LOGGER_ENDPOINT = "https://script.google.com/macros/s/AKfycbz0yyH_uzZBft2Vz6WaYOYD_LPHILsqKRjerWATmJ4Ofarm6WZBwjD57Q5TpWYExqLJ/exec";
 
 /**
  * Send a log event to the backend

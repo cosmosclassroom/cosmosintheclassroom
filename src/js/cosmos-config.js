@@ -1,14 +1,26 @@
-// Cosmos Configuration Class
-// This document stores local user data for personalization across cosmosintheclassroom.org
-// It handles loading, saving, and updating user settings.
-// The configuration is stored in the browser's local storage.
-// The UI allows the user to select current (course)(period)(calendar date) etc as needed by the system
-// The settings are organized into categories for easy access and management.
-// All scripts reviewing this configuration should use the CosmosConfig class to ensure consistency.
+/**
+ * CosmosConfig: Centralized Personalization & Settings Manager
+ * -----------------------------------------------------------
+ * - Stores and manages all user personalization info for cosmosintheclassroom.org
+ * - Handles loading, saving, updating, and event notification for user settings
+ * - Uses browser localStorage for persistence
+ * - Provides a cascade of settings: privacy, chunker (course/class), portal, UI, etc.
+ * - All systems (Portal, Chunker, Socrates, Library) must use this class for consistency
+ * - Settings are organized by category for maintainability and cross-system compatibility
+ * - UI and logic should always reference CosmosConfig for personalization and progress
+ */
 
 class CosmosConfig {
-            },
-            
+    /**
+     * Constructor: Initializes default settings and loads from localStorage
+     * - Defines the cascade of personalization info
+     * - Binds system events for UI and accessibility
+     */
+    constructor() {
+        this.settingsKey = 'cosmos_classroom_settings';
+
+        // Default settings cascade
+        this.defaults = {
             // Privacy & Data
             privacy: {
                 trackingEnabled: false,
@@ -16,12 +28,11 @@ class CosmosConfig {
                 sharePrefWithTeachers: false,
                 storeProgress: true
             },
-            
-            // Chunker Configuration
+            // Chunker: Course/Class/Period personalization
             chunker: {
                 currentClass: {
                     course: '',
-                    level: '', 
+                    level: '',
                     period: '',
                     semester: 'fall2025',
                     teacher: ''
@@ -43,65 +54,59 @@ class CosmosConfig {
                     showOriginalContent: true,
                     compactMode: false
                 }
-            }
+            },
+            // Portal: Bookmarks, recently viewed, etc. (added dynamically)
+            portal: {
+                bookmarkedUnits: [],
+                recentlyViewed: []
+            },
+            // UI: Theme, accessibility, etc. (added dynamically)
+            ui: {
+                theme: 'auto',
+                reducedMotion: false
+            },
+            // Ratatoskr: Widget settings (added dynamically)
+            ratatoskr: {}
         };
-        
-        this.settings = this.load();
+        this.config = this.loadConfig();
+        this.settings = this.mergeDeep(this.defaults, this.config);
         this.bindEvents();
+        this.ensureUserCredentials();
     }
 
-    load() {
-        try {
-            const stored = localStorage.getItem(this.storageKey);
-            if (stored) {
-                const parsed = JSON.parse(stored);
-                return this.mergeDeep(this.defaults, parsed);
-            }
-        } catch (error) {
-            console.warn('Failed to load Cosmos settings:', error);
-        }
-        return JSON.parse(JSON.stringify(this.defaults)); // Deep copy
-    }
-
-    save() {
-        try {
-            localStorage.setItem(this.storageKey, JSON.stringify(this.settings));
-            this.notifyChange('saved', this.settings);
-            return true;
-        } catch (error) {
-            console.error('Failed to save Cosmos settings:', error);
-            return false;
-        }
-    }
-
-    get(path) {
-        return this.getNestedValue(this.settings, path);
-    }
-
-    set(path, value) {
-        this.setNestedValue(this.settings, path, value);
-        this.save();
-        this.notifyChange(path, value);
-    }
-
-    // Ratatoskr-specific convenience methods
-    getRatatoskrSettings() {
-        return this.get('ratatoskr');
-    }
-
+    /**
+     * Set a Ratatoskr widget setting by key
+     * @param {string} key - Setting key
+     * @param {*} value - Value to set
+     */
     setRatatoskrSetting(key, value) {
         this.set(`ratatoskr.${key}`, value);
     }
 
-    // Chunker-specific convenience methods
+    /**
+     * Get all chunker (course/class) settings
+     * @returns {Object} Chunker settings object
+     */
     getChunkerSettings() {
         return this.get('chunker');
     }
 
+    /**
+     * Set a chunker (course/class) setting by key
+     * @param {string} key - Setting key
+     * @param {*} value - Value to set
+     */
     setChunkerSetting(key, value) {
         this.set(`chunker.${key}`, value);
     }
 
+    /**
+     * Set the currently active class (course, level, period, teacher)
+     * @param {string} course
+     * @param {string} level
+     * @param {string} period
+     * @param {string} [teacher]
+     */
     setActiveClass(course, level, period, teacher = '') {
         this.set('chunker.currentClass', {
             course: course,
@@ -112,12 +117,19 @@ class CosmosConfig {
         });
     }
 
+    /**
+     * Get a unique ID string for the currently active class
+     * @returns {string} Unique class ID
+     */
     getActiveClassId() {
         const classConfig = this.get('chunker.currentClass');
         return `${classConfig.course}-${classConfig.level}-period${classConfig.period}-${classConfig.semester}`;
     }
 
-    // Portal-specific methods
+    /**
+     * Add a unit bookmark in the portal system
+     * @param {string} unitId - Unit identifier
+     */
     addBookmark(unitId) {
         const bookmarks = this.get('portal.bookmarkedUnits') || [];
         if (!bookmarks.includes(unitId)) {
@@ -126,24 +138,37 @@ class CosmosConfig {
         }
     }
 
+    /**
+     * Add a page to the recently viewed list in the portal system
+     * @param {string} pageId - Page identifier
+     */
     addToRecentlyViewed(pageId) {
         const recent = this.get('portal.recentlyViewed') || [];
         const filtered = recent.filter(id => id !== pageId);
         filtered.unshift(pageId);
-        
         // Keep only last 10 items
         if (filtered.length > 10) {
             filtered.splice(10);
         }
-        
         this.set('portal.recentlyViewed', filtered);
     }
 
-    // Utility methods
+    /**
+     * Utility: Get a nested value from an object by dot-path
+     * @param {Object} obj
+     * @param {string} path - Dot-separated path
+     * @returns {*} Value at path
+     */
     getNestedValue(obj, path) {
         return path.split('.').reduce((current, key) => current?.[key], obj);
     }
 
+    /**
+     * Utility: Set a nested value in an object by dot-path
+     * @param {Object} obj
+     * @param {string} path - Dot-separated path
+     * @param {*} value - Value to set
+     */
     setNestedValue(obj, path, value) {
         const keys = path.split('.');
         const lastKey = keys.pop();
@@ -156,9 +181,14 @@ class CosmosConfig {
         target[lastKey] = value;
     }
 
+    /**
+     * Utility: Deep merge two objects (target, source)
+     * @param {Object} target
+     * @param {Object} source
+     * @returns {Object} Merged result
+     */
     mergeDeep(target, source) {
         const result = JSON.parse(JSON.stringify(target)); // Deep copy
-        
         function merge(dest, src) {
             for (const key in src) {
                 if (src[key] && typeof src[key] === 'object' && !Array.isArray(src[key])) {
@@ -171,11 +201,13 @@ class CosmosConfig {
                 }
             }
         }
-        
         merge(result, source);
         return result;
     }
 
+    /**
+     * Bind system events for UI and accessibility (theme, motion)
+     */
     bindEvents() {
         // Listen for system theme changes
         if (window.matchMedia) {
@@ -223,8 +255,57 @@ class CosmosConfig {
             return false;
         }
     }
+
+    loadConfig() {
+        const raw = localStorage.getItem(this.settingsKey);
+        return raw ? JSON.parse(raw) : {};
+    }
+
+    saveConfig() {
+        localStorage.setItem(this.settingsKey, JSON.stringify(this.config));
+    }
+
+    ensureUserCredentials() {
+        if (!this.config.username || !this.config.pin) {
+            this.promptForCredentials();
+        }
+    }
+
+    promptForCredentials() {
+        // Simple prompt (replace with modal/UI in production)
+        const username = prompt('Enter your name:');
+        const pin = prompt('Set a 4-digit PIN:');
+        if (username && pin && /^\d{4}$/.test(pin)) {
+            this.config.username = username;
+            this.config.pin = pin;
+            this.saveConfig();
+        } else {
+            alert('Invalid input. Please try again.');
+            this.promptForCredentials();
+        }
+    }
 }
 
 // Global instance
 window.CosmosConfig = new CosmosConfig();
+
+function doPost(e) {
+  var data = {};
+  try {
+    data = JSON.parse(e.postData.contents);
+  } catch (err) {
+    return ContentService.createTextOutput("Error: Invalid JSON")
+      .setMimeType(ContentService.MimeType.TEXT)
+      .setHeaders({ "Access-Control-Allow-Origin": "*" });
+  }
+  // ... handle data ...
+  return ContentService.createTextOutput("OK")
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeaders({ "Access-Control-Allow-Origin": "*" });
+}
+function doGet(e) {
+  return ContentService.createTextOutput("OK")
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeaders({ "Access-Control-Allow-Origin": "*" });
+}
 

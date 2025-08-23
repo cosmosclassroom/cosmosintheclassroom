@@ -35,7 +35,7 @@ portal/
 ├── directory.py                  # Python utilities for structure management
 │
 ├── scripts/                      # Shared utilities
-│   ├── universal-data-logger.js  # Analytics and data collection
+│   ├── universal-data-logger.js  # Analytics and data collection (single source)
 │   └── logger-readme.md          # Documentation for data logging
 │
 ├── dev/                          # Development tools
