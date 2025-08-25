@@ -70,8 +70,60 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- SIDEBAR LOGIC ---
-    sidebarToggle.addEventListener('click', () => sidebar.classList.remove('sidebar-hidden'));
-    sidebarCloseBtn.addEventListener('click', () => sidebar.classList.add('sidebar-hidden'));
+    // Make toggle robust: ensure elements exist, toggle class (open/close), and expose small debug logs.
+    if (sidebarToggle && sidebar) {
+        // Initialize aria state
+        sidebarToggle.setAttribute('aria-controls', 'key-dates-sidebar');
+        sidebarToggle.setAttribute('aria-expanded', String(!sidebar.classList.contains('sidebar-hidden')));
+        sidebarToggle.addEventListener('click', (e) => {
+            // Toggle the sidebar visibility class. Use toggle to allow closing by same button.
+            const wasHidden = sidebar.classList.contains('sidebar-hidden');
+            sidebar.classList.toggle('sidebar-hidden');
+            sidebarToggle.setAttribute('aria-expanded', String(wasHidden));
+            // Small debug trace for devtools when diagnosing issues.
+            try { console.log('branford: sidebar-toggle clicked. wasHidden=', wasHidden, 'nowHidden=', sidebar.classList.contains('sidebar-hidden')); } catch (err) {}
+        });
+    } else {
+        try { console.warn('branford: sidebar or sidebar-toggle not found', { sidebar, sidebarToggle }); } catch (err) {}
+    }
+
+    // Temporary diagnostic: log clicks and targets near the toggle to detect overlays (remove after debugging)
+    document.addEventListener('click', function debugClickLogger(e) {
+        try {
+            const rect = sidebarToggle && sidebarToggle.getBoundingClientRect && sidebarToggle.getBoundingClientRect();
+            const withinToggleBounds = rect && (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom);
+            if (withinToggleBounds) {
+                console.log('branford-debug: click within toggle bounds', { x: e.clientX, y: e.clientY, target: e.target });
+            }
+        } catch (err) {}
+    }, { capture: true });
+
+    // Programmatic toggle (callable from console) and keyboard fallback
+    window.toggleSidebar = function(open) {
+        if (!sidebar) return;
+        if (typeof open === 'boolean') {
+            sidebar.classList.toggle('sidebar-hidden', !open);
+            sidebarToggle && sidebarToggle.setAttribute('aria-expanded', String(open));
+        } else {
+            const wasHidden = sidebar.classList.contains('sidebar-hidden');
+            sidebar.classList.toggle('sidebar-hidden');
+            sidebarToggle && sidebarToggle.setAttribute('aria-expanded', String(!wasHidden));
+        }
+    };
+
+    document.addEventListener('keydown', function(e) {
+        // Press 's' to toggle sidebar (keyboard fallback for debugging)
+        if (e.key === 's' || e.key === 'S') {
+            try { window.toggleSidebar(); } catch (err) {}
+        }
+    });
+
+    if (sidebarCloseBtn && sidebar) {
+        sidebarCloseBtn.addEventListener('click', () => {
+            sidebar.classList.add('sidebar-hidden');
+            sidebarToggle && sidebarToggle.setAttribute('aria-expanded', 'false');
+        });
+    }
 
     // --- SCHEDULE VIEWER LOGIC ---
     function updateScheduleView(day, noteText = "") {
@@ -99,9 +151,14 @@ document.addEventListener('DOMContentLoaded', function() {
         scheduleViewerSection.insertBefore(noteDiv, scheduleViewerSection.children[2]);
     }
 
-    dayButtons.addEventListener('click', (e) => {
-        if (e.target.classList.contains('day-btn')) updateScheduleView(e.target.dataset.day);
-    });
+    if (dayButtons) {
+        dayButtons.addEventListener('click', (e) => {
+            const btn = e.target.closest && e.target.closest('.day-btn');
+            if (btn && btn.dataset && btn.dataset.day) updateScheduleView(btn.dataset.day);
+        });
+    } else {
+        try { console.warn('branford: dayButtons container not found'); } catch (err) {}
+    }
 
     function generateCalendar(year, month) {
         const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
@@ -258,9 +315,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    calendarContainer.addEventListener('click', (e) => {
-        if (e.target.dataset.date) openDayScheduleModal(e.target.dataset.date);
-    });
+    // Use closest so clicks on inner elements still register the date cell
+    if (calendarContainer) {
+        calendarContainer.addEventListener('click', (e) => {
+            const dateEl = e.target.closest && e.target.closest('[data-date]');
+            if (dateEl && dateEl.dataset && dateEl.dataset.date) {
+                try { console.log('branford: calendar cell clicked', dateEl.dataset.date); } catch (err) {}
+                openDayScheduleModal(dateEl.dataset.date);
+            }
+        });
+    } else {
+        try { console.warn('branford: calendarContainer not found'); } catch (err) {}
+    }
 
     modalCloseBtn.addEventListener('click', () => modal.classList.add('hidden'));
     modal.addEventListener('click', (e) => {
