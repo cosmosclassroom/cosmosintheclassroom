@@ -41,17 +41,6 @@
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
-    
-    <!-- Cosmos Configuration System -->
-    <script src="{{ '/src/js/cosmos-config.js' | relative_url }}" defer></script>
-    
-    <!-- Theme Management -->
-    <script src="{{ '/src/js/theme-manager.js' | relative_url }}" defer></script>
-    
-    <!-- Ratatoskr Widget (only on curriculum pages) -->
-  <!-- Ratatoskr Widget (now loaded on all pages) -->
-  <script src="{{ '/src/Ratatoskr/js/ratatoskr-widget.js' | relative_url }}" defer></script>
-  <link rel="stylesheet" href="{{ '/src/Ratatoskr/css/ratatoskr.css' | relative_url }}">
   </head>
   <body>
     <header>
@@ -65,9 +54,6 @@
       {{ content }}
     
     </div>
-    
-    <!-- Settings Panel (global) -->
-    {% include settings-panel.html %}
     
     {% if page.math != false %}
     <!-- Initialize KaTeX rendering -->
@@ -85,5 +71,7 @@
         });
     </script>
     {% endif %}
+
+    
   </body>
 </html>

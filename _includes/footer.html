@@ -1,78 +1,15 @@
-<!-- _includes/footer.html -->
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-links">
-            <a href="{{ '/about.html' | relative_url }}" class="footer-link">About</a>
-            <a href="{{ '/teachers.html' | relative_url }}" class="footer-link">For Teachers</a>
-            <a href="{{ '/#contact' | relative_url }}" class="footer-link">Contact</a>
-            <a href="{{ '/physics/honors/' | relative_url }}" class="footer-link">Honors Physics</a>
-            <a href="{{ '/physics/standard/' | relative_url }}" class="footer-link">Standard Physics</a>
-        </div>
-        <div class="footer-copyright">
-            © {{ 'now' | date: "%Y" }} Cosmos in the Classroom. I hope you like it.
-            <a rel="license" href="//creativecommons.org/licenses/by-nc/3.0/deed.en_US" style="margin-left: 1rem;">
-                <img alt="Creative Commons License" style="border-width:0; vertical-align: middle;" 
-                     src="//i.creativecommons.org/l/by-nc/3.0/80x15.png"/>
-            </a>
-        </div>
-    </div>
+<footer>
+  <div class="copyright">
+    {% for tweet_tag in site.tweet_tags %}
+    <a href="{{ tweet_tag.href }}" target="_blank">
+      {{ tweet_tag.text}}
+    </a>
+    &bullet;
+    {% endfor %}
+    <a rel="license" href="//creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+      <img
+	 alt="Creative Commons License" style="border-width:0"
+	 src="//i.creativecommons.org/l/by-nc/3.0/80x15.png"/>
+    </a>
+  </div>
 </footer>
-
-<style>
-    /* Site Footer Styles */
-    .site-footer {
-        background: rgba(255, 255, 255, 0.95);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 2rem 0;
-        margin-top: auto;
-    }
-
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .footer-links {
-        display: flex;
-        gap: 2rem;
-        flex-wrap: wrap;
-    }
-
-    .footer-link {
-        color: #666;
-        text-decoration: none;
-        font-size: 0.9rem;
-        transition: color 0.3s ease;
-    }
-
-    .footer-link:hover {
-        color: #3498db;
-    }
-
-    .footer-copyright {
-        color: #999;
-        font-size: 0.85rem;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .footer-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .footer-links {
-            justify-content: center;
-        }
-    }
-</style>
