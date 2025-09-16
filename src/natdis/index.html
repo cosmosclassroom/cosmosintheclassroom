@@ -1,0 +1,207 @@
+<!DOCTYPE html>`
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disasters Course Navigation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #2c3e50;
+            --background-light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .course-overview {
+            background-color: var(--background-light);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .unit-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .unit-card {
+            flex: 1 1 300px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .unit-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+        }
+
+        .unit-content {
+            padding: 1rem;
+        }
+
+        .phase-section {
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: var(--background-light);
+            border-radius: 4px;
+        }
+
+        .resource-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-item {
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .resource-item a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .resource-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .phase-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-indicator {
+            height: 4px;
+            background-color: var(--accent-color);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .unit-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Natural Disasters</h1>
+        <div class="progress-indicator"></div>
+    </div>
+
+    <div class="course-overview">
+        <h2>Course Overview</h2>
+        <p>An integrated exploration of natural disasters through the lenses of science, engineering, and policy.</p>
+        <div id="course-stats">
+            <!-- Dynamically populated from scope-sequence.json -->
+        </div>
+    </div>
+
+    <div class="unit-container" id="units">
+        <!-- Units will be dynamically populated here -->
+    </div>
+
+    <script>
+        // This script will fetch and populate content from the _data JSON files
+        async function loadCourseContent() {
+            try {
+                // Load main configuration files
+                const overview = await fetch('_data/overview.json').then(r => r.json());
+                const scopeSequence = await fetch('_data/scope-sequence.json').then(r => r.json());
+                const agenda = await fetch('_data/agenda.json').then(r => r.json());
+                
+                // Update course stats
+                document.getElementById('course-stats').innerHTML = `
+                    <p>Total Class Meetings: ${scopeSequence.totalClassMeetings}</p>
+                    <p>Total Instructional Days: ${scopeSequence.totalInstructionalDays}</p>
+                `;
+
+                // Create unit cards
+                const unitsContainer = document.getElementById('units');
+                
+                for (const unit of overview.courseUnits) {
+                    const unitCard = document.createElement('div');
+                    unitCard.className = 'unit-card';
+                    
+                    const unitData = agenda.units.find(u => u.unitNumber === unit.unitNumber);
+                    
+                    unitCard.innerHTML = `
+                        <div class="unit-header">
+                            <h2>Unit ${unit.unitNumber}: ${unit.unitTitle}</h2>
+                            <p>${unit.overarchingQuestion}</p>
+                        </div>
+                        <div class="unit-content">
+                            <div class="phase-section">
+                                <div class="phase-title">🔬 Scientist Phase</div>
+                                <ul class="resource-list">
+                                    ${unitData?.instructionalSequence?.scientist?.map(item => 
+                                        `<li class="resource-item"><a href="${unit.unitNumber}-${unit.unitTitle.toLowerCase()}/${item}">${item}</a></li>`
+                                    ).join('') || ''}
+                                </ul>
+                            </div>
+                            <div class="phase-section">
+                                <div class="phase-title">⚡ Engineer Phase</div>
+                                <ul class="resource-list">
+                                    ${unitData?.instructionalSequence?.engineer?.map(item => 
+                                        `<li class="resource-item"><a href="${unit.unitNumber}-${unit.unitTitle.toLowerCase()}/${item}">${item}</a></li>`
+                                    ).join('') || ''}
+                                </ul>
+                            </div>
+                            <div class="phase-section">
+                                <div class="phase-title">📋 Policymaker Phase</div>
+                                <ul class="resource-list">
+                                    ${unitData?.instructionalSequence?.policymaker?.map(item => 
+                                        `<li class="resource-item"><a href="${unit.unitNumber}-${unit.unitTitle.toLowerCase()}/${item}">${item}</a></li>`
+                                    ).join('') || ''}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    
+                    unitsContainer.appendChild(unitCard);
+                }
+
+            } catch (error) {
+                console.error('Error loading course content:', error);
+            }
+        }
+
+        // Update progress indicator based on scroll position
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-indicator').style.width = scrolled + '%';
+        });
+
+        // Load content when page loads
+        document.addEventListener('DOMContentLoaded', loadCourseContent);
+    </script>
+</body>
+</html>
