@@ -26,8 +26,8 @@ b) The northward (y) component
 
 **Problem B:** A force vector of 85.0 N acts at an angle of 45.0° above the horizontal. Find:
 
-a) The horizontal component ($$F_x$$)
-b) The vertical component ($$F_y$$)
+a) The horizontal component ($F_x$)
+b) The vertical component ($F_y$)
 
 
 ## Journeyman Level: Applied Problem-Solving
@@ -57,25 +57,25 @@ d) The magnitude and direction of the resultant vector
 ### 5. The Surveyor's Challenge
 You are creating a vector map of a new park. Your survey drone has provided the locations of three key landmarks relative to a central fountain (the origin):
 
-- Landmark A (Oak tree): $$80.0 \text{ m}$$ at $$120.0$$° from positive x-axis
-- Landmark B (Picnic area): $$100.0 \text{ m}$$ at $$30.0$$° from positive x-axis
-- Landmark C (Playground): $$60.0 \text{ m}$$ at $$225.0$$° from positive x-axis
+- Landmark A (Oak tree): $80.0 \text{ m}$ at $120.0°$ from positive x-axis
+- Landmark B (Picnic area): $100.0 \text{ m}$ at $30.0°$ from positive x-axis
+- Landmark C (Playground): $60.0 \text{ m}$ at $225.0°$ from positive x-axis
 
 Your task is to determine:
 
 a) The coordinates (x,y) of each landmark
-b) The displacement vector $$\overrightarrow{d_{AB}}$$ from the oak tree directly to the picnic area
-c) The displacement vector $$\overrightarrow{d_{BC}}$$ from the picnic area directly to the playground
-d) The total displacement $$\overrightarrow{d_{total}}$$ if someone walks from the oak tree to the picnic area to the playground
+b) The displacement vector $\overrightarrow{d_{AB}}$ from the oak tree directly to the picnic area
+c) The displacement vector $\overrightarrow{d_{BC}}$ from the picnic area directly to the playground
+d) The total displacement $\overrightarrow{d_{total}}$ if someone walks from the oak tree to the picnic area to the playground
 
 ### 6. Multi-Step Navigation Problem
 A rescue helicopter must navigate through a complex flight pattern:
 
 **Flight segments:**
 
-- Segment 1: $$\overrightarrow{d_1} = 25.0 \text{ km}$$ on bearing $$045$$° (northeast)
-- Segment 2: $$\overrightarrow{d_2} = 18.0 \text{ km}$$ on bearing $$180$$° (due south)
-- Segment 3: $$\overrightarrow{d_3} = 32.0 \text{ km}$$ on bearing $$270$$° (due west)
+- Segment 1: $\overrightarrow{d_1} = 25.0 \text{ km}$ on bearing $045°$ (northeast)
+- Segment 2: $\overrightarrow{d_2} = 18.0 \text{ km}$ on bearing $180°$ (due south)
+- Segment 3: $\overrightarrow{d_3} = 32.0 \text{ km}$ on bearing $270°$ (due west)
 
 Calculate:
 
