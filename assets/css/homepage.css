@@ -17,6 +17,12 @@
   background-color: #fff;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -77,4 +83,43 @@
   color: #666;
   font-size: 0.9rem;
   border-top: 1px solid #eaeaea;
+}
+
+/* Unit Grid Styles */
+.unit {
+  padding: 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  background-color: #f9f9f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.unit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f0f4f8;
+}
+
+.unit h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.unit h3 a {
+  color: #2c6ba0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.unit h3 a:hover {
+  color: #1c4b70;
+  text-decoration: underline;
+}
+
+.unit p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
