@@ -1,1 +1,0 @@
-# Quiz 6.1 Content
