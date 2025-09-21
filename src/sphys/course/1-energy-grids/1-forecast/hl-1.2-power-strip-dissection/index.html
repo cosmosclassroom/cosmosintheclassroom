@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <p>Pre-Lab | Power Strip Dissection
+In this lab, you will explore basic electrical circuits to understand how energy flows and how larger power grids work. Using a D-battery, alligator clips, a power strip, and a small light bulb, you’ll construct simple circuits and investigate how they behave. Two types of circuits you’ll encounter are series circuits and parallel circuits.</p>
+
+<p>In a series circuit, all components are connected in a single path, so the same current flows through each component. If one part of the circuit is disconnected or a component fails, the entire circuit stops working. An example is a string of old holiday lights—if one bulb burns out, the whole string goes dark.</p>
+
+<p>In a parallel circuit, the components are connected along multiple paths, so the current can flow through more than one route. If one component fails, the others can continue to function. Most household wiring uses parallel circuits, which is why one light going out doesn’t cause the entire house to lose power.</p>
+
+<p>This lab should be completed in your Science Notebook.</p>
+
+<ol>
+  <li>
+    <p>What happens in a series circuit if one component, like a light bulb, is removed or stops working? How does this affect the flow of electricity?</p>
+  </li>
+  <li>
+    <p>In a parallel circuit, how does the flow of electricity differ compared to a series circuit? What advantage does this provide in real-world applications, such as household wiring?</p>
+  </li>
+  <li>
+    <p>How does the on-off switch in the power strip control the circuit, and how does this relate to how power grids manage electricity distribution to homes and businesses?</p>
+  </li>
+</ol>
+
+<p>Hexagon Lab
+Powerstrip Dissection
+Objective:
+Understand how a power strip functions in terms of energy distribution, safety features, and connections to larger electrical systems. Explore parallels between the internal structure of a power strip and the electric grid’s role in transmitting and distributing power to communities.
+Materials:</p>
+
+<p>D Battery (and terminal chamber)
+Alligator Clips
+Dissected Power Strip
+“Grain of Wheat” bulbs (1.5V, 100mA)</p>
+
+<p>Background
+Inspect the Materials:
+Examine the components: the D-battery, alligator clips, the power strip with the plug removed, and the grain-of-wheat light bulb. Describe the function of each component and identify it as one of the three major subsystems of a grid: generation, transmission, distribution or consumption.
+Component
+Primary Function
+Infrastructure Subsystem
+D-Battery (and terminals)</p>
+
+<p>Alligator Clips</p>
+
+<p>Power Strip</p>
+
+<p>Bulbs</p>
+
+<p>Procedure
+Assemble the Circuit:
+Connect one alligator clip to the positive terminal of the D-battery and another alligator clip to the negative terminal.
+ Attach the free end of the positive alligator clip to one exposed wire (not green) of the power strip.
+ Connect the free end of the negative alligator clip to the other wire (not green) of the power strip.
+ Insert the grain-of-wheat light bulb into the sockets on the power strip (you may need to use connectors or clips if necessary).
+Test the Circuit:
+ Turn the switch on the power strip to the “ON” position and observe whether the light bulb illuminates.
+ Turn the switch to the “OFF” position and observe the change.
+Explore Circuit Configurations:
+Disconnect the grain-of-wheat light bulb and connect it in series with another light bulb.
+Observe what happens when one bulb is disconnected in a series circuit.
+Try connecting the two different bulbs in parallel configuration on the power strip.
+Observe what happens when one bulb is disconnected in a parallel circuit
+Discuss how the brightness of the light bulb changes with different configurations.
+Add a switch
+Obtain a switch and attach it in series with one of the light bulbs.
+Observe the effects of each setting on the switch (ON/OFF) on the functioning of your circuit
+Attach another bulb in parallel with the switch/bulb from step 4a. Observe the effects of the first switch on the second bulb.</p>
+
+<p>Post-Lab Questions
+How did the behavior of the light bulb change when you experimented with different circuit configurations (series vs. parallel)? Why did this change occur? Hint: Consider the flow of electricity and how it is affected in each type of circuit.</p>
+
+<p>How do parallel circuits in your experiment relate to the way power is distributed in a community power grid? Why are parallel circuits more useful than series circuits in this context?</p>
+
+<p>How does the on-off switch on the power strip control the flow of electricity through the circuit? In what ways do switches in a power grid, such as circuit breakers or substations, function similarly?</p>
+
+<p>What are some limitations of using a power strip with a simple on-off switch to model a larger power grid? What specific components (e.g., transformers, circuit breakers) or complexities (e.g., variable energy demand) would be needed to make this model more accurate?</p>
+
+<p>After completing this lab, what is one question you still have about electricity, circuits, or the power grid?</p>
+
+<p>Hexagon Lab 1.1: Building the First Circuit Model
+Introduction
+How can we possibly begin to understand a system as vast as a power grid? The same way scientists and engineers always do: by starting with a simple model. A model isn’t just a smaller copy; it’s a tool for thinking. It strips away the overwhelming complexity of the real world to help us focus on the fundamental relationships at play. Our journey begins not with a power plant, but with a battery, a bulb, and a few wires.
+Materials
+1 D-Cell Battery
+1 Small Lightbulb (e.g., a flashlight bulb)
+2 Wires with alligator clips
+The Challenge
+Using only the materials provided, your task is to make the bulb light up. But the goal isn’t just to get a result—it’s to develop a model that explains how and why it works.
+The Investigation
+Explore and Sketch: Discover as many different arrangements as you can that successfully light the bulb. In your notebook, sketch each successful arrangement.
+Document Failures: Find a few arrangements that do not work. Sketch these as well.
+Find the Pattern: Look at all of your sketches.
+What do all the successful circuits have in common?
+What do all the failed attempts have in common?
+Develop a Rule: Based on your observations, write a single sentence that serves as a “rule” for making a bulb light up. This rule is the first version of your circuit model.
+Making Your Thinking Visible
+Draw Your Model: Choose your most reliable arrangement. Draw a clean, clear diagram of it in your research log.
+Show the Flow: On your diagram, use arrows to show the path you believe the energy is taking to get from the battery to the bulb and back.
+Explain Your Model: Below your diagram, write a short caption that explains why your arrangement works, using the “rule” you developed in the investigation.
+This simple model of a closed loop is the fundamental building block for every electrical system, from the phone in your pocket to the power grid that spans a continent.</p>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

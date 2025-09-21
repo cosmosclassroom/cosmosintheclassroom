@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Hexagon Lab 1.1B: From Power Strip to Power Grid | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <h1 id="hexagon-lab-11b-from-power-strip-to-power-grid">Hexagon Lab 1.1B: From Power Strip to Power Grid</h1>
+
+<p><strong>Today’s Question:</strong> How does electricity travel from a power plant to your phone charger?</p>
+
+<hr />
+
+<h2 id="what-you-need">What You Need:</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Your Science Notebook</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Calculator</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Colored pencils or markers</li>
+</ul>
+
+<h2 id="background">Background:</h2>
+<p>You’ve learned Ohm’s Law and can calculate voltage and current in simple circuits. But how does electricity actually get from a power plant hundreds of miles away to the outlet in your classroom? Today you’ll trace this journey step by step.</p>
+
+<hr />
+
+<h2 id="part-1-the-power-strip-investigation">Part 1: The Power Strip Investigation</h2>
+
+<h3 id="data-set-a-power-strip-anatomy"><strong>Data Set A: Power Strip Anatomy</strong></h3>
+
+<p>Here’s what you found when we took apart the power strip:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Component</th>
+      <th style="text-align: left">What It Does</th>
+      <th style="text-align: left">Connected To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Plug (male)</td>
+      <td style="text-align: left">Gets electricity from wall outlet</td>
+      <td style="text-align: left">Wall outlet</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Internal wires</td>
+      <td style="text-align: left">Carry electricity through the strip</td>
+      <td style="text-align: left">Multiple outlets</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Circuit breaker</td>
+      <td style="text-align: left">Stops electricity if too much flows</td>
+      <td style="text-align: left">Internal wires</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Outlets (female)</td>
+      <td style="text-align: left">Provide electricity to devices</td>
+      <td style="text-align: left">Your phone charger</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Step 1:</strong> In your notebook, draw the path electricity takes from the wall outlet to your phone charger. Use arrows to show direction.</p>
+
+<p><strong>Step 2:</strong> Answer these questions:</p>
+<ol>
+  <li>Are the outlets in the power strip connected in series or parallel? How do you know?</li>
+  <li>If one outlet breaks, will the others still work? Explain using your circuit knowledge.</li>
+</ol>
+
+<hr />
+
+<h2 id="part-2-scaling-up---from-outlet-to-building">Part 2: Scaling Up - From Outlet to Building</h2>
+
+<h3 id="data-set-b-classroom-electrical-system"><strong>Data Set B: Classroom Electrical System</strong></h3>
+
+<p>Your teacher measured the voltage at different points in our school’s electrical system:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Location</th>
+      <th style="text-align: left">Voltage</th>
+      <th style="text-align: left">Current Capacity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Wall outlet (where we plug in)</td>
+      <td style="text-align: left">120 V</td>
+      <td style="text-align: left">15 A</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Classroom breaker box</td>
+      <td style="text-align: left">120 V</td>
+      <td style="text-align: left">15 A per circuit</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Main school panel</td>
+      <td style="text-align: left">240 V</td>
+      <td style="text-align: left">200 A total</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Transformer outside school</td>
+      <td style="text-align: left">7,200 V</td>
+      <td style="text-align: left">High</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Step 3:</strong> Graph this data. Put “Location” on the x-axis and “Voltage” on the y-axis.</p>
+
+<p><strong>Step 4:</strong> What pattern do you notice as you go from the outlet toward the transformer?</p>
+
+<p><strong>Make a Claim:</strong> Complete this sentence: “As electricity travels from the transformer to the outlet, the voltage <strong>__</strong><strong>__</strong>___.”
+Cite specific numbers from the data table as evidence.</p>
+
+<hr />
+
+<h2 id="part-3-the-big-picture---regional-power-grid">Part 3: The Big Picture - Regional Power Grid</h2>
+
+<h3 id="data-set-c-texas-power-grid-components"><strong>Data Set C: Texas Power Grid Components</strong></h3>
+
+<p>Here are the major parts of the Texas power grid and their typical voltages:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Grid Component</th>
+      <th style="text-align: left">Voltage Level</th>
+      <th style="text-align: left">Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Power plants</td>
+      <td style="text-align: left">13,000 V</td>
+      <td style="text-align: left">Generate electricity</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Transmission lines (long distance)</td>
+      <td style="text-align: left">345,000 V</td>
+      <td style="text-align: left">Carry power across Texas</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Distribution substations</td>
+      <td style="text-align: left">7,200 V</td>
+      <td style="text-align: left">Reduce voltage for neighborhoods</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Local transformers</td>
+      <td style="text-align: left">240 V</td>
+      <td style="text-align: left">Final voltage reduction</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Your house</td>
+      <td style="text-align: left">120 V</td>
+      <td style="text-align: left">Safe voltage for appliances</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Step 5:</strong> Create a flow chart showing how electricity moves from power plant to your house. Include all five components and their voltage levels.</p>
+
+<p><strong>Step 6:</strong> Why do you think the transmission lines use such high voltage (345,000 V) when your house only needs 120 V?</p>
+
+<p><em>Hint: Think about what you learned in Problem Set 1.1 about power losses.</em></p>
+
+<hr />
+
+<h2 id="part-4-connecting-to-the-texas-crisis">Part 4: Connecting to the Texas Crisis</h2>
+
+<h3 id="data-set-d-what-happened-in-february-2021"><strong>Data Set D: What Happened in February 2021</strong></h3>
+
+<p>During the Texas blackout, different parts of the grid failed:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Day</th>
+      <th style="text-align: left">Power Plants Working</th>
+      <th style="text-align: left">Transmission Lines</th>
+      <th style="text-align: left">Distribution</th>
+      <th style="text-align: left">Houses with Power</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Feb 13</td>
+      <td style="text-align: left">95%</td>
+      <td style="text-align: left">100%</td>
+      <td style="text-align: left">100%</td>
+      <td style="text-align: left">95%</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Feb 15</td>
+      <td style="text-align: left">60%</td>
+      <td style="text-align: left">90%</td>
+      <td style="text-align: left">85%</td>
+      <td style="text-align: left">40%</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Feb 17</td>
+      <td style="text-align: left">45%</td>
+      <td style="text-align: left">75%</td>
+      <td style="text-align: left">60%</td>
+      <td style="text-align: left">30%</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Feb 19</td>
+      <td style="text-align: left">70%</td>
+      <td style="text-align: left">95%</td>
+      <td style="text-align: left">90%</td>
+      <td style="text-align: left">65%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Step 7:</strong> Which part of the grid failed first? Which failed last?</p>
+
+<p><strong>Step 8:</strong> Explain why transmission and distribution problems got worse even after some power plants came back online.</p>
+
+<hr />
+
+<h2 id="part-5-check-your-understanding">Part 5: Check Your Understanding</h2>
+
+<p><strong>Complete these sentences using evidence from today’s investigation:</strong></p>
+
+<ol>
+  <li>
+    <p>“Electricity travels from power plants to homes by <strong>__</strong><strong>__</strong>___.”</p>
+  </li>
+  <li>
+    <p>“Transmission lines use very high voltage because <strong>__</strong><strong>__</strong>___.”</p>
+  </li>
+  <li>
+    <p>“The Texas blackout got worse because <strong>__</strong><strong>__</strong>___.”</p>
+  </li>
+  <li>
+    <p>“Power grids are like systems because they have <strong>__</strong><strong>__</strong>___.”</p>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="connection-to-tomorrow">Connection to Tomorrow</h2>
+
+<p><strong>Tomorrow we’ll learn about series and parallel circuits in more detail. Based on today’s investigation:</strong></p>
+
+<p><strong>Predict:</strong> Is the power grid mostly series or parallel circuits? Why does this matter for reliability?</p>
+
+<hr />
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

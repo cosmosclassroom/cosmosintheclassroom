@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      
+<hr />
+<p>layout: default
+title: “Unit 1: Earthquakes - Lecture Notes”
+—</p>
+<h1 id="unit-1-earthquakes---lecture-notes">Unit 1: Earthquakes - Lecture Notes</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This unit explores how we build resilient communities on ground that is constantly in motion. We examine earthquake science through the lens of Branford, CT, which sits near the Moodus seismic area. Students will progress through the roles of scientist, engineer, and policymaker to understand seismic hazards, design resilient structures, and develop safety policies.</p>
+
+<h2 id="part-1-the-scientists-perspective">Part 1: The Scientist’s Perspective</h2>
+
+<h3 id="11-plate-tectonics-and-seismic-forces">1.1 Plate Tectonics and Seismic Forces</h3>
+
+<h4 id="key-concepts">Key Concepts</h4>
+<ul>
+  <li><strong>Plate Tectonics</strong>: Earth’s outer shell (lithosphere) is divided into several large, moving plates</li>
+  <li><strong>Convergent Boundaries</strong>: Where plates push together, creating compression forces</li>
+  <li><strong>Divergent Boundaries</strong>: Where plates pull apart, creating tension forces</li>
+  <li><strong>Transform Boundaries</strong>: Where plates slide past each other, creating shear forces</li>
+  <li><strong>Elastic Rebound Theory</strong>: The fundamental process causing earthquakes</li>
+</ul>
+
+<h4 id="the-elastic-rebound-theory">The Elastic Rebound Theory</h4>
+<p>Explains how earthquakes occur:</p>
+<ol>
+  <li>Rocks along a fault are subjected to forces that cause elastic strain</li>
+  <li>The strain accumulates until it exceeds the friction holding the rocks together</li>
+  <li>The rocks suddenly slip, releasing the stored energy as seismic waves</li>
+  <li>The ground “rebounds” to a new position</li>
+</ol>
+
+<h4 id="seismic-waves">Seismic Waves</h4>
+
+<p><strong>Primary Waves (P-waves)</strong></p>
+<ul>
+  <li>Compression waves (push-pull motion)</li>
+  <li>Fastest seismic waves (4-7 km/s)</li>
+  <li>Can travel through solids, liquids, and gases</li>
+  <li>First to arrive at seismic stations</li>
+</ul>
+
+<p><strong>Secondary Waves (S-waves)</strong></p>
+<ul>
+  <li>Shear waves (side-to-side motion)</li>
+  <li>Slower than P-waves (2-5 km/s)</li>
+  <li>Can only travel through solids</li>
+  <li>Arrive after P-waves</li>
+</ul>
+
+<p><strong>Surface Waves</strong></p>
+<ul>
+  <li>Travel along Earth’s surface</li>
+  <li>Slowest but most destructive</li>
+  <li>Cause most of the damage in an earthquake</li>
+</ul>
+
+<h4 id="formulas-for-seismic-wave-analysis">Formulas for Seismic Wave Analysis</h4>
+<ul>
+  <li><strong>Distance calculation</strong>: $Distance = Speed \times Time$</li>
+  <li><strong>S-P interval</strong>: $Time_{S-P} = Time_{S-wave} - Time_{P-wave}$
+    <ul>
+      <li>The S-P interval increases with distance from the epicenter</li>
+      <li>Used in triangulation to locate epicenters</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="12-measuring-and-locating-earthquakes">1.2 Measuring and Locating Earthquakes</h3>
+
+<h4 id="triangulation-method">Triangulation Method</h4>
+<p>Using three or more seismic stations to locate an epicenter:</p>
+<ol>
+  <li>Calculate the S-P interval at each station</li>
+  <li>Convert the time difference to distance using travel-time graphs</li>
+  <li>Draw a circle around each station with radius equal to the calculated distance</li>
+  <li>The intersection of three circles marks the epicenter</li>
+</ol>
+
+<h4 id="magnitude-scales">Magnitude Scales</h4>
+
+<p><strong>Richter Scale</strong></p>
+<ul>
+  <li>Logarithmic scale: each whole number increase represents 10x amplitude</li>
+  <li>$Magnitude = log_{10}(A/A_0)$
+    <ul>
+      <li>A = measured amplitude</li>
+      <li>A₀ = standard reference amplitude</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Moment Magnitude Scale (M<sub>w</sub>)</strong></p>
+<ul>
+  <li>Modern scale that measures the total energy released</li>
+  <li>More accurate for larger earthquakes</li>
+  <li>Addresses limitations of the Richter scale</li>
+</ul>
+
+<h4 id="energy-release">Energy Release</h4>
+<ul>
+  <li>Each whole number increase in magnitude = approximately 32x energy release</li>
+  <li>Formula: $Energy = 10^{1.5M+4.8}$ (in joules)</li>
+</ul>
+
+<h3 id="13-seismic-hazard-assessment">1.3 Seismic Hazard Assessment</h3>
+
+<h4 id="seismic-hazard-maps">Seismic Hazard Maps</h4>
+<ul>
+  <li>Probability maps showing likelihood of ground shaking</li>
+  <li>Based on:
+    <ul>
+      <li>Historical earthquake data</li>
+      <li>Known fault locations</li>
+      <li>Geological conditions</li>
+      <li>Recurrence intervals</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="risk-formula">Risk Formula</h4>
+<ul>
+  <li>$Risk = Hazard \times Vulnerability$
+    <ul>
+      <li>Hazard = probability and severity of an earthquake</li>
+      <li>Vulnerability = susceptibility of buildings and infrastructure</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="the-moodus-seismic-area-connecticut-context">The Moodus Seismic Area (Connecticut Context)</h4>
+<ul>
+  <li>History of small to moderate earthquakes</li>
+  <li>“Moodus noises” reported since colonial times</li>
+  <li>Largest recorded event: 1791, estimated magnitude 4.3</li>
+  <li>Most activity occurs at shallow depths (1-5 km)</li>
+</ul>
+
+<h2 id="part-2-the-engineers-perspective">Part 2: The Engineer’s Perspective</h2>
+
+<h3 id="21-structural-engineering-for-seismic-forces">2.1 Structural Engineering for Seismic Forces</h3>
+
+<h4 id="types-of-forces-buildings-must-resist">Types of Forces Buildings Must Resist</h4>
+<ul>
+  <li><strong>Inertial Forces</strong>: Objects resist changes in motion (lateral forces)</li>
+  <li><strong>Shear Forces</strong>: Parallel forces causing layers to slide</li>
+  <li><strong>Bending Moments</strong>: Forces causing rotation around a point</li>
+  <li><strong>Torsion</strong>: Twisting forces</li>
+</ul>
+
+<h4 id="building-response-during-earthquakes">Building Response During Earthquakes</h4>
+<ul>
+  <li><strong>Resonance</strong>: When ground motion frequency matches building’s natural frequency</li>
+  <li><strong>Damping</strong>: Reduction of vibrations over time</li>
+  <li><strong>Ductility</strong>: Ability to deform without breaking</li>
+</ul>
+
+<h4 id="key-engineering-principles">Key Engineering Principles</h4>
+
+<p><strong>Redundancy</strong></p>
+<ul>
+  <li>Multiple load paths ensure stability if one element fails</li>
+  <li>Avoids single points of failure</li>
+</ul>
+
+<p><strong>Regular Configuration</strong></p>
+<ul>
+  <li>Symmetrical buildings perform better</li>
+  <li>Irregular shapes create stress concentrations</li>
+</ul>
+
+<p><strong>Diaphragm Action</strong></p>
+<ul>
+  <li>Floors and roofs act as horizontal diaphragms</li>
+  <li>Transfer lateral forces to vertical elements (walls, frames)</li>
+</ul>
+
+<h3 id="22-earthquake-resistant-design-strategies">2.2 Earthquake-Resistant Design Strategies</h3>
+
+<h4 id="foundation-systems">Foundation Systems</h4>
+<ul>
+  <li><strong>Base Isolation</strong>: Separates building from ground motion
+    <ul>
+      <li>Uses flexible bearings or pads</li>
+      <li>Decouples building from ground movement</li>
+    </ul>
+  </li>
+  <li><strong>Deep Foundations</strong>: Piles or caissons extend to stable soil layers</li>
+</ul>
+
+<h4 id="structural-systems">Structural Systems</h4>
+<ul>
+  <li><strong>Moment-Resisting Frames</strong>: Rigid connections between beams and columns</li>
+  <li><strong>Shear Walls</strong>: Reinforced walls resist lateral forces</li>
+  <li><strong>Braced Frames</strong>: Diagonal members provide triangulation</li>
+  <li><strong>Cross-Bracing</strong>: X-shaped braces distribute forces</li>
+</ul>
+
+<h4 id="connection-details">Connection Details</h4>
+<ul>
+  <li><strong>Ductile Connections</strong>: Allow controlled deformation</li>
+  <li><strong>Strong Column/Weak Beam</strong>: Ensures columns remain intact during failure</li>
+</ul>
+
+<h4 id="energy-dissipation-devices">Energy Dissipation Devices</h4>
+<ul>
+  <li><strong>Dampers</strong>: Convert kinetic energy to heat</li>
+  <li><strong>Tuned Mass Dampers</strong>: Counteract building sway</li>
+</ul>
+
+<h3 id="23-performance-based-design">2.3 Performance-Based Design</h3>
+
+<h4 id="building-performance-categories">Building Performance Categories</h4>
+<ul>
+  <li><strong>Immediate Occupancy</strong>: Minimal damage, building remains functional</li>
+  <li><strong>Life Safety</strong>: Structural damage occurs but building doesn’t collapse</li>
+  <li><strong>Collapse Prevention</strong>: Building may be damaged beyond repair but doesn’t collapse</li>
+</ul>
+
+<h4 id="engineering-calculations">Engineering Calculations</h4>
+<ul>
+  <li><strong>Factor of Safety</strong>: $FOS = \frac{Resisting\,Forces}{Driving\,Forces}$</li>
+  <li><strong>Cost-Effectiveness</strong>: $Cost\,Effectiveness = \frac{Total\,Benefit}{Total\,Cost}$</li>
+  <li><strong>Response Spectrum Analysis</strong>: Models how structures respond to different frequencies</li>
+</ul>
+
+<h2 id="part-3-the-policymakers-perspective">Part 3: The Policymaker’s Perspective</h2>
+
+<h3 id="31-seismic-building-codes">3.1 Seismic Building Codes</h3>
+
+<h4 id="code-development-process">Code Development Process</h4>
+<ul>
+  <li>Based on scientific research and post-earthquake investigations</li>
+  <li>Updated periodically to incorporate new knowledge</li>
+  <li>Minimum requirements for public safety</li>
+</ul>
+
+<h4 id="key-elements-of-building-codes">Key Elements of Building Codes</h4>
+<ul>
+  <li><strong>Seismic Zone Classification</strong>: Different requirements based on regional risk</li>
+  <li><strong>Importance Factors</strong>: Higher standards for critical facilities</li>
+  <li><strong>Prescriptive vs. Performance-Based Provisions</strong>: Rules-based vs. outcome-based</li>
+</ul>
+
+<h4 id="enforcement-mechanisms">Enforcement Mechanisms</h4>
+<ul>
+  <li>Plan review process</li>
+  <li>Inspection requirements</li>
+  <li>Occupancy certification</li>
+</ul>
+
+<h3 id="32-vulnerability-assessment">3.2 Vulnerability Assessment</h3>
+
+<h4 id="components-of-vulnerability">Components of Vulnerability</h4>
+<ul>
+  <li><strong>Structural Vulnerability</strong>: Building design and construction</li>
+  <li><strong>Non-Structural Vulnerability</strong>: Contents, utilities, equipment</li>
+  <li><strong>Social Vulnerability</strong>: Demographics, socioeconomic factors</li>
+  <li><strong>Systemic Vulnerability</strong>: Infrastructure interdependencies</li>
+</ul>
+
+<h4 id="community-resilience-factors">Community Resilience Factors</h4>
+<ul>
+  <li>Emergency response capabilities</li>
+  <li>Redundant infrastructure systems</li>
+  <li>Economic diversity</li>
+  <li>Social cohesion</li>
+</ul>
+
+<h3 id="33-policy-tradeoffs-and-decision-making">3.3 Policy Tradeoffs and Decision-Making</h3>
+
+<h4 id="cost-benefit-analysis">Cost-Benefit Analysis</h4>
+<ul>
+  <li>Direct costs: Construction, retrofitting</li>
+  <li>Indirect costs: Business disruption, economic impact</li>
+  <li>Benefits: Lives saved, property protected, functionality maintained</li>
+  <li>Challenge: Valuing intangibles (human life, historical significance)</li>
+</ul>
+
+<h4 id="retrofit-policy-options">Retrofit Policy Options</h4>
+<ul>
+  <li><strong>Mandatory Programs</strong>: Required upgrades for certain buildings</li>
+  <li><strong>Voluntary Programs</strong>: Incentives for seismic improvements</li>
+  <li><strong>Trigger Mechanisms</strong>: Requirements activated by renovations or occupancy changes</li>
+</ul>
+
+<h4 id="balancing-competing-priorities">Balancing Competing Priorities</h4>
+<ul>
+  <li>Public safety vs. economic constraints</li>
+  <li>Immediate needs vs. long-term resilience</li>
+  <li>Individual rights vs. community protection</li>
+</ul>
+
+<h4 id="risk-communication">Risk Communication</h4>
+<ul>
+  <li>Translating technical information for public understanding</li>
+  <li>Building consensus for preparedness investments</li>
+  <li>Overcoming status quo bias and disaster myopia</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This unit integrates scientific understanding of earthquakes, engineering principles for resilient design, and policy approaches to community safety. By examining these perspectives together, we develop a comprehensive view of how communities can live safely in seismically active regions.</p>
+
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+
+<ul>
+  <li>Bolt, B.A. (1999). <em>Earthquakes</em> (4th ed.). W.H. Freeman.</li>
+  <li>FEMA P-749. (2010). <em>Earthquake-Resistant Design Concepts: An Introduction to the NEHRP Recommended Seismic Provisions</em>.</li>
+  <li>USGS. (2018). <em>The USGS Earthquake Hazards Program in NEHRP—Investing in a Safer Future</em>.</li>
+  <li>Comerio, M.C. (1998). <em>Disaster Hits Home: New Policy for Urban Housing Recovery</em>. University of California Press.</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

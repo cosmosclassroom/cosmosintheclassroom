@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <p>marp: true
+theme: default</p>
+
+<hr />
+
+<h1 id="day-1-analyzing-the-blackout"><strong>Day 1: Analyzing the Blackout</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-1-agenda"><strong>Day 1 Agenda</strong></h3>
+
+<ol>
+  <li>Introduce Unit 1 Phenomenon: The 2021 Texas Power Crisis</li>
+  <li>Begin Hexagon Lab: Analyzing Blackout Data</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>When you flip a light switch, where does the electrical energy come from?</li>
+  <li>What does it mean for a power grid to “fail”?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-2-finding-patterns-in-the-data"><strong>Day 2: Finding Patterns in the Data</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-1">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-2-agenda"><strong>Day 2 Agenda</strong></h3>
+
+<ol>
+  <li>Finish Hexagon Lab: Analyzing Blackout Data</li>
+  <li>Introduce and Begin Research Brief - Forecast</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-1"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>From yesterday’s data analysis, what was one initial pattern that stood out to you about the blackout?</li>
+  <li>What is one question you have after looking at the data?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>Based on the lab, what is the difference between raw data and a scientific conclusion?</li>
+  <li>What key piece of information helped you turn your data into a conclusion?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-3-building-our-foundation"><strong>Day 3: Building Our Foundation</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-2">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-3-agenda"><strong>Day 3 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Research Brief - Forecast</li>
+  <li>Begin Flexbook Reading / Direct Instruction on foundational electrical concepts.</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-2"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>In your own words, what is the main goal of the ‘Forecast’ Research Brief?</li>
+  <li>What is the primary question we are trying to answer with this forecast?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-1"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>After completing your initial forecast, what is the <em>biggest</em> unanswered question you still have about the power grid?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-4-circuits-and-power"><strong>Day 4: Circuits and Power</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-3">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-4-agenda"><strong>Day 4 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Flexbook Reading / Direct Instruction</li>
+  <li>Begin Problem Set 1 (Circuits &amp; Power)</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-3"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>List one key vocabulary term from yesterday’s reading (e.g., Voltage, Current, Resistance).</li>
+  <li>In one sentence, what does that term measure or describe?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-5-problem-solving"><strong>Day 5: Problem Solving</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-4">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-5-agenda"><strong>Day 5 Agenda</strong></h3>
+
+<ol>
+  <li>Dedicated work time: Continue Problem Set 1 (Circuits &amp; Power)</li>
+  <li>Peer collaboration and review</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-4"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What relationship does Ohm’s Law describe?</li>
+  <li>What do the three variables in the Ohm’s Law equation ($V=IR$) stand for?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-6-applying-the-concepts"><strong>Day 6: Applying the Concepts</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-5">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-6-agenda"><strong>Day 6 Agenda</strong></h3>
+
+<ol>
+  <li>Finish and review Problem Set 1 (Circuits &amp; Power)</li>
+  <li>Begin Quiz 1 - Foundational Concepts</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-5"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>Which problem number from the problem set did you find most challenging?</li>
+  <li>Briefly, what made that particular problem difficult?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-7-checking-for-understanding"><strong>Day 7: Checking for Understanding</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-6">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-7-agenda"><strong>Day 7 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Quiz 1 - Foundational Concepts</li>
+  <li>Review quiz and clarify misconceptions</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-6"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What is one concept from this unit you feel very confident about?</li>
+  <li>What is one concept you would like to review one last time before the quiz?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-2"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>On the quiz, which question type was easier for you: conceptual or calculation-based?</li>
+  <li>Why do you think that type of question was more straightforward for you?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-8-modeling-the-grid"><strong>Day 8: Modeling the Grid</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-7">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-8-agenda"><strong>Day 8 Agenda</strong></h3>
+
+<ol>
+  <li>Introduce the “Blueprint” phase</li>
+  <li>Begin Research Brief Blueprint: System Models of the Grid</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-7"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>In your own words, what is a “system model”?</li>
+  <li>Why would an engineer want to create a model of a power grid before building one?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-3"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>What are the three most essential components you need to include in your model of the power grid?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-9-systems-thinking"><strong>Day 9: Systems Thinking</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-8">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-9-agenda"><strong>Day 9 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Research Brief Blueprint - System Models of the Grid</li>
+  <li>Begin Flexbook Reading / Direct Instruction on system interactions.</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-8"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What is the primary goal of modeling the electrical grid as a system?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-10-energy-on-the-move"><strong>Day 10: Energy on the Move</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-9">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-10-agenda"><strong>Day 10 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Flexbook Reading / Direct Instruction</li>
+  <li>Begin Hexagon Lab - Modeling Energy Transfer in Wires</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-9"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What’s the difference between energy <em>generation</em> and energy <em>transmission</em>?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-11-resistance-and-loss"><strong>Day 11: Resistance and Loss</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-10">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-11-agenda"><strong>Day 11 Agenda</strong></h3>
+
+<ol>
+  <li>Continue Hexagon Lab - Modeling Energy Transfer in Wires</li>
+  <li>Data analysis and initial conclusions</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-10"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>From our last lab session, what relationship did you begin to observe between the properties of a wire and energy transfer?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-4"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>In our wire model, where does the “lost” electrical energy go?</li>
+  <li>How does this energy loss connect to the real-world challenge of powering a city?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-12-supply-and-demand"><strong>Day 12: Supply and Demand</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-11">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-12-agenda"><strong>Day 12 Agenda</strong></h3>
+
+<ol>
+  <li>Conclude Hexagon Lab - Modeling Energy Transfer in Wires</li>
+  <li>Begin Problem Set 2 (Supply &amp; Demand)</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-11"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What was the single most important finding from your Energy Transfer lab?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-13-balancing-the-grid"><strong>Day 13: Balancing the Grid</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-12">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-13-agenda"><strong>Day 13 Agenda</strong></h3>
+
+<ol>
+  <li>Complete and review Problem Set 2 (Supply &amp; Demand)</li>
+  <li>Prepare for Quiz 2</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-12"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>Why is balancing energy supply with consumer demand a critical challenge for grid operators?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-14-blueprint-check-in"><strong>Day 14: Blueprint Check-In</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-13">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-14-agenda"><strong>Day 14 Agenda</strong></h3>
+
+<ol>
+  <li>Begin Quiz 2 - System Modeling &amp; Application</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-13"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What are the key inputs, outputs, and processes in the power grid system model we’ve been developing?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-5"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>How did creating a system model help you understand the concepts on this quiz better than just solving equations?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-15-time-for-reflection"><strong>Day 15: Time for Reflection</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-14">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-15-agenda"><strong>Day 15 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Quiz 2 - System Modeling &amp; Application</li>
+  <li>Introduce the “Reflection” phase</li>
+  <li>Begin Flexbook Reading / Direct Instruction on engineering tradeoffs</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-14"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>We have a forecast (what happened) and a blueprint (how it works). What do you think the purpose of a “reflection” stage will be?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-16-engineering-tradeoffs"><strong>Day 16: Engineering Tradeoffs</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-15">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-16-agenda"><strong>Day 16 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Flexbook Reading / Direct Instruction</li>
+  <li>Begin Hexagon Labs - Engineering Design Tradeoffs</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-15"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>Based on the reading, what is an “engineering tradeoff”?</li>
+  <li>Provide a simple, non-electrical example of a tradeoff.</li>
+</ul>
+
+<hr />
+
+<h1 id="day-17-designing-solutions"><strong>Day 17: Designing Solutions</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-16">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-17-agenda"><strong>Day 17 Agenda</strong></h3>
+
+<ol>
+  <li>Continue Hexagon Labs - Engineering Design Tradeoffs</li>
+  <li>Analyze scenarios and propose solutions</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-16"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What are the main competing priorities you are trying to balance in the engineering design lab (e.g., cost, reliability, environmental impact)?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-18-policy-and-people"><strong>Day 18: Policy and People</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-17">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-18-agenda"><strong>Day 18 Agenda</strong></h3>
+
+<ol>
+  <li>Conclude Hexagon Labs - Engineering Design Tradeoffs</li>
+  <li>Begin Research Brief Reflection - Systems, Policy, and Design</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-17"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>In yesterday’s lab, what was the most difficult design tradeoff you had to make?</li>
+  <li>What made that specific tradeoff so challenging?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-6"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>How does public policy or government regulation influence the engineering design choices you explored in the lab?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-19-synthesizing-our-work"><strong>Day 19: Synthesizing Our Work</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-18">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-19-agenda"><strong>Day 19 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Research Brief Reflection - Systems, Policy, and Design</li>
+  <li>Complete Quiz 3 - Design Principles</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-18"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>Beyond pure physics, what is one other field (e.g., economics, politics, ethics) that influences the design of a power grid?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-7"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>After completing your final research brief, what is your single biggest takeaway from this entire unit?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-20-unit-assessment"><strong>Day 20: Unit Assessment</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-19">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-20-agenda"><strong>Day 20 Agenda</strong></h3>
+
+<ol>
+  <li>Begin Assessments and Transfer Tasks</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-19"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>Look back at your answer to the “Appetizer” question on Day 1. How has your understanding of “flipping a switch” changed or deepened?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-21-demonstrating-mastery"><strong>Day 21: Demonstrating Mastery</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-20">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-21-agenda"><strong>Day 21 Agenda</strong></h3>
+
+<ol>
+  <li>Continue Assessments and Transfer Tasks</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-20"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What part of the unit assessment do you feel most prepared for?</li>
+  <li>What part of the assessment feels like the biggest challenge for you?</li>
+</ul>
+
+<hr />
+
+<h1 id="day-22-unit-wrap-up"><strong>Day 22: Unit Wrap-Up</strong></h1>
+<h3 id="standard-physics--unit-1-the-invisible-currents-21">Standard Physics | Unit 1: The Invisible Currents</h3>
+<!-- Omit the image tag to avoid rendering issues. -->
+
+<hr />
+
+<h3 id="day-22-agenda"><strong>Day 22 Agenda</strong></h3>
+
+<ol>
+  <li>Complete Final Assessments and Transfer Tasks</li>
+  <li>Unit Review &amp; Reflection</li>
+</ol>
+
+<hr />
+
+<h3 id="appetizer-21"><strong>Appetizer</strong></h3>
+
+<ul>
+  <li>What is one skill or concept from this unit that you could apply to understand another complex system in the world?</li>
+</ul>
+
+<hr />
+
+<h3 id="dessert-8"><strong>Dessert</strong></h3>
+
+<ul>
+  <li>Propose one solution to help prevent a future large-scale blackout.</li>
+  <li>Briefly explain how your solution is supported by a concept you learned in this unit.</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

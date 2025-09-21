@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Set 1.2 — Solutions Viewer</title>
+    <style>
+        body{font-family: system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial; margin:0; background:#f7f7fb; color:#111}
+        .wrap{max-width:900px;margin:3rem auto;padding:2rem;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(24,24,40,0.06)}
+        header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+        h1{font-size:1.25rem;margin:0}
+        .controls{display:flex;gap:.5rem;align-items:center}
+        button{background:#2563eb;color:#fff;border:0;padding:.5rem .75rem;border-radius:6px;cursor:pointer}
+        button:disabled{opacity:.45;cursor:default}
+        .btn-ghost{background:#eef2ff;color:#2563eb}
+        #content{min-height:260px;padding:1rem 0;font-size:1rem;line-height:1.5}
+        .meta{color:#475569;font-size:.9rem;margin-bottom:.5rem}
+        .progress{height:8px;background:#e6eefc;border-radius:99px;overflow:hidden}
+        .progress > i{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);width:0%}
+        footer{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;color:#475569;font-size:.9rem}
+        pre{background:#0b1220;color:#dbeafe;padding:1rem;border-radius:6px;overflow:auto}
+        .kb{font-weight:600}
+    </style>
+    <!-- MathJax (enhanced config for ams + textmacros) -->
+    <style>
+        mjx-container[jax="CHTML"][display="true"] { margin: 1rem 0; }
+    </style>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                displayMath: [['$$','$$'], ['\\[','\\]']],
+                packages: {'[+]': ['ams', 'textmacros']},
+                tags: 'none'
+            },
+            options: {
+                skipHtmlTags: ['script','noscript','style','textarea','pre'],
+                renderActions: {
+                    addMenu: []
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>Problem Set 1.2 — Solutions</h1>
+            <div class="controls">
+                <button id="prev" class="btn-ghost">◀ Prev</button>
+                <button id="next">Next ▶</button>
+            </div>
+        </header>
+
+        <div class="meta">Slide <span id="idx">1</span> / <span id="total">9</span></div>
+        <div class="progress" aria-hidden>
+            <i id="bar"></i>
+        </div>
+
+        <main id="content" role="main" aria-live="polite">
+            <!-- dynamic content -->
+        </main>
+
+        <footer>
+            <div>Use <span class="kb">←</span> and <span class="kb">→</span> to navigate</div>
+            <div><button id="showAll" class="btn-ghost">Show All</button></div>
+        </footer>
+    </div>
+
+    <script>
+        const solutions = [
+            `
+            <h2>1. Scalar vs. Vector Classification</h2>
+            <ol>
+                <li>
+                    <strong>The speed limit on the highway: 65 mph</strong><br>
+                    <strong>Answer:</strong> Scalar<br>
+                    <span class="note">Explanation: Speed limit only specifies magnitude (65 mph) without any direction information.</span>
+                </li>
+                <li>
+                    <strong>The velocity of a car: 65 mph due north</strong><br>
+                    <strong>Answer:</strong> Vector<br>
+                    <span class="note">Explanation: Velocity includes both magnitude (65 mph) and direction (due north).</span>
+                </li>
+                <li>
+                    <strong>The mass of a textbook: 2.1 kg</strong><br>
+                    <strong>Answer:</strong> Scalar<br>
+                    <span class="note">Explanation: Mass only specifies amount of matter (2.1 kg) without directional component.</span>
+                </li>
+                <li>
+                    <strong>The weight of the textbook: 21 N downward</strong><br>
+                    <strong>Answer:</strong> Vector<br>
+                    <span class="note">Explanation: Weight includes both magnitude (21 N) and direction (downward).</span>
+                </li>
+                <li>
+                    <strong>The temperature in the room: 22°C</strong><br>
+                    <strong>Answer:</strong> Scalar<br>
+                    <span class="note">Explanation: Temperature specifies only magnitude (22°C) with no direction.</span>
+                </li>
+            </ol>
+            `,
+            `
+            <h2>2. Basic Vector Components</h2>
+            <p><strong>A displacement vector has a magnitude of 50.0 m and points 30.0° north of east. Calculate:</strong></p>
+            <ul>
+                <li>
+                    <strong>a) The eastward (x) component</strong><br>
+                    <strong>Answer:</strong> 43.3 m<br>
+                    <div class="work">
+                        $$x = 50.0 \\times \\cos(30.0^{\\circ}) = 50.0 \\times 0.866 = 43.3\,\\text{m}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>b) The northward (y) component</strong><br>
+                    <strong>Answer:</strong> 25.0 m<br>
+                    <div class="work">
+                        $$y = 50.0 \\times \\sin(30.0^{\\circ}) = 50.0 \\times 0.500 = 25.0\,\\text{m}$$
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>3. Force Vector Components</h2>
+            <p><strong>A force vector of 85.0 N acts at an angle of 45.0° above the horizontal. Find:</strong></p>
+            <ul>
+                <li>
+                    <strong>a) The horizontal component (\(F_x\))</strong><br>
+                    <strong>Answer:</strong> 60.1 N<br>
+                    <div class="work">
+                        $$F_x = 85.0 \\times \\cos(45.0^{\\circ}) = 85.0 \\times 0.7071 = 60.1\,\\text{N}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>b) The vertical component (\(F_y\))</strong><br>
+                    <strong>Answer:</strong> 60.1 N<br>
+                    <div class="work">
+                        $$F_y = 85.0 \\times \\sin(45.0^{\\circ}) = 85.0 \\times 0.7071 = 60.1\,\\text{N}$$
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>4. Navigation and Bearings</h2>
+            <p>An airplane flies at <strong>180.0 km/h</strong> on a bearing of <strong>135°</strong> (measured clockwise from north). Calculate:</p>
+            <ul>
+                <li>
+                    <strong>a) The standard mathematical angle (measured counterclockwise from east)</strong><br>
+                    <strong>Answer:</strong> 315°<br>
+                    <div class="work">
+                        $$\\text{Standard angle} = 90^{\\circ} - 135^{\\circ} = -45^{\\circ} = 315^{\\circ}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>b) The eastward velocity component</strong><br>
+                    <strong>Answer:</strong> 127.3 km/h<br>
+                    <div class="work">
+                        $$v_x = 180.0 \\times \\cos(315^{\\circ}) = 180.0 \\times 0.7071 = 127.3\,\\text{km/h}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>c) The northward velocity component</strong><br>
+                    <strong>Answer:</strong> -127.3 km/h<br>
+                    <div class="work">
+                        $$v_y = 180.0 \\times \\sin(315^{\\circ}) = 180.0 \\times (-0.7071) = -127.3\,\\text{km/h}$$
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>5. Vector Addition by Components</h2>
+            <ul>
+                <li>
+                    <strong>a) The x and y components of vector A (75.0 m at 60.0° north of east)</strong><br>
+                    <strong>Answer:</strong> x = 37.5 m, y = 65.0 m<br>
+                    <div class="work">
+                        $$A_x = 75.0 \\times \\cos(60.0^{\\circ}) = 37.5\,\\text{m}$$<br>
+                        $$A_y = 75.0 \\times \\sin(60.0^{\\circ}) = 65.0\,\\text{m}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>b) The x and y components of vector B (40.0 m at 120.0° from x-axis)</strong><br>
+                    <strong>Answer:</strong> x = -20.0 m, y = 34.6 m<br>
+                    <div class="work">
+                        $$B_x = 40.0 \\times \\cos(120.0^{\\circ}) = -20.0\,\\text{m}$$<br>
+                        $$B_y = 40.0 \\times \\sin(120.0^{\\circ}) = 34.6\,\\text{m}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>c) The x and y components of the resultant vector (A + B)</strong><br>
+                    <strong>Answer:</strong> x = 17.5 m, y = 99.6 m<br>
+                    <div class="work">
+                        $$R_x = 37.5 + (-20.0) = 17.5\,\\text{m}$$<br>
+                        $$R_y = 65.0 + 34.6 = 99.6\,\\text{m}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>d) The magnitude and direction of the resultant vector</strong><br>
+                    <strong>Answer:</strong> 101 m at 80.0° north of east<br>
+                    <div class="work">
+                        $$R = \\sqrt{(17.5)^2 + (99.6)^2} = 101\,\\text{m}$$<br>
+                        $$\\theta = \\tan^{-1}\\left(\\frac{99.6}{17.5}\\right) = 80.0^{\\circ}$$
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>6. The Surveyor's Challenge</h2>
+            <ul>
+                <li>
+                    <strong>a) Coordinates (x, y) of each landmark</strong><br>
+                    <strong>Oak tree:</strong> (-40.0 m, 69.3 m)<br>
+                    <strong>Picnic area:</strong> (86.6 m, 50.0 m)<br>
+                    <strong>Playground:</strong> (-42.4 m, -42.4 m)<br>
+                    <div class="work">
+                        $$x = r \\cos(\\theta),\\quad y = r \\sin(\\theta)$$
+                    </div>
+                </li>
+                <li>
+                    <strong>b) Displacement vector from oak tree to picnic area (\(\overrightarrow{d_{AB}}\))</strong><br>
+                    <strong>Answer:</strong> 131.7 m at 45.2°<br>
+                    <div class="work">
+                        $$\\Delta x = 126.6\,\\text{m},\\quad \\Delta y = -19.3\,\\text{m}$$<br>
+                        Magnitude: $$131.7\,\\text{m}$$, Direction: $$45.2^{\\circ}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>c) Displacement vector from picnic area to playground (\(\overrightarrow{d_{BC}}\))</strong><br>
+                    <strong>Answer:</strong> 173.2 m at 221.0°<br>
+                    <div class="work">
+                        $$\\Delta x = -129.0\,\\text{m},\\quad \\Delta y = -92.4\,\\text{m}$$<br>
+                        Magnitude: $$173.2\,\\text{m}$$, Direction: $$221.0^{\\circ}$$
+                    </div>
+                </li>
+                <li>
+                    <strong>d) Total displacement from oak tree to playground</strong><br>
+                    <strong>Answer:</strong> 116.4 m at 207.3°<br>
+                    <div class="work">
+                        $$\\Delta x = -2.4\,\\text{m},\\quad \\Delta y = -111.7\,\\text{m}$$<br>
+                        Magnitude: $$116.4\,\\text{m}$$, Direction: $$207.3^{\\circ}$$
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>7. Multi-Step Navigation Problem</h2>
+            <ul>
+                <li>
+                    <strong>a) Final position relative to starting point (x, y)</strong><br>
+                    <strong>Answer:</strong> (-14.3 km, -0.7 km)<br>
+                    <div class="work">
+                        Segment 1: \(x_1 = 17.7\,\\text{km}, y_1 = 17.7\,\\text{km}\)<br>
+                        Segment 2: \(x_2 = 0.0\,\\text{km}, y_2 = -18.0\,\\text{km}\)<br>
+                        Segment 3: \(x_3 = -32.0\,\\text{km}, y_3 = 0.0\,\\text{km}\)<br>
+                        Total: \(x = -14.3\,\\text{km}, y = -0.7\,\\text{km}\)
+                    </div>
+                </li>
+                <li>
+                    <strong>b) Magnitude and direction of direct displacement</strong><br>
+                    <strong>Answer:</strong> 14.3 km at 267°<br>
+                    <div class="work">
+                        \(R = 14.3\,\\text{km}\), \\(\theta = 267^{\\circ}\\)
+                    </div>
+                </li>
+                <li>
+                    <strong>c) Extra distance flown compared to direct route</strong><br>
+                    <strong>Answer:</strong> 60.7 km<br>
+                    <div class="work">
+                        Total flown: \(75.0\,\\text{km}\), Direct: \(14.3\,\\text{km}\), Extra: \(60.7\,\\text{km}\)
+                    </div>
+                </li>
+            </ul>
+            `,
+            `
+            <h2>8. Reflection & Connection</h2>
+            <p>
+                The component method is a more powerful and less error-prone approach because it transforms vector problems into independent calculations along perpendicular axes, eliminating the imprecision inherent in graphical measurement. While the graphical method suffers from limitations in drawing precision and scale, the component method allows for mathematical exactness limited only by the precision of the original measurements. This mathematical approach enables us to maintain significant figure rules precisely throughout calculations, ensuring our final answers have scientifically justified accuracy that directly reflects the quality of our input data.
+            </p>
+            `
+        ];
+
+        const total = solutions.length;
+        const idxEl = document.getElementById('idx');
+        const totalEl = document.getElementById('total');
+        const contentEl = document.getElementById('content');
+        const barEl = document.getElementById('bar');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+        const showAllBtn = document.getElementById('showAll');
+
+        let i = 0;
+        totalEl.textContent = total;
+
+        function render() {
+            idxEl.textContent = i+1;
+            contentEl.innerHTML = solutions[i];
+            const pct = Math.round(((i+1)/total)*100);
+            barEl.style.width = pct + '%';
+            prevBtn.disabled = i === 0;
+            nextBtn.disabled = i === total-1;
+            if (window.MathJax && MathJax.typesetPromise) {
+                MathJax.typesetClear();
+                MathJax.typesetPromise([contentEl]).catch(()=>{});
+            }
+        }
+
+        prevBtn.addEventListener('click', ()=>{ if(i>0){ i--; render(); }});
+        nextBtn.addEventListener('click', ()=>{ if(i<total-1){ i++; render(); }});
+
+        document.addEventListener('keydown',(e)=>{
+            if(e.key === 'ArrowRight') { nextBtn.click(); }
+            if(e.key === 'ArrowLeft') { prevBtn.click(); }
+        });
+
+        showAllBtn.addEventListener('click', ()=>{
+            contentEl.innerHTML = solutions.map((s,idx)=>`<section style="margin-bottom:1.25rem"><div class="meta">Slide ${idx+1}</div>${s}</section>`).join('');
+            idxEl.textContent = 'all';
+            barEl.style.width = '100%';
+            prevBtn.disabled = true; nextBtn.disabled = true; showAllBtn.disabled = true;
+            if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise();
+        });
+
+        window.addEventListener('load', ()=>{
+            render();
+        });
+    </script>
+</body>
+</html>

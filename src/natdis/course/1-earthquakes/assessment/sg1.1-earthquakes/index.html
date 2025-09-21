@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Study Guide: Quiz 1.1-S - Decoding Seismic Signals | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <h1 id="study-guide-quiz-11-s---decoding-seismic-signals">Study Guide: Quiz 1.1-S - Decoding Seismic Signals</h1>
+
+<p><strong>Quiz Date:</strong> [Insert Date]<br />
+<strong>Duration:</strong> 22 minutes<br />
+<strong>Your Role:</strong> The Scientist</p>
+
+<hr />
+
+<h2 id="what-this-quiz-covers">What This Quiz Covers</h2>
+
+<p>You’ll be thinking like a scientist studying earthquakes. The quiz focuses on:</p>
+<ul>
+  <li><strong>Analyzing seismic wave data</strong> to find earthquake locations</li>
+  <li><strong>Interpreting local earthquake patterns</strong> for Connecticut</li>
+  <li><strong>Understanding the limitations</strong> of earthquake science</li>
+</ul>
+
+<hr />
+
+<h2 id="key-concepts-to-review">Key Concepts to Review</h2>
+
+<h3 id="1-seismic-waves-and-timing">1. Seismic Waves and Timing</h3>
+
+<p><strong>P-waves vs. S-waves:</strong></p>
+<ul>
+  <li><strong>P-waves (Primary)</strong>: Faster, arrive first</li>
+  <li><strong>S-waves (Secondary)</strong>: Slower, arrive second</li>
+  <li><strong>S-P interval</strong>: Time difference between S-wave and P-wave arrivals</li>
+</ul>
+
+<p><strong>Important Formula:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Time = Hours:Minutes:Seconds format
+S-P interval = S-wave time - P-wave time
+</code></pre></div></div>
+
+<p><strong>Example:</strong></p>
+<ul>
+  <li>P-wave arrives at 2:15:30</li>
+  <li>S-wave arrives at 2:16:05</li>
+  <li>S-P interval = 35 seconds</li>
+</ul>
+
+<h3 id="2-finding-earthquake-distance">2. Finding Earthquake Distance</h3>
+
+<p><strong>Key Formula:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Distance = Speed × Time
+</code></pre></div></div>
+
+<p><strong>What you need to know:</strong></p>
+<ul>
+  <li>Use travel-time graphs to find distance from S-P interval</li>
+  <li>Read graphs carefully (time on y-axis, distance on x-axis)</li>
+  <li>P-waves typically travel at about 6 km/s in the crust</li>
+</ul>
+
+<h3 id="3-magnitude-vs-intensity">3. Magnitude vs. Intensity</h3>
+
+<p><strong>Magnitude:</strong></p>
+<ul>
+  <li><strong>What it is</strong>: Total energy released by the earthquake</li>
+  <li><strong>Scale</strong>: Richter Scale or Moment Magnitude (numbers like 5.8, 6.2)</li>
+  <li><strong>Key point</strong>: One number for the whole earthquake</li>
+</ul>
+
+<p><strong>Intensity:</strong></p>
+<ul>
+  <li><strong>What it is</strong>: How strong the shaking feels in a specific place</li>
+  <li><strong>Scale</strong>: Modified Mercalli Intensity (I-XII)</li>
+  <li><strong>Key point</strong>: Different locations experience different intensities</li>
+</ul>
+
+<p><strong>Why intensity varies:</strong></p>
+<ul>
+  <li>Distance from epicenter</li>
+  <li>Local geology (rock vs. soil)</li>
+  <li>Building construction quality</li>
+</ul>
+
+<hr />
+
+<h2 id="what-you-should-practice">What You Should Practice</h2>
+
+<h3 id="1-time-calculations">1. Time Calculations</h3>
+<p><strong>Practice converting time formats and finding intervals:</strong></p>
+<ul>
+  <li>If P-wave arrives at 10:05:15 and S-wave at 10:05:40, what’s the S-P interval?</li>
+  <li>Answer: 25 seconds</li>
+</ul>
+
+<h3 id="2-using-travel-time-graphs">2. Using Travel-Time Graphs</h3>
+<p><strong>Practice reading the standard seismic graph:</strong></p>
+<ul>
+  <li>Find your S-P interval on the y-axis</li>
+  <li>Follow horizontally to where it fits between the P and S curves</li>
+  <li>Read the distance on the x-axis</li>
+</ul>
+
+<h3 id="3-data-pattern-analysis">3. Data Pattern Analysis</h3>
+<p><strong>Practice looking at earthquake data tables:</strong></p>
+<ul>
+  <li>Which earthquakes were felt vs. not felt?</li>
+  <li>What patterns do you see with magnitude and distance?</li>
+  <li>What factors seem most important?</li>
+</ul>
+
+<h3 id="4-explaining-scientific-concepts">4. Explaining Scientific Concepts</h3>
+<p><strong>Practice explaining cause and effect:</strong></p>
+<ul>
+  <li>Why do different places feel the same earthquake differently?</li>
+  <li>How do data limitations affect scientific conclusions?</li>
+  <li>What happens when scientific funding gets cut?</li>
+</ul>
+
+<hr />
+
+<h2 id="sample-practice-problems">Sample Practice Problems</h2>
+
+<h3 id="problem-type-1-s-p-interval-calculation">Problem Type 1: S-P Interval Calculation</h3>
+<p>A seismograph records:</p>
+<ul>
+  <li>P-wave arrival: 3:22:15 PM</li>
+  <li>S-wave arrival: 3:22:58 PM</li>
+</ul>
+
+<p>Calculate the S-P interval.</p>
+
+<p><strong>Answer:</strong> 43 seconds</p>
+
+<h3 id="problem-type-2-distance-from-graph">Problem Type 2: Distance from Graph</h3>
+<p>With an S-P interval of 30 seconds, use a travel-time graph to find the distance to the epicenter.</p>
+
+<p><strong>Answer:</strong> About 250 km (exact answer depends on the graph)</p>
+
+<h3 id="problem-type-3-data-analysis">Problem Type 3: Data Analysis</h3>
+<p>Given this data:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Magnitude</th>
+      <th>Distance (km)</th>
+      <th>Felt?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.8</td>
+      <td>25</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>3.1</td>
+      <td>12</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>2.9</td>
+      <td>8</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>How many earthquakes were felt?</p>
+
+<p><strong>Answer:</strong> 2 earthquakes</p>
+
+<hr />
+
+<h2 id="key-vocabulary-to-know">Key Vocabulary to Know</h2>
+
+<p><strong>Epicenter</strong>: Point on Earth’s surface directly above where an earthquake starts</p>
+
+<p><strong>Seismograph</strong>: Instrument that records earthquake waves</p>
+
+<p><strong>S-P interval</strong>: Time difference between S-wave and P-wave arrivals</p>
+
+<p><strong>Triangulation</strong>: Using data from multiple stations to locate an epicenter</p>
+
+<p><strong>Magnitude</strong>: Measure of total energy released by an earthquake</p>
+
+<p><strong>Intensity</strong>: Measure of earthquake effects at a specific location</p>
+
+<p><strong>Modified Mercalli Scale</strong>: Scale (I-XII) that describes earthquake intensity based on damage and what people felt</p>
+
+<hr />
+
+<h2 id="calculator-and-formula-sheet">Calculator and Formula Sheet</h2>
+
+<p><strong>You will be provided:</strong></p>
+<ul>
+  <li>Basic calculator</li>
+  <li>Travel-time graph</li>
+  <li>Formula sheet with: Distance = Speed × Time</li>
+</ul>
+
+<p><strong>You should bring:</strong></p>
+<ul>
+  <li>Pencil and eraser</li>
+  <li>Ruler (helpful for reading graphs)</li>
+</ul>
+
+<hr />
+
+<h2 id="quiz-structure-preview">Quiz Structure Preview</h2>
+
+<p><strong>Segment 1 (7 minutes): Seismic Wave Analysis</strong></p>
+<ul>
+  <li>S-P interval calculations</li>
+  <li>Using travel-time graphs</li>
+  <li>Basic wave speed problems</li>
+  <li>Explaining intensity differences</li>
+</ul>
+
+<p><strong>Segment 2 (8 minutes): Local Risk Assessment</strong></p>
+<ul>
+  <li>Analyzing Connecticut earthquake data</li>
+  <li>Finding patterns in the data</li>
+  <li>Distance and magnitude relationships</li>
+  <li>Preparing information for engineers</li>
+</ul>
+
+<p><strong>Segment 3 (7 minutes): Scientific Limitations</strong></p>
+<ul>
+  <li>Understanding data gaps and uncertainties</li>
+  <li>Effects of budget cuts on monitoring</li>
+  <li>How limitations affect community planning</li>
+  <li>Thinking about scientific communication</li>
+</ul>
+
+<hr />
+
+<h2 id="study-tips">Study Tips</h2>
+
+<h3 id="the-night-before">The Night Before:</h3>
+<ul>
+  <li><strong>Review your notes</strong> from Chapter 1.1 and Lab 1.1</li>
+  <li><strong>Practice time calculations</strong> - make sure you can subtract times accurately</li>
+  <li><strong>Look at the travel-time graph</strong> in your textbook until reading it feels comfortable</li>
+  <li><strong>Review the Modified Mercalli Scale</strong> and why intensity varies by location</li>
+</ul>
+
+<h3 id="right-before-the-quiz">Right Before the Quiz:</h3>
+<ul>
+  <li><strong>Bring a pencil</strong> and eraser</li>
+  <li><strong>Check your calculator</strong> works</li>
+  <li><strong>Remember</strong>: Show your work even for simple calculations</li>
+  <li><strong>Read questions carefully</strong> - especially word problems</li>
+</ul>
+
+<h3 id="during-the-quiz">During the Quiz:</h3>
+<ul>
+  <li><strong>Start with problems you feel confident about</strong></li>
+  <li><strong>Show all calculation steps</strong> clearly</li>
+  <li><strong>Include units</strong> in your answers (seconds, km, etc.)</li>
+  <li><strong>Use the provided formulas</strong> and graphs</li>
+  <li><strong>Check your work</strong> if you have time</li>
+</ul>
+
+<hr />
+
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+
+<p>❌ <strong>Time calculation errors</strong>: Practice subtracting times in minutes:seconds format</p>
+
+<p>❌ <strong>Graph reading mistakes</strong>: Make sure you’re reading the right axis and scale</p>
+
+<p>❌ <strong>Mixing up P and S waves</strong>: Remember P = Primary = First, S = Secondary = Second</p>
+
+<p>❌ <strong>Forgetting units</strong>: Always include seconds, km, etc. in your answers</p>
+
+<p>❌ <strong>Not showing work</strong>: Even simple calculations should show your steps</p>
+
+<hr />
+
+<h2 id="questions-study-resources">Questions? Study Resources</h2>
+
+<p><strong>If you’re struggling with:</strong></p>
+<ul>
+  <li><strong>Time calculations</strong>: Practice with a digital clock or stopwatch</li>
+  <li><strong>Graph reading</strong>: Use the practice graphs in your textbook</li>
+  <li><strong>Understanding concepts</strong>: Review your Cornell notes from class</li>
+  <li><strong>Word problems</strong>: Read them twice and identify what you’re solving for</li>
+</ul>
+
+<p><strong>Additional help:</strong></p>
+<ul>
+  <li>Office hours: [Insert times]</li>
+  <li>Study group: [Insert information]</li>
+  <li>Online practice: [Insert links if available]</li>
+</ul>
+
+<hr />
+
+<h2 id="final-reminders">Final Reminders</h2>
+
+<p>✅ This quiz tests your ability to <strong>think like a scientist</strong></p>
+
+<p>✅ Focus on <strong>understanding patterns</strong> in the data, not just memorizing formulas</p>
+
+<p>✅ Remember that <strong>scientists acknowledge limitations</strong> - uncertainty is part of science</p>
+
+<p>✅ Connect your answers to <strong>real-world applications</strong> in Connecticut when possible</p>
+
+<p>✅ <strong>Manage your time</strong>: Don’t spend too long on any single problem</p>
+
+<p><strong>You’ve got this! The goal is to show you can analyze earthquake data and think critically about scientific information.</strong></p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
