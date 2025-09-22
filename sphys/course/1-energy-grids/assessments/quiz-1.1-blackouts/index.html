@@ -652,11 +652,15 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         
         // Set up navigation if multiple sections
         if (sections.length > 1) {
+            console.log(`Setting up navigation for ${sections.length} sections`);
             setupSectionNavigation();
             showSection(0);
         } else {
             // Single section - show normally
-            document.getElementById('section-nav').style.display = 'none';
+            const sectionNav = document.getElementById('section-nav');
+            if (sectionNav) {
+                sectionNav.style.display = 'none';
+            }
             console.log('Only one section found, showing all content normally');
         }
     }
@@ -666,21 +670,36 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         const sectionDots = document.getElementById('section-dots');
         const prevBtn = document.getElementById('prev-section-btn');
         const nextBtn = document.getElementById('next-section-btn');
-        const submitBtnTop = document.getElementById('submit-btn-top');
+        const submitBtn = document.getElementById('submit-btn');
         const bottomSubmit = document.getElementById('bottom-submit');
         
-        sectionNav.style.display = 'block';
+        console.log('setupSectionNavigation: Elements found:', {
+            sectionNav: !!sectionNav,
+            sectionDots: !!sectionDots,
+            prevBtn: !!prevBtn,
+            nextBtn: !!nextBtn,
+            submitBtn: !!submitBtn,
+            bottomSubmit: !!bottomSubmit
+        });
+        
+        if (sectionNav) {
+            sectionNav.style.display = 'block';
+        }
         
         // Hide bottom submit section when using section navigation
-        if (bottomSubmit) bottomSubmit.style.display = 'none';
+        if (bottomSubmit) {
+            bottomSubmit.style.display = 'none';
+        }
         
         // Create progress dots
-        sectionDots.innerHTML = '';
-        for (let i = 0; i < sections.length; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'section-dot';
-            dot.onclick = () => navigateToSection(i);
-            sectionDots.appendChild(dot);
+        if (sectionDots) {
+            sectionDots.innerHTML = '';
+            for (let i = 0; i < sections.length; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'section-dot';
+                dot.onclick = () => navigateToSection(i);
+                sectionDots.appendChild(dot);
+            }
         }
         
         // Navigation button handlers
@@ -705,25 +724,56 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         const sectionIndicator = document.getElementById('section-indicator');
         const prevBtn = document.getElementById('prev-section-btn');
         const nextBtn = document.getElementById('next-section-btn');
-        const submitBtnTop = document.getElementById('submit-btn-top');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        console.log(`showSection(${index}): Elements found:`, {
+            contentContainer: !!contentContainer,
+            sectionIndicator: !!sectionIndicator,
+            prevBtn: !!prevBtn,
+            nextBtn: !!nextBtn,
+            submitBtn: !!submitBtn
+        });
         
         // Update content
-        contentContainer.innerHTML = sections[index];
+        if (contentContainer) {
+            contentContainer.innerHTML = sections[index];
+        }
         
         // Update section indicator
-        sectionIndicator.textContent = `Section ${index + 1} of ${sections.length}`;
+        if (sectionIndicator) {
+            const newText = `Section ${index + 1} of ${sections.length}`;
+            console.log(`Updating section indicator from "${sectionIndicator.textContent}" to "${newText}"`);
+            sectionIndicator.textContent = newText;
+        }
         
         // Update navigation buttons
-        prevBtn.disabled = index === 0;
+        if (prevBtn) {
+            prevBtn.disabled = index === 0;
+        }
         
         // Show/hide appropriate buttons based on section
         const isLastSection = index === sections.length - 1;
+        console.log(`Section ${index + 1}: isLastSection = ${isLastSection} (${index} === ${sections.length - 1})`);
+        
         if (isLastSection) {
-            nextBtn.style.display = 'none';
-            submitBtnTop.style.display = 'inline-block';
+            if (nextBtn) {
+                nextBtn.style.display = 'none';
+                console.log('Hiding next button');
+            }
+            if (submitBtn) {
+                submitBtn.style.display = 'inline-block';
+                submitBtn.style.visibility = 'visible';
+                console.log('Showing submit button:', submitBtn.style.display, submitBtn.style.visibility);
+            }
         } else {
-            nextBtn.style.display = 'inline-block';
-            submitBtnTop.style.display = 'none';
+            if (nextBtn) {
+                nextBtn.style.display = 'inline-block';
+                console.log('Showing next button');
+            }
+            if (submitBtn) {
+                submitBtn.style.display = 'none';
+                console.log('Hiding submit button');
+            }
         }
         
         // Update progress dots
@@ -755,17 +805,63 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
 
     function checkSectionCompletion() {
         const currentSectionElement = document.getElementById('assessment-sections');
-        const requiredQuestions = currentSectionElement.querySelectorAll('.question[data-required="true"]');
+        const requiredQuestions = currentSectionElement.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
         let allAnswered = true;
+        let answeredCount = 0;
         
-        requiredQuestions.forEach(question => {
-            const textarea = question.querySelector('textarea');
-            const checkedInputs = question.querySelectorAll('input:checked');
+        console.log(`Checking section ${currentSection + 1} completion. Found ${requiredQuestions.length} required questions.`);
+        
+        requiredQuestions.forEach((question, idx) => {
+            let questionAnswered = false;
             
-            if ((textarea && !textarea.value.trim()) || (!textarea && checkedInputs.length === 0)) {
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via textarea`);
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via radio button`);
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via checkbox`);
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                    console.log(`Question ${idx + 1}: answered via number/text input`);
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                    console.log(`Question ${idx + 1}: answered via select dropdown`);
+                }
+            });
+            
+            if (!questionAnswered) {
                 allAnswered = false;
+                console.log(`Question ${idx + 1}: NOT answered`);
+            } else {
+                answeredCount++;
             }
         });
+        
+        console.log(`Section ${currentSection + 1} summary: ${answeredCount}/${requiredQuestions.length} questions answered. Complete: ${allAnswered}`);
         
         sectionRequirements[currentSection] = allAnswered;
         
@@ -788,8 +884,22 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         
         // Check if trying to move forward without completing current section
         if (index > currentSection && !sectionRequirements[currentSection]) {
-            alert('Please complete all required questions in this section before proceeding.');
-            return;
+            // Run completion check again to make sure we have the latest state
+            checkSectionCompletion();
+            
+            // Check again after running completion check
+            if (!sectionRequirements[currentSection]) {
+                const currentSectionElement = document.getElementById('assessment-sections');
+                const requiredQuestions = currentSectionElement.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
+                
+                console.log(`Section ${currentSection + 1} completion check:`, {
+                    totalRequired: requiredQuestions.length,
+                    sectionComplete: sectionRequirements[currentSection]
+                });
+                
+                alert(`Please complete all required questions in Section ${currentSection + 1} before proceeding.`);
+                return;
+            }
         }
         
         showSection(index);
@@ -797,14 +907,47 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
 
     // Progress tracking
     function updateProgress() {
-        const questions = document.querySelectorAll('.question[data-required="true"]');
+        const questions = document.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
         let answered = 0;
         
         questions.forEach(question => {
-            const textarea = question.querySelector('textarea');
-            const inputs = question.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+            let questionAnswered = false;
             
-            if ((textarea && textarea.value.trim()) || inputs.length > 0) {
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                }
+            });
+            
+            if (questionAnswered) {
                 answered++;
             }
         });
@@ -840,14 +983,44 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         }
         
         // Validate required questions
-        document.querySelectorAll('.question[data-required="true"]').forEach(question => {
-            const textarea = question.querySelector('textarea');
-            const checkedInputs = question.querySelectorAll('input:checked');
+        document.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]').forEach(question => {
+            let questionAnswered = false;
             
-            if (textarea && !textarea.value.trim()) {
-                question.classList.add('error');
-                isValid = false;
-            } else if (!textarea && checkedInputs.length === 0) {
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                }
+            });
+            
+            if (!questionAnswered) {
                 question.classList.add('error');
                 isValid = false;
             }
