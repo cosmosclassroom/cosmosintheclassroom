@@ -9,6 +9,54 @@
 <body>
     <div class="container">
         <p><link rel="stylesheet" href="/assets/css/homepage.css"></p>
+<!-- Navigation Menu Bar -->
+<nav class="main-nav">
+  <div class="nav-container">
+    <div class="nav-brand">Cosmos in the Classroom</div>
+    <div class="nav-menu">
+      <div class="dropdown">
+        <button class="dropbtn">Physics Honors 25-26 ▼</button>
+        <div class="dropdown-content">
+          <a href="/physics_honors_25-26/unit-01/" target="_blank">Unit 1: Kinematics</a>
+          <a href="/physics_honors_25-26/unit-02/" target="_blank">Unit 2: Dynamics</a>
+          <a href="/physics_honors_25-26/unit-03/" target="_blank">Unit 3: Energy</a>
+          <a href="/physics_honors_25-26/unit-04/" target="_blank">Unit 4: Momentum</a>
+          <a href="/physics_honors_25-26/unit-05/" target="_blank">Unit 5: Circular Motion</a>
+          <a href="/physics_honors_25-26/" target="_blank">Course Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Standard Physics ▼</button>
+        <div class="dropdown-content">
+          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: Energy Systems</a>
+          <a href="/sphys/course/2-earth-sciences/" target="_blank">Unit 2: Earth Sciences</a>
+          <a href="/sphys/course/3-applied-physics/" target="_blank">Unit 3: Applied Physics</a>
+          <a href="/sphys/" target="_blank">Course Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Natural Disasters ▼</button>
+        <div class="dropdown-content">
+          <a href="/natdis/unit-01/" target="_blank">Unit 1: Earthquakes</a>
+          <a href="/natdis/unit-02/" target="_blank">Unit 2: Weather Systems</a>
+          <a href="/natdis/unit-03/" target="_blank">Unit 3: Climate Change</a>
+          <a href="/natdis/" target="_blank">Course Home</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Resources ▼</button>
+        <div class="dropdown-content">
+          <a href="/build/" target="_blank">Development Dashboard</a>
+          <a href="/assets/" target="_blank">Course Assets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <h1 id="cosmos-in-the-classroom">Cosmos in the Classroom</h1>
 <p>Welcome to the Cosmos in the Classroom website! This site provides comprehensive physics and natural science education resources.</p>
 <h2 id="course-directory">Course Directory</h2>
@@ -48,6 +96,89 @@
 </div>
 
 <style>
+/* Navigation Styles */
+.main-nav {
+  background: #2c3e50;
+  padding: 0;
+  margin: -1rem -1rem 2rem -1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-brand {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.dropbtn:hover {
+  background: #34495e;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 4px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #2c3e50;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: #f1f2f6;
+  color: #4a90e2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background: #34495e;
+}
+
+/* Course Directory Styles */
 .course-directory {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -99,6 +230,7 @@
   color: white;
 }
 
+/* Resources Section Styles */
 .resources-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -125,6 +257,40 @@
 
 .resource-card a:hover {
   text-decoration: underline;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-brand {
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+  }
+
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    display: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    background: #ecf0f1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }
 </style>
 
