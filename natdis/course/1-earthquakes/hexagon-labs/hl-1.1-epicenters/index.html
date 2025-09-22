@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <style>
+/* Enhanced dropdown styling for better usability */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8b7355;
+  /* Add padding around the dropdown content */
+  padding: 0.5rem 0;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+/* Better hover behavior - keep dropdown open when hovering over content */
+.site-nav .dropdown:hover .dropdown-content,
+.site-nav .dropdown-content:hover {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn,
+.site-nav .dropdown-content:hover + .dropbtn {
+  background-color: #e0e0d1;
+}
+/* JavaScript-based dropdown for click behavior */
+.site-nav .dropdown.active .dropdown-content {
+  display: block;
+}
+</style>
+
+<script>
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Close other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+    });
+    
+    // Keep dropdown open when hovering over content
+    content.addEventListener('mouseenter', function() {
+      dropdown.classList.add('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+</script>
+
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/physics_honors_25-26/">📚 Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/physics_honors_25-26/course/unit_01_measurement/" target="_blank">Unit 1: Speaking the Same Language</a>
+          <a href="/physics_honors_25-26/course/unit_02_kinematics_1d/" target="_blank">Unit 2: The Art of Observation</a>
+          <a href="/physics_honors_25-26/course/unit_03_kinematics_2d/" target="_blank">Unit 3: The World in Two Dimensions</a>
+          <a href="/physics_honors_25-26/course/unit_04_dynamics/" target="_blank">Unit 4: The Why of Motion (Dynamics)</a>
+          <a href="/physics_honors_25-26/course/unit_05_energy/" target="_blank">Unit 5: The Universe's Accounting System</a>
+            <a href="/physics_honors_25-26/">→ View All 10 Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/">📚 Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: The Invisible Currents</a>
+          <a href="/sphys/course/2-earth-forces/" target="_blank">Unit 2: Planetary Pulses</a>
+          <a href="/sphys/course/3-collision-safety/" target="_blank">Unit 3: The Geometry of Impact</a>
+          <a href="/sphys/course/4-cosmic-impacts/" target="_blank">Unit 4: Cosmic Impacts</a>
+          <a href="/sphys/course/5-electromagnetic-radiation/" target="_blank">Unit 5: The Invisible Symphony</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/">📚 Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/natdis/course/1-earthquakes/" target="_blank">Unit 1: Earthquakes</a>
+          <a href="/natdis/course/2-tsunamis/" target="_blank">Unit 2: Tsunamis</a>
+          <a href="/natdis/course/3-wildfire/" target="_blank">Unit 3: Wildfire Science</a>
+          <a href="/natdis/course/4-flooding/" target="_blank">Unit 4: Flooding & Landslides</a>
+          <a href="/natdis/course/5-portfolio/" target="_blank">Unit 5: Final Portfolio</a>
+          </div>
+        </li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <hr />
+<p>layout: default
+title: “Hexagon Lab 1.1: Locating an Epicenter”
+—</p>
+<h1 id="hexagon-lab-11-locating-an-epicenter">Hexagon Lab 1.1: Locating an Epicenter</h1>
+
+<h2 id="authors">Authors</h2>
+
+<p><strong>Role:</strong> Seismologist<br />
+<strong>Mission:</strong> To determine the precise epicenter of an earthquake using seismic wave data from three monitoring stations.</p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This laboratory investigation demonstrates the practical application of seismic wave analysis to locate earthquake epicenters. Using P-wave and S-wave arrival time data from three monitoring stations, students will employ standard seismological triangulation methods to determine the exact location of an earthquake’s origin.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Seismic events generate two primary types of waves that propagate through Earth’s crust: Primary waves (P-waves) and Secondary waves (S-waves). P-waves, being compression waves, travel at higher velocities than the transverse S-waves. The time difference between these wave arrivals at various monitoring stations provides crucial data for epicenter location. This investigation utilizes real-world seismological techniques to analyze wave arrival data and determine epicenter coordinates through triangulation.</p>
+
+<h2 id="methods-and-materials">Methods and Materials</h2>
+
+<h3 id="data-collection">Data Collection</h3>
+
+<p>This investigation requires careful analysis of seismic wave arrival times from three monitoring stations. Students will calculate essential parameters and use provided reference materials to determine the earthquake’s epicenter.</p>
+
+<h3 id="equipment">Equipment</h3>
+
+<ul>
+  <li>Travel-Time Graph</li>
+  <li>Compass</li>
+  <li>Reference Map</li>
+  <li>Data Recording Sheet</li>
+</ul>
+
+<h2 id="procedure">Procedure</h2>
+
+<h3 id="part-1-wave-analysis">Part 1: Wave Analysis</h3>
+
+<p>Calculate the S-P wave interval and determine epicenter distances for each monitoring station.</p>
+
+<h4 id="11-s-p-interval-calculation">1.1 S-P Interval Calculation</h4>
+
+<p>For each monitoring station, calculate the time difference between P-wave and S-wave arrivals using the following formula:</p>
+
+<pre><code class="language-math">S-P Interval = S-wave arrival time - P-wave arrival time
+</code></pre>
+
+<h4 id="12-data-collection">1.2 Data Collection</h4>
+
+<p>Record calculations in Table 1 below:</p>
+
+<h3 id="table-1-seismic-wave-arrival-data">Table 1: Seismic Wave Arrival Data</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Station</th>
+      <th>P-Wave Arrival (s)</th>
+      <th>S-Wave Arrival (s)</th>
+      <th>S-P Interval (s)</th>
+      <th>Distance to Epicenter (km)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>City A</td>
+      <td>32</td>
+      <td>57</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>City B</td>
+      <td>15</td>
+      <td>25</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>City C</td>
+      <td>45</td>
+      <td>80</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="13-distance-determination">1.3 Distance Determination</h4>
+
+<p>Using the Travel-Time Graph (Figure 2):</p>
+
+<p><img src="P-S_Wave_Travel_Time_Graph.png" alt="P-S Wave Travel Time Graph showing P-wave (blue) and S-wave (red) arrival times versus epicenter distance" /></p>
+
+<p><strong>Figure 2:</strong> Seismic wave travel-time curves showing the linear relationship between arrival times and epicenter distance. P-waves (blue) arrive first due to higher propagation velocity, while S-waves (red) arrive later. The increasing separation between curves with distance enables accurate epicenter determination using the S-P interval method.</p>
+
+<p>Follow these steps to determine epicenter distance:</p>
+
+<ol>
+  <li>Locate the calculated S-P Interval on the vertical axis</li>
+  <li>Move horizontally to the center point between S-wave and P-wave curves</li>
+  <li>Project vertically down to the horizontal axis</li>
+  <li>Record the corresponding distance in kilometers</li>
+</ol>
+
+<h3 id="part-2-epicenter-triangulation">Part 2: Epicenter Triangulation</h3>
+
+<h4 id="21-map-preparation">2.1 Map Preparation</h4>
+
+<p>Transfer the reference map (Figure 1) to your laboratory notebook. This map displays the locations of monitoring stations (City A, B, and C) with an appropriate scale bar for distance measurements.</p>
+
+<p><strong>Figure 1:</strong> Schematic representation of monitoring station locations on a reference grid. Scale bar indicates distances in kilometers (km).</p>
+
+<h4 id="22-triangulation-process">2.2 Triangulation Process</h4>
+
+<ol>
+  <li>For each monitoring station:
+    <ul>
+      <li>Set compass radius to the calculated epicenter distance</li>
+      <li>Center compass on the station location</li>
+      <li>Draw a complete circle representing possible epicenter positions</li>
+    </ul>
+  </li>
+  <li>Epicenter Identification:
+    <ul>
+      <li>Locate the intersection point of all three circles</li>
+      <li>Mark this point with an “X” and label as “Epicenter”</li>
+      <li>Record the coordinates using the reference grid</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="results">Results</h2>
+
+<p>Document your findings in your laboratory notebook, including:</p>
+
+<ul>
+  <li>Completed data table with all calculations</li>
+  <li>Annotated map showing triangulation circles</li>
+  <li>Final epicenter coordinates</li>
+</ul>
+
+<h2 id="discussion">Discussion</h2>
+
+<p>Consider the following questions:</p>
+
+<ol>
+  <li>How does the time difference between P-waves and S-waves help determine distance?</li>
+  <li>Why are three stations necessary for accurate epicenter location?</li>
+  <li>What factors might affect the precision of this method?</li>
+</ol>
+
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

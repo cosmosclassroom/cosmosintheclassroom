@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Answer Key: Problem Set 2 - Supply &amp; Demand | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <style>
+/* Enhanced dropdown styling for better usability */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8b7355;
+  /* Add padding around the dropdown content */
+  padding: 0.5rem 0;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+/* Better hover behavior - keep dropdown open when hovering over content */
+.site-nav .dropdown:hover .dropdown-content,
+.site-nav .dropdown-content:hover {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn,
+.site-nav .dropdown-content:hover + .dropbtn {
+  background-color: #e0e0d1;
+}
+/* JavaScript-based dropdown for click behavior */
+.site-nav .dropdown.active .dropdown-content {
+  display: block;
+}
+</style>
+
+<script>
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Close other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+    });
+    
+    // Keep dropdown open when hovering over content
+    content.addEventListener('mouseenter', function() {
+      dropdown.classList.add('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+</script>
+
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/physics_honors_25-26/">📚 Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/physics_honors_25-26/course/unit_01_measurement/" target="_blank">Unit 1: Speaking the Same Language</a>
+          <a href="/physics_honors_25-26/course/unit_02_kinematics_1d/" target="_blank">Unit 2: The Art of Observation</a>
+          <a href="/physics_honors_25-26/course/unit_03_kinematics_2d/" target="_blank">Unit 3: The World in Two Dimensions</a>
+          <a href="/physics_honors_25-26/course/unit_04_dynamics/" target="_blank">Unit 4: The Why of Motion (Dynamics)</a>
+          <a href="/physics_honors_25-26/course/unit_05_energy/" target="_blank">Unit 5: The Universe's Accounting System</a>
+            <a href="/physics_honors_25-26/">→ View All 10 Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/">📚 Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: The Invisible Currents</a>
+          <a href="/sphys/course/2-earth-forces/" target="_blank">Unit 2: Planetary Pulses</a>
+          <a href="/sphys/course/3-collision-safety/" target="_blank">Unit 3: The Geometry of Impact</a>
+          <a href="/sphys/course/4-cosmic-impacts/" target="_blank">Unit 4: Cosmic Impacts</a>
+          <a href="/sphys/course/5-electromagnetic-radiation/" target="_blank">Unit 5: The Invisible Symphony</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/">📚 Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/natdis/course/1-earthquakes/" target="_blank">Unit 1: Earthquakes</a>
+          <a href="/natdis/course/2-tsunamis/" target="_blank">Unit 2: Tsunamis</a>
+          <a href="/natdis/course/3-wildfire/" target="_blank">Unit 3: Wildfire Science</a>
+          <a href="/natdis/course/4-flooding/" target="_blank">Unit 4: Flooding & Landslides</a>
+          <a href="/natdis/course/5-portfolio/" target="_blank">Unit 5: Final Portfolio</a>
+          </div>
+        </li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <h1 id="answer-key-problem-set-2---supply--demand">Answer Key: Problem Set 2 - Supply &amp; Demand</h1>
+<p><strong>Unit P.1: The Invisible Currents</strong></p>
+
+<hr />
+
+<h2 id="answer-key-overview"><strong>Answer Key Overview</strong></h2>
+
+<p>This detailed answer key provides complete solutions with step-by-step LaTeX formatting for all problems in the Supply &amp; Demand problem set. Each solution includes proper unit analysis, conceptual explanations, and connections to the Texas energy crisis phenomenon.</p>
+
+<hr />
+
+<h2 id="part-a-foundation---worked-examples"><strong>Part A: Foundation - Worked Examples</strong></h2>
+
+<p><em>These examples are already worked in the student version and serve as models for the problem-solving approach.</em></p>
+
+<hr />
+
+<h2 id="part-b-application---independent-practice"><strong>Part B: Application - Independent Practice</strong></h2>
+
+<h3 id="problem-1-community-energy-needs"><strong>Problem 1: Community Energy Needs</strong></h3>
+
+<p><strong>Given Information:</strong></p>
+<ul>
+  <li>500 homes averaging 2 kW each</li>
+  <li>50 businesses averaging 10 kW each</li>
+  <li>1 hospital requiring 200 kW</li>
+</ul>
+
+<h4 id="part-a-total-power-demand"><strong>Part (a): Total Power Demand</strong></h4>
+
+<p>\begin{align}
+\text{Homes: } P_{\text{homes}} &amp;= 500 \text{ homes} \times 2 \text{ kW/home} <br />
+&amp;= 1000 \text{ kW} <br />
+<br />
+\text{Businesses: } P_{\text{business}} &amp;= 50 \text{ businesses} \times 10 \text{ kW/business} <br />
+&amp;= 500 \text{ kW} <br />
+<br />
+\text{Hospital: } P_{\text{hospital}} &amp;= 200 \text{ kW} <br />
+<br />
+\text{Total Power Demand: } P_{\text{total}} &amp;= P_{\text{homes}} + P_{\text{business}} + P_{\text{hospital}} <br />
+&amp;= 1000 + 500 + 200 <br />
+&amp;= 1700 \text{ kW} = 1.7 \text{ MW}
+\end{align}</p>
+
+<h4 id="part-b-total-energy-for-24-hours"><strong>Part (b): Total Energy for 24 Hours</strong></h4>
+
+<p>\begin{align}
+\text{Given: } P_{\text{total}} &amp;= 1700 \text{ kW}, \quad \Delta t = 24 \text{ h} <br />
+\text{Formula: } E &amp;= P \times \Delta t <br />
+\text{Substitute: } E &amp;= 1700 \text{ kW} \times 24 \text{ h} <br />
+\text{Calculate: } E &amp;= 40,800 \text{ kWh}
+\end{align}</p>
+
+<p><strong>Conceptual Note:</strong> This town needs 40.8 MWh of energy per day, which is equivalent to the daily energy consumption of about 1,360 typical US homes (30 kWh/day average).</p>
+
+<hr />
+
+<h3 id="problem-2-energy-mix-analysis"><strong>Problem 2: Energy Mix Analysis</strong></h3>
+
+<p><strong>Given Data:</strong></p>
+<ul>
+  <li><strong>Before Crisis Total:</strong> 48,000 MW</li>
+  <li><strong>During Crisis Total:</strong> 34,000 MW</li>
+</ul>
+
+<h4 id="part-a-percentage-of-power-lost"><strong>Part (a): Percentage of Power Lost</strong></h4>
+
+<p>\begin{align}
+\text{Power lost} &amp;= \text{Normal total} - \text{Crisis total} <br />
+&amp;= 48,000 \text{ MW} - 34,000 \text{ MW} <br />
+&amp;= 14,000 \text{ MW} <br />
+<br />
+\text{Percentage lost} &amp;= \frac{\text{Power lost}}{\text{Normal total}} \times 100\% <br />
+&amp;= \frac{14,000 \text{ MW}}{48,000 \text{ MW}} \times 100\% <br />
+&amp;= 0.292 \times 100\% <br />
+&amp;= 29.2\%
+\end{align}</p>
+
+<h4 id="part-b-money-saved-during-blackouts"><strong>Part (b): Money Saved During Blackouts</strong></h4>
+
+<p>\begin{align}
+\text{Energy not used per hour} &amp;= 48,000 \text{ MW} = 48,000,000 \text{ kW} <br />
+<br />
+\text{Cost saved per hour} &amp;= \text{Energy not used} \times \text{Rate} <br />
+&amp;= 48,000,000 \text{ kW} \times $0.12/\text{kWh} <br />
+&amp;= $5,760,000 \text{ per hour}
+\end{align}</p>
+
+<p><strong>Economic Context:</strong> While Texans “saved” $5.76 million per hour in electricity costs, this was due to forced blackouts, not voluntary conservation. The economic losses from business closures, food spoilage, and infrastructure damage far exceeded these savings.</p>
+
+<hr />
+
+<h3 id="problem-3-storage-system-design"><strong>Problem 3: Storage System Design</strong></h3>
+
+<p><strong>Given Information:</strong></p>
+<ul>
+  <li>Community peak demand: 100 MW</li>
+  <li>Storage duration: 4 hours</li>
+  <li>Battery efficiency: 85%</li>
+  <li>Cost: $300 per kWh</li>
+</ul>
+
+<h4 id="part-a-energy-storage-capacity-needed"><strong>Part (a): Energy Storage Capacity Needed</strong></h4>
+
+<p>\begin{align}
+\text{Power needed: } P &amp;= 100 \text{ MW} = 100,000 \text{ kW} <br />
+\text{Time needed: } \Delta t &amp;= 4 \text{ hours} <br />
+<br />
+\text{Energy to store: } E &amp;= P \times \Delta t <br />
+&amp;= 100,000 \text{ kW} \times 4 \text{ h} <br />
+&amp;= 400,000 \text{ kWh}
+\end{align}</p>
+
+<h4 id="part-b-battery-capacity-accounting-for-efficiency"><strong>Part (b): Battery Capacity Accounting for Efficiency</strong></h4>
+
+<p>\begin{align}
+\text{Required capacity} &amp;= \frac{\text{Energy needed}}{\text{Efficiency}} <br />
+&amp;= \frac{400,000 \text{ kWh}}{0.85} <br />
+&amp;= 470,588 \text{ kWh} \approx 471 \text{ MWh}
+\end{align}</p>
+
+<p><strong>Efficiency Explanation:</strong> Due to energy losses during charging and discharging, the battery system must be oversized by approximately 17.6% to deliver the required 400 MWh of usable energy.</p>
+
+<h4 id="part-c-total-system-cost"><strong>Part (c): Total System Cost</strong></h4>
+
+<p>\begin{align}
+\text{Cost} &amp;= \text{Required capacity} \times \text{Cost per kWh} <br />
+&amp;= 470,588 \text{ kWh} \times $300/\text{kWh} <br />
+&amp;= $141,176,400 \approx $141.2 \text{ million}
+\end{align}</p>
+
+<hr />
+
+<h2 id="part-c-extension---challenge-problems"><strong>Part C: Extension - Challenge Problems</strong></h2>
+
+<h3 id="problem-4-regional-grid-analysis"><strong>Problem 4: Regional Grid Analysis</strong></h3>
+
+<p><strong>Given Information:</strong></p>
+<ul>
+  <li>Population served: 26 million people</li>
+  <li>Average household power: 1.2 kW</li>
+  <li>Average household size: 2.5 people</li>
+  <li>Industrial/commercial multiplier: 1.5× residential</li>
+  <li>Grid efficiency: 92%</li>
+</ul>
+
+<h4 id="part-a-total-power-generation-needed"><strong>Part (a): Total Power Generation Needed</strong></h4>
+
+<p>\begin{align}
+\text{Number of households} &amp;= \frac{26,000,000 \text{ people}}{2.5 \text{ people/household}} <br />
+&amp;= 10,400,000 \text{ households} <br />
+<br />
+\text{Residential demand} &amp;= 10,400,000 \text{ households} \times 1.2 \text{ kW/household} <br />
+&amp;= 12,480,000 \text{ kW} <br />
+<br />
+\text{Total demand} &amp;= \text{Residential demand} \times 1.5 <br />
+&amp;= 12,480,000 \text{ kW} \times 1.5 <br />
+&amp;= 18,720,000 \text{ kW} <br />
+<br />
+\text{Generation needed} &amp;= \frac{\text{Total demand}}{\text{Grid efficiency}} <br />
+&amp;= \frac{18,720,000 \text{ kW}}{0.92} <br />
+&amp;= 20,347,826 \text{ kW} \approx 20,348 \text{ MW}
+\end{align}</p>
+
+<h4 id="part-b-comparison-to-actual-peak-demand"><strong>Part (b): Comparison to Actual Peak Demand</strong></h4>
+
+<p><strong>Calculated:</strong> 20,348 MW<br />
+<strong>Actual Texas Peak:</strong> ~75,000 MW<br />
+<strong>Difference:</strong> Factor of ~3.7× higher actual demand</p>
+
+<p><strong>Possible Explanations:</strong></p>
+<ol>
+  <li><strong>Peak vs. Average Demand:</strong> Our calculation uses average household power (1.2 kW), but peak demand occurs when air conditioning usage is maximum (summer afternoons), potentially reaching 5-8 kW per household</li>
+  <li><strong>Industrial Load Underestimation:</strong> The 1.5× multiplier may underestimate heavy industrial users like refineries, data centers, and manufacturing</li>
+  <li><strong>Commercial Buildings:</strong> Large office buildings, hospitals, and schools have high peak demands not captured in simple residential scaling</li>
+  <li><strong>Geographic Factors:</strong> Texas serves parts of neighboring states and has unique industrial energy demands</li>
+  <li><strong>Economic Growth:</strong> Energy demand grows faster than population due to increasing per-capita consumption</li>
+</ol>
+
+<hr />
+
+<h3 id="problem-5-renewable-energy-trade-offs"><strong>Problem 5: Renewable Energy Trade-offs</strong></h3>
+
+<p><strong>Option A: Natural Gas Plant</strong></p>
+<ul>
+  <li>Capacity: 500 MW</li>
+  <li>Construction cost: $800 million</li>
+  <li>Lifespan: 30 years</li>
+</ul>
+
+<p><strong>Option B: Wind + Battery System</strong></p>
+<ul>
+  <li>Total capacity: 600 MW wind + 300 MW battery = 900 MW</li>
+  <li>Construction cost: $1.2 billion</li>
+  <li>Lifespan: 25 years</li>
+</ul>
+
+<h4 id="part-a-cost-per-mw-of-capacity"><strong>Part (a): Cost per MW of Capacity</strong></h4>
+
+<p>\begin{align}
+\text{Option A: } \text{Cost per MW} &amp;= \frac{$800 \text{ million}}{500 \text{ MW}} <br />
+&amp;= $1.6 \text{ million per MW} <br />
+<br />
+\text{Option B: } \text{Cost per MW} &amp;= \frac{$1200 \text{ million}}{900 \text{ MW}} <br />
+&amp;= $1.33 \text{ million per MW}
+\end{align}</p>
+
+<p><strong>Note:</strong> Option B appears cheaper per MW, but this comparison doesn’t account for capacity factors (wind doesn’t blow constantly) or operational costs.</p>
+
+<h4 id="part-b-comprehensive-analysis-and-recommendation"><strong>Part (b): Comprehensive Analysis and Recommendation</strong></h4>
+
+<p><strong>Economic Analysis:</strong></p>
+
+<p><strong>Levelized Cost of Energy (LCOE) Estimates:</strong></p>
+
+<p><em>Option A (Natural Gas):</em>
+\begin{align}
+\text{Annual Energy} &amp;= 500 \text{ MW} \times 8760 \text{ h/year} \times 0.6 \text{ capacity factor} <br />
+&amp;= 2,628,000 \text{ MWh/year} <br />
+<br />
+\text{Fuel Cost/Year} &amp;= 2,628,000 \text{ MWh} \times $40/\text{MWh} = $105.1 \text{ million} <br />
+<br />
+\text{Total 30-year Cost} &amp;= $800 \text{ million} + (30 \times $105.1 \text{ million}) <br />
+&amp;= $800 + $3153 = $3953 \text{ million} <br />
+<br />
+\text{LCOE} &amp;= \frac{$3953 \text{ million}}{30 \text{ years} \times 2,628,000 \text{ MWh/year}} <br />
+&amp;= $50.1/\text{MWh}
+\end{align}</p>
+
+<p><em>Option B (Wind + Battery):</em>
+\begin{align}
+\text{Annual Energy} &amp;= 200 \text{ MW avg} \times 8760 \text{ h/year} <br />
+&amp;= 1,752,000 \text{ MWh/year} <br />
+<br />
+\text{Total 25-year Cost} &amp;= $1200 \text{ million} \text{ (no fuel costs)} <br />
+<br />
+\text{LCOE} &amp;= \frac{$1200 \text{ million}}{25 \text{ years} \times 1,752,000 \text{ MWh/year}} <br />
+&amp;= $27.4/\text{MWh}
+\end{align}</p>
+
+<p><strong>Recommendation: Option B (Wind + Battery)</strong></p>
+
+<p><strong>Justification:</strong></p>
+<ol>
+  <li><strong>Lower Operating Costs:</strong> No fuel costs provide price stability and protection from natural gas price volatility</li>
+  <li><strong>Environmental Benefits:</strong> Zero emissions during operation vs. significant CO₂ emissions from natural gas</li>
+  <li><strong>Energy Independence:</strong> Reduces dependence on natural gas supply chains that proved vulnerable during the 2021 crisis</li>
+  <li><strong>Long-term Economics:</strong> Despite higher upfront costs, the LCOE is significantly lower ($27.4 vs $50.1 per MWh)</li>
+  <li><strong>Grid Resilience:</strong> Battery storage provides grid stabilization services and emergency backup power</li>
+</ol>
+
+<p><strong>Trade-offs to Consider:</strong></p>
+<ul>
+  <li>Lower capacity factor means less total energy production</li>
+  <li>Technology risk (batteries have shorter lifespans than gas turbines)</li>
+  <li>Intermittency requires backup power or additional storage</li>
+  <li>Higher upfront capital requirements</li>
+</ul>
+
+<hr />
+
+<h2 id="part-d-reflection---sample-responses"><strong>Part D: Reflection - Sample Responses</strong></h2>
+
+<h3 id="conceptual-understanding-response"><strong>Conceptual Understanding Response</strong></h3>
+
+<p><strong>“The difference between energy and power is important for grid planning because…“</strong></p>
+
+<p><em>Sample Strong Response:</em> “Power tells us the instantaneous demand that the grid must meet at any moment (like during peak summer afternoons), while energy tells us the total amount of electricity we need to generate over time. Grid planners need enough power capacity to meet peak demand without blackouts, but they also need to ensure sufficient energy generation throughout the day to meet total consumption needs. During the Texas crisis, the grid lost power capacity (MW) when plants froze, but even if they had maintained capacity, running out of fuel would have meant insufficient energy (MWh) to last through the multi-day event.”</p>
+
+<h3 id="real-world-connections-response"><strong>Real-World Connections Response</strong></h3>
+
+<p><strong>“How do the calculations in this problem set help explain what happened during the Texas crisis?”</strong></p>
+
+<p><em>Sample Response:</em> “The calculations show how losing 29.2% of power generation capacity created a massive supply-demand imbalance. When 14,000 MW of generation went offline, the grid couldn’t meet the 48,000 MW demand, forcing rolling blackouts. The storage system calculations demonstrate why Texas struggled - without significant battery storage, they couldn’t buffer the supply disruptions. The efficiency calculations show how transmission losses made the crisis worse, as the remaining plants had to work harder to compensate for grid inefficiencies.”</p>
+
+<h3 id="engineering-thinking-response"><strong>Engineering Thinking Response</strong></h3>
+
+<p><strong>“When solving Problem 5, what factors were most important in your decision?”</strong></p>
+
+<p><em>Sample Response:</em> “Cost, reliability, and environmental impact were all crucial. The LCOE calculation showed wind+battery was more economical long-term, despite higher upfront costs. Reliability was complex - natural gas is dispatchable but vulnerable to fuel supply disruptions (as seen in 2021), while wind is intermittent but the fuel (wind) is always available. Environmental impact favored renewables for climate reasons. Real engineers must also consider permitting time, financing options, grid integration challenges, and political/regulatory factors that weren’t included in our simplified analysis.”</p>
+
+<hr />
+
+<h2 id="connections-to-unit-phenomena"><strong>Connections to Unit Phenomena</strong></h2>
+
+<p>These problems directly connect to the Texas energy crisis by demonstrating:</p>
+
+<ol>
+  <li><strong>Supply-Demand Balance:</strong> Problem 2 quantifies the exact supply shortage that caused the crisis</li>
+  <li><strong>System Vulnerability:</strong> Problems show how weather events can simultaneously affect multiple generation sources</li>
+  <li><strong>Storage Necessity:</strong> Problem 3 illustrates why energy storage is crucial for grid resilience</li>
+  <li><strong>Economic Trade-offs:</strong> Problem 5 explores the complex decisions facing energy planners</li>
+  <li><strong>Scale of Impact:</strong> Problem 4 provides context for the enormous scale of modern electrical grids</li>
+</ol>
+
+<p>The mathematical tools developed here prepare students for the upcoming Hexagon Lab on Engineering Design Tradeoffs, where they’ll use decision matrices to evaluate real energy data and make recommendations for community energy systems.</p>
+
+<hr />
+
+<h2 id="common-student-errors-and-misconceptions"><strong>Common Student Errors and Misconceptions</strong></h2>
+
+<h3 id="unit-confusion"><strong>Unit Confusion</strong></h3>
+<ul>
+  <li><strong>Error:</strong> Mixing up MW and MWh in calculations</li>
+  <li><strong>Correction:</strong> Emphasize that MW measures rate (power) while MWh measures total amount (energy)</li>
+  <li><strong>Check:</strong> Units must make sense - energy = power × time</li>
+</ul>
+
+<h3 id="percentage-calculations"><strong>Percentage Calculations</strong></h3>
+<ul>
+  <li><strong>Error:</strong> Using wrong denominator (crisis total instead of normal total)</li>
+  <li><strong>Correction:</strong> Percentage loss = (amount lost)/(original amount) × 100%</li>
+</ul>
+
+<h3 id="efficiency-applications"><strong>Efficiency Applications</strong></h3>
+<ul>
+  <li><strong>Error:</strong> Forgetting that inefficient systems require more input than output</li>
+  <li><strong>Correction:</strong> Input energy = output energy ÷ efficiency</li>
+</ul>
+
+<h3 id="economic-analysis-oversimplification"><strong>Economic Analysis Oversimplification</strong></h3>
+<ul>
+  <li><strong>Error:</strong> Only considering construction costs, ignoring operating costs</li>
+  <li><strong>Correction:</strong> True cost comparison requires lifecycle analysis including fuel, maintenance, and replacement costs</li>
+</ul>
+
+<hr />
+
+<p><strong>Note to Instructors:</strong> This answer key provides detailed solutions to support student learning and help identify common misconceptions. Use the conceptual explanations to guide classroom discussions about the physics and engineering principles underlying each calculation.</p>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

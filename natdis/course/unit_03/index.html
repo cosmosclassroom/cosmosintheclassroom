@@ -1,42 +1,191 @@
-<!DOCTYPE html>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Unit 3: Wildfire Science | socrates</title>
-<meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="Unit 3: Wildfire Science" />
-<meta property="og:locale" content="en_US" />
-<meta property="og:site_name" content="socrates" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Unit 3: Wildfire Science" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Unit 3: Wildfire Science","url":"/natdis/course/unit_03/"}</script>
-<!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="/assets/css/style.css?v=59aa8935496a96f47eb69302e77cacf80f041315">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-<!-- Setup Google Analytics -->
-
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Unit 3: Wildfire Science | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
   <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-      <h1><a href="/">socrates</a></h1>
-      
+    <header>
+      <div class="site-header">
+        <style>
+/* Enhanced dropdown styling for better usability */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8b7355;
+  /* Add padding around the dropdown content */
+  padding: 0.5rem 0;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+/* Better hover behavior - keep dropdown open when hovering over content */
+.site-nav .dropdown:hover .dropdown-content,
+.site-nav .dropdown-content:hover {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn,
+.site-nav .dropdown-content:hover + .dropbtn {
+  background-color: #e0e0d1;
+}
+/* JavaScript-based dropdown for click behavior */
+.site-nav .dropdown.active .dropdown-content {
+  display: block;
+}
+</style>
 
+<script>
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Close other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+    });
+    
+    // Keep dropdown open when hovering over content
+    content.addEventListener('mouseenter', function() {
+      dropdown.classList.add('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+</script>
+
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/physics_honors_25-26/">📚 Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/physics_honors_25-26/course/unit_01_measurement/" target="_blank">Unit 1: Speaking the Same Language</a>
+          <a href="/physics_honors_25-26/course/unit_02_kinematics_1d/" target="_blank">Unit 2: The Art of Observation</a>
+          <a href="/physics_honors_25-26/course/unit_03_kinematics_2d/" target="_blank">Unit 3: The World in Two Dimensions</a>
+          <a href="/physics_honors_25-26/course/unit_04_dynamics/" target="_blank">Unit 4: The Why of Motion (Dynamics)</a>
+          <a href="/physics_honors_25-26/course/unit_05_energy/" target="_blank">Unit 5: The Universe's Accounting System</a>
+            <a href="/physics_honors_25-26/">→ View All 10 Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/">📚 Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: The Invisible Currents</a>
+          <a href="/sphys/course/2-earth-forces/" target="_blank">Unit 2: Planetary Pulses</a>
+          <a href="/sphys/course/3-collision-safety/" target="_blank">Unit 3: The Geometry of Impact</a>
+          <a href="/sphys/course/4-cosmic-impacts/" target="_blank">Unit 4: Cosmic Impacts</a>
+          <a href="/sphys/course/5-electromagnetic-radiation/" target="_blank">Unit 5: The Invisible Symphony</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/">📚 Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/natdis/course/1-earthquakes/" target="_blank">Unit 1: Earthquakes</a>
+          <a href="/natdis/course/2-tsunamis/" target="_blank">Unit 2: Tsunamis</a>
+          <a href="/natdis/course/3-wildfire/" target="_blank">Unit 3: Wildfire Science</a>
+          <a href="/natdis/course/4-flooding/" target="_blank">Unit 4: Flooding & Landslides</a>
+          <a href="/natdis/course/5-portfolio/" target="_blank">Unit 5: Final Portfolio</a>
+          </div>
+        </li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
       <h1 id="unit-3-wildfire-science">Unit 3: Wildfire Science</h1>
 
 <h2 id="overview">Overview</h2>
@@ -97,10 +246,26 @@
 
 <p><em>[Generated automatically by create_unit_landing_pages.py]</em></p>
 
-
-      
+    
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
   </body>
 </html>

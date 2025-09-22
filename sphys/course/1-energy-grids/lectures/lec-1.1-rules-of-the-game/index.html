@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <style>
+/* Enhanced dropdown styling for better usability */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8b7355;
+  /* Add padding around the dropdown content */
+  padding: 0.5rem 0;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+/* Better hover behavior - keep dropdown open when hovering over content */
+.site-nav .dropdown:hover .dropdown-content,
+.site-nav .dropdown-content:hover {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn,
+.site-nav .dropdown-content:hover + .dropbtn {
+  background-color: #e0e0d1;
+}
+/* JavaScript-based dropdown for click behavior */
+.site-nav .dropdown.active .dropdown-content {
+  display: block;
+}
+</style>
+
+<script>
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Close other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+    });
+    
+    // Keep dropdown open when hovering over content
+    content.addEventListener('mouseenter', function() {
+      dropdown.classList.add('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+</script>
+
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/physics_honors_25-26/">📚 Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/physics_honors_25-26/course/unit_01_measurement/" target="_blank">Unit 1: Speaking the Same Language</a>
+          <a href="/physics_honors_25-26/course/unit_02_kinematics_1d/" target="_blank">Unit 2: The Art of Observation</a>
+          <a href="/physics_honors_25-26/course/unit_03_kinematics_2d/" target="_blank">Unit 3: The World in Two Dimensions</a>
+          <a href="/physics_honors_25-26/course/unit_04_dynamics/" target="_blank">Unit 4: The Why of Motion (Dynamics)</a>
+          <a href="/physics_honors_25-26/course/unit_05_energy/" target="_blank">Unit 5: The Universe's Accounting System</a>
+            <a href="/physics_honors_25-26/">→ View All 10 Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/">📚 Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: The Invisible Currents</a>
+          <a href="/sphys/course/2-earth-forces/" target="_blank">Unit 2: Planetary Pulses</a>
+          <a href="/sphys/course/3-collision-safety/" target="_blank">Unit 3: The Geometry of Impact</a>
+          <a href="/sphys/course/4-cosmic-impacts/" target="_blank">Unit 4: Cosmic Impacts</a>
+          <a href="/sphys/course/5-electromagnetic-radiation/" target="_blank">Unit 5: The Invisible Symphony</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/">📚 Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+          <a href="/natdis/course/1-earthquakes/" target="_blank">Unit 1: Earthquakes</a>
+          <a href="/natdis/course/2-tsunamis/" target="_blank">Unit 2: Tsunamis</a>
+          <a href="/natdis/course/3-wildfire/" target="_blank">Unit 3: Wildfire Science</a>
+          <a href="/natdis/course/4-flooding/" target="_blank">Unit 4: Flooding & Landslides</a>
+          <a href="/natdis/course/5-portfolio/" target="_blank">Unit 5: Final Portfolio</a>
+          </div>
+        </li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <style>
+/* Hide bullets on all unordered lists */
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+ul li {
+  margin-left: 0;
+}
+</style>
+
+<h3 id="lecture-11-the-rules-of-the-game---energy-and-circuits">Lecture 1.1: The Rules of the Game - Energy and Circuits</h3>
+
+<p><strong>Energy is the currency of the universe; power is how fast you spend it.</strong></p>
+
+<hr />
+
+<h3 id="todays-essential-questions">Today’s Essential Questions</h3>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li>What is the difference between energy and power?</li>
+  <li>What are voltage, current, and resistance?</li>
+  <li>How does Ohm’s Law describe the relationship between them?</li>
+</ul>
+
+<hr />
+
+<h3 id="connecting-to-our-last-investigation">Connecting to Our Last Investigation</h3>
+
+<p>In the first blackout lab, we saw the human cost of a system failure. Today, we’ll learn the precise physical language to describe <em>why</em> that system failed.</p>
+
+<hr />
+
+<h3 id="energy-e-vs-power-p"><strong>Energy (E) vs. Power (P)</strong></h3>
+
+<ul>
+  <li>
+    <p><strong>Energy</strong> is the capacity to do work. It’s the total amount of “stuff” you have to make things happen, measured in Joules.</p>
+  </li>
+  <li>
+    <p><strong>Power</strong> is the <em>rate</em> at which you use energy. It’s how fast you are doing the work, measured in Watts.</p>
+  </li>
+</ul>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li>
+    <p><strong>Analogy:</strong> If energy is the amount of money in your bank account, power is how quickly you spend it. A car with more horsepower (power) can accelerate faster, using up its fuel (energy) more quickly.</p>
+  </li>
+  <li>
+\[Energy = Power \times time\]
+  </li>
+  <li>
+\[E = P \cdot \Delta t\]
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="voltage-v"><strong>Voltage (V)</strong></h3>
+
+<ul>
+  <li><strong>Voltage</strong> is the pressure that pushes electrons through a circuit. It’s the potential energy per unit of charge.</li>
+</ul>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li><strong>Analogy:</strong> Voltage is like the water pressure in a hose. The higher the pressure, the harder the water is pushed.</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><strong>Note:</strong> Unlike water in a hose, the electrons themselves do not carry energy from the power plant to your house. The energy is transferred through the electric field in the circuit, not by the physical movement of electrons over long distances.</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="current-i"><strong>Current (I)</strong></h3>
+
+<p><strong>Current</strong> is the rate at which electric charge flows past a point in a circuit.</p>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li><strong>Analogy:</strong> Current is like the flow rate of water in a hose. The more water that flows past a point per second, the higher the current.</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li><strong>Note:</strong> The energy delivered to your home is <em>not</em> carried by individual electrons traveling all the way from the power plant, but by the collective movement and interactions of electrons in the circuit.</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h3 id="resistance-r"><strong>Resistance (R)</strong></h3>
+
+<p><strong>Resistance</strong> is the opposition to the flow of current in a circuit. It’s a measure of how difficult it is for electrons to move through a material.</p>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li><strong>Analogy:</strong> Resistance is like a narrow section in a hose. It restricts the flow of water, reducing the current even if the pressure is high.</li>
+</ul>
+
+<hr />
+
+<h3 id="ohms-law"><strong>Ohm’s Law</strong></h3>
+
+<p>Ohm’s Law is the fundamental relationship between voltage, current, and resistance. It states that the voltage across a circuit is equal to the current multiplied by the resistance.</p>
+
+<ul>
+  <li>
+\[V = IR\]
+  </li>
+  <li>
+\[\text{Voltage} = \text{Current} \times \text{Resistance}\]
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="the-power-equation"><strong>The Power Equation</strong></h3>
+
+<p>The Power Equation tells us how much electrical power is being used in a circuit. It states that power is equal to the current multiplied by the voltage.</p>
+
+<ul>
+  <li>
+\[P = IV\]
+  </li>
+  <li>
+\[Power = \text{Current} \times \text{Voltage}\]
+  </li>
+</ul>
+
+<hr />
+<h3 id="units-and-sample">Units and Sample</h3>
+<ul>
+  <li><strong>Current (I)</strong> — measured in Amperes (A). 1 A = 1 Coulomb of charge passing a point each second (1 C/s).</li>
+  <li><strong>Resistance (R)</strong> — measured in Ohms (Ω). 1 Ω = 1 Volt per Ampere (1 V/A). Tells how much the material resists current.</li>
+  <li><strong>Power (P)</strong> — measured in Watts (W). 1 W = 1 Joule per second (1 J/s) = 1 Volt × 1 Ampere. Indicates how fast energy is being converted or used.</li>
+</ul>
+
+<hr />
+
+<h3 id="computing-resistance">Computing Resistance</h3>
+
+<p>Suppose a circuit has a 9 V source and a current of 0.30 A flows.</p>
+<ul>
+  <li>
+\[V = IR\]
+  </li>
+  <li>
+\[R = \frac{V}{I} = \frac{9\,\text{V}}{0.30\,\text{A}} = 30\,\Omega\]
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="computing-power">Computing Power</h3>
+<ul>
+  <li>
+\[P = VI = (9\,\text{V})(0.30\,\text{A})\]
+  </li>
+  <li>
+\[2.7\,\text{W}\]
+  </li>
+  <li>Interpretation: The resistor turns electrical energy into another form (mostly heat/light) at a rate of 2.7 Joules every second (2.7 Watts)</li>
+</ul>
+
+<hr />
+
+<h3 id="thinking-lens-systems-and-system-models">Thinking Lens: Systems and System Models</h3>
+
+<p>How does a single component—like a frozen natural gas pipe or a downed power line—in a vast, interconnected system like a power grid lead to a catastrophic, cascading failure across an entire state?</p>
+
+<hr />
+
+<h3 id="preparing-for-our-next-task">Preparing for Our Next Task</h3>
+
+<p>The two main equations we cover today, Ohm’s Law and the Power Equation, are the exact tools you’ll need for Problem Set 1.</p>
+
+<hr />
+
+<h3 id="summary-answering-our-questions">Summary: Answering Our Questions</h3>
+
+<!-- .element: class="fragmented" -->
+<ul>
+  <li><strong>What is the difference between energy and power?</strong></li>
+  <li>Energy is the total amount of work that can be done, while power is the rate at which that work is done.</li>
+  <li><strong>What are voltage, current, and resistance?</strong></li>
+  <li>Voltage is the electrical “pressure,” current is the flow rate of charge, and resistance is the opposition to that flow.</li>
+  <li><strong>How does Ohm’s Law describe the relationship between them?</strong></li>
+  <li>Ohm’s Law states that voltage is directly proportional to current, with resistance as the constant of proportionality.</li>
+</ul>
+
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>
