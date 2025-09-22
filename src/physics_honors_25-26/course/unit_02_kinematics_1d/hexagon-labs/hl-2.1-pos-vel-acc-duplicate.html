@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Hexagon Lab 2.1: Analyzing Rocket Ascent Data | socrates</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Hexagon Lab 2.1: Analyzing Rocket Ascent Data" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="socrates" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hexagon Lab 2.1: Analyzing Rocket Ascent Data" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Hexagon Lab 2.1: Analyzing Rocket Ascent Data","url":"/src/physics_honors_25-26/course/unit_02_kinematics_1d/hexagon-labs/hl-2.1-pos-vel-acc-duplicate.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=8e0d4283de2fdddd8ef188c9f2cf1e76c9d2f900">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="/">socrates</a></h1>
+      
+
+      <h1 id="hexagon-lab-21-analyzing-rocket-ascent-data">Hexagon Lab 2.1: Analyzing Rocket Ascent Data</h1>
+
+<p>Complete the following investigations in your Science Notebook.</p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This investigation analyzes velocity-time data from a suborbital sounding rocket launch to identify different phases of motion and understand the relationship between rocket engine operation and kinematic behavior.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Sounding rockets are research vehicles designed to carry scientific instruments to altitudes between 50-1,500 km above Earth’s surface. Unlike orbital rockets, they follow a parabolic trajectory, reaching their maximum altitude (apogee) and then returning to Earth. The telemetry data from these launches provides a clear window into the physics of accelerated motion.</p>
+
+<p>During a typical sounding rocket flight, several distinct phases occur: initial engine burn, engine cutoff, coasting flight under gravity alone (ballistic phase), and eventual descent. Each phase has characteristic signatures in the velocity data that reveal the underlying physics of motion.</p>
+
+<p><strong>Research Question:</strong> How can we use velocity-time data to identify the different phases of rocket motion and determine the acceleration during each phase?</p>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="materials">Materials</h3>
+<ul>
+  <li>Velocity-time dataset from NASA sounding rocket launch</li>
+  <li>Graphing tools (digital or paper)</li>
+  <li>Calculator</li>
+  <li>Research Log</li>
+</ul>
+
+<h3 id="dataset">Dataset</h3>
+<p><strong>Sounding Rocket Telemetry Data - Vertical Velocity Component</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time (s)</th>
+      <th>Velocity (m/s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <td>2.0</td>
+      <td>78.4</td>
+    </tr>
+    <tr>
+      <td>4.0</td>
+      <td>156.8</td>
+    </tr>
+    <tr>
+      <td>6.0</td>
+      <td>235.2</td>
+    </tr>
+    <tr>
+      <td>8.0</td>
+      <td>313.6</td>
+    </tr>
+    <tr>
+      <td>10.0</td>
+      <td>392.0</td>
+    </tr>
+    <tr>
+      <td>12.0</td>
+      <td>470.4</td>
+    </tr>
+    <tr>
+      <td>14.0</td>
+      <td>548.8</td>
+    </tr>
+    <tr>
+      <td>16.0</td>
+      <td>627.2</td>
+    </tr>
+    <tr>
+      <td>18.0</td>
+      <td>705.6</td>
+    </tr>
+    <tr>
+      <td>20.0</td>
+      <td>784.0</td>
+    </tr>
+    <tr>
+      <td>22.0</td>
+      <td>764.4</td>
+    </tr>
+    <tr>
+      <td>24.0</td>
+      <td>744.8</td>
+    </tr>
+    <tr>
+      <td>26.0</td>
+      <td>725.2</td>
+    </tr>
+    <tr>
+      <td>28.0</td>
+      <td>705.6</td>
+    </tr>
+    <tr>
+      <td>30.0</td>
+      <td>686.0</td>
+    </tr>
+    <tr>
+      <td>32.0</td>
+      <td>666.4</td>
+    </tr>
+    <tr>
+      <td>34.0</td>
+      <td>646.8</td>
+    </tr>
+    <tr>
+      <td>36.0</td>
+      <td>627.2</td>
+    </tr>
+    <tr>
+      <td>38.0</td>
+      <td>607.6</td>
+    </tr>
+    <tr>
+      <td>40.0</td>
+      <td>588.0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Given Information:</strong></p>
+<ul>
+  <li>Launch occurs at t = 0 s from sea level</li>
+  <li>$a_g = 9.80 \text{ m/s}^2$ (acceleration due to gravity)</li>
+  <li>All measurements are for vertical motion only</li>
+  <li>Data collected at 2.0 s intervals</li>
+</ul>
+
+<hr />
+
+<h2 id="results">Results</h2>
+
+<h3 id="investigation-1-engine-burn-phase-analysis">Investigation 1: Engine Burn Phase Analysis</h3>
+
+<p><strong>Variable Interpretation &amp; Calibration</strong>
+Examine the early portion of the flight data (0-20 s) to identify when the rocket engine is firing and calculate the acceleration during this phase.</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ol>
+  <li>
+    <p>Plot the velocity-time data for the first 20 seconds. Describe the shape of this portion of the graph.</p>
+  </li>
+  <li>Calculate the acceleration during this phase using two data points:
+    <ul>
+      <li>At t = 0.0 s: $\overrightarrow{v} = 0.0 \text{ m/s}$</li>
+      <li>At t = 20.0 s: $\overrightarrow{v} = 784.0 \text{ m/s}$</li>
+      <li>$\overrightarrow{a} = \frac{\Delta \overrightarrow{v}}{\Delta t} = \frac{784.0 - 0.0}{20.0 - 0.0} = $ <strong>__</strong>_ $\text{m/s}^2$</li>
+    </ul>
+  </li>
+  <li>Compare this acceleration to what happens when objects fall freely under gravity alone ($a_g = 9.80 \text{ m/s}^2$). What does the magnitude of the rocket’s acceleration tell you about what must be happening during this phase of flight?</li>
+</ol>
+
+<p><strong>Summary Statement:</strong>
+<strong>What evidence from the velocity data indicates that the rocket engine is operating during the first 20 seconds?</strong> Make and support a claim using the calculated acceleration values and comparison to gravity.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Response:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Claim:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Evidence:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="investigation-2-engine-cutoff-and-ballistic-phase">Investigation 2: Engine Cutoff and Ballistic Phase</h3>
+
+<p><strong>Variable Interpretation &amp; Calibration</strong>
+Analyze what happens after t = 20 s to identify when the engine shuts off and calculate the acceleration during the ballistic (engine-off) phase.</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ol>
+  <li>
+    <p>Examine the velocity data after t = 20 s. What change do you observe in the pattern of the velocity values?</p>
+  </li>
+  <li>Calculate the acceleration during the ballistic phase using data from 20-30 s:
+    <ul>
+      <li>At t = 20.0 s: $\overrightarrow{v} = 784.0 \text{ m/s}$</li>
+      <li>At t = 30.0 s: $\overrightarrow{v} = 686.0 \text{ m/s}$</li>
+      <li>$\overrightarrow{a} = \frac{\Delta \overrightarrow{v}}{\Delta t} = \frac{686.0 - 784.0}{30.0 - 20.0} = $ <strong>__</strong>_ $\text{m/s}^2$</li>
+    </ul>
+  </li>
+  <li>How does this calculated acceleration compare to $a_g = -9.80 \text{ m/s}^2$ (the acceleration of objects in free fall)? What does this comparison tell you about what is happening to the rocket after t = 20 s?</li>
+</ol>
+
+<p><strong>Summary Statement:</strong>
+<strong>How does the velocity pattern change at t = 20 s, and what does this reveal about the rocket’s engine operation?</strong> Use the calculated accelerations to support your explanation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Response:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Claim:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Evidence:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="investigation-3-predicting-apogee">Investigation 3: Predicting Apogee</h3>
+
+<p><strong>Variable Interpretation &amp; Calibration</strong>
+Use the ballistic phase data to predict when the rocket will reach its maximum altitude (apogee), where velocity = 0.</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ol>
+  <li>
+    <p>During the ballistic phase, the rocket follows the kinematic equation:
+$\overrightarrow{v}_1 = \overrightarrow{v}_0 + \overrightarrow{a} \cdot \Delta t$</p>
+  </li>
+  <li>At apogee, $\overrightarrow{v}_1 = 0$. Using the conditions at t = 20 s as initial conditions for the ballistic phase:
+    <ul>
+      <li>$\overrightarrow{v}_0 = 784.0 \text{ m/s}$ (velocity at engine cutoff)</li>
+      <li>$\overrightarrow{a} = -9.80 \text{ m/s}^2$ (gravity only)</li>
+      <li>$\overrightarrow{v}_1 = 0 \text{ m/s}$ (at apogee)</li>
+    </ul>
+  </li>
+  <li>
+    <p>Solve for the time after engine cutoff when apogee occurs:
+$0 = 784.0 + (-9.80) \cdot \Delta t$
+$\Delta t = $ <strong>__</strong>_ seconds after engine cutoff</p>
+  </li>
+  <li>Therefore, apogee occurs at: $t = 20.0 + $ <strong>__</strong>_ $= $ <strong>__</strong>_ seconds after launch</li>
+</ol>
+
+<p><strong>Summary Statement:</strong>
+<strong>Based on your kinematic analysis, when should the rocket reach its maximum altitude?</strong> Show your mathematical reasoning and explain any assumptions you made.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Response:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Claim:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Evidence:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="discussion">Discussion</h2>
+
+<h3 id="summary-of-findings">Summary of Findings</h3>
+<p>Synthesize your findings from all three investigations. How do the different phases of rocket motion reveal distinct patterns in the velocity data? What story does the velocity-time graph tell about the rocket’s journey?</p>
+
+<p><strong>Connection to Unit Learning Objectives:</strong></p>
+<ul>
+  <li>How does this analysis demonstrate that acceleration is the rate of change of velocity?</li>
+  <li>What patterns in the velocity data reveal different phases of the rocket’s flight?</li>
+</ul>
+
+<h3 id="scientific-thinking-reflection">Scientific Thinking Reflection</h3>
+<p><strong>Metacognitive Prompt:</strong> Reflect on how analyzing the slope of different sections of the velocity-time graph revealed different phases of motion. What was challenging about interpreting the transition from powered flight to ballistic flight, and how did the mathematical analysis help clarify this transition?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Reflection:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="real-world-applications">Real-World Applications</h3>
+<p>Consider how this type of kinematic analysis applies to these scenarios:</p>
+<ol>
+  <li>Launch trajectory optimization for space missions</li>
+  <li>Analyzing aircraft performance during takeoff</li>
+  <li>Designing safety systems for emergency rocket engine shutdowns</li>
+</ol>
+
+<p>Choose one scenario and explain how velocity-time analysis would be essential for engineers working on that problem.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Application Analysis:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="references">References</h2>
+<ul>
+  <li>NASA Sounding Rocket Program Office telemetry data</li>
+  <li>Course textbook: Unit 2, Kinematics and Motion Analysis</li>
+</ul>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
