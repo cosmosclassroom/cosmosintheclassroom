@@ -1,0 +1,81 @@
+# Chapter 1 — The Invisible Currents
+
+**Central question:** How can we design reliable and equitable systems to meet our communities’ energy needs?
+
+**Narrative arc:** We begin with a crisis that plunged millions into darkness. From that human story we move from the macro-level of power grids to the micro-level of electrons, and back up to engineering better, more just systems.
+
+---
+
+## 1.1 Introduction — When the Lights Go Out
+
+The story begins with a familiar inconvenience: a flicker, a hum, and then silence. A local outage can be a minor adventure. A multi-day, statewide blackout is catastrophic — it disrupts heat, communication, health, and safety.
+
+In February 2021, millions in Texas experienced such a crisis. To understand how it happened and how to prevent it, we must learn the language of energy and the rules that govern its flow.
+
+### Check for Understanding
+1. Think of a time you experienced a power outage. What were the immediate consequences?  
+   _Answer:_ ___________________________
+
+2. Why is a massive, multi-day blackout more serious than a brief local outage? Which other systems are affected (water, communications, healthcare, etc.)?  
+   _Answer:_ ___________________________
+
+---
+
+## 1.2 Phenomenon — A System in Crisis
+
+Our puzzle: the Texas blackout during the February 2021 cold snap. The grid, designed for reliability, failed to meet demand, and operators had to intentionally curtail power to avoid catastrophic equipment damage.
+
+This event sits at the intersection of extreme weather, engineering design, and policy. To solve the puzzle we will examine multiple perspectives: human impacts, infrastructure behavior, and system-level decisions.
+
+> Pause your reading and complete the Hexagon Lab: *Analyzing Blackout Narratives*.  
+> Open the lab document and record the human-context observations before continuing.
+
+---
+
+## 1.3 Investigation — Making a Forecast
+
+With the context in mind, formalize your initial hypothesis. Define the problem and propose a starting forecast based on the evidence you gathered.
+
+> Pause your reading and complete the Research Brief — *Forecast* section in your research log.
+
+---
+
+## 1.4 The Rules of the Game — Circuits, Current, and Energy Transfer
+
+To bring order to the crisis story we must learn the fundamentals of electricity.
+
+- **Voltage (V):** the "push" or potential difference that moves charges (Volts).  
+- **Current (I):** the rate of charge flow through a conductor (Amperes, A).  
+- **Resistance (R):** opposition to current flow (Ohms, Ω).
+
+The core relations:
+- Ohm’s Law: \(V = I\,R\)  
+- Electrical power: \(P = V I\) (Watts)  
+- Alternate forms: \(P = I^2 R\) and \(P = \dfrac{V^2}{R}\)  
+- Energy: \(E = P t\) (Joules, with \(t\) in seconds)
+
+### Check for Understanding
+1. In your own words, explain the difference between voltage and current using an analogy (for example: water in pipes).  
+   _Answer:_ ___________________________
+
+2. If a circuit has a 9‑V battery and a light bulb with \(3\ \Omega\) resistance, what is the current?  
+   _Work:_ \(I = \dfrac{V}{R} = \dfrac{9\ \text{V}}{3\ \Omega} = 3\ \text{A}\)  
+   _Answer:_ 3 A
+
+> Pause your reading and complete the Hexagon Lab — *Power Strip Dissection* in your notebook and lab document.
+
+---
+
+## 1.5 Thinking Lens — Systems and System Models
+
+Use the Systems and System Models lens: the grid is a network of generation, transmission, and load. A failure in one part (frozen generators, overloaded lines) can cascade and affect the whole system. We will build models to predict behavior and failure modes.
+
+> Pause and complete Problem Set 1 — *Circuits & Power* to practice Ohm’s Law and power calculations.
+
+---
+
+## Summary & Next Steps
+
+- You have encountered a real-world phenomenon, developed initial hypotheses, and learned the foundational physics needed to analyze the grid.  
+- Next: apply systems models to explore cascading failures and mitigation strategies in subsequent sections.
+
