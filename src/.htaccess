@@ -1,0 +1,9 @@
+# Deny access to administrative directories
+<DirectoryMatch "0-admin">
+    Require all denied
+</DirectoryMatch>
+
+# Deny access to any admin-related files
+<FilesMatch "admin">
+    Require all denied
+</FilesMatch>
