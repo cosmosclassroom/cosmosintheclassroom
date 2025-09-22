@@ -1,4 +1,245 @@
-<h1 id="hexagon-lab-14-engineering-design-tradeoffs">Hexagon Lab 1.4: Engineering Design Tradeoffs</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Hexagon Lab 1.4: Engineering Design Tradeoffs | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<style>
+/* Simple dropdown styling */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+.site-nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn {
+  background-color: #e0e0d1;
+}
+</style>
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <a href="/src/courses/hphys/hphys_landing.html">Honors Physics</a>
+            <a href="/src/courses/sphys/sphys_overview.md">Standard Physics</a>
+            <a href="/src/courses/natural-disasters/natural_disasters_landing.html">Natural Disasters</a>
+          </div>
+        </li>
+        <li><a href="/src/modules/ref/ref_lib.md" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">Library</a></li>
+        <li><a href="/src/modules/hexagon-labs/hexagon-lab-interface.html" style="color: #2563eb; text-decoration: underline; font-weight: 600; padding: 0.5rem 1rem; border-radius: 0.5rem;">Hexagon Labs Viewer</a></li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<style>
+  .hexagon-lab-container { padding: 2rem; }
+  .lab-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .lab-info {
+    background-color: #f8f9fa;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .safety-alert {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #dc3545;
+  }
+  .materials-list {
+    background-color: #e2f0d9;
+    border: 1px solid #c5e1a5;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+  .investigation-section {
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background-color: #ffffff;
+  }
+  .data-table {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin: 1rem 0;
+  }
+  .analysis-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid #f39c12;
+  }
+</style>
+
+<div class="hexagon-lab-container">
+  <div class="lab-header">
+    <h1>Hexagon Lab 1.4: Engineering Design Tradeoffs</h1>
+    
+    <p class="lead mb-0">Analysis Laboratory</p>
+    
+  </div>
+  
+  <div class="lab-info">
+    <div class="row">
+      <div class="col-md-6">
+        <strong>Course:</strong> SPHYS<br>
+        <strong>Unit:</strong> 1-energy-grids<br>
+        <strong>Time Required:</strong> 50 minutes
+      </div>
+      <div class="col-md-6">
+        <strong>Lab Type:</strong> Analysis<br>
+        
+        <strong>Prerequisites:</strong> Understanding of different energy sources (solar, wind, natural gas)., Basic data table and chart interpretation skills.
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="safety-alert">
+    <h5><i class="fas fa-exclamation-triangle"></i> Safety Requirements</h5>
+    <ul>
+      
+        <li>none</li>
+      
+    </ul>
+  </div>
+  
+
+  
+  <div class="materials-list">
+    <h5><i class="fas fa-tools"></i> Materials</h5>
+    <ul>
+      
+        <li>calculator</li>
+      
+        <li>science_notebook</li>
+      
+        <li>data_webpage_access</li>
+      
+    </ul>
+  </div>
+  
+
+  
+  <div class="alert alert-info">
+    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
+    <ul class="mb-0">
+      
+        <li>Use a decision matrix to quantitatively evaluate design solutions.</li>
+      
+        <li>Construct a scientific argument using the Claim-Evidence-Reasoning framework.</li>
+      
+    </ul>
+  </div>
+  
+
+  <!-- Content from markdown file -->
+  <h1 id="hexagon-lab-14-engineering-design-tradeoffs">Hexagon Lab 1.4: Engineering Design Tradeoffs</h1>
 
 <p><strong>Today’s Question:</strong> How do engineers use data to make difficult decisions when there is no single “best” choice?</p>
 
@@ -223,3 +464,45 @@ Your task is to write a scientific argument to convince the town council. Use th
 </blockquote>
 
 <p><strong>Share:</strong> Compare your final recommendation with a team that had a different community assignment. Why did you get different answers even though you used the same data?</p>
+
+  
+  
+  <div class="mt-4">
+    <strong>Topics:</strong>
+    
+      <span class="badge bg-warning text-dark me-1">engineering</span>
+    
+      <span class="badge bg-warning text-dark me-1">decision-matrix</span>
+    
+      <span class="badge bg-warning text-dark me-1">tradeoffs</span>
+    
+      <span class="badge bg-warning text-dark me-1">energy</span>
+    
+      <span class="badge bg-warning text-dark me-1">CER</span>
+    
+  </div>
+  
+</div>
+    
+    </div>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
+</html>

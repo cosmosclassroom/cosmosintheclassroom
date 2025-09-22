@@ -1,4 +1,137 @@
-<p><strong>Anchoring Phenomenon:</strong> The Texas power crisis of February 2021, where a severe winter storm caused a massive failure of the state’s electrical grid.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit P.1 Assessment: Analyzing the Texas Power Crisis - Cosmos in the Classroom</title>
+    
+    <!-- External CSS with single, reliable path -->
+    <link rel="stylesheet" href="/assets/css/assessment.css">
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-link">← Back to Home</a>
+            <a href="/sphys/" class="nav-link">
+                SPHYS Course
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div id="password-prompt" class="password-container">
+            <h2>Assessment Access</h2>
+            <p>This assessment requires a password. Enter the code provided by your instructor:</p>
+            <div class="password-form">
+                <input type="password" id="assessment-password" placeholder="Enter password" autocomplete="off">
+                <button id="password-submit-btn">Access Assessment</button>
+            </div>
+            <div id="password-error" class="error-message" style="display: none;">
+                Incorrect password. Please try again.
+            </div>
+        </div>
+
+        <div id="assessment-content" class="assessment-container" style="display: none;">
+        
+            
+            <!-- Progress indicator -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span class="progress-text" id="progress-text">0% Complete</span>
+            </div>
+            
+            <!-- Assessment header -->
+            <header class="assessment-header">
+                <h1>Unit P.1 Assessment: Analyzing the Texas Power Crisis</h1>
+                <div class="assessment-meta">
+                    
+                    <div class="meta-item">
+                        <span class="meta-label">Time Limit:</span>
+                        <span class="meta-value">50 minutes</span>
+                    </div>
+                    
+                    
+                    <div class="meta-item">
+                        <span class="meta-label">Materials:</span>
+                        <span class="meta-value">formula_sheet, calculator</span>
+                    </div>
+                    
+                    <div class="meta-item">
+                        <span class="meta-label">Started:</span>
+                        <span class="meta-value" id="start-time"></span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Auto-save indicator -->
+            <div id="auto-save-indicator" class="auto-save-indicator"></div>
+
+            <!-- Main assessment form -->
+            <form id="assessment-form" class="assessment-form">
+                <!-- Student information section -->
+                <section class="student-info-section">
+                    <h3>Student Information</h3>
+                    <div class="form-grid">
+                        <div class="form-field">
+                            <label for="student-name">Full Name *</label>
+                            <input type="text" id="student-name" name="StudentName" required>
+                            <span class="field-error" id="student-name-error"></span>
+                        </div>
+                        <div class="form-field">
+                            <label for="course-name">Course</label>
+                            <input type="text" id="course-name" name="CourseName" 
+                                   value="SPHYS" readonly>
+                        </div>
+                        <div class="form-field">
+                            <label for="class-period">Class Period *</label>
+                            <select id="class-period" name="ClassPeriod" required>
+                                <option value="">Select Period</option>
+                                
+                                <option value="1">Period 1</option>
+                                
+                                <option value="2">Period 2</option>
+                                
+                                <option value="3">Period 3</option>
+                                
+                                <option value="4">Period 4</option>
+                                
+                                <option value="5">Period 5</option>
+                                
+                                <option value="6">Period 6</option>
+                                
+                                <option value="7">Period 7</option>
+                                
+                                <option value="8">Period 8</option>
+                                
+                            </select>
+                            <span class="field-error" id="class-period-error"></span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hidden tracking fields -->
+                <input type="hidden" name="AssessmentTitle" value="Unit P.1 Assessment: Analyzing the Texas Power Crisis">
+                <input type="hidden" name="StartTime" id="start-time-hidden">
+                <input type="hidden" name="BrowserInfo" id="browser-info">
+
+                <!-- Assessment content from markdown -->
+                <div class="assessment-content">
+                    <p><strong>Anchoring Phenomenon:</strong> The Texas power crisis of February 2021, where a severe winter storm caused a massive failure of the state’s electrical grid.</p>
 
 <p><strong>Core Concepts:</strong> Electrical Circuits, Energy Consumption, Systems &amp; System Models, Source Credibility</p>
 
@@ -89,3 +222,270 @@ Find: The total cost to run the heater.</p>
 <div class="question" data-required="true" data-points="14">
   <textarea rows="10" name="Question5" placeholder="Write your comprehensive explanation here. Make sure to include all required elements listed above..."></textarea>
 </div>
+
+                </div>
+
+                <!-- Submit section -->
+                <section class="submit-section">
+                    <button type="submit" class="submit-btn" id="submit-btn">
+                        Submit Assessment
+                    </button>
+                    <div id="submit-status" class="submit-status"></div>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <script>
+    // Assessment configuration
+    const ASSESSMENT_CONFIG = {
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbx1EUOLtqFRfIiLgurFQA3yYJEuZgWn4bMH5Cuq4ZOP_Dlc6N6Euol7Af_Dokj87aAfSg/exec',
+        autoSaveInterval: 30000,
+        passwordHash: 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3'
+    };
+
+    // Simple password verification (client-side deterrent only)
+    async function verifyPassword(password) {
+        if (!ASSESSMENT_CONFIG.passwordHash) return true;
+        
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        
+        return hashHex === ASSESSMENT_CONFIG.passwordHash;
+    }
+
+    // Progress tracking
+    function updateProgress() {
+        const questions = document.querySelectorAll('.question[data-required="true"]');
+        let answered = 0;
+        
+        questions.forEach(question => {
+            const textarea = question.querySelector('textarea');
+            const inputs = question.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
+            
+            if ((textarea && textarea.value.trim()) || inputs.length > 0) {
+                answered++;
+            }
+        });
+        
+        const percentage = questions.length > 0 ? Math.round((answered / questions.length) * 100) : 0;
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressFill) progressFill.style.width = `${percentage}%`;
+        if (progressText) progressText.textContent = `${percentage}% Complete`;
+    }
+
+    // Form validation
+    function validateForm() {
+        let isValid = true;
+        
+        // Clear previous errors
+        document.querySelectorAll('.field-error').forEach(error => error.textContent = '');
+        document.querySelectorAll('.question').forEach(q => q.classList.remove('error'));
+        
+        // Validate required fields
+        const studentName = document.getElementById('student-name');
+        const classPeriod = document.getElementById('class-period');
+        
+        if (!studentName.value.trim()) {
+            document.getElementById('student-name-error').textContent = 'Name is required';
+            isValid = false;
+        }
+        
+        if (!classPeriod.value) {
+            document.getElementById('class-period-error').textContent = 'Please select a class period';
+            isValid = false;
+        }
+        
+        // Validate required questions
+        document.querySelectorAll('.question[data-required="true"]').forEach(question => {
+            const textarea = question.querySelector('textarea');
+            const checkedInputs = question.querySelectorAll('input:checked');
+            
+            if (textarea && !textarea.value.trim()) {
+                question.classList.add('error');
+                isValid = false;
+            } else if (!textarea && checkedInputs.length === 0) {
+                question.classList.add('error');
+                isValid = false;
+            }
+        });
+        
+        return isValid;
+    }
+
+    // Auto-save functionality
+    async function autoSave() {
+        if (!ASSESSMENT_CONFIG.webAppUrl) return;
+        
+        const indicator = document.getElementById('auto-save-indicator');
+        const form = document.getElementById('assessment-form');
+        
+        try {
+            indicator.textContent = 'Saving...';
+            indicator.className = 'auto-save-indicator saving';
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.AutoSave = true;
+            data.Timestamp = new Date().toISOString();
+            
+            // Local backup
+            localStorage.setItem(`assessment-${data.AssessmentTitle}`, JSON.stringify(data));
+            
+            indicator.textContent = 'Saved';
+            indicator.className = 'auto-save-indicator saved';
+            
+            setTimeout(() => {
+                indicator.textContent = '';
+                indicator.className = 'auto-save-indicator';
+            }, 3000);
+            
+        } catch (error) {
+            console.warn('Auto-save failed:', error);
+            indicator.textContent = '';
+            indicator.className = 'auto-save-indicator';
+        }
+    }
+
+    // Form submission
+    async function submitAssessment(formData) {
+        if (!ASSESSMENT_CONFIG.webAppUrl) {
+            throw new Error('Submission endpoint not configured');
+        }
+        
+        const data = Object.fromEntries(formData.entries());
+        data.SubmissionTime = new Date().toISOString();
+        
+        const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        
+        if (!response.ok) {
+            throw new Error(`Submission failed: ${response.status}`);
+        }
+        
+        return response.json();
+    }
+
+    // Initialize assessment
+    document.addEventListener('DOMContentLoaded', function() {
+        const startTime = new Date();
+        const startTimeElement = document.getElementById('start-time');
+        const startTimeHidden = document.getElementById('start-time-hidden');
+        const browserInfo = document.getElementById('browser-info');
+        
+        if (startTimeElement) startTimeElement.textContent = startTime.toLocaleString();
+        if (startTimeHidden) startTimeHidden.value = startTime.toISOString();
+        if (browserInfo) browserInfo.value = navigator.userAgent;
+
+        
+        // Password protection
+        const passwordPrompt = document.getElementById('password-prompt');
+        const assessmentContent = document.getElementById('assessment-content');
+        const passwordInput = document.getElementById('assessment-password');
+        const passwordBtn = document.getElementById('password-submit-btn');
+        const passwordError = document.getElementById('password-error');
+        
+        // Check session storage for previous access
+        const sessionKey = 'assessment-access-unit-p-1-assessment-analyzing-the-texas-power-crisis';
+        if (sessionStorage.getItem(sessionKey)) {
+            passwordPrompt.style.display = 'none';
+            assessmentContent.style.display = 'block';
+        }
+        
+        async function checkPassword() {
+            const password = passwordInput.value;
+            const isValid = await verifyPassword(password);
+            
+            if (isValid) {
+                passwordPrompt.style.display = 'none';
+                assessmentContent.style.display = 'block';
+                sessionStorage.setItem(sessionKey, 'granted');
+                passwordError.style.display = 'none';
+            } else {
+                passwordError.style.display = 'block';
+                passwordInput.value = '';
+                passwordInput.focus();
+            }
+        }
+        
+        passwordBtn.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+        
+
+        // Progress tracking
+        document.addEventListener('input', updateProgress);
+        document.addEventListener('change', updateProgress);
+        
+        // Auto-save setup
+        if (ASSESSMENT_CONFIG.autoSaveInterval > 0) {
+            setInterval(autoSave, ASSESSMENT_CONFIG.autoSaveInterval);
+        }
+        
+        // Form submission
+        const form = document.getElementById('assessment-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const submitStatus = document.getElementById('submit-status');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                submitStatus.textContent = 'Please correct the errors above before submitting.';
+                submitStatus.className = 'submit-status error';
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            submitStatus.textContent = 'Submitting your assessment...';
+            submitStatus.className = 'submit-status loading';
+            
+            try {
+                await submitAssessment(new FormData(form));
+                
+                submitStatus.textContent = 'Assessment submitted successfully!';
+                submitStatus.className = 'submit-status success';
+                submitBtn.textContent = 'Submitted';
+                
+                // Disable all form elements
+                form.querySelectorAll('input, textarea, select, button').forEach(el => {
+                    el.disabled = true;
+                });
+                
+                // Clear auto-save
+                const title = document.querySelector('input[name="AssessmentTitle"]')?.value;
+                if (title) localStorage.removeItem(`assessment-${title}`);
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                submitStatus.textContent = 'Submission failed. Please try again.';
+                submitStatus.className = 'submit-status error';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Assessment';
+            }
+        });
+        
+        // Prevent accidental navigation
+        window.addEventListener('beforeunload', function(e) {
+            if (submitBtn.textContent !== 'Submitted') {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        });
+        
+        // Initial progress update
+        updateProgress();
+    });
+    </script>
+</body>
+</html>
