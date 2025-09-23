@@ -243,6 +243,11 @@
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .student-info-section {
+            transition: all 0.3s ease;
         }
 
         /* Instructions Section Styling */
@@ -287,6 +292,17 @@
         .section-dot.instructions-dot.active {
             background-color: #563d7c;
             transform: scale(1.2);
+        }
+
+        /* Recovery button styling */
+        .nav-btn.utility-btn {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .nav-btn.utility-btn:hover {
+            background-color: #138496;
+            border-color: #117a8b;
         }
 
         .assessment-header h1 {
@@ -404,8 +420,8 @@
 
             <!-- Scrollable Assessment Content Area -->
             <div class="assessment-scroll-area">
-                <!-- Assessment header -->
-                <header class="assessment-header">
+                <!-- Assessment header - will be hidden during quiz sections -->
+                <header class="assessment-header" id="assessment-header">
                     <h1>Quiz 1.1: Decoding Seismic Signals</h1>
                     <div class="assessment-meta">
                         
@@ -422,8 +438,8 @@
 
                 <!-- Main assessment form -->
                 <form id="assessment-form" class="assessment-form">
-                    <!-- Student information section -->
-                    <section class="student-info-section">
+                    <!-- Student information section - will be hidden during quiz sections -->
+                    <section class="student-info-section" id="student-info-section">
                         <h3>Student Information</h3>
                         <div class="form-grid">
                             <div class="form-field">
@@ -728,6 +744,7 @@
     let currentSection = 0;
     let sections = [];
     let sectionRequirements = [];
+    let sectionFormData = {}; // Store form data for each section
 
     function initializeSections() {
         const contentContainer = document.getElementById('assessment-sections');
@@ -755,6 +772,10 @@
                         ${parts[0]}
                         <div class="start-assessment-prompt">
                             <p><strong>Ready to begin?</strong> Click "Next" to start with the first question section.</p>
+                            <p><small><em>Note: Once you begin, the interface will switch to a cleaner view focused on the questions.</em></small></p>
+                            <div style="background: #d1ecf1; border: 1px solid #b8daff; color: #0c5460; padding: 8px; margin-top: 10px; border-radius: 4px; font-size: 12px;">
+                                💾 <strong>Auto-Save:</strong> Your progress is automatically saved as you work. If you accidentally close the page, you'll be offered to restore your progress when you return.
+                            </div>
                         </div>
                     </div>
                 `);
@@ -886,6 +907,11 @@
     function showSection(index) {
         if (index < 0 || index >= sections.length) return;
         
+        // Save current section data before switching
+        if (currentSection !== index) {
+            saveCurrentSectionData();
+        }
+        
         currentSection = index;
         const contentContainer = document.getElementById('assessment-sections');
         const sectionIndicator = document.getElementById('section-indicator');
@@ -904,6 +930,25 @@
         // Update content
         if (contentContainer) {
             contentContainer.innerHTML = sections[index];
+        }
+        
+        // Restore saved data for this section (after content is loaded)
+        setTimeout(() => {
+            restoreSectionData(index);
+        }, 10);
+        
+        // Show/hide header and student info based on section
+        const assessmentHeader = document.getElementById('assessment-header');
+        const studentInfoSection = document.getElementById('student-info-section');
+        
+        if (index === 0) {
+            // Instructions section - show header and student info
+            if (assessmentHeader) assessmentHeader.style.display = 'block';
+            if (studentInfoSection) studentInfoSection.style.display = 'block';
+        } else {
+            // Quiz sections - hide header and student info for cleaner interface
+            if (assessmentHeader) assessmentHeader.style.display = 'none';
+            if (studentInfoSection) studentInfoSection.style.display = 'none';
         }
         
         // Update section indicator
@@ -956,6 +1001,115 @@
         // Re-attach event listeners for new content
         attachSectionEventListeners();
         updateProgress();
+    }
+
+    function saveCurrentSectionData() {
+        // Save form data from the current section
+        const contentContainer = document.getElementById('assessment-sections');
+        const inputs = contentContainer.querySelectorAll('input, textarea, select');
+        
+        if (!sectionFormData[currentSection]) {
+            sectionFormData[currentSection] = {};
+        }
+        
+        inputs.forEach(input => {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+                if (input.checked) {
+                    if (input.type === 'radio') {
+                        sectionFormData[currentSection][input.name] = input.value;
+                    } else {
+                        // Handle checkboxes (multiple values)
+                        if (!sectionFormData[currentSection][input.name]) {
+                            sectionFormData[currentSection][input.name] = [];
+                        }
+                        if (!sectionFormData[currentSection][input.name].includes(input.value)) {
+                            sectionFormData[currentSection][input.name].push(input.value);
+                        }
+                    }
+                }
+            } else {
+                if (input.value) {
+                    sectionFormData[currentSection][input.name] = input.value;
+                }
+            }
+        });
+        
+        console.log(`Saved data for section ${currentSection}:`, sectionFormData[currentSection]);
+    }
+
+    function restoreSectionData(sectionIndex) {
+        // Restore form data for the given section
+        if (!sectionFormData[sectionIndex]) return;
+        
+        const data = sectionFormData[sectionIndex];
+        
+        Object.keys(data).forEach(fieldName => {
+            const value = data[fieldName];
+            
+            // Handle radio buttons
+            const radioInputs = document.querySelectorAll(`input[name="${fieldName}"][type="radio"]`);
+            if (radioInputs.length > 0) {
+                radioInputs.forEach(radio => {
+                    radio.checked = (radio.value === value);
+                });
+                return;
+            }
+            
+            // Handle checkboxes
+            const checkboxInputs = document.querySelectorAll(`input[name="${fieldName}"][type="checkbox"]`);
+            if (checkboxInputs.length > 0) {
+                const values = Array.isArray(value) ? value : [value];
+                checkboxInputs.forEach(checkbox => {
+                    checkbox.checked = values.includes(checkbox.value);
+                });
+                return;
+            }
+            
+            // Handle regular inputs and textareas
+            const input = document.querySelector(`[name="${fieldName}"]`);
+            if (input) {
+                input.value = value;
+            }
+        });
+        
+        console.log(`Restored data for section ${sectionIndex}:`, data);
+    }
+
+    function mergeSectionDataToForm() {
+        // Create hidden inputs for all section data to ensure it's included in form submission
+        const form = document.getElementById('assessment-form');
+        
+        Object.keys(sectionFormData).forEach(sectionIndex => {
+            const sectionData = sectionFormData[sectionIndex];
+            
+            Object.keys(sectionData).forEach(fieldName => {
+                const value = sectionData[fieldName];
+                
+                // Check if there's already an input with this name in the current form
+                const existingInput = form.querySelector(`[name="${fieldName}"]`);
+                if (!existingInput) {
+                    // Create hidden input for this field
+                    if (Array.isArray(value)) {
+                        // Handle checkbox arrays
+                        value.forEach(val => {
+                            const hiddenInput = document.createElement('input');
+                            hiddenInput.type = 'hidden';
+                            hiddenInput.name = fieldName;
+                            hiddenInput.value = val;
+                            form.appendChild(hiddenInput);
+                        });
+                    } else {
+                        const hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = fieldName;
+                        hiddenInput.value = value;
+                        form.appendChild(hiddenInput);
+                    }
+                }
+            });
+        });
+        
+        console.log('Merged all section data to form for submission');
     }
 
     function attachSectionEventListeners() {
@@ -1210,10 +1364,16 @@
             indicator.textContent = 'Saving...';
             indicator.className = 'auto-save-indicator saving';
             
+            // Save current section data first
+            saveCurrentSectionData();
+            
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             data.AutoSave = true;
             data.Timestamp = new Date().toISOString();
+            
+            // Include section data in the save
+            data.SectionData = sectionFormData;
             
             // Local backup
             localStorage.setItem(`assessment-${data.AssessmentTitle}`, JSON.stringify(data));
@@ -1235,6 +1395,20 @@
 
     // Form submission
     async function submitAssessment(formData) {
+        // Check if running on localhost for development
+        const isLocalDevelopment = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+        
+        if (isLocalDevelopment) {
+            // Simulate submission for local development
+            console.log('Local development mode - simulating submission');
+            console.log('Form data would be submitted:', Object.fromEntries(formData.entries()));
+            
+            // Simulate a delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            return { success: true, message: 'Simulated submission for local development' };
+        }
+        
         if (!ASSESSMENT_CONFIG.webAppUrl) {
             throw new Error('Submission endpoint not configured');
         }
@@ -1242,17 +1416,194 @@
         const data = Object.fromEntries(formData.entries());
         data.SubmissionTime = new Date().toISOString();
         
-        const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
+        try {
+            const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Submission failed: ${response.status}`);
+            }
+            
+            return response.json();
+        } catch (error) {
+            if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+                throw new Error('Unable to submit assessment. This may be due to network issues or CORS restrictions in development mode.');
+            }
+            throw error;
+        }
+    }
+
+    // Check for saved progress and offer recovery
+    function checkForSavedProgress() {
+        const assessmentTitle = document.querySelector('input[name="AssessmentTitle"]')?.value || 'Quiz 1.1: Decoding Seismic Signals';
+        const savedData = localStorage.getItem(`assessment-${assessmentTitle}`);
         
-        if (!response.ok) {
-            throw new Error(`Submission failed: ${response.status}`);
+        if (savedData) {
+            try {
+                const parsedData = JSON.parse(savedData);
+                const savedTime = new Date(parsedData.Timestamp);
+                const timeDiff = Date.now() - savedTime.getTime();
+                const hoursDiff = timeDiff / (1000 * 60 * 60);
+                
+                // Only offer recovery if saved within last 24 hours
+                if (hoursDiff < 24) {
+                    showRecoveryDialog(parsedData, savedTime);
+                } else {
+                    // Clean up old saves
+                    localStorage.removeItem(`assessment-${assessmentTitle}`);
+                }
+            } catch (error) {
+                console.warn('Failed to parse saved assessment data:', error);
+                localStorage.removeItem(`assessment-${assessmentTitle}`);
+            }
+        }
+    }
+
+    function showRecoveryDialog(savedData, savedTime) {
+        const recoveryModal = document.createElement('div');
+        recoveryModal.className = 'modal-overlay';
+        recoveryModal.style.display = 'flex';
+        recoveryModal.innerHTML = `
+            <div class="modal-content" style="max-width: 500px;">
+                <h3>🔄 Restore Previous Progress?</h3>
+                <p>We found a saved version of your assessment from <strong>${savedTime.toLocaleString()}</strong>.</p>
+                <p>Would you like to restore your previous answers?</p>
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+                    <button id="recovery-cancel" class="nav-btn" style="background: #6c757d;">Start Fresh</button>
+                    <button id="recovery-restore" class="nav-btn" style="background: #28a745;">Restore Progress</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(recoveryModal);
+        
+        document.getElementById('recovery-cancel').onclick = () => {
+            const assessmentTitle = savedData.AssessmentTitle;
+            localStorage.removeItem(`assessment-${assessmentTitle}`);
+            document.body.removeChild(recoveryModal);
+        };
+        
+        document.getElementById('recovery-restore').onclick = () => {
+            restoreFormData(savedData);
+            document.body.removeChild(recoveryModal);
+            
+            // Show success message
+            const indicator = document.getElementById('auto-save-indicator');
+            if (indicator) {
+                indicator.textContent = 'Progress Restored!';
+                indicator.className = 'auto-save-indicator saved';
+                setTimeout(() => {
+                    indicator.textContent = '';
+                    indicator.className = 'auto-save-indicator';
+                }, 4000);
+            }
+        };
+    }
+
+    function restoreFormData(savedData) {
+        // Restore section data if available
+        if (savedData.SectionData) {
+            Object.assign(sectionFormData, savedData.SectionData);
         }
         
-        return response.json();
+        // Restore form field values
+        Object.keys(savedData).forEach(key => {
+            if (key === 'AutoSave' || key === 'Timestamp' || key === 'SectionData') return;
+            
+            // Handle radio buttons and checkboxes
+            const radioElements = document.querySelectorAll(`input[name="${key}"][type="radio"]`);
+            const checkboxElements = document.querySelectorAll(`input[name="${key}"][type="checkbox"]`);
+            
+            if (radioElements.length > 0) {
+                // Handle radio buttons
+                radioElements.forEach(radio => {
+                    radio.checked = (radio.value === savedData[key]);
+                });
+            } else if (checkboxElements.length > 0) {
+                // Handle checkboxes
+                const savedValues = Array.isArray(savedData[key]) ? savedData[key] : [savedData[key]];
+                checkboxElements.forEach(checkbox => {
+                    checkbox.checked = savedValues.includes(checkbox.value);
+                });
+            } else {
+                // Handle regular input fields
+                const element = document.querySelector(`[name="${key}"]`);
+                if (element) {
+                    element.value = savedData[key];
+                }
+            }
+        });
+        
+        // Restore current section data if we're in a section
+        const currentSection = document.querySelector('.assessment-section:not([style*="display: none"])');
+        if (currentSection && savedData.SectionData) {
+            const sectionId = currentSection.id;
+            restoreSectionData(sectionId);
+        }
+        
+        // Trigger change events to update any dependent UI
+        const form = document.getElementById('assessment-form');
+        if (form) {
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                const event = new Event('change', { bubbles: true });
+                input.dispatchEvent(event);
+            });
+        }
+        
+        console.log('Assessment progress restored from local storage');
+    }
+
+    function addManualRecoveryButton() {
+        const assessmentTitle = document.querySelector('input[name="AssessmentTitle"]')?.value || 'Quiz 1.1: Decoding Seismic Signals';
+        const savedData = localStorage.getItem(`assessment-${assessmentTitle}`);
+        
+        if (savedData) {
+            try {
+                const parsedData = JSON.parse(savedData);
+                const savedTime = new Date(parsedData.Timestamp);
+                const timeDiff = Date.now() - savedTime.getTime();
+                const hoursDiff = timeDiff / (1000 * 60 * 60);
+                
+                // Only show manual recovery if saved within last 24 hours
+                if (hoursDiff < 24) {
+                    const recoveryBtn = document.createElement('button');
+                    recoveryBtn.type = 'button';
+                    recoveryBtn.className = 'nav-btn utility-btn';
+                    recoveryBtn.innerHTML = '🔄 Load Saved Progress';
+                    recoveryBtn.style.marginLeft = '10px';
+                    recoveryBtn.title = `Saved ${savedTime.toLocaleString()}`;
+                    
+                    recoveryBtn.onclick = () => {
+                        if (confirm(`Load your saved progress from ${savedTime.toLocaleString()}?`)) {
+                            restoreFormData(parsedData);
+                            
+                            // Show success message
+                            const indicator = document.getElementById('auto-save-indicator');
+                            if (indicator) {
+                                indicator.textContent = 'Progress Restored!';
+                                indicator.className = 'auto-save-indicator saved';
+                                setTimeout(() => {
+                                    indicator.textContent = '';
+                                    indicator.className = 'auto-save-indicator';
+                                }, 4000);
+                            }
+                        }
+                    };
+                    
+                    // Add to section controls
+                    const sectionControls = document.querySelector('.section-controls');
+                    if (sectionControls) {
+                        sectionControls.insertBefore(recoveryBtn, sectionControls.firstChild);
+                    }
+                }
+            } catch (error) {
+                console.warn('Failed to parse saved assessment data for manual recovery:', error);
+            }
+        }
     }
 
     // Initialize assessment
@@ -1265,6 +1616,27 @@
         if (startTimeElement) startTimeElement.textContent = startTime.toLocaleString();
         if (startTimeHidden) startTimeHidden.value = startTime.toISOString();
         if (browserInfo) browserInfo.value = navigator.userAgent;
+
+        // Check for and offer to restore saved progress
+        checkForSavedProgress();
+        
+        // Add manual recovery button if there's saved data
+        addManualRecoveryButton();
+
+        // Add development mode indicator
+        const isLocalDevelopment = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+        if (isLocalDevelopment) {
+            const devNotice = document.createElement('div');
+            devNotice.innerHTML = `
+                <div style="background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 10px; margin: 10px 0; border-radius: 4px; font-size: 14px;">
+                    <strong>Development Mode:</strong> Assessment submissions will be simulated locally. No data will be sent to external servers.
+                </div>
+            `;
+            const assessmentHeader = document.querySelector('.assessment-header');
+            if (assessmentHeader) {
+                assessmentHeader.appendChild(devNotice);
+            }
+        }
 
         
         // Password protection
@@ -1323,6 +1695,9 @@
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             
+            // Save current section data before submission
+            saveCurrentSectionData();
+            
             // Confirmation dialog
             if (!confirm('Are you sure you want to submit your assessment? You will not be able to make changes after submission.')) {
                 return;
@@ -1335,6 +1710,9 @@
             
             submitBtn.disabled = true;
             submitBtn.textContent = 'Submitting...';
+            
+            // Merge all section data back into the main form before submission
+            mergeSectionDataToForm();
             
             try {
                 await submitAssessment(new FormData(form));
@@ -1355,10 +1733,15 @@
                 
             } catch (error) {
                 console.error('Submission error:', error);
-                submitStatus.textContent = 'Submission failed. Please try again.';
-                submitStatus.className = 'submit-status error';
+                
+                // Show user-friendly error message
+                const errorMessage = error.message || 'Submission failed. Please try again.';
+                alert(`Submission Error: ${errorMessage}`);
+                
+                // Reset submit button
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Submit Assessment';
+                submitBtn.style.background = ''; // Reset to original color
             }
         });
         
