@@ -666,6 +666,143 @@
 
 <p><strong>Remember:</strong> Your scratch paper with mathematical work may be collected separately.</p>
 
+<script>
+  // CORS-free quiz submission using FormData
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbz4A0HUZbK0P72GGpGqVptWnf-EBRKxH39HDIReVq1DncW2qOEavIxi-6C2X7195BSbGw/exec";
+  
+  let startTime = new Date();
+  
+  function submitQuiz() {
+    const submissionTime = new Date();
+    
+    // Use FormData to avoid CORS preflight issues
+    const formData = new FormData();
+    
+    // Add assessment metadata
+    formData.append('AssessmentTitle', 'Unit P.1 Assessment: Analyzing the Texas Power Crisis');
+    formData.append('StudentName', document.getElementById('student-name')?.value || 'Anonymous');
+    formData.append('CourseName', 'SPHYS');
+    formData.append('ClassPeriod', document.getElementById('class-period')?.value || '');
+    formData.append('StartTime', startTime.toISOString());
+    formData.append('SubmissionTime', submissionTime.toISOString());
+    formData.append('BrowserInfo', navigator.userAgent);
+    
+    // Collect all answers using the exact field names from the HTML
+    formData.append('Question1', document.querySelector('input[name="Question1"]')?.value || '');
+    formData.append('Question1_Unit', document.querySelector('select[name="Question1_Unit"]')?.value || '');
+    formData.append('Question2', document.querySelector('input[name="Question2"]')?.value || '');
+    formData.append('Question2_Unit', document.querySelector('select[name="Question2_Unit"]')?.value || '');
+    formData.append('Question3_Choice', document.querySelector('input[name="Question3_Choice"]:checked')?.value || '');
+    formData.append('Question3_Explanation', document.querySelector('textarea[name="Question3_Explanation"]')?.value || '');
+    formData.append('Question4', document.querySelector('textarea[name="Question4"]')?.value || '');
+    formData.append('Question5', document.querySelector('textarea[name="Question5"]')?.value || '');
+    
+    // Submit with FormData (no CORS issues)
+    fetch(webAppUrl, {
+      method: 'POST',
+      // CRITICAL: No headers object - let browser set Content-Type automatically
+      body: formData  // Pass FormData directly, not JSON
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === 'success') {
+        alert('Assessment submitted successfully!');
+        // Disable form after submission
+        document.querySelectorAll('input, textarea, select').forEach(el => el.disabled = true);
+        document.querySelector('#submit-btn').style.display = 'none';
+      } else {
+        alert('Submission failed: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Submission failed. Please try again or contact your instructor.');
+    });
+  }
+  
+  // Auto-save with FormData approach
+  function autoSaveProgress() {
+    const formData = new FormData();
+    
+    formData.append('AutoSave', 'true');
+    formData.append('AssessmentTitle', 'Unit P.1 Assessment: Analyzing the Texas Power Crisis');
+    formData.append('StudentName', document.getElementById('student-name')?.value || 'Anonymous');
+    formData.append('CourseName', 'SPHYS');
+    
+    // Save current progress
+    formData.append('Question1', document.querySelector('input[name="Question1"]')?.value || '');
+    formData.append('Question1_Unit', document.querySelector('select[name="Question1_Unit"]')?.value || '');
+    formData.append('Question2', document.querySelector('input[name="Question2"]')?.value || '');
+    formData.append('Question2_Unit', document.querySelector('select[name="Question2_Unit"]')?.value || '');
+    formData.append('Question3_Choice', document.querySelector('input[name="Question3_Choice"]:checked')?.value || '');
+    formData.append('Question3_Explanation', document.querySelector('textarea[name="Question3_Explanation"]')?.value || '');
+    formData.append('Question4', document.querySelector('textarea[name="Question4"]')?.value || '');
+    formData.append('Question5', document.querySelector('textarea[name="Question5"]')?.value || '');
+    
+    fetch(webAppUrl, {
+      method: 'POST',
+      body: formData  // FormData = no CORS
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Auto-save:', data.message);
+    })
+    .catch(error => {
+      console.log('Auto-save failed:', error);
+    });
+  }
+  
+  // Initialize UI
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add student info section
+    const firstSection = document.querySelector('h2, .segment');
+    if (firstSection) {
+      const studentForm = document.createElement('div');
+      studentForm.className = 'student-info-form';
+      studentForm.style.cssText = 'background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #dee2e6;';
+      studentForm.innerHTML = `
+        <h3 style="margin-top: 0;">Student Information</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <div>
+            <label for="student-name"><strong>Student Name:</strong></label>
+            <input type="text" id="student-name" style="width: 100%; padding: 8px; margin-top: 5px;" required>
+          </div>
+          <div>
+            <label for="class-period"><strong>Class Period:</strong></label>
+            <input type="text" id="class-period" placeholder="e.g., Period 3" style="width: 100%; padding: 8px; margin-top: 5px;">
+          </div>
+        </div>
+      `;
+      firstSection.parentNode.insertBefore(studentForm, firstSection);
+    }
+    
+    // Add submit button
+    const checklist = document.querySelector('.checklist');
+    if (checklist) {
+      const submitSection = document.createElement('div');
+      submitSection.style.cssText = 'text-align: center; margin: 30px 0; padding: 20px; background: #e7f3ff; border-radius: 8px;';
+      submitSection.innerHTML = `
+        <button type="button" id="submit-btn" onclick="submitQuiz()" 
+                style="background: #007bff; color: white; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer;">
+          Submit Assessment
+        </button>
+        <p style="margin-top: 10px; color: #6c757d;">Complete the checklist above before submitting.</p>
+      `;
+      checklist.parentNode.appendChild(submitSection);
+    }
+    
+    // Auto-save every 2 minutes and on input changes
+    setInterval(autoSaveProgress, 120000);
+    
+    document.querySelectorAll('input, textarea, select').forEach(element => {
+      element.addEventListener('change', function() {
+        setTimeout(autoSaveProgress, 1000);
+      });
+    });
+  });
+</script>
+
+
                     </div>
                 </form>
             </div>

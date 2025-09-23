@@ -686,8 +686,153 @@
 <!-- Quiz Content Ends Here -->
 
 <script>
-  // Standard Google Web App URL for all quizzes
-  const webAppUrl = "https://script.google.com/macros/s/AKfycbwADurKsk0BvFPTnmWY-ltwy5Jal3UV_le9BH5d5ikjfnwNZRKacAqB5J_ub0k0ybIWOw/exec";
+  // Enhanced quiz submission using FormData to avoid CORS issues
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbz4A0HUZbK0P72GGpGqVptWnf-EBRKxH39HDIReVq1DncW2qOEavIxi-6C2X7195BSbGw/exec";
+  
+  let startTime = new Date();
+  
+  function submitQuiz() {
+    const submissionTime = new Date();
+    
+    // Create FormData object - this avoids CORS preflight issues
+    const formData = new FormData();
+    
+    // Add quiz metadata
+    formData.append('AssessmentTitle', 'Quiz 1.1: Decoding Seismic Signals');
+    formData.append('StudentName', document.getElementById('student-name')?.value || 'Anonymous');
+    formData.append('CourseName', 'NATDIS');
+    formData.append('ClassPeriod', document.getElementById('class-period')?.value || '');
+    formData.append('StartTime', startTime.toISOString());
+    formData.append('SubmissionTime', submissionTime.toISOString());
+    formData.append('BrowserInfo', navigator.userAgent);
+    
+    // Collect all question answers - FormData automatically handles form fields
+    formData.append('Question1_Answer', document.getElementById('Question1_Answer')?.value || '');
+    formData.append('Question1_Units', document.getElementById('Question1_Units')?.value || '');
+    formData.append('Question2', document.getElementById('Question2')?.value || '');
+    formData.append('Question2_Units', document.getElementById('Question2_Units')?.value || '');
+    formData.append('Question3', document.getElementById('Question3')?.value || '');
+    formData.append('Question3_Units', document.getElementById('Question3_Units')?.value || '');
+    formData.append('Question4', document.getElementById('Question4')?.value || '');
+    formData.append('Question5', document.getElementById('Question5')?.value || '');
+    formData.append('Question6', document.getElementById('Question6')?.value || '');
+    formData.append('Question7', document.getElementById('Question7')?.value || '');
+    formData.append('Question7_Units', document.getElementById('Question7_Units')?.value || '');
+    formData.append('Question8', document.getElementById('Question8')?.value || '');
+    formData.append('Question9', document.getElementById('Question9')?.value || '');
+    formData.append('Question10', document.getElementById('Question10')?.value || '');
+    formData.append('Question11a', document.getElementById('Question11a')?.value || '');
+    formData.append('Question11b', document.getElementById('Question11b')?.value || '');
+    formData.append('Question11c', document.getElementById('Question11c')?.value || '');
+    formData.append('Question12a', document.getElementById('Question12a')?.value || '');
+    formData.append('Question12b', document.getElementById('Question12b')?.value || '');
+    formData.append('Question13', document.getElementById('Question13')?.value || '');
+    formData.append('Question14', document.getElementById('Question14')?.value || '');
+    
+    // Submit using FormData (NO CORS issues)
+    fetch(webAppUrl, {
+      method: 'POST',
+      // IMPORTANT: No Content-Type header - let browser set it automatically
+      // IMPORTANT: Pass FormData directly, not JSON
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === 'success') {
+        alert('Quiz submitted successfully!');
+        // Disable form after submission
+        document.querySelectorAll('input, textarea, select').forEach(el => el.disabled = true);
+        document.querySelector('#submit-btn').style.display = 'none';
+      } else {
+        alert('Submission failed: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Submission failed. Please try again or contact your instructor.');
+    });
+  }
+  
+  // Auto-save functionality using the same FormData approach
+  function autoSaveProgress() {
+    const formData = new FormData();
+    
+    // Add auto-save flag
+    formData.append('AutoSave', 'true');
+    formData.append('AssessmentTitle', 'Quiz 1.1: Decoding Seismic Signals');
+    formData.append('StudentName', document.getElementById('student-name')?.value || 'Anonymous');
+    formData.append('CourseName', 'NATDIS');
+    
+    // Collect current answers
+    formData.append('Question1_Answer', document.getElementById('Question1_Answer')?.value || '');
+    formData.append('Question1_Units', document.getElementById('Question1_Units')?.value || '');
+    formData.append('Question2', document.getElementById('Question2')?.value || '');
+    formData.append('Question2_Units', document.getElementById('Question2_Units')?.value || '');
+    formData.append('Question3', document.getElementById('Question3')?.value || '');
+    formData.append('Question3_Units', document.getElementById('Question3_Units')?.value || '');
+    formData.append('Question4', document.getElementById('Question4')?.value || '');
+    formData.append('Question5', document.getElementById('Question5')?.value || '');
+    // ... add other questions as needed
+    
+    fetch(webAppUrl, {
+      method: 'POST',
+      body: formData  // FormData avoids CORS
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Auto-save:', data.message);
+    })
+    .catch(error => {
+      console.log('Auto-save failed:', error);
+    });
+  }
+  
+  // Add UI elements when page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add student info form
+    const firstSegment = document.querySelector('.quiz-segment');
+    if (firstSegment) {
+      const studentForm = document.createElement('div');
+      studentForm.className = 'mb-4 p-3 bg-light border rounded';
+      studentForm.innerHTML = `
+        <h5>Student Information</h5>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="student-name" class="form-label">Student Name:</label>
+            <input type="text" class="form-control" id="student-name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="class-period" class="form-label">Class Period:</label>
+            <input type="text" class="form-control" id="class-period" placeholder="e.g., Period 3">
+          </div>
+        </div>
+      `;
+      firstSegment.parentNode.insertBefore(studentForm, firstSegment);
+    }
+    
+    // Add submit button
+    const lastSegment = document.querySelector('#segment3');
+    if (lastSegment) {
+      const submitSection = document.createElement('div');
+      submitSection.className = 'text-center mt-4 p-3';
+      submitSection.innerHTML = `
+        <button type="button" id="submit-btn" class="btn btn-primary btn-lg" onclick="submitQuiz()">
+          Submit Quiz
+        </button>
+      `;
+      lastSegment.appendChild(submitSection);
+    }
+    
+    // Auto-save every 2 minutes
+    setInterval(autoSaveProgress, 120000);
+    
+    // Auto-save when user switches between segments
+    document.querySelectorAll('input, textarea, select').forEach(element => {
+      element.addEventListener('change', function() {
+        setTimeout(autoSaveProgress, 1000); // Delay auto-save slightly
+      });
+    });
+  });
 </script>
 
 
