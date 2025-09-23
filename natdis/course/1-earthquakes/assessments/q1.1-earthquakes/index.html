@@ -245,6 +245,50 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
+        /* Instructions Section Styling */
+        .instructions-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #007bff;
+        }
+
+        .instructions-section h2 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .start-assessment-prompt {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(40, 167, 69, 0.1);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .start-assessment-prompt p {
+            margin: 0;
+            color: #155724;
+            font-weight: 500;
+        }
+
+        /* Instructions dot styling */
+        .section-dot.instructions-dot {
+            background-color: #6f42c1;
+            border: 2px solid #563d7c;
+        }
+
+        .section-dot.instructions-dot.active {
+            background-color: #563d7c;
+            transform: scale(1.2);
+        }
+
         .assessment-header h1 {
             margin-top: 0;
             color: #343a40;
@@ -351,7 +395,7 @@
                         
                         <button type="button" id="prev-section-btn" class="nav-btn" disabled>← Previous</button>
                         <button type="button" id="next-section-btn" class="nav-btn">Next →</button>
-                        <button type="submit" id="submit-btn" class="submit-btn" style="display: none;">
+                        <button type="submit" id="submit-btn" class="submit-btn">
                             Submit Assessment
                         </button>
                     </div>
@@ -695,30 +739,55 @@
         const sectionHeaders = content.match(/<h2[^>]*>Segment \d+[^<]*<\/h2>/gi);
         console.log('Found section headers:', sectionHeaders);
         
-        if (sectionHeaders && sectionHeaders.length > 1) {
+        if (sectionHeaders && sectionHeaders.length >= 1) {
             // Split by h2 headers containing "Segment"
             const parts = content.split(/<h2[^>]*>Segment \d+[^<]*<\/h2>/i);
             console.log('Split parts:', parts.length);
             
-            // Reconstruct sections with their headers
+            // Create sections array starting with instructions section
             sections = [];
+            
+            // First section: Instructions and general info (everything before first Segment)
+            if (parts[0].trim()) {
+                sections.push(`
+                    <div class="instructions-section">
+                        <h2>Assessment Instructions</h2>
+                        ${parts[0]}
+                        <div class="start-assessment-prompt">
+                            <p><strong>Ready to begin?</strong> Click "Next" to start with the first question section.</p>
+                        </div>
+                    </div>
+                `);
+            }
+            
+            // Add the actual assessment segments
             for (let i = 1; i < parts.length; i++) {
                 const header = sectionHeaders[i - 1];
                 const sectionContent = header + parts[i];
                 sections.push(sectionContent);
             }
             
-            // Add any content before the first section header
-            if (parts[0].trim()) {
-                sections[0] = parts[0] + sections[0];
-            }
         } else {
             // Fallback: try markdown-style headers that might not be converted yet
             const markdownSections = content.split(/## Segment \d+[^\n]*/i);
             console.log('Markdown sections:', markdownSections.length);
             
             if (markdownSections.length > 1) {
-                sections = markdownSections.slice(1); // Remove empty first part
+                sections = [];
+                // Add instructions as first section
+                if (markdownSections[0].trim()) {
+                    sections.push(`
+                        <div class="instructions-section">
+                            <h2>Assessment Instructions</h2>
+                            ${markdownSections[0]}
+                            <div class="start-assessment-prompt">
+                                <p><strong>Ready to begin?</strong> Click "Next" to start with the first question section.</p>
+                            </div>
+                        </div>
+                    `);
+                }
+                // Add the rest as question sections
+                sections = sections.concat(markdownSections.slice(1));
             } else {
                 // No sections found - treat entire content as one section
                 sections = [content];
@@ -740,6 +809,12 @@
             const sectionNav = document.getElementById('section-nav');
             if (sectionNav) {
                 sectionNav.style.display = 'none';
+            }
+            // Ensure submit button is visible even for single sections
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.style.display = 'inline-block';
+                submitBtn.style.visibility = 'visible';
             }
             console.log('Only one section found, showing all content normally');
         }
@@ -771,12 +846,24 @@
             bottomSubmit.style.display = 'none';
         }
         
+        // Always ensure submit button is visible - students can submit blank attempts
+        if (submitBtn) {
+            submitBtn.style.display = 'inline-block';
+            submitBtn.style.visibility = 'visible';
+        }
+        
         // Create progress dots
         if (sectionDots) {
             sectionDots.innerHTML = '';
             for (let i = 0; i < sections.length; i++) {
                 const dot = document.createElement('span');
                 dot.className = 'section-dot';
+                if (i === 0) {
+                    dot.title = 'Instructions';
+                    dot.classList.add('instructions-dot');
+                } else {
+                    dot.title = `Question Section ${i}`;
+                }
                 dot.onclick = () => navigateToSection(i);
                 sectionDots.appendChild(dot);
             }
@@ -787,8 +874,8 @@
         nextBtn.onclick = () => navigateToSection(currentSection + 1);
         
         // Submit button handler (same as bottom button)
-        if (submitBtnTop) {
-            submitBtnTop.onclick = (e) => {
+        if (submitBtn) {
+            submitBtn.onclick = (e) => {
                 e.preventDefault();
                 const form = document.getElementById('assessment-form');
                 if (form) form.dispatchEvent(new Event('submit'));
@@ -821,7 +908,12 @@
         
         // Update section indicator
         if (sectionIndicator) {
-            const newText = `Section ${index + 1} of ${sections.length}`;
+            let newText;
+            if (index === 0) {
+                newText = `Instructions`;
+            } else {
+                newText = `Question Section ${index} of ${sections.length - 1}`;
+            }
             console.log(`Updating section indicator from "${sectionIndicator.textContent}" to "${newText}"`);
             sectionIndicator.textContent = newText;
         }
@@ -835,24 +927,22 @@
         const isLastSection = index === sections.length - 1;
         console.log(`Section ${index + 1}: isLastSection = ${isLastSection} (${index} === ${sections.length - 1})`);
         
+        // Always show submit button - students can submit blank attempts
+        if (submitBtn) {
+            submitBtn.style.display = 'inline-block';
+            submitBtn.style.visibility = 'visible';
+            console.log('Always showing submit button:', submitBtn.style.display, submitBtn.style.visibility);
+        }
+        
         if (isLastSection) {
             if (nextBtn) {
                 nextBtn.style.display = 'none';
                 console.log('Hiding next button');
             }
-            if (submitBtn) {
-                submitBtn.style.display = 'inline-block';
-                submitBtn.style.visibility = 'visible';
-                console.log('Showing submit button:', submitBtn.style.display, submitBtn.style.visibility);
-            }
         } else {
             if (nextBtn) {
                 nextBtn.style.display = 'inline-block';
                 console.log('Showing next button');
-            }
-            if (submitBtn) {
-                submitBtn.style.display = 'none';
-                console.log('Hiding submit button');
             }
         }
         
