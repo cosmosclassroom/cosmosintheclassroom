@@ -267,21 +267,40 @@ h3 {
 /* Multiple Choice & Checkboxes */
 .question input[type="radio"],
 .question input[type="checkbox"] {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-right: 0.75rem;
+  margin-bottom: 0;
   transform: scale(1.2);
+  vertical-align: middle;
 }
 
+/* Radio button and checkbox containers */
 .question label {
-  display: block;
-  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
   cursor: pointer;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0.25rem;
+  line-height: 1.4;
+  transition: background-color 0.2s ease;
 }
 
 .question label:hover {
   background: rgba(52, 152, 219, 0.1);
-  border-radius: 3px;
+  border-radius: 4px;
+}
+
+/* Ensure proper spacing for option text */
+.question label input[type="radio"] + *,
+.question label input[type="checkbox"] + * {
+  margin-left: 0.25rem;
+}
+
+/* For labels that contain radio/checkbox inputs */
+.question label:has(input[type="radio"]),
+.question label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 /* Mathematical Content */
