@@ -686,7 +686,7 @@
     <script>
     // Assessment configuration
     const ASSESSMENT_CONFIG = {
-        webAppUrl: 'https://script.google.com/macros/s/AKfycbxWpKzrW-qkPlHFA_qlyqwrp0WHp4D5XN91ZVgYaRGUofMMTHjOgGrEzOn1jZh9tNAUjA/exec',
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbzUNmuIgtUuFwG7bUxn4i4xDpuD6V3wKhd1cehRwk5ymKly_w72D_OcSu-BHc9a_GZ0jQ/exec',
         autoSaveInterval: 30000,
         password: 'grid2025',
         passwordHash: ''
@@ -1420,7 +1420,9 @@
             
             const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 
+                    'Content-Type': 'text/plain;charset=utf-8'  // CORS-friendly: avoids preflight
+                },
                 body: JSON.stringify(data)
             });
             
@@ -1443,7 +1445,12 @@
             console.error('💬 Error message:', error.message);
             
             if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
-                throw new Error('Unable to submit assessment. This may be due to network issues or CORS restrictions in development mode.');
+                console.error('🚨 CORS troubleshooting tips:');
+                console.error('1. Verify Google Apps Script deployed with "Who has access: Anyone"');
+                console.error('2. Try creating a new deployment instead of updating existing one');
+                console.error('3. Check if webAppUrl is the latest deployment URL');
+                console.error('4. Current URL:', ASSESSMENT_CONFIG.webAppUrl);
+                throw new Error('Unable to submit assessment. This may be due to CORS restrictions. Please contact your instructor if the problem persists.');
             }
             throw error;
         }
