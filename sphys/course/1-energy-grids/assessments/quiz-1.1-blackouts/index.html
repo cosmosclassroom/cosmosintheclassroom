@@ -623,7 +623,7 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
     <script>
     // Assessment configuration
     const ASSESSMENT_CONFIG = {
-        webAppUrl: 'https://script.google.com/macros/s/AKfycbx1EUOLtqFRfIiLgurFQA3yYJEuZgWn4bMH5Cuq4ZOP_Dlc6N6Euol7Af_Dokj87aAfSg/exec',
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbxWpKzrW-qkPlHFA_qlyqwrp0WHp4D5XN91ZVgYaRGUofMMTHjOgGrEzOn1jZh9tNAUjA/exec',
         autoSaveInterval: 30000,
         password: '',
         passwordHash: ''
@@ -1352,18 +1352,33 @@ A Texas town is using the Decision Matrix below to choose a new backup power sou
         data.SubmissionTime = new Date().toISOString();
         
         try {
+            console.log('🚀 Starting submission to:', ASSESSMENT_CONFIG.webAppUrl);
+            console.log('📤 Sending data:', data);
+            
             const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
             
+            console.log('📡 Response received:', response);
+            console.log('📊 Response status:', response.status);
+            console.log('✅ Response ok:', response.ok);
+            
             if (!response.ok) {
                 throw new Error(`Submission failed: ${response.status}`);
             }
             
-            return response.json();
+            console.log('🔄 Parsing JSON response...');
+            const result = await response.json();
+            console.log('📋 Parsed result:', result);
+            
+            return result;
         } catch (error) {
+            console.error('❌ Full error details:', error);
+            console.error('🔍 Error type:', error.name);
+            console.error('💬 Error message:', error.message);
+            
             if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
                 throw new Error('Unable to submit assessment. This may be due to network issues or CORS restrictions in development mode.');
             }
