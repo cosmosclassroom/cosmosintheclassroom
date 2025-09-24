@@ -1,218 +1,1663 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title> | Cosmos in the Classroom</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Assessment - Cosmos in the Classroom</title>
     
+    <!-- External CSS with single, reliable path -->
+    <link rel="stylesheet" href="/assets/css/assessment.css">
     
-    <!-- KaTeX Dependencies -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    
-    
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- tabs.js for tabs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        // Initialize Highlight.js
-        hljs.highlightAll();
-        // Initialize tabs.js
-        const tabs = new Tabs('.tabs');
-        tabs.init();
-      });
-    </script>
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-    
-    <!-- Add Mermaid library and initialize -->
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
-  </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <style>
-/* Enhanced dropdown styling for better usability */
-.site-nav .dropdown {
-  position: relative;
-  display: inline-block;
-}
-.site-nav .dropbtn {
-  background: none;
-  color: #2c3e50;
-  font-weight: 500;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.site-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f5f5dc;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
-  z-index: 1000;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  border: 1px solid #8b7355;
-  /* Add padding around the dropdown content */
-  padding: 0.5rem 0;
-}
-.site-nav .dropdown-content a {
-  color: #2c3e50;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  display: block;
-  border-radius: 0.5rem;
-  margin: 0 0.5rem;
-  transition: background 0.2s;
-}
-.site-nav .dropdown-content a:hover {
-  background-color: #e0e0d1;
-}
-/* Better hover behavior - keep dropdown open when hovering over content */
-.site-nav .dropdown:hover .dropdown-content,
-.site-nav .dropdown-content:hover {
-  display: block;
-}
-.site-nav .dropdown:hover .dropbtn,
-.site-nav .dropdown-content:hover + .dropbtn {
-  background-color: #e0e0d1;
-}
-/* JavaScript-based dropdown for click behavior */
-.site-nav .dropdown.active .dropdown-content {
-  display: block;
-}
-</style>
-
-<script>
-// Enhanced dropdown functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
-  
-  dropdowns.forEach(dropdown => {
-    const btn = dropdown.querySelector('.dropbtn');
-    const content = dropdown.querySelector('.dropdown-content');
-    
-    // Toggle dropdown on click
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      
-      // Close other dropdowns
-      dropdowns.forEach(other => {
-        if (other !== dropdown) {
-          other.classList.remove('active');
+    <!-- Section navigation styles -->
+    <style>
+        /* Viewport Layout */
+        .assessment-viewport-header {
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            z-index: 100;
+            padding: 15px;
+            border-bottom: 2px solid #dee2e6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 0;
         }
-      });
-      
-      // Toggle current dropdown
-      dropdown.classList.toggle('active');
-    });
-    
-    // Keep dropdown open when hovering over content
-    content.addEventListener('mouseenter', function() {
-      dropdown.classList.add('active');
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function() {
-      dropdown.classList.remove('active');
-    });
-  });
-});
-</script>
 
-<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
-    <div>
-      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
-        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
-      </h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
-        <li class="dropdown">
-          <button class="dropbtn">Courses ▼</button>
-          <div class="dropdown-content">
-            <a href="/physics_honors_25-26/">📚 Honors Physics Home</a>
-            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
-          <a href="/physics_honors_25-26/course/unit_01_measurement/" target="_blank">Unit 1: Speaking the Same Language</a>
-          <a href="/physics_honors_25-26/course/unit_02_kinematics_1d/" target="_blank">Unit 2: The Art of Observation</a>
-          <a href="/physics_honors_25-26/course/unit_03_kinematics_2d/" target="_blank">Unit 3: The World in Two Dimensions</a>
-          <a href="/physics_honors_25-26/course/unit_04_dynamics/" target="_blank">Unit 4: The Why of Motion (Dynamics)</a>
-          <a href="/physics_honors_25-26/course/unit_05_energy/" target="_blank">Unit 5: The Universe's Accounting System</a>
-            <a href="/physics_honors_25-26/">→ View All 10 Units</a>
-            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
-            <a href="/sphys/">📚 Standard Physics Home</a>
-            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
-          <a href="/sphys/course/1-energy-grids/" target="_blank">Unit 1: The Invisible Currents</a>
-          <a href="/sphys/course/2-earth-forces/" target="_blank">Unit 2: Planetary Pulses</a>
-          <a href="/sphys/course/3-collision-safety/" target="_blank">Unit 3: The Geometry of Impact</a>
-          <a href="/sphys/course/4-cosmic-impacts/" target="_blank">Unit 4: Cosmic Impacts</a>
-          <a href="/sphys/course/5-electromagnetic-radiation/" target="_blank">Unit 5: The Invisible Symphony</a>
-            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
-            <a href="/natdis/">📚 Natural Disasters Home</a>
-            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
-          <a href="/natdis/course/1-earthquakes/" target="_blank">Unit 1: Earthquakes</a>
-          <a href="/natdis/course/2-tsunamis/" target="_blank">Unit 2: Tsunamis</a>
-          <a href="/natdis/course/3-wildfire/" target="_blank">Unit 3: Wildfire Science</a>
-          <a href="/natdis/course/4-flooding/" target="_blank">Unit 4: Flooding & Landslides</a>
-          <a href="/natdis/course/5-portfolio/" target="_blank">Unit 5: Final Portfolio</a>
-          </div>
-        </li>
-        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        .assessment-scroll-area {
+            height: calc(100vh - 140px);
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
 
-      </div>
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #495057;
+            min-width: 100px;
+        }
+        
+        .section-navigation {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section-progress {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-dots {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .section-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dee2e6;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .section-dot.active {
+            background: #007bff;
+            transform: scale(1.2);
+        }
+        
+        .section-dot.completed {
+            background: #28a745;
+        }
+        
+        .section-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .nav-btn {
+            padding: 8px 16px;
+            border: 1px solid #007bff;
+            background: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .nav-btn:hover:not(:disabled) {
+            background: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-1px);
+        }
+        
+        .nav-btn:disabled {
+            background: #6c757d;
+            border-color: #6c757d;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .utility-btn {
+            background: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .utility-btn:hover {
+            background: #138496;
+            border-color: #117a8b;
+        }
+
+        .submit-btn {
+            background: #28a745;
+            border-color: #28a745;
+            font-weight: 600;
+            padding: 10px 20px;
+        }
+
+        .submit-btn:hover {
+            background: #218838;
+            border-color: #1e7e34;
+        }
+
+        /* Formula Notecard Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #6c757d;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .modal-close-btn:hover {
+            color: #dc3545;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #343a40;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .formula-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 6px;
+        }
+
+        .formula-math {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: #0056b3;
+            margin: 0 0 8px 0;
+        }
+
+        .formula-desc {
+            margin: 0;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        /* Enhanced Assessment Layout */
+        .assessment-header {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .student-info-section {
+            transition: all 0.3s ease;
+        }
+
+        /* Instructions Section Styling */
+        .instructions-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid #007bff;
+        }
+
+        .instructions-section h2 {
+            color: #0056b3;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .start-assessment-prompt {
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(40, 167, 69, 0.1);
+            border: 2px solid #28a745;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .start-assessment-prompt p {
+            margin: 0;
+            color: #155724;
+            font-weight: 500;
+        }
+
+        /* Instructions dot styling */
+        .section-dot.instructions-dot {
+            background-color: #6f42c1;
+            border: 2px solid #563d7c;
+        }
+
+        .section-dot.instructions-dot.active {
+            background-color: #563d7c;
+            transform: scale(1.2);
+        }
+
+        /* Recovery button styling */
+        .nav-btn.utility-btn {
+            background-color: #17a2b8;
+            border-color: #17a2b8;
+        }
+
+        .nav-btn.utility-btn:hover {
+            background-color: #138496;
+            border-color: #117a8b;
+        }
+
+        .assessment-header h1 {
+            margin-top: 0;
+            color: #343a40;
+        }
+
+        .student-info-section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .assessment-viewport-header {
+                padding: 10px;
+            }
+            
+            .section-navigation {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            
+            .section-controls {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .nav-btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .assessment-scroll-area {
+                height: calc(100vh - 180px);
+                padding: 10px;
+            }
+
+            .modal-content {
+                margin: 20px;
+                width: calc(100% - 40px);
+                padding: 20px;
+            }
+        }
+    </style>
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-link">← Back to Home</a>
+            <a href="/sphys/" class="nav-link">
+                SPHYS Course
+            </a>
+        </nav>
     </header>
-    
-  <div class="markdown-body" style="margin-top: 120px;">
-    
-      <hr />
+
+    <main class="main-content">
+        
+        <div id="assessment-content" class="assessment-container">
+        
+            
+            <!-- Fixed Assessment Viewport Header -->
+            <div class="assessment-viewport-header">
+                <!-- Progress indicator -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0% Complete</span>
+                </div>
+                
+                <!-- Section navigation -->
+                <div class="section-navigation" id="section-nav" style="display: none;">
+                    <div class="section-progress">
+                        <span id="section-indicator">Section 1 of 3</span>
+                        <div class="section-dots" id="section-dots"></div>
+                    </div>
+                    <div class="section-controls">
+                        
+                        <button type="button" id="prev-section-btn" class="nav-btn" disabled>← Previous</button>
+                        <button type="button" id="next-section-btn" class="nav-btn">Next →</button>
+                        <button type="submit" id="submit-btn" class="submit-btn">
+                            Submit Assessment
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Assessment Content Area -->
+            <div class="assessment-scroll-area">
+                <!-- Assessment header - will be hidden during quiz sections -->
+                <header class="assessment-header" id="assessment-header">
+                    <h1>Unit Assessment</h1>
+                    <div class="assessment-meta">
+                        
+                        
+                        <div class="meta-item">
+                            <span class="meta-label">Started:</span>
+                            <span class="meta-value" id="start-time"></span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Auto-save indicator -->
+                <div id="auto-save-indicator" class="auto-save-indicator"></div>
+
+                <!-- Main assessment form -->
+                <form id="assessment-form" class="assessment-form">
+                    <!-- Student information section - will be hidden during quiz sections -->
+                    <section class="student-info-section" id="student-info-section">
+                        <h3>Student Information</h3>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="student-name">Full Name *</label>
+                                <input type="text" id="student-name" name="StudentName" required>
+                                <span class="field-error" id="student-name-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="course-name">Course</label>
+                                <input type="text" id="course-name" name="CourseName" 
+                                       value="SPHYS" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label for="class-period">Class Period *</label>
+                                <select id="class-period" name="ClassPeriod" required>
+                                    <option value="">Select Period</option>
+                                    
+                                    <option value="1">Period 1</option>
+                                    
+                                    <option value="2">Period 2</option>
+                                    
+                                    <option value="3">Period 3</option>
+                                    
+                                    <option value="4">Period 4</option>
+                                    
+                                    <option value="5">Period 5</option>
+                                    
+                                    <option value="6">Period 6</option>
+                                    
+                                    <option value="7">Period 7</option>
+                                    
+                                    <option value="8">Period 8</option>
+                                    
+                                </select>
+                                <span class="field-error" id="class-period-error"></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Hidden tracking fields -->
+                    <input type="hidden" name="AssessmentTitle" value="Unit Assessment">
+                    <input type="hidden" name="StartTime" id="start-time-hidden">
+                    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+                    <!-- Dynamic section content container -->
+                    <div id="assessment-sections">
+                        <hr />
 <p>layout: assessment
 title: “Unit 3 Assessment”
 unitNumber: 3
 assessmentType: “unit-assessment”
 —</p>
 
-    
-    </div>
-    
-    
-    <!-- Initialize KaTeX rendering -->
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formula Sheet Modal -->
+        
+    </main>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            renderMathInElement(document.body, {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\[", right: "\\]", display: true},
-                    {left: "\\(", right: "\\)", display: false}
-                ],
-                throwOnError: false
+    // Assessment configuration
+    const ASSESSMENT_CONFIG = {
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbwlCDJ8sCL70GQ6A94du7dvS-W7svMe8VbNb_Gik0Gf5Lx-QC6CFulEpoe_uX76ezBWRQ/exec',
+        autoSaveInterval: 30000,
+        password: '',
+        passwordHash: ''
+    };
+
+    // Simple password verification (client-side deterrent only)
+    async function verifyPassword(password) {
+        console.log('Checking password:', password);
+        console.log('Expected password:', ASSESSMENT_CONFIG.password);
+        console.log('Expected hash:', ASSESSMENT_CONFIG.passwordHash);
+        
+        // Check plain text password first (preferred method)
+        if (ASSESSMENT_CONFIG.password && ASSESSMENT_CONFIG.password.trim()) {
+            const isMatch = password.trim() === ASSESSMENT_CONFIG.password.trim();
+            console.log('Plain text match:', isMatch);
+            return isMatch;
+        }
+        
+        // Fallback to hash comparison for legacy assessments
+        if (ASSESSMENT_CONFIG.passwordHash && ASSESSMENT_CONFIG.passwordHash.trim()) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            
+            const isMatch = hashHex === ASSESSMENT_CONFIG.passwordHash;
+            console.log('Hash match:', isMatch);
+            return isMatch;
+        }
+        
+        // No password protection
+        console.log('No password protection');
+        return true;
+    }
+
+    // Section management
+    let currentSection = 0;
+    let sections = [];
+    let sectionRequirements = [];
+    let sectionFormData = {}; // Store form data for each section
+
+    function initializeSections() {
+        const contentContainer = document.getElementById('assessment-sections');
+        const content = contentContainer.innerHTML;
+        
+        console.log('Content to split:', content.substring(0, 500)); // Debug
+        
+        // Split content by section headers (## Segment) - more flexible approach
+        const sectionHeaders = content.match(/<h2[^>]*>Segment \d+[^<]*<\/h2>/gi);
+        console.log('Found section headers:', sectionHeaders);
+        
+        if (sectionHeaders && sectionHeaders.length >= 1) {
+            // Split by h2 headers containing "Segment"
+            const parts = content.split(/<h2[^>]*>Segment \d+[^<]*<\/h2>/i);
+            console.log('Split parts:', parts.length);
+            
+            // Create sections array starting with instructions section
+            sections = [];
+            
+            // First section: Instructions and general info (everything before first Segment)
+            if (parts[0].trim()) {
+                sections.push(`
+                    <div class="instructions-section">
+                        <h2>Assessment Instructions</h2>
+                        ${parts[0]}
+                        <div class="start-assessment-prompt">
+                            <p><strong>Ready to begin?</strong> Click "Next" to start with the first question section.</p>
+                            <p><small><em>Note: Once you begin, the interface will switch to a cleaner view focused on the questions.</em></small></p>
+                            <div style="background: #d1ecf1; border: 1px solid #b8daff; color: #0c5460; padding: 8px; margin-top: 10px; border-radius: 4px; font-size: 12px;">
+                                💾 <strong>Auto-Save:</strong> Your progress is automatically saved as you work. If you accidentally close the page, you'll be offered to restore your progress when you return.
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+            
+            // Add the actual assessment segments
+            for (let i = 1; i < parts.length; i++) {
+                const header = sectionHeaders[i - 1];
+                const sectionContent = header + parts[i];
+                sections.push(sectionContent);
+            }
+            
+        } else {
+            // Fallback: try markdown-style headers that might not be converted yet
+            const markdownSections = content.split(/## Segment \d+[^\n]*/i);
+            console.log('Markdown sections:', markdownSections.length);
+            
+            if (markdownSections.length > 1) {
+                sections = [];
+                // Add instructions as first section
+                if (markdownSections[0].trim()) {
+                    sections.push(`
+                        <div class="instructions-section">
+                            <h2>Assessment Instructions</h2>
+                            ${markdownSections[0]}
+                            <div class="start-assessment-prompt">
+                                <p><strong>Ready to begin?</strong> Click "Next" to start with the first question section.</p>
+                            </div>
+                        </div>
+                    `);
+                }
+                // Add the rest as question sections
+                sections = sections.concat(markdownSections.slice(1));
+            } else {
+                // No sections found - treat entire content as one section
+                sections = [content];
+            }
+        }
+        
+        console.log('Final sections:', sections.length);
+        
+        // Initialize section requirements tracking
+        sectionRequirements = sections.map(() => false);
+        
+        // Set up navigation if multiple sections
+        if (sections.length > 1) {
+            console.log(`Setting up navigation for ${sections.length} sections`);
+            setupSectionNavigation();
+            showSection(0);
+        } else {
+            // Single section - show normally
+            const sectionNav = document.getElementById('section-nav');
+            if (sectionNav) {
+                sectionNav.style.display = 'none';
+            }
+            // Ensure submit button is visible even for single sections
+            const submitBtn = document.getElementById('submit-btn');
+            if (submitBtn) {
+                submitBtn.style.display = 'inline-block';
+                submitBtn.style.visibility = 'visible';
+            }
+            console.log('Only one section found, showing all content normally');
+        }
+    }
+
+    function setupSectionNavigation() {
+        const sectionNav = document.getElementById('section-nav');
+        const sectionDots = document.getElementById('section-dots');
+        const prevBtn = document.getElementById('prev-section-btn');
+        const nextBtn = document.getElementById('next-section-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const bottomSubmit = document.getElementById('bottom-submit');
+        
+        console.log('setupSectionNavigation: Elements found:', {
+            sectionNav: !!sectionNav,
+            sectionDots: !!sectionDots,
+            prevBtn: !!prevBtn,
+            nextBtn: !!nextBtn,
+            submitBtn: !!submitBtn,
+            bottomSubmit: !!bottomSubmit
+        });
+        
+        if (sectionNav) {
+            sectionNav.style.display = 'block';
+        }
+        
+        // Hide bottom submit section when using section navigation
+        if (bottomSubmit) {
+            bottomSubmit.style.display = 'none';
+        }
+        
+        // Always ensure submit button is visible - students can submit blank attempts
+        if (submitBtn) {
+            submitBtn.style.display = 'inline-block';
+            submitBtn.style.visibility = 'visible';
+        }
+        
+        // Create progress dots
+        if (sectionDots) {
+            sectionDots.innerHTML = '';
+            for (let i = 0; i < sections.length; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'section-dot';
+                if (i === 0) {
+                    dot.title = 'Instructions';
+                    dot.classList.add('instructions-dot');
+                } else {
+                    dot.title = `Question Section ${i}`;
+                }
+                dot.onclick = () => navigateToSection(i);
+                sectionDots.appendChild(dot);
+            }
+        }
+        
+        // Navigation button handlers
+        prevBtn.onclick = () => navigateToSection(currentSection - 1);
+        nextBtn.onclick = () => navigateToSection(currentSection + 1);
+        
+        // Submit button handler (same as bottom button)
+        if (submitBtn) {
+            submitBtn.onclick = (e) => {
+                e.preventDefault();
+                const form = document.getElementById('assessment-form');
+                if (form) form.dispatchEvent(new Event('submit'));
+            };
+        }
+    }
+
+    function showSection(index) {
+        if (index < 0 || index >= sections.length) return;
+        
+        // Save current section data before switching
+        if (currentSection !== index) {
+            saveCurrentSectionData();
+        }
+        
+        currentSection = index;
+        const contentContainer = document.getElementById('assessment-sections');
+        const sectionIndicator = document.getElementById('section-indicator');
+        const prevBtn = document.getElementById('prev-section-btn');
+        const nextBtn = document.getElementById('next-section-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        console.log(`showSection(${index}): Elements found:`, {
+            contentContainer: !!contentContainer,
+            sectionIndicator: !!sectionIndicator,
+            prevBtn: !!prevBtn,
+            nextBtn: !!nextBtn,
+            submitBtn: !!submitBtn
+        });
+        
+        // Update content
+        if (contentContainer) {
+            contentContainer.innerHTML = sections[index];
+        }
+        
+        // Restore saved data for this section (after content is loaded)
+        setTimeout(() => {
+            restoreSectionData(index);
+            attachSectionEventListeners(); // Re-attach event listeners after content change
+        }, 10);
+        
+        // Show/hide header and student info based on section
+        const assessmentHeader = document.getElementById('assessment-header');
+        const studentInfoSection = document.getElementById('student-info-section');
+        
+        if (index === 0) {
+            // Instructions section - show header and student info
+            if (assessmentHeader) assessmentHeader.style.display = 'block';
+            if (studentInfoSection) studentInfoSection.style.display = 'block';
+        } else {
+            // Quiz sections - hide header and student info for cleaner interface
+            if (assessmentHeader) assessmentHeader.style.display = 'none';
+            if (studentInfoSection) studentInfoSection.style.display = 'none';
+        }
+        
+        // Update section indicator
+        if (sectionIndicator) {
+            let newText;
+            if (index === 0) {
+                newText = `Instructions`;
+            } else {
+                newText = `Question Section ${index} of ${sections.length - 1}`;
+            }
+            console.log(`Updating section indicator from "${sectionIndicator.textContent}" to "${newText}"`);
+            sectionIndicator.textContent = newText;
+        }
+        
+        // Update navigation buttons
+        if (prevBtn) {
+            prevBtn.disabled = index === 0;
+        }
+        
+        // Show/hide appropriate buttons based on section
+        const isLastSection = index === sections.length - 1;
+        console.log(`Section ${index + 1}: isLastSection = ${isLastSection} (${index} === ${sections.length - 1})`);
+        
+        // Always show submit button - students can submit blank attempts
+        if (submitBtn) {
+            submitBtn.style.display = 'inline-block';
+            submitBtn.style.visibility = 'visible';
+            console.log('Always showing submit button:', submitBtn.style.display, submitBtn.style.visibility);
+        }
+        
+        if (isLastSection) {
+            if (nextBtn) {
+                nextBtn.style.display = 'none';
+                console.log('Hiding next button');
+            }
+        } else {
+            if (nextBtn) {
+                nextBtn.style.display = 'inline-block';
+                console.log('Showing next button');
+            }
+        }
+        
+        // Update progress dots
+        const dots = document.querySelectorAll('.section-dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+            dot.classList.toggle('completed', sectionRequirements[i]);
+        });
+        
+        // Re-attach event listeners for new content
+        attachSectionEventListeners();
+        updateProgress();
+    }
+
+    function saveCurrentSectionData() {
+        // Save form data from the current section
+        const contentContainer = document.getElementById('assessment-sections');
+        const inputs = contentContainer.querySelectorAll('input, textarea, select');
+        
+        if (!sectionFormData[currentSection]) {
+            sectionFormData[currentSection] = {};
+        }
+        
+        inputs.forEach(input => {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+                if (input.checked) {
+                    if (input.type === 'radio') {
+                        sectionFormData[currentSection][input.name] = input.value;
+                    } else {
+                        // Handle checkboxes (multiple values)
+                        if (!sectionFormData[currentSection][input.name]) {
+                            sectionFormData[currentSection][input.name] = [];
+                        }
+                        if (!sectionFormData[currentSection][input.name].includes(input.value)) {
+                            sectionFormData[currentSection][input.name].push(input.value);
+                        }
+                    }
+                }
+            } else {
+                if (input.value) {
+                    sectionFormData[currentSection][input.name] = input.value;
+                }
+            }
+        });
+        
+        console.log(`Saved data for section ${currentSection}:`, sectionFormData[currentSection]);
+    }
+
+    function restoreSectionData(sectionIndex) {
+        // Restore form data for the given section
+        if (!sectionFormData[sectionIndex]) {
+            console.log(`No saved data for section ${sectionIndex}`);
+            return;
+        }
+        
+        const data = sectionFormData[sectionIndex];
+        console.log(`Restoring data for section ${sectionIndex}:`, data);
+        
+        Object.keys(data).forEach(fieldName => {
+            const value = data[fieldName];
+            console.log(`Restoring field ${fieldName} with value:`, value);
+            
+            // Handle radio buttons
+            const radioInputs = document.querySelectorAll(`input[name="${fieldName}"][type="radio"]`);
+            if (radioInputs.length > 0) {
+                console.log(`Found ${radioInputs.length} radio buttons for ${fieldName}`);
+                radioInputs.forEach(radio => {
+                    const shouldCheck = (radio.value === value);
+                    radio.checked = shouldCheck;
+                    console.log(`Radio ${radio.value}: checked = ${shouldCheck}`);
+                });
+                return;
+            }
+            
+            // Handle checkboxes
+            const checkboxInputs = document.querySelectorAll(`input[name="${fieldName}"][type="checkbox"]`);
+            if (checkboxInputs.length > 0) {
+                console.log(`Found ${checkboxInputs.length} checkboxes for ${fieldName}`);
+                const values = Array.isArray(value) ? value : [value];
+                checkboxInputs.forEach(checkbox => {
+                    const shouldCheck = values.includes(checkbox.value);
+                    checkbox.checked = shouldCheck;
+                    console.log(`Checkbox ${checkbox.value}: checked = ${shouldCheck}`);
+                });
+                return;
+            }
+            
+            // Handle regular inputs and textareas
+            const input = document.querySelector(`[name="${fieldName}"]`);
+            if (input) {
+                input.value = value;
+                console.log(`Set input ${fieldName} to: ${value}`);
+            } else {
+                console.log(`No input found for field: ${fieldName}`);
+            }
+        });
+        
+        console.log(`Restore complete for section ${sectionIndex}`);
+    }
+
+    function mergeSectionDataToForm() {
+        // Create hidden inputs for all section data to ensure it's included in form submission
+        const form = document.getElementById('assessment-form');
+        
+        Object.keys(sectionFormData).forEach(sectionIndex => {
+            const sectionData = sectionFormData[sectionIndex];
+            
+            Object.keys(sectionData).forEach(fieldName => {
+                const value = sectionData[fieldName];
+                
+                // Check if there's already an input with this name in the current form
+                const existingInput = form.querySelector(`[name="${fieldName}"]`);
+                if (!existingInput) {
+                    // Create hidden input for this field
+                    if (Array.isArray(value)) {
+                        // Handle checkbox arrays
+                        value.forEach(val => {
+                            const hiddenInput = document.createElement('input');
+                            hiddenInput.type = 'hidden';
+                            hiddenInput.name = fieldName;
+                            hiddenInput.value = val;
+                            form.appendChild(hiddenInput);
+                        });
+                    } else {
+                        const hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = fieldName;
+                        hiddenInput.value = value;
+                        form.appendChild(hiddenInput);
+                    }
+                }
             });
         });
-    </script>
-    
+        
+        console.log('Merged all section data to form for submission');
+    }
 
-    
-  </body>
+    function attachSectionEventListeners() {
+        // Re-attach input listeners for progress tracking
+        const inputs = document.querySelectorAll('#assessment-sections input, #assessment-sections textarea');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                updateProgress();
+                checkSectionCompletion();
+            });
+            input.addEventListener('change', () => {
+                updateProgress();
+                checkSectionCompletion();
+            });
+        });
+    }
+
+    function checkSectionCompletion() {
+        const currentSectionElement = document.getElementById('assessment-sections');
+        const requiredQuestions = currentSectionElement.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
+        let allAnswered = true;
+        let answeredCount = 0;
+        
+        console.log(`Checking section ${currentSection + 1} completion. Found ${requiredQuestions.length} required questions.`);
+        
+        requiredQuestions.forEach((question, idx) => {
+            let questionAnswered = false;
+            
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via textarea`);
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via radio button`);
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+                console.log(`Question ${idx + 1}: answered via checkbox`);
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                    console.log(`Question ${idx + 1}: answered via number/text input`);
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                    console.log(`Question ${idx + 1}: answered via select dropdown`);
+                }
+            });
+            
+            if (!questionAnswered) {
+                allAnswered = false;
+                console.log(`Question ${idx + 1}: NOT answered`);
+            } else {
+                answeredCount++;
+            }
+        });
+        
+        console.log(`Section ${currentSection + 1} summary: ${answeredCount}/${requiredQuestions.length} questions answered. Complete: ${allAnswered}`);
+        
+        sectionRequirements[currentSection] = allAnswered;
+        
+        // Update next button state
+        const nextBtn = document.getElementById('next-section-btn');
+        if (currentSection < sections.length - 1) {
+            nextBtn.disabled = !allAnswered;
+            nextBtn.title = allAnswered ? '' : 'Please complete all required questions before proceeding';
+        }
+        
+        // Update progress dots
+        const dots = document.querySelectorAll('.section-dot');
+        if (dots[currentSection]) {
+            dots[currentSection].classList.toggle('completed', allAnswered);
+        }
+    }
+
+    function navigateToSection(index) {
+        if (index < 0 || index >= sections.length) return;
+        
+        // Check if trying to move forward without completing current section
+        if (index > currentSection && !sectionRequirements[currentSection]) {
+            // Run completion check again to make sure we have the latest state
+            checkSectionCompletion();
+            
+            // Check again after running completion check
+            if (!sectionRequirements[currentSection]) {
+                const currentSectionElement = document.getElementById('assessment-sections');
+                const requiredQuestions = currentSectionElement.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
+                
+                console.log(`Section ${currentSection + 1} completion check:`, {
+                    totalRequired: requiredQuestions.length,
+                    sectionComplete: sectionRequirements[currentSection]
+                });
+                
+                alert(`Please complete all required questions in Section ${currentSection + 1} before proceeding.`);
+                return;
+            }
+        }
+        
+        showSection(index);
+    }
+
+    // Progress tracking
+    function updateProgress() {
+        const questions = document.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]');
+        let answered = 0;
+        
+        questions.forEach(question => {
+            let questionAnswered = false;
+            
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                }
+            });
+            
+            if (questionAnswered) {
+                answered++;
+            }
+        });
+        
+        const percentage = questions.length > 0 ? Math.round((answered / questions.length) * 100) : 0;
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressFill) progressFill.style.width = `${percentage}%`;
+        if (progressText) progressText.textContent = `${percentage}% Complete`;
+    }
+
+    // Form validation
+    function validateForm() {
+        let isValid = true;
+        
+        // Clear previous errors
+        document.querySelectorAll('.field-error').forEach(error => error.textContent = '');
+        document.querySelectorAll('.question').forEach(q => q.classList.remove('error'));
+        
+        // Validate required fields
+        const studentName = document.getElementById('student-name');
+        const classPeriod = document.getElementById('class-period');
+        
+        if (!studentName.value.trim()) {
+            document.getElementById('student-name-error').textContent = 'Name is required';
+            isValid = false;
+        }
+        
+        if (!classPeriod.value) {
+            document.getElementById('class-period-error').textContent = 'Please select a class period';
+            isValid = false;
+        }
+        
+        // Validate required questions
+        document.querySelectorAll('.question[data-required="true"], .calculation-question[data-required="true"]').forEach(question => {
+            let questionAnswered = false;
+            
+            // Check for textarea answers
+            const textarea = question.querySelector('textarea');
+            if (textarea && textarea.value.trim()) {
+                questionAnswered = true;
+            }
+            
+            // Check for radio button answers
+            const checkedRadios = question.querySelectorAll('input[type="radio"]:checked');
+            if (checkedRadios.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for checkbox answers
+            const checkedBoxes = question.querySelectorAll('input[type="checkbox"]:checked');
+            if (checkedBoxes.length > 0) {
+                questionAnswered = true;
+            }
+            
+            // Check for number/text input answers (for calculation questions)
+            const numberInputs = question.querySelectorAll('input[type="number"], input[type="text"]');
+            numberInputs.forEach(input => {
+                if (input.value.trim()) {
+                    questionAnswered = true;
+                }
+            });
+            
+            // Check for select dropdown answers
+            const selects = question.querySelectorAll('select');
+            selects.forEach(select => {
+                if (select.value && select.value !== '') {
+                    questionAnswered = true;
+                }
+            });
+            
+            if (!questionAnswered) {
+                question.classList.add('error');
+                isValid = false;
+            }
+        });
+        
+        return isValid;
+    }
+
+    // Auto-save functionality
+    async function autoSave() {
+        if (!ASSESSMENT_CONFIG.webAppUrl) return;
+        
+        const indicator = document.getElementById('auto-save-indicator');
+        const form = document.getElementById('assessment-form');
+        
+        try {
+            indicator.textContent = 'Saving...';
+            indicator.className = 'auto-save-indicator saving';
+            
+            // Save current section data first
+            saveCurrentSectionData();
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            data.AutoSave = true;
+            data.Timestamp = new Date().toISOString();
+            
+            // Include section data in the save
+            data.SectionData = sectionFormData;
+            
+            // Local backup
+            localStorage.setItem(`assessment-${data.AssessmentTitle}`, JSON.stringify(data));
+            
+            indicator.textContent = 'Saved';
+            indicator.className = 'auto-save-indicator saved';
+            
+            setTimeout(() => {
+                indicator.textContent = '';
+                indicator.className = 'auto-save-indicator';
+            }, 3000);
+            
+        } catch (error) {
+            console.warn('Auto-save failed:', error);
+            indicator.textContent = '';
+            indicator.className = 'auto-save-indicator';
+        }
+    }
+
+    // Form submission
+    async function submitAssessment(formData) {
+        // Check if running on localhost for development
+        const isLocalDevelopment = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+        
+        if (isLocalDevelopment) {
+            // Simulate submission for local development
+            console.log('Local development mode - simulating submission');
+            console.log('Form data would be submitted:', Object.fromEntries(formData.entries()));
+            
+            // Simulate a delay
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            return { success: true, message: 'Simulated submission for local development' };
+        }
+        
+        if (!ASSESSMENT_CONFIG.webAppUrl) {
+            throw new Error('Submission endpoint not configured');
+        }
+        
+        const data = Object.fromEntries(formData.entries());
+        data.SubmissionTime = new Date().toISOString();
+        
+        try {
+            console.log('🚀 Starting submission to:', ASSESSMENT_CONFIG.webAppUrl);
+            console.log('📤 Sending data:', data);
+            
+            const response = await fetch(ASSESSMENT_CONFIG.webAppUrl, {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'text/plain;charset=utf-8'  // CORS-friendly: avoids preflight
+                },
+                body: JSON.stringify(data)
+            });
+            
+            console.log('📡 Response received:', response);
+            console.log('📊 Response status:', response.status);
+            console.log('✅ Response ok:', response.ok);
+            
+            if (!response.ok) {
+                throw new Error(`Submission failed: ${response.status}`);
+            }
+            
+            console.log('🔄 Parsing JSON response...');
+            const result = await response.json();
+            console.log('📋 Parsed result:', result);
+            
+            return result;
+        } catch (error) {
+            console.error('❌ Full error details:', error);
+            console.error('🔍 Error type:', error.name);
+            console.error('💬 Error message:', error.message);
+            
+            if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+                console.error('🚨 CORS troubleshooting tips:');
+                console.error('1. Verify Google Apps Script deployed with "Who has access: Anyone"');
+                console.error('2. Try creating a new deployment instead of updating existing one');
+                console.error('3. Check if webAppUrl is the latest deployment URL');
+                console.error('4. Current URL:', ASSESSMENT_CONFIG.webAppUrl);
+                throw new Error('Unable to submit assessment. This may be due to CORS restrictions. Please contact your instructor if the problem persists.');
+            }
+            throw error;
+        }
+    }
+
+    // Fallback submission dialog when main submission fails
+    function showFallbackSubmissionDialog(form, errorMessage) {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        data.SubmissionTime = new Date().toISOString();
+        
+        // Create a formatted submission summary
+        const submissionText = Object.entries(data)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join('\n');
+        
+        // Create modal dialog
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); z-index: 10000; display: flex;
+            align-items: center; justify-content: center;
+        `;
+        
+        const dialog = document.createElement('div');
+        dialog.style.cssText = `
+            background: white; border-radius: 8px; padding: 20px;
+            max-width: 600px; max-height: 80vh; overflow-y: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        `;
+        
+        const studentName = data.StudentName || 'Student';
+        const assessmentTitle = data.AssessmentTitle || 'Assessment';
+        
+        dialog.innerHTML = `
+            <h3 style="color: #dc3545; margin-top: 0;">Submission Failed</h3>
+            <p><strong>Error:</strong> ${errorMessage}</p>
+            <p>Don't worry! Your answers have been saved. Please choose one of these options:</p>
+            
+            <div style="margin: 20px 0;">
+                <button id="emailFallback" style="background: #007bff; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 5px; cursor: pointer;">
+                    📧 Email Your Answers
+                </button>
+                <button id="copyFallback" style="background: #28a745; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 5px; cursor: pointer;">
+                    📋 Copy to Clipboard
+                </button>
+                <button id="downloadFallback" style="background: #17a2b8; color: white; border: none; padding: 10px 20px; margin: 5px; border-radius: 5px; cursor: pointer;">
+                    💾 Download as File
+                </button>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <label for="submissionData" style="display: block; margin-bottom: 5px; font-weight: bold;">Your Submission Data:</label>
+                <textarea id="submissionData" readonly style="width: 100%; height: 200px; font-family: monospace; font-size: 12px; border: 1px solid #ccc; padding: 10px;">${submissionText}</textarea>
+            </div>
+            
+            <div style="text-align: right;">
+                <button id="closeFallback" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+                    Close
+                </button>
+            </div>
+        `;
+        
+        modal.appendChild(dialog);
+        document.body.appendChild(modal);
+        
+        // Email fallback
+        document.getElementById('emailFallback').addEventListener('click', () => {
+            const subject = encodeURIComponent(`${assessmentTitle} Submission - ${studentName}`);
+            const body = encodeURIComponent(`Assessment Submission\n\n${submissionText}`);
+            const teacherEmail = 'teacher@school.edu';
+            window.open(`mailto:${teacherEmail}?subject=${subject}&body=${body}`);
+        });
+        
+        // Copy to clipboard
+        document.getElementById('copyFallback').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(submissionText);
+                alert('Submission data copied to clipboard!');
+            } catch (err) {
+                // Fallback for older browsers
+                document.getElementById('submissionData').select();
+                document.execCommand('copy');
+                alert('Submission data copied to clipboard!');
+            }
+        });
+        
+        // Download as file
+        document.getElementById('downloadFallback').addEventListener('click', () => {
+            const blob = new Blob([submissionText], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${assessmentTitle}-${studentName}-${new Date().toISOString().split('T')[0]}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+        
+        // Close dialog
+        document.getElementById('closeFallback').addEventListener('click', () => {
+            document.body.removeChild(modal);
+        });
+        
+        // Close on background click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                document.body.removeChild(modal);
+            }
+        });
+    }
+
+    // Check for saved progress and offer recovery
+    function checkForSavedProgress() {
+        const assessmentTitle = document.querySelector('input[name="AssessmentTitle"]')?.value || 'Unit Assessment';
+        const savedData = localStorage.getItem(`assessment-${assessmentTitle}`);
+        
+        if (savedData) {
+            try {
+                const parsedData = JSON.parse(savedData);
+                const savedTime = new Date(parsedData.Timestamp);
+                const timeDiff = Date.now() - savedTime.getTime();
+                const hoursDiff = timeDiff / (1000 * 60 * 60);
+                
+                // Only offer recovery if saved within last 24 hours
+                if (hoursDiff < 24) {
+                    showRecoveryDialog(parsedData, savedTime);
+                } else {
+                    // Clean up old saves
+                    localStorage.removeItem(`assessment-${assessmentTitle}`);
+                }
+            } catch (error) {
+                console.warn('Failed to parse saved assessment data:', error);
+                localStorage.removeItem(`assessment-${assessmentTitle}`);
+            }
+        }
+    }
+
+    function showRecoveryDialog(savedData, savedTime) {
+        const recoveryModal = document.createElement('div');
+        recoveryModal.className = 'modal-overlay';
+        recoveryModal.style.display = 'flex';
+        recoveryModal.innerHTML = `
+            <div class="modal-content" style="max-width: 500px;">
+                <h3>🔄 Restore Previous Progress?</h3>
+                <p>We found a saved version of your assessment from <strong>${savedTime.toLocaleString()}</strong>.</p>
+                <p>Would you like to restore your previous answers?</p>
+                <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+                    <button id="recovery-cancel" class="nav-btn" style="background: #6c757d;">Start Fresh</button>
+                    <button id="recovery-restore" class="nav-btn" style="background: #28a745;">Restore Progress</button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(recoveryModal);
+        
+        document.getElementById('recovery-cancel').onclick = () => {
+            const assessmentTitle = savedData.AssessmentTitle;
+            localStorage.removeItem(`assessment-${assessmentTitle}`);
+            document.body.removeChild(recoveryModal);
+        };
+        
+        document.getElementById('recovery-restore').onclick = () => {
+            restoreFormData(savedData);
+            document.body.removeChild(recoveryModal);
+            
+            // Show success message
+            const indicator = document.getElementById('auto-save-indicator');
+            if (indicator) {
+                indicator.textContent = 'Progress Restored!';
+                indicator.className = 'auto-save-indicator saved';
+                setTimeout(() => {
+                    indicator.textContent = '';
+                    indicator.className = 'auto-save-indicator';
+                }, 4000);
+            }
+        };
+    }
+
+    function restoreFormData(savedData) {
+        // Restore section data if available
+        if (savedData.SectionData) {
+            Object.assign(sectionFormData, savedData.SectionData);
+        }
+        
+        // Restore form field values
+        Object.keys(savedData).forEach(key => {
+            if (key === 'AutoSave' || key === 'Timestamp' || key === 'SectionData') return;
+            
+            // Handle radio buttons and checkboxes
+            const radioElements = document.querySelectorAll(`input[name="${key}"][type="radio"]`);
+            const checkboxElements = document.querySelectorAll(`input[name="${key}"][type="checkbox"]`);
+            
+            if (radioElements.length > 0) {
+                // Handle radio buttons
+                radioElements.forEach(radio => {
+                    radio.checked = (radio.value === savedData[key]);
+                });
+            } else if (checkboxElements.length > 0) {
+                // Handle checkboxes
+                const savedValues = Array.isArray(savedData[key]) ? savedData[key] : [savedData[key]];
+                checkboxElements.forEach(checkbox => {
+                    checkbox.checked = savedValues.includes(checkbox.value);
+                });
+            } else {
+                // Handle regular input fields
+                const element = document.querySelector(`[name="${key}"]`);
+                if (element) {
+                    element.value = savedData[key];
+                }
+            }
+        });
+        
+        // Restore current section data if we're in a section
+        const currentSection = document.querySelector('.assessment-section:not([style*="display: none"])');
+        if (currentSection && savedData.SectionData) {
+            const sectionId = currentSection.id;
+            restoreSectionData(sectionId);
+        }
+        
+        // Trigger change events to update any dependent UI
+        const form = document.getElementById('assessment-form');
+        if (form) {
+            const inputs = form.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                const event = new Event('change', { bubbles: true });
+                input.dispatchEvent(event);
+            });
+        }
+        
+        console.log('Assessment progress restored from local storage');
+    }
+
+    function addManualRecoveryButton() {
+        const assessmentTitle = document.querySelector('input[name="AssessmentTitle"]')?.value || 'Unit Assessment';
+        const savedData = localStorage.getItem(`assessment-${assessmentTitle}`);
+        
+        if (savedData) {
+            try {
+                const parsedData = JSON.parse(savedData);
+                const savedTime = new Date(parsedData.Timestamp);
+                const timeDiff = Date.now() - savedTime.getTime();
+                const hoursDiff = timeDiff / (1000 * 60 * 60);
+                
+                // Only show manual recovery if saved within last 24 hours
+                if (hoursDiff < 24) {
+                    const recoveryBtn = document.createElement('button');
+                    recoveryBtn.type = 'button';
+                    recoveryBtn.className = 'nav-btn utility-btn';
+                    recoveryBtn.innerHTML = '🔄 Load Saved Progress';
+                    recoveryBtn.style.marginLeft = '10px';
+                    recoveryBtn.title = `Saved ${savedTime.toLocaleString()}`;
+                    
+                    recoveryBtn.onclick = () => {
+                        if (confirm(`Load your saved progress from ${savedTime.toLocaleString()}?`)) {
+                            restoreFormData(parsedData);
+                            
+                            // Show success message
+                            const indicator = document.getElementById('auto-save-indicator');
+                            if (indicator) {
+                                indicator.textContent = 'Progress Restored!';
+                                indicator.className = 'auto-save-indicator saved';
+                                setTimeout(() => {
+                                    indicator.textContent = '';
+                                    indicator.className = 'auto-save-indicator';
+                                }, 4000);
+                            }
+                        }
+                    };
+                    
+                    // Add to section controls
+                    const sectionControls = document.querySelector('.section-controls');
+                    if (sectionControls) {
+                        sectionControls.insertBefore(recoveryBtn, sectionControls.firstChild);
+                    }
+                }
+            } catch (error) {
+                console.warn('Failed to parse saved assessment data for manual recovery:', error);
+            }
+        }
+    }
+
+    // Initialize assessment
+    document.addEventListener('DOMContentLoaded', function() {
+        const startTime = new Date();
+        const startTimeElement = document.getElementById('start-time');
+        const startTimeHidden = document.getElementById('start-time-hidden');
+        const browserInfo = document.getElementById('browser-info');
+        
+        if (startTimeElement) startTimeElement.textContent = startTime.toLocaleString();
+        if (startTimeHidden) startTimeHidden.value = startTime.toISOString();
+        if (browserInfo) browserInfo.value = navigator.userAgent;
+
+        // Check for and offer to restore saved progress
+        checkForSavedProgress();
+        
+        // Add manual recovery button if there's saved data
+        addManualRecoveryButton();
+
+        // Add development mode indicator
+        const isLocalDevelopment = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+        if (isLocalDevelopment) {
+            const devNotice = document.createElement('div');
+            devNotice.innerHTML = `
+                <div style="background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 10px; margin: 10px 0; border-radius: 4px; font-size: 14px;">
+                    <strong>Development Mode:</strong> Assessment submissions will be simulated locally. No data will be sent to external servers.
+                </div>
+            `;
+            const assessmentHeader = document.querySelector('.assessment-header');
+            if (assessmentHeader) {
+                assessmentHeader.appendChild(devNotice);
+            }
+        }
+
+        
+
+        
+
+        // Progress tracking
+        document.addEventListener('input', updateProgress);
+        document.addEventListener('change', updateProgress);
+        
+        // Auto-save setup
+        if (ASSESSMENT_CONFIG.autoSaveInterval > 0) {
+            setInterval(autoSave, ASSESSMENT_CONFIG.autoSaveInterval);
+        }
+        
+        // Form submission
+        const form = document.getElementById('assessment-form');
+        const submitBtn = document.getElementById('submit-btn'); // Works with the new unified button
+        const submitStatus = document.getElementById('submit-status');
+        
+        // Add confirmation dialog before submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Save current section data before submission
+            saveCurrentSectionData();
+            
+            // Confirmation dialog
+            if (!confirm('Are you sure you want to submit your assessment? You will not be able to make changes after submission.')) {
+                return;
+            }
+            
+            if (!validateForm()) {
+                alert('Please correct the errors before submitting.');
+                return;
+            }
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Merge all section data back into the main form before submission
+            mergeSectionDataToForm();
+            
+            try {
+                await submitAssessment(new FormData(form));
+                
+                submitBtn.textContent = 'Submitted ✓';
+                submitBtn.style.background = '#28a745';
+                
+                // Disable all form elements
+                form.querySelectorAll('input, textarea, select, button').forEach(el => {
+                    el.disabled = true;
+                });
+                
+                alert('Assessment submitted successfully!');
+                
+                // Clear auto-save
+                const title = document.querySelector('input[name="AssessmentTitle"]')?.value;
+                if (title) localStorage.removeItem(`assessment-${title}`);
+                
+            } catch (error) {
+                console.error('Submission error:', error);
+                
+                // Show fallback submission dialog
+                showFallbackSubmissionDialog(form, error.message);
+                
+                // Reset submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Assessment';
+                submitBtn.style.background = ''; // Reset to original color
+            }
+        });
+        
+        // Prevent accidental navigation
+        window.addEventListener('beforeunload', function(e) {
+            if (submitBtn.textContent !== 'Submitted') {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        });
+        
+        // Initial progress update
+        updateProgress();
+        
+        // Initialize section management
+        initializeSections();
+    });
+    </script>
+</body>
 </html>

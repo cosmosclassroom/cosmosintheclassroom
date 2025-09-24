@@ -1,93 +1,399 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Natural Disasters Course</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <h1 id="natural-disasters">Natural Disasters</h1>
-<p>Welcome to Natural Disasters, an interdisciplinary course that explores the physics, geology, and environmental science behind Earth's most powerful natural phenomena. Students investigate the causes, effects, and mitigation strategies for major natural disasters.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Interdisciplinary study of natural disasters through physics, geology, and environmental science">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <title>Natural Disasters Course | Cosmos in the Classroom</title>
+    
+    
+    <!-- KaTeX Dependencies -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Highlight.js
+        hljs.highlightAll();
+        // Initialize tabs.js
+        const tabs = new Tabs('.tabs');
+        tabs.init();
+      });
+    </script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <style>
+/* Enhanced dropdown styling for better usability */
+.site-nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.site-nav .dropbtn {
+  background: none;
+  color: #2c3e50;
+  font-weight: 500;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f5f5dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  z-index: 1000;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #8b7355;
+  /* Add padding around the dropdown content */
+  padding: 0.5rem 0;
+}
+.site-nav .dropdown-content a {
+  color: #2c3e50;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 0.5rem;
+  transition: background 0.2s;
+}
+.site-nav .dropdown-content a:hover {
+  background-color: #e0e0d1;
+}
+/* Better hover behavior - keep dropdown open when hovering over content */
+.site-nav .dropdown:hover .dropdown-content,
+.site-nav .dropdown-content:hover {
+  display: block;
+}
+.site-nav .dropdown:hover .dropbtn,
+.site-nav .dropdown-content:hover + .dropbtn {
+  background-color: #e0e0d1;
+}
+/* JavaScript-based dropdown for click behavior */
+.site-nav .dropdown.active .dropdown-content {
+  display: block;
+}
+</style>
+
+<script>
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.site-nav .dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const btn = dropdown.querySelector('.dropbtn');
+    const content = dropdown.querySelector('.dropdown-content');
+    
+    // Toggle dropdown on click
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Close other dropdowns
+      dropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+    });
+    
+    // Keep dropdown open when hovering over content
+    content.addEventListener('mouseenter', function() {
+      dropdown.classList.add('active');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+      dropdown.classList.remove('active');
+    });
+  });
+});
+</script>
+
+<header class="site-header" style="background: #f5f5dc; border-bottom: 2px solid #8b7355; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+  <div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem;">
+    <div>
+      <h1 class="site-title" style="font-family: 'Georgia', 'Libre Baskerville', serif; font-size: 2rem; margin: 0; color: #2c3e50;">
+        <a href="/" style="color: #2c3e50; text-decoration: none;">Cosmos in the Classroom</a>
+      </h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; font-size: 1.1rem; align-items: center;">
+        <li class="dropdown">
+          <button class="dropbtn">Courses ▼</button>
+          <div class="dropdown-content">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/course/">Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/hphys/course/0-admin/">Unit 0: Admin</a>
+            <a href="/hphys/course/1-measurement/">Unit 1: Measurement</a>
+            <a href="/slides/hphys/1-measurement/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</a>
+            <a href="/slides/hphys/2-kinematics-1d/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</a>
+            <a href="/slides/hphys/3-kinematics-2d/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/4-dynamics/">Unit 4: Dynamics</a>
+            <a href="/slides/hphys/4-dynamics/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/5-energy/">Unit 5: Energy</a>
+            <a href="/slides/hphys/5-energy/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/6-momentum/">Unit 6: Momentum</a>
+            <a href="/slides/hphys/6-momentum/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</a>
+            <a href="/slides/hphys/7-gravity-orbits/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/">→ View 3 More Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/course/">Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/course/1-energy-grids/">Unit 1: Energy Grids</a>
+            <a href="/slides/sphys/1-energy-grids/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/sphys/course/2-earth-forces/">Unit 2: Earth Forces</a>
+            <a href="/sphys/course/3-collision-safety/">Unit 3: Collision Safety</a>
+            <a href="/slides/sphys/3-collision-safety/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/sphys/course/4-cosmic-impacts/">Unit 4: Cosmic Impacts</a>
+            <a href="/sphys/course/5-electromagnetic-radiation/">Unit 5: Electromagnetic Radiation</a>
+            <a href="/slides/sphys/5-electromagnetic-radiation/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/course/">Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/course/1-earthquakes/">Unit 1: Earthquakes</a>
+            <a href="/slides/natdis/1-earthquakes/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/natdis/course/2-tsunamis/">Unit 2: Tsunamis</a>
+            <a href="/natdis/course/3-wildfire/">Unit 3: Wildfire</a>
+            <a href="/natdis/course/3-wildfire-science/">Unit 3: Wildfire Science</a>
+            <a href="/natdis/course/4-flooding/">Unit 4: Flooding</a>
+            <a href="/natdis/course/4-flooding-and-landslides/">Unit 4: Flooding And Landslides</a>
+            <a href="/natdis/course/5-final-portfolio/">Unit 5: Final Portfolio</a>
+            <a href="/natdis/course/5-portfolio/">Unit 5: Portfolio</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html" style="color: #2c3e50; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.5rem;">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body" style="margin-top: 120px;">
+    
+      <h1 id="natural-disasters">Natural Disasters</h1>
+
+<p>Welcome to Natural Disasters, an interdisciplinary course that explores the physics, geology, and environmental science behind Earth’s most powerful natural phenomena. Students investigate the causes, effects, and mitigation strategies for major natural disasters.</p>
+
 <h2 id="course-overview">Course Overview</h2>
-<p>This course emphasizes:
-- <strong>Earth System Science</strong>: Understanding interconnected Earth processes
-- <strong>Physics Applications</strong>: Wave mechanics, fluid dynamics, thermodynamics in natural systems
-- <strong>Risk Assessment</strong>: Quantitative analysis of hazard probability and impact
-- <strong>Mitigation Strategies</strong>: Engineering and policy approaches to disaster preparedness
-- <strong>Data Analysis</strong>: Interpreting real scientific data from monitoring systems</p>
+
+<p>This course emphasizes:</p>
+<ul>
+  <li><strong>Earth System Science</strong>: Understanding interconnected Earth processes</li>
+  <li><strong>Physics Applications</strong>: Wave mechanics, fluid dynamics, thermodynamics in natural systems</li>
+  <li><strong>Risk Assessment</strong>: Quantitative analysis of hazard probability and impact</li>
+  <li><strong>Mitigation Strategies</strong>: Engineering and policy approaches to disaster preparedness</li>
+  <li><strong>Data Analysis</strong>: Interpreting real scientific data from monitoring systems</li>
+</ul>
+
 <h2 id="course-units">Course Units</h2>
+
 <h3 id="unit-1-earthquakes"><a href="1-earthquakes/">Unit 1: Earthquakes</a></h3>
 <ul>
-<li><strong>Core Topics</strong>: Seismic waves, tectonic plate mechanics, fault systems</li>
-<li><strong>Key Skills</strong>: Wave analysis, energy calculations, magnitude scales</li>
-<li><strong>Physics Focus</strong>: Elastic wave propagation, stress and strain, energy release</li>
-<li><strong>Content Types</strong>: <a href="../slides/natdis/1-earthquakes/">Lectures</a> | <a href="1-earthquakes/flexbook/">Flexbook</a> | <a href="1-earthquakes/hexagon-labs/">Labs</a> | <a href="1-earthquakes/problem-sets/">Problem Sets</a> | <a href="1-earthquakes/research-briefs/">Research Briefs</a></li>
+  <li><strong>Core Topics</strong>: Seismic waves, tectonic plate mechanics, fault systems</li>
+  <li><strong>Key Skills</strong>: Wave analysis, energy calculations, magnitude scales</li>
+  <li><strong>Physics Focus</strong>: Elastic wave propagation, stress and strain, energy release</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Content Types</strong>: <a href="../slides/natdis/1-earthquakes/">Lectures</a></td>
+          <td><a href="1-earthquakes/flexbook/">Flexbook</a></td>
+          <td><a href="1-earthquakes/hexagon-labs/">Labs</a></td>
+          <td><a href="1-earthquakes/problem-sets/">Problem Sets</a></td>
+          <td><a href="1-earthquakes/research-briefs/">Research Briefs</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
 <h3 id="unit-2-tsunamis"><a href="2-tsunamis/">Unit 2: Tsunamis</a></h3>
 <ul>
-<li><strong>Core Topics</strong>: Water wave mechanics, wave generation and propagation</li>
-<li><strong>Key Skills</strong>: Wave equation applications, energy transfer, coastal impact analysis</li>
-<li><strong>Physics Focus</strong>: Fluid dynamics, wave interference, shallow water waves</li>
-<li><strong>Content Types</strong>: <a href="../slides/natdis/2-tsunamis/">Lectures</a> | <a href="2-tsunamis/flexbook/">Flexbook</a> | <a href="2-tsunamis/hexagon-labs/">Labs</a> | <a href="2-tsunamis/problem-sets/">Problem Sets</a> | <a href="2-tsunamis/research-briefs/">Research Briefs</a></li>
+  <li><strong>Core Topics</strong>: Water wave mechanics, wave generation and propagation</li>
+  <li><strong>Key Skills</strong>: Wave equation applications, energy transfer, coastal impact analysis</li>
+  <li><strong>Physics Focus</strong>: Fluid dynamics, wave interference, shallow water waves</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Content Types</strong>: <a href="../slides/natdis/2-tsunamis/">Lectures</a></td>
+          <td><a href="2-tsunamis/flexbook/">Flexbook</a></td>
+          <td><a href="2-tsunamis/hexagon-labs/">Labs</a></td>
+          <td><a href="2-tsunamis/problem-sets/">Problem Sets</a></td>
+          <td><a href="2-tsunamis/research-briefs/">Research Briefs</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
 <h3 id="unit-3-wildfire"><a href="3-wildfire/">Unit 3: Wildfire</a></h3>
 <ul>
-<li><strong>Core Topics</strong>: Combustion physics, heat transfer, atmospheric dynamics</li>
-<li><strong>Key Skills</strong>: Thermodynamics, heat transfer mechanisms, weather analysis</li>
-<li><strong>Physics Focus</strong>: Chemical energy, thermal radiation, fluid flow</li>
-<li><strong>Content Types</strong>: <a href="../slides/natdis/3-wildfire/">Lectures</a> | <a href="3-wildfire/flexbook/">Flexbook</a> | <a href="3-wildfire/hexagon-labs/">Labs</a> | <a href="3-wildfire/problem-sets/">Problem Sets</a> | <a href="3-wildfire/research-briefs/">Research Briefs</a></li>
+  <li><strong>Core Topics</strong>: Combustion physics, heat transfer, atmospheric dynamics</li>
+  <li><strong>Key Skills</strong>: Thermodynamics, heat transfer mechanisms, weather analysis</li>
+  <li><strong>Physics Focus</strong>: Chemical energy, thermal radiation, fluid flow</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Content Types</strong>: <a href="../slides/natdis/3-wildfire/">Lectures</a></td>
+          <td><a href="3-wildfire/flexbook/">Flexbook</a></td>
+          <td><a href="3-wildfire/hexagon-labs/">Labs</a></td>
+          <td><a href="3-wildfire/problem-sets/">Problem Sets</a></td>
+          <td><a href="3-wildfire/research-briefs/">Research Briefs</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
 <h3 id="unit-4-flooding"><a href="4-flooding/">Unit 4: Flooding</a></h3>
 <ul>
-<li><strong>Core Topics</strong>: Hydrodynamics, precipitation physics, watershed analysis</li>
-<li><strong>Key Skills</strong>: Fluid mechanics, statistical analysis, system modeling</li>
-<li><strong>Physics Focus</strong>: Pressure, flow dynamics, conservation of mass and energy</li>
-<li><strong>Content Types</strong>: <a href="../slides/natdis/4-flooding/">Lectures</a> | <a href="4-flooding/flexbook/">Flexbook</a> | <a href="4-flooding/hexagon-labs/">Labs</a> | <a href="4-flooding/problem-sets/">Problem Sets</a> | <a href="4-flooding/research-briefs/">Research Briefs</a></li>
+  <li><strong>Core Topics</strong>: Hydrodynamics, precipitation physics, watershed analysis</li>
+  <li><strong>Key Skills</strong>: Fluid mechanics, statistical analysis, system modeling</li>
+  <li><strong>Physics Focus</strong>: Pressure, flow dynamics, conservation of mass and energy</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Content Types</strong>: <a href="../slides/natdis/4-flooding/">Lectures</a></td>
+          <td><a href="4-flooding/flexbook/">Flexbook</a></td>
+          <td><a href="4-flooding/hexagon-labs/">Labs</a></td>
+          <td><a href="4-flooding/problem-sets/">Problem Sets</a></td>
+          <td><a href="4-flooding/research-briefs/">Research Briefs</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
 <h3 id="unit-5-portfolio"><a href="5-portfolio/">Unit 5: Portfolio</a></h3>
 <ul>
-<li><strong>Core Topics</strong>: Disaster risk assessment, mitigation planning, case studies</li>
-<li><strong>Key Skills</strong>: Data synthesis, risk quantification, communication</li>
-<li><strong>Physics Focus</strong>: Integration of multiple physical processes and systems</li>
-<li><strong>Content Types</strong>: <a href="../slides/natdis/5-portfolio/">Lectures</a> | <a href="5-portfolio/flexbook/">Flexbook</a> | <a href="5-portfolio/hexagon-labs/">Labs</a> | <a href="5-portfolio/problem-sets/">Problem Sets</a> | <a href="5-portfolio/research-briefs/">Research Briefs</a></li>
+  <li><strong>Core Topics</strong>: Disaster risk assessment, mitigation planning, case studies</li>
+  <li><strong>Key Skills</strong>: Data synthesis, risk quantification, communication</li>
+  <li><strong>Physics Focus</strong>: Integration of multiple physical processes and systems</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Content Types</strong>: <a href="../slides/natdis/5-portfolio/">Lectures</a></td>
+          <td><a href="5-portfolio/flexbook/">Flexbook</a></td>
+          <td><a href="5-portfolio/hexagon-labs/">Labs</a></td>
+          <td><a href="5-portfolio/problem-sets/">Problem Sets</a></td>
+          <td><a href="5-portfolio/research-briefs/">Research Briefs</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
 </ul>
+
 <h2 id="content-types-explained">Content Types Explained</h2>
-<h3 id="flexbook-chapters">📚 <strong>Flexbook Chapters</strong></h3>
+
+<h3 id="-flexbook-chapters">📚 <strong>Flexbook Chapters</strong></h3>
 <p>Comprehensive exploration of disaster science integrating physics, geology, and environmental science.</p>
-<h3 id="hexagon-labs">🔬 <strong>Hexagon Labs</strong></h3>
+
+<h3 id="-hexagon-labs">🔬 <strong>Hexagon Labs</strong></h3>
 <p>Data-driven investigations using real monitoring data and physical models of natural processes.</p>
-<h3 id="problem-sets">📝 <strong>Problem Sets</strong></h3>
+
+<h3 id="-problem-sets">📝 <strong>Problem Sets</strong></h3>
 <p>Quantitative analysis of disaster scenarios using physics and mathematical modeling.</p>
-<h3 id="research-briefs">🔍 <strong>Research Briefs</strong></h3>
+
+<h3 id="-research-briefs">🔍 <strong>Research Briefs</strong></h3>
 <p>Current research in disaster science, early warning systems, and mitigation technologies.</p>
-<h3 id="lectures">🎯 <strong>Lectures</strong></h3>
+
+<h3 id="-lectures">🎯 <strong>Lectures</strong></h3>
 <p>Scientific presentations connecting physics principles to natural disaster phenomena.</p>
+
 <h2 id="scientific-approach">Scientific Approach</h2>
-<p>Natural Disasters integrates multiple scientific disciplines through:
-- <strong>Quantitative Analysis</strong>: Using physics and mathematics to understand disaster processes
-- <strong>Data Interpretation</strong>: Working with real seismographic, meteorological, and hydrological data
-- <strong>Systems Thinking</strong>: Understanding complex interactions between Earth systems
-- <strong>Risk Assessment</strong>: Probability analysis and uncertainty quantification
-- <strong>Mitigation Engineering</strong>: Physics-based approaches to disaster preparedness</p>
-<h2 id="assessment-philosophy">Assessment Philosophy</h2>
-<p>Assessment emphasizes scientific reasoning through:
-- <strong>Data Analysis</strong>: Interpreting real scientific datasets and monitoring information
-- <strong>Physics Applications</strong>: Using physical principles to explain natural phenomena
-- <strong>Risk Evaluation</strong>: Quantitative assessment of hazard probability and impact
-- <strong>Communication</strong>: Presenting scientific findings to diverse audiences
-- <strong>Problem-Solving</strong>: Developing evidence-based mitigation strategies</p>
-<h2 id="course-resources">Course Resources</h2>
+
+<p>Natural Disasters integrates multiple scientific disciplines through:</p>
 <ul>
-<li><a href="vocabulary.md">Course Vocabulary</a> - Key scientific terms and concepts</li>
-<li>Real-time monitoring data from USGS, NOAA, and international agencies</li>
-<li>Laboratory simulations and physical models</li>
-<li>GIS and data analysis software tools</li>
+  <li><strong>Quantitative Analysis</strong>: Using physics and mathematics to understand disaster processes</li>
+  <li><strong>Data Interpretation</strong>: Working with real seismographic, meteorological, and hydrological data</li>
+  <li><strong>Systems Thinking</strong>: Understanding complex interactions between Earth systems</li>
+  <li><strong>Risk Assessment</strong>: Probability analysis and uncertainty quantification</li>
+  <li><strong>Mitigation Engineering</strong>: Physics-based approaches to disaster preparedness</li>
 </ul>
+
+<h2 id="assessment-philosophy">Assessment Philosophy</h2>
+
+<p>Assessment emphasizes scientific reasoning through:</p>
+<ul>
+  <li><strong>Data Analysis</strong>: Interpreting real scientific datasets and monitoring information</li>
+  <li><strong>Physics Applications</strong>: Using physical principles to explain natural phenomena</li>
+  <li><strong>Risk Evaluation</strong>: Quantitative assessment of hazard probability and impact</li>
+  <li><strong>Communication</strong>: Presenting scientific findings to diverse audiences</li>
+  <li><strong>Problem-Solving</strong>: Developing evidence-based mitigation strategies</li>
+</ul>
+
+<h2 id="course-resources">Course Resources</h2>
+
+<ul>
+  <li><a href="/natdis/course/vocabulary/">Course Vocabulary</a> - Key scientific terms and concepts</li>
+  <li>Real-time monitoring data from USGS, NOAA, and international agencies</li>
+  <li>Laboratory simulations and physical models</li>
+  <li>GIS and data analysis software tools</li>
+</ul>
+
 <hr />
-<p><em>This course develops scientific literacy and quantitative reasoning skills while exploring some of Earth's most powerful and impactful natural phenomena.</em></p>
+
+<p><em>This course develops scientific literacy and quantitative reasoning skills while exploring some of Earth’s most powerful and impactful natural phenomena.</em></p>
+
+    
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    
+    
+    <!-- Initialize KaTeX rendering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "\\(", right: "\\)", display: false}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+    
+
+    
+  </body>
 </html>
