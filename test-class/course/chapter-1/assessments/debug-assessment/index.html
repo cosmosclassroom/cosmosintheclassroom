@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Kinematics and Motion Sample Assessment (Debug) | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <style>
+  .student-info {
+    margin-bottom: 20px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .radio-group, .checkbox-group {
+    margin-bottom: 15px;
+  }
+  .radio-option, .checkbox-option {
+    margin-bottom: 8px;
+  }
+  .input-group {
+    display: flex;
+  }
+  .input-group-append {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+  }
+  .btn {
+    padding: 10px 15px;
+    background: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #debug-info {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  .form-data-display {
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 10px;
+    background: #eee;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+</style>
+
+<h1>Kinematics and Motion Assessment (Debug Version)</h1>
+
+<p class="alert alert-info">This is a debugging version of the assessment. Form data will be displayed at the bottom of the page.</p>
+
+<form id="assessment-form">
+  <!-- Hidden metadata fields -->
+  <input type="hidden" name="AssessmentType" value="markdown" />
+  <input type="hidden" name="AssessmentId" value="test-class-sample-md-assessment-debug" />
+  <input type="hidden" name="AssessmentTitle" value="Kinematics and Motion Sample Assessment (Debug)" />
+  <input type="hidden" name="CoursePrefix" value="test-class" />
+  <input type="hidden" name="TotalPoints" value="10" />
+  <input type="hidden" name="Unit" value="1" />
+  <input type="hidden" name="Section" value="2" />
+
+  <!-- Student Information Section -->
+  <div class="student-info">
+    <div class="form-group">
+      <label for="student-name">Student Name:</label>
+      <input type="text" id="student-name" name="StudentName" class="form-control" required="" />
+    </div>
+    
+    <div class="form-group">
+      <label for="class-period">Class Period:</label>
+      <select id="class-period" name="ClassPeriod" class="form-control" required="">
+        <option value="">Select your class period</option>
+        <option value="1st">1st Period</option>
+        <option value="2nd">2nd Period</option>
+        <option value="3rd">3rd Period</option>
+        <option value="4th">4th Period</option>
+        <option value="5th">5th Period</option>
+        <option value="6th">6th Period</option>
+        <option value="7th">7th Period</option>
+      </select>
+    </div>
+  </div>
+
+  <h2>Multiple Choice Questions</h2>
+
+  <h3>Question 1: Vector Quantities</h3>
+  <p>Which of the following quantities are vectors? Select all that apply.</p>
+  <div class="checkbox-group">
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option1" name="Q1_Mass" value="Mass" />
+      <label for="q1_option1">Mass</label>
+    </div>
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option2" name="Q1_Displacement" value="Displacement" />
+      <label for="q1_option2">Displacement</label>
+    </div>
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option3" name="Q1_Velocity" value="Velocity" />
+      <label for="q1_option3">Velocity</label>
+    </div>
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option4" name="Q1_Time" value="Time" />
+      <label for="q1_option4">Time</label>
+    </div>
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option5" name="Q1_Acceleration" value="Acceleration" />
+      <label for="q1_option5">Acceleration</label>
+    </div>
+    <div class="checkbox-option">
+      <input type="checkbox" id="q1_option6" name="Q1_Speed" value="Speed" />
+      <label for="q1_option6">Speed</label>
+    </div>
+  </div>
+
+  <h3>Question 2: Displacement vs. Distance</h3>
+  <p>A student walks 3 meters east, then 4 meters north. The student's total distance traveled and displacement are, respectively:</p>
+  <div class="radio-group">
+    <div class="radio-option">
+      <input type="radio" id="q2_option1" name="Q2_Answer" value="5 m and 5 m" />
+      <label for="q2_option1">5 m and 5 m</label>
+    </div>
+    <div class="radio-option">
+      <input type="radio" id="q2_option2" name="Q2_Answer" value="7 m and 7 m" />
+      <label for="q2_option2">7 m and 7 m</label>
+    </div>
+    <div class="radio-option">
+      <input type="radio" id="q2_option3" name="Q2_Answer" value="7 m and 5 m" />
+      <label for="q2_option3">7 m and 5 m</label>
+    </div>
+    <div class="radio-option">
+      <input type="radio" id="q2_option4" name="Q2_Answer" value="5 m and 7 m" />
+      <label for="q2_option4">5 m and 7 m</label>
+    </div>
+  </div>
+
+  <h2>Numerical Questions</h2>
+  
+  <h3>Question 3: Calculating Average Velocity</h3>
+  <p>A car travels 150 meters in 10 seconds. What is its average velocity?</p>
+  <div class="form-group">
+    <label for="q3_answer">Your answer:</label>
+    <div class="input-group">
+      <input type="number" id="q3_answer" name="Q3_Answer" class="form-control" step="0.01" />
+      <div class="input-group-append">
+        <span class="input-group-text">m/s</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group" style="margin-top: 30px;">
+    <button type="button" id="debug-submit" class="btn">Debug Submit</button>
+    <button type="button" id="debug-check" class="btn btn-secondary">Check Form Data</button>
+  </div>
+</form>
+
+<div id="debug-info">
+  <h3>Debug Information</h3>
+  <h4>Form Data:</h4>
+  <div class="form-data-display" id="form-data"></div>
+  
+  <h4>Network Request:</h4>
+  <div class="form-data-display" id="network-data"></div>
+  
+  <h4>Response:</h4>
+  <div class="form-data-display" id="response-data"></div>
+</div>
+
+<script>
+  // Debug functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('assessment-form');
+    const formDataDisplay = document.getElementById('form-data');
+    const networkDataDisplay = document.getElementById('network-data');
+    const responseDataDisplay = document.getElementById('response-data');
+    const debugCheckBtn = document.getElementById('debug-check');
+    const debugSubmitBtn = document.getElementById('debug-submit');
+
+    // Check form data button
+    debugCheckBtn.addEventListener('click', function() {
+      const formData = new FormData(form);
+      let formDataOutput = '';
+      
+      for (const [key, value] of formData.entries()) {
+        formDataOutput += `${key}: ${value}\n`;
+      }
+      
+      formDataDisplay.textContent = formDataOutput || 'No form data';
+    });
+
+    // Debug submit button
+    debugSubmitBtn.addEventListener('click', function() {
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.SubmissionTime = new Date().toISOString();
+      
+      // Display the data to be sent
+      formDataDisplay.textContent = JSON.stringify(data, null, 2);
+      
+      // Send the data to the Google Script
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbwlCDJ8sCL70GQ6A94du7dvS-W7svMe8VbNb_Gik0Gf5Lx-QC6CFulEpoe_uX76ezBWRQ/exec';
+      
+      networkDataDisplay.textContent = `Sending POST request to ${webAppUrl}...\nContent-Type: text/plain;charset=utf-8\n\nData: ${JSON.stringify(data)}`;
+      
+      fetch(webAppUrl, {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        networkDataDisplay.textContent += `\n\nResponse status: ${response.status} ${response.statusText}`;
+        return response.text();
+      })
+      .then(text => {
+        try {
+          const json = JSON.parse(text);
+          responseDataDisplay.textContent = JSON.stringify(json, null, 2);
+        } catch (e) {
+          responseDataDisplay.textContent = `Raw response:\n${text}`;
+        }
+      })
+      .catch(error => {
+        responseDataDisplay.textContent = `Error: ${error.message}`;
+      });
+    });
+  });
+</script>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
