@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Unit 0 | Cosmos in the Classroom</title>
+    <title>Unit images: Unit 0 | Cosmos in the Classroom</title>
     
     
     <script src="/assets/js/mathjax-config.js"></script>
@@ -97,7 +97,212 @@
     
   <div class="markdown-body">
     
-      <h1 id="unit-0">Unit 0</h1>
+      
+<div class="course-nav-dropdown">
+  <div class="course-title">
+    <h2>Natural Disasters</h2>
+  </div>
+  
+  <div class="dropdown-container">
+    <label for="unit-select-natdis">Select Unit:</label>
+    <select id="unit-select-natdis" class="unit-select">
+      <option value="">-- Choose a Unit --</option>
+      
+        <option value="/natdis/course/0-nature-science/">Unit 0: Nature Science</option>
+      
+        <option value="/natdis/course/1-earthquakes/">Unit 1: Earthquakes</option>
+      
+        <option value="/natdis/course/2-tsunamis/">Unit 2: Tsunamis</option>
+      
+        <option value="/natdis/course/3-wildfire/">Unit 3: Wildfire</option>
+      
+        <option value="/natdis/course/3-wildfire-science/">Unit 3: Wildfire Science</option>
+      
+        <option value="/natdis/course/4-flooding/">Unit 4: Flooding</option>
+      
+        <option value="/natdis/course/4-flooding-and-landslides/">Unit 4: Flooding And Landslides</option>
+      
+        <option value="/natdis/course/5-final-portfolio/">Unit 5: Final Portfolio</option>
+      
+        <option value="/natdis/course/5-portfolio/">Unit 5: Portfolio</option>
+      
+    </select>
+    
+    <label for="content-select-natdis">Select Content Type:</label>
+    <select id="content-select-natdis" class="content-select" disabled="">
+      <option value="">-- Choose Content Type --</option>
+    </select>
+
+    <label for="item-select-natdis" id="item-label-natdis" style="display:none;">Select Document:</label>
+    <select id="item-select-natdis" class="item-select" style="display:none;">
+      <option value="">-- Choose Document --</option>
+    </select>
+
+    <button id="nav-go-natdis" class="nav-go-button" disabled="">Go</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Get the navigation data from the YAML file
+  const courseData = JSON.parse(document.getElementById('course-data-natdis').textContent);
+  
+  // Get the dropdown elements
+  const unitSelect = document.getElementById('unit-select-natdis');
+  const contentSelect = document.getElementById('content-select-natdis');
+  const itemSelect = document.getElementById('item-select-natdis');
+  const itemLabel = document.getElementById('item-label-natdis');
+  const goButton = document.getElementById('nav-go-natdis');
+
+  // Function to populate content types when a unit is selected
+  unitSelect.addEventListener('change', function() {
+    contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
+    contentSelect.disabled = true;
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    if (this.value) {
+      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
+        selectedUnit.content_types.forEach(content => {
+          const option = document.createElement('option');
+          option.value = content.url;
+          option.textContent = content.title;
+          contentSelect.appendChild(option);
+        });
+        contentSelect.disabled = false;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Function to populate items when a content type is selected
+  contentSelect.addEventListener('change', function() {
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    const unitUrl = unitSelect.value;
+    const contentUrl = contentSelect.value;
+    if (unitUrl && contentUrl) {
+      const selectedUnit = courseData.units.find(unit => unit.url === unitUrl);
+      const selectedContent = selectedUnit.content_types.find(content => content.url === contentUrl);
+      if (selectedContent && selectedContent.items && selectedContent.items.length > 0) {
+        selectedContent.items.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.url;
+          option.textContent = item.title;
+          itemSelect.appendChild(option);
+        });
+        itemSelect.style.display = '';
+        itemLabel.style.display = '';
+        goButton.disabled = true;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Enable the go button when a document is selected
+  itemSelect.addEventListener('change', function() {
+    goButton.disabled = !this.value;
+  });
+
+  // Navigate to the selected page when the go button is clicked
+  goButton.addEventListener('click', function() {
+    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
+})();
+// Embed the navigation data as a JSON script tag
+</script>
+
+<script type="application/json" id="course-data-natdis">{"title":"Natural Disasters","url":"/natdis/","units":[{"number":0,"title":"Nature Science","slug":"0-nature-science","url":"/natdis/course/0-nature-science/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/0-nature-science/flexbook/"}]},{"number":1,"title":"Earthquakes","slug":"1-earthquakes","url":"/natdis/course/1-earthquakes/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/1-earthquakes/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/natdis/course/1-earthquakes/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/1-earthquakes/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/1-earthquakes/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/1-earthquakes/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/natdis/course/1-earthquakes/assessments/"},{"type":"keys","title":"Keys","url":"/natdis/course/1-earthquakes/keys/"},{"type":"notes","title":"Notes","url":"/natdis/course/1-earthquakes/notes/"}]},{"number":2,"title":"Tsunamis","slug":"2-tsunamis","url":"/natdis/course/2-tsunamis/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/2-tsunamis/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/2-tsunamis/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/2-tsunamis/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/2-tsunamis/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/natdis/course/2-tsunamis/assessments/"}]},{"number":3,"title":"Wildfire","slug":"3-wildfire","url":"/natdis/course/3-wildfire/","content_types":[]},{"number":3,"title":"Wildfire Science","slug":"3-wildfire-science","url":"/natdis/course/3-wildfire-science/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/3-wildfire-science/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/3-wildfire-science/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/3-wildfire-science/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/3-wildfire-science/research-briefs/"}]},{"number":4,"title":"Flooding","slug":"4-flooding","url":"/natdis/course/4-flooding/","content_types":[{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/4-flooding/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/4-flooding/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/4-flooding/research-briefs/"}]},{"number":4,"title":"Flooding And Landslides","slug":"4-flooding-and-landslides","url":"/natdis/course/4-flooding-and-landslides/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/4-flooding-and-landslides/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/4-flooding-and-landslides/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/4-flooding-and-landslides/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/4-flooding-and-landslides/research-briefs/"}]},{"number":5,"title":"Final Portfolio","slug":"5-final-portfolio","url":"/natdis/course/5-final-portfolio/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/natdis/course/5-final-portfolio/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/5-final-portfolio/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/5-final-portfolio/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/5-final-portfolio/research-briefs/"}]},{"number":5,"title":"Portfolio","slug":"5-portfolio","url":"/natdis/course/5-portfolio/","content_types":[{"type":"hexagon-labs","title":"Hexagon Labs","url":"/natdis/course/5-portfolio/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/natdis/course/5-portfolio/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/natdis/course/5-portfolio/research-briefs/"}]}]}</script>
+
+<style>
+.course-nav-dropdown {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.course-title h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .dropdown-container {
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+  }
+}
+
+.dropdown-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.dropdown-container select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.nav-go-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #4a6da7;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-go-button:hover {
+  background-color: #3a5d97;
+}
+
+.nav-go-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+</style>
+
+<hr />
+<p>layout: default
+title: Unit 0
+course: natdis
+unit: ‘1’
+content_type: images
+permalink: /natdis/course/images/
+unit_number: 0
+unit_slug: 1-unknown
+—</p>
+
+<h1 id="unit-0">Unit 0</h1>
 
 <p>This is the landing page for Unit 0: Unit 0 in the Natural Disasters course.</p>
 

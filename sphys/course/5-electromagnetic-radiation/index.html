@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Unit 5: The Invisible Symphony | Cosmos in the Classroom</title>
+    <title>Unit 5: 'Unit 5: The Invisible Symphony' | Cosmos in the Classroom</title>
     
     
     <script src="/assets/js/mathjax-config.js"></script>
@@ -97,7 +97,202 @@
     
   <div class="markdown-body">
     
-      <h1 id="unit-5-the-invisible-symphony">Unit 5: The Invisible Symphony</h1>
+      
+<div class="course-nav-dropdown">
+  <div class="course-title">
+    <h2>Standard Physics</h2>
+  </div>
+  
+  <div class="dropdown-container">
+    <label for="unit-select-sphys">Select Unit:</label>
+    <select id="unit-select-sphys" class="unit-select">
+      <option value="">-- Choose a Unit --</option>
+      
+        <option value="/sphys/course/1-energy-grids/">Unit 1: Energy Grids</option>
+      
+        <option value="/sphys/course/2-earth-forces/">Unit 2: Earth Forces</option>
+      
+        <option value="/sphys/course/3-collision-safety/">Unit 3: Collision Safety</option>
+      
+        <option value="/sphys/course/4-cosmic-impacts/">Unit 4: Cosmic Impacts</option>
+      
+        <option value="/sphys/course/5-electromagnetic-radiation/">Unit 5: Electromagnetic Radiation</option>
+      
+    </select>
+    
+    <label for="content-select-sphys">Select Content Type:</label>
+    <select id="content-select-sphys" class="content-select" disabled="">
+      <option value="">-- Choose Content Type --</option>
+    </select>
+
+    <label for="item-select-sphys" id="item-label-sphys" style="display:none;">Select Document:</label>
+    <select id="item-select-sphys" class="item-select" style="display:none;">
+      <option value="">-- Choose Document --</option>
+    </select>
+
+    <button id="nav-go-sphys" class="nav-go-button" disabled="">Go</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Get the navigation data from the YAML file
+  const courseData = JSON.parse(document.getElementById('course-data-sphys').textContent);
+  
+  // Get the dropdown elements
+  const unitSelect = document.getElementById('unit-select-sphys');
+  const contentSelect = document.getElementById('content-select-sphys');
+  const itemSelect = document.getElementById('item-select-sphys');
+  const itemLabel = document.getElementById('item-label-sphys');
+  const goButton = document.getElementById('nav-go-sphys');
+
+  // Function to populate content types when a unit is selected
+  unitSelect.addEventListener('change', function() {
+    contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
+    contentSelect.disabled = true;
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    if (this.value) {
+      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
+        selectedUnit.content_types.forEach(content => {
+          const option = document.createElement('option');
+          option.value = content.url;
+          option.textContent = content.title;
+          contentSelect.appendChild(option);
+        });
+        contentSelect.disabled = false;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Function to populate items when a content type is selected
+  contentSelect.addEventListener('change', function() {
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    const unitUrl = unitSelect.value;
+    const contentUrl = contentSelect.value;
+    if (unitUrl && contentUrl) {
+      const selectedUnit = courseData.units.find(unit => unit.url === unitUrl);
+      const selectedContent = selectedUnit.content_types.find(content => content.url === contentUrl);
+      if (selectedContent && selectedContent.items && selectedContent.items.length > 0) {
+        selectedContent.items.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.url;
+          option.textContent = item.title;
+          itemSelect.appendChild(option);
+        });
+        itemSelect.style.display = '';
+        itemLabel.style.display = '';
+        goButton.disabled = true;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Enable the go button when a document is selected
+  itemSelect.addEventListener('change', function() {
+    goButton.disabled = !this.value;
+  });
+
+  // Navigate to the selected page when the go button is clicked
+  goButton.addEventListener('click', function() {
+    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
+})();
+// Embed the navigation data as a JSON script tag
+</script>
+
+<script type="application/json" id="course-data-sphys">{"title":"Standard Physics","url":"/sphys/","units":[{"number":1,"title":"Energy Grids","slug":"1-energy-grids","url":"/sphys/course/1-energy-grids/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/1-energy-grids/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/1-energy-grids/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/1-energy-grids/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/1-energy-grids/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/1-energy-grids/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/1-energy-grids/assessments/"},{"type":"keys","title":"Keys","url":"/sphys/course/1-energy-grids/keys/"}]},{"number":2,"title":"Earth Forces","slug":"2-earth-forces","url":"/sphys/course/2-earth-forces/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/2-earth-forces/flexbook/"}]},{"number":3,"title":"Collision Safety","slug":"3-collision-safety","url":"/sphys/course/3-collision-safety/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/3-collision-safety/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/3-collision-safety/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/3-collision-safety/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/3-collision-safety/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/3-collision-safety/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/3-collision-safety/assessments/"}]},{"number":4,"title":"Cosmic Impacts","slug":"4-cosmic-impacts","url":"/sphys/course/4-cosmic-impacts/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/4-cosmic-impacts/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/4-cosmic-impacts/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/4-cosmic-impacts/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/4-cosmic-impacts/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/4-cosmic-impacts/assessments/"}]},{"number":5,"title":"Electromagnetic Radiation","slug":"5-electromagnetic-radiation","url":"/sphys/course/5-electromagnetic-radiation/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/5-electromagnetic-radiation/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/5-electromagnetic-radiation/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/5-electromagnetic-radiation/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/5-electromagnetic-radiation/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/5-electromagnetic-radiation/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/5-electromagnetic-radiation/assessments/"}]}]}</script>
+
+<style>
+.course-nav-dropdown {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.course-title h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .dropdown-container {
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+  }
+}
+
+.dropdown-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.dropdown-container select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.nav-go-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #4a6da7;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-go-button:hover {
+  background-color: #3a5d97;
+}
+
+.nav-go-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+</style>
+
+<hr />
+<p>layout: default
+title: ‘Unit 5: The Invisible Symphony’
+course: sphys
+unit: ‘5’
+content_type: 5-electromagnetic-radiation
+unit_slug: 5-electromagnetic-radiation
+—</p>
+
+<h1 id="unit-5-the-invisible-symphony">Unit 5: The Invisible Symphony</h1>
 
 <h2 id="overview">Overview</h2>
 

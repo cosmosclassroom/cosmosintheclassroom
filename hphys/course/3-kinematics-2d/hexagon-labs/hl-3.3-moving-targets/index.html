@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab: Hitting a Moving Target | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/hphys/course/1-measurement/">Unit 1: Measurement</a>
+            <a href="/hphys/course/1-measurement/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</a>
+            <a href="/hphys/course/2-kinematics-1d/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</a>
+            <a href="/hphys/course/3-kinematics-2d/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/4-dynamics/">Unit 4: Dynamics</a>
+            <a href="/hphys/course/4-dynamics/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/5-energy/">Unit 5: Energy</a>
+            <a href="/hphys/course/5-energy/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/6-momentum/">Unit 6: Momentum</a>
+            <a href="/hphys/course/6-momentum/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</a>
+            <a href="/hphys/course/7-gravity-orbits/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/course/8-waves-sound/">Unit 8: Waves Sound</a>
+            <a href="/hphys/course/8-waves-sound/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/hphys/">→ View 2 More Units</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/">Standard Physics Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/sphys/course/1-energy-grids/">Unit 1: Energy Grids</a>
+            <a href="/sphys/course/1-energy-grids/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/sphys/course/2-earth-forces/">Unit 2: Earth Forces</a>
+            <a href="/sphys/course/3-collision-safety/">Unit 3: Collision Safety</a>
+            <a href="/sphys/course/3-collision-safety/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/sphys/course/4-cosmic-impacts/">Unit 4: Cosmic Impacts</a>
+            <a href="/sphys/course/5-electromagnetic-radiation/">Unit 5: Electromagnetic Radiation</a>
+            <a href="/sphys/course/5-electromagnetic-radiation/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/">Natural Disasters Home</a>
+            <hr style="margin: 0.5rem 0; border: none; border-top: 1px solid #8b7355;">
+            <a href="/natdis/course/0-nature-science/">Unit 0: Nature Science</a>
+            <a href="/natdis/course/1-earthquakes/">Unit 1: Earthquakes</a>
+            <a href="/natdis/course/1-earthquakes/lectures/" style="margin-left: 1rem; font-size: 0.9em; color: #666;">📊 Slides</a>
+            <a href="/natdis/course/2-tsunamis/">Unit 2: Tsunamis</a>
+            <a href="/natdis/course/3-wildfire/">Unit 3: Wildfire</a>
+            <a href="/natdis/course/3-wildfire-science/">Unit 3: Wildfire Science</a>
+            <a href="/natdis/course/4-flooding/">Unit 4: Flooding</a>
+            <a href="/natdis/course/4-flooding-and-landslides/">Unit 4: Flooding And Landslides</a>
+            <a href="/natdis/course/5-final-portfolio/">Unit 5: Final Portfolio</a>
+            <a href="/natdis/">→ View 1 More Units</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/lab.css">
+
+
+<div class="hexagon-lab-container">
+  <div class="lab-header">
+    <h1>Hexagon Lab: Hitting a Moving Target</h1></div><div class="lab-info">
+    <div class="row">
+      <div class="col-md-6"><strong>Course:</strong> HPHYS<br><strong>Unit:</strong> 3<br></div>
+      <div class="col-md-6"></div>
+    </div>
+  </div><h1 id="objective">Objective</h1>
+<p>Synthesize principles of projectile motion and relative velocity to predict the required “lead time” to intercept a moving target in 2D kinematics (horizontal and vertical motion) plus time.</p>
+
+<h1 id="introduction">Introduction</h1>
+<p>In our last lecture, we discussed the challenge of aiming a cannon from a moving warship. Now, the cannon is stationary and the target is moving. Imagine you are the master gunner defending a fortress. A supply cart is being rushed across the field below at a constant speed. Firing directly at the cart’s current position will result in a miss, as the cart will have moved on by the time your cannonball arrives.</p>
+
+<p>Your mission: Analyze the motion of both your projectile and the target to determine precisely where to aim and when to fire so their paths intersect at the same moment.</p>
+
+<h1 id="scenario-simulated-data-analysis">Scenario: Simulated Data Analysis</h1>
+<p>You do not need to run a simulation. Instead, you will be provided with the necessary data from your “scouts,” who have already observed the target and your cannon.</p>
+
+<h2 id="cannon-parameters">Cannon Parameters</h2>
+<ul>
+  <li>Muzzle Velocity ($v_i$): 120.0 m/s</li>
+  <li>Launch Angle ($\theta$): 35.0°</li>
+</ul>
+
+<h2 id="target-parameters">Target Parameters</h2>
+<ul>
+  <li>Motion: Moves from left to right at a constant velocity</li>
+  <li>Starting Point: 300 m to the left of your cannon</li>
+  <li>Path: Will cross directly in front of your cannon ($x=0$)</li>
+</ul>
+
+<h2 id="data-table-target-motion">Data Table: Target Motion</h2>
+<p>| Time (s) | Target Position, $x$ (m) |
+|———-|————————–|
+| 0.0      | -300.0                   |
+| 5.0      | -200.0                   |
+| 10.0     | -100.0                   |
+| 15.0     | 0.0                      |
+| 20.0     | 100.0                    |</p>
+
+<p><em>Using this data, calculate the constant velocity of the target ($\vec{v}_{target}$).</em></p>
+
+<h1 id="investigation-calculating-the-intercept">Investigation: Calculating the Intercept</h1>
+<p>Work through the following steps in your lab notebook:</p>
+
+<h2 id="analyze-your-weapon-projectile">Analyze Your Weapon (Projectile)</h2>
+<ul>
+  <li>Calculate the total time of flight for your cannonball, assuming it is fired over level ground.</li>
+  <li>Calculate the range ($\Delta x$) of your cannonball. This is the only possible location where you can intercept the target.</li>
+</ul>
+
+<h2 id="analyze-the-targets-motion">Analyze the Target’s Motion</h2>
+<ul>
+  <li>Calculate the velocity of the target using the data table.</li>
+</ul>
+
+<h2 id="plan-the-intercept">Plan the Intercept</h2>
+<ul>
+  <li>You know how long your cannonball will be in the air ($t_{flight}$).</li>
+  <li>You know where it will land ($x_{intercept}$, the range).</li>
+  <li>During the time the cannonball is flying, the target will continue to move. Calculate the distance the target travels during your cannonball’s flight time (the “lead distance”).</li>
+  <li>To hit the target, the cannon must be fired before the target reaches the landing spot. Where must the target be located on the $x$-axis at the exact moment you fire for a successful hit?</li>
+</ul>
+
+<h1 id="post-lab-synthesis-and-analysis">Post-Lab: Synthesis and Analysis</h1>
+<p><strong>Argument from Evidence:</strong> Write a “General Order” to a new artillery apprentice explaining the rule for hitting a moving target. In your own words, explain why you cannot simply aim at the target’s current position. Use the specific values you calculated (time of flight, target speed, lead distance) to make your argument.</p>
+
+<p><strong>Cause and Effect:</strong> If the enemy used a faster cart (e.g., doubled the velocity), how would that change the required “lead distance”? How would it change the position the target must be in when you fire?</p>
+
+<p><strong>Modeling:</strong> Can you devise a single equation that an artillery officer could use? The formula should solve for the required position of the target at the moment of firing ($x_{target_at_fire}$) as a function of the cannonball’s range ($\Delta x_{projectile}$), the target’s velocity ($v_{target}$), and the projectile’s time of flight ($t_{flight}$).</p>
+
+<hr />
+</div>
+    
+    </div>
+    
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

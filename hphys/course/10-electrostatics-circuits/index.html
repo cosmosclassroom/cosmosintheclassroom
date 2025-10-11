@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Unit 10: The Force That Binds Us All | Cosmos in the Classroom</title>
+    <title>Unit 10: Readme | Cosmos in the Classroom</title>
     
     
     <script src="/assets/js/mathjax-config.js"></script>
@@ -97,7 +97,212 @@
     
   <div class="markdown-body">
     
-      <h1 id="unit-10-the-force-that-binds-us-all">Unit 10: The Force That Binds Us All</h1>
+      
+<div class="course-nav-dropdown">
+  <div class="course-title">
+    <h2>Honors Physics</h2>
+  </div>
+  
+  <div class="dropdown-container">
+    <label for="unit-select-hphys">Select Unit:</label>
+    <select id="unit-select-hphys" class="unit-select">
+      <option value="">-- Choose a Unit --</option>
+      
+        <option value="/hphys/course/1-measurement/">Unit 1: Measurement</option>
+      
+        <option value="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</option>
+      
+        <option value="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</option>
+      
+        <option value="/hphys/course/4-dynamics/">Unit 4: Dynamics</option>
+      
+        <option value="/hphys/course/5-energy/">Unit 5: Energy</option>
+      
+        <option value="/hphys/course/6-momentum/">Unit 6: Momentum</option>
+      
+        <option value="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</option>
+      
+        <option value="/hphys/course/8-waves-sound/">Unit 8: Waves Sound</option>
+      
+        <option value="/hphys/course/9-optics/">Unit 9: Optics</option>
+      
+        <option value="/hphys/course/10-electrostatics-circuits/">Unit 10: Electrostatics Circuits</option>
+      
+    </select>
+    
+    <label for="content-select-hphys">Select Content Type:</label>
+    <select id="content-select-hphys" class="content-select" disabled="">
+      <option value="">-- Choose Content Type --</option>
+    </select>
+
+    <label for="item-select-hphys" id="item-label-hphys" style="display:none;">Select Document:</label>
+    <select id="item-select-hphys" class="item-select" style="display:none;">
+      <option value="">-- Choose Document --</option>
+    </select>
+
+    <button id="nav-go-hphys" class="nav-go-button" disabled="">Go</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // Get the navigation data from the YAML file
+  const courseData = JSON.parse(document.getElementById('course-data-hphys').textContent);
+  
+  // Get the dropdown elements
+  const unitSelect = document.getElementById('unit-select-hphys');
+  const contentSelect = document.getElementById('content-select-hphys');
+  const itemSelect = document.getElementById('item-select-hphys');
+  const itemLabel = document.getElementById('item-label-hphys');
+  const goButton = document.getElementById('nav-go-hphys');
+
+  // Function to populate content types when a unit is selected
+  unitSelect.addEventListener('change', function() {
+    contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
+    contentSelect.disabled = true;
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    if (this.value) {
+      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
+        selectedUnit.content_types.forEach(content => {
+          const option = document.createElement('option');
+          option.value = content.url;
+          option.textContent = content.title;
+          contentSelect.appendChild(option);
+        });
+        contentSelect.disabled = false;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Function to populate items when a content type is selected
+  contentSelect.addEventListener('change', function() {
+    goButton.disabled = true;
+    itemSelect.style.display = 'none';
+    itemLabel.style.display = 'none';
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+
+    const unitUrl = unitSelect.value;
+    const contentUrl = contentSelect.value;
+    if (unitUrl && contentUrl) {
+      const selectedUnit = courseData.units.find(unit => unit.url === unitUrl);
+      const selectedContent = selectedUnit.content_types.find(content => content.url === contentUrl);
+      if (selectedContent && selectedContent.items && selectedContent.items.length > 0) {
+        selectedContent.items.forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.url;
+          option.textContent = item.title;
+          itemSelect.appendChild(option);
+        });
+        itemSelect.style.display = '';
+        itemLabel.style.display = '';
+        goButton.disabled = true;
+      } else {
+        goButton.disabled = false;
+      }
+    }
+  });
+
+  // Enable the go button when a document is selected
+  itemSelect.addEventListener('change', function() {
+    goButton.disabled = !this.value;
+  });
+
+  // Navigate to the selected page when the go button is clicked
+  goButton.addEventListener('click', function() {
+    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
+})();
+// Embed the navigation data as a JSON script tag
+</script>
+
+<script type="application/json" id="course-data-hphys">{"title":"Honors Physics","url":"/hphys/","units":[{"number":1,"title":"Measurement","slug":"1-measurement","url":"/hphys/course/1-measurement/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/1-measurement/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/1-measurement/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/1-measurement/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/1-measurement/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/1-measurement/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/1-measurement/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/1-measurement/keys/"}]},{"number":2,"title":"Kinematics 1D","slug":"2-kinematics-1d","url":"/hphys/course/2-kinematics-1d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/2-kinematics-1d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/2-kinematics-1d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/2-kinematics-1d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/2-kinematics-1d/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/2-kinematics-1d/keys/"}]},{"number":3,"title":"Kinematics 2D","slug":"3-kinematics-2d","url":"/hphys/course/3-kinematics-2d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/3-kinematics-2d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/3-kinematics-2d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/3-kinematics-2d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/3-kinematics-2d/assessments/"}]},{"number":4,"title":"Dynamics","slug":"4-dynamics","url":"/hphys/course/4-dynamics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/4-dynamics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/4-dynamics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/4-dynamics/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/4-dynamics/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/4-dynamics/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/4-dynamics/assessments/"}]},{"number":5,"title":"Energy","slug":"5-energy","url":"/hphys/course/5-energy/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/5-energy/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/5-energy/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/5-energy/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/5-energy/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/5-energy/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/5-energy/assessments/"}]},{"number":6,"title":"Momentum","slug":"6-momentum","url":"/hphys/course/6-momentum/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/6-momentum/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/6-momentum/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/6-momentum/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/6-momentum/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/6-momentum/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/6-momentum/assessments/"}]},{"number":7,"title":"Gravity Orbits","slug":"7-gravity-orbits","url":"/hphys/course/7-gravity-orbits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/7-gravity-orbits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/7-gravity-orbits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/7-gravity-orbits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/7-gravity-orbits/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/7-gravity-orbits/assessments/"}]},{"number":8,"title":"Waves Sound","slug":"8-waves-sound","url":"/hphys/course/8-waves-sound/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/8-waves-sound/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/8-waves-sound/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/8-waves-sound/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/8-waves-sound/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/8-waves-sound/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/8-waves-sound/assessments/"}]},{"number":9,"title":"Optics","slug":"9-optics","url":"/hphys/course/9-optics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/9-optics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/9-optics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/9-optics/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/9-optics/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/9-optics/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/9-optics/assessments/"}]},{"number":10,"title":"Electrostatics Circuits","slug":"10-electrostatics-circuits","url":"/hphys/course/10-electrostatics-circuits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/10-electrostatics-circuits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/10-electrostatics-circuits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/10-electrostatics-circuits/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/10-electrostatics-circuits/assessments/"}]}]}</script>
+
+<style>
+.course-nav-dropdown {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.course-title h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dropdown-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .dropdown-container {
+    grid-template-columns: 1fr 1fr auto;
+    gap: 1rem;
+    align-items: end;
+  }
+}
+
+.dropdown-container label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.dropdown-container select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.nav-go-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #4a6da7;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-go-button:hover {
+  background-color: #3a5d97;
+}
+
+.nav-go-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+</style>
+
+<hr />
+<p>layout: default
+title: ‘Unit 10: The Force That Binds Us All’
+course: hphys
+unit: ‘10’
+content_type: 10-electrostatics-circuits
+unit_slug: 10-electrostatics-circuits
+—</p>
+
+<h1 id="unit-10-the-force-that-binds-us-all">Unit 10: The Force That Binds Us All</h1>
 
 <h2 id="overview">Overview</h2>
 
