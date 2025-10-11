@@ -1,0 +1,194 @@
+/* Homepage and card styles for Cosmos in the Classroom */
+.flexbox {
+  display: flex;
+  padding: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+.card {
+  margin: 0;
+  padding: 16px 24px;
+  text-align: justify;
+  border: 2px solid #333;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.card.honors {
+  border-top: 4px solid #4285F4;
+}
+.card.standard {
+  border-top: 4px solid #34A853;
+}
+.card.build-tools {
+  border-top: 4px solid #FF6D01;
+  background: linear-gradient(135deg, #fff8f3, #ffffff);
+}
+.card.build-tools h1 {
+  background: linear-gradient(135deg, #FF6D01, #FF8E53);
+  color: white;
+  font-size: 1.3em;
+}
+.card h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-primary, #f0f0f0);
+  color: #333;
+}
+.section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eaeaea;
+}
+.card ul {
+  list-style-type: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+.card ul li {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  transition: background-color 0.2s;
+}
+.card ul li:hover {
+  background-color: #e8e8e8;
+}
+.card a {
+  color: #2c6ba0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.card a:hover {
+  color: #1c4b70;
+  text-decoration: underline;
+}
+.footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Unit Grid Styles */
+.unit {
+  padding: 1.25rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  background-color: #f9f9f9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.unit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #f0f4f8;
+}
+
+.unit h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.unit h3 a {
+  color: #2c6ba0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.unit h3 a:hover {
+  color: #1c4b70;
+  text-decoration: underline;
+}
+
+.unit p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Course card styles for homepage */
+.course-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.course-card {
+  border-left: 5px solid var(--course-color, #333);
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.course-card h3 {
+  margin-top: 0;
+  color: var(--course-color, #333);
+  font-size: 1.4rem;
+}
+
+.course-card p {
+  flex-grow: 1;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.course-card .button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--course-color, #333);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 1rem;
+  transition: opacity 0.2s;
+  font-weight: 500;
+}
+
+.course-card .button:hover {
+  opacity: 0.9;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}

@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>The Rules of Falling | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <a role="menuitem" tabindex="-1" href="/hphys/">Honors Physics (HP)</a>
+            <a role="menuitem" tabindex="-1" href="/sphys/">Standard Physics (SP)</a>
+            <a role="menuitem" tabindex="-1" href="/natdis/">Natural Disasters (ND)</a>
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="/assets/css/lecture.css">
+
+
+<article class="lecture">
+  <header class="lecture-header">
+    <h1>The Rules of Falling</h1>
+    
+    
+  </header>
+
+  
+
+  
+
+  
+
+  <section class="lecture-body">
+    <h1 id="lecture-22-the-rules-of-falling"><strong>Lecture 2.2: The Rules of Falling</strong></h1>
+<h3 id="unit-2-the-art-of-observation">Unit 2: The Art of Observation</h3>
+
+<hr />
+
+<h2 id="todays-mission">Today’s Mission</h2>
+
+<ul>
+  <li>
+    <p><strong>Bridge Back:</strong> Yesterday you learned to read the story of motion from graphs. The rocket’s velocity-time graph showed constant acceleration during engine burn. Today, we’ll develop the mathematical tools to predict exactly where and when objects reach their destinations.</p>
+  </li>
+  <li>
+    <p><strong>Thinking Lens:</strong> We will use <strong>Mathematical Modeling</strong> to create equations that describe constant acceleration motion.</p>
+  </li>
+  <li>
+    <p><strong>Essential Questions:</strong></p>
+    <ul>
+      <li>How do we derive the kinematic equations from first principles?</li>
+      <li>What makes freefall a special case of constant acceleration?</li>
+      <li>How can we systematically solve motion problems?</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="the-foundation-constant-acceleration">The Foundation: Constant Acceleration</h2>
+
+<p>When acceleration is constant, we can create precise mathematical relationships.</p>
+
+<ul>
+  <li>
+    <p><strong>Definition of acceleration:</strong>
+\(\vec{a} = \frac{\Delta \vec{v}}{\Delta t} = \frac{\vec{v}_f - \vec{v}_i}{t}\)</p>
+  </li>
+  <li>
+    <p><strong>Rearranging gives us our first kinematic equation:</strong>
+\(\vec{v}_f = \vec{v}_i + \vec{a}t \quad \text{(1)}\)</p>
+  </li>
+  <li>
+    <p>This tells us the final velocity if we know initial velocity, acceleration, and time.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="deriving-position-from-velocity">Deriving Position from Velocity</h2>
+
+<ul>
+  <li>
+    <p>For constant acceleration, the average velocity is:
+\(\vec{v}_{avg} = \frac{\vec{v}_i + \vec{v}_f}{2}\)</p>
+  </li>
+  <li>
+    <p>Since displacement equals average velocity times time:
+\(\Delta \vec{x} = \vec{v}_{avg} \cdot t = \frac{\vec{v}_i + \vec{v}_f}{2} \cdot t\)</p>
+  </li>
+  <li>
+    <p>Substituting equation (1), $\vec{v}_f = \vec{v}_i + \vec{a}t$:
+\(\Delta \vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2 \quad \text{(2)}\)</p>
+  </li>
+  <li>
+    <p><strong>This is our second kinematic equation.</strong></p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="the-time-independent-equation">The Time-Independent Equation</h2>
+
+<p>Sometimes we need to eliminate time from our calculations.</p>
+
+<ul>
+  <li>Starting with:
+    <ul>
+      <li>Equation (1): $\vec{v}_f = \vec{v}_i + \vec{a}t$ → $t = \frac{\vec{v}_f - \vec{v}_i}{\vec{a}}$</li>
+      <li>Equation (2): $\Delta \vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2$</li>
+    </ul>
+  </li>
+  <li>
+    <p>Substituting the expression for $t$:
+\(\Delta \vec{x} = \vec{v}_i \left(\frac{\vec{v}_f - \vec{v}_i}{\vec{a}}\right) + \frac{1}{2}\vec{a}\left(\frac{\vec{v}_f - \vec{v}_i}{\vec{a}}\right)^2\)</p>
+  </li>
+  <li>After algebraic manipulation:
+\(\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta \vec{x} \quad \text{(3)}\)</li>
+</ul>
+
+<hr />
+
+<h2 id="the-three-kinematic-equations">The Three Kinematic Equations</h2>
+
+<div style="display: flex; justify-content: space-between;">
+
+<div style="width: 45%;">
+
+**The Complete Set:**
+
+* **Equation (1):** $\vec{v}_f = \vec{v}_i + \vec{a}t$
+
+* **Equation (2):** $\Delta \vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2$
+
+* **Equation (3):** $\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta \vec{x}$
+
+</div>
+
+<div style="width: 45%;">
+
+**How to Choose:**
+
+* Each equation contains **four of the five variables**: $\vec{v}_i$, $\vec{v}_f$, $\vec{a}$, $t$, $\Delta \vec{x}$
+
+* Select the equation that contains your **three known variables** and **one unknown**
+
+</div>
+
+</div>
+
+<hr />
+
+<h2 id="freefall-galileos-revolutionary-discovery">Freefall: Galileo’s Revolutionary Discovery</h2>
+
+<ul>
+  <li>
+    <p><strong>Key Insight:</strong> All objects fall with the same acceleration (ignoring air resistance).</p>
+  </li>
+  <li>
+    <p>On Earth’s surface:
+\(|\vec{a}_g| = 9.80 \text{ m/s}^2\)</p>
+  </li>
+  <li>
+    <p><strong>Convention:</strong> Choose positive direction as upward, so:
+\(\vec{a} = -\vec{a}_g = -9.80 \text{ m/s}^2\)</p>
+  </li>
+  <li>
+    <p>Freefall is simply constant acceleration motion with $\vec{a} = -9.80 \text{ m/s}^2$!</p>
+  </li>
+  <li>
+    <p><strong>Watch:</strong> <a href="https://www.youtubeeducation.com/watch?v=ZBr8Q2ROX9s">Galileo’s Discovery of Freefall</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="problem-solving-strategy">Problem-Solving Strategy</h2>
+
+<div style="display: flex; justify-content: space-between;">
+
+<div style="width: 45%;">
+
+**Steps 1-3:**
+* **Step 1:** Identify what you know and what you want to find
+* **Step 2:** Choose coordinate system (positive direction)
+* **Step 3:** Select the kinematic equation that contains your known and unknown variables
+
+</div>
+
+<div style="width: 45%;">
+
+**Steps 4-6:**
+* **Step 4:** Substitute values with proper units and significant figures
+* **Step 5:** Solve algebraically, then substitute numerical values
+* **Step 6:** Check your answer for reasonableness
+
+</div>
+
+</div>
+
+<hr />
+
+<h2 id="worked-example-stone-drop">Worked Example: Stone Drop</h2>
+
+<p><strong>Problem:</strong> A stone is dropped from rest from a height of $45.0 \text{ m}$. How long does it take to reach the ground, and what is its final velocity?</p>
+
+<ul>
+  <li><strong>Given:</strong>
+    <ul>
+      <li>$\vec{v}_i = 0.0 \text{ m/s}$ (dropped from rest)</li>
+      <li>$\Delta \vec{x} = -45.0 \text{ m}$ (downward displacement)</li>
+      <li>$\vec{a} = -9.80 \text{ m/s}^2$</li>
+    </ul>
+  </li>
+  <li><strong>Find:</strong> $t$ and $\vec{v}_f$</li>
+</ul>
+
+<hr />
+
+<h2 id="stone-drop-solution-finding-time">Stone Drop Solution: Finding Time</h2>
+
+<p><strong>Use equation (2):</strong> $\Delta \vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2$</p>
+
+<ul>
+  <li>
+    <p>Since the stone is dropped from rest, $\vec{v}_i = 0.0 \text{ m/s}$:
+$\Delta \vec{x} = \frac{1}{2}\vec{a}t^2$</p>
+  </li>
+  <li>
+    <p>Solve algebraically for $t$:
+$t = \sqrt{\frac{2\Delta \vec{x}}{\vec{a}}}$</p>
+  </li>
+  <li>
+    <p>Now substitute numerical values:
+$t = \sqrt{\frac{2(-45.0 \text{ m})}{-9.80 \text{ m/s}^2}} = \sqrt{9.18 \text{ s}^2} = 3.03 \text{ s}$</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="stone-drop-solution-finding-velocity">Stone Drop Solution: Finding Velocity</h2>
+
+<p><strong>Use equation (1):</strong> $\vec{v}_f = \vec{v}_i + \vec{a}t$</p>
+
+<ul>
+  <li>
+    <p>Solve algebraically (with $\vec{v}_i = 0$): 
+$\vec{v}_f = \vec{a}t$</p>
+  </li>
+  <li>
+    <p>Substitute numerical values:
+$\vec{v}_f = (-9.80 \text{ m/s}^2)(3.03 \text{ s}) = -29.7 \text{ m/s}$</p>
+  </li>
+</ul>
+
+<p><strong>The negative sign indicates downward motion.</strong></p>
+
+<ul>
+  <li><strong>Watch:</strong> <a href="https://www.youtubeeducation.com/watch?v=E43-CfukEgs">Falling Objects Without Air Resistance</a></li>
+</ul>
+
+<hr />
+
+<h2 id="worked-example-rocket-at-apogee">Worked Example: Rocket at Apogee</h2>
+
+<p><strong>Problem:</strong> A model rocket is launched vertically upward with initial velocity $\vec{v}_i = 125 \text{ m/s}$. Find the maximum height and time to reach it.</p>
+
+<ul>
+  <li><strong>Given:</strong>
+    <ul>
+      <li>$\vec{v}_i = 125 \text{ m/s}$ (upward)</li>
+      <li>$\vec{v}_f = 0.0 \text{ m/s}$ (at maximum height)</li>
+      <li>$\vec{a} = -9.80 \text{ m/s}^2$ (gravitational acceleration)</li>
+    </ul>
+  </li>
+  <li><strong>Find:</strong> $t$ and $\Delta \vec{x}$</li>
+</ul>
+
+<hr />
+
+<h2 id="rocket-solution-finding-time">Rocket Solution: Finding Time</h2>
+
+<p><strong>Use equation (1):</strong> $\vec{v}_f = \vec{v}_i + \vec{a}t$</p>
+
+<ul>
+  <li>
+    <p>Solve algebraically for $t$:
+$t = \frac{\vec{v}_f - \vec{v}_i}{\vec{a}}$</p>
+  </li>
+  <li>
+    <p>Substitute numerical values:
+$t = \frac{0.0 \text{ m/s} - 125 \text{ m/s}}{-9.80 \text{ m/s}^2} = 12.8 \text{ s}$</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="rocket-solution-finding-height">Rocket Solution: Finding Height</h2>
+
+<p><strong>Use equation (3):</strong> $\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta \vec{x}$</p>
+
+<ul>
+  <li>
+    <p>Solve algebraically for $\Delta \vec{x}$:
+$\Delta \vec{x} = \frac{\vec{v}_f^2 - \vec{v}_i^2}{2\vec{a}}$</p>
+  </li>
+  <li>
+    <p>Substitute numerical values:
+$\Delta \vec{x} = \frac{(0.0 \text{ m/s})^2 - (125 \text{ m/s})^2}{2(-9.80 \text{ m/s}^2)} = 797 \text{ m}$</p>
+  </li>
+</ul>
+
+<p><strong>The rocket reaches a maximum height of 797 m.</strong></p>
+
+<hr />
+
+<h2 id="check-for-understanding">Check for Understanding</h2>
+
+<p>A ball is thrown upward with initial velocity $15.0 \text{ m/s}$.</p>
+
+<p><strong>1. Which equation would you use to find how high it goes?</strong></p>
+
+<ul>
+  <li>
+    <p>Use equation (3), $\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta \vec{x}$ with $\vec{v}_f = 0.0 \text{ m/s}$ at maximum height</p>
+  </li>
+  <li>
+    <p>Solve algebraically: $\Delta \vec{x} = \frac{\vec{v}_f^2 - \vec{v}_i^2}{2\vec{a}}$</p>
+  </li>
+  <li>
+    <p>Substitute values: $\Delta \vec{x} = \frac{(0.0 \text{ m/s})^2 - (15.0 \text{ m/s})^2}{2(-9.80 \text{ m/s}^2)} = \frac{-225 \text{ (m/s)}^2}{-19.6 \text{ m/s}^2} = 11.5 \text{ m}$</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="check-for-understanding-continued">Check for Understanding (continued)</h2>
+
+<p><strong>2. What is the acceleration throughout the motion?</strong></p>
+
+<ul>
+  <li>$\vec{a} = -9.80 \text{ m/s}^2$ (constant throughout entire flight)</li>
+</ul>
+
+<p><strong>3. How long does it take to return to the starting point?</strong></p>
+
+<ul>
+  <li>
+    <p>First find time to reach maximum height: $t_{up} = \frac{\vec{v}_f - \vec{v}_i}{\vec{a}} = \frac{0.0 \text{ m/s} - \vec{v}_i}{\vec{a}}$</p>
+  </li>
+  <li>
+    <p>By symmetry, total flight time = $2t_{up} = \frac{2(15.0 \text{ m/s})}{9.80 \text{ m/s}^2} = 3.06 \text{ s}$</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="connection-to-our-rocket-investigation">Connection to Our Rocket Investigation</h2>
+
+<p><strong>The Power of Equations:</strong></p>
+<ul>
+  <li>We can now predict when the rocket engine cuts off</li>
+  <li>We can calculate exactly when it reaches maximum altitude</li>
+  <li>We can determine its velocity at any point in the trajectory</li>
+  <li>These same equations govern satellites, projectiles, and all falling objects</li>
+</ul>
+
+<p><strong>From graphs to equations:</strong> Yesterday’s slopes and areas are now precise mathematical relationships!</p>
+
+<hr />
+
+<h2 id="answering-our-essential-questions">Answering Our Essential Questions</h2>
+
+<p><strong>1. How do we derive the kinematic equations from first principles?</strong></p>
+<ul>
+  <li>Start with definition of acceleration: $\vec{a} = \frac{\Delta \vec{v}}{\Delta t}$</li>
+  <li>Apply algebraic manipulation to eliminate variables</li>
+</ul>
+
+<p><strong>2. What makes freefall a special case of constant acceleration?</strong></p>
+<ul>
+  <li>Freefall has constant acceleration $\vec{a_g} = -9.80 \text{ m/s}^2$</li>
+  <li>Same kinematic equations apply with this specific acceleration value (on Earth)</li>
+</ul>
+
+<p><strong>3. How can we systematically solve motion problems?</strong></p>
+<ul>
+  <li>Identify knowns and unknowns • Choose appropriate equation • Solve algebraically first</li>
+</ul>
+
+<hr />
+
+<h2 id="summary-and-next-steps">Summary and Next Steps</h2>
+
+<p><strong>The Kinematic Toolbox:</strong></p>
+<ul>
+  <li><strong>Equation (1):</strong> $\vec{v}_f = \vec{v}_i + \vec{a}t$</li>
+  <li><strong>Equation (2):</strong> $\Delta \vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2$</li>
+  <li><strong>Equation (3):</strong> $\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta \vec{x}$</li>
+</ul>
+
+<p><strong>Key Principles:</strong></p>
+<ul>
+  <li>Always define coordinate system clearly</li>
+  <li>Use proper vector notation and units throughout</li>
+  <li>Freefall is constant acceleration with $\vec{a} = -9.80 \text{ m/s}^2$</li>
+</ul>
+
+  </section>
+</article>
+
+    
+    </div>
+    
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

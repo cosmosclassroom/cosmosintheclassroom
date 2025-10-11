@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectiles - Cosmos in the Classroom</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Added metadata for submission/Sheets -->
+    <div id="assessment-metadata"
+         data-resource-id=""
+         data-json-path=""
+         data-course="hphys"
+         data-content-type="assessment"
+         data-title="Projectiles"
+         data-start-at="2025-10-11T15:51:02+00:00"
+         data-attempt-id=""
+         hidden></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-link">← Back to Home</a>
+            <a href="/hphys/" class="nav-link">
+                HPHYS Course
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div id="assessment-content" class="assessment-container">
+        
+            
+            <!-- Fixed Assessment Header -->
+            <div class="assessment-viewport-header">
+                <!-- Progress indicator -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0% Complete</span>
+                </div>
+                
+                <!-- Section navigation (for multi-section assessments) -->
+                <div class="section-navigation" id="section-nav" style="display: none;">
+                    <div class="section-progress">
+                        <span id="section-indicator">Section 1 of 3</span>
+                        <div class="section-dots" id="section-dots"></div>
+                    </div>
+                    <div class="section-controls">
+                        
+                        <button type="button" id="prev-section-btn" class="nav-btn" disabled>← Previous</button>
+                        <button type="button" id="next-section-btn" class="nav-btn">Next →</button>
+                        <button type="submit" id="submit-btn" class="submit-btn">Submit Assessment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Assessment Content -->
+            <div class="assessment-scroll-area">
+                <!-- Assessment header -->
+                <header class="assessment-header" id="assessment-header">
+                    <h1>Projectiles</h1>
+                    <div class="assessment-meta">
+                        
+                        
+                        <span class="meta-item">
+                            <span class="meta-label">Started:</span>
+                            <span class="meta-value" id="start-time"></span>
+                        </span>
+                    </div>
+                </header>
+
+                <!-- Auto-save indicator -->
+                <div id="auto-save-indicator" class="auto-save-indicator"></div>
+
+                <!-- Main assessment form -->
+                <form id="assessment-form" class="assessment-form">
+                    <!-- Hidden form data -->
+                    <input type="hidden" name="AssessmentTitle" value="Projectiles">
+                    <input type="hidden" name="Course" value="hphys">
+                    <input type="hidden" name="StartTime" id="start-time-hidden">
+                    <input type="hidden" name="BrowserInfo" id="browser-info">
+                    <input type="hidden" name="Timestamp" id="timestamp">
+                    <!-- Added hidden fields for Google Sheets ingestion -->
+                    <input type="hidden" name="answers_json" id="answers-json">
+                    <input type="hidden" name="EndTime" id="end-time">
+                    <input type="hidden" name="AttemptId" id="attempt-id">
+
+                    <!-- Student information -->
+                    <section class="student-info-section" id="student-info-section">
+                        <h3>Student Information</h3>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="student-name">Full Name *</label>
+                                <input type="text" id="student-name" name="StudentName" required>
+                                <span class="field-error" id="student-name-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="course-name">Course</label>
+                                <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label for="class-period">Class Period</label>
+                                <select id="class-period" name="ClassPeriod">
+                                    <option value="">Select Period</option>
+                                    <option value="1st">1st Period</option>
+                                    <option value="2nd">2nd Period</option>
+                                    <option value="3rd">3rd Period</option>
+                                    <option value="4th">4th Period</option>
+                                    <option value="5th">5th Period</option>
+                                    <option value="6th">6th Period</option>
+                                    <option value="7th">7th Period</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Assessment content (rendered from Markdown) -->
+                    <div id="assessment-sections" class="quiz-content">
+                        <p>title: ‘Quiz 3.1: Foundations of 2D Motion’ layout: quiz date: ‘2025-10-22’ course: hphys content_type: quiz unit: 3
+Instructions: Please answer the following questions to the best of your ability. Show all work for calculations, starting with the base formula. Ensure your final answers have the correct units and significant figures.</p>
+
+<p>Part 1: The Apprentice’s Practice (Conceptual Understanding)
+Answer the following multiple-choice questions.</p>
+
+<ol>
+  <li>
+    <p>A cannonball is fired horizontally from a tall cliff at the same instant a second, identical cannonball is dropped from the same height. Ignoring air resistance, which of the following is true?
+a) The fired cannonball hits the ground first.
+b) The dropped cannonball hits the ground first.
+c) They both hit the ground at the same time.
+d) It depends on the horizontal speed of the fired cannonball.</p>
+  </li>
+  <li>
+    <p>A projectile is launched horizontally. What can be said about its vertical acceleration (a_y) and horizontal acceleration (a_x) during its flight?
+a) a_y is constant; a_x is constant.
+b) a_y is zero; a_x is -9.80 m/s².
+c) a_y is -9.80 m/s²; a_x is zero.
+d) a_y changes; a_x is zero.</p>
+  </li>
+</ol>
+
+<p>Part 2: The Journeyman’s Task (Problem Solving)
+Solve the following problem. Show all steps clearly.</p>
+
+<ol>
+  <li>A stone is thrown horizontally with a velocity of 15.0 m/s from the top of a building that is 44.0 m high.</li>
+</ol>
+
+<p>a) How long does it take for the stone to reach the ground?</p>
+
+<p>b) How far from the base of the building does the stone land?</p>
+
+<p>Part 3: The Master’s Insight (Analysis &amp; Application)
+Solve the following problem, which requires a multi-step analysis.</p>
+
+<ol>
+  <li>A supply plane flying at a constant altitude of 800.0 m with a horizontal speed of 120.0 m/s needs to drop a package to a stranded hiker. To ensure the package lands on target, the pilot must release it before the plane is directly overhead.</li>
+</ol>
+
+<p>a) Calculate the time the package will be in the air.</p>
+
+<p>b) What is the required horizontal distance between the plane and the hiker when the package is released? This distance is often called the “range” in this context.</p>
+
+<p>c) If the plane were flying twice as fast (at 240.0 m/s), would the time of flight change? Explain your reasoning.</p>
+
+
+                    </div>
+
+                    <!-- Submit section -->
+                    <div class="submit-section" id="bottom-submit">
+                        <button type="submit" id="main-submit-btn" class="submit-btn">
+                            Submit Assessment
+                        </button>
+                        <div id="submit-status" class="submit-status"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formula Sheet Modal (if enabled) -->
+        
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/assessment-config.js"></script>
+    <script src="/assets/js/assessment-loader.js"></script>
+    <script src="/assets/js/assessment-utils.js"></script>
+    <script src="/assets/js/assessment-storage.js"></script>
+    <script src="/assets/js/assessment-sections.js"></script>
+    <script src="/assets/js/assessment-submit.js"></script>
+    <script src="/assets/js/assessment-main.js"></script>
+    <script src="/assets/js/assessment-glue.js"></script>
+</body>
+</html>

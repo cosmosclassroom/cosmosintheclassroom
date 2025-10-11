@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab 1.3: Energy Source Reliability Analysis | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <a role="menuitem" tabindex="-1" href="/hphys/">Honors Physics (HP)</a>
+            <a role="menuitem" tabindex="-1" href="/sphys/">Standard Physics (SP)</a>
+            <a role="menuitem" tabindex="-1" href="/natdis/">Natural Disasters (ND)</a>
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/lab.css">
+
+
+<div class="hexagon-lab-container">
+  <div class="lab-header">
+    <h1>Hexagon Lab 1.3: Energy Source Reliability Analysis</h1></div><div class="lab-info">
+    <div class="row">
+      <div class="col-md-6"><strong>Course:</strong> SPHYS<br><strong>Unit:</strong> 1-energy-grids<br><strong>Time Required:</strong> 50 minutes</div>
+      <div class="col-md-6"></div>
+    </div>
+  </div><h1 id="hexagon-lab-13-energy-source-reliability-analysis">Hexagon Lab 1.3: Energy Source Reliability Analysis</h1>
+
+<h2 id="objective">Objective</h2>
+<p>Analyze a dataset of energy source performance during the Texas Winter Storm Uri to determine which sources are most reliable under extreme weather conditions and calculate their operational efficiency.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>During February 2021, Winter Storm Uri brought unprecedented cold to Texas, causing massive failures across the energy grid. Different energy sources responded very differently to these extreme conditions. Your task is to analyze real performance data to understand the vulnerabilities and strengths of each energy source.</p>
+
+<h2 id="dataset">Dataset</h2>
+<p>You will analyze a comprehensive dataset showing the performance of different energy sources during the crisis week, including their capacity factors, outage rates, and temperature sensitivity.</p>
+
+<h3 id="energy-source-performance-data">Energy Source Performance Data</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Energy Source</th>
+      <th>Normal Capacity (MW)</th>
+      <th>Crisis Capacity (MW)</th>
+      <th>Temperature During Crisis (°F)</th>
+      <th>Fuel Supply Issues</th>
+      <th>Weather Vulnerability Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Natural Gas</td>
+      <td>20,000</td>
+      <td>12,000</td>
+      <td>15</td>
+      <td>Wellhead freeze-offs, pipeline pressure drops</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Wind</td>
+      <td>15,000</td>
+      <td>9,000</td>
+      <td>15</td>
+      <td>Turbine icing, cold weather shutdowns</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>Coal</td>
+      <td>8,000</td>
+      <td>8,000</td>
+      <td>15</td>
+      <td>Frozen coal piles (minor)</td>
+      <td>Low</td>
+    </tr>
+    <tr>
+      <td>Nuclear</td>
+      <td>5,000</td>
+      <td>5,000</td>
+      <td>15</td>
+      <td>None</td>
+      <td>Very Low</td>
+    </tr>
+    <tr>
+      <td>Solar</td>
+      <td>3,000</td>
+      <td>1,500</td>
+      <td>15</td>
+      <td>Snow cover on panels</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="efficiency-and-reliability-metrics">Efficiency and Reliability Metrics</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Energy Source</th>
+      <th>Capacity Factor (Normal)</th>
+      <th>Capacity Factor (Crisis)</th>
+      <th>Average Cost ($/MWh)</th>
+      <th>CO2 Emissions (tons/MWh)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Natural Gas</td>
+      <td>85%</td>
+      <td>60%</td>
+      <td>40</td>
+      <td>0.35</td>
+    </tr>
+    <tr>
+      <td>Wind</td>
+      <td>40%</td>
+      <td>30%</td>
+      <td>25</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Coal</td>
+      <td>75%</td>
+      <td>75%</td>
+      <td>35</td>
+      <td>0.90</td>
+    </tr>
+    <tr>
+      <td>Nuclear</td>
+      <td>95%</td>
+      <td>95%</td>
+      <td>30</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Solar</td>
+      <td>25%</td>
+      <td>12.5%</td>
+      <td>50</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="investigation-tasks">Investigation Tasks</h2>
+
+<h3 id="task-1-reliability-analysis">Task 1: Reliability Analysis</h3>
+<ol>
+  <li><strong>Calculate the capacity loss</strong> for each energy source during the crisis.
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capacity Loss (%) = [(Normal Capacity - Crisis Capacity) / Normal Capacity] × 100%
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Rank the energy sources</strong> from most reliable to least reliable based on their capacity loss during the crisis.</p>
+  </li>
+  <li><strong>In your lab notebook</strong>, create a bar chart showing the capacity loss percentage for each energy source.</li>
+</ol>
+
+<h3 id="task-2-efficiency-comparison">Task 2: Efficiency Comparison</h3>
+<ol>
+  <li>
+    <p><strong>Compare the capacity factors</strong> of each energy source under normal conditions vs. crisis conditions.</p>
+  </li>
+  <li><strong>Calculate the efficiency drop</strong> for each source:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Efficiency Drop = Normal Capacity Factor - Crisis Capacity Factor
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Identify patterns</strong>: Which types of energy sources (renewable vs. non-renewable) were most affected by the weather?</li>
+</ol>
+
+<h3 id="task-3-vulnerability-assessment">Task 3: Vulnerability Assessment</h3>
+<ol>
+  <li>
+    <p><strong>Using the Weather Vulnerability Rating</strong>, explain why some sources failed more than others.</p>
+  </li>
+  <li>
+    <p><strong>Analyze the fuel supply issues</strong>: How did the physical properties of different fuels affect their availability during extreme cold?</p>
+  </li>
+  <li>
+    <p><strong>Create a vulnerability matrix</strong> in your notebook with:</p>
+    <ul>
+      <li>Energy Source</li>
+      <li>Primary Vulnerability</li>
+      <li>Secondary Effects</li>
+      <li>Recovery Time Estimate</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="task-4-system-design-analysis">Task 4: System Design Analysis</h3>
+<ol>
+  <li><strong>Calculate the total energy deficit</strong> during the crisis:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Total Normal Capacity = Sum of all normal capacities
+Total Crisis Capacity = Sum of all crisis capacities
+Energy Deficit = Total Normal Capacity - Total Crisis Capacity
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Propose an improved energy mix</strong> that would be more resilient to extreme weather. Consider:
+    <ul>
+      <li>Reliability ratings</li>
+      <li>Cost factors</li>
+      <li>Environmental impact</li>
+      <li>Diversity of fuel sources</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="synthesis-questions">Synthesis Questions</h2>
+
+<h3 id="cross-cutting-concept-systems-and-system-models">Cross-Cutting Concept: Systems and System Models</h3>
+<ol>
+  <li>
+    <p><strong>How does this data demonstrate that the electrical grid is a complex system?</strong> Explain how the failure of one component (natural gas infrastructure) caused cascading effects throughout the entire system.</p>
+  </li>
+  <li>
+    <p><strong>What does this analysis reveal about the trade-offs between efficiency and resilience in system design?</strong></p>
+  </li>
+</ol>
+
+<h3 id="engineering-design-considerations">Engineering Design Considerations</h3>
+<ol>
+  <li><strong>If you were designing Texas’s energy portfolio for the future, what criteria would be most important?</strong> Rank these factors and justify your choices:
+    <ul>
+      <li>Lowest cost</li>
+      <li>Highest reliability</li>
+      <li>Lowest emissions</li>
+      <li>Fastest response time</li>
+      <li>Most weather-resistant</li>
+    </ul>
+  </li>
+  <li><strong>How might energy storage change the analysis of these different sources?</strong> Consider how batteries or other storage could compensate for the weaknesses you identified.</li>
+</ol>
+
+<h2 id="real-world-connections">Real-World Connections</h2>
+<p>This lab demonstrates why engineers must consider <strong>multiple failure modes</strong> when designing critical infrastructure. The 2021 Texas crisis showed that even a robust system can fail when multiple components are stressed simultaneously by the same external factor (extreme cold).</p>
+
+<p>Your analysis skills here directly connect to the engineering design process you’ll use in upcoming labs where you’ll design energy solutions for different communities with different priorities and constraints.</p>
+
+<h2 id="data-analysis-notes">Data Analysis Notes</h2>
+<p><em>For instructors: This dataset is designed to show clear patterns where fossil fuel sources (especially natural gas) experienced the greatest weather-related failures, while nuclear remained most reliable. The data supports discussions about energy security, infrastructure winterization, and the importance of diverse energy portfolios.</em></p>
+<div class="mt-4">
+    <strong>Topics:</strong><span class="badge bg-warning text-dark me-1">energy</span><span class="badge bg-warning text-dark me-1">reliability</span><span class="badge bg-warning text-dark me-1">efficiency</span><span class="badge bg-warning text-dark me-1">grid</span><span class="badge bg-warning text-dark me-1">supply</span></div></div>
+    
+    </div>
+    
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

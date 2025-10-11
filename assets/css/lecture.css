@@ -1,0 +1,47 @@
+/* Lecture layout styles (minimal placeholder, extend as needed) */
+.lecture { padding: 2rem; }
+.lecture-header { margin-bottom: 1rem; }
+.lecture-meta { color: #6c757d; }
+.core-idea, .key-concepts, .essential-questions, .thinking-lens { margin: 1rem 0; }
+
+/* Responsive images for lectures */
+.lecture .figure,
+.lecture img.lecture-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 1rem auto; /* center horizontally */
+}
+
+/* Simple side-by-side image layout */
+.lecture .img-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+	align-items: flex-start;
+}
+.lecture .img-col {
+	flex: 1 1 300px; /* grow, shrink, min width */
+	max-width: 520px;
+}
+.lecture .img-col img {
+	width: 100%;
+}
+
+.lecture .img-caption {
+	text-align: center;
+	font-size: 0.95rem;
+	color: #555;
+	margin-top: 0.25rem;
+}
+
+/* Optional: constrain very large images on wide screens */
+@media (min-width: 1024px) {
+	.lecture img.lecture-img.w-80 { max-width: 80%; }
+	.lecture img.lecture-img.w-70 { max-width: 70%; }
+	.lecture img.lecture-img.w-60 { max-width: 60%; }
+	.lecture img.lecture-img.w-90 { max-width: 90%; }
+	.lecture img.lecture-img.w-75 { max-width: 75%; }
+	.lecture img.lecture-img.w-50 { max-width: 50%; }
+}

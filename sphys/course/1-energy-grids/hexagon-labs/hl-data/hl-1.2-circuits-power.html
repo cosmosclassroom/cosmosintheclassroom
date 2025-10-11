@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hexagon Lab P1.2 - Wire Resistance Data</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 40px; background-color: #f4f4f9; }
+        h1, h2 { color: #333; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        .plot-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
+        .plot { width: 48%; margin-bottom: 40px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hexagon Lab P1.2: Modeling Energy Transfer in Wires</h1>
+        <p>Use the following charts and data table from a series of simulated experiments to determine how variables like wire material, length, and thickness affect electrical resistance.</p>
+
+        <div class="plot-container">
+            <div id="lengthPlot" class="plot"></div>
+            <div id="thicknessPlot" class="plot"></div>
+            <div id="materialPlot" class="plot" style="width: 98%;"></div>
+        </div>
+
+        <h2>Raw Data Table</h2>
+        <div id="dataTable"></div>
+    </div>
+
+    <script>
+        // Mock Dataset Generation
+        const data = [];
+        const materials = { "Copper": 1.68e-8, "Aluminum": 2.82e-8, "Nichrome": 1.10e-6 };
+        
+        // Varying Length
+        for (let l = 1; l <= 10; l++) {
+            const r = materials["Copper"] * (l * 10) / 1; // R = rho * L / A
+            data.push({ Experiment: "Length", WireMaterial: "Copper", WireLength_m: l * 10, WireThickness_mm2: 1, Resistance_Ohms: parseFloat(r.toExponential(2)) });
+        }
+        // Varying Thickness
+        for (let a = 1; a <= 10; a++) {
+            const r = materials["Copper"] * 10 / a;
+             data.push({ Experiment: "Thickness", WireMaterial: "Copper", WireLength_m: 10, WireThickness_mm2: a, Resistance_Ohms: parseFloat(r.toExponential(2)) });
+        }
+        // Varying Material
+        for (const mat in materials) {
+             const r = materials[mat] * 10 / 1;
+             data.push({ Experiment: "Material", WireMaterial: mat, WireLength_m: 10, WireThickness_mm2: 1, Resistance_Ohms: parseFloat(r.toExponential(2)) });
+        }
+
+        // Plot 1: Resistance vs Length
+        const lengthData = data.filter(d => d.Experiment === "Length");
+        const traceLength = {
+            x: lengthData.map(d => d.WireLength_m),
+            y: lengthData.map(d => d.Resistance_Ohms),
+            mode: 'lines+markers',
+            type: 'scatter'
+        };
+        Plotly.newPlot('lengthPlot', [traceLength], { title: 'Resistance vs. Wire Length', xaxis: { title: 'Length (m)' }, yaxis: { title: 'Resistance (Ω)' } });
+
+        // Plot 2: Resistance vs Thickness
+        const thicknessData = data.filter(d => d.Experiment === "Thickness");
+        const traceThickness = {
+            x: thicknessData.map(d => d.WireThickness_mm2),
+            y: thicknessData.map(d => d.Resistance_Ohms),
+            mode: 'lines+markers',
+            type: 'scatter'
+        };
+        Plotly.newPlot('thicknessPlot', [traceThickness], { title: 'Resistance vs. Wire Thickness', xaxis: { title: 'Thickness (mm²)' }, yaxis: { title: 'Resistance (Ω)' } });
+
+        // Plot 3: Resistance vs Material
+        const materialData = data.filter(d => d.Experiment === "Material");
+        const traceMaterial = {
+            x: materialData.map(d => d.WireMaterial),
+            y: materialData.map(d => d.Resistance_Ohms),
+            type: 'bar'
+        };
+        Plotly.newPlot('materialPlot', [traceMaterial], { title: 'Resistance by Material (for a 10m, 1mm² wire)', xaxis: { title: 'Material' }, yaxis: { title: 'Resistance (Ω)' } });
+        
+        // Data Table
+        let tableHTML = '<table><tr><th>Experiment</th><th>Material</th><th>Length (m)</th><th>Thickness (mm²)</th><th>Resistance (Ω)</th></tr>';
+        data.forEach(row => {
+            tableHTML += `<tr><td>${row.Experiment}</td><td>${row.WireMaterial}</td><td>${row.WireLength_m}</td><td>${row.WireThickness_mm2}</td><td>${row.Resistance_Ohms}</td></tr>`;
+        });
+        tableHTML += '</table>';
+        document.getElementById('dataTable').innerHTML = tableHTML;
+
+    </script>
+</body>
+</html>
