@@ -258,6 +258,22 @@
 
     // Debug submit button
     debugSubmitBtn.addEventListener('click', function() {
+      // Check if required fields are filled
+      const studentName = form.querySelector('#student-name');
+      const classPeriod = form.querySelector('#class-period');
+      
+      if (!studentName.value) {
+        alert('Please enter your name');
+        studentName.focus();
+        return;
+      }
+      
+      if (!classPeriod.value) {
+        alert('Please select your class period');
+        classPeriod.focus();
+        return;
+      }
+      
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
       data.SubmissionTime = new Date().toISOString();
@@ -265,8 +281,8 @@
       // Display the data to be sent
       formDataDisplay.textContent = JSON.stringify(data, null, 2);
       
-      // Send the data to the Google Script
-      const webAppUrl = 'https://script.google.com/macros/s/AKfycbwlCDJ8sCL70GQ6A94du7dvS-W7svMe8VbNb_Gik0Gf5Lx-QC6CFulEpoe_uX76ezBWRQ/exec';
+      // Send the data to the Google Script - use the same URL defined in _config.yml
+      const webAppUrl = 'https://script.google.com/macros/s/AKfycbyfQDS9WaEzl4sXrt-AaSmLxshSwNIwL7KT9JsWqm4OteLUTxjU9ZI4ibI02emjPLS5BA/exec';
       
       networkDataDisplay.textContent = `Sending POST request to ${webAppUrl}...\nContent-Type: text/plain;charset=utf-8\n\nData: ${JSON.stringify(data)}`;
       
