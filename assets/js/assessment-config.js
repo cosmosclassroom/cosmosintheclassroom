@@ -1,6 +1,6 @@
 // Assessment configuration
 const ASSESSMENT_CONFIG = {
-    webAppUrl: 'https://script.google.com/macros/s/AKfycbwlCDJ8sCL70GQ6A94du7dvS-W7svMe8VbNb_Gik0Gf5Lx-QC6CFulEpoe_uX76ezBWRQ/exec',
+    webAppUrl: 'https://script.google.com/macros/s/AKfycbwoNvklG6XSla2Kwd8S6nsdK_uMByuNZaBC3cjT2QAYNuGnt3LM3vEltc5ZsifanNwqrA/exec',
     autoSaveInterval: 30000, // Will be overridden by Jekyll
     password: '', // Will be overridden by Jekyll
     passwordHash: '' // Will be overridden by Jekyll
