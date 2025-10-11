@@ -15,11 +15,11 @@
 <meta property="og:url" content="https://www.cosmosintheclassroom.org/test-class/course/chapter-1/assessments/sample-assessment/" />
 <meta property="og:site_name" content="Cosmos in the Classroom" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-10-08T00:00:00+00:00" />
+<meta property="article:published_time" content="2025-10-11T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Kinematics and Motion Sample Assessment" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-08T00:00:00+00:00","datePublished":"2025-10-08T00:00:00+00:00","description":"A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.","headline":"Kinematics and Motion Sample Assessment","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.cosmosintheclassroom.org/test-class/course/chapter-1/assessments/sample-assessment/"},"url":"https://www.cosmosintheclassroom.org/test-class/course/chapter-1/assessments/sample-assessment/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-11T00:00:00+00:00","datePublished":"2025-10-11T00:00:00+00:00","description":"A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.","headline":"Kinematics and Motion Sample Assessment","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.cosmosintheclassroom.org/test-class/course/chapter-1/assessments/sample-assessment/"},"url":"https://www.cosmosintheclassroom.org/test-class/course/chapter-1/assessments/sample-assessment/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.cosmosintheclassroom.org/feed.xml" title="Cosmos in the Classroom" /></head>
 
@@ -41,6 +41,75 @@
       }
     };
   </script>
+  <style>
+    /* Password Screen Styles */
+    #password-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.95);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    #password-container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    #password-container h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    
+    #password-form {
+      margin-top: 20px;
+    }
+    
+    #password-input {
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    
+    #password-submit {
+      padding: 10px 20px;
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    #password-submit:hover {
+      background-color: #3367d6;
+    }
+    
+    #password-error {
+      color: #d93025;
+      margin-top: 10px;
+      display: none;
+    }
+    
+    .hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <!---->
@@ -67,6 +136,20 @@
   </div>
 </header>
 
+  
+  <!-- Password Screen Overlay -->
+  <div id="password-screen" >
+    <div id="password-container">
+      <h2>Assessment Password Required</h2>
+      <p>Please enter the assessment password to continue.</p>
+      <form id="password-form" onsubmit="return checkPassword(event)">
+        <input type="password" id="password-input" placeholder="Enter password" required>
+        <button type="submit" id="password-submit">Submit</button>
+      </form>
+      <p id="password-error">Incorrect password. Please try again.</p>
+    </div>
+  </div>
+  
   <main class="assessment assessment-md">
     <div class="assessment-header">
       <h1>Kinematics and Motion Sample Assessment</h1>
@@ -83,7 +166,7 @@
     <form id="assessment-form">
       <!-- Hidden metadata fields for Google Script integration -->
       <input type="hidden" name="AssessmentType" value="markdown">
-      <input type="hidden" name="AssessmentId" value="test-class-hphys-sample-md-assessment">
+      <input type="hidden" name="AssessmentId" value="test-class-sample-md-assessment">
       <input type="hidden" name="AssessmentTitle" value="Kinematics and Motion Sample Assessment">
       <input type="hidden" name="CoursePrefix" value="">
       <input type="hidden" name="TotalPoints" value="10">
@@ -94,6 +177,28 @@
       
       <div class="assessment-content">
         <h1 id="kinematics-and-motion-assessment">Kinematics and Motion Assessment</h1>
+
+<!-- Student Information Section -->
+<div class="student-info">
+  <div class="form-group">
+    <label for="student-name">Student Name:</label>
+    <input type="text" id="student-name" name="StudentName" class="form-control" required="" />
+  </div>
+  
+  <div class="form-group">
+    <label for="class-period">Class Period:</label>
+    <select id="class-period" name="ClassPeriod" class="form-control" required="">
+      <option value="">Select your class period</option>
+      <option value="1st">1st Period</option>
+      <option value="2nd">2nd Period</option>
+      <option value="3rd">3rd Period</option>
+      <option value="4th">4th Period</option>
+      <option value="5th">5th Period</option>
+      <option value="6th">6th Period</option>
+      <option value="7th">7th Period</option>
+    </select>
+  </div>
+</div>
 
 <p>This assessment covers the fundamental concepts of kinematics, including displacement, velocity, acceleration, and motion graphs. The equations used include:</p>
 
@@ -111,35 +216,59 @@
 <p>Which of the following quantities are vectors? Select all that apply.</p>
 
 <ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mass</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Displacement</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Velocity</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Time</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Acceleration</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Speed</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option1" value="Mass" /> Mass</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option2" value="Displacement" /> Displacement</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option3" value="Velocity" /> Velocity</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option4" value="Time" /> Time</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option5" value="Acceleration" /> Acceleration</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><input type="checkbox" name="Q1_Option6" value="Speed" /> Speed</li>
 </ul>
 
 <h3 id="question-2-displacement-vs-distance">Question 2: Displacement vs. Distance</h3>
 
 <p>A student walks 3 meters east, then 4 meters north. The student’s total distance traveled and displacement are, respectively:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />5 m and 5 m</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />7 m and 7 m</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />7 m and 5 m</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />5 m and 7 m</li>
-</ul>
+<div class="radio-group">
+  <div class="radio-option">
+    <input type="radio" id="q2_option1" name="Q2_Answer" value="5 m and 5 m" />
+    <label for="q2_option1">5 m and 5 m</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q2_option2" name="Q2_Answer" value="7 m and 7 m" />
+    <label for="q2_option2">7 m and 7 m</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q2_option3" name="Q2_Answer" value="7 m and 5 m" />
+    <label for="q2_option3">7 m and 5 m</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q2_option4" name="Q2_Answer" value="5 m and 7 m" />
+    <label for="q2_option4">5 m and 7 m</label>
+  </div>
+</div>
 
 <h3 id="question-3-acceleration-definition">Question 3: Acceleration Definition</h3>
 
 <p>Acceleration is defined as:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The rate of change of distance with time</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The total displacement divided by the time taken</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The rate of change of velocity with time</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The product of mass and velocity</li>
-</ul>
+<div class="radio-group">
+  <div class="radio-option">
+    <input type="radio" id="q3_option1" name="Q3_Answer" value="The rate of change of distance with time" />
+    <label for="q3_option1">The rate of change of distance with time</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q3_option2" name="Q3_Answer" value="The total displacement divided by the time taken" />
+    <label for="q3_option2">The total displacement divided by the time taken</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q3_option3" name="Q3_Answer" value="The rate of change of velocity with time" />
+    <label for="q3_option3">The rate of change of velocity with time</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q3_option4" name="Q3_Answer" value="The product of mass and velocity" />
+    <label for="q3_option4">The product of mass and velocity</label>
+  </div>
+</div>
 
 <h2 id="numerical-questions">Numerical Questions</h2>
 
@@ -147,7 +276,19 @@
 
 <p>A car travels 150 meters in 10 seconds. What is its average velocity?</p>
 
-<p>Answer: [15] m/s</p>
+<div class="form-group">
+  <label for="q4_answer">Your answer:</label>
+  <div class="input-group">
+    <input type="number" id="q4_answer" name="Q4_Answer" class="form-control" step="0.01" required="" />
+    <div class="input-group-append">
+      <span class="input-group-text">m/s</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden field for expected answer and tolerance -->
+<p><input type="hidden" name="Q4_ExpectedAnswer" value="15" />
+<input type="hidden" name="Q4_Tolerance" value="0.1" /></p>
 
 <h3 id="question-5-free-fall-calculation">Question 5: Free Fall Calculation</h3>
 
@@ -157,7 +298,19 @@
 
 <p>Where $y_0 = 20 \text{ m}$, $v_0 = 0 \text{ m/s}$, and $y = 0 \text{ m}$ at the ground.</p>
 
-<p>Answer: [2.02] s</p>
+<div class="form-group">
+  <label for="q5_answer">Your answer:</label>
+  <div class="input-group">
+    <input type="number" id="q5_answer" name="Q5_Answer" class="form-control" step="0.01" required="" />
+    <div class="input-group-append">
+      <span class="input-group-text">s</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden field for expected answer and tolerance -->
+<p><input type="hidden" name="Q5_ExpectedAnswer" value="2.02" />
+<input type="hidden" name="Q5_Tolerance" value="0.01" /></p>
 
 <h2 id="unit-selection-questions">Unit Selection Questions</h2>
 
@@ -165,25 +318,37 @@
 
 <p>Select the appropriate SI unit for measuring acceleration:</p>
 
-<p>[m/s²]</p>
-<ul>
-  <li>m/s</li>
-  <li>m/s²</li>
-  <li>kg·m/s</li>
-  <li>N</li>
-</ul>
+<div class="form-group">
+  <label for="q6_unit">Select unit:</label>
+  <select id="q6_unit" name="Q6_Answer" class="form-control" required="">
+    <option value="">Select a unit</option>
+    <option value="m/s">m/s</option>
+    <option value="m/s²">m/s²</option>
+    <option value="kg·m/s">kg·m/s</option>
+    <option value="N">N</option>
+  </select>
+</div>
+
+<!-- Hidden field for expected answer -->
+<p><input type="hidden" name="Q6_ExpectedAnswer" value="m/s²" /></p>
 
 <h3 id="question-7-dimensional-analysis">Question 7: Dimensional Analysis</h3>
 
 <p>The quantity momentum has the same dimension as:</p>
 
-<p>[Force × Time]</p>
-<ul>
-  <li>Force × Distance</li>
-  <li>Force × Time</li>
-  <li>Mass × Distance</li>
-  <li>Energy / Velocity</li>
-</ul>
+<div class="form-group">
+  <label for="q7_answer">Select answer:</label>
+  <select id="q7_answer" name="Q7_Answer" class="form-control" required="">
+    <option value="">Select an answer</option>
+    <option value="Force × Distance">Force × Distance</option>
+    <option value="Force × Time">Force × Time</option>
+    <option value="Mass × Distance">Mass × Distance</option>
+    <option value="Energy / Velocity">Energy / Velocity</option>
+  </select>
+</div>
+
+<!-- Hidden field for expected answer -->
+<p><input type="hidden" name="Q7_ExpectedAnswer" value="Force × Time" /></p>
 
 <h2 id="conceptual-questions">Conceptual Questions</h2>
 
@@ -191,27 +356,55 @@
 
 <p>A horizontal line on a position-time graph represents:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Constant acceleration</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Increasing velocity</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Zero velocity</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Negative acceleration</li>
-</ul>
+<div class="radio-group">
+  <div class="radio-option">
+    <input type="radio" id="q8_option1" name="Q8_Answer" value="Constant acceleration" />
+    <label for="q8_option1">Constant acceleration</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q8_option2" name="Q8_Answer" value="Increasing velocity" />
+    <label for="q8_option2">Increasing velocity</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q8_option3" name="Q8_Answer" value="Zero velocity" />
+    <label for="q8_option3">Zero velocity</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q8_option4" name="Q8_Answer" value="Negative acceleration" />
+    <label for="q8_option4">Negative acceleration</label>
+  </div>
+</div>
+
+<!-- Hidden field for expected answer -->
+<p><input type="hidden" name="Q8_ExpectedAnswer" value="Zero velocity" /></p>
 
 <h3 id="question-9-motion-scenarios">Question 9: Motion Scenarios</h3>
 
 <p>A ball is thrown straight upward. At the highest point of its trajectory:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Both velocity and acceleration are zero</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Velocity is zero, but acceleration is not zero</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Velocity is not zero, but acceleration is zero</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Neither velocity nor acceleration is zero</li>
-</ul>
+<div class="radio-group">
+  <div class="radio-option">
+    <input type="radio" id="q9_option1" name="Q9_Answer" value="Both velocity and acceleration are zero" />
+    <label for="q9_option1">Both velocity and acceleration are zero</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q9_option2" name="Q9_Answer" value="Velocity is zero, but acceleration is not zero" />
+    <label for="q9_option2">Velocity is zero, but acceleration is not zero</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q9_option3" name="Q9_Answer" value="Velocity is not zero, but acceleration is zero" />
+    <label for="q9_option3">Velocity is not zero, but acceleration is zero</label>
+  </div>
+  <div class="radio-option">
+    <input type="radio" id="q9_option4" name="Q9_Answer" value="Neither velocity nor acceleration is zero" />
+    <label for="q9_option4">Neither velocity nor acceleration is zero</label>
+  </div>
+</div>
+
+<!-- Hidden field for expected answer -->
+<p><input type="hidden" name="Q9_ExpectedAnswer" value="Velocity is zero, but acceleration is not zero" /></p>
 
 <h3 id="question-10-complex-physics-calculation">Question 10: Complex Physics Calculation</h3>
-
-<h3 id="what-is-the-best-source-of-pasta-sauce-this-side-of-the-mississippi">What is the best source of pasta sauce this side of the Mississippi?</h3>
 
 <p>The electric field $\vec{E}$ at a distance $r$ from a point charge $q$ is given by:</p>
 
@@ -219,7 +412,19 @@
 
 <p>If a charge $q = 1.6 \times 10^{-19} \text{ C}$ is placed at the origin, what is the magnitude of the electric field at a distance of $r = 0.5 \text{ m}$? Use $\epsilon_0 = 8.85 \times 10^{-12} \text{ C}^2/\text{N}\cdot\text{m}^2$.</p>
 
-<p>Answer: [5.76] N/C</p>
+<div class="form-group">
+  <label for="q10_answer">Your answer:</label>
+  <div class="input-group">
+    <input type="number" id="q10_answer" name="Q10_Answer" class="form-control" step="0.01" required="" />
+    <div class="input-group-append">
+      <span class="input-group-text">N/C</span>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden field for expected answer and tolerance -->
+<p><input type="hidden" name="Q10_ExpectedAnswer" value="5.76" />
+<input type="hidden" name="Q10_Tolerance" value="0.01" /></p>
 
 
       </div>
@@ -350,6 +555,61 @@
   
   <!-- Initialize assessment status tracking -->
   <script>
+    // Password validation function
+    function checkPassword(event) {
+      event.preventDefault();
+      
+      const passwordInput = document.getElementById('password-input').value;
+      const passwordHash = 'a1b2c3d4e5f6'; // Use the hash from YAML
+      const passwordScreen = document.getElementById('password-screen');
+      const passwordError = document.getElementById('password-error');
+      
+      // First check for direct match with plain password (for simple cases)
+      if (passwordInput === 'physics2025') {
+        // Password correct - hide the password screen
+        passwordScreen.classList.add('hidden');
+        // Store in session that password was entered correctly
+        sessionStorage.setItem('assessment_test-class-sample-md-assessment_auth', 'true');
+        return false;
+      }
+      
+      // If hash is available, check against hash
+      if (passwordHash && passwordHash.length > 0) {
+        // Simple hash function for basic security
+        function simpleHash(str) {
+          let hash = 0;
+          for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit integer
+          }
+          return hash.toString(16); // Convert to hex
+        }
+        
+        if (simpleHash(passwordInput) === passwordHash) {
+          // Password correct - hide the password screen
+          passwordScreen.classList.add('hidden');
+          // Store in session that password was entered correctly
+          sessionStorage.setItem('assessment_test-class-sample-md-assessment_auth', 'true');
+          return false;
+        }
+      }
+      
+      // Password incorrect - show error
+      passwordError.style.display = 'block';
+      return false;
+    }
+    
+    // Check if user already entered password in this session
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordScreen = document.getElementById('password-screen');
+      if (passwordScreen && !passwordScreen.classList.contains('hidden')) {
+        if (sessionStorage.getItem('assessment_test-class-sample-md-assessment_auth') === 'true') {
+          passwordScreen.classList.add('hidden');
+        }
+      }
+    });
+    
     // Debug information for script loading
     window.assessmentScriptStatus = {
       config: false,
@@ -386,17 +646,33 @@
       document.body.appendChild(script);
     }
     
-    // Load scripts in sequence to ensure proper dependencies
-    loadScript('/assets/js/assessment-config.js', 'config', function() {
-      loadScript('/assets/js/assessment-utils.js', 'utils', function() {
-        loadScript('/assets/js/assessment-storage.js', 'storage', function() {
-          loadScript('/assets/js/assessment-submit.js', 'submit', function() {
-            loadScript('/assets/js/assessment-md.js', 'md', function() {
-              console.log('All assessment scripts loaded!');
-              console.log('Final script status:', window.assessmentScriptStatus);
-              console.log('submitAssessment available:', typeof submitAssessment === 'function');
-              console.log('autoSave available:', typeof autoSave === 'function');
-            });
+    // Inject assessment configuration from YAML
+    const configScript = document.createElement('script');
+    configScript.type = 'text/javascript';
+    configScript.innerHTML = `
+      // Override assessment configuration with values from YAML front matter
+      window.ASSESSMENT_CONFIG = {
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbwlCDJ8sCL70GQ6A94du7dvS-W7svMe8VbNb_Gik0Gf5Lx-QC6CFulEpoe_uX76ezBWRQ/exec',
+        autoSaveInterval: 30000,
+        password: 'physics2025',
+        passwordHash: 'a1b2c3d4e5f6'
+      };
+      // Mark as loaded
+      if (window.markScriptLoaded) {
+        window.markScriptLoaded('config');
+      }
+    `;
+    document.body.appendChild(configScript);
+    
+    // Load remaining scripts in sequence to ensure proper dependencies
+    loadScript('/assets/js/assessment-utils.js', 'utils', function() {
+      loadScript('/assets/js/assessment-storage.js', 'storage', function() {
+        loadScript('/assets/js/assessment-submit.js', 'submit', function() {
+          loadScript('/assets/js/assessment-md.js', 'md', function() {
+            console.log('All assessment scripts loaded!');
+            console.log('Final script status:', window.assessmentScriptStatus);
+            console.log('submitAssessment available:', typeof submitAssessment === 'function');
+            console.log('autoSave available:', typeof autoSave === 'function');
           });
         });
       });
