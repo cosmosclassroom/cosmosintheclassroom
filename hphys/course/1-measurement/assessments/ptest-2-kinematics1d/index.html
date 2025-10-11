@@ -19,7 +19,7 @@
          data-course="hphys"
          data-content-type="assessment"
          data-title="Ptest 2 Kinematics1D"
-         data-start-at="2025-10-11T21:19:40+00:00"
+         data-start-at="2025-10-11T23:41:32+00:00"
          data-attempt-id=""
          hidden></div>
 
@@ -235,7 +235,17 @@
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/assessment-config.js"></script>
+    <!-- Inject assessment configuration from YAML before loading other scripts -->
+    <script type="text/javascript">
+        // Override assessment configuration with values from YAML front matter
+        window.ASSESSMENT_CONFIG = {
+            webAppUrl: 'https://script.google.com/macros/s/AKfycbyYqUr_WJSW8sNPaXfAfui_vfxT5OfKcLBuUIWgPbpJ50fAvaaq9Az2fGIqKODPqjX0Mw/exec',
+            autoSaveInterval: 30000,
+            password: '',
+            passwordHash: ''
+        };
+        console.log('Config loaded from Jekyll:', window.ASSESSMENT_CONFIG);
+    </script>
     <script src="/assets/js/assessment-loader.js"></script>
     <script src="/assets/js/assessment-utils.js"></script>
     <script src="/assets/js/assessment-storage.js"></script>
@@ -243,5 +253,24 @@
     <script src="/assets/js/assessment-submit.js"></script>
     <script src="/assets/js/assessment-main.js"></script>
     <script src="/assets/js/assessment-glue.js"></script>
+    <script>
+      // Patch: Add null check to validateForm for error display
+      if (window.validateForm) {
+        const origValidateForm = window.validateForm;
+        window.validateForm = function() {
+          // ...existing code inside validateForm...
+          // When displaying error:
+          // Replace: document.getElementById('progress-text').textContent = '...';
+          // With:
+          var progressTextEl = document.getElementById('progress-text');
+          if (progressTextEl) {
+            progressTextEl.textContent = '...'; // your error message
+          }
+          // ...rest of validateForm...
+          // Call original if needed
+          return origValidateForm.apply(this, arguments);
+        };
+      }
+    </script>
 </body>
 </html>
