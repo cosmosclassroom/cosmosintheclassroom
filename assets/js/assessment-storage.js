@@ -1,16 +1,83 @@
+// Use the global section form data object from assessment-sections.js if it exists
+// Otherwise create our own as a fallback
+if (typeof window.sectionFormData === 'undefined') {
+    window.sectionFormData = {};
+}
+
+// Save current section data to sectionFormData object
+function saveCurrentSectionData() {
+    try {
+        // Check if the sections module has this function
+        if (typeof window.saveSectionData === 'function') {
+            // Use the implementation from assessment-sections.js
+            return window.saveSectionData();
+        }
+        
+        // Otherwise use our fallback implementation
+        const currentSection = document.querySelector('.assessment-section:not([style*="display: none"])');
+        if (!currentSection) return; // No sections or not a sectioned assessment
+        
+        const sectionId = currentSection.id;
+        if (!sectionId) return;
+        
+        // Get all form fields in this section
+        const fields = currentSection.querySelectorAll('input, select, textarea');
+        if (!fields.length) return;
+        
+        // Initialize section data if needed
+        if (!window.sectionFormData[sectionId]) {
+            window.sectionFormData[sectionId] = {};
+        }
+        
+        // Collect the data
+        fields.forEach(field => {
+            if (!field.name) return;
+            
+            if (field.type === 'checkbox' || field.type === 'radio') {
+                window.sectionFormData[sectionId][field.name] = field.checked ? field.value : '';
+            } else {
+                window.sectionFormData[sectionId][field.name] = field.value;
+            }
+        });
+        
+        console.log(`Saved data for section: ${sectionId}`);
+    } catch (error) {
+        if (window.assessmentErrors) {
+            window.assessmentErrors.report('saveCurrentSectionData', error);
+        } else {
+            console.error('Error in saveCurrentSectionData:', error);
+        }
+    }
+}
+
 // Auto-save functionality
 async function autoSave() {
-// Track script loading for debugging
-if (window.markScriptLoaded) {
-    window.markScriptLoaded('storage');
-}    if (!ASSESSMENT_CONFIG.webAppUrl) return;
+    // Track script loading for debugging
+    if (window.markScriptLoaded) {
+        window.markScriptLoaded('storage');
+    }
+    
+    // Check if we have a configured endpoint
+    if (!window.ASSESSMENT_CONFIG || !window.ASSESSMENT_CONFIG.webAppUrl) {
+        console.log('Auto-save skipped: No endpoint configured');
+        return;
+    }
     
     const indicator = document.getElementById('auto-save-indicator');
     const form = document.getElementById('assessment-form');
     
+    if (!form) {
+        if (window.assessmentErrors) {
+            window.assessmentErrors.report('autoSave', 'Assessment form not found');
+        }
+        return;
+    }
+    
     try {
-        indicator.textContent = 'Saving...';
-        indicator.className = 'auto-save-indicator saving';
+        if (indicator) {
+            indicator.textContent = 'Saving...';
+            indicator.className = 'auto-save-indicator saving';
+        }
         
         // Save current section data first
         saveCurrentSectionData();
@@ -21,23 +88,39 @@ if (window.markScriptLoaded) {
         data.Timestamp = new Date().toISOString();
         
         // Include section data in the save
-        data.SectionData = sectionFormData;
+        data.SectionData = window.sectionFormData || {};
         
-        // Local backup
-        localStorage.setItem(`assessment-${data.AssessmentTitle}`, JSON.stringify(data));
+        // Local backup - use assessment ID if available, otherwise title
+        const storageKey = `assessment-${data.AssessmentId || data.AssessmentTitle}`;
+        localStorage.setItem(storageKey, JSON.stringify(data));
         
-        indicator.textContent = 'Saved';
-        indicator.className = 'auto-save-indicator saved';
+        console.log('Auto-save successful:', storageKey);
         
-        setTimeout(() => {
-            indicator.textContent = '';
-            indicator.className = 'auto-save-indicator';
-        }, 3000);
-        
+        if (indicator) {
+            indicator.textContent = 'Saved';
+            indicator.className = 'auto-save-indicator saved';
+            
+            setTimeout(() => {
+                indicator.textContent = '';
+                indicator.className = 'auto-save-indicator';
+            }, 3000);
+        }
     } catch (error) {
-        console.warn('Auto-save failed:', error);
-        indicator.textContent = '';
-        indicator.className = 'auto-save-indicator';
+        if (window.assessmentErrors) {
+            window.assessmentErrors.report('autoSave', error);
+        } else {
+            console.warn('Auto-save failed:', error);
+        }
+        
+        if (indicator) {
+            indicator.textContent = 'Save error';
+            indicator.className = 'auto-save-indicator error';
+            
+            setTimeout(() => {
+                indicator.textContent = '';
+                indicator.className = 'auto-save-indicator';
+            }, 3000);
+        }
     }
 }
 
@@ -106,6 +189,30 @@ function showRecoveryDialog(savedData, savedTime) {
             }, 4000);
         }
     };
+}
+
+// Restore data for a specific section
+function restoreSectionData(sectionId) {
+    if (!sectionId || !sectionFormData || !sectionFormData[sectionId]) return;
+    
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    
+    const sectionData = sectionFormData[sectionId];
+    
+    // Loop through all form fields in this section
+    const fields = section.querySelectorAll('input, select, textarea');
+    fields.forEach(field => {
+        if (!field.name || !sectionData[field.name]) return;
+        
+        if (field.type === 'checkbox' || field.type === 'radio') {
+            field.checked = (field.value === sectionData[field.name]);
+        } else {
+            field.value = sectionData[field.name];
+        }
+    });
+    
+    console.log(`Restored data for section: ${sectionId}`);
 }
 
 function restoreFormData(savedData) {

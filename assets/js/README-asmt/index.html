@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Assessment System Documentation | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <h1 id="assessment-system-documentation">Assessment System Documentation</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>The assessment system in Socrates is a modular JavaScript framework that handles quizzes, tests, and assessments. It provides features like auto-saving, section navigation, progress tracking, and submission handling. This document explains how the components work together and how they integrate with the Google Apps Script backend.</p>
+
+<h2 id="component-architecture">Component Architecture</h2>
+
+<h3 id="core-files-and-dependencies">Core Files and Dependencies</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assessment-error.js       # Error handling framework (load first)
+assessment-sections.js    # Section management for multi-page assessments
+assessment-storage.js     # Auto-saving and data persistence
+assessment-utils.js       # Common utilities and validation
+assessment-submit.js      # Form submission handling
+assessment-md.js          # Markdown-specific integration
+assessment-loader.js      # JSON-based assessment loading
+assessment-glue.js        # Integration between components
+assessment-init.js        # Coordinated initialization
+password-reappearance.js  # Password screen handling after submission
+mathjax-config.js         # Configuration for MathJax rendering in assessments
+</code></pre></div></div>
+
+<p><strong>Load Order</strong>: Files must be included in dependency order. The error handling system should be loaded first, and the initialization script last.</p>
+
+<h2 id="module-responsibilities">Module Responsibilities</h2>
+
+<h3 id="error-handling-assessment-errorjs">Error Handling (<code class="language-plaintext highlighter-rouge">assessment-error.js</code>)</h3>
+
+<p>Central error management system that captures and reports errors both to the console and to users. It prevents silent failures that could disrupt assessment completion.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">window.assessmentErrors.report(source, error, context)</code> - Reports errors with source tracking</li>
+  <li><code class="language-plaintext highlighter-rouge">window.assessmentErrors.onError(handler)</code> - Registers error handlers</li>
+  <li><code class="language-plaintext highlighter-rouge">window.withErrorHandling(fn, source)</code> - Wraps functions with error handling</li>
+</ul>
+
+<h3 id="section-management-assessment-sectionsjs">Section Management (<code class="language-plaintext highlighter-rouge">assessment-sections.js</code>)</h3>
+
+<p>Manages multi-page assessments and navigation between sections.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">window.sections</code> - Array of assessment sections</li>
+  <li><code class="language-plaintext highlighter-rouge">window.currentSection</code> - Current active section index</li>
+  <li><code class="language-plaintext highlighter-rouge">window.sectionFormData</code> - Form data storage by section</li>
+  <li><code class="language-plaintext highlighter-rouge">window.saveSectionData()</code> - Saves data for the current section</li>
+  <li><code class="language-plaintext highlighter-rouge">initializeSections()</code> - Sets up sections from content</li>
+</ul>
+
+<h3 id="data-storage-assessment-storagejs">Data Storage (<code class="language-plaintext highlighter-rouge">assessment-storage.js</code>)</h3>
+
+<p>Handles saving and restoring assessment progress.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">autoSave()</code> - Saves current form state to localStorage</li>
+  <li><code class="language-plaintext highlighter-rouge">checkForSavedProgress()</code> - Checks for and offers to restore saved work</li>
+  <li><code class="language-plaintext highlighter-rouge">restoreFormData(savedData)</code> - Restores saved form data</li>
+</ul>
+
+<h3 id="form-submission-assessment-submitjs">Form Submission (<code class="language-plaintext highlighter-rouge">assessment-submit.js</code>)</h3>
+
+<p>Handles form submission to the Google Apps Script backend.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">submitAssessment(formData)</code> - Sends form data to the server</li>
+  <li><code class="language-plaintext highlighter-rouge">showFallbackSubmissionDialog()</code> - Fallback when submission fails</li>
+</ul>
+
+<h3 id="initialization-assessment-initjs">Initialization (<code class="language-plaintext highlighter-rouge">assessment-init.js</code>)</h3>
+
+<p>Coordinates the initialization of all assessment components.</p>
+
+<ul>
+  <li>Sets up error handling, auto-save intervals, and event listeners</li>
+  <li>Performs health checks on the assessment system components</li>
+  <li>Reports status on component availability</li>
+</ul>
+
+<h3 id="password-reappearance-password-reappearancejs">Password Reappearance (<code class="language-plaintext highlighter-rouge">password-reappearance.js</code>)</h3>
+
+<p>Handles showing the password protection screen after an assessment is successfully submitted.</p>
+
+<ul>
+  <li>Hooks into the <code class="language-plaintext highlighter-rouge">submitAssessment</code> function without modifying the original</li>
+  <li>Shows password screen after a short delay following submission</li>
+  <li>Ensures that other students cannot access a completed assessment</li>
+  <li>Uses function wrapping to extend existing functionality</li>
+</ul>
+
+<p>Implementation:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">submitAssessment</span> <span class="o">=</span> <span class="k">async</span> <span class="kd">function</span><span class="p">(</span><span class="nx">formData</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">originalSubmitAssessment</span><span class="p">(</span><span class="nx">formData</span><span class="p">);</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">success</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nb">window</span><span class="p">.</span><span class="nx">showPasswordAfterSubmission</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">function</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nb">window</span><span class="p">.</span><span class="nx">showPasswordAfterSubmission</span><span class="p">();</span>
+    <span class="p">},</span> <span class="mi">2000</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="mathjax-configuration-mathjax-configjs">MathJax Configuration (<code class="language-plaintext highlighter-rouge">mathjax-config.js</code>)</h3>
+
+<p>Configures MathJax for proper rendering of mathematical notation in assessments.</p>
+
+<ul>
+  <li>Defines delimiters for inline math: <code class="language-plaintext highlighter-rouge">$...$</code> and <code class="language-plaintext highlighter-rouge">\(...\)</code></li>
+  <li>Defines delimiters for display math: <code class="language-plaintext highlighter-rouge">$$...$$</code> and <code class="language-plaintext highlighter-rouge">\[...\]</code></li>
+  <li>Uses SVG output with global font caching for optimal performance</li>
+  <li>Ensures consistent rendering across all assessment types</li>
+  <li>Critical for proper display of physics and math equations</li>
+</ul>
+
+<p>Configuration:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">window</span><span class="p">.</span><span class="nx">MathJax</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">tex</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">inlineMath</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">$</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="se">\\</span><span class="s1">(</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="se">\\</span><span class="s1">)</span><span class="dl">'</span><span class="p">]],</span>
+    <span class="na">displayMath</span><span class="p">:</span> <span class="p">[[</span><span class="dl">'</span><span class="s1">$$</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">$$</span><span class="dl">'</span><span class="p">],</span> <span class="p">[</span><span class="dl">'</span><span class="se">\\</span><span class="s1">[</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="se">\\</span><span class="s1">]</span><span class="dl">'</span><span class="p">]]</span>
+  <span class="p">},</span>
+  <span class="na">svg</span><span class="p">:</span> <span class="p">{</span> <span class="na">fontCache</span><span class="p">:</span> <span class="dl">'</span><span class="s1">global</span><span class="dl">'</span> <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="integration-with-google-apps-script">Integration with Google Apps Script</h2>
+
+<p>The assessment system submits data to a Google Apps Script backend (<code class="language-plaintext highlighter-rouge">scripts/google-apps-script/quiz-backend.js</code>) which processes submissions and stores them in Google Sheets.</p>
+
+<h3 id="submission-flow">Submission Flow</h3>
+
+<ol>
+  <li>User completes assessment and clicks Submit</li>
+  <li><code class="language-plaintext highlighter-rouge">submitAssessment()</code> in <code class="language-plaintext highlighter-rouge">assessment-submit.js</code> gathers form data</li>
+  <li>Data is sent to the Google Apps Script endpoint defined in <code class="language-plaintext highlighter-rouge">ASSESSMENT_CONFIG.webAppUrl</code></li>
+  <li>Backend script processes the data and stores it in a spreadsheet</li>
+  <li>Response indicates success/failure and any next steps</li>
+</ol>
+
+<h3 id="backend-configuration">Backend Configuration</h3>
+
+<p>The Google Apps Script backend URL is configured in:</p>
+<ul>
+  <li>Jekyll <code class="language-plaintext highlighter-rouge">_config.yml</code> under <code class="language-plaintext highlighter-rouge">google_scripts.quiz_collector</code></li>
+  <li>Or via a <code class="language-plaintext highlighter-rouge">&lt;meta&gt;</code> tag with <code class="language-plaintext highlighter-rouge">name="assessment-endpoint"</code></li>
+</ul>
+
+<h3 id="data-format">Data Format</h3>
+
+<p>The submission format is a JSON object containing:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">AssessmentType</code>: Type of assessment (quiz, test, etc.)</li>
+  <li><code class="language-plaintext highlighter-rouge">AssessmentId</code>: Unique identifier for the assessment</li>
+  <li><code class="language-plaintext highlighter-rouge">AssessmentTitle</code>: Human-readable title</li>
+  <li><code class="language-plaintext highlighter-rouge">StudentName</code>: Student’s name</li>
+  <li><code class="language-plaintext highlighter-rouge">ClassPeriod</code>: Student’s class period</li>
+  <li>Question data: Each question’s data with naming convention <code class="language-plaintext highlighter-rouge">Q1_Answer</code>, etc.</li>
+  <li><code class="language-plaintext highlighter-rouge">SubmissionTime</code>: ISO timestamp of submission</li>
+  <li><code class="language-plaintext highlighter-rouge">SectionData</code>: (Optional) Data from each section</li>
+</ul>
+
+<h3 id="backend-validation">Backend Validation</h3>
+
+<p>The backend performs validation on submissions to ensure:</p>
+<ul>
+  <li>All required fields are present</li>
+  <li>Student information is complete</li>
+  <li>Data format is correct</li>
+  <li>Duplicate submissions are handled appropriately</li>
+</ul>
+
+<h2 id="error-recovery-and-resilience">Error Recovery and Resilience</h2>
+
+<p>The system is designed to be resilient to common issues:</p>
+
+<ol>
+  <li><strong>Browser Crashes</strong>: Auto-save stores progress in localStorage</li>
+  <li><strong>Network Issues</strong>: Fallback submission dialog if network fails</li>
+  <li><strong>Script Errors</strong>: Error handling prevents single errors from breaking the whole assessment</li>
+  <li><strong>Missing Components</strong>: Graceful degradation if certain components fail to load</li>
+</ol>
+
+<h2 id="debugging-and-testing">Debugging and Testing</h2>
+
+<p>For testing and development:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">assessment-submit-debug.js</code> provides verbose logging</li>
+  <li>Local development mode simulates submissions without sending data</li>
+  <li><code class="language-plaintext highlighter-rouge">test-backend-sim.js</code> in Google Apps Script folder can simulate backend responses</li>
+</ul>
+
+<h2 id="component-integration">Component Integration</h2>
+
+<h3 id="password-protection-and-mathjax">Password Protection and MathJax</h3>
+
+<p>The integration between password protection, assessment submission, and MathJax provides a complete solution for secure, mathematically-rich assessments:</p>
+
+<ol>
+  <li><strong>Initial Access Control</strong>: Password protection limits access to authorized students</li>
+  <li><strong>During Assessment</strong>: MathJax renders mathematical notation throughout the assessment</li>
+  <li><strong>After Submission</strong>: Password screen reappears to prevent unauthorized access to completed assessments</li>
+</ol>
+
+<p>This workflow ensures:</p>
+<ul>
+  <li>Mathematical content displays correctly throughout the assessment lifecycle</li>
+  <li>Assessments remain secure before and after completion</li>
+  <li>Students can’t access others’ completed work, even on shared devices</li>
+</ul>
+
+<h3 id="loading-order-best-practices">Loading Order Best Practices</h3>
+
+<p>For optimal performance and functionality, include these files in the following order:</p>
+
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">mathjax-config.js</code> (before MathJax itself loads)</li>
+  <li><code class="language-plaintext highlighter-rouge">assessment-error.js</code> (error handling framework)</li>
+  <li>Core assessment files</li>
+  <li><code class="language-plaintext highlighter-rouge">password-reappearance.js</code> (after assessment-submit.js)</li>
+  <li><code class="language-plaintext highlighter-rouge">assessment-init.js</code> (initialization must be last)</li>
+</ol>
+
+<h2 id="related-resources">Related Resources</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">scripts/google-apps-script/README.md</code>: Backend documentation</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/google-apps-script/quizzes.instructions.md</code>: Instructions for quiz setup</li>
+  <li><code class="language-plaintext highlighter-rouge">scripts/google-apps-script/config.md</code>: Configuration options for the backend</li>
+</ul>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

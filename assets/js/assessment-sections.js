@@ -1,8 +1,8 @@
-// Section management
-let currentSection = 0;
-let sections = [];
-let sectionRequirements = [];
-let sectionFormData = {}; // Store form data for each section
+// Section management - exported as window.variables for cross-module access
+window.currentSection = 0;
+window.sections = [];
+window.sectionRequirements = [];
+window.sectionFormData = {}; // Store form data for each section - shared with other modules
 
 function initializeSections() {
     const contentContainer = document.getElementById('assessment-sections');
@@ -266,38 +266,56 @@ function showSection(index) {
     updateProgress();
 }
 
-function saveCurrentSectionData() {
-    // Save form data from the current section
-    const contentContainer = document.getElementById('assessment-sections');
-    const inputs = contentContainer.querySelectorAll('input, textarea, select');
-    
-    if (!sectionFormData[currentSection]) {
-        sectionFormData[currentSection] = {};
-    }
-    
-    inputs.forEach(input => {
-        if (input.type === 'radio' || input.type === 'checkbox') {
-            if (input.checked) {
-                if (input.type === 'radio') {
-                    sectionFormData[currentSection][input.name] = input.value;
-                } else {
-                    // Handle checkboxes (multiple values)
-                    if (!sectionFormData[currentSection][input.name]) {
-                        sectionFormData[currentSection][input.name] = [];
-                    }
-                    if (!sectionFormData[currentSection][input.name].includes(input.value)) {
-                        sectionFormData[currentSection][input.name].push(input.value);
+// Export this function to the window object so other modules can use it
+window.saveSectionData = function() {
+    try {
+        // Save form data from the current section
+        const contentContainer = document.getElementById('assessment-sections');
+        if (!contentContainer) return false;
+        
+        const inputs = contentContainer.querySelectorAll('input, textarea, select');
+        
+        if (!window.sectionFormData[window.currentSection]) {
+            window.sectionFormData[window.currentSection] = {};
+        }
+        
+        inputs.forEach(input => {
+            if (input.type === 'radio' || input.type === 'checkbox') {
+                if (input.checked) {
+                    if (input.type === 'radio') {
+                        window.sectionFormData[window.currentSection][input.name] = input.value;
+                    } else {
+                        // Handle checkboxes (multiple values)
+                        if (!window.sectionFormData[window.currentSection][input.name]) {
+                            window.sectionFormData[window.currentSection][input.name] = [];
+                        }
+                        if (!window.sectionFormData[window.currentSection][input.name].includes(input.value)) {
+                            window.sectionFormData[window.currentSection][input.name].push(input.value);
+                        }
                     }
                 }
+            } else {
+                if (input.value) {
+                    window.sectionFormData[window.currentSection][input.name] = input.value;
+                }
             }
+        });
+        
+        console.log(`Saved data for section ${window.currentSection}:`, window.sectionFormData[window.currentSection]);
+        return true;
+    } catch (error) {
+        if (window.assessmentErrors) {
+            window.assessmentErrors.report('saveSectionData', error);
         } else {
-            if (input.value) {
-                sectionFormData[currentSection][input.name] = input.value;
-            }
+            console.error('Error in saveSectionData:', error);
         }
-    });
-    
-    console.log(`Saved data for section ${currentSection}:`, sectionFormData[currentSection]);
+        return false;
+    }
+};
+
+// Local function that calls the window-exported version
+function saveCurrentSectionData() {
+    return window.saveSectionData();
 }
 
 function restoreSectionData(sectionIndex) {
