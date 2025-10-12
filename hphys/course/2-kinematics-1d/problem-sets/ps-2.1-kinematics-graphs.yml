@@ -1,0 +1,132 @@
+# ==============================================================================
+# YAML Problem Set Data File
+# This file contains the structured content for Problem Set 2.1.
+# A Jekyll layout or script will read this file to generate a student-facing
+# problem set page and a separate answer key.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# SECTION 1: AI GENERATION GUIDELINES
+# ------------------------------------------------------------------------------
+ai_generation_guidelines:
+  - "All generated solutions MUST follow the systematic problem-solving process."
+  - "All generated solutions MUST show the algebraic rearrangement of the parent formula before substituting numbers."
+  - "All generated solutions MUST explicitly track SI units through the calculation to verify the final units."
+  - "All 'given' values in problem statements MUST be written with an unambiguous number of significant figures (e.g., use '20. cm' or '2.0e1 cm' for two sig figs, never '20 cm')."
+  - "All final answers MUST be reported to the correct number of significant figures."
+  - "The student_solutions_list should ONLY contain final, quantitative answers. Do not include conceptual explanations."
+
+# ------------------------------------------------------------------------------
+# SECTION 2: FRONT MATTER & METADATA
+# ------------------------------------------------------------------------------
+front_matter:
+  # --- Jekyll Fields (Required by your site standards) ---
+  title: "Problem Set 2.1: Interpreting Kinematic Graphs"
+  layout: problem_set_layout
+  date: 2025-10-12
+  course: hphys
+  content_type: problem_set
+  unit: "2-kinematics"
+  DCI: "PS2.A"
+  Practice: ["Analyzing and Interpreting Data", "Using Mathematics and Computational Thinking"]
+  CCC: ["Patterns"]
+  tags: ["kinematics", "problem_set", "graphs", "position", "velocity"]
+
+# ------------------------------------------------------------------------------
+# SECTION 3: PROBLEM SET OVERVIEW
+# ------------------------------------------------------------------------------
+overview:
+  follows_lecture: "Lecture 2.1: The Language of Motion"
+  introduction: "The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket."
+  key_formulae:
+    - "For a position-time graph: Average Velocity = Slope = $\\frac{\\Delta\\vec{x}}{\\Delta t}$"
+    - "For a velocity-time graph: Acceleration = Slope = $\\frac{\\Delta\\vec{v}}{\\Delta t}$"
+    - "For a velocity-time graph: Displacement = Area under the curve"
+  global_standards:
+    - "For all problems, assume the acceleration due to gravity is $\\vec{a}_g = -9.80 \\, m/s^2$."
+    - "Present all final answers with the correct units and number of significant figures."
+
+# ------------------------------------------------------------------------------
+# SECTION 4: PROBLEMS & SOLUTIONS
+# ------------------------------------------------------------------------------
+problems:
+  # ------------------------- TIER 1: APPRENTICE ---------------------------
+  - problem_number: 1
+    tier:
+      level: 1
+      title: "The Apprentice's Practice: Foundational Skills"
+    phenomenon_connection: "This problem analyzes the motion of a camera drone used to film the rocket launch, focusing on a period of constant velocity."
+    problem_statement: "The position-time graph below shows the motion of a camera drone. What is the drone's average velocity between t = 2.0 s and t = 6.0 s?"
+    diagram_placeholder: "[A position-time graph showing a straight line passing through the points (2.0 s, 10.0 m) and (6.0 s, 50.0 m)]"
+    solution:
+      givens:
+        - "From graph: $\\vec{x}_i = 10.0 \\, m$ at $t_i = 2.0 \\, s$"
+        - "From graph: $\\vec{x}_f = 50.0 \\, m$ at $t_f = 6.0 \\, s$"
+      unknowns:
+        - |
+          $\vec{v}_{avg} = ?$
+      steps:
+        - "1. **Select Parent Equation:** The average velocity is the slope of the position-time graph: $\\vec{v}_{avg} = \\frac{\\Delta\\vec{x}}{\\Delta t} = \\frac{\\vec{x}_f - \\vec{x}_i}{t_f - t_i}$."
+        - "2. **Algebraic Rearrangement:** None needed."
+        - "3. **Substitute Values and Track Units:**"
+        - |
+          $\vec{v}_{avg} = \frac{50.0 \, m - 10.0 \, m}{6.0 \, s - 2.0 \, s} = \frac{40.0 \, m}{4.0 \, s}$
+      final_answer: |
+        The drone's average velocity is **+10. m/s**.
+
+  # ------------------------- TIER 2: JOURNEYMAN ---------------------------
+  - problem_number: 2
+    tier:
+      level: 2
+      title: "The Journeyman's Task: Synthesis & Application"
+    phenomenon_connection: "This graph represents the first few seconds of the sounding rocket's powered ascent after launch."
+    problem_statement: "The velocity-time graph below shows the initial motion of the rocket. From the graph, determine (a) the rocket's acceleration and (b) its displacement between t = 0.00 s and t = 4.00 s."
+    diagram_placeholder: "[A velocity-time graph showing a straight line starting at the origin (0,0) and ending at the point (4.00 s, 120.0 m/s)]"
+    solution:
+      # Part (a) Acceleration
+      givens_a:
+        - "From graph: $\\vec{v}_i = 0.00 \, m/s$ at $t_i = 0.00 \\, s$"
+        - "From graph: $\\vec{v}_f = 120.0 \, m/s$ at $t_f = 4.00 \\, s$"
+      unknowns_a:
+        - |
+          $\vec{a} = ?$
+      steps_a:
+        - "1. **Select Parent Equation:** Acceleration is the slope of the v-t graph: $\\vec{a} = \\frac{\\Delta\\vec{v}}{\\Delta t}$."
+        - "2. **Substitute and Solve:**"
+        - |
+          $\vec{a} = \frac{120.0 \, m/s - 0.00 \, m/s}{4.00 \, s - 0.00 \, s} = \frac{120.0 \, m/s}{4.00 \, s} = +30.0 \, m/s^2$
+      # Part (b) Displacement
+      givens_b:
+        - "The shape under the graph is a triangle."
+        - "Base of triangle, $b = 4.00 \\, s$"
+        - "Height of triangle, $h = 120.0 \\, m/s$"
+      unknowns_b:
+        - |
+          $\Delta\vec{x} = ?$
+      steps_b:
+        - "1. **Select Parent Equation:** Displacement is the area under the v-t graph. For a triangle, Area $= \\frac{1}{2}bh$."
+        - "2. **Substitute and Solve:**"
+        - |
+          $\Delta\vec{x} = \frac{1}{2}(4.00 \, s)(120.0 \, m/s) = +240. \, m$
+      final_answer: |
+        (a) The acceleration is **+30.0 m/s²**. (b) The displacement is **+240. m**.
+
+  # ------------------------- TIER 3: MASTER -------------------------------
+  - problem_number: 3
+    tier:
+      level: 3
+      title: "The Master's Insight: From Story to Graph"
+    phenomenon_connection: "This problem describes the complete flight of the sounding rocket, from its launch to the moment its parachute deploys."
+    problem_statement: "Read the following story of the rocket's motion. On a single set of axes, sketch a qualitative (not to scale) but physically correct velocity-time graph that represents this entire journey. Label the key events (A, B, C, D) on your time axis.\n\n**The Story:**\n- **(A) Launch:** The rocket launches from rest and accelerates upwards at a large, constant rate.\n- **(B) Engine Cutout:** The engine cuts out. The rocket continues to move upwards but slows down due to gravity.\n- **(C) Apogee:** The rocket momentarily stops at its highest point.\n- **(D) Parachute Deployment:** After falling for some time and gaining downward speed, a parachute deploys, causing the rocket to quickly slow down to a slow, constant downward velocity."
+    diagram_placeholder: "[Student should produce a v-t graph]"
+    # Solution is conceptual and involves drawing a graph.
+
+# ==============================================================================
+# SECTION 5: STUDENT SOLUTIONS LIST
+# ==============================================================================
+student_solutions_list:
+  - problem_number: 1
+    final_answer: "+10. m/s"
+  - problem_number: 2
+    final_answer: "(a) +30.0 m/s², (b) +240. m"
+  # Problem 3 is conceptual and has no quantitative answer.
