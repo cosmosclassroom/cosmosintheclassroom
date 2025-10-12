@@ -1,0 +1,104 @@
+---
+title: "Chapter 4: The Rules of Constant Acceleration"
+layout: flexbook
+date: 2025-10-12
+course: hphys
+content_type: flexbook
+unit: "2"
+unit_slug: 2-kinematics-1d
+chapter_number: 4
+chapter_title: "The Rules of Constant Acceleration"
+DCI: "PS2.A"
+Practice: ["Using Mathematics and Computational Thinking", "Constructing Explanations"]
+CCC: ["Cause and Effect", "Patterns"]
+tags: ["kinematics", "kinematic equations", "freefall", "acceleration", "gravity"]
+learning_objectives:
+  - Derive the kinematic equations for uniformly accelerated motion from the definitions of velocity and acceleration.
+  - Apply the kinematic equations to solve for unknown quantities (displacement, velocity, acceleration, or time) in one-dimensional motion problems.
+  - Analyze the motion of an object in freefall as a special case of constant acceleration.
+
+keyVocabulary:
+  - term: Freefall
+    definition: >-
+      The motion of an object under the sole influence of gravity, where
+      the acceleration is constant (g = 9.80 m/s² near Earth's surface).
+  - term: Kinematic Equations
+    definition: >-
+      A set of equations that relate the five kinematic variables (displacement, initial velocity, final velocity, acceleration, time) for an object moving with constant acceleration.
+
+keyFormulae:
+  - formula: $v_1 = v_0 + at$
+  - formula: $d = v_0 t + \frac{1}{2}at^2$
+  - formula: $v_1^2 = v_0^2 + 2ad$
+
+# The `instructionalFlow` is an ordered list of content blocks that structure the chapter.
+instructional_flow:
+  - type: reading
+    title: "Introduction: From Description to Prediction"
+    content: |
+      In the last chapter, we learned to read the story of a journey from a graph. We can see where an object has been and how its speed has changed. But science seeks not just to describe the past, but to predict the future. A graph is a record, but an equation is a crystal ball. What if we could craft a set of mathematical tools that, given a few starting conditions, could tell us exactly where an object will be and how fast it will be moving at any moment in the future? This is the grand promise of kinematics. It's the leap from being a historian of motion to becoming its prophet. This is the story of how a few elegant equations gave us the power to predict the paths of everything from a falling apple to a soaring rocket.
+
+  - type: reading
+    title: "Phenomenon: The Engineer's Challenge"
+    content: |
+      Let's return to our sounding rocket. An aerospace engineer cannot simply launch it and hope it reaches the right altitude for its scientific mission. They must know, with incredible precision, *before it ever leaves the ground*, the exact moment the engines should cut out to ensure the rocket coasts to the perfect apogee. They need to predict its velocity and position at every instant. A graph of a *previous* launch is useful, but it's not enough. They need a predictive model. The entire mission, from the deployment of instruments to the calculation of the splashdown zone for recovery, depends on a set of equations that can accurately forecast the rocket's trajectory under the constant acceleration of its engines and the constant pull of gravity. The puzzle is no longer just "what is the story of the journey?" but "what will the story of the journey be?"
+
+  - type: activity_prompt
+    title: "Blueprint: Graphical Analysis of Motion"
+    content: |
+      Pause your reading here. To build a predictive model, we first need a complete descriptive one. Open your **Unit 2 Research Brief** document and complete the "Blueprint" section for "Decoding the Data Stream." Use your graphical analysis to create a comprehensive model of the rocket's flight.
+    button_text: "Open Research Brief"
+
+  - type: reading
+    title: "Investigation: The Great Equalizer"
+    content: |
+      Once the rocket's engines cut out, it is in a state of "freefall," where the only significant force acting on it is gravity. Does a heavy rocket fall faster than a light one? Does an object's mass affect how it accelerates due to gravity? This question puzzled thinkers for centuries until Galileo Galilei proposed a revolutionary idea: in the absence of air resistance, all objects fall at the same rate. Let's test this profound claim.
+
+  - type: activity_prompt
+    title: "Discovery: The Feather & The Bowling Ball"
+    content: |
+      Pause your reading here. Open your **Unit 2 Hexagon Labs** document and complete "Hexagon Lab - Freefall Simulations (Feather & Bowling Ball)."
+    button_text: "Open Hexagon Labs"
+
+  - type: reading
+    title: "The Rules of the Game: The Equations of Motion"
+    content: |
+      Your investigation revealed a fundamental truth: the acceleration due to gravity (g) is constant for all objects near the Earth's surface. This special case, constant acceleration, is incredibly common and allows us to derive a set of powerful predictive equations. We don't need a rigorous calculus proof to understand where they come from; they are a logical consequence of the definitions we already know.
+
+      If acceleration is constant, then the velocity changes at a steady rate. Our first equation is just a rearrangement of the definition of acceleration:
+      **1.  $v_1 = v_0 + at$** (Final velocity is the initial velocity plus the accumulated change).
+
+      The distance an object travels is its average velocity multiplied by time. For constant acceleration, the average velocity is simply the average of the start and end velocities:
+      **2. $d = \frac{v_0 + v_1}{2} t$** (Displacement is the average velocity times time).
+
+      By substituting the first equation into the second, we can derive an equation that doesn't require us to know the final velocity:
+      **3. $d = v_0 t + \frac{1}{2}at^2$** (Displacement is the initial velocity part plus the acceleration part).
+
+      And finally, by combining them in a different way, we can get an equation that doesn't depend on time at all, which is incredibly useful:
+      **4. $v_1^2 = v_0^2 + 2ad$** (The final velocity squared is the initial squared plus the contribution from acceleration over a distance).
+
+      These four equations are the toolkit of kinematics. For any problem involving constant acceleration, if you know three of the five variables (d, v₀, v₁, a, t), you can find the other two.
+
+  - type: image
+    # A diagram showing an object being thrown upwards and falling back down.
+    # On the way up, velocity vectors (upward) get shorter. On the way down, velocity vectors (downward) get longer.
+    # At all points in the trajectory, a constant downward acceleration vector 'g' is shown.
+    title: "Motion in Freefall"
+    src: "https://placehold.co/600x400/222/fff?text=Motion+in+Freefall"
+    caption: "In freefall, the upward velocity decreases to zero and then becomes negative, while the acceleration remains constant and downwards (g = -9.8 m/s²) throughout the entire flight."
+
+  - type: reading
+    title: "Thinking Lens: Cause and Effect"
+    content: |
+      Using our lens of **Cause and Effect**, the kinematic equations become more than just math. They are a precise description of causality. A constant net force (the cause, which we will study later) produces a constant acceleration. This constant acceleration (the cause) directly *causes* a linear change in velocity over time and a quadratic change in position over time (the effects). The equations are the link between the cause (acceleration) and the ultimate effect (the object's final position and velocity). Freefall is the purest example: the constant gravitational force causes the constant acceleration 'g', which causes all objects to follow the same predictable trajectory.
+
+  - type: activity_prompt
+    title: "Practice: The Kinematic Equations"
+    content: |
+      You've seen the origin and power of the kinematic equations. It's time to put them to use. Pause your reading here. Open your **Unit 2 Problem Sets** document and complete "Problem Set 2.2: The Kinematic Equations" to master your new predictive toolkit.
+    button_text: "Open Problem Sets"
+
+  - type: reading
+    title: "The Bigger Picture: Synthesis and Connection"
+    content: |
+      With the kinematic equations, we have made a monumental leap. We have moved from observing motion to predicting it. These equations are the engine of classical mechanics, allowing us to calculate the trajectory of a cannonball, the stopping distance of a car, and the flight of our sounding rocket with astonishing precision. They represent a profound discovery about the universe: that the future state of a simple system is encoded in its present state by a set of clear, unchanging mathematical rules. This predictive power is what separates science from mere description. However, our world is rarely confined to a single line. To truly map the motions of the cosmos—from a thrown baseball to an orbiting planet—we must take our new language and learn to speak it in more than one dimension.

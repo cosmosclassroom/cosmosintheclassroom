@@ -59,62 +59,79 @@
   <div class="markdown-body">
     
       
-<div class="course-nav-dropdown">
+<div class="course-nav-dropdown course-nav-dropdown--hphys">
   <div class="course-title">
-    <h2>Honors Physics</h2>
+    
+      <h2>Honors Physics</h2>
+    
   </div>
   
   <div class="dropdown-container">
-    <label for="unit-select-hphys">Select Unit:</label>
-    <select id="unit-select-hphys" class="unit-select">
-      <option value="">-- Choose a Unit --</option>
-      
-        <option value="/hphys/course/1-measurement/">Unit 1: Measurement</option>
-      
-        <option value="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</option>
-      
-        <option value="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</option>
-      
-        <option value="/hphys/course/4-dynamics/">Unit 4: Dynamics</option>
-      
-        <option value="/hphys/course/5-energy/">Unit 5: Energy</option>
-      
-        <option value="/hphys/course/6-momentum/">Unit 6: Momentum</option>
-      
-        <option value="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</option>
-      
-        <option value="/hphys/course/8-waves-sound/">Unit 8: Waves Sound</option>
-      
-        <option value="/hphys/course/9-optics/">Unit 9: Optics</option>
-      
-        <option value="/hphys/course/10-electrostatics-circuits/">Unit 10: Electrostatics Circuits</option>
-      
-    </select>
+    <div class="dropdown-group">
+      <label for="unit-select-hphys">Select Unit:</label>
+      <select id="unit-select-hphys" class="unit-select" aria-label="Select a unit">
+        <option value="">-- Choose a Unit --</option>
+        
+          
+            <option value="/hphys/course/1-measurement/">Unit 1: Measurement</option>
+          
+            <option value="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</option>
+          
+            <option value="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</option>
+          
+            <option value="/hphys/course/4-dynamics/">Unit 4: Dynamics</option>
+          
+            <option value="/hphys/course/5-energy/">Unit 5: Energy</option>
+          
+            <option value="/hphys/course/6-momentum/">Unit 6: Momentum</option>
+          
+            <option value="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</option>
+          
+            <option value="/hphys/course/8-waves-sound/">Unit 8: Waves Sound</option>
+          
+            <option value="/hphys/course/9-optics/">Unit 9: Optics</option>
+          
+            <option value="/hphys/course/10-electrostatics-circuits/">Unit 10: Electrostatics Circuits</option>
+          
+        
+      </select>
+    </div>
     
-    <label for="content-select-hphys">Select Content Type:</label>
-    <select id="content-select-hphys" class="content-select" disabled="">
-      <option value="">-- Choose Content Type --</option>
-    </select>
+    <div class="dropdown-group">
+      <label for="content-select-hphys">Select Content Type:</label>
+      <select id="content-select-hphys" class="content-select" disabled="" aria-label="Select a content type">
+        <option value="">-- Choose Content Type --</option>
+      </select>
+    </div>
 
-    <label for="item-select-hphys" id="item-label-hphys" style="display:none;">Select Document:</label>
-    <select id="item-select-hphys" class="item-select" style="display:none;">
-      <option value="">-- Choose Document --</option>
-    </select>
+    <div class="dropdown-group" id="document-select-group-hphys" style="display:none;">
+      <label for="item-select-hphys" id="item-label-hphys">Select Document:</label>
+      <select id="item-select-hphys" class="item-select" aria-label="Select a document">
+        <option value="">-- Choose Document --</option>
+      </select>
+    </div>
 
-    <button id="nav-go-hphys" class="nav-go-button" disabled="">Go</button>
+    <div class="button-container">
+      <button id="nav-go-hphys" class="nav-go-button" disabled="" aria-label="Go to selected content">Go</button>
+    </div>
   </div>
 </div>
 
 <script>
 (function() {
   // Get the navigation data
-  var courseData = {"title":"Honors Physics","url":"/hphys/","units":[{"number":1,"title":"Measurement","slug":"1-measurement","url":"/hphys/course/1-measurement/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/1-measurement/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/1-measurement/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/1-measurement/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/1-measurement/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/1-measurement/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/1-measurement/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/1-measurement/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.2-mapping-world/","title":"Mapping World"},{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.1-language-of-measurement/","title":"Chapter 1: The Language of Measurement"},{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.2-power-of-vectors/","title":"Chapter 2: From Lines to Maps: The Power of Vectors"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.1-rules-of-the-game/","title":"Lecture 1.1: The Rules of the Game"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.2-vectors-old/","title":"Vectors Old"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.2-a-new-way-of-seeing/","title":"Lecture 1.2: Lecture 1.2: A New Way of Seeing"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-2.1-graphical-kinematics/","title":"Graphical Kinematics"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-2.2-kinematics1d/","title":"The Rules of Falling"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.2-vector-simulations/","title":"Hexagon Lab 1.2: Hexagon Lab - Vector Addition Simulations"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.3-reconciling-data/","title":"Hexagon Lab 1.3: Hexagon Lab - Reconciling Discrepant Data Sets"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.1-historical-measurement/","title":"Historical Measurement"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4-pt-vt-track-carts/","title":"Track Cart: Position-Time & Velocity-Time"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4.-pt-vt-track-cart-prelab copy/","title":"Hl 1.4. Pt Vt Track Cart Prelab Copy"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4.-pt-vt-track-cart-prelab-key/","title":"Pre-Lab Answer Key: Diluting Gravity"},{"type":"problem-sets","url":"/hphys/course/1-measurement/problem-sets/ps-1.1-measurement/","title":"Measurement"},{"type":"research-briefs","url":"/hphys/course/1-measurement/research-briefs/rb-1-measurement/","title":"Research Brief 1: Measurement & Mapping"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/mars-orbiter/","title":"Mars Orbiter"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/ptest-2-kinematics1d-key/","title":"Solutions Key: The Physics of a Hollywood Stunt"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/README/","title":"Readme"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-2-kinematics-1d-key/","title":"Test 2 Kinematics 1D Key"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-2-kinematics-1d/","title":"Test 2 Kinematics 1D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/ptest-2-kinematics1d/","title":"Ptest 2 Kinematics1D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-3-kinematics-2d/","title":"Test 3 Kinematics 2D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-3-kinematics2d/","title":"Unit 3 Test: The Siege of Constantinople"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/","title":"Unit 1 Quiz: Measurement and Vectors"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/hphys-unit1-measurement-quiz/","title":"Unit 1 Measurement Quiz"},{"type":"keys","url":"/hphys/course/1-measurement/keys/ps1.1-measurement/","title":"Problem Set 1.1 Answer Key — The Language of Measurement"},{"type":"keys","url":"/hphys/course/1-measurement/keys/ps1.2-vectors/","title":"Ps1.2 Vectors"},{"type":"keys","url":"/hphys/course/1-measurement/keys/mars-orbiter-key/","title":"Mars Orbiter Key"},{"type":"keys","url":"/hphys/course/1-measurement/keys/test-2-kinematics-1d-key/","title":"Test 2 Kinematics 1D Key"},{"type":"keys","url":"/hphys/course/1-measurement/keys/quiz-01-measurement-vectors-key/","title":"Quiz 01 1 Key"}]},{"number":2,"title":"Kinematics 1D","slug":"2-kinematics-1d","url":"/hphys/course/2-kinematics-1d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/2-kinematics-1d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/2-kinematics-1d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/2-kinematics-1d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/2-kinematics-1d/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/2-kinematics-1d/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/2-kinematics-1d/flexbook/fb-2.1-language-motion/","title":"Language Motion"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lectures/lec-2.1-graphical-kinematics/","title":"Graphical Kinematics"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lectures/lec-2.2-kinematics1d/","title":"The Rules of Falling"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.2-freefall-simulations/","title":"Hexagon Lab 2.2: Hexagon Lab - Freefall Simulations"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.3-air-resistance-effects/","title":"Hexagon Lab 2.3: Hexagon Lab - Modeling the Effects of Air Resistance"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.1-pos-vel-acc-duplicate/","title":"Pos Vel Acc Duplicate"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.2-freefall-sim-duplicate/","title":"Hexagon Lab 2.2: Freefall Simulations"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.3-model-air-resist-duplicate/","title":"Hexagon Lab 2.3: Modeling the Effects of Air Resistance"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.2-constant-acceleration/","title":"Problem Set 2.2: Kinematics with Constant Acceleration"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-graphical-analysis/","title":"Graphical Motion Duplicate"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-position-time-OLD/","title":"Position-Time Graphs (OLD)"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-kinematics-graphs/","title":"Problem Set 2.1: Interpreting Kinematic Graphs"},{"type":"research-briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/rb-2-1d-kinematics/","title":"rb-2-1d-kinematics"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/q2.1-intro-kinematics/","title":"Quiz 2.1: Kinematics and Graphical Analysis"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/test2-kinematics1d/","title":"Unit 2 Assessment: Sounding Rocket Kinematic Analysis"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/quiz_02_3/","title":"Quiz_02_3"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/quiz_02_4/","title":"Quiz_02_4"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/sg2-kinematics1d-test/","title":"Sg2 Kinematics1D Test"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/hl-2.1-pos-vel-acc-key/","title":"Pos Vel Acc Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/ps-2.1-graphical-motion-key/","title":"Graphical Motion Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/ps-2.2-constant-acceleration-key/","title":"Problem Set 2.2 Key: Kinematics with Constant Acceleration"}]},{"number":3,"title":"Kinematics 2D","slug":"3-kinematics-2d","url":"/hphys/course/3-kinematics-2d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/3-kinematics-2d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/3-kinematics-2d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/3-kinematics-2d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/3-kinematics-2d/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/3-kinematics-2d/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/flexbook/fb-3.1-projectile-intro/","title":"Chapter 3: The Independence of Motion"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/flexbook/fb-3.2-projectile-main/","title":"Chapter 6: Hitting the Target"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.1-independence-motion/","title":"The Independence of Motion"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.2-projectile-motion/","title":"Angled Projectiles: The Master Gunner's Secret"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.3-relative-motion/","title":"Relative Velocity: A Matter of Perspective"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.1-projectile-data-analysis/","title":"Hexagon Lab 3.1 - Analyzing Projectile Motion Data"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.2-real-projectile-motion/","title":"Hexagon Lab: Real-World Projectile Motion"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.3-moving-targets/","title":"Hexagon Lab: Hitting a Moving Target"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.1-independence-of-motion/","title":"Problem Set 3.1: Problem Set 3.1: Independence of Motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.2-general-projectile-motion/","title":"Problem Set 3.2: Problem Set 3.2: General Projectile Motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.3-relative-motion/","title":"ps-3.3-relative-motion"},{"type":"research-briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/rb-3-the-world-in-two-dimensions/","title":"Research Brief: The World in Two Dimensions"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/test-3-seige-constantinpole/","title":"Unit 3 Test - The Siege of Constantinople"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/overview/","title":"Unit 3 Assessment Overview"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.1-motion-dimensions/","title":"Quiz 3.1: Motion in Two Dimensions"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.2-projectiles/","title":"Quiz 3.2: Relative Motion & Real-World Applications"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.1-projectiles/","title":"Projectiles"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/quiz-3.1-motion-dimensions-key copy/","title":"Quiz 3.1: Motion in Two Dimensions — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/quiz-3.2-projectiles-key/","title":"Quiz 3.2: Relative Motion & Real-World Applications — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/test-3-seige-constantinople-key/","title":"Unit 3 Test: The Siege of Constantinople — Answer Key"}]},{"number":4,"title":"Dynamics","slug":"4-dynamics","url":"/hphys/course/4-dynamics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/4-dynamics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/4-dynamics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/4-dynamics/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/4-dynamics/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/4-dynamics/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/4-dynamics/flexbook/fb-4.1-newtons-laws-of-motion/","title":"Chapter 7: Newton's Laws of Motion"},{"type":"flexbook","url":"/hphys/course/4-dynamics/flexbook/fb-4.2-applying-forces-in-real-world/","title":"Chapter 8: Applying Forces in the Real World"},{"type":"lectures","url":"/hphys/course/4-dynamics/lectures/lec-4.1-laws-of-cause-and-effect/","title":"Lecture 4.1: Lecture 4.1: The Laws of Cause and Effect"},{"type":"lectures","url":"/hphys/course/4-dynamics/lectures/lec-4.2-forces-in-the-real-world/","title":"Lecture 4.2: Lecture 4.2: Forces in the Real World"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.1-investigating-inertia/","title":"Hexagon Lab 4.1: Hexagon Lab - Investigating Inertia"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.2-measuring-friction/","title":"Hexagon Lab 4.2: Hexagon Lab - Measuring Coefficients of Friction"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.3-action-reaction-pairs/","title":"Hexagon Lab 4.3: Hexagon Lab - Action-Reaction Pairs"},{"type":"problem-sets","url":"/hphys/course/4-dynamics/problem-sets/ps-4.1-newtons-laws/","title":"Problem Set 4.1: Problem Set 4.1: Newton's Laws of Motion"},{"type":"problem-sets","url":"/hphys/course/4-dynamics/problem-sets/ps-4.2-friction-and-inclines/","title":"Problem Set 4.2: Problem Set 4.2: Friction and Inclined Planes"},{"type":"research-briefs","url":"/hphys/course/4-dynamics/research-briefs/rb-04.1-the-why-of-motion/","title":"The Why Of Motion"}]},{"number":5,"title":"Energy","slug":"5-energy","url":"/hphys/course/5-energy/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/5-energy/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/5-energy/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/5-energy/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/5-energy/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/5-energy/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/5-energy/flexbook/fb-5.1-work-and-energy/","title":"Chapter 9: Work and Energy"},{"type":"flexbook","url":"/hphys/course/5-energy/flexbook/fb-5.2-conservation-and-power/","title":"Chapter 10: Conservation and Power"},{"type":"lectures","url":"/hphys/course/5-energy/lectures/lec-5.1-currency-of-change/","title":"Lecture 5.1: Lecture 5.1: The Currency of Change"},{"type":"lectures","url":"/hphys/course/5-energy/lectures/lec-5.2-the-unbreakable-law/","title":"Lecture 5.2: Lecture 5.2: The Unbreakable Law"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.1-doing-work/","title":"Hexagon Lab 5.1: Hexagon Lab - Doing Work to Lift Objects"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.2-conservation-of-energy/","title":"Hexagon Lab 5.2: Hexagon Lab - Conservation of Mechanical Energy"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.3-energy-efficiency/","title":"Hexagon Lab 5.3: Hexagon Lab - Energy Efficiency & Loss"},{"type":"problem-sets","url":"/hphys/course/5-energy/problem-sets/ps-5.1-work-and-energy/","title":"Problem Set 5.1: Problem Set 5.1: Work and Energy"},{"type":"problem-sets","url":"/hphys/course/5-energy/problem-sets/ps-5.2-conservation-and-power/","title":"Problem Set 5.2: Problem Set 5.2: Conservation of Energy and Power"},{"type":"research-briefs","url":"/hphys/course/5-energy/research-briefs/rb-05.1-the-universes-accounting-system/","title":"The Universes Accounting System"}]},{"number":6,"title":"Momentum","slug":"6-momentum","url":"/hphys/course/6-momentum/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/6-momentum/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/6-momentum/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/6-momentum/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/6-momentum/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/6-momentum/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/6-momentum/flexbook/fb-6.1-impulse-and-momentum/","title":"Chapter 11: Impulse and Momentum"},{"type":"flexbook","url":"/hphys/course/6-momentum/flexbook/fb-6.2-types-of-collisions/","title":"Chapter 12: Types of Collisions"},{"type":"lectures","url":"/hphys/course/6-momentum/lectures/lec-6.1-mass-in-motion/","title":"Lecture 6.1: Lecture 6.1: Mass in Motion"},{"type":"lectures","url":"/hphys/course/6-momentum/lectures/lec-6.2-rules-of-interaction/","title":"Lecture 6.2: Lecture 6.2: The Rules of Interaction"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.1-collision-data/","title":"Hexagon Lab 6.1: Hexagon Lab - Analyzing Collision Data"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.2-elastic-inelastic-collisions/","title":"Hexagon Lab 6.2: Hexagon Lab - Elastic vs. Inelastic Collisions"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.3-rocket-propulsion/","title":"Hexagon Lab 6.3: Hexagon Lab - Rocket Propulsion as a Momentum System"},{"type":"problem-sets","url":"/hphys/course/6-momentum/problem-sets/ps-6.1-impulse-and-momentum/","title":"Problem Set 6.1: Problem Set 6.1: Impulse and Momentum"},{"type":"problem-sets","url":"/hphys/course/6-momentum/problem-sets/ps-6.2-conservation-of-momentum/","title":"Problem Set 6.2: Problem Set 6.2: Conservation of Momentum"},{"type":"research-briefs","url":"/hphys/course/6-momentum/research-briefs/rb-06.1-the-conversation-of-matter/","title":"The Conversation Of Matter"}]},{"number":7,"title":"Gravity Orbits","slug":"7-gravity-orbits","url":"/hphys/course/7-gravity-orbits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/7-gravity-orbits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/7-gravity-orbits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/7-gravity-orbits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/7-gravity-orbits/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/7-gravity-orbits/flexbook/fb-7.1-physics-of-circular-motion/","title":"Chapter 13: The Physics of Circular Motion"},{"type":"flexbook","url":"/hphys/course/7-gravity-orbits/flexbook/fb-7.2-law-of-the-heavens/","title":"Chapter 14: The Law of the Heavens"},{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lectures/lec-7.1-physics-of-turning/","title":"Lecture 7.1: Lecture 7.1: The Physics of Turning"},{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lectures/lec-7.2-force-across-the-void/","title":"Lecture 7.2: Lecture 7.2: The Force That Reaches Across the Void"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.1-circular-motion-sim/","title":"Hexagon Lab 7.1: Hexagon Lab - Simulating Circular Motion"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.2-deriving-keplers-laws/","title":"Hexagon Lab 7.2: Hexagon Lab - Deriving Kepler’s Laws from Simulations"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.3-weightlessness/","title":"Hexagon Lab 7.3: Hexagon Lab - 'Weightlessness' in Orbit"},{"type":"problem-sets","url":"/hphys/course/7-gravity-orbits/problem-sets/ps-7.1-circular-motion/","title":"Problem Set 7.1: Problem Set 7.1: Circular Motion"},{"type":"problem-sets","url":"/hphys/course/7-gravity-orbits/problem-sets/ps-7.2-universal-gravitation/","title":"Problem Set 7.2: Problem Set 7.2: Universal Gravitation"},{"type":"research-briefs","url":"/hphys/course/7-gravity-orbits/research-briefs/rb-07.1-the-great-cosmic-waltz/","title":"The Great Cosmic Waltz"}]},{"number":8,"title":"Waves Sound","slug":"8-waves-sound","url":"/hphys/course/8-waves-sound/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/8-waves-sound/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/8-waves-sound/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/8-waves-sound/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/8-waves-sound/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/8-waves-sound/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/8-waves-sound/flexbook/fb-8.1-properties-of-waves/","title":"Chapter 15: Properties of Waves"},{"type":"flexbook","url":"/hphys/course/8-waves-sound/flexbook/fb-8.2-wave-interactions/","title":"Chapter 16: Wave Interactions"},{"type":"lectures","url":"/hphys/course/8-waves-sound/lectures/lec-8.1-rhythm-of-nature/","title":"Lecture 8.1: Lecture 8.1: The Rhythm of Nature"},{"type":"lectures","url":"/hphys/course/8-waves-sound/lectures/lec-8.2-when-waves-meet/","title":"Lecture 8.2: Lecture 8.2: When Waves Meet"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.1-making-waves/","title":"Hexagon Lab 8.1: Hexagon Lab - Making Waves"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.2-standing-waves/","title":"Hexagon Lab 8.2: Hexagon Lab - Standing Waves & Resonance"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.3-simple-harmonic-motion/","title":"Hexagon Lab 8.3: Hexagon Lab - Simple Harmonic Motion"},{"type":"problem-sets","url":"/hphys/course/8-waves-sound/problem-sets/ps-8.1-wave-properties/","title":"Problem Set 8.1: Problem Set 8.1: Wave Properties"},{"type":"problem-sets","url":"/hphys/course/8-waves-sound/problem-sets/ps-8.2-wave-interference/","title":"Problem Set 8.2: Problem Set 8.2: Wave Interference and SHM"},{"type":"research-briefs","url":"/hphys/course/8-waves-sound/research-briefs/rb-08.1-the-traveling-ripple/","title":"The Traveling Ripple"}]},{"number":9,"title":"Optics","slug":"9-optics","url":"/hphys/course/9-optics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/9-optics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/9-optics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/9-optics/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/9-optics/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/9-optics/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/9-optics/flexbook/fb-9.1-bending-and-bouncing-light/","title":"Chapter 17: The Bending and Bouncing of Light"},{"type":"flexbook","url":"/hphys/course/9-optics/flexbook/fb-9.2-lenses-and-image-formation/","title":"Chapter 18: Lenses and Image Formation"},{"type":"lectures","url":"/hphys/course/9-optics/lectures/lec-9.1-rules-of-lights-path/","title":"Lecture 9.1: Lecture 9.1: The Rules of Light's Path"},{"type":"lectures","url":"/hphys/course/9-optics/lectures/lec-9.2-bending-light-to-see/","title":"Lecture 9.2: Lecture 9.2: Bending Light to See"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.1-bending-bouncing-light/","title":"Hexagon Lab 9.1: Hexagon Lab - Bending and Bouncing Light"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.2-converging-diverging-lenses/","title":"Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.3-building-a-telescope/","title":"Hexagon Lab 9.3: Hexagon Lab - Building a Simple Telescope"},{"type":"problem-sets","url":"/hphys/course/9-optics/problem-sets/ps-9.1-reflection-refraction/","title":"Problem Set 9.1: Problem Set 9.1: Reflection and Refraction"},{"type":"problem-sets","url":"/hphys/course/9-optics/problem-sets/ps-9.2-lenses-and-images/","title":"Problem Set 9.2: Problem Set 9.2: Lenses and Image Formation"},{"type":"research-briefs","url":"/hphys/course/9-optics/research-briefs/rb-09.1-the-story-of-sight/","title":"The Story Of Sight"}]},{"number":10,"title":"Electrostatics Circuits","slug":"10-electrostatics-circuits","url":"/hphys/course/10-electrostatics-circuits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/10-electrostatics-circuits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/10-electrostatics-circuits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/10-electrostatics-circuits/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/10-electrostatics-circuits/flexbook/fb-10.1-rules-of-static-charge/","title":"Chapter 19: The Rules of Static Charge"},{"type":"flexbook","url":"/hphys/course/10-electrostatics-circuits/flexbook/fb-10.2-flow-of-charge/","title":"Chapter 20: The Flow of Charge"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lectures/lec-10.1-the-unseen-force/","title":"Lecture 10.1: Lecture 10.1: The Unseen Force"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lectures/lec-10.2-making-charge-flow/","title":"Lecture 10.2: Lecture 10.2: Making Charge Flow"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.1-investigating-static-charge/","title":"Hexagon Lab 10.1: Hexagon Lab - Investigating Static Charge"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.2-building-simple-circuits/","title":"Hexagon Lab 10.2: Hexagon Lab - Building Simple Circuits"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.3-series-vs-parallel-circuits/","title":"Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"},{"type":"problem-sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/ps-10.1-electrostatics/","title":"Problem Set 10.1: Problem Set 10.1: Electrostatics"},{"type":"problem-sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/ps-10.2-simple-circuits/","title":"Problem Set 10.2: Problem Set 10.2: Simple Circuits"},{"type":"research-briefs","url":"/hphys/course/10-electrostatics-circuits/research-briefs/rb-10.1-the-force-that-binds/","title":"The Force That Binds"}]}]};
+  var courseData = {"title":"Honors Physics","url":"/hphys/","units":[{"number":1,"title":"Measurement","slug":"1-measurement","url":"/hphys/course/1-measurement/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/1-measurement/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/1-measurement/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/1-measurement/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/1-measurement/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/1-measurement/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/1-measurement/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/1-measurement/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.1-language-of-measurement/","title":"Chapter 1: The Language of Measurement"},{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.2-power-of-vectors/","title":"Chapter 2: From Lines to Maps: The Power of Vectors"},{"type":"flexbook","url":"/hphys/course/1-measurement/flexbook/fb-1.2-mapping-world/","title":"Chapter 1.6: Mapping the World"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.1-rules-of-the-game/","title":"Lecture 1.1: The Rules of the Game"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.2-vectors-old/","title":"Vectors Old"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-1.2-a-new-way-of-seeing/","title":"Lecture 1.2: Lecture 1.2: A New Way of Seeing"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-2.1-graphical-kinematics/","title":"Graphical Kinematics"},{"type":"lectures","url":"/hphys/course/1-measurement/lectures/lec-2.2-kinematics1d/","title":"The Rules of Falling"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.2-vector-simulations/","title":"Hexagon Lab 1.2: Hexagon Lab - Vector Addition Simulations"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.3-reconciling-data/","title":"Hexagon Lab 1.3: Hexagon Lab - Reconciling Discrepant Data Sets"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.1-historical-measurement/","title":"Historical Measurement"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4-pt-vt-track-carts/","title":"Track Cart: Position-Time & Velocity-Time"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4.-pt-vt-track-cart-prelab copy/","title":"Hl 1.4. Pt Vt Track Cart Prelab Copy"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hexagon-labs/hl-1.4.-pt-vt-track-cart-prelab-key/","title":"Pre-Lab Answer Key: Diluting Gravity"},{"type":"problem-sets","url":"/hphys/course/1-measurement/problem-sets/ps-1.1-measurement/","title":"Measurement"},{"type":"research-briefs","url":"/hphys/course/1-measurement/research-briefs/rb-1-measurement/","title":"Research Brief 1: Measurement & Mapping"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/mars-orbiter/","title":"Mars Orbiter"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/ptest-2-kinematics1d-key/","title":"Solutions Key: The Physics of a Hollywood Stunt"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/README/","title":"Readme"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-2-kinematics-1d-key/","title":"Test 2 Kinematics 1D Key"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-2-kinematics-1d/","title":"Test 2 Kinematics 1D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/ptest-2-kinematics1d/","title":"Ptest 2 Kinematics1D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-3-kinematics-2d/","title":"Test 3 Kinematics 2D"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/test-3-kinematics2d/","title":"Unit 3 Test: The Siege of Constantinople"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/","title":"Unit 1 Quiz: Measurement and Vectors"},{"type":"assessments","url":"/hphys/course/1-measurement/assessments/hphys-unit1-measurement-quiz/","title":"Unit 1 Measurement Quiz"},{"type":"keys","url":"/hphys/course/1-measurement/keys/ps1.1-measurement/","title":"Problem Set 1.1 Answer Key — The Language of Measurement"},{"type":"keys","url":"/hphys/course/1-measurement/keys/ps1.2-vectors/","title":"Ps1.2 Vectors"},{"type":"keys","url":"/hphys/course/1-measurement/keys/mars-orbiter-key/","title":"Mars Orbiter Key"},{"type":"keys","url":"/hphys/course/1-measurement/keys/test-2-kinematics-1d-key/","title":"Test 2 Kinematics 1D Key"},{"type":"keys","url":"/hphys/course/1-measurement/keys/quiz-01-measurement-vectors-key/","title":"Quiz 01 1 Key"}]},{"number":2,"title":"Kinematics 1D","slug":"2-kinematics-1d","url":"/hphys/course/2-kinematics-1d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/2-kinematics-1d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/2-kinematics-1d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/2-kinematics-1d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/2-kinematics-1d/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/2-kinematics-1d/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/2-kinematics-1d/flexbook/fb-2.1-language-motion/","title":"Language Motion"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lectures/lec-2.1-graphical-kinematics/","title":"Graphical Kinematics"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lectures/lec-2.2-kinematics1d/","title":"The Rules of Falling"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.2-freefall-simulations/","title":"Hexagon Lab 2.2: Hexagon Lab - Freefall Simulations"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.3-air-resistance-effects/","title":"Hexagon Lab 2.3: Hexagon Lab - Modeling the Effects of Air Resistance"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.1-pos-vel-acc-duplicate/","title":"Pos Vel Acc Duplicate"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.2-freefall-sim-duplicate/","title":"Hexagon Lab 2.2: Freefall Simulations"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/hl-2.3-model-air-resist-duplicate/","title":"Hexagon Lab 2.3: Modeling the Effects of Air Resistance"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.2-constant-acceleration/","title":"Problem Set 2.2: Kinematics with Constant Acceleration"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-graphical-analysis/","title":"Graphical Motion Duplicate"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-position-time-OLD/","title":"Position-Time Graphs (OLD)"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/problem-sets/ps-2.1-kinematics-graphs/","title":"Problem Set 2.1: Interpreting Kinematic Graphs"},{"type":"research-briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/rb-2-1d-kinematics/","title":"rb-2-1d-kinematics"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/q2.1-intro-kinematics/","title":"Quiz 2.1: Kinematics and Graphical Analysis"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/test2-kinematics1d/","title":"Unit 2 Assessment: Sounding Rocket Kinematic Analysis"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/quiz_02_3/","title":"Quiz_02_3"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/quiz_02_4/","title":"Quiz_02_4"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/assessments/sg2-kinematics1d-test/","title":"Sg2 Kinematics1D Test"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/hl-2.1-pos-vel-acc-key/","title":"Pos Vel Acc Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/ps-2.1-graphical-motion-key/","title":"Graphical Motion Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/keys/ps-2.2-constant-acceleration-key/","title":"Problem Set 2.2 Key: Kinematics with Constant Acceleration"}]},{"number":3,"title":"Kinematics 2D","slug":"3-kinematics-2d","url":"/hphys/course/3-kinematics-2d/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/3-kinematics-2d/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/3-kinematics-2d/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/3-kinematics-2d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/hphys/course/3-kinematics-2d/assessments/"},{"type":"keys","title":"Keys","url":"/hphys/course/3-kinematics-2d/keys/"}],"files":[{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/flexbook/fb-3.1-projectile-intro/","title":"Chapter 3: The Independence of Motion"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/flexbook/fb-3.2-projectile-main/","title":"Chapter 6: Hitting the Target"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.1-independence-motion/","title":"The Independence of Motion"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.2-projectile-motion/","title":"Angled Projectiles: The Master Gunner's Secret"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lectures/lec-3.3-relative-motion/","title":"Relative Velocity: A Matter of Perspective"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.1-projectile-data-analysis/","title":"Hexagon Lab 3.1 - Analyzing Projectile Motion Data"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.2-real-projectile-motion/","title":"Hexagon Lab: Real-World Projectile Motion"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/hl-3.3-moving-targets/","title":"Hexagon Lab: Hitting a Moving Target"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.1-independence-of-motion/","title":"Problem Set 3.1: Problem Set 3.1: Independence of Motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.2-general-projectile-motion/","title":"Problem Set 3.2: Problem Set 3.2: General Projectile Motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/problem-sets/ps-3.3-relative-motion/","title":"ps-3.3-relative-motion"},{"type":"research-briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/rb-3-the-world-in-two-dimensions/","title":"Research Brief: The World in Two Dimensions"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/test-3-seige-constantinpole/","title":"Unit 3 Test - The Siege of Constantinople"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/overview/","title":"Unit 3 Assessment Overview"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.1-motion-dimensions/","title":"Quiz 3.1: Motion in Two Dimensions"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.2-projectiles/","title":"Quiz 3.2: Relative Motion & Real-World Applications"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/assessments/quiz-3.1-projectiles/","title":"Projectiles"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/quiz-3.1-motion-dimensions-key copy/","title":"Quiz 3.1: Motion in Two Dimensions — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/quiz-3.2-projectiles-key/","title":"Quiz 3.2: Relative Motion & Real-World Applications — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/keys/test-3-seige-constantinople-key/","title":"Unit 3 Test: The Siege of Constantinople — Answer Key"}]},{"number":4,"title":"Dynamics","slug":"4-dynamics","url":"/hphys/course/4-dynamics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/4-dynamics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/4-dynamics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/4-dynamics/hexagon-labs/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/4-dynamics/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/4-dynamics/flexbook/fb-4.1-newtons-laws-of-motion/","title":"fb-4.1-newtons-laws-of-motion"},{"type":"flexbook","url":"/hphys/course/4-dynamics/flexbook/fb-4.2-applying-forces-in-real-world/","title":"Chapter 8: Applying Forces in the Real World"},{"type":"lectures","url":"/hphys/course/4-dynamics/lectures/lec-4.2-forces-in-the-real-world/","title":"Lecture 4.2: Lecture 4.2: Forces in the Real World"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.1-investigating-inertia/","title":"Hexagon Lab 4.1: Hexagon Lab - Investigating Inertia"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.2-measuring-friction/","title":"Hexagon Lab 4.2: Hexagon Lab - Measuring Coefficients of Friction"},{"type":"hexagon-labs","url":"/hphys/course/4-dynamics/hexagon-labs/hl-4.3-action-reaction-pairs/","title":"Hexagon Lab 4.3: Hexagon Lab - Action-Reaction Pairs"},{"type":"research-briefs","url":"/hphys/course/4-dynamics/research-briefs/rb-04.1-the-why-of-motion/","title":"The Why Of Motion"}]},{"number":5,"title":"Energy","slug":"5-energy","url":"/hphys/course/5-energy/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/5-energy/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/5-energy/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/5-energy/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/5-energy/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/5-energy/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/5-energy/flexbook/fb-5.1-work-and-energy/","title":"Chapter 9: Work and Energy"},{"type":"flexbook","url":"/hphys/course/5-energy/flexbook/fb-5.2-conservation-and-power/","title":"Chapter 10: Conservation and Power"},{"type":"lectures","url":"/hphys/course/5-energy/lectures/lec-5.1-currency-of-change/","title":"Lecture 5.1: Lecture 5.1: The Currency of Change"},{"type":"lectures","url":"/hphys/course/5-energy/lectures/lec-5.2-the-unbreakable-law/","title":"Lecture 5.2: Lecture 5.2: The Unbreakable Law"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.1-doing-work/","title":"Hexagon Lab 5.1: Hexagon Lab - Doing Work to Lift Objects"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.2-conservation-of-energy/","title":"Hexagon Lab 5.2: Hexagon Lab - Conservation of Mechanical Energy"},{"type":"hexagon-labs","url":"/hphys/course/5-energy/hexagon-labs/hl-5.3-energy-efficiency/","title":"Hexagon Lab 5.3: Hexagon Lab - Energy Efficiency & Loss"},{"type":"problem-sets","url":"/hphys/course/5-energy/problem-sets/ps-5.1-work-and-energy/","title":"Problem Set 5.1: Problem Set 5.1: Work and Energy"},{"type":"problem-sets","url":"/hphys/course/5-energy/problem-sets/ps-5.2-conservation-and-power/","title":"Problem Set 5.2: Problem Set 5.2: Conservation of Energy and Power"},{"type":"research-briefs","url":"/hphys/course/5-energy/research-briefs/rb-05.1-the-universes-accounting-system/","title":"The Universes Accounting System"}]},{"number":6,"title":"Momentum","slug":"6-momentum","url":"/hphys/course/6-momentum/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/6-momentum/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/6-momentum/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/6-momentum/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/6-momentum/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/6-momentum/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/6-momentum/flexbook/fb-6.1-impulse-and-momentum/","title":"Chapter 11: Impulse and Momentum"},{"type":"flexbook","url":"/hphys/course/6-momentum/flexbook/fb-6.2-types-of-collisions/","title":"Chapter 12: Types of Collisions"},{"type":"lectures","url":"/hphys/course/6-momentum/lectures/lec-6.1-mass-in-motion/","title":"Lecture 6.1: Lecture 6.1: Mass in Motion"},{"type":"lectures","url":"/hphys/course/6-momentum/lectures/lec-6.2-rules-of-interaction/","title":"Lecture 6.2: Lecture 6.2: The Rules of Interaction"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.1-collision-data/","title":"Hexagon Lab 6.1: Hexagon Lab - Analyzing Collision Data"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.2-elastic-inelastic-collisions/","title":"Hexagon Lab 6.2: Hexagon Lab - Elastic vs. Inelastic Collisions"},{"type":"hexagon-labs","url":"/hphys/course/6-momentum/hexagon-labs/hl-6.3-rocket-propulsion/","title":"Hexagon Lab 6.3: Hexagon Lab - Rocket Propulsion as a Momentum System"},{"type":"problem-sets","url":"/hphys/course/6-momentum/problem-sets/ps-6.1-impulse-and-momentum/","title":"Problem Set 6.1: Problem Set 6.1: Impulse and Momentum"},{"type":"problem-sets","url":"/hphys/course/6-momentum/problem-sets/ps-6.2-conservation-of-momentum/","title":"Problem Set 6.2: Problem Set 6.2: Conservation of Momentum"},{"type":"research-briefs","url":"/hphys/course/6-momentum/research-briefs/rb-06.1-the-conversation-of-matter/","title":"The Conversation Of Matter"}]},{"number":7,"title":"Gravity Orbits","slug":"7-gravity-orbits","url":"/hphys/course/7-gravity-orbits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/7-gravity-orbits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/7-gravity-orbits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/7-gravity-orbits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/7-gravity-orbits/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/7-gravity-orbits/flexbook/fb-7.1-physics-of-circular-motion/","title":"Chapter 13: The Physics of Circular Motion"},{"type":"flexbook","url":"/hphys/course/7-gravity-orbits/flexbook/fb-7.2-law-of-the-heavens/","title":"Chapter 14: The Law of the Heavens"},{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lectures/lec-7.1-physics-of-turning/","title":"Lecture 7.1: Lecture 7.1: The Physics of Turning"},{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lectures/lec-7.2-force-across-the-void/","title":"Lecture 7.2: Lecture 7.2: The Force That Reaches Across the Void"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.1-circular-motion-sim/","title":"Hexagon Lab 7.1: Hexagon Lab - Simulating Circular Motion"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.2-deriving-keplers-laws/","title":"Hexagon Lab 7.2: Hexagon Lab - Deriving Kepler’s Laws from Simulations"},{"type":"hexagon-labs","url":"/hphys/course/7-gravity-orbits/hexagon-labs/hl-7.3-weightlessness/","title":"Hexagon Lab 7.3: Hexagon Lab - 'Weightlessness' in Orbit"},{"type":"problem-sets","url":"/hphys/course/7-gravity-orbits/problem-sets/ps-7.1-circular-motion/","title":"Problem Set 7.1: Problem Set 7.1: Circular Motion"},{"type":"problem-sets","url":"/hphys/course/7-gravity-orbits/problem-sets/ps-7.2-universal-gravitation/","title":"Problem Set 7.2: Problem Set 7.2: Universal Gravitation"},{"type":"research-briefs","url":"/hphys/course/7-gravity-orbits/research-briefs/rb-07.1-the-great-cosmic-waltz/","title":"The Great Cosmic Waltz"}]},{"number":8,"title":"Waves Sound","slug":"8-waves-sound","url":"/hphys/course/8-waves-sound/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/8-waves-sound/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/8-waves-sound/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/8-waves-sound/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/8-waves-sound/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/8-waves-sound/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/8-waves-sound/flexbook/fb-8.1-properties-of-waves/","title":"Chapter 15: Properties of Waves"},{"type":"flexbook","url":"/hphys/course/8-waves-sound/flexbook/fb-8.2-wave-interactions/","title":"Chapter 16: Wave Interactions"},{"type":"lectures","url":"/hphys/course/8-waves-sound/lectures/lec-8.1-rhythm-of-nature/","title":"Lecture 8.1: Lecture 8.1: The Rhythm of Nature"},{"type":"lectures","url":"/hphys/course/8-waves-sound/lectures/lec-8.2-when-waves-meet/","title":"Lecture 8.2: Lecture 8.2: When Waves Meet"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.1-making-waves/","title":"Hexagon Lab 8.1: Hexagon Lab - Making Waves"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.2-standing-waves/","title":"Hexagon Lab 8.2: Hexagon Lab - Standing Waves & Resonance"},{"type":"hexagon-labs","url":"/hphys/course/8-waves-sound/hexagon-labs/hl-8.3-simple-harmonic-motion/","title":"Hexagon Lab 8.3: Hexagon Lab - Simple Harmonic Motion"},{"type":"problem-sets","url":"/hphys/course/8-waves-sound/problem-sets/ps-8.1-wave-properties/","title":"Problem Set 8.1: Problem Set 8.1: Wave Properties"},{"type":"problem-sets","url":"/hphys/course/8-waves-sound/problem-sets/ps-8.2-wave-interference/","title":"Problem Set 8.2: Problem Set 8.2: Wave Interference and SHM"},{"type":"research-briefs","url":"/hphys/course/8-waves-sound/research-briefs/rb-08.1-the-traveling-ripple/","title":"The Traveling Ripple"}]},{"number":9,"title":"Optics","slug":"9-optics","url":"/hphys/course/9-optics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/9-optics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/9-optics/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/9-optics/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/9-optics/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/9-optics/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/9-optics/flexbook/fb-9.1-bending-and-bouncing-light/","title":"Chapter 17: The Bending and Bouncing of Light"},{"type":"flexbook","url":"/hphys/course/9-optics/flexbook/fb-9.2-lenses-and-image-formation/","title":"Chapter 18: Lenses and Image Formation"},{"type":"lectures","url":"/hphys/course/9-optics/lectures/lec-9.1-rules-of-lights-path/","title":"Lecture 9.1: Lecture 9.1: The Rules of Light's Path"},{"type":"lectures","url":"/hphys/course/9-optics/lectures/lec-9.2-bending-light-to-see/","title":"Lecture 9.2: Lecture 9.2: Bending Light to See"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.1-bending-bouncing-light/","title":"Hexagon Lab 9.1: Hexagon Lab - Bending and Bouncing Light"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.2-converging-diverging-lenses/","title":"Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hexagon-labs/hl-9.3-building-a-telescope/","title":"Hexagon Lab 9.3: Hexagon Lab - Building a Simple Telescope"},{"type":"problem-sets","url":"/hphys/course/9-optics/problem-sets/ps-9.1-reflection-refraction/","title":"Problem Set 9.1: Problem Set 9.1: Reflection and Refraction"},{"type":"problem-sets","url":"/hphys/course/9-optics/problem-sets/ps-9.2-lenses-and-images/","title":"Problem Set 9.2: Problem Set 9.2: Lenses and Image Formation"},{"type":"research-briefs","url":"/hphys/course/9-optics/research-briefs/rb-09.1-the-story-of-sight/","title":"The Story Of Sight"}]},{"number":10,"title":"Electrostatics Circuits","slug":"10-electrostatics-circuits","url":"/hphys/course/10-electrostatics-circuits/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/10-electrostatics-circuits/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/10-electrostatics-circuits/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/10-electrostatics-circuits/research-briefs/"}],"files":[{"type":"flexbook","url":"/hphys/course/10-electrostatics-circuits/flexbook/fb-10.1-rules-of-static-charge/","title":"Chapter 19: The Rules of Static Charge"},{"type":"flexbook","url":"/hphys/course/10-electrostatics-circuits/flexbook/fb-10.2-flow-of-charge/","title":"Chapter 20: The Flow of Charge"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lectures/lec-10.1-the-unseen-force/","title":"Lecture 10.1: Lecture 10.1: The Unseen Force"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lectures/lec-10.2-making-charge-flow/","title":"Lecture 10.2: Lecture 10.2: Making Charge Flow"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.1-investigating-static-charge/","title":"Hexagon Lab 10.1: Hexagon Lab - Investigating Static Charge"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.2-building-simple-circuits/","title":"Hexagon Lab 10.2: Hexagon Lab - Building Simple Circuits"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/hl-10.3-series-vs-parallel-circuits/","title":"Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"},{"type":"problem-sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/ps-10.1-electrostatics/","title":"Problem Set 10.1: Problem Set 10.1: Electrostatics"},{"type":"problem-sets","url":"/hphys/course/10-electrostatics-circuits/problem-sets/ps-10.2-simple-circuits/","title":"Problem Set 10.2: Problem Set 10.2: Simple Circuits"},{"type":"research-briefs","url":"/hphys/course/10-electrostatics-circuits/research-briefs/rb-10.1-the-force-that-binds/","title":"The Force That Binds"}]}]};
+  
+  
+  var useManifest = false;
+  
   
   // Get the dropdown elements
   const unitSelect = document.getElementById('unit-select-hphys');
   const contentSelect = document.getElementById('content-select-hphys');
   const itemSelect = document.getElementById('item-select-hphys');
   const itemLabel = document.getElementById('item-label-hphys');
+  const documentSelectGroup = document.getElementById('document-select-group-hphys');
   const goButton = document.getElementById('nav-go-hphys');
 
   // Function to populate content types when a unit is selected
@@ -122,12 +139,48 @@
     contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
     contentSelect.disabled = true;
     goButton.disabled = true;
-    itemSelect.style.display = 'none';
-    itemLabel.style.display = 'none';
+    documentSelectGroup.style.display = 'none';
     itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
 
     if (this.value) {
-      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (useManifest) {
+        // Extract the unit slug from the URL
+        const unitSlug = this.value.split('/').filter(part => part).pop();
+        const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
+        
+        if (selectedUnit && selectedUnit.documents) {
+          // Add content type options based on manifest structure
+          const contentTypes = [
+            {type: "lectures", title: "Lectures", icon: "📝"},
+            {type: "hexagon-labs", title: "Hexagon Labs", icon: "🧪"},
+            {type: "problem-sets", title: "Problem Sets", icon: "📊"},
+            {type: "assessments", title: "Assessments", icon: "✅"}
+          ];
+          
+          // Only add content types that exist in the unit
+          contentTypes.forEach(content => {
+            // Check if this content type exists in the flattened document structure
+            const hasContent = selectedUnit.documents.some(doc => 
+              typeof doc === 'object' && doc[content.type] || 
+              typeof doc === 'string' && doc.includes(content.type + '/')
+            );
+            
+            if (hasContent) {
+              const option = document.createElement('option');
+              option.value = this.value + content.type + '/';
+              option.textContent = `${content.icon} ${content.title}`;
+              contentSelect.appendChild(option);
+            }
+          });
+          
+          contentSelect.disabled = false;
+        }
+        
+        // Enable Go button if there are options
+        goButton.disabled = contentSelect.options.length <= 1;
+      } else {
+        // Use original course data navigation
+        const selectedUnit = courseData.units.find(unit => unit.url === this.value);
         if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
           selectedUnit.content_types.forEach(content => {
             const option = document.createElement('option');
@@ -139,15 +192,61 @@
         } else {
           goButton.disabled = false;
         }
+      }
     }
   });
 
   // Function to populate items when a content type is selected
-    contentSelect.addEventListener('change', function() {
-      itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
-      itemSelect.style.display = 'none';
-      itemLabel.style.display = 'none';
-      goButton.disabled = true;
+  contentSelect.addEventListener('change', function() {
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+    documentSelectGroup.style.display = 'none';
+    goButton.disabled = true;
+    
+    if (useManifest && this.value) {
+      // Extract the unit slug and content type from the selected value
+      const pathParts = this.value.split('/').filter(part => part);
+      const unitSlug = pathParts[pathParts.length - 2];
+      const contentType = pathParts[pathParts.length - 1];
+      
+      const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
+      if (selectedUnit && selectedUnit.documents) {
+        // Find all documents of this content type
+        let documents = [];
+        
+        // Flatten the document structure to find all items of this content type
+        selectedUnit.documents.forEach(doc => {
+          if (typeof doc === 'object' && doc[contentType]) {
+            // If it's an object with the content type as a key
+            doc[contentType].forEach(item => {
+              documents.push({
+                url: this.value + item,
+                title: item.split('/').pop().replace('.md', '').replace(/-/g, ' ')
+              });
+            });
+          } else if (typeof doc === 'string' && doc.startsWith(contentType + '/')) {
+            // If it's a string path starting with the content type
+            documents.push({
+              url: this.value + doc.substring(contentType.length + 1),
+              title: doc.split('/').pop().replace('.md', '').replace(/-/g, ' ')
+            });
+          }
+        });
+        
+        if (documents.length > 0) {
+          documents.forEach(doc => {
+            const option = document.createElement('option');
+            option.value = doc.url;
+            // Capitalize first letter of each word
+            option.textContent = doc.title.replace(/\b\w/g, l => l.toUpperCase());
+            itemSelect.appendChild(option);
+          });
+          documentSelectGroup.style.display = 'block';
+        } else {
+          goButton.disabled = false;
+        }
+      }
+    } else {
+      // Use original course data navigation
       const selectedUnit = courseData.units.find(unit => unit.url === unitSelect.value);
       if (selectedUnit && selectedUnit.files) {
         // Filter files by selected type and exclude assessments
@@ -159,8 +258,7 @@
             option.textContent = file.title || file.url.split('/').pop();
             itemSelect.appendChild(option);
           });
-          itemSelect.style.display = 'inline-block';
-          itemLabel.style.display = 'inline-block';
+          documentSelectGroup.style.display = 'block';
           goButton.disabled = true;
         } else {
           goButton.disabled = !contentSelect.value;
@@ -168,86 +266,182 @@
       } else {
         goButton.disabled = !contentSelect.value;
       }
-    });
+    }
+  });
 
-    // Enable Go button when a document is selected
-    itemSelect.addEventListener('change', function() {
-      goButton.disabled = !this.value;
-    });
+  // Enable Go button when a document is selected
+  itemSelect.addEventListener('change', function() {
+    goButton.disabled = !this.value;
+  });
 
   // Navigate to the selected page when the go button is clicked
-    goButton.addEventListener('click', function() {
-      let url = itemSelect.value || contentSelect.value || unitSelect.value;
-      if (url) {
-        window.location.href = url;
-      }
-    });
+  goButton.addEventListener('click', function() {
+    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
 })();
 </script>
 
 <style>
+/* Base styles for the course navigation dropdown */
 .course-nav-dropdown {
   margin: 2rem 0;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Course-specific styling */
+.course-nav-dropdown--hphys {
+  background-color: #f3f8ff;
+  border: 1px solid #d0e1ff;
+}
+
+.course-nav-dropdown--sphys {
+  background-color: #f4f9f4;
+  border: 1px solid #d5e8d5;
+}
+
+.course-nav-dropdown--natdis {
+  background-color: #fff8f3;
+  border: 1px solid #ffe0c9;
 }
 
 .course-title h2 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  color: #333;
+  margin-bottom: 1.25rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.75rem;
 }
 
+/* Course-specific title styling */
+.course-nav-dropdown--hphys .course-title h2 {
+  color: #2c5282;
+  border-color: #bee3f8;
+}
+
+.course-nav-dropdown--sphys .course-title h2 {
+  color: #276749;
+  border-color: #c6f6d5;
+}
+
+.course-nav-dropdown--natdis .course-title h2 {
+  color: #c05621;
+  border-color: #fed7aa;
+}
+
+/* Dropdown container */
 .dropdown-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-@media (min-width: 768px) {
-  .dropdown-container {
-    grid-template-columns: 1fr 1fr auto;
-    gap: 1rem;
-    align-items: end;
-  }
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.dropdown-container label {
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+/* Form controls */
+.dropdown-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: #555;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
 }
 
-.dropdown-container select {
+.dropdown-group select {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
+  padding: 0.625rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.375rem;
   background-color: white;
   font-size: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
 }
 
+.dropdown-group select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.dropdown-group select:disabled {
+  background-color: #edf2f7;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Go button styling */
 .nav-go-button {
-  padding: 0.5rem 1.5rem;
-  background-color: #4a6da7;
-  color: white;
+  padding: 0.625rem 2rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.nav-go-button:hover {
-  background-color: #3a5d97;
+/* Course-specific button styling */
+.course-nav-dropdown--hphys .nav-go-button {
+  background-color: #4299e1;
+  color: white;
+}
+
+.course-nav-dropdown--hphys .nav-go-button:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.course-nav-dropdown--sphys .nav-go-button {
+  background-color: #48bb78;
+  color: white;
+}
+
+.course-nav-dropdown--sphys .nav-go-button:hover:not(:disabled) {
+  background-color: #38a169;
+}
+
+.course-nav-dropdown--natdis .nav-go-button {
+  background-color: #ed8936;
+  color: white;
+}
+
+.course-nav-dropdown--natdis .nav-go-button:hover:not(:disabled) {
+  background-color: #dd6b20;
 }
 
 .nav-go-button:disabled {
-  background-color: #cccccc;
+  background-color: #cbd5e0 !important;
   cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .dropdown-container {
+    grid-template-columns: repeat(3, 1fr) auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .button-container {
+    margin-top: 0.5rem;
+  }
 }
 </style>
 

@@ -59,39 +59,51 @@
   <div class="markdown-body">
     
       
-<div class="course-nav-dropdown">
+<div class="course-nav-dropdown course-nav-dropdown--sphys">
   <div class="course-title">
-    <h2>Standard Physics</h2>
+    
+      <h2>Standard Physics</h2>
+    
   </div>
   
   <div class="dropdown-container">
-    <label for="unit-select-sphys">Select Unit:</label>
-    <select id="unit-select-sphys" class="unit-select">
-      <option value="">-- Choose a Unit --</option>
-      
-        <option value="/sphys/course/1-energy-grids/">Unit 1: Energy Grids</option>
-      
-        <option value="/sphys/course/2-earth-forces/">Unit 2: Earth Forces</option>
-      
-        <option value="/sphys/course/3-collision-safety/">Unit 3: Collision Safety</option>
-      
-        <option value="/sphys/course/4-cosmic-impacts/">Unit 4: Cosmic Impacts</option>
-      
-        <option value="/sphys/course/5-electromagnetic-radiation/">Unit 5: Electromagnetic Radiation</option>
-      
-    </select>
+    <div class="dropdown-group">
+      <label for="unit-select-sphys">Select Unit:</label>
+      <select id="unit-select-sphys" class="unit-select" aria-label="Select a unit">
+        <option value="">-- Choose a Unit --</option>
+        
+          
+            <option value="/sphys/course/1-energy-grids/">Unit 1: Energy Grids</option>
+          
+            <option value="/sphys/course/2-earth-forces/">Unit 2: Earth Forces</option>
+          
+            <option value="/sphys/course/3-collision-safety/">Unit 3: Collision Safety</option>
+          
+            <option value="/sphys/course/4-cosmic-impacts/">Unit 4: Cosmic Impacts</option>
+          
+            <option value="/sphys/course/5-electromagnetic-radiation/">Unit 5: Electromagnetic Radiation</option>
+          
+        
+      </select>
+    </div>
     
-    <label for="content-select-sphys">Select Content Type:</label>
-    <select id="content-select-sphys" class="content-select" disabled="">
-      <option value="">-- Choose Content Type --</option>
-    </select>
+    <div class="dropdown-group">
+      <label for="content-select-sphys">Select Content Type:</label>
+      <select id="content-select-sphys" class="content-select" disabled="" aria-label="Select a content type">
+        <option value="">-- Choose Content Type --</option>
+      </select>
+    </div>
 
-    <label for="item-select-sphys" id="item-label-sphys" style="display:none;">Select Document:</label>
-    <select id="item-select-sphys" class="item-select" style="display:none;">
-      <option value="">-- Choose Document --</option>
-    </select>
+    <div class="dropdown-group" id="document-select-group-sphys" style="display:none;">
+      <label for="item-select-sphys" id="item-label-sphys">Select Document:</label>
+      <select id="item-select-sphys" class="item-select" aria-label="Select a document">
+        <option value="">-- Choose Document --</option>
+      </select>
+    </div>
 
-    <button id="nav-go-sphys" class="nav-go-button" disabled="">Go</button>
+    <div class="button-container">
+      <button id="nav-go-sphys" class="nav-go-button" disabled="" aria-label="Go to selected content">Go</button>
+    </div>
   </div>
 </div>
 
@@ -100,11 +112,16 @@
   // Get the navigation data
   var courseData = {"title":"Standard Physics","url":"/sphys/","units":[{"number":1,"title":"Energy Grids","slug":"1-energy-grids","url":"/sphys/course/1-energy-grids/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/1-energy-grids/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/1-energy-grids/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/1-energy-grids/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/1-energy-grids/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/1-energy-grids/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/1-energy-grids/assessments/"},{"type":"keys","title":"Keys","url":"/sphys/course/1-energy-grids/keys/"}],"files":[{"type":"flexbook","url":"/sphys/course/1-energy-grids/flexbook/fb-1-how-electricity-transfers/","title":"How Electricity Transfers"},{"type":"flexbook","url":"/sphys/course/1-energy-grids/flexbook/fb-2-designing-grid-solutions/","title":"Chapter 2: Designing Reliable Grid Solutions"},{"type":"flexbook","url":"/sphys/course/1-energy-grids/flexbook/fb-3-electromagnetism/","title":"Chapter 3: The Invisible Dance of Fields"},{"type":"flexbook","url":"/sphys/course/1-energy-grids/flexbook/4-circuits-grids/","title":"Chapter 4: From Fields to Flow: The Rules of the Circuit"},{"type":"lectures","url":"/sphys/course/1-energy-grids/lectures/lec-1.1-rules-of-the-game/","title":"Rules Of The Game"},{"type":"lectures","url":"/sphys/course/1-energy-grids/lectures/lec-1.2-designing-reliable-systems/","title":"Designing Reliable Systems"},{"type":"lectures","url":"/sphys/course/1-energy-grids/lectures/lec-1.2-supply-and-demand/","title":"Supply and Demand - The Heartbeat of the Grid"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.2-power-strip-dissection/","title":"Power Strip Dissection"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.1-blackout-narratives/","title":"Blackout Narratives"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.3-blackout-systems/","title":"Hexagon Lab P.1.3: Engineering Design Tradeoffs"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.4-design-tradeoffs/","title":"Hexagon Lab 1.4: Engineering Design Tradeoffs"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.3-energy-transfer-wires/","title":"Hexagon Lab 1.3: Modeling Energy Transfer in Wires"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.3-energy-source-reliability/","title":"Hexagon Lab 1.3: Energy Source Reliability Analysis"},{"type":"hexagon-labs","url":"/sphys/course/1-energy-grids/hexagon-labs/hl-1.4-design-tradeoffs-debrief/","title":"Design Tradeoffs Debrief"},{"type":"problem-sets","url":"/sphys/course/1-energy-grids/problem-sets/ps-1.1-circuits-and-power/","title":"Circuits And Power"},{"type":"problem-sets","url":"/sphys/course/1-energy-grids/problem-sets/ps-1.2-supply-and-demand/","title":"Problem Set 1.2: Supply and Demand"},{"type":"research-briefs","url":"/sphys/course/1-energy-grids/research-briefs/rb-1.1-the-invisible-currents/","title":"The Invisible Currents"},{"type":"research-briefs","url":"/sphys/course/1-energy-grids/research-briefs/rb-1.2-blueprint-system-grid/","title":"Research Brief P.1 Blueprint: Modeling Grid Reliability"},{"type":"research-briefs","url":"/sphys/course/1-energy-grids/research-briefs/rb-1-texas-blackouts/","title":"Rb 1 Texas Blackouts"},{"type":"assessments","url":"/sphys/course/1-energy-grids/assessments/quiz-1.1-blackouts/","title":"Unit P.1 Assessment: Analyzing the Texas Power Crisis"},{"type":"assessments","url":"/sphys/course/1-energy-grids/assessments/sg-quiz-1.1-blackouts/","title":"Unit P.1 Assessment Study Guide: The Invisible Currents"},{"type":"assessments","url":"/sphys/course/1-energy-grids/assessments/quiz-1.1-blackouts-2025/","title":"Blackouts 2025"},{"type":"keys","url":"/sphys/course/1-energy-grids/keys/ps-1.1-circuits-power-key/","title":"Circuits Power Key"},{"type":"keys","url":"/sphys/course/1-energy-grids/keys/fb-1.2-grids-key/","title":"Grids Key"},{"type":"keys","url":"/sphys/course/1-energy-grids/keys/ps-1.2-supply-demand-key/","title":"Key Ps 1.2 Supply Demand"},{"type":"keys","url":"/sphys/course/1-energy-grids/keys/quiz-1.1-blackouts-2025-key/","title":"Blackouts 2025 Key"}]},{"number":2,"title":"Earth Forces","slug":"2-earth-forces","url":"/sphys/course/2-earth-forces/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/2-earth-forces/flexbook/"}],"files":[{"type":"flexbook","url":"/sphys/course/2-earth-forces/flexbook/5-planetary-pulses/","title":"5 Planetary Pulses"},{"type":"flexbook","url":"/sphys/course/2-earth-forces/flexbook/6-plate-force-motion/","title":"6 Plate Force Motion"},{"type":"flexbook","url":"/sphys/course/2-earth-forces/flexbook/7-action-reaction/","title":"7 Action Reaction"},{"type":"flexbook","url":"/sphys/course/2-earth-forces/flexbook/8-modeling-rift/","title":"8 Modeling Rift"}]},{"number":3,"title":"Collision Safety","slug":"3-collision-safety","url":"/sphys/course/3-collision-safety/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/3-collision-safety/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/3-collision-safety/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/3-collision-safety/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/3-collision-safety/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/3-collision-safety/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/3-collision-safety/assessments/"}],"files":[{"type":"flexbook","url":"/sphys/course/3-collision-safety/flexbook/fb-3.1-factors-increasing-risk/","title":"Factors Increasing Risk"},{"type":"flexbook","url":"/sphys/course/3-collision-safety/flexbook/fb-3.2-designing-for-safety/","title":"Designing For Safety"},{"type":"lectures","url":"/sphys/course/3-collision-safety/lectures/lec-3.1-the-language-of-motion/","title":"The Language Of Motion"},{"type":"lectures","url":"/sphys/course/3-collision-safety/lectures/lec-3.2-the-why-of-motion/","title":"The Why Of Motion"},{"type":"lectures","url":"/sphys/course/3-collision-safety/lectures/lec-3.3-the-rules-of-interaction/","title":"The Rules Of Interaction"},{"type":"hexagon-labs","url":"/sphys/course/3-collision-safety/hexagon-labs/hl-3.1-analyzing-traffic-data/","title":"Analyzing Traffic Data"},{"type":"hexagon-labs","url":"/sphys/course/3-collision-safety/hexagon-labs/hl-3.2-vehicle-safety-crumple-zones/","title":"Vehicle Safety Crumple Zones"},{"type":"problem-sets","url":"/sphys/course/3-collision-safety/problem-sets/ps-3.1-kinematic-graphs/","title":"Kinematic Graphs"},{"type":"problem-sets","url":"/sphys/course/3-collision-safety/problem-sets/ps-3.2-conservation-of-momentum/","title":"Conservation Of Momentum"},{"type":"research-briefs","url":"/sphys/course/3-collision-safety/research-briefs/rb-3.1-the-geometry-of-impact/","title":"The Geometry Of Impact"},{"type":"assessments","url":"/sphys/course/3-collision-safety/assessments/unit-assessment/","title":"Unit Assessment"}]},{"number":4,"title":"Cosmic Impacts","slug":"4-cosmic-impacts","url":"/sphys/course/4-cosmic-impacts/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/4-cosmic-impacts/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/4-cosmic-impacts/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/4-cosmic-impacts/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/4-cosmic-impacts/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/4-cosmic-impacts/assessments/"}],"files":[{"type":"flexbook","url":"/sphys/course/4-cosmic-impacts/flexbook/fb-4.1-forces-fields-orbits/","title":"Forces Fields Orbits"},{"type":"flexbook","url":"/sphys/course/4-cosmic-impacts/flexbook/fb-4.2-past-impacts/","title":"Past Impacts"},{"type":"hexagon-labs","url":"/sphys/course/4-cosmic-impacts/hexagon-labs/hl-4.1-analyzing-neo-data/","title":"Analyzing Neo Data"},{"type":"hexagon-labs","url":"/sphys/course/4-cosmic-impacts/hexagon-labs/hl-4.2-deriving-keplers-laws/","title":"Deriving Keplers Laws"},{"type":"problem-sets","url":"/sphys/course/4-cosmic-impacts/problem-sets/ps-4.1-newtons-law-of-gravitation/","title":"Newtons Law Of Gravitation"},{"type":"problem-sets","url":"/sphys/course/4-cosmic-impacts/problem-sets/ps-4.2-cratering-evidence/","title":"Cratering Evidence"},{"type":"research-briefs","url":"/sphys/course/4-cosmic-impacts/research-briefs/rb-4.1-cosmic-impacts/","title":"Cosmic Impacts"},{"type":"assessments","url":"/sphys/course/4-cosmic-impacts/assessments/unit-assessment/","title":"Unit Assessment"}]},{"number":5,"title":"Electromagnetic Radiation","slug":"5-electromagnetic-radiation","url":"/sphys/course/5-electromagnetic-radiation/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/sphys/course/5-electromagnetic-radiation/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/sphys/course/5-electromagnetic-radiation/lectures/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/sphys/course/5-electromagnetic-radiation/hexagon-labs/"},{"type":"problem-sets","title":"Problem Sets","url":"/sphys/course/5-electromagnetic-radiation/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/sphys/course/5-electromagnetic-radiation/research-briefs/"},{"type":"assessments","title":"Assessments","url":"/sphys/course/5-electromagnetic-radiation/assessments/"}],"files":[{"type":"flexbook","url":"/sphys/course/5-electromagnetic-radiation/flexbook/fb-5.1-how-microwaves-heat-food/","title":"How Microwaves Heat Food"},{"type":"flexbook","url":"/sphys/course/5-electromagnetic-radiation/flexbook/fb-5.2-uses-and-safety/","title":"Uses And Safety"},{"type":"lectures","url":"/sphys/course/5-electromagnetic-radiation/lectures/lec-5.1-the-rhythm-of-nature/","title":"The Rhythm Of Nature"},{"type":"lectures","url":"/sphys/course/5-electromagnetic-radiation/lectures/lec-5.2-the-duality-of-light/","title":"The Duality Of Light"},{"type":"lectures","url":"/sphys/course/5-electromagnetic-radiation/lectures/lec-5.3-the-spectrum-of-reality/","title":"The Spectrum Of Reality"},{"type":"hexagon-labs","url":"/sphys/course/5-electromagnetic-radiation/hexagon-labs/hl-5.1-wave-properties/","title":"Wave Properties"},{"type":"hexagon-labs","url":"/sphys/course/5-electromagnetic-radiation/hexagon-labs/hl-5.2-particle-model-of-light/","title":"Particle Model Of Light"},{"type":"hexagon-labs","url":"/sphys/course/5-electromagnetic-radiation/hexagon-labs/hl-5.3-evaluating-5g-claims/","title":"Evaluating 5G Claims"},{"type":"problem-sets","url":"/sphys/course/5-electromagnetic-radiation/problem-sets/ps-5.1-frequency-and-wavelength/","title":"Frequency And Wavelength"},{"type":"problem-sets","url":"/sphys/course/5-electromagnetic-radiation/problem-sets/ps-5.2-constructing-the-em-spectrum/","title":"Constructing The Em Spectrum"},{"type":"research-briefs","url":"/sphys/course/5-electromagnetic-radiation/research-briefs/rb-5.1-the-invisible-symphony/","title":"The Invisible Symphony"},{"type":"assessments","url":"/sphys/course/5-electromagnetic-radiation/assessments/unit-assessment/","title":"Unit Assessment"}]}]};
   
+  
+  var useManifest = false;
+  
+  
   // Get the dropdown elements
   const unitSelect = document.getElementById('unit-select-sphys');
   const contentSelect = document.getElementById('content-select-sphys');
   const itemSelect = document.getElementById('item-select-sphys');
   const itemLabel = document.getElementById('item-label-sphys');
+  const documentSelectGroup = document.getElementById('document-select-group-sphys');
   const goButton = document.getElementById('nav-go-sphys');
 
   // Function to populate content types when a unit is selected
@@ -112,12 +129,48 @@
     contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
     contentSelect.disabled = true;
     goButton.disabled = true;
-    itemSelect.style.display = 'none';
-    itemLabel.style.display = 'none';
+    documentSelectGroup.style.display = 'none';
     itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
 
     if (this.value) {
-      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (useManifest) {
+        // Extract the unit slug from the URL
+        const unitSlug = this.value.split('/').filter(part => part).pop();
+        const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
+        
+        if (selectedUnit && selectedUnit.documents) {
+          // Add content type options based on manifest structure
+          const contentTypes = [
+            {type: "lectures", title: "Lectures", icon: "📝"},
+            {type: "hexagon-labs", title: "Hexagon Labs", icon: "🧪"},
+            {type: "problem-sets", title: "Problem Sets", icon: "📊"},
+            {type: "assessments", title: "Assessments", icon: "✅"}
+          ];
+          
+          // Only add content types that exist in the unit
+          contentTypes.forEach(content => {
+            // Check if this content type exists in the flattened document structure
+            const hasContent = selectedUnit.documents.some(doc => 
+              typeof doc === 'object' && doc[content.type] || 
+              typeof doc === 'string' && doc.includes(content.type + '/')
+            );
+            
+            if (hasContent) {
+              const option = document.createElement('option');
+              option.value = this.value + content.type + '/';
+              option.textContent = `${content.icon} ${content.title}`;
+              contentSelect.appendChild(option);
+            }
+          });
+          
+          contentSelect.disabled = false;
+        }
+        
+        // Enable Go button if there are options
+        goButton.disabled = contentSelect.options.length <= 1;
+      } else {
+        // Use original course data navigation
+        const selectedUnit = courseData.units.find(unit => unit.url === this.value);
         if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
           selectedUnit.content_types.forEach(content => {
             const option = document.createElement('option');
@@ -129,15 +182,61 @@
         } else {
           goButton.disabled = false;
         }
+      }
     }
   });
 
   // Function to populate items when a content type is selected
-    contentSelect.addEventListener('change', function() {
-      itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
-      itemSelect.style.display = 'none';
-      itemLabel.style.display = 'none';
-      goButton.disabled = true;
+  contentSelect.addEventListener('change', function() {
+    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+    documentSelectGroup.style.display = 'none';
+    goButton.disabled = true;
+    
+    if (useManifest && this.value) {
+      // Extract the unit slug and content type from the selected value
+      const pathParts = this.value.split('/').filter(part => part);
+      const unitSlug = pathParts[pathParts.length - 2];
+      const contentType = pathParts[pathParts.length - 1];
+      
+      const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
+      if (selectedUnit && selectedUnit.documents) {
+        // Find all documents of this content type
+        let documents = [];
+        
+        // Flatten the document structure to find all items of this content type
+        selectedUnit.documents.forEach(doc => {
+          if (typeof doc === 'object' && doc[contentType]) {
+            // If it's an object with the content type as a key
+            doc[contentType].forEach(item => {
+              documents.push({
+                url: this.value + item,
+                title: item.split('/').pop().replace('.md', '').replace(/-/g, ' ')
+              });
+            });
+          } else if (typeof doc === 'string' && doc.startsWith(contentType + '/')) {
+            // If it's a string path starting with the content type
+            documents.push({
+              url: this.value + doc.substring(contentType.length + 1),
+              title: doc.split('/').pop().replace('.md', '').replace(/-/g, ' ')
+            });
+          }
+        });
+        
+        if (documents.length > 0) {
+          documents.forEach(doc => {
+            const option = document.createElement('option');
+            option.value = doc.url;
+            // Capitalize first letter of each word
+            option.textContent = doc.title.replace(/\b\w/g, l => l.toUpperCase());
+            itemSelect.appendChild(option);
+          });
+          documentSelectGroup.style.display = 'block';
+        } else {
+          goButton.disabled = false;
+        }
+      }
+    } else {
+      // Use original course data navigation
       const selectedUnit = courseData.units.find(unit => unit.url === unitSelect.value);
       if (selectedUnit && selectedUnit.files) {
         // Filter files by selected type and exclude assessments
@@ -149,8 +248,7 @@
             option.textContent = file.title || file.url.split('/').pop();
             itemSelect.appendChild(option);
           });
-          itemSelect.style.display = 'inline-block';
-          itemLabel.style.display = 'inline-block';
+          documentSelectGroup.style.display = 'block';
           goButton.disabled = true;
         } else {
           goButton.disabled = !contentSelect.value;
@@ -158,86 +256,182 @@
       } else {
         goButton.disabled = !contentSelect.value;
       }
-    });
+    }
+  });
 
-    // Enable Go button when a document is selected
-    itemSelect.addEventListener('change', function() {
-      goButton.disabled = !this.value;
-    });
+  // Enable Go button when a document is selected
+  itemSelect.addEventListener('change', function() {
+    goButton.disabled = !this.value;
+  });
 
   // Navigate to the selected page when the go button is clicked
-    goButton.addEventListener('click', function() {
-      let url = itemSelect.value || contentSelect.value || unitSelect.value;
-      if (url) {
-        window.location.href = url;
-      }
-    });
+  goButton.addEventListener('click', function() {
+    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    if (url) {
+      window.location.href = url;
+    }
+  });
 })();
 </script>
 
 <style>
+/* Base styles for the course navigation dropdown */
 .course-nav-dropdown {
   margin: 2rem 0;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Course-specific styling */
+.course-nav-dropdown--hphys {
+  background-color: #f3f8ff;
+  border: 1px solid #d0e1ff;
+}
+
+.course-nav-dropdown--sphys {
+  background-color: #f4f9f4;
+  border: 1px solid #d5e8d5;
+}
+
+.course-nav-dropdown--natdis {
+  background-color: #fff8f3;
+  border: 1px solid #ffe0c9;
 }
 
 .course-title h2 {
   margin-top: 0;
-  margin-bottom: 1rem;
-  color: #333;
+  margin-bottom: 1.25rem;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.75rem;
 }
 
+/* Course-specific title styling */
+.course-nav-dropdown--hphys .course-title h2 {
+  color: #2c5282;
+  border-color: #bee3f8;
+}
+
+.course-nav-dropdown--sphys .course-title h2 {
+  color: #276749;
+  border-color: #c6f6d5;
+}
+
+.course-nav-dropdown--natdis .course-title h2 {
+  color: #c05621;
+  border-color: #fed7aa;
+}
+
+/* Dropdown container */
 .dropdown-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
-@media (min-width: 768px) {
-  .dropdown-container {
-    grid-template-columns: 1fr 1fr auto;
-    gap: 1rem;
-    align-items: end;
-  }
+.dropdown-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.dropdown-container label {
+.button-container {
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+/* Form controls */
+.dropdown-group label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: #555;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
 }
 
-.dropdown-container select {
+.dropdown-group select {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
+  padding: 0.625rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.375rem;
   background-color: white;
   font-size: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
 }
 
+.dropdown-group select:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.dropdown-group select:disabled {
+  background-color: #edf2f7;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Go button styling */
 .nav-go-button {
-  padding: 0.5rem 1.5rem;
-  background-color: #4a6da7;
-  color: white;
+  padding: 0.625rem 2rem;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
+  width: 100%;
 }
 
-.nav-go-button:hover {
-  background-color: #3a5d97;
+/* Course-specific button styling */
+.course-nav-dropdown--hphys .nav-go-button {
+  background-color: #4299e1;
+  color: white;
+}
+
+.course-nav-dropdown--hphys .nav-go-button:hover:not(:disabled) {
+  background-color: #3182ce;
+}
+
+.course-nav-dropdown--sphys .nav-go-button {
+  background-color: #48bb78;
+  color: white;
+}
+
+.course-nav-dropdown--sphys .nav-go-button:hover:not(:disabled) {
+  background-color: #38a169;
+}
+
+.course-nav-dropdown--natdis .nav-go-button {
+  background-color: #ed8936;
+  color: white;
+}
+
+.course-nav-dropdown--natdis .nav-go-button:hover:not(:disabled) {
+  background-color: #dd6b20;
 }
 
 .nav-go-button:disabled {
-  background-color: #cccccc;
+  background-color: #cbd5e0 !important;
   cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .dropdown-container {
+    grid-template-columns: repeat(3, 1fr) auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .button-container {
+    margin-top: 0.5rem;
+  }
 }
 </style>
 
