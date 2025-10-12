@@ -1,523 +1,597 @@
-<!DOCTYPE html>
+
+<!-- 
+DEPRECATED LAYOUT - DO NOT USE FOR NEW CONTENT
+This layout is maintained for legacy compatibility only.
+For all new assessments, please use the physics-quiz layout with JSON data files.
+See the unified assessment workflow: YAML → JSON → Markdown Wrapper → Jekyll Render
+-->
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit 1 Quiz: Measurement and Vectors - Cosmos in the Classroom</title>
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
+  <head>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 1 Quiz: Measurement and Vectors | Cosmos in the Classroom</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Unit 1 Quiz: Measurement and Vectors" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets." />
+<meta property="og:description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets." />
+<link rel="canonical" href="https://www.cosmosintheclassroom.org/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/" />
+<meta property="og:url" content="https://www.cosmosintheclassroom.org/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/" />
+<meta property="og:site_name" content="Cosmos in the Classroom" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-10-11T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unit 1 Quiz: Measurement and Vectors" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-10-11T00:00:00+00:00","datePublished":"2025-10-11T00:00:00+00:00","description":"A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.","headline":"Unit 1 Quiz: Measurement and Vectors","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.cosmosintheclassroom.org/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/"},"url":"https://www.cosmosintheclassroom.org/hphys/course/1-measurement/assessments/quiz-1.1-measurement-vectors/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.cosmosintheclassroom.org/feed.xml" title="Cosmos in the Classroom" /></head>
+
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</head>
-<body>
-    <!-- Added metadata for submission/Sheets -->
-    <div id="assessment-metadata"
-         data-resource-id=""
-         data-json-path=""
-         data-course="hphys"
-         data-content-type="assessment"
-         data-title="Unit 1 Quiz: Measurement and Vectors"
-         data-start-at="2025-10-12T02:10:06+00:00"
-         data-attempt-id=""
-         hidden></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Password Screen Styles */
+      #password-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      #password-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+      #password-container h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      #password-form {
+        margin-top: 20px;
+      }
+      #password-input {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      #password-submit {
+        padding: 10px 20px;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #password-submit:hover {
+        background-color: #3367d6;
+      }
+      #password-error {
+        color: #d93025;
+        margin-top: 10px;
+        display: none;
+      }
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <!-- Site Header -->
-    <header class="site-header">
-        <nav class="site-nav">
-            <a href="/" class="nav-link">← Back to Home</a>
-            <a href="/hphys/" class="nav-link">
-                HPHYS Course
-            </a>
-        </nav>
+      </div>
     </header>
-
-    <main class="main-content">
+  
+    <!-- Password Screen Overlay -->
+    <div id="password-screen" >
+      <div id="password-container">
+        <h2>Assessment Password Required</h2>
+        <p>Please enter the assessment password to continue.</p>
+        <form id="password-form" onsubmit="return checkPassword(event)">
+          <input type="password" id="password-input" placeholder="Enter password" required>
+          <button type="submit" id="password-submit">Submit</button>
+        </form>
+        <p id="password-error">Incorrect password. Please try again.</p>
+      </div>
+    </div>
+    <div class="markdown-body">
+      <main class="assessment assessment-md">
+    <div class="assessment-header">
+      <h1>Unit 1 Quiz: Measurement and Vectors</h1>
+      
+      <div class="assessment-metadata">
+        <span class="points">50 points</span>
         
-        <div id="assessment-content" class="assessment-container">
+        <span class="time-limit">30 minutes</span>
         
-            
-            <!-- Fixed Assessment Header -->
-            <div class="assessment-viewport-header">
-                <!-- Progress indicator -->
-                <div class="progress-container">
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-                    <span class="progress-text" id="progress-text">0% Complete</span>
-                </div>
-                
-                <!-- Section navigation (for multi-section assessments) -->
-                <div class="section-navigation" id="section-nav" style="display: none;">
-                    <div class="section-progress">
-                        <span id="section-indicator">Section 1 of 3</span>
-                        <div class="section-dots" id="section-dots"></div>
-                    </div>
-                    <div class="section-controls">
-                        
-                        <button type="button" id="prev-section-btn" class="nav-btn" disabled>← Previous</button>
-                        <button type="button" id="next-section-btn" class="nav-btn">Next →</button>
-                        <button type="submit" id="submit-btn" class="submit-btn">Submit Assessment</button>
-                    </div>
-                </div>
-            </div>
+      </div>
+      
+    </div>
+    
+    <form id="assessment-form">
+      <!-- Hidden metadata fields for Google Script integration -->
+      <input type="hidden" name="AssessmentType" value="markdown">
+      <input type="hidden" name="AssessmentId" value="hphys-quiz-1-1-measurement-vectors">
+      <input type="hidden" name="AssessmentTitle" value="Unit 1 Quiz: Measurement and Vectors">
+      <input type="hidden" name="CoursePrefix" value="">
+      <input type="hidden" name="TotalPoints" value="50">
+      <input type="hidden" name="Unit" value="1-measurement">
+      <input type="hidden" name="Section" value="1">
+      
+      <div class="auto-save-indicator" id="auto-save-indicator"></div>
+      
+          <div class="assessment-content">
+            <h1 id="honors-physics-assessment-measurement-and-vectors">Honors Physics Assessment: Measurement and Vectors</h1>
 
-            <!-- Scrollable Assessment Content -->
-            <div class="assessment-scroll-area">
-                <!-- Assessment header -->
-                <header class="assessment-header" id="assessment-header">
-                    <h1>Unit 1 Quiz: Measurement and Vectors</h1>
-                    <div class="assessment-meta">
-                        
-                        <span class="meta-item">
-                            <span class="meta-label">Time Limit:</span>
-                            <span class="meta-value">30 minutes</span>
-                        </span>
-                        
-                        
-                        <span class="meta-item">
-                            <span class="meta-label">Started:</span>
-                            <span class="meta-value" id="start-time"></span>
-                        </span>
-                    </div>
-                </header>
+<!-- Student Information Section -->
+<div class="student-info">
+  <div class="form-group">
+    <label for="student-name">Student Name:</label>
+    <input type="text" id="student-name" name="StudentName" class="form-control" required="" />
+  </div>
+  <div class="form-group">
+    <label for="class-period">Class Period:</label>
+    <select id="class-period" name="ClassPeriod" class="form-control" required="">
+      <option value="">Select your class period</option>
+      <option value="1st">1st Period</option>
+      <option value="2nd">2nd Period</option>
+      <option value="3rd">3rd Period</option>
+      <option value="4th">4th Period</option>
+      <option value="5th">5th Period</option>
+      <option value="6th">6th Period</option>
+      <option value="7th">7th Period</option>
+    </select>
+  </div>
+</div>
 
-                <!-- Auto-save indicator -->
-                <div id="auto-save-indicator" class="auto-save-indicator"></div>
+<h2 id="anchoring-phenomenon-lunar-measurement--navigation">Anchoring Phenomenon: Lunar Measurement &amp; Navigation</h2>
 
-                <!-- Main assessment form -->
-                <form id="assessment-form" class="assessment-form">
-                    <!-- Hidden form data -->
-                    <input type="hidden" name="AssessmentTitle" value="Unit 1 Quiz: Measurement and Vectors">
-                    <input type="hidden" name="Course" value="hphys">
-                    <input type="hidden" name="StartTime" id="start-time-hidden">
-                    <input type="hidden" name="BrowserInfo" id="browser-info">
-                    <input type="hidden" name="Timestamp" id="timestamp">
-                    <!-- Added hidden fields for Google Sheets ingestion -->
-                    <input type="hidden" name="answers_json" id="answers-json">
-                    <input type="hidden" name="EndTime" id="end-time">
-                    <input type="hidden" name="AttemptId" id="attempt-id">
+<h2 id="core-concepts-measurement-vectors-precision">Core Concepts: Measurement, Vectors, Precision</h2>
 
-                    <!-- Student information -->
-                    <section class="student-info-section" id="student-info-section">
-                        <h3>Student Information</h3>
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="student-name">Full Name *</label>
-                                <input type="text" id="student-name" name="StudentName" required>
-                                <span class="field-error" id="student-name-error"></span>
-                            </div>
-                            <div class="form-field">
-                                <label for="course-name">Course</label>
-                                <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
-                            </div>
-                            <div class="form-field">
-                                <label for="class-period">Class Period</label>
-                                <select id="class-period" name="ClassPeriod">
-                                    <option value="">Select Period</option>
-                                    <option value="1st">1st Period</option>
-                                    <option value="2nd">2nd Period</option>
-                                    <option value="3rd">3rd Period</option>
-                                    <option value="4th">4th Period</option>
-                                    <option value="5th">5th Period</option>
-                                    <option value="6th">6th Period</option>
-                                    <option value="7th">7th Period</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </section>
+<h3 id="time-limit-30-minutes">Time Limit: 30 minutes</h3>
+<h3 id="support-materials-available-calculator-formula-sheet-reference-guide">Support Materials Available: Calculator, Formula Sheet, Reference Guide</h3>
 
-                    <!-- Assessment content (rendered from Markdown) -->
-                    <div id="assessment-sections" class="quiz-content">
-                        <h1 id="unit-1-quiz-measurement-and-vectors">Unit 1 Quiz: Measurement and Vectors</h1>
-
-<p>Name: <strong>__</strong><strong>__</strong><strong>__</strong><strong>__</strong>_   Date: <strong>__</strong><strong>__</strong>_   Period: _____</p>
-
-<p><strong>Instructions:</strong> Show all work. Use proper vector notation ($\vec{ }$) and SI units. Include units with every numerical value. Provide complete sentences for explanation prompts.</p>
-
-<p><strong>Time Limit:</strong> 30 minutes<br />
-<strong>Total Points:</strong> 50</p>
-
-<hr />
-
-<h2 id="assessment-expectations">Assessment Expectations</h2>
+<div class="assessment-section" data-section-id="instructions">
+<h3>Assessment Overview</h3>
+<h4>What You'll Demonstrate</h4>
+<p>By completing this assessment, you'll show your ability to:</p>
 <ul>
-  <li>Use $\vec{ }$ for all vectors</li>
-  <li>Include units with every numerical answer</li>
-  <li>Show mathematical work (organized and labeled) for full credit</li>
-  <li>State final answers with correct significant figures</li>
-  <li>Clearly label components (e.g., $d_x$, $d_y$)</li>
+  <li>Convert units and analyze measurement precision</li>
+  <li>Resolve vector components and apply vector notation</li>
+  <li>Model physical situations using vectors</li>
 </ul>
-
-<hr />
-
-<h2 id="part-a-traditional-skills-25-points">Part A: Traditional Skills (25 points)</h2>
-
-<h3 id="1-measurement-precision-8-points">1. Measurement Precision (8 points)</h3>
-
-<p>a) Convert [VALUE NEEDED] to [TARGET UNIT NEEDED], showing unit analysis and proper significant figures. (4)<br />
-b) Two lunar research stations separated by a surface distance of [BASELINE DISTANCE VALUE NEEDED] show a solar shadow angle difference of [ANGLE VALUE NEEDED]° at local lunar noon. What fraction of Luna’s full 360° circle does this represent? Use that fraction to estimate Luna’s circumference. Show proportional reasoning. (4)</p>
-
-<h3 id="2-vector-components-17-points">2. Vector Components (17 points)</h3>
-
-<table>
-  <tbody>
-    <tr>
-      <td>A displacement vector $\vec{d}$ has magnitude $</td>
-      <td>\vec{d}</td>
-      <td>= $ [MAGNITUDE VALUE NEEDED] at $\theta = $ [ANGLE VALUE NEEDED]° north of east.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>a) Neatly sketch $\vec{d}$ with labeled horizontal ($d_x$) and vertical ($d_y$) components (include a right triangle and angle). (4)<br />
-b) Compute the eastward component $d_x$. Show: formula → substitution → numeric result with units. (6)<br />
-c) Compute the northward component $d_y$. Justify significant figures. (7)</p>
-
-<hr />
-
-<h2 id="part-b-ngss--inquiry-25-points">Part B: NGSS / Inquiry (25 points)</h2>
-
-<h3 id="3-scientific-modeling-15-points">3. Scientific Modeling (15 points)</h3>
-
-<p>You are mapping a classroom using vectors. The teacher’s desk is at coordinates $(x, y) = ($ [X VALUE NEEDED] m, [Y VALUE NEEDED] m $)$ from your chosen origin.</p>
-
-<p>a) Determine the displacement vector $\vec{r}$ from the origin to the desk: give (i) component form $\vec{r} = \langle x, y \rangle$, (ii) magnitude $|\vec{r}|$, (iii) direction as an angle north of east (or using $\tan^{-1}$ with quadrant justification). (8)<br />
-b) Explain (3–4 sentences) why a quantitative coordinate system yields higher reliability than a freehand sketch for classroom mapping. Reference precision, reproducibility, and error analysis. (7)</p>
-
-<h3 id="4-cross-cutting-concepts-10-points">4. Cross-Cutting Concepts (10 points)</h3>
-
-<p>a) Scale &amp; Proportion: Global Positioning System accuracy requires position resolution within about [ACCURACY VALUE NEEDED] globally. Explain why expressing motion or position with vector components (rather than only a single magnitude and heading) enables this precision. Cite how component-wise error control works. (5)<br />
-b) Patterns: Connect Eratosthenes’s ancient Earth-size method to modern GPS triangulation. Identify the shared mathematical pattern and how proportional or angular differences translate into large-scale distance determination. (5)</p>
-
-<hr />
-
-<h2 id="optional-metacognitive-reflection-unscored">Optional Metacognitive Reflection (Unscored)</h2>
-
-<p>Which single step in today’s work most improved your confidence with vectors or measurement, and why?</p>
-
-<hr />
-
-<h2 id="scoring-breakdown-for-instructor">Scoring Breakdown (For Instructor)</h2>
-<ul>
-  <li>Q1: 8</li>
-  <li>Q2: 17</li>
-  <li>Q3: 15</li>
-  <li>Q4: 10
-Total: 50</li>
-</ul>
-
-<hr />
-
-<h2 id="teacher-notes-remove-after-finalization">Teacher Notes (Remove after finalization)</h2>
-<ul>
-  <li>Replace all [VALUE NEEDED] placeholders with unit-consistent numbers (choose classroom-realistic distances &amp; angles).</li>
-  <li>Ensure angle choice in Q2 is non-trivial (e.g., 37° or 28°) to discourage memorized special triangles.</li>
-  <li>Option: Supply a small diagram sheet if sketches are formally graded.
-[Connect to engineering applications, technological solutions, or broader implications of understanding this phenomenon.]</li>
-</ul>
-
-<h3 id="b-core-practice">B. Core Practice</h3>
-<p>[Problems focused on application, design, or engineering challenges related to the phenomenon.]</p>
-
-<ol>
-  <li>
-    <p>[Engineering design problem or optimization challenge]</p>
-  </li>
-  <li>
-    <p>[Problem requiring evaluation of real-world constraints and trade-offs]</p>
-  </li>
-  <li>
-    <p>[Problem connecting to technology or societal applications]</p>
-  </li>
-</ol>
-
-<h3 id="c-synthesis--cross-cutting-lens-crosscutting-concept">C. Synthesis &amp; Cross-Cutting Lens ([Crosscutting Concept])</h3>
-<p>[Question that connects the phenomenon to broader themes: how understanding this phenomenon enables technological advancement, addresses societal needs, or reveals universal principles.]</p>
-
-<h3 id="d-metacognitive-prompt">D. Metacognitive Prompt</h3>
-<p>[Reflection on the relationship between scientific understanding and technological application, or on the broader implications of the phenomenon.]</p>
-
-<hr />
-
-<h2 id="additional-segments-as-needed---follow-same-format">[Additional Segments as needed - follow same format]</h2>
-
-<hr />
-
-<h2 id="segment-4-of-4-metacognition--synthesis-estimated-time-10-15-minutes">Segment 4 of 4: Metacognition &amp; Synthesis (Estimated Time: 10-15 minutes)</h2>
-
-<h3 id="a-context--phenomenon-link">A. Context &amp; Phenomenon Link</h3>
-<p>[Bring the phenomenon full circle. Connect back to the opening context while demonstrating how student understanding has deepened throughout the assessment.]</p>
-
-<h3 id="b-core-practice-1">B. Core Practice</h3>
-<p>[Synthesis problems that require students to demonstrate comprehensive understanding and ability to apply learning to new contexts.]</p>
-
-<ol>
-  <li>
-    <p>[Problem requiring comprehensive explanation of the phenomenon using multiple concepts]</p>
-  </li>
-  <li>
-    <p>[Transfer problem applying the same principles to a different but related situation]</p>
-  </li>
-  <li>
-    <p>[Problem requiring students to make predictions about related phenomena]</p>
-  </li>
-</ol>
-
-<h3 id="c-synthesis--cross-cutting-lens-integration">C. Synthesis &amp; Cross-Cutting Lens (Integration)</h3>
-<p>[Question that asks students to integrate multiple crosscutting concepts or to reflect on how this phenomenon exemplifies broader patterns in science.]</p>
-
-<h3 id="d-metacognitive-prompt-1">D. Metacognitive Prompt</h3>
-<p>[Final reflection on learning: How has understanding of this phenomenon changed? What new questions does it raise? How does this connect to the unit’s overarching question?]</p>
-
-<hr />
-
-<h2 id="assessment-design-guidelines">Assessment Design Guidelines</h2>
-
-<h3 id="phenomenon-selection-criteria">Phenomenon Selection Criteria</h3>
-<ul>
-  <li><strong>Compelling:</strong> Captures student interest and curiosity</li>
-  <li><strong>Relevant:</strong> Connects to student experience or current events</li>
-  <li><strong>Rich:</strong> Allows investigation of multiple physics concepts</li>
-  <li><strong>Authentic:</strong> Represents real scientific or engineering challenges</li>
-  <li><strong>Accessible:</strong> Can be understood without extensive background knowledge</li>
-</ul>
-
-<h3 id="three-dimensional-learning-integration">Three-Dimensional Learning Integration</h3>
-
-<h4 id="science-and-engineering-practices">Science and Engineering Practices</h4>
-<ul>
-  <li>Asking questions and defining problems</li>
-  <li>Developing and using models</li>
-  <li>Planning and carrying out investigations</li>
-  <li>Analyzing and interpreting data</li>
-  <li>Using mathematics and computational thinking</li>
-  <li>Constructing explanations and designing solutions</li>
-  <li>Engaging in argument from evidence</li>
-  <li>Obtaining, evaluating, and communicating information</li>
-</ul>
-
-<h4 id="crosscutting-concepts-thinking-lenses">Crosscutting Concepts (Thinking Lenses)</h4>
-<ul>
-  <li>Patterns</li>
-  <li>Cause and effect: Mechanism and explanation</li>
-  <li>Scale, proportion, and quantity</li>
-  <li>Systems and system models</li>
-  <li>Energy and matter: Flows, cycles, and conservation</li>
-  <li>Structure and function</li>
-  <li>Stability and change</li>
-</ul>
-
-<h4 id="disciplinary-core-ideas">Disciplinary Core Ideas</h4>
-<ul>
-  <li>[Unit-specific physics concepts from course JSON]</li>
-</ul>
-
-<h3 id="assessment-quality-indicators">Assessment Quality Indicators</h3>
-
-<h4 id="authenticity">Authenticity</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Problems are grounded in real-world contexts</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Scenarios are believable and relevant</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Mathematics serves understanding, not computation for its own sake</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Engineering applications are realistic and current</li>
-</ul>
-
-<h4 id="cognitive-demand">Cognitive Demand</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Problems require explanation, not just calculation</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Students must justify reasoning and approaches</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Multiple solution pathways are possible</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Higher-order thinking skills are emphasized</li>
-</ul>
-
-<h4 id="accessibility">Accessibility</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Multiple entry points for different learning styles</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Clear problem statements with sufficient context</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Appropriate scaffolding and support</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Accommodation options for diverse learners</li>
-</ul>
-
-<h4 id="alignment">Alignment</h4>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Direct connection to unit learning objectives</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Integration of science and engineering practices</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Meaningful application of crosscutting concepts</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Assessment of conceptual understanding, not just procedural skill</li>
-</ul>
-
-<h3 id="scoring-and-feedback-guidelines">Scoring and Feedback Guidelines</h3>
-
-<h4 id="formative-use">Formative Use</h4>
-<ul>
-  <li>Use segment structure to provide targeted feedback</li>
-  <li>Focus on reasoning process, not just final answers</li>
-  <li>Identify misconceptions for instructional planning</li>
-  <li>Recognize growth in scientific thinking practices</li>
-</ul>
-
-<h4 id="summative-evaluation">Summative Evaluation</h4>
-<ul>
-  <li>Evaluate conceptual understanding demonstrated through application</li>
-  <li>Assess quality of scientific reasoning and explanation</li>
-  <li>Consider growth in problem-solving sophistication</li>
-  <li>Document evidence of three-dimensional learning</li>
-</ul>
-
-<h4 id="student-self-assessment">Student Self-Assessment</h4>
-<ul>
-  <li>Metacognitive prompts support student reflection</li>
-  <li>Students can identify their own learning and areas for growth</li>
-  <li>Develops scientific thinking habits and self-awareness</li>
-  <li>Prepares students for lifelong learning in science</li>
-</ul>
-
-<hr />
-
-<h2 id="sample-problem-types-by-assessment-focus">Sample Problem Types by Assessment Focus</h2>
-
-<h3 id="conceptual-understanding">Conceptual Understanding</h3>
-<ul>
-  <li>Explain phenomenon using scientific principles</li>
-  <li>Predict outcomes based on conceptual models</li>
-  <li>Compare and contrast related situations</li>
-  <li>Identify assumptions and limitations</li>
-</ul>
-
-<h3 id="mathematical-application">Mathematical Application</h3>
-<ul>
-  <li>Solve multi-step problems with realistic constraints</li>
-  <li>Interpret graphical data and mathematical relationships</li>
-  <li>Use dimensional analysis and unit conversions</li>
-  <li>Apply mathematical models to new contexts</li>
-</ul>
-
-<h3 id="scientific-reasoning">Scientific Reasoning</h3>
-<ul>
-  <li>Construct arguments from evidence</li>
-  <li>Evaluate competing explanations</li>
-  <li>Design investigations to test hypotheses</li>
-  <li>Analyze the reliability and validity of data</li>
-</ul>
-
-<h3 id="engineering-applications">Engineering Applications</h3>
-<ul>
-  <li>Optimize solutions given constraints and criteria</li>
-  <li>Evaluate trade-offs in design decisions</li>
-  <li>Apply physics principles to solve practical problems</li>
-  <li>Consider societal implications of technological solutions</li>
-</ul>
-
-<hr />
-
-<h2 id="differentiation-strategies">Differentiation Strategies</h2>
-
-<h3 id="for-advanced-learners">For Advanced Learners</h3>
-<ul>
-  <li>Extension problems with additional complexity</li>
-  <li>Open-ended design challenges</li>
-  <li>Connections to cutting-edge research or technology</li>
-  <li>Leadership roles in collaborative problem-solving</li>
-</ul>
-
-<h3 id="for-struggling-learners">For Struggling Learners</h3>
-<ul>
-  <li>Additional scaffolding in problem setup</li>
-  <li>Graphic organizers for complex reasoning</li>
-  <li>Choice in problem-solving approaches</li>
-  <li>Collaborative opportunities with peer support</li>
-</ul>
-
-<h3 id="universal-design-features">Universal Design Features</h3>
-<ul>
-  <li>Multiple representations (visual, verbal, mathematical)</li>
-  <li>Clear learning objectives and success criteria</li>
-  <li>Various ways to demonstrate understanding</li>
-  <li>Built-in reflection and self-assessment opportunities</li>
-</ul>
-
-<hr />
-
-<h2 id="technology-integration">Technology Integration</h2>
-
-<h3 id="digital-tools">Digital Tools</h3>
-<ul>
-  <li>Simulations for complex phenomenon investigation</li>
-  <li>Graphing calculators for mathematical analysis</li>
-  <li>Online collaboration platforms for group work</li>
-  <li>Digital portfolios for reflection and growth tracking</li>
-</ul>
-
-<h3 id="assessment-delivery">Assessment Delivery</h3>
-<ul>
-  <li>Online platforms for immediate feedback</li>
-  <li>Adaptive questioning based on student responses</li>
-  <li>Digital submission and peer review capabilities</li>
-  <li>Integration with learning management systems</li>
-</ul>
-
-<hr />
-
-<p><em>This assessment template embodies the course philosophy that physics learning should be phenomenon-driven, three-dimensional, and focused on building scientific thinking practices that prepare students for lifelong learning and civic engagement.</em></p>
-
-
-                    </div>
-
-                    <!-- Submit section -->
-                    <div class="submit-section" id="bottom-submit">
-                        <button type="submit" id="main-submit-btn" class="submit-btn">
-                            Submit Assessment
-                        </button>
-                        <div id="submit-status" class="submit-status"></div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Formula Sheet Modal (if enabled) -->
-        
-    </main>
-
-    <!-- External JavaScript -->
-    <!-- Inject assessment configuration from YAML before loading other scripts -->
-    <script type="text/javascript">
-        // Override assessment configuration with values from YAML front matter
-        window.ASSESSMENT_CONFIG = {
-            webAppUrl: 'https://script.google.com/macros/s/AKfycbyYqUr_WJSW8sNPaXfAfui_vfxT5OfKcLBuUIWgPbpJ50fAvaaq9Az2fGIqKODPqjX0Mw/exec',
-            autoSaveInterval: 30000,
-            password: '',
-            passwordHash: ''
-        };
-        console.log('Config loaded from Jekyll:', window.ASSESSMENT_CONFIG);
-    </script>
-    <script src="/assets/js/assessment-loader.js"></script>
-    <script src="/assets/js/assessment-utils.js"></script>
-    <script src="/assets/js/assessment-storage.js"></script>
-    <script src="/assets/js/assessment-sections.js"></script>
-    <script src="/assets/js/assessment-submit.js"></script>
-    <script src="/assets/js/assessment-main.js"></script>
-    <script src="/assets/js/assessment-glue.js"></script>
+<div class="navigation-buttons">
+  <button type="button" class="next-section-button">Begin Assessment</button>
+</div>
+</div>
+
+<div class="assessment-section" data-section-id="section1">
+<h3>Section 1: Measurement Precision &amp; Unit Analysis</h3>
+<div class="form-group" data-question-id="q1" data-points="4">
+  <p><strong>1. Unit Conversion:</strong></p>
+  <p>Convert <em>2.45 km</em> to meters, showing unit analysis and proper significant figures.</p>
+  <input type="number" name="q1" class="form-control" step="0.01" required="" /> meters
+</div>
+<div class="form-group" data-question-id="q2" data-points="4">
+  <p><strong>2. Lunar Circumference Estimation:</strong></p>
+  <p>Two lunar research stations separated by a surface distance of <em>12.0 km</em> show a solar shadow angle difference of <em>2.5°</em> at local lunar noon. What fraction of Luna’s full 360° circle does this represent? Use that fraction to estimate Luna’s circumference. Show proportional reasoning.</p>
+  <textarea name="q2" class="form-control" rows="3" required=""></textarea>
+</div>
+<div class="navigation-buttons">
+  <button type="button" class="next-section-button">Next Section</button>
+</div>
+</div>
+
+<div class="assessment-section" data-section-id="section2">
+<h3>Section 2: Vector Components &amp; Representation</h3>
+<div class="form-group" data-question-id="q3" data-points="4">
+  <p><strong>3. Vector Sketch:</strong></p>
+  <p>A displacement vector $\vec{d}$ has magnitude $|\vec{d}| = 15.0$ m at $\theta = 37°$ north of east.<br />Neatly sketch $\vec{d}$ with labeled horizontal ($d_x$) and vertical ($d_y$) components (include a right triangle and angle).</p>
+  <textarea name="q3" class="form-control" rows="2" required="" placeholder="Describe your sketch or upload separately."></textarea>
+</div>
+<div class="form-group" data-question-id="q4" data-points="6">
+  <p><strong>4. Eastward Component Calculation:</strong></p>
+  <p>Compute the eastward component $d_x$. Show: formula → substitution → numeric result with units.</p>
+  <input type="number" name="q4" class="form-control" step="0.01" required="" /> meters
+</div>
+<div class="form-group" data-question-id="q5" data-points="7">
+  <p><strong>5. Northward Component Calculation:</strong></p>
+  <p>Compute the northward component $d_y$. Justify significant figures.</p>
+  <input type="number" name="q5" class="form-control" step="0.01" required="" /> meters
+  <textarea name="q5_explain" class="form-control" rows="2" required="" placeholder="Explain your significant figures."></textarea>
+</div>
+<div class="navigation-buttons">
+  <button type="button" class="prev-section-button">Previous Section</button>
+  <button type="button" class="next-section-button">Next Section</button>
+</div>
+</div>
+
+<div class="assessment-section" data-section-id="section3">
+<h3>Section 3: Scientific Modeling &amp; Inquiry</h3>
+<div class="form-group" data-question-id="q6" data-points="8">
+  <p><strong>6. Classroom Mapping:</strong></p>
+  <p>The teacher’s desk is at coordinates $(x, y) = (4.0\ \text{m}, 3.0\ \text{m})$ from your chosen origin.<br />Determine the displacement vector $\vec{r}$ from the origin to the desk: give (i) component form $\vec{r} = \langle x, y \rangle$, (ii) magnitude $|\vec{r}|$, (iii) direction as an angle north of east (or using $\tan^{-1}$ with quadrant justification).</p>
+  <textarea name="q6" class="form-control" rows="4" required=""></textarea>
+</div>
+<div class="form-group" data-question-id="q7" data-points="7">
+  <p><strong>7. Reliability of Quantitative Mapping:</strong></p>
+  <p>Explain (3–4 sentences) why a quantitative coordinate system yields higher reliability than a freehand sketch for classroom mapping. Reference precision, reproducibility, and error analysis.</p>
+  <textarea name="q7" class="form-control" rows="3" required=""></textarea>
+</div>
+<div class="navigation-buttons">
+  <button type="button" class="prev-section-button">Previous Section</button>
+  <button type="button" class="next-section-button">Next Section</button>
+</div>
+</div>
+
+<div class="assessment-section" data-section-id="section4">
+<h3>Section 4: Cross-Cutting Concepts</h3>
+<div class="form-group" data-question-id="q8" data-points="5">
+  <p><strong>8. Scale &amp; Proportion:</strong></p>
+  <p>Global Positioning System accuracy requires position resolution within about <em>1.0 m</em> globally. Explain why expressing motion or position with vector components (rather than only a single magnitude and heading) enables this precision. Cite how component-wise error control works.</p>
+  <textarea name="q8" class="form-control" rows="3" required=""></textarea>
+</div>
+<div class="form-group" data-question-id="q9" data-points="5">
+  <p><strong>9. Patterns &amp; Triangulation:</strong></p>
+  <p>Connect Eratosthenes’s ancient Earth-size method to modern GPS triangulation. Identify the shared mathematical pattern and how proportional or angular differences translate into large-scale distance determination.</p>
+  <textarea name="q9" class="form-control" rows="3" required=""></textarea>
+</div>
+<div class="navigation-buttons">
+  <button type="button" class="prev-section-button">Previous Section</button>
+  <button type="button" class="next-section-button">Next Section</button>
+</div>
+</div>
+
+<div class="assessment-section" data-section-id="reflection">
+<h3>Metacognitive Reflection (Unscored)</h3>
+<div class="form-group" data-question-id="q10">
+  <p>Which single step in today’s work most improved your confidence with vectors or measurement, and why?</p>
+  <textarea name="q10" class="form-control" rows="3"></textarea>
+</div>
+<div class="navigation-buttons">
+  <button type="button" class="prev-section-button">Previous Section</button>
+  <button type="submit" id="submit-assessment" class="btn btn-primary">Submit Assessment</button>
+</div>
+<div id="submission-confirmation" class="alert alert-success mt-3" style="display:none;">
+  <p>Your assessment has been submitted successfully!</p>
+  <p>A copy of your responses has been saved.</p>
+</div>
+</div>
+
+          </div>
+      
+          <div class="assessment-actions">
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+            <button type="button" class="btn btn-secondary save-progress">Save Progress</button>
+          </div>
+    </form>
+    
+    <!-- JavaScript to make elements interactive without Ruby plugins -->
     <script>
-      // Patch: Add null check to validateForm for error display
-      if (window.validateForm) {
-        const origValidateForm = window.validateForm;
-        window.validateForm = function() {
-          // ...existing code inside validateForm...
-          // When displaying error:
-          // Replace: document.getElementById('progress-text').textContent = '...';
-          // With:
-          var progressTextEl = document.getElementById('progress-text');
-          if (progressTextEl) {
-            progressTextEl.textContent = '...'; // your error message
+      document.addEventListener('DOMContentLoaded', function() {
+        // Access global assessment modules if available
+        const hasAutoSave = typeof autoSave === 'function';
+        const hasSubmit = typeof submitAssessment === 'function';
+        
+        // Ensure MathJax properly typeset after DOM modifications
+        function renderMathJax() {
+          if (window.MathJax) {
+            window.MathJax.typesetPromise && window.MathJax.typesetPromise();
           }
-          // ...rest of validateForm...
-          // Call original if needed
-          return origValidateForm.apply(this, arguments);
+        }
+        
+        // Initial MathJax render
+        renderMathJax();
+        
+        // Make checkboxes interactive (remove disabled attribute)
+        document.querySelectorAll('.task-list-item-checkbox').forEach(checkbox => {
+          checkbox.removeAttribute('disabled');
+          checkbox.name = 'question_option';
+          checkbox.classList.add('interactive-checkbox');
+        });
+        
+        // Process unit selections - look for the pattern [unit] followed by a list of units
+        document.querySelectorAll('p').forEach(paragraph => {
+          const text = paragraph.innerHTML;
+          // Match pattern: [unit] where unit is the correct answer
+          const unitMatch = text.match(/\[([\w\s\.\-\+\/°²³]+)\]/);
+          
+          if (unitMatch && paragraph.nextElementSibling && paragraph.nextElementSibling.tagName === 'UL') {
+            const correctUnit = unitMatch[1];
+            const unitList = paragraph.nextElementSibling;
+            const units = Array.from(unitList.querySelectorAll('li')).map(li => li.textContent.trim());
+            
+            // Create select element
+            const select = document.createElement('select');
+            select.name = 'unit_selection';
+            select.className = 'unit-select';
+            
+            // Add options from the list
+            units.forEach(unit => {
+              const option = document.createElement('option');
+              option.value = unit;
+              option.textContent = unit;
+              // Set the correct unit as selected by default
+              if (unit === correctUnit) {
+                option.selected = true;
+              }
+              select.appendChild(option);
+            });
+            
+            // Create wrapper
+            const wrapper = document.createElement('div');
+            wrapper.className = 'unit-selection-field';
+            wrapper.innerHTML = paragraph.innerHTML.replace(/\[([\w\s\.\-\+\/°²³]+)\]/, '');
+            wrapper.appendChild(select);
+            
+            // Replace original paragraph and list with our select
+            paragraph.parentNode.replaceChild(wrapper, paragraph);
+            unitList.remove();
+          }
+        });
+        
+        // Process answer fields immediately after page load
+        function processAnswerFields() {
+          // Find paragraphs containing "Answer: [number]"
+          const answerRegex = /Answer:\s*\[([\d\.]+)\]\s*([a-zA-Z0-9\/²³°\s]+)?/i;
+          
+          document.querySelectorAll('p').forEach(p => {
+            if (p.innerHTML.includes('Answer:') && p.innerHTML.includes('[') && p.innerHTML.includes(']')) {
+              // Get the original HTML
+              const originalHTML = p.innerHTML;
+              
+              // Extract the answer value and unit
+              const answerMatch = originalHTML.match(answerRegex);
+              if (answerMatch) {
+                const correctValue = answerMatch[1];
+                const unit = answerMatch[2] ? answerMatch[2].trim() : '';
+                
+                // Replace the [number] pattern with an input field
+                p.innerHTML = originalHTML.replace(
+                  /\[[\d\.]+\]/,
+                  '<input type="number" step="any" class="answer-field" name="numerical_answer" placeholder="Enter number">'
+                );
+              }
+            }
+          });
+        }
+        
+        // Run answer field processing
+        processAnswerFields();
+        
+        // We'll now delegate form submission and autosave to the loaded scripts
+        // The event listeners are set up in assessment-md.js which is loaded last
+        console.log('Inline JavaScript completed, waiting for scripts to load...');
+        
+        // Ensure MathJax is rendered after all DOM manipulations
+        setTimeout(renderMathJax, 500);
+        
+        // Add another MathJax render after a longer delay to catch any late DOM changes
+        setTimeout(renderMathJax, 1500);
+      });
+    </script>
+      </main>
+    </div>
+    <footer class="site-footer" style="background: #2c3e50; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-radius: 1rem 1rem 0 0;">
+  <div class="footer-content">
+    <p>&copy; 2025 Cosmos in the Classroom. Educational Use Only.</p>
+    <p>
+      <a href="/license" style="color: #fff;">
+        📚 Educational Use License - AI-Generated Content Included
+      </a>
+    </p>
+    <p style="font-size: 0.9rem; color: #fdbb2d;">Made with Jekyll &amp; GitHub Pages</p>
+  </div>
+</footer>
+
+  
+  <!-- Initialize assessment status tracking -->
+  <script>
+    // Password validation function
+    function checkPassword(event) {
+      event.preventDefault();
+      
+      const passwordInput = document.getElementById('password-input').value;
+      const passwordHash = ''; // Use the hash from YAML
+      const passwordScreen = document.getElementById('password-screen');
+      const passwordError = document.getElementById('password-error');
+      
+      // First check for direct match with plain password (for simple cases)
+      if (passwordInput === 'hphys2025') {
+        // Password correct - hide the password screen
+        passwordScreen.classList.add('hidden');
+        // Store in session that password was entered correctly
+        sessionStorage.setItem('assessment_hphys-quiz-1-1-measurement-vectors_auth', 'true');
+        return false;
+      }
+      
+      // If hash is available, check against hash
+      if (passwordHash && passwordHash.length > 0) {
+        // Simple hash function for basic security
+        function simpleHash(str) {
+          let hash = 0;
+          for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit integer
+          }
+          return hash.toString(16); // Convert to hex
+        }
+        
+        if (simpleHash(passwordInput) === passwordHash) {
+          // Password correct - hide the password screen
+          passwordScreen.classList.add('hidden');
+          // Store in session that password was entered correctly
+          sessionStorage.setItem('assessment_hphys-quiz-1-1-measurement-vectors_auth', 'true');
+          return false;
+        }
+      }
+      
+      // Password incorrect - show error
+      passwordError.style.display = 'block';
+      return false;
+    }
+    
+    // Show password screen after submission
+    function showPasswordAfterSubmission() {
+      const passwordScreen = document.getElementById('password-screen');
+      if (passwordScreen) {
+        // Clear session storage authentication
+        sessionStorage.removeItem('assessment_hphys-quiz-1-1-measurement-vectors_auth');
+        // Show password screen
+        passwordScreen.classList.remove('hidden');
+        // Clear password input field and hide error message
+        document.getElementById('password-input').value = '';
+        document.getElementById('password-error').style.display = 'none';
+      }
+    }
+    
+    // Make password functions available globally for other scripts
+    window.showPasswordAfterSubmission = showPasswordAfterSubmission;
+    
+    // Check if user already entered password in this session
+    document.addEventListener('DOMContentLoaded', function() {
+      const passwordScreen = document.getElementById('password-screen');
+      if (passwordScreen && !passwordScreen.classList.contains('hidden')) {
+        if (sessionStorage.getItem('assessment_hphys-quiz-1-1-measurement-vectors_auth') === 'true') {
+          passwordScreen.classList.add('hidden');
+        }
+      }
+      
+      // Set up form submission interception to show password after submission
+      const form = document.getElementById('assessment-form');
+      if (form && 'hphys2025' !== '') {
+        // Save the original submit function
+        const originalSubmit = form.submit;
+        
+        // Override the submit function
+        form.submit = function() {
+          // Call the original submit
+          originalSubmit.apply(this, arguments);
+          
+          // After a short delay, show the password screen
+          setTimeout(showPasswordAfterSubmission, 2000);
         };
       }
-    </script>
+    });
+    
+    // Debug information for script loading
+    window.assessmentScriptStatus = {
+      config: false,
+      utils: false,
+      storage: false,
+      submit: false,
+      md: false
+    };
+    
+    // Override script status to track properly
+    window.markScriptLoaded = function(scriptName) {
+      if (window.assessmentScriptStatus && scriptName in window.assessmentScriptStatus) {
+        window.assessmentScriptStatus[scriptName] = true;
+        console.log(`Script ${scriptName} marked as loaded`);
+      }
+    };
+    
+    // Load scripts dynamically to ensure proper order and tracking
+    function loadScript(url, scriptName, callback) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = url;
+      
+      script.onload = function() {
+        window.markScriptLoaded(scriptName);
+        callback && callback();
+      };
+      
+      script.onerror = function() {
+        console.error(`Failed to load script: ${url}`);
+        callback && callback();
+      };
+      
+      document.body.appendChild(script);
+    }
+    
+    // Inject assessment configuration from YAML
+    const configScript = document.createElement('script');
+    configScript.type = 'text/javascript';
+    configScript.innerHTML = `
+      // Override assessment configuration with values from YAML front matter
+      window.ASSESSMENT_CONFIG = {
+        webAppUrl: 'https://script.google.com/macros/s/AKfycbyYqUr_WJSW8sNPaXfAfui_vfxT5OfKcLBuUIWgPbpJ50fAvaaq9Az2fGIqKODPqjX0Mw/exec',
+        autoSaveInterval: 30000,
+        password: 'hphys2025',
+        passwordHash: ''
+      };
+      // Mark as loaded
+      if (window.markScriptLoaded) {
+        window.markScriptLoaded('config');
+      }
+    `;
+    document.body.appendChild(configScript);
+    
+    // Load remaining scripts in sequence to ensure proper dependencies
+    loadScript('/assets/js/assessment-utils.js', 'utils', function() {
+      loadScript('/assets/js/assessment-storage.js', 'storage', function() {
+        loadScript('/assets/js/assessment-submit.js', 'submit', function() {
+          loadScript('/assets/js/assessment-md.js', 'md', function() {
+            // After all core scripts are loaded, add our password reappearance extension
+            loadScript('/assets/js/password-reappearance.js', 'password', function() {
+              console.log('All assessment scripts loaded!');
+              console.log('Final script status:', window.assessmentScriptStatus);
+              console.log('submitAssessment available:', typeof submitAssessment === 'function');
+              console.log('autoSave available:', typeof autoSave === 'function');
+              console.log('Password reappearance extension loaded');
+            });
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

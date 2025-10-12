@@ -1,7 +1,15 @@
-<!DOCTYPE html>
+
+<!-- 
+DEPRECATED LAYOUT - DO NOT USE FOR NEW CONTENT
+This layout is maintained for legacy compatibility only.
+For all new assessments, please use the physics-quiz layout with JSON data files.
+See the unified assessment workflow: YAML → JSON → Markdown Wrapper → Jekyll Render
+-->
+
+<!doctype html>
 <html lang="en">
-<head>
   <head>
+    <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -23,96 +31,77 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.cosmosintheclassroom.org/feed.xml" title="Cosmos in the Classroom" /></head>
 
-  <link rel="stylesheet" href="/assets/css/assessment.css">
-  <!-- Add MathJax support -->
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
-  </script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Password Screen Styles */
+      #password-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
       }
-    };
-  </script>
-  <style>
-    /* Password Screen Styles */
-    #password-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    
-    #password-container {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    #password-container h2 {
-      margin-top: 0;
-      color: #333;
-    }
-    
-    #password-form {
-      margin-top: 20px;
-    }
-    
-    #password-input {
-      padding: 10px;
-      width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    
-    #password-submit {
-      padding: 10px 20px;
-      background-color: #4285F4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    
-    #password-submit:hover {
-      background-color: #3367d6;
-    }
-    
-    #password-error {
-      color: #d93025;
-      margin-top: 10px;
-      display: none;
-    }
-    
-    .hidden {
-      display: none !important;
-    }
-  </style>
-</head>
-<body>
-  <!---->
+      #password-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+      #password-container h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      #password-form {
+        margin-top: 20px;
+      }
+      #password-input {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      #password-submit {
+        padding: 10px 20px;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #password-submit:hover {
+        background-color: #3367d6;
+      }
+      #password-error {
+        color: #d93025;
+        margin-top: 10px;
+        display: none;
+      }
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
 <header class="site-header site-header-bar">
   <div class="header-content">
     <div>
@@ -136,21 +125,23 @@
   </div>
 </header>
 
+      </div>
+    </header>
   
-  <!-- Password Screen Overlay -->
-  <div id="password-screen" >
-    <div id="password-container">
-      <h2>Assessment Password Required</h2>
-      <p>Please enter the assessment password to continue.</p>
-      <form id="password-form" onsubmit="return checkPassword(event)">
-        <input type="password" id="password-input" placeholder="Enter password" required>
-        <button type="submit" id="password-submit">Submit</button>
-      </form>
-      <p id="password-error">Incorrect password. Please try again.</p>
+    <!-- Password Screen Overlay -->
+    <div id="password-screen" >
+      <div id="password-container">
+        <h2>Assessment Password Required</h2>
+        <p>Please enter the assessment password to continue.</p>
+        <form id="password-form" onsubmit="return checkPassword(event)">
+          <input type="password" id="password-input" placeholder="Enter password" required>
+          <button type="submit" id="password-submit">Submit</button>
+        </form>
+        <p id="password-error">Incorrect password. Please try again.</p>
+      </div>
     </div>
-  </div>
-  
-  <main class="assessment assessment-md">
+    <div class="markdown-body">
+      <main class="assessment assessment-md">
     <div class="assessment-header">
       <h1>Kinematics and Motion Sample Assessment</h1>
       
@@ -175,8 +166,8 @@
       
       <div class="auto-save-indicator" id="auto-save-indicator"></div>
       
-      <div class="assessment-content">
-        <h1 id="kinematics-and-motion-assessment">Kinematics and Motion Assessment</h1>
+          <div class="assessment-content">
+            <h1 id="kinematics-and-motion-assessment">Kinematics and Motion Assessment</h1>
 
 <!-- Student Information Section -->
 <div class="student-info">
@@ -445,12 +436,12 @@
 <input type="hidden" name="Q10_Tolerance" value="0.01" /></p>
 
 
-      </div>
+          </div>
       
-      <div class="assessment-actions">
-        <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
-        <button type="button" class="btn btn-secondary save-progress">Save Progress</button>
-      </div>
+          <div class="assessment-actions">
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+            <button type="button" class="btn btn-secondary save-progress">Save Progress</button>
+          </div>
     </form>
     
     <!-- JavaScript to make elements interactive without Ruby plugins -->
@@ -557,8 +548,9 @@
         setTimeout(renderMathJax, 1500);
       });
     </script>
-  </main>
-  <footer class="site-footer" style="background: #2c3e50; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-radius: 1rem 1rem 0 0;">
+      </main>
+    </div>
+    <footer class="site-footer" style="background: #2c3e50; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-radius: 1rem 1rem 0 0;">
   <div class="footer-content">
     <p>&copy; 2025 Cosmos in the Classroom. Educational Use Only.</p>
     <p>

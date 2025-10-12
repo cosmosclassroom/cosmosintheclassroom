@@ -1,7 +1,15 @@
-<!DOCTYPE html>
+
+<!-- 
+DEPRECATED LAYOUT - DO NOT USE FOR NEW CONTENT
+This layout is maintained for legacy compatibility only.
+For all new assessments, please use the physics-quiz layout with JSON data files.
+See the unified assessment workflow: YAML → JSON → Markdown Wrapper → Jekyll Render
+-->
+
+<!doctype html>
 <html lang="en">
-<head>
   <head>
+    <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
@@ -23,96 +31,77 @@
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://www.cosmosintheclassroom.org/feed.xml" title="Cosmos in the Classroom" /></head>
 
-  <link rel="stylesheet" href="/assets/css/assessment.css">
-  <!-- Add MathJax support -->
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
-  </script>
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Password Screen Styles */
+      #password-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
       }
-    };
-  </script>
-  <style>
-    /* Password Screen Styles */
-    #password-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-    
-    #password-container {
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      text-align: center;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    #password-container h2 {
-      margin-top: 0;
-      color: #333;
-    }
-    
-    #password-form {
-      margin-top: 20px;
-    }
-    
-    #password-input {
-      padding: 10px;
-      width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    
-    #password-submit {
-      padding: 10px 20px;
-      background-color: #4285F4;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    
-    #password-submit:hover {
-      background-color: #3367d6;
-    }
-    
-    #password-error {
-      color: #d93025;
-      margin-top: 10px;
-      display: none;
-    }
-    
-    .hidden {
-      display: none !important;
-    }
-  </style>
-</head>
-<body>
-  <!---->
+      #password-container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+      }
+      #password-container h2 {
+        margin-top: 0;
+        color: #333;
+      }
+      #password-form {
+        margin-top: 20px;
+      }
+      #password-input {
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      #password-submit {
+        padding: 10px 20px;
+        background-color: #4285F4;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #password-submit:hover {
+        background-color: #3367d6;
+      }
+      #password-error {
+        color: #d93025;
+        margin-top: 10px;
+        display: none;
+      }
+      .hidden {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
 <header class="site-header site-header-bar">
   <div class="header-content">
     <div>
@@ -136,21 +125,23 @@
   </div>
 </header>
 
+      </div>
+    </header>
   
-  <!-- Password Screen Overlay -->
-  <div id="password-screen" >
-    <div id="password-container">
-      <h2>Assessment Password Required</h2>
-      <p>Please enter the assessment password to continue.</p>
-      <form id="password-form" onsubmit="return checkPassword(event)">
-        <input type="password" id="password-input" placeholder="Enter password" required>
-        <button type="submit" id="password-submit">Submit</button>
-      </form>
-      <p id="password-error">Incorrect password. Please try again.</p>
+    <!-- Password Screen Overlay -->
+    <div id="password-screen" >
+      <div id="password-container">
+        <h2>Assessment Password Required</h2>
+        <p>Please enter the assessment password to continue.</p>
+        <form id="password-form" onsubmit="return checkPassword(event)">
+          <input type="password" id="password-input" placeholder="Enter password" required>
+          <button type="submit" id="password-submit">Submit</button>
+        </form>
+        <p id="password-error">Incorrect password. Please try again.</p>
+      </div>
     </div>
-  </div>
-  
-  <main class="assessment assessment-md">
+    <div class="markdown-body">
+      <main class="assessment assessment-md">
     <div class="assessment-header">
       <h1>Quiz 1.1: Decoding Seismic Signals</h1>
       
@@ -166,7 +157,7 @@
     <form id="assessment-form">
       <!-- Hidden metadata fields for Google Script integration -->
       <input type="hidden" name="AssessmentType" value="markdown">
-      <input type="hidden" name="AssessmentId" value="natdis-1-1-earthquakes">
+      <input type="hidden" name="AssessmentId" value="natdis-quiz-1-1-earthquakes">
       <input type="hidden" name="AssessmentTitle" value="Quiz 1.1: Decoding Seismic Signals">
       <input type="hidden" name="CoursePrefix" value="">
       <input type="hidden" name="TotalPoints" value="14">
@@ -175,159 +166,155 @@
       
       <div class="auto-save-indicator" id="auto-save-indicator"></div>
       
-      <div class="assessment-content">
-        <h1 id="quiz-11-decoding-seismic-signals">Quiz 1.1: Decoding Seismic Signals</h1>
+          <div class="assessment-content">
+            <h1 id="quiz-11-decoding-seismic-signals">Quiz 1.1: Decoding Seismic Signals</h1>
+
+<div class="student-info-form" style="background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #dee2e6;">
+   <h3 style="margin-top: 0;">Student Information</h3>
+   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <div>
+         <label for="student-name"><strong>Student Name:</strong></label>
+         <input type="text" id="student-name" name="StudentName" style="width: 100%; padding: 8px; margin-top: 5px;" required="" />
+      </div>
+      <div>
+         <label for="class-period"><strong>Class Period:</strong></label>
+         <input type="text" id="class-period" name="ClassPeriod" placeholder="e.g., Period 3" style="width: 100%; padding: 8px; margin-top: 5px;" />
+      </div>
+   </div>
+</div>
 
 <h2 id="role-the-scientist">Role: The Scientist</h2>
 <h2 id="duration-22-minutes">Duration: 22 minutes</h2>
 <h2 id="instructions-complete-all-sections-show-your-work-on-paper-for-calculations-then-enter-your-final-answers-and-select-appropriate-units">Instructions: Complete all sections. Show your work on paper for calculations, then enter your final answers and select appropriate units.</h2>
-
-<h3 id="segment-1-of-3-seismic-wave-analysis-7-minutes">Segment 1 of 3: Seismic Wave Analysis (7 minutes)</h3>
 <p><strong>Context:</strong> On August 23, 2011, a magnitude 5.8 earthquake centered in Virginia was felt throughout the Northeast, including in Branford, Connecticut.</p>
 
-<ol>
-  <li><strong>A seismograph in Hartford, CT recorded P-wave arrival at 2:51:32 PM and S-wave arrival at 2:52:17 PM. Calculate the S-P interval in seconds.</strong>
-    <ul>
-      <li><em>Equation:</em> S-P interval = S-wave arrival time - P-wave arrival time</li>
-      <li><em>Variables:</em> $\Delta t = t_S - t_P$</li>
-    </ul>
-  </li>
-</ol>
+<div class="form-group">
+      <label for="q1">1. A seismograph in Hartford, CT recorded P-wave arrival at 2:51:32 PM and S-wave arrival at 2:52:17 PM. Calculate the S-P interval in seconds.<br />
+      <em>Equation:</em> S-P interval = S-wave arrival time - P-wave arrival time<br />
+      <em>Variables:</em> $\Delta t = t_S - t_P$</label><br />
+      <input type="number" id="q1" name="Q1_Answer" step="1" required="" /> seconds
+   </div>
 
-<p><img src="/natdis/course/1-earthquakes/assets/images/s-p-interval-distance-graph.png" alt="S-P Interval Distance Graph" /></p>
+<p><img src="/assets/images/natdis/s-p-interval-distance-graph.png" alt="S-P Interval Distance Graph" /></p>
 
-<ol>
-  <li>
-    <p><strong>Using the S-P interval from Problem 1 and the standard travel-time graph, determine the distance from Hartford to the earthquake epicenter.</strong></p>
-  </li>
-  <li><strong>If the P-wave traveled at an average speed of 6.0 km/s through the Earth’s crust, calculate how long it took the P-wave to travel from the Virginia epicenter to Hartford.</strong>
-    <ul>
-      <li><em>Equation:</em> Time = Distance $\div$ Speed</li>
-      <li><em>Variables:</em> $t = d / v$</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>The 2011 Virginia earthquake had a magnitude of 5.8, but it was felt from Georgia to Maine. Explain why a single earthquake (cause) can have very different intensity experiences (effects) in different locations.</strong></p>
-  </li>
-  <li><strong>As a scientist, what would be your biggest concern about the seismic monitoring network in the Northeast based on this 2011 event?</strong></li>
-</ol>
+<div class="form-group">
+      <label for="q2">2. Using the S-P interval from Problem 1 and the standard travel-time graph, determine the distance from Hartford to the earthquake epicenter.</label><br />
+      <input type="number" id="q2" name="Q2_Answer" step="0.1" required="" /> km
+   </div>
 
-<hr />
+<div class="form-group">
+      <label for="q3">3. If the P-wave traveled at an average speed of 6.0 km/s through the Earth's crust, calculate how long it took the P-wave to travel from the Virginia epicenter to Hartford.<br />
+      <em>Equation:</em> Time = Distance $\div$ Speed<br />
+      <em>Variables:</em> $t = d / v$</label><br />
+      <input type="number" id="q3" name="Q3_Answer" step="0.1" required="" /> seconds
+   </div>
 
-<h3 id="segment-2-of-3-local-risk-assessment-8-minutes">Segment 2 of 3: Local Risk Assessment (8 minutes)</h3>
-<p><strong>Context:</strong> Scientists studying Connecticut’s seismic risk focus on the Moodus seismic zone, where small earthquakes occur regularly.</p>
+<div class="form-group">
+      <label for="q4">4. The 2011 Virginia earthquake had a magnitude of 5.8, but it was felt from Georgia to Maine. Explain why a single earthquake (cause) can have very different intensity experiences (effects) in different locations.</label><br />
+      <textarea id="q4" name="Q4_Answer" rows="2" required=""></textarea>
+   </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Year</th>
-      <th>Magnitude</th>
-      <th>Distance from Branford (km)</th>
-      <th>Felt in Branford?</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1998</td>
-      <td>2.1</td>
-      <td>18</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>2001</td>
-      <td>2.8</td>
-      <td>12</td>
-      <td>Slightly</td>
-    </tr>
-    <tr>
-      <td>2005</td>
-      <td>3.2</td>
-      <td>15</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>2009</td>
-      <td>2.5</td>
-      <td>22</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>2012</td>
-      <td>3.4</td>
-      <td>8</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>2015</td>
-      <td>2.9</td>
-      <td>14</td>
-      <td>Slightly</td>
-    </tr>
-    <tr>
-      <td>2018</td>
-      <td>3.1</td>
-      <td>11</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>2021</td>
-      <td>2.7</td>
-      <td>19</td>
-      <td>No</td>
-    </tr>
-  </tbody>
-</table>
+<div class="form-group">
+      <label for="q5">5. As a scientist, what would be your biggest concern about the seismic monitoring network in the Northeast based on this 2011 event?</label><br />
+      <textarea id="q5" name="Q5_Answer" rows="2" required=""></textarea>
+   </div>
 
-<ol>
-  <li>
-    <p><strong>How many earthquakes in this dataset were felt in Branford (including “slightly felt”)?</strong></p>
-  </li>
-  <li>
-    <p><strong>Based on the data, what is the approximate distance threshold below which earthquakes of magnitude 2.5 or greater are likely to be felt in Branford?</strong></p>
-  </li>
-  <li>
-    <p><strong>Which factor seems more important for whether an earthquake is felt in Branford: the magnitude or the distance? Explain your reasoning using specific examples from the data.</strong></p>
-  </li>
-  <li>
-    <p><strong>Describe the pattern you observe between earthquake magnitude, distance from Branford, and whether the earthquake was felt. How does this pattern help scientists predict which future earthquakes will affect our community?</strong></p>
-  </li>
-  <li>
-    <p><strong>Based on your analysis, what key information would you provide to engineers designing earthquake-resistant structures in Branford?</strong></p>
-  </li>
-</ol>
+<p><button type="button" onclick="window.navigateToSection(1)">Next Section</button>
+&lt;/div&gt;</p>
 
-<hr />
+<div class="assessment-section" data-section-id="segment2" style="display:none;">
+   <h3>Segment 2 of 3: Local Risk Assessment (8 minutes)</h3>
+   <p><strong>Context:</strong> Scientists studying Connecticut's seismic risk focus on the Moodus seismic zone, where small earthquakes occur regularly.</p>
 
-<h3 id="segment-3-of-3-scientific-limitations-7-minutes">Segment 3 of 3: Scientific Limitations (7 minutes)</h3>
-<p><strong>Context:</strong> In 2020, seismologists predicted a 30% chance of a magnitude 6.0+ earthquake striking the East Coast within 50 years. However, earthquake prediction remains challenging.</p>
+   <table>
+      <thead>
+         <tr><th>Year</th><th>Magnitude</th><th>Distance from Branford (km)</th><th>Felt in Branford?</th></tr>
+      </thead>
+      <tbody>
+         <tr><td>1998</td><td>2.1</td><td>18</td><td>No</td></tr>
+         <tr><td>2001</td><td>2.8</td><td>12</td><td>Slightly</td></tr>
+         <tr><td>2005</td><td>3.2</td><td>15</td><td>Yes</td></tr>
+         <tr><td>2009</td><td>2.5</td><td>22</td><td>No</td></tr>
+         <tr><td>2012</td><td>3.4</td><td>8</td><td>Yes</td></tr>
+         <tr><td>2015</td><td>2.9</td><td>14</td><td>Slightly</td></tr>
+         <tr><td>2018</td><td>3.1</td><td>11</td><td>Yes</td></tr>
+         <tr><td>2021</td><td>2.7</td><td>19</td><td>No</td></tr>
+      </tbody>
+   </table>
 
-<ol>
-  <li><strong>For each limitation below, explain how it could affect the accuracy of risk assessments:</strong>
-    <ul>
-      <li>a) Incomplete historical records (Only ~400 years of written records in New England)</li>
-      <li>b) Sparse seismograph network (Fewer monitoring stations than in California)</li>
-      <li>c) Infrequent large events (Long return periods between major earthquakes)</li>
-    </ul>
-  </li>
-  <li><strong>A proposed budget cut would reduce funding for the Northeast seismic monitoring network by 40%. Calculate the impact:</strong>
-    <ul>
-      <li>Current network: 25 seismograph stations</li>
-      <li>a) Stations remaining after budget cut:</li>
-      <li>b) Percentage of coverage lost (%):</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Choose one data limitation from Problem 11. Explain how this scientific limitation (cause) could lead to poor engineering designs or policy decisions (effect) that put communities at risk.</strong></p>
-  </li>
-  <li><strong>How has thinking like a scientist in this quiz changed your understanding of earthquake risk in Connecticut? What questions would you now ask when you hear news reports about earthquake predictions?</strong></li>
-</ol>
+   <div class="form-group">
+      <label for="q6">6. How many earthquakes in this dataset were felt in Branford (including "slightly felt")?</label><br />
+      <input type="number" id="q6" name="Q6_Answer" step="1" required="" />
+   </div>
 
-      </div>
+   <div class="form-group">
+      <label for="q7">7. Based on the data, what is the approximate distance threshold below which earthquakes of magnitude 2.5 or greater are likely to be felt in Branford?</label><br />
+      <input type="number" id="q7" name="Q7_Answer" step="1" required="" /> km
+   </div>
+
+   <div class="form-group">
+      <label for="q8">8. Which factor seems more important for whether an earthquake is felt in Branford: the magnitude or the distance? Explain your reasoning using specific examples from the data.</label><br />
+      <textarea id="q8" name="Q8_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <div class="form-group">
+      <label for="q9">9. Describe the pattern you observe between earthquake magnitude, distance from Branford, and whether the earthquake was felt. How does this pattern help scientists predict which future earthquakes will affect our community?</label><br />
+      <textarea id="q9" name="Q9_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <div class="form-group">
+      <label for="q10">10. Based on your analysis, what key information would you provide to engineers designing earthquake-resistant structures in Branford?</label><br />
+      <textarea id="q10" name="Q10_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <button type="button" onclick="window.navigateToSection(2)">Next Section</button>
+</div>
+
+<div class="assessment-section" data-section-id="segment3" style="display:none;">
+   <h3>Segment 3 of 3: Scientific Limitations (7 minutes)</h3>
+   <p><strong>Context:</strong> In 2020, seismologists predicted a 30% chance of a magnitude 6.0+ earthquake striking the East Coast within 50 years. However, earthquake prediction remains challenging.</p>
+
+   <div class="form-group">
+      <label for="q11a">11a. Incomplete historical records (Only ~400 years of written records in New England): How could this affect the accuracy of risk assessments?</label><br />
+      <textarea id="q11a" name="Q11a_Answer" rows="2" required=""></textarea>
+   </div>
+   <div class="form-group">
+      <label for="q11b">11b. Sparse seismograph network (Fewer monitoring stations than in California): How could this affect the accuracy of risk assessments?</label><br />
+      <textarea id="q11b" name="Q11b_Answer" rows="2" required=""></textarea>
+   </div>
+   <div class="form-group">
+      <label for="q11c">11c. Infrequent large events (Long return periods between major earthquakes): How could this affect the accuracy of risk assessments?</label><br />
+      <textarea id="q11c" name="Q11c_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <div class="form-group">
+      <label for="q12a">12a. A proposed budget cut would reduce funding for the Northeast seismic monitoring network by 40%. Current network: 25 seismograph stations.<br />Stations remaining after budget cut:</label><br />
+      <input type="number" id="q12a" name="Q12a_Answer" step="1" required="" />
+   </div>
+   <div class="form-group">
+      <label for="q12b">12b. Percentage of coverage lost (%):</label><br />
+      <input type="number" id="q12b" name="Q12b_Answer" step="0.1" required="" /> %
+   </div>
+
+   <div class="form-group">
+      <label for="q13">13. Choose one data limitation from Problem 11. Explain how this scientific limitation (cause) could lead to poor engineering designs or policy decisions (effect) that put communities at risk.</label><br />
+      <textarea id="q13" name="Q13_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <div class="form-group">
+      <label for="q14">14. How has thinking like a scientist in this quiz changed your understanding of earthquake risk in Connecticut? What questions would you now ask when you hear news reports about earthquake predictions?</label><br />
+      <textarea id="q14" name="Q14_Answer" rows="2" required=""></textarea>
+   </div>
+
+   <button type="submit" class="submit-button">Submit</button>
+</div>
+
+          </div>
       
-      <div class="assessment-actions">
-        <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
-        <button type="button" class="btn btn-secondary save-progress">Save Progress</button>
-      </div>
+          <div class="assessment-actions">
+            <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+            <button type="button" class="btn btn-secondary save-progress">Save Progress</button>
+          </div>
     </form>
     
     <!-- JavaScript to make elements interactive without Ruby plugins -->
@@ -434,8 +421,9 @@
         setTimeout(renderMathJax, 1500);
       });
     </script>
-  </main>
-  <footer class="site-footer" style="background: #2c3e50; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-radius: 1rem 1rem 0 0;">
+      </main>
+    </div>
+    <footer class="site-footer" style="background: #2c3e50; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 2rem; border-radius: 1rem 1rem 0 0;">
   <div class="footer-content">
     <p>&copy; 2025 Cosmos in the Classroom. Educational Use Only.</p>
     <p>
@@ -464,7 +452,7 @@
         // Password correct - hide the password screen
         passwordScreen.classList.add('hidden');
         // Store in session that password was entered correctly
-        sessionStorage.setItem('assessment_natdis-1-1-earthquakes_auth', 'true');
+        sessionStorage.setItem('assessment_natdis-quiz-1-1-earthquakes_auth', 'true');
         return false;
       }
       
@@ -485,7 +473,7 @@
           // Password correct - hide the password screen
           passwordScreen.classList.add('hidden');
           // Store in session that password was entered correctly
-          sessionStorage.setItem('assessment_natdis-1-1-earthquakes_auth', 'true');
+          sessionStorage.setItem('assessment_natdis-quiz-1-1-earthquakes_auth', 'true');
           return false;
         }
       }
@@ -500,7 +488,7 @@
       const passwordScreen = document.getElementById('password-screen');
       if (passwordScreen) {
         // Clear session storage authentication
-        sessionStorage.removeItem('assessment_natdis-1-1-earthquakes_auth');
+        sessionStorage.removeItem('assessment_natdis-quiz-1-1-earthquakes_auth');
         // Show password screen
         passwordScreen.classList.remove('hidden');
         // Clear password input field and hide error message
@@ -516,7 +504,7 @@
     document.addEventListener('DOMContentLoaded', function() {
       const passwordScreen = document.getElementById('password-screen');
       if (passwordScreen && !passwordScreen.classList.contains('hidden')) {
-        if (sessionStorage.getItem('assessment_natdis-1-1-earthquakes_auth') === 'true') {
+        if (sessionStorage.getItem('assessment_natdis-quiz-1-1-earthquakes_auth') === 'true') {
           passwordScreen.classList.add('hidden');
         }
       }
