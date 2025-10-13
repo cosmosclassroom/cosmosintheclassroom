@@ -119,7 +119,9 @@
     if (!meta) { log('no assessment-metadata found; skipping'); return; }
 
     // Skip JSON loading for YAML-based assessments
-    const isYamlBased = meta.getAttribute('data-yaml-based') === 'true';
+    const yamlBasedAttr = meta.getAttribute('data-yaml-based');
+    log('data-yaml-based attribute value:', yamlBasedAttr, '(type:', typeof yamlBasedAttr + ')');
+    const isYamlBased = yamlBasedAttr === 'true' || yamlBasedAttr === true;
     if (isYamlBased) {
       log('YAML-based assessment detected; skipping JSON fetch');
       return;
