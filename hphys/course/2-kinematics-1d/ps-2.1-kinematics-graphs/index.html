@@ -61,6 +61,19 @@
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 
+<!-- Chart.js Library (Conditional Loading) -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" 
+        integrity="sha384-TvU5kVKczJ5tRE8xVdNy4f6avs6tJpA6z3nHcMaFkbpG4F9R6z7J5xM5vGvF5Tk6" 
+        crossorigin="anonymous"></script>
+<script>
+    // Chart.js loaded indicator
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity.html] Chart.js v4.4.0 loaded');
+</script>
+
+
 <!-- Backend Configuration -->
 <script>
     window.SITE_CONFIG = window.SITE_CONFIG || {};
@@ -230,6 +243,9 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
           </div>
           
           
+          
+          
+          
           <div class="problem-answer">
             <label for="answer-A-1-1">
               Your Answer:
@@ -279,6 +295,9 @@ b) Is the rocket accelerating? How do you know?
 c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent line.</p>
 
           </div>
+          
+          
+          
           
           
           <div class="problem-answer">
@@ -334,6 +353,9 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
           </div>
           
           
+          
+          
+          
           <div class="problem-answer">
             <label for="answer-B-1-3">
               Your Answer:
@@ -382,6 +404,9 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
 </ul>
 
           </div>
+          
+          
+          
           
           
           <div class="problem-answer">
@@ -438,6 +463,9 @@ d) Calculate the car’s acceleration.</p>
           </div>
           
           
+          
+          
+          
           <div class="problem-answer">
             <label for="answer-C-1-5">
               Your Answer:
@@ -485,6 +513,9 @@ c) Calculate the object’s position after 3.0 s.
 d) At what time will the object have fallen 45.0 m?</p>
 
           </div>
+          
+          
+          
           
           
           <div class="problem-answer">
@@ -537,6 +568,9 @@ c) If the rocket continues with the same acceleration, how long will it take to 
           </div>
           
           
+          
+          
+          
           <div class="problem-answer">
             <label for="answer-D-7">
               Your Answer:
@@ -584,6 +618,9 @@ c) Draw the velocity-time graph from t = 0 s to t = 25.0 s.
 d) Calculate the total distance traveled in 25.0 s.</p>
 
           </div>
+          
+          
+          
           
           
           <div class="problem-answer">
@@ -636,6 +673,9 @@ c) What was the train’s maximum speed?</p>
           </div>
           
           
+          
+          
+          
           <div class="problem-answer">
             <label for="answer-E-9">
               Your Answer:
@@ -682,6 +722,9 @@ b) What is the maximum height reached by the rocket?
 c) How long after launch does the rocket reach its maximum height?</p>
 
           </div>
+          
+          
+          
           
           
           <div class="problem-answer">
@@ -782,68 +825,32 @@ c) How long after launch does the rocket reach its maximum height?</p>
 
 </form>
 
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
-// Problem Navigation System
-let currentProblemIndex = 0;
-let totalProblems = 0;
-
+// Initialize Problem Set Navigator
 document.addEventListener('DOMContentLoaded', function() {
     const problems = document.querySelectorAll('.problem-container');
-    totalProblems = problems.length;
     
-    if (totalProblems > 0) {
-        showProblem(0);
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-problem',
+            nextButtonId: 'next-problem',
+            itemLabel: 'Problem'
+        });
+        
+        console.log('[problem-set] Sequential navigation initialized');
     }
 });
 
+// Legacy function support (for inline onclick handlers)
 function navigateProblem(direction) {
-    const newIndex = currentProblemIndex + direction;
-    if (newIndex >= 0 && newIndex < totalProblems) {
-        showProblem(newIndex);
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
     }
 }
-
-function showProblem(index) {
-    const problems = document.querySelectorAll('.problem-container');
-    
-    // Hide all problems
-    problems.forEach(problem => problem.classList.remove('active'));
-    
-    // Show current problem
-    if (problems[index]) {
-        problems[index].classList.add('active');
-        currentProblemIndex = index;
-        
-        // Update navigation buttons
-        const prevButton = document.getElementById('prev-problem');
-        const nextButton = document.getElementById('next-problem');
-        
-        if (prevButton) prevButton.disabled = (index === 0);
-        if (nextButton) nextButton.disabled = (index === totalProblems - 1);
-        
-        // Update progress
-        updateProgress();
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('[problem-nav] Showing problem', index + 1, 'of', totalProblems);
-    }
-}
-
-function updateProgress() {
-    const progressFill = document.getElementById('progress-fill');
-    const progressText = document.getElementById('progress-text');
-    
-    if (progressFill && progressText) {
-        const percent = ((currentProblemIndex + 1) / totalProblems) * 100;
-        progressFill.style.width = percent + '%';
-        progressText.textContent = `Problem ${currentProblemIndex + 1} of ${totalProblems}`;
-    }
-}
-
-// Make navigation function globally available
-window.navigateProblem = navigateProblem;
 </script>
 
             
@@ -852,7 +859,7 @@ window.navigateProblem = navigateProblem;
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760394683"></script>
+    <script src="/assets/js/activity-core.js?v=1760395710"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -868,7 +875,7 @@ window.navigateProblem = navigateProblem;
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760394683';
+                script.src = moduleMap[contentType] + '?v=1760395710';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };
