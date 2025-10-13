@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML Prototype Quiz: Measurement Basics - Cosmos in the Classroom</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <!-- Added metadata for submission/Sheets -->
+    <div id="assessment-metadata"
+         data-resource-id="hphys-yaml-prototype-v1"
+         data-json-path=""
+         data-yaml-based="true"
+         data-course="hphys"
+         data-content-type="assessment"
+         data-title="YAML Prototype Quiz: Measurement Basics"
+         data-start-at="2025-10-13T18:21:13+00:00"
+         data-attempt-id=""
+         hidden></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-link">← Back to Home</a>
+            <a href="/hphys/" class="nav-link">
+                HPHYS Course
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        
+        <div id="assessment-content" class="assessment-container">
+        
+            
+            <!-- Fixed Assessment Header -->
+            <div class="assessment-viewport-header">
+                <!-- Progress indicator -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text">0% Complete</span>
+                </div>
+                
+                <!-- Section navigation (for multi-section assessments) -->
+                <div class="section-navigation" id="section-nav" style="display: none;">
+                    <div class="section-progress">
+                        <span id="section-indicator">Section 1 of 3</span>
+                        <div class="section-dots" id="section-dots"></div>
+                    </div>
+                    <div class="section-controls">
+                        
+                        <button type="button" id="prev-section-btn" class="nav-btn" disabled>← Previous</button>
+                        <button type="button" id="next-section-btn" class="nav-btn">Next →</button>
+                        <button type="submit" id="submit-btn" class="submit-btn">Submit Assessment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Assessment Content -->
+            <div class="assessment-scroll-area">
+                <!-- Assessment header -->
+                <header class="assessment-header" id="assessment-header">
+                    <h1>YAML Prototype Quiz: Measurement Basics</h1>
+                    <div class="assessment-meta">
+                        
+                        <span class="meta-item">
+                            <span class="meta-label">Time Limit:</span>
+                            <span class="meta-value">15 minutes</span>
+                        </span>
+                        
+                        
+                        <span class="meta-item">
+                            <span class="meta-label">Materials:</span>
+                            <span class="meta-value">Calculator, Formula Sheet</span>
+                        </span>
+                        
+                        <span class="meta-item">
+                            <span class="meta-label">Started:</span>
+                            <span class="meta-value" id="start-time"></span>
+                        </span>
+                    </div>
+                </header>
+
+                <!-- Auto-save indicator -->
+                <div id="auto-save-indicator" class="auto-save-indicator"></div>
+
+                <!-- Main assessment form -->
+                <form id="assessment-form" class="assessment-form">
+                    <!-- Hidden form data -->
+                    <input type="hidden" name="AssessmentTitle" value="YAML Prototype Quiz: Measurement Basics">
+                    <input type="hidden" name="Course" value="hphys">
+                    <input type="hidden" name="StartTime" id="start-time-hidden">
+                    <input type="hidden" name="BrowserInfo" id="browser-info">
+                    <input type="hidden" name="Timestamp" id="timestamp">
+                    <!-- Added hidden fields for Google Sheets ingestion -->
+                    <input type="hidden" name="answers_json" id="answers-json">
+                    <input type="hidden" name="EndTime" id="end-time">
+                    <input type="hidden" name="AttemptId" id="attempt-id">
+
+                    <!-- Student information -->
+                    <section class="student-info-section" id="student-info-section">
+                        <h3>Student Information</h3>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="student-name">Full Name *</label>
+                                <input type="text" id="student-name" name="StudentName" required>
+                                <span class="field-error" id="student-name-error"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="course-name">Course</label>
+                                <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label for="class-period">Class Period</label>
+                                <select id="class-period" name="ClassPeriod">
+                                    <option value="">Select Period</option>
+                                    <option value="1st">1st Period</option>
+                                    <option value="2nd">2nd Period</option>
+                                    <option value="3rd">3rd Period</option>
+                                    <option value="4th">4th Period</option>
+                                    <option value="5th">5th Period</option>
+                                    <option value="6th">6th Period</option>
+                                    <option value="7th">7th Period</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Assessment content: YAML questions or Markdown fallback -->
+                    <div id="assessment-sections" class="quiz-content">
+                        <!-- DEBUG: Checking page.questions -->
+                        <!-- page.questions exists: 5 -->
+                        <!-- page.questions type: [{"id":"q1","type":"multiple_choice","prompt":"What is the SI base unit for length?","points":5,"choices":[{"text":"Meter (m)","value":"meter","correct":true},{"text":"Kilometer (km)","value":"kilometer","correct":false},{"text":"Centimeter (cm)","value":"centimeter","correct":false},{"text":"Foot (ft)","value":"foot","correct":false}],"explanation":"The meter is the SI base unit for length. Other units like kilometers and centimeters are derived from the meter."},{"id":"q2","type":"multiple_select","prompt":"Select ALL vector quantities from the list below:","points":10,"choices":[{"text":"Velocity","value":"velocity","correct":true},{"text":"Speed","value":"speed","correct":false},{"text":"Displacement","value":"displacement","correct":true},{"text":"Distance","value":"distance","correct":false},{"text":"Force","value":"force","correct":true}],"explanation":"Vector quantities have both magnitude and direction. Velocity, displacement, and force are vectors. Speed and distance are scalar quantities (magnitude only)."},{"id":"q3","type":"numeric","prompt":"Convert 2.5 kilometers to meters. Enter your answer as a number.","points":10,"units":"m","answer":2500,"tolerance":0,"validation":{"required":true,"min":0,"max":10000},"explanation":"To convert kilometers to meters, multiply by 1000. Therefore, 2.5 km × 1000 = 2500 m."},{"id":"q4","type":"short_answer","prompt":"Define 'precision' in the context of measurement.","points":10,"maxlength":200,"validation":{"required":true,"minlength":20},"sample_answer":"Precision refers to how close repeated measurements are to each other, indicating the consistency and reproducibility of a measurement tool or method."},{"id":"q5","type":"long_answer","prompt":"A student measures the length of a desk three times and gets: 1.24 m, 1.23 m, and 1.25 m. Another student measures the same desk and gets: 1.15 m, 1.14 m, and 1.16 m. The actual length is 1.24 m. Compare the accuracy and precision of both students' measurements. Explain your reasoning.","points":15,"rows":6,"maxlength":1000,"validation":{"required":true,"minlength":100},"rubric":[{"criterion":"Correctly identifies first student as accurate","points":5},{"criterion":"Correctly identifies both students as precise","points":5},{"criterion":"Clear explanation with evidence from data","points":5}],"sample_answer":"The first student's measurements are both accurate and precise. They are accurate because the average (1.24 m) equals the true value, and precise because all three values are very close together (range of only 0.02 m). The second student's measurements are precise but not accurate. They are precise because the values are clustered tightly (range of 0.02 m), but inaccurate because they are all systematically lower than the true value (average 1.15 m vs. actual 1.24 m). This suggests the second student may have a systematic measurement error or instrument calibration issue."}] -->
+                        
+                        
+                            <!-- YAML-based questions: Generate form fields -->
+                            <!-- DEBUG: Inside questions block, count: 5 -->
+                            
+                                <div class="question-container" data-question-id="q1" data-points="5">
+                                    <div class="question-header">
+                                        <span class="question-number">Question 1</span>
+                                        <span class="question-points">(5 points)</span>
+                                    </div>
+                                    
+                                    <div class="question-prompt">
+                                        <p>What is the SI base unit for length?</p>
+
+                                    </div>
+                                    
+                                    <!-- Question Type: Multiple Choice (Radio Buttons) -->
+                                    
+                                        <div class="question-choices" role="radiogroup">
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="radio" 
+                                                        name="q1" 
+                                                        value="meter" 
+                                                        data-correct="true"
+                                                        required>
+                                                    <span class="choice-text"><p>Meter (m)</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="radio" 
+                                                        name="q1" 
+                                                        value="kilometer" 
+                                                        data-correct="false"
+                                                        required>
+                                                    <span class="choice-text"><p>Kilometer (km)</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="radio" 
+                                                        name="q1" 
+                                                        value="centimeter" 
+                                                        data-correct="false"
+                                                        required>
+                                                    <span class="choice-text"><p>Centimeter (cm)</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="radio" 
+                                                        name="q1" 
+                                                        value="foot" 
+                                                        data-correct="false"
+                                                        required>
+                                                    <span class="choice-text"><p>Foot (ft)</p>
+</span>
+                                                </label>
+                                            
+                                        </div>
+                                    
+                                    
+                                    <!-- Question Type: Multiple Select (Checkboxes) -->
+                                    
+                                    
+                                    <!-- Question Type: Numeric (Number Input with Units) -->
+                                    
+                                    
+                                    <!-- Question Type: Short Answer (Text Input) -->
+                                    
+                                    
+                                    <!-- Question Type: Long Answer (Textarea) -->
+                                    
+                                    
+                                    
+                                        <div class="question-explanation" style="display: none;">
+                                            <p>The meter is the SI base unit for length. Other units like kilometers and centimeters are derived from the meter.</p>
+
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="question-container" data-question-id="q2" data-points="10">
+                                    <div class="question-header">
+                                        <span class="question-number">Question 2</span>
+                                        <span class="question-points">(10 points)</span>
+                                    </div>
+                                    
+                                    <div class="question-prompt">
+                                        <p>Select ALL vector quantities from the list below:</p>
+
+                                    </div>
+                                    
+                                    <!-- Question Type: Multiple Choice (Radio Buttons) -->
+                                    
+                                    
+                                    <!-- Question Type: Multiple Select (Checkboxes) -->
+                                    
+                                        <div class="question-choices" role="group">
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        name="q2[]" 
+                                                        value="velocity"
+                                                        data-correct="true">
+                                                    <span class="choice-text"><p>Velocity</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        name="q2[]" 
+                                                        value="speed"
+                                                        data-correct="false">
+                                                    <span class="choice-text"><p>Speed</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        name="q2[]" 
+                                                        value="displacement"
+                                                        data-correct="true">
+                                                    <span class="choice-text"><p>Displacement</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        name="q2[]" 
+                                                        value="distance"
+                                                        data-correct="false">
+                                                    <span class="choice-text"><p>Distance</p>
+</span>
+                                                </label>
+                                            
+                                                <label class="choice-option">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        name="q2[]" 
+                                                        value="force"
+                                                        data-correct="true">
+                                                    <span class="choice-text"><p>Force</p>
+</span>
+                                                </label>
+                                            
+                                        </div>
+                                    
+                                    
+                                    <!-- Question Type: Numeric (Number Input with Units) -->
+                                    
+                                    
+                                    <!-- Question Type: Short Answer (Text Input) -->
+                                    
+                                    
+                                    <!-- Question Type: Long Answer (Textarea) -->
+                                    
+                                    
+                                    
+                                        <div class="question-explanation" style="display: none;">
+                                            <p>Vector quantities have both magnitude and direction. Velocity, displacement, and force are vectors. Speed and distance are scalar quantities (magnitude only).</p>
+
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="question-container" data-question-id="q3" data-points="10">
+                                    <div class="question-header">
+                                        <span class="question-number">Question 3</span>
+                                        <span class="question-points">(10 points)</span>
+                                    </div>
+                                    
+                                    <div class="question-prompt">
+                                        <p>Convert 2.5 kilometers to meters. Enter your answer as a number.</p>
+
+                                    </div>
+                                    
+                                    <!-- Question Type: Multiple Choice (Radio Buttons) -->
+                                    
+                                    
+                                    <!-- Question Type: Multiple Select (Checkboxes) -->
+                                    
+                                    
+                                    <!-- Question Type: Numeric (Number Input with Units) -->
+                                    
+                                        <div class="numeric-input-group">
+                                            <input 
+                                                type="number" 
+                                                name="q3" 
+                                                class="numeric-input"
+                                                min="0"
+                                                max="10000"
+                                                step="any"
+                                                required
+                                                placeholder="Enter numeric answer">
+                                            
+                                                <span class="input-units">m</span>
+                                            
+                                        </div>
+                                    
+                                    
+                                    <!-- Question Type: Short Answer (Text Input) -->
+                                    
+                                    
+                                    <!-- Question Type: Long Answer (Textarea) -->
+                                    
+                                    
+                                    
+                                        <div class="question-explanation" style="display: none;">
+                                            <p>To convert kilometers to meters, multiply by 1000. Therefore, 2.5 km × 1000 = 2500 m.</p>
+
+                                        </div>
+                                    
+                                </div>
+                            
+                                <div class="question-container" data-question-id="q4" data-points="10">
+                                    <div class="question-header">
+                                        <span class="question-number">Question 4</span>
+                                        <span class="question-points">(10 points)</span>
+                                    </div>
+                                    
+                                    <div class="question-prompt">
+                                        <p>Define ‘precision’ in the context of measurement.</p>
+
+                                    </div>
+                                    
+                                    <!-- Question Type: Multiple Choice (Radio Buttons) -->
+                                    
+                                    
+                                    <!-- Question Type: Multiple Select (Checkboxes) -->
+                                    
+                                    
+                                    <!-- Question Type: Numeric (Number Input with Units) -->
+                                    
+                                    
+                                    <!-- Question Type: Short Answer (Text Input) -->
+                                    
+                                        <input 
+                                            type="text" 
+                                            name="q4" 
+                                            class="short-answer-input"
+                                            maxlength="200"
+                                            minlength="20"
+                                            required
+                                            placeholder="Enter your answer">
+                                    
+                                    
+                                    <!-- Question Type: Long Answer (Textarea) -->
+                                    
+                                    
+                                    
+                                </div>
+                            
+                                <div class="question-container" data-question-id="q5" data-points="15">
+                                    <div class="question-header">
+                                        <span class="question-number">Question 5</span>
+                                        <span class="question-points">(15 points)</span>
+                                    </div>
+                                    
+                                    <div class="question-prompt">
+                                        <p>A student measures the length of a desk three times and gets: 1.24 m, 1.23 m, and 1.25 m. Another student measures the same desk and gets: 1.15 m, 1.14 m, and 1.16 m. The actual length is 1.24 m. Compare the accuracy and precision of both students’ measurements. Explain your reasoning.</p>
+
+                                    </div>
+                                    
+                                    <!-- Question Type: Multiple Choice (Radio Buttons) -->
+                                    
+                                    
+                                    <!-- Question Type: Multiple Select (Checkboxes) -->
+                                    
+                                    
+                                    <!-- Question Type: Numeric (Number Input with Units) -->
+                                    
+                                    
+                                    <!-- Question Type: Short Answer (Text Input) -->
+                                    
+                                    
+                                    <!-- Question Type: Long Answer (Textarea) -->
+                                    
+                                        <textarea 
+                                            name="q5" 
+                                            class="long-answer-input"
+                                            rows="6"
+                                            maxlength="1000"
+                                            minlength="100"
+                                            required
+                                            placeholder="Write your answer here..."></textarea>
+                                        
+                                            <div class="character-count">
+                                                <span class="char-current">0</span> / <span class="char-max">1000</span> characters
+                                            </div>
+                                        
+                                    
+                                    
+                                    
+                                </div>
+                            
+                        
+                    </div>
+
+                    <!-- Submit section -->
+                    <div class="submit-section" id="bottom-submit">
+                        <button type="submit" id="main-submit-btn" class="submit-btn">
+                            Submit Assessment
+                        </button>
+                        <div id="submit-status" class="submit-status"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Formula Sheet Modal (if enabled) -->
+        
+    </main>
+
+    <!-- External JavaScript -->
+    <!-- Inject assessment configuration from YAML before loading other scripts -->
+    <script type="text/javascript">
+        // Override assessment configuration with values from YAML front matter
+        window.ASSESSMENT_CONFIG = {
+            webAppUrl: 'https://script.google.com/macros/s/AKfycbyYqUr_WJSW8sNPaXfAfui_vfxT5OfKcLBuUIWgPbpJ50fAvaaq9Az2fGIqKODPqjX0Mw/exec',
+            autoSaveInterval: 30000,
+            password: '',
+            passwordHash: ''
+        };
+        console.log('Config loaded from Jekyll:', window.ASSESSMENT_CONFIG);
+    </script>
+    <script src="/assets/js/assessment-loader.js"></script>
+    <script src="/assets/js/assessment-utils.js"></script>
+    <script src="/assets/js/assessment-storage.js"></script>
+    <script src="/assets/js/assessment-sections.js"></script>
+    <script src="/assets/js/assessment-submit.js"></script>
+    <script src="/assets/js/assessment-main.js"></script>
+    <script src="/assets/js/assessment-glue.js"></script>
+    <script>
+      // Patch: Add null check to validateForm for error display
+      if (window.validateForm) {
+        const origValidateForm = window.validateForm;
+        window.validateForm = function() {
+          // ...existing code inside validateForm...
+          // When displaying error:
+          // Replace: document.getElementById('progress-text').textContent = '...';
+          // With:
+          var progressTextEl = document.getElementById('progress-text');
+          if (progressTextEl) {
+            progressTextEl.textContent = '...'; // your error message
+          }
+          // ...rest of validateForm...
+          // Call original if needed
+          return origValidateForm.apply(this, arguments);
+        };
+      }
+    </script>
+</body>
+</html>

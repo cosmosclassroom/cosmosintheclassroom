@@ -102,12 +102,14 @@ function validateForm() {
     const classPeriod = document.getElementById('class-period');
     
     if (!studentName.value.trim()) {
-        document.getElementById('student-name-error').textContent = 'Name is required';
+        const errorEl = document.getElementById('student-name-error');
+        if (errorEl) errorEl.textContent = 'Name is required';
         isValid = false;
     }
     
     if (!classPeriod.value) {
-        document.getElementById('class-period-error').textContent = 'Please select a class period';
+        const errorEl = document.getElementById('class-period-error');
+        if (errorEl) errorEl.textContent = 'Please select a class period';
         isValid = false;
     }
     

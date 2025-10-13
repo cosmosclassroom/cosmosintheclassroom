@@ -7,6 +7,7 @@
     
     <!-- External CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
     
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -16,10 +17,11 @@
     <div id="assessment-metadata"
          data-resource-id=""
          data-json-path=""
+         data-yaml-based="false"
          data-course="hphys"
          data-content-type="assessment"
          data-title="Unit 3 Test: The Siege of Constantinople"
-         data-start-at="2025-10-12T15:03:13+00:00"
+         data-start-at="2025-10-13T18:21:13+00:00"
          data-attempt-id=""
          hidden></div>
 
@@ -124,9 +126,15 @@
                         </div>
                     </section>
 
-                    <!-- Assessment content (rendered from Markdown) -->
+                    <!-- Assessment content: YAML questions or Markdown fallback -->
                     <div id="assessment-sections" class="quiz-content">
-                        <h1 id="unit-3-test-the-siege-of-constantinople">Unit 3 Test: The Siege of Constantinople</h1>
+                        <!-- DEBUG: Checking page.questions -->
+                        <!-- page.questions exists: 0 -->
+                        <!-- page.questions type: null -->
+                        
+                        
+                            <!-- Fallback: Markdown content for legacy assessments -->
+                            <h1 id="unit-3-test-the-siege-of-constantinople">Unit 3 Test: The Siege of Constantinople</h1>
 
 <p><strong>Instructions:</strong><br />
 You are an engineer in the army of Sultan Mehmed II. Your task is to apply the principles of physics to the great siege. Show all work for calculations, starting with the base formula(s). Ensure your final answers have the correct units and significant figures.</p>
@@ -191,6 +199,7 @@ b) Using the given muzzle velocity and angle, calculate the total time of flight
 c) During this time of flight, the siege tower continues to move. To hit the stationary target, the cannoneer must aim the cannon barrel slightly backward (against the direction of motion). What is the angle (relative to a line aimed directly at the target) at which the cannon must be aimed to compensate for the siege tower’s forward movement?</p>
 
 
+                        
                     </div>
 
                     <!-- Submit section -->

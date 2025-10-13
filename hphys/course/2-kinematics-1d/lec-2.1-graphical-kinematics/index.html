@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Graphical Kinematics | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="/assets/css/lecture.css">
+
+<div class="lecture">
+  <header class="lecture-header">
+    <h1>Graphical Kinematics</h1>
+    <div class="lecture-meta">
+      <p>HPHYS Unit 2</p>
+      
+    </div>
+  </header>
+  
+  <div class="lecture-content">
+    <h1 id="lecture-21-the-language-of-motion"><strong>Lecture 2.1: The Language of Motion</strong></h1>
+<h3 id="unit-2-the-art-of-observation">Unit 2: The Art of Observation</h3>
+
+<hr />
+
+<h2 id="todays-mission">Today’s Mission</h2>
+
+<ul>
+  <li>
+    <p><strong>Bridge Back:</strong> In the rocket lab, the changing slope of the velocity graph told a story about the engine firing and cutting off. Today, we’ll formalize the rules for reading that story.</p>
+  </li>
+  <li>
+    <p><strong>Thinking Lens:</strong> We will look for <strong>Patterns</strong> in graphs to understand the story of an object’s motion.</p>
+  </li>
+  <li><strong>Essential Questions:</strong></li>
+  <li>
+    <ol>
+      <li>What is the difference between distance and displacement?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>How can we find velocity from a position-time graph?</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>What do the slope and area of a velocity-time graph represent?</li>
+    </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="where-are-you-position-distance--displacement">Where Are You? Position, Distance, &amp; Displacement</h2>
+
+<ul>
+  <li><strong>Position ($x$):</strong> An object’s location relative to a defined origin.</li>
+  <li><strong>Distance:</strong> The total path length traveled. It is a <strong>scalar</strong>.</li>
+  <li>
+    <p><strong>Displacement ($\Delta\vec{x}$):</strong> The change in position ($\vec{x}<em>{final} - \vec{x}</em>{initial}$). It is a <strong>vector</strong> (magnitude and direction).</p>
+  </li>
+  <li><strong>Example:</strong> You walk $7.0 \text{ m}$ East, then turn around and walk $3.0 \text{ m}$ West.</li>
+  <li>
+    <ul>
+      <li><strong>Distance traveled:</strong> $7.0 \text{ m} + 3.0 \text{ m} = 10.0 \text{ m}$</li>
+    </ul>
+  </li>
+  <li>
+    <ul>
+      <li><strong>Displacement:</strong> $4.0 \text{ m, East}$</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="position-vs-time-graphs">Position vs. Time Graphs</h2>
+
+<p>A position vs. time graph shows an object’s position at every moment.</p>
+
+<p><strong>The most important rule:</strong>
+The <strong>slope</strong> of a position vs. time graph represents the object’s <strong>velocity</strong>.</p>
+
+\[\text{slope} = \frac{\text{rise}}{\text{run}} = \frac{\Delta x}{\Delta t} = \text{velocity}\]
+
+<p><img src="assets/images/pt-constant.png" alt="bg right:60%" /></p>
+
+<hr />
+
+<h2 id="position-vs-time-accelerated-motion">Position vs. Time: Accelerated Motion</h2>
+
+<p>When an object accelerates, its position vs. time graph becomes curved.</p>
+
+<p><img src="assets/images/pt-accelerated.png" alt="bg right:60%" /></p>
+
+<hr />
+<h2 id="reading-the-story-of-a-p-t-graph">Reading the Story of a P-T Graph</h2>
+
+<ul>
+  <li><strong>Positive Slope:</strong> Object is moving in the positive direction (away from the origin).</li>
+  <li><strong>Negative Slope:</strong> Object is moving in the negative direction (toward the origin).</li>
+  <li><strong>Zero Slope (Horizontal Line):</strong> Object is at rest (velocity is zero).</li>
+  <li><strong>Steeper Slope:</strong> Higher speed.</li>
+  <li><strong>Curved Line:</strong> The velocity is changing (acceleration is occurring).</li>
+</ul>
+
+<hr />
+<h2 id="velocity-vs-time-graphs">Velocity vs. Time Graphs</h2>
+
+<ol>
+  <li>The <strong>slope</strong> of the graph represents <strong>acceleration</strong>.
+\(\text{slope} = \frac{\Delta v}{\Delta t} = \text{acceleration}\)</li>
+  <li>The <strong>area</strong> under the graph represents <strong>displacement</strong>.
+\(\text{area} = \text{velocity} \times \text{time} = \frac{\text{m}}{\text{s}} \cdot \text{s} = \text{m}\)</li>
+</ol>
+
+<p><img src="assets/images/vt-constant.png" alt="bg right:50% contain" /></p>
+
+<hr />
+
+<h2 id="velocity-vs-time-accelerated-motion">Velocity vs. Time: Accelerated Motion</h2>
+
+<p><img src="assets/images/vt-accelerated.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Key observations:</strong></p>
+<ul>
+  <li>Constant slope = constant acceleration</li>
+  <li>Area under the curve = total displacement</li>
+  <li>Steeper slope = greater acceleration</li>
+</ul>
+
+<hr />
+<h2 id="example-analyzing-the-rocket-launch">Example: Analyzing the Rocket Launch</h2>
+
+<p>Let’s analyze the first 10 seconds of the rocket’s motion from our lab data.</p>
+
+<ul>
+  <li>
+    <p><strong>Acceleration ($0-4s$):</strong>
+slope = $\frac{40.0 \text{ m/s} - 0.0 \text{ m/s}}{4.0 \text{ s} - 0.0 \text{ s}} = 10.0 \text{ m/s}^2$</p>
+  </li>
+  <li>
+    <p><strong>Displacement ($0-4s$):</strong>
+area = $\frac{1}{2} \cdot \text{base} \cdot \text{height}$
+area = $\frac{1}{2} (4.0 \text{ s})(40.0 \text{ m/s}) = 80.0 \text{ m}$</p>
+  </li>
+</ul>
+
+<hr />
+<h2 id="check-for-understanding">Check for Understanding</h2>
+<p>Describe the rocket’s motion from <strong>t = 4.0 s to t = 8.2 s</strong>.</p>
+
+<ol>
+  <li><strong>What is its acceleration?</strong>
+    <ul>
+      <li>It’s the slope. It’s constant and negative ($\approx -9.8 \text{ m/s}^2$).</li>
+    </ul>
+  </li>
+  <li><strong>Is it speeding up or slowing down?</strong>
+    <ul>
+      <li>It’s slowing down. The velocity is positive but decreasing.</li>
+    </ul>
+  </li>
+  <li><strong>How could we find its displacement during this time?</strong>
+    <ul>
+      <li>Find the area of the trapezoid between t=4s and t=8.2s.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="answering-our-essential-questions">Answering Our Essential Questions</h2>
+
+<p><strong>1. What is the difference between distance and displacement?</strong></p>
+<ul>
+  <li><strong>Distance</strong> is the total path length traveled (scalar)</li>
+  <li><strong>Displacement</strong> is the change in position with direction (vector)</li>
+</ul>
+
+<p><strong>2. How can we find velocity from a position-time graph?</strong></p>
+<ul>
+  <li><strong>Velocity = slope</strong> of the position-time graph</li>
+  <li>Steeper slope = higher speed; negative slope = motion toward origin</li>
+</ul>
+
+<p><strong>3. What do the slope and area of a velocity-time graph represent?</strong></p>
+<ul>
+  <li><strong>Slope</strong> = acceleration (rate of velocity change)</li>
+  <li><strong>Area</strong> = displacement (total change in position)</li>
+</ul>
+
+<hr />
+
+<h2 id="summary-and-next-steps">Summary and Next Steps</h2>
+
+<p><strong>Key Rules:</strong></p>
+<ul>
+  <li><strong>Position-Time:</strong>
+    <ul>
+      <li>Slope = Velocity</li>
+    </ul>
+  </li>
+  <li><strong>Velocity-Time:</strong>
+    <ul>
+      <li>Slope = Acceleration</li>
+      <li>Area = Displacement</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Bookend Statement:</strong> A graph of motion is a story waiting to be read.</p>
+  </li>
+  <li><strong>Bridge Forward:</strong> The skills of interpreting slope and area on these motion graphs are exactly what you’ll need to master <strong>Problem Set 2.1</strong>.</li>
+</ul>
+
+  </div>
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

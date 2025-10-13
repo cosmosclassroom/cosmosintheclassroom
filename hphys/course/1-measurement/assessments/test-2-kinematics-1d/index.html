@@ -7,6 +7,7 @@
     
     <!-- External CSS -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/assessment.css">
     
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -16,10 +17,11 @@
     <div id="assessment-metadata"
          data-resource-id=""
          data-json-path=""
+         data-yaml-based="false"
          data-course="hphys"
          data-content-type="assessment"
          data-title="Test 2 Kinematics 1D"
-         data-start-at="2025-10-12T15:03:13+00:00"
+         data-start-at="2025-10-13T18:21:13+00:00"
          data-attempt-id=""
          hidden></div>
 
@@ -124,9 +126,15 @@
                         </div>
                     </section>
 
-                    <!-- Assessment content (rendered from Markdown) -->
+                    <!-- Assessment content: YAML questions or Markdown fallback -->
                     <div id="assessment-sections" class="quiz-content">
-                        <h1>—</h1>
+                        <!-- DEBUG: Checking page.questions -->
+                        <!-- page.questions exists: 0 -->
+                        <!-- page.questions type: null -->
+                        
+                        
+                            <!-- Fallback: Markdown content for legacy assessments -->
+                            <h1>—</h1>
 <p>title: “Chapter 2 Assessment: The Story of a Sounding Rocket”
 layout: assessment
 date: 2025-10-03
@@ -236,6 +244,7 @@ math: true</p>
 <p>In the problem you just solved, we assumed the rockets could accelerate forever. In reality, a sounding rocket’s engine burns out at a certain altitude, and it begins to coast. Describe, in words, how the problem would change if Rocket A’s engine cut out at $t = 8.00 \, \text{s}$. Would Rocket B still be able to catch it? What different calculations would you need to perform to find out for sure? (You do not need to do the calculations).</p>
 
 
+                        
                     </div>
 
                     <!-- Submit section -->

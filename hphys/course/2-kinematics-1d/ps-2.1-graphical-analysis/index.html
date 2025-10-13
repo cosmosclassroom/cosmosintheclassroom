@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Problem Set 2.1: Graphical Analysis of Motion | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/problem-set.css">
+
+<div class="problem-set-container">
+  <div class="problem-set-header">
+    <h1>Problem Set 2.1: Graphical Analysis of Motion</h1>
+    <p class="mb-0">HPHYS Unit 2</p>
+  </div>
+  
+  <div class="problem-set-info">
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Difficulty:</strong> apprentice, journeyman, master</p>
+        <p><strong>Submission Format:</strong> paper</p>
+        <p><strong>Estimated Time:</strong> 45 minutes</p>
+      </div>
+      <div class="col-md-6">
+        
+        <p><strong>Topics:</strong> kinematics, graphs, velocity, acceleration</p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="problem-set-content">
+    <p><strong>Introduction:</strong> In the rocket lab, you analyzed velocity-time data to understand different phases of motion. Now you’ll practice interpreting various types of motion graphs and extracting quantitative information from them. Remember: the slope of a position-time graph gives velocity, and the slope of a velocity-time graph gives acceleration.</p>
+
+<p><strong>Mathematical Relationships Reference:</strong></p>
+<ul>
+  <li><strong>Slope of position-time graph</strong> = velocity</li>
+  <li><strong>Slope of velocity-time graph</strong> = acceleration</li>
+  <li><strong>Area under velocity-time graph</strong> = displacement</li>
+  <li><strong>Average velocity</strong> = $\frac{\Delta x}{\Delta t}$</li>
+  <li><strong>Average acceleration</strong> = $\frac{\Delta v}{\Delta t}$</li>
+</ul>
+
+<p>problems:</p>
+<ul>
+  <li>
+    <p>id: “2.1.A.1”
+difficulty: “apprentice”
+question: |
+  <strong>Problem 1: Walking to School</strong>
+  Use the provided dataset to answer the following:
+  a) What is the student’s average velocity between t = 120 s and t = 480 s?
+  b) How far does the student travel in the first 240 s?
+  c) What is the student’s displacement after 600 s?
+dataset:
+  problemId: “2.1.A.1”
+  title: “Walking to School”
+  description: “Position-time data for a student walking to school at constant velocity”
+  xAxis: {label: “Time (s)”, range: [0, 600]}
+  yAxis: {label: “Position (m)”, range: [0, 900]}
+  dataPoints:
+    - {x: 0, y: 0}
+    - {x: 120, y: 180}
+    - {x: 240, y: 360}
+    - {x: 360, y: 540}
+    - {x: 480, y: 720}
+    - {x: 600, y: 900}
+  graphType: “position_vs_time”
+solution: |
+  a) Velocity is the slope: $v = \frac{\Delta x}{\Delta t} = \frac{720 \text{ m} - 180 \text{ m}}{480 \text{ s} - 120 \text{ s}} = \frac{540 \text{ m}}{360 \text{ s}} = 1.5 \text{ m/s}$.
+  b) From the data table, the position at t = 240 s is 360 m.
+  c) The final displacement at t = 600 s is the final position, 900 m.</p>
+  </li>
+  <li>
+    <p>id: “2.1.A.2”
+difficulty: “apprentice”
+question: |
+  <strong>Problem 2: Bicycle Ride Analysis</strong>
+  Use the provided dataset to answer the following:
+  a) Calculate the bicycle’s acceleration between t = 4.0 s and t = 10.0 s.
+  b) What is the bicycle’s displacement during the first 8.0 s? (Hint: Find the area under the curve)
+  c) If this acceleration continues, what will the bicycle’s velocity be at t = 16.0 s?
+dataset:
+  problemId: “2.1.A.2”
+  title: “Bicycle Velocity Analysis”
+  description: “Velocity-time data for a bicycle rider accelerating from rest”
+  xAxis: {label: “Time (s)”, range: [0, 12]}
+  yAxis: {label: “Velocity (m/s)”, range: [0, 18]}
+  dataPoints:
+    - {x: 0, y: 0}
+    - {x: 2, y: 3.0}
+    - {x: 4, y: 6.0}
+    - {x: 6, y: 9.0}
+    - {x: 8, y: 12.0}
+    - {x: 10, y: 15.0}
+    - {x: 12, y: 18.0}
+  graphType: “velocity_vs_time”
+solution: |
+  a) Acceleration is the slope: $a = \frac{\Delta v}{\Delta t} = \frac{15.0 \text{ m/s} - 6.0 \text{ m/s}}{10.0 \text{ s} - 4.0 \text{ s}} = \frac{9.0 \text{ m/s}}{6.0 \text{ s}} = 1.5 \text{ m/s}^2$.
+  b) Displacement is the area (triangle): $\Delta x = \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} (8.0 \text{ s})(12.0 \text{ m/s}) = 48 \text{ m}$.
+  c) Using $v = v_0 + at$: $v = 0 + (1.5 \text{ m/s}^2)(16.0 \text{ s}) = 24 \text{ m/s}$.</p>
+  </li>
+  <li>
+    <p>id: “2.1.A.3”
+difficulty: “apprentice”
+question: |
+  <strong>Problem 3: Elevator Motion</strong>
+  Use the provided dataset to answer the following:
+  a) During which time intervals is the elevator accelerating?
+  b) What is the elevator’s acceleration between t = 10.0 s and t = 14.0 s?
+  c) Calculate the elevator’s total displacement from t = 0 to t = 20.0 s.
+dataset:
+  problemId: “2.1.A.3”
+  title: “Elevator Velocity Profile”
+  description: “Velocity-time data for an elevator moving between floors”
+  xAxis: {label: “Time (s)”, range: [0, 20]}
+  yAxis: {label: “Velocity (m/s)”, range: [-3, 5]}
+  dataPoints:
+    - {x: 0, y: 0}
+    - {x: 2, y: 4.0}
+    - {x: 6, y: 4.0}
+    - {x: 10, y: 4.0}
+    - {x: 14, y: 0}
+    - {x: 16, y: 0}
+    - {x: 18, y: -2.0}
+    - {x: 20, y: -2.0}
+  graphType: “velocity_vs_time”
+solution: |
+  a) The elevator is accelerating when the velocity graph has a non-zero slope. This occurs during the intervals <strong>0-2 s</strong>, <strong>10-14 s</strong>, and <strong>16-18 s</strong>.
+  b) $a = \frac{\Delta v}{\Delta t} = \frac{0 \text{ m/s} - 4.0 \text{ m/s}}{14.0 \text{ s} - 10.0 \text{ s}} = \frac{-4.0 \text{ m/s}}{4.0 \text{ s}} = -1.0 \text{ m/s}^2$.
+  c) Total displacement is the total area under the curve:
+  Area (0-14s) = Area(trapezoid) = $\frac{1}{2}(14+8)(4.0) = 44$ m.
+  Area (16-20s) = Area(trapezoid) = $\frac{1}{2}(4+2)(-2.0) = -6$ m.
+  Total Displacement = $44 \text{ m} - 6 \text{ m} = 38 \text{ m}$.</p>
+  </li>
+  <li>
+    <p>id: “2.1.B.4”
+difficulty: “journeyman”
+question: |
+  <strong>Problem 4: Rocket Telemetry Analysis</strong>
+  Building on your lab experience, analyze this velocity-time data from a different sounding rocket launch.
+  a) Determine the rocket’s acceleration during the engine burn phase.
+  b) Determine the rocket’s acceleration during the ballistic (engine-off) phase.
+  c) At what time does the engine cut off? Provide evidence from the data.
+  d) Calculate when this rocket will reach apogee (maximum altitude).
+dataset:
+  problemId: “2.1.B.4”
+  title: “Alternative Rocket Launch Profile”
+  description: “Velocity-time data from sounding rocket with different engine burn time”
+  xAxis: {label: “Time (s)”, range: [0, 50]}
+  yAxis: {label: “Velocity (m/s)”, range: [0, 600]}
+  dataPoints:
+    - {x: 0, y: 0}
+    - {x: 5, y: 120}
+    - {x: 10, y: 240}
+    - {x: 15, y: 360}
+    - {x: 25, y: 480}
+    - {x: 30, y: 431}
+    - {x: 35, y: 382}
+    - {x: 40, y: 333}
+    - {x: 45, y: 284}
+    - {x: 50, y: 235}
+  graphType: “velocity_vs_time”
+solution: |
+  a) The burn phase appears to last until t=25 s, when velocity is maximum. The acceleration is not constant. From 0-15s, $a = \frac{360 \text{ m/s}}{15 \text{ s}} = 24 \text{ m/s}^2$. From 15-25s, $a = \frac{480-360 \text{ m/s}}{10 \text{ s}} = 12 \text{ m/s}^2$. The average acceleration is $\frac{480 \text{ m/s}}{25 \text{ s}} = 19.2 \text{ m/s}^2$.
+  b) The ballistic phase begins after t=25 s. $a = \frac{235 \text{ m/s} - 480 \text{ m/s}}{50 \text{ s} - 25 \text{ s}} = \frac{-245 \text{ m/s}}{25 \text{ s}} = -9.8 \text{ m/s}^2$.
+  c) The engine cuts off at <strong>t = 25 s</strong>. The evidence is the abrupt change in acceleration from positive (thrust) to a constant -9.8 m/s² (gravity alone).
+  d) Apogee occurs when v=0. Using the ballistic phase data with $v_0 = 480$ m/s at $t_0 = 25$ s: $0 = 480 + (-9.8)(t - 25)$. Solving for t gives $t \approx 74$ s.</p>
+  </li>
+  <li>
+    <p>id: “2.1.C.5”
+difficulty: “master”
+question: |
+  <strong>Problem 5: Motion Detective Challenge</strong>
+  a) Construct the velocity-time graph for this motion by calculating the average velocity for each time interval.
+  b) Construct the acceleration-time graph using your velocity data.
+  c) Based on your analysis, what type of motion does this represent?
+  d) At what time does this object reach its maximum height? How do you know from the position-time graph?
+dataset:
+  problemId: “2.1.C.5”
+  title: “Mystery Motion Analysis”
+  description: “Position-time data for an unknown moving object”
+  xAxis: {label: “Time (s)”, range: [0, 16]}
+  yAxis: {label: “Position (m)”, range: [0, 25]}
+  dataPoints:
+    - {x: 0, y: 0}
+    - {x: 2, y: 8.0}
+    - {x: 4, y: 14.4}
+    - {x: 6, y: 19.2}
+    - {x: 8, y: 22.4}
+    - {x: 10, y: 24.0}
+    - {x: 12, y: 24.0}
+    - {x: 14, y: 22.4}
+    - {x: 16, y: 19.2}
+  graphType: “position_vs_time”
+solution: |
+  a) Velocities: v(1s) = 4 m/s, v(3s) = 3.2 m/s, v(5s) = 2.4 m/s, v(7s) = 1.6 m/s, v(9s) = 0.8 m/s, v(11s) = 0 m/s, v(13s) = -0.8 m/s, v(15s) = -1.6 m/s.
+  b) Acceleration is the slope of the velocity graph. $a = \frac{0.8 - 4.0 \text{ m/s}}{9 \text{ s} - 1 \text{ s}} = \frac{-3.2 \text{ m/s}}{8 \text{ s}} = -0.4 \text{ m/s}^2$. This is constant.
+  c) This represents motion with <strong>constant negative acceleration</strong>.
+  d) The object reaches its maximum height when its velocity is zero. This occurs between <strong>t=10s and t=12s</strong>, where the position-time graph is flat (zero slope).</p>
+  </li>
+  <li>
+    <p>id: “reflection”
+difficulty: “master”
+question: |
+  <strong>Reflection Question:</strong>
+  How does a single velocity-time graph contain complete information about one-dimensional motion? Explain how you can extract position, velocity, and acceleration information from just this one type of graph, using specific examples from today’s problems.
+rubric: |
+  A complete answer must state all three relationships:</p>
+    <ol>
+      <li><strong>Velocity:</strong> Read directly from the y-axis at any given time.</li>
+      <li><strong>Acceleration:</strong> Calculated from the slope of the line (e.g., Problem 2a &amp; 3b).</li>
+      <li><strong>Displacement:</strong> Calculated from the area under the curve (e.g., Problem 2b &amp; 3c).</li>
+    </ol>
+  </li>
+</ul>
+
+  </div>
+</div>
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

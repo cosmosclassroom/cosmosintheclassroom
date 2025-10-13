@@ -118,6 +118,13 @@
     const meta = document.getElementById('assessment-metadata');
     if (!meta) { log('no assessment-metadata found; skipping'); return; }
 
+    // Skip JSON loading for YAML-based assessments
+    const isYamlBased = meta.getAttribute('data-yaml-based') === 'true';
+    if (isYamlBased) {
+      log('YAML-based assessment detected; skipping JSON fetch');
+      return;
+    }
+
     const resourceId = meta.getAttribute('data-resource-id') || '';
     const jsonPathHint = meta.getAttribute('data-json-path') || '';
     const course = meta.getAttribute('data-course') || '';

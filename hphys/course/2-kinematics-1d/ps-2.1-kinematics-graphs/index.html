@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Problem Set 2.1: Interpreting Kinematic Graphs | Cosmos in the Classroom</title>
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/problem-set.css">
+
+<div class="problem-set-container">
+  <div class="problem-set-header">
+    <h1>Problem Set 2.1: Interpreting Kinematic Graphs</h1>
+    <p class="mb-0">HPHYS Unit 2</p>
+  </div>
+  
+  <div class="problem-set-info">
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Difficulty:</strong> apprentice, journeyman, master</p>
+        <p><strong>Submission Format:</strong> paper</p>
+        <p><strong>Estimated Time:</strong> 45 minutes</p>
+      </div>
+      <div class="col-md-6">
+        
+        <p><strong>Topics:</strong> kinematics, graphs, position, velocity</p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="problem-set-content">
+    <h1>==============================================================================</h1>
+<h1 id="yaml-problem-set-data-interpreting-kinematic-graphs">YAML Problem Set Data: Interpreting Kinematic Graphs</h1>
+<h1 id="-1">==============================================================================</h1>
+
+<h1 id="-2">——————————————————————————</h1>
+<h1 id="section-1-problem-set-overview">SECTION 1: PROBLEM SET OVERVIEW</h1>
+<h1 id="-3">——————————————————————————</h1>
+<p>overview:
+  introduction: |
+    The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
+
+<p>key_formulae:
+    - “For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$”
+    - “For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$”
+    - “For a velocity-time graph: Displacement = Area under the curve”</p>
+
+<p>global_standards:
+    - “For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.”
+    - “Present all final answers with the correct units and number of significant figures.”</p>
+
+<h1 id="-4">——————————————————————————</h1>
+<h1 id="section-2-problems">SECTION 2: PROBLEMS</h1>
+<h1 id="-5">——————————————————————————</h1>
+<p>problems:
+  # ======================= PART A: POSITION-TIME GRAPHS =======================</p>
+<ul>
+  <li>
+    <p>problem_number: “A.1.1”
+section: “Part A: Reading Position-Time Graphs”
+subsection: “Position vs. Time Analysis”
+tier:
+  level: 1
+  title: “Apprentice”
+problem_statement: |
+  A car’s position is recorded every second, giving the following position-time data:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Time (s)</th>
+          <th>Position (m)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>45</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>80</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>a) Plot the position-time graph.
+  b) Calculate the average velocity for each time interval.
+  c) At what time was the car moving the fastest? Explain your reasoning.</p>
+  </li>
+  <li>
+    <p>problem_number: “A.1.2”
+section: “Part A: Reading Position-Time Graphs”
+subsection: “Position vs. Time Analysis”
+tier:
+  level: 1
+  title: “Apprentice”
+problem_statement: |
+  The position-time graph for a rocket launch is shown below:</p>
+
+    <p>[Graph description: Position-time graph showing a curved line starting at the origin and increasing at an increasing rate]</p>
+
+    <p>a) Is the rocket’s velocity constant? How do you know?
+  b) Is the rocket accelerating? How do you know?
+  c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent line.</p>
+  </li>
+</ul>
+
+<p># ======================= PART B: VELOCITY-TIME GRAPHS =======================</p>
+<ul>
+  <li>
+    <p>problem_number: “B.1.3”
+section: “Part B: Reading Velocity-Time Graphs”
+subsection: “Velocity vs. Time Interpretation”
+tier:
+  level: 1
+  title: “Apprentice”
+problem_statement: |
+  A runner’s velocity-time graph is shown below:</p>
+
+    <p>[Graph description: Velocity-time graph showing a horizontal line at 5 m/s from 0-10s, then a linear decrease to 0 m/s at 20s, then a horizontal line at 0 m/s until 30s]</p>
+
+    <p>a) Describe the runner’s motion in words for each segment of the graph.
+  b) Calculate the total displacement of the runner over the 30-second interval.
+  c) What was the runner’s acceleration during the interval from 10 s to 20 s?</p>
+  </li>
+  <li>
+    <p>problem_number: “B.1.4”
+section: “Part B: Reading Velocity-Time Graphs”
+subsection: “Velocity vs. Time Interpretation”
+tier:
+  level: 1
+  title: “Apprentice”
+problem_statement: |
+  A ball is thrown upward and then falls back to the ground. Sketch a velocity-time graph that represents this motion. Label key points including:</p>
+    <ul>
+      <li>The time when the ball reaches maximum height</li>
+      <li>The time when the ball returns to its starting height</li>
+      <li>Regions of positive and negative acceleration</li>
+    </ul>
+  </li>
+</ul>
+
+<p># =================== PART C: CONNECTING POSITION AND VELOCITY ==================</p>
+<ul>
+  <li>
+    <p>problem_number: “C.1.5”
+section: “Part C: Connecting Position and Velocity”
+subsection: “Graphical Relationships”
+tier:
+  level: 2
+  title: “Journeyman”
+problem_statement: |
+  The velocity-time graph for a car is shown below:</p>
+
+    <p>[Graph description: Velocity-time graph showing a straight line with positive slope from the origin to (10s, 20 m/s)]</p>
+
+    <p>a) What type of motion is represented?
+  b) Draw the corresponding position-time graph.
+  c) Calculate the car’s displacement after 10.0 s.
+  d) Calculate the car’s acceleration.</p>
+  </li>
+  <li>
+    <p>problem_number: “C.1.6”
+section: “Part C: Connecting Position and Velocity”
+subsection: “Graphical Relationships”
+tier:
+  level: 2
+  title: “Journeyman”
+problem_statement: |
+  A falling object has an initial velocity of 0 m/s and experiences constant acceleration due to gravity.
+  a) Draw the velocity-time graph for the first 5.0 s of fall.
+  b) Draw the corresponding position-time graph.
+  c) Calculate the object’s position after 3.0 s.
+  d) At what time will the object have fallen 45.0 m?</p>
+  </li>
+</ul>
+
+<p># ======================= PART D: ACCELERATION ANALYSIS =======================</p>
+<ul>
+  <li>
+    <p>problem_number: “D.7”
+section: “Part D: Acceleration Analysis”
+tier:
+  level: 2
+  title: “Journeyman”
+problem_statement: |
+  A rocket’s velocity-time graph shows a constant increase from 0 m/s to 1000 m/s over 20.0 s.
+  a) What is the rocket’s acceleration?
+  b) What distance does the rocket travel in this time?
+  c) If the rocket continues with the same acceleration, how long will it take to reach a velocity of 2000 m/s?</p>
+  </li>
+  <li>
+    <p>problem_number: “D.8”
+section: “Part D: Acceleration Analysis”
+tier:
+  level: 3
+  title: “Master”
+problem_statement: |
+  A cyclist travels with a velocity given by v(t) = 4t - 0.2t² m/s, where t is in seconds.
+  a) Find the cyclist’s acceleration as a function of time.
+  b) At what time is the velocity maximum?
+  c) Draw the velocity-time graph from t = 0 s to t = 25.0 s.
+  d) Calculate the total distance traveled in 25.0 s.</p>
+  </li>
+</ul>
+
+<p># =================== PART E: REAL-WORLD APPLICATIONS ==================</p>
+<ul>
+  <li>
+    <p>problem_number: “E.9”
+section: “Part E: Real-World Applications”
+tier:
+  level: 2
+  title: “Journeyman”
+problem_statement: |
+  A train accelerates from rest at 0.50 m/s² for 60.0 s, then maintains a constant velocity for 120.0 s, and finally decelerates at 1.0 m/s² until it stops.
+  a) Draw the velocity-time graph for the entire journey.
+  b) Calculate the total distance traveled.
+  c) What was the train’s maximum speed?</p>
+  </li>
+  <li>
+    <p>problem_number: “E.10”
+section: “Part E: Real-World Applications”
+tier:
+  level: 3
+  title: “Master”
+problem_statement: |
+  A rocket launches vertically with an acceleration of 15.0 m/s² for 20.0 s. Then its engines shut off and it continues to rise while decelerating due to gravity.
+  a) Draw the velocity-time graph from launch until the rocket reaches its maximum height.
+  b) What is the maximum height reached by the rocket?
+  c) How long after launch does the rocket reach its maximum height?</p>
+  </li>
+</ul>
+
+<h1 id="-6">——————————————————————————</h1>
+<h1 id="section-3-reflection-questions">SECTION 3: REFLECTION QUESTIONS</h1>
+<h1 id="-7">——————————————————————————</h1>
+<p>reflection:
+  questions:
+    - prompt: “<strong>Conceptual Understanding:</strong> Which graphical relationship (position-time, velocity-time, or acceleration-time) do you find most intuitive for understanding motion, and why?”
+      type: “open_response”
+    - prompt: “<strong>Mathematical Connection:</strong> Explain how the mathematical operations of slope and area connect to physical quantities in kinematic graphs.”
+      type: “open_response”
+    - prompt: “<strong>Application Thinking:</strong> How might engineers use kinematic graphs when designing a roller coaster? What specific features of the graphs would be most important?”
+      type: “open_response”</p>
+
+<h1 id="-8">——————————————————————————</h1>
+<h1 id="section-4-student-solutions-list-partial---quantitative-problems-only">SECTION 4: STUDENT SOLUTIONS LIST (Partial - Quantitative Problems Only)</h1>
+<h1 id="-9">——————————————————————————</h1>
+<p>student_solutions_list:
+  note: “Many problems in this set require graphical or conceptual responses. Only quantitative answers are provided here.”</p>
+
+<p>problem_A1_b:
+    interval_0_to_1: “$5 \text{ m/s}$”
+    interval_1_to_2: “$15 \text{ m/s}$”
+    interval_2_to_3: “$25 \text{ m/s}$”
+    interval_3_to_4: “$35 \text{ m/s}$”</p>
+
+<p>problem_A1_c: “At $t = 4 \text{ s}$ (highest average velocity)”</p>
+
+<p>problem_B3_b: “$75 \text{ m}$”</p>
+
+<p>problem_B3_c: “$-0.50 \text{ m/s}^2$”</p>
+
+<p>problem_C5_c: “$100 \text{ m}$”</p>
+
+<p>problem_C5_d: “$2.0 \text{ m/s}^2$”</p>
+
+<p>problem_C6_c: “$-44 \text{ m}$ (44 m below starting point)”</p>
+
+<p>problem_C6_d: “$3.0 \text{ s}$”</p>
+
+<p>problem_D7_a: “$50 \text{ m/s}^2$”</p>
+
+<p>problem_D7_b: “$10{,}000 \text{ m}$ (10 km)”</p>
+
+<p>problem_D7_c: “$40.0 \text{ s}$ total”</p>
+
+<p>problem_D8_a: “$a(t) = 4 - 0.4t \text{ m/s}^2$”</p>
+
+<p>problem_D8_b: “$t = 10 \text{ s}$”</p>
+
+<p>problem_D8_d: “$167 \text{ m}$”</p>
+
+<p>problem_E9_b: “$4500 \text{ m}$ (4.5 km)”</p>
+
+<p>problem_E9_c: “$30 \text{ m/s}$”</p>
+
+<p>problem_E10_b: “$3459 \text{ m}$ (≈ 3.5 km)”</p>
+
+<p>problem_E10_c: “$50.6 \text{ s}$”</p>
+
+  </div>
+</div>
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
