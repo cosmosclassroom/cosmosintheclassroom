@@ -39,9 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeAutoSave();
     }
     
-    // Set up panel toggle
-    initializePanelToggle();
-    
     // Set up form handlers
     initializeFormHandlers();
     
@@ -103,40 +100,6 @@ function initializeForm() {
 }
 
 // =============================================================================
-// STICKY PANEL TOGGLE
-// =============================================================================
-function initializePanelToggle() {
-    const toggleButton = document.getElementById('toggle-submission');
-    const panelContent = document.getElementById('submission-form-container');
-    const panel = document.getElementById('submission-panel');
-    
-    if (!toggleButton || !panelContent) {
-        console.error('[activity-core] Panel elements not found');
-        return;
-    }
-    
-    toggleButton.addEventListener('click', function() {
-        const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
-        
-        if (isExpanded) {
-            // Collapse
-            panelContent.hidden = true;
-            toggleButton.setAttribute('aria-expanded', 'false');
-            panel.classList.remove('expanded');
-            toggleButton.querySelector('.toggle-arrow').textContent = '▲';
-        } else {
-            // Expand
-            panelContent.hidden = false;
-            toggleButton.setAttribute('aria-expanded', 'true');
-            panel.classList.add('expanded');
-            toggleButton.querySelector('.toggle-arrow').textContent = '▼';
-        }
-    });
-    
-    console.log('[activity-core] Panel toggle initialized');
-}
-
-// =============================================================================
 // FORM HANDLERS
 // =============================================================================
 function initializeFormHandlers() {
@@ -180,8 +143,17 @@ async function handleSubmit(event) {
     // Set submit time
     document.getElementById('submit-time').value = new Date().toISOString();
     
-    // Create FormData
+    // Create FormData from the form
     const formData = new FormData(form);
+    
+    // CRITICAL: Ensure ALL answer fields are included, even if empty
+    // This prevents column misalignment when first student skips questions
+    const allAnswerFields = form.querySelectorAll('.problem-answer-field');
+    allAnswerFields.forEach(field => {
+        if (field.name && !formData.has(field.name)) {
+            formData.append(field.name, ''); // Add empty value
+        }
+    });
     
     try {
         // Check if we're in local development

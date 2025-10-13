@@ -109,108 +109,750 @@
             
                 <!-- 
   Problem Set Content Display
-  Renders problems with inline answer fields (like quiz)
+  Single unified form with problems and reflection
 -->
 
-<div class="problem-set-content">
-  <!-- Problem Set Introduction -->
+<form id="activity-submission-form" class="activity-form">
   
+  <div class="problem-set-content">
+    <!-- Problem Set Introduction -->
+    
+    <section class="ps-introduction">
+      <p>The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
 
-  <!-- Key Formulae -->
-  
+    </section>
+    
 
-  <!-- Global Standards -->
-  
-
-  <!-- Problems with Answer Fields -->
-  
-</div>
-
-            
-        </div>
-
-        <!-- Submission Panel (Sticky Footer) -->
+    <!-- Key Formulae -->
+    
+    <section class="ps-formulae">
+      <h3>Key Formulae</h3>
+      <ul>
         
-        <div class="activity-submission-panel" id="submission-panel">
-            <button class="panel-toggle" id="toggle-submission" aria-expanded="false" aria-controls="submission-form-container">
-                <span class="toggle-icon">📝</span>
-                <span class="toggle-text">Submit This Activity</span>
-                <span class="toggle-arrow">▲</span>
+        <li>For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$
+</li>
+        
+        <li>For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$
+</li>
+        
+        <li>For a velocity-time graph: Displacement = Area under the curve
+</li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Global Standards -->
+    
+    <section class="ps-standards">
+      <h3>Standards for All Problems</h3>
+      <ul>
+        
+        <li>For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.
+</li>
+        
+        <li>Present all final answers with the correct units and number of significant figures.
+</li>
+        
+      </ul>
+    </section>
+    
+
+    <!-- Problems with Answer Fields -->
+    
+    <div class="ps-problems">
+      <!-- Progress indicator -->
+      <div class="problem-progress">
+        <div class="problem-progress-bar">
+          <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div id="progress-text">Problem 1 of 10</div>
+      </div>
+
+      
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="A.1.1" data-problem-index="0">
+          
+          <h2 class="problem-section-header">Part A: Reading Position-Time Graphs</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem A.1.1</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A car’s position is recorded every second, giving the following position-time data:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time (s)</th>
+      <th>Position (m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>a) Plot the position-time graph.
+b) Calculate the average velocity for each time interval.
+c) At what time was the car moving the fastest? Explain your reasoning.</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-A-1-1">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-A-1-1" 
+              name="answer_A_1_1"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
             </button>
-            
-            <div class="panel-content" id="submission-form-container" hidden>
-                <form id="activity-submission-form" class="activity-form">
-                    <!-- Student Information Section -->
-                    <fieldset class="form-section">
-                        <legend>Student Information</legend>
-                        <div class="form-grid">
-                            <div class="form-field">
-                                <label for="student-name">Full Name *</label>
-                                <input type="text" id="student-name" name="StudentName" required>
-                            </div>
-                            <div class="form-field">
-                                <label for="student-email">Email</label>
-                                <input type="email" id="student-email" name="StudentEmail">
-                            </div>
-                            <div class="form-field">
-                                <label for="course-name">Course</label>
-                                <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
-                            </div>
-                            <div class="form-field">
-                                <label for="class-period">Class Period</label>
-                                <select id="class-period" name="ClassPeriod">
-                                    <option value="">Select Period</option>
-                                    <option value="1">1st Period</option>
-                                    <option value="2">2nd Period</option>
-                                    <option value="3">3rd Period</option>
-                                    <option value="4">4th Period</option>
-                                    <option value="5">5th Period</option>
-                                    <option value="6">6th Period</option>
-                                    <option value="7">7th Period</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-                    </fieldset>
-
-                    <!-- Dynamic Activity-Specific Fields (injected by JavaScript) -->
-                    <div id="activity-specific-fields"></div>
-
-                    <!-- Hidden metadata fields -->
-                    <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
-                    <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
-                    <input type="hidden" name="ContentType" value="problem_set">
-                    <input type="hidden" name="Course" value="hphys">
-                    <input type="hidden" name="Unit" value="2-kinematics-1d">
-                    <input type="hidden" name="StartTime" id="start-time">
-                    <input type="hidden" name="SubmitTime" id="submit-time">
-                    <input type="hidden" name="BrowserInfo" id="browser-info">
-
-                    <!-- Action Buttons -->
-                    <div class="form-actions">
-                        <button type="button" id="clear-form" class="btn btn-secondary">Clear Form</button>
-                        <button type="submit" id="submit-button" class="btn btn-primary">
-                            <span class="submit-text">Submit Activity</span>
-                            <span class="submit-spinner" hidden>Submitting...</span>
-                        </button>
-                    </div>
-
-                    <!-- Status Messages -->
-                    <div id="submission-status" class="submission-status" hidden></div>
-                </form>
-
-                <!-- Auto-save indicator -->
-                <div class="auto-save-indicator" id="auto-save-indicator" hidden>
-                    <span class="indicator-icon">💾</span>
-                    <span class="indicator-text">Draft saved</span>
-                </div>
-            </div>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
         </div>
+      
         
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="A.1.2" data-problem-index="1">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem A.1.2</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The position-time graph for a rocket launch is shown below:</p>
+
+<p>[Graph description: Position-time graph showing a curved line starting at the origin and increasing at an increasing rate]</p>
+
+<p>a) Is the rocket’s velocity constant? How do you know?
+b) Is the rocket accelerating? How do you know?
+c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent line.</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-A-1-2">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-A-1-2" 
+              name="answer_A_1_2"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="B.1.3" data-problem-index="2">
+          
+          <h2 class="problem-section-header">Part B: Reading Velocity-Time Graphs</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem B.1.3</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A runner’s velocity-time graph is shown below:</p>
+
+<p>[Graph description: Velocity-time graph showing a horizontal line at 5 m/s from 0-10s, then a linear decrease to 0 m/s at 20s, then a horizontal line at 0 m/s until 30s]</p>
+
+<p>a) Describe the runner’s motion in words for each segment of the graph.
+b) Calculate the total displacement of the runner over the 30-second interval.
+c) What was the runner’s acceleration during the interval from 10 s to 20 s?</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-B-1-3">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-B-1-3" 
+              name="answer_B_1_3"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="B.1.4" data-problem-index="3">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem B.1.4</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A ball is thrown upward and then falls back to the ground. Sketch a velocity-time graph that represents this motion. Label key points including:</p>
+<ul>
+  <li>The time when the ball reaches maximum height</li>
+  <li>The time when the ball returns to its starting height</li>
+  <li>Regions of positive and negative acceleration</li>
+</ul>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-B-1-4">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-B-1-4" 
+              name="answer_B_1_4"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="C.1.5" data-problem-index="4">
+          
+          <h2 class="problem-section-header">Part C: Connecting Position and Velocity</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem C.1.5</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The velocity-time graph for a car is shown below:</p>
+
+<p>[Graph description: Velocity-time graph showing a straight line with positive slope from the origin to (10s, 20 m/s)]</p>
+
+<p>a) What type of motion is represented?
+b) Draw the corresponding position-time graph.
+c) Calculate the car’s displacement after 10.0 s.
+d) Calculate the car’s acceleration.</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-C-1-5">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-C-1-5" 
+              name="answer_C_1_5"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="C.1.6" data-problem-index="5">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem C.1.6</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A falling object has an initial velocity of 0 m/s and experiences constant acceleration due to gravity.
+a) Draw the velocity-time graph for the first 5.0 s of fall.
+b) Draw the corresponding position-time graph.
+c) Calculate the object’s position after 3.0 s.
+d) At what time will the object have fallen 45.0 m?</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-C-1-6">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-C-1-6" 
+              name="answer_C_1_6"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="D.7" data-problem-index="6">
+          
+          <h2 class="problem-section-header">Part D: Acceleration Analysis</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem D.7</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A rocket’s velocity-time graph shows a constant increase from 0 m/s to 1000 m/s over 20.0 s.
+a) What is the rocket’s acceleration?
+b) What distance does the rocket travel in this time?
+c) If the rocket continues with the same acceleration, how long will it take to reach a velocity of 2000 m/s?</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-D-7">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-D-7" 
+              name="answer_D_7"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="D.8" data-problem-index="7">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem D.8</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A cyclist travels with a velocity given by v(t) = 4t - 0.2t² m/s, where t is in seconds.
+a) Find the cyclist’s acceleration as a function of time.
+b) At what time is the velocity maximum?
+c) Draw the velocity-time graph from t = 0 s to t = 25.0 s.
+d) Calculate the total distance traveled in 25.0 s.</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-D-8">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-D-8" 
+              name="answer_D_8"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="E.9" data-problem-index="8">
+          
+          <h2 class="problem-section-header">Part E: Real-World Applications</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem E.9</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A train accelerates from rest at 0.50 m/s² for 60.0 s, then maintains a constant velocity for 120.0 s, and finally decelerates at 1.0 m/s² until it stops.
+a) Draw the velocity-time graph for the entire journey.
+b) Calculate the total distance traveled.
+c) What was the train’s maximum speed?</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-E-9">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-E-9" 
+              name="answer_E_9"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="E.10" data-problem-index="9">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem E.10</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A rocket launches vertically with an acceleration of 15.0 m/s² for 20.0 s. Then its engines shut off and it continues to rise while decelerating due to gravity.
+a) Draw the velocity-time graph from launch until the rocket reaches its maximum height.
+b) What is the maximum height reached by the rocket?
+c) How long after launch does the rocket reach its maximum height?</p>
+
+          </div>
+          
+          
+          <div class="problem-answer">
+            <label for="answer-E-10">
+              Your Answer:
+            </label>
+            <textarea 
+              id="answer-E-10" 
+              name="answer_E_10"
+              class="problem-answer-field"
+              rows="4"
+              placeholder="Enter your answer here. Show your work and include units."></textarea>
+          </div>
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+        </div>
+      
+    </div>
+    
+
+    <!-- Reflection Section (at end, part of same form) -->
+    <div class="form-section reflection-section">
+      <h2>Reflection & Submission</h2>
+      
+      <!-- Student Information -->
+      <fieldset class="form-subsection">
+        <legend>Student Information</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="student-name">Full Name *</label>
+            <input type="text" id="student-name" name="StudentName" required>
+          </div>
+          <div class="form-field">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="StudentEmail">
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course</label>
+            <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
+          </div>
+          <div class="form-field">
+            <label for="class-period">Class Period</label>
+            <select id="class-period" name="ClassPeriod">
+              <option value="">Select Period</option>
+              <option value="1">1st Period</option>
+              <option value="2">2nd Period</option>
+              <option value="3">3rd Period</option>
+              <option value="4">4th Period</option>
+              <option value="5">5th Period</option>
+              <option value="6">6th Period</option>
+              <option value="7">7th Period</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
+      <div id="activity-specific-fields"></div>
+
+      <!-- Hidden metadata fields -->
+      <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
+      <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
+      <input type="hidden" name="ContentType" value="problem_set">
+      <input type="hidden" name="Course" value="hphys">
+      <input type="hidden" name="Unit" value="2-kinematics-1d">
+      <input type="hidden" name="StartTime" id="start-time">
+      <input type="hidden" name="SubmitTime" id="submit-time">
+      <input type="hidden" name="BrowserInfo" id="browser-info">
+
+      <!-- Status Messages -->
+      <div id="submission-status" class="submission-status" hidden></div>
+      
+      <!-- Auto-save indicator -->
+      <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+        Draft saved
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="form-actions">
+        <button type="button" id="clear-form" class="btn btn-secondary">Clear Form</button>
+        <button type="submit" id="submit-button" class="btn btn-primary">
+          <span class="submit-text">Submit Problem Set</span>
+          <span class="submit-spinner" hidden>Submitting...</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+
+<script>
+// Problem Navigation System
+let currentProblemIndex = 0;
+let totalProblems = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    totalProblems = problems.length;
+    
+    if (totalProblems > 0) {
+        showProblem(0);
+    }
+});
+
+function navigateProblem(direction) {
+    const newIndex = currentProblemIndex + direction;
+    if (newIndex >= 0 && newIndex < totalProblems) {
+        showProblem(newIndex);
+    }
+}
+
+function showProblem(index) {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    // Hide all problems
+    problems.forEach(problem => problem.classList.remove('active'));
+    
+    // Show current problem
+    if (problems[index]) {
+        problems[index].classList.add('active');
+        currentProblemIndex = index;
+        
+        // Update navigation buttons
+        const prevButton = document.getElementById('prev-problem');
+        const nextButton = document.getElementById('next-problem');
+        
+        if (prevButton) prevButton.disabled = (index === 0);
+        if (nextButton) nextButton.disabled = (index === totalProblems - 1);
+        
+        // Update progress
+        updateProgress();
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log('[problem-nav] Showing problem', index + 1, 'of', totalProblems);
+    }
+}
+
+function updateProgress() {
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    
+    if (progressFill && progressText) {
+        const percent = ((currentProblemIndex + 1) / totalProblems) * 100;
+        progressFill.style.width = percent + '%';
+        progressText.textContent = `Problem ${currentProblemIndex + 1} of ${totalProblems}`;
+    }
+}
+
+// Make navigation function globally available
+window.navigateProblem = navigateProblem;
+</script>
+
+            
+        </div>
+
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760393604"></script>
+    <script src="/assets/js/activity-core.js?v=1760394683"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -226,7 +868,7 @@
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760393604';
+                script.src = moduleMap[contentType] + '?v=1760394683';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };
