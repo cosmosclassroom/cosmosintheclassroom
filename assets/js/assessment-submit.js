@@ -4,7 +4,10 @@ async function submitAssessment(formData) {
 if (window.markScriptLoaded) {
     window.markScriptLoaded('submit');
 }    // Check if running on localhost for development
-    const isLocalDevelopment = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+    // Allow ?livetest=1 query param to force live submission for testing
+    const urlParams = new URLSearchParams(window.location.search);
+    const forceLive = urlParams.get('livetest') === '1';
+    const isLocalDevelopment = !forceLive && (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost');
     
     if (isLocalDevelopment) {
         // Simulate submission for local development
@@ -17,11 +20,34 @@ if (window.markScriptLoaded) {
         return { success: true, message: 'Simulated submission for local development' };
     }
     
+    console.log('🔴 LIVE SUBMISSION MODE ACTIVE - Will POST to backend');
+    
     if (!ASSESSMENT_CONFIG.webAppUrl) {
         throw new Error('Submission endpoint not configured');
     }
     
-    const data = Object.fromEntries(formData.entries());
+    // Convert FormData to object, handling multiple values (checkboxes)
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+        if (data.hasOwnProperty(key)) {
+            // Key already exists - convert to array or append to existing array
+            if (Array.isArray(data[key])) {
+                data[key].push(value);
+            } else {
+                data[key] = [data[key], value];
+            }
+        } else {
+            data[key] = value;
+        }
+    }
+    
+    // Convert arrays to comma-separated strings for Google Sheets compatibility
+    Object.keys(data).forEach(key => {
+        if (Array.isArray(data[key])) {
+            data[key] = data[key].join(', ');
+        }
+    });
+    
     data.SubmissionTime = new Date().toISOString();
     
     try {

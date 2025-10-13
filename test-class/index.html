@@ -102,138 +102,137 @@
 
 <script>
 (function() {
-  // Get the navigation data
-  var courseData = null;
+  const courseCode = 'test-class';
+  const courseData = null;
   
   
-  var useManifest = false;
+  const useManifest = false;
   
   
   // Get the dropdown elements
   const unitSelect = document.getElementById('unit-select-test-class');
   const contentSelect = document.getElementById('content-select-test-class');
   const itemSelect = document.getElementById('item-select-test-class');
-  const itemLabel = document.getElementById('item-label-test-class');
   const documentSelectGroup = document.getElementById('document-select-group-test-class');
   const goButton = document.getElementById('nav-go-test-class');
 
-  // Function to populate content types when a unit is selected
+  // Content type definitions with proper URL structure
+  const contentTypes = [
+    {key: "lectures", title: "Lectures", icon: "📝", urlPath: "lectures"},
+    {key: "hexagon-labs", title: "Hexagon Labs", icon: "🧪", urlPath: "hexagon-labs"},
+    {key: "problem-sets", title: "Problem Sets", icon: "📊", urlPath: "problem-sets"},
+    {key: "assessments", title: "Assessments", icon: "✅", urlPath: "assessments"}
+  ];
+
+  // Helper function to extract documents by type from manifest
+  function getDocumentsByType(unit, contentType) {
+    if (!unit || !unit.documents) return [];
+    
+    const docs = [];
+    unit.documents.forEach(doc => {
+      if (typeof doc === 'object' && doc[contentType]) {
+        // Handle object format: {type: [files]}
+        const files = Array.isArray(doc[contentType]) ? doc[contentType] : [doc[contentType]];
+        docs.push(...files);
+      } else if (typeof doc === 'string' && doc.startsWith(contentType + '/')) {
+        // Handle string format: "type/file.md"
+        docs.push(doc.substring(contentType.length + 1));
+      }
+    });
+    return docs;
+  }
+
+  // Populate content types when unit is selected
   unitSelect.addEventListener('change', function() {
     contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
     contentSelect.disabled = true;
-    goButton.disabled = true;
-    documentSelectGroup.style.display = 'none';
     itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
+    documentSelectGroup.style.display = 'none';
+    goButton.disabled = true;
 
-    if (this.value) {
-      if (useManifest) {
-        // Extract the unit slug from the URL
-        const unitSlug = this.value.split('/').filter(part => part).pop();
-        const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
-        
-        if (selectedUnit && selectedUnit.documents) {
-          // Add content type options based on manifest structure
-          const contentTypes = [
-            {type: "lectures", title: "Lectures", icon: "📝"},
-            {type: "hexagon-labs", title: "Hexagon Labs", icon: "🧪"},
-            {type: "problem-sets", title: "Problem Sets", icon: "📊"},
-            {type: "assessments", title: "Assessments", icon: "✅"}
-          ];
-          
-          // Only add content types that exist in the unit
-          contentTypes.forEach(content => {
-            // Check if this content type exists in the flattened document structure
-            const hasContent = selectedUnit.documents.some(doc => 
-              typeof doc === 'object' && doc[content.type] || 
-              typeof doc === 'string' && doc.includes(content.type + '/')
-            );
-            
-            if (hasContent) {
-              const option = document.createElement('option');
-              option.value = this.value + content.type + '/';
-              option.textContent = `${content.icon} ${content.title}`;
-              contentSelect.appendChild(option);
-            }
-          });
-          
-          contentSelect.disabled = false;
-        }
-        
-        // Enable Go button if there are options
-        goButton.disabled = contentSelect.options.length <= 1;
-      } else {
-        // Use original course data navigation
-        const selectedUnit = courseData.units.find(unit => unit.url === this.value);
-        if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
-          selectedUnit.content_types.forEach(content => {
-            const option = document.createElement('option');
-            option.value = content.type;
-            option.textContent = content.title;
-            contentSelect.appendChild(option);
-          });
-          contentSelect.disabled = false;
-        } else {
-          goButton.disabled = false;
-        }
+    if (!this.value) return;
+
+    if (useManifest) {
+      const unitSlug = this.value;
+      const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
+      
+      if (!selectedUnit) {
+        console.error('Unit not found:', unitSlug);
+        return;
       }
+
+      // Add available content types
+      contentTypes.forEach(content => {
+        const docs = getDocumentsByType(selectedUnit, content.key);
+        if (docs.length > 0) {
+          const option = document.createElement('option');
+          option.value = content.urlPath;
+          option.textContent = `${content.icon} ${content.title}`;
+          option.dataset.contentKey = content.key;
+          contentSelect.appendChild(option);
+        }
+      });
+      
+      contentSelect.disabled = contentSelect.options.length <= 1;
+      goButton.disabled = contentSelect.options.length <= 1;
+      
+    } else {
+      // Legacy course_navigation.yml structure
+      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
+      if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
+        selectedUnit.content_types.forEach(content => {
+          const option = document.createElement('option');
+          option.value = content.type;
+          option.textContent = content.title;
+          contentSelect.appendChild(option);
+        });
+        contentSelect.disabled = false;
+      }
+      goButton.disabled = !selectedUnit || !selectedUnit.content_types;
     }
   });
 
-  // Function to populate items when a content type is selected
+  // Populate items when content type is selected
   contentSelect.addEventListener('change', function() {
     itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
     documentSelectGroup.style.display = 'none';
     goButton.disabled = true;
     
-    if (useManifest && this.value) {
-      // Extract the unit slug and content type from the selected value
-      const pathParts = this.value.split('/').filter(part => part);
-      const unitSlug = pathParts[pathParts.length - 2];
-      const contentType = pathParts[pathParts.length - 1];
+    if (!this.value) return;
+
+    if (useManifest) {
+      const unitSlug = unitSelect.value;
+      const contentUrlPath = this.value;
+      const contentKey = this.options[this.selectedIndex].dataset.contentKey;
       
       const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
-      if (selectedUnit && selectedUnit.documents) {
-        // Find all documents of this content type
-        let documents = [];
-        
-        // Flatten the document structure to find all items of this content type
-        selectedUnit.documents.forEach(doc => {
-          if (typeof doc === 'object' && doc[contentType]) {
-            // If it's an object with the content type as a key
-            doc[contentType].forEach(item => {
-              documents.push({
-                url: this.value + item,
-                title: item.split('/').pop().replace('.md', '').replace(/-/g, ' ')
-              });
-            });
-          } else if (typeof doc === 'string' && doc.startsWith(contentType + '/')) {
-            // If it's a string path starting with the content type
-            documents.push({
-              url: this.value + doc.substring(contentType.length + 1),
-              title: doc.split('/').pop().replace('.md', '').replace(/-/g, ' ')
-            });
-          }
+      if (!selectedUnit) return;
+
+      const docs = getDocumentsByType(selectedUnit, contentKey);
+      
+      if (docs.length > 0) {
+        docs.forEach(docPath => {
+          const option = document.createElement('option');
+          // Construct proper URL: /course/course/unit-slug/content-type/file
+          const cleanPath = docPath.replace('.md', '').replace(/^\/+|\/+$/g, '');
+          option.value = `/${courseCode}/course/${unitSlug}/${contentUrlPath}/${cleanPath}/`;
+          
+          // Extract filename for display
+          const filename = docPath.split('/').pop().replace('.md', '').replace(/-/g, ' ');
+          option.textContent = filename.replace(/\b\w/g, l => l.toUpperCase());
+          itemSelect.appendChild(option);
         });
-        
-        if (documents.length > 0) {
-          documents.forEach(doc => {
-            const option = document.createElement('option');
-            option.value = doc.url;
-            // Capitalize first letter of each word
-            option.textContent = doc.title.replace(/\b\w/g, l => l.toUpperCase());
-            itemSelect.appendChild(option);
-          });
-          documentSelectGroup.style.display = 'block';
-        } else {
-          goButton.disabled = false;
-        }
+        documentSelectGroup.style.display = 'block';
+      } else {
+        // Content type page exists but no individual documents
+        goButton.disabled = false;
       }
+      
     } else {
-      // Use original course data navigation
+      // Legacy structure
       const selectedUnit = courseData.units.find(unit => unit.url === unitSelect.value);
       if (selectedUnit && selectedUnit.files) {
-        // Filter files by selected type and exclude assessments
-        const files = selectedUnit.files.filter(f => f.type === contentSelect.value && !f.url.includes('/assessments/'));
+        const files = selectedUnit.files.filter(f => f.type === contentSelect.value);
         if (files.length > 0) {
           files.forEach(file => {
             const option = document.createElement('option');
@@ -242,191 +241,46 @@
             itemSelect.appendChild(option);
           });
           documentSelectGroup.style.display = 'block';
-          goButton.disabled = true;
         } else {
-          goButton.disabled = !contentSelect.value;
+          goButton.disabled = false;
         }
-      } else {
-        goButton.disabled = !contentSelect.value;
       }
     }
   });
 
-  // Enable Go button when a document is selected
+  // Enable Go button when document is selected
   itemSelect.addEventListener('change', function() {
     goButton.disabled = !this.value;
   });
 
-  // Navigate to the selected page when the go button is clicked
+  // Navigate to selected page
   goButton.addEventListener('click', function() {
-    let url = itemSelect.value || contentSelect.value || unitSelect.value;
+    let url;
+    
+    if (itemSelect.value) {
+      url = itemSelect.value;
+    } else if (contentSelect.value) {
+      if (useManifest) {
+        const unitSlug = unitSelect.value;
+        const contentPath = contentSelect.value;
+        url = `/${courseCode}/course/${unitSlug}/${contentPath}/`;
+      } else {
+        url = contentSelect.value;
+      }
+    } else if (unitSelect.value) {
+      if (useManifest) {
+        url = `/${courseCode}/course/${unitSelect.value}/`;
+      } else {
+        url = unitSelect.value;
+      }
+    }
+    
     if (url) {
       window.location.href = url;
     }
   });
 })();
 </script>
-
-<style>
-/* Base styles for the course navigation dropdown */
-.course-nav-dropdown {
-  margin: 2rem 0;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Course-specific styling */
-.course-nav-dropdown--hphys {
-  background-color: #f3f8ff;
-  border: 1px solid #d0e1ff;
-}
-
-.course-nav-dropdown--sphys {
-  background-color: #f4f9f4;
-  border: 1px solid #d5e8d5;
-}
-
-.course-nav-dropdown--natdis {
-  background-color: #fff8f3;
-  border: 1px solid #ffe0c9;
-}
-
-.course-title h2 {
-  margin-top: 0;
-  margin-bottom: 1.25rem;
-  color: #2c3e50;
-  font-size: 1.5rem;
-  font-weight: 600;
-  border-bottom: 2px solid #e5e5e5;
-  padding-bottom: 0.75rem;
-}
-
-/* Course-specific title styling */
-.course-nav-dropdown--hphys .course-title h2 {
-  color: #2c5282;
-  border-color: #bee3f8;
-}
-
-.course-nav-dropdown--sphys .course-title h2 {
-  color: #276749;
-  border-color: #c6f6d5;
-}
-
-.course-nav-dropdown--natdis .course-title h2 {
-  color: #c05621;
-  border-color: #fed7aa;
-}
-
-/* Dropdown container */
-.dropdown-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.dropdown-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.button-container {
-  display: flex;
-  align-items: flex-end;
-  margin-top: auto;
-}
-
-/* Form controls */
-.dropdown-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #4a5568;
-}
-
-.dropdown-group select {
-  width: 100%;
-  padding: 0.625rem;
-  border: 1px solid #cbd5e0;
-  border-radius: 0.375rem;
-  background-color: white;
-  font-size: 1rem;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
-}
-
-.dropdown-group select:focus {
-  outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
-}
-
-.dropdown-group select:disabled {
-  background-color: #edf2f7;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-/* Go button styling */
-.nav-go-button {
-  padding: 0.625rem 2rem;
-  border: none;
-  border-radius: 0.375rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  width: 100%;
-}
-
-/* Course-specific button styling */
-.course-nav-dropdown--hphys .nav-go-button {
-  background-color: #4299e1;
-  color: white;
-}
-
-.course-nav-dropdown--hphys .nav-go-button:hover:not(:disabled) {
-  background-color: #3182ce;
-}
-
-.course-nav-dropdown--sphys .nav-go-button {
-  background-color: #48bb78;
-  color: white;
-}
-
-.course-nav-dropdown--sphys .nav-go-button:hover:not(:disabled) {
-  background-color: #38a169;
-}
-
-.course-nav-dropdown--natdis .nav-go-button {
-  background-color: #ed8936;
-  color: white;
-}
-
-.course-nav-dropdown--natdis .nav-go-button:hover:not(:disabled) {
-  background-color: #dd6b20;
-}
-
-.nav-go-button:disabled {
-  background-color: #cbd5e0 !important;
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  .dropdown-container {
-    grid-template-columns: repeat(3, 1fr) auto;
-  }
-}
-
-@media (max-width: 767px) {
-  .button-container {
-    margin-top: 0.5rem;
-  }
-}
-</style>
 
 <h2 id="available-resources">Available Resources</h2>
 
