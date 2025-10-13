@@ -48,6 +48,14 @@ if (window.markScriptLoaded) {
         }
     });
     
+    // Add metadata for backend routing
+    const metadata = document.getElementById('assessment-metadata');
+    if (metadata) {
+        data.ResourceID = metadata.getAttribute('data-resource-id') || 'unknown';
+        data.ContentType = metadata.getAttribute('data-content-type') || 'assessment';
+        data.Course = metadata.getAttribute('data-course') || 'unknown';
+    }
+    
     data.SubmissionTime = new Date().toISOString();
     
     try {
