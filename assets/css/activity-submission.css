@@ -487,9 +487,58 @@ button[type="submit"]:disabled,
 .ps-standards {
     background: #f8f9fa;
     border-left: 4px solid #3498db;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
+    padding: 0;
+    margin-bottom: 1rem;
     border-radius: 4px;
+}
+
+/* Collapsible Section Styling */
+.collapsible-section summary {
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: background-color 0.2s ease;
+}
+
+.collapsible-section summary:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.collapsible-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.collapsible-section .toggle-icon {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.8em;
+    color: #3498db;
+}
+
+.collapsible-section[open] .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.collapsible-section .section-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .ps-formulae ul,
@@ -688,6 +737,62 @@ button[type="submit"]:disabled,
     text-align: center;
     font-weight: 600;
     color: #2c3e50;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.problem-navigation-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.problem-selector {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    background-color: white;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%233498db' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 12px;
+}
+
+.problem-selector:hover {
+    background-color: #f8f9fa;
+    border-color: #2980b9;
+}
+
+.problem-selector:focus {
+    outline: none;
+    border-color: #2980b9;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.problem-count {
+    font-size: 1rem;
+    color: #7f8c8d;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .problem-progress-bar {

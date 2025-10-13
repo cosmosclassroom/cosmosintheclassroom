@@ -126,58 +126,120 @@
 <form id="activity-submission-form" class="activity-form">
   
   <div class="problem-set-content">
-    <!-- Problem Set Introduction -->
+    <!-- Problem Set Introduction (Collapsible) -->
     
-    <section class="ps-introduction">
-      <p>The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
+    <details class="ps-introduction collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Instructions</span>
+      </summary>
+      <div class="section-content">
+        <p>The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
 
-    </section>
-    
-
-    <!-- Key Formulae -->
-    
-    <section class="ps-formulae">
-      <h3>Key Formulae</h3>
-      <ul>
-        
-        <li>For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$
-</li>
-        
-        <li>For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$
-</li>
-        
-        <li>For a velocity-time graph: Displacement = Area under the curve
-</li>
-        
-      </ul>
-    </section>
+      </div>
+    </details>
     
 
-    <!-- Global Standards -->
+    <!-- Key Formulae (Collapsible) -->
     
-    <section class="ps-standards">
-      <h3>Standards for All Problems</h3>
-      <ul>
-        
-        <li>For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.
+    <details class="ps-formulae collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Key Formulae</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$
 </li>
-        
-        <li>Present all final answers with the correct units and number of significant figures.
+          
+          <li>For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$
 </li>
-        
-      </ul>
-    </section>
+          
+          <li>For a velocity-time graph: Displacement = Area under the curve
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+    <details class="ps-standards collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Standards for All Problems</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.
+</li>
+          
+          <li>Present all final answers with the correct units and number of significant figures.
+</li>
+          
+        </ul>
+      </div>
+    </details>
     
 
     <!-- Problems with Answer Fields -->
     
     <div class="ps-problems">
-      <!-- Progress indicator -->
+      <!-- Progress indicator with dropdown navigation -->
       <div class="problem-progress">
         <div class="problem-progress-bar">
           <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
         </div>
-        <div id="progress-text">Problem 1 of 10</div>
+        <div class="problem-navigation-dropdown">
+          <label for="problem-selector" class="visually-hidden">Jump to problem:</label>
+          <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
+            
+            <option value="0" selected>
+              Problem A.1.1 - Apprentice
+            </option>
+            
+            <option value="1" >
+              Problem A.1.2 - Apprentice
+            </option>
+            
+            <option value="2" >
+              Problem B.1.3 - Apprentice
+            </option>
+            
+            <option value="3" >
+              Problem B.1.4 - Apprentice
+            </option>
+            
+            <option value="4" >
+              Problem C.1.5 - Journeyman
+            </option>
+            
+            <option value="5" >
+              Problem C.1.6 - Journeyman
+            </option>
+            
+            <option value="6" >
+              Problem D.7 - Journeyman
+            </option>
+            
+            <option value="7" >
+              Problem D.8 - Master
+            </option>
+            
+            <option value="8" >
+              Problem E.9 - Journeyman
+            </option>
+            
+            <option value="9" >
+              Problem E.10 - Master
+            </option>
+            
+          </select>
+          <span class="problem-count">of 10</span>
+        </div>
       </div>
 
       
@@ -2369,10 +2431,11 @@ document.addEventListener('DOMContentLoaded', function() {
             progressTextId: 'progress-text',
             prevButtonId: 'prev-problem',
             nextButtonId: 'next-problem',
-            itemLabel: 'Problem'
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
         });
         
-        console.log('[problem-set] Sequential navigation initialized');
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
     }
 });
 
@@ -2380,6 +2443,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function navigateProblem(direction) {
     if (window.problemNavigator) {
         window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
     }
 }
 </script>
@@ -2390,7 +2460,7 @@ function navigateProblem(direction) {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760396435"></script>
+    <script src="/assets/js/activity-core.js?v=1760397654"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -2406,7 +2476,7 @@ function navigateProblem(direction) {
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760396435';
+                script.src = moduleMap[contentType] + '?v=1760397654';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };

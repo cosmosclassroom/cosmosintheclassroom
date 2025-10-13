@@ -26,6 +26,7 @@ class ActivityNavigator {
         this.progressTextId = options.progressTextId || 'progress-text';
         this.prevButtonId = options.prevButtonId || 'prev-item';
         this.nextButtonId = options.nextButtonId || 'next-item';
+        this.dropdownId = options.dropdownId || null; // New: dropdown selector support
         this.itemLabel = options.itemLabel || 'Item';
         this.scrollToTop = options.scrollToTop !== false; // Default true
         
@@ -139,6 +140,7 @@ class ActivityNavigator {
     updateProgress() {
         const progressFill = document.getElementById(this.progressBarId);
         const progressText = document.getElementById(this.progressTextId);
+        const dropdown = this.dropdownId ? document.getElementById(this.dropdownId) : null;
         
         if (progressFill) {
             const percent = ((this.currentIndex + 1) / this.totalItems) * 100;
@@ -148,9 +150,18 @@ class ActivityNavigator {
         if (progressText) {
             progressText.textContent = `${this.itemLabel} ${this.currentIndex + 1} of ${this.totalItems}`;
         }
+        
+        // Update dropdown selection without triggering change event
+        if (dropdown) {
+            dropdown.value = this.currentIndex;
+        }
     }
     
     // Public API
+    jumpTo(index) {
+        this.showItem(index);
+    }
+    
     goToItem(index) {
         this.showItem(index);
     }
