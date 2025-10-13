@@ -473,6 +473,156 @@ button[type="submit"]:disabled,
 }
 
 /* =============================================================================
+   PROBLEM SET DISPLAY
+   ============================================================================= */
+
+.problem-set-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.ps-introduction,
+.ps-formulae,
+.ps-standards {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+.ps-formulae ul,
+.ps-standards ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+}
+
+.ps-formulae li,
+.ps-standards li {
+    margin-bottom: 0.5rem;
+}
+
+.problem-section-header {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin: 3rem 0 1.5rem 0;
+    font-size: 1.8rem;
+}
+
+.problem-container {
+    background: #ffffff;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s ease;
+}
+
+.problem-container:hover {
+    border-color: #3498db;
+}
+
+.problem-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.problem-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.problem-tier {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.problem-tier.tier-1 {
+    background: #d4edda;
+    color: #155724;
+}
+
+.problem-tier.tier-2 {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.problem-tier.tier-3 {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.problem-statement {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.problem-statement table {
+    margin: 1rem 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.problem-statement th,
+.problem-statement td {
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.problem-statement th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.problem-answer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #dee2e6;
+}
+
+.problem-answer label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.problem-answer-field {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problem-answer-field:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.problem-answer-field::placeholder {
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* =============================================================================
    ACCESSIBILITY
    ============================================================================= */
 

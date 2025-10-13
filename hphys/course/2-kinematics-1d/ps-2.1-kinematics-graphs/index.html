@@ -58,307 +58,187 @@
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
 
-<div class="problem-set-container">
-  <div class="problem-set-header">
-    <h1>Problem Set 2.1: Interpreting Kinematic Graphs</h1>
-    <p class="mb-0">HPHYS Unit 2</p>
-  </div>
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="ps-2.1-kinematics-graphs"
+         data-content-type="problem_set"
+         data-course="hphys"
+         data-title="Problem Set 2.1: Interpreting Kinematic Graphs"
+         data-unit="2-kinematics-1d"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="{&quot;completion_checklist&quot;:{&quot;problems&quot;:[&quot;Apprentice Problems (A1-A5)&quot;,&quot;Journeyman Problems (J1-J3)&quot;,&quot;Master Problems (M1-M2)&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What did you learn about interpreting kinematic graphs? Which type of graph (position-time or velocity-time) was easier for you to work with, and why?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}"
+         hidden></div>
+
+    <!-- Site Header -->
+    <header class="site-header">
+        <nav class="site-nav">
+            <a href="/" class="nav-link">← Back to Home</a>
+            <a href="/hphys/" class="nav-link">
+                HPHYS Course
+            </a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Problem Set 2.1: Interpreting Kinematic Graphs</h1>
+            <div class="activity-meta">
+                <span class="activity-course">HPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Problem set</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Problem Set Content Display
+  Renders problems with inline answer fields (like quiz)
+-->
+
+<div class="problem-set-content">
+  <!-- Problem Set Introduction -->
   
-  <div class="problem-set-info">
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Difficulty:</strong> apprentice, journeyman, master</p>
-        <p><strong>Submission Format:</strong> paper</p>
-        <p><strong>Estimated Time:</strong> 45 minutes</p>
-      </div>
-      <div class="col-md-6">
-        
-        <p><strong>Topics:</strong> kinematics, graphs, position, velocity</p>
-        
-      </div>
-    </div>
-  </div>
+
+  <!-- Key Formulae -->
   
-  <div class="problem-set-content">
-    <h1>==============================================================================</h1>
-<h1 id="yaml-problem-set-data-interpreting-kinematic-graphs">YAML Problem Set Data: Interpreting Kinematic Graphs</h1>
-<h1 id="-1">==============================================================================</h1>
 
-<h1 id="-2">——————————————————————————</h1>
-<h1 id="section-1-problem-set-overview">SECTION 1: PROBLEM SET OVERVIEW</h1>
-<h1 id="-3">——————————————————————————</h1>
-<p>overview:
-  introduction: |
-    The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
+  <!-- Global Standards -->
+  
 
-<p>key_formulae:
-    - “For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$”
-    - “For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$”
-    - “For a velocity-time graph: Displacement = Area under the curve”</p>
-
-<p>global_standards:
-    - “For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.”
-    - “Present all final answers with the correct units and number of significant figures.”</p>
-
-<h1 id="-4">——————————————————————————</h1>
-<h1 id="section-2-problems">SECTION 2: PROBLEMS</h1>
-<h1 id="-5">——————————————————————————</h1>
-<p>problems:
-  # ======================= PART A: POSITION-TIME GRAPHS =======================</p>
-<ul>
-  <li>
-    <p>problem_number: “A.1.1”
-section: “Part A: Reading Position-Time Graphs”
-subsection: “Position vs. Time Analysis”
-tier:
-  level: 1
-  title: “Apprentice”
-problem_statement: |
-  A car’s position is recorded every second, giving the following position-time data:</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Time (s)</th>
-          <th>Position (m)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>5</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>20</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>45</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>80</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p>a) Plot the position-time graph.
-  b) Calculate the average velocity for each time interval.
-  c) At what time was the car moving the fastest? Explain your reasoning.</p>
-  </li>
-  <li>
-    <p>problem_number: “A.1.2”
-section: “Part A: Reading Position-Time Graphs”
-subsection: “Position vs. Time Analysis”
-tier:
-  level: 1
-  title: “Apprentice”
-problem_statement: |
-  The position-time graph for a rocket launch is shown below:</p>
-
-    <p>[Graph description: Position-time graph showing a curved line starting at the origin and increasing at an increasing rate]</p>
-
-    <p>a) Is the rocket’s velocity constant? How do you know?
-  b) Is the rocket accelerating? How do you know?
-  c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent line.</p>
-  </li>
-</ul>
-
-<p># ======================= PART B: VELOCITY-TIME GRAPHS =======================</p>
-<ul>
-  <li>
-    <p>problem_number: “B.1.3”
-section: “Part B: Reading Velocity-Time Graphs”
-subsection: “Velocity vs. Time Interpretation”
-tier:
-  level: 1
-  title: “Apprentice”
-problem_statement: |
-  A runner’s velocity-time graph is shown below:</p>
-
-    <p>[Graph description: Velocity-time graph showing a horizontal line at 5 m/s from 0-10s, then a linear decrease to 0 m/s at 20s, then a horizontal line at 0 m/s until 30s]</p>
-
-    <p>a) Describe the runner’s motion in words for each segment of the graph.
-  b) Calculate the total displacement of the runner over the 30-second interval.
-  c) What was the runner’s acceleration during the interval from 10 s to 20 s?</p>
-  </li>
-  <li>
-    <p>problem_number: “B.1.4”
-section: “Part B: Reading Velocity-Time Graphs”
-subsection: “Velocity vs. Time Interpretation”
-tier:
-  level: 1
-  title: “Apprentice”
-problem_statement: |
-  A ball is thrown upward and then falls back to the ground. Sketch a velocity-time graph that represents this motion. Label key points including:</p>
-    <ul>
-      <li>The time when the ball reaches maximum height</li>
-      <li>The time when the ball returns to its starting height</li>
-      <li>Regions of positive and negative acceleration</li>
-    </ul>
-  </li>
-</ul>
-
-<p># =================== PART C: CONNECTING POSITION AND VELOCITY ==================</p>
-<ul>
-  <li>
-    <p>problem_number: “C.1.5”
-section: “Part C: Connecting Position and Velocity”
-subsection: “Graphical Relationships”
-tier:
-  level: 2
-  title: “Journeyman”
-problem_statement: |
-  The velocity-time graph for a car is shown below:</p>
-
-    <p>[Graph description: Velocity-time graph showing a straight line with positive slope from the origin to (10s, 20 m/s)]</p>
-
-    <p>a) What type of motion is represented?
-  b) Draw the corresponding position-time graph.
-  c) Calculate the car’s displacement after 10.0 s.
-  d) Calculate the car’s acceleration.</p>
-  </li>
-  <li>
-    <p>problem_number: “C.1.6”
-section: “Part C: Connecting Position and Velocity”
-subsection: “Graphical Relationships”
-tier:
-  level: 2
-  title: “Journeyman”
-problem_statement: |
-  A falling object has an initial velocity of 0 m/s and experiences constant acceleration due to gravity.
-  a) Draw the velocity-time graph for the first 5.0 s of fall.
-  b) Draw the corresponding position-time graph.
-  c) Calculate the object’s position after 3.0 s.
-  d) At what time will the object have fallen 45.0 m?</p>
-  </li>
-</ul>
-
-<p># ======================= PART D: ACCELERATION ANALYSIS =======================</p>
-<ul>
-  <li>
-    <p>problem_number: “D.7”
-section: “Part D: Acceleration Analysis”
-tier:
-  level: 2
-  title: “Journeyman”
-problem_statement: |
-  A rocket’s velocity-time graph shows a constant increase from 0 m/s to 1000 m/s over 20.0 s.
-  a) What is the rocket’s acceleration?
-  b) What distance does the rocket travel in this time?
-  c) If the rocket continues with the same acceleration, how long will it take to reach a velocity of 2000 m/s?</p>
-  </li>
-  <li>
-    <p>problem_number: “D.8”
-section: “Part D: Acceleration Analysis”
-tier:
-  level: 3
-  title: “Master”
-problem_statement: |
-  A cyclist travels with a velocity given by v(t) = 4t - 0.2t² m/s, where t is in seconds.
-  a) Find the cyclist’s acceleration as a function of time.
-  b) At what time is the velocity maximum?
-  c) Draw the velocity-time graph from t = 0 s to t = 25.0 s.
-  d) Calculate the total distance traveled in 25.0 s.</p>
-  </li>
-</ul>
-
-<p># =================== PART E: REAL-WORLD APPLICATIONS ==================</p>
-<ul>
-  <li>
-    <p>problem_number: “E.9”
-section: “Part E: Real-World Applications”
-tier:
-  level: 2
-  title: “Journeyman”
-problem_statement: |
-  A train accelerates from rest at 0.50 m/s² for 60.0 s, then maintains a constant velocity for 120.0 s, and finally decelerates at 1.0 m/s² until it stops.
-  a) Draw the velocity-time graph for the entire journey.
-  b) Calculate the total distance traveled.
-  c) What was the train’s maximum speed?</p>
-  </li>
-  <li>
-    <p>problem_number: “E.10”
-section: “Part E: Real-World Applications”
-tier:
-  level: 3
-  title: “Master”
-problem_statement: |
-  A rocket launches vertically with an acceleration of 15.0 m/s² for 20.0 s. Then its engines shut off and it continues to rise while decelerating due to gravity.
-  a) Draw the velocity-time graph from launch until the rocket reaches its maximum height.
-  b) What is the maximum height reached by the rocket?
-  c) How long after launch does the rocket reach its maximum height?</p>
-  </li>
-</ul>
-
-<h1 id="-6">——————————————————————————</h1>
-<h1 id="section-3-reflection-questions">SECTION 3: REFLECTION QUESTIONS</h1>
-<h1 id="-7">——————————————————————————</h1>
-<p>reflection:
-  questions:
-    - prompt: “<strong>Conceptual Understanding:</strong> Which graphical relationship (position-time, velocity-time, or acceleration-time) do you find most intuitive for understanding motion, and why?”
-      type: “open_response”
-    - prompt: “<strong>Mathematical Connection:</strong> Explain how the mathematical operations of slope and area connect to physical quantities in kinematic graphs.”
-      type: “open_response”
-    - prompt: “<strong>Application Thinking:</strong> How might engineers use kinematic graphs when designing a roller coaster? What specific features of the graphs would be most important?”
-      type: “open_response”</p>
-
-<h1 id="-8">——————————————————————————</h1>
-<h1 id="section-4-student-solutions-list-partial---quantitative-problems-only">SECTION 4: STUDENT SOLUTIONS LIST (Partial - Quantitative Problems Only)</h1>
-<h1 id="-9">——————————————————————————</h1>
-<p>student_solutions_list:
-  note: “Many problems in this set require graphical or conceptual responses. Only quantitative answers are provided here.”</p>
-
-<p>problem_A1_b:
-    interval_0_to_1: “$5 \text{ m/s}$”
-    interval_1_to_2: “$15 \text{ m/s}$”
-    interval_2_to_3: “$25 \text{ m/s}$”
-    interval_3_to_4: “$35 \text{ m/s}$”</p>
-
-<p>problem_A1_c: “At $t = 4 \text{ s}$ (highest average velocity)”</p>
-
-<p>problem_B3_b: “$75 \text{ m}$”</p>
-
-<p>problem_B3_c: “$-0.50 \text{ m/s}^2$”</p>
-
-<p>problem_C5_c: “$100 \text{ m}$”</p>
-
-<p>problem_C5_d: “$2.0 \text{ m/s}^2$”</p>
-
-<p>problem_C6_c: “$-44 \text{ m}$ (44 m below starting point)”</p>
-
-<p>problem_C6_d: “$3.0 \text{ s}$”</p>
-
-<p>problem_D7_a: “$50 \text{ m/s}^2$”</p>
-
-<p>problem_D7_b: “$10{,}000 \text{ m}$ (10 km)”</p>
-
-<p>problem_D7_c: “$40.0 \text{ s}$ total”</p>
-
-<p>problem_D8_a: “$a(t) = 4 - 0.4t \text{ m/s}^2$”</p>
-
-<p>problem_D8_b: “$t = 10 \text{ s}$”</p>
-
-<p>problem_D8_d: “$167 \text{ m}$”</p>
-
-<p>problem_E9_b: “$4500 \text{ m}$ (4.5 km)”</p>
-
-<p>problem_E9_c: “$30 \text{ m/s}$”</p>
-
-<p>problem_E10_b: “$3459 \text{ m}$ (≈ 3.5 km)”</p>
-
-<p>problem_E10_c: “$50.6 \text{ s}$”</p>
-
-  </div>
+  <!-- Problems with Answer Fields -->
+  
 </div>
+
+            
+        </div>
+
+        <!-- Submission Panel (Sticky Footer) -->
+        
+        <div class="activity-submission-panel" id="submission-panel">
+            <button class="panel-toggle" id="toggle-submission" aria-expanded="false" aria-controls="submission-form-container">
+                <span class="toggle-icon">📝</span>
+                <span class="toggle-text">Submit This Activity</span>
+                <span class="toggle-arrow">▲</span>
+            </button>
+            
+            <div class="panel-content" id="submission-form-container" hidden>
+                <form id="activity-submission-form" class="activity-form">
+                    <!-- Student Information Section -->
+                    <fieldset class="form-section">
+                        <legend>Student Information</legend>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="student-name">Full Name *</label>
+                                <input type="text" id="student-name" name="StudentName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="student-email">Email</label>
+                                <input type="email" id="student-email" name="StudentEmail">
+                            </div>
+                            <div class="form-field">
+                                <label for="course-name">Course</label>
+                                <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label for="class-period">Class Period</label>
+                                <select id="class-period" name="ClassPeriod">
+                                    <option value="">Select Period</option>
+                                    <option value="1">1st Period</option>
+                                    <option value="2">2nd Period</option>
+                                    <option value="3">3rd Period</option>
+                                    <option value="4">4th Period</option>
+                                    <option value="5">5th Period</option>
+                                    <option value="6">6th Period</option>
+                                    <option value="7">7th Period</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Dynamic Activity-Specific Fields (injected by JavaScript) -->
+                    <div id="activity-specific-fields"></div>
+
+                    <!-- Hidden metadata fields -->
+                    <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
+                    <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
+                    <input type="hidden" name="ContentType" value="problem_set">
+                    <input type="hidden" name="Course" value="hphys">
+                    <input type="hidden" name="Unit" value="2-kinematics-1d">
+                    <input type="hidden" name="StartTime" id="start-time">
+                    <input type="hidden" name="SubmitTime" id="submit-time">
+                    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+                    <!-- Action Buttons -->
+                    <div class="form-actions">
+                        <button type="button" id="clear-form" class="btn btn-secondary">Clear Form</button>
+                        <button type="submit" id="submit-button" class="btn btn-primary">
+                            <span class="submit-text">Submit Activity</span>
+                            <span class="submit-spinner" hidden>Submitting...</span>
+                        </button>
+                    </div>
+
+                    <!-- Status Messages -->
+                    <div id="submission-status" class="submission-status" hidden></div>
+                </form>
+
+                <!-- Auto-save indicator -->
+                <div class="auto-save-indicator" id="auto-save-indicator" hidden>
+                    <span class="indicator-icon">💾</span>
+                    <span class="indicator-text">Draft saved</span>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760393604"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            if (moduleMap[contentType]) {
+                const script = document.createElement('script');
+                script.src = moduleMap[contentType] + '?v=1760393604';
+                script.onerror = function() {
+                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
+                };
+                document.body.appendChild(script);
+            } else {
+                console.warn('[activity.html] No submission module found for content_type:', contentType);
+            }
+        });
+    </script>
+    
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>
