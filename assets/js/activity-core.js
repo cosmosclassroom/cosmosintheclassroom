@@ -135,10 +135,10 @@ async function handleSubmit(event) {
     const submitButton = document.getElementById('submit-button');
     const statusDiv = document.getElementById('submission-status');
     
-    // Disable submit button
+    // Disable submit button and show submitting state
     submitButton.disabled = true;
-    submitButton.querySelector('.submit-text').hidden = true;
-    submitButton.querySelector('.submit-spinner').hidden = false;
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Submitting...';
     
     // Set submit time
     document.getElementById('submit-time').value = new Date().toISOString();
@@ -193,10 +193,9 @@ async function handleSubmit(event) {
         console.error('[activity-core] Submission error:', error);
         showStatus('error', 'Submission failed: ' + error.message);
     } finally {
-        // Re-enable submit button
+        // Re-enable submit button and restore text
         submitButton.disabled = false;
-        submitButton.querySelector('.submit-text').hidden = false;
-        submitButton.querySelector('.submit-spinner').hidden = true;
+        submitButton.textContent = originalText;
     }
 }
 
