@@ -198,7 +198,7 @@
     <!-- Canvas for Chart.js -->
     <div class="figure-canvas-wrapper">
       <canvas 
-        id="chart-rocket-ascent-vt1" 
+        id="chart-rocket-ascent-vt" 
         data-chart-config="{&quot;chart_id&quot;:&quot;chart-rocket-ascent-vt&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Vertical Velocity of Sounding Rocket&quot;,&quot;caption&quot;:&quot;Figure 1: Velocity data shows three distinct flight phases: powered ascent (high positive slope), coasting (negative slope less than $|\\vec{a}_g|$), and near freefall descent (slope near $|\\vec{a}_g| = 9.80 \\, \\mathrm{m/s}^2$).&quot;,&quot;showGrid&quot;:true,&quot;aspectRatio&quot;:2.5,&quot;borderColor&quot;:&quot;#3498db&quot;,&quot;backgroundColor&quot;:&quot;rgba(52, 152, 219, 0.2)&quot;,&quot;pointRadius&quot;:3,&quot;tension&quot;:0.2,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:40},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Vertical Velocity (m/s)&quot;,&quot;min&quot;:-20,&quot;max&quot;:120},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:5,&quot;y&quot;:100},{&quot;x&quot;:10,&quot;y&quot;:70},{&quot;x&quot;:15,&quot;y&quot;:30},{&quot;x&quot;:18,&quot;y&quot;:0},{&quot;x&quot;:23,&quot;y&quot;:-45},{&quot;x&quot;:28,&quot;y&quot;:-75},{&quot;x&quot;:33,&quot;y&quot;:-90},{&quot;x&quot;:40,&quot;y&quot;:-98}]}"
         data-defer-render="true"
         aria-label="Vertical Velocity of Sounding Rocket. Use the table below for accessible data.">
@@ -206,7 +206,7 @@
     </div>
     
     <!-- Accessibility: Fallback data table (always present, visually hidden) -->
-    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Vertical Velocity of Sounding Rocket">
+    <div class="figure-data-table sr-only" hidden aria-hidden="false" role="table" aria-label="Data table for Vertical Velocity of Sounding Rocket">
       <table>
         <caption>Vertical Velocity of Sounding Rocket</caption>
         <thead>
@@ -289,7 +289,7 @@
   
   <script>
   (function() {
-    const canvasId = 'chart-rocket-ascent-vt1';
+    const canvasId = 'chart-rocket-ascent-vt';
     const canvas = document.getElementById(canvasId);
     
     if (!canvas) {
@@ -480,15 +480,41 @@
         
         <div class="analysis-questions">
           <h3>Analysis Questions</h3>
-          <ol>
-            
-            <li><p><strong>Powered Ascent Phase:</strong> Identify the time interval for the powered ascent phase. Calculate the average acceleration during this phase by finding the slope of the line during this interval.</p>
-</li>
-            
-            <li><p><strong>Apogee Identification:</strong> Identify the time at which the rocket reaches its maximum altitude (apogee). What is the velocity at this point? Why must the velocity be this value at apogee?</p>
-</li>
-            
-            <li><table>
+          
+          <div class="question-block">
+            <label for="inv1-q1" class="question-label">
+              <strong>Question 1:</strong>
+              <p><strong>Powered Ascent Phase:</strong> Identify the time interval for the powered ascent phase. Calculate the average acceleration during this phase by finding the slope of the line during this interval.</p>
+
+            </label>
+            <textarea 
+              id="inv1-q1" 
+              name="inv1_q1"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv1-q2" class="question-label">
+              <strong>Question 2:</strong>
+              <p><strong>Apogee Identification:</strong> Identify the time at which the rocket reaches its maximum altitude (apogee). What is the velocity at this point? Why must the velocity be this value at apogee?</p>
+
+            </label>
+            <textarea 
+              id="inv1-q2" 
+              name="inv1_q2"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv1-q3" class="question-label">
+              <strong>Question 3:</strong>
+              <table>
   <tbody>
     <tr>
       <td><strong>Coasting Phase Analysis:</strong> Calculate the acceleration during the coasting phase (from the end of powered ascent to apogee). Compare this value to the acceleration due to gravity, $</td>
@@ -497,12 +523,32 @@
     </tr>
   </tbody>
 </table>
-</li>
-            
-            <li><p><strong>Maximum Altitude Estimation:</strong> Using the technique of calculating the area under the curve, estimate the maximum altitude the rocket reached. Show your work by dividing the area into geometric shapes (triangles, trapezoids, rectangles).</p>
-</li>
-            
-          </ol>
+
+            </label>
+            <textarea 
+              id="inv1-q3" 
+              name="inv1_q3"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv1-q4" class="question-label">
+              <strong>Question 4:</strong>
+              <p><strong>Maximum Altitude Estimation:</strong> Using the technique of calculating the area under the curve, estimate the maximum altitude the rocket reached. Show your work by dividing the area into geometric shapes (triangles, trapezoids, rectangles).</p>
+
+            </label>
+            <textarea 
+              id="inv1-q4" 
+              name="inv1_q4"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
         </div>
         
       </div>
@@ -576,18 +622,52 @@
         
         <div class="analysis-questions">
           <h3>Analysis Questions</h3>
-          <ol>
-            
-            <li><p><strong>Cause and Effect:</strong> What is the Cause and Effect relationship between the acceleration difference shown in the table and the rocket’s flight characteristics? How does air resistance <em>cause</em> the observed <em>effect</em> on acceleration magnitude?</p>
-</li>
-            
-            <li><p><strong>Parachute Deployment:</strong> If the rocket had a parachute deploy at $t = 30 \, \mathrm{s}$, how would that event change the slope of the v-t graph after that time? Sketch what this would look like on your graph.</p>
-</li>
-            
-            <li><p><strong>Position-Time Graph:</strong> Sketch the position-time ($x$-$t$) graph that corresponds to the provided velocity-time graph. Explicitly show: (a) Where the slope is zero (what does this represent?), (b) Where the slope is most steep (what does this represent?), (c) The shape of the curve during each phase.</p>
-</li>
-            
-          </ol>
+          
+          <div class="question-block">
+            <label for="inv2-q1" class="question-label">
+              <strong>Question 1:</strong>
+              <p><strong>Cause and Effect:</strong> What is the Cause and Effect relationship between the acceleration difference shown in the table and the rocket’s flight characteristics? How does air resistance <em>cause</em> the observed <em>effect</em> on acceleration magnitude?</p>
+
+            </label>
+            <textarea 
+              id="inv2-q1" 
+              name="inv2_q1"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv2-q2" class="question-label">
+              <strong>Question 2:</strong>
+              <p><strong>Parachute Deployment:</strong> If the rocket had a parachute deploy at $t = 30 \, \mathrm{s}$, how would that event change the slope of the v-t graph after that time? Sketch what this would look like on your graph.</p>
+
+            </label>
+            <textarea 
+              id="inv2-q2" 
+              name="inv2_q2"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv2-q3" class="question-label">
+              <strong>Question 3:</strong>
+              <p><strong>Position-Time Graph:</strong> Sketch the position-time ($x$-$t$) graph that corresponds to the provided velocity-time graph. Explicitly show: (a) Where the slope is zero (what does this represent?), (b) Where the slope is most steep (what does this represent?), (c) The shape of the curve during each phase.</p>
+
+            </label>
+            <textarea 
+              id="inv2-q3" 
+              name="inv2_q3"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
         </div>
         
       </div>
@@ -608,19 +688,29 @@
         
         
         
-        <div class="cer-prompt">
-          <h3>Claim</h3>
-          <p>Write a single, clear, and specific sentence that states the maximum acceleration and maximum altitude achieved by the rocket.</p>
+        <div class="cer-section">
+          <label for="cer-claim" class="cer-label">
+            <h3>Claim</h3>
+            <p>Write a single, clear, and specific sentence that states the maximum acceleration and maximum altitude achieved by the rocket.</p>
 
 <p><strong>Example:</strong> The rocket achieved a maximum average acceleration of [number] $\mathrm{m/s}^2$ during powered ascent and reached a maximum altitude of approximately [number] meters.</p>
 
+          </label>
+          <textarea 
+            id="cer-claim" 
+            name="synthesis_claim"
+            rows="3"
+            placeholder="Write your claim here..."
+            class="form-control cer-response"
+          ></textarea>
         </div>
         
         
         
-        <div class="cer-prompt">
-          <h3>Evidence</h3>
-          <p>Provide a bulleted list of specific, quantitative data points from your analysis that support your claim:</p>
+        <div class="cer-section">
+          <label for="cer-evidence" class="cer-label">
+            <h3>Evidence</h3>
+            <p>Provide a bulleted list of specific, quantitative data points from your analysis that support your claim:</p>
 
 <ul>
   <li>(From Investigation 1) The velocity changed from $0 \, \mathrm{m/s}$ to $100 \, \mathrm{m/s}$ over the first 5 seconds.</li>
@@ -638,16 +728,33 @@
   </li>
 </ul>
 
+          </label>
+          <textarea 
+            id="cer-evidence" 
+            name="synthesis_evidence"
+            rows="6"
+            placeholder="List your evidence here (use bullet points)..."
+            class="form-control cer-response"
+          ></textarea>
         </div>
         
         
         
-        <div class="cer-prompt">
-          <h3>Reasoning</h3>
-          <p>In a paragraph, explain how the principles of <strong>kinematics</strong> and the <strong>Cause and Effect</strong> of external forces (thrust, gravity, and air resistance) translate into the <em>Patterns</em> observed on the v-t graph. Why are the varying slopes of the graph (acceleration) sufficient to explain the entire journey?</p>
+        <div class="cer-section">
+          <label for="cer-reasoning" class="cer-label">
+            <h3>Reasoning</h3>
+            <p>In a paragraph, explain how the principles of <strong>kinematics</strong> and the <strong>Cause and Effect</strong> of external forces (thrust, gravity, and air resistance) translate into the <em>Patterns</em> observed on the v-t graph. Why are the varying slopes of the graph (acceleration) sufficient to explain the entire journey?</p>
 
 <p><strong>Example:</strong> The steep positive slope during powered flight proves the presence of a strong net upward force (thrust &gt; gravity + drag). The shallower negative slope during descent, compared to theoretical freefall, provides quantitative evidence of the <em>cause</em>—air resistance—which reduces the magnitude of the downward acceleration, <em>affecting</em> the total flight time and terminal velocity.</p>
 
+          </label>
+          <textarea 
+            id="cer-reasoning" 
+            name="synthesis_reasoning"
+            rows="8"
+            placeholder="Explain your reasoning in a paragraph..."
+            class="form-control cer-response"
+          ></textarea>
         </div>
         
       </div>
@@ -679,11 +786,11 @@
 
   </div> <!-- Close #lab-sections-container -->
 
-</form> <!-- Close form element -->
-
-<!-- Submission Section (moved OUTSIDE navigation container) -->
-<div class="submission-container" id="submission-section">
-  <form id="activity-submission-form" class="activity-form" data-resource-id="hl-2.1-sounding-rocket" data-content-type="hexagon_lab">
+  <!-- Submission Section (after lab content, but within same form) -->
+  <div class="submission-section-wrapper" id="submission-wrapper">
+    <hr class="section-divider">
+    <h2 class="submission-heading">Submit Your Lab Report</h2>
+    <p class="submission-intro">When you've completed all investigations, fill out the form below to submit your work.</p>
     
     <div class="form-section reflection-section">
       <h2>Lab Report & Submission</h2>
@@ -819,7 +926,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760400578"></script>
+    <script src="/assets/js/activity-core.js?v=1760401600"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -835,7 +942,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760400578';
+                script.src = moduleMap[contentType] + '?v=1760401600';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };

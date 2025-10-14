@@ -58,27 +58,6 @@
             container.insertAdjacentHTML('beforeend', checklistHtml);
         }
 
-        // File Upload (Lab Report)
-        const uploadHtml = `
-            <div class="form-group">
-                <label for="lab-report-upload" class="form-label required">
-                    Lab Report Upload
-                    <span class="help-text">Upload your completed lab report (PDF, DOCX, or images)</span>
-                </label>
-                <input 
-                    type="file" 
-                    id="lab-report-upload" 
-                    name="lab_report"
-                    accept=".pdf,.docx,.doc,.jpg,.jpeg,.png"
-                    multiple
-                    required
-                    class="form-control file-upload"
-                >
-                <div class="file-upload-list" id="file-list"></div>
-            </div>
-        `;
-        container.insertAdjacentHTML('beforeend', uploadHtml);
-
         // Difficulty Rating
         if (fields.difficulty_rating) {
             const difficultyHtml = generateDifficultyRating();
@@ -111,7 +90,7 @@
         if (fields.reflection && fields.reflection.prompt) {
             const reflectionHtml = `
                 <div class="form-group">
-                    <label for="reflection" class="form-label required">
+                    <label for="reflection" class="form-label">
                         Reflection
                         <span class="help-text">${fields.reflection.prompt}</span>
                     </label>
@@ -119,7 +98,6 @@
                         id="reflection" 
                         name="reflection"
                         rows="4"
-                        required
                         placeholder="Write your reflection here..."
                         class="form-control"
                     ></textarea>
@@ -187,9 +165,6 @@
             `;
             container.insertAdjacentHTML('beforeend', notesHtml);
         }
-
-        // Attach file upload handler
-        attachFileUploadHandler();
     }
 
     function generateChecklistField(checklistConfig) {
@@ -197,7 +172,7 @@
         
         let checklistHtml = `
             <div class="form-group">
-                <label class="form-label required">
+                <label class="form-label">
                     Completion Checklist
                     <span class="help-text">Check off each section as you complete it</span>
                 </label>
@@ -212,7 +187,6 @@
                         id="checklist-${index}" 
                         name="completion_checklist[]"
                         value="${section}"
-                        required
                     >
                     <label for="checklist-${index}">${section}</label>
                 </div>
@@ -258,26 +232,6 @@
                 </div>
             </div>
         `;
-    }
-
-    function attachFileUploadHandler() {
-        const fileInput = document.getElementById('lab-report-upload');
-        const fileList = document.getElementById('file-list');
-        
-        if (!fileInput || !fileList) return;
-
-        fileInput.addEventListener('change', function(e) {
-            fileList.innerHTML = '';
-            
-            if (this.files.length === 0) return;
-
-            const listHtml = Array.from(this.files).map(file => {
-                const size = (file.size / 1024).toFixed(1);
-                return `<div class="file-item">📄 ${file.name} (${size} KB)</div>`;
-            }).join('');
-
-            fileList.innerHTML = listHtml;
-        });
     }
 
     // =============================================================================

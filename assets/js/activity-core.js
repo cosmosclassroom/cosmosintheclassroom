@@ -358,6 +358,11 @@ function restoreSavedData() {
         Object.keys(data).forEach(key => {
             const element = document.querySelector(`[name="${key}"]`);
             if (element) {
+                // Skip file inputs (cannot be programmatically set for security)
+                if (element.type === 'file') {
+                    return;
+                }
+                
                 if (element.type === 'checkbox') {
                     element.checked = data[key] === true;
                 } else if (element.type === 'radio') {
