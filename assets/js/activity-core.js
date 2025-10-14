@@ -137,8 +137,9 @@ async function handleSubmit(event) {
     
     // Disable submit button and show submitting state
     submitButton.disabled = true;
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Submitting...';
+    const originalText = submitButton.innerHTML;
+    submitButton.innerHTML = '⏳ Submitting...';
+    submitButton.style.opacity = '0.7';
     
     // Set submit time
     document.getElementById('submit-time').value = new Date().toISOString();
@@ -195,7 +196,8 @@ async function handleSubmit(event) {
     } finally {
         // Re-enable submit button and restore text
         submitButton.disabled = false;
-        submitButton.textContent = originalText;
+        submitButton.innerHTML = originalText;
+        submitButton.style.opacity = '1';
     }
 }
 

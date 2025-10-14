@@ -46,51 +46,12 @@
             console.error('[ps-form] Container #activity-specific-fields not found');
             return;
         }
-
-        const fields = metadata.submissionFields || {};
         
-        // Build form HTML
-        let html = '';
-
-        // Section 1: Completion Checklist
-        if (fields.completion_checklist !== false) {
-            html += buildCompletionChecklist(fields.completion_checklist);
-        }
-
-        // Section 2: Difficulty Rating
-        if (fields.difficulty_rating !== false) {
-            html += buildDifficultyRating();
-        }
-
-        // Section 3: Time Spent
-        if (fields.time_spent !== false) {
-            html += buildTimeSpent();
-        }
-
-        // Section 4: Reflection
-        if (fields.reflection !== false) {
-            html += buildReflection(fields.reflection);
-        }
-
-        // Section 5: Questions/Help Needed
-        if (fields.questions !== false) {
-            html += buildQuestionsField();
-        }
-
-        // Section 6: Collaboration (if enabled)
-        if (fields.collaboration === true) {
-            html += buildCollaborationField();
-        }
-
-        // Section 7: Additional Notes
-        if (fields.additional_notes !== false) {
-            html += buildAdditionalNotes();
-        }
-
-        container.innerHTML = html;
-
-        // Attach event listeners
-        attachEventListeners();
+        // Clear existing content - no additional fields needed for problem sets
+        // All questions are already rendered in the problem set sections
+        container.innerHTML = '';
+        
+        console.log('[ps-form] Problem set uses inline questions - no additional submission fields');
     }
 
     // =============================================================================
