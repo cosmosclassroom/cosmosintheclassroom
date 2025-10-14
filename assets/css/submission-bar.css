@@ -1,0 +1,208 @@
+/**
+ * Floating Submission Bar - Minimal, Clean
+ * Version: 2.0.0 (Updated for Academic Tone)
+ * Date: October 14, 2025
+ * 
+ * Clean floating submission bar for flexbook checkpoint submissions.
+ * Provides minimal interface: student name confirmation + submit button.
+ * NOW USES GLOBAL CSS VARIABLES from main.css
+ */
+
+/* =============================================================================
+   FLOATING SUBMISSION BAR
+   ============================================================================= */
+
+.submission-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-background-main);
+    border-top: 2px solid var(--color-text-heading);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Ensure content doesn't get hidden behind fixed submission bar */
+.flexbook-content,
+.activity-content-wrapper {
+    padding-bottom: 100px; /* Space for floating bar + navigation buttons */
+}
+
+.activity-navigation {
+    margin-bottom: 2rem; /* Extra margin above submission bar */
+}
+
+.submission-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Inline Form Fields */
+.submission-field-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.submission-field-inline label {
+    font-weight: 500;
+    color: var(--color-text-body);
+    margin: 0;
+    font-family: var(--font-sans-body);
+    font-size: 0.85rem;
+}
+
+.submission-field-inline input {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-background-subtle);
+    border-radius: 3px;
+    font-size: 0.95rem;
+    width: 100%;
+    font-family: var(--font-sans-body);
+    background: var(--color-background-main);
+    color: var(--color-text-body);
+}
+
+.submission-field-inline input:focus {
+    outline: none;
+    border-color: var(--color-text-heading);
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
+}
+
+/* Submit Button - Uses Academic Palette */
+.btn-submit-inline {
+    padding: 0.6rem 1.5rem;
+    background: var(--color-button-primary);
+    color: var(--color-background-main);
+    border: 1px solid var(--color-text-heading);
+    border-radius: 3px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: var(--font-sans-body);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.15);
+    align-self: flex-end;
+    white-space: nowrap;
+}
+
+.btn-submit-inline:hover {
+    background: var(--color-text-heading);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+.btn-submit-inline:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+}
+
+/* Status Messages */
+.submission-status-inline {
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--font-sans-body);
+}
+
+.submission-status-inline.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.submission-status-inline.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.submission-status-inline.info {
+    background-color: var(--color-background-subtle);
+    border: 1px solid var(--color-text-heading);
+    color: var(--color-text-body);
+}
+
+/* Auto-save Indicator */
+.auto-save-indicator-inline {
+    color: #28a745;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-sans-body);
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    .submission-bar {
+        padding: 0.5rem 1rem;
+    }
+    
+    .submission-bar-content {
+        flex-direction: column;
+        gap: 0.75rem;
+        align-items: stretch;
+    }
+    
+    .btn-submit-inline {
+        width: 100%;
+    }
+}
+
+/* =============================================================================
+   CHECKPOINT ANSWER FIELDS (Flexbook Content)
+   ============================================================================= */
+
+.checkpoint-question {
+    margin-bottom: 1.5rem;
+}
+
+.checkpoint-question label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text-body);
+    font-family: var(--font-sans-body);
+}
+
+.checkpoint-answer {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--color-background-subtle);
+    border-radius: 3px;
+    font-size: 0.95rem;
+    font-family: var(--font-sans-body);
+    background: var(--color-background-main);
+    color: var(--color-text-body);
+    line-height: 1.5;
+}
+
+.checkpoint-answer:focus {
+    border-color: var(--color-text-heading);
+    box-shadow: 0 0 0 2px rgba(44, 62, 80, 0.1);
+    outline: none;
+}
+
+textarea.checkpoint-answer {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select.checkpoint-answer {
+    cursor: pointer;
+}

@@ -7,6 +7,14 @@
   <link rel="icon" href="/favico.ico" type="image/x-icon">
     <title>The Independence of Motion | Cosmos in the Classroom</title>
     
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
     
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -74,6 +82,12 @@
 <h3 id="unit-3-the-world-in-two-dimensions">Unit 3: The World in Two Dimensions</h3>
 
 <hr />
+<style>
+  ul li em, ul li strong em, ul li b em {
+    font-style: normal !important;
+    font-weight: inherit !important;
+  }
+  </style>
 
 <h2 id="todays-mission">Today’s Mission</h2>
 
@@ -99,7 +113,7 @@
 
 <p>This means we can analyze a complex curved path as two separate, simultaneous, and much simpler straight-line motion problems.</p>
 
-<p><img src="/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-motion-balls-spectrograph.png" alt="bg right:50% contain" /></p>
+<!-- ![bg right:50% contain](/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-motion-balls-spectrograph.png) -->
 
 <hr />
 
@@ -117,13 +131,13 @@
   <li>
     <p><strong>Conclusion:</strong> With no horizontal forces, the horizontal acceleration ($a_x$) is zero. This means the horizontal velocity ($v_x$) does not change. It is constant.</p>
   </li>
+  <li><strong>Equation for horizontal motion:</strong></li>
   <li>
-    <p><strong>Equation for horizontal motion:</strong>
-\(\Delta x = v_x t\)</p>
+\[\Delta \overrightarrow{x} = \overrightarrow{v}_x t\]
   </li>
 </ul>
 
-<p><img src="/assets/images/hphys/3-2d-kinematics/lec-3.1-projectile-tower-drawing.png" alt="bg right:50% contain" /></p>
+<!-- ![bg right:50% contain](/assets/images/hphys/3-2d-kinematics/lec-3.1-projectile-tower-drawing.png) -->
 
 <hr />
 
@@ -136,32 +150,41 @@
     <p><strong>Question:</strong> Once the cannonball leaves the barrel, what is the only force acting on it?</p>
   </li>
   <li>
-    <p><strong>Answer:</strong> The force of gravity ($F_g$), which pulls it straight down.</p>
+    <p><strong>Answer:</strong> The force of gravity ($\overrightarrow{F}_g$), which pulls it straight down.</p>
   </li>
 </ul>
 
-<p><img src="/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-sphere-masses.png" alt="bg right:50% contain" /></p>
+<!-- ![bg right:50% contain](/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-sphere-masses.png) -->
 
 <hr />
 
 <ul>
-  <li><strong>Conclusion:</strong> The cannonball experiences a constant downward acceleration, $a_g$.</li>
-</ul>
-
-\[a_y = a_g = -9.80 \text{ m/s}^2\]
-
-<ul>
+  <li>
+    <p><strong>Conclusion:</strong> The cannonball experiences a constant downward acceleration, $\overrightarrow{a}_g$.</p>
+  </li>
   <li>
     <p>For the vertical dimension, we use our familiar kinematic equations for constant acceleration:</p>
   </li>
   <li>
-\[v_{y,f} = v_{y,i} + a_g t\]
+    <ul>
+      <li>
+\[\overrightarrow{v}_{y,f} = \overrightarrow{v}_{y,i} + \overrightarrow{a}_g t\]
+      </li>
+    </ul>
   </li>
   <li>
-\[\Delta y = v_{y,i} t + \frac{1}{2} a_g t^2\]
+    <ul>
+      <li>
+\[\Delta \overrightarrow{y} = \overrightarrow{v}_{y,i} t + \frac{1}{2} \overrightarrow{a}_g t^2\]
+      </li>
+    </ul>
   </li>
   <li>
-\[v_{y,f}^2 = v_{y,i}^2 + 2 a_g \Delta y\]
+    <ul>
+      <li>
+\[\overrightarrow{v}_{y,f}^2 = \overrightarrow{v}_{y,i}^2 + 2 \overrightarrow{a}_g \Delta \overrightarrow{y}\]
+      </li>
+    </ul>
   </li>
 </ul>
 
@@ -186,10 +209,10 @@
 
 <p><strong>To solve problems, we often:</strong></p>
 
-<ol>
+<ul>
   <li>Use the vertical information to solve for time.</li>
   <li>Use that time to solve for the horizontal distance.</li>
-</ol>
+</ul>
 
 <hr />
 
@@ -211,7 +234,7 @@
   <li>Solve for time using vertical motion, then use time to find horizontal distance.</li>
 </ul>
 
-<p><img src="/assets/images/hphys/3-2d-kinematics/lec-3.1-projectile-tower-drawing.png" alt="bg right:40% contain" /></p>
+<!-- ![bg right:40% contain](/assets/images/hphys/3-2d-kinematics/lec-3.1-projectile-tower-drawing.png) -->
 
 <hr />
 
@@ -265,11 +288,11 @@
 <ul>
   <li>
     <p>Use the vertical motion equation:
-\(\Delta y = v_{y,i} t + \frac{1}{2} a_g t^2\)</p>
+\(\Delta \overrightarrow{y} = \overrightarrow{v}_{y,i} t + \frac{1}{2} \overrightarrow{a}_g t^2\)</p>
   </li>
   <li>
     <p>Since $v_{y,i} = 0$, the equation simplifies to:
-\(\Delta y = \frac{1}{2} a_g t^2\)</p>
+\(\Delta \overrightarrow{y} = \frac{1}{2} \overrightarrow{a}_g t^2\)</p>
   </li>
 </ul>
 
@@ -280,8 +303,7 @@
 <ul>
   <li>
     <p>Rearrange to solve for $t$:
-\(t^2 = \frac{2\Delta y}{a_g}\)
-\(t = \sqrt{\frac{2\Delta y}{a_g}}\)</p>
+\(t = \sqrt{\frac{2\Delta \overrightarrow{y}}{\overrightarrow{a}_g}}\)</p>
   </li>
   <li>
     <p>Now substitute values:
@@ -301,11 +323,11 @@
 <ul>
   <li>
     <p>Use the horizontal motion equation:
-\(\Delta x = v_x t\)</p>
+\(\Delta \overrightarrow{x} = \overrightarrow{v}_x t\)</p>
   </li>
   <li>
     <p>Substitute values:
-\(\Delta x = (15.0\,\text{m/s})(4.00\,\text{s}) = 60.0\,\text{m}\)</p>
+\(\Delta \overrightarrow{x} = (15.0\,\text{m/s})(4.00\,\text{s}) = 60.0\,\text{m}\)</p>
   </li>
   <li>
     <p><strong>Answer:</strong> The stone lands <strong>60.0 m</strong> from the base of the cliff.</p>
@@ -320,7 +342,7 @@
 
 <p><strong>Which one hits the ground first?</strong> (Ignore air resistance.)</p>
 
-<p><img src="/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-of-motion--dropped-vs--horizontally-launched-ball-graph.png" alt="bg right:45% contain" /></p>
+<!-- ![bg right:45% contain](/assets/images/hphys/3-2d-kinematics/lec-3.1-independence-of-motion--dropped-vs--horizontally-launched-ball-graph.png) -->
 
 <ul>
   <li>
@@ -359,7 +381,7 @@ Analyze 2D projectile motion as two separate 1D problems.</p>
 
 <ul>
   <li>Horizontal: Constant velocity ($a_x = 0$)</li>
-  <li>Vertical: Constant acceleration ($a_y = a_g$)</li>
+  <li>Vertical: Constant acceleration ($\overrightarrow{a}_g$)</li>
   <li>Time ($t$) is the link between them.</li>
 </ul>
 

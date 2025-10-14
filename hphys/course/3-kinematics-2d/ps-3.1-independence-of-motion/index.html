@@ -7,6 +7,14 @@
   <link rel="icon" href="/favico.ico" type="image/x-icon">
     <title>Problem Set 3.1: Independence of Motion | Cosmos in the Classroom</title>
     
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
     
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -60,6 +68,24 @@
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
 
 <!-- Chart.js Library (Conditional Loading) -->
 
@@ -92,2338 +118,7 @@
          data-submission-fields="null"
          hidden></div>
 
-    <!-- Site Header with Breadcrumb and Navigation -->
-    <header class="site-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1rem 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <nav class="site-nav" style="display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto;">
-            <div class="breadcrumb-nav" style="display: flex; gap: 1rem; align-items: center;">
-                <a href="/" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.25rem; background: rgba(255,255,255,0.1); transition: background 0.2s;">
-                    ← Home
-                </a>
-                <span style="color: rgba(255,255,255,0.7);">/</span>
-                <a href="/hphys/" class="nav-link" style="color: white; text-decoration: none; font-weight: 500; padding: 0.5rem 1rem; border-radius: 0.25rem; background: rgba(255,255,255,0.1); transition: background 0.2s;">
-                    HPHYS Course
-                </a>
-            </div>
-        </nav>
-    </header>
-
     <main class="main-content">
-        <!-- Quick Navigation Dropdown -->
-        <div class="quick-navigation-wrapper" style="background: #f8f9fa; border-bottom: 2px solid #dee2e6; padding: 1rem 2rem; margin-bottom: 2rem;">
-            <div style="max-width: 1400px; margin: 0 auto;">
-                <details style="cursor: pointer;">
-                    <summary style="font-weight: 600; color: #495057; padding: 0.5rem; list-style: none; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.2rem;">🧭</span>
-                        <span>Quick Navigation - Jump to Other Content</span>
-                        <span style="margin-left: auto; font-size: 0.9rem; color: #6c757d;">▼</span>
-                    </summary>
-                    <div style="padding: 1rem; margin-top: 0.5rem;">
-                        
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-<div class="course-nav-dropdown course-nav-dropdown--hphys">
-  <div class="course-title">
-    
-      <h2>Honors Physics</h2>
-    
-  </div>
-  
-  <div class="dropdown-container">
-    <div class="dropdown-group">
-      <label for="unit-select-hphys">Select Unit:</label>
-      <select id="unit-select-hphys" class="unit-select" aria-label="Select a unit">
-        <option value="">-- Choose a Unit --</option>
-        
-          
-            <option value="/hphys/course/1-measurement/">Unit 1: Measurement</option>
-          
-            <option value="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1D</option>
-          
-            <option value="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2D</option>
-          
-            <option value="/hphys/course/4-dynamics/">Unit 4: Dynamics</option>
-          
-            <option value="/hphys/course/5-energy/">Unit 5: Energy</option>
-          
-            <option value="/hphys/course/6-momentum/">Unit 6: Momentum</option>
-          
-            <option value="/hphys/course/7-gravity-orbits/">Unit 7: Gravity Orbits</option>
-          
-            <option value="/hphys/course/8-waves-sound/">Unit 8: Waves Sound</option>
-          
-            <option value="/hphys/course/9-optics/">Unit 9: Optics</option>
-          
-            <option value="/hphys/course/10-electrostatics-circuits/">Unit 10: Electrostatics Circuits</option>
-          
-        
-      </select>
-    </div>
-    
-    <div class="dropdown-group">
-      <label for="content-select-hphys">Select Content Type:</label>
-      <select id="content-select-hphys" class="content-select" disabled aria-label="Select a content type">
-        <option value="">-- Choose Content Type --</option>
-      </select>
-    </div>
-
-    <div class="dropdown-group" id="document-select-group-hphys" style="display:none;">
-      <label for="item-select-hphys" id="item-label-hphys">Select Document:</label>
-      <select id="item-select-hphys" class="item-select" aria-label="Select a document">
-        <option value="">-- Choose Document --</option>
-      </select>
-    </div>
-
-    <div class="button-container">
-      <button id="nav-go-hphys" class="nav-go-button" disabled aria-label="Go to selected content">Go</button>
-    </div>
-  </div>
-</div>
-
-<script>
-(function() {
-  const courseCode = 'hphys';
-  const courseData = {"title":"Honors Physics","url":"/hphys/","units":[{"number":1,"title":"Measurement","slug":"1-measurement","url":"/hphys/course/1-measurement/","content_types":[{"type":"assessments","title":"Assessments","url":"/hphys/course/1-measurement/assessments/"},{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/1-measurement/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/1-measurement/hexagon-labs/"},{"type":"keys","title":"Keys","url":"/hphys/course/1-measurement/keys/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/1-measurement/lectures/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/1-measurement/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/1-measurement/research-briefs/"}],"files":[{"type":"assessments","url":"/hphys/course/1-measurement/ptest-2-kinematics1d/","title":"Ptest 2 Kinematics1D"},{"type":"assessments","url":"/hphys/course/1-measurement/README/","title":"Readme"},{"type":"assessments","url":"/hphys/course/1-measurement/ptest-2-kinematics1d-key/","title":"Solutions Key: The Physics of a Hollywood Stunt"},{"type":"assessments","url":"/hphys/course/1-measurement/test-2-kinematics-1d/","title":"Test 2 Kinematics 1D"},{"type":"assessments","url":"/hphys/course/1-measurement/quiz-1.1-measurement-vectors/","title":"Unit 1 Quiz: Measurement and Vectors"},{"type":"assessments","url":"/hphys/course/1-measurement/test-3-kinematics2d/","title":"Unit 3 Test: The Siege of Constantinople"},{"type":"assessments","url":"/hphys/course/1-measurement/mars-orbiter/","title":"mars-orbiter"},{"type":"flexbook","url":"/hphys/course/1-measurement/fb-1.2-mapping-world/","title":"Chapter 1.6: Mapping the World"},{"type":"flexbook","url":"/hphys/course/1-measurement/fb-1-full/","title":"fb-1-full"},{"type":"flexbook","url":"/hphys/course/1-measurement/fb-1.1-language-of-measurement/","title":"fb-1.1-language-of-measurement"},{"type":"flexbook","url":"/hphys/course/1-measurement/fb-1.2-power-of-vectors/","title":"fb-1.2-power-of-vectors"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.2-vector-simulations/","title":"Hexagon Lab 1.2: Hexagon Lab - Vector Addition Simulations"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.3-reconciling-data/","title":"Hexagon Lab 1.3: Hexagon Lab - Reconciling Discrepant Data Sets"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.1-historical-measurement/","title":"Historical Measurement"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.4.-pt-vt-track-cart-prelab copy/","title":"Hl 1.4. Pt Vt Track Cart Prelab Copy"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.4.-pt-vt-track-cart-prelab-key/","title":"Pre-Lab Answer Key: Diluting Gravity"},{"type":"hexagon-labs","url":"/hphys/course/1-measurement/hl-1.4-pt-vt-track-carts/","title":"Track Cart: Position-Time & Velocity-Time"},{"type":"keys","url":"/hphys/course/1-measurement/mars-orbiter-key/","title":"Mars Orbiter Key"},{"type":"keys","url":"/hphys/course/1-measurement/ps1.1-measurement/","title":"Problem Set 1.1 Answer Key — The Language of Measurement"},{"type":"keys","url":"/hphys/course/1-measurement/ps1.2-vectors/","title":"Ps1.2 Vectors"},{"type":"keys","url":"/hphys/course/1-measurement/quiz-01-measurement-vectors-key/","title":"Quiz 01 1 Key"},{"type":"keys","url":"/hphys/course/1-measurement/test-2-kinematics-1d-key/","title":"Test 2 Kinematics 1D Key"},{"type":"lectures","url":"/hphys/course/1-measurement/lec-1.1-rules-of-the-game/","title":"Lecture 1.1: The Rules of the Game"},{"type":"lectures","url":"/hphys/course/1-measurement/lec-1.2-a-new-way-of-seeing/","title":"Lecture 1.2: Lecture 1.2: A New Way of Seeing"},{"type":"lectures","url":"/hphys/course/1-measurement/lec-1.2-vectors-old/","title":"Vectors Old"},{"type":"problem-sets","url":"/hphys/course/1-measurement/ps-1.1-measurement/","title":"Problem Set 1.1: The Language of Measurement"},{"type":"research-briefs","url":"/hphys/course/1-measurement/rb-1-measurement/","title":"Research Brief 1: Measurement & Mapping"}]},{"number":2,"title":"Kinematics 1D","slug":"2-kinematics-1d","url":"/hphys/course/2-kinematics-1d/","content_types":[{"type":"assessments","title":"Assessments","url":"/hphys/course/2-kinematics-1d/assessments/"},{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/2-kinematics-1d/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/2-kinematics-1d/hexagon-labs/"},{"type":"keys","title":"Keys","url":"/hphys/course/2-kinematics-1d/keys/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/2-kinematics-1d/lectures/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/2-kinematics-1d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/2-kinematics-1d/research-briefs/"}],"files":[{"type":"assessments","url":"/hphys/course/2-kinematics-1d/quiz_02_3/","title":"Quiz_02_3"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/quiz_02_4/","title":"Quiz_02_4"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/sg2-kinematics1d-test/","title":"Sg2 Kinematics1D Test"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/test2-kinematics1d/","title":"Unit 2 Assessment: Sounding Rocket Kinematic Analysis"},{"type":"assessments","url":"/hphys/course/2-kinematics-1d/q2.1-intro-kinematics/","title":"q2.1-intro-kinematics"},{"type":"flexbook","url":"/hphys/course/2-kinematics-1d/fb-2-constant-accel/","title":"fb-2-constant-accel"},{"type":"flexbook","url":"/hphys/course/2-kinematics-1d/fb-2-motion-with-graph/","title":"fb-2-motion-with-graph"},{"type":"flexbook","url":"/hphys/course/2-kinematics-1d/fb-2.1-language-motion/","title":"fb-2.1-language-motion"},{"type":"hexagon-labs","url":"/hphys/course/2-kinematics-1d/hl-2.1-sounding-rocket/","title":"hl-2.1-sounding-rocket"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/ps-2.1-graphical-motion-key/","title":"Graphical Motion Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/hl-2.1-pos-vel-acc-key/","title":"Pos Vel Acc Key"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/ps-2.2-constant-acceleration-key/","title":"Problem Set 2.2 Key: Kinematics with Constant Acceleration"},{"type":"keys","url":"/hphys/course/2-kinematics-1d/ps-2.1-kinematics-graphs-key/","title":"ps-2.1-kinematics-graphs-key"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lec-2.1-graphical-kinematics/","title":"Graphical Kinematics"},{"type":"lectures","url":"/hphys/course/2-kinematics-1d/lec-2.2-kinematics1d/","title":"The Rules of Falling"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/ps-2.2-constant-acceleration/","title":"Problem Set 2.2: Kinematics with Constant Acceleration"},{"type":"problem-sets","url":"/hphys/course/2-kinematics-1d/ps-2.1-kinematics-graphs/","title":"ps-2.1-kinematics-graphs"},{"type":"research-briefs","url":"/hphys/course/2-kinematics-1d/rb-2-1d-kinematics/","title":"rb-2-1d-kinematics"}]},{"number":3,"title":"Kinematics 2D","slug":"3-kinematics-2d","url":"/hphys/course/3-kinematics-2d/","content_types":[{"type":"assessments","title":"Assessments","url":"/hphys/course/3-kinematics-2d/assessments/"},{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/3-kinematics-2d/flexbook/"},{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/3-kinematics-2d/hexagon-labs/"},{"type":"keys","title":"Keys","url":"/hphys/course/3-kinematics-2d/keys/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/3-kinematics-2d/lectures/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/3-kinematics-2d/problem-sets/"},{"type":"research-briefs","title":"Research Briefs","url":"/hphys/course/3-kinematics-2d/research-briefs/"}],"files":[{"type":"assessments","url":"/hphys/course/3-kinematics-2d/quiz-3.1-projectiles/","title":"Projectiles"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/quiz-3.1-motion-dimensions/","title":"Quiz 3.1: Motion in Two Dimensions"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/quiz-3.2-projectiles/","title":"Quiz 3.2: Relative Motion & Real-World Applications"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/overview/","title":"Unit 3 Assessment Overview"},{"type":"assessments","url":"/hphys/course/3-kinematics-2d/test-3-seige-constantinpole/","title":"Unit 3 Test - The Siege of Constantinople"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/fb-3-projectiles/","title":"fb-3-projectiles"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/fb-3.1-projectile-intro/","title":"fb-3.1-projectile-intro"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/fb-3.2-projectile-main/","title":"fb-3.2-projectile-main"},{"type":"flexbook","url":"/hphys/course/3-kinematics-2d/fb-5-geometry-impact/","title":"fb-5-geometry-impact"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hl-3.1-projectile-data-analysis/","title":"Hexagon Lab 3.1 - Analyzing Projectile Motion Data"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hl-3.3-moving-targets/","title":"Hexagon Lab: Hitting a Moving Target"},{"type":"hexagon-labs","url":"/hphys/course/3-kinematics-2d/hl-3.2-real-projectile-motion/","title":"Hexagon Lab: Real-World Projectile Motion"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/quiz-3.1-motion-dimensions-key copy/","title":"Quiz 3.1: Motion in Two Dimensions — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/quiz-3.2-projectiles-key/","title":"Quiz 3.2: Relative Motion & Real-World Applications — Answer Key"},{"type":"keys","url":"/hphys/course/3-kinematics-2d/test-3-seige-constantinople-key/","title":"Unit 3 Test: The Siege of Constantinople — Answer Key"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lec-3.2-projectile-motion/","title":"Angled Projectiles: The Master Gunner's Secret"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lec-3.3-relative-motion/","title":"Relative Velocity: A Matter of Perspective"},{"type":"lectures","url":"/hphys/course/3-kinematics-2d/lec-3.1-independence-motion/","title":"The Independence of Motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/ps-3.1-independence-of-motion/","title":"ps-3.1-independence-of-motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/ps-3.2-general-projectile-motion/","title":"ps-3.2-general-projectile-motion"},{"type":"problem-sets","url":"/hphys/course/3-kinematics-2d/ps-3.3-relative-motion/","title":"ps-3.3-relative-motion"},{"type":"research-briefs","url":"/hphys/course/3-kinematics-2d/rb-3-the-world-in-two-dimensions/","title":"Research Brief 3: The World in Two Dimensions"}]},{"number":4,"title":"Dynamics","slug":"4-dynamics","url":"/hphys/course/4-dynamics/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/4-dynamics/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/4-dynamics/lectures/"},{"type":"problem-sets","title":"Problem Sets","url":"/hphys/course/4-dynamics/problem-sets/"}],"files":[{"type":"flexbook","url":"/hphys/course/4-dynamics/fb-7-forces-motion/","title":"fb-7-forces-motion"},{"type":"flexbook","url":"/hphys/course/4-dynamics/fb-8-applying-forces/","title":"fb-8-applying-forces"},{"type":"lectures","url":"/hphys/course/4-dynamics/lec-4.1-laws-of-cause-and-effect/","title":"Lecture 4.1: The Laws of Cause and Effect"},{"type":"problem-sets","url":"/hphys/course/4-dynamics/ps-4.1-newtons-laws/","title":"ps-4.1-newtons-laws"}]},{"number":5,"title":"Energy","slug":"5-energy","url":"/hphys/course/5-energy/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/5-energy/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/5-energy/lectures/"}],"files":[{"type":"flexbook","url":"/hphys/course/5-energy/fb-10-conservation-power/","title":"fb-10-conservation-power"},{"type":"flexbook","url":"/hphys/course/5-energy/fb-9-work-energy/","title":"fb-9-work-energy"},{"type":"lectures","url":"/hphys/course/5-energy/lec-5.1-currency-of-change/","title":"Lecture 5.1: Lecture 5.1: The Currency of Change"},{"type":"lectures","url":"/hphys/course/5-energy/lec-5.2-the-unbreakable-law/","title":"Lecture 5.2: Lecture 5.2: The Unbreakable Law"}]},{"number":6,"title":"Momentum","slug":"6-momentum","url":"/hphys/course/6-momentum/","content_types":[{"type":"flexbook","title":"Flexbook Chapters","url":"/hphys/course/6-momentum/flexbook/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/6-momentum/lectures/"}],"files":[{"type":"flexbook","url":"/hphys/course/6-momentum/fb-11-conservation-momentum/","title":"Chapter 11: Impulse and Momentum"},{"type":"lectures","url":"/hphys/course/6-momentum/lec-6.1-mass-in-motion/","title":"Lecture 6.1: Lecture 6.1: Mass in Motion"},{"type":"lectures","url":"/hphys/course/6-momentum/lec-6.2-rules-of-interaction/","title":"Lecture 6.2: Lecture 6.2: The Rules of Interaction"}]},{"number":7,"title":"Gravity Orbits","slug":"7-gravity-orbits","url":"/hphys/course/7-gravity-orbits/","content_types":[{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/7-gravity-orbits/lectures/"}],"files":[{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lec-7.1-physics-of-turning/","title":"Lecture 7.1: Lecture 7.1: The Physics of Turning"},{"type":"lectures","url":"/hphys/course/7-gravity-orbits/lec-7.2-force-across-the-void/","title":"Lecture 7.2: Lecture 7.2: The Force That Reaches Across the Void"}]},{"number":8,"title":"Waves Sound","slug":"8-waves-sound","url":"/hphys/course/8-waves-sound/","content_types":[{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/8-waves-sound/lectures/"}],"files":[{"type":"lectures","url":"/hphys/course/8-waves-sound/lec-8.1-rhythm-of-nature/","title":"Lecture 8.1: Lecture 8.1: The Rhythm of Nature"},{"type":"lectures","url":"/hphys/course/8-waves-sound/lec-8.2-when-waves-meet/","title":"Lecture 8.2: Lecture 8.2: When Waves Meet"}]},{"number":9,"title":"Optics","slug":"9-optics","url":"/hphys/course/9-optics/","content_types":[{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/9-optics/hexagon-labs/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/9-optics/lectures/"}],"files":[{"type":"hexagon-labs","url":"/hphys/course/9-optics/hl-9.1-bending-bouncing-light/","title":"Hexagon Lab 9.1: Hexagon Lab - Bending and Bouncing Light"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hl-9.2-converging-diverging-lenses/","title":"Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses"},{"type":"hexagon-labs","url":"/hphys/course/9-optics/hl-9.3-building-a-telescope/","title":"Hexagon Lab 9.3: Hexagon Lab - Building a Simple Telescope"},{"type":"lectures","url":"/hphys/course/9-optics/lec-9.1-rules-of-lights-path/","title":"Lecture 9.1: Lecture 9.1: The Rules of Light's Path"},{"type":"lectures","url":"/hphys/course/9-optics/lec-9.2-bending-light-to-see/","title":"Lecture 9.2: Lecture 9.2: Bending Light to See"}]},{"number":10,"title":"Electrostatics Circuits","slug":"10-electrostatics-circuits","url":"/hphys/course/10-electrostatics-circuits/","content_types":[{"type":"hexagon-labs","title":"Hexagon Labs","url":"/hphys/course/10-electrostatics-circuits/hexagon-labs/"},{"type":"lectures","title":"Lecture Slides","url":"/hphys/course/10-electrostatics-circuits/lectures/"}],"files":[{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hl-10.1-investigating-static-charge/","title":"Hexagon Lab 10.1: Hexagon Lab - Investigating Static Charge"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hl-10.2-building-simple-circuits/","title":"Hexagon Lab 10.2: Hexagon Lab - Building Simple Circuits"},{"type":"hexagon-labs","url":"/hphys/course/10-electrostatics-circuits/hl-10.3-series-vs-parallel-circuits/","title":"Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lec-10.1-the-unseen-force/","title":"Lecture 10.1: Lecture 10.1: The Unseen Force"},{"type":"lectures","url":"/hphys/course/10-electrostatics-circuits/lec-10.2-making-charge-flow/","title":"Lecture 10.2: Lecture 10.2: Making Charge Flow"}]}]};
-  
-  
-  const useManifest = false;
-  
-  
-  // Get the dropdown elements
-  const unitSelect = document.getElementById('unit-select-hphys');
-  const contentSelect = document.getElementById('content-select-hphys');
-  const itemSelect = document.getElementById('item-select-hphys');
-  const documentSelectGroup = document.getElementById('document-select-group-hphys');
-  const goButton = document.getElementById('nav-go-hphys');
-
-  // Content type definitions with proper URL structure
-  const contentTypes = [
-    {key: "lectures", title: "Lectures", icon: "📝", urlPath: "lectures"},
-    {key: "hexagon-labs", title: "Hexagon Labs", icon: "🧪", urlPath: "hexagon-labs"},
-    {key: "problem-sets", title: "Problem Sets", icon: "📊", urlPath: "problem-sets"},
-    {key: "assessments", title: "Assessments", icon: "✅", urlPath: "assessments"}
-  ];
-
-  // Helper function to extract documents by type from manifest
-  function getDocumentsByType(unit, contentType) {
-    if (!unit || !unit.documents) return [];
-    
-    const docs = [];
-    unit.documents.forEach(doc => {
-      if (typeof doc === 'object' && doc[contentType]) {
-        // Handle object format: {type: [files]}
-        const files = Array.isArray(doc[contentType]) ? doc[contentType] : [doc[contentType]];
-        docs.push(...files);
-      } else if (typeof doc === 'string' && doc.startsWith(contentType + '/')) {
-        // Handle string format: "type/file.md"
-        docs.push(doc.substring(contentType.length + 1));
-      }
-    });
-    return docs;
-  }
-
-  // Populate content types when unit is selected
-  unitSelect.addEventListener('change', function() {
-    contentSelect.innerHTML = '<option value="">-- Choose Content Type --</option>';
-    contentSelect.disabled = true;
-    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
-    documentSelectGroup.style.display = 'none';
-    goButton.disabled = true;
-
-    if (!this.value) return;
-
-    if (useManifest) {
-      const unitSlug = this.value;
-      const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
-      
-      if (!selectedUnit) {
-        console.error('Unit not found:', unitSlug);
-        return;
-      }
-
-      // Add available content types
-      contentTypes.forEach(content => {
-        const docs = getDocumentsByType(selectedUnit, content.key);
-        if (docs.length > 0) {
-          const option = document.createElement('option');
-          option.value = content.urlPath;
-          option.textContent = `${content.icon} ${content.title}`;
-          option.dataset.contentKey = content.key;
-          contentSelect.appendChild(option);
-        }
-      });
-      
-      contentSelect.disabled = contentSelect.options.length <= 1;
-      goButton.disabled = contentSelect.options.length <= 1;
-      
-    } else {
-      // Legacy course_navigation.yml structure
-      const selectedUnit = courseData.units.find(unit => unit.url === this.value);
-      if (selectedUnit && selectedUnit.content_types && selectedUnit.content_types.length > 0) {
-        selectedUnit.content_types.forEach(content => {
-          const option = document.createElement('option');
-          option.value = content.type;
-          option.textContent = content.title;
-          contentSelect.appendChild(option);
-        });
-        contentSelect.disabled = false;
-      }
-      goButton.disabled = !selectedUnit || !selectedUnit.content_types;
-    }
-  });
-
-  // Populate items when content type is selected
-  contentSelect.addEventListener('change', function() {
-    itemSelect.innerHTML = '<option value="">-- Choose Document --</option>';
-    documentSelectGroup.style.display = 'none';
-    goButton.disabled = true;
-    
-    if (!this.value) return;
-
-    if (useManifest) {
-      const unitSlug = unitSelect.value;
-      const contentUrlPath = this.value;
-      const contentKey = this.options[this.selectedIndex].dataset.contentKey;
-      
-      const selectedUnit = manifestData.units.find(unit => unit.unitSlug === unitSlug);
-      if (!selectedUnit) return;
-
-      const docs = getDocumentsByType(selectedUnit, contentKey);
-      
-      if (docs.length > 0) {
-        docs.forEach(docPath => {
-          const option = document.createElement('option');
-          // Construct proper URL: /course/course/unit-slug/content-type/file
-          const cleanPath = docPath.replace('.md', '').replace(/^\/+|\/+$/g, '');
-          option.value = `/${courseCode}/course/${unitSlug}/${contentUrlPath}/${cleanPath}/`;
-          
-          // Extract filename for display
-          const filename = docPath.split('/').pop().replace('.md', '').replace(/-/g, ' ');
-          option.textContent = filename.replace(/\b\w/g, l => l.toUpperCase());
-          itemSelect.appendChild(option);
-        });
-        documentSelectGroup.style.display = 'block';
-      } else {
-        // Content type page exists but no individual documents
-        goButton.disabled = false;
-      }
-      
-    } else {
-      // Legacy structure
-      const selectedUnit = courseData.units.find(unit => unit.url === unitSelect.value);
-      if (selectedUnit && selectedUnit.files) {
-        const files = selectedUnit.files.filter(f => f.type === contentSelect.value);
-        if (files.length > 0) {
-          files.forEach(file => {
-            const option = document.createElement('option');
-            option.value = file.url;
-            option.textContent = file.title || file.url.split('/').pop();
-            itemSelect.appendChild(option);
-          });
-          documentSelectGroup.style.display = 'block';
-        } else {
-          goButton.disabled = false;
-        }
-      }
-    }
-  });
-
-  // Enable Go button when document is selected
-  itemSelect.addEventListener('change', function() {
-    goButton.disabled = !this.value;
-  });
-
-  // Navigate to selected page
-  goButton.addEventListener('click', function() {
-    let url;
-    
-    if (itemSelect.value) {
-      url = itemSelect.value;
-    } else if (contentSelect.value) {
-      if (useManifest) {
-        const unitSlug = unitSelect.value;
-        const contentPath = contentSelect.value;
-        url = `/${courseCode}/course/${unitSlug}/${contentPath}/`;
-      } else {
-        url = contentSelect.value;
-      }
-    } else if (unitSelect.value) {
-      if (useManifest) {
-        url = `/${courseCode}/course/${unitSelect.value}/`;
-      } else {
-        url = unitSelect.value;
-      }
-    }
-    
-    if (url) {
-      window.location.href = url;
-    }
-  });
-})();
-</script>
-                    </div>
-                </details>
-            </div>
-        </div>
         
         <!-- Activity Header -->
         <div class="activity-header">
@@ -2603,15 +298,60 @@ b) How far from the base of the table does the marble land?</p>
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-1" onclick="toggleCurrentAnswer('1')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-1">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$0.40\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$0.60\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-1-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-1-a">
+                    Part (a)
                   </label>
                   
                   
@@ -2620,12 +360,9 @@ b) How far from the base of the table does the marble land?</p>
                         type="text" 
                         id="answer-1-a" 
                         name="answer_1_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_1_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_1_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -2637,9 +374,9 @@ b) How far from the base of the table does the marble land?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-1-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-1-b">
+                    Part (b)
                   </label>
                   
                   
@@ -2648,12 +385,9 @@ b) How far from the base of the table does the marble land?</p>
                         type="text" 
                         id="answer-1-b" 
                         name="answer_1_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_1_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_1_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -2666,48 +400,6 @@ b) How far from the base of the table does the marble land?</p>
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-1" onclick="toggleCurrentAnswer('1')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-1" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$0.40\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$0.60\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -2737,15 +429,60 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-2" onclick="toggleCurrentAnswer('2')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-2">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$2.67\,\text{s}$ (both objects - same time)</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$320\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-2-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-2-a">
+                    Part (a)
                   </label>
                   
                   
@@ -2754,12 +491,9 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
                         type="text" 
                         id="answer-2-a" 
                         name="answer_2_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_2_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_2_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -2771,9 +505,9 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-2-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-2-b">
+                    Part (b)
                   </label>
                   
                   
@@ -2782,12 +516,9 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
                         type="text" 
                         id="answer-2-b" 
                         name="answer_2_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_2_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_2_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -2800,48 +531,6 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-2" onclick="toggleCurrentAnswer('2')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-2" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$2.67\,\text{s}$ (both objects - same time)</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$320\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -2872,15 +561,68 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-3" onclick="toggleCurrentAnswer('3')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-3">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$3.03\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$60.6\,\text{m}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>$-29.7\,\text{m/s}$ (downward)</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-3-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-3-a">
+                    Part (a)
                   </label>
                   
                   
@@ -2889,12 +631,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                         type="text" 
                         id="answer-3-a" 
                         name="answer_3_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_3_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_3_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -2906,9 +645,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-3-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-3-b">
+                    Part (b)
                   </label>
                   
                   
@@ -2917,12 +656,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                         type="text" 
                         id="answer-3-b" 
                         name="answer_3_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_3_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_3_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -2936,9 +672,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-3-c" style="font-weight: 600;">
-                    Part c):
+                <div class="answer-part">
+                  <label for="answer-3-c">
+                    Part (c)
                   </label>
                   
                   
@@ -2947,12 +683,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                         type="text" 
                         id="answer-3-c" 
                         name="answer_3_c"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_3_c_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_3_c_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -2965,56 +698,6 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-3" onclick="toggleCurrentAnswer('3')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-3" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$3.03\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$60.6\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>c)</strong> <p>$-29.7\,\text{m/s}$ (downward)</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -3044,15 +727,60 @@ b) How far horizontally does the package travel?</p>
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-4" onclick="toggleCurrentAnswer('4')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-4">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$4.95\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$421\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-4-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-4-a">
+                    Part (a)
                   </label>
                   
                   
@@ -3061,12 +789,9 @@ b) How far horizontally does the package travel?</p>
                         type="text" 
                         id="answer-4-a" 
                         name="answer_4_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_4_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_4_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -3078,9 +803,9 @@ b) How far horizontally does the package travel?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-4-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-4-b">
+                    Part (b)
                   </label>
                   
                   
@@ -3089,12 +814,9 @@ b) How far horizontally does the package travel?</p>
                         type="text" 
                         id="answer-4-b" 
                         name="answer_4_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_4_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_4_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -3107,48 +829,6 @@ b) How far horizontally does the package travel?</p>
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-4" onclick="toggleCurrentAnswer('4')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-4" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$4.95\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$421\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -3181,63 +861,6 @@ c) Stone B lands twice as far from the cliff as Stone A. Explain why this makes 
           
           
           
-          
-          
-          <div class="problem-answer">
-            
-              
-              
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-5-a" style="font-weight: 600;">
-                    Part a):
-                  </label>
-                  
-                  
-                    <select 
-                      id="answer-5-a" 
-                      name="answer_5_a"
-                      class="problem-answer-field"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-                      <option value="">Select an answer...</option>
-                      
-                    </select>
-                  
-                </div>
-              
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-5-b" style="font-weight: 600;">
-                    Part b):
-                  </label>
-                  
-                  
-                    <textarea 
-                      id="answer-5-b" 
-                      name="answer_5_b"
-                      class="problem-answer-field"
-                      rows="3"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"
-                      placeholder="Enter your answer here."></textarea>
-                  
-                </div>
-              
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-5-c" style="font-weight: 600;">
-                    Part c):
-                  </label>
-                  
-                  
-                    <textarea 
-                      id="answer-5-c" 
-                      name="answer_5_c"
-                      class="problem-answer-field"
-                      rows="3"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"
-                      placeholder="Enter your answer here."></textarea>
-                  
-                </div>
-              
-            
-          </div>
 
           
           <div class="problem-navigation">
@@ -3246,47 +869,101 @@ c) Stone B lands twice as far from the cliff as Stone A. Explain why this makes 
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-5" onclick="toggleCurrentAnswer('5')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
+            <button type="button" class="check-answer-button" id="check-answer-5" onclick="toggleCurrentAnswer('5')">
+              View Solution
             </button>
-            
-            <div class="current-answer-display" id="answer-key-5" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>They hit at the same time</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>Vertical motion is independent of horizontal velocity; both experience same downward acceleration and same initial vertical velocity (0 m/s)</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>c)</strong> <p>Since time is the same and distance = velocity × time, doubling the horizontal velocity doubles the horizontal distance</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
             
             
             <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
               Next <span class="nav-icon">→</span>
             </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-5">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>They hit at the same time</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>Vertical motion is independent of horizontal velocity; both experience same downward acceleration and same initial vertical velocity (0 m/s)</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>Since time is the same and distance = velocity × time, doubling the horizontal velocity doubles the horizontal distance</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-5-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <select 
+                      id="answer-5-a" 
+                      name="answer_5_a">
+                      <option value="">Select response...</option>
+                      
+                    </select>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-5-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-5-b" 
+                      name="answer_5_b"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-5-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-5-c" 
+                      name="answer_5_c"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
           </div>
         </div>
       
@@ -3317,32 +994,83 @@ c) How far horizontally does the thrown marble travel?</p>
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-6" onclick="toggleCurrentAnswer('6')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-6">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>They hit at the same time</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$0.49\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>$1.5\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-6-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-6-a">
+                    Part (a)
                   </label>
                   
                   
                     <select 
                       id="answer-6-a" 
-                      name="answer_6_a"
-                      class="problem-answer-field"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;">
-                      <option value="">Select an answer...</option>
+                      name="answer_6_a">
+                      <option value="">Select response...</option>
                       
                     </select>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-6-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-6-b">
+                    Part (b)
                   </label>
                   
                   
@@ -3351,12 +1079,9 @@ c) How far horizontally does the thrown marble travel?</p>
                         type="text" 
                         id="answer-6-b" 
                         name="answer_6_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_6_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_6_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -3368,9 +1093,9 @@ c) How far horizontally does the thrown marble travel?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-6-c" style="font-weight: 600;">
-                    Part c):
+                <div class="answer-part">
+                  <label for="answer-6-c">
+                    Part (c)
                   </label>
                   
                   
@@ -3379,12 +1104,9 @@ c) How far horizontally does the thrown marble travel?</p>
                         type="text" 
                         id="answer-6-c" 
                         name="answer_6_c"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_6_c_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_6_c_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -3397,56 +1119,6 @@ c) How far horizontally does the thrown marble travel?</p>
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-6" onclick="toggleCurrentAnswer('6')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-6" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>They hit at the same time</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$0.49\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>c)</strong> <p>$1.5\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -3477,15 +1149,68 @@ c) What assumptions did you make in your calculation?</p>
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-7" onclick="toggleCurrentAnswer('7')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-7">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$20.2\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$5050\,\text{m}$ (5.05 km before target)</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>No air resistance, flat ground, no wind, Earth’s rotation negligible, constant gravity</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-7-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-7-a">
+                    Part (a)
                   </label>
                   
                   
@@ -3494,12 +1219,9 @@ c) What assumptions did you make in your calculation?</p>
                         type="text" 
                         id="answer-7-a" 
                         name="answer_7_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_7_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_7_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -3511,9 +1233,9 @@ c) What assumptions did you make in your calculation?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-7-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-7-b">
+                    Part (b)
                   </label>
                   
                   
@@ -3522,12 +1244,9 @@ c) What assumptions did you make in your calculation?</p>
                         type="text" 
                         id="answer-7-b" 
                         name="answer_7_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_7_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_7_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -3539,73 +1258,21 @@ c) What assumptions did you make in your calculation?</p>
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-7-c" style="font-weight: 600;">
-                    Part c):
+                <div class="answer-part">
+                  <label for="answer-7-c">
+                    Part (c)
                   </label>
                   
                   
                     <textarea 
                       id="answer-7-c" 
                       name="answer_7_c"
-                      class="problem-answer-field"
                       rows="3"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"
-                      placeholder="Enter your answer here."></textarea>
+                      placeholder="Enter response..."></textarea>
                   
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-7" onclick="toggleCurrentAnswer('7')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-7" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$20.2\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$5050\,\text{m}$ (5.05 km before target)</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>c)</strong> <p>No air resistance, flat ground, no wind, Earth’s rotation negligible, constant gravity</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -3638,15 +1305,66 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-8" onclick="toggleCurrentAnswer('8')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-8">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$4.0\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$78\,\text{m}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-8-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-8-a">
+                    Part (a)
                   </label>
                   
                   
@@ -3655,12 +1373,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                         type="text" 
                         id="answer-8-a" 
                         name="answer_8_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_8_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_8_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="s">s</option>
@@ -3672,9 +1387,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-8-b" style="font-weight: 600;">
-                    Part b):
+                <div class="answer-part">
+                  <label for="answer-8-b">
+                    Part (b)
                   </label>
                   
                   
@@ -3683,12 +1398,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                         type="text" 
                         id="answer-8-b" 
                         name="answer_8_b"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_8_b_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_8_b_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -3700,9 +1412,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-8-c_magnitude" style="font-weight: 600;">
-                    Part c_magnitude):
+                <div class="answer-part">
+                  <label for="answer-8-c_magnitude">
+                    Part (c_magnitude)
                   </label>
                   
                   
@@ -3711,12 +1423,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                         type="text" 
                         id="answer-8-c_magnitude" 
                         name="answer_8_c_magnitude"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_8_c_magnitude_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_8_c_magnitude_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -3728,9 +1437,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-8-c_direction" style="font-weight: 600;">
-                    Part c_direction):
+                <div class="answer-part">
+                  <label for="answer-8-c_direction">
+                    Part (c_direction)
                   </label>
                   
                   
@@ -3739,12 +1448,9 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                         type="text" 
                         id="answer-8-c_direction" 
                         name="answer_8_c_direction"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_8_c_direction_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_8_c_direction_unit">
                         <option value="">Unit</option>
                         
                           <option value="degrees">degrees</option>
@@ -3757,54 +1463,6 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-8" onclick="toggleCurrentAnswer('8')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-8" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$4.0\,\text{s}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>b)</strong> <p>$78\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                  
-                    
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -3835,15 +1493,66 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
           
           
           
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-9" onclick="toggleCurrentAnswer('9')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-9">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$19.6\,\text{m}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>$37.5\,\text{m/s}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
           
           
           <div class="problem-answer">
             
               
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-9-a" style="font-weight: 600;">
-                    Part a):
+                <div class="answer-part">
+                  <label for="answer-9-a">
+                    Part (a)
                   </label>
                   
                   
@@ -3852,12 +1561,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                         type="text" 
                         id="answer-9-a" 
                         name="answer_9_a"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_9_a_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_9_a_unit">
                         <option value="">Unit</option>
                         
                           <option value="m">m</option>
@@ -3869,9 +1575,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-9-b_magnitude" style="font-weight: 600;">
-                    Part b_magnitude):
+                <div class="answer-part">
+                  <label for="answer-9-b_magnitude">
+                    Part (b_magnitude)
                   </label>
                   
                   
@@ -3880,12 +1586,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                         type="text" 
                         id="answer-9-b_magnitude" 
                         name="answer_9_b_magnitude"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_9_b_magnitude_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_9_b_magnitude_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -3897,9 +1600,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-9-b_direction" style="font-weight: 600;">
-                    Part b_direction):
+                <div class="answer-part">
+                  <label for="answer-9-b_direction">
+                    Part (b_direction)
                   </label>
                   
                   
@@ -3908,12 +1611,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                         type="text" 
                         id="answer-9-b_direction" 
                         name="answer_9_b_direction"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_9_b_direction_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_9_b_direction_unit">
                         <option value="">Unit</option>
                         
                           <option value="degrees">degrees</option>
@@ -3925,9 +1625,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                   
                 </div>
               
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-9-c" style="font-weight: 600;">
-                    Part c):
+                <div class="answer-part">
+                  <label for="answer-9-c">
+                    Part (c)
                   </label>
                   
                   
@@ -3936,12 +1636,9 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                         type="text" 
                         id="answer-9-c" 
                         name="answer_9_c"
-                        class="problem-answer-field"
-                        style="width: 120px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;"
                         placeholder="Value">
                       <select 
-                        name="answer_9_c_unit"
-                        style="width: 80px; padding: 0.25rem 0.5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; line-height: 1.2;">
+                        name="answer_9_c_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -3954,54 +1651,6 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                 </div>
               
             
-          </div>
-
-          
-          <div class="problem-navigation">
-            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
-              <span class="nav-icon">←</span> Previous
-            </button>
-            
-            
-            <button type="button" class="check-answer-button" id="check-answer-9" onclick="toggleCurrentAnswer('9')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
-            </button>
-            
-            <div class="current-answer-display" id="answer-key-9" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>a)</strong> <p>$19.6\,\text{m}$</p>
-
-                      </div>
-                    
-                  
-                    
-                    
-                  
-                    
-                    
-                  
-                    
-                    
-                      <div style="margin-bottom: 0.5rem;">
-                        <strong>c)</strong> <p>$37.5\,\text{m/s}$</p>
-
-                      </div>
-                    
-                  
-                
-              </div>
-            </div>
-            
-            
-            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
-              Next <span class="nav-icon">→</span>
-            </button>
           </div>
         </div>
       
@@ -4034,30 +1683,6 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
           
           
           
-          
-          
-          <div class="problem-answer">
-            
-              
-              
-                <div class="answer-part" style="margin-bottom: 1rem;">
-                  <label for="answer-10-reflection" style="font-weight: 600;">
-                    Part reflection):
-                  </label>
-                  
-                  
-                    <textarea 
-                      id="answer-10-reflection" 
-                      name="answer_10_reflection"
-                      class="problem-answer-field"
-                      rows="8"
-                      style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px;"
-                      placeholder="Write your essay response here..."></textarea>
-                  
-                </div>
-              
-            
-          </div>
 
           
           <div class="problem-navigation">
@@ -4066,26 +1691,51 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-10" onclick="toggleCurrentAnswer('10')" style="background: #ffc107; border: 2px solid #ff9800; color: #000; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
-              🔍 Check Answer
+            <button type="button" class="check-answer-button" id="check-answer-10" onclick="toggleCurrentAnswer('10')">
+              View Solution
             </button>
-            
-            <div class="current-answer-display" id="answer-key-10" style="display: none; margin-top: 1rem; padding: 1rem; background: #e7f3ff; border: 2px solid #0066cc; border-radius: 6px;">
-              <strong style="color: #004080;">✓ Answer:</strong>
-              <div style="margin-top: 0.5rem; font-family: 'Courier New', monospace; font-size: 0.95rem;">
-                
-                  
-                    
-                    
-                  
-                
-              </div>
-            </div>
             
             
             <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
               Next <span class="nav-icon">→</span>
             </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-10">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-10-reflection">
+                    Part (reflection)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-10-reflection" 
+                      name="answer_10_reflection"
+                      rows="8"
+                      placeholder="Compose your response here..."></textarea>
+                  
+                </div>
+              
+            
           </div>
         </div>
       
@@ -4094,7 +1744,7 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
 
     <!-- Reflection Section (at end, part of same form) -->
     <div class="form-section reflection-section">
-      <h2>Reflection & Submission</h2>
+      <h3>Reflection & Submission</h3>
       
       <!-- Student Information -->
       <fieldset class="form-subsection">
@@ -4146,22 +1796,22 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
       <div id="submission-status" class="submission-status" hidden></div>
       
       <!-- Auto-save indicator (top right corner) -->
-      <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-        ✓ Draft saved
+      <div id="auto-save-indicator" hidden>
+        ✓ Saved
       </div>
 
       <!-- Simple Submit Button -->
-      <div class="form-actions" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #dee2e6;">
+      <div class="form-actions">
         <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
           Submit Problem Set
         </button>
-        <p class="help-text" style="margin-top: 0.5rem; text-align: center; color: #6c757d;">
-          Your answers are auto-saved as you work. Click above when you're ready to submit.
+        <p class="help-text">
+          Answers are auto-saved. Submit when complete.
         </p>
       </div>
       
       <!-- Status Messages (appears after button) -->
-      <div id="submission-status" class="submission-status" hidden style="margin-top: 1rem;"></div>
+      <div id="submission-status" class="submission-status" hidden></div>
 
     </div>
 
@@ -4194,12 +1844,14 @@ function toggleCurrentAnswer(problemNumber) {
     
     if (answerDiv.style.display === 'none') {
         answerDiv.style.display = 'block';
-        checkBtn.textContent = '🙈 Hide Answer';
-        checkBtn.style.background = '#dc3545';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
     } else {
         answerDiv.style.display = 'none';
-        checkBtn.textContent = '🔍 Check Answer';
-        checkBtn.style.background = '#ffc107';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
     }
 }
 
@@ -4243,7 +1895,7 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760410048"></script>
+    <script src="/assets/js/activity-core.js?v=1760485356"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -4254,12 +1906,13 @@ function jumpToProblem(index) {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js'
+                'research_brief': '/assets/js/activity-modules/rb-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js'
             };
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760410048';
+                script.src = moduleMap[contentType] + '?v=1760485356';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };

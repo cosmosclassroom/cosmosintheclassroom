@@ -7,6 +7,14 @@
   <link rel="icon" href="/favico.ico" type="image/x-icon">
     <title>Supply and Demand - The Heartbeat of the Grid | Cosmos in the Classroom</title>
     
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
     
     <script src="/assets/js/mathjax-config.js"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -75,12 +83,8 @@
 <h2 id="todays-mission">Today’s Mission</h2>
 
 <ul>
-  <li>
-    <p><strong>Bridge Back:</strong> In our opening investigation of the Texas crisis, you saw the human impact of grid failure. Today we learn the technical reasons why the system couldn’t keep the lights on.</p>
-  </li>
-  <li>
-    <p><strong>Thinking Lens:</strong> We will use <strong>Systems and System Models</strong> - The electrical grid is a perfect example of a complex system where the behavior of the whole emerges from the interactions of many parts.</p>
-  </li>
+  <li><strong>Bridge Back:</strong> In our opening investigation of the Texas crisis, you saw the human impact of grid failure. Today we learn the technical reasons why the system couldn’t keep the lights on.</li>
+  <li><strong>Thinking Lens:</strong> We will use <strong>Systems and System Models</strong> - The electrical grid is a perfect example of a complex system where the behavior of the whole emerges from the interactions of many parts.</li>
 </ul>
 
 <hr />
@@ -108,38 +112,51 @@
 
 <h3 id="the-fundamental-distinction">The Fundamental Distinction</h3>
 
-<p>In your home, you pay for <strong>energy</strong> (measured in kilowatt-hours, kWh), but the grid must provide <strong>power</strong> (measured in kilowatts, kW) instantaneously.</p>
-
-<p><strong>Key Relationship:</strong>
-\(E = P \times \Delta t\)</p>
-
-<p>Where:</p>
 <ul>
-  <li>$E$ = Energy (kWh or J)</li>
-  <li>$P$ = Power (kW or W)</li>
-  <li>$\Delta t$ = Time (hours or seconds)</li>
+  <li>In your home, you pay for <strong>energy</strong> (measured in kilowatt-hours, kWh), but the grid must provide <strong>power</strong> (measured in kilowatts, kW) instantaneously.</li>
+  <li><strong>Key Relationship:</strong>
+    <ul>
+      <li>
+\[E = P \times \Delta t\]
+      </li>
+      <li>Where:
+        <ul>
+          <li>$E$ = Energy (kWh or J)</li>
+          <li>$P$ = Power (kW or W)</li>
+          <li>$\Delta t$ = Time (hours or seconds)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
-
-<!-- **Unit Conversion:** 1 kWh = 1,000 watts used for 1 hour -->
 
 <hr />
 
 <h2 id="example-the-texas-household-crisis">Example: The Texas Household Crisis</h2>
 
-<p>During the February 2021 freeze, a typical Texas home:</p>
-
 <ul>
-  <li><strong>Normal winter demand:</strong> $P = 2.0 \text{ kW}$ average</li>
-  <li><strong>Crisis demand:</strong> $P = 5.0 \text{ kW}$ average (space heaters, heat pumps working harder)</li>
+  <li>During the February 2021 freeze, a typical Texas home:
+    <ul>
+      <li><strong>Normal winter demand:</strong> $P = 2.0 \text{ kW}$ average</li>
+      <li><strong>Crisis demand:</strong> $P = 5.0 \text{ kW}$ average (space heaters, heat pumps working harder)</li>
+    </ul>
+  </li>
+  <li><strong>Daily energy consumption:</strong>
+    <ul>
+      <li>
+\[E = P \times \Delta t = 5.0 \text{ kW} \times 24 \text{ h} = 120 \text{ kWh}\]
+      </li>
+    </ul>
+  </li>
+  <li><strong>Cost impact:</strong>
+    <ul>
+      <li>
+\[\text{Cost} = 120 \text{ kWh} \times \$0.12\text{/kWh} = \$14.40 \text{ per day}\]
+      </li>
+    </ul>
+  </li>
+  <li>But the real crisis wasn’t the cost—it was that the grid couldn’t provide those 5.0 kW when everyone needed them simultaneously.</li>
 </ul>
-
-<p><strong>Daily energy consumption:</strong>
-\(E = P \times \Delta t = 5.0 \text{ kW} \times 24 \text{ h} = 120 \text{ kWh}\)</p>
-
-<p><strong>Cost impact:</strong>
-\(\text{Cost} = 120 \text{ kWh} \times \$0.12\text{/kWh} = \$14.40 \text{ per day}\)</p>
-
-<p><em>But the real crisis wasn’t the cost—it was that the grid couldn’t provide those 5.0 kW when everyone needed them simultaneously.</em></p>
 
 <hr />
 
@@ -147,21 +164,25 @@
 
 <h3 id="the-iron-law-of-electrical-grids">The Iron Law of Electrical Grids</h3>
 
-<p><strong>Supply must equal demand every second of every day.</strong></p>
+<ul>
+  <li><strong>Supply must equal demand every second of every day.</strong></li>
+  <li>Unlike water in a reservoir or gasoline in a tank, electrical energy cannot be easily stored at grid scale.</li>
+</ul>
 
-<p>Unlike water in a reservoir or gasoline in a tank, electrical energy cannot be easily stored at grid scale.</p>
+<hr />
 
 <h3 id="the-grids-heartbeat-frequency">The Grid’s “Heartbeat”: Frequency</h3>
 
-<p>The electrical grid operates at exactly <strong>60 Hz</strong> in North America (like a synchronized heartbeat).</p>
-
-<p>When this balance fails:</p>
 <ul>
-  <li><strong>Excess supply</strong> → Frequency rises above 60 Hz → Motors spin too fast, equipment overheats</li>
-  <li><strong>Insufficient supply</strong> → Frequency drops below 60 Hz → Motors slow down, voltage sags</li>
+  <li>The electrical grid operates at exactly <strong>60 Hz</strong> in North America (like a synchronized heartbeat).</li>
+  <li>When this balance fails:
+    <ul>
+      <li><strong>Excess supply</strong> → Frequency rises above 60 Hz → Motors spin too fast, equipment overheats</li>
+      <li><strong>Insufficient supply</strong> → Frequency drops below 60 Hz → Motors slow down, voltage sags</li>
+      <li><strong>Below ~59.5 Hz</strong> → Cascading grid collapse (takes weeks to restart, not hours)</li>
+    </ul>
+  </li>
 </ul>
-
-<p><strong>Below ~59.5 Hz</strong> → Cascading grid collapse (takes weeks to restart, not hours)</p>
 
 <hr />
 
@@ -169,47 +190,14 @@
 
 <p><strong>February 14, 2021 - Hour by Hour:</strong></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Event</th>
-      <th>Impact</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>6:00 AM</td>
-      <td>Demand begins rising as temperatures plummet</td>
-      <td>Normal operations</td>
-    </tr>
-    <tr>
-      <td>7:00 AM</td>
-      <td>Natural gas plants start experiencing fuel delivery problems</td>
-      <td>Supply concerns</td>
-    </tr>
-    <tr>
-      <td>8:00 AM</td>
-      <td>Wind turbines begin icing over</td>
-      <td>Supply drops</td>
-    </tr>
-    <tr>
-      <td>9:00 AM</td>
-      <td>Demand peaks at 69,000 MW</td>
-      <td>Critical stress</td>
-    </tr>
-    <tr>
-      <td>10:00 AM</td>
-      <td>Supply drops to 45,000 MW</td>
-      <td>24,000 MW shortage</td>
-    </tr>
-    <tr>
-      <td>10:30 AM</td>
-      <td>Emergency blackouts begin</td>
-      <td>System protection</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>6:00 AM: Demand begins rising as temperatures plummet → Normal operations</li>
+  <li>7:00 AM: Natural gas plants start experiencing fuel delivery problems → Supply concerns</li>
+  <li>8:00 AM: Wind turbines begin icing over → Supply drops</li>
+  <li>9:00 AM: Demand peaks at 69,000 MW → Critical stress</li>
+  <li>10:00 AM: Supply drops to 45,000 MW → 24,000 MW shortage</li>
+  <li>10:30 AM: Emergency blackouts begin → System protection</li>
+</ul>
 
 <hr />
 
@@ -264,18 +252,21 @@
 
 <h2 id="the-crisis-math">The Crisis Math</h2>
 
-<p><strong>Normal Texas Winter:</strong></p>
 <ul>
-  <li>Total capacity: 85,000 MW</li>
-  <li>Typical demand: 45,000 MW</li>
-  <li>Reserve margin: $\frac{85,000 - 45,000}{45,000} \times 100\% = 89\%$ (comfortable)</li>
-</ul>
-
-<p><strong>February 2021 Crisis:</strong></p>
-<ul>
-  <li>Available capacity: 34,000 MW (60% loss)</li>
-  <li>Peak demand: 69,000 MW (54% increase)</li>
-  <li><strong>Result:</strong> 35,000 MW shortage → Blackouts</li>
+  <li><strong>Normal Texas Winter:</strong>
+    <ul>
+      <li>Total capacity: 85,000 MW</li>
+      <li>Typical demand: 45,000 MW</li>
+      <li>Reserve margin: $\frac{85,000 - 45,000}{45,000} \times 100\% = 89\%$ (comfortable)</li>
+    </ul>
+  </li>
+  <li><strong>February 2021 Crisis:</strong>
+    <ul>
+      <li>Available capacity: 34,000 MW (60% loss)</li>
+      <li>Peak demand: 69,000 MW (54% increase)</li>
+      <li><strong>Result:</strong> 35,000 MW shortage → Blackouts</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -286,28 +277,39 @@
 
 <p><strong>Scenario:</strong> A Texas town of 10,000 people faces an energy supply decision.</p>
 
-<p><strong>Given Information:</strong></p>
 <ul>
-  <li>4,000 households × 2.0 kW average = 8,000 kW residential</li>
-  <li>200 businesses × 5.0 kW average = 1,000 kW commercial</li>
-  <li>1 hospital: 500 kW critical load</li>
+  <li><strong>Given Information:</strong>
+    <ul>
+      <li>4,000 households × 2.0 kW average = 8,000 kW residential</li>
+      <li>200 businesses × 5.0 kW average = 1,000 kW commercial</li>
+      <li>1 hospital: 500 kW critical load</li>
+    </ul>
+  </li>
+  <li><strong>Find:</strong> Total power demand and daily energy consumption</li>
 </ul>
-
-<p><strong>Find:</strong> Total power demand and daily energy consumption</p>
 
 <hr />
 
 <h2 id="small-town-solution">Small Town Solution</h2>
 
-<p><strong>Power Demand Calculation:</strong>
-\(P_{\text{total}} = P_{\text{residential}} + P_{\text{commercial}} + P_{\text{hospital}}\)
-\(P_{\text{total}} = 8,000 \text{ kW} + 1,000 \text{ kW} + 500 \text{ kW} = 9,500 \text{ kW} = 9.5 \text{ MW}\)</p>
-
-<p><strong>Energy Calculation:</strong></p>
 <ul>
-  <li>Daily consumption: $E = P \times \Delta t = 9.5 \text{ MW} \times 24 \text{ h} = 228 \text{ MWh}$</li>
-  <li>Annual consumption: $E = 228 \text{ MWh} \times 365 \text{ days} = 83,220 \text{ MWh}$</li>
-  <li>Annual cost at $0.10/kWh: $\text{Cost} = 83,220,000 \text{ kWh} \times $0.10\text{/kWh} = $8.3 \text{ million}$</li>
+  <li><strong>Power Demand Calculation:</strong>
+    <ul>
+      <li>
+\[P_{\text{total}} = P_{\text{residential}} + P_{\text{commercial}} + P_{\text{hospital}}\]
+      </li>
+      <li>
+\[P_{\text{total}} = 8,000 \text{ kW} + 1,000 \text{ kW} + 500 \text{ kW} = 9,500 \text{ kW} = 9.5 \text{ MW}\]
+      </li>
+    </ul>
+  </li>
+  <li><strong>Energy Calculation:</strong>
+    <ul>
+      <li>Daily consumption: $E = P \times \Delta t = 9.5 \text{ MW} \times 24 \text{ h} = 228 \text{ MWh}$</li>
+      <li>Annual consumption: $E = 228 \text{ MWh} \times 365 \text{ days} = 83,220 \text{ MWh}$</li>
+      <li>Annual cost at $0.10/kWh: $\text{Cost} = 83,220,000 \text{ kWh} \times $0.10\text{/kWh} = $8.3 \text{ million}$</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
@@ -316,27 +318,44 @@
 
 <p>Real-world power systems lose energy at every step:</p>
 
-<h3 id="system-losses">System Losses</h3>
 <ul>
-  <li><strong>Generation efficiency:</strong> 35-60% (fuel → electricity)</li>
-  <li><strong>Transmission losses:</strong> 2-8% (power lines)</li>
-  <li><strong>Distribution losses:</strong> 2-4% (local grid)</li>
+  <li><strong>System Losses</strong>
+    <ul>
+      <li><strong>Generation efficiency:</strong> 35-60% (fuel → electricity)</li>
+      <li><strong>Transmission losses:</strong> 2-8% (power lines)</li>
+      <li><strong>Distribution losses:</strong> 2-4% (local grid)</li>
+    </ul>
+  </li>
+  <li><strong>Overall system efficiency:</strong> Typically 30-50%</li>
 </ul>
-
-<p><strong>Overall system efficiency:</strong> Typically 30-50%</p>
 
 <hr />
 
 <h2 id="efficiency-example-calculation">Efficiency Example Calculation</h2>
 
-<p>To deliver 228 MWh to the town with 40% overall efficiency:</p>
-
-<p><strong>Required fuel energy:</strong>
-\(E_{\text{fuel}} = \frac{E_{\text{delivered}}}{\text{efficiency}} = \frac{228 \text{ MWh}}{0.40} = 570 \text{ MWh}\)</p>
-
-<p><strong>Extra cost of inefficiency:</strong>
-\(\text{Wasted energy} = 570 - 228 = 342 \text{ MWh per day}\)
-\(\text{Extra cost} = 342,000 \text{ kWh} \times \$0.10\text{/kWh} = \$34,200 \text{ per day}\)</p>
+<ul>
+  <li>To deliver 228 MWh to the town with 40% overall efficiency:
+    <ul>
+      <li><strong>Required fuel energy:</strong>
+        <ul>
+          <li>
+\[E_{\text{fuel}} = \frac{E_{\text{delivered}}}{\text{efficiency}} = \frac{228 \text{ MWh}}{0.40} = 570 \text{ MWh}\]
+          </li>
+        </ul>
+      </li>
+      <li><strong>Extra cost of inefficiency:</strong>
+        <ul>
+          <li>
+\[\text{Wasted energy} = 570 - 228 = 342 \text{ MWh per day}\]
+          </li>
+          <li>
+\[\text{Extra cost} = 342,000 \text{ kWh} \times \$0.10\text{/kWh} = \$34,200 \text{ per day}\]
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
@@ -350,6 +369,10 @@
   <li>Insurance against blackouts costs money</li>
   <li>Question: How much is reliability worth?</li>
 </ul>
+
+<hr />
+
+<h3 id="trade-offs-in-energy-system-design-1">Trade-offs in Energy System Design</h3>
 
 <p><strong>Speed vs. Efficiency:</strong></p>
 <ul>
@@ -371,12 +394,12 @@
 <p>The 2021 Texas crisis revealed that blackouts don’t affect all communities equally:</p>
 
 <ul>
-  <li><strong>Wealthy neighborhoods:</strong> Restored first, better infrastructure</li>
+  <li><strong>Wealthy neighborhoods:</strong> Restored first, better infrastructure, critical services</li>
   <li><strong>Low-income areas:</strong> Longer outages, older grid equipment</li>
   <li><strong>Critical facilities:</strong> Hospitals prioritized over residential</li>
 </ul>
 
-<p><em>Engineering decisions become social justice issues.</em></p>
+<p><em>Engineering decisions become social equity issues.</em></p>
 
 <hr />
 
@@ -407,6 +430,10 @@
 
 <p><strong>Storage capacity needed:</strong>
 \(E_{\text{storage}} = P \times \Delta t = 9.5 \text{ MW} \times 4 \text{ h} = 38 \text{ MWh}\)</p>
+
+<hr />
+
+<h2 id="the-cost-of-batteries">The Cost of Batteries</h2>
 
 <p><strong>Battery cost:</strong>
 \(\text{Cost} = 38,000 \text{ kWh} \times \$400\text{/kWh} = \$15.2 \text{ million}\)</p>
