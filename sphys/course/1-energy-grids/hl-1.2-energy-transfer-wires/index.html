@@ -1,1 +1,737 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab: Modeling Energy Transfer in Wires | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+    // Chart.js loaded indicator
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity.html] Chart.js v4.4.0 loaded');
+</script>
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="hexagon_lab"
+         data-course="sphys"
+         data-title="Hexagon Lab: Modeling Energy Transfer in Wires"
+         data-unit="1"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Hexagon Lab: Modeling Energy Transfer in Wires</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Hexagon lab</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 1</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Hexagon Lab Content Display with Sequential Navigation
+  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <div class="hexagon-lab-content">
+    
+    <!-- Student Name Field (at the top) -->
+    <div class="form-group" style="margin-bottom: 2rem; padding: 1.5rem; background-color: #f8f9fa; border-radius: 0.5rem; max-width: 500px;">
+      <label for="student-name" class="form-label" style="font-weight: 600; margin-bottom: 0.5rem; display: block; font-size: 1.1rem;">
+        Your Name
+      </label>
+      <input 
+        type="text" 
+        id="student-name" 
+        name="StudentName" 
+        class="form-control"
+        placeholder="Enter your full name"
+        style="padding: 0.75rem; font-size: 1rem; border: 2px solid #007bff; border-radius: 0.25rem; width: 100%;"
+      >
+      <small style="color: #6c757d; margin-top: 0.25rem; display: block;">Enter your name before starting the lab</small>
+    </div>
+    
+    <!-- Progress indicator (will be shown if multiple sections detected) -->
+    <div class="activity-progress" id="lab-progress" style="display: none;">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1</div>
+    </div>
+
+    <!-- Lab Content (rendered from YAML structure) -->
+    <div id="lab-sections-container">
+      
+      
+      <!-- Overview Section -->
+      <div class="nav-item-container lab-section" data-item-index="0" data-section-title="Overview">
+        <h2>Overview</h2>
+        
+        
+        <div class="lab-abstract">
+          <h3>Abstract</h3>
+          <p>In this investigation, you will analyze a pre-generated dataset from a series of simulated experiments to determine how physical properties of a wire—its length, thickness, and material—affect its electrical resistance. By identifying these patterns, you will develop a model to explain how and why energy is lost as electricity is transmitted through the power grid.</p>
+
+        </div>
+        
+        
+        
+        <div class="lab-introduction">
+          <h3>Introduction</h3>
+          <p>A significant amount of the electrical energy generated at a power plant never reaches our homes. It is lost as heat in the thousands of miles of transmission lines that make up the grid. This energy loss is a direct consequence of a property called <strong>resistance</strong>. An efficient grid is one that minimizes this resistance. But what makes a wire more or less resistant? Your task is to analyze the data from several experiments to discover the rules that govern resistance.</p>
+
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Investigation Sections -->
+      
+      <div class="nav-item-container lab-section" data-item-index="1" data-section-title="Investigation ">
+        <h2>Investigation : Investigation: The Properties of Resistance</h2>
+        
+        
+        <div class="investigation-description">
+          <p>The following datasets were generated from a simulation where the length, thickness (cross-sectional area), and material of a wire were systematically changed, and the resulting electrical resistance was measured. Analyze each chart and the summary data table to determine the relationship between these variables.</p>
+
+        </div>
+        
+        
+        
+        
+        <!-- Render Dataset (Chart.js visualization) -->
+        
+        <div class="investigation-dataset">
+          
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Experiment 3: Resistance vs. Material (10m long, 1 mm² thick)">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Experiment 3: Resistance vs. Material (10m long, 1 mm² thick)</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="resistance-vs-material" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;resistance-vs-material&quot;,&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Experiment 3: Resistance vs. Material (10m long, 1 mm² thick)&quot;,&quot;x_label&quot;:&quot;Wire Material&quot;,&quot;y_label&quot;:&quot;Resistance (Ω)&quot;,&quot;datasets&quot;:[{&quot;label&quot;:&quot;Resistance (Ω)&quot;,&quot;data&quot;:[{&quot;x&quot;:&quot;Copper&quot;,&quot;y&quot;:0.17},{&quot;x&quot;:&quot;Aluminum&quot;,&quot;y&quot;:0.28},{&quot;x&quot;:&quot;Nichrome&quot;,&quot;y&quot;:11.0}],&quot;backgroundColor&quot;:[&quot;rgba(25, 135, 84, 0.7)&quot;,&quot;rgba(108, 117, 125, 0.7)&quot;,&quot;rgba(255, 193, 7, 0.7)&quot;]}]}"
+        data-defer-render="true"
+        aria-label="Experiment 3: Resistance vs. Material (10m long, 1 mm² thick). Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Experiment 3: Resistance vs. Material (10m long, 1 mm² thick)">
+      <table>
+        <caption>Experiment 3: Resistance vs. Material (10m long, 1 mm² thick)</caption>
+        <thead>
+          <tr>
+            <th scope="col">X</th>
+            <th scope="col">Y</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'resistance-vs-material';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        labels: chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 2,
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.xAxis.min,
+            max: chartConfig.xAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min,
+            max: chartConfig.yAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+        </div>
+        
+        
+        <!-- Render Table Data -->
+        
+        
+        <!-- Analysis Questions -->
+        
+        <div class="analysis-questions">
+          <h3>Analysis Questions</h3>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      <!-- Synthesis Section (Claim-Evidence-Reasoning) -->
+      <div class="nav-item-container lab-section" data-item-index="2" data-section-title="Synthesis">
+        <h2>Synthesis: Claim-Evidence-Reasoning</h2>
+        
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-claim" class="cer-label">
+            <h3>Claim</h3>
+            <p><strong>Claim:</strong> Based on the overarching question, write a single sentence that describes the factors that influence a wire’s resistance.</p>
+
+          </label>
+          <textarea 
+            id="cer-claim" 
+            name="synthesis_claim"
+            rows="3"
+            placeholder="Write your claim here..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-evidence" class="cer-label">
+            <h3>Evidence</h3>
+            <p><strong>Evidence:</strong> Provide a specific piece of quantitative data from each of the three experiments that supports your claim.</p>
+
+<ul>
+  <li>“(From Experiment 1) Doubling the wire length from 10 m to 20 m doubled the resistance from 0.17 Ω to 0.34 Ω, showing a direct relationship.”</li>
+  <li>“(From Experiment 2) Doubling the wire thickness from 0.5 mm² to 1.0 mm² halved the resistance from 0.34 Ω to 0.17 Ω, showing an inverse relationship.”</li>
+  <li>“(From Experiment 3) For the same length and thickness, a copper wire had a resistance of only 0.17 Ω, while a nichrome wire had a resistance of 11.0 Ω.”</li>
+</ul>
+
+          </label>
+          <textarea 
+            id="cer-evidence" 
+            name="synthesis_evidence"
+            rows="6"
+            placeholder="List your evidence here (use bullet points)..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-reasoning" class="cer-label">
+            <h3>Reasoning</h3>
+            <p><strong>Reasoning:</strong> In a paragraph, explain the scientific principles that connect your evidence to your claim. Use the Crosscutting Concept of <strong>Energy and Matter</strong>. How does resistance relate to the transfer of energy in a circuit? Explain <em>why</em> a longer, thinner wire would have more resistance by thinking about the path electrons must travel through the matter of the wire.</p>
+
+          </label>
+          <textarea 
+            id="cer-reasoning" 
+            name="synthesis_reasoning"
+            rows="8"
+            placeholder="Explain your reasoning in a paragraph..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Connection to Unit Phenomenon -->
+      <div class="nav-item-container lab-section" data-item-index="3" data-section-title="Connection">
+        <h2>Connection to Unit Phenomenon</h2>
+        <p>This lab directly explains a key vulnerability of power grids. The energy lost in transmission lines is given by the formula $P_{loss} = I^2R$. Your investigation shows that the resistance, ‘R’, is an inherent property of the thousands of miles of wire that make up the grid. During the Texas crisis, the massive surge in current (‘I’) meant that this unavoidable resistance caused a huge increase in energy lost as heat ($I^2$ is a powerful factor!). This loss of energy further strained the failing power plants, making the supply-demand deficit even worse and contributing to the cascading blackouts. Engineers must use highly conductive, thick wires to minimize ‘R’ and make the grid as efficient as possible.</p>
+
+      </div>
+      
+      
+      
+      
+      
+    </div>
+
+    <!-- Navigation Buttons (will be inserted by JavaScript if needed) -->
+    <div class="activity-navigation" id="lab-navigation" style="display: none;">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+
+  </div> <!-- Close #lab-sections-container -->
+
+  <!-- Submission Section (compact version) -->
+  <div class="submission-section-wrapper" id="submission-wrapper">
+    
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Hexagon Lab: Modeling Energy Transfer in Wires">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="hexagon_lab">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="1">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
+    <div id="activity-specific-fields"></div>
+    
+    <!-- Auto-save indicator (top right corner) -->
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      ✓ Draft saved
+    </div>
+
+    <!-- Simple Submit Button -->
+    <div class="form-actions" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #dee2e6;">
+      <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
+        Submit Lab Report
+      </button>
+      <p class="help-text" style="margin-top: 0.5rem; text-align: center; color: #6c757d;">
+        Your answers are auto-saved as you work. Click above when you're ready to submit.
+      </p>
+    </div>
+    
+    <!-- Status Messages (appears after button) -->
+    <div id="submission-status" class="submission-status" hidden style="margin-top: 1rem;"></div>
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+<script>
+/**
+ * Hexagon Lab Section Navigator
+ * YAML-first: Sections already structured by Liquid, just initialize navigation
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('lab-sections-container');
+    
+    if (!container) {
+        console.warn('[hexagon-lab] Lab sections container not found');
+        return;
+    }
+    
+    // Count pre-structured sections
+    const sections = container.querySelectorAll('.nav-item-container');
+    
+    if (sections.length <= 1) {
+        // Single section or no sections - show everything, no navigation needed
+        console.log('[hexagon-lab] Single section mode - no navigation needed');
+        if (sections.length === 1) {
+            sections[0].classList.add('active');
+        }
+        return;
+    }
+    
+    console.log('[hexagon-lab] Found', sections.length, 'sections');
+    
+    // Show progress and navigation UI
+    document.getElementById('lab-progress').style.display = 'block';
+    document.getElementById('lab-navigation').style.display = 'flex';
+    
+    // Initialize navigator
+    window.labNavigator = new ActivityNavigator({
+        containerSelector: '.nav-item-container',
+        progressBarId: 'progress-fill',
+        progressTextId: 'progress-text',
+        prevButtonId: 'prev-item',
+        nextButtonId: 'next-item',
+        itemLabel: 'Section'
+    });
+    
+    console.log('[hexagon-lab] Sequential navigation initialized');
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760487547"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js'
+            };
+            
+            if (moduleMap[contentType]) {
+                const script = document.createElement('script');
+                script.src = moduleMap[contentType] + '?v=1760487547';
+                script.onerror = function() {
+                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
+                };
+                document.body.appendChild(script);
+            } else {
+                console.warn('[activity.html] No submission module found for content_type:', contentType);
+            }
+        });
+    </script>
+    
+</div> <!-- .activity-page -->
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
