@@ -30,8 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
@@ -67,241 +66,446 @@
     
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>The Unseen Engine: Quantifying Force and Change</h1>
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="The Unseen Engine: Quantifying Force and Change"
+         data-unit="2-earth-forces"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>The Unseen Engine: Quantifying Force and Change</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Flexbook</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <div class="flexbook-content">
     
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Define acceleration as any change in velocity.</li>
-      
-        <li>Apply Newton's Second Law ($F_{net}=ma$) to calculate force, mass, or acceleration.</li>
-      
-        <li>Distinguish between mass as a measure of inertia and weight as the force of gravity.</li>
-      
-        <li>Define friction as a force that opposes motion and include it in net force calculations.</li>
-      
-    </ul>
-  </div>
-  
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 11</div>
+    </div>
+    
 
-  
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-    <div class="chapter-body">
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
       
         
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
           
-          <h1>Chapter 6: The Unseen Engine: Quantifying Force and Change</h1>
+          <!-- Item Header -->
           
-        
-      
-        
-          <div class="narrative"><p><strong>Central Question:</strong> If a force caused the rift, how can we measure the relationship between that push, the mass of the tectonic plates, and the speed of the rupture?
+          <h2 class="flexbook-item-title">Chapter 6: The Unseen Engine: Quantifying Force and Change</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Central Question:</strong> If a force caused the rift, how can we measure the relationship between that push, the mass of the tectonic plates, and the speed of the rupture?
 <strong>Narrative Arc:</strong> To move from mystery to explanation, we need a rulebook for the universe. This chapter introduces the grand equation of motion, $F=ma$, as the Rosetta Stone for translating the invisible cause (force) into the visible effect (acceleration). We will treat the Earth’s crust as a system of objects and learn the quantitative tools needed to analyze the immense forces at play.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>6.1 From 'Why' to 'How Much'</h2>
           
+          
+        </div>
         
       
         
-          <div class="narrative"><p>In the last chapter, we reached a critical conclusion: an unbalanced force must have torn the Afar desert apart. This is a powerful, but incomplete, explanation. It gives us the <em>why</em>, but not the <em>how much</em>. To answer this, we need to find a measurable link between the force applied and the change in motion it produces.
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">6.1 From 'Why' to 'How Much'</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>In the last chapter, we reached a critical conclusion: an unbalanced force must have torn the Afar desert apart. This is a powerful, but incomplete, explanation. It gives us the <em>why</em>, but not the <em>how much</em>. To answer this, we need to find a measurable link between the force applied and the change in motion it produces.
 That measurable change is <strong>acceleration</strong>. Acceleration is not just about speeding up; it is <em>any</em> change in an object’s velocity—speeding up, slowing down, or changing direction. The swerving hockey puck, the book as you begin to lift it, and the tectonic plates as they began to rip apart were all accelerating.
 Acceleration is the visible fingerprint left behind by an unbalanced force. If we can measure the acceleration of an object, and we know its inertia, we can calculate the exact size of the force that set it in motion. This moves us from a qualitative story to a quantitative investigation, which is the heart of physics.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>What is the difference between velocity and acceleration? Give an example of an object that is accelerating but not speeding up.</p>
-</li>
-                
-                  <li><p>Why is being able to calculate the size of the force important for solving the Afar Rift mystery?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>6.2 The Great Equation of Motion: $F=ma$</h2>
           
+        </div>
         
       
         
-          <div class="narrative"><p>How exactly are force, inertia, and acceleration related? This question obsessed Isaac Newton. Through meticulous observation and brilliant insight, he discovered a relationship of stunning simplicity and universal power. It is perhaps the most important single equation in all of classical physics: <strong>Newton’s Second Law of Motion</strong>.
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="2"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>What is the difference between velocity and acceleration? Give an example of an object that is accelerating but not speeding up.</p>
+
+<p>Why is being able to calculate the size of the force important for solving the Afar Rift mystery?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">6.2 The Great Equation of Motion: $F=ma$</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>How exactly are force, inertia, and acceleration related? This question obsessed Isaac Newton. Through meticulous observation and brilliant insight, he discovered a relationship of stunning simplicity and universal power. It is perhaps the most important single equation in all of classical physics: <strong>Newton’s Second Law of Motion</strong>.
 The law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass. In the language of mathematics, it is written:
 \(F_{net} = ma\)
 Where: - <strong>$F_{net}$</strong> is the <strong>net force</strong> acting on the object (measured in Newtons, N). This is the sum of all pushes and pulls. - <strong>$m$</strong> is the <strong>mass</strong> of the object (measured in kilograms, kg). This is the quantitative measure of its inertia. - <strong>$a$</strong> is the <strong>acceleration</strong> of the object (measured in meters per second squared, m/s²).</p>
 
 <p>This equation is our engine of inquiry. It means that if you push twice as hard on an object, it will accelerate twice as much. If you push with the same force on an object with twice the mass, it will accelerate only half as much.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-thinking-lens">
-            
-              <ul>
-                
-                  <li><p><strong>Thinking Lens (Cause and Effect):</strong> Newton’s Second Law is the ultimate mathematical expression of Cause and Effect. The net force ($F_{net}$) is the <em>cause</em>. The acceleration ($a$) is the direct, measurable <em>effect</em>. How does having this equation change our investigation from just identifying a cause to precisely measuring it?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>You push a small car and a large truck with the exact same force. Which one accelerates more, and why? Use $F=ma$ to explain.</p>
-</li>
-                
-                  <li><p>A 10 kg rock is accelerating at 2 m/s². What is the net force acting on it?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>6.3 The Burden of Being: Mass vs. Weight</h2>
-          
+        </div>
         
       
         
-          <div class="narrative"><p>In everyday language, we often use the words ‘mass’ and ‘weight’ interchangeably. In physics, they are fundamentally different.
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="4"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-thinking-lens">
+              <p><strong>Thinking Lens (Cause and Effect):</strong> Newton’s Second Law is the ultimate mathematical expression of Cause and Effect. The net force ($F_{net}$) is the <em>cause</em>. The acceleration ($a$) is the direct, measurable <em>effect</em>. How does having this equation change our investigation from just identifying a cause to precisely measuring it?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="5"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>You push a small car and a large truck with the exact same force. Which one accelerates more, and why? Use $F=ma$ to explain.</p>
+
+<p>A 10 kg rock is accelerating at 2 m/s². What is the net force acting on it?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="6"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">6.3 The Burden of Being: Mass vs. Weight</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>In everyday language, we often use the words ‘mass’ and ‘weight’ interchangeably. In physics, they are fundamentally different.
 <strong>Mass (m)</strong> is the amount of ‘stuff’ an object is made of. It is the measure of inertia. Your mass is the same whether you are on Earth, on the Moon, or floating in deep space.
 <strong>Weight (W)</strong> is the force of gravity acting on an object’s mass. It is a force, measured in Newtons. Your weight depends entirely on where you are. On the Moon, where gravity is weaker, you would weigh only one-sixth of what you do on Earth, even though your mass hasn’t changed at all. 
 Weight is calculated using Newton’s Second Law, where the force is weight (W) and the acceleration is the acceleration due to gravity (g), which is approximately 9.8 m/s² on Earth’s surface.
 \(W = mg\)
 For the Afar Rift to open, the forces tearing the crust apart had to overcome the rock’s immense inertia.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>An astronaut has a mass of 80 kg. What is her weight on Earth? What is her mass on the Moon?</p>
-</li>
-                
-                  <li><p>A book is resting on a table. Is there a net force acting on it? Explain in terms of balanced forces and $F=ma$.</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>6.4 The Unseen Brake: The Force of Friction</h2>
           
+        </div>
         
       
         
-          <div class="narrative"><p>Our investigation now has a powerful engine ($F_{net}=ma$), but we are missing one key element of the real world: resistance. Tectonic plates are not gliding on perfectly smooth ice. They are grinding against each other, a system filled with incredible <strong>friction</strong>.
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="7"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>An astronaut has a mass of 80 kg. What is her weight on Earth? What is her mass on the Moon?</p>
+
+<p>A book is resting on a table. Is there a net force acting on it? Explain in terms of balanced forces and $F=ma$.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="8"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">6.4 The Unseen Brake: The Force of Friction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Our investigation now has a powerful engine ($F_{net}=ma$), but we are missing one key element of the real world: resistance. Tectonic plates are not gliding on perfectly smooth ice. They are grinding against each other, a system filled with incredible <strong>friction</strong>.
 Friction is a force that opposes motion (or attempted motion) between surfaces in contact. It is the unseen brake that always acts against the direction of movement. [Image of a free-body diagram with friction] When we calculate the net force, we must always account for friction. If you are pushing a box to the right with a force of 100 N and friction is pushing back to the left with a force of 20 N, the net force is not 100 N, but rather:
 \(F_{net} = F_{push} - F_{friction} = 100 N - 20 N = 80 N\)
 It is this 80 N net force that determines the box’s acceleration. For the African continent to be ripped apart, the geological forces pulling it open had to be <em>greater than</em> the immense static friction holding the tectonic plate together. The 2005 event suggests that for a brief, violent period, the driving force overwhelmed the frictional force, resulting in a large net force and a terrifyingly rapid acceleration.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>You are sliding a heavy box across the floor at a constant velocity. Is there a net force on the box? What can you say about the force of your push compared to the force of friction?</p>
-</li>
-                
-                  <li><p>How does the concept of friction add a layer of complexity to the mystery of the Afar Rift?</p>
-</li>
-                
-              </ul>
-            
-          </div>
+          
+          
+        </div>
         
       
         
-          <div class="activity-link">
-            <strong>Connection to Problem Set:</strong> Problem Set 1 (Forces & Vectors)<br/>
-            <em>The principles of net force and Newton's Second Law are the core concepts you will need to master the problems in this section.</em>
-          </div>
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="9"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>You are sliding a heavy box across the floor at a constant velocity. Is there a net force on the box? What can you say about the force of your push compared to the force of friction?</p>
+
+<p>How does the concept of friction add a layer of complexity to the mystery of the Afar Rift?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="10"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 1 (Forces & Vectors)</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>The principles of net force and Newton’s Second Law are the core concepts you will need to master the problems in this section.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
         
       
     </div>
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
     
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="The Unseen Engine: Quantifying Force and Change">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="2-earth-forces">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
 
   </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> SPHYS<br>
-        <strong>Unit:</strong> 2-earth-forces<br>
-        
-      </div>
-      <div class="col-md-6">
-        <strong>Reading Time:</strong> 25 minutes<br>
-        
-        <strong>Topics:</strong>
-        
-        
-      </div>
-    </div>
-    
-  </footer>
 </div>
+
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760489412"></script>
+    
+    
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

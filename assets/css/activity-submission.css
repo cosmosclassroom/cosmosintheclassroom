@@ -114,59 +114,42 @@ textarea.problem-answer-field,   ===============================================
 
 
 
-/* Problem containers */.activity-header h1 {
-
+/* Problem containers */
 .problem-container,
-
-.nav-item-container {    font-family: var(--font-serif-headings);    background: #ffffff;
-
+.nav-item-container {
+    font-family: var(--font-serif-headings);
     background: var(--color-background-main);
-
-    border: 1px solid var(--color-background-subtle);    color: var(--color-text-heading);
-
+    border: 1px solid var(--color-background-subtle);
+    color: var(--color-text-heading);
     border-radius: 3px;
-
-    padding: 2rem;}label {    border-top: 3px solid #2c3e50;
-
+    padding: 2rem;
     margin-bottom: 2rem;
-
+    display: none !important; /* Hidden by default - force override */
 }
-
-    font-weight: 500;    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 
 .problem-container.active,
-
-.nav-item-container.active {    color: #495057;    z-index: 1000;
-
-    display: block;
-
-    border-color: var(--color-text-heading);    font-size: 0.95rem;    transition: transform 0.3s ease-in-out;
-
+.nav-item-container.active {
+    color: #495057;
+    z-index: 1000;
+    display: block !important; /* Force visible when active */
+    border-color: var(--color-text-heading);
+    font-size: 0.95rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-}}
-
 /* =============================================================================
-
    NAVIGATION CONTROLS (Problem Sets, Flexbooks)
-
    ============================================================================= */
 
-input[type="text"],.activity-submission-panel.expanded {
-
 .activity-navigation,
-
-.problem-navigation {input[type="email"],    max-height: 85vh;
-
+.problem-navigation {
     display: flex;
-
-    justify-content: space-between;input[type="number"],    overflow-y: auto;
-
+    justify-content: space-between;
     align-items: center;
-
-    margin-top: 1.5rem;select,}
-
+    margin-top: 1.5rem;
     padding-top: 1.5rem;
+}
+
 
     border-top: 1px solid var(--color-background-subtle);textarea {
 
@@ -1706,14 +1689,14 @@ button[type="submit"]:active,
     padding: 2rem;
     margin-bottom: 2rem;
     transition: all 0.3s ease;
-    display: none; /* Hidden by default */
+    display: none !important; /* Hidden by default - force override */
     max-width: 100%;
     overflow-wrap: break-word;
     box-sizing: border-box;
 }
 
 .nav-item-container.active {
-    display: block;
+    display: block !important; /* Force visible when active */
     animation: fadeIn 0.3s ease-in;
 }
 

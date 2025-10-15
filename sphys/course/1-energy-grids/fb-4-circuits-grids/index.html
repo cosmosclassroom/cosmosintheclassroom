@@ -30,8 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
@@ -67,204 +66,83 @@
     
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>Chapter 4: From Fields to Flow: The Rules of the Circuit</h1>
-    
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Define voltage, current, and resistance, using an analogy to explain their roles in a circuit.</li>
-      
-        <li>Apply Ohm's Law (V=IR) to solve for an unknown variable in a simple circuit.</li>
-      
-        <li>Apply the power equation (P=IV) to calculate the power consumption of an electrical device.</li>
-      
-        <li>Distinguish between energy and power, and explain how they relate to a utility bill.</li>
-      
-    </ul>
-  </div>
-  
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-  
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
 
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-    <div class="chapter-body">
-      
-        
-          
-          <h1>Chapter 4: From Fields to Flow: The Rules of the Circuit</h1>
-          
-        
-      
-        
-          <div class="narrative"><p><strong>Central Question:</strong> How can we translate the abstract concept of an electric field into a set of predictable, mathematical rules that govern the flow of electricity in a circuit?
-<strong>Narrative Arc:</strong> We have journeyed with Faraday into the realm of invisible fields. Now we join Georg Ohm and James Prescott Joule, who took these ethereal concepts and forged them into the practical, quantitative laws of the circuit. We will move from the ‘why’ of electrical force to the ‘how much’—how much current will flow, how much energy is used. This chapter builds the mathematical toolkit we need to analyze, predict, and design the electrical systems that power our world.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
-          
-          <h2>4.1 The Language of the Circuit: Voltage, Current, and Resistance</h2>
-          
-        
-      
-        
-          <div class="narrative"><p>To analyze a circuit, we need a common language. Engineers use three fundamental quantities to describe the behavior of electricity:</p>
-<ul>
-  <li><strong>Voltage (V):</strong> Imagine a water slide. The height of the slide creates the potential for the water to flow down. Voltage is the electrical equivalent of that height or pressure. It is the ‘push’ that the electric field provides to the charges in a wire. It is measured in <strong>Volts (V)</strong>.</li>
-  <li><strong>Current (I):</strong> This is the actual flow of electric charge. It’s the rate at which electrons move past a point in the wire, similar to the amount of water flowing down the slide per second. It is measured in <strong>Amperes (A)</strong>, or ‘Amps’.</li>
-  <li><strong>Resistance (R):</strong> Not all paths are created equal. A wide, smooth water slide allows water to flow easily, while a narrow, rough one would slow it down. Resistance is a measure of how much a material opposes the flow of electric current. A copper wire has very low resistance, while the filament in an incandescent light bulb has very high resistance. It is measured in <strong>Ohms (Ω)</strong>.
-These three quantities are not independent; they are locked together in a simple, elegant relationship that forms the bedrock of all circuit analysis.</li>
-</ul>
-</div>
-        
-      
-        
-          
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>Use the water slide analogy to describe a circuit with high voltage and low current. What might this look like?</p>
-</li>
-                
-                  <li><p>Use the same analogy to describe a circuit with high resistance.</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
-          
-          <h2>4.2 Ohm's Law: The Rulebook</h2>
-          
-        
-      
-        
-          <div class="narrative"><p>In the early 19th century, the German physicist Georg Ohm conducted a series of painstaking experiments. He discovered a beautifully simple mathematical relationship between voltage, current, and resistance. This relationship, now known as <strong>Ohm’s Law</strong>, is the cornerstone of circuit analysis:
-\(V = IR\)
-This simple equation is incredibly powerful. If you know any two of the quantities, you can calculate the third. It allows an engineer to precisely predict how a circuit will behave before ever building it. It is the fundamental rulebook for the flow of electric charge.</p>
-</div>
-        
-      
-        
-          
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>A simple circuit has a 12-Volt battery and a light bulb with a resistance of 3 Ohms. How much current flows through the light bulb?</p>
-</li>
-                
-                  <li><p>If you want to decrease the current flowing through a circuit, you can either decrease the voltage or increase the resistance. Which method do you think is more common in everyday electronics? Why?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
-          
-          <h2>4.3 Electrical Power: The Rate of Work</h2>
-          
-        
-      
-        
-          <div class="narrative"><p>Voltage and current tell us about the state of the circuit, but they don’t tell us how much work it is doing. For that, we need the concept of <strong>Power (P)</strong>. In physics, power is the rate at which energy is used or transferred. Electrical power is the rate at which the electric field is doing work on the charges in the circuit. The formula is as simple and elegant as Ohm’s Law:
-\(P = IV\)
-Power is measured in <strong>Watts (W)</strong>. A 100-watt light bulb is converting electrical energy into light and heat at a rate of 100 joules per second. To find out the total <strong>Energy (E)</strong> used, you simply multiply the power by the time the appliance was on: $E = P \cdot \Delta t$. This relationship is why your electricity bill is measured in kilowatt-hours (kWh)—a unit of energy, not power. The Texas blackout was a failure of <em>power</em>—the inability to supply energy fast enough to meet the instantaneous demand.</p>
-</div>
-        
-      
-        
-          
-          <div class="callout callout-thinking-lens">
-            
-              <ul>
-                
-                  <li><p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> A single AA battery provides 1.5V. A wall outlet provides 120V. A high-voltage transmission line can carry 500,000V. How does understanding these vast differences in scale help explain why we design different types of circuits for different tasks?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>A device is plugged into a standard 120V outlet and draws 2A of current. What is its power rating in watts?</p>
-</li>
-                
-                  <li><p>Why is it more useful for an electricity company to bill you for kilowatt-hours than for just kilowatts?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <div class="activity-link">
-            <strong>Connection to Problem Set:</strong> Problem Set 1 (Circuits & Power)<br/>
-            <em>The two fundamental equations you learned in this chapter, $V=IR$ and $P=IV$, are the essential tools you will need to solve every question in the upcoming problem set.</em>
-          </div>
-        
-      
-    </div>
-  
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
 
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
-    
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
 
-  </div>
-  
-  
-  <footer class="mt-5">
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type=""
+         data-course="sphys"
+         data-title="Chapter 4: From Fields to Flow: The Rules of the Circuit"
+         data-unit="1"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Chapter 4: From Fields to Flow: The Rules of the Circuit</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type"></span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 1</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- Fallback: Render markdown content directly -->
+                <div class="activity-content">
+                    
+
+                </div>
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760489412"></script>
     
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> SPHYS<br>
-        <strong>Unit:</strong> 1<br>
-        
-      </div>
-      <div class="col-md-6">
-        <strong>Reading Time:</strong> 20 minutes<br>
-        
-        <strong>Topics:</strong>
-        
-        
-      </div>
-    </div>
     
-  </footer>
-</div>
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

@@ -30,8 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
@@ -67,161 +66,374 @@
     
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>A Fireball from the Void: The Rules of Cosmic Attraction</h1>
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="A Fireball from the Void: The Rules of Cosmic Attraction"
+         data-unit="4-cosmic-impacts"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>A Fireball from the Void: The Rules of Cosmic Attraction</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Flexbook</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 4</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <div class="flexbook-content">
     
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Describe the 2013 Chelyabinsk meteor event and explain why it is a significant phenomenon for study.</li>
-      
-        <li>State Newton's Universal Law of Gravitation and define each variable in the equation.</li>
-      
-        <li>Explain the inverse-square relationship between gravitational force and distance.</li>
-      
-        <li>Differentiate between mass and weight in the context of celestial mechanics.</li>
-      
-    </ul>
-  </div>
-  
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 8</div>
+    </div>
+    
 
-  
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-    <div class="chapter-body">
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
       
         
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
           
-          <h1>Chapter 13: A Fireball from the Void: The Rules of Cosmic Attraction</h1>
+          <!-- Item Header -->
           
-        
-      
-        
-          <div class="narrative"><p><strong>Central Question:</strong> What invisible force governs the paths of asteroids through space, and how can we use its rules to predict and understand cosmic collisions?
+          <h2 class="flexbook-item-title">Chapter 13: A Fireball from the Void: The Rules of Cosmic Attraction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Central Question:</strong> What invisible force governs the paths of asteroids through space, and how can we use its rules to predict and understand cosmic collisions?
 <strong>Narrative Arc:</strong> Our focus shifts from the Earth’s surface to the vast emptiness of space, where a new drama unfolds. We begin with a terrifying, real-world event—a meteor exploding over a modern city—that shatters our sense of planetary safety. To understand this threat, we must follow in Newton’s footsteps, expanding our understanding of gravity from a local phenomenon to a universal law of attraction that binds the cosmos together.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>13.1 A Stone from the Sky</h2>
           
+          
+        </div>
         
       
         
-          <div class="narrative"><p>On the morning of February 15, 2013, the citizens of Chelyabinsk, Russia, witnessed a terrifying spectacle. A streak of light, brighter than the sun, tore across the winter sky. It was not a plane or a missile. It was a rock, an asteroid about 20 meters in diameter, that had been traveling through space for millions of years. It entered Earth’s atmosphere at over 40,000 miles per hour.</p>
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.1 A Stone from the Sky</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>On the morning of February 15, 2013, the citizens of Chelyabinsk, Russia, witnessed a terrifying spectacle. A streak of light, brighter than the sun, tore across the winter sky. It was not a plane or a missile. It was a rock, an asteroid about 20 meters in diameter, that had been traveling through space for millions of years. It entered Earth’s atmosphere at over 40,000 miles per hour.</p>
 
 <p>The immense pressure and heat caused the asteroid to explode in a brilliant fireball nearly 18 miles above the ground. The resulting shockwave, arriving minutes later, blasted out windows, damaged thousands of buildings, and injured over 1,500 people. It was the largest known object to strike the Earth in over a century, and it was a stark reminder that we live in a cosmic shooting gallery. This event is our new anchoring phenomenon. Why did it happen? And could it happen again?</p>
-</div>
-        
-      
-        
-          <div class="activity-link">
-            <strong>Research Brief - Forecast:</strong> Initial Model of a Cosmic Impact<br/>
-            <em>Based on what you currently know, draw a model of our solar system showing the Sun, Earth, and the path of an asteroid. Use arrows to represent the forces you think are acting on the asteroid and on Earth to cause such a collision.</em>
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>13.2 Newton's Great Idea: The Universal Tug</h2>
           
+          
+        </div>
         
       
         
-          <div class="narrative"><p>We are used to gravity. It’s the force that pulls a dropped apple to the ground. But Isaac Newton’s genius was to realize that the same force pulling the apple also reached far, far higher—all the way to the Moon. He proposed that gravity was not just a property of the Earth, but a <strong>universal</strong> force. Every object with mass in the universe pulls on every other object with mass. You are gravitationally attracted to your desk, the person next to you, and the Andromeda galaxy.
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Research Brief - Forecast: Initial Model of a Cosmic Impact</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>Based on what you currently know, draw a model of our solar system showing the Sun, Earth, and the path of an asteroid. Use arrows to represent the forces you think are acting on the asteroid and on Earth to cause such a collision.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.2 Newton's Great Idea: The Universal Tug</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>We are used to gravity. It’s the force that pulls a dropped apple to the ground. But Isaac Newton’s genius was to realize that the same force pulling the apple also reached far, far higher—all the way to the Moon. He proposed that gravity was not just a property of the Earth, but a <strong>universal</strong> force. Every object with mass in the universe pulls on every other object with mass. You are gravitationally attracted to your desk, the person next to you, and the Andromeda galaxy.
 The force that pulled the Chelyabinsk meteor toward Earth is the very same force that keeps the Moon in orbit and holds the Sun’s family of planets together. To analyze cosmic collisions, we need a law that works on this grand, universal scale.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>13.3 The Law of Universal Gravitation</h2>
           
+          
+        </div>
         
       
         
-          <div class="narrative"><p>Newton formulated this universal tug with a single, powerful equation that describes the force of gravity ($F_g$) between any two objects:
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="4"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.3 The Law of Universal Gravitation</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Newton formulated this universal tug with a single, powerful equation that describes the force of gravity ($F_g$) between any two objects:
 \(F_g = G \frac{m_1 m_2}{r^2}\)
 Let’s break this down: - <strong>$m_1$ and $m_2$</strong> are the masses of the two objects. The more massive the objects, the stronger the pull. - <strong>$r$</strong> is the distance between the centers of the two objects. - <strong>$G$</strong> is the Universal Gravitational Constant, a tiny number that shows why gravity is the weakest of the fundamental forces.
 The most important part of this law is the <strong>inverse-square relationship</strong>. The force of gravity decreases with the <em>square</em> of the distance. If you double the distance between two objects, the gravitational force between them doesn’t get twice as weak; it gets <strong>four times</strong> weaker ($2^2 = 4$). This is why the pull of distant stars on Earth is negligible, while the pull of our nearby Sun and Moon dominates our cosmic neighborhood.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-thinking-lens">
-            
-              <ul>
-                
-                  <li><p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> The force of gravity between you and the Earth is your weight. The force of gravity between you and your textbook is incredibly tiny. Use Newton’s Universal Law to explain why, considering the masses and distances involved.</p>
-</li>
-                
-              </ul>
-            
-          </div>
+          
+          
+        </div>
         
       
         
-          <div class="activity-link">
-            <strong>Connection to Problem Set:</strong> Problem Set 1 (Newton's Law of Gravitation)<br/>
-            <em>You will now apply this law to calculate the gravitational forces between various celestial objects, from planets and moons to asteroids and stars.</em>
-          </div>
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="5"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-thinking-lens">
+              <p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> The force of gravity between you and the Earth is your weight. The force of gravity between you and your textbook is incredibly tiny. Use Newton’s Universal Law to explain why, considering the masses and distances involved.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="bridge-to-next">**Next Steps:** This law describes the *force* between two objects, but it doesn't tell us about the *path* they will take. How does this constant pull lead to the stable, repeating paths we call orbits? And how can a slight change in that path lead to a collision? That is the subject of our next chapter.
-</div>
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="6"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 1 (Newton's Law of Gravitation)</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>You will now apply this law to calculate the gravitational forces between various celestial objects, from planets and moons to asteroids and stars.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Next Steps:</strong> This law describes the <em>force</em> between two objects, but it doesn’t tell us about the <em>path</em> they will take. How does this constant pull lead to the stable, repeating paths we call orbits? And how can a slight change in that path lead to a collision? That is the subject of our next chapter.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
     </div>
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
     
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="A Fireball from the Void: The Rules of Cosmic Attraction">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="4-cosmic-impacts">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
 
   </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> SPHYS<br>
-        <strong>Unit:</strong> 4-cosmic-impacts<br>
-        
-      </div>
-      <div class="col-md-6">
-        <strong>Reading Time:</strong> 25 minutes<br>
-        
-        <strong>Topics:</strong>
-        
-        
-      </div>
-    </div>
-    
-  </footer>
 </div>
+
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760489412"></script>
+    
+    
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

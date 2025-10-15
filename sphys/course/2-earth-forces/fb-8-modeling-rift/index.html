@@ -30,8 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
@@ -67,229 +66,416 @@
     
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>The Final Model: Solving the Rift</h1>
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="The Final Model: Solving the Rift"
+         data-unit="2-earth-forces"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>The Final Model: Solving the Rift</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Flexbook</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <div class="flexbook-content">
     
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Synthesize Newton's three laws of motion into a single, coherent model to explain a complex geological event.</li>
-      
-        <li>Explain the concept of dynamic equilibrium in the context of tectonic forces.</li>
-      
-        <li>Describe the 'tipping point' of the Afar Rift event in terms of unbalanced forces overcoming static friction.</li>
-      
-        <li>Construct a final, evidence-based model that provides a complete explanation for the 2005 Afar Rift.</li>
-      
-    </ul>
-  </div>
-  
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 10</div>
+    </div>
+    
 
-  
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-    <div class="chapter-body">
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
       
         
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
           
-          <h1>Chapter 8: The Final Model: Solving the Rift</h1>
+          <!-- Item Header -->
           
-        
-      
-        
-          <div class="narrative"><p><strong>Central Question:</strong> How can we combine Newton’s Laws into a single, complete model that explains the 2005 Afar Rift?
+          <h2 class="flexbook-item-title">Chapter 8: The Final Model: Solving the Rift</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Central Question:</strong> How can we combine Newton’s Laws into a single, complete model that explains the 2005 Afar Rift?
 <strong>Narrative Arc:</strong> Our investigation has reached its conclusion. We have followed the trail from a mysterious crack in the desert down to the churning heart of the planet. We have unearthed the universal laws that govern the motion of all things. Now, we assemble this knowledge. We will construct our final, most complete model, transforming a collection of clues into a coherent scientific explanation.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>8.1 The Story So Far: A Review of the Evidence</h2>
           
-        
-      
-        
-          <div class="narrative"><p>Before we can reach a verdict, we must present a closing argument, weaving together all the threads of evidence. Our evidence consists of the fundamental principles of physics we have explored:</p>
-</div>
-        
-      
-        
-          <ul>
-            
-              <li><p><strong>Inertia &amp; Mass (Chapter 5):</strong> The property of the tectonic plate that resisted any change in its motion. Its immense mass meant it should have stayed put.</p>
-</li>
-            
-              <li><p><strong>Unbalanced Forces (Chapter 5):</strong> The only way to overcome inertia. The cause of the rift had to be a net force that was not zero.</p>
-</li>
-            
-              <li><p><strong>Newton’s Second Law, $F=ma$ (Chapter 6):</strong> The rulebook. It connects the invisible cause (Force) to the visible effect (acceleration).</p>
-</li>
-            
-              <li><p><strong>Friction (Chapter 6):</strong> The primary force of resistance holding the plate together.</p>
-</li>
-            
-              <li><p><strong>Newton’s Third Law, Action-Reaction (Chapter 7):</strong> The source of the force—the symmetric push and pull of the Earth on itself.</p>
-</li>
-            
-              <li><p><strong>Mantle Convection (Chapter 7):</strong> The engine itself, creating the tensional force that became unbalanced.</p>
-</li>
-            
-          </ul>
-        
-      
-        
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>In one sentence for each, explain the role that Inertia, F=ma, and Action-Reaction play in our story of the Afar Rift.</p>
-</li>
-                
-              </ul>
-            
-          </div>
+        </div>
         
       
         
-          <hr/>
-        
-      
-        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
           
-          <h2>8.2 A Planet in Balance: The Anatomy of Stability</h2>
+          <!-- Item Header -->
           
+          <h2 class="flexbook-item-title">8.1 The Story So Far: A Review of the Evidence</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Before we can reach a verdict, we must present a closing argument, weaving together all the threads of evidence. Our evidence consists of the fundamental principles of physics we have explored:</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="narrative"><p>For millions of years before the rift, the Afar region was in a state of stability. This does not mean there were no forces. Deep below, mantle convection created a constant <strong>tensional force ($F_{tension}$)</strong> trying to pull the plate apart. But this force was opposed by the immense force of <strong>static friction ($F_{friction}$)</strong> and the cohesion of the rock itself.
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="2"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>In one sentence for each, explain the role that Inertia, F=ma, and Action-Reaction play in our story of the Afar Rift.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">8.2 A Planet in Balance: The Anatomy of Stability</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>For millions of years before the rift, the Afar region was in a state of stability. This does not mean there were no forces. Deep below, mantle convection created a constant <strong>tensional force ($F_{tension}$)</strong> trying to pull the plate apart. But this force was opposed by the immense force of <strong>static friction ($F_{friction}$)</strong> and the cohesion of the rock itself.
 The net force on the plate was zero:
 \(F_{net} = F_{tension} - F_{friction} = 0\)
 Because the net force was zero, there was no acceleration ($a=0$). The plate remained at rest, a perfect illustration of Newton’s First Law. The planet was in a state of <strong>dynamic equilibrium</strong>—a tense, but stable, balance.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>Draw a simple force diagram of the African plate before the 2005 rift. Label the key forces and use the lengths of your arrows to show that they are balanced.</p>
-</li>
-                
-                  <li><p>Use the term ‘dynamic equilibrium’ to explain why the ground can be stable even when massive forces are acting on it.</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>8.3 The Moment of Change: Solving the Puzzle</h2>
           
+        </div>
         
       
         
-          <div class="narrative"><p>So, what happened in September 2005? The system tipped. Geologists believe a plume of particularly hot magma surged upward, increasing the drag on the crust. For a critical moment, the tensional force became greater than the maximum possible force of static friction.
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="4"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>Draw a simple force diagram of the African plate before the 2005 rift. Label the key forces and use the lengths of your arrows to show that they are balanced.</p>
+
+<p>Use the term ‘dynamic equilibrium’ to explain why the ground can be stable even when massive forces are acting on it.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">8.3 The Moment of Change: Solving the Puzzle</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>So, what happened in September 2005? The system tipped. Geologists believe a plume of particularly hot magma surged upward, increasing the drag on the crust. For a critical moment, the tensional force became greater than the maximum possible force of static friction.
 \(F_{tension} &gt; F_{friction(max)}\)
 Suddenly, the net force was no longer zero. The forces were unbalanced.
 \(F_{net} = F_{tension} - F_{friction} &gt; 0\)
 The instant the net force became positive, the crust began to accelerate, obeying $F=ma$. The rock fractured, and the rift tore open. The long period of stability gave way to a sudden, catastrophic moment of change. We have solved the puzzle. The rift was the direct, predictable outcome of the fundamental laws of motion playing out on a planetary scale.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>How does the concept of a ‘tipping point’ or ‘threshold’ relate to the difference between static and kinetic friction in this event?</p>
-</li>
-                
-                  <li><p>Explain how Newton’s three laws of motion are all needed to tell the complete story of the rift.</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>8.4 Your Final Model: Telling the Whole Story</h2>
           
+        </div>
         
       
         
-          <div class="narrative"><p>This is the moment to synthesize your understanding. The science practice of <strong>Developing and Using Models</strong> is about constructing complete, evidence-based explanations of complex phenomena.</p>
-</div>
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="6"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>How does the concept of a ‘tipping point’ or ‘threshold’ relate to the difference between static and kinetic friction in this event?</p>
+
+<p>Explain how Newton’s three laws of motion are all needed to tell the complete story of the rift.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="activity-link">
-            <strong>Research Brief - Reflection:</strong> Construct Your Final Model of the Afar Rift<br/>
-            <em>In your science notebook, construct your final, complete model of the Afar Rift. Draw a final, detailed cross-section of the Earth at the moment the rift occurred, showing the core, mantle, and crust. Label all key components and forces (Mantle Convection, Tension, Friction, Acceleration). Then, write a full, narrative explanation of the event, correctly using all the key vocabulary from this unit to tell the complete story.
-</em>
-          </div>
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">8.4 Your Final Model: Telling the Whole Story</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>This is the moment to synthesize your understanding. The science practice of <strong>Developing and Using Models</strong> is about constructing complete, evidence-based explanations of complex phenomena.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="bridge-to-next">**Unit Conclusion:** By assembling a model from fundamental principles, you have solved the mystery of the Afar Rift. You have seen how the same laws that govern everyday motion can explain the most powerful geological forces. This way of thinking—building and testing models based on universal laws—is the foundation of all physics.
-</div>
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="8"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Research Brief - Reflection: Construct Your Final Model of the Afar Rift</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>In your science notebook, construct your final, complete model of the Afar Rift. Draw a final, detailed cross-section of the Earth at the moment the rift occurred, showing the core, mantle, and crust. Label all key components and forces (Mantle Convection, Tension, Friction, Acceleration). Then, write a full, narrative explanation of the event, correctly using all the key vocabulary from this unit to tell the complete story.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="9"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Unit Conclusion:</strong> By assembling a model from fundamental principles, you have solved the mystery of the Afar Rift. You have seen how the same laws that govern everyday motion can explain the most powerful geological forces. This way of thinking—building and testing models based on universal laws—is the foundation of all physics.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
     </div>
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
     
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="The Final Model: Solving the Rift">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="2-earth-forces">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
 
   </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> SPHYS<br>
-        <strong>Unit:</strong> 2-earth-forces<br>
-        
-      </div>
-      <div class="col-md-6">
-        <strong>Reading Time:</strong> 30 minutes<br>
-        
-        <strong>Topics:</strong>
-        
-        
-      </div>
-    </div>
-    
-  </footer>
 </div>
+
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760489412"></script>
+    
+    
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

@@ -30,8 +30,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
@@ -67,174 +66,374 @@
     
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>The Delicate Dance of Gravity: Orbits and Energy</h1>
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="The Delicate Dance of Gravity: Orbits and Energy"
+         data-unit="4-cosmic-impacts"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>The Delicate Dance of Gravity: Orbits and Energy</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Flexbook</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 4</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <div class="flexbook-content">
     
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Explain how an orbit is a balance between tangential velocity and gravitational acceleration.</li>
-      
-        <li>Use Newton's cannonball thought experiment to describe the conditions necessary to achieve a stable orbit.</li>
-      
-        <li>Define kinetic energy and gravitational potential energy in the context of an orbiting object.</li>
-      
-        <li>Describe how energy is conserved in an elliptical orbit, with the object speeding up as it gets closer to the central body and slowing down as it moves farther away.</li>
-      
-    </ul>
-  </div>
-  
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 8</div>
+    </div>
+    
 
-  
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-    <div class="chapter-body">
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
       
         
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
           
-          <h1>Chapter 14: The Delicate Dance of Gravity: Orbits and Energy</h1>
+          <!-- Item Header -->
           
-        
-      
-        
-          <div class="narrative"><p><strong>Central Question:</strong> How does the force of gravity, which always pulls objects together, create the stable, looping paths we call orbits?
+          <h2 class="flexbook-item-title">Chapter 14: The Delicate Dance of Gravity: Orbits and Energy</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Central Question:</strong> How does the force of gravity, which always pulls objects together, create the stable, looping paths we call orbits?
 <strong>Narrative Arc:</strong> We have established the rule of cosmic attraction. Now we explore its most beautiful consequence: the orbit. We will discover that an orbit is not a state of floating, but a state of perpetual falling. By understanding the perfect balance between forward motion and downward pull, and by tracking the flow of energy in a cosmic system, we can understand how planets, moons, and asteroids can dance around each other for billions of years without ever meeting.</p>
-</div>
-        
-      
-        
-          <hr/>
-        
-      
-        
+
+            </div>
           
-          <h2>14.1 The Paradox of the Orbit</h2>
           
-        
-      
-        
-          <div class="narrative"><p>It is a deep and important puzzle. We know the Earth pulls on the Moon with an immense gravitational force. Why hasn’t the Moon crashed into the Earth? What keeps it suspended in the sky? The secret ingredient is not an upward force, but a sideways one. The Moon is constantly moving <em>forward</em> at a tremendous speed. Without gravity, it would fly off in a straight line into deep space. Without its forward motion, it would plummet directly to Earth. The combination of these two motions—a forward velocity and a downward acceleration due to gravity—is what creates the stable, curved path of an orbit.</p>
-</div>
-        
-      
-        
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>What two motions must be perfectly balanced for a stable orbit to exist?</p>
-</li>
-                
-              </ul>
-            
-          </div>
+        </div>
         
       
         
-          <hr/>
-        
-      
-        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
           
-          <h2>14.2 Newton's Cannonball: Falling and Missing</h2>
+          <!-- Item Header -->
           
+          <h2 class="flexbook-item-title">14.1 The Paradox of the Orbit</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>It is a deep and important puzzle. We know the Earth pulls on the Moon with an immense gravitational force. Why hasn’t the Moon crashed into the Earth? What keeps it suspended in the sky? The secret ingredient is not an upward force, but a sideways one. The Moon is constantly moving <em>forward</em> at a tremendous speed. Without gravity, it would fly off in a straight line into deep space. Without its forward motion, it would plummet directly to Earth. The combination of these two motions—a forward velocity and a downward acceleration due to gravity—is what creates the stable, curved path of an orbit.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="narrative"><p>To visualize this, Isaac Newton imagined a giant cannon on top of a very high mountain.</p>
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="2"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>What two motions must be perfectly balanced for a stable orbit to exist?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">14.2 Newton's Cannonball: Falling and Missing</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>To visualize this, Isaac Newton imagined a giant cannon on top of a very high mountain.</p>
 <ul>
   <li>If you fire the cannonball with a <strong>low speed</strong>, it travels a short distance before gravity pulls it to the ground. - If you fire it with a <strong>higher speed</strong>, it travels much farther before crashing. - If you could fire it at a very specific, incredibly <strong>high speed</strong>, something amazing happens. As the cannonball falls, the Earth’s surface curves away beneath it at the exact same rate. The cannonball is constantly falling <em>towards</em> the Earth, but it is moving so fast sideways that it never gets any closer. It is “falling around” the planet.</li>
 </ul>
 
 <p>This is what an orbit is: the art of falling and consistently missing the ground. Every satellite, the International Space Station, and the Moon itself are all in a state of freefall, captured by this elegant balance.</p>
-</div>
-        
-      
-        
+
+            </div>
           
-          <div class="callout callout-note">
-            
-              <ul>
-                
-                  <li><p>Why do astronauts on the International Space Station feel ‘weightless’ even though Earth’s gravity is still very strong at their altitude?</p>
-</li>
-                
-                  <li><p>What would happen to a satellite if its forward velocity suddenly increased significantly?</p>
-</li>
-                
-              </ul>
-            
-          </div>
-        
-      
-        
-          <hr/>
-        
-      
-        
           
-          <h2>14.3 The Energy of an Orbit: A Cosmic Bank Account</h2>
           
+        </div>
         
       
         
-          <div class="narrative"><p>An orbit isn’t just a balance of motion; it’s also a balance of energy. An orbiting object has a “cosmic bank account” with two types of funds:</p>
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="4"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-note">
+              <p>Why do astronauts on the International Space Station feel ‘weightless’ even though Earth’s gravity is still very strong at their altitude?</p>
+
+<p>What would happen to a satellite if its forward velocity suddenly increased significantly?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">14.3 The Energy of an Orbit: A Cosmic Bank Account</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>An orbit isn’t just a balance of motion; it’s also a balance of energy. An orbiting object has a “cosmic bank account” with two types of funds:</p>
 <ul>
   <li><strong>Kinetic Energy (KE):</strong> The energy of motion. The faster an object moves, the more kinetic energy it has. ($KE = \frac{1}{2}mv^2$) - <strong>Gravitational Potential Energy (PE):</strong> The energy of position. The farther an object is from the central body, the more potential energy it has, because it has farther to fall.
 In a perfectly circular orbit, both KE and PE remain constant. But most orbits, like that of the Chelyabinsk meteor, are elliptical. In an elliptical orbit, the object is constantly trading one form of energy for the other. As it moves farther away, it slows down (losing KE, gaining PE). As it swings back and gets closer, gravity pulls it in, causing it to speed up (losing PE, gaining KE). The <em>total energy</em> (KE + PE) of the orbit, however, remains the same. This is the law of conservation of energy at a cosmic scale.</li>
 </ul>
-</div>
+
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="activity-link">
-            <strong>Hexagon Lab:</strong> Deriving Kepler’s Laws<br/>
-            <em>By analyzing a dataset of planetary orbits, you will discover the mathematical patterns that Johannes Kepler found, which describe this beautiful relationship between an object's distance and its orbital speed.</em>
-          </div>
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="6"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Hexagon Lab: Deriving Kepler’s Laws</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>By analyzing a dataset of planetary orbits, you will discover the mathematical patterns that Johannes Kepler found, which describe this beautiful relationship between an object’s distance and its orbital speed.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
         
       
         
-          <div class="bridge-to-next">**Next Steps:** The Chelyabinsk meteor was in a stable orbit, its energy account balanced, for millions of years. But its stable path happened to cross the stable path of another object: Earth. Now that we understand the rules of the cosmic dance, we must confront the history of past impacts and assess the risks of future ones.
-</div>
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Next Steps:</strong> The Chelyabinsk meteor was in a stable orbit, its energy account balanced, for millions of years. But its stable path happened to cross the stable path of another object: Earth. Now that we understand the rules of the cosmic dance, we must confront the history of past impacts and assess the risks of future ones.</p>
+
+            </div>
+          
+          
+          
+        </div>
         
       
     </div>
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
     
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="The Delicate Dance of Gravity: Orbits and Energy">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="4-cosmic-impacts">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
 
   </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> SPHYS<br>
-        <strong>Unit:</strong> 4-cosmic-impacts<br>
-        
-      </div>
-      <div class="col-md-6">
-        <strong>Reading Time:</strong> 30 minutes<br>
-        
-        <strong>Topics:</strong>
-        
-        
-      </div>
-    </div>
-    
-  </footer>
 </div>
+
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760489412"></script>
+    
+    
+</div> <!-- .activity-page -->
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>
