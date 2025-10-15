@@ -106,11 +106,17 @@ class ActivityNavigator {
         }
         
         // Hide all items
-        this.items.forEach(item => item.classList.remove('active'));
+        this.items.forEach((item, i) => {
+            item.classList.remove('active');
+            item.style.display = 'none'; // Force inline style to hide
+            console.log(`[ActivityNavigator] Hiding item ${i}:`, item.style.display);
+        });
         
         // Show current item
         this.items[index].classList.add('active');
+        this.items[index].style.display = 'block'; // Force inline style to show
         this.currentIndex = index;
+        console.log(`[ActivityNavigator] Showing item ${index}:`, this.items[index].style.display, this.items[index]);
         
         // Update UI
         this.updateButtons();

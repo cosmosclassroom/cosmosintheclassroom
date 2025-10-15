@@ -116,7 +116,9 @@ textarea.problem-answer-field,   ===============================================
 
 /* Problem containers */
 .problem-container,
-.nav-item-container {
+.nav-item-container,
+.markdown-body .nav-item-container,
+div.nav-item-container {
     font-family: var(--font-serif-headings);
     background: var(--color-background-main);
     border: 1px solid var(--color-background-subtle);
@@ -128,7 +130,9 @@ textarea.problem-answer-field,   ===============================================
 }
 
 .problem-container.active,
-.nav-item-container.active {
+.nav-item-container.active,
+.markdown-body .nav-item-container.active,
+div.nav-item-container.active {
     color: #495057;
     z-index: 1000;
     display: block !important; /* Force visible when active */
@@ -952,38 +956,36 @@ button[type="submit"]:active,
 }
 
 .flexbook-reading {
-
-    line-height: 1.8;@keyframes slideInRight {
-
-    font-size: 1.05rem;    from {
-
-}        opacity: 0;
-
-        transform: translateX(100%);
-
-.flexbook-reading p {    }
-
-    margin-bottom: 1.2rem;    to {
-
-}        opacity: 1;
-
-        transform: translateX(0);
-
-.flexbook-activity-prompt {    }
-
-    background: #f8f9fa;}
-
-    padding: 1.5rem;
-
-    border-left: 4px solid #007bff;@keyframes fadeOut {
-
-    margin: 1.5rem 0;    to {
-
-    border-radius: 0.25rem;        opacity: 0;
-
-}    }
-
+    line-height: 1.8;
+    font-size: 1.05rem;
 }
+
+.flexbook-reading p {
+    margin-bottom: 1.2rem;
+}
+
+.flexbook-activity-prompt {
+    background: #f8f9fa;
+    border-left: 4px solid #f39c12;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+}
+
+.activity-response {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed #dee2e6;
+}
+
+.activity-response label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.activity-response-field {
 
 /* Checkpoint Sections */
 
