@@ -34,67 +34,307 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
+    
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-<div class="problem-set-container">
-  <div class="problem-set-header">
-    <h1>Problem Set 1.1: Circuits & Power</h1>
-    <p class="mb-0">SPHYS Unit 1</p>
-  </div>
-  
-  <div class="problem-set-info">
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Difficulty:</strong> </p>
-        <p><strong>Submission Format:</strong> paper</p>
-        <p><strong>Estimated Time:</strong> 45 minutes</p>
-      </div>
-      <div class="col-md-6">
+<!-- Chart.js for data visualization -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+</script>
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* No-header page: Remove all top spacing for content-first experience */
+.no-header-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.no-header-page .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.no-header-page .breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.no-header-page .breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.no-header-page .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #adb5bd;
+}
+
+.no-header-page .activity-header {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.no-header-page .activity-header h1 {
+    margin-top: 0;
+}
+    </style>
+
+<div class="activity-content-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         
-        <p><strong>Topics:</strong> circuits, power, energy, ohms law, problem_set</p>
         
-      </div>
-    </div>
-  </div>
+        
+        
+        
+        
+        <a href="/sphys/">Standard Physics</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/sphys/course/1/">Unit 1: </a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Problem Set 1.1: Circuits & Power</span>
+    </nav>
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="ps-1.1-circuits-and-power"
+         data-content-type="problem_set"
+         data-course="sphys"
+         data-title="Problem Set 1.1: Circuits & Power"
+         data-unit="1"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Problem Set 1.1: Circuits & Power</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Problem set</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 1</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Problem Set Content Display
+  Single unified form with problems and reflection
+-->
+
+<form id="activity-submission-form" class="activity-form">
   
   <div class="problem-set-content">
+    <!-- Problem Set Introduction (Collapsible) -->
     
 
+    <!-- Key Formulae (Collapsible) -->
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+
+    <!-- Problems with Answer Fields -->
+    
+
+    <!-- Reflection Section (at end, part of same form) -->
+    <div class="form-section reflection-section">
+      <h3>Reflection & Submission</h3>
+      
+      <!-- Student Information -->
+      <fieldset class="form-subsection">
+        <legend>Student Information</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="student-name">Full Name *</label>
+            <input type="text" id="student-name" name="StudentName" required>
+          </div>
+          <div class="form-field">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="StudentEmail">
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course</label>
+            <input type="text" id="course-name" name="CourseName" value="SPHYS" readonly>
+          </div>
+          <div class="form-field">
+            <label for="class-period">Class Period</label>
+            <select id="class-period" name="ClassPeriod">
+              <option value="">Select Period</option>
+              <option value="1">1st Period</option>
+              <option value="2">2nd Period</option>
+              <option value="3">3rd Period</option>
+              <option value="4">4th Period</option>
+              <option value="5">5th Period</option>
+              <option value="6">6th Period</option>
+              <option value="7">7th Period</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
+      <div id="activity-specific-fields"></div>
+
+      <!-- Hidden metadata fields -->
+      <input type="hidden" name="ActivityTitle" value="Problem Set 1.1: Circuits & Power">
+      <input type="hidden" name="ResourceID" value="ps-1.1-circuits-and-power">
+      <input type="hidden" name="ContentType" value="problem_set">
+      <input type="hidden" name="Course" value="sphys">
+      <input type="hidden" name="Unit" value="1">
+      <input type="hidden" name="StartTime" id="start-time">
+      <input type="hidden" name="SubmitTime" id="submit-time">
+      <input type="hidden" name="BrowserInfo" id="browser-info">
+
+      <!-- Status Messages -->
+      <div id="submission-status" class="submission-status" hidden></div>
+      
+      <!-- Auto-save indicator (top right corner) -->
+      <div id="auto-save-indicator" hidden>
+        ✓ Saved
+      </div>
+
+      <!-- Simple Submit Button -->
+      <div class="form-actions">
+        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
+          Submit Problem Set
+        </button>
+        <p class="help-text">
+          Answers are auto-saved. Submit when complete.
+        </p>
+      </div>
+
+    </div>
+
   </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script>
+// Toggle solutions visibility
+function toggleSolutions() {
+    const solutionsDiv = document.getElementById('student-solutions');
+    const toggleBtn = document.getElementById('toggle-solutions-btn');
+    
+    if (solutionsDiv.style.display === 'none') {
+        solutionsDiv.style.display = 'block';
+        toggleBtn.textContent = '🙈 Hide Answers';
+        toggleBtn.style.background = '#dc3545';
+    } else {
+        solutionsDiv.style.display = 'none';
+        toggleBtn.textContent = '🔍 Check Your Answers';
+        toggleBtn.style.background = '#ffc107';
+    }
+}
+
+// Toggle current problem's answer
+function toggleCurrentAnswer(problemNumber) {
+    const answerDiv = document.getElementById('answer-key-' + problemNumber);
+    const checkBtn = document.getElementById('check-answer-' + problemNumber);
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
+    } else {
+        answerDiv.style.display = 'none';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
+    }
+}
+
+// Initialize Problem Set Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-problem',
+            nextButtonId: 'next-problem',
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
+        });
+        
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
+    }
+});
+
+// Legacy function support (for inline onclick handlers)
+function navigateProblem(direction) {
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
+    }
+}
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    
+    
+
 </div>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

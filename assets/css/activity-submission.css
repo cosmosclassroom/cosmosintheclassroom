@@ -600,8 +600,48 @@ button[type="submit"]:disabled,
 }
 
 .problem-container.active {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     animation: fadeIn 0.3s ease-in;
+}
+
+/* Layout: Question content on left, answer fields on right */
+.problem-container.active .problem-header {
+    grid-column: 1 / -1; /* Span full width */
+}
+
+.problem-container.active .problem-statement {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.problem-container.active .problem-dataset {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.problem-container.active .problem-navigation {
+    grid-column: 1 / -1; /* Span full width */
+    grid-row: 4;
+}
+
+.problem-container.active .current-answer-display {
+    grid-column: 1 / -1; /* Span full width when shown */
+    grid-row: 5;
+}
+
+.problem-container.active .problem-answer {
+    grid-column: 2;
+    grid-row: 2 / 4; /* Span rows 2-3 to align with statement + dataset */
+    align-self: start;
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 900px) {
+    .problem-container.active {
+        display: block;
+    }
 }
 
 @keyframes fadeIn {
@@ -763,10 +803,58 @@ button[type="submit"]:disabled,
     padding: 0.4rem 0.5rem;
 }
 
-/* Essay Text Areas */
+/* Text Response Fields (default textarea) */
+.answer-part textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #adb5bd;
+    background: white;
+    border-radius: 2px;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 60px;
+    font-family: inherit;
+}
+
+.answer-part textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+/* Essay Text Areas (larger) */
 .answer-part textarea[rows="8"] {
     font-family: Georgia, serif;
     line-height: 1.6;
+    min-height: 180px;
+}
+
+/* Checkbox Fields for Drawing/Task Completion */
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.checkbox-field input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #800000; /* Maroon color for checked state */
+}
+
+.checkbox-field label {
+    margin: 0;
+    font-weight: 400;
+    color: #495057;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 /* =============================================================================
@@ -1073,7 +1161,7 @@ button[type="submit"]:disabled,
 
 .flexbook-reading {
     line-height: 1.8;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .flexbook-reading p {
@@ -1230,7 +1318,7 @@ button[type="submit"]:disabled,
 .checkpoint-question label {
     display: block;
     margin-bottom: 0.75rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
     color: var(--color-text-body, #3d3d3c);
 }
@@ -1244,7 +1332,7 @@ button[type="submit"]:disabled,
     padding: 0.75rem;
     border: 1px solid var(--color-background-subtle, #f1f1eb);
     border-radius: 4px;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     font-family: var(--font-sans-body, 'Lato', sans-serif);
     background: var(--color-background-main, #fdfdfa);
     color: var(--color-text-body, #3d3d3c);

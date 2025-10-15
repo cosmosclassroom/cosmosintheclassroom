@@ -114,7 +114,7 @@ class ActivityNavigator {
         
         // Show current item
         this.items[index].classList.add('active');
-        this.items[index].style.display = 'block'; // Force inline style to show
+        this.items[index].style.display = ''; // Remove inline display, let CSS handle it
         this.currentIndex = index;
         console.log(`[ActivityNavigator] Showing item ${index}:`, this.items[index].style.display, this.items[index]);
         

@@ -34,35 +34,8 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
+    
     
   <div class="markdown-body">
     
@@ -70,24 +43,7 @@
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 <link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -96,10 +52,64 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* No-header page: Remove all top spacing for content-first experience */
+.no-header-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.no-header-page .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.no-header-page .breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.no-header-page .breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.no-header-page .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #adb5bd;
+}
+
+.no-header-page .activity-header {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.no-header-page .activity-header h1 {
+    margin-top: 0;
+}
+    </style>
+
+<div class="activity-content-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        
+        
+        
+        
+        
+        
+        <a href="/sphys/">Standard Physics</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/sphys/course/1/">Unit 1: </a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">How Electricity Transfers</span>
+    </nav>
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="fb-1-how-electricity-transfers"
          data-content-type="flexbook"
          data-course="sphys"
          data-title="How Electricity Transfers"
@@ -412,7 +422,7 @@ Open the lab document and record the human-context observations before continuin
 
     <!-- Hidden metadata fields -->
     <input type="hidden" name="ActivityTitle" value="How Electricity Transfers">
-    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ResourceID" value="fb-1-how-electricity-transfers">
     <input type="hidden" name="ContentType" value="flexbook">
     <input type="hidden" name="Course" value="sphys">
     <input type="hidden" name="Unit" value="1">
@@ -441,7 +451,7 @@ Open the lab document and record the human-context observations before continuin
 
 </form>
 
-<script src="/assets/js/activity-navigator.js"></script>
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -475,10 +485,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760493039"></script>
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
     
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

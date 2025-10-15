@@ -34,120 +34,307 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
+    
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-<div class="problem-set-container">
-  <div class="problem-set-header">
-    <h1>Problem Set 1.1: The Language of Measurement</h1>
-    <p class="mb-0">HPHYS Unit 1</p>
-  </div>
-  
-  <div class="problem-set-info">
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Difficulty:</strong> apprentice, journeyman, master</p>
-        <p><strong>Submission Format:</strong> paper</p>
-        <p><strong>Estimated Time:</strong> 45 minutes</p>
-      </div>
-      <div class="col-md-6">
+<!-- Chart.js for data visualization -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+</script>
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* No-header page: Remove all top spacing for content-first experience */
+.no-header-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.no-header-page .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.no-header-page .breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.no-header-page .breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.no-header-page .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #adb5bd;
+}
+
+.no-header-page .activity-header {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.no-header-page .activity-header h1 {
+    margin-top: 0;
+}
+    </style>
+
+<div class="activity-content-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         
-        <p><strong>Topics:</strong> dimensional-analysis, significant-figures, measurement</p>
         
-      </div>
-    </div>
-  </div>
+        
+        
+        
+        
+        <a href="/hphys/">Honors Physics</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/hphys/course/1/">Unit 1: </a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Problem Set 1.1: The Language of Measurement</span>
+    </nav>
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="ps-1.1-measurement"
+         data-content-type="problem_set"
+         data-course="hphys"
+         data-title="Problem Set 1.1: The Language of Measurement"
+         data-unit="1"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Problem Set 1.1: The Language of Measurement</h1>
+            <div class="activity-meta">
+                <span class="activity-course">HPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Problem set</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 1</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Problem Set Content Display
+  Single unified form with problems and reflection
+-->
+
+<form id="activity-submission-form" class="activity-form">
   
   <div class="problem-set-content">
-    <h1 id="introduction">Introduction</h1>
-<p>In our last lecture, we discussed how BIG the goal of measurement is not just to get a number, but to communicate a value with honesty and precision. This problem set is your first opportunity to practice using the formal rules—dimensional analysis and significant figures—that allow scientists to achieve that goal. Complete this problem set on separate paper to be collected by your instructor.</p>
+    <!-- Problem Set Introduction (Collapsible) -->
+    
 
-<p>problems:</p>
-<ul>
-  <li>id: “p1”
-difficulty: “apprentice”
-question: “The cheetah is the fastest land animal, capable of running at speeds of up to 72 km/hr. What is this speed in meters per second (m/s)?”
-solution: |
-  \(\left( \frac{72 \text{ km}}{1 \text{ hr}} \right) \left( \frac{1000 \text{ m}}{1 \text{ km}} \right) \left( \frac{1 \text{ hr}}{3600 \text{ s}} \right) = 20 \text{ m/s}\)
-  (The initial measurement has two significant figures, so the final answer must also have two.)</li>
-  <li>id: “p2”
-difficulty: “apprentice”
-question: “The official height of a basketball hoop is 10.0 feet. What is this height in meters? (Use the conversion factor: 1.000 inch = 2.540 cm)”
-solution: |
-  \(\left( \frac{10.0 \text{ ft}}{1} \right) \left( \frac{12 \text{ in}}{1 \text{ ft}} \right) \left( \frac{2.540 \text{ cm}}{1 \text{ in}} \right) \left( \frac{1 \text{ m}}{100 \text{ cm}} \right) = 3.05 \text{ m}\)
-  (The initial measurement has three significant figures, so the answer is rounded to three.)</li>
-  <li>id: “p3”
-difficulty: “apprentice”
-question: “A marathon is a race that is 26.22 miles long. How many kilometers is this? (Use the conversion factor: 1.000 mi = 1.609 km)”
-solution: |
-  \((26.22 \text{ mi}) \left( \frac{1.609 \text{ km}}{1 \text{ mi}} \right) = 42.19 \text{ km}\)
-  (Both values have four significant figures, so the result must have four.)</li>
-  <li>id: “p4”
-difficulty: “apprentice”
-question: “Calculate the area of a rectangular plot of land that measures 24.5 meters long by 8.2 meters wide.”
-solution: |
-  \(A = l \times w = (24.5 \text{ m})(8.2 \text{ m}) = 200.9 \text{ m}^2 \approx 2.0 \times 10^2 \text{ m}^2\)
-  (The least precise measurement, 8.2 m, has two significant figures, so the final answer must be rounded to two.)</li>
-  <li>id: “p5”
-difficulty: “apprentice”
-question: “A student measures three consecutive displacements: 15.88 m, 2.1 m, and 105 m. What is the total displacement?”
-solution: |
-  \(15.88 \text{ m} + 2.1 \text{ m} + 105 \text{ m} = 122.98 \text{ m} \approx 123 \text{ m}\)
-  (When adding, the precision is limited by the least precise value. The number 105 m is precise to the ones place, so the final answer must be rounded to the ones place.)</li>
-  <li>id: “p6”
-difficulty: “apprentice”
-question: “An experimenter measures a time of 150.0 s. A second experimenter measures 0.55 s. You need to divide the first measurement by the second. What is the result?”
-solution: |
-  \(\frac{150.0 \text{ s}}{0.55 \text{ s}} = 272.72... \approx 270 \text{ or } 2.7 \times 10^2\)
-  (The least precise measurement, 0.55 s, has two significant figures, so the final answer must be rounded to two.)</li>
-  <li>id: “p7”
-difficulty: “journeyman”
-question: “In the Hexagon Lab, we learned that Eratosthenes measured the distance between the cities of Syene and Alexandria. A modern analysis suggests this distance was approximately 5.00e3 stadia. If one stadium is equivalent to 185 meters, what is the distance between the two cities in kilometers? Be sure your final answer is reported with the correct number of significant figures.”
-context: “This problem synthesizes multiple skills and connects them to our unit’s anchoring phenomenon.”
-solution: |
-  \((5.00 \times 10^3 \text{ stadia}) \left( \frac{185 \text{ m}}{1 \text{ stadia}} \right) \left( \frac{1 \text{ km}}{1000 \text{ m}} \right) = 925 \text{ km}\)
-  (Both initial measurements have three significant figures, so the final answer must also have three.)</li>
-  <li>id: “p8”
-difficulty: “master”
-question: “Why would it be scientifically dishonest for you to report the distance between the cities in the previous problem with seven significant figures (e.g., 925.0000 km), even if that’s what your calculator showed? Connect your answer to the principles of honest and precise measurement we discussed in our last lecture.”
-context: “This question is not about calculation; it is about thinking like a scientist. Answer in 2-3 complete sentences.”
-rubric: “A correct answer will state that reporting extra, non-significant digits implies a higher level of precision than was actually measured. It is dishonest because it misleads the reader about the certainty of the result, violating the principle that our reported values must reflect the precision of our original measurements.”</li>
-</ul>
+    <!-- Key Formulae (Collapsible) -->
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+
+    <!-- Problems with Answer Fields -->
+    
+
+    <!-- Reflection Section (at end, part of same form) -->
+    <div class="form-section reflection-section">
+      <h3>Reflection & Submission</h3>
+      
+      <!-- Student Information -->
+      <fieldset class="form-subsection">
+        <legend>Student Information</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="student-name">Full Name *</label>
+            <input type="text" id="student-name" name="StudentName" required>
+          </div>
+          <div class="form-field">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="StudentEmail">
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course</label>
+            <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
+          </div>
+          <div class="form-field">
+            <label for="class-period">Class Period</label>
+            <select id="class-period" name="ClassPeriod">
+              <option value="">Select Period</option>
+              <option value="1">1st Period</option>
+              <option value="2">2nd Period</option>
+              <option value="3">3rd Period</option>
+              <option value="4">4th Period</option>
+              <option value="5">5th Period</option>
+              <option value="6">6th Period</option>
+              <option value="7">7th Period</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
+      <div id="activity-specific-fields"></div>
+
+      <!-- Hidden metadata fields -->
+      <input type="hidden" name="ActivityTitle" value="Problem Set 1.1: The Language of Measurement">
+      <input type="hidden" name="ResourceID" value="ps-1.1-measurement">
+      <input type="hidden" name="ContentType" value="problem_set">
+      <input type="hidden" name="Course" value="hphys">
+      <input type="hidden" name="Unit" value="1">
+      <input type="hidden" name="StartTime" id="start-time">
+      <input type="hidden" name="SubmitTime" id="submit-time">
+      <input type="hidden" name="BrowserInfo" id="browser-info">
+
+      <!-- Status Messages -->
+      <div id="submission-status" class="submission-status" hidden></div>
+      
+      <!-- Auto-save indicator (top right corner) -->
+      <div id="auto-save-indicator" hidden>
+        ✓ Saved
+      </div>
+
+      <!-- Simple Submit Button -->
+      <div class="form-actions">
+        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
+          Submit Problem Set
+        </button>
+        <p class="help-text">
+          Answers are auto-saved. Submit when complete.
+        </p>
+      </div>
+
+    </div>
 
   </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script>
+// Toggle solutions visibility
+function toggleSolutions() {
+    const solutionsDiv = document.getElementById('student-solutions');
+    const toggleBtn = document.getElementById('toggle-solutions-btn');
+    
+    if (solutionsDiv.style.display === 'none') {
+        solutionsDiv.style.display = 'block';
+        toggleBtn.textContent = '🙈 Hide Answers';
+        toggleBtn.style.background = '#dc3545';
+    } else {
+        solutionsDiv.style.display = 'none';
+        toggleBtn.textContent = '🔍 Check Your Answers';
+        toggleBtn.style.background = '#ffc107';
+    }
+}
+
+// Toggle current problem's answer
+function toggleCurrentAnswer(problemNumber) {
+    const answerDiv = document.getElementById('answer-key-' + problemNumber);
+    const checkBtn = document.getElementById('check-answer-' + problemNumber);
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
+    } else {
+        answerDiv.style.display = 'none';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
+    }
+}
+
+// Initialize Problem Set Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-problem',
+            nextButtonId: 'next-problem',
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
+        });
+        
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
+    }
+});
+
+// Legacy function support (for inline onclick handlers)
+function navigateProblem(direction) {
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
+    }
+}
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    
+    
+
 </div>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

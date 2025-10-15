@@ -34,7 +34,8 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -63,6 +64,7 @@
 
       </div>
     </header>
+    
     
   <div class="markdown-body">
     
@@ -104,7 +106,7 @@
          data-course="sphys"
          data-title="The Unstoppability Factor: Momentum and Impulse"
          data-unit="3-collision-safety"
-         data-submission-enabled="false"
+         data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
@@ -200,20 +202,64 @@ A heavy truck and a lightweight sports car traveling at the same speed have vast
         
       
         
-        <div class="nav-item-container flexbook-item-callout" 
+        <div class="nav-item-container flexbook-item-checkpoint" 
              data-item-index="2"
-             data-item-type="callout">
+             data-item-type="checkpoint">
           
           <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Checkpoint: Momentum</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-callout callout-note">
-              <p>Which has more momentum: a 1,500 kg car traveling at 10 m/s or a 10,000 kg truck traveling at 1 m/s?</p>
-
-<p>If a vehicle doubles its speed, what happens to its momentum?</p>
-
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Momentum</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-3-q1">
+                    <strong>Question 1:</strong> Which has more momentum - a 1,500 kg car traveling at 10 m/s or a 10,000 kg truck traveling at 1 m/s?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-3-q1" 
+                      name="checkpoint_3_q1"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="2">
+                  
+                  <label for="checkpoint-3-q2">
+                    <strong>Question 2:</strong> If a vehicle doubles its speed, what happens to its momentum?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-3-q2" 
+                      name="checkpoint_3_q2"
+                      rows="2"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
             </div>
           
           
@@ -420,7 +466,7 @@ This reveals a crucial inverse relationship: <strong>To make the force smaller, 
 
 </form>
 
-<script src="/assets/js/activity-navigator.js"></script>
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -454,8 +500,33 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760493039"></script>
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
     
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js'
+            };
+            
+            if (moduleMap[contentType]) {
+                const script = document.createElement('script');
+                script.src = moduleMap[contentType] + '?v=1760564678';
+                script.onerror = function() {
+                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
+                };
+                document.body.appendChild(script);
+            } else {
+                console.warn('[activity.html] No submission module found for content_type:', contentType);
+            }
+        });
+    </script>
     
 </div> <!-- .activity-page -->
 

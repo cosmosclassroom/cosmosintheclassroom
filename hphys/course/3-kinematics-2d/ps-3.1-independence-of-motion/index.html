@@ -34,35 +34,8 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
+    
     
   <div class="markdown-body">
     
@@ -70,31 +43,13 @@
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 <link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
 <script>
-    // Chart.js loaded indicator
     window.SITE_CONFIG = window.SITE_CONFIG || {};
     window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity.html] Chart.js v4.4.0 loaded');
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
 </script>
 
 
@@ -104,7 +59,61 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* No-header page: Remove all top spacing for content-first experience */
+.no-header-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.no-header-page .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.no-header-page .breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.no-header-page .breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.no-header-page .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #adb5bd;
+}
+
+.no-header-page .activity-header {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.no-header-page .activity-header h1 {
+    margin-top: 0;
+}
+    </style>
+
+<div class="activity-content-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        
+        
+        
+        
+        
+        
+        <a href="/hphys/">Honors Physics</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/hphys/course/3-kinematics-2d/">Unit 3: Kinematics 2d</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Problem Set 3.1: Independence of Motion</span>
+    </nav>
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
          data-resource-id="ps-3.1-independence-of-motion"
@@ -291,8 +300,9 @@
           <div class="problem-statement">
             <p>A marble rolls off a horizontal table with a speed of $1.5\,\text{m/s}$. The table is $0.80\,\text{m}$ high.</p>
 
-<p>a) How long does it take the marble to hit the floor?
-b) How far from the base of the table does the marble land?</p>
+<p><strong>(a)</strong> How long does it take the marble to hit the floor?</p>
+
+<p><strong>(b)</strong> How far from the base of the table does the marble land?</p>
 
           </div>
           
@@ -422,8 +432,9 @@ b) How far from the base of the table does the marble land?</p>
           <div class="problem-statement">
             <p>A spy at Constantinople drops a message from a wall that is $35.0\,\text{m}$ high. At the exact same moment, a cannonball is fired horizontally from the top of the wall with an initial speed of $120.\,\text{m/s}$.</p>
 
-<p>a) How long is each object in the air?
-b) How far horizontally does the cannonball travel before hitting the ground?</p>
+<p><strong>(a)</strong> How long is each object in the air?</p>
+
+<p><strong>(b)</strong> How far horizontally does the cannonball travel before hitting the ground?</p>
 
           </div>
           
@@ -553,9 +564,11 @@ b) How far horizontally does the cannonball travel before hitting the ground?</p
           <div class="problem-statement">
             <p>A ball is thrown horizontally from a cliff $45.0\,\text{m}$ high with an initial speed of $20.0\,\text{m/s}$.</p>
 
-<p>a) How long is the ball in the air?
-b) What is the horizontal distance traveled?
-c) What is the ball’s vertical velocity when it hits the ground?</p>
+<p><strong>(a)</strong> How long is the ball in the air?</p>
+
+<p><strong>(b)</strong> What is the horizontal distance traveled?</p>
+
+<p><strong>(c)</strong> What is the ball’s vertical velocity when it hits the ground?</p>
 
           </div>
           
@@ -720,8 +733,9 @@ c) What is the ball’s vertical velocity when it hits the ground?</p>
           <div class="problem-statement">
             <p>A package is dropped from a helicopter flying horizontally at $85.0\,\text{m/s}$ at an altitude of $120.0\,\text{m}$.</p>
 
-<p>a) How long does it take the package to reach the ground?
-b) How far horizontally does the package travel?</p>
+<p><strong>(a)</strong> How long does it take the package to reach the ground?</p>
+
+<p><strong>(b)</strong> How far horizontally does the package travel?</p>
 
           </div>
           
@@ -853,9 +867,11 @@ b) How far horizontally does the package travel?</p>
           <div class="problem-statement">
             <p>Two stones are thrown horizontally from the same cliff. Stone A is thrown at $10.0\,\text{m/s}$, and Stone B is thrown at $20.0\,\text{m/s}$.</p>
 
-<p>a) Which stone hits the ground first? 
-b) Explain your reasoning using the principle of independence.
-c) Stone B lands twice as far from the cliff as Stone A. Explain why this makes sense mathematically.</p>
+<p><strong>(a)</strong> Which stone hits the ground first?</p>
+
+<p><strong>(b)</strong> Explain your reasoning using the principle of independence.</p>
+
+<p><strong>(c)</strong> Stone B lands twice as far from the cliff as Stone A. Explain why this makes sense mathematically.</p>
 
           </div>
           
@@ -931,6 +947,14 @@ c) Stone B lands twice as far from the cliff as Stone A. Explain why this makes 
                       name="answer_5_a">
                       <option value="">Select response...</option>
                       
+                        <option value="Stone A hits first">Stone A hits first</option>
+                      
+                        <option value="Stone B hits first">Stone B hits first</option>
+                      
+                        <option value="They hit at the same time">They hit at the same time</option>
+                      
+                        <option value="Cannot be determined without knowing cliff height">Cannot be determined without knowing cliff height</option>
+                      
                     </select>
                   
                 </div>
@@ -986,9 +1010,11 @@ c) Stone B lands twice as far from the cliff as Stone A. Explain why this makes 
           <div class="problem-statement">
             <p>A physics student drops one marble straight down from a height of $1.20\,\text{m}$. At the exact same instant, another student throws a second marble horizontally from the same height with a speed of $3.0\,\text{m/s}$.</p>
 
-<p>a) Which marble hits the ground first?
-b) Calculate the time it takes for each marble to hit the ground.
-c) How far horizontally does the thrown marble travel?</p>
+<p><strong>(a)</strong> Which marble hits the ground first?</p>
+
+<p><strong>(b)</strong> Calculate the time it takes for the marbles to hit the ground.</p>
+
+<p><strong>(c)</strong> How far horizontally does the thrown marble travel?</p>
 
           </div>
           
@@ -1063,6 +1089,12 @@ c) How far horizontally does the thrown marble travel?</p>
                       id="answer-6-a" 
                       name="answer_6_a">
                       <option value="">Select response...</option>
+                      
+                        <option value="Dropped marble hits first">Dropped marble hits first</option>
+                      
+                        <option value="Thrown marble hits first">Thrown marble hits first</option>
+                      
+                        <option value="They hit at the same time">They hit at the same time</option>
                       
                     </select>
                   
@@ -1141,9 +1173,11 @@ c) How far horizontally does the thrown marble travel?</p>
           <div class="problem-statement">
             <p>A plane flying at $250.0\,\text{m/s}$ at an altitude of $2000.0\,\text{m}$ needs to drop a supply crate to land in a designated zone.</p>
 
-<p>a) How long does it take for the crate to fall?
-b) How far before the target zone should the pilot release the crate?
-c) What assumptions did you make in your calculation?</p>
+<p><strong>(a)</strong> How long does it take for the crate to fall?</p>
+
+<p><strong>(b)</strong> How far before the target zone should the pilot release the crate?</p>
+
+<p><strong>(c)</strong> What assumptions did you make in your calculation?</p>
 
           </div>
           
@@ -1297,9 +1331,15 @@ c) What assumptions did you make in your calculation?</p>
           <div class="problem-statement">
             <p>A ball rolls off a horizontal roof at $4.5\,\text{m/s}$. It lands on the ground $18.0\,\text{m}$ from the base of the building.</p>
 
-<p>a) How long was the ball in the air?
-b) How high is the building?
-c) What is the ball’s velocity (magnitude and direction) just before it hits the ground?</p>
+<p><strong>(a)</strong> How long was the ball in the air?</p>
+
+<p><strong>(b)</strong> How high is the building?</p>
+
+<p><strong>(c)</strong> What is the ball’s velocity just before it hits the ground?</p>
+<ul>
+  <li>(i) Magnitude</li>
+  <li>(ii) Direction (angle below horizontal)</li>
+</ul>
 
           </div>
           
@@ -1413,19 +1453,19 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                 </div>
               
                 <div class="answer-part">
-                  <label for="answer-8-c_magnitude">
-                    Part (c_magnitude)
+                  <label for="answer-8-c-i">
+                    Part (c-i)
                   </label>
                   
                   
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
                       <input 
                         type="text" 
-                        id="answer-8-c_magnitude" 
-                        name="answer_8_c_magnitude"
+                        id="answer-8-c-i" 
+                        name="answer_8_c-i"
                         placeholder="Value">
                       <select 
-                        name="answer_8_c_magnitude_unit">
+                        name="answer_8_c-i_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -1438,19 +1478,19 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
                 </div>
               
                 <div class="answer-part">
-                  <label for="answer-8-c_direction">
-                    Part (c_direction)
+                  <label for="answer-8-c-ii">
+                    Part (c-ii)
                   </label>
                   
                   
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
                       <input 
                         type="text" 
-                        id="answer-8-c_direction" 
-                        name="answer_8_c_direction"
+                        id="answer-8-c-ii" 
+                        name="answer_8_c-ii"
                         placeholder="Value">
                       <select 
-                        name="answer_8_c_direction_unit">
+                        name="answer_8_c-ii_unit">
                         <option value="">Unit</option>
                         
                           <option value="degrees">degrees</option>
@@ -1485,9 +1525,15 @@ c) What is the ball’s velocity (magnitude and direction) just before it hits t
           <div class="problem-statement">
             <p>A stunt driver drives a car horizontally off a cliff at $25.0\,\text{m/s}$. The car lands in a lake $50.0\,\text{m}$ from the base of the cliff.</p>
 
-<p>a) How high is the cliff?
-b) What is the car’s impact velocity (magnitude and direction)?
-c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what should the new launch speed be (assuming the same cliff height)?</p>
+<p><strong>(a)</strong> How high is the cliff?</p>
+
+<p><strong>(b)</strong> What is the car’s impact velocity?</p>
+<ul>
+  <li>(i) Magnitude</li>
+  <li>(ii) Direction (angle below horizontal)</li>
+</ul>
+
+<p><strong>(c)</strong> If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what should the new launch speed be (assuming the same cliff height)?</p>
 
           </div>
           
@@ -1576,19 +1622,19 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                 </div>
               
                 <div class="answer-part">
-                  <label for="answer-9-b_magnitude">
-                    Part (b_magnitude)
+                  <label for="answer-9-b-i">
+                    Part (b-i)
                   </label>
                   
                   
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
                       <input 
                         type="text" 
-                        id="answer-9-b_magnitude" 
-                        name="answer_9_b_magnitude"
+                        id="answer-9-b-i" 
+                        name="answer_9_b-i"
                         placeholder="Value">
                       <select 
-                        name="answer_9_b_magnitude_unit">
+                        name="answer_9_b-i_unit">
                         <option value="">Unit</option>
                         
                           <option value="m/s">m/s</option>
@@ -1601,19 +1647,19 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
                 </div>
               
                 <div class="answer-part">
-                  <label for="answer-9-b_direction">
-                    Part (b_direction)
+                  <label for="answer-9-b-ii">
+                    Part (b-ii)
                   </label>
                   
                   
                     <div style="display: flex; gap: 0.5rem; align-items: center;">
                       <input 
                         type="text" 
-                        id="answer-9-b_direction" 
-                        name="answer_9_b_direction"
+                        id="answer-9-b-ii" 
+                        name="answer_9_b-ii"
                         placeholder="Value">
                       <select 
-                        name="answer_9_b_direction_unit">
+                        name="answer_9_b-ii_unit">
                         <option value="">Unit</option>
                         
                           <option value="degrees">degrees</option>
@@ -1809,9 +1855,6 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
           Answers are auto-saved. Submit when complete.
         </p>
       </div>
-      
-      <!-- Status Messages (appears after button) -->
-      <div id="submission-status" class="submission-status" hidden></div>
 
     </div>
 
@@ -1819,7 +1862,7 @@ c) If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what sho
 
 </form>
 
-<script src="/assets/js/activity-navigator.js"></script>
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -1871,6 +1914,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
     }
 });
 
@@ -1895,7 +1953,7 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760493039"></script>
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -1906,24 +1964,22 @@ function jumpToProblem(index) {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760493039';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760564678';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

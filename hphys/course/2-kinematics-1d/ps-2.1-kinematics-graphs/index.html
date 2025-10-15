@@ -34,35 +34,8 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body>
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
+    
     
   <div class="markdown-body">
     
@@ -70,31 +43,13 @@
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 <link rel="stylesheet" href="/assets/css/submission-bar.css">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
 <script>
-    // Chart.js loaded indicator
     window.SITE_CONFIG = window.SITE_CONFIG || {};
     window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity.html] Chart.js v4.4.0 loaded');
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
 </script>
 
 
@@ -104,7 +59,61 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* No-header page: Remove all top spacing for content-first experience */
+.no-header-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.no-header-page .breadcrumb-nav {
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.no-header-page .breadcrumb-nav a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.no-header-page .breadcrumb-nav a:hover {
+    text-decoration: underline;
+}
+
+.no-header-page .breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: #adb5bd;
+}
+
+.no-header-page .activity-header {
+    margin-top: 0;
+    padding-top: 1.5rem;
+}
+
+.no-header-page .activity-header h1 {
+    margin-top: 0;
+}
+    </style>
+
+<div class="activity-content-container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        
+        
+        
+        
+        
+        
+        <a href="/hphys/">Honors Physics</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1d</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-current">Problem Set 2.1: Interpreting Kinematic Graphs</span>
+    </nav>
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
          data-resource-id="ps-2.1-kinematics-graphs"
@@ -215,31 +224,31 @@
           <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
             
             <option value="0" selected>
-              Problem A.1.1 - Apprentice
+              Problem A.1 - Apprentice
             </option>
             
             <option value="1" >
-              Problem A.1.2 - Apprentice
+              Problem A.2 - Apprentice
             </option>
             
             <option value="2" >
-              Problem B.1.3 - Apprentice
+              Problem B.3 - Journeyman
             </option>
             
             <option value="3" >
-              Problem B.1.4 - Apprentice
+              Problem B.4 - Journeyman
             </option>
             
             <option value="4" >
-              Problem C.1.5 - Journeyman
+              Problem C.5 - Journeyman
             </option>
             
             <option value="5" >
-              Problem C.1.6 - Journeyman
+              Problem C.6 - Journeyman
             </option>
             
             <option value="6" >
-              Problem D.7 - Journeyman
+              Problem D.7 - Master
             </option>
             
             <option value="7" >
@@ -247,7 +256,7 @@
             </option>
             
             <option value="8" >
-              Problem E.9 - Journeyman
+              Problem E.9 - Master
             </option>
             
             <option value="9" >
@@ -267,20 +276,20 @@
         
         
         
-        <div class="problem-container" data-problem-id="A.1.1" data-problem-index="0">
+        <div class="problem-container" data-problem-id="A.1" data-problem-index="0">
           
           <h2 class="problem-section-header">Part A: Reading Position-Time Graphs</h2>
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem A.1.1</span>
+            <span class="problem-number">Problem A.1</span>
             
             <span class="problem-tier tier-1">Apprentice</span>
             
           </div>
           
           <div class="problem-statement">
-            <p>A car’s position is recorded every second, giving the following position-time data:</p>
+            <p>A car’s position is recorded every second. The position-time graph is shown below:</p>
 
 <table>
   <thead>
@@ -313,9 +322,9 @@
   </tbody>
 </table>
 
-<p>a) Plot the position-time graph.
-b) Calculate the average velocity for each time interval.
-c) At what time was the car moving the fastest? Explain your reasoning.</p>
+<p><strong>(a)</strong> Calculate the average velocity for each time interval.</p>
+
+<p><strong>(b)</strong> At what time was the car moving the fastest? Explain your reasoning.</p>
 
           </div>
           
@@ -591,7 +600,7 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-A-1-1" onclick="toggleCurrentAnswer('A-1-1')">
+            <button type="button" class="check-answer-button" id="check-answer-A-1" onclick="toggleCurrentAnswer('A-1')">
               View Solution
             </button>
             
@@ -603,13 +612,16 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
 
           
           
-          <div class="current-answer-display" id="answer-key-A-1-1">
+          <div class="current-answer-display" id="answer-key-A-1">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
                 
               
             </div>
@@ -620,14 +632,35 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
           <div class="problem-answer">
             
               
-              <label for="answer-A-1-1">
-                Response:
-              </label>
-              <textarea 
-                id="answer-A-1-1" 
-                name="answer_A_1_1"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-A-1-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-1-a" 
+                      name="answer_A_1_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-1-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-1-b" 
+                      name="answer_A_1_b"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -638,11 +671,11 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
         
         
         
-        <div class="problem-container" data-problem-id="A.1.2" data-problem-index="1">
+        <div class="problem-container" data-problem-id="A.2" data-problem-index="1">
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem A.1.2</span>
+            <span class="problem-number">Problem A.2</span>
             
             <span class="problem-tier tier-1">Apprentice</span>
             
@@ -651,9 +684,11 @@ c) At what time was the car moving the fastest? Explain your reasoning.</p>
           <div class="problem-statement">
             <p>The position-time graph for a rocket launch is shown below:</p>
 
-<p>a) Is the rocket’s velocity constant? How do you know?
-b) Is the rocket accelerating? How do you know?
-c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent line.</p>
+<p><strong>(a)</strong> Is the rocket’s velocity constant? How do you know?</p>
+
+<p><strong>(b)</strong> Is the rocket accelerating? How do you know?</p>
+
+<p><strong>(c)</strong> Estimate the rocket’s velocity at $t = 2.0 \, \text{s}$ using the slope of the tangent line.</p>
 
           </div>
           
@@ -678,7 +713,7 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
     <div class="figure-canvas-wrapper">
       <canvas 
         id="prob-a2-rocket-position" 
-        data-chart-config="{&quot;chart_id&quot;:&quot;prob-a2-rocket-position&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Position vs Time - Rocket Launch&quot;,&quot;caption&quot;:&quot;Notice the increasing slope (velocity) as time progresses - this indicates acceleration&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:5},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Position (m)&quot;,&quot;min&quot;:0,&quot;max&quot;:125},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:1,&quot;y&quot;:5},{&quot;x&quot;:2,&quot;y&quot;:20},{&quot;x&quot;:3,&quot;y&quot;:45},{&quot;x&quot;:4,&quot;y&quot;:80},{&quot;x&quot;:5,&quot;y&quot;:125}],&quot;borderColor&quot;:&quot;rgb(231, 76, 60)&quot;,&quot;backgroundColor&quot;:&quot;rgba(231, 76, 60, 0.1)&quot;,&quot;tension&quot;:0.4,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-a2-rocket-position&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Position vs Time - Rocket Launch&quot;,&quot;caption&quot;:&quot;Notice the increasing slope (velocity) as time progresses - this indicates acceleration&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:5},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Position (m)&quot;,&quot;min&quot;:0,&quot;max&quot;:125},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:1,&quot;y&quot;:4},{&quot;x&quot;:2,&quot;y&quot;:16},{&quot;x&quot;:3,&quot;y&quot;:36},{&quot;x&quot;:4,&quot;y&quot;:64},{&quot;x&quot;:5,&quot;y&quot;:100}],&quot;borderColor&quot;:&quot;rgb(231, 76, 60)&quot;,&quot;backgroundColor&quot;:&quot;rgba(231, 76, 60, 0.1)&quot;,&quot;tension&quot;:0.4,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
         data-defer-render="true"
         aria-label="Position vs Time - Rocket Launch. Use the table below for accessible data.">
       </canvas>
@@ -704,27 +739,27 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
             
             <tr>
               <td>1</td>
-              <td>5</td>
+              <td>4</td>
             </tr>
             
             <tr>
               <td>2</td>
-              <td>20</td>
+              <td>16</td>
             </tr>
             
             <tr>
               <td>3</td>
-              <td>45</td>
+              <td>36</td>
             </tr>
             
             <tr>
               <td>4</td>
-              <td>80</td>
+              <td>64</td>
             </tr>
             
             <tr>
               <td>5</td>
-              <td>125</td>
+              <td>100</td>
             </tr>
             
           
@@ -934,7 +969,7 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-A-1-2" onclick="toggleCurrentAnswer('A-1-2')">
+            <button type="button" class="check-answer-button" id="check-answer-A-2" onclick="toggleCurrentAnswer('A-2')">
               View Solution
             </button>
             
@@ -946,13 +981,19 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
 
           
           
-          <div class="current-answer-display" id="answer-key-A-1-2">
+          <div class="current-answer-display" id="answer-key-A-2">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -963,14 +1004,60 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
           <div class="problem-answer">
             
               
-              <label for="answer-A-1-2">
-                Response:
-              </label>
-              <textarea 
-                id="answer-A-1-2" 
-                name="answer_A_1_2"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-2-a" 
+                      name="answer_A_2_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-2-b" 
+                      name="answer_A_2_b"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-A-2-c" 
+                        name="answer_A_2_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_A_2_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -981,24 +1068,26 @@ c) Estimate the rocket’s velocity at t = 2.0 s using the slope of the tangent 
         
         
         
-        <div class="problem-container" data-problem-id="B.1.3" data-problem-index="2">
+        <div class="problem-container" data-problem-id="B.3" data-problem-index="2">
           
           <h2 class="problem-section-header">Part B: Reading Velocity-Time Graphs</h2>
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem B.1.3</span>
+            <span class="problem-number">Problem B.3</span>
             
-            <span class="problem-tier tier-1">Apprentice</span>
+            <span class="problem-tier tier-2">Journeyman</span>
             
           </div>
           
           <div class="problem-statement">
             <p>A runner’s velocity-time graph is shown below:</p>
 
-<p>a) Describe the runner’s motion in words for each segment of the graph.
-b) Calculate the total displacement of the runner over the 30-second interval.
-c) What was the runner’s acceleration during the interval from 10 s to 20 s?</p>
+<p><strong>(a)</strong> Describe the runner’s motion in words for each segment of the graph.</p>
+
+<p><strong>(b)</strong> Calculate the total displacement of the runner over the 30-second interval.</p>
+
+<p><strong>(c)</strong> What was the runner’s acceleration during the interval from $10 \, \text{s}$ to $20 \, \text{s}$?</p>
 
           </div>
           
@@ -1269,7 +1358,7 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-B-1-3" onclick="toggleCurrentAnswer('B-1-3')">
+            <button type="button" class="check-answer-button" id="check-answer-B-3" onclick="toggleCurrentAnswer('B-3')">
               View Solution
             </button>
             
@@ -1281,13 +1370,19 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
 
           
           
-          <div class="current-answer-display" id="answer-key-B-1-3">
+          <div class="current-answer-display" id="answer-key-B-3">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -1298,14 +1393,71 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
           <div class="problem-answer">
             
               
-              <label for="answer-B-1-3">
-                Response:
-              </label>
-              <textarea 
-                id="answer-B-1-3" 
-                name="answer_B_1_3"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-B-3-a" 
+                      name="answer_B_3_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-3-b" 
+                        name="answer_B_3_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_3_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-3-c" 
+                        name="answer_B_3_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_3_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -1316,27 +1468,292 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
         
         
         
-        <div class="problem-container" data-problem-id="B.1.4" data-problem-index="3">
+        <div class="problem-container" data-problem-id="B.4" data-problem-index="3">
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem B.1.4</span>
+            <span class="problem-number">Problem B.4</span>
             
-            <span class="problem-tier tier-1">Apprentice</span>
+            <span class="problem-tier tier-2">Journeyman</span>
             
           </div>
           
           <div class="problem-statement">
-            <p>A ball is thrown upward and then falls back to the ground. Sketch a velocity-time graph that represents this motion. Label key points including:</p>
-<ul>
-  <li>The time when the ball reaches maximum height</li>
-  <li>The time when the ball returns to its starting height</li>
-  <li>Regions of positive and negative acceleration</li>
-</ul>
+            <p>A ball is thrown upward and then falls back to the ground. The velocity-time graph is shown below:</p>
+
+<p><strong>(a)</strong> At what time does the ball reach maximum height?</p>
+
+<p><strong>(b)</strong> At what time does the ball return to its starting height?</p>
+
+<p><strong>(c)</strong> What is the ball’s acceleration during the upward motion?</p>
+
+<p><strong>(d)</strong> What is the ball’s acceleration during the downward motion?</p>
 
           </div>
           
           
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Velocity vs Time - Ball Thrown Upward">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Velocity vs Time - Ball Thrown Upward</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-b4-ball-velocity" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-b4-ball-velocity&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Velocity vs Time - Ball Thrown Upward&quot;,&quot;caption&quot;:&quot;Linear velocity change with constant slope (-9.80 m/s²) throughout motion&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:4},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (m/s)&quot;,&quot;min&quot;:-20,&quot;max&quot;:20},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:19.6},{&quot;x&quot;:1,&quot;y&quot;:9.8},{&quot;x&quot;:2,&quot;y&quot;:0},{&quot;x&quot;:3,&quot;y&quot;:-9.8},{&quot;x&quot;:4,&quot;y&quot;:-19.6}],&quot;borderColor&quot;:&quot;rgb(46, 204, 113)&quot;,&quot;backgroundColor&quot;:&quot;rgba(46, 204, 113, 0.1)&quot;,&quot;tension&quot;:0,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Velocity vs Time - Ball Thrown Upward. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Velocity vs Time - Ball Thrown Upward">
+      <table>
+        <caption>Velocity vs Time - Ball Thrown Upward</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Velocity (m/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>19.6</td>
+            </tr>
+            
+            <tr>
+              <td>1</td>
+              <td>9.8</td>
+            </tr>
+            
+            <tr>
+              <td>2</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>3</td>
+              <td>-9.8</td>
+            </tr>
+            
+            <tr>
+              <td>4</td>
+              <td>-19.6</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>Linear velocity change with constant slope (-9.80 m/s²) throughout motion</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-b4-ball-velocity';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        labels: chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 2,
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.xAxis.min,
+            max: chartConfig.xAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min,
+            max: chartConfig.yAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
           
 
           
@@ -1346,7 +1763,7 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-B-1-4" onclick="toggleCurrentAnswer('B-1-4')">
+            <button type="button" class="check-answer-button" id="check-answer-B-4" onclick="toggleCurrentAnswer('B-4')">
               View Solution
             </button>
             
@@ -1358,13 +1775,22 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
 
           
           
-          <div class="current-answer-display" id="answer-key-B-1-4">
+          <div class="current-answer-display" id="answer-key-B-4">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -1375,14 +1801,107 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
           <div class="problem-answer">
             
               
-              <label for="answer-B-1-4">
-                Response:
-              </label>
-              <textarea 
-                id="answer-B-1-4" 
-                name="answer_B_1_4"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-B-4-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-4-a" 
+                        name="answer_B_4_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_4_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-4-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-4-b" 
+                        name="answer_B_4_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_4_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-4-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-4-c" 
+                        name="answer_B_4_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_4_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-4-d">
+                    Part (d)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-4-d" 
+                        name="answer_B_4_d"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_4_d_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -1393,13 +1912,13 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
         
         
         
-        <div class="problem-container" data-problem-id="C.1.5" data-problem-index="4">
+        <div class="problem-container" data-problem-id="C.5" data-problem-index="4">
           
           <h2 class="problem-section-header">Part C: Connecting Position and Velocity</h2>
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem C.1.5</span>
+            <span class="problem-number">Problem C.5</span>
             
             <span class="problem-tier tier-2">Journeyman</span>
             
@@ -1408,10 +1927,13 @@ c) What was the runner’s acceleration during the interval from 10 s to 20 s?</
           <div class="problem-statement">
             <p>The velocity-time graph for a car is shown below:</p>
 
-<p>a) What type of motion is represented?
-b) Draw the corresponding position-time graph.
-c) Calculate the car’s displacement after 10.0 s.
-d) Calculate the car’s acceleration.</p>
+<p><strong>(a)</strong> What type of motion is represented?</p>
+
+<p><strong>(b)</strong> Draw the corresponding position-time graph on graph paper.</p>
+
+<p><strong>(c)</strong> Calculate the car’s displacement after $10.0 \, \text{s}$.</p>
+
+<p><strong>(d)</strong> Calculate the car’s acceleration.</p>
 
           </div>
           
@@ -1672,7 +2194,7 @@ d) Calculate the car’s acceleration.</p>
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-C-1-5" onclick="toggleCurrentAnswer('C-1-5')">
+            <button type="button" class="check-answer-button" id="check-answer-C-5" onclick="toggleCurrentAnswer('C-5')">
               View Solution
             </button>
             
@@ -1684,13 +2206,22 @@ d) Calculate the car’s acceleration.</p>
 
           
           
-          <div class="current-answer-display" id="answer-key-C-1-5">
+          <div class="current-answer-display" id="answer-key-C-5">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -1701,14 +2232,90 @@ d) Calculate the car’s acceleration.</p>
           <div class="problem-answer">
             
               
-              <label for="answer-C-1-5">
-                Response:
-              </label>
-              <textarea 
-                id="answer-C-1-5" 
-                name="answer_C_1_5"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-C-5-a" 
+                      name="answer_C_5_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-C-5-b" 
+                        name="answer_C_5_b"
+                        value="completed">
+                      <label for="answer-C-5-b">
+                        I have drawn the position-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-5-c" 
+                        name="answer_C_5_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_5_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-d">
+                    Part (d)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-5-d" 
+                        name="answer_C_5_d"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_5_d_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -1719,22 +2326,26 @@ d) Calculate the car’s acceleration.</p>
         
         
         
-        <div class="problem-container" data-problem-id="C.1.6" data-problem-index="5">
+        <div class="problem-container" data-problem-id="C.6" data-problem-index="5">
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem C.1.6</span>
+            <span class="problem-number">Problem C.6</span>
             
             <span class="problem-tier tier-2">Journeyman</span>
             
           </div>
           
           <div class="problem-statement">
-            <p>A falling object has an initial velocity of 0 m/s and experiences constant acceleration due to gravity.
-a) Draw the velocity-time graph for the first 5.0 s of fall.
-b) Draw the corresponding position-time graph.
-c) Calculate the object’s position after 3.0 s.
-d) At what time will the object have fallen 45.0 m?</p>
+            <p>A falling object has an initial velocity of $0 \, \text{m/s}$ and experiences constant acceleration due to gravity.</p>
+
+<p><strong>(a)</strong> Draw the velocity-time graph for the first $5.0 \, \text{s}$ of fall on graph paper.</p>
+
+<p><strong>(b)</strong> Draw the corresponding position-time graph on graph paper.</p>
+
+<p><strong>(c)</strong> Calculate the object’s position after $3.0 \, \text{s}$.</p>
+
+<p><strong>(d)</strong> At what time will the object have fallen $45.0 \, \text{m}$?</p>
 
           </div>
           
@@ -1748,7 +2359,7 @@ d) At what time will the object have fallen 45.0 m?</p>
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-C-1-6" onclick="toggleCurrentAnswer('C-1-6')">
+            <button type="button" class="check-answer-button" id="check-answer-C-6" onclick="toggleCurrentAnswer('C-6')">
               View Solution
             </button>
             
@@ -1760,13 +2371,22 @@ d) At what time will the object have fallen 45.0 m?</p>
 
           
           
-          <div class="current-answer-display" id="answer-key-C-1-6">
+          <div class="current-answer-display" id="answer-key-C-6">
             <strong>Solution:</strong>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -1777,14 +2397,93 @@ d) At what time will the object have fallen 45.0 m?</p>
           <div class="problem-answer">
             
               
-              <label for="answer-C-1-6">
-                Response:
-              </label>
-              <textarea 
-                id="answer-C-1-6" 
-                name="answer_C_1_6"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-C-6-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-C-6-a" 
+                        name="answer_C_6_a"
+                        value="completed">
+                      <label for="answer-C-6-a">
+                        I have drawn the velocity-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-6-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-C-6-b" 
+                        name="answer_C_6_b"
+                        value="completed">
+                      <label for="answer-C-6-b">
+                        I have drawn the position-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-6-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-6-c" 
+                        name="answer_C_6_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_6_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-6-d">
+                    Part (d)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-6-d" 
+                        name="answer_C_6_d"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_6_d_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -1803,16 +2502,18 @@ d) At what time will the object have fallen 45.0 m?</p>
           <div class="problem-header">
             <span class="problem-number">Problem D.7</span>
             
-            <span class="problem-tier tier-2">Journeyman</span>
+            <span class="problem-tier tier-3">Master</span>
             
           </div>
           
           <div class="problem-statement">
-            <p>A rocket’s velocity-time graph shows a constant increase from 0 m/s to 1000 m/s over 20.0 s.</p>
+            <p>A rocket’s velocity-time graph shows a constant increase from $0 \, \text{m/s}$ to $1000 \, \text{m/s}$ over $20.0 \, \text{s}$.</p>
 
-<p>a) What is the rocket’s acceleration?
-b) What distance does the rocket travel in this time?
-c) If the rocket continues with the same acceleration, how long will it take to reach a velocity of 2000 m/s?</p>
+<p><strong>(a)</strong> What is the rocket’s acceleration?</p>
+
+<p><strong>(b)</strong> What distance does the rocket travel in this time?</p>
+
+<p><strong>(c)</strong> If the rocket continues with the same acceleration, how long will it take to reach a velocity of $2000 \, \text{m/s}$?</p>
 
           </div>
           
@@ -2090,8 +2791,14 @@ c) If the rocket continues with the same acceleration, how long will it take to 
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -2102,14 +2809,82 @@ c) If the rocket continues with the same acceleration, how long will it take to 
           <div class="problem-answer">
             
               
-              <label for="answer-D-7">
-                Response:
-              </label>
-              <textarea 
-                id="answer-D-7" 
-                name="answer_D_7"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-a" 
+                        name="answer_D_7_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-b" 
+                        name="answer_D_7_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-c" 
+                        name="answer_D_7_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="min">min</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -2131,11 +2906,15 @@ c) If the rocket continues with the same acceleration, how long will it take to 
           </div>
           
           <div class="problem-statement">
-            <p>A cyclist travels with a velocity given by v(t) = 4t - 0.2t² m/s, where t is in seconds.
-a) Find the cyclist’s acceleration as a function of time.
-b) At what time is the velocity maximum?
-c) Draw the velocity-time graph from t = 0 s to t = 25.0 s.
-d) Calculate the total distance traveled in 25.0 s.</p>
+            <p>A cyclist travels with a velocity given by $v(t) = 4t - 0.2t^2 \, \text{m/s}$, where $t$ is in seconds.</p>
+
+<p><strong>(a)</strong> Find the cyclist’s acceleration as a function of time.</p>
+
+<p><strong>(b)</strong> At what time is the velocity maximum?</p>
+
+<p><strong>(c)</strong> Draw the velocity-time graph from $t = 0 \, \text{s}$ to $t = 25.0 \, \text{s}$ on graph paper.</p>
+
+<p><strong>(d)</strong> Calculate the total distance traveled in $25.0 \, \text{s}$.</p>
 
           </div>
           
@@ -2166,8 +2945,17 @@ d) Calculate the total distance traveled in 25.0 s.</p>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -2178,14 +2966,90 @@ d) Calculate the total distance traveled in 25.0 s.</p>
           <div class="problem-answer">
             
               
-              <label for="answer-D-8">
-                Response:
-              </label>
-              <textarea 
-                id="answer-D-8" 
-                name="answer_D_8"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-D-8-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-D-8-a" 
+                      name="answer_D_8_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-8-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-8-b" 
+                        name="answer_D_8_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_8_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="min">min</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-8-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-D-8-c" 
+                        name="answer_D_8_c"
+                        value="completed">
+                      <label for="answer-D-8-c">
+                        I have drawn the velocity-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-8-d">
+                    Part (d)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-8-d" 
+                        name="answer_D_8_d"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_8_d_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -2204,16 +3068,18 @@ d) Calculate the total distance traveled in 25.0 s.</p>
           <div class="problem-header">
             <span class="problem-number">Problem E.9</span>
             
-            <span class="problem-tier tier-2">Journeyman</span>
+            <span class="problem-tier tier-3">Master</span>
             
           </div>
           
           <div class="problem-statement">
-            <p>A train accelerates from rest at 0.50 m/s² for 60.0 s, then maintains a constant velocity for 120.0 s, and finally decelerates at 1.0 m/s² until it stops.</p>
+            <p>A train accelerates from rest at $0.50 \, \text{m/s}^2$ for $60.0 \, \text{s}$, then maintains a constant velocity for $120.0 \, \text{s}$, and finally decelerates at $1.0 \, \text{m/s}^2$ until it stops.</p>
 
-<p>a) Draw the velocity-time graph for the entire journey.
-b) Calculate the total distance traveled.
-c) What was the train’s maximum speed?</p>
+<p><strong>(a)</strong> Draw the velocity-time graph for the entire journey on graph paper.</p>
+
+<p><strong>(b)</strong> Calculate the total distance traveled.</p>
+
+<p><strong>(c)</strong> What was the train’s maximum speed?</p>
 
           </div>
           
@@ -2501,8 +3367,14 @@ c) What was the train’s maximum speed?</p>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -2513,14 +3385,76 @@ c) What was the train’s maximum speed?</p>
           <div class="problem-answer">
             
               
-              <label for="answer-E-9">
-                Response:
-              </label>
-              <textarea 
-                id="answer-E-9" 
-                name="answer_E_9"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-E-9-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-E-9-a" 
+                        name="answer_E_9_a"
+                        value="completed">
+                      <label for="answer-E-9-a">
+                        I have drawn the velocity-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-9-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-9-b" 
+                        name="answer_E_9_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_9_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-9-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-9-c" 
+                        name="answer_E_9_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_9_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -2542,10 +3476,13 @@ c) What was the train’s maximum speed?</p>
           </div>
           
           <div class="problem-statement">
-            <p>A rocket launches vertically with an acceleration of 15.0 m/s² for 20.0 s. Then its engines shut off and it continues to rise while decelerating due to gravity.
-a) Draw the velocity-time graph from launch until the rocket reaches its maximum height.
-b) What is the maximum height reached by the rocket?
-c) How long after launch does the rocket reach its maximum height?</p>
+            <p>A rocket launches vertically with an acceleration of $15.0 \, \text{m/s}^2$ for $20.0 \, \text{s}$. Then its engines shut off and it continues to rise while decelerating due to gravity.</p>
+
+<p><strong>(a)</strong> Draw the velocity-time graph from launch until the rocket reaches its maximum height on graph paper.</p>
+
+<p><strong>(b)</strong> What is the maximum height reached by the rocket?</p>
+
+<p><strong>(c)</strong> How long after launch does the rocket reach its maximum height?</p>
 
           </div>
           
@@ -2576,8 +3513,14 @@ c) How long after launch does the rocket reach its maximum height?</p>
             <div>
               
                 
+                  
+                  
                 
-                  <em>Solution not available.</em>
+                  
+                  
+                
+                  
+                  
                 
               
             </div>
@@ -2588,14 +3531,76 @@ c) How long after launch does the rocket reach its maximum height?</p>
           <div class="problem-answer">
             
               
-              <label for="answer-E-10">
-                Response:
-              </label>
-              <textarea 
-                id="answer-E-10" 
-                name="answer_E_10"
-                rows="4"
-                placeholder="Show work and include units."></textarea>
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-E-10-a" 
+                        name="answer_E_10_a"
+                        value="completed">
+                      <label for="answer-E-10-a">
+                        I have drawn the velocity-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-10-b" 
+                        name="answer_E_10_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_10_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-10-c" 
+                        name="answer_E_10_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_10_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="min">min</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
@@ -2670,9 +3675,6 @@ c) How long after launch does the rocket reach its maximum height?</p>
           Answers are auto-saved. Submit when complete.
         </p>
       </div>
-      
-      <!-- Status Messages (appears after button) -->
-      <div id="submission-status" class="submission-status" hidden></div>
 
     </div>
 
@@ -2680,7 +3682,7 @@ c) How long after launch does the rocket reach its maximum height?</p>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js"></script>
+<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -2732,6 +3734,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
     }
 });
 
@@ -2756,7 +3773,7 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760493039"></script>
+    <script src="/assets/js/activity-core.js?v=1760564678"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -2767,24 +3784,22 @@ function jumpToProblem(index) {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760493039';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760564678';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>
