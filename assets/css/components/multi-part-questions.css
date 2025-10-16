@@ -1,0 +1,78 @@
+/* Multi-part question styles for research briefs and assessments */
+.multi-part-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(240, 240, 245, 0.5);
+    border-radius: 5px;
+    border-left: 4px solid #3273dc;
+}
+
+.part-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.part-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.part-section h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: #363636;
+}
+
+.part-prompt {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.multi-part-container textarea {
+    border: 1px solid #ccc;
+    transition: border-color 0.2s ease;
+}
+
+.multi-part-container textarea:focus {
+    border-color: #3273dc;
+    box-shadow: 0 0 0 0.125rem rgba(50, 115, 220, 0.2);
+    outline: none;
+}
+
+/* Multiple choice styling for multi-part questions */
+.multiple-choice-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-check {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.form-check-input {
+    margin-right: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.form-check-label {
+    font-weight: normal;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .multi-part-container {
+        padding: 0.75rem;
+    }
+}

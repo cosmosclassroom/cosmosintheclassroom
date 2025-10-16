@@ -1,1 +1,1762 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Problem Set 3.1: Independence of Motion | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+</script>
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Problem Set 3.1: Independence of Motion</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">HPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Problem set</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 3</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="ps-3.1-independence-of-motion"
+         data-content-type="problem_set"
+         data-course="hphys"
+         data-title="Problem Set 3.1: Independence of Motion"
+         data-unit="3"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         
+         hidden>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Problem Set Content Display
+  Single unified form with problems and reflection
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Problem Set 3.1: Independence of Motion">
+  <input type="hidden" name="ResourceID" value="ps-3.1-independence-of-motion">
+  <input type="hidden" name="ContentType" value="problem_set">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="3">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="problem-set-content">
+    <!-- Problem Set Introduction (Collapsible) -->
+    
+    <details class="ps-introduction collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Instructions</span>
+      </summary>
+      <div class="section-content">
+        <p>In this problem set, we begin to truly explore the complexity of two-dimensional motion. The core insight—the <strong>Independence of Motion</strong>—allows us to break one difficult problem into two simpler, one-dimensional problems. Just as the artillery commanders at Constantinople had to consider how far and how long their cannonballs would fly, you will use kinematic equations to predict the trajectory of horizontally launched projectiles.</p>
+
+      </div>
+    </details>
+    
+
+    <!-- Key Formulae (Collapsible) -->
+    
+    <details class="ps-formulae collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Key Formulae</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>Horizontal motion (constant velocity): $\Delta x = v_x t$
+</li>
+          
+          <li>Vertical motion (constant acceleration): $\Delta y = v_{y,i} t + \frac{1}{2} a_g t^2$
+</li>
+          
+          <li>Vertical motion (constant acceleration): $v_{y,f}^2 = v_{y,i}^2 + 2 a_g \Delta y$
+</li>
+          
+          <li>Vertical motion (constant acceleration): $v_{y,f} = v_{y,i} + a_g t$
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+    <details class="ps-standards collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Standards for All Problems</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.
+</li>
+          
+          <li>Use downward as the negative direction.
+</li>
+          
+          <li>Follow the systematic problem-solving process: identify knowns, choose equation, rearrange algebraically, then substitute values.
+</li>
+          
+          <li>Present all final answers with the correct units and number of significant figures.
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
+
+    <!-- Problems with Answer Fields -->
+    
+    <div class="ps-problems">
+      <!-- Progress indicator with dropdown navigation -->
+      <div class="problem-progress">
+        <div class="problem-progress-bar">
+          <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="problem-navigation-dropdown">
+          <label for="problem-selector" class="visually-hidden">Jump to problem:</label>
+          <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
+            
+            <option value="0" selected>
+              Problem 1 - Apprentice
+            </option>
+            
+            <option value="1" >
+              Problem 2 - Apprentice
+            </option>
+            
+            <option value="2" >
+              Problem 3 - Apprentice
+            </option>
+            
+            <option value="3" >
+              Problem 4 - Apprentice
+            </option>
+            
+            <option value="4" >
+              Problem 5 - Journeyman
+            </option>
+            
+            <option value="5" >
+              Problem 6 - Journeyman
+            </option>
+            
+            <option value="6" >
+              Problem 7 - Journeyman
+            </option>
+            
+            <option value="7" >
+              Problem 8 - Master
+            </option>
+            
+            <option value="8" >
+              Problem 9 - Master
+            </option>
+            
+            <option value="9" >
+              Problem 10 - Master
+            </option>
+            
+          </select>
+          <span class="problem-count">of 10</span>
+        </div>
+      </div>
+
+      
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="1" data-problem-index="0">
+          
+          <h2 class="problem-section-header">Part A: Foundational Skills</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 1</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A marble rolls off a horizontal table with a speed of $1.5\,\text{m/s}$. The table is $0.80\,\text{m}$ high.</p>
+
+<p><strong>(a)</strong> How long does it take the marble to hit the floor?</p>
+
+<p><strong>(b)</strong> How far from the base of the table does the marble land?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-1" onclick="toggleCurrentAnswer('1')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-1">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$0.40\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$0.60\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-1-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-1-a" 
+                        name="answer_1_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_1_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-1-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-1-b" 
+                        name="answer_1_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_1_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="cm">cm</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="2" data-problem-index="1">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 2</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A spy at Constantinople drops a message from a wall that is $35.0\,\text{m}$ high. At the exact same moment, a cannonball is fired horizontally from the top of the wall with an initial speed of $120.\,\text{m/s}$.</p>
+
+<p><strong>(a)</strong> How long is each object in the air?</p>
+
+<p><strong>(b)</strong> How far horizontally does the cannonball travel before hitting the ground?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-2" onclick="toggleCurrentAnswer('2')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-2">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$2.67\,\text{s}$ (both objects - same time)</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$320\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-2-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-2-a" 
+                        name="answer_2_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_2_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-2-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-2-b" 
+                        name="answer_2_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_2_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="3" data-problem-index="2">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 3</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A ball is thrown horizontally from a cliff $45.0\,\text{m}$ high with an initial speed of $20.0\,\text{m/s}$.</p>
+
+<p><strong>(a)</strong> How long is the ball in the air?</p>
+
+<p><strong>(b)</strong> What is the horizontal distance traveled?</p>
+
+<p><strong>(c)</strong> What is the balls vertical velocity when it hits the ground?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-3" onclick="toggleCurrentAnswer('3')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-3">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$3.03\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$60.6\,\text{m}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>$-29.7\,\text{m/s}$ (downward)</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-3-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-3-a" 
+                        name="answer_3_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_3_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-3-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-3-b" 
+                        name="answer_3_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_3_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                          <option value="cm">cm</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-3-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-3-c" 
+                        name="answer_3_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_3_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="4" data-problem-index="3">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 4</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A package is dropped from a helicopter flying horizontally at $85.0\,\text{m/s}$ at an altitude of $120.0\,\text{m}$.</p>
+
+<p><strong>(a)</strong> How long does it take the package to reach the ground?</p>
+
+<p><strong>(b)</strong> How far horizontally does the package travel?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-4" onclick="toggleCurrentAnswer('4')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-4">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$4.95\,\text{s}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(b)</strong> <p>$421\,\text{m}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-4-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-4-a" 
+                        name="answer_4_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_4_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="ms">ms</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-4-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-4-b" 
+                        name="answer_4_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_4_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="5" data-problem-index="4">
+          
+          <h2 class="problem-section-header">Part B: Synthesis & Application</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 5</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>Two stones are thrown horizontally from the same cliff. Stone A is thrown at $10.0\,\text{m/s}$, and Stone B is thrown at $20.0\,\text{m/s}$.</p>
+
+<p><strong>(a)</strong> Which stone hits the ground first?</p>
+
+<p><strong>(b)</strong> Explain your reasoning using the principle of independence.</p>
+
+<p><strong>(c)</strong> Stone B lands twice as far from the cliff as Stone A. Explain why this makes sense mathematically.</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-5" onclick="toggleCurrentAnswer('5')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-5">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-5-">
+                    Part ()
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-5-" 
+                      name="answer_5_"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="6" data-problem-index="5">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 6</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A physics student drops one marble straight down from a height of $1.20\,\text{m}$. At the exact same instant, another student throws a second marble horizontally from the same height with a speed of $3.0\,\text{m/s}$.</p>
+
+<p><strong>(a)</strong> Which marble hits the ground first?</p>
+
+<p><strong>(b)</strong> Calculate the time it takes for the marbles to hit the ground.</p>
+
+<p><strong>(c)</strong> How far horizontally does the thrown marble travel?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-6" onclick="toggleCurrentAnswer('6')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-6">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-6-">
+                    Part ()
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-6-" 
+                      name="answer_6_"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="7" data-problem-index="6">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 7</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A plane flying at $250.0\,\text{m/s}$ at an altitude of $2000.0\,\text{m}$ needs to drop a supply crate to land in a designated zone.</p>
+
+<p><strong>(a)</strong> How long does it take for the crate to fall?</p>
+
+<p><strong>(b)</strong> How far before the target zone should the pilot release the crate?</p>
+
+<p><strong>(c)</strong> What assumptions did you make in your calculation?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-7" onclick="toggleCurrentAnswer('7')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-7">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-7-">
+                    Part ()
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-7-" 
+                      name="answer_7_"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="8" data-problem-index="7">
+          
+          <h2 class="problem-section-header">Part C: Complex Scenarios</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 8</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A ball rolls off a horizontal roof at $4.5\,\text{m/s}$. It lands on the ground $18.0\,\text{m}$ from the base of the building.</p>
+
+<p><strong>(a)</strong> How long was the ball in the air?</p>
+
+<p><strong>(b)</strong> How high is the building?</p>
+
+<p><strong>(c)</strong> What is the balls velocity just before it hits the ground?</p>
+<ul>
+  <li>(i) Magnitude</li>
+  <li>(ii) Direction (angle below horizontal)</li>
+</ul>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-8" onclick="toggleCurrentAnswer('8')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-8">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-8-">
+                    Part ()
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-8-" 
+                      name="answer_8_"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="9" data-problem-index="8">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 9</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A stunt driver drives a car horizontally off a cliff at $25.0\,\text{m/s}$. The car lands in a lake $50.0\,\text{m}$ from the base of the cliff.</p>
+
+<p><strong>(a)</strong> How high is the cliff?</p>
+
+<p><strong>(b)</strong> What is the cars impact velocity?</p>
+<ul>
+  <li>(i) Magnitude</li>
+  <li>(ii) Direction (angle below horizontal)</li>
+</ul>
+
+<p><strong>(c)</strong> If the driver wants to land $75.0\,\text{m}$ from the cliff instead, what should the new launch speed be (assuming the same cliff height)?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-9" onclick="toggleCurrentAnswer('9')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-9">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                    <div>
+                      <strong>(a)</strong> <p>$19.6\,\text{m}$</p>
+
+                    </div>
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                    <div>
+                      <strong>(c)</strong> <p>$37.5\,\text{m/s}$</p>
+
+                    </div>
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-9-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-9-a" 
+                        name="answer_9_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_9_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="ft">ft</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-9-b-i">
+                    Part (b-i)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-9-b-i" 
+                        name="answer_9_b-i"
+                        placeholder="Value">
+                      <select 
+                        name="answer_9_b-i_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-9-b-ii">
+                    Part (b-ii)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-9-b-ii" 
+                        name="answer_9_b-ii"
+                        placeholder="Value">
+                      <select 
+                        name="answer_9_b-ii_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="degrees">degrees</option>
+                        
+                          <option value="°">°</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-9-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-9-c" 
+                        name="answer_9_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_9_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="10" data-problem-index="9">
+          
+          <h2 class="problem-section-header">Part C: Metacognitive Reflection</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 10</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>Problem 2 illustrated that the time a projectile is in the air is determined only by its vertical motion, regardless of its horizontal speed.</p>
+
+<p>Reflect on the Cross-Cutting Concept of <strong>Systems and System Models</strong>: In the context of the Siege of Constantinople, how does treating the cannonballs trajectory as two <strong>independent</strong> systems—one horizontal and one vertical—simplify the Artillery Commanders problem?</p>
+
+<p>Explain why the variable time ($t$) is the bridge that connects these two independent systems.</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-10" onclick="toggleCurrentAnswer('10')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-10">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-10-reflection">
+                    Part (reflection)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-10-reflection" 
+                      name="answer_10_reflection"
+                      rows="8"
+                      placeholder="Compose your response here..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script>
+// Toggle solutions visibility
+function toggleSolutions() {
+    const solutionsDiv = document.getElementById('student-solutions');
+    const toggleBtn = document.getElementById('toggle-solutions-btn');
+    
+    if (solutionsDiv.style.display === 'none') {
+        solutionsDiv.style.display = 'block';
+        toggleBtn.textContent = '🙈 Hide Answers';
+        toggleBtn.style.background = '#dc3545';
+    } else {
+        solutionsDiv.style.display = 'none';
+        toggleBtn.textContent = '🔍 Check Your Answers';
+        toggleBtn.style.background = '#ffc107';
+    }
+}
+
+// Toggle current problem's answer
+function toggleCurrentAnswer(problemNumber) {
+    const answerDiv = document.getElementById('answer-key-' + problemNumber);
+    const checkBtn = document.getElementById('check-answer-' + problemNumber);
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
+    } else {
+        answerDiv.style.display = 'none';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
+    }
+}
+
+// Initialize Problem Set Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-problem',
+            nextButtonId: 'next-problem',
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
+        });
+        
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
+    }
+});
+
+// Legacy function support (for inline onclick handlers)
+function navigateProblem(direction) {
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
+    }
+}
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760655643"></script>
+    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760655643';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

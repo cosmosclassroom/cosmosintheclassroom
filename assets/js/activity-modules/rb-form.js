@@ -109,13 +109,28 @@
                             title: phase.title,
                             description: phase.description,
                             prompts: (phase.prompts || []).map((prompt, pIndex) => {
-                                return {
+                                const mappedPrompt = {
                                     index: pIndex,
                                     title: prompt.title,
                                     prompt: prompt.prompt_text,
                                     response_type: prompt.response_type || 'textarea',
                                     rows: prompt.rows || 5
                                 };
+                                
+                                // Handle multi-part prompts
+                                if (prompt.response_type === 'multi_part' && prompt.parts) {
+                                    mappedPrompt.parts = prompt.parts.map(part => {
+                                        return {
+                                            part: part.part,
+                                            prompt: part.prompt,
+                                            response_type: part.response_type || 'textarea',
+                                            rows: part.rows || 3,
+                                            choices: part.choices
+                                        };
+                                    });
+                                }
+                                
+                                return mappedPrompt;
                             })
                         };
                     });
@@ -136,13 +151,28 @@
                     title: phase.title,
                     description: phase.description,
                     prompts: (phase.prompts || []).map((prompt, pIndex) => {
-                        return {
+                        const mappedPrompt = {
                             index: pIndex,
                             title: prompt.title,
                             prompt: prompt.prompt_text,
                             response_type: prompt.response_type || 'textarea',
                             rows: prompt.rows || 5
                         };
+                        
+                        // Handle multi-part prompts
+                        if (prompt.response_type === 'multi_part' && prompt.parts) {
+                            mappedPrompt.parts = prompt.parts.map(part => {
+                                return {
+                                    part: part.part,
+                                    prompt: part.prompt,
+                                    response_type: part.response_type || 'textarea',
+                                    rows: part.rows || 3,
+                                    choices: part.choices
+                                };
+                            });
+                        }
+                        
+                        return mappedPrompt;
                     })
                 };
             });
@@ -218,6 +248,40 @@
                            <textarea id="${fieldId}-wonder" name="${fieldName}_wonder" rows="3" 
                             class="form-control brief-response" required></textarea>
                          </div>`;
+                html += '</div>';
+            } else if (prompt.response_type === 'multi_part') {
+                html += '<div class="multi-part-container">';
+                
+                if (prompt.parts && Array.isArray(prompt.parts)) {
+                    prompt.parts.forEach((part, partIndex) => {
+                        const partId = `${fieldId}-part-${part.part || partIndex}`;
+                        const partName = `${fieldName}_part_${part.part || partIndex}`;
+                        
+                        html += `<div class="part-section">
+                                   <h5>Part ${part.part || String.fromCharCode(97 + partIndex).toUpperCase()}</h5>
+                                   <p class="part-prompt">${escapeHtml(part.prompt)}</p>`;
+                                   
+                        if (part.response_type === 'textarea') {
+                            html += `<textarea id="${partId}" name="${partName}" rows="${part.rows || 3}" 
+                                      class="form-control brief-response" required></textarea>`;
+                        } else if (part.response_type === 'multiple_choice' && Array.isArray(part.choices)) {
+                            html += `<div class="multiple-choice-options">`;
+                            part.choices.forEach((choice, choiceIndex) => {
+                                html += `<div class="form-check">
+                                          <input class="form-check-input brief-response" type="radio" name="${partName}" 
+                                           id="${partId}-choice-${choiceIndex}" value="${choice.value || choice.text}">
+                                          <label class="form-check-label" for="${partId}-choice-${choiceIndex}">
+                                            ${escapeHtml(choice.text)}
+                                          </label>
+                                        </div>`;
+                            });
+                            html += `</div>`;
+                        }
+                        
+                        html += `</div>`;
+                    });
+                }
+                
                 html += '</div>';
             } else if (prompt.response_type === 'cer') {
                 html += '<div class="cer-container">';

@@ -317,12 +317,219 @@
 
     <!-- Problems with Answer Fields -->
     
+    <div class="ps-problems">
+      <!-- Progress indicator with dropdown navigation -->
+      <div class="problem-progress">
+        <div class="problem-progress-bar">
+          <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="problem-navigation-dropdown">
+          <label for="problem-selector" class="visually-hidden">Jump to problem:</label>
+          <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
+            
+            <option value="0" selected>
+              Problem 1 - The Apprentice's Practice: Foundational Skills
+            </option>
+            
+            <option value="1" >
+              Problem 2 - The Journeyman's Task: Synthesis & Application
+            </option>
+            
+            <option value="2" >
+              Problem 3 - The Master's Insight: Metacognitive Reflection
+            </option>
+            
+          </select>
+          <span class="problem-count">of 3</span>
+        </div>
+      </div>
+
+      
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="1" data-problem-index="0">
+          
+          <h2 class="problem-section-header"></h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 1</span>
+            
+            <span class="problem-tier tier-1">The Apprentice's Practice: Foundational Skills</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>Perform the following conversions and calculations, reporting your answer with the correct number of significant figures:</p>
+
+<p>a) Convert a speed of 110.0 km/hr to m/s.</p>
+
+<p>b) The distance to the moon is approximately 384,400 km. Express this in meters using scientific notation.</p>
+
+<p>c) Calculate the area of a rectangle with sides measuring 12.8 cm and 4.2 cm.</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-1">
+                Response:
+              </label>
+              <textarea 
+                id="answer-1" 
+                name="answer_1"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="2" data-problem-index="1">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 2</span>
+            
+            <span class="problem-tier tier-2">The Journeyman's Task: Synthesis & Application</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>In the Eratosthenes lab, you used a distance of ~800 km and an angle of 7.2 degrees. Let’s assume the more precise, modern values are 805 km and 7.20 degrees. The distance was measured by a surveyor counting steps. If the surveyor’s pace was 0.76 meters per step, how many steps did they count? Convert the distance to meters and show your work using dimensional analysis.</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-2">
+                Response:
+              </label>
+              <textarea 
+                id="answer-2" 
+                name="answer_2"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="3" data-problem-index="2">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 3</span>
+            
+            <span class="problem-tier tier-3">The Master's Insight: Metacognitive Reflection</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>Our model of Eratosthenes’s experiment assumes the sun’s rays are perfectly parallel. In reality, they are not, but the sun is so far away that the difference is negligible. How does this illustrate the Cross-Cutting Concept of ‘Scale, Proportion, and Quantity’ when deciding which variables are important in a scientific model?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-3">
+                Response:
+              </label>
+              <textarea 
+                id="answer-3" 
+                name="answer_3"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+    </div>
+    
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760647339"></script>
+<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -413,8 +620,8 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760647339"></script>
-    <script src="/assets/js/sticky-header.js?v=1760647339"></script>
+    <script src="/assets/js/activity-core.js?v=1760655643"></script>
+    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
     
     
 

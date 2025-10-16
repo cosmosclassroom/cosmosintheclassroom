@@ -1,1 +1,2755 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Problem Set 2.1: Interpreting Kinematic Graphs | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.chartJsLoaded = true;
+    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+</script>
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Problem Set 2.1: Interpreting Kinematic Graphs</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">HPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Problem set</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="ps-2.1-kinematics-graphs"
+         data-content-type="problem_set"
+         data-course="hphys"
+         data-title="Problem Set 2.1: Interpreting Kinematic Graphs"
+         data-unit="2"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Part A: Position-Time Graphs&quot;,&quot;Part B: Velocity-Time Graphs&quot;,&quot;Part C: Connecting Position and Velocity&quot;,&quot;Part D: Acceleration Analysis&quot;,&quot;Part E: Real-World Applications&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What did you learn about interpreting kinematic graphs? Which type of graph (position-time or velocity-time) was easier for you to work with, and why?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}"
+         
+         hidden>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Problem Set Content Display
+  Single unified form with problems and reflection
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
+  <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
+  <input type="hidden" name="ContentType" value="problem_set">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="problem-set-content">
+    <!-- Problem Set Introduction (Collapsible) -->
+    
+    <details class="ps-introduction collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Instructions</span>
+      </summary>
+      <div class="section-content">
+        <p>The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.</p>
+
+      </div>
+    </details>
+    
+
+    <!-- Key Formulae (Collapsible) -->
+    
+    <details class="ps-formulae collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Key Formulae</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>For a position-time graph: Average Velocity = Slope = $\frac{\Delta\vec{x}}{\Delta t}$
+</li>
+          
+          <li>For a velocity-time graph: Acceleration = Slope = $\frac{\Delta\vec{v}}{\Delta t}$
+</li>
+          
+          <li>For a velocity-time graph: Displacement = Area under the curve
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+    <details class="ps-standards collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Standards for All Problems</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.
+</li>
+          
+          <li>Present all final answers with the correct units and number of significant figures.
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
+
+    <!-- Problems with Answer Fields -->
+    
+    <div class="ps-problems">
+      <!-- Progress indicator with dropdown navigation -->
+      <div class="problem-progress">
+        <div class="problem-progress-bar">
+          <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div class="problem-navigation-dropdown">
+          <label for="problem-selector" class="visually-hidden">Jump to problem:</label>
+          <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
+            
+            <option value="0" selected>
+              Problem A.1 - Apprentice
+            </option>
+            
+            <option value="1" >
+              Problem A.2 - Apprentice
+            </option>
+            
+            <option value="2" >
+              Problem B.3 - Journeyman
+            </option>
+            
+            <option value="3" >
+              Problem C.5 - Journeyman
+            </option>
+            
+            <option value="4" >
+              Problem D.7 - Master
+            </option>
+            
+            <option value="5" >
+              Problem E.10 - Master
+            </option>
+            
+          </select>
+          <span class="problem-count">of 6</span>
+        </div>
+      </div>
+
+      
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="A.1" data-problem-index="0">
+          
+          <h2 class="problem-section-header">Part A: Reading Position-Time Graphs</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem A.1</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A car’s position is recorded every second. The data is provided in the graph.</p>
+
+<p><strong>(a)</strong> Calculate the average velocity for each time interval (0-1s, 1-2s, 2-3s, 3-4s).
+<strong>(b)</strong> At what time was the car moving the fastest? Explain your reasoning.</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Position vs Time - Car Motion">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Position vs Time - Car Motion</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-a1-position-time" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-a1-position-time&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Position vs Time - Car Motion&quot;,&quot;caption&quot;:&quot;The position data shows increasing velocity (steeper slope at later times)&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:5},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Position (m)&quot;,&quot;min&quot;:0,&quot;max&quot;:90},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:1,&quot;y&quot;:5},{&quot;x&quot;:2,&quot;y&quot;:20},{&quot;x&quot;:3,&quot;y&quot;:45},{&quot;x&quot;:4,&quot;y&quot;:80}],&quot;borderColor&quot;:&quot;rgb(52, 152, 219)&quot;,&quot;backgroundColor&quot;:&quot;rgba(52, 152, 219, 0.1)&quot;,&quot;tension&quot;:0.3,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Position vs Time - Car Motion. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Position vs Time - Car Motion">
+      <table>
+        <caption>Position vs Time - Car Motion</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Position (m)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>1</td>
+              <td>5</td>
+            </tr>
+            
+            <tr>
+              <td>2</td>
+              <td>20</td>
+            </tr>
+            
+            <tr>
+              <td>3</td>
+              <td>45</td>
+            </tr>
+            
+            <tr>
+              <td>4</td>
+              <td>80</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>The position data shows increasing velocity (steeper slope at later times)</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-a1-position-time';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-A-1" onclick="toggleCurrentAnswer('A-1')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-A-1">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-A-1-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-1-a" 
+                      name="answer_A_1_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-1-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-1-b" 
+                      name="answer_A_1_b"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="A.2" data-problem-index="1">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem A.2</span>
+            
+            <span class="problem-tier tier-1">Apprentice</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The position-time graph for a rocket launch is shown.</p>
+
+<p><strong>(a)</strong> Is the rocket’s velocity constant? How do you know?
+<strong>(b)</strong> Is the rocket accelerating? How do you know?
+<strong>(c)</strong> Estimate the rocket’s velocity at $t = 2.0 \, \text{s}$ using the slope of the tangent line.</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Position vs Time - Rocket Launch">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Position vs Time - Rocket Launch</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-a2-rocket-position" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-a2-rocket-position&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Position vs Time - Rocket Launch&quot;,&quot;caption&quot;:&quot;Notice the increasing slope (velocity) as time progresses - this indicates acceleration&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:5},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Position (m)&quot;,&quot;min&quot;:0,&quot;max&quot;:125},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:1,&quot;y&quot;:4},{&quot;x&quot;:2,&quot;y&quot;:16},{&quot;x&quot;:3,&quot;y&quot;:36},{&quot;x&quot;:4,&quot;y&quot;:64},{&quot;x&quot;:5,&quot;y&quot;:100}],&quot;borderColor&quot;:&quot;rgb(231, 76, 60)&quot;,&quot;backgroundColor&quot;:&quot;rgba(231, 76, 60, 0.1)&quot;,&quot;tension&quot;:0.4,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Position vs Time - Rocket Launch. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Position vs Time - Rocket Launch">
+      <table>
+        <caption>Position vs Time - Rocket Launch</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Position (m)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>1</td>
+              <td>4</td>
+            </tr>
+            
+            <tr>
+              <td>2</td>
+              <td>16</td>
+            </tr>
+            
+            <tr>
+              <td>3</td>
+              <td>36</td>
+            </tr>
+            
+            <tr>
+              <td>4</td>
+              <td>64</td>
+            </tr>
+            
+            <tr>
+              <td>5</td>
+              <td>100</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>Notice the increasing slope (velocity) as time progresses - this indicates acceleration</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-a2-rocket-position';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-A-2" onclick="toggleCurrentAnswer('A-2')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-A-2">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-2-a" 
+                      name="answer_A_2_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-A-2-b" 
+                      name="answer_A_2_b"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-A-2-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-A-2-c" 
+                        name="answer_A_2_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_A_2_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s">m/s</option>
+                        
+                          <option value="km/h">km/h</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="B.3" data-problem-index="2">
+          
+          <h2 class="problem-section-header">Part B: Reading Velocity-Time Graphs</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem B.3</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A runner’s velocity-time graph is shown.</p>
+
+<p><strong>(a)</strong> Describe the runner’s motion in words for each segment of the graph.
+<strong>(b)</strong> Calculate the total displacement of the runner over the 30-second interval.
+<strong>(c)</strong> What was the runner’s acceleration during the interval from $10 \, \text{s}$ to $20 \, \text{s}$?</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Velocity vs Time - Runner Motion">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Velocity vs Time - Runner Motion</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-b3-runner-velocity" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-b3-runner-velocity&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Velocity vs Time - Runner Motion&quot;,&quot;caption&quot;:&quot;Three distinct phases: constant velocity (0-10s), deceleration (10-20s), and rest (20-30s)&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:30},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (m/s)&quot;,&quot;min&quot;:0,&quot;max&quot;:6},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:5},{&quot;x&quot;:10,&quot;y&quot;:5},{&quot;x&quot;:20,&quot;y&quot;:0},{&quot;x&quot;:30,&quot;y&quot;:0}],&quot;borderColor&quot;:&quot;rgb(46, 204, 113)&quot;,&quot;backgroundColor&quot;:&quot;rgba(46, 204, 113, 0.1)&quot;,&quot;tension&quot;:0,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Velocity vs Time - Runner Motion. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Velocity vs Time - Runner Motion">
+      <table>
+        <caption>Velocity vs Time - Runner Motion</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Velocity (m/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>5</td>
+            </tr>
+            
+            <tr>
+              <td>10</td>
+              <td>5</td>
+            </tr>
+            
+            <tr>
+              <td>20</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>30</td>
+              <td>0</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>Three distinct phases: constant velocity (0-10s), deceleration (10-20s), and rest (20-30s)</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-b3-runner-velocity';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-B-3" onclick="toggleCurrentAnswer('B-3')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-B-3">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-B-3-a" 
+                      name="answer_B_3_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-3-b" 
+                        name="answer_B_3_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_3_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-B-3-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-B-3-c" 
+                        name="answer_B_3_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_B_3_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="C.5" data-problem-index="3">
+          
+          <h2 class="problem-section-header">Part C: Connecting Position and Velocity</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem C.5</span>
+            
+            <span class="problem-tier tier-2">Journeyman</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The velocity-time graph for a car is shown.</p>
+
+<p><strong>(a)</strong> What type of motion is represented?
+<strong>(b)</strong> Draw the corresponding position-time graph on graph paper.
+<strong>(c)</strong> Calculate the car’s displacement after $10.0 \, \text{s}$.
+<strong>(d)</strong> Calculate the car’s acceleration.</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Velocity vs Time - Car with Constant Acceleration">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Velocity vs Time - Car with Constant Acceleration</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-c5-car-velocity" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-c5-car-velocity&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Velocity vs Time - Car with Constant Acceleration&quot;,&quot;caption&quot;:&quot;Linear velocity-time relationship indicates constant acceleration&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:10},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (m/s)&quot;,&quot;min&quot;:0,&quot;max&quot;:20},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:10,&quot;y&quot;:20}],&quot;borderColor&quot;:&quot;rgb(52, 152, 219)&quot;,&quot;backgroundColor&quot;:&quot;rgba(52, 152, 219, 0.1)&quot;,&quot;tension&quot;:0,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Velocity vs Time - Car with Constant Acceleration. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Velocity vs Time - Car with Constant Acceleration">
+      <table>
+        <caption>Velocity vs Time - Car with Constant Acceleration</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Velocity (m/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>10</td>
+              <td>20</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>Linear velocity-time relationship indicates constant acceleration</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-c5-car-velocity';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-C-5" onclick="toggleCurrentAnswer('C-5')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-C-5">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <textarea 
+                      id="answer-C-5-a" 
+                      name="answer_C_5_a"
+                      rows="3"
+                      placeholder="Enter response..."></textarea>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-C-5-b" 
+                        name="answer_C_5_b"
+                        value="completed">
+                      <label for="answer-C-5-b">
+                        I have drawn the position-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-5-c" 
+                        name="answer_C_5_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_5_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-C-5-d">
+                    Part (d)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-C-5-d" 
+                        name="answer_C_5_d"
+                        placeholder="Value">
+                      <select 
+                        name="answer_C_5_d_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="D.7" data-problem-index="4">
+          
+          <h2 class="problem-section-header">Part D: Acceleration Analysis</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem D.7</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A rocket’s velocity-time graph shows a constant increase from $0 \, \text{m/s}$ to $1000 \, \text{m/s}$ over $20.0 \, \text{s}$.</p>
+
+<p><strong>(a)</strong> What is the rocket’s acceleration?
+<strong>(b)</strong> What distance does the rocket travel in this time?
+<strong>(c)</strong> If the rocket continues with the same acceleration, how long will it take to reach a velocity of $2000 \, \text{m/s}$?</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Velocity vs Time - Rocket Acceleration">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Velocity vs Time - Rocket Acceleration</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="prob-d7-rocket-velocity" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;prob-d7-rocket-velocity&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Velocity vs Time - Rocket Acceleration&quot;,&quot;caption&quot;:&quot;Constant slope indicates uniform acceleration of 50 m/s²&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:20},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (m/s)&quot;,&quot;min&quot;:0,&quot;max&quot;:1000},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:0},{&quot;x&quot;:20,&quot;y&quot;:1000}],&quot;borderColor&quot;:&quot;rgb(231, 76, 60)&quot;,&quot;backgroundColor&quot;:&quot;rgba(231, 76, 60, 0.1)&quot;,&quot;tension&quot;:0,&quot;pointRadius&quot;:5,&quot;pointHoverRadius&quot;:7}"
+        data-defer-render="true"
+        aria-label="Velocity vs Time - Rocket Acceleration. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Velocity vs Time - Rocket Acceleration">
+      <table>
+        <caption>Velocity vs Time - Rocket Acceleration</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Velocity (m/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            
+            <tr>
+              <td>20</td>
+              <td>1000</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>Constant slope indicates uniform acceleration of 50 m/s²</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'prob-d7-rocket-velocity';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-D-7" onclick="toggleCurrentAnswer('D-7')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-D-7">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-a" 
+                        name="answer_D_7_a"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_a_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m/s²">m/s²</option>
+                        
+                          <option value="m/s^2">m/s^2</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-b" 
+                        name="answer_D_7_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-D-7-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-D-7-c" 
+                        name="answer_D_7_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_D_7_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="min">min</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="E.10" data-problem-index="5">
+          
+          <h2 class="problem-section-header">Part E: Real-World Applications</h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem E.10</span>
+            
+            <span class="problem-tier tier-3">Master</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A rocket launches vertically with an acceleration of $15.0 \, \text{m/s}^2$ for $20.0 \, \text{s}$. Then its engines shut off and it continues to rise while decelerating due to gravity.</p>
+
+<p><strong>(a)</strong> Draw the velocity-time graph from launch until the rocket reaches its maximum height on graph paper.
+<strong>(b)</strong> What is the maximum height reached by the rocket?
+<strong>(c)</strong> How long after launch does the rocket reach its maximum height?</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-E-10" onclick="toggleCurrentAnswer('E-10')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-E-10">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                  
+                  
+                
+                  
+                  
+                
+                  
+                  
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-a">
+                    Part (a)
+                  </label>
+                  
+                  
+                    <div class="checkbox-field">
+                      <input 
+                        type="checkbox" 
+                        id="answer-E-10-a" 
+                        name="answer_E_10_a"
+                        value="completed">
+                      <label for="answer-E-10-a">
+                        I have drawn the velocity-time graph
+                      </label>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-b">
+                    Part (b)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-10-b" 
+                        name="answer_E_10_b"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_10_b_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="m">m</option>
+                        
+                          <option value="km">km</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+                <div class="answer-part">
+                  <label for="answer-E-10-c">
+                    Part (c)
+                  </label>
+                  
+                  
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                      <input 
+                        type="text" 
+                        id="answer-E-10-c" 
+                        name="answer_E_10_c"
+                        placeholder="Value">
+                      <select 
+                        name="answer_E_10_c_unit">
+                        <option value="">Unit</option>
+                        
+                          <option value="s">s</option>
+                        
+                          <option value="min">min</option>
+                        
+                      </select>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script>
+// Toggle solutions visibility
+function toggleSolutions() {
+    const solutionsDiv = document.getElementById('student-solutions');
+    const toggleBtn = document.getElementById('toggle-solutions-btn');
+    
+    if (solutionsDiv.style.display === 'none') {
+        solutionsDiv.style.display = 'block';
+        toggleBtn.textContent = '🙈 Hide Answers';
+        toggleBtn.style.background = '#dc3545';
+    } else {
+        solutionsDiv.style.display = 'none';
+        toggleBtn.textContent = '🔍 Check Your Answers';
+        toggleBtn.style.background = '#ffc107';
+    }
+}
+
+// Toggle current problem's answer
+function toggleCurrentAnswer(problemNumber) {
+    const answerDiv = document.getElementById('answer-key-' + problemNumber);
+    const checkBtn = document.getElementById('check-answer-' + problemNumber);
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
+    } else {
+        answerDiv.style.display = 'none';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
+    }
+}
+
+// Initialize Problem Set Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-problem',
+            nextButtonId: 'next-problem',
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
+        });
+        
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
+        
+        // DIAGNOSTIC: Check if active class and grid are working
+        setTimeout(() => {
+            const firstProblem = document.querySelector('.problem-container.active');
+            if (firstProblem) {
+                const computedStyle = window.getComputedStyle(firstProblem);
+                console.log('[DIAGNOSTIC] First problem container:');
+                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
+                console.log('  - Inline style.display:', firstProblem.style.display);
+                console.log('  - Computed display:', computedStyle.display);
+                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
+            } else {
+                console.error('[DIAGNOSTIC] No .problem-container.active found!');
+            }
+        }, 500);
+    }
+});
+
+// Legacy function support (for inline onclick handlers)
+function navigateProblem(direction) {
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
+    }
+}
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760655643"></script>
+    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760655643';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

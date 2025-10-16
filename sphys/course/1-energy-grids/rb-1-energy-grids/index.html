@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Research Brief: Energy Grids | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
+
+<link rel="stylesheet" href="/assets/css/research-brief.css">
+<link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Research Brief: Energy Grids</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Research brief</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 1</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="rb-1-energy-grids"
+         data-content-type="research_brief"
+         data-course="sphys"
+         data-title="Research Brief: Energy Grids"
+         data-unit="1"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         data-brief-cycle="[{&quot;phase&quot;:1,&quot;title&quot;:&quot;Phase 1: Forecast&quot;,&quot;description&quot;:&quot;After encountering the 2021 Texas power crisis, your first task is to document your initial understanding of the problem and your ideas about how our electrical system works.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Initial Situation Understanding&quot;,&quot;prompt_text&quot;:&quot;In February 2021, millions of people in Texas lost power during a winter storm. Some had no electricity, heat, or water for days. What do you already know about power grids or blackouts? What factors do you think might have contributed to the power grid failure?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:6},{&quot;title&quot;:&quot;My First Model&quot;,&quot;prompt_text&quot;:&quot;Draw or describe what you think happened to cause the power grid failure. Show all the parts you think are involved and how they connect.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Who Was Affected?&quot;,&quot;prompt_text&quot;:&quot;Who do you think was most affected by this crisis? How might different communities have been impacted differently?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]},{&quot;phase&quot;:2,&quot;title&quot;:&quot;Phase 2: Blueprint&quot;,&quot;description&quot;:&quot;Now that you have learned about electrical circuits, power, and energy transfer, update your understanding of the grid failure using evidence from our labs and readings.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Updated Model with New Understanding&quot;,&quot;prompt_text&quot;:&quot;Based on what you&#39;ve learned, revise your understanding of the grid failure. Include concepts of voltage, current, resistance, power, energy transfer, and system stability.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Cause-Effect Analysis&quot;,&quot;prompt_text&quot;:&quot;Complete these cause-and-effect statements:&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;The part of the system that failed first was probably ___ because ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;This failure led to ___ which then caused ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;A more reliable system would need to ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2}]},{&quot;title&quot;:&quot;Evidence-Based Reasoning&quot;,&quot;prompt_text&quot;:&quot;Using evidence from Hexagon Lab 1.1, the Flexbook reading, and class discussion, construct a Claim-Evidence-Reasoning statement about what caused the Texas power grid failure.&quot;,&quot;response_type&quot;:&quot;cer&quot;}]},{&quot;phase&quot;:3,&quot;title&quot;:&quot;Phase 3: Reflection&quot;,&quot;description&quot;:&quot;Construct your final, evidence-based explanation of the power grid failure and reflect on solutions and equity considerations.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Final Explanation&quot;,&quot;prompt_text&quot;:&quot;Write a comprehensive explanation of what caused the Texas power grid failure and how it could have been prevented. Use at least 3 science terms correctly (voltage, current, power, etc.) and include evidence from our labs and readings.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:12},{&quot;title&quot;:&quot;Engineering Solutions&quot;,&quot;prompt_text&quot;:&quot;Propose three changes that could make the power grid more reliable.&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;Solution 1: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;Solution 2: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;Solution 3: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]},{&quot;title&quot;:&quot;Equity and Community Impact&quot;,&quot;prompt_text&quot;:&quot;Consider the following questions about equity and community impact:&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;How did the power grid failure affect different communities differently?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;Why is this important to consider when designing energy systems?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;How does this connect to our big question: &#39;How can we design reliable and equitable systems to meet our communities&#39; energy needs?&#39;&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]}]}]"
+         hidden>
+         
+         <!-- Additional brief cycle data for JavaScript to access -->
+         <script type="application/json" id="brief-cycle-data">
+         [{"phase":1,"title":"Phase 1: Forecast","description":"After encountering the 2021 Texas power crisis, your first task is to document your initial understanding of the problem and your ideas about how our electrical system works.","prompts":[{"title":"Initial Situation Understanding","prompt_text":"In February 2021, millions of people in Texas lost power during a winter storm. Some had no electricity, heat, or water for days. What do you already know about power grids or blackouts? What factors do you think might have contributed to the power grid failure?","response_type":"textarea","rows":6},{"title":"My First Model","prompt_text":"Draw or describe what you think happened to cause the power grid failure. Show all the parts you think are involved and how they connect.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Who Was Affected?","prompt_text":"Who do you think was most affected by this crisis? How might different communities have been impacted differently?","response_type":"textarea","rows":4}]},{"phase":2,"title":"Phase 2: Blueprint","description":"Now that you have learned about electrical circuits, power, and energy transfer, update your understanding of the grid failure using evidence from our labs and readings.","prompts":[{"title":"Updated Model with New Understanding","prompt_text":"Based on what you've learned, revise your understanding of the grid failure. Include concepts of voltage, current, resistance, power, energy transfer, and system stability.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Cause-Effect Analysis","prompt_text":"Complete these cause-and-effect statements:","response_type":"multi_part","parts":[{"part":"a","prompt":"The part of the system that failed first was probably ___ because ___.","response_type":"textarea","rows":2},{"part":"b","prompt":"This failure led to ___ which then caused ___.","response_type":"textarea","rows":2},{"part":"c","prompt":"A more reliable system would need to ___.","response_type":"textarea","rows":2}]},{"title":"Evidence-Based Reasoning","prompt_text":"Using evidence from Hexagon Lab 1.1, the Flexbook reading, and class discussion, construct a Claim-Evidence-Reasoning statement about what caused the Texas power grid failure.","response_type":"cer"}]},{"phase":3,"title":"Phase 3: Reflection","description":"Construct your final, evidence-based explanation of the power grid failure and reflect on solutions and equity considerations.","prompts":[{"title":"Final Explanation","prompt_text":"Write a comprehensive explanation of what caused the Texas power grid failure and how it could have been prevented. Use at least 3 science terms correctly (voltage, current, power, etc.) and include evidence from our labs and readings.","response_type":"textarea","rows":12},{"title":"Engineering Solutions","prompt_text":"Propose three changes that could make the power grid more reliable.","response_type":"multi_part","parts":[{"part":"a","prompt":"Solution 1: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4},{"part":"b","prompt":"Solution 2: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4},{"part":"c","prompt":"Solution 3: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4}]},{"title":"Equity and Community Impact","prompt_text":"Consider the following questions about equity and community impact:","response_type":"multi_part","parts":[{"part":"a","prompt":"How did the power grid failure affect different communities differently?","response_type":"textarea","rows":4},{"part":"b","prompt":"Why is this important to consider when designing energy systems?","response_type":"textarea","rows":4},{"part":"c","prompt":"How does this connect to our big question: 'How can we design reliable and equitable systems to meet our communities' energy needs?'","response_type":"textarea","rows":4}]}]}]
+         </script>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Research Brief Content Display with Sequential Navigation
+  Renders brief_cycle phases one at a time with Previous/Next navigation
+  Mirrors flexbook-display.html architecture for stepwise progression
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Research Brief: Energy Grids">
+  <input type="hidden" name="ResourceID" value="rb-1-energy-grids">
+  <input type="hidden" name="ContentType" value="research_brief">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="1">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="research-brief-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Phase 1 of 3</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Brief Cycle Phases (Sequential Display) -->
+    
+    <div class="research-brief-phases">
+      
+      <div class="nav-item-container research-brief-phase active" 
+           data-item-index="0"
+           data-phase-id="1">
+        <!-- Phase Header -->
+        <h2 class="phase-title">Phase 1: Forecast</h2>
+        
+        
+        <p class="phase-description"><p>After encountering the 2021 Texas power crisis, your first task is to document your initial understanding of the problem and your ideas about how our electrical system works.</p>
+</p>
+        
+
+        <!-- Prompts within phase -->
+        
+        <div class="research-brief-prompts">
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Initial Situation Understanding</label>
+            
+            
+            <div class="prompt-text"><p>In February 2021, millions of people in Texas lost power during a winter storm. Some had no electricity, heat, or water for days. What do you already know about power grids or blackouts? What factors do you think might have contributed to the power grid failure?</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <textarea 
+                id="prompt-1-1-" 
+                name="brief_1_"
+                rows="6"
+                placeholder="Enter your response..."
+                class="prompt-response"></textarea>
+
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">My First Model</label>
+            
+            
+            <div class="prompt-text"><p>Draw or describe what you think happened to cause the power grid failure. Show all the parts you think are involved and how they connect.</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <div class="science-notebook-prompt">
+                <p class="notebook-instruction">
+                  <strong>Science Notebook Activity:</strong> Please create your diagram, sketch, or model in your science notebook.
+                </p>
+                <textarea 
+                  id="notebook-1-2-" 
+                  name="brief_1__notebook"
+                  rows="3"
+                  placeholder="Write any notes about your diagram here (optional)"
+                  class="prompt-response notebook-notes"></textarea>
+              </div>
+              
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Who Was Affected?</label>
+            
+            
+            <div class="prompt-text"><p>Who do you think was most affected by this crisis? How might different communities have been impacted differently?</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <textarea 
+                id="prompt-1-3-" 
+                name="brief_1_"
+                rows="4"
+                placeholder="Enter your response..."
+                class="prompt-response"></textarea>
+
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="nav-item-container research-brief-phase" 
+           data-item-index="1"
+           data-phase-id="2">
+        <!-- Phase Header -->
+        <h2 class="phase-title">Phase 2: Blueprint</h2>
+        
+        
+        <p class="phase-description"><p>Now that you have learned about electrical circuits, power, and energy transfer, update your understanding of the grid failure using evidence from our labs and readings.</p>
+</p>
+        
+
+        <!-- Prompts within phase -->
+        
+        <div class="research-brief-prompts">
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Updated Model with New Understanding</label>
+            
+            
+            <div class="prompt-text"><p>Based on what you’ve learned, revise your understanding of the grid failure. Include concepts of voltage, current, resistance, power, energy transfer, and system stability.</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <div class="science-notebook-prompt">
+                <p class="notebook-instruction">
+                  <strong>Science Notebook Activity:</strong> Please create your diagram, sketch, or model in your science notebook.
+                </p>
+                <textarea 
+                  id="notebook-2-1-" 
+                  name="brief_2__notebook"
+                  rows="3"
+                  placeholder="Write any notes about your diagram here (optional)"
+                  class="prompt-response notebook-notes"></textarea>
+              </div>
+              
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Cause-Effect Analysis</label>
+            
+            
+            <div class="prompt-text"><p>Complete these cause-and-effect statements:</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <!-- Fallback: text input -->
+              <input 
+                type="text" 
+                id="prompt-2-2-" 
+                name="brief_2_"
+                placeholder="Enter response..."
+                class="text-input">
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Evidence-Based Reasoning</label>
+            
+            
+            <div class="prompt-text"><p>Using evidence from Hexagon Lab 1.1, the Flexbook reading, and class discussion, construct a Claim-Evidence-Reasoning statement about what caused the Texas power grid failure.</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <div class="cer-structure">
+                <div class="cer-part">
+                  <label for="claim-2-3-">Claim</label>
+                  <textarea 
+                    id="claim-2-3-" 
+                    name="brief_2__claim"
+                    rows="2"
+                    placeholder="State your claim clearly..."
+                    class="cer-response"></textarea>
+                </div>
+                <div class="cer-part">
+                  <label for="evidence-2-3-">Evidence</label>
+                  <textarea 
+                    id="evidence-2-3-" 
+                    name="brief_2__evidence"
+                    rows="3"
+                    placeholder="Provide supporting evidence..."
+                    class="cer-response"></textarea>
+                </div>
+                <div class="cer-part">
+                  <label for="reasoning-2-3-">Reasoning</label>
+                  <textarea 
+                    id="reasoning-2-3-" 
+                    name="brief_2__reasoning"
+                    rows="3"
+                    placeholder="Explain your reasoning..."
+                    class="cer-response"></textarea>
+                </div>
+              </div>
+
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="nav-item-container research-brief-phase" 
+           data-item-index="2"
+           data-phase-id="3">
+        <!-- Phase Header -->
+        <h2 class="phase-title">Phase 3: Reflection</h2>
+        
+        
+        <p class="phase-description"><p>Construct your final, evidence-based explanation of the power grid failure and reflect on solutions and equity considerations.</p>
+</p>
+        
+
+        <!-- Prompts within phase -->
+        
+        <div class="research-brief-prompts">
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Final Explanation</label>
+            
+            
+            <div class="prompt-text"><p>Write a comprehensive explanation of what caused the Texas power grid failure and how it could have been prevented. Use at least 3 science terms correctly (voltage, current, power, etc.) and include evidence from our labs and readings.</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <textarea 
+                id="prompt-3-1-" 
+                name="brief_3_"
+                rows="12"
+                placeholder="Enter your response..."
+                class="prompt-response"></textarea>
+
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Engineering Solutions</label>
+            
+            
+            <div class="prompt-text"><p>Propose three changes that could make the power grid more reliable.</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <!-- Fallback: text input -->
+              <input 
+                type="text" 
+                id="prompt-3-2-" 
+                name="brief_3_"
+                placeholder="Enter response..."
+                class="text-input">
+            
+          </div>
+          
+          <div class="research-brief-prompt-item" data-prompt-id="">
+            <label class="prompt-label">Equity and Community Impact</label>
+            
+            
+            <div class="prompt-text"><p>Consider the following questions about equity and community impact:</p>
+</div>
+            
+
+            <!-- Response Type Handling -->
+            
+              <!-- Fallback: text input -->
+              <input 
+                type="text" 
+                id="prompt-3-3-" 
+                name="brief_3_"
+                placeholder="Enter response..."
+                class="text-input">
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <!-- Submission Button (Bottom) -->
+  
+  <div class="research-brief-submission">
+    <button type="submit" class="submit-btn" id="submit-brief">
+      Submit Research Brief
+    </button>
+  </div>
+  
+
+</form>
+
+
+<!-- Load ActivityNavigator library FIRST -->
+<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+
+<!-- Initialize all activity features after DOM is ready -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize stepwise navigation for research brief phases
+    const navigator = new ActivityNavigator({
+      containerSelector: '.research-brief-phase',
+      progressBarId: 'progress-fill',
+      progressTextId: 'progress-text',
+      prevButtonId: 'prev-item',
+      nextButtonId: 'next-item',
+      itemLabel: 'Phase',
+      scrollToTop: true
+    });
+    
+    // Set timestamps for form submission tracking
+    document.getElementById('start-time').value = new Date().toISOString();
+    document.getElementById('browser-info').value = navigator.userAgent;
+    
+    // Initialize form tracking if available
+    if (window.ActivityCore) {
+      window.ActivityCore.initializeForm('activity-submission-form');
+    }
+  });
+
+  // Update submit time when form is submitted
+  document.getElementById('activity-submission-form').addEventListener('submit', function(e) {
+    document.getElementById('submit-time').value = new Date().toISOString();
+  });
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760655643"></script>
+    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760655643';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
