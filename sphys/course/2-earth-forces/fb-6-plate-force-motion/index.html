@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,34 +57,225 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">The Unseen Engine: Quantifying Force and Change</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="fb-6-plate-force-motion"
          data-content-type="flexbook"
          data-course="sphys"
          data-title="The Unseen Engine: Quantifying Force and Change"
-         data-unit="2-earth-forces"
+         data-unit="2"
          data-submission-enabled="false"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>The Unseen Engine: Quantifying Force and Change</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Flexbook</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 2</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -136,7 +286,17 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <div class="flexbook-content">
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="The Unseen Engine: Quantifying Force and Change">
+  <input type="hidden" name="ResourceID" value="fb-6-plate-force-motion">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
     
     <!-- Progress indicator -->
     
@@ -145,6 +305,16 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 11</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
     </div>
     
 
@@ -159,15 +329,30 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Chapter 6: The Unseen Engine: Quantifying Force and Change</h2>
+          <h2 class="section-title">Chapter 6: The Unseen Engine: Quantifying Force and Change</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Central Question:</strong> If a force caused the rift, how can we measure the relationship between that push, the mass of the tectonic plates, and the speed of the rupture?
-<strong>Narrative Arc:</strong> To move from mystery to explanation, we need a rulebook for the universe. This chapter introduces the grand equation of motion, $F=ma$, as the Rosetta Stone for translating the invisible cause (force) into the visible effect (acceleration). We will treat the Earth’s crust as a system of objects and learn the quantitative tools needed to analyze the immense forces at play.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Central Question:</strong> If a force caused the rift, how can we measure the</p>
 
+<p>relationship between that push, the mass of the tectonic plates, and the speed</p>
+
+<p>of the rupture?</p>
+
+<p><strong>Narrative Arc:</strong> To move from mystery to explanation, we need a rulebook for</p>
+
+<p>the universe. This chapter introduces the grand equation of motion, $F=ma$, as</p>
+
+<p>the Rosetta Stone for translating the invisible cause (force) into the visible</p>
+
+<p>effect (acceleration). We will treat the Earth’s crust as a system of objects</p>
+
+<p>and learn the quantitative tools needed to analyze the immense forces at play.</p>
+
+              </div>
             </div>
           
           
@@ -182,16 +367,38 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">6.1 From 'Why' to 'How Much'</h2>
+          <h2 class="section-title">6.1 From 'Why' to 'How Much'</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>In the last chapter, we reached a critical conclusion: an unbalanced force must have torn the Afar desert apart. This is a powerful, but incomplete, explanation. It gives us the <em>why</em>, but not the <em>how much</em>. To answer this, we need to find a measurable link between the force applied and the change in motion it produces.
-That measurable change is <strong>acceleration</strong>. Acceleration is not just about speeding up; it is <em>any</em> change in an object’s velocity—speeding up, slowing down, or changing direction. The swerving hockey puck, the book as you begin to lift it, and the tectonic plates as they began to rip apart were all accelerating.
-Acceleration is the visible fingerprint left behind by an unbalanced force. If we can measure the acceleration of an object, and we know its inertia, we can calculate the exact size of the force that set it in motion. This moves us from a qualitative story to a quantitative investigation, which is the heart of physics.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>In the last chapter, we reached a critical conclusion: an unbalanced force</p>
 
+<p>must have torn the Afar desert apart. This is a powerful, but incomplete, explanation.</p>
+
+<p>It gives us the <em>why</em>, but not the <em>how much</em>. To answer this, we need to find</p>
+
+<p>a measurable link between the force applied and the change in motion it produces.</p>
+
+<p>That measurable change is <strong>acceleration</strong>. Acceleration is not just about speeding</p>
+
+<p>up; it is <em>any</em> change in an object’s velocity—speeding up, slowing down, or</p>
+
+<p>changing direction. The swerving hockey puck, the book as you begin to lift it,</p>
+
+<p>and the tectonic plates as they began to rip apart were all accelerating.</p>
+
+<p>Acceleration is the visible fingerprint left behind by an unbalanced force. If</p>
+
+<p>we can measure the acceleration of an object, and we know its inertia, we can</p>
+
+<p>calculate the exact size of the force that set it in motion. This moves us from</p>
+
+<p>a qualitative story to a quantitative investigation, which is the heart of physics.</p>
+
+              </div>
             </div>
           
           
@@ -206,7 +413,7 @@ Acceleration is the visible fingerprint left behind by an unbalanced force. If w
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Understanding Acceleration</h2>
+          <h2 class="section-title">Checkpoint: Understanding Acceleration</h2>
           
           
           <!-- Content based on type -->
@@ -272,19 +479,21 @@ Acceleration is the visible fingerprint left behind by an unbalanced force. If w
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">6.2 The Great Equation of Motion: $F=ma$</h2>
+          <h2 class="section-title">6.2 The Great Equation of Motion: $F=ma$</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>How exactly are force, inertia, and acceleration related? This question obsessed Isaac Newton. Through meticulous observation and brilliant insight, he discovered a relationship of stunning simplicity and universal power. It is perhaps the most important single equation in all of classical physics: <strong>Newton’s Second Law of Motion</strong>.
+            <div class="reading-section">
+              <div class="content">
+                <p>How exactly are force, inertia, and acceleration related? This question obsessed Isaac Newton. Through meticulous observation and brilliant insight, he discovered a relationship of stunning simplicity and universal power. It is perhaps the most important single equation in all of classical physics: <strong>Newton’s Second Law of Motion</strong>.
 The law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass. In the language of mathematics, it is written:
 \(F_{net} = ma\)
 Where: - <strong>$F_{net}$</strong> is the <strong>net force</strong> acting on the object (measured in Newtons, N). This is the sum of all pushes and pulls. - <strong>$m$</strong> is the <strong>mass</strong> of the object (measured in kilograms, kg). This is the quantitative measure of its inertia. - <strong>$a$</strong> is the <strong>acceleration</strong> of the object (measured in meters per second squared, m/s²).</p>
 
 <p>This equation is our engine of inquiry. It means that if you push twice as hard on an object, it will accelerate twice as much. If you push with the same force on an object with twice the mass, it will accelerate only half as much.</p>
 
+              </div>
             </div>
           
           
@@ -303,8 +512,10 @@ Where: - <strong>$F_{net}$</strong> is the <strong>net force</strong> acting on 
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-thinking-lens">
-              <p><strong>Thinking Lens (Cause and Effect):</strong> Newton’s Second Law is the ultimate mathematical expression of Cause and Effect. The net force ($F_{net}$) is the <em>cause</em>. The acceleration ($a$) is the direct, measurable <em>effect</em>. How does having this equation change our investigation from just identifying a cause to precisely measuring it?</p>
+              <div class="content">
+                <p><strong>Thinking Lens (Cause and Effect):</strong> Newton’s Second Law is the ultimate mathematical expression of Cause and Effect. The net force ($F_{net}$) is the <em>cause</em>. The acceleration ($a$) is the direct, measurable <em>effect</em>. How does having this equation change our investigation from just identifying a cause to precisely measuring it?</p>
 
+              </div>
             </div>
           
           
@@ -319,7 +530,7 @@ Where: - <strong>$F_{net}$</strong> is the <strong>net force</strong> acting on 
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Applying Newton's Second Law</h2>
+          <h2 class="section-title">Checkpoint: Applying Newton's Second Law</h2>
           
           
           <!-- Content based on type -->
@@ -398,19 +609,21 @@ Where: - <strong>$F_{net}$</strong> is the <strong>net force</strong> acting on 
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">6.3 The Burden of Being: Mass vs. Weight</h2>
+          <h2 class="section-title">6.3 The Burden of Being: Mass vs. Weight</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>In everyday language, we often use the words ‘mass’ and ‘weight’ interchangeably. In physics, they are fundamentally different.
+            <div class="reading-section">
+              <div class="content">
+                <p>In everyday language, we often use the words ‘mass’ and ‘weight’ interchangeably. In physics, they are fundamentally different.
 <strong>Mass (m)</strong> is the amount of ‘stuff’ an object is made of. It is the measure of inertia. Your mass is the same whether you are on Earth, on the Moon, or floating in deep space.
 <strong>Weight (W)</strong> is the force of gravity acting on an object’s mass. It is a force, measured in Newtons. Your weight depends entirely on where you are. On the Moon, where gravity is weaker, you would weigh only one-sixth of what you do on Earth, even though your mass hasn’t changed at all. 
 Weight is calculated using Newton’s Second Law, where the force is weight (W) and the acceleration is the acceleration due to gravity (g), which is approximately 9.8 m/s² on Earth’s surface.
 \(W = mg\)
 For the Afar Rift to open, the forces tearing the crust apart had to overcome the rock’s immense inertia.</p>
 
+              </div>
             </div>
           
           
@@ -425,7 +638,7 @@ For the Afar Rift to open, the forces tearing the crust apart had to overcome th
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Mass vs. Weight</h2>
+          <h2 class="section-title">Checkpoint: Mass vs. Weight</h2>
           
           
           <!-- Content based on type -->
@@ -491,17 +704,48 @@ For the Afar Rift to open, the forces tearing the crust apart had to overcome th
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">6.4 The Unseen Brake: The Force of Friction</h2>
+          <h2 class="section-title">6.4 The Unseen Brake: The Force of Friction</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>Our investigation now has a powerful engine ($F_{net}=ma$), but we are missing one key element of the real world: resistance. Tectonic plates are not gliding on perfectly smooth ice. They are grinding against each other, a system filled with incredible <strong>friction</strong>.
-Friction is a force that opposes motion (or attempted motion) between surfaces in contact. It is the unseen brake that always acts against the direction of movement. [Image of a free-body diagram with friction] When we calculate the net force, we must always account for friction. If you are pushing a box to the right with a force of 100 N and friction is pushing back to the left with a force of 20 N, the net force is not 100 N, but rather:
-\(F_{net} = F_{push} - F_{friction} = 100 N - 20 N = 80 N\)
-It is this 80 N net force that determines the box’s acceleration. For the African continent to be ripped apart, the geological forces pulling it open had to be <em>greater than</em> the immense static friction holding the tectonic plate together. The 2005 event suggests that for a brief, violent period, the driving force overwhelmed the frictional force, resulting in a large net force and a terrifyingly rapid acceleration.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>Our investigation now has a powerful engine ($F_{net}=ma$), but we are</p>
 
+<p>missing one key element of the real world: resistance. Tectonic plates are not</p>
+
+<p>gliding on perfectly smooth ice. They are grinding against each other, a system</p>
+
+<p>filled with incredible <strong>friction</strong>.</p>
+
+<p>Friction is a force that opposes motion (or attempted motion) between surfaces</p>
+
+<p>in contact. It is the unseen brake that always acts against the direction of movement.</p>
+
+<p>[Image of a free-body diagram with friction] When we calculate the net force,</p>
+
+<p>we must always account for friction. If you are pushing a box to the right with</p>
+
+<p>a force of 100 N and friction is pushing back to the left with a force of 20 N,</p>
+
+<p>the net force is not 100 N, but rather:</p>
+
+\[F_{net} = F_{push} - F_{friction} = 100 N - 20 N = 80 N\]
+
+<p>It is this 80 N net force that determines the box’s acceleration. For the African</p>
+
+<p>continent to be ripped apart, the geological forces pulling it open had to be</p>
+
+<p><em>greater than</em> the immense static friction holding the tectonic plate together.</p>
+
+<p>The 2005 event suggests that for a brief, violent period, the driving force overwhelmed</p>
+
+<p>the frictional force, resulting in a large net force and a terrifyingly rapid</p>
+
+<p>acceleration.</p>
+
+              </div>
             </div>
           
           
@@ -516,7 +760,7 @@ It is this 80 N net force that determines the box’s acceleration. For the Afri
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Understanding Friction</h2>
+          <h2 class="section-title">Checkpoint: Understanding Friction</h2>
           
           
           <!-- Content based on type -->
@@ -582,14 +826,16 @@ It is this 80 N net force that determines the box’s acceleration. For the Afri
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 1 (Forces & Vectors)</h2>
+          <h2 class="section-title">Connection to Problem Set: Problem Set 1 (Forces & Vectors)</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt">
-              <p>The principles of net force and Newton’s Second Law are the core concepts you will need to master the problems in this section.</p>
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>The principles of net force and Newton’s Second Law are the core concepts you will need to master the problems in this section.</p>
 
+              </div>
               
               
               
@@ -602,63 +848,15 @@ It is this 80 N net force that determines the box’s acceleration. For the Afri
       
     </div>
     
-    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
-    
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
+    <!-- Navigation buttons have been moved to the top for better UX -->
     
     
-    
-
-    <!-- Floating Submission Bar (included at end of form) -->
-    <!-- Floating Submission Bar (Minimal, Clean) -->
-<div id="submission-bar" class="submission-bar">
-  <div class="submission-bar-content">
-    
-    <!-- Student Name (Quick Confirm) -->
-    <div class="submission-field-inline">
-      <label for="student-name-quick">Your Name:</label>
-      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
-    </div>
-
-    <!-- Hidden metadata fields -->
-    <input type="hidden" name="ActivityTitle" value="The Unseen Engine: Quantifying Force and Change">
-    <input type="hidden" name="ResourceID" value="">
-    <input type="hidden" name="ContentType" value="flexbook">
-    <input type="hidden" name="Course" value="sphys">
-    <input type="hidden" name="Unit" value="2-earth-forces">
-    <input type="hidden" name="StartTime" id="start-time">
-    <input type="hidden" name="SubmitTime" id="submit-time">
-    <input type="hidden" name="BrowserInfo" id="browser-info">
-
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status-inline" hidden></div>
-    
-    <!-- Auto-save indicator -->
-    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
-      ✓ Saved
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" id="submit-button" class="btn-submit-inline">
-      Submit
-    </button>
-
-  </div>
-</div>
-
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -691,11 +889,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

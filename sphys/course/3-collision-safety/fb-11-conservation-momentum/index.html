@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,34 +57,225 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">The Unbreakable Rule: Conservation of Momentum</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 3</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="fb-11-conservation-momentum"
          data-content-type="flexbook"
          data-course="sphys"
          data-title="The Unbreakable Rule: Conservation of Momentum"
-         data-unit="3-collision-safety"
+         data-unit="3"
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>The Unbreakable Rule: Conservation of Momentum</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Flexbook</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 3</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -136,7 +286,17 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <div class="flexbook-content">
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="The Unbreakable Rule: Conservation of Momentum">
+  <input type="hidden" name="ResourceID" value="fb-11-conservation-momentum">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="3">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
     
     <!-- Progress indicator -->
     
@@ -145,6 +305,16 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 10</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
     </div>
     
 
@@ -159,16 +329,18 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Chapter 11: The Unbreakable Rule: Conservation of Momentum</h2>
+          <h2 class="section-title">Chapter 11: The Unbreakable Rule: Conservation of Momentum</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Central Question:</strong> In the chaos of a collision, is there anything that stays the same? Is there a rule that even the most violent crash must obey?</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Central Question:</strong> In the chaos of a collision, is there anything that stays the same? Is there a rule that even the most violent crash must obey?</p>
 
 <p><strong>Narrative Arc:</strong> We have explored how forces change the momentum of a single object. Now, we zoom out to discover a law that governs the interaction <em>between</em> objects. We will find that while momentum can be transferred from one object to another, it can never be created or destroyed. This is the Law of Conservation of Momentum, an unbreakable rule of the universe that allows accident investigators to reconstruct the past and physicists to predict the future.</p>
 
+              </div>
             </div>
           
           
@@ -183,18 +355,20 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">11.1 Defining the System</h2>
+          <h2 class="section-title">11.1 Defining the System</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>Before we can state the law, we must define our terms. In physics, a <strong>system</strong> is a collection of objects that we are interested in studying. For a collision between two cars, our system consists of Car A and Car B.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>Before we can state the law, we must define our terms. In physics, a <strong>system</strong> is a collection of objects that we are interested in studying. For a collision between two cars, our system consists of Car A and Car B.</p>
 
 <p>The forces that the cars exert on each other during the collision are called <strong>internal forces</strong>. Forces exerted by things outside the system—like friction from the road or air resistance—are called <strong>external forces</strong>.</p>
 
 <p>The Law of Conservation of Momentum applies to any <strong>closed, isolated system</strong>—one where there are no significant external forces acting on it. While a car crash isn’t perfectly isolated (there’s always some friction), the forces the cars exert on each other are so enormous that, for the brief moment of the collision, we can often ignore the external forces.</p>
 
+              </div>
             </div>
           
           
@@ -213,8 +387,10 @@
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-thinking-lens">
-              <p><strong>Thinking Lens (Systems and System Models):</strong> Why is defining the boundaries of your system the essential first step before you can analyze an interaction? What would happen to our analysis if we defined our system as ‘just Car A’ instead of ‘Car A and Car B’?</p>
+              <div class="content">
+                <p><strong>Thinking Lens (Systems and System Models):</strong> Why is defining the boundaries of your system the essential first step before you can analyze an interaction? What would happen to our analysis if we defined our system as ‘just Car A’ instead of ‘Car A and Car B’?</p>
 
+              </div>
             </div>
           
           
@@ -229,13 +405,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">11.2 The Law: What Goes In Must Come Out</h2>
+          <h2 class="section-title">11.2 The Law: What Goes In Must Come Out</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>The Law of Conservation of Momentum is elegant and profound: <strong>In a closed, isolated system, the total momentum of all objects before a collision is equal to the total momentum of all objects after the collision.</strong></p>
+            <div class="reading-section">
+              <div class="content">
+                <p>The Law of Conservation of Momentum is elegant and profound: <strong>In a closed, isolated system, the total momentum of all objects before a collision is equal to the total momentum of all objects after the collision.</strong></p>
 
 <p>Momentum is not lost; it is simply transferred between objects. The math is straightforward:</p>
 
@@ -243,6 +420,7 @@
 
 <p>Think of a billiard ball collision. Before the collision, the moving cue ball has momentum, and the stationary 8-ball has zero momentum. After the collision, both balls are moving. The cue ball has transferred some of its momentum to the 8-ball, but if you were to add up the individual momenta of both balls after the crash, the total would be exactly the same as the initial momentum of the cue ball. The universe keeps a perfect accounting.</p>
 
+              </div>
             </div>
           
           
@@ -257,7 +435,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Conservation of Momentum</h2>
+          <h2 class="section-title">Checkpoint: Conservation of Momentum</h2>
           
           
           <!-- Content based on type -->
@@ -302,13 +480,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">11.3 Bounces and Splats: Elastic vs. Inelastic Collisions</h2>
+          <h2 class="section-title">11.3 Bounces and Splats: Elastic vs. Inelastic Collisions</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>While total momentum is always conserved, the fate of the system’s kinetic energy—the energy of motion—depends on the nature of the collision.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>While total momentum is always conserved, the fate of the system’s kinetic energy—the energy of motion—depends on the nature of the collision.</p>
 
 <ul>
   <li>
@@ -319,6 +498,7 @@
   </li>
 </ul>
 
+              </div>
             </div>
           
           
@@ -333,7 +513,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Types of Collisions</h2>
+          <h2 class="section-title">Checkpoint: Types of Collisions</h2>
           
           
           <!-- Content based on type -->
@@ -399,16 +579,18 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">11.4 Reconstructing the Crash</h2>
+          <h2 class="section-title">11.4 Reconstructing the Crash</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>The Law of Conservation of Momentum is a powerful forensic tool. After a crash, investigators can measure the final mass and velocity of the vehicles (from skid marks and resting positions). They can then use the equation $\Sigma p_{initial} = \Sigma p_{final}$ to work backward and calculate the initial velocities of the cars <em>before</em> the crash.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>The Law of Conservation of Momentum is a powerful forensic tool. After a crash, investigators can measure the final mass and velocity of the vehicles (from skid marks and resting positions). They can then use the equation $\Sigma p_{initial} = \Sigma p_{final}$ to work backward and calculate the initial velocities of the cars <em>before</em> the crash.</p>
 
 <p>This allows them to determine if a driver was speeding or violating other traffic laws. It is a perfect example of using a fundamental law of physics to reconstruct a past event and find a clear, evidence-based answer. It is how we know what happened, even when we weren’t there to see it.</p>
 
+              </div>
             </div>
           
           
@@ -423,14 +605,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 2 (Conservation of Momentum)</h2>
+          <h2 class="section-title">Connection to Problem Set: Problem Set 2 (Conservation of Momentum)</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt">
-              <p>You will now use the Law of Conservation of Momentum to solve for unknown velocities in a series of 1D and 2D collision scenarios.</p>
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You will now use the Law of Conservation of Momentum to solve for unknown velocities in a series of 1D and 2D collision scenarios.</p>
 
+              </div>
               
               
               
@@ -448,14 +632,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          <h2 class="section-title">Unit Conclusion</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>We have unraveled the paradox. Cars are safer because engineers use the Impulse-Momentum theorem to design crumple zones and airbags that extend collision time and reduce force. However, more collisions are happening due to factors outside the car itself. Armed with the physics of kinematics and momentum, we can now move beyond analyzing individual crashes to ask a bigger question: How can we design a <em>safer system</em> for everyone?</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>We have unraveled the paradox. Cars are safer because engineers use the Impulse-Momentum theorem to design crumple zones and airbags that extend collision time and reduce force. However, more collisions are happening due to factors outside the car itself. Armed with the physics of kinematics and momentum, we can now move beyond analyzing individual crashes to ask a bigger question: How can we design a <em>safer system</em> for everyone?</p>
 
+              </div>
             </div>
           
           
@@ -465,63 +651,15 @@
       
     </div>
     
-    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
-    
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
+    <!-- Navigation buttons have been moved to the top for better UX -->
     
     
-    
-
-    <!-- Floating Submission Bar (included at end of form) -->
-    <!-- Floating Submission Bar (Minimal, Clean) -->
-<div id="submission-bar" class="submission-bar">
-  <div class="submission-bar-content">
-    
-    <!-- Student Name (Quick Confirm) -->
-    <div class="submission-field-inline">
-      <label for="student-name-quick">Your Name:</label>
-      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
-    </div>
-
-    <!-- Hidden metadata fields -->
-    <input type="hidden" name="ActivityTitle" value="The Unbreakable Rule: Conservation of Momentum">
-    <input type="hidden" name="ResourceID" value="">
-    <input type="hidden" name="ContentType" value="flexbook">
-    <input type="hidden" name="Course" value="sphys">
-    <input type="hidden" name="Unit" value="3-collision-safety">
-    <input type="hidden" name="StartTime" id="start-time">
-    <input type="hidden" name="SubmitTime" id="submit-time">
-    <input type="hidden" name="BrowserInfo" id="browser-info">
-
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status-inline" hidden></div>
-    
-    <!-- Auto-save indicator -->
-    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
-      ✓ Saved
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" id="submit-button" class="btn-submit-inline">
-      Submit
-    </button>
-
-  </div>
-</div>
-
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -554,8 +692,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -566,24 +705,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

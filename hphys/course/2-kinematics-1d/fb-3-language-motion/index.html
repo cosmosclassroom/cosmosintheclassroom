@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 2: The Language of Motion | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Chapter 2: The Language of Motion</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">HPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="fb-2-language-motion"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 2: The Language of Motion"
+         data-unit="2"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         
+         hidden>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Chapter 2: The Language of Motion">
+  <input type="hidden" name="ResourceID" value="fb-2-language-motion">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 10</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Introduction: The Poetry of Motion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>The Central Question:</strong>
+How can we precisely describe and predict the motion of objects through space and time?</p>
+
+<p><strong>The Narrative Arc:</strong>
+Our journey into kinematics—the language of motion—begins with a puzzling engineering challenge: sending scientific instruments to the edge of space using sounding rockets. Through analyzing the complex motion of these rockets, we’ll develop a powerful mathematical framework for describing how objects move. This framework, first glimpsed by Galileo and later formalized by Newton, represents one of humanity’s most profound intellectual achievements—the ability to translate the dance of moving bodies into the precise language of mathematics. By the chapter’s end, you’ll understand how scientists can predict with extraordinary precision the exact path an object will take, whether it’s a rocket launching into the upper atmosphere, a planet orbiting a distant star, or a smartphone slipping from your grasp.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Phenomenon: Racing to the Edge of Space</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Our story begins approximately 100 kilometers above Earth’s surface, where the atmosphere thins to almost nothing, and the blackness of space begins. This region—known as the Kármán line—represents the conventional boundary between Earth’s atmosphere and outer space. This is the domain of the <strong>sounding rocket</strong>—a scientific workhorse that carries instruments to collect data from a realm too high for aircraft but too low for satellites.</p>
+
+<p>Unlike orbital rockets that achieve the necessary 7.9 km/s velocity to circle our planet indefinitely, sounding rockets follow a parabolic trajectory, rising to the edge of space before falling back to Earth. Their flight reveals an elegant dance of forces and motion: an initial powered ascent with increasing velocity, a moment of zero vertical velocity at maximum height, and the graceful fall back to Earth under the influence of gravity.</p>
+
+<p>Consider NASA’s Black Brant XII sounding rocket, launched from Wallops Island, Virginia in 2021 to study the upper atmosphere:</p>
+
+<p><strong>Consider This:</strong></p>
+<ul>
+  <li>The four-stage Black Brant XII launches with an initial acceleration of 20.0 m/s², reaches a peak velocity of 1,500 m/s, and a maximum altitude of 150 km.</li>
+  <li>The rocket must deploy scientific instruments precisely at apogee, when vertical velocity reaches exactly 0 m/s.</li>
+  <li>After data collection, which lasts approximately 400 seconds, the rocket falls back to Earth, landing in the Atlantic Ocean 290 km downrange from the launch site.</li>
+  <li>Yet, despite this complex journey involving variable acceleration, engineers can predict the rocket’s precise landing location to within a few kilometers. How?</li>
+</ul>
+
+<p>The seemingly simple question—”Where will the rocket land?”—requires a sophisticated mathematical framework to answer with precision. This question has driven aerospace engineering since the days of Robert Goddard, who launched the world’s first liquid-fueled rocket in 1926.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Forecast: Make Your Prediction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Pause your reading here. Before we investigate rocket motion, it’s time to make your initial prediction. Open your Unit 2 Research Brief document and complete the “Forecast” section in your lab notebook or digital log.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Investigation: Decoding a Rocket's Journey</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>With your initial forecast complete, you’ll now examine data from an actual NASA sounding rocket launch. By analyzing the patterns in its motion through rigorous graphical and mathematical analysis, you’ll begin to develop the quantitative relationships that govern all moving objects.</p>
+
+<p>The data you’ll analyze comes from a NASA Black Brant IX sounding rocket launch conducted at White Sands Missile Range in 2019. The rocket carried instruments designed to measure ionospheric plasma fluctuations. Engineers equipped the rocket with high-precision accelerometers and GPS systems to track its position with extraordinary accuracy—essential for both scientific data collection and range safety.</p>
+
+<p>By carefully examining the position-time, velocity-time, and acceleration-time relationships, you’ll discover patterns that reveal the underlying mathematical structure of motion itself. These patterns aren’t arbitrary—they reflect fundamental properties of space and time, and they apply universally, from subatomic particles to galaxy clusters.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="4"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Lab Activity: Analyzing Rocket Ascent Data</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Pause your reading here. Open your Unit 2 Hexagon Labs document and complete “Lab 2.1: Analyzing Rocket Ascent Data.” Be prepared to analyze experimental uncertainty, perform statistical analysis on velocity calculations, and identify the mathematical relationships between position, velocity, and acceleration.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">The Rules of the Game: The Language of Kinematics</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Having analyzed the rocket data, we can now formalize the mathematical relationships you’ve discovered. These relationships weren’t invented—they were uncovered through careful observation and rigorous analysis, a process that began with Galileo’s experiments and continues today in modern physics laboratories.</p>
+
+<h3 id="position-displacement-and-distance">Position, Displacement, and Distance</h3>
+<p><strong>Position</strong> ($x$) describes an object’s location relative to a chosen reference point or origin, typically measured in meters (m). Position is a vector quantity, meaning it has both magnitude and direction.</p>
+
+<p><strong>Displacement</strong> ($\Delta x$) is the change in position, representing the straight-line path from the initial position to the final position. It’s calculated as:
+\(\Delta x = x_f - x_i\)</p>
+
+<p><strong>Distance</strong> (d) is the total length of the path traveled, regardless of direction. Unlike displacement, distance is always positive and is a scalar quantity.</p>
+
+<h3 id="velocity-and-speed">Velocity and Speed</h3>
+<p><strong>Velocity</strong> ($v$) is the rate of change of position with respect to time, measured in meters per second (m/s). It tells us both how fast an object is moving and in what direction. The <strong>average velocity</strong> over a time interval is given by:
+\(v_{avg} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}\)</p>
+
+<p><strong>Speed</strong> is the magnitude of velocity, telling us only how fast an object is moving.</p>
+
+<h3 id="acceleration">Acceleration</h3>
+<p><strong>Acceleration</strong> ($a$) is the rate of change of velocity with respect to time, measured in meters per second squared (m/s²). The <strong>average acceleration</strong> is:
+\(a_{avg} = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t_f - t_i}\)</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="6"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Putting It Together: Engineering the Perfect Launch</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Now that we understand the language of motion, we can apply it to design a successful sounding rocket mission. Aerospace engineers must answer crucial questions with extraordinary precision: How high will the rocket go? How long will it spend in the data-collection region? Where will it land?</p>
+
+<p>This precise mathematical language of motion doesn’t just apply to rockets—it governs everything from a basketball’s arc to a car’s stopping distance to a planet’s orbit. By mastering these concepts, you gain the power to predict movement anywhere in the universe.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="7"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Practice Your Skills</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Pause your reading here. Complete Problem Set 2.1: Position &amp; Velocity and Problem Set 2.2: Graphical Analysis to practice applying these concepts.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="8"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Looking Ahead: Motion in Higher Dimensions</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>In this chapter, we’ve focused on motion along a single dimension. However, the natural world rarely restricts movement to just one axis. To see the complete pattern of motion, we must expand our perspective to vector analysis, projectile motion, and relative motion. The foundation you’ve built here—the precise language of position, velocity, and acceleration—will serve as the bedrock for everything that follows.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="9"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Chapter Summary</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>In this chapter, we’ve developed a powerful mathematical framework for describing and analyzing motion in one dimension.</p>
+
+<p><strong>Key Concepts:</strong></p>
+<ul>
+  <li><strong>Position</strong> ($x$): Location relative to a reference point.</li>
+  <li><strong>Displacement</strong> ($\Delta x$): The change in position.</li>
+  <li><strong>Distance</strong> (d): The total path length traveled.</li>
+  <li><strong>Velocity</strong> ($v$): The rate of change of position, $v = \frac{dx}{dt}$.</li>
+  <li><strong>Acceleration</strong> ($a$): The rate of change of velocity, $a = \frac{dv}{dt}$.</li>
+  <li><strong>Graphical analysis</strong>: The slope of a position-time graph gives velocity; the slope of a velocity-time graph gives acceleration.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Freefall</strong>: Motion under the influence of gravity alone, with $\vec{a} = -\vec{a}_g$ where $</td>
+          <td>\vec{a}_g</td>
+          <td>= 9.80 \, \text{m/s}^2$.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation buttons have been moved to the top for better UX -->
+    
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760613538';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,34 +57,225 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">The Earth Pushes Back: Action, Reaction, and the Forces Within</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="fb-7-action-reaction"
          data-content-type="flexbook"
          data-course="sphys"
          data-title="The Earth Pushes Back: Action, Reaction, and the Forces Within"
-         data-unit="2-earth-forces"
+         data-unit="2"
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>The Earth Pushes Back: Action, Reaction, and the Forces Within</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Flexbook</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 2</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -136,7 +286,17 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <div class="flexbook-content">
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="The Earth Pushes Back: Action, Reaction, and the Forces Within">
+  <input type="hidden" name="ResourceID" value="fb-7-action-reaction">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
     
     <!-- Progress indicator -->
     
@@ -145,6 +305,16 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 11</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
     </div>
     
 
@@ -159,15 +329,30 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Chapter 7: The Earth Pushes Back: Action, Reaction, and the Forces Within</h2>
+          <h2 class="section-title">Chapter 7: The Earth Pushes Back: Action, Reaction, and the Forces Within</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Central Question:</strong> How can the fluid motion of magma deep within the Earth exert enough force to tear solid rock at the surface?
-<strong>Narrative Arc:</strong> The rift wasn’t a one-way event; the Earth’s crust didn’t just move, it was pushed and pulled by forces from within. Here we explore the elegant symmetry of Newton’s Third Law—that for every action, there is an equal and opposite reaction. We will journey deep into the planet’s interior to find the immense, balanced forces that hold a planet together, and the imbalances that can tear it apart.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Central Question:</strong> How can the fluid motion of magma deep within the</p>
 
+<p>Earth exert enough force to tear solid rock at the surface?</p>
+
+<p><strong>Narrative Arc:</strong> The rift wasn’t a one-way event; the Earth’s crust didn’t</p>
+
+<p>just move, it was pushed and pulled by forces from within. Here we explore the</p>
+
+<p>elegant symmetry of Newton’s Third Law—that for every action, there is an equal</p>
+
+<p>and opposite reaction. We will journey deep into the planet’s interior to find</p>
+
+<p>the immense, balanced forces that hold a planet together, and the imbalances that</p>
+
+<p>can tear it apart.</p>
+
+              </div>
             </div>
           
           
@@ -182,16 +367,30 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">7.1 The Symmetric Universe</h2>
+          <h2 class="section-title">7.1 The Symmetric Universe</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>Imagine a rocket, silent on its launchpad. To defy gravity and hurl itself into space, it must push. But what does it push against? The rocket’s engines blast hot gas downwards with incredible force. This is the <strong>action</strong>. In response, the universe provides a perfect and equal push in the opposite direction, propelling the rocket upwards. This is the <strong>reaction</strong>.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>Imagine a rocket, silent on its launchpad. To defy gravity and hurl itself</p>
 
-<p>This is a profound insight. Forces never exist in isolation. They always come in pairs. You cannot push on a wall without the wall pushing back on you. To find the force that tore Africa apart, we must look for its equal and opposite partner.</p>
+<p>into space, it must push. But what does it push against? The rocket’s engines</p>
 
+<p>blast hot gas downwards with incredible force. This is the <strong>action</strong>. In response,</p>
+
+<p>the universe provides a perfect and equal push in the opposite direction, propelling</p>
+
+<p>the rocket upwards. This is the <strong>reaction</strong>.</p>
+
+<p>This is a profound insight. Forces never exist in isolation. They always come</p>
+
+<p>in pairs. You cannot push on a wall without the wall pushing back on you. To find</p>
+
+<p>the force that tore Africa apart, we must look for its equal and opposite partner.</p>
+
+              </div>
             </div>
           
           
@@ -206,7 +405,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Action-Reaction Forces</h2>
+          <h2 class="section-title">Checkpoint: Action-Reaction Forces</h2>
           
           
           <!-- Content based on type -->
@@ -272,15 +471,32 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">7.2 Newton's Third Law of Motion</h2>
+          <h2 class="section-title">7.2 Newton's Third Law of Motion</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>This principle of paired forces was codified by Isaac Newton as his <strong>Third Law of Motion</strong>. It is often stated as: <em>For every action, there is an equal and opposite reaction.</em>
-This means that if Object A exerts a force on Object B, then Object B simultaneously exerts a force on Object A that is equal in magnitude and opposite in direction. It is critical to understand that these two forces act on <strong>different objects</strong>. They never cancel each other out because they are not acting on the same thing. The rocket pushes the gas, and the gas pushes the rocket. It is the force <em>on the rocket</em> that causes the rocket to accelerate.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>This principle of paired forces was codified by Isaac Newton as his **Third</p>
 
+<p>Law of Motion**. It is often stated as: *For every action, there is an equal and</p>
+
+<p>opposite reaction.*</p>
+
+<p>This means that if Object A exerts a force on Object B, then Object B simultaneously</p>
+
+<p>exerts a force on Object A that is equal in magnitude and opposite in direction.</p>
+
+<p>It is critical to understand that these two forces act on <strong>different objects</strong>.</p>
+
+<p>They never cancel each other out because they are not acting on the same thing.</p>
+
+<p>The rocket pushes the gas, and the gas pushes the rocket. It is the force *on</p>
+
+<p>the rocket* that causes the rocket to accelerate.</p>
+
+              </div>
             </div>
           
           
@@ -295,7 +511,7 @@ This means that if Object A exerts a force on Object B, then Object B simultaneo
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Newton's Third Law</h2>
+          <h2 class="section-title">Checkpoint: Newton's Third Law</h2>
           
           
           <!-- Content based on type -->
@@ -361,19 +577,46 @@ This means that if Object A exerts a force on Object B, then Object B simultaneo
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">7.3 The Engine of the Earth: Convection and Tension</h2>
+          <h2 class="section-title">7.3 The Engine of the Earth: Convection and Tension</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>The inside of the Earth is not a solid, static ball. The mantle, a thick layer of rock beneath the crust, churns with incredible slowness in a process called <strong>mantle convection</strong>. Think of it like a giant pot of thick soup simmering on a stove.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>The inside of the Earth is not a solid, static ball. The mantle, a thick</p>
+
+<p>layer of rock beneath the crust, churns with incredible slowness in a process</p>
+
+<p>called <strong>mantle convection</strong>. Think of it like a giant pot of thick soup simmering</p>
+
+<p>on a stove.</p>
+
 <ol>
-  <li><strong>Heating:</strong> Rock near the Earth’s hot core heats up, expands, and becomes less dense. 2.  <strong>Rising:</strong> This hotter, less dense rock slowly rises. 3.  <strong>Spreading &amp; Cooling:</strong> When it reaches the underside of the rigid tectonic plates, it spreads out, transferring heat and beginning to cool. 4.  <strong>Sinking:</strong> As it cools, the rock becomes denser and sinks back down toward the core.</li>
+  <li><strong>Heating:</strong> Rock near the Earth’s hot core heats up, expands, and becomes</li>
 </ol>
 
-<p>This massive, cyclical movement is the engine of our planet. As the rising magma spreads, it drags on the bottom of the tectonic plates. This is the <strong>action</strong>: the mantle pushes and drags the plate sideways. According to Newton’s Third Law, the plate must exert an equal and opposite pull on the mantle—the <strong>reaction</strong>. The relentless drag of the mantle on the crust creates a pulling force within the plate itself, known as <strong>tension</strong>.</p>
+<p>less dense. 2. <strong>Rising:</strong> This hotter, less dense rock slowly rises. 3. **Spreading</p>
 
+<p>&amp; Cooling:** When it reaches the underside of the rigid tectonic plates, it spreads</p>
+
+<p>out, transferring heat and beginning to cool. 4. <strong>Sinking:</strong> As it cools, the</p>
+
+<p>rock becomes denser and sinks back down toward the core.</p>
+
+<p>This massive, cyclical movement is the engine of our planet. As the rising magma</p>
+
+<p>spreads, it drags on the bottom of the tectonic plates. This is the <strong>action</strong>:</p>
+
+<p>the mantle pushes and drags the plate sideways. According to Newton’s Third Law,</p>
+
+<p>the plate must exert an equal and opposite pull on the mantle—the <strong>reaction</strong>.</p>
+
+<p>The relentless drag of the mantle on the crust creates a pulling force within</p>
+
+<p>the plate itself, known as <strong>tension</strong>.</p>
+
+              </div>
             </div>
           
           
@@ -388,7 +631,7 @@ This means that if Object A exerts a force on Object B, then Object B simultaneo
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Checkpoint: Mantle Convection</h2>
+          <h2 class="section-title">Checkpoint: Mantle Convection</h2>
           
           
           <!-- Content based on type -->
@@ -454,16 +697,36 @@ This means that if Object A exerts a force on Object B, then Object B simultaneo
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">7.4 When the Earth Pulls Itself Apart</h2>
+          <h2 class="section-title">7.4 When the Earth Pulls Itself Apart</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>We can now see the whole system. The constant churning of the mantle creates a steady tensional force, trying to rip the African plate in two. For eons, this force has been in a balanced tug-of-war with the strength of the rock and the friction holding the plate together.
-The 2005 Afar Rift was a catastrophic moment of change. The tensional force, built up over millions of years, finally overwhelmed the forces holding the crust together. The action force (the mantle’s drag) became greater than the resisting forces, resulting in a sudden, unbalanced net force and the creation of a 35-mile-long wound in the Earth’s skin.
-We have found the culprit. The force did not come from the outside; it came from the symmetric push and pull of the Earth’s own internal engine.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>We can now see the whole system. The constant churning of the mantle creates</p>
 
+<p>a steady tensional force, trying to rip the African plate in two. For eons, this</p>
+
+<p>force has been in a balanced tug-of-war with the strength of the rock and the</p>
+
+<p>friction holding the plate together.</p>
+
+<p>The 2005 Afar Rift was a catastrophic moment of change. The tensional force, built</p>
+
+<p>up over millions of years, finally overwhelmed the forces holding the crust together.</p>
+
+<p>The action force (the mantle’s drag) became greater than the resisting forces,</p>
+
+<p>resulting in a sudden, unbalanced net force and the creation of a 35-mile-long</p>
+
+<p>wound in the Earth’s skin.</p>
+
+<p>We have found the culprit. The force did not come from the outside; it came from</p>
+
+<p>the symmetric push and pull of the Earth’s own internal engine.</p>
+
+              </div>
             </div>
           
           
@@ -482,8 +745,10 @@ We have found the culprit. The force did not come from the outside; it came from
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-thinking-lens">
-              <p><strong>Thinking Lens (Stability and Change):</strong> The slow, steady process of mantle convection created a system in <em>stability</em> for millions of years, with balanced forces. The Afar Rift was a rapid <em>change</em> that occurred when that balance was broken. How does this lens help us connect processes that happen on vastly different timescales?</p>
+              <div class="content">
+                <p><strong>Thinking Lens (Stability and Change):</strong> The slow, steady process of mantle convection created a system in <em>stability</em> for millions of years, with balanced forces. The Afar Rift was a rapid <em>change</em> that occurred when that balance was broken. How does this lens help us connect processes that happen on vastly different timescales?</p>
 
+              </div>
             </div>
           
           
@@ -502,10 +767,16 @@ We have found the culprit. The force did not come from the outside; it came from
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-note">
-              <p>Use the concepts of ‘Stability and Change’ to explain the Afar Rift in terms of Newton’s Third Law and net force.</p>
+              <div class="content">
+                <p>Use the concepts of ‘Stability and Change’ to explain the Afar Rift</p>
 
-<p>How does this chapter answer the central question: ‘How can fluid motion deep within the Earth exert force to tear solid rock?’</p>
+<p>in terms of Newton’s Third Law and net force.</p>
 
+<p>How does this chapter answer the central question: ‘How can fluid motion deep</p>
+
+<p>within the Earth exert force to tear solid rock?’</p>
+
+              </div>
             </div>
           
           
@@ -520,14 +791,22 @@ We have found the culprit. The force did not come from the outside; it came from
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          <h2 class="section-title">Unit Conclusion</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Revisiting Your Model:</strong> Think back to the initial model you drew for the Afar Rift in Chapter 5. How has your understanding of the forces involved changed? Update your model to include the concepts of mantle convection and action-reaction pairs.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Revisiting Your Model:</strong> Think back to the initial model you drew for</p>
 
+<p>the Afar Rift in Chapter 5. How has your understanding of the forces involved</p>
+
+<p>changed? Update your model to include the concepts of mantle convection and action-reaction</p>
+
+<p>pairs.</p>
+
+              </div>
             </div>
           
           
@@ -537,63 +816,15 @@ We have found the culprit. The force did not come from the outside; it came from
       
     </div>
     
-    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
-    
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
+    <!-- Navigation buttons have been moved to the top for better UX -->
     
     
-    
-
-    <!-- Floating Submission Bar (included at end of form) -->
-    <!-- Floating Submission Bar (Minimal, Clean) -->
-<div id="submission-bar" class="submission-bar">
-  <div class="submission-bar-content">
-    
-    <!-- Student Name (Quick Confirm) -->
-    <div class="submission-field-inline">
-      <label for="student-name-quick">Your Name:</label>
-      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
-    </div>
-
-    <!-- Hidden metadata fields -->
-    <input type="hidden" name="ActivityTitle" value="The Earth Pushes Back: Action, Reaction, and the Forces Within">
-    <input type="hidden" name="ResourceID" value="">
-    <input type="hidden" name="ContentType" value="flexbook">
-    <input type="hidden" name="Course" value="sphys">
-    <input type="hidden" name="Unit" value="2-earth-forces">
-    <input type="hidden" name="StartTime" id="start-time">
-    <input type="hidden" name="SubmitTime" id="submit-time">
-    <input type="hidden" name="BrowserInfo" id="browser-info">
-
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status-inline" hidden></div>
-    
-    <!-- Auto-save indicator -->
-    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
-      ✓ Saved
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" id="submit-button" class="btn-submit-inline">
-      Submit
-    </button>
-
-  </div>
-</div>
-
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -626,8 +857,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -638,24 +870,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

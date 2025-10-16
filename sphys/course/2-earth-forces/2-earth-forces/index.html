@@ -130,14 +130,333 @@
         <div class="activity-content-wrapper">
             
                 <!-- 
-  Research Brief Content Display
-  Renders the research brief content
+  Research Brief Content Display with Sequential Navigation
+  Renders brief_cycle array one phase at a time
 -->
 
-<div class="research-brief-content">
+<form id="activity-submission-form" class="activity-form">
   
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Research Brief: Planetary Pulses">
+  <input type="hidden" name="ResourceID" value="">
+  <input type="hidden" name="ContentType" value="research_brief">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="research-brief-content">
+    
+    <!-- Introduction content -->
+    <div class="brief-introduction">
+      
 
-</div>
+    </div>
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Phase 1 of 3</div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Brief Phases (Sequential Display) -->
+    
+    <div class="brief-phases-container">
+      
+        
+        <div class="nav-item-container brief-phase active" 
+             data-item-index="0"
+             data-brief-phase="1">
+          
+          <h2 class="phase-title">Phase 1: Forecast</h2>
+          <div class="phase-description">
+            <p>Our investigation begins with a dramatic geological event: a massive, sudden rip in the Earth’s crust. Before we analyze the forces involved, your first task is to document your initial understanding of the event and your first model of what could cause it.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Summarize the Gist</h4>
+              <p class="prompt-text">Describe the key events that happened in the Afar Triangle, Ethiopia, in 2005. What was surprising or puzzling about this geological event?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase1_prompt1" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">My First Model of the Earth's Interior</h4>
+              <p class="prompt-text">Draw a cross-section of the Earth. Based on what you currently know, label the layers and draw arrows to show what you think might be happening inside the planet to cause a giant rip in the crust.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-1-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-1-2"
+                      name="phase1_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-1-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="1"
+             data-brief-phase="2">
+          
+          <h2 class="phase-title">Phase 2: Blueprint</h2>
+          <div class="phase-description">
+            <p>Now that you have analyzed data on plate motion and seismic waves, it is time to synthesize your findings to build a model of the Earth’s internal engine.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Argument from Evidence: 'Seeing' Inside the Earth</h4>
+              <p class="prompt-text">Based on your findings from the 'Interpreting Seismic Wave Data' lab, construct a full Claim-Evidence-Reasoning statement that explains how seismologists know the Earth has a liquid outer core.</p>
+              
+              
+                <div class="response-container cer-format">
+                  <div class="cer-section">
+                    <h5>Claim</h5>
+                    <textarea 
+                      name="phase2_prompt1_claim" 
+                      class="brief-response-field"
+                      rows="2"
+                      placeholder="Make a claim that answers the question..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Evidence</h5>
+                    <textarea 
+                      name="phase2_prompt1_evidence" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Provide evidence that supports your claim..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Reasoning</h5>
+                    <textarea 
+                      name="phase2_prompt1_reasoning" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Explain why your evidence supports your claim..."></textarea>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Explain It Two Ways: Mantle Convection</h4>
+              <p class="prompt-text">Explain the process of mantle convection, the engine that drives plate tectonics.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase2_prompt2" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+              
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="2"
+             data-brief-phase="3">
+          
+          <h2 class="phase-title">Phase 3: Reflection</h2>
+          <div class="phase-description">
+            <p>Our investigation into the Afar Rift is complete. Your final task is to construct a definitive, evidence-based explanation of the event, and then to reflect on your own learning journey.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Synthesis: Explaining the Afar Rift</h4>
+              <p class="prompt-text">This is your final, complete explanation of the 2005 Afar Rift. Your narrative must weave together all the core concepts of this unit into a coherent story. Explain how the microscopic process of radioactive decay leads to the macroscopic engine of mantle convection, and how this engine, governed by Newton's Laws of Motion, created the immense, unbalanced tensional forces necessary to overcome inertia and friction to tear the continent apart.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt1" 
+                    class="brief-response-field"
+                    rows="15"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Model: The Earth's Engine</h4>
+              <p class="prompt-text">Accompany your synthesis with a final, revised model. This should be a detailed, labeled cross-section of the Earth showing the entire process: radioactive decay in the core/mantle heating the rock, the resulting convection cell, the action-reaction forces of the mantle dragging on the crust, and the resulting tensional forces pulling the rift apart.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-3-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-3-2"
+                      name="phase3_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-3-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Synthesis Lens: Cause and Effect Across Scales</h4>
+              <p class="prompt-text">Explain how the concept of 'Cause and Effect' connects the microscopic process of radioactive decay in the mantle to the macroscopic event of a volcanic eruption on the surface. How did this unit help you link events across vastly different scales of size and time?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt3" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Metacognition: The Meaning of 'Force'</h4>
+              <p class="prompt-text">Reflect on how your understanding of the word 'force' changed in this unit. How is a physicist's definition of force different from how we use the word in everyday language? How did using free-body diagrams help clarify your thinking?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt4" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Research Brief Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const phaseItems = document.querySelectorAll('.nav-item-container');
+    
+    if (phaseItems.length > 1) {
+        // Use unified navigator for multi-phase briefs
+        window.briefNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Phase'
+        });
+        
+        console.log('[research-brief] Sequential navigation initialized');
+    } else {
+        // Single phase - show everything
+        if (phaseItems.length === 1) {
+            phaseItems[0].classList.add('active');
+        }
+        console.log('[research-brief] Single phase mode - no navigation needed');
+    }
+    
+    // Initialize file upload UI
+    document.querySelectorAll('.file-input').forEach(input => {
+        const nameDisplay = document.getElementById('file-name-' + input.id.replace('file-upload-', ''));
+        if (nameDisplay) {
+            input.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    nameDisplay.textContent = this.files[0].name;
+                } else {
+                    nameDisplay.textContent = 'No file chosen';
+                }
+            });
+        }
+    });
+});
+</script>
 
             
         </div>
@@ -145,7 +464,7 @@
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -162,7 +481,7 @@
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
+                script.src = moduleMap[contentType] + '?v=1760613538';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };

@@ -1,343 +1,381 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
-  <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Problem Set 1.1: Circuits & Power | Cosmos in the Classroom</title>
-    
-    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
-    <!-- Global CSS with new academic palette -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
-    
-    <script src="/assets/js/mathjax-config.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- tabs.js for tabs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
-    <script src="/assets/js/site-init.js"></script>
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
-  </head>
-  <body class="no-header-page">
-    
-    
-  <div class="markdown-body">
-    
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<hr />
+<p>layout: activity-focused
+title: “Problem Set 1.1: Circuits &amp; Power”
+course: sphys
+content_type: problem_set
+unit: “1”
+unit_slug: “1-energy-grids”
+slug: “ps-1.1-circuits-and-power”
+resource_id: “ps-1.1-circuits-and-power”
+DCI: “PS3.A”
+Practice: [“Using Mathematics and Computational Thinking”]
+CCC: [“Scale, Proportion, and Quantity”, “Systems and System Models”]
+tags: [“circuits”, “power”, “energy”, “ohms law”, “problem_set”]
+overview:
+  follows_lecture: “Lecture 1.1: The Rules of the Game - Energy and Circuits”
+  introduction: “In this problem set, you will apply the foundational equations of electrical circuits to analyze various components and systems. These calculations are the first step in understanding the load on an electrical grid and the factors that contribute to events like the Texas power crisis.”
+  key_formulae:
+    - “\(V = IR\)”
+    - “\(P = IV\)”
+    - “\(P = I^2R \\quad \\text{and} \\quad P = \\frac{V^2}{R}\)”
+    - “\(E = P \\cdot \\Delta t\)”
+  global_standards:
+    - “Follow the systematic problem-solving process for all calculations.”
+    - “Present all final answers with the correct units and to three significant figures unless otherwise specified.”
+problems:</p>
+<ul>
+  <li>problem_number: 1
+tier:
+  level: 1
+  title: “The Apprentice’s Practice: Foundational Concepts”
+phenomenon_connection: “Understanding the language of circuits is the first step to diagnosing failures in a complex system like a power grid.”
+problem_statement: “In the common water-pipe analogy for a simple circuit, what does a narrow, rocky section of the pipe represent?”</li>
+</ul>
 
-<!-- Chart.js for data visualization -->
+<h1>———————————————————————</h1>
+<h1 id="section-problem-set-overview">SECTION: PROBLEM SET OVERVIEW</h1>
+<h1 id="-1">——————————————————————————</h1>
+<p>overview:
+  follows_lecture: “Lecture 1.1: The Rules of the Game - Energy and Circuits”
+  introduction: “In this problem set, you will apply the foundational equations of electrical circuits to analyze various components and systems. These calculations are the first step in understanding the load on an electrical grid and the factors that contribute to events like the Texas power crisis.”
+  key_formulae:
+    - “\(V = IR\)”
+    - “\(P = IV\)”
+    - “\(P = I^2R \\quad \\text{and} \\quad P = \\frac{V^2}{R}\)”
+    - “\(E = P \\cdot \\Delta t\)”
+  global_standards:
+    - “Follow the systematic problem-solving process for all calculations.”
+    - “Present all final answers with the correct units and to three significant figures unless otherwise specified.”</p>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
-</script>
+<h1 id="-2">———————————————————————</h1>
+<h1 id="section-problems--solutions">SECTION: PROBLEMS &amp; SOLUTIONS</h1>
+<h1 id="-3">——————————————————————————</h1>
+<p>problems:
+  # ————————- TIER 1: APPRENTICE —————————
+  - problem_number: 1
+    tier:
+      level: 1
+      title: “The Apprentice’s Practice: Foundational Concepts”
+    phenomenon_connection: “Understanding the language of circuits is the first step to diagnosing failures in a complex system like a power grid.”
+    problem_statement: “In the common water-pipe analogy for a simple circuit, what does a narrow, rocky section of the pipe represent?”
+    hints:
+      - “Think about what makes it harder for water to flow through a pipe.”
+      - “Which of the three main electrical quantities (Voltage, Current, Resistance) opposes the flow of charge?”
+    answer_format:
+      - part: “a”
+        type: “multiple_choice”
+        choices:
+          - “Voltage (V)”
+          - “Current (I)”
+          - “Resistance (R)”
+    solution:
+      final_answer: |
+        A narrow, rocky section of the pipe represents <strong>Resistance (R)</strong>, as it impedes the flow of water, just as electrical resistance impedes the flow of current.</p>
 
+<p>  - problem_number: 2
+    tier:
+      level: 1
+      title: “The Apprentice’s Practice: Ohm’s Law (Solving for R)”
+    phenomenon_connection: “Every device that draws power contributes to the load on the grid. Calculating the properties of these components is a fundamental skill.”
+    problem_statement: “A standard LED requires a current of 2.00e-2 A when 3.00 V is applied. What is the LED’s resistance?”
+    hints: []
+    solution:
+      givens:
+        - “$I = 2.00 \times 10^{-2} \, \text{A}$”
+        - “$V = 3.00 \, \text{V}$”
+      unknowns:
+        - “$R = ?$”
+      steps:
+        - “1. <strong>Select Parent Equation:</strong> Ohm’s Law is $V = IR$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> To solve for resistance, divide both sides by current: $R = \frac{V}{I}$.”
+        - “3. <strong>Substitute Values and Track Units:</strong>”
+        - |
+          \(R = \\frac{3.00 \\, \\text{V}}{2.00 \\times 10^{-2} \\, \\text{A}} = 150. \\, \\frac{\\text{V}}{\\text{A}}\)
+      final_answer: “The LED’s resistance is <strong>150. Ω</strong>.”</p>
 
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
+<p>  - problem_number: 3
+    tier:
+      level: 1
+      title: “The Apprentice’s Practice: Ohm’s Law (Solving for V)”
+    phenomenon_connection: “Power grids must supply a stable voltage. Understanding how voltage relates to other circuit properties is key.”
+    problem_statement: “A current of 0.500 A flows through a resistor with a resistance of 240. Ω. What is the voltage across the resistor?”
+    hints: []
+    solution:
+      givens:
+        - “$I = 0.500 \, \text{A}$”
+        - “$R = 240. \, \Omega$”
+      unknowns:
+        - “$V = ?$”
+      steps:
+        - “1. <strong>Select Parent Equation:</strong> Ohm’s Law is $V = IR$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> No rearrangement is needed.”
+        - “3. <strong>Substitute Values and Track Units:</strong>”
+        - |
+          \(V = (0.500 \\, \\text{A})(240. \\, \\Omega) = 120. \\, \\text{A} \\cdot \\Omega\)
+      final_answer: “The voltage across the resistor is <strong>120. V</strong>.”</p>
 
-<style>
-/* No-header page: Remove all top spacing for content-first experience */
-.no-header-page {
-    padding-top: 0;
-    margin-top: 0;
-}
+<p>  - problem_number: 4
+    tier:
+      level: 1
+      title: “The Apprentice’s Practice: Power Calculation (Solving for P)”
+    phenomenon_connection: “Power ratings determine how quickly a device consumes energy, which dictates the instantaneous demand on the grid.”
+    problem_statement: “A large television is plugged into a 120. V outlet and draws 2.50 A of current. What power does it consume?”
+    hints: []
+    solution:
+      givens:
+        - “$V = 120. \, \text{V}$”
+        - “$I = 2.50 \, \text{A}$”
+      unknowns:
+        - “$P = ?$”
+      steps:
+        - “1. <strong>Select Parent Equation:</strong> The basic power equation is $P = IV$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> No rearrangement is needed.”
+        - “3. <strong>Substitute Values and Track Units:</strong>”
+        - |
+          \(P = (2.50 \\, \\text{A})(120. \\, \\text{V}) = 300. \\, \\text{A} \\cdot \\text{V}\)
+      final_answer: “The television consumes <strong>300. W</strong>.”</p>
 
-.no-header-page .breadcrumb-nav {
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    font-size: 0.9rem;
-    color: #6c757d;
-}
+<p>  - problem_number: 5
+    tier:
+      level: 1
+      title: “The Apprentice’s Practice: Power Calculation (Solving for I)”
+    phenomenon_connection: “Grid operators are most concerned with the total current being drawn. Calculating the current of individual devices is the first step in determining that total.”
+    problem_statement: “A modern microwave oven is rated at 1100 W and plugs into a standard 120. V outlet. How much current does it draw?”
+    hints: []
+    solution:
+      givens:
+        - “$P = 1100. \, \text{W}$”
+        - “$V = 120. \, \text{V}$”
+      unknowns:
+        - “$I = ?$”
+      steps:
+        - “1. <strong>Select Parent Equation:</strong> $P = IV$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> To solve for current, divide both sides by voltage: $I = \frac{P}{V}$.”
+        - “3. <strong>Substitute Values and Track Units:</strong>”
+        - |
+          \(I = \\frac{1100. \\, \\text{W}}{120. \\, \\text{V}} = 9.17 \\, \\frac{\\text{W}}{\\text{V}}\)
+      final_answer: “The microwave draws <strong>9.17 A</strong>.”</p>
 
-.no-header-page .breadcrumb-nav a {
-    color: #007bff;
-    text-decoration: none;
-}
+<p>  # ————————- TIER 2: JOURNEYMAN —————————
+  - problem_number: 6
+    tier:
+      level: 2
+      title: “The Journeyman’s Task: Synthesis &amp; Application”
+    phenomenon_connection: “Understanding the relationship between power, voltage, and resistance is critical for engineers designing appliances and planning for their impact on the grid.”
+    problem_statement: “A 60.0 W incandescent light bulb is plugged into a 120. V wall outlet. a) How much current does the bulb draw? b) What is the resistance of the bulb’s filament?”
+    hints:
+      - “For part (a), find the formula from your key formulae list that connects power, current, and voltage.”
+      - “For part (b), you can use the current you found in part (a) along with Ohm’s Law.”
+    answer_format:
+      - part: “a”
+        type: “numeric_with_units”
+        units: [“A”, “mA”]
+      - part: “b”
+        type: “numeric_with_units”
+        units: [“Ω”, “kΩ”]
+    solution:
+      givens:
+        - “$P = 60.0 \, \text{W}$”
+        - “$V = 120. \, \text{V}$”
+      unknowns:
+        - “$I = ? \quad (\text{Part a})$”
+        - “$R = ? \quad (\text{Part b})$”
+      steps:
+        - “— <strong>Part (a): Find the current</strong> —”
+        - “1. <strong>Select Parent Equation:</strong> $P = IV$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> To find current, divide by voltage: $I = \frac{P}{V}$.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(I = \\frac{60.0 \\, \\text{W}}{120. \\, \\text{V}} = 0.500 \\, \\text{A}\)
+        - “— <strong>Part (b): Find the resistance</strong> —”
+        - “1. <strong>Select Parent Equation:</strong> We can use Ohm’s Law, $V = IR$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> To find resistance, divide by current: $R = \frac{V}{I}$.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(R = \\frac{120. \\, \\text{V}}{0.500 \\, \\text{A}} = 240. \\, \\Omega\)
+        - “<strong>Alternative Method for Part (b):</strong> Use the power equation $P = \frac{V^2}{R}$. Rearrange to $R = \frac{V^2}{P} = \frac{(120. V)^2}{60.0 W} = 240. \Omega$.”
+      final_answer: “The bulb draws <strong>0.500 A</strong> of current and its filament has a resistance of <strong>240. Ω</strong>.”</p>
 
-.no-header-page .breadcrumb-nav a:hover {
-    text-decoration: underline;
-}
+<p>  - problem_number: 7
+    tier:
+      level: 2
+      title: “The Journeyman’s Task: Energy Consumption”
+    phenomenon_connection: “The total energy demand on a grid is the sum of the power used by all devices over time. A blackout occurs when the grid cannot supply this total energy.”
+    problem_statement: “A 100. W light bulb is left on for 3.00 hours. a) Convert the time to seconds. b) How many joules of energy were used?”
+    hints: []
+    answer_format:
+      - part: “a”
+        type: “numeric_with_units”
+        units: [”s”]
+      - part: “b”
+        type: “numeric_with_units”
+        units: [“J”, “kJ”, “MJ”]
+    solution:
+      givens:
+        - “$P = 100. \, \text{W}$”
+        - “$\Delta t = 3.00 \, \text{hours}$”
+      unknowns:
+        - “$\Delta t \, \text{in} \, \text{seconds} = ?$”
+        - “$E = ?$”
+      steps:
+        - “— <strong>Part (a): Convert time</strong> —”
+        - |
+          \(3.00 \\, \\text{hr} \\times \\frac{60 \\, \\text{min}}{1 \\, \\text{hr}} \\times \\frac{60 \\, \\text{s}}{1 \\, \\text{min}} = 10,800 \\, \\text{s}\)
+        - “— <strong>Part (b): Calculate energy</strong> —”
+        - “1. <strong>Select Parent Equation:</strong> $E = P \cdot \Delta t$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> No rearrangement needed.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(E = (100. \\, \\text{W})(10,800 \\, \\text{s}) = 1,080,000 \\, \\text{J}\)
+        - “This is equivalent to $1.08 \times 10^6 \text{J}$, or 1.08 megajoules (MJ).”
+      final_answer: “The bulb was on for <strong>10,800 s</strong> and used <strong>1.08 x 10^6 J</strong> of energy.”</p>
 
-.no-header-page .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: #adb5bd;
-}
+<p>  - problem_number: 8
+    tier:
+      level: 2
+      title: “The Journeyman’s Task: Power Loss in Transmission”
+    phenomenon_connection: “Significant energy is lost as heat in the wires that transmit power from plants to cities. Minimizing this loss is a major goal for grid engineers.”
+    problem_statement: “A long-distance power line has a resistance of 10.0 Ω and carries a current of 1000. A. How much power is lost as heat in the wire itself?”
+    hints:
+      - “You are given resistance and current, and asked to find power. Which power equation is most direct?”
+    solution:
+      givens:
+        - “$R = 10.0 \, \Omega$”
+        - “$I = 1000. \, \text{A}$”
+      unknowns:
+        - “$P_{loss} = ?$”
+      steps:
+        - “1. <strong>Select Parent Equation:</strong> We can use the derived power equation $P = I^2R$, as it directly relates power, current, and resistance.”
+        - “2. <strong>Algebraic Rearrangement:</strong> No rearrangement is needed.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(P = (1000. \\, \\text{A})^2 (10.0 \\, \\Omega) = (1.00 \\times 10^6 \\, \\text{A}^2)(10.0 \\, \\Omega) = 1.00 \\times 10^7 \\, \\text{W}\)
+        - “This is equivalent to 10.0 megawatts (MW).”
+      final_answer: “The power line loses <strong>1.00 x 10^7 W</strong> (or 10.0 MW) as heat.”</p>
 
-.no-header-page .activity-header {
-    margin-top: 0;
-    padding-top: 1.5rem;
-}
+<p>  # ————————- TIER 3: MASTER ——————————-
+  - problem_number: 9
+    tier:
+      level: 3
+      title: “The Master’s Insight: Connecting to the Phenomenon”
+    phenomenon_connection: “During the Texas power crisis, a primary cause of increased demand was the use of electric heaters to combat the cold. This problem models the impact of a single such device.”
+    problem_statement: “A common portable electric space heater is rated at 1500. W. a) Calculate the current a single heater draws from a 120. V outlet. b) Explain why millions of homes simultaneously drawing this extra current would strain an electrical grid, connecting to the Texas blackout.”
+    hints: []
+    answer_format:
+      - part: “a”
+        type: “numeric_with_units”
+        units: [“A”]
+      - part: “b”
+        type: “essay”
+        rows: 6
+    solution:
+      givens:
+        - “$P = 1500. \, \text{W}$”
+        - “$V = 120. \, \text{V}$”
+      unknowns:
+        - “$I = ?$”
+        - “Conceptual explanation.”
+      steps:
+        - “— <strong>Part (a): Calculate current</strong> —”
+        - “1. <strong>Select Parent Equation:</strong> $P = IV$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> $I = \frac{P}{V}$.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(I = \\frac{1500. \\, \\text{W}}{120. \\, \\text{V}} = 12.5 \\, \\text{A}\)
+        - “— <strong>Part (b): Explanation</strong> —”
+        - |
+          A single heater drawing 12.5 A is a very large load, close to the 15 A limit of a typical household circuit. When millions of homes turn on devices like this simultaneously, the total current drawn from the grid increases enormously. This massive surge in current has several effects:
+          1.  <strong>Overloads Transformers:</strong> Local and regional transformers have thermal limits. The immense current heats them up ($P_{loss} = I^2R$), risking damage or failure.
+          2.  <strong>Strains Transmission Lines:</strong> Similarly, the high-voltage lines that carry power across the state heat up and lose a significant amount of energy as heat, reducing the grid’s efficiency.
+          3.  <strong>Exceeds Generation Capacity:</strong> Most importantly, the total power demand ($P_{total} = \sum P_{individual}$) can exceed the power plants’ maximum ability to generate it, especially if some plants fail due to weather, as happened in Texas. This supply-demand imbalance forces operators to implement rolling blackouts to prevent a total grid collapse.
+      final_answer: “The heater draws <strong>12.5 A</strong>. This large individual load, multiplied by millions of households, creates a massive surge in demand that can overload grid components and exceed the total power generation capacity, leading to systemic failures.”</p>
 
-.no-header-page .activity-header h1 {
-    margin-top: 0;
-}
-    </style>
+<p>  - problem_number: 10
+    tier:
+      level: 3
+      title: “The Master’s Insight: Real-World Energy Costs”
+    phenomenon_connection: “Your electricity bill reflects your personal contribution to the grid’s total load. Understanding it is key to making informed decisions about energy conservation and cost.”
+    problem_statement: “The space heater from the previous problem (1500. W) runs for 6.00 hours a day. The cost of electricity in a particular area is $0.150 per kilowatt-hour (kWh). a) Calculate the energy consumed in kWh. b) Calculate the cost to run the heater for one day.”
+    hints:
+      - “A kilowatt-hour is a unit of energy, not power. It’s the energy used when you consume 1 kilowatt of power for 1 hour.”
+      - “First, convert the heater’s power from watts to kilowatts.”
+    solution:
+      givens:
+        - “$P = 1500. \, \text{W}$”
+        - “$\Delta t = 6.00 \, \text{hours}$”
+        - “Cost = $0.150 / kWh”
+      unknowns:
+        - “$E \, \text{in} \, \text{kWh} = ?$”
+        - “Daily Cost = ?$”
+      steps:
+        - “— <strong>Part (a): Calculate energy in kWh</strong> —”
+        - “1. <strong>Convert Power to kilowatts (kW):</strong>”
+        - |
+          \(1500. \\, \\text{W} \\times \\frac{1 \\, \\text{kW}}{1000 \\, \\text{W}} = 1.50 \\, \\text{kW}\)
+        - “2. <strong>Calculate Energy:</strong> Using the formula $E = P \cdot \Delta t$ with the correct units.”
+        - |
+          \(E = (1.50 \\, \\text{kW})(6.00 \\, \\text{h}) = 9.00 \\, \\text{kWh}\)
+        - “— <strong>Part (b): Calculate cost</strong> —”
+        - “1. <strong>Use the energy from part (a) and the cost per unit:</strong>”
+        - |
+          \(\\text{Cost} = (9.00 \\, \\text{kWh}) \\times (\\frac{\\$0.150}{1 \\, \\text{kWh}}) = \\$1.35\)
+      final_answer: “The heater consumes <strong>9.00 kWh</strong> of energy and costs <strong>$1.35</strong> to run for one day.”</p>
 
-<div class="activity-content-container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        
-        
-        
-        
-        
-        
-        <a href="/sphys/">Standard Physics</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/sphys/course/1/">Unit 1: </a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Problem Set 1.1: Circuits & Power</span>
-    </nav>
+<p>  - problem_number: 11
+    tier:
+      level: 3
+      title: “The Master’s Insight: Circuit Design and Safety”
+    phenomenon_connection: “Household circuits are protected by circuit breakers (or fuses) that prevent excessive current, which can cause fires. This problem explores the engineering constraints of such a system.”
+    problem_statement: “A kitchen circuit is connected to a 120. V source and is protected by a 15.0 A circuit breaker. You plug in a 1100. W microwave and a 900. W toaster. a) What is the total power drawn by both appliances? b) What is the total current drawn? c) Will this combination of appliances trip the circuit breaker? Explain.”
+    hints:
+      - “When multiple devices are plugged into the same household circuit, they are in parallel. The total power drawn is the sum of the individual powers.”
+    solution:
+      givens:
+        - “$V = 120. \, \text{V}$”
+        - “$I_{max} = 15.0 \, \text{A}$”
+        - “$P_{microwave} = 1100. \, \text{W}$”
+        - “$P_{toaster} = 900. \, \text{W}$”
+      unknowns:
+        - “$P_{total} = ?$”
+        - “$I_{total} = ?$”
+        - “Will the breaker trip?”
+      steps:
+        - “— <strong>Part (a): Calculate total power</strong> —”
+        - |
+          \(P_{total} = P_{microwave} + P_{toaster} = 1100. \\, \\text{W} + 900. \\, \\text{W} = 2000. \\, \\text{W}\)
+        - “— <strong>Part (b): Calculate total current</strong> —”
+        - “1. <strong>Select Parent Equation:</strong> $P_{total} = I_{total}V$.”
+        - “2. <strong>Algebraic Rearrangement:</strong> $I_{total} = \frac{P_{total}}{V}$.”
+        - “3. <strong>Substitute Values:</strong>”
+        - |
+          \(I_{total} = \\frac{2000. \\, \\text{W}}{120. \\, \\text{V}} = 16.7 \\, \\text{A}\)
+        - “— <strong>Part (c): Will the breaker trip?</strong> —”
+        - “Yes, the breaker will trip. The calculated total current is 16.7 A, which is greater than the 15.0 A rating of the circuit breaker. The breaker is designed to interrupt the circuit to prevent overheating and potential fire when the current exceeds its safe limit.”
+      final_answer: “The total power is <strong>2000. W</strong>, drawing a total current of <strong>16.7 A</strong>. <strong>Yes, this will trip the 15.0 A circuit breaker</strong> because the current drawn exceeds the breaker’s rating.”</p>
 
-    <!-- Critical metadata for backend routing and JavaScript -->
-    <div id="activity-metadata"
-         data-resource-id="ps-1.1-circuits-and-power"
-         data-content-type="problem_set"
-         data-course="sphys"
-         data-title="Problem Set 1.1: Circuits & Power"
-         data-unit="1"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null"
-         hidden></div>
-
-    <main class="main-content">
-        
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Problem Set 1.1: Circuits & Power</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Problem set</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
-  Problem Set Content Display
-  Single unified form with problems and reflection
--->
-
-<form id="activity-submission-form" class="activity-form">
-  
-  <div class="problem-set-content">
-    <!-- Problem Set Introduction (Collapsible) -->
-    
-
-    <!-- Key Formulae (Collapsible) -->
-    
-
-    <!-- Global Standards (Collapsible) -->
-    
-
-    <!-- Problems with Answer Fields -->
-    
-
-    <!-- Reflection Section (at end, part of same form) -->
-    <div class="form-section reflection-section">
-      <h3>Reflection & Submission</h3>
-      
-      <!-- Student Information -->
-      <fieldset class="form-subsection">
-        <legend>Student Information</legend>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="student-name">Full Name *</label>
-            <input type="text" id="student-name" name="StudentName" required>
-          </div>
-          <div class="form-field">
-            <label for="student-email">Email</label>
-            <input type="email" id="student-email" name="StudentEmail">
-          </div>
-          <div class="form-field">
-            <label for="course-name">Course</label>
-            <input type="text" id="course-name" name="CourseName" value="SPHYS" readonly>
-          </div>
-          <div class="form-field">
-            <label for="class-period">Class Period</label>
-            <select id="class-period" name="ClassPeriod">
-              <option value="">Select Period</option>
-              <option value="1">1st Period</option>
-              <option value="2">2nd Period</option>
-              <option value="3">3rd Period</option>
-              <option value="4">4th Period</option>
-              <option value="5">5th Period</option>
-              <option value="6">6th Period</option>
-              <option value="7">7th Period</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
-      <div id="activity-specific-fields"></div>
-
-      <!-- Hidden metadata fields -->
-      <input type="hidden" name="ActivityTitle" value="Problem Set 1.1: Circuits & Power">
-      <input type="hidden" name="ResourceID" value="ps-1.1-circuits-and-power">
-      <input type="hidden" name="ContentType" value="problem_set">
-      <input type="hidden" name="Course" value="sphys">
-      <input type="hidden" name="Unit" value="1">
-      <input type="hidden" name="StartTime" id="start-time">
-      <input type="hidden" name="SubmitTime" id="submit-time">
-      <input type="hidden" name="BrowserInfo" id="browser-info">
-
-      <!-- Status Messages -->
-      <div id="submission-status" class="submission-status" hidden></div>
-      
-      <!-- Auto-save indicator (top right corner) -->
-      <div id="auto-save-indicator" hidden>
-        ✓ Saved
-      </div>
-
-      <!-- Simple Submit Button -->
-      <div class="form-actions">
-        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
-          Submit Problem Set
-        </button>
-        <p class="help-text">
-          Answers are auto-saved. Submit when complete.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</form>
-
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
-<script>
-// Toggle solutions visibility
-function toggleSolutions() {
-    const solutionsDiv = document.getElementById('student-solutions');
-    const toggleBtn = document.getElementById('toggle-solutions-btn');
-    
-    if (solutionsDiv.style.display === 'none') {
-        solutionsDiv.style.display = 'block';
-        toggleBtn.textContent = '🙈 Hide Answers';
-        toggleBtn.style.background = '#dc3545';
-    } else {
-        solutionsDiv.style.display = 'none';
-        toggleBtn.textContent = '🔍 Check Your Answers';
-        toggleBtn.style.background = '#ffc107';
-    }
-}
-
-// Toggle current problem's answer
-function toggleCurrentAnswer(problemNumber) {
-    const answerDiv = document.getElementById('answer-key-' + problemNumber);
-    const checkBtn = document.getElementById('check-answer-' + problemNumber);
-    
-    if (answerDiv.style.display === 'none') {
-        answerDiv.style.display = 'block';
-        checkBtn.textContent = 'Hide Solution';
-        checkBtn.style.background = '#6c757d';
-        checkBtn.style.borderColor = '#5a6268';
-    } else {
-        answerDiv.style.display = 'none';
-        checkBtn.textContent = 'View Solution';
-        checkBtn.style.background = '#007bff';
-        checkBtn.style.borderColor = '#0056b3';
-    }
-}
-
-// Initialize Problem Set Navigator
-document.addEventListener('DOMContentLoaded', function() {
-    const problems = document.querySelectorAll('.problem-container');
-    
-    if (problems.length > 0) {
-        window.problemNavigator = new ActivityNavigator({
-            containerSelector: '.problem-container',
-            progressBarId: 'progress-fill',
-            progressTextId: 'progress-text',
-            prevButtonId: 'prev-problem',
-            nextButtonId: 'next-problem',
-            itemLabel: 'Problem',
-            dropdownId: 'problem-selector'
-        });
-        
-        console.log('[problem-set] Sequential navigation with dropdown initialized');
-        
-        // DIAGNOSTIC: Check if active class and grid are working
-        setTimeout(() => {
-            const firstProblem = document.querySelector('.problem-container.active');
-            if (firstProblem) {
-                const computedStyle = window.getComputedStyle(firstProblem);
-                console.log('[DIAGNOSTIC] First problem container:');
-                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
-                console.log('  - Inline style.display:', firstProblem.style.display);
-                console.log('  - Computed display:', computedStyle.display);
-                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
-            } else {
-                console.error('[DIAGNOSTIC] No .problem-container.active found!');
-            }
-        }, 500);
-    }
-});
-
-// Legacy function support (for inline onclick handlers)
-function navigateProblem(direction) {
-    if (window.problemNavigator) {
-        window.problemNavigator.navigate(direction);
-    }
-}
-
-// Jump to specific problem from dropdown
-function jumpToProblem(index) {
-    if (window.problemNavigator) {
-        window.problemNavigator.jumpTo(parseInt(index));
-    }
-}
-</script>
-
-            
-        </div>
-
-    </main>
-
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
-    
-    
-
-</div>
-
-    
-    </div>
-    <script type="application/json" id="course-data-">null</script>
-    <script src="/assets/js/navigation.js"></script>
-  </body>
-</html>
+<h1 id="-4">——————————————————————————</h1>
+<h1 id="section-student-solutions-list">SECTION: STUDENT SOLUTIONS LIST</h1>
+<h1 id="-5">——————————————————————————</h1>
+<p>student_solutions_list:
+  - problem_number: 1
+    final_answer: “Resistance (R)”
+  - problem_number: 2
+    final_answer: “150. Ω”
+  - problem_number: 3
+    final_answer: “120. V”
+  - problem_number: 4
+    final_answer: “300. W”
+  - problem_number: 5
+    final_answer: “9.17 A”
+  - problem_number: 6
+    final_answer: “a) 0.500 A, b) 240. Ω”
+  - problem_number: 7
+    final_answer: “a) 10,800 s, b) 1.08 x 10^6 J”
+  - problem_number: 8
+    final_answer: “1.00 x 10^7 W”
+  - problem_number: 9
+    final_answer: “a) 12.5 A”
+  - problem_number: 10
+    final_answer: “a) 9.00 kWh, b) $1.35”
+  - problem_number: 11
+    final_answer: “a) 2000. W, b) 16.7 A, c) Yes”</p>

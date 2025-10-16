@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,49 +57,886 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Chapter 17: The Symphony of Light</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 5</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
-         data-content-type=""
+         data-resource-id="fb-17-radiation-types"
+         data-content-type="flexbook"
          data-course="sphys"
          data-title="Chapter 17: The Symphony of Light"
-         data-unit="5-em-radiation"
+         data-unit="5"
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Chapter 17: The Symphony of Light</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type"></span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 5</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
-                <!-- Fallback: Render markdown content directly -->
-                <div class="activity-content">
-                    
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
 
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Chapter 17: The Symphony of Light">
+  <input type="hidden" name="ResourceID" value="fb-17-radiation-types">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="5">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 9</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Introduction: More Than Meets the Eye</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Our journey began with the invisible waves that heat our food. We learned that microwaves are a form of light, a wave of electromagnetic energy. But this is just one note in a vast, cosmic symphony. The visible light our eyes can see is a tiny, sliver of the full range of light that fills the universe.</p>
+
+<p><strong>The Question:</strong> What are the other forms of electromagnetic radiation, and how does their position in this symphony determine their properties, their uses, and their potential dangers?</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">17.1 The Full Spectrum</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The <strong>Electromagnetic (EM) Spectrum</strong> is the continuum of all electromagnetic waves, arranged by their frequency and wavelength. They are all the same fundamental phenomenon—vibrations of electric and magnetic fields—and they all travel at the same ultimate speed in a vacuum: the speed of light, <em>c</em>. The only thing that differentiates a radio wave from a gamma ray is its frequency.</p>
+
+<p>[Image of the electromagnetic spectrum]</p>
+
+<p>From the long-wavelength, low-frequency radio waves that carry our broadcasts, to the microwaves for communication and cooking, to the infrared that we feel as heat, to the tiny band of visible light, into the higher-frequency ultraviolet, X-rays, and the incredibly energetic gamma rays—it is all light.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-dataset" 
+             data-item-index="2"
+             data-item-type="dataset">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Visualizing the EM Spectrum</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-dataset">
+              
+                
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Energy of Photon by Radiation Type">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Energy of Photon by Radiation Type</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="em-spectrum-chart" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;em-spectrum-chart&quot;,&quot;chart_type&quot;:&quot;bar&quot;,&quot;title&quot;:&quot;Energy of Photon by Radiation Type&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Type of EM Radiation&quot;},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Approximate Energy per Photon (log scale in eV)&quot;,&quot;is_log&quot;:true},&quot;dataPoints&quot;:[{&quot;x&quot;:&quot;Radio&quot;,&quot;y&quot;:0.000001},{&quot;x&quot;:&quot;Microwave&quot;,&quot;y&quot;:0.001},{&quot;x&quot;:&quot;Infrared&quot;,&quot;y&quot;:0.1},{&quot;x&quot;:&quot;Visible&quot;,&quot;y&quot;:2},{&quot;x&quot;:&quot;Ultraviolet&quot;,&quot;y&quot;:100},{&quot;x&quot;:&quot;X-Ray&quot;,&quot;y&quot;:10000},{&quot;x&quot;:&quot;Gamma Ray&quot;,&quot;y&quot;:1000000}]}"
+        data-defer-render="true"
+        aria-label="Energy of Photon by Radiation Type. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Energy of Photon by Radiation Type">
+      <table>
+        <caption>Energy of Photon by Radiation Type</caption>
+        <thead>
+          <tr>
+            <th scope="col">Type of EM Radiation</th>
+            <th scope="col">Approximate Energy per Photon (log scale in eV)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>Radio</td>
+              <td>1.0e-06</td>
+            </tr>
+            
+            <tr>
+              <td>Microwave</td>
+              <td>0.001</td>
+            </tr>
+            
+            <tr>
+              <td>Infrared</td>
+              <td>0.1</td>
+            </tr>
+            
+            <tr>
+              <td>Visible</td>
+              <td>2</td>
+            </tr>
+            
+            <tr>
+              <td>Ultraviolet</td>
+              <td>100</td>
+            </tr>
+            
+            <tr>
+              <td>X-Ray</td>
+              <td>10000</td>
+            </tr>
+            
+            <tr>
+              <td>Gamma Ray</td>
+              <td>1000000</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'em-spectrum-chart';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">17.2 The Particle of Light: The Photon</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>At the turn of the 20th century, Max Planck and Albert Einstein revealed a shocking truth about light: it is not just a continuous wave, but it also comes in discrete, particle-like packets of energy called <strong>photons</strong>.</p>
+
+<p>The energy of a single photon is directly proportional to the frequency of its wave. This is described by one of the most important equations in modern physics:</p>
+
+\[E = hf\]
+
+<p>Here, <code class="language-plaintext highlighter-rouge">E</code> is the energy of one photon, <code class="language-plaintext highlighter-rouge">f</code> is the wave’s frequency, and <code class="language-plaintext highlighter-rouge">h</code> is a fundamental constant of the universe (Planck’s constant). This means high-frequency waves (like X-rays) are composed of a stream of incredibly high-energy photons, while low-frequency waves (like radio waves) are composed of a stream of very low-energy photons.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="4"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Energy and Frequency</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Energy and Frequency</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-5-q1">
+                    <strong>Question 1:</strong> According to both the graph and the equation E=hf, which has more energy per photon: a microwave or an X-ray? Explain.
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-5-q1" 
+                      name="checkpoint_5_q1"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
                 </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">17.3 The Critical Divide: Ionizing vs. Non-ionizing Radiation</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The relationship between frequency and energy is the single most important concept for understanding the safety of radiation. It creates a critical dividing line across the spectrum.</p>
+
+<ul>
+  <li>
+    <p><strong>Non-ionizing Radiation:</strong> The photons of low-frequency waves (radio, microwave, infrared, visible light) do not have enough energy to knock electrons out of atoms. They can make molecules vibrate and rotate (like in a microwave oven), but they cannot fundamentally alter their chemical structure.</p>
+  </li>
+  <li>
+    <p><strong>Ionizing Radiation:</strong> The photons of high-frequency waves (ultraviolet, X-rays, gamma rays) carry so much energy that a single photon can physically knock an electron out of an atom it hits. This process, called ionization, can break apart molecules, including the critical DNA in our cells, which can lead to cell death or cancer. This is why we wear sunscreen to block UV light and why medical X-rays are used with caution.</p>
+  </li>
+</ul>
+
+<p>The boundary lies within the ultraviolet part of the spectrum. The entire debate about the safety of technologies like cell phones and 5G hinges on this distinction. These technologies use microwaves, which are a form of non-ionizing radiation.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="6"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Lab Activity: Separating Fact from Fiction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You are now equipped with the definitive scientific model of the EM spectrum. In this final lab, you will apply your understanding to critically evaluate a series of real-world claims and media reports about the safety of 5G technology.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="7"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Final Checkpoint: Applying the Model</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Final Checkpoint: Applying the Model</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="4">
+                  
+                  <label for="checkpoint-8-q1">
+                    <strong>Question 1:</strong> A person tells you they are worried about 'radiation' from their WiFi router. Using the correct scientific terms (ionizing/non-ionizing), explain why this is not the same kind of risk as radiation from a medical X-ray.
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-8-q1" 
+                      name="checkpoint_8_q1"
+                      rows="4"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="8"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Course Conclusion: Your Final Reflection</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You have now completed your journey, from the failure of a local power grid to the fundamental nature of light itself. Your final task is to reflect on this journey and synthesize what you have learned about the interplay of science, technology, and society.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation buttons have been moved to the top for better UX -->
+    
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
             
         </div>
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -151,24 +947,22 @@
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

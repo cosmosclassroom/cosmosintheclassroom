@@ -41,7 +41,12 @@
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Chart.js for data visualization -->
 
@@ -60,59 +65,205 @@
 </script>
 
 <style>
-/* No-header page: Remove all top spacing for content-first experience */
-.no-header-page {
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
     padding-top: 0;
     margin-top: 0;
 }
+</style>
 
-.no-header-page .breadcrumb-nav {
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Problem Set 2.1: Interpreting Kinematic Graphs</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">HPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Problem set</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
     font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
     color: #6c757d;
 }
 
-.no-header-page .breadcrumb-nav a {
-    color: #007bff;
-    text-decoration: none;
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
 }
 
-.no-header-page .breadcrumb-nav a:hover {
-    text-decoration: underline;
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
 }
 
-.no-header-page .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: #adb5bd;
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
 }
 
-.no-header-page .activity-header {
-    margin-top: 0;
-    padding-top: 1.5rem;
+.meta-separator {
+    margin: 0 0.4rem;
 }
 
-.no-header-page .activity-header h1 {
-    margin-top: 0;
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
 }
-    </style>
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
 
 <div class="activity-content-container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        
-        
-        
-        
-        
-        
-        <a href="/hphys/">Honors Physics</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/hphys/course/2-kinematics-1d/">Unit 2: Kinematics 1d</a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Problem Set 2.1: Interpreting Kinematic Graphs</span>
-    </nav>
 
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
@@ -125,22 +276,13 @@
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Part A: Position-Time Graphs&quot;,&quot;Part B: Velocity-Time Graphs&quot;,&quot;Part C: Connecting Position and Velocity&quot;,&quot;Part D: Acceleration Analysis&quot;,&quot;Part E: Real-World Applications&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What did you learn about interpreting kinematic graphs? Which type of graph (position-time or velocity-time) was easier for you to work with, and why?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Problem Set 2.1: Interpreting Kinematic Graphs</h1>
-            <div class="activity-meta">
-                <span class="activity-course">HPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Problem set</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 2</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -150,6 +292,16 @@
 -->
 
 <form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
+  <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
+  <input type="hidden" name="ContentType" value="problem_set">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="2-kinematics-1d">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
   
   <div class="problem-set-content">
     <!-- Problem Set Introduction (Collapsible) -->
@@ -289,42 +441,10 @@
           </div>
           
           <div class="problem-statement">
-            <p>A car’s position is recorded every second. The position-time graph is shown below:</p>
+            <p>A car’s position is recorded every second. The data is provided in the graph.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time (s)</th>
-      <th>Position (m)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>45</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>80</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>(a)</strong> Calculate the average velocity for each time interval.</p>
-
-<p><strong>(b)</strong> At what time was the car moving the fastest? Explain your reasoning.</p>
+<p><strong>(a)</strong> Calculate the average velocity for each time interval (0-1s, 1-2s, 2-3s, 3-4s).
+<strong>(b)</strong> At what time was the car moving the fastest? Explain your reasoning.</p>
 
           </div>
           
@@ -457,12 +577,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -474,7 +602,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -486,29 +614,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -682,13 +822,11 @@
           </div>
           
           <div class="problem-statement">
-            <p>The position-time graph for a rocket launch is shown below:</p>
+            <p>The position-time graph for a rocket launch is shown.</p>
 
-<p><strong>(a)</strong> Is the rocket’s velocity constant? How do you know?</p>
-
-<p><strong>(b)</strong> Is the rocket accelerating? How do you know?</p>
-
-<p><strong>(c)</strong> Estimate the rocket’s velocity at $t = 2.0 \, \text{s}$ using the slope of the tangent line.</p>
+<p><strong>(a)</strong> Is the rocket’s velocity constant? How do you know?
+<strong>(b)</strong> Is the rocket accelerating? How do you know?
+<strong>(c)</strong> Estimate the rocket’s velocity at $t = 2.0 \, \text{s}$ using the slope of the tangent line.</p>
 
           </div>
           
@@ -826,12 +964,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -843,7 +989,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -855,29 +1001,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -1081,13 +1239,11 @@
           </div>
           
           <div class="problem-statement">
-            <p>A runner’s velocity-time graph is shown below:</p>
+            <p>A runner’s velocity-time graph is shown.</p>
 
-<p><strong>(a)</strong> Describe the runner’s motion in words for each segment of the graph.</p>
-
-<p><strong>(b)</strong> Calculate the total displacement of the runner over the 30-second interval.</p>
-
-<p><strong>(c)</strong> What was the runner’s acceleration during the interval from $10 \, \text{s}$ to $20 \, \text{s}$?</p>
+<p><strong>(a)</strong> Describe the runner’s motion in words for each segment of the graph.
+<strong>(b)</strong> Calculate the total displacement of the runner over the 30-second interval.
+<strong>(c)</strong> What was the runner’s acceleration during the interval from $10 \, \text{s}$ to $20 \, \text{s}$?</p>
 
           </div>
           
@@ -1215,12 +1371,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -1232,7 +1396,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -1244,29 +1408,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -1479,15 +1655,12 @@
           </div>
           
           <div class="problem-statement">
-            <p>A ball is thrown upward and then falls back to the ground. The velocity-time graph is shown below:</p>
+            <p>A ball is thrown upward and then falls back to the ground. The velocity-time graph is shown.</p>
 
-<p><strong>(a)</strong> At what time does the ball reach maximum height?</p>
-
-<p><strong>(b)</strong> At what time does the ball return to its starting height?</p>
-
-<p><strong>(c)</strong> What is the ball’s acceleration during the upward motion?</p>
-
-<p><strong>(d)</strong> What is the ball’s acceleration during the downward motion?</p>
+<p><strong>(a)</strong> At what time does the ball reach maximum height?
+<strong>(b)</strong> At what time does the ball return to its starting height?
+<strong>(c)</strong> What is the ball’s acceleration during the upward motion?
+<strong>(d)</strong> What is the ball’s acceleration during the downward motion?</p>
 
           </div>
           
@@ -1620,12 +1793,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -1637,7 +1818,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -1649,29 +1830,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -1925,15 +2118,12 @@
           </div>
           
           <div class="problem-statement">
-            <p>The velocity-time graph for a car is shown below:</p>
+            <p>The velocity-time graph for a car is shown.</p>
 
-<p><strong>(a)</strong> What type of motion is represented?</p>
-
-<p><strong>(b)</strong> Draw the corresponding position-time graph on graph paper.</p>
-
-<p><strong>(c)</strong> Calculate the car’s displacement after $10.0 \, \text{s}$.</p>
-
-<p><strong>(d)</strong> Calculate the car’s acceleration.</p>
+<p><strong>(a)</strong> What type of motion is represented?
+<strong>(b)</strong> Draw the corresponding position-time graph on graph paper.
+<strong>(c)</strong> Calculate the car’s displacement after $10.0 \, \text{s}$.
+<strong>(d)</strong> Calculate the car’s acceleration.</p>
 
           </div>
           
@@ -2051,12 +2241,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -2068,7 +2266,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -2080,29 +2278,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -2339,13 +2549,10 @@
           <div class="problem-statement">
             <p>A falling object has an initial velocity of $0 \, \text{m/s}$ and experiences constant acceleration due to gravity.</p>
 
-<p><strong>(a)</strong> Draw the velocity-time graph for the first $5.0 \, \text{s}$ of fall on graph paper.</p>
-
-<p><strong>(b)</strong> Draw the corresponding position-time graph on graph paper.</p>
-
-<p><strong>(c)</strong> Calculate the object’s position after $3.0 \, \text{s}$.</p>
-
-<p><strong>(d)</strong> At what time will the object have fallen $45.0 \, \text{m}$?</p>
+<p><strong>(a)</strong> Draw the velocity-time graph for the first $5.0 \, \text{s}$ of fall on graph paper.
+<strong>(b)</strong> Draw the corresponding position-time graph on graph paper.
+<strong>(c)</strong> Calculate the object’s position after $3.0 \, \text{s}$.
+<strong>(d)</strong> At what time will the object have fallen $45.0 \, \text{m}$?</p>
 
           </div>
           
@@ -2509,11 +2716,9 @@
           <div class="problem-statement">
             <p>A rocket’s velocity-time graph shows a constant increase from $0 \, \text{m/s}$ to $1000 \, \text{m/s}$ over $20.0 \, \text{s}$.</p>
 
-<p><strong>(a)</strong> What is the rocket’s acceleration?</p>
-
-<p><strong>(b)</strong> What distance does the rocket travel in this time?</p>
-
-<p><strong>(c)</strong> If the rocket continues with the same acceleration, how long will it take to reach a velocity of $2000 \, \text{m/s}$?</p>
+<p><strong>(a)</strong> What is the rocket’s acceleration?
+<strong>(b)</strong> What distance does the rocket travel in this time?
+<strong>(c)</strong> If the rocket continues with the same acceleration, how long will it take to reach a velocity of $2000 \, \text{m/s}$?</p>
 
           </div>
           
@@ -2631,12 +2836,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -2648,7 +2861,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -2660,29 +2873,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -2908,13 +3133,10 @@
           <div class="problem-statement">
             <p>A cyclist travels with a velocity given by $v(t) = 4t - 0.2t^2 \, \text{m/s}$, where $t$ is in seconds.</p>
 
-<p><strong>(a)</strong> Find the cyclist’s acceleration as a function of time.</p>
-
-<p><strong>(b)</strong> At what time is the velocity maximum?</p>
-
-<p><strong>(c)</strong> Draw the velocity-time graph from $t = 0 \, \text{s}$ to $t = 25.0 \, \text{s}$ on graph paper.</p>
-
-<p><strong>(d)</strong> Calculate the total distance traveled in $25.0 \, \text{s}$.</p>
+<p><strong>(a)</strong> Find the cyclist’s acceleration as a function of time.
+<strong>(b)</strong> At what time is the velocity maximum?
+<strong>(c)</strong> Draw the velocity-time graph from $t = 0 \, \text{s}$ to $t = 25.0 \, \text{s}$ on graph paper.
+<strong>(d)</strong> Calculate the total distance traveled in $25.0 \, \text{s}$.</p>
 
           </div>
           
@@ -3075,11 +3297,9 @@
           <div class="problem-statement">
             <p>A train accelerates from rest at $0.50 \, \text{m/s}^2$ for $60.0 \, \text{s}$, then maintains a constant velocity for $120.0 \, \text{s}$, and finally decelerates at $1.0 \, \text{m/s}^2$ until it stops.</p>
 
-<p><strong>(a)</strong> Draw the velocity-time graph for the entire journey on graph paper.</p>
-
-<p><strong>(b)</strong> Calculate the total distance traveled.</p>
-
-<p><strong>(c)</strong> What was the train’s maximum speed?</p>
+<p><strong>(a)</strong> Draw the velocity-time graph for the entire journey on graph paper.
+<strong>(b)</strong> Calculate the total distance traveled.
+<strong>(c)</strong> What was the train’s maximum speed?</p>
 
           </div>
           
@@ -3207,12 +3427,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -3224,7 +3452,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -3236,29 +3464,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -3478,11 +3718,9 @@
           <div class="problem-statement">
             <p>A rocket launches vertically with an acceleration of $15.0 \, \text{m/s}^2$ for $20.0 \, \text{s}$. Then its engines shut off and it continues to rise while decelerating due to gravity.</p>
 
-<p><strong>(a)</strong> Draw the velocity-time graph from launch until the rocket reaches its maximum height on graph paper.</p>
-
-<p><strong>(b)</strong> What is the maximum height reached by the rocket?</p>
-
-<p><strong>(c)</strong> How long after launch does the rocket reach its maximum height?</p>
+<p><strong>(a)</strong> Draw the velocity-time graph from launch until the rocket reaches its maximum height on graph paper.
+<strong>(b)</strong> What is the maximum height reached by the rocket?
+<strong>(c)</strong> How long after launch does the rocket reach its maximum height?</p>
 
           </div>
           
@@ -3608,81 +3846,11 @@
     </div>
     
 
-    <!-- Reflection Section (at end, part of same form) -->
-    <div class="form-section reflection-section">
-      <h3>Reflection & Submission</h3>
-      
-      <!-- Student Information -->
-      <fieldset class="form-subsection">
-        <legend>Student Information</legend>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="student-name">Full Name *</label>
-            <input type="text" id="student-name" name="StudentName" required>
-          </div>
-          <div class="form-field">
-            <label for="student-email">Email</label>
-            <input type="email" id="student-email" name="StudentEmail">
-          </div>
-          <div class="form-field">
-            <label for="course-name">Course</label>
-            <input type="text" id="course-name" name="CourseName" value="HPHYS" readonly>
-          </div>
-          <div class="form-field">
-            <label for="class-period">Class Period</label>
-            <select id="class-period" name="ClassPeriod">
-              <option value="">Select Period</option>
-              <option value="1">1st Period</option>
-              <option value="2">2nd Period</option>
-              <option value="3">3rd Period</option>
-              <option value="4">4th Period</option>
-              <option value="5">5th Period</option>
-              <option value="6">6th Period</option>
-              <option value="7">7th Period</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
-      <div id="activity-specific-fields"></div>
-
-      <!-- Hidden metadata fields -->
-      <input type="hidden" name="ActivityTitle" value="Problem Set 2.1: Interpreting Kinematic Graphs">
-      <input type="hidden" name="ResourceID" value="ps-2.1-kinematics-graphs">
-      <input type="hidden" name="ContentType" value="problem_set">
-      <input type="hidden" name="Course" value="hphys">
-      <input type="hidden" name="Unit" value="2-kinematics-1d">
-      <input type="hidden" name="StartTime" id="start-time">
-      <input type="hidden" name="SubmitTime" id="submit-time">
-      <input type="hidden" name="BrowserInfo" id="browser-info">
-
-      <!-- Status Messages -->
-      <div id="submission-status" class="submission-status" hidden></div>
-      
-      <!-- Auto-save indicator (top right corner) -->
-      <div id="auto-save-indicator" hidden>
-        ✓ Saved
-      </div>
-
-      <!-- Simple Submit Button -->
-      <div class="form-actions">
-        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
-          Submit Problem Set
-        </button>
-        <p class="help-text">
-          Answers are auto-saved. Submit when complete.
-        </p>
-      </div>
-
-    </div>
-
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -3772,8 +3940,9 @@ function jumpToProblem(index) {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -3791,7 +3960,7 @@ function jumpToProblem(index) {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760564678';
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

@@ -1,343 +1,154 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
-  <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Problem Set 3.2: Conservation of Momentum | Cosmos in the Classroom</title>
-    
-    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
-    <!-- Global CSS with new academic palette -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
-    
-    <script src="/assets/js/mathjax-config.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- tabs.js for tabs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
-    <script src="/assets/js/site-init.js"></script>
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
-  </head>
-  <body class="no-header-page">
-    
-    
-  <div class="markdown-body">
-    
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<hr />
+<p>layout: activity-focused
+title: “Problem Set 3.2: Conservation of Momentum”
+course: sphys
+content_type: problem_set
+unit: “3”
+unit_slug: “3-collision-safety”
+slug: “ps-3.2-conservation-of-momentum”
+resource_id: “ps-3.2-conservation-of-momentum”
+DCI: “PS2.A”
+Practice: [“Using Mathematics and Computational Thinking”]
+CCC: [“Systems and System Models”, “Energy and Matter”]
+tags: [“momentum”, “impulse”, “conservation of momentum”, “collisions”, “problem_set”]</p>
 
-<!-- Chart.js for data visualization -->
+<p>overview:
+  follows_lecture: “Lecture 3.3: The Rules of Interaction”
+  introduction: “The law of conservation of momentum is a fundamental rule of the universe: in any collision, the total momentum before the crash must equal the total momentum after. This principle allows accident investigators to work backward and determine how fast vehicles were going before a crash. In this problem set, you will be the investigator, applying this law to solve for unknown velocities in various collision scenarios.”
+  key_formulae:
+    - “Momentum: \(\\vec{p} = m\\vec{v}\)”
+    - “Impulse-Momentum Theorem: \(F_{net} \\cdot \\Delta t = \\Delta \\vec{p}\)”
+    - “Conservation of Momentum: \(\\Sigma \\vec{p}_{initial} = \\Sigma \\vec{p}_{final}\)”
+    - “\(m_1\\vec{v}_{1i} + m_2\\vec{v}_{2i} = m_1\\vec{v}_{1f} + m_2\\vec{v}_{2f}\)”
+  global_standards:
+    - “Assume all collisions are ‘closed systems’ where external forces like friction are negligible during the brief impact.”
+    - “Present all final answers with the correct units and to three significant figures.”</p>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
-</script>
+<h1>——————————————————————————</h1>
+<h1 id="section-problems--solutions">SECTION: PROBLEMS &amp; SOLUTIONS</h1>
+<h1 id="-1">——————————————————————————</h1>
+<p>problems:
+  # ————————- TIER 1: APPRENTICE —————————</p>
+<ul>
+  <li>
+    <p>problem_number: 1
+tier:
+  level: 1
+  title: “The Apprentice’s Practice: Calculating Momentum”
+phenomenon_connection: “The danger of a vehicle in motion is best described by its momentum. This problem compares the ‘unstoppability’ of two different vehicles.”
+problem_statement: “A 1,200. kg car is traveling East at 25.0 m/s. A 4,500. kg truck is traveling East at 10.0 m/s. Which vehicle has more momentum?”
+solution:
+  givens:
+    - “$m_{car} = 1,200. \, \text{kg}$, $\vec{v}<em>{car} = +25.0 \, \text{m/s}$”
+    - “$m</em>{truck} = 4,500. \, \text{kg}$, $\vec{v}<em>{truck} = +10.0 \, \text{m/s}$”
+  unknowns:
+    - “$\vec{p}</em>{car} = ?$ , $\vec{p}_{truck} = ?$”
+  steps:
+    - “1. <strong>Select Parent Equation:</strong> $\vec{p} = m\vec{v}$”
+    - “2. <strong>Calculate Momentum for the Car:</strong>”
+    - |
+      \(\\vec{p}_{car} = (1,200. \\, kg)(+25.0 \\, m/s) = +30,000 \\, kg \\cdot m/s\)
+    - “3. <strong>Calculate Momentum for the Truck:</strong>”
+    - |
+      \(\\vec{p}_{truck} = (4,500. \\, kg)(+10.0 \\, m/s) = +45,000 \\, kg \\cdot m/s\)
+  final_answer: “The truck has more momentum (4.50e4 kg·m/s) than the car (3.00e4 kg·m/s).”</p>
+  </li>
+  <li>
+    <p>problem_number: 2
+tier:
+  level: 1
+  title: “The Apprentice’s Practice: Perfectly Inelastic Collision”
+phenomenon_connection: “This models a common rear-end collision where the two vehicles become entangled and move as a single object after the crash.”
+problem_statement: “A 1,500. kg car traveling at 20.0 m/s strikes a stationary 1,200. kg car from behind. The two cars lock together after the collision. What is their combined final velocity?”
+solution:
+  givens:
+    - “$m_1 = 1,500. \, \text{kg}$, $\vec{v}<em>{1i} = +20.0 \, \text{m/s}$”
+    - “$m_2 = 1,200. \, \text{kg}$, $\vec{v}</em>{2i} = 0 \, \text{m/s}$”
+  unknowns:
+    - “$\vec{v}<em>f = ?$”
+  steps:
+    - “1. <strong>Select Parent Equation:</strong> Conservation of momentum for a perfectly inelastic collision: $m_1\vec{v}</em>{1i} + m_2\vec{v}_{2i} = (m_1 + m_2)\vec{v}_f$.”
+    - “2. <strong>Algebraic Rearrangement:</strong> Solve for $\vec{v}_f$: \(\\vec{v}_f = \\frac{m_1\\vec{v}_{1i} + m_2\\vec{v}_{2i}}{m_1 + m_2}\)”
+    - “3. <strong>Substitute Values:</strong>”
+    - |
+      \(\\vec{v}_f = \\frac{(1,500. \\, kg)(20.0 \\, m/s) + (1,200. \\, kg)(0 \\, m/s)}{1,500. \\, kg + 1,200. \\, kg}\)
+    - |
+      \(\\vec{v}_f = \\frac{30,000 \\, kg \\cdot m/s}{2,700. \\, kg} = +11.1 \\, m/s\)
+  final_answer: “The combined final velocity of the two cars is <strong>+11.1 m/s</strong>.”</p>
+  </li>
+</ul>
 
+<p># ————————- TIER 2: JOURNEYMAN —————————</p>
+<ul>
+  <li>problem_number: 3
+tier:
+  level: 2
+  title: “The Journeyman’s Task: Elastic Collision”
+phenomenon_connection: “This models a collision where vehicles bounce off each other. By measuring the final speed of one car, an investigator can calculate the final speed of the other.”
+problem_statement: “A 2,000. kg SUV traveling at 15.0 m/s rear-ends a 1,000. kg compact car traveling in the same direction at 5.00 m/s. After the collision, the compact car is measured to be moving at 17.0 m/s. What is the final velocity of the SUV?”
+solution:
+  givens:
+    - “$m_1 = 2,000. \, \text{kg}$ (SUV), $\vec{v}<em>{1i} = +15.0 \, \text{m/s}$”
+    - “$m_2 = 1,000. \, \text{kg}$ (Car), $\vec{v}</em>{2i} = +5.00 \, \text{m/s}$, $\vec{v}<em>{2f} = +17.0 \, \text{m/s}$”
+  unknowns:
+    - “$\vec{v}</em>{1f} = ?$”
+  steps:
+    - “1. <strong>Select Parent Equation:</strong> Conservation of momentum: $m_1\vec{v}<em>{1i} + m_2\vec{v}</em>{2i} = m_1\vec{v}<em>{1f} + m_2\vec{v}</em>{2f}$.”
+    - “2. <strong>Algebraic Rearrangement:</strong> Isolate the term $m_1\vec{v}<em>{1f}$: $m_1\vec{v}</em>{1f} = m_1\vec{v}<em>{1i} + m_2\vec{v}</em>{2i} - m_2\vec{v}<em>{2f}$. Then divide by $m_1$.”
+    - “3. <strong>Substitute Values:</strong>”
+    - |
+      \(p_{initial} = (2000)(15) + (1000)(5) = 30000 + 5000 = 35000 \\, kg \\cdot m/s\)
+    - |
+      \(p_{final} = (2000)\\vec{v}_{1f} + (1000)(17) = 2000\\vec{v}_{1f} + 17000\)
+    - “4. <strong>Set initial = final:</strong> $35000 = 2000\vec{v}</em>{1f} + 17000$.”
+    - “$18000 = 2000\vec{v}_{1f}$”
+    - “\(\\vec{v}_{1f} = \\frac{18000}{2000} = +9.00 \\, m/s\)”
+  final_answer: “The final velocity of the SUV is <strong>+9.00 m/s</strong>.”</li>
+</ul>
 
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
+<p># ————————- TIER 3: MASTER ——————————-</p>
+<ul>
+  <li>problem_number: 4
+tier:
+  level: 3
+  title: “The Master’s Insight: 2D Collision at an Intersection”
+phenomenon_connection: “This models a ‘T-bone’ collision, a common and dangerous type of crash. Momentum is conserved independently in both the North-South and East-West directions, allowing investigators to reconstruct the event.”
+problem_statement: “A 1,800. kg minivan traveling East at 20.0 m/s collides with a 1,400. kg sedan traveling North at 25.0 m/s. The vehicles lock together. What is the magnitude of their final velocity?”
+diagram_placeholder: “”
+solution:
+  givens:
+    - “$m_v = 1,800. \, \text{kg}$, $\vec{v}<em>{vi,x} = +20.0 \, \text{m/s}$”
+    - “$m_s = 1,400. \, \text{kg}$, $\vec{v}</em>{si,y} = +25.0 \, \text{m/s}$”
+    - “$M_{total} = 1800 + 1400 = 3,200. \, \text{kg}$”
+  unknowns:
+    - “$|\vec{v}<em>f| = ?$”
+  steps:
+    - “<strong>Strategy:</strong> Conserve momentum in the x and y directions separately to find the components of the final velocity, then combine them using the Pythagorean theorem.”
+    - “— <strong>X-Direction (East-West)</strong> —”
+    - “$p</em>{ix} = m_v v_{vi,x} + m_s v_{si,x} = (1800)(20) + (1400)(0) = 36,000 \, kg \cdot m/s$.”
+    - “$p_{fx} = M_{total} v_{fx} = (3200)v_{fx}$.”
+    - “$p_{ix} = p_{fx} \implies 36000 = 3200 v_{fx} \implies v_{fx} = 11.25 \, m/s$.”
+    - “— <strong>Y-Direction (North-South)</strong> —”
+    - “$p_{iy} = m_v v_{vi,y} + m_s v_{si,y} = (1800)(0) + (1400)(25) = 35,000 \, kg \cdot m/s$.”
+    - “$p_{fy} = M_{total} v_{fy} = (3200)v_{fy}$.”
+    - “$p_{iy} = p_{fy} \implies 35000 = 3200 v_{fy} \implies v_{fy} = 10.94 \, m/s$.”
+    - “— <strong>Combine Components</strong> —”
+    - “$v_f = \sqrt{v_{fx}^2 + v_{fy}^2} = \sqrt{(11.25)^2 + (10.94)^2}$”
+    - “$v_f = \sqrt{126.56 + 119.68} = \sqrt{246.24} = 15.69 \, m/s$”
+  final_answer: “The magnitude of their final velocity is <strong>15.7 m/s</strong>.”</li>
+</ul>
 
-<style>
-/* No-header page: Remove all top spacing for content-first experience */
-.no-header-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.no-header-page .breadcrumb-nav {
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    font-size: 0.9rem;
-    color: #6c757d;
-}
-
-.no-header-page .breadcrumb-nav a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.no-header-page .breadcrumb-nav a:hover {
-    text-decoration: underline;
-}
-
-.no-header-page .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: #adb5bd;
-}
-
-.no-header-page .activity-header {
-    margin-top: 0;
-    padding-top: 1.5rem;
-}
-
-.no-header-page .activity-header h1 {
-    margin-top: 0;
-}
-    </style>
-
-<div class="activity-content-container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        
-        
-        
-        
-        
-        
-        <a href="/sphys/">Standard Physics</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/sphys/course/3/">Unit 3: </a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Problem Set 3.2: Conservation of Momentum</span>
-    </nav>
-
-    <!-- Critical metadata for backend routing and JavaScript -->
-    <div id="activity-metadata"
-         data-resource-id="ps-3.2-conservation-of-momentum"
-         data-content-type="problem_set"
-         data-course="sphys"
-         data-title="Problem Set 3.2: Conservation of Momentum"
-         data-unit="3"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null"
-         hidden></div>
-
-    <main class="main-content">
-        
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Problem Set 3.2: Conservation of Momentum</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Problem set</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
-  Problem Set Content Display
-  Single unified form with problems and reflection
--->
-
-<form id="activity-submission-form" class="activity-form">
-  
-  <div class="problem-set-content">
-    <!-- Problem Set Introduction (Collapsible) -->
-    
-
-    <!-- Key Formulae (Collapsible) -->
-    
-
-    <!-- Global Standards (Collapsible) -->
-    
-
-    <!-- Problems with Answer Fields -->
-    
-
-    <!-- Reflection Section (at end, part of same form) -->
-    <div class="form-section reflection-section">
-      <h3>Reflection & Submission</h3>
-      
-      <!-- Student Information -->
-      <fieldset class="form-subsection">
-        <legend>Student Information</legend>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="student-name">Full Name *</label>
-            <input type="text" id="student-name" name="StudentName" required>
-          </div>
-          <div class="form-field">
-            <label for="student-email">Email</label>
-            <input type="email" id="student-email" name="StudentEmail">
-          </div>
-          <div class="form-field">
-            <label for="course-name">Course</label>
-            <input type="text" id="course-name" name="CourseName" value="SPHYS" readonly>
-          </div>
-          <div class="form-field">
-            <label for="class-period">Class Period</label>
-            <select id="class-period" name="ClassPeriod">
-              <option value="">Select Period</option>
-              <option value="1">1st Period</option>
-              <option value="2">2nd Period</option>
-              <option value="3">3rd Period</option>
-              <option value="4">4th Period</option>
-              <option value="5">5th Period</option>
-              <option value="6">6th Period</option>
-              <option value="7">7th Period</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-        </div>
-      </fieldset>
-
-      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
-      <div id="activity-specific-fields"></div>
-
-      <!-- Hidden metadata fields -->
-      <input type="hidden" name="ActivityTitle" value="Problem Set 3.2: Conservation of Momentum">
-      <input type="hidden" name="ResourceID" value="ps-3.2-conservation-of-momentum">
-      <input type="hidden" name="ContentType" value="problem_set">
-      <input type="hidden" name="Course" value="sphys">
-      <input type="hidden" name="Unit" value="3">
-      <input type="hidden" name="StartTime" id="start-time">
-      <input type="hidden" name="SubmitTime" id="submit-time">
-      <input type="hidden" name="BrowserInfo" id="browser-info">
-
-      <!-- Status Messages -->
-      <div id="submission-status" class="submission-status" hidden></div>
-      
-      <!-- Auto-save indicator (top right corner) -->
-      <div id="auto-save-indicator" hidden>
-        ✓ Saved
-      </div>
-
-      <!-- Simple Submit Button -->
-      <div class="form-actions">
-        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
-          Submit Problem Set
-        </button>
-        <p class="help-text">
-          Answers are auto-saved. Submit when complete.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</form>
-
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
-<script>
-// Toggle solutions visibility
-function toggleSolutions() {
-    const solutionsDiv = document.getElementById('student-solutions');
-    const toggleBtn = document.getElementById('toggle-solutions-btn');
-    
-    if (solutionsDiv.style.display === 'none') {
-        solutionsDiv.style.display = 'block';
-        toggleBtn.textContent = '🙈 Hide Answers';
-        toggleBtn.style.background = '#dc3545';
-    } else {
-        solutionsDiv.style.display = 'none';
-        toggleBtn.textContent = '🔍 Check Your Answers';
-        toggleBtn.style.background = '#ffc107';
-    }
-}
-
-// Toggle current problem's answer
-function toggleCurrentAnswer(problemNumber) {
-    const answerDiv = document.getElementById('answer-key-' + problemNumber);
-    const checkBtn = document.getElementById('check-answer-' + problemNumber);
-    
-    if (answerDiv.style.display === 'none') {
-        answerDiv.style.display = 'block';
-        checkBtn.textContent = 'Hide Solution';
-        checkBtn.style.background = '#6c757d';
-        checkBtn.style.borderColor = '#5a6268';
-    } else {
-        answerDiv.style.display = 'none';
-        checkBtn.textContent = 'View Solution';
-        checkBtn.style.background = '#007bff';
-        checkBtn.style.borderColor = '#0056b3';
-    }
-}
-
-// Initialize Problem Set Navigator
-document.addEventListener('DOMContentLoaded', function() {
-    const problems = document.querySelectorAll('.problem-container');
-    
-    if (problems.length > 0) {
-        window.problemNavigator = new ActivityNavigator({
-            containerSelector: '.problem-container',
-            progressBarId: 'progress-fill',
-            progressTextId: 'progress-text',
-            prevButtonId: 'prev-problem',
-            nextButtonId: 'next-problem',
-            itemLabel: 'Problem',
-            dropdownId: 'problem-selector'
-        });
-        
-        console.log('[problem-set] Sequential navigation with dropdown initialized');
-        
-        // DIAGNOSTIC: Check if active class and grid are working
-        setTimeout(() => {
-            const firstProblem = document.querySelector('.problem-container.active');
-            if (firstProblem) {
-                const computedStyle = window.getComputedStyle(firstProblem);
-                console.log('[DIAGNOSTIC] First problem container:');
-                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
-                console.log('  - Inline style.display:', firstProblem.style.display);
-                console.log('  - Computed display:', computedStyle.display);
-                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
-            } else {
-                console.error('[DIAGNOSTIC] No .problem-container.active found!');
-            }
-        }, 500);
-    }
-});
-
-// Legacy function support (for inline onclick handlers)
-function navigateProblem(direction) {
-    if (window.problemNavigator) {
-        window.problemNavigator.navigate(direction);
-    }
-}
-
-// Jump to specific problem from dropdown
-function jumpToProblem(index) {
-    if (window.problemNavigator) {
-        window.problemNavigator.jumpTo(parseInt(index));
-    }
-}
-</script>
-
-            
-        </div>
-
-    </main>
-
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
-    
-    
-
-</div>
-
-    
-    </div>
-    <script type="application/json" id="course-data-">null</script>
-    <script src="/assets/js/navigation.js"></script>
-  </body>
-</html>
+<h1 id="-2">——————————————————————————</h1>
+<h1 id="section-student-solutions-list">SECTION: STUDENT SOLUTIONS LIST</h1>
+<h1 id="-3">——————————————————————————</h1>
+<p>student_solutions_list:</p>
+<ul>
+  <li>problem_number: 1
+final_answer: “Truck (4.50e4 kg·m/s)”</li>
+  <li>problem_number: 2
+final_answer: “+11.1 m/s”</li>
+  <li>problem_number: 3
+final_answer: “+9.00 m/s”</li>
+  <li>problem_number: 4
+final_answer: “15.7 m/s”</li>
+</ul>

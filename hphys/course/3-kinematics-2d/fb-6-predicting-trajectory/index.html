@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 6: Predicting the Trajectory | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Chapter 6: Predicting the Trajectory</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">HPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 3</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="fb-6-predicting-trajectory"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 6: Predicting the Trajectory"
+         data-unit="3"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         
+         hidden>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Chapter 6: Predicting the Trajectory">
+  <input type="hidden" name="ResourceID" value="fb-6-predicting-trajectory">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="3">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 15</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Introduction: The Challenge of Aim</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>In the last chapter, we analyzed the simplest case of projectile motion: an object launched horizontally. But the world is rarely so straightforward. To throw a spear, launch a rocket, or fire a cannon at a distant target requires <em>aim</em>. It means launching the projectile upwards, into the sky, trusting that gravity will pull it back down in just the right place. This adds a new layer of complexity. The elegant arc of the projectile’s path now has both an upward and a downward journey. Our task in this chapter is to master this arc—not just to describe it, but to predict it with mathematical certainty.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Phenomenon: The Artillery Commander's Dilemma</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Return to the walls of Constantinople in 1453. The immense power of Sultan Mehmed II’s cannons is useless without precision. The artillery commander faces a critical dilemma: at what angle should the barrel be aimed? Aim too low, and the massive stone ball will fall short, wasting precious gunpowder and time. Aim too high, and it may soar harmlessly over the walls, or take so long to arrive that its impact energy is reduced. The difference between victory and failure is a matter of degrees. To breach the walls, the commander must solve a two-dimensional physics problem where the initial velocity is no longer purely horizontal.</p>
+
+<p><strong>The Question:</strong> How can an artillery commander develop a model to predict the exact range of a cannonball based on its launch speed and angle?</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Forecast: Make Your Prediction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You are the artillery commander. Before formalizing the physics, what is your intuition? What angle do you think will produce the longest range? What challenges will you face?</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ul>
+  <li>What do you predict the path of the cannonball will look like?</li>
+  <li>Which launch angle—a low one like 30° or a high one like 60°—do you think will make the ball travel farther? Why?</li>
+  <li>How will you know how long the cannonball will stay in the air?</li>
+</ul>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Investigation: Finding Patterns in the Arc</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Before we derive the formal rules, you will investigate these questions as a scientist would: by gathering data. Using a simulation, you can fire hundreds of virtual cannonballs, changing one variable at a time to see how it affects the outcome. Your goal is to discover the pattern that connects launch angle to range.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="4"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Lab Activity: Optimizing Launch Angle for Range</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>In this lab, you will use a projectile motion simulation to determine the relationship between launch angle and range, and discover the angle that yields the maximum possible range.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="5"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Investigation Phase</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Investigation Phase</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="2">
+                  
+                  <label for="checkpoint-6-q1">
+                    <strong>Question 1:</strong> Based on your lab simulation, what launch angle appeared to produce the maximum range?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-6-q1" 
+                      name="checkpoint_6_q1"
+                      rows="2"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-6-q2">
+                    <strong>Question 2:</strong> Did you notice a pattern? For example, what did you observe about the range for a 30° launch compared to a 60° launch?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-6-q2" 
+                      name="checkpoint_6_q2"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="6"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">The Rules of the Game: Deconstructing the Arc</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Your investigation revealed a clear pattern. Now, we build the mathematical model to explain it. The core principle remains the same: <strong>the independence of motion</strong>. The horizontal and vertical stories are separate, linked only by time.</p>
+
+<p>The only new step is that the initial velocity, $v_0$, is now directed at an angle, $\theta$. We cannot use this velocity directly. First, we must resolve it into its components using trigonometry:</p>
+<ul>
+  <li>The initial horizontal velocity is $v_{0x} = v_0 \cos(\theta)$. This value will <em>never change</em> throughout the flight (ignoring air resistance).</li>
+  <li>The initial vertical velocity is $v_{0y} = v_0 \sin(\theta)$. This value will immediately start to decrease due to gravity, become zero at the peak of the trajectory, and then become negative as the projectile falls.</li>
+</ul>
+
+<p>Once we have these starting components, we can analyze the two stories just as before.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-example" 
+             data-item-index="7"
+             data-item-type="example">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Example: The Angled Cannon</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            
+            <div class="flexbook-item-default">
+              <p>An artillery piece fires a cannonball with an initial speed of 120 m/s at an angle of 30.0° above the horizontal.</p>
+
+<p><strong>Part A:</strong> What are the initial horizontal and vertical components of the velocity?</p>
+
+<p><strong>Solution:</strong>
+$v_{0x} = v_0 \cos(\theta) = (120 \, \text{m/s}) \cos(30.0^\circ) = 104 \, \text{m/s}$
+$v_{0y} = v_0 \sin(\theta) = (120 \, \text{m/s}) \sin(30.0^\circ) = 60.0 \, \text{m/s}$</p>
+
+<p><strong>Part B:</strong> How long is the cannonball in the air (total time of flight)?</p>
+
+<p><strong>Solution:</strong>
+This is a vertical problem. We can find the time it takes to reach the peak ($v_y = 0$).
+Knowns: $v_{0y} = 60.0 \, \text{m/s}$, $v_y = 0$, $a_g = -9.80 \, \text{m/s}^2$.
+Use $v_y = v_{0y} + a_g t$.
+$t_{peak} = \frac{v_y - v_{0y}}{a_g} = \frac{0 - 60.0 \, \text{m/s}}{-9.80 \, \text{m/s}^2} = 6.12 \, \text{s}$.
+The total time of flight is twice the time to the peak (assuming it lands at the same height).
+$t_{total} = 2 \times t_{peak} = 12.2 \, \text{s}$.</p>
+
+<p><strong>Part C:</strong> What is the range of the cannonball?</p>
+
+<p><strong>Solution:</strong>
+This is a horizontal problem using the total time of flight.
+Knowns: $v_x = 104 \, \text{m/s}$, $t = 12.2 \, \text{s}$.
+$d_x = v_x t = (104 \, \text{m/s})(12.2 \, \text{s}) = 1270 \, \text{m}$ (or 1.27 km).</p>
+
+            </div>
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="8"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-warning">
+              <div class="content">
+                <p><strong>Common Mistake:</strong> A very common mistake is to forget that the vertical velocity is <strong>zero</strong> at the highest point of the trajectory. This is a powerful piece of information that allows you to calculate the time to the peak and the maximum height.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="9"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Conceptual Framework</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Conceptual Framework</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-10-q1">
+                    <strong>Question 1:</strong> Why is it absolutely necessary to resolve the initial velocity into x and y components before solving a projectile motion problem?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-10-q1" 
+                      name="checkpoint_10_q1"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="2">
+                  
+                  <label for="checkpoint-10-q2">
+                    <strong>Question 2:</strong> What is happening to the vertical velocity of the cannonball as it rises? What about as it falls?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-10-q2" 
+                      name="checkpoint_10_q2"
+                      rows="2"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="10"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Practice Problems</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Now it’s your turn to take command. Use the principles of component vectors and independent motion to solve a series of trajectory challenges.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="11"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Application & Practice</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Application & Practice</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-12-q1">
+                    <strong>Question 1:</strong> Based on your lab and the physics you've learned, why do you think a 45° angle gives the maximum range?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-12-q1" 
+                      name="checkpoint_12_q1"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="12"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Thinking Lens: Patterns</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The universe is full of repeating patterns. The arc of a thrown ball, the path of a cannonball, and the trajectory of a water fountain jet all share the same mathematical shape: a parabola. This consistent <strong>pattern</strong> is not a coincidence. It is the visual result of two simple rules interacting over time: constant horizontal motion and constant vertical acceleration. By understanding the underlying rules, we gain predictive power over the pattern itself. Recognizing these patterns is a core practice of science, allowing us to see the simple, universal laws that govern seemingly complex events.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="13"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Synthesis: From Constantinople to the Cosmos</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The ability to predict a trajectory changed the world. It gave the Ottoman Empire the key to a city that had been impenetrable for a millennium. But the intellectual framework born from this necessity did much more. This very same mathematics—separating motion into components, analyzing each part, and reassembling the whole—is what allows NASA engineers to plot a course for a probe to Mars. The probe is a projectile, launched at an angle, subject to the constant pull of the sun’s gravity. The scales are astronomically different, but the physics, the pattern, is the same. The quest to understand the flight of a cannonball gave humanity the tools to begin its journey to the stars.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="14"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Final Checkpoint: Synthesis & Reflection</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Final Checkpoint: Synthesis & Reflection</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="4">
+                  
+                  <label for="checkpoint-15-q1">
+                    <strong>Question 1:</strong> Return to the anchoring phenomenon. How would you now advise the artillery commander to determine the correct launch angle to hit the walls of Constantinople? What two key measurements would they need to make?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-15-q1" 
+                      name="checkpoint_15_q1"
+                      rows="4"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation buttons have been moved to the top for better UX -->
+    
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760613538';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

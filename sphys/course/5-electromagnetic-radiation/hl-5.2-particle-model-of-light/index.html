@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,10 +57,210 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Hexagon Lab: The Particle Model of Light</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Hexagon lab</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 5</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="hl-5.2-particle-model-of-light"
          data-content-type="hexagon_lab"
          data-course="sphys"
          data-title="Hexagon Lab: The Particle Model of Light"
@@ -110,22 +269,13 @@
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Hexagon Lab: The Particle Model of Light</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Hexagon lab</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 5</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -135,6 +285,16 @@
 -->
 
 <form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Hexagon Lab: The Particle Model of Light">
+  <input type="hidden" name="ResourceID" value="hl-5.2-particle-model-of-light">
+  <input type="hidden" name="ContentType" value="hexagon_lab">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="5">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
   
   <div class="hexagon-lab-content">
     
@@ -284,63 +444,75 @@
           <h3>Analysis Questions</h3>
           
           <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
+            
               
+              <label for="inv1-q1" class="question-label">
+                <strong>Question 1:</strong>
+                <p>Compare Table 1 and Table 2. What is the key difference between the red light and the UV light that determines whether or not electrons are ejected?</p>
 
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q1" 
+                name="inv1_q1"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
+            
               
+              <label for="inv1-q2" class="question-label">
+                <strong>Question 2:</strong>
+                <p>Look closely at the results in Table 2. Increasing the intensity (brightness) of the UV light ejected <em>more</em> electrons, but what happened to the maximum kinetic energy of any <em>single</em> ejected electron?</p>
 
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q2" 
+                name="inv1_q2"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
+            
               
+              <label for="inv1-q3" class="question-label">
+                <strong>Question 3:</strong>
+                <p>Look at Table 3. How does the kinetic energy of the ejected electrons change as the frequency of the light increases (from Green to UV)?</p>
 
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q3" 
+                name="inv1_q3"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
+            
               
+              <label for="inv1-q4" class="question-label">
+                <strong>Question 4:</strong>
+                <p>The classical wave model predicted that a very bright (high intensity) red light should eventually deliver enough energy to eject an electron. Does the data support this? How does this evidence support a <em>particle</em> model, where one ‘light particle’ (a photon) must have enough energy on its own to knock out one electron?</p>
 
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q4" 
+                name="inv1_q4"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
         </div>
@@ -446,7 +618,7 @@
     
     <!-- Hidden metadata fields -->
     <input type="hidden" name="ActivityTitle" value="Hexagon Lab: The Particle Model of Light">
-    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ResourceID" value="hl-5.2-particle-model-of-light">
     <input type="hidden" name="ContentType" value="hexagon_lab">
     <input type="hidden" name="Course" value="sphys">
     <input type="hidden" name="Unit" value="5">
@@ -479,7 +651,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 /**
  * Hexagon Lab Section Navigator
@@ -531,8 +703,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -543,24 +716,22 @@ document.addEventListener('DOMContentLoaded', function() {
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

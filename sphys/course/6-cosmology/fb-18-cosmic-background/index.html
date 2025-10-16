@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,11 +57,211 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Chapter 18: An Echo of the Beginning</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 6</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
-         data-content-type=""
+         data-resource-id="fb-18-cosmic-background"
+         data-content-type="flexbook"
          data-course="sphys"
          data-title="Chapter 18: An Echo of the Beginning"
          data-unit="6"
@@ -110,37 +269,700 @@
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Chapter 18: An Echo of the Beginning</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type"></span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 6</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
-                <!-- Fallback: Render markdown content directly -->
-                <div class="activity-content">
-                    
+                <!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
 
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Chapter 18: An Echo of the Beginning">
+  <input type="hidden" name="ResourceID" value="fb-18-cosmic-background">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="6">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 10</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Introduction: The Final Mystery</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Our journey through physics has taken us from the circuits in our walls to the forces that shape planets and the invisible waves that carry our messages. We have learned a set of universal rules that govern energy and motion. For our final chapter, we turn these tools to the biggest question of all: Where did everything come from?</p>
+
+<p>The answer, it turns out, was hidden in a faint, persistent hiss in the microwave part of the very spectrum we just studied. It is the story of the greatest detective case in the history of science.</p>
+
+<p><strong>The Question:</strong> Why is the entire universe, in every direction we look, glowing with a faint bath of microwave radiation?</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">18.1 The Persistent Hum of the Universe</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>In 1964, two American radio astronomers, Arno Penzias and Robert Wilson, were trying to use a large radio antenna to study our galaxy. They were plagued by a persistent, low-level noise—a steady, uniform hiss of microwave radiation that seemed to come from everywhere at once. It was the same no matter where they pointed their antenna, day or night, season after season. They checked their equipment, rewired their systems, and even cleaned out pigeon droppings from the horn of the antenna, but the hiss remained.</p>
+
+<p>They had accidentally stumbled upon the most important discovery in modern cosmology: the <strong>Cosmic Microwave Background (CMB)</strong>. This faint glow wasn’t a flaw in their equipment or an earthly signal; it was a feature of the universe itself. But what was it?</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="2"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: The Puzzle</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: The Puzzle</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-3-q1">
+                    <strong>Question 1:</strong> In your own words, describe the puzzling phenomenon discovered by Penzias and Wilson. What made the signal so strange?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-3-q1" 
+                      name="checkpoint_3_q1"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
                 </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">18.2 A Universe in Flight</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The first major clue to solving this puzzle had been found decades earlier by the astronomer Edwin Hubble. While observing distant galaxies in the 1920s, he noticed something astonishing. He analyzed the light from these galaxies and saw that its wavelengths were stretched, or <strong>redshifted</strong>. Just as the pitch of an ambulance siren drops as it moves away from you (the Doppler effect), the wavelength of light from a galaxy stretches to the red end of the spectrum as it moves away from us.</p>
+
+<p>Hubble discovered that nearly every galaxy is redshifted, meaning they are all moving away from us. Even more profound, he found a clear pattern: <strong>the farther away a galaxy is, the faster it is moving away.</strong> This became known as Hubble’s Law.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-dataset" 
+             data-item-index="4"
+             data-item-type="dataset">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Hubble's Data: The Expanding Universe</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-dataset">
+              
+                
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Galaxy Distance vs. Recessional Velocity">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Galaxy Distance vs. Recessional Velocity</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="hubble-law-chart" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;hubble-law-chart&quot;,&quot;chart_type&quot;:&quot;scatter&quot;,&quot;title&quot;:&quot;Galaxy Distance vs. Recessional Velocity&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Distance (Megaparsecs)&quot;,&quot;min&quot;:0},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (km/s)&quot;,&quot;min&quot;:0},&quot;dataPoints&quot;:[{&quot;x&quot;:50,&quot;y&quot;:3500},{&quot;x&quot;:100,&quot;y&quot;:7000},{&quot;x&quot;:150,&quot;y&quot;:10500},{&quot;x&quot;:200,&quot;y&quot;:14000},{&quot;x&quot;:250,&quot;y&quot;:17500},{&quot;x&quot;:300,&quot;y&quot;:21000}]}"
+        data-defer-render="true"
+        aria-label="Galaxy Distance vs. Recessional Velocity. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Galaxy Distance vs. Recessional Velocity">
+      <table>
+        <caption>Galaxy Distance vs. Recessional Velocity</caption>
+        <thead>
+          <tr>
+            <th scope="col">Distance (Megaparsecs)</th>
+            <th scope="col">Velocity (km/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>50</td>
+              <td>3500</td>
+            </tr>
+            
+            <tr>
+              <td>100</td>
+              <td>7000</td>
+            </tr>
+            
+            <tr>
+              <td>150</td>
+              <td>10500</td>
+            </tr>
+            
+            <tr>
+              <td>200</td>
+              <td>14000</td>
+            </tr>
+            
+            <tr>
+              <td>250</td>
+              <td>17500</td>
+            </tr>
+            
+            <tr>
+              <td>300</td>
+              <td>21000</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'hubble-law-chart';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">18.3 The Inescapable Conclusion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>If all galaxies are rushing away from each other, what happens if we run the clock backward? The conclusion is inescapable. In the past, everything in the universe must have been closer together. If we go back far enough, roughly 13.8 billion years ago, everything—all matter, all energy—must have been compressed into a single, infinitesimally small, incredibly hot, and dense point.</p>
+
+<p>This is the origin of the <strong>Big Bang Theory</strong>. It wasn’t an “explosion” in the traditional sense, but the simultaneous expansion of space itself, everywhere, from this initial hot, dense state.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="6"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Winding the Clock Back</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Winding the Clock Back</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="2">
+                  
+                  <label for="checkpoint-7-q1">
+                    <strong>Question 1:</strong> How does the evidence of redshift lead to the idea of an expanding universe?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-7-q1" 
+                      name="checkpoint_7_q1"
+                      rows="2"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-7-q2">
+                    <strong>Question 2:</strong> Explain the logical step that takes us from an expanding universe to the Big Bang theory.
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-7-q2" 
+                      name="checkpoint_7_q2"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">18.4 The Echo of Creation</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>Now we can solve the puzzle. If the universe began in an unimaginably hot fireball, it must have been glowing with intense, high-energy radiation. For the first few hundred thousand years, this light was trapped in a hot plasma. But as the universe expanded and cooled, a moment came when the light was finally set free to travel across the cosmos.</p>
+
+<p>Over the next 13.8 billion years, the continued expansion of space has stretched that primordial light. Its wavelength has been elongated from high-energy gamma rays, down through the spectrum, all the way to the low-energy microwave radiation we see today.</p>
+
+<p>The hiss that Penzias and Wilson discovered was not noise. It was the afterglow of creation. The Cosmic Microwave Background is the oldest light in the universe, a fossil relic of the Big Bang, bathing the cosmos in the faint, residual heat from its own birth.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-image" 
+             data-item-index="8"
+             data-item-type="image">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">The Cosmic Microwave Background</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-image">
+              
+              <figure>
+                <img src="/assets/images/sphys/cosmology/cmb-map.png" alt="All-sky map of the cosmic microwave background radiation" />
+                
+                <figcaption><p>A map of the CMB created by the Planck satellite. The tiny temperature fluctuations (shown as color differences) were the seeds that eventually grew into the galaxies we see today.</p>
+</figcaption>
+                
+              </figure>
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-bridge" 
+             data-item-index="9"
+             data-item-type="bridge">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            
+            <div class="flexbook-item-default">
+              
+
+            </div>
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation buttons have been moved to the top for better UX -->
+    
+    
+
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+
             
         </div>
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -151,24 +973,22 @@
             const moduleMap = {
                 'problem_set': '/assets/js/activity-modules/ps-form.js',
                 'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
             };
             
-            if (moduleMap[contentType]) {
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
+                script.src = modulePath + '?v=1760613538';
                 document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
             }
         });
     </script>
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

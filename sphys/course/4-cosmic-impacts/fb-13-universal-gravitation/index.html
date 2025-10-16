@@ -34,62 +34,21 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
-
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
+<!-- Chart.js for data visualization -->
 
 
 <!-- Backend Configuration -->
@@ -98,34 +57,225 @@
     window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
 </script>
 
-<div class="activity-page">
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">A Fireball from the Void: The Rules of Cosmic Attraction</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Flexbook</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 4</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id=""
+         data-resource-id="fb-13-universal-gravitation"
          data-content-type="flexbook"
          data-course="sphys"
          data-title="A Fireball from the Void: The Rules of Cosmic Attraction"
-         data-unit="4-cosmic-impacts"
+         data-unit="4"
          data-submission-enabled="false"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>A Fireball from the Void: The Rules of Cosmic Attraction</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Flexbook</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 4</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -136,7 +286,17 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <div class="flexbook-content">
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="A Fireball from the Void: The Rules of Cosmic Attraction">
+  <input type="hidden" name="ResourceID" value="fb-13-universal-gravitation">
+  <input type="hidden" name="ContentType" value="flexbook">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="4">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="flexbook-content instructional-flow">
     
     <!-- Progress indicator -->
     
@@ -145,6 +305,16 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 8</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
     </div>
     
 
@@ -159,15 +329,30 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Chapter 13: A Fireball from the Void: The Rules of Cosmic Attraction</h2>
+          <h2 class="section-title">Chapter 13: A Fireball from the Void: The Rules of Cosmic Attraction</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Central Question:</strong> What invisible force governs the paths of asteroids through space, and how can we use its rules to predict and understand cosmic collisions?
-<strong>Narrative Arc:</strong> Our focus shifts from the Earth’s surface to the vast emptiness of space, where a new drama unfolds. We begin with a terrifying, real-world event—a meteor exploding over a modern city—that shatters our sense of planetary safety. To understand this threat, we must follow in Newton’s footsteps, expanding our understanding of gravity from a local phenomenon to a universal law of attraction that binds the cosmos together.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Central Question:</strong> What invisible force governs the paths of asteroids</p>
 
+<p>through space, and how can we use its rules to predict and understand cosmic collisions?</p>
+
+<p><strong>Narrative Arc:</strong> Our focus shifts from the Earth’s surface to the vast emptiness</p>
+
+<p>of space, where a new drama unfolds. We begin with a terrifying, real-world event—a</p>
+
+<p>meteor exploding over a modern city—that shatters our sense of planetary safety.</p>
+
+<p>To understand this threat, we must follow in Newton’s footsteps, expanding our</p>
+
+<p>understanding of gravity from a local phenomenon to a universal law of attraction</p>
+
+<p>that binds the cosmos together.</p>
+
+              </div>
             </div>
           
           
@@ -182,16 +367,36 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">13.1 A Stone from the Sky</h2>
+          <h2 class="section-title">13.1 A Stone from the Sky</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>On the morning of February 15, 2013, the citizens of Chelyabinsk, Russia, witnessed a terrifying spectacle. A streak of light, brighter than the sun, tore across the winter sky. It was not a plane or a missile. It was a rock, an asteroid about 20 meters in diameter, that had been traveling through space for millions of years. It entered Earth’s atmosphere at over 40,000 miles per hour.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>On the morning of February 15, 2013, the citizens of Chelyabinsk, Russia,</p>
 
-<p>The immense pressure and heat caused the asteroid to explode in a brilliant fireball nearly 18 miles above the ground. The resulting shockwave, arriving minutes later, blasted out windows, damaged thousands of buildings, and injured over 1,500 people. It was the largest known object to strike the Earth in over a century, and it was a stark reminder that we live in a cosmic shooting gallery. This event is our new anchoring phenomenon. Why did it happen? And could it happen again?</p>
+<p>witnessed a terrifying spectacle. A streak of light, brighter than the sun, tore</p>
 
+<p>across the winter sky. It was not a plane or a missile. It was a rock, an asteroid</p>
+
+<p>about 20 meters in diameter, that had been traveling through space for millions</p>
+
+<p>of years. It entered Earth’s atmosphere at over 40,000 miles per hour.</p>
+
+<p>The immense pressure and heat caused the asteroid to explode in a brilliant fireball</p>
+
+<p>nearly 18 miles above the ground. The resulting shockwave, arriving minutes later,</p>
+
+<p>blasted out windows, damaged thousands of buildings, and injured over 1,500 people.</p>
+
+<p>It was the largest known object to strike the Earth in over a century, and it</p>
+
+<p>was a stark reminder that we live in a cosmic shooting gallery. This event is</p>
+
+<p>our new anchoring phenomenon. Why did it happen? And could it happen again?</p>
+
+              </div>
             </div>
           
           
@@ -206,14 +411,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Research Brief - Forecast: Initial Model of a Cosmic Impact</h2>
+          <h2 class="section-title">Research Brief - Forecast: Initial Model of a Cosmic Impact</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt">
-              <p>Based on what you currently know, draw a model of our solar system showing the Sun, Earth, and the path of an asteroid. Use arrows to represent the forces you think are acting on the asteroid and on Earth to cause such a collision.</p>
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Based on what you currently know, draw a model of our solar system showing the Sun, Earth, and the path of an asteroid. Use arrows to represent the forces you think are acting on the asteroid and on Earth to cause such a collision.</p>
 
+              </div>
               
               
               
@@ -231,15 +438,36 @@
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">13.2 Newton's Great Idea: The Universal Tug</h2>
+          <h2 class="section-title">13.2 Newton's Great Idea: The Universal Tug</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>We are used to gravity. It’s the force that pulls a dropped apple to the ground. But Isaac Newton’s genius was to realize that the same force pulling the apple also reached far, far higher—all the way to the Moon. He proposed that gravity was not just a property of the Earth, but a <strong>universal</strong> force. Every object with mass in the universe pulls on every other object with mass. You are gravitationally attracted to your desk, the person next to you, and the Andromeda galaxy.
-The force that pulled the Chelyabinsk meteor toward Earth is the very same force that keeps the Moon in orbit and holds the Sun’s family of planets together. To analyze cosmic collisions, we need a law that works on this grand, universal scale.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>We are used to gravity. It’s the force that pulls a dropped apple to</p>
 
+<p>the ground. But Isaac Newton’s genius was to realize that the same force pulling</p>
+
+<p>the apple also reached far, far higher—all the way to the Moon. He proposed that</p>
+
+<p>gravity was not just a property of the Earth, but a <strong>universal</strong> force. Every</p>
+
+<p>object with mass in the universe pulls on every other object with mass. You are</p>
+
+<p>gravitationally attracted to your desk, the person next to you, and the Andromeda</p>
+
+<p>galaxy.</p>
+
+<p>The force that pulled the Chelyabinsk meteor toward Earth is the very same force</p>
+
+<p>that keeps the Moon in orbit and holds the Sun’s family of planets together.</p>
+
+<p>To analyze cosmic collisions, we need a law that works on this grand, universal</p>
+
+<p>scale.</p>
+
+              </div>
             </div>
           
           
@@ -254,17 +482,42 @@ The force that pulled the Chelyabinsk meteor toward Earth is the very same force
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">13.3 The Law of Universal Gravitation</h2>
+          <h2 class="section-title">13.3 The Law of Universal Gravitation</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p>Newton formulated this universal tug with a single, powerful equation that describes the force of gravity ($F_g$) between any two objects:
-\(F_g = G \frac{m_1 m_2}{r^2}\)
-Let’s break this down: - <strong>$m_1$ and $m_2$</strong> are the masses of the two objects. The more massive the objects, the stronger the pull. - <strong>$r$</strong> is the distance between the centers of the two objects. - <strong>$G$</strong> is the Universal Gravitational Constant, a tiny number that shows why gravity is the weakest of the fundamental forces.
-The most important part of this law is the <strong>inverse-square relationship</strong>. The force of gravity decreases with the <em>square</em> of the distance. If you double the distance between two objects, the gravitational force between them doesn’t get twice as weak; it gets <strong>four times</strong> weaker ($2^2 = 4$). This is why the pull of distant stars on Earth is negligible, while the pull of our nearby Sun and Moon dominates our cosmic neighborhood.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p>Newton formulated this universal tug with a single, powerful equation</p>
 
+<p>that describes the force of gravity ($F_g$) between any two objects:</p>
+
+\[F_g = G \frac{m_1 m_2}{r^2}\]
+
+<p>Let’s break this down: - <strong>$m_1$ and $m_2$</strong> are the masses of the two objects.</p>
+
+<p>The more massive the objects, the stronger the pull. - <strong>$r$</strong> is the distance</p>
+
+<p>between the centers of the two objects. - <strong>$G$</strong> is the Universal Gravitational</p>
+
+<p>Constant, a tiny number that shows why gravity is the weakest of the fundamental</p>
+
+<p>forces.</p>
+
+<p>The most important part of this law is the <strong>inverse-square relationship</strong>. The</p>
+
+<p>force of gravity decreases with the <em>square</em> of the distance. If you double the</p>
+
+<p>distance between two objects, the gravitational force between them doesn’t get</p>
+
+<p>twice as weak; it gets <strong>four times</strong> weaker ($2^2 = 4$). This is why the pull</p>
+
+<p>of distant stars on Earth is negligible, while the pull of our nearby Sun and</p>
+
+<p>Moon dominates our cosmic neighborhood.</p>
+
+              </div>
             </div>
           
           
@@ -283,8 +536,10 @@ The most important part of this law is the <strong>inverse-square relationship</
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-thinking-lens">
-              <p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> The force of gravity between you and the Earth is your weight. The force of gravity between you and your textbook is incredibly tiny. Use Newton’s Universal Law to explain why, considering the masses and distances involved.</p>
+              <div class="content">
+                <p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> The force of gravity between you and the Earth is your weight. The force of gravity between you and your textbook is incredibly tiny. Use Newton’s Universal Law to explain why, considering the masses and distances involved.</p>
 
+              </div>
             </div>
           
           
@@ -299,14 +554,16 @@ The most important part of this law is the <strong>inverse-square relationship</
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 1 (Newton's Law of Gravitation)</h2>
+          <h2 class="section-title">Connection to Problem Set: Problem Set 1 (Newton's Law of Gravitation)</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt">
-              <p>You will now apply this law to calculate the gravitational forces between various celestial objects, from planets and moons to asteroids and stars.</p>
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You will now apply this law to calculate the gravitational forces between various celestial objects, from planets and moons to asteroids and stars.</p>
 
+              </div>
               
               
               
@@ -324,14 +581,22 @@ The most important part of this law is the <strong>inverse-square relationship</
           
           <!-- Item Header -->
           
-          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          <h2 class="section-title">Unit Conclusion</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-reading">
-              <p><strong>Next Steps:</strong> This law describes the <em>force</em> between two objects, but it doesn’t tell us about the <em>path</em> they will take. How does this constant pull lead to the stable, repeating paths we call orbits? And how can a slight change in that path lead to a collision? That is the subject of our next chapter.</p>
+            <div class="reading-section">
+              <div class="content">
+                <p><strong>Next Steps:</strong> This law describes the <em>force</em> between two objects, but</p>
 
+<p>it doesn’t tell us about the <em>path</em> they will take. How does this constant pull</p>
+
+<p>lead to the stable, repeating paths we call orbits? And how can a slight change</p>
+
+<p>in that path lead to a collision? That is the subject of our next chapter.</p>
+
+              </div>
             </div>
           
           
@@ -341,63 +606,15 @@ The most important part of this law is the <strong>inverse-square relationship</
       
     </div>
     
-    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
-    
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
+    <!-- Navigation buttons have been moved to the top for better UX -->
     
     
-    
-
-    <!-- Floating Submission Bar (included at end of form) -->
-    <!-- Floating Submission Bar (Minimal, Clean) -->
-<div id="submission-bar" class="submission-bar">
-  <div class="submission-bar-content">
-    
-    <!-- Student Name (Quick Confirm) -->
-    <div class="submission-field-inline">
-      <label for="student-name-quick">Your Name:</label>
-      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
-    </div>
-
-    <!-- Hidden metadata fields -->
-    <input type="hidden" name="ActivityTitle" value="A Fireball from the Void: The Rules of Cosmic Attraction">
-    <input type="hidden" name="ResourceID" value="">
-    <input type="hidden" name="ContentType" value="flexbook">
-    <input type="hidden" name="Course" value="sphys">
-    <input type="hidden" name="Unit" value="4-cosmic-impacts">
-    <input type="hidden" name="StartTime" id="start-time">
-    <input type="hidden" name="SubmitTime" id="submit-time">
-    <input type="hidden" name="BrowserInfo" id="browser-info">
-
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status-inline" hidden></div>
-    
-    <!-- Auto-save indicator -->
-    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
-      ✓ Saved
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" id="submit-button" class="btn-submit-inline">
-      Submit
-    </button>
-
-  </div>
-</div>
-
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -430,11 +647,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
-</div> <!-- .activity-page -->
+
+</div>
 
     
     </div>

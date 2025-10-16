@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Research Brief 3: The World in Two Dimensions | Cosmos in the Classroom</title>
+    <title>Research Brief: The Siege at Constantinople | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,223 +34,647 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="/assets/css/research-brief.css">
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
-<div class="research-brief-container">
-  <div class="research-brief-header">
-    <h1>Research Brief 3: The World in Two Dimensions</h1>
-    <p class="mb-0">HPHYS Unit 3</p>
-  </div>
-  
-  <div class="research-brief-info">
-    <div class="row">
-      <div class="col-md-6">
-        
-        
-        <p><strong>Estimated Time:</strong> 35 minutes</p>
-        
-      </div>
-      <div class="col-md-6">
-        
-        <p><strong>Tags:</strong> projectile motion, vectors, 2D kinematics, Constantinople, physics</p>
-        
-      </div>
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Research Brief: The Siege at Constantinople</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Research brief</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 3</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
     </div>
-  </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="rb-3-projectiles-siege"
+         data-content-type="research_brief"
+         data-course="sphys"
+         data-title="Research Brief: The Siege at Constantinople"
+         data-unit="3"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         data-brief-cycle="[{&quot;phase&quot;:1,&quot;title&quot;:&quot;Phase 1: Forecast&quot;,&quot;description&quot;:&quot;Our unit is anchored by the historical phenomenon of using large-scale artillery at the 1453 Siege of Constantinople. Your first task is to think like an artillery commander.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Initial Observations&quot;,&quot;prompt_text&quot;:&quot;Observe the animation of the cannon firing. In the spaces below, list at least three things you notice about the cannonball&#39;s path (trajectory) and three things you wonder about what factors determine where it will land.&quot;,&quot;response_type&quot;:&quot;notice_wonder&quot;},{&quot;title&quot;:&quot;My First Model&quot;,&quot;prompt_text&quot;:&quot;You are the artillery commander. Draw a diagram that represents your first, best guess at an explanation for the cannonball&#39;s flight. Your model should show the forces you believe are acting on the cannonball *after it has left the cannon* and identify the key variables (like launch angle and speed) that you can control.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Connecting to Prior Knowledge&quot;,&quot;prompt_text&quot;:&quot;The path of the cannonball is influenced by gravity. How does this phenomenon relate to what you learned about freefall and constant acceleration in Unit 2?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:5}]},{&quot;phase&quot;:2,&quot;title&quot;:&quot;Phase 2: Blueprint&quot;,&quot;description&quot;:&quot;Now that you have analyzed projectile data, it&#39;s time to build a mathematical model to predict the cannonball&#39;s trajectory.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Argument from Evidence: Optimizing Launch Angle&quot;,&quot;prompt_text&quot;:&quot;Based on your findings from the &#39;Optimizing Launch Angle for Range&#39; lab, construct a full Claim-Evidence-Reasoning statement that answers the question: &#39;What is the relationship between launch angle and the horizontal range of a projectile, assuming no air resistance?&#39;&quot;,&quot;response_type&quot;:&quot;cer&quot;},{&quot;title&quot;:&quot;Explain It Two Ways&quot;,&quot;prompt_text&quot;:&quot;Explain the concept of the &#39;Independence of Motion&#39; in two different ways.&quot;,&quot;response_type&quot;:&quot;explanation_synthesis&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;ELI5 (Explain Like I&#39;m 5)&quot;,&quot;prompt_text&quot;:&quot;Explain this concept using a simple analogy, like walking on a moving train or dropping a ball from a moving car.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;title&quot;:&quot;ELIScientist (Explain Like a Scientist)&quot;,&quot;prompt_text&quot;:&quot;Now, explain the same concept using precise, scientific vocabulary. Describe how we treat the horizontal (x) and vertical (y) components of a projectile&#39;s motion separately and what type of motion occurs in each direction.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]}]},{&quot;phase&quot;:3,&quot;title&quot;:&quot;Phase 3: Reflection&quot;,&quot;description&quot;:&quot;Your training is complete. The final step is to write your commander&#39;s report, providing a definitive, evidence-based plan to hit the target, and then to reflect on your learning.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Final Synthesis: The Commander&#39;s Report&quot;,&quot;prompt_text&quot;:&quot;As artillery commander, write a definitive report explaining how to hit a target at a known distance. Your report must be a comprehensive, multi-paragraph explanation that details how to use the principles of projectile motion to calculate the correct launch angle for a given initial velocity. Ground your argument in the &#39;Independence of Motion&#39; and use the specific kinematic equations for the x and y directions to justify your procedure.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:15},{&quot;title&quot;:&quot;Final Model&quot;,&quot;prompt_text&quot;:&quot;Accompany your report with a final, revised model. Upload a detailed, labeled diagram of a projectile&#39;s trajectory. Your diagram must show the initial velocity vector resolved into its x and y components, illustrate that the horizontal velocity is constant while the vertical velocity changes, and label key points like the apex and range.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Metacognition: Then and Now&quot;,&quot;prompt_text&quot;:&quot;Look back at the initial model you drew in your Forecast. A common misconception is to think that a forward force continues to push the cannonball after it leaves the cannon. Was this part of your initial model? What lab evidence or conceptual understanding was most responsible for clarifying the forces acting on a projectile?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8},{&quot;title&quot;:&quot;Metacognition: Seeing the World Differently&quot;,&quot;prompt_text&quot;:&quot;How has learning about projectile motion changed the way you watch or think about sports (e.g., the arc of a basketball shot, the path of a kicked football, the trajectory of a baseball)?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8}]}]"
+         hidden>
+         
+         <!-- Additional brief cycle data for JavaScript to access -->
+         <script type="application/json" id="brief-cycle-data">
+         [{"phase":1,"title":"Phase 1: Forecast","description":"Our unit is anchored by the historical phenomenon of using large-scale artillery at the 1453 Siege of Constantinople. Your first task is to think like an artillery commander.","prompts":[{"title":"Initial Observations","prompt_text":"Observe the animation of the cannon firing. In the spaces below, list at least three things you notice about the cannonball's path (trajectory) and three things you wonder about what factors determine where it will land.","response_type":"notice_wonder"},{"title":"My First Model","prompt_text":"You are the artillery commander. Draw a diagram that represents your first, best guess at an explanation for the cannonball's flight. Your model should show the forces you believe are acting on the cannonball *after it has left the cannon* and identify the key variables (like launch angle and speed) that you can control.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Connecting to Prior Knowledge","prompt_text":"The path of the cannonball is influenced by gravity. How does this phenomenon relate to what you learned about freefall and constant acceleration in Unit 2?","response_type":"textarea","rows":5}]},{"phase":2,"title":"Phase 2: Blueprint","description":"Now that you have analyzed projectile data, it's time to build a mathematical model to predict the cannonball's trajectory.","prompts":[{"title":"Argument from Evidence: Optimizing Launch Angle","prompt_text":"Based on your findings from the 'Optimizing Launch Angle for Range' lab, construct a full Claim-Evidence-Reasoning statement that answers the question: 'What is the relationship between launch angle and the horizontal range of a projectile, assuming no air resistance?'","response_type":"cer"},{"title":"Explain It Two Ways","prompt_text":"Explain the concept of the 'Independence of Motion' in two different ways.","response_type":"explanation_synthesis","prompts":[{"title":"ELI5 (Explain Like I'm 5)","prompt_text":"Explain this concept using a simple analogy, like walking on a moving train or dropping a ball from a moving car.","response_type":"textarea","rows":4},{"title":"ELIScientist (Explain Like a Scientist)","prompt_text":"Now, explain the same concept using precise, scientific vocabulary. Describe how we treat the horizontal (x) and vertical (y) components of a projectile's motion separately and what type of motion occurs in each direction.","response_type":"textarea","rows":4}]}]},{"phase":3,"title":"Phase 3: Reflection","description":"Your training is complete. The final step is to write your commander's report, providing a definitive, evidence-based plan to hit the target, and then to reflect on your learning.","prompts":[{"title":"Final Synthesis: The Commander's Report","prompt_text":"As artillery commander, write a definitive report explaining how to hit a target at a known distance. Your report must be a comprehensive, multi-paragraph explanation that details how to use the principles of projectile motion to calculate the correct launch angle for a given initial velocity. Ground your argument in the 'Independence of Motion' and use the specific kinematic equations for the x and y directions to justify your procedure.","response_type":"textarea","rows":15},{"title":"Final Model","prompt_text":"Accompany your report with a final, revised model. Upload a detailed, labeled diagram of a projectile's trajectory. Your diagram must show the initial velocity vector resolved into its x and y components, illustrate that the horizontal velocity is constant while the vertical velocity changes, and label key points like the apex and range.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Metacognition: Then and Now","prompt_text":"Look back at the initial model you drew in your Forecast. A common misconception is to think that a forward force continues to push the cannonball after it leaves the cannon. Was this part of your initial model? What lab evidence or conceptual understanding was most responsible for clarifying the forces acting on a projectile?","response_type":"textarea","rows":8},{"title":"Metacognition: Seeing the World Differently","prompt_text":"How has learning about projectile motion changed the way you watch or think about sports (e.g., the arc of a basketball shot, the path of a kicked football, the trajectory of a baseball)?","response_type":"textarea","rows":8}]}]
+         </script>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Research Brief Content Display with Sequential Navigation
+  Renders brief_cycle array one phase at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Research Brief: The Siege at Constantinople">
+  <input type="hidden" name="ResourceID" value="rb-3-projectiles-siege">
+  <input type="hidden" name="ContentType" value="research_brief">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="3">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
   
   <div class="research-brief-content">
-    <h1>==============================================================================</h1>
-<h1 id="yaml-research-brief-data-the-world-in-two-dimensions">YAML Research Brief Data: The World in Two Dimensions</h1>
-<h1 id="-1">==============================================================================</h1>
+    
+    <!-- Introduction content -->
+    <div class="brief-introduction">
+      
 
-<h1 id="-2">——————————————————————————</h1>
-<h1 id="section-1-research-brief-overview">SECTION 1: RESEARCH BRIEF OVERVIEW</h1>
-<h1 id="-3">——————————————————————————</h1>
-<p>overview:
-  phenomenon: “The first effective use of large-scale artillery in the 1453 Siege of Constantinople.”</p>
+    </div>
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Phase 1 of 3</div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
 
-<p>historical_context: |
-    The Siege of Constantinople in 1453 marked a turning point in military history. The Ottoman forces, under Sultan Mehmed II, deployed massive bronze cannons designed by the Hungarian engineer Orban. These cannons could hurl stone projectiles weighing up to 600 kg over distances exceeding 1.5 km. The success of this artillery bombardment depended critically on understanding the trajectory of projectiles—a problem that requires analyzing motion in two dimensions simultaneously.</p>
+    <!-- Brief Phases (Sequential Display) -->
+    
+    <div class="brief-phases-container">
+      
+        
+        <div class="nav-item-container brief-phase active" 
+             data-item-index="0"
+             data-brief-phase="1">
+          
+          <h2 class="phase-title">Phase 1: Forecast</h2>
+          <div class="phase-description">
+            <p>Our unit is anchored by the historical phenomenon of using large-scale artillery at the 1453 Siege of Constantinople. Your first task is to think like an artillery commander.</p>
 
-<p>central_question: “How do you determine the correct angle to launch a projectile to hit a target at a specific distance?”</p>
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Initial Observations</h4>
+              <p class="prompt-text">Observe the animation of the cannon firing. In the spaces below, list at least three things you notice about the cannonball's path (trajectory) and three things you wonder about what factors determine where it will land.</p>
+              
+              
+                <div class="response-container notice-wonder-format">
+                  <div class="nw-column">
+                    <h5>I Notice</h5>
+                    <textarea 
+                      name="phase1_prompt1_notice" 
+                      class="brief-response-field"
+                      rows="4"
+                      placeholder="What do you observe?"></textarea>
+                  </div>
+                  <div class="nw-column">
+                    <h5>I Wonder</h5>
+                    <textarea 
+                      name="phase1_prompt1_wonder" 
+                      class="brief-response-field"
+                      rows="4"
+                      placeholder="What questions do you have?"></textarea>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">My First Model</h4>
+              <p class="prompt-text">You are the artillery commander. Draw a diagram that represents your first, best guess at an explanation for the cannonball's flight. Your model should show the forces you believe are acting on the cannonball *after it has left the cannon* and identify the key variables (like launch angle and speed) that you can control.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-1-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-1-2"
+                      name="phase1_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-1-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Connecting to Prior Knowledge</h4>
+              <p class="prompt-text">The path of the cannonball is influenced by gravity. How does this phenomenon relate to what you learned about freefall and constant acceleration in Unit 2?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase1_prompt3" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="1"
+             data-brief-phase="2">
+          
+          <h2 class="phase-title">Phase 2: Blueprint</h2>
+          <div class="phase-description">
+            <p>Now that you have analyzed projectile data, it’s time to build a mathematical model to predict the cannonball’s trajectory.</p>
 
-<p>key_concepts:
-    - “Independence of horizontal and vertical motion”
-    - “Vector decomposition of velocity”
-    - “Projectile motion equations”
-    - “Range optimization”</p>
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Argument from Evidence: Optimizing Launch Angle</h4>
+              <p class="prompt-text">Based on your findings from the 'Optimizing Launch Angle for Range' lab, construct a full Claim-Evidence-Reasoning statement that answers the question: 'What is the relationship between launch angle and the horizontal range of a projectile, assuming no air resistance?'</p>
+              
+              
+                <div class="response-container cer-format">
+                  <div class="cer-section">
+                    <h5>Claim</h5>
+                    <textarea 
+                      name="phase2_prompt1_claim" 
+                      class="brief-response-field"
+                      rows="2"
+                      placeholder="Make a claim that answers the question..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Evidence</h5>
+                    <textarea 
+                      name="phase2_prompt1_evidence" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Provide evidence that supports your claim..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Reasoning</h5>
+                    <textarea 
+                      name="phase2_prompt1_reasoning" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Explain why your evidence supports your claim..."></textarea>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Explain It Two Ways</h4>
+              <p class="prompt-text">Explain the concept of the 'Independence of Motion' in two different ways.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase2_prompt2" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+              
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="2"
+             data-brief-phase="3">
+          
+          <h2 class="phase-title">Phase 3: Reflection</h2>
+          <div class="phase-description">
+            <p>Your training is complete. The final step is to write your commander’s report, providing a definitive, evidence-based plan to hit the target, and then to reflect on your learning.</p>
 
-<h1 id="-4">——————————————————————————</h1>
-<h1 id="section-2-three-phase-structure">SECTION 2: THREE-PHASE STRUCTURE</h1>
-<h1 id="-5">——————————————————————————</h1>
-
-<h1 id="-forecast-phase-">========================= FORECAST PHASE ===================================</h1>
-<p>forecast:
-  phase_title: “Forecast: The Artillery Commander’s Dilemma”
-  timing: “Beginning of Unit”</p>
-
-<p>prompt: |
-    You are an artillery commander at the Siege of Constantinople in 1453. Your Sultan has commissioned the construction of massive cannons to breach the legendary walls of the city. However, the cannons are heavy, difficult to aim, and expensive to fire (each shot requires significant time and gunpowder to reload).</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Your Challenge:** Before wasting precious ammunition, you must predict where a cannonball will land based on the angle at which you aim the cannon and the velocity at which the ball leaves the barrel.
-</code></pre></div></div>
-
-<p>guiding_questions:
-    - “What variables do you think affect where a projectile lands?”
-    - “Draw a sketch showing the path you expect a cannonball to follow. What shape is it?”
-    - “If you could only choose one launch angle to test, which would you choose and why?”
-    - “What makes this problem more complex than the one-dimensional motion problems you’ve solved before?”</p>
-
-<p>deliverables:
-    - “Sketch of expected projectile path”
-    - “List of variables that affect range”
-    - “Initial prediction for optimal launch angle”
-    - “Written explanation of reasoning (3-5 sentences)”</p>
-
-<h1 id="-blueprint-phase-">========================= BLUEPRINT PHASE ==================================</h1>
-<p>blueprint:
-  phase_title: “Blueprint: Modeling Projectile Trajectories”
-  timing: “Mid-Unit”</p>
-
-<p>prompt: |
-    Now that you’ve learned about vector decomposition and the independence of motion in perpendicular directions, it’s time to build a mathematical model that can predict projectile motion.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Your Task:** Develop a complete mathematical framework for calculating the range of a projectile launched at angle θ with initial velocity $v_0$.
-</code></pre></div></div>
-
-<p>mathematical_framework:
-    - step: 1
-      description: “Decompose the initial velocity into horizontal and vertical components”
-      equations:
-        - “$v_{0x} = v_0 \cos(\theta)$”
-        - “$v_{0y} = v_0 \sin(\theta)$”</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- step: 2
-  description: "Apply kinematic equations separately to each dimension"
-  horizontal:
-    - "$x = v_{0x} t$ (constant velocity)"
-  vertical:
-    - "$y = v_{0y} t - \\frac{1}{2} g t^2$ (constant acceleration)"
-    - "$v_y = v_{0y} - gt$"
-
-- step: 3
-  description: "Find time of flight by setting y = 0 at landing"
-  equation: "$t_{flight} = \\frac{2v_0 \\sin(\\theta)}{g}$"
-
-- step: 4
-  description: "Calculate range using horizontal motion equation"
-  equation: "$R = v_{0x} \\cdot t_{flight} = \\frac{v_0^2 \\sin(2\\theta)}{g}$"
-</code></pre></div></div>
-
-<p>investigation_prompts:
-    - “Using your model, calculate the range for launch angles of 15°, 30°, 45°, 60°, and 75° (assume $v_0 = 100$ m/s).”
-    - “Create a graph showing Range vs. Launch Angle.”
-    - “At what angle is the range maximized? Does this match your initial prediction?”
-    - “Test your model using a projectile motion simulation. How well does it predict actual trajectories?”
-    - “What assumptions does your model make? When might it fail in the real world?”</p>
-
-<p>deliverables:
-    - “Complete derivation of range equation”
-    - “Data table with calculated ranges for different angles”
-    - “Graph of Range vs. Launch Angle”
-    - “Comparison between model predictions and simulation results”
-    - “Discussion of model limitations (air resistance, rotation, etc.)”</p>
-
-<h1 id="-reflection-phase-">========================= REFLECTION PHASE =================================</h1>
-<p>reflection:
-  phase_title: “Reflection: Systems and the Independence of Motion”
-  timing: “End of Unit”</p>
-
-<p>prompt: |
-    Return to your initial question: <strong>What is the correct angle to launch a projectile to hit a target at a specific distance?</strong></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You now have a complete mathematical model and have tested it against simulations. Synthesize your learning by answering this question with full justification.
-</code></pre></div></div>
-
-<p>synthesis_questions:
-    - question: “What is the optimal launch angle for maximum range, and why?”
-      guidance: “Explain both mathematically (referencing the $\sin(2\theta)$ term) and conceptually (balancing time aloft with horizontal speed).”</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- question: "How does the principle of independence of motion make this problem solvable?"
-  guidance: "Reflect on how treating a complex 2D problem as two simpler 1D problems is a powerful problem-solving strategy. Where else in physics might this approach be useful?"
-
-- question: "Why is 45° the optimal angle only in idealized conditions?"
-  guidance: "Discuss how air resistance, launch height differences, and other real-world factors change the optimal angle."
-
-- question: "How did this investigation demonstrate the CCC 'Systems and System Models'?"
-  guidance: "Consider how breaking the projectile motion system into horizontal and vertical subsystems allowed for analysis that would be impossible if treated as a single system."
-</code></pre></div></div>
-
-<p>real_world_connections:
-    - “Sports: Why do athletes release projectiles (shot put, javelin) at angles less than 45°?”
-    - “Engineering: How do engineers account for air resistance when designing projectiles?”
-    - “Space Exploration: How does the absence of air resistance on the Moon change projectile motion?”
-    - “Military History: How accurate was Ottoman artillery, and what factors limited its effectiveness?”</p>
-
-<p>deliverables:
-    - “Final answer to the central question with complete justification”
-    - “Reflection essay (2-3 paragraphs) on the power of the independence of motion principle”
-    - “Diagram showing how your understanding evolved from Forecast to Blueprint to Reflection”
-    - “Application example: Choose one real-world scenario and explain how projectile motion analysis applies”</p>
-
-<h1 id="-6">——————————————————————————</h1>
-<h1 id="section-3-assessment-criteria">SECTION 3: ASSESSMENT CRITERIA</h1>
-<h1 id="-7">——————————————————————————</h1>
-<p>assessment:
-  apprentice_level:
-    - “Correctly decomposes initial velocity into components”
-    - “Applies kinematic equations to each dimension separately”
-    - “Calculates time of flight and range for a given angle”
-    - “Identifies that 45° maximizes range”</p>
-
-<p>journeyman_level:
-    - “Derives the range equation from first principles”
-    - “Creates accurate graphs and data tables”
-    - “Compares model predictions with simulation results”
-    - “Explains the mathematical reason for 45° optimization”</p>
-
-<p>master_level:
-    - “Critically evaluates model limitations and assumptions”
-    - “Extends analysis to non-ideal conditions (launch height, air resistance)”
-    - “Synthesizes learning across all three phases coherently”
-    - “Applies concepts to novel contexts beyond the original phenomenon”</p>
-
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Synthesis: The Commander's Report</h4>
+              <p class="prompt-text">As artillery commander, write a definitive report explaining how to hit a target at a known distance. Your report must be a comprehensive, multi-paragraph explanation that details how to use the principles of projectile motion to calculate the correct launch angle for a given initial velocity. Ground your argument in the 'Independence of Motion' and use the specific kinematic equations for the x and y directions to justify your procedure.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt1" 
+                    class="brief-response-field"
+                    rows="15"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Model</h4>
+              <p class="prompt-text">Accompany your report with a final, revised model. Upload a detailed, labeled diagram of a projectile's trajectory. Your diagram must show the initial velocity vector resolved into its x and y components, illustrate that the horizontal velocity is constant while the vertical velocity changes, and label key points like the apex and range.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-3-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-3-2"
+                      name="phase3_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-3-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Metacognition: Then and Now</h4>
+              <p class="prompt-text">Look back at the initial model you drew in your Forecast. A common misconception is to think that a forward force continues to push the cannonball after it leaves the cannon. Was this part of your initial model? What lab evidence or conceptual understanding was most responsible for clarifying the forces acting on a projectile?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt3" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Metacognition: Seeing the World Differently</h4>
+              <p class="prompt-text">How has learning about projectile motion changed the way you watch or think about sports (e.g., the arc of a basketball shot, the path of a kicked football, the trajectory of a baseball)?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt4" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
   </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Research Brief Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const phaseItems = document.querySelectorAll('.nav-item-container');
+    
+    if (phaseItems.length > 1) {
+        // Use unified navigator for multi-phase briefs
+        window.briefNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Phase'
+        });
+        
+        console.log('[research-brief] Sequential navigation initialized');
+    } else {
+        // Single phase - show everything
+        if (phaseItems.length === 1) {
+            phaseItems[0].classList.add('active');
+        }
+        console.log('[research-brief] Single phase mode - no navigation needed');
+    }
+    
+    // Initialize file upload UI
+    document.querySelectorAll('.file-input').forEach(input => {
+        const nameDisplay = document.getElementById('file-name-' + input.id.replace('file-upload-', ''));
+        if (nameDisplay) {
+            input.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    nameDisplay.textContent = this.files[0].name;
+                } else {
+                    nameDisplay.textContent = 'No file chosen';
+                }
+            });
+        }
+    });
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760613538';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
 </div>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

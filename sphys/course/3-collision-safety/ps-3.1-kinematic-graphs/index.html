@@ -41,7 +41,12 @@
     
       <!-- Activity Submission System CSS -->
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
 <!-- Chart.js for data visualization -->
 
@@ -60,59 +65,205 @@
 </script>
 
 <style>
-/* No-header page: Remove all top spacing for content-first experience */
-.no-header-page {
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
     padding-top: 0;
     margin-top: 0;
 }
+</style>
 
-.no-header-page .breadcrumb-nav {
-    padding: 0.75rem 1rem;
-    background: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Problem Set 3.1: Kinematic Graphs</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Problem set</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 3</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
     font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
     color: #6c757d;
 }
 
-.no-header-page .breadcrumb-nav a {
-    color: #007bff;
-    text-decoration: none;
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
 }
 
-.no-header-page .breadcrumb-nav a:hover {
-    text-decoration: underline;
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
 }
 
-.no-header-page .breadcrumb-separator {
-    margin: 0 0.5rem;
-    color: #adb5bd;
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
 }
 
-.no-header-page .activity-header {
-    margin-top: 0;
-    padding-top: 1.5rem;
+.meta-separator {
+    margin: 0 0.4rem;
 }
 
-.no-header-page .activity-header h1 {
-    margin-top: 0;
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
 }
-    </style>
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
 
 <div class="activity-content-container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        
-        
-        
-        
-        
-        
-        <a href="/sphys/">Standard Physics</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="/sphys/course/3/">Unit 3: </a>
-        <span class="breadcrumb-separator">›</span>
-        <span class="breadcrumb-current">Problem Set 3.1: Kinematic Graphs</span>
-    </nav>
 
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
@@ -125,22 +276,13 @@
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         hidden></div>
+         
+         hidden>
+         
+    </div>
 
     <main class="main-content">
         
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Problem Set 3.1: Kinematic Graphs</h1>
-            <div class="activity-meta">
-                <span class="activity-course">SPHYS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Problem set</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 3</span>
-            </div>
-        </div>
-
         <!-- Activity-Specific Content Display -->
         <div class="activity-content-wrapper">
             
@@ -151,94 +293,892 @@
 
 <form id="activity-submission-form" class="activity-form">
   
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Problem Set 3.1: Kinematic Graphs">
+  <input type="hidden" name="ResourceID" value="ps-3.1-kinematic-graphs">
+  <input type="hidden" name="ContentType" value="problem_set">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="3">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
   <div class="problem-set-content">
     <!-- Problem Set Introduction (Collapsible) -->
+    
+    <details class="ps-introduction collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Instructions</span>
+      </summary>
+      <div class="section-content">
+        <p>To investigate the puzzling patterns in traffic data, we must first learn to precisely describe motion. Motion graphs are a physicist’s most powerful tool for visualizing the story of an object’s movement. In this problem set, you will practice interpreting these graphs to determine an object’s position, velocity, and acceleration, building the skills needed to analyze a vehicle collision.</p>
+
+      </div>
+    </details>
     
 
     <!-- Key Formulae (Collapsible) -->
     
+    <details class="ps-formulae collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Key Formulae</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>Average Velocity: \(\vec{v}_{avg} = \frac{\Delta \vec{x}}{\Delta t} = \frac{\text{rise}}{\text{run}} \text{ (slope of position-time graph)}\)
+</li>
+          
+          <li>Average Acceleration: \(\vec{a}_{avg} = \frac{\Delta \vec{v}}{\Delta t} = \frac{\text{rise}}{\text{run}} \text{ (slope of velocity-time graph)}\)
+</li>
+          
+          <li>Displacement: \(\Delta \vec{x} = \text{Area under velocity-time graph}\)
+</li>
+          
+        </ul>
+      </div>
+    </details>
+    
 
     <!-- Global Standards (Collapsible) -->
+    
+    <details class="ps-standards collapsible-section">
+      <summary class="section-toggle">
+        <span class="toggle-icon">▶</span>
+        <span class="toggle-text">Standards for All Problems</span>
+      </summary>
+      <div class="section-content">
+        <ul>
+          
+          <li>Clearly state what the slope and area represent for each type of graph.
+</li>
+          
+          <li>Present all final answers with the correct units and to three significant figures.
+</li>
+          
+        </ul>
+      </div>
+    </details>
     
 
     <!-- Problems with Answer Fields -->
     
-
-    <!-- Reflection Section (at end, part of same form) -->
-    <div class="form-section reflection-section">
-      <h3>Reflection & Submission</h3>
-      
-      <!-- Student Information -->
-      <fieldset class="form-subsection">
-        <legend>Student Information</legend>
-        <div class="form-grid">
-          <div class="form-field">
-            <label for="student-name">Full Name *</label>
-            <input type="text" id="student-name" name="StudentName" required>
-          </div>
-          <div class="form-field">
-            <label for="student-email">Email</label>
-            <input type="email" id="student-email" name="StudentEmail">
-          </div>
-          <div class="form-field">
-            <label for="course-name">Course</label>
-            <input type="text" id="course-name" name="CourseName" value="SPHYS" readonly>
-          </div>
-          <div class="form-field">
-            <label for="class-period">Class Period</label>
-            <select id="class-period" name="ClassPeriod">
-              <option value="">Select Period</option>
-              <option value="1">1st Period</option>
-              <option value="2">2nd Period</option>
-              <option value="3">3rd Period</option>
-              <option value="4">4th Period</option>
-              <option value="5">5th Period</option>
-              <option value="6">6th Period</option>
-              <option value="7">7th Period</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
+    <div class="ps-problems">
+      <!-- Progress indicator with dropdown navigation -->
+      <div class="problem-progress">
+        <div class="problem-progress-bar">
+          <div class="problem-progress-fill" id="progress-fill" style="width: 0%;"></div>
         </div>
-      </fieldset>
+        <div class="problem-navigation-dropdown">
+          <label for="problem-selector" class="visually-hidden">Jump to problem:</label>
+          <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
+            
+            <option value="0" selected>
+              Problem 1 - The Apprentice's Practice: Constant Velocity
+            </option>
+            
+            <option value="1" >
+              Problem 2 - The Journeyman's Task: A Complete Story of Motion
+            </option>
+            
+            <option value="2" >
+              Problem 3 - The Master's Insight: The Danger of Distraction
+            </option>
+            
+          </select>
+          <span class="problem-count">of 3</span>
+        </div>
+      </div>
 
-      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
-      <div id="activity-specific-fields"></div>
-
-      <!-- Hidden metadata fields -->
-      <input type="hidden" name="ActivityTitle" value="Problem Set 3.1: Kinematic Graphs">
-      <input type="hidden" name="ResourceID" value="ps-3.1-kinematic-graphs">
-      <input type="hidden" name="ContentType" value="problem_set">
-      <input type="hidden" name="Course" value="sphys">
-      <input type="hidden" name="Unit" value="3">
-      <input type="hidden" name="StartTime" id="start-time">
-      <input type="hidden" name="SubmitTime" id="submit-time">
-      <input type="hidden" name="BrowserInfo" id="browser-info">
-
-      <!-- Status Messages -->
-      <div id="submission-status" class="submission-status" hidden></div>
       
-      <!-- Auto-save indicator (top right corner) -->
-      <div id="auto-save-indicator" hidden>
-        ✓ Saved
-      </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="1" data-problem-index="0">
+          
+          <h2 class="problem-section-header"></h2>
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 1</span>
+            
+            <span class="problem-tier tier-1">The Apprentice's Practice: Constant Velocity</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The position-time graph below shows the motion of a car. What is the car’s velocity?</p>
 
-      <!-- Simple Submit Button -->
-      <div class="form-actions">
-        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
-          Submit Problem Set
-        </button>
-        <p class="help-text">
-          Answers are auto-saved. Submit when complete.
-        </p>
-      </div>
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Position vs Time Graph">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Position vs Time Graph</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="position-time-graph-1" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;position-time-graph-1&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Position vs Time Graph&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:5},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Position (m)&quot;,&quot;min&quot;:0,&quot;max&quot;:70},&quot;dataPoints&quot;:[{&quot;x&quot;:0,&quot;y&quot;:10},{&quot;x&quot;:1,&quot;y&quot;:20},{&quot;x&quot;:2,&quot;y&quot;:30},{&quot;x&quot;:3,&quot;y&quot;:40},{&quot;x&quot;:4,&quot;y&quot;:50},{&quot;x&quot;:5,&quot;y&quot;:60}],&quot;caption&quot;:&quot;A car moving with constant velocity.&quot;}"
+        data-defer-render="true"
+        aria-label="Position vs Time Graph. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Position vs Time Graph">
+      <table>
+        <caption>Position vs Time Graph</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Position (m)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0</td>
+              <td>10</td>
+            </tr>
+            
+            <tr>
+              <td>1</td>
+              <td>20</td>
+            </tr>
+            
+            <tr>
+              <td>2</td>
+              <td>30</td>
+            </tr>
+            
+            <tr>
+              <td>3</td>
+              <td>40</td>
+            </tr>
+            
+            <tr>
+              <td>4</td>
+              <td>50</td>
+            </tr>
+            
+            <tr>
+              <td>5</td>
+              <td>60</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>A car moving with constant velocity.</p>
 
     </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'position-time-graph-1';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-1" onclick="toggleCurrentAnswer('1')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-1">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                
+                  <em>Solution not available.</em>
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-1">
+                Response:
+              </label>
+              <textarea 
+                id="answer-1" 
+                name="answer_1"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="2" data-problem-index="1">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 2</span>
+            
+            <span class="problem-tier tier-2">The Journeyman's Task: A Complete Story of Motion</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>The velocity-time graph below shows a car’s motion.</p>
+
+          </div>
+          
+          
+          
+          <div class="problem-dataset">
+            
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Velocity vs. Time">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Velocity vs. Time</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="velocity-time-graph" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;velocity-time-graph&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Velocity vs. Time&quot;,&quot;xAxis&quot;:{&quot;label&quot;:&quot;Time (s)&quot;,&quot;min&quot;:0,&quot;max&quot;:6},&quot;yAxis&quot;:{&quot;label&quot;:&quot;Velocity (m/s)&quot;,&quot;min&quot;:0,&quot;max&quot;:25},&quot;dataPoints&quot;:[{&quot;x&quot;:0.0,&quot;y&quot;:20.0},{&quot;x&quot;:2.0,&quot;y&quot;:20.0},{&quot;x&quot;:5.0,&quot;y&quot;:0.0}],&quot;caption&quot;:&quot;The velocity-time graph shows a car moving at a constant velocity of 20.0 m/s for 2.0 s, then decelerating uniformly to a stop at 5.0 s.&quot;}"
+        data-defer-render="true"
+        aria-label="Velocity vs. Time. Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Velocity vs. Time">
+      <table>
+        <caption>Velocity vs. Time</caption>
+        <thead>
+          <tr>
+            <th scope="col">Time (s)</th>
+            <th scope="col">Velocity (m/s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            
+            <tr>
+              <td>0.0</td>
+              <td>20.0</td>
+            </tr>
+            
+            <tr>
+              <td>2.0</td>
+              <td>20.0</td>
+            </tr>
+            
+            <tr>
+              <td>5.0</td>
+              <td>0.0</td>
+            </tr>
+            
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+    <div class="figure-caption">
+      <p>The velocity-time graph shows a car moving at a constant velocity of 20.0 m/s for 2.0 s, then decelerating uniformly to a stop at 5.0 s.</p>
+
+    </div>
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'velocity-time-graph';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+          </div>
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-2" onclick="toggleCurrentAnswer('2')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-2">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                
+                  <em>Solution not available.</em>
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-2">
+                Response:
+              </label>
+              <textarea 
+                id="answer-2" 
+                name="answer_2"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+        
+        
+        
+        
+        
+        
+        <div class="problem-container" data-problem-id="3" data-problem-index="2">
+          
+          
+          <div class="problem-header">
+            <span class="problem-number">Problem 3</span>
+            
+            <span class="problem-tier tier-3">The Master's Insight: The Danger of Distraction</span>
+            
+          </div>
+          
+          <div class="problem-statement">
+            <p>A driver traveling at 25.0 m/s sees a hazard. Their braking system can provide an acceleration of -5.00 m/s².</p>
+
+          </div>
+          
+          
+          
+
+          
+          <div class="problem-navigation">
+            <button type="button" class="problem-nav-button" id="prev-problem" onclick="navigateProblem(-1)">
+              <span class="nav-icon">←</span> Previous
+            </button>
+            
+            
+            <button type="button" class="check-answer-button" id="check-answer-3" onclick="toggleCurrentAnswer('3')">
+              View Solution
+            </button>
+            
+            
+            <button type="button" class="problem-nav-button" id="next-problem" onclick="navigateProblem(1)">
+              Next <span class="nav-icon">→</span>
+            </button>
+          </div>
+
+          
+          
+          <div class="current-answer-display" id="answer-key-3">
+            <strong>Solution:</strong>
+            <div>
+              
+                
+                
+                  <em>Solution not available.</em>
+                
+              
+            </div>
+          </div>
+          
+          
+          
+          <div class="problem-answer">
+            
+              
+              <label for="answer-3">
+                Response:
+              </label>
+              <textarea 
+                id="answer-3" 
+                name="answer_3"
+                rows="4"
+                placeholder="Show work and include units."></textarea>
+            
+          </div>
+        </div>
+      
+    </div>
+    
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -328,8 +1268,9 @@ function jumpToProblem(index) {
 
     </main>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
     
     
 

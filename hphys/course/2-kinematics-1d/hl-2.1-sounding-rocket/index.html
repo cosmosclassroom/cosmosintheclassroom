@@ -144,6 +144,16 @@
 
 <form id="activity-submission-form" class="activity-form">
   
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Hexagon Lab: Analyzing Rocket Ascent Data">
+  <input type="hidden" name="ResourceID" value="hl-2.1-sounding-rocket">
+  <input type="hidden" name="ContentType" value="hexagon_lab">
+  <input type="hidden" name="Course" value="hphys">
+  <input type="hidden" name="Unit" value="2-kinematics-1d">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
   <div class="hexagon-lab-content">
     
     <!-- Student Name Field (at the top) -->
@@ -362,12 +372,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -379,7 +397,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -391,29 +409,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -507,63 +537,75 @@
           <h3>Analysis Questions</h3>
           
           <div class="question-block">
-            <label for="inv1-q1" class="question-label">
-              <strong>Question 1:</strong>
-              <p><strong>Identifying Key Moments:</strong> At what time does the rocket reach its maximum altitude (apogee)? What is the approximate maximum altitude in meters?</p>
+            
+              
+              <label for="inv1-q1" class="question-label">
+                <strong>Question 1:</strong>
+                <p><strong>Identifying Key Moments:</strong> At what time does the rocket reach its maximum altitude (apogee)? What is the approximate maximum altitude in meters?</p>
 
-            </label>
-            <textarea 
-              id="inv1-q1" 
-              name="inv1_q1"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q1" 
+                name="inv1_q1"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv1-q2" class="question-label">
-              <strong>Question 2:</strong>
-              <p><strong>Slope Analysis:</strong> The slope of a position-time graph represents velocity. During which time interval (0-5s, 5-10s, 10-15s, or 15-18s) is the slope steepest? What does this tell you about the rocket’s velocity during that interval?</p>
+            
+              
+              <label for="inv2-q2" class="question-label">
+                <strong>Question 2:</strong>
+                <p><strong>Slope Analysis:</strong> The slope of a position-time graph represents velocity. During which time interval (0-5s, 5-10s, 10-15s, or 15-18s) is the slope steepest? What does this tell you about the rocket’s velocity during that interval?</p>
 
-            </label>
-            <textarea 
-              id="inv1-q2" 
-              name="inv1_q2"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv2-q2" 
+                name="inv2_q2"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv1-q3" class="question-label">
-              <strong>Question 3:</strong>
-              <p><strong>Curvature Interpretation:</strong> The position-time graph is curved, not straight. What does the changing slope tell you about the rocket’s motion? Is the rocket moving at constant velocity? How do you know?</p>
+            
+              
+              <label for="inv3-q3" class="question-label">
+                <strong>Question 3:</strong>
+                <p><strong>Curvature Interpretation:</strong> The position-time graph is curved, not straight. What does the changing slope tell you about the rocket’s motion? Is the rocket moving at constant velocity? How do you know?</p>
 
-            </label>
-            <textarea 
-              id="inv1-q3" 
-              name="inv1_q3"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv3-q3" 
+                name="inv3_q3"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv1-q4" class="question-label">
-              <strong>Question 4:</strong>
-              <p><strong>Descent Analysis:</strong> Compare the ascent portion of the graph (0-18s) to the descent portion (18-40s). Which takes longer? What might this tell you about the forces acting on the rocket during ascent versus descent?</p>
+            
+              
+              <label for="inv4-q4" class="question-label">
+                <strong>Question 4:</strong>
+                <p><strong>Descent Analysis:</strong> Compare the ascent portion of the graph (0-18s) to the descent portion (18-40s). Which takes longer? What might this tell you about the forces acting on the rocket during ascent versus descent?</p>
 
-            </label>
-            <textarea 
-              id="inv1-q4" 
-              name="inv1_q4"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv4-q4" 
+                name="inv4_q4"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
         </div>
@@ -743,12 +785,20 @@
       
       // Build Chart.js data structure
       const chartData = {
-        labels: chartConfig.dataPoints.map(p => p.x),
+        // For bar charts, we use the labels separately
+        labels: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.label || p.x) : 
+                chartConfig.dataPoints.map(p => p.x),
         datasets: [{
           label: chartConfig.yAxis.label || 'Data',
-          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          // For bar charts, we just need the y values
+          data: chartConfig.chart_type === 'bar' ? 
+                chartConfig.dataPoints.map(p => p.y) : 
+                chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
           borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
-          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          backgroundColor: chartConfig.chart_type === 'bar' ? 
+                          'rgba(52, 152, 219, 0.7)' : 
+                          'rgba(52, 152, 219, 0.1)',
           borderWidth: chartConfig.borderWidth || 2,
           pointRadius: chartConfig.pointRadius || 4,
           pointHoverRadius: chartConfig.pointHoverRadius || 6,
@@ -760,7 +810,7 @@
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: true,
-        aspectRatio: chartConfig.aspectRatio || 2,
+        aspectRatio: chartConfig.aspectRatio || 1.75, // Wider aspect ratio
         plugins: {
           legend: {
             display: chartConfig.showLegend !== false,
@@ -772,29 +822,41 @@
           tooltip: {
             enabled: true,
             mode: 'index',
-            intersect: false
+            intersect: false,
+            callbacks: {
+              // Use the label property for bar charts if available
+              title: function(context) {
+                const dataPoint = chartConfig.dataPoints[context[0].dataIndex];
+                return dataPoint.label || context[0].label || '';
+              }
+            }
           }
         },
         scales: {
           x: {
-            type: 'linear',
+            type: chartConfig.chart_type === 'bar' ? 'category' : 'linear',
             title: {
               display: true,
               text: chartConfig.xAxis.label || 'X'
             },
-            min: chartConfig.xAxis.min,
-            max: chartConfig.xAxis.max,
+            min: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.min !== undefined ? 
+                 chartConfig.xAxis.min - (chartConfig.xAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.chart_type !== 'bar' && chartConfig.xAxis.max !== undefined ? 
+                 chartConfig.xAxis.max + (chartConfig.xAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
-            }
+            },
+            // For bar charts, use labels from dataPoints
+            labels: chartConfig.chart_type === 'bar' ? 
+                    chartConfig.dataPoints.map(p => p.label || p.x) : undefined
           },
           y: {
             title: {
               display: true,
               text: chartConfig.yAxis.label || 'Y'
             },
-            min: chartConfig.yAxis.min,
-            max: chartConfig.yAxis.max,
+            min: chartConfig.yAxis.min !== undefined ? chartConfig.yAxis.min - (chartConfig.yAxis.min * 0.05) : undefined, // Add 5% padding
+            max: chartConfig.yAxis.max !== undefined ? chartConfig.yAxis.max + (chartConfig.yAxis.max * 0.05) : undefined, // Add 5% padding
             grid: {
               display: chartConfig.showGrid !== false
             }
@@ -888,39 +950,47 @@
           <h3>Analysis Questions</h3>
           
           <div class="question-block">
-            <label for="inv2-q1" class="question-label">
-              <strong>Question 1:</strong>
-              <p><strong>Powered Ascent Phase:</strong> Identify the time interval for the powered ascent phase. Calculate the average acceleration during this phase by finding the slope of the line during this interval.</p>
+            
+              
+              <label for="inv1-q1" class="question-label">
+                <strong>Question 1:</strong>
+                <p><strong>Powered Ascent Phase:</strong> Identify the time interval for the powered ascent phase. Calculate the average acceleration during this phase by finding the slope of the line during this interval.</p>
 
-            </label>
-            <textarea 
-              id="inv2-q1" 
-              name="inv2_q1"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q1" 
+                name="inv1_q1"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv2-q2" class="question-label">
-              <strong>Question 2:</strong>
-              <p><strong>Apogee Identification:</strong> Identify the time at which the rocket reaches its maximum altitude (apogee). What is the velocity at this point? Why must the velocity be this value at apogee?</p>
+            
+              
+              <label for="inv2-q2" class="question-label">
+                <strong>Question 2:</strong>
+                <p><strong>Apogee Identification:</strong> Identify the time at which the rocket reaches its maximum altitude (apogee). What is the velocity at this point? Why must the velocity be this value at apogee?</p>
 
-            </label>
-            <textarea 
-              id="inv2-q2" 
-              name="inv2_q2"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv2-q2" 
+                name="inv2_q2"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv2-q3" class="question-label">
-              <strong>Question 3:</strong>
-              <table>
+            
+              
+              <label for="inv3-q3" class="question-label">
+                <strong>Question 3:</strong>
+                <table>
   <tbody>
     <tr>
       <td><strong>Coasting Phase Analysis:</strong> Calculate the acceleration during the coasting phase (from the end of powered ascent to apogee). Compare this value to the acceleration due to gravity, $</td>
@@ -930,29 +1000,33 @@
   </tbody>
 </table>
 
-            </label>
-            <textarea 
-              id="inv2-q3" 
-              name="inv2_q3"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv3-q3" 
+                name="inv3_q3"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv2-q4" class="question-label">
-              <strong>Question 4:</strong>
-              <p><strong>Maximum Altitude Estimation:</strong> Using the technique of calculating the area under the curve, estimate the maximum altitude the rocket reached. Show your work by dividing the area into geometric shapes (triangles, trapezoids, rectangles).</p>
+            
+              
+              <label for="inv4-q4" class="question-label">
+                <strong>Question 4:</strong>
+                <p><strong>Maximum Altitude Estimation:</strong> Using the technique of calculating the area under the curve, estimate the maximum altitude the rocket reached. Show your work by dividing the area into geometric shapes (triangles, trapezoids, rectangles).</p>
 
-            </label>
-            <textarea 
-              id="inv2-q4" 
-              name="inv2_q4"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv4-q4" 
+                name="inv4_q4"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
         </div>
@@ -1030,48 +1104,57 @@
           <h3>Analysis Questions</h3>
           
           <div class="question-block">
-            <label for="inv3-q1" class="question-label">
-              <strong>Question 1:</strong>
-              <p><strong>Cause and Effect:</strong> What is the Cause and Effect relationship between the acceleration difference shown in the table and the rocket’s flight characteristics? How does air resistance <em>cause</em> the observed <em>effect</em> on acceleration magnitude?</p>
+            
+              
+              <label for="inv1-q1" class="question-label">
+                <strong>Question 1:</strong>
+                <p><strong>Cause and Effect:</strong> What is the Cause and Effect relationship between the acceleration difference shown in the table and the rocket’s flight characteristics? How does air resistance <em>cause</em> the observed <em>effect</em> on acceleration magnitude?</p>
 
-            </label>
-            <textarea 
-              id="inv3-q1" 
-              name="inv3_q1"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv1-q1" 
+                name="inv1_q1"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv3-q2" class="question-label">
-              <strong>Question 2:</strong>
-              <p><strong>Parachute Deployment:</strong> If the rocket had a parachute deploy at $t = 30 \, \mathrm{s}$, how would that event change the slope of the v-t graph after that time? Sketch what this would look like on your graph.</p>
+            
+              
+              <label for="inv2-q2" class="question-label">
+                <strong>Question 2:</strong>
+                <p><strong>Parachute Deployment:</strong> If the rocket had a parachute deploy at $t = 30 \, \mathrm{s}$, how would that event change the slope of the v-t graph after that time? Sketch what this would look like on your graph.</p>
 
-            </label>
-            <textarea 
-              id="inv3-q2" 
-              name="inv3_q2"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv2-q2" 
+                name="inv2_q2"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
           <div class="question-block">
-            <label for="inv3-q3" class="question-label">
-              <strong>Question 3:</strong>
-              <p><strong>Position-Time Graph:</strong> Sketch the position-time ($x$-$t$) graph that corresponds to the provided velocity-time graph. Explicitly show: (a) Where the slope is zero (what does this represent?), (b) Where the slope is most steep (what does this represent?), (c) The shape of the curve during each phase.</p>
+            
+              
+              <label for="inv3-q3" class="question-label">
+                <strong>Question 3:</strong>
+                <p><strong>Position-Time Graph:</strong> Sketch the position-time ($x$-$t$) graph that corresponds to the provided velocity-time graph. Explicitly show: (a) Where the slope is zero (what does this represent?), (b) Where the slope is most steep (what does this represent?), (c) The shape of the curve during each phase.</p>
 
-            </label>
-            <textarea 
-              id="inv3-q3" 
-              name="inv3_q3"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
+              </label>
+              <textarea 
+                id="inv3-q3" 
+                name="inv3_q3"
+                rows="6"
+                placeholder="Enter your answer here..."
+                class="form-control question-response"
+              ></textarea>
+            
           </div>
           
         </div>
@@ -1231,7 +1314,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760564678"></script>
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
 <script>
 /**
  * Hexagon Lab Section Navigator
@@ -1284,7 +1367,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760564678"></script>
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -1301,7 +1384,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (moduleMap[contentType]) {
                 const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760564678';
+                script.src = moduleMap[contentType] + '?v=1760613538';
                 script.onerror = function() {
                     console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
                 };

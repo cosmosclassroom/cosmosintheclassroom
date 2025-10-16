@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Research Brief: Constructing the Pyramids | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body class="no-header-page">
+    
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Research Brief: Constructing the Pyramids</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Research brief</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 4</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="rb-4-newtons-laws-pyramids"
+         data-content-type="research_brief"
+         data-course="sphys"
+         data-title="Research Brief: Constructing the Pyramids"
+         data-unit="4"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         data-brief-cycle="[{&quot;phase&quot;:1,&quot;title&quot;:&quot;Phase 1: Forecast&quot;,&quot;description&quot;:&quot;Our unit is anchored by the phenomenon of moving multi-ton stone blocks to build the Great Pyramid of Giza. Your first task is to think like the ancient engineers and identify the challenges they faced.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Initial Observations&quot;,&quot;prompt_text&quot;:&quot;Observe the illustration of the pyramid construction site. In the spaces below, list at least three things you notice about the forces involved and three things you now wonder about how they accomplished this monumental task.&quot;,&quot;response_type&quot;:&quot;notice_wonder&quot;},{&quot;title&quot;:&quot;My First Model&quot;,&quot;prompt_text&quot;:&quot;Based on what you already know, draw a diagram (a physical model) showing all the pushes and pulls you believe are acting on a single stone block as it&#39;s being dragged up a ramp. This is your first, best guess at explaining the forces at play.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Connecting to Prior Knowledge&quot;,&quot;prompt_text&quot;:&quot;How might the pushes and pulls (forces) on the stone block relate to what you learned about acceleration in Unit 2?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:5}]},{&quot;phase&quot;:2,&quot;title&quot;:&quot;Phase 2: Blueprint&quot;,&quot;description&quot;:&quot;Now that you have analyzed data from the Hexagon Labs on inertia and friction, it&#39;s time to synthesize your findings into a more formal, mathematical model of forces.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Argument from Evidence: Measuring Coefficients of Friction&quot;,&quot;prompt_text&quot;:&quot;Based on your findings from the &#39;Measuring Coefficients of Friction&#39; lab, construct a full Claim-Evidence-Reasoning statement that explains how the normal force and the types of surfaces in contact determine the force of kinetic friction.&quot;,&quot;response_type&quot;:&quot;cer&quot;},{&quot;title&quot;:&quot;Explain It Two Ways&quot;,&quot;prompt_text&quot;:&quot;Explain the concept of Newton&#39;s Second Law ($\\Sigma F = ma$) in two different ways.&quot;,&quot;response_type&quot;:&quot;explanation_synthesis&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;ELI5 (Explain Like I&#39;m 5)&quot;,&quot;prompt_text&quot;:&quot;Explain this law in the simplest possible terms, using an everyday analogy like pushing a shopping cart.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;title&quot;:&quot;ELIScientist (Explain Like a Scientist)&quot;,&quot;prompt_text&quot;:&quot;Now, explain the same law using precise, scientific vocabulary. Be sure to describe the relationship between net force, mass, and acceleration, and explain why it is a vector relationship.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]}]},{&quot;phase&quot;:3,&quot;title&quot;:&quot;Phase 3: Reflection&quot;,&quot;description&quot;:&quot;Our investigation is complete. The final step is to construct your definitive engineering plan for the pyramid builders and then to reflect on your own learning process.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Final Synthesis: The Engineer&#39;s Plan&quot;,&quot;prompt_text&quot;:&quot;Present a quantitative, evidence-based plan for moving a 2.5-ton stone block up a ramp. Your response should be a comprehensive, multi-paragraph engineering proposal that uses a Free-Body Diagram, Newton&#39;s Second Law, and the formula for friction to calculate the minimum force required to pull the block at a constant velocity. Justify your plan with specific calculations and vocabulary from this unit.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:15},{&quot;title&quot;:&quot;Final Model&quot;,&quot;prompt_text&quot;:&quot;Accompany your plan with a final, revised model. Upload a complete, detailed Free-Body Diagram for the stone block on an inclined plane. Your diagram must accurately label all forces: the force of gravity resolved into its parallel and perpendicular components, the normal force, the force of friction, and the applied pulling force. This model should be a significant improvement over your initial sketch.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Metacognition: Then and Now&quot;,&quot;prompt_text&quot;:&quot;Look back at the initial diagram of forces you drew in your Forecast. What forces did you miss or misrepresent (e.g., the normal force, or breaking gravity into components)? What specific lab or activity was most responsible for clarifying your understanding of how to correctly model all the forces?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8},{&quot;title&quot;:&quot;Metacognition: Seeing the World Differently&quot;,&quot;prompt_text&quot;:&quot;How has a quantitative understanding of forces and friction changed the way you think about an everyday activity, like pushing a heavy piece of furniture across a room, a car braking, or playing a sport like hockey or curling?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8}]}]"
+         hidden>
+         
+         <!-- Additional brief cycle data for JavaScript to access -->
+         <script type="application/json" id="brief-cycle-data">
+         [{"phase":1,"title":"Phase 1: Forecast","description":"Our unit is anchored by the phenomenon of moving multi-ton stone blocks to build the Great Pyramid of Giza. Your first task is to think like the ancient engineers and identify the challenges they faced.","prompts":[{"title":"Initial Observations","prompt_text":"Observe the illustration of the pyramid construction site. In the spaces below, list at least three things you notice about the forces involved and three things you now wonder about how they accomplished this monumental task.","response_type":"notice_wonder"},{"title":"My First Model","prompt_text":"Based on what you already know, draw a diagram (a physical model) showing all the pushes and pulls you believe are acting on a single stone block as it's being dragged up a ramp. This is your first, best guess at explaining the forces at play.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Connecting to Prior Knowledge","prompt_text":"How might the pushes and pulls (forces) on the stone block relate to what you learned about acceleration in Unit 2?","response_type":"textarea","rows":5}]},{"phase":2,"title":"Phase 2: Blueprint","description":"Now that you have analyzed data from the Hexagon Labs on inertia and friction, it's time to synthesize your findings into a more formal, mathematical model of forces.","prompts":[{"title":"Argument from Evidence: Measuring Coefficients of Friction","prompt_text":"Based on your findings from the 'Measuring Coefficients of Friction' lab, construct a full Claim-Evidence-Reasoning statement that explains how the normal force and the types of surfaces in contact determine the force of kinetic friction.","response_type":"cer"},{"title":"Explain It Two Ways","prompt_text":"Explain the concept of Newton's Second Law ($\\Sigma F = ma$) in two different ways.","response_type":"explanation_synthesis","prompts":[{"title":"ELI5 (Explain Like I'm 5)","prompt_text":"Explain this law in the simplest possible terms, using an everyday analogy like pushing a shopping cart.","response_type":"textarea","rows":4},{"title":"ELIScientist (Explain Like a Scientist)","prompt_text":"Now, explain the same law using precise, scientific vocabulary. Be sure to describe the relationship between net force, mass, and acceleration, and explain why it is a vector relationship.","response_type":"textarea","rows":4}]}]},{"phase":3,"title":"Phase 3: Reflection","description":"Our investigation is complete. The final step is to construct your definitive engineering plan for the pyramid builders and then to reflect on your own learning process.","prompts":[{"title":"Final Synthesis: The Engineer's Plan","prompt_text":"Present a quantitative, evidence-based plan for moving a 2.5-ton stone block up a ramp. Your response should be a comprehensive, multi-paragraph engineering proposal that uses a Free-Body Diagram, Newton's Second Law, and the formula for friction to calculate the minimum force required to pull the block at a constant velocity. Justify your plan with specific calculations and vocabulary from this unit.","response_type":"textarea","rows":15},{"title":"Final Model","prompt_text":"Accompany your plan with a final, revised model. Upload a complete, detailed Free-Body Diagram for the stone block on an inclined plane. Your diagram must accurately label all forces: the force of gravity resolved into its parallel and perpendicular components, the normal force, the force of friction, and the applied pulling force. This model should be a significant improvement over your initial sketch.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Metacognition: Then and Now","prompt_text":"Look back at the initial diagram of forces you drew in your Forecast. What forces did you miss or misrepresent (e.g., the normal force, or breaking gravity into components)? What specific lab or activity was most responsible for clarifying your understanding of how to correctly model all the forces?","response_type":"textarea","rows":8},{"title":"Metacognition: Seeing the World Differently","prompt_text":"How has a quantitative understanding of forces and friction changed the way you think about an everyday activity, like pushing a heavy piece of furniture across a room, a car braking, or playing a sport like hockey or curling?","response_type":"textarea","rows":8}]}]
+         </script>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Research Brief Content Display with Sequential Navigation
+  Renders brief_cycle array one phase at a time
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Research Brief: Constructing the Pyramids">
+  <input type="hidden" name="ResourceID" value="rb-4-newtons-laws-pyramids">
+  <input type="hidden" name="ContentType" value="research_brief">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="4">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="research-brief-content">
+    
+    <!-- Introduction content -->
+    <div class="brief-introduction">
+      
+
+    </div>
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Phase 1 of 3</div>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+
+    <!-- Brief Phases (Sequential Display) -->
+    
+    <div class="brief-phases-container">
+      
+        
+        <div class="nav-item-container brief-phase active" 
+             data-item-index="0"
+             data-brief-phase="1">
+          
+          <h2 class="phase-title">Phase 1: Forecast</h2>
+          <div class="phase-description">
+            <p>Our unit is anchored by the phenomenon of moving multi-ton stone blocks to build the Great Pyramid of Giza. Your first task is to think like the ancient engineers and identify the challenges they faced.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Initial Observations</h4>
+              <p class="prompt-text">Observe the illustration of the pyramid construction site. In the spaces below, list at least three things you notice about the forces involved and three things you now wonder about how they accomplished this monumental task.</p>
+              
+              
+                <div class="response-container notice-wonder-format">
+                  <div class="nw-column">
+                    <h5>I Notice</h5>
+                    <textarea 
+                      name="phase1_prompt1_notice" 
+                      class="brief-response-field"
+                      rows="4"
+                      placeholder="What do you observe?"></textarea>
+                  </div>
+                  <div class="nw-column">
+                    <h5>I Wonder</h5>
+                    <textarea 
+                      name="phase1_prompt1_wonder" 
+                      class="brief-response-field"
+                      rows="4"
+                      placeholder="What questions do you have?"></textarea>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">My First Model</h4>
+              <p class="prompt-text">Based on what you already know, draw a diagram (a physical model) showing all the pushes and pulls you believe are acting on a single stone block as it's being dragged up a ramp. This is your first, best guess at explaining the forces at play.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-1-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-1-2"
+                      name="phase1_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-1-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Connecting to Prior Knowledge</h4>
+              <p class="prompt-text">How might the pushes and pulls (forces) on the stone block relate to what you learned about acceleration in Unit 2?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase1_prompt3" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="1"
+             data-brief-phase="2">
+          
+          <h2 class="phase-title">Phase 2: Blueprint</h2>
+          <div class="phase-description">
+            <p>Now that you have analyzed data from the Hexagon Labs on inertia and friction, it’s time to synthesize your findings into a more formal, mathematical model of forces.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Argument from Evidence: Measuring Coefficients of Friction</h4>
+              <p class="prompt-text">Based on your findings from the 'Measuring Coefficients of Friction' lab, construct a full Claim-Evidence-Reasoning statement that explains how the normal force and the types of surfaces in contact determine the force of kinetic friction.</p>
+              
+              
+                <div class="response-container cer-format">
+                  <div class="cer-section">
+                    <h5>Claim</h5>
+                    <textarea 
+                      name="phase2_prompt1_claim" 
+                      class="brief-response-field"
+                      rows="2"
+                      placeholder="Make a claim that answers the question..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Evidence</h5>
+                    <textarea 
+                      name="phase2_prompt1_evidence" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Provide evidence that supports your claim..."></textarea>
+                  </div>
+                  <div class="cer-section">
+                    <h5>Reasoning</h5>
+                    <textarea 
+                      name="phase2_prompt1_reasoning" 
+                      class="brief-response-field"
+                      rows="3"
+                      placeholder="Explain why your evidence supports your claim..."></textarea>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Explain It Two Ways</h4>
+              <p class="prompt-text">Explain the concept of Newton's Second Law ($\Sigma F = ma$) in two different ways.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase2_prompt2" 
+                    class="brief-response-field"
+                    rows="5"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+              
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container brief-phase" 
+             data-item-index="2"
+             data-brief-phase="3">
+          
+          <h2 class="phase-title">Phase 3: Reflection</h2>
+          <div class="phase-description">
+            <p>Our investigation is complete. The final step is to construct your definitive engineering plan for the pyramid builders and then to reflect on your own learning process.</p>
+
+          </div>
+          
+          
+          
+          
+          <!-- Phase Prompts -->
+          <div class="phase-prompts">
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Synthesis: The Engineer's Plan</h4>
+              <p class="prompt-text">Present a quantitative, evidence-based plan for moving a 2.5-ton stone block up a ramp. Your response should be a comprehensive, multi-paragraph engineering proposal that uses a Free-Body Diagram, Newton's Second Law, and the formula for friction to calculate the minimum force required to pull the block at a constant velocity. Justify your plan with specific calculations and vocabulary from this unit.</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt1" 
+                    class="brief-response-field"
+                    rows="15"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Final Model</h4>
+              <p class="prompt-text">Accompany your plan with a final, revised model. Upload a complete, detailed Free-Body Diagram for the stone block on an inclined plane. Your diagram must accurately label all forces: the force of gravity resolved into its parallel and perpendicular components, the normal force, the force of friction, and the applied pulling force. This model should be a significant improvement over your initial sketch.</p>
+              
+              
+                <div class="response-container file-upload-format">
+                  <div class="file-upload-field">
+                    <label for="file-upload-3-2" class="file-upload-label">
+                      Choose File
+                    </label>
+                    <input 
+                      type="file" 
+                      id="file-upload-3-2"
+                      name="phase3_prompt2_file"
+                      class="file-input hidden"
+                      accept=".jpg,.jpeg,.png,.pdf">
+                    <div class="file-name" id="file-name-3-2">No file chosen</div>
+                  </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Metacognition: Then and Now</h4>
+              <p class="prompt-text">Look back at the initial diagram of forces you drew in your Forecast. What forces did you miss or misrepresent (e.g., the normal force, or breaking gravity into components)? What specific lab or activity was most responsible for clarifying your understanding of how to correctly model all the forces?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt3" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+            <div class="brief-prompt-container">
+              <h4 class="prompt-title">Metacognition: Seeing the World Differently</h4>
+              <p class="prompt-text">How has a quantitative understanding of forces and friction changed the way you think about an everyday activity, like pushing a heavy piece of furniture across a room, a car braking, or playing a sport like hockey or curling?</p>
+              
+              
+                <div class="response-container">
+                  <textarea 
+                    name="phase3_prompt4" 
+                    class="brief-response-field"
+                    rows="8"
+                    placeholder="Enter your response here..."></textarea>
+                </div>
+                
+                
+            </div>
+            
+          </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+  </div>
+
+</form>
+
+<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script>
+// Initialize Research Brief Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const phaseItems = document.querySelectorAll('.nav-item-container');
+    
+    if (phaseItems.length > 1) {
+        // Use unified navigator for multi-phase briefs
+        window.briefNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Phase'
+        });
+        
+        console.log('[research-brief] Sequential navigation initialized');
+    } else {
+        // Single phase - show everything
+        if (phaseItems.length === 1) {
+            phaseItems[0].classList.add('active');
+        }
+        console.log('[research-brief] Single phase mode - no navigation needed');
+    }
+    
+    // Initialize file upload UI
+    document.querySelectorAll('.file-input').forEach(input => {
+        const nameDisplay = document.getElementById('file-name-' + input.id.replace('file-upload-', ''));
+        if (nameDisplay) {
+            input.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    nameDisplay.textContent = this.files[0].name;
+                } else {
+                    nameDisplay.textContent = 'No file chosen';
+                }
+            });
+        }
+    });
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760613538"></script>
+    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760613538';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
