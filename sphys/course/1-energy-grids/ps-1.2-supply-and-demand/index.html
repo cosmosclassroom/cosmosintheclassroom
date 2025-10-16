@@ -1,1 +1,210 @@
+<hr />
+<p>layout: activity-focused
+course: sphys
+content_type: problem_set
+unit: 1
+unit_slug: 1-energy-grids
+resource_id: ps-1.2-supply-and-demand
+title: “Problem Set 1.2: Supply and Demand”</p>
 
+<p>overview:
+  follows_lecture: ‘Lecture 1.2: Designing Reliable Energy Systems’
+  introduction: |
+  In this problem set, you will apply the concepts of energy, power,
+    and efficiency to analyze the supply and demand challenges of electrical grids.
+    These problems model the real-world calculations engineers and planners use to
+    design stable energy systems and understand the cascading failures that occurred
+    during the Texas power crisis.
+  key_formulae:
+    - \(E = P \cdot \Delta t\)
+    - \(\text{Efficiency} = \frac{E_{\text{out}}}{E_{\text{in}}} \times 100\%\)
+    - \(\text{Cost} = \text{Energy} \times \text{Rate}\)
+  global_standards:
+    - Follow the systematic problem-solving process for all calculations.
+    - Present all final answers with the correct units and appropriate significant figures.
+problems:</p>
+<ul>
+  <li>problem_number: 1
+  tier:
+level: 1
+title: ‘The Apprentice’’s Practice: Community Energy Needs’
+  phenomenon_connection: |
+  An electrical grid must be able to meet the combined, or
+aggregate, demand of all its users. This problem models how that total demand
+is calculated.
+  problem_statement: |
+  ‘A small town has the following average power demands: 500 homes’
+at 2.0 kW each, 50 businesses at 10.0 kW each, and 1 hospital at 200. kW.’’
+‘
+a) Calculate the total power demand for the town in kW.’’
+‘
+b) If this demand is constant for 24 hours, how much total energy (in kWh) does’’
+the town consume?’
+  solution:
+givens:
+    <ul>
+      <li>‘Homes: 500, $P_{home} = 2.0 \, \text{kW}$’</li>
+      <li>‘Businesses: 50, $P_{biz} = 10.0 \, \text{kW}$’</li>
+      <li>‘Hospital: $P_{hosp} = 200 \, \text{kW}$’</li>
+      <li>’$\Delta t = 24 \, \text{h}$’
+unknowns:</li>
+      <li>‘$P_{total} = ?$’</li>
+      <li>‘$E_{total} = ?$’
+steps: |
+        <ol>
+          <li><strong>Sum the individual power demands:</strong> $P_{total} = (\text{Num}<em>{homes} \times P</em>{home}) + (\text{Num}<em>{biz} \times P</em>{biz}) + P_{hosp}$</li>
+          <li><strong>Substitute Values:</strong>
+ $P_{total} = (500 \times 2.0 \, \text{kW}) + (50 \times 10.0 \, \text{kW}) + 200 \, \text{kW}$
+ $P_{total} = 1000 \, \text{kW} + 500 \, \text{kW} + 200 \, \text{kW} = 1700 \, \text{kW}$</li>
+          <li><strong>Select Parent Equation for energy:</strong> $E = P \cdot \Delta t$</li>
+          <li><strong>Substitute Values:</strong>
+ $E = (1700 \, \text{kW}) \times (24 \, \text{h}) = 40,800 \, \text{kWh}$
+final_answer: The town’s total power demand is <strong>1,700 kW</strong>. Over 24 hours, it
+  consumes <strong>40,800 kWh</strong> of energy.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>problem_number: 2
+  tier:
+level: 1
+title: ‘The Apprentice’’s Practice: Energy Mix Analysis’
+  phenomenon_connection: During the crisis, certain energy sources failed while others
+remained stable. This problem analyzes the direct impact of those failures on
+the grid’s total generation capacity.
+  problem_statement: ‘Before the crisis, Texas had a generation capacity of 48,000
+MW. During the crisis, this dropped to 34,000 MW. The cost of electricity is $0.12
+per kWh.</p>
+
+    <p>a) What percentage of total power generation was lost?</p>
+
+    <p>b) How much money was <em>not</em> spent on electricity per hour during the crisis due
+to the power deficit?’
+  solution:
+givens:</p>
+    <ul>
+      <li>‘$P_{normal} = 48,000 \, \text{MW}$’</li>
+      <li>‘$P_{crisis} = 34,000 \, \text{MW}$’</li>
+      <li>‘Rate = $0.12/kWh’
+unknowns:</li>
+      <li>’\% Power Lost = ?’</li>
+      <li>‘Cost Savings per Hour = ?’
+steps: |
+        <ol>
+          <li><strong>Calculate Power Lost:</strong> $P_{lost} = P_{normal} - P_{crisis} = 48,000 \, \text{MW} - 34,000 \, \text{MW} = 14,000 \, \text{MW}$</li>
+          <li><strong>Calculate Percentage:</strong> $\%<em>{lost} = (P</em>{lost} / P_{normal}) \times 100\% = (14,000 \, \text{MW} / 48,000 \, \text{MW}) \times 100\% = 29.2\%$</li>
+          <li><strong>Find energy not used in one hour:</strong> $E_{lost} = P_{lost} \times 1 \, \text{h} = 14,000 \, \text{MWh}$</li>
+          <li><strong>Convert MWh to kWh:</strong> $14,000 \, \text{MWh} \times \frac{1000 \, \text{kWh}}{1 \, \text{MWh}} = 14,000,000 \, \text{kWh}$</li>
+          <li><strong>Calculate Cost:</strong> Cost = Energy × Rate = $14,000,000 \, \text{kWh} \times $0.12/\text{kWh} = $1,680,000$
+final_answer: The grid lost <strong>29.2%</strong> of its generation capacity. This resulted
+  in <strong>$1,680,000</strong> not being spent on electricity each hour.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>problem_number: 3
+  tier:
+level: 2
+title: ‘The Journeyman’’s Task: Storage System Design’
+  phenomenon_connection: A key engineering solution to prevent future blackouts is
+energy storage. This problem models the design calculations for a community-scale
+battery system.
+  problem_statement: ‘A community with a peak demand of 100. MW wants to install a
+battery system that can provide 4.00 hours of emergency power. The battery system
+is 85.0% efficient (meaning you must put in more energy than you get out). The
+installed cost is $300. per kWh of storage capacity.</p>
+
+    <p>a) How much energy (in kWh) must the battery be able to <em>deliver</em>?</p>
+
+    <p>b) Accounting for efficiency, how much total battery capacity (in kWh) must be
+installed?</p>
+
+    <p>c) What will this storage system cost?’
+  solution:
+givens:</p>
+    <ul>
+      <li>‘$P_{demand} = 100. \, \text{MW} = 100,000 \, \text{kW}$’</li>
+      <li>’$\Delta t = 4.00 \, \text{h}$’</li>
+      <li>‘Efficiency = 85.0% = 0.850’</li>
+      <li>‘Cost Rate = $300./kWh’
+unknowns:</li>
+      <li>‘$E_{out} = ?$’</li>
+      <li>‘$E_{in} (Capacity) = ?$’</li>
+      <li>‘Total Cost = ?’
+steps: |
+        <ol>
+          <li><strong>Calculate energy needed:</strong> $E_{out} = P_{demand} \times \Delta t = 100,000 \, \text{kW} \times 4.00 \, \text{h} = 400,000 \, \text{kWh}$</li>
+          <li><strong>Select equation:</strong> Efficiency = $E_{out} / E_{in}$</li>
+          <li><strong>Rearrange:</strong> $E_{in} = E_{out} / \text{Efficiency}$</li>
+          <li><strong>Substitute:</strong> $E_{in} = 400,000 \, \text{kWh} / 0.850 = 470,588 \, \text{kWh}$</li>
+          <li><strong>Calculate cost:</strong> Cost = Capacity × Rate = $470,588 \, \text{kWh} \times $300./\text{kWh} = $141,176,400$
+final_answer: The battery must deliver <strong>400,000 kWh</strong>. To do this, <strong>471,000
+  kWh</strong> of capacity must be installed, for a total cost of <strong>$141.2 million</strong>.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>problem_number: 4
+tier:
+  level: 3
+  title: ‘The Master’’s Insight: Renewable Energy Trade-offs’
+phenomenon_connection: Solving the grid reliability problem involves complex engineering
+  and economic decisions. This problem challenges you to weigh the trade-offs between
+  a traditional fossil fuel plant and a modern renewable-plus-storage system, mirroring
+  the choices facing Texas today.
+problem_statement: ‘A city needs a new 500. MW power source. They are comparing
+  two options:</p>
+
+    <p><strong>Option A (Gas Plant):</strong> 500. MW capacity, $800. million construction cost.</p>
+
+    <p><strong>Option B (Wind + Battery):</strong> 600. MW wind capacity + 300. MW battery capacity,
+  $1.20 billion construction cost.</p>
+
+    <p>a) Calculate the construction cost per MW of <em>rated capacity</em> for each option.</p>
+
+    <p>b) Which option would you recommend? Justify your answer by considering reliability,
+  fuel costs, and environmental impact in addition to the initial construction cost.’
+solution:
+  givens:
+    - ‘Option A: $Cost_A = $800. \times 10^6$, $P_A = 500. \, \text{MW}$’
+    - ‘Option B: $Cost_B = $1.20 \times 10^9$, $P_B = 600. \, \text{MW} + 300. \, \text{MW} = 900. \, \text{MW}$’
+  unknowns:
+    - ‘Cost per MW = ?’
+    - ‘Recommendation’
+  steps: |
+    1. <strong>Calculate cost per MW for Option A:</strong> 
+       Rate = $Cost_A / P_A = $800,000,000 / 500. \, \text{MW} = $1,600,000 \, / \text{MW}$</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2. **Calculate cost per MW for Option B:** 
+   Rate = $Cost_B / P_B = \$1,200,000,000 / 900. \, \text{MW} = \$1,330,000 \, / \text{MW}$
+  
+3. **Consider multiple factors for recommendation:**
+     
+   * **Reliability:** Option A (Natural Gas) is generally more reliable as it is dispatchable and not dependent on weather. However, the Texas crisis showed this can fail in extreme cold. Option B's reliability depends on wind patterns but is significantly enhanced by the battery storage, which can provide power even when the wind isn't blowing.
+     
+   * **Fuel Cost:** Option A has significant, ongoing fuel costs for natural gas, which can be volatile. Option B has a fuel cost of $0.
+     
+   * **Environmental Impact:** Option A produces greenhouse gases. Option B is a zero-emission source of generation.
+     
+   * **Conclusion:** While Option A has a higher construction cost per MW of *dispatchable* power and ongoing fuel costs, it offers higher reliability in most conditions. Option B has a lower cost per *installed* MW and no fuel cost, but its output is intermittent, making the battery essential for reliability. An engineer might recommend **Option B** if long-term cost savings and environmental goals are the priority, accepting the challenge of managing an intermittent resource. They might recommend **Option A** if guaranteed, on-demand power is the absolute top priority and the fuel cost/emissions are deemed acceptable trade-offs.   final_answer: Option A costs **$1.60 million per MW**. Option B costs **$1.33
+million per MW**. The best choice depends on prioritizing factors like reliability,
+long-term operational costs, and environmental impact. student_solutions_list:
+</code></pre></div>    </div>
+  </li>
+  <li>problem_number: 1
+final_answer: a) 1,700 kW, b) 40,800 kWh</li>
+  <li>problem_number: 2
+final_answer: a) 29.2% lost, b) $1,680,000 per hour</li>
+  <li>problem_number: 3
+final_answer: a) 400,000 kWh, b) 471,000 kWh, c) $141.2 million</li>
+  <li>problem_number: 4
+final_answer: ‘a) Option A: $1.60M/MW, Option B: $1.33M/MW’
+layout: activity-focused
+title: ‘Problem Set 1.2: Supply and Demand’
+course: sphys
+content_type: problem_set
+unit: ‘1’</li>
+</ul>
