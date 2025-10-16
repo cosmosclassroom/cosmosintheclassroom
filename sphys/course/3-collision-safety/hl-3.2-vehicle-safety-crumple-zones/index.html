@@ -43,6 +43,8 @@
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 <!-- Enhanced Typography for Flexbooks -->
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -831,7 +833,7 @@
       <!-- Connection to Unit Phenomenon -->
       <div class="nav-item-container lab-section" data-item-index="3" data-section-title="Connection">
         <h2>Connection to Unit Phenomenon</h2>
-        <p>This lab provides the direct physical explanation for one half of our unit’s anchoring paradox. The reason traffic fatalities have decreased, as you saw in the first lab, is a direct result of this engineered application of the Impulse-Momentum Theorem. Crumple zones, along with airbags and seatbelts which also work by extending the time of impact, have made it possible to survive crashes that would have been fatal decades ago. This is a perfect example of how a deep understanding of a fundamental physics principle leads to engineering designs that save millions of lives.</p>
+        <p>This lab provides the direct physical explanation for one half of our unit’s anchoring paradox. The reason traffic fatalities have decreased, as you saw in the first lab, is a direct result of this engineered application of the Impulse-Momentum Theorem. Crumple zones, along with airbags and seatbelts which also work by extending the time of impact, have made it possible to survive crashes that would have been fatal decades ago. This is a perfect example of how a deep understanding of a fundamental physics principle leads to engineering designs that save millions of lives.’</p>
 
       </div>
       
@@ -891,7 +893,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+<script src="/assets/js/activity-navigator.js?v=1760640386"></script>
 <script>
 /**
  * Hexagon Lab Section Navigator
@@ -944,8 +946,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760613538"></script>
-    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    <script src="/assets/js/activity-core.js?v=1760640386"></script>
+    <script src="/assets/js/sticky-header.js?v=1760640386"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -963,7 +965,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760613538';
+                script.src = modulePath + '?v=1760640386';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

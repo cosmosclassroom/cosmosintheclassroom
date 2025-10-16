@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Rb 2 Tsunamis Full | Cosmos in the Classroom</title>
+    <title>Research Brief: Tsunamis | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,107 +34,362 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-      </div>
-    </header>
+  <body class="no-header-page">
     
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="/assets/css/research-brief.css">
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<!-- Enhanced Typography for Flexbooks -->
+<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
 
-<div class="research-brief-container">
-  <div class="research-brief-header">
-    <h1>Rb 2 Tsunamis Full</h1>
-    <p class="mb-0">NATDIS Unit 2</p>
-  </div>
-  
-  <div class="research-brief-info">
-    <div class="row">
-      <div class="col-md-6">
-        
-        
-      </div>
-      <div class="col-md-6">
-        
-      </div>
+<link rel="stylesheet" href="/assets/css/research-brief.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js for data visualization -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<style>
+/* Clean activity page: Full-width content with sticky header */
+.activity-content-container {
+    padding-top: 0;
+    margin-top: 0;
+}
+</style>
+
+<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
+<!-- Sticky Header for Activity Pages -->
+<header class="activity-sticky-header" role="banner">
+    <div class="sticky-header-container">
+        <!-- Left: Student Name Input -->
+        <div class="sticky-header-left">
+            <label for="student-name-input" class="visually-hidden">Student Name</label>
+            <input 
+                type="text" 
+                id="student-name-input" 
+                class="student-name-field"
+                placeholder="Enter your name"
+                aria-label="Student name for submission">
+        </div>
+
+        <!-- Center: Activity Title -->
+        <div class="sticky-header-center">
+            <h1 class="activity-title">Research Brief: Tsunamis</h1>
+            <div class="activity-meta-compact">
+                <span class="meta-course">SPHYS</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-type">Research brief</span>
+                <span class="meta-separator">•</span>
+                <span class="meta-unit">Unit 2</span>
+            </div>
+        </div>
+
+        <!-- Right: Submit Button -->
+        <div class="sticky-header-right">
+            <button 
+                type="button" 
+                id="submit-activity-btn" 
+                class="submit-btn"
+                aria-label="Submit your work">
+                Submit
+            </button>
+        </div>
     </div>
+</header>
+
+<style>
+/* Sticky Header Styles */
+.activity-sticky-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 2px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sticky-header-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left: Student Name Input */
+.sticky-header-left {
+    justify-self: start;
+}
+
+.student-name-field {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.student-name-field:focus {
+    border-color: #007bff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.student-name-field::placeholder {
+    color: #6c757d;
+}
+
+/* Center: Activity Title */
+.sticky-header-center {
+    text-align: center;
+    justify-self: center;
+}
+
+.activity-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #212529;
+    line-height: 1.2;
+}
+
+.activity-meta-compact {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.meta-separator {
+    margin: 0 0.4rem;
+}
+
+/* Right: Submit Button */
+.sticky-header-right {
+    justify-self: end;
+}
+
+.submit-btn {
+    padding: 0.6rem 1.5rem;
+    background: #28a745;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: #218838;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+.submit-btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.submit-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Visually Hidden (Accessibility) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sticky-header-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .sticky-header-left,
+    .sticky-header-center,
+    .sticky-header-right {
+        justify-self: stretch;
+        text-align: center;
+    }
+
+    .student-name-field {
+        max-width: 100%;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+</style>
+
+
+<div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="rb-2-tsunamis"
+         data-content-type="research_brief"
+         data-course="sphys"
+         data-title="Research Brief: Tsunamis"
+         data-unit="2"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         
+         hidden>
+         
+    </div>
+
+    <main class="main-content">
+        
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Research Brief Content Display with Sequential Navigation
+  Renders brief_cycle phases one at a time with Previous/Next navigation
+  Mirrors flexbook-display.html architecture for stepwise progression
+-->
+
+<form id="activity-submission-form" class="activity-form">
+  
+  <!-- Hidden metadata fields for submission -->
+  <input type="hidden" name="ActivityTitle" value="Research Brief: Tsunamis">
+  <input type="hidden" name="ResourceID" value="rb-2-tsunamis">
+  <input type="hidden" name="ContentType" value="research_brief">
+  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Unit" value="2">
+  <input type="hidden" name="StartTime" id="start-time">
+  <input type="hidden" name="SubmitTime" id="submit-time">
+  <input type="hidden" name="BrowserInfo" id="browser-info">
+  
+  <div class="research-brief-content instructional-flow">
+    
+    <!-- Progress indicator -->
+    
+
+    <!-- Brief Cycle Phases (Sequential Display) -->
+    
+  </div>
+
+  <!-- Submission Button (Bottom) -->
+  
+  <div class="research-brief-submission">
+    <button type="submit" class="submit-btn" id="submit-brief">
+      Submit Research Brief
+    </button>
   </div>
   
-  <div class="research-brief-content">
-    <h2 id="metacognitive-journal-your-thinking-journey">Metacognitive Journal: Your Thinking Journey</h2>
 
-<p>Throughout this unit, you’ll keep a journal to help you track your thinking, connect your learning, and reflect on your growth as a scientist, engineer, policymaker, and citizen. Use the prompts below to guide your entries at each stage:</p>
+</form>
 
-<!-- Complete at the very start of the unit, before any major activities. -->
-<h3 id="a-forecast-your-initial-ideas--predictions">(a) Forecast: Your Initial Ideas &amp; Predictions</h3>
 
-<ul>
-  <li>What do you currently believe causes tsunamis? Write down your ideas, even if you’re unsure or think they might be wrong.</li>
-  <li>Make a prediction: Which type of coastal defense (engineered or natural) do you think would work best for Branford, CT? Why?</li>
-  <li>What do you expect will be the biggest challenge for a community facing a tsunami? Explain your reasoning.</li>
-</ul>
+<!-- Load ActivityNavigator library FIRST -->
+<script src="/assets/js/activity-navigator.js?v=1760640386"></script>
 
-<!-- Complete after finishing at least two of the following: Hexagon Lab 2.1, Hexagon Lab 2.2, Problem Set 2.1, Problem Set 2.2, or relevant readings. -->
-<h3 id="b-blueprint-connecting-your-experiences-to-big-ideas">(b) Blueprint: Connecting Your Experiences to Big Ideas</h3>
+<!-- Initialize all activity features after DOM is ready -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize stepwise navigation for research brief phases
+    const navigator = new ActivityNavigator({
+      containerSelector: '.research-brief-phase',
+      progressBarId: 'progress-fill',
+      progressTextId: 'progress-text',
+      prevButtonId: 'prev-item',
+      nextButtonId: 'next-item',
+      itemLabel: 'Phase',
+      scrollToTop: true
+    });
+    
+    // Set timestamps for form submission tracking
+    document.getElementById('start-time').value = new Date().toISOString();
+    document.getElementById('browser-info').value = navigator.userAgent;
+    
+    // Initialize form tracking if available
+    if (window.ActivityCore) {
+      window.ActivityCore.initializeForm('activity-submission-form');
+    }
+  });
 
-<ul>
-  <li>Choose at least two activities (labs, problem sets, or readings) from your progress tracker. For each:
-    <ul>
-      <li>Briefly describe what you did.</li>
-      <li>What did you learn about tsunamis, wave physics, or coastal engineering?</li>
-      <li>Did this experience change or confirm your initial predictions? How?</li>
-    </ul>
-  </li>
-  <li>Connect your learning to the unit’s central question: <em>How can we ensure community resilience against a low-frequency, high-impact coastal hazard?</em></li>
-  <li>Use the geo-literacy framework:
-    <ul>
-      <li><strong>Interactions:</strong> How did human and natural systems interact in your activities?</li>
-      <li><strong>Interconnections:</strong> Did you notice any connections between local actions and broader impacts?</li>
-      <li><strong>Implications:</strong> What consequences did you anticipate or observe from different engineering or policy choices?</li>
-    </ul>
-  </li>
-</ul>
+  // Update submit time when form is submitted
+  document.getElementById('activity-submission-form').addEventListener('submit', function(e) {
+    document.getElementById('submit-time').value = new Date().toISOString();
+  });
+</script>
 
-<!-- Complete after all major unit activities, including the Scientist’s Report, Engineer’s Proposal, Policymaker’s Brief, and all labs/problem sets. -->
-<h3 id="c-reflection-how-has-your-thinking-grown">(c) Reflection: How Has Your Thinking Grown?</h3>
+            
+        </div>
 
-<ul>
-  <li>How has your thinking about tsunamis and coastal resilience changed since the start of the unit?</li>
-  <li>In what ways have your abilities to use math and science to understand and solve natural disaster engineering problems improved?</li>
-  <li>As a deliberate citizen, what responsibilities do you have in understanding, evaluating, and acting on scientific, engineering, and policy information?</li>
-  <li>What ethical or societal considerations now seem most important to you when planning for natural disasters?</li>
-</ul>
+    </main>
 
-  </div>
+    <!-- External JavaScript (load order matters: core first, then sticky header) -->
+    <script src="/assets/js/activity-core.js?v=1760640386"></script>
+    <script src="/assets/js/sticky-header.js?v=1760640386"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js'
+            };
+            
+            const modulePath = moduleMap[contentType];
+            if (modulePath) {
+                const script = document.createElement('script');
+                script.src = modulePath + '?v=1760640386';
+                document.body.appendChild(script);
+                console.log('[activity-focused.html] Loaded module:', modulePath);
+            }
+        });
+    </script>
+    
+
 </div>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

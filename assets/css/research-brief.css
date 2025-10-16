@@ -1,5 +1,415 @@
-/* Research brief layout styles (minimal placeholder, extend as needed) */
-.research-brief { padding: 2rem; }
-.rb-header { margin-bottom: 1rem; }
-.unit-label { color: #6c757d; }
-.rb-content section { margin: 1rem 0; }
+/* Research brief layout styles - Revised Oct 16, 2025 */
+
+/* Basic Layout & Typography */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.research-brief { 
+  padding: 1.5rem; 
+}
+
+.research-brief-content.instructional-flow {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.7;
+  color: #2c3e50;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rb-header { 
+  margin-bottom: 1.5rem; 
+}
+
+.unit-label { 
+  color: #6c757d; 
+}
+
+.rb-content section { 
+  margin: 1.5rem 0; 
+}
+
+/* Main Container Layout */
+.research-brief-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.instructional-flow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.research-brief-phases {
+  margin-top: 1rem;
+}
+
+.nav-item-container {
+  display: none !important;
+  background: #ffffff;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.nav-item-container.active {
+  display: block !important;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Research Brief Phase Navigation */
+.research-brief-phases {
+  margin-top: 1.5rem;
+}
+
+.phase-title {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.phase-description {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #495057;
+}
+
+/* Prompt Styling */
+.research-brief-prompt-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhance visual feedback when a prompt contains focused input */
+.research-brief-prompt-item:has(textarea:focus),
+.research-brief-prompt-item:has(input:focus),
+.research-brief-prompt-item:has(select:focus) {
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.1);
+}
+
+.prompt-label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #212529;
+}
+
+.prompt-instructions {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Prompt Text Styling */
+.prompt-text {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.prompt-text p {
+  margin-bottom: 0.75rem;
+}
+
+.prompt-text strong {
+  color: #212529;
+  font-weight: 600;
+}
+
+/* Science Notebook Styling */
+.science-notebook-prompt {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-left: 4px solid #f0ad4e;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.notebook-instruction {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.notebook-instruction strong {
+  color: #856404;
+}
+
+.notebook-notes {
+  background-color: #fff;
+  border: 1px solid #ffe8cc;
+}
+
+/* Activity Navigation */
+.activity-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.activity-nav-button {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.activity-nav-button:hover {
+  background-color: #e9ecef;
+}
+
+.activity-nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-icon {
+  display: inline-block;
+  margin: 0 0.25rem;
+}
+
+/* Activity Progress Bar */
+.activity-progress {
+  margin-bottom: 1.5rem;
+}
+
+.activity-progress-bar {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.activity-progress-fill {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease-in-out;
+}
+
+#progress-text {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+/* Submission Button */
+.research-brief-submission {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(76, 110, 245, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(76, 110, 245, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(76, 110, 245, 0); }
+}
+
+/* Explanation Synthesis Styling */
+.explanation-synthesis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.explanation-synthesis-part {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.subprompt-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #343a40;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.subprompt-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #495057;
+  line-height: 1.5;
+}
+
+/* This block is deprecated and replaced by the unified Response Type Styling above */
+
+/* Response Type Styling */
+.prompt-response,
+.cer-response,
+.nw-response,
+.explanation-response,
+.text-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #dee2e6;
+  border-radius: 0.375rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: #212529 !important;
+  margin-top: 1rem;
+  background-color: #fff !important;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  min-height: 120px !important;
+  resize: vertical;
+  white-space: pre-wrap;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-align: start;
+  -webkit-rtl-ordering: logical;
+  overflow-wrap: break-word;
+}
+
+.prompt-response:focus,
+.cer-response:focus,
+.nw-response:focus,
+.explanation-response:focus,
+.text-input:focus {
+  outline: none !important;
+  border-color: #4c6ef5 !important;
+  box-shadow: 0 0 0 0.2rem rgba(76, 110, 245, 0.25) !important;
+  background-color: #fff !important;
+}
+
+/* CER Structure */
+.cer-structure {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.cer-part {
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+}
+
+.cer-part:nth-child(1) {
+  border-left: 4px solid #3498db;
+}
+
+.cer-part:nth-child(2) {
+  border-left: 4px solid #2ecc71;
+}
+
+.cer-part:nth-child(3) {
+  border-left: 4px solid #9b59b6;
+}
+
+.cer-part label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+}
+
+/* Label styling consistency */
+label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Notice/Wonder Structure */
+.notice-wonder-structure {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.nw-part {
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  border-left: 4px solid #27ae60;
+}
+
+.nw-part label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #343a40;
+  margin-bottom: 0.5rem;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #adb5bd;
+  opacity: 1;
+}
+
+/* Explicit overrides for user agent styling */
+textarea.prompt-response,
+textarea.cer-response,
+textarea.nw-response,
+textarea.explanation-response {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size: 1rem !important;
+  color: #212529 !important;
+  border-width: 2px !important;
+  border-color: #dee2e6 !important;
+  padding: 0.75rem 1rem !important;
+  background-color: #fff !important;
+  margin: 1rem 0 0 0 !important;
+}
+
+/* Make sure textarea display follows container display */
+.nav-item-container.active textarea {
+  display: block !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .notice-wonder-structure {
+    grid-template-columns: 1fr;
+  }
+}

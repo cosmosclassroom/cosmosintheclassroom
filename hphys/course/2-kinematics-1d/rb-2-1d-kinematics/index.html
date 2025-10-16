@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Research Brief: Launching a Sounding Rocket | Cosmos in the Classroom</title>
+    <title>Rb 2 1D Kinematics | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +43,10 @@
 <link rel="stylesheet" href="/assets/css/activity-submission.css">
 <!-- Enhanced Typography for Flexbooks -->
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+<!-- Research Brief Styling (when content_type is research_brief) -->
+
+<link rel="stylesheet" href="/assets/css/research-brief.css">
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,9 +86,9 @@
 
         <!-- Center: Activity Title -->
         <div class="sticky-header-center">
-            <h1 class="activity-title">Research Brief: Launching a Sounding Rocket</h1>
+            <h1 class="activity-title">Rb 2 1D Kinematics</h1>
             <div class="activity-meta-compact">
-                <span class="meta-course">SPHYS</span>
+                <span class="meta-course">HPHYS</span>
                 <span class="meta-separator">•</span>
                 <span class="meta-type">Research brief</span>
                 <span class="meta-separator">•</span>
@@ -260,22 +264,17 @@
 
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="rb-2-kinematics-rocket"
+         data-resource-id="rb-2-1d-kinematics"
          data-content-type="research_brief"
-         data-course="sphys"
-         data-title="Research Brief: Launching a Sounding Rocket"
+         data-course="hphys"
+         data-title="Rb 2 1D Kinematics"
          data-unit="2"
-         data-submission-enabled="true"
+         data-submission-enabled="false"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
          data-submission-fields="null"
-         data-brief-cycle="[{&quot;phase&quot;:1,&quot;title&quot;:&quot;Phase 1: Forecast&quot;,&quot;description&quot;:&quot;Our unit is anchored by the phenomenon of a multi-stage rocket launch. Your first task is to document your initial ideas about how we describe motion.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Initial Observations&quot;,&quot;prompt_text&quot;:&quot;Observe the animation of the sounding rocket launch. In the spaces below, list at least three things you notice about its motion and three things you now wonder about how to describe that motion with data.&quot;,&quot;response_type&quot;:&quot;notice_wonder&quot;},{&quot;title&quot;:&quot;My First Model&quot;,&quot;prompt_text&quot;:&quot;Based on what you already know, sketch a velocity-time graph that represents your first, best guess for the rocket&#39;s entire journey, from ignition to apogee (its highest point). Label the parts of the graph where you think the engine is firing and where it is coasting.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Connecting to Prior Knowledge&quot;,&quot;prompt_text&quot;:&quot;How does the rocket&#39;s motion relate to what you already know about everyday examples of speeding up, slowing down, and falling?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:5}]},{&quot;phase&quot;:2,&quot;title&quot;:&quot;Phase 2: Blueprint&quot;,&quot;description&quot;:&quot;Now that you have analyzed data from the Hexagon Labs, it&#39;s time to synthesize your findings into a more formal model of motion.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Argument from Evidence: Analyzing Rocket Ascent Data&quot;,&quot;prompt_text&quot;:&quot;Based on your findings from the &#39;Analyzing Rocket Ascent Data&#39; lab, construct a full Claim-Evidence-Reasoning statement that explains how the slope of a velocity-time graph can tell you the story of the rocket&#39;s acceleration during different phases of its flight.&quot;,&quot;response_type&quot;:&quot;cer&quot;},{&quot;title&quot;:&quot;Explain It Two Ways&quot;,&quot;prompt_text&quot;:&quot;Explain the concept of &#39;acceleration&#39; in two different ways.&quot;,&quot;response_type&quot;:&quot;explanation_synthesis&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;ELI5 (Explain Like I&#39;m 5)&quot;,&quot;prompt_text&quot;:&quot;Explain acceleration in the simplest possible terms, using an everyday analogy like riding a bike or a skateboard.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;title&quot;:&quot;ELIScientist (Explain Like a Scientist)&quot;,&quot;prompt_text&quot;:&quot;Now, explain acceleration using precise, scientific vocabulary from this unit. Be sure to mention what type of quantity it is (scalar or vector), its standard units, and its relationship to velocity.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]}]},{&quot;phase&quot;:3,&quot;title&quot;:&quot;Phase 3: Reflection&quot;,&quot;description&quot;:&quot;Our investigation is complete. The final step is to construct your definitive, evidence-based explanation of the rocket&#39;s journey and reflect on your learning process.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Final Synthesis: The Story of the Rocket&quot;,&quot;prompt_text&quot;:&quot;Present a full narrative of the rocket&#39;s flight from launch to apogee. Your story must be a comprehensive, multi-paragraph explanation that is explicitly grounded in the evidence from your graphical analysis. Use specific quantitative data (e.g., calculated accelerations, displacement from the area under the curve) and key vocabulary (displacement, velocity, acceleration, freefall) to support your narrative.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:15},{&quot;title&quot;:&quot;Final Model&quot;,&quot;prompt_text&quot;:&quot;Accompany your synthesis with your final, revised model. Upload a single document showing the complete set of motion graphs (position-time, velocity-time, and acceleration-time) for the rocket&#39;s journey. These graphs should be quantitatively consistent and represent a significant improvement over your initial sketch from the Forecast.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Metacognition: Then and Now&quot;,&quot;prompt_text&quot;:&quot;Look back at the initial velocity-time graph you sketched in your Forecast. What was the biggest misconception or gap in your initial thinking? What specific feature of the data from the &#39;Analyzing Rocket Ascent Data&#39; lab was most responsible for correcting your model?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8},{&quot;title&quot;:&quot;Metacognition: Seeing the World Differently&quot;,&quot;prompt_text&quot;:&quot;How has what you learned about graphical analysis changed the way you think about motion in the real world (e.g., watching a car accelerate, a ball thrown in the air, or an elevator moving between floors)?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:8}]}]"
-         hidden>
          
-         <!-- Additional brief cycle data for JavaScript to access -->
-         <script type="application/json" id="brief-cycle-data">
-         [{"phase":1,"title":"Phase 1: Forecast","description":"Our unit is anchored by the phenomenon of a multi-stage rocket launch. Your first task is to document your initial ideas about how we describe motion.","prompts":[{"title":"Initial Observations","prompt_text":"Observe the animation of the sounding rocket launch. In the spaces below, list at least three things you notice about its motion and three things you now wonder about how to describe that motion with data.","response_type":"notice_wonder"},{"title":"My First Model","prompt_text":"Based on what you already know, sketch a velocity-time graph that represents your first, best guess for the rocket's entire journey, from ignition to apogee (its highest point). Label the parts of the graph where you think the engine is firing and where it is coasting.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Connecting to Prior Knowledge","prompt_text":"How does the rocket's motion relate to what you already know about everyday examples of speeding up, slowing down, and falling?","response_type":"textarea","rows":5}]},{"phase":2,"title":"Phase 2: Blueprint","description":"Now that you have analyzed data from the Hexagon Labs, it's time to synthesize your findings into a more formal model of motion.","prompts":[{"title":"Argument from Evidence: Analyzing Rocket Ascent Data","prompt_text":"Based on your findings from the 'Analyzing Rocket Ascent Data' lab, construct a full Claim-Evidence-Reasoning statement that explains how the slope of a velocity-time graph can tell you the story of the rocket's acceleration during different phases of its flight.","response_type":"cer"},{"title":"Explain It Two Ways","prompt_text":"Explain the concept of 'acceleration' in two different ways.","response_type":"explanation_synthesis","prompts":[{"title":"ELI5 (Explain Like I'm 5)","prompt_text":"Explain acceleration in the simplest possible terms, using an everyday analogy like riding a bike or a skateboard.","response_type":"textarea","rows":4},{"title":"ELIScientist (Explain Like a Scientist)","prompt_text":"Now, explain acceleration using precise, scientific vocabulary from this unit. Be sure to mention what type of quantity it is (scalar or vector), its standard units, and its relationship to velocity.","response_type":"textarea","rows":4}]}]},{"phase":3,"title":"Phase 3: Reflection","description":"Our investigation is complete. The final step is to construct your definitive, evidence-based explanation of the rocket's journey and reflect on your learning process.","prompts":[{"title":"Final Synthesis: The Story of the Rocket","prompt_text":"Present a full narrative of the rocket's flight from launch to apogee. Your story must be a comprehensive, multi-paragraph explanation that is explicitly grounded in the evidence from your graphical analysis. Use specific quantitative data (e.g., calculated accelerations, displacement from the area under the curve) and key vocabulary (displacement, velocity, acceleration, freefall) to support your narrative.","response_type":"textarea","rows":15},{"title":"Final Model","prompt_text":"Accompany your synthesis with your final, revised model. Upload a single document showing the complete set of motion graphs (position-time, velocity-time, and acceleration-time) for the rocket's journey. These graphs should be quantitatively consistent and represent a significant improvement over your initial sketch from the Forecast.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Metacognition: Then and Now","prompt_text":"Look back at the initial velocity-time graph you sketched in your Forecast. What was the biggest misconception or gap in your initial thinking? What specific feature of the data from the 'Analyzing Rocket Ascent Data' lab was most responsible for correcting your model?","response_type":"textarea","rows":8},{"title":"Metacognition: Seeing the World Differently","prompt_text":"How has what you learned about graphical analysis changed the way you think about motion in the real world (e.g., watching a car accelerate, a ball thrown in the air, or an elevator moving between floors)?","response_type":"textarea","rows":8}]}]
-         </script>
+         hidden>
          
     </div>
 
@@ -286,358 +285,68 @@
             
                 <!-- 
   Research Brief Content Display with Sequential Navigation
-  Renders brief_cycle array one phase at a time
+  Renders brief_cycle phases one at a time with Previous/Next navigation
+  Mirrors flexbook-display.html architecture for stepwise progression
 -->
 
 <form id="activity-submission-form" class="activity-form">
   
   <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Research Brief: Launching a Sounding Rocket">
-  <input type="hidden" name="ResourceID" value="rb-2-kinematics-rocket">
+  <input type="hidden" name="ActivityTitle" value="Rb 2 1D Kinematics">
+  <input type="hidden" name="ResourceID" value="rb-2-1d-kinematics">
   <input type="hidden" name="ContentType" value="research_brief">
-  <input type="hidden" name="Course" value="sphys">
+  <input type="hidden" name="Course" value="hphys">
   <input type="hidden" name="Unit" value="2">
   <input type="hidden" name="StartTime" id="start-time">
   <input type="hidden" name="SubmitTime" id="submit-time">
   <input type="hidden" name="BrowserInfo" id="browser-info">
   
-  <div class="research-brief-content">
-    
-    <!-- Introduction content -->
-    <div class="brief-introduction">
-      
-
-    </div>
+  <div class="research-brief-content instructional-flow">
     
     <!-- Progress indicator -->
     
-    <div class="activity-progress">
-      <div class="activity-progress-bar">
-        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
-      </div>
-      <div id="progress-text">Phase 1 of 3</div>
-    </div>
-    
-    <!-- Navigation Buttons -->
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
-    
 
-    <!-- Brief Phases (Sequential Display) -->
-    
-    <div class="brief-phases-container">
-      
-        
-        <div class="nav-item-container brief-phase active" 
-             data-item-index="0"
-             data-brief-phase="1">
-          
-          <h2 class="phase-title">Phase 1: Forecast</h2>
-          <div class="phase-description">
-            <p>Our unit is anchored by the phenomenon of a multi-stage rocket launch. Your first task is to document your initial ideas about how we describe motion.</p>
-
-          </div>
-          
-          
-          
-          
-          <!-- Phase Prompts -->
-          <div class="phase-prompts">
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Initial Observations</h4>
-              <p class="prompt-text">Observe the animation of the sounding rocket launch. In the spaces below, list at least three things you notice about its motion and three things you now wonder about how to describe that motion with data.</p>
-              
-              
-                <div class="response-container notice-wonder-format">
-                  <div class="nw-column">
-                    <h5>I Notice</h5>
-                    <textarea 
-                      name="phase1_prompt1_notice" 
-                      class="brief-response-field"
-                      rows="4"
-                      placeholder="What do you observe?"></textarea>
-                  </div>
-                  <div class="nw-column">
-                    <h5>I Wonder</h5>
-                    <textarea 
-                      name="phase1_prompt1_wonder" 
-                      class="brief-response-field"
-                      rows="4"
-                      placeholder="What questions do you have?"></textarea>
-                  </div>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">My First Model</h4>
-              <p class="prompt-text">Based on what you already know, sketch a velocity-time graph that represents your first, best guess for the rocket's entire journey, from ignition to apogee (its highest point). Label the parts of the graph where you think the engine is firing and where it is coasting.</p>
-              
-              
-                <div class="response-container file-upload-format">
-                  <div class="file-upload-field">
-                    <label for="file-upload-1-2" class="file-upload-label">
-                      Choose File
-                    </label>
-                    <input 
-                      type="file" 
-                      id="file-upload-1-2"
-                      name="phase1_prompt2_file"
-                      class="file-input hidden"
-                      accept=".jpg,.jpeg,.png,.pdf">
-                    <div class="file-name" id="file-name-1-2">No file chosen</div>
-                  </div>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Connecting to Prior Knowledge</h4>
-              <p class="prompt-text">How does the rocket's motion relate to what you already know about everyday examples of speeding up, slowing down, and falling?</p>
-              
-              
-                <div class="response-container">
-                  <textarea 
-                    name="phase1_prompt3" 
-                    class="brief-response-field"
-                    rows="5"
-                    placeholder="Enter your response here..."></textarea>
-                </div>
-                
-                
-            </div>
-            
-          </div>
-          
-          
-          
-        </div>
-        
-      
-        
-        <div class="nav-item-container brief-phase" 
-             data-item-index="1"
-             data-brief-phase="2">
-          
-          <h2 class="phase-title">Phase 2: Blueprint</h2>
-          <div class="phase-description">
-            <p>Now that you have analyzed data from the Hexagon Labs, it’s time to synthesize your findings into a more formal model of motion.</p>
-
-          </div>
-          
-          
-          
-          
-          <!-- Phase Prompts -->
-          <div class="phase-prompts">
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Argument from Evidence: Analyzing Rocket Ascent Data</h4>
-              <p class="prompt-text">Based on your findings from the 'Analyzing Rocket Ascent Data' lab, construct a full Claim-Evidence-Reasoning statement that explains how the slope of a velocity-time graph can tell you the story of the rocket's acceleration during different phases of its flight.</p>
-              
-              
-                <div class="response-container cer-format">
-                  <div class="cer-section">
-                    <h5>Claim</h5>
-                    <textarea 
-                      name="phase2_prompt1_claim" 
-                      class="brief-response-field"
-                      rows="2"
-                      placeholder="Make a claim that answers the question..."></textarea>
-                  </div>
-                  <div class="cer-section">
-                    <h5>Evidence</h5>
-                    <textarea 
-                      name="phase2_prompt1_evidence" 
-                      class="brief-response-field"
-                      rows="3"
-                      placeholder="Provide evidence that supports your claim..."></textarea>
-                  </div>
-                  <div class="cer-section">
-                    <h5>Reasoning</h5>
-                    <textarea 
-                      name="phase2_prompt1_reasoning" 
-                      class="brief-response-field"
-                      rows="3"
-                      placeholder="Explain why your evidence supports your claim..."></textarea>
-                  </div>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Explain It Two Ways</h4>
-              <p class="prompt-text">Explain the concept of 'acceleration' in two different ways.</p>
-              
-              
-                <div class="response-container">
-                  <textarea 
-                    name="phase2_prompt2" 
-                    class="brief-response-field"
-                    rows="5"
-                    placeholder="Enter your response here..."></textarea>
-                </div>
-              
-            </div>
-            
-          </div>
-          
-          
-          
-        </div>
-        
-      
-        
-        <div class="nav-item-container brief-phase" 
-             data-item-index="2"
-             data-brief-phase="3">
-          
-          <h2 class="phase-title">Phase 3: Reflection</h2>
-          <div class="phase-description">
-            <p>Our investigation is complete. The final step is to construct your definitive, evidence-based explanation of the rocket’s journey and reflect on your learning process.</p>
-
-          </div>
-          
-          
-          
-          
-          <!-- Phase Prompts -->
-          <div class="phase-prompts">
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Final Synthesis: The Story of the Rocket</h4>
-              <p class="prompt-text">Present a full narrative of the rocket's flight from launch to apogee. Your story must be a comprehensive, multi-paragraph explanation that is explicitly grounded in the evidence from your graphical analysis. Use specific quantitative data (e.g., calculated accelerations, displacement from the area under the curve) and key vocabulary (displacement, velocity, acceleration, freefall) to support your narrative.</p>
-              
-              
-                <div class="response-container">
-                  <textarea 
-                    name="phase3_prompt1" 
-                    class="brief-response-field"
-                    rows="15"
-                    placeholder="Enter your response here..."></textarea>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Final Model</h4>
-              <p class="prompt-text">Accompany your synthesis with your final, revised model. Upload a single document showing the complete set of motion graphs (position-time, velocity-time, and acceleration-time) for the rocket's journey. These graphs should be quantitatively consistent and represent a significant improvement over your initial sketch from the Forecast.</p>
-              
-              
-                <div class="response-container file-upload-format">
-                  <div class="file-upload-field">
-                    <label for="file-upload-3-2" class="file-upload-label">
-                      Choose File
-                    </label>
-                    <input 
-                      type="file" 
-                      id="file-upload-3-2"
-                      name="phase3_prompt2_file"
-                      class="file-input hidden"
-                      accept=".jpg,.jpeg,.png,.pdf">
-                    <div class="file-name" id="file-name-3-2">No file chosen</div>
-                  </div>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Metacognition: Then and Now</h4>
-              <p class="prompt-text">Look back at the initial velocity-time graph you sketched in your Forecast. What was the biggest misconception or gap in your initial thinking? What specific feature of the data from the 'Analyzing Rocket Ascent Data' lab was most responsible for correcting your model?</p>
-              
-              
-                <div class="response-container">
-                  <textarea 
-                    name="phase3_prompt3" 
-                    class="brief-response-field"
-                    rows="8"
-                    placeholder="Enter your response here..."></textarea>
-                </div>
-                
-                
-            </div>
-            
-            <div class="brief-prompt-container">
-              <h4 class="prompt-title">Metacognition: Seeing the World Differently</h4>
-              <p class="prompt-text">How has what you learned about graphical analysis changed the way you think about motion in the real world (e.g., watching a car accelerate, a ball thrown in the air, or an elevator moving between floors)?</p>
-              
-              
-                <div class="response-container">
-                  <textarea 
-                    name="phase3_prompt4" 
-                    class="brief-response-field"
-                    rows="8"
-                    placeholder="Enter your response here..."></textarea>
-                </div>
-                
-                
-            </div>
-            
-          </div>
-          
-          
-          
-        </div>
-        
-      
-    </div>
+    <!-- Brief Cycle Phases (Sequential Display) -->
     
   </div>
 
+  <!-- Submission Button (Bottom) -->
+  
+
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760613538"></script>
+
+<!-- Load ActivityNavigator library FIRST -->
+<script src="/assets/js/activity-navigator.js?v=1760640386"></script>
+
+<!-- Initialize all activity features after DOM is ready -->
 <script>
-// Initialize Research Brief Navigator
-document.addEventListener('DOMContentLoaded', function() {
-    const phaseItems = document.querySelectorAll('.nav-item-container');
-    
-    if (phaseItems.length > 1) {
-        // Use unified navigator for multi-phase briefs
-        window.briefNavigator = new ActivityNavigator({
-            containerSelector: '.nav-item-container',
-            progressBarId: 'progress-fill',
-            progressTextId: 'progress-text',
-            prevButtonId: 'prev-item',
-            nextButtonId: 'next-item',
-            itemLabel: 'Phase'
-        });
-        
-        console.log('[research-brief] Sequential navigation initialized');
-    } else {
-        // Single phase - show everything
-        if (phaseItems.length === 1) {
-            phaseItems[0].classList.add('active');
-        }
-        console.log('[research-brief] Single phase mode - no navigation needed');
-    }
-    
-    // Initialize file upload UI
-    document.querySelectorAll('.file-input').forEach(input => {
-        const nameDisplay = document.getElementById('file-name-' + input.id.replace('file-upload-', ''));
-        if (nameDisplay) {
-            input.addEventListener('change', function() {
-                if (this.files.length > 0) {
-                    nameDisplay.textContent = this.files[0].name;
-                } else {
-                    nameDisplay.textContent = 'No file chosen';
-                }
-            });
-        }
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize stepwise navigation for research brief phases
+    const navigator = new ActivityNavigator({
+      containerSelector: '.research-brief-phase',
+      progressBarId: 'progress-fill',
+      progressTextId: 'progress-text',
+      prevButtonId: 'prev-item',
+      nextButtonId: 'next-item',
+      itemLabel: 'Phase',
+      scrollToTop: true
     });
-});
+    
+    // Set timestamps for form submission tracking
+    document.getElementById('start-time').value = new Date().toISOString();
+    document.getElementById('browser-info').value = navigator.userAgent;
+    
+    // Initialize form tracking if available
+    if (window.ActivityCore) {
+      window.ActivityCore.initializeForm('activity-submission-form');
+    }
+  });
+
+  // Update submit time when form is submitted
+  document.getElementById('activity-submission-form').addEventListener('submit', function(e) {
+    document.getElementById('submit-time').value = new Date().toISOString();
+  });
 </script>
 
             
@@ -646,31 +355,9 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760613538"></script>
-    <script src="/assets/js/sticky-header.js?v=1760613538"></script>
+    <script src="/assets/js/activity-core.js?v=1760640386"></script>
+    <script src="/assets/js/sticky-header.js?v=1760640386"></script>
     
-    
-    <!-- Conditionally load activity-specific form modules -->
-    <script>
-        // Module loading logic (executed after activity-core.js loads)
-        document.addEventListener('DOMContentLoaded', function() {
-            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-            const moduleMap = {
-                'problem_set': '/assets/js/activity-modules/ps-form.js',
-                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js'
-            };
-            
-            const modulePath = moduleMap[contentType];
-            if (modulePath) {
-                const script = document.createElement('script');
-                script.src = modulePath + '?v=1760613538';
-                document.body.appendChild(script);
-                console.log('[activity-focused.html] Loaded module:', modulePath);
-            }
-        });
-    </script>
     
 
 </div>
