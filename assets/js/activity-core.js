@@ -85,10 +85,15 @@ function loadMetadata() {
 }
 
 function parseJSON(jsonString) {
+    if (!jsonString) {
+        console.warn('[activity-core] JSON string is undefined or empty');
+        return null;
+    }
     try {
         return JSON.parse(jsonString);
     } catch (e) {
         console.warn('[activity-core] Failed to parse JSON:', e);
+        console.log('[activity-core] JSON string was:', jsonString);
         return null;
     }
 }
@@ -391,8 +396,10 @@ function saveFormData() {
     const storageKey = 'activity-draft-' + ACTIVITY_STATE.metadata.resourceId;
     localStorage.setItem(storageKey, JSON.stringify(data));
     
-    // Show save indicator
-    showAutoSaveIndicator();
+    // Don't show save indicator for hexagon labs
+    if (ACTIVITY_STATE.metadata.contentType !== 'hexagon_lab') {
+        showAutoSaveIndicator();
+    }
     
     console.log('[activity-core] Auto-saved draft for:', ACTIVITY_STATE.metadata.resourceId);
 }

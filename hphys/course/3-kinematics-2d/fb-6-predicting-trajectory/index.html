@@ -45,6 +45,8 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,6 +275,17 @@
          data-submission-fields="null"
          
          hidden>
+         <!-- Debug output - remove after fixing -->
+         <script>
+         console.log('DEBUG - Page metadata:');
+         console.log('resourceId:', 'fb-6-predicting-trajectory');
+         console.log('contentType:', 'flexbook');
+         console.log('submissionEnabled:', 'true');
+         console.log('submissionFields JSON:', 'null');
+         console.log('overview:', 'null');
+         console.log('investigations:', 'null');
+         console.log('synthesis:', 'null');
+         </script>
          
     </div>
 
@@ -302,19 +315,568 @@
     
     <!-- Progress indicator -->
     
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 14</div>
+    </div>
+    
+    <!-- Navigation Buttons (Moved to top for better UX) -->
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
 
     <!-- Instructional Flow Items (Sequential Display) -->
     
-    <div class="flexbook-empty">
-      <p>No instructional content defined for this flexbook.</p>
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Introduction: Beyond the Straight Line</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>So far, our study of motion has been confined to a single dimension—objects moving forward and backward along a straight line. But the world is not so simple. A thrown baseball, a stream of water from a fountain, a leaping dolphin—all of these trace a curved path through space.</p>
+
+<p>To understand this two-dimensional motion, we cannot use our 1D kinematic equations directly. We must first learn to see the world as a physicist does: as a system of independent motions, happening simultaneously.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Phenomenon: The Artillery Problem</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>For centuries, the success of armies depended on a deep, practical understanding of physics. An artillery crew needed to hit a target miles away, a target they often couldn’t see. Firing a cannonball was an act of prediction. If they fired it with too much upward angle, it would fall short. Too little angle, and it would fly too far or hit the ground too soon. The angle of launch and the initial speed from the gunpowder had to be calculated with precision. A small error in the initial vector could mean the difference between victory and defeat.</p>
+
+<p><strong>The Question:</strong> How can we use the principles of physics to create a mathematical model that accurately predicts the trajectory of a projectile, turning the art of aiming into a science?</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Forecast: Make Your Prediction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>Before we build our model, consider the artillery problem. What factors do you think are most important in determining where the cannonball will land?</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ul>
+  <li>If you want to achieve the maximum possible range, what launch angle do you think would be best? 45 degrees? 30 degrees? 60 degrees?</li>
+  <li>If two cannonballs are fired at the same speed but different angles (e.g., 30 degrees and 60 degrees), which one will stay in the air longer?</li>
+  <li>What role does gravity play in the cannonball’s path?</li>
+</ul>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">The Rules of the Game: Independence of Motion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The single most important concept in all of projectile motion is the <strong>independence of horizontal and vertical motion</strong>. This means we can treat the two directions as entirely separate problems, connected only by the fact that they happen for the same amount of time.</p>
+
+<p>Once a projectile is launched, gravity is the only force acting on it (we will ignore air resistance for now). Since gravity only pulls downward, it can only change the projectile’s vertical motion. It has absolutely no effect on its horizontal motion.</p>
+
+<ul>
+  <li><strong>Horizontal (x-direction):</strong> The velocity is constant (\(v_x = \\text{constant}\)). There is no horizontal acceleration (\(a_x = 0\)).</li>
+  <li><strong>Vertical (y-direction):</strong> The velocity changes due to gravity. There is a constant downward acceleration (\(a_y = -g = -9.8 \\, \\text{m/s}^2\)).</li>
+</ul>
+
+<p>To analyze the motion, we must first use trigonometry to break the initial velocity vector, \(v_i\), into its x and y components.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-image" 
+             data-item-index="4"
+             data-item-type="image">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Decomposing the Initial Velocity Vector</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-image">
+              
+              <figure>
+                <img src="/assets/images/hphys/3-kinematics-2d/velocity-vector-components.png" alt="A right triangle showing the initial velocity vector as the hypotenuse, with the horizontal and vertical components as the adjacent and opposite sides." />
+                
+                <figcaption><p>The initial velocity vector, \(v_i\), is broken into its horizontal (\(v_{ix}\)) and vertical (\(v_{iy}\)) components using the launch angle, \(\theta\).</p>
+</figcaption>
+                
+              </figure>
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-example" 
+             data-item-index="5"
+             data-item-type="example">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Example 1: Calculating Velocity Components</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            
+            <div class="flexbook-item-default">
+              <p>A cannonball is fired with an initial velocity of \(150 \\, \\text{m/s}\) at an angle of \(35^{\\circ}\) above the horizontal. Find the initial horizontal and vertical components of its velocity.</p>
+
+<p><strong>Solution:</strong>
+We use the definitions from the diagram above.</p>
+
+<p>Horizontal component:
+\(v_{ix} = v_i \\cos(\\theta) = (150 \\, \\text{m/s}) \\cos(35^{\\circ}) = 122.9 \\, \\text{m/s}\)</p>
+
+<p>Vertical component:
+\(v_{iy} = v_i \\sin(\\theta) = (150 \\, \\text{m/s}) \\sin(35^{\\circ}) = 86.0 \\, \\text{m/s}\)</p>
+
+            </div>
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="6"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Checkpoint: Conceptual Framework</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Checkpoint: Conceptual Framework</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="2">
+                  
+                  <label for="checkpoint-7-q1">
+                    <strong>Question 1:</strong> In your own words, what does the 'independence of motion' mean for a projectile?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-7-q1" 
+                      name="checkpoint_7_q1"
+                      rows="2"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-7-q2">
+                    <strong>Question 2:</strong> A javelin is thrown with an initial velocity of $$25 \, \text{m/s}$$ at an angle of $$50^{\circ}$$. Calculate its initial horizontal ($$v_{ix}$$) and vertical ($$v_{iy}$$) velocities.
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-7-q2" 
+                      name="checkpoint_7_q2"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Building the Model: A Two-Column Approach</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>The key to solving projectile motion problems is organization. Since the horizontal and vertical motions are independent, we can analyze them in separate columns.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Horizontal (x) Motion</th>
+      <th style="text-align: left">Vertical (y) Motion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">\(a_x = 0\)</td>
+      <td style="text-align: left">\(a_y = -9.8 \\, \\text{m/s}^2\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(v_{ix} = v_i \\cos(\\theta)\)</td>
+      <td style="text-align: left">\(v_{iy} = v_i \\sin(\\theta)\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">\(\\Delta x = v_{ix} t\)</td>
+      <td style="text-align: left">\(\\Delta y = v_{iy} t + \\frac{1}{2}a_y t^2\)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left">\(v_{fy} = v_{iy} + a_y t\)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The variable that links the two columns is <strong>time (\(t\))</strong>. We often solve for time in the vertical direction first and then use that time to find the horizontal range.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-example" 
+             data-item-index="8"
+             data-item-type="example">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Example 2: Calculating Time of Flight and Range</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            
+            <div class="flexbook-item-default">
+              <p>For the cannonball in Example 1 (\(v_i = 150 \\, \\text{m/s}\) at \(35^{\\circ}\)), calculate its total time of flight and its range, assuming it lands at the same height it was launched from.</p>
+
+<p><strong>Part A: Time of Flight</strong>
+We’ll analyze the vertical motion. The cannonball lands when its vertical displacement (\(\\Delta y\)) is zero.</p>
+
+<p>Knowns (y-direction):</p>
+<ul>
+  <li>
+\[v_{iy} = 86.0 \\, \\text{m/s}\]
+  </li>
+  <li>
+\[a_y = -9.8 \\, \\text{m/s}^2\]
+  </li>
+  <li>
+\[\\Delta y = 0 \\, \\text{m}\]
+  </li>
+</ul>
+
+<p>Use the displacement equation:</p>
+
+\[\\Delta y = v_{iy} t + \\frac{1}{2}a_y t^2\]
+
+\[0 = (86.0 \\, \\text{m/s})t + \\frac{1}{2}(-9.8 \\, \\text{m/s}^2)t^2\]
+
+\[0 = t(86.0 \\, \\text{m/s} - 4.9 \\, \\text{m/s}^2 \\cdot t)\]
+
+<p>This gives two solutions: \(t=0\) (the launch) and \(86.0 \\, \\text{m/s} - 4.9 \\, \\text{m/s}^2 \\cdot t = 0\), which gives \(t = \\frac{86.0 \\, \\text{m/s}}{4.9 \\, \\text{m/s}^2} = 17.6 \\, \\text{s}\).</p>
+
+<p>The time of flight is <strong>17.6 seconds</strong>.</p>
+
+<p><strong>Part B: Range</strong>
+Now we use the time of flight to analyze the horizontal motion.</p>
+
+<p>Knowns (x-direction):</p>
+<ul>
+  <li>
+\[v_{ix} = 122.9 \\, \\text{m/s}\]
+  </li>
+  <li>
+\[t = 17.6 \\, \\text{s}\]
+  </li>
+</ul>
+
+<p>Use the horizontal distance equation:</p>
+
+\[\\Delta x = v_{ix} t\]
+
+\[\\Delta x = (122.9 \\, \\text{m/s})(17.6 \\, \\text{s}) = 2163 \\, \\text{m}\]
+
+<p>The range of the cannonball is <strong>2163 meters</strong>, or about 2.16 kilometers.</p>
+
+            </div>
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="9"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-warning">
+              <div class="content">
+                <p><strong>Common Mistake:</strong> Never mix x and y variables in the same equation (except for time). A vertical acceleration (\(a_y\)) can only be used with vertical velocities (\(v_{iy}, v_{fy}\)) and vertical displacement (\(\\Delta y\)).</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="10"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Practice Problems</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt reading-section">
+              <div class="content">
+                <p>You now have the complete mathematical model to solve the artillery problem. It is time to practice its application.</p>
+
+              </div>
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="11"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Thinking Lens: Patterns in Motion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="reading-section">
+              <div class="content">
+                <p>When you combine constant velocity in one direction with constant acceleration in another, a predictable and beautiful pattern emerges: the parabola. Every projectile, from a tossed key to a ballistic missile, follows this same essential shape. By understanding the simple, independent rules that govern each direction, we can predict the entire complex system. This is the power of a physical model. We’ve found the pattern that governs all motion in a gravitational field.</p>
+
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-video" 
+             data-item-index="12"
+             data-item-type="video">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Demonstration: The Fired and the Dropped</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-video">
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-checkpoint" 
+             data-item-index="13"
+             data-item-type="checkpoint">
+          
+          <!-- Item Header -->
+          
+          <h2 class="section-title">Final Checkpoint: Synthesis & Reflection</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-checkpoint" data-flow-type="checkpoint">
+              <h3>Final Checkpoint: Synthesis & Reflection</h3>
+              <div class="checkpoint-questions">
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="4">
+                  
+                  <label for="checkpoint-14-q1">
+                    <strong>Question 1:</strong> Return to the anchoring phenomenon. In your own words, explain the step-by-step process an artillery crew would use to calculate the range of their cannonball.
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-14-q1" 
+                      name="checkpoint_14_q1"
+                      rows="4"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+                <div class="checkpoint-question" 
+                     data-answer-format="text"
+                     data-rows="3">
+                  
+                  <label for="checkpoint-14-q2">
+                    <strong>Question 2:</strong> What is happening to the projectile's vertical velocity ($$v_y$$) at the very peak of its trajectory? What about its horizontal velocity ($$v_x$$) at that same point?
+                  </label>
+                  
+                  
+                  
+                    <textarea 
+                      id="checkpoint-14-q2" 
+                      name="checkpoint_14_q2"
+                      rows="3"
+                      class="checkpoint-answer"
+                      placeholder="Enter your answer here..."></textarea>
+                  
+                  
+                  
+                </div>
+                
+              </div>
+            </div>
+          
+          
+          
+        </div>
+        
+      
     </div>
+    
+    <!-- Navigation buttons have been moved to the top for better UX -->
+    
     
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -348,8 +910,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760655643"></script>
-    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    <script src="/assets/js/activity-core.js?v=1760668345"></script>
+    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -367,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760655643';
+                script.src = modulePath + '?v=1760668345';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

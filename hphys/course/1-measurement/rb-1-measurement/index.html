@@ -48,6 +48,8 @@
 <link rel="stylesheet" href="/assets/css/research-brief.css">
 <link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
 
+<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -276,6 +278,17 @@
          data-submission-fields="null"
          
          hidden>
+         <!-- Debug output - remove after fixing -->
+         <script>
+         console.log('DEBUG - Page metadata:');
+         console.log('resourceId:', 'rb-1-measurement');
+         console.log('contentType:', 'research_brief');
+         console.log('submissionEnabled:', 'true');
+         console.log('submissionFields JSON:', 'null');
+         console.log('overview:', 'null');
+         console.log('investigations:', 'null');
+         console.log('synthesis:', 'null');
+         </script>
          
     </div>
 
@@ -324,7 +337,7 @@
 
 
 <!-- Load ActivityNavigator library FIRST -->
-<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
 
 <!-- Initialize all activity features after DOM is ready -->
 <script>
@@ -362,8 +375,8 @@
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760655643"></script>
-    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    <script src="/assets/js/activity-core.js?v=1760668345"></script>
+    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -381,7 +394,7 @@
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760655643';
+                script.src = modulePath + '?v=1760668345';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

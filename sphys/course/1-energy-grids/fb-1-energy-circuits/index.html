@@ -45,6 +45,8 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,6 +275,17 @@
          data-submission-fields="null"
          
          hidden>
+         <!-- Debug output - remove after fixing -->
+         <script>
+         console.log('DEBUG - Page metadata:');
+         console.log('resourceId:', 'fb-1.1-rules-of-the-game');
+         console.log('contentType:', 'flexbook');
+         console.log('submissionEnabled:', 'true');
+         console.log('submissionFields JSON:', 'null');
+         console.log('overview:', 'null');
+         console.log('investigations:', 'null');
+         console.log('synthesis:', 'null');
+         </script>
          
     </div>
 
@@ -314,7 +327,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -348,8 +361,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760655643"></script>
-    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    <script src="/assets/js/activity-core.js?v=1760668345"></script>
+    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -367,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760655643';
+                script.src = modulePath + '?v=1760668345';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

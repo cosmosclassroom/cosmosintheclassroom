@@ -45,6 +45,8 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,6 +282,17 @@
          data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Part A: Position-Time Graphs&quot;,&quot;Part B: Velocity-Time Graphs&quot;,&quot;Part C: Connecting Position and Velocity&quot;,&quot;Part D: Acceleration Analysis&quot;,&quot;Part E: Real-World Applications&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What did you learn about interpreting kinematic graphs? Which type of graph (position-time or velocity-time) was easier for you to work with, and why?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}"
          
          hidden>
+         <!-- Debug output - remove after fixing -->
+         <script>
+         console.log('DEBUG - Page metadata:');
+         console.log('resourceId:', 'ps-2.1-kinematics-graphs');
+         console.log('contentType:', 'problem_set');
+         console.log('submissionEnabled:', 'true');
+         console.log('submissionFields JSON:', '{"completion_checklist":{"sections":["Part A: Position-Time Graphs","Part B: Velocity-Time Graphs","Part C: Connecting Position and Velocity","Part D: Acceleration Analysis","Part E: Real-World Applications"]},"difficulty_rating":true,"time_spent":true,"reflection":{"prompt":"What did you learn about interpreting kinematic graphs? Which type of graph (position-time or velocity-time) was easier for you to work with, and why?"},"questions":true,"collaboration":true,"additional_notes":true}');
+         console.log('overview:', '{"introduction":"The data from a rocket launch is often visualized as a graph. In this problem set, you will practice reading the story of motion from position-time (p-t) and velocity-time (v-t) graphs, connecting the graphical patterns to the physical motion of our sounding rocket.\n","key_formulae":["For a position-time graph: Average Velocity = Slope = $\\frac{\\Delta\\vec{x}}{\\Delta t}$","For a velocity-time graph: Acceleration = Slope = $\\frac{\\Delta\\vec{v}}{\\Delta t}$","For a velocity-time graph: Displacement = Area under the curve"],"global_standards":["For all problems, assume the acceleration due to gravity is $\\vec{a}_g = -9.80 \\, m/s^2$.","Present all final answers with the correct units and number of significant figures."]}');
+         console.log('investigations:', 'null');
+         console.log('synthesis:', 'null');
+         </script>
          
     </div>
 
@@ -2627,7 +2640,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -2718,8 +2731,8 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760655643"></script>
-    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    <script src="/assets/js/activity-core.js?v=1760668345"></script>
+    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -2737,7 +2750,7 @@ function jumpToProblem(index) {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760655643';
+                script.src = modulePath + '?v=1760668345';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

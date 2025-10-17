@@ -45,6 +45,8 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
+<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
+
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,6 +282,17 @@
          data-submission-fields="null"
          
          hidden>
+         <!-- Debug output - remove after fixing -->
+         <script>
+         console.log('DEBUG - Page metadata:');
+         console.log('resourceId:', 'ps-3.1-independence-of-motion');
+         console.log('contentType:', 'problem_set');
+         console.log('submissionEnabled:', 'true');
+         console.log('submissionFields JSON:', 'null');
+         console.log('overview:', '{"follows_lecture":"Lecture 3.1: The Independence of Motion","introduction":"In this problem set, we begin to truly explore the complexity of two-dimensional motion. The core insight—the **Independence of Motion**—allows us to break one difficult problem into two simpler, one-dimensional problems. Just as the artillery commanders at Constantinople had to consider how far and how long their cannonballs would fly, you will use kinematic equations to predict the trajectory of horizontally launched projectiles.\n","key_formulae":["Horizontal motion (constant velocity): $\\Delta x = v_x t$","Vertical motion (constant acceleration): $\\Delta y = v_{y,i} t + \\frac{1}{2} a_g t^2$","Vertical motion (constant acceleration): $v_{y,f}^2 = v_{y,i}^2 + 2 a_g \\Delta y$","Vertical motion (constant acceleration): $v_{y,f} = v_{y,i} + a_g t$"],"global_standards":["For all problems, assume the acceleration due to gravity is $\\vec{a}_g = -9.80 \\, m/s^2$.","Use downward as the negative direction.","Follow the systematic problem-solving process: identify knowns, choose equation, rearrange algebraically, then substitute values.","Present all final answers with the correct units and number of significant figures."]}');
+         console.log('investigations:', 'null');
+         console.log('synthesis:', 'null');
+         </script>
          
     </div>
 
@@ -1634,7 +1647,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760655643"></script>
+<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -1725,8 +1738,8 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760655643"></script>
-    <script src="/assets/js/sticky-header.js?v=1760655643"></script>
+    <script src="/assets/js/activity-core.js?v=1760668345"></script>
+    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -1744,7 +1757,7 @@ function jumpToProblem(index) {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760655643';
+                script.src = modulePath + '?v=1760668345';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }
