@@ -45,10 +45,6 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
-<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
-
-<link rel="stylesheet" href="/assets/css/hexagon-lab.css">
-
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -381,75 +377,63 @@
           <h3>Analysis Questions</h3>
           
           <div class="question-block">
-            
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
               
-              <label for="inv1-q1" class="question-label">
-                <strong>Question 1:</strong>
-                <p>Using the EM spectrum diagram, locate 5G (which uses microwaves) and visible light. Which one has a higher frequency and more energy per photon?</p>
 
-              </label>
-              <textarea 
-                id="inv1-q1" 
-                name="inv1_q1"
-                rows="6"
-                placeholder="Enter your answer here..."
-                class="form-control question-response"
-              ></textarea>
-            
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
           </div>
           
           <div class="question-block">
-            
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
               
-              <label for="inv1-q2" class="question-label">
-                <strong>Question 2:</strong>
-                <p>Find the boundary between non-ionizing and ionizing radiation on the diagram. On which side does 5G radiation fall? On which side do X-rays fall?</p>
 
-              </label>
-              <textarea 
-                id="inv1-q2" 
-                name="inv1_q2"
-                rows="6"
-                placeholder="Enter your answer here..."
-                class="form-control question-response"
-              ></textarea>
-            
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
           </div>
           
           <div class="question-block">
-            
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
               
-              <label for="inv1-q3" class="question-label">
-                <strong>Question 3:</strong>
-                <p>Select one of the provided claims that you suspect is inaccurate. Quote the claim in your notebook. Then, write a sentence explaining the scientific inaccuracy, using evidence from the EM spectrum diagram (e.g., ‘This claim is inaccurate because it confuses non-ionizing microwave radiation with high-energy ionizing radiation’).</p>
 
-              </label>
-              <textarea 
-                id="inv1-q3" 
-                name="inv1_q3"
-                rows="6"
-                placeholder="Enter your answer here..."
-                class="form-control question-response"
-              ></textarea>
-            
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
           </div>
           
           <div class="question-block">
-            
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
               
-              <label for="inv1-q4" class="question-label">
-                <strong>Question 4:</strong>
-                <p>Construct a complete, evidence-based argument to refute one of the more misleading claims. Your argument should be structured like a mini-CER (Claim, Evidence, Reasoning). Your claim should state whether the media post is accurate or not. Your evidence should be a specific fact from the EM spectrum diagram. Your reasoning should explain <em>why</em> that fact proves the claim is misleading.</p>
 
-              </label>
-              <textarea 
-                id="inv1-q4" 
-                name="inv1_q4"
-                rows="6"
-                placeholder="Enter your answer here..."
-                class="form-control question-response"
-              ></textarea>
-            
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
           </div>
           
         </div>
@@ -562,7 +546,13 @@
     <div id="submission-status" class="submission-status" hidden></div>
   </div>
 
+<<<<<<< HEAD
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+=======
 <!-- Scripts are now loaded in the layout file -->
+>>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
 <script>
 /**
  * Hexagon Lab Section Navigator
@@ -708,8 +698,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760668345"></script>
-    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
+    <script src="/assets/js/activity-core.js?v=1760712103"></script>
+    <script src="/assets/js/sticky-header.js?v=1760712103"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -727,7 +717,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760668345';
+                script.src = modulePath + '?v=1760712103';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

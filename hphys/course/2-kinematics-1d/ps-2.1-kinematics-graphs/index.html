@@ -45,8 +45,6 @@
 <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
 <!-- Research Brief Styling (when content_type is research_brief) -->
 
-<!-- Hexagon Lab Styling (when content_type is hexagon_lab) -->
-
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -391,7 +389,7 @@
           <select id="problem-selector" class="problem-selector" onchange="jumpToProblem(this.value)">
             
             <option value="0" selected>
-              Problem A.1 - Apprentice
+              Problem A.1.1 - Apprentice
             </option>
             
             <option value="1" >
@@ -427,13 +425,13 @@
         
         
         
-        <div class="problem-container" data-problem-id="A.1" data-problem-index="0">
+        <div class="problem-container" data-problem-id="A.1.1" data-problem-index="0">
           
           <h2 class="problem-section-header">Part A: Reading Position-Time Graphs</h2>
           
           
           <div class="problem-header">
-            <span class="problem-number">Problem A.1</span>
+            <span class="problem-number">Problem A.1.1</span>
             
             <span class="problem-tier tier-1">Apprentice</span>
             
@@ -739,7 +737,7 @@
             </button>
             
             
-            <button type="button" class="check-answer-button" id="check-answer-A-1" onclick="toggleCurrentAnswer('A-1')">
+            <button type="button" class="check-answer-button" id="check-answer-A-1-1" onclick="toggleCurrentAnswer('A-1-1')">
               View Solution
             </button>
             
@@ -751,7 +749,7 @@
 
           
           
-          <div class="current-answer-display" id="answer-key-A-1">
+          <div class="current-answer-display" id="answer-key-A-1-1">
             <strong>Solution:</strong>
             <div>
               
@@ -773,28 +771,28 @@
               
               
                 <div class="answer-part">
-                  <label for="answer-A-1-a">
+                  <label for="answer-A-1-1-a">
                     Part (a)
                   </label>
                   
                   
                     <textarea 
-                      id="answer-A-1-a" 
-                      name="answer_A_1_a"
+                      id="answer-A-1-1-a" 
+                      name="answer_A_1_1_a"
                       rows="3"
                       placeholder="Enter response..."></textarea>
                   
                 </div>
               
                 <div class="answer-part">
-                  <label for="answer-A-1-b">
+                  <label for="answer-A-1-1-b">
                     Part (b)
                   </label>
                   
                   
                     <textarea 
-                      id="answer-A-1-b" 
-                      name="answer_A_1_b"
+                      id="answer-A-1-1-b" 
+                      name="answer_A_1_1_b"
                       rows="3"
                       placeholder="Enter response..."></textarea>
                   
@@ -2640,7 +2638,7 @@
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760668345"></script>
+<script src="/assets/js/activity-navigator.js?v=1760712103"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -2731,8 +2729,8 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760668345"></script>
-    <script src="/assets/js/sticky-header.js?v=1760668345"></script>
+    <script src="/assets/js/activity-core.js?v=1760712103"></script>
+    <script src="/assets/js/sticky-header.js?v=1760712103"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -2750,7 +2748,7 @@ function jumpToProblem(index) {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760668345';
+                script.src = modulePath + '?v=1760712103';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }
