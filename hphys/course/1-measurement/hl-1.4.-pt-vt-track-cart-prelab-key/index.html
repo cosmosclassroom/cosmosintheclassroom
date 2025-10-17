@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Pre-Lab Answer Key: Diluting Gravity</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-1.4.-pt-vt-track-cart-prelab-key"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="hphys"
          data-title="Pre-Lab Answer Key: Diluting Gravity"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-1.4.-pt-vt-track-cart-prelab-key","contentType":"hexagon_lab","course":"hphys","unit":"1","title":"Pre-Lab Answer Key: Diluting Gravity"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"hphys","unit":"1","title":"Pre-Lab Answer Key: Diluting Gravity"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,126 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <p>This key provides the correct calculations, graph descriptions, and a sample experimental procedure for the “Diluting Gravity” pre-lab.</p>
+
+<hr />
+
+<h2 id="part-a--practice-the-math">Part A — Practice the Math</h2>
+
+<p>This section checks the student’s ability to perform the core calculations for the lab.</p>
+
+<ul>
+  <li><strong>Theoretical Acceleration:</strong> The calculation requires substituting the given values into the formula.
+    <ul>
+      <li>Setup: $a_{theory} = g \sin \theta$</li>
+      <li>$a_{theory} = (9.80 \ m/s^2) \times \sin(4.00^\circ)$</li>
+      <li><strong>Final Answer:</strong> <strong>$a_{theory} \approx 0.684 \ m/s^2$</strong> (rounded to 3 significant figures).</li>
+    </ul>
+  </li>
+  <li><strong>Percent Error:</strong> This calculation compares the theoretical value to the given experimental one.
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Setup: $\% \text{ error} = \left</td>
+              <td>\frac{a_{theory} - a_{exp}}{a_{theory}} \right</td>
+              <td>\times 100\%$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$\% \text{ error} = \left</td>
+              <td>\frac{0.684 \ m/s^2 - 0.675 \ m/s^2}{0.684 \ m/s^2} \right</td>
+              <td>\times 100\%$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li><strong>Final Answer:</strong> <strong>$\% \text{ error} \approx 1.32\%$</strong></li>
+    </ul>
+  </li>
+  <li><strong>Interpretation:</strong> An error of only <strong>1.32%</strong> shows that the experimental measurement <strong>very reasonably matches</strong> the theoretical prediction. The small difference is likely due to minor experimental factors like friction or measurement uncertainty. 👍</li>
+</ul>
+
+<hr />
+
+<h2 id="part-b--predict-the-graphs">Part B — Predict the Graphs</h2>
+
+<p>This section assesses the student’s conceptual understanding of motion with constant acceleration.</p>
+
+<ul>
+  <li><strong>Position–time (p–t):</strong> The sketch should be a <strong>parabolic curve</strong> starting at the origin and getting steeper, indicating increasing velocity. The justification is that with constant acceleration from rest, position is proportional to time squared ($x = \frac{1}{2}at^2$).</li>
+  <li>
+    <p><strong>Velocity–time (v–t):</strong> The sketch should be a <strong>straight line</strong> with a constant, positive slope, starting from the origin ($v=0$). The slope of this line represents the cart’s <strong>acceleration</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Acceleration–time (a–t):</strong> The sketch should be a <strong>horizontal line</strong> at a constant positive value. This value is the average acceleration and should match the slope of the v–t graph.</p>
+  </li>
+  <li><strong>Conceptual Prediction:</strong> If you <strong>increase the angle $\theta$</strong>, the value of $\sin\theta$ also increases. According to the model $a = g \sin \theta$, this means the <strong>acceleration will be greater</strong>. On the v–t graph, a larger acceleration corresponds to a <strong>steeper positive slope</strong>.</li>
+</ul>
+
+<hr />
+
+<h2 id="part-c--be-ready-to-record-data">Part C — Be Ready to Record Data</h2>
+
+<p>The student’s notebook should contain a neat, empty version of the data table provided, ready for the lab investigation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Angle $\theta$ (deg)</th>
+      <th style="text-align: left">$a_{theory}$ (m/s²)</th>
+      <th style="text-align: left">$a_{exp}$ (m/s²)</th>
+      <th style="text-align: left">% error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="part-d--develop-your-procedure">Part D — Develop Your Procedure</h2>
+
+<p>The student should write a numbered, step-by-step procedure. A good procedure would look like this:</p>
+
+<ol>
+  <li><strong>Set up the ramp.</strong> Elevate one end of the track using books or a lab jack. Place the motion detector at the high end, pointing down the track.</li>
+  <li><strong>Measure the independent variable.</strong> Use a protractor to measure the ramp angle, $\theta$. Record this angle in the data table.</li>
+  <li><strong>Calculate the theoretical acceleration.</strong> For the measured angle, calculate $a_{theory} = (9.80 \ m/s^2) \sin \theta$ and record it in the table.</li>
+  <li><strong>Collect motion data.</strong> Place the cart about 15 cm from the motion detector. Start data collection and release the cart from rest, making sure to keep the release method consistent for all trials. Catch the cart at the bottom.</li>
+  <li><strong>Determine the dependent variable.</strong> On the velocity-time graph, find the slope of the linear section where the cart was freely rolling. This slope is the experimental acceleration, $a_{exp}$. Record this in the table.</li>
+  <li><strong>Analyze results.</strong> Calculate the percent error between your theoretical and experimental values and record it in the table.</li>
+  <li><strong>Ensure reliability.</strong> To be confident in the results, repeat steps 2-6 for at least two more different angles. This will show the relationship between angle and acceleration.</li>
+</ol>
+
+      </div>
       
       
     </div>
@@ -512,15 +471,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

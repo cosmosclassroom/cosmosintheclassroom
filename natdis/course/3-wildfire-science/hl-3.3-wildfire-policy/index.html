@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Defensible Space Policy</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-3.3-wildfire-policy"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
          data-title="Defensible Space Policy"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-3.3-wildfire-policy","contentType":"hexagon_lab","course":"natdis","unit":"3","title":"Defensible Space Policy"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"natdis","unit":"3","title":"Defensible Space Policy"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,59 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <p>hexagon_lab_title: “Hexagon Lab 3.3: Legislating Safety (The Policymaker)”
+role_and_mission: |
+  <strong>Your Role:</strong> The Policymaker
+  <strong>Your Mission:</strong> To use the scientific risk assessment and the engineering design proposal to select and justify a new town-wide ordinance for mandatory defensible space in Branford.
+central_question: “How do policymakers translate scientific data and engineering recommendations into a legally enforceable policy that balances public safety, individual rights, economic costs, and political reality?”
+introduction:
+  title: “The Policy Decision”
+  content: |
+    <strong>Decision Required:</strong> The data is clear. The Scientist has identified the peak fire danger, and the Engineer has proposed an effective, affordable design for a 100-foot defensible space. Now, you, as a member of the Branford Town Council, must turn this recommendation into law. You must decide on the final version of the ordinance.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Stakeholders:** Your decision will affect homeowners, environmental groups, the local fire department, and real estate developers—all of whom have conflicting priorities.
+
+**Timeline:** A vote is scheduled for the end of the month, before the peak of the wildfire season. background:   title: "Background: Real-World Context"   content: |
+**Case Study:** In response to recurring, devastating wildfires, many towns in California and Colorado have enacted similar mandatory defensible space ordinances. For example, Boulder County, Colorado's "Defensible Space" code requires homeowners in wildfire-prone areas to meet specific vegetation clearance standards, which are verified by county inspectors.
+
+**Political Reality:** These laws are often controversial. They have faced opposition from residents concerned about the cost of compliance, property rights, and the aesthetic impact of tree removal. Successful policies have required significant public outreach, financial assistance programs, and phased-in enforcement. information_synthesis:   title: "Information Synthesis"   content: |
+**From the Scientists (Lab 3.1):**
+- **Risk Level:** Confirmed that Branford faces days with a "Very High" to "Extreme" Fire Weather Index (FWI &gt; 50).
+- **Uncertainty:** While the FWI predicts conditions, it cannot predict the exact time or location of an ignition event.
+
+**From the Engineers (Lab 3.2):**
+- **Preferred Solution:** The "100-Foot Lean, Clean, and Green" zone is the most cost-effective option, reducing radiant heat by over 80% for under $6,000.
+- **Trade-offs:** This option requires the removal of a significant number of mature trees and shrubs, which has environmental and aesthetic costs. investigation:   title: "Investigation: Stakeholder Analysis"   content: "You are considering three versions of the final ordinance. Use the stakeholder data below to analyze the political landscape for each option."   table_data:
+caption: "Stakeholder Positions on Proposed Defensible Space Ordinances"
+source: "Simulated from public hearing testimony and local polling"
+headers:
+  - "Stakeholder Group"
+  - "Primary Concern"
+  - "Policy Preference"
+  - "Political Influence"
+rows:
+  - ["Branford Fire Dept.", "Firefighter safety &amp; effectiveness", "Option A (Strict Mandate)", "High"]
+  - ["Homeowners Alliance", "Cost &amp; property rights", "Option C (Voluntary)", "High"]
+  - ["Environmental Council", "Tree canopy &amp; habitat loss", "Option B (Incentive-Based)", "Medium"]
+  - ["Real Estate Developers", "New construction costs &amp; rules", "Option B (Incentive-Based)", "Medium"]   analysis_questions:
+- "Which policy option has the strongest support from the group most responsible for public safety (the Fire Department)?"
+- "Which option faces the most significant opposition from the largest voting bloc (Homeowners Alliance)?"
+- "Which option represents the most likely political compromise? Which stakeholder groups would need to be convinced to support it?" part_one_analysis:   title: "Part 1: Multi-Criteria Decision Analysis"   content: |
+**Step 1:** In your notebook, create a decision matrix. The rows should be the three policy options, and the columns should be the following criteria: **Public Safety**, **Total Cost to Community**, **Environmental Impact**, and **Political Feasibility**.
+
+**Step 2:** Score each option (from 1=worst to 10=best) for each of the four criteria. Justify your scores with data from the labs and the stakeholder table.
+
+**Step 3:** Based on your analysis, which policy option provides the most balanced outcome? Is it the same one the Engineer recommended based on technical data alone? Why or why not? synthesis:   title: "Synthesis and Communication"   prompts:
+- title: "Building a Coalition"
+  content: "You've selected a preferred policy. Now, you need to get it passed. Describe the strategy you would use to persuade the Homeowners Alliance that your chosen policy is in their best interest. What arguments would you make? What compromises might you offer?"
+- title: "Interconnections"
+  content: "This lab completes the journey from data to decision. Explain why a policymaker cannot simply implement the 'best' scientific or engineering solution without considering the social and political context. How did the work of the Scientist and Engineer serve as the essential, non-negotiable foundation for your political decision-making?"
+</code></pre></div></div>
+
+      </div>
       
       
     </div>
@@ -512,15 +404,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

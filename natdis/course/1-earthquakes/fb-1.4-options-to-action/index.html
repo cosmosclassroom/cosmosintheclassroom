@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -68,194 +95,6 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Chapter 4: The Policymaker - From Options to Action</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Flexbook</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 
 <div class="activity-content-container">
@@ -299,17 +138,7 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Chapter 4: The Policymaker - From Options to Action">
-  <input type="hidden" name="ResourceID" value="fb-1.4-options-to-action">
-  <input type="hidden" name="ContentType" value="flexbook">
-  <input type="hidden" name="Course" value="natdis">
-  <input type="hidden" name="Unit" value="1">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="flexbook-content instructional-flow">
+  <div class="flexbook-content">
     
     <!-- Progress indicator -->
     
@@ -318,16 +147,6 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 9</div>
-    </div>
-    
-    <!-- Navigation Buttons (Moved to top for better UX) -->
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
     </div>
     
 
@@ -342,18 +161,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Introduction: The Weight of Decision</h2>
+          <h2 class="flexbook-item-title">Introduction: The Weight of Decision</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Your journey has brought you to the final and perhaps most challenging role: the policymaker. The scientist has defined the risk. The engineer has provided potential solutions. But data and designs alone do not build a bridge. A choice must be made.</p>
+            <div class="flexbook-reading">
+              <p>Your journey has brought you to the final and perhaps most challenging role: the policymaker. The scientist has defined the risk. The engineer has provided potential solutions. But data and designs alone do not build a bridge. A choice must be made.</p>
 
 <p>This is where knowledge meets action. The policymaker stands between the technical experts and the community they serve. Their task is to take the complex reports from scientists and engineers and translate them into a single, defensible, and prudent course of action for the public good.</p>
 
-              </div>
             </div>
           
           
@@ -368,14 +185,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Phenomenon: Two Proposals for Branford</h2>
+          <h2 class="flexbook-item-title">Phenomenon: Two Proposals for Branford</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The engineering team has returned with two distinct, viable proposals for the new earthquake-resistant bridge in Branford.</p>
+            <div class="flexbook-reading">
+              <p>The engineering team has returned with two distinct, viable proposals for the new earthquake-resistant bridge in Branford.</p>
 
 <ul>
   <li><strong>Proposal A: The Fortress.</strong> This design uses state-of-the-art base isolation technology and advanced composite materials. It is engineered to withstand a magnitude 7.0 earthquake with minimal damage, ensuring it remains usable for emergency vehicles almost immediately after a major event. However, it is 30% over the initial budget and will take six months longer to build.</li>
@@ -386,7 +202,6 @@
 
 <p><strong>The Question:</strong> As a member of the town council, which proposal do you choose, and how will you justify your decision to the citizens of Branford?</p>
 
-              </div>
             </div>
           
           
@@ -401,14 +216,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Forecast: Make Your Recommendation</h2>
+          <h2 class="flexbook-item-title">Forecast: Make Your Recommendation</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt reading-section">
-              <div class="content">
-                <p>This is the core of your final task for this unit. Before we proceed, open your Research Brief to the final section, the Policymaker’s Brief. Based on the two proposals above, make an initial choice.</p>
+            <div class="flexbook-activity-prompt">
+              <p>This is the core of your final task for this unit. Before we proceed, open your Research Brief to the final section, the Policymaker’s Brief. Based on the two proposals above, make an initial choice.</p>
 
 <p><strong>Guiding Questions:</strong></p>
 <ul>
@@ -417,7 +231,6 @@
   <li>Who in the community benefits most from each proposal? Who might be negatively affected?</li>
 </ul>
 
-              </div>
               
               
               
@@ -435,14 +248,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Rules of the Game: The Policymaker's Toolkit</h2>
+          <h2 class="flexbook-item-title">The Rules of the Game: The Policymaker's Toolkit</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Making a responsible decision requires more than a gut feeling. Policymakers rely on structured ways of thinking to analyze their options and communicate their choices clearly.</p>
+            <div class="flexbook-reading">
+              <p>Making a responsible decision requires more than a gut feeling. Policymakers rely on structured ways of thinking to analyze their options and communicate their choices clearly.</p>
 
 <h3 id="cost-benefit-analysis-beyond-the-price-tag">Cost-Benefit Analysis: Beyond the Price Tag</h3>
 <p>You have already used a simple version of cost-benefit analysis. For a policymaker, this analysis is much broader.</p>
@@ -463,7 +275,6 @@ A wise policymaker weighs all of these factors to understand the true value of a
 A responsible decision must consider the competing needs and priorities of all these groups.</li>
 </ul>
 
-              </div>
             </div>
           
           
@@ -482,10 +293,8 @@ A responsible decision must consider the competing needs and priorities of all t
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-info">
-              <div class="content">
-                <p><strong>Argument from Evidence:</strong> A policymaker’s most powerful tool is evidence. When you make your recommendation, you must support it with facts from your previous work. Use the scientist’s risk assessment to explain <em>why</em> the investment is necessary, and use the engineer’s analysis to explain <em>why</em> your chosen solution is the most prudent path forward.</p>
+              <p><strong>Argument from Evidence:</strong> A policymaker’s most powerful tool is evidence. When you make your recommendation, you must support it with facts from your previous work. Use the scientist’s risk assessment to explain <em>why</em> the investment is necessary, and use the engineer’s analysis to explain <em>why</em> your chosen solution is the most prudent path forward.</p>
 
-              </div>
             </div>
           
           
@@ -500,7 +309,7 @@ A responsible decision must consider the competing needs and priorities of all t
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Checkpoint: The Art of the Decision</h2>
+          <h2 class="flexbook-item-title">Checkpoint: The Art of the Decision</h2>
           
           
           <!-- Content based on type -->
@@ -566,16 +375,14 @@ A responsible decision must consider the competing needs and priorities of all t
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Thinking Lens: Cause and Effect</h2>
+          <h2 class="flexbook-item-title">Thinking Lens: Cause and Effect</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Every policy decision is a cause that sets off a chain of effects. Choosing the more expensive bridge (Proposal A) might cause higher taxes, which could cause some public anger, but it also causes a higher level of safety, which could cause lives to be saved in a future earthquake. Choosing the on-budget bridge (Proposal B) causes lower taxes and less construction disruption, but it may also cause higher repair costs and greater economic disruption after an earthquake. Your job as a policymaker is to anticipate these chains of cause and effect and choose the path that leads to the best overall outcome for the community’s future.</p>
+            <div class="flexbook-reading">
+              <p>Every policy decision is a cause that sets off a chain of effects. Choosing the more expensive bridge (Proposal A) might cause higher taxes, which could cause some public anger, but it also causes a higher level of safety, which could cause lives to be saved in a future earthquake. Choosing the on-budget bridge (Proposal B) causes lower taxes and less construction disruption, but it may also cause higher repair costs and greater economic disruption after an earthquake. Your job as a policymaker is to anticipate these chains of cause and effect and choose the path that leads to the best overall outcome for the community’s future.</p>
 
-              </div>
             </div>
           
           
@@ -590,16 +397,14 @@ A responsible decision must consider the competing needs and priorities of all t
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Synthesize: Write Your Policy Brief</h2>
+          <h2 class="flexbook-item-title">Synthesize: Write Your Policy Brief</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt reading-section">
-              <div class="content">
-                <p>You now have all the tools. Your final task is to complete the Policymaker’s Brief in your Research Brief portfolio. Use the evidence you have gathered as a scientist and an engineer to conduct a cost-benefit analysis of the two proposals and write a formal recommendation to the town council. Your argument should be clear, persuasive, and grounded in evidence. This is your chance to become the Deliberate Citizen.</p>
+            <div class="flexbook-activity-prompt">
+              <p>You now have all the tools. Your final task is to complete the Policymaker’s Brief in your Research Brief portfolio. Use the evidence you have gathered as a scientist and an engineer to conduct a cost-benefit analysis of the two proposals and write a formal recommendation to the town council. Your argument should be clear, persuasive, and grounded in evidence. This is your chance to become the Deliberate Citizen.</p>
 
-              </div>
               
               
               
@@ -617,7 +422,7 @@ A responsible decision must consider the competing needs and priorities of all t
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Final Checkpoint: Synthesis & Reflection</h2>
+          <h2 class="flexbook-item-title">Final Checkpoint: Synthesis & Reflection</h2>
           
           
           <!-- Content based on type -->
@@ -678,15 +483,63 @@ A responsible decision must consider the competing needs and priorities of all t
       
     </div>
     
-    <!-- Navigation buttons have been moved to the top for better UX -->
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
     
     
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 4: The Policymaker - From Options to Action">
+    <input type="hidden" name="ResourceID" value="fb-1.4-options-to-action">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="natdis">
+    <input type="hidden" name="Unit" value="1">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -720,8 +573,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    <script src="/assets/js/sticky-header.js?v=1760715382"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -739,7 +592,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760715118';
+                script.src = modulePath + '?v=1760715382';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

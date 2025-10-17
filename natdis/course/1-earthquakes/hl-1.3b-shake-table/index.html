@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Shake Table</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-1.3b-shake-table"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
          data-title="Shake Table"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-1.3b-shake-table","contentType":"hexagon_lab","course":"natdis","unit":"1","title":"Shake Table"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"natdis","unit":"1","title":"Shake Table"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,103 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <h1 id="hexagon-lab-12-shake-table-engineering">Hexagon Lab 1.2: Shake-Table Engineering</h1>
+
+<h2 id="objective">Objective</h2>
+<p>Build a model tower, test its ability to withstand simulated shaking, analyze its weak points, and redesign it to be more resilient.</p>
+
+<h2 id="introduction">Introduction</h2>
+<p>Earthquakes create sideways forces that are dangerous to buildings. Engineers use solutions like cross-bracing and shear walls to help structures resist these forces. In this lab, you’ll test these principles yourself.</p>
+
+<h2 id="materials">Materials</h2>
+<ul>
+  <li>20 plastic straws</li>
+  <li>1 meter masking tape</li>
+  <li>1 small piece of cardboard (about 15 cm x 15 cm)</li>
+  <li>1 small weight (e.g., bag of 20 pennies, small beanbag)</li>
+  <li>Shake table (or a flat, stiff textbook you can shake by hand)</li>
+</ul>
+
+<hr />
+
+<h2 id="part-1-initial-design--build">Part 1: Initial Design &amp; Build</h2>
+<ol>
+  <li>In your science notebook, sketch a simple, rectangular tower at least 20 cm tall.</li>
+  <li>Build your tower using straws and tape on the cardboard base. Make it as tall and stable as possible. <strong>Do not use diagonal (cross-bracing) supports yet.</strong></li>
+  <li>Tape the weight securely to the top of your tower (simulates a real building’s mass).</li>
+</ol>
+
+<hr />
+
+<h2 id="part-2-testing-procedure">Part 2: Testing Procedure</h2>
+<ol>
+  <li>Place your tower on the shake table.</li>
+  <li>Test at each level (Low, Medium, High) for about 10 seconds each.</li>
+  <li>After each test, record your observations and rate stability from 1 (collapsed) to 5 (perfectly stable).</li>
+</ol>
+
+<p><strong>Data Table Example:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shake Level</th>
+      <th>Observations</th>
+      <th>Stability Rating (1-5)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Low</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>High</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="part-3-analysis--redesign">Part 3: Analysis &amp; Redesign</h2>
+<ol>
+  <li>Review your data. Where was your tower weakest? Why did it fail or bend?</li>
+  <li>In your notebook, sketch a new, improved design. Add at least one engineering principle (e.g., cross-bracing, wider base) and label it.</li>
+  <li>Rebuild your tower using your improved design.</li>
+</ol>
+
+<hr />
+
+<h2 id="part-4-final-test">Part 4: Final Test</h2>
+<ol>
+  <li>Test your redesigned tower using the same procedure.</li>
+  <li>Record your results in a new data table.</li>
+  <li>Compare the stability ratings of your first and second towers, especially during the high-level shake.</li>
+</ol>
+
+<hr />
+
+<h2 id="part-5-conclusion--reflection">Part 5: Conclusion &amp; Reflection</h2>
+<p>Answer these in your science notebook (use complete sentences):</p>
+
+<ol>
+  <li><strong>Effectiveness:</strong> Which design was more successful at resisting the simulated earthquake? Use your data to support your answer.</li>
+  <li><strong>Engineering Principles:</strong> What specific engineering principle did you add? How did it help your tower handle sideways forces?</li>
+  <li><strong>Real-World Connection:</strong> How does this experiment help you understand why some buildings collapse during earthquakes while others remain standing? Connect your answer to resilience and vulnerability.</li>
+</ol>
+
+      </div>
       
       
     </div>
@@ -512,15 +448,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

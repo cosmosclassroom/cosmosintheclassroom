@@ -34,456 +34,67 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Enhanced Typography for Flexbooks -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-<!-- Research Brief Styling (when content_type is research_brief) -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/problem-set.css">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Chart.js for data visualization -->
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
-</script>
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Problem Set 3.2: Conservation of Momentum</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">SPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Problem set</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
-
-
-<div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
-    <div id="activity-metadata"
-         data-resource-id="ps-3.2-conservation-of-momentum"
-         data-content-type="problem_set"
-         data-course="sphys"
-         data-title="Problem Set 3.2: Conservation of Momentum"
-         data-unit="3"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null"
-         
-         hidden>
-         <!-- Debug output - remove after fixing -->
-         <script>
-         console.log('DEBUG - Page metadata:');
-         console.log('resourceId:', 'ps-3.2-conservation-of-momentum');
-         console.log('contentType:', 'problem_set');
-         console.log('submissionEnabled:', '');
-         console.log('submissionFields JSON:', 'null');
-         console.log('overview:', '{"follows_lecture":"Lecture 3.3: The Rules of Interaction","introduction":"The law of conservation of momentum is a fundamental rule of the universe: in any collision, the total momentum before the crash must equal the total momentum after. This principle allows accident investigators to work backward and determine how fast vehicles were going before a crash. In this problem set, you will be the investigator, applying this law to solve for unknown velocities in various collision scenarios.","key_formulae":["Momentum: $$\\vec{p} = m\\vec{v}$$","Impulse-Momentum Theorem: $$F_{net} \\cdot \\Delta t = \\Delta \\vec{p}$$","Conservation of Momentum: $$\\Sigma \\vec{p}_{initial} = \\Sigma \\vec{p}_{final}$$","$$m_1\\vec{v}_{1i} + m_2\\vec{v}_{2i} = m_1\\vec{v}_{1f} + m_2\\vec{v}_{2f}$$"],"global_standards":["Assume all collisions are 'closed systems' where external forces like friction are negligible during the brief impact.","Present all final answers with the correct units and to three significant figures."]}');
-         console.log('investigations:', 'null');
-         console.log('synthesis:', 'null');
-         </script>
-         
-    </div>
-
-    <main class="main-content">
-        
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
-  Problem Set Content Display
-  Single unified form with problems and reflection
--->
-
-<form id="activity-submission-form" class="activity-form">
+<div class="problem-set-container">
+  <div class="problem-set-header">
+    <h1>Problem Set 3.2: Conservation of Momentum</h1>
+    <p class="mb-0">SPHYS Unit 3</p>
+  </div>
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Problem Set 3.2: Conservation of Momentum">
-  <input type="hidden" name="ResourceID" value="ps-3.2-conservation-of-momentum">
-  <input type="hidden" name="ContentType" value="problem_set">
-  <input type="hidden" name="Course" value="sphys">
-  <input type="hidden" name="Unit" value="3">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
+  <div class="problem-set-info">
+    <div class="row">
+      <div class="col-md-6">
+        <p><strong>Difficulty:</strong> </p>
+        <p><strong>Submission Format:</strong> paper</p>
+        <p><strong>Estimated Time:</strong> 45 minutes</p>
+      </div>
+      <div class="col-md-6">
+        
+        <p><strong>Topics:</strong> momentum, impulse, conservation of momentum, collisions, problem_set</p>
+        
+      </div>
+    </div>
+  </div>
   
   <div class="problem-set-content">
-    <!-- Problem Set Introduction (Collapsible) -->
-    
-    <details class="ps-introduction collapsible-section">
-      <summary class="section-toggle">
-        <span class="toggle-icon">▶</span>
-        <span class="toggle-text">Instructions</span>
-      </summary>
-      <div class="section-content">
-        <p>The law of conservation of momentum is a fundamental rule of the universe: in any collision, the total momentum before the crash must equal the total momentum after. This principle allows accident investigators to work backward and determine how fast vehicles were going before a crash. In this problem set, you will be the investigator, applying this law to solve for unknown velocities in various collision scenarios.</p>
-
-      </div>
-    </details>
-    
-
-    <!-- Key Formulae (Collapsible) -->
-    
-    <details class="ps-formulae collapsible-section">
-      <summary class="section-toggle">
-        <span class="toggle-icon">▶</span>
-        <span class="toggle-text">Key Formulae</span>
-      </summary>
-      <div class="section-content">
-        <ul>
-          
-          <li>Momentum: \(\vec{p} = m\vec{v}\)
-</li>
-          
-          <li>Impulse-Momentum Theorem: \(F_{net} \cdot \Delta t = \Delta \vec{p}\)
-</li>
-          
-          <li>Conservation of Momentum: \(\Sigma \vec{p}_{initial} = \Sigma \vec{p}_{final}\)
-</li>
-          
-          <li>\[m_1\vec{v}_{1i} + m_2\vec{v}_{2i} = m_1\vec{v}_{1f} + m_2\vec{v}_{2f}\]
-</li>
-          
-        </ul>
-      </div>
-    </details>
-    
-
-    <!-- Global Standards (Collapsible) -->
-    
-    <details class="ps-standards collapsible-section">
-      <summary class="section-toggle">
-        <span class="toggle-icon">▶</span>
-        <span class="toggle-text">Standards for All Problems</span>
-      </summary>
-      <div class="section-content">
-        <ul>
-          
-          <li>Assume all collisions are ‘closed systems’ where external forces like friction are negligible during the brief impact.
-</li>
-          
-          <li>Present all final answers with the correct units and to three significant figures.
-</li>
-          
-        </ul>
-      </div>
-    </details>
-    
-
-    <!-- Problems with Answer Fields -->
     
 
   </div>
-
-</form>
-
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
-<script>
-// Toggle solutions visibility
-function toggleSolutions() {
-    const solutionsDiv = document.getElementById('student-solutions');
-    const toggleBtn = document.getElementById('toggle-solutions-btn');
-    
-    if (solutionsDiv.style.display === 'none') {
-        solutionsDiv.style.display = 'block';
-        toggleBtn.textContent = '🙈 Hide Answers';
-        toggleBtn.style.background = '#dc3545';
-    } else {
-        solutionsDiv.style.display = 'none';
-        toggleBtn.textContent = '🔍 Check Your Answers';
-        toggleBtn.style.background = '#ffc107';
-    }
-}
-
-// Toggle current problem's answer
-function toggleCurrentAnswer(problemNumber) {
-    const answerDiv = document.getElementById('answer-key-' + problemNumber);
-    const checkBtn = document.getElementById('check-answer-' + problemNumber);
-    
-    if (answerDiv.style.display === 'none') {
-        answerDiv.style.display = 'block';
-        checkBtn.textContent = 'Hide Solution';
-        checkBtn.style.background = '#6c757d';
-        checkBtn.style.borderColor = '#5a6268';
-    } else {
-        answerDiv.style.display = 'none';
-        checkBtn.textContent = 'View Solution';
-        checkBtn.style.background = '#007bff';
-        checkBtn.style.borderColor = '#0056b3';
-    }
-}
-
-// Initialize Problem Set Navigator
-document.addEventListener('DOMContentLoaded', function() {
-    const problems = document.querySelectorAll('.problem-container');
-    
-    if (problems.length > 0) {
-        window.problemNavigator = new ActivityNavigator({
-            containerSelector: '.problem-container',
-            progressBarId: 'progress-fill',
-            progressTextId: 'progress-text',
-            prevButtonId: 'prev-problem',
-            nextButtonId: 'next-problem',
-            itemLabel: 'Problem',
-            dropdownId: 'problem-selector'
-        });
-        
-        console.log('[problem-set] Sequential navigation with dropdown initialized');
-        
-        // DIAGNOSTIC: Check if active class and grid are working
-        setTimeout(() => {
-            const firstProblem = document.querySelector('.problem-container.active');
-            if (firstProblem) {
-                const computedStyle = window.getComputedStyle(firstProblem);
-                console.log('[DIAGNOSTIC] First problem container:');
-                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
-                console.log('  - Inline style.display:', firstProblem.style.display);
-                console.log('  - Computed display:', computedStyle.display);
-                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
-            } else {
-                console.error('[DIAGNOSTIC] No .problem-container.active found!');
-            }
-        }, 500);
-    }
-});
-
-// Legacy function support (for inline onclick handlers)
-function navigateProblem(direction) {
-    if (window.problemNavigator) {
-        window.problemNavigator.navigate(direction);
-    }
-}
-
-// Jump to specific problem from dropdown
-function jumpToProblem(index) {
-    if (window.problemNavigator) {
-        window.problemNavigator.jumpTo(parseInt(index));
-    }
-}
-</script>
-
-            
-        </div>
-
-    </main>
-
-    <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
-    
-    
-
 </div>
-
     
     </div>
     <script type="application/json" id="course-data-">null</script>

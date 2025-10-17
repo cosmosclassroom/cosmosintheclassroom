@@ -34,8 +34,7 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="">
-    
+  <body>
     <header>
       <div class="site-header">
         <!---->
@@ -65,7 +64,6 @@
       </div>
     </header>
     
-    
   <div class="markdown-body">
     
       <link rel="stylesheet" href="/assets/css/lecture.css">
@@ -80,7 +78,149 @@
   </header>
   
   <div class="lecture-content">
-    
+    <h1 id="lecture-32-the-master-gunners-secret"><strong>Lecture 3.2: The Master Gunner’s Secret</strong></h1>
+<h3 id="unit-3-the-world-in-two-dimensions">Unit 3: The World in Two Dimensions</h3>
+
+<hr />
+
+<h2 id="todays-mission">Today’s Mission</h2>
+
+<ul>
+  <li><strong>Bridge Back:</strong> In the simulation lab, you discovered the patterns of angled projectiles. You saw that $45^\circ$ gave the maximum range. Today, we will learn the mathematical secret that explains why.</li>
+  <li><strong>Thinking Lens:</strong> We will use <strong>Systems and System Models</strong> to break down a complex velocity vector into simple horizontal and vertical components.</li>
+  <li><strong>Essential Questions:</strong>
+    <ul>
+      <li>How do we use trigonometry to find the initial horizontal and vertical velocities?</li>
+      <li>What is the complete step-by-step process for solving angled projectile problems?</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="the-master-gunners-problem">The Master Gunner’s Problem</h2>
+
+<p>Firing horizontally is simple. But to hit the walls of Constantinople, the gunners had to fire at an angle.</p>
+
+<p>This creates a new challenge: The initial velocity ($v_i$) is no longer purely horizontal or vertical. It’s both.</p>
+
+<p>Our entire strategy of separating motion into two worlds depends on finding the initial velocity in each direction.</p>
+
+<!-- A diagram of a cannon firing a projectile at an angle. The initial velocity vector, $v_i$, is shown pointing up and away from the cannon at an angle $\theta$. -->
+
+<hr />
+
+<h2 id="the-secret-soh-cah-toa">The Secret: SOH CAH TOA</h2>
+
+<p>The secret to separating the velocities lies in simple trigonometry. The initial velocity vector is the hypotenuse of a right triangle. The horizontal and vertical velocities are the legs.</p>
+
+<!-- A right-triangle diagram. The hypotenuse is labeled $v_i$ (initial velocity). The angle $\theta$ is shown. The adjacent side is labeled $v_x$ (horizontal velocity). The opposite side is labeled $v_{y,i}$ (initial vertical velocity). -->
+
+<p><strong>Horizontal (x-component):</strong>
+\(v_x = v_i \cos(\theta)\)</p>
+
+<p><strong>Vertical (y-component):</strong>
+\(v_{y,i} = v_i \sin(\theta)\)</p>
+
+<p>These two equations are the only new tools you need for this entire topic.</p>
+
+<hr />
+
+<h2 id="the-physics-is-the-same">The Physics is the Same</h2>
+
+<p>Once you use trigonometry to find the initial velocities, the physics is identical to what you already know.</p>
+
+<p><strong>The Horizontal Story: Constant Velocity</strong></p>
+
+<ul>
+  <li>No forces (ignoring air resistance).</li>
+  <li>Velocity is constant: $v_x = v_i \cos(\theta)$</li>
+  <li>The only equation: $\Delta x = v_x t$</li>
+</ul>
+
+<p><strong>The Vertical Story: Constant Acceleration</strong></p>
+
+<ul>
+  <li>Only gravity acts on the object.</li>
+  <li>Acceleration is constant: $a_g = -9.80\,\text{m/s}^2$</li>
+  <li>Use the kinematic equations with $v_{y,i} = v_i \sin(\theta)$</li>
+</ul>
+
+<!-- An image showing the trajectory of a projectile. At several points along the arc, velocity vectors are drawn. Each vector is broken into a horizontal component (which stays the same length) and a vertical component (which shrinks, becomes zero at the apex, and then grows downward). -->
+
+<hr />
+
+<h2 id="worked-example-breaching-the-walls">Worked Example: Breaching the Walls</h2>
+
+<p>A cannon fires a ball with an initial velocity of $150\,\text{m/s}$ at an angle of $35.0^\circ$ above the horizontal.</p>
+
+<p><strong>Question:</strong> What is the cannonball’s range ($\Delta x$)?</p>
+
+<p><strong>Step 1: Resolve the initial velocity vector.</strong></p>
+<ul>
+  <li>$v_x = (150\,\text{m/s})\cos(35.0^\circ) = 123\,\text{m/s}$</li>
+  <li>$v_{y,i} = (150\,\text{m/s})\sin(35.0^\circ) = 86.0\,\text{m/s}$</li>
+</ul>
+
+<p><strong>Step 2: Find the total time of flight. (A vertical problem)</strong>
+Let’s find the time to the apex and double it. At the apex, $v_{y,f} = 0$.</p>
+
+<p>\(v_{y,f} = v_{y,i} + a_g t\)
+\(0 = 86.0\,\text{m/s} + (-9.80\,\text{m/s}^2)t\)
+\(t_{apex} = \frac{-86.0\,\text{m/s}}{-9.80\,\text{m/s}^2} = 8.78\,\text{s}\)
+\(t_{total} = 2 \times t_{apex} = 17.6\,\text{s}\)</p>
+
+<p><strong>Step 3: Find the range. (A horizontal problem)</strong>
+\(\Delta x = v_x t_{total} = (123\,\text{m/s})(17.6\,\text{s}) = 2160\,\text{m}\)</p>
+
+<hr />
+
+<h2 id="check-for-understanding">Check for Understanding</h2>
+
+<p>A soccer ball is kicked with the same initial speed at three different angles: $20^\circ$, $45^\circ$, and $70^\circ$.</p>
+
+<p><strong>Which launch angle will have the largest initial vertical velocity ($v_{y,i}$)?</strong></p>
+
+<p>$70^\circ$, because $\sin(\theta)$ is largest for the largest angle.</p>
+
+<p><strong>Which launch angle will keep the ball in the air for the longest time?</strong></p>
+
+<p>$70^\circ$, because the largest initial vertical velocity means it takes longer to go up and come back down.</p>
+
+<p><strong>Which launch angle will have the largest initial horizontal velocity ($v_x$)?</strong></p>
+
+<p>$20^\circ$, because $\cos(\theta)$ is largest for the smallest angle.</p>
+
+<hr />
+
+<h2 id="answering-our-essential-questions">Answering Our Essential Questions</h2>
+
+<p><strong>1. How do we use trigonometry to find the initial horizontal and vertical velocities?</strong></p>
+
+<p>We model the initial velocity vector as the hypotenuse of a right triangle.</p>
+
+<ul>
+  <li>Horizontal Component: $v_x = v_i \cos(\theta)$</li>
+  <li>Vertical Component: $v_{y,i} = v_i \sin(\theta)$</li>
+</ul>
+
+<p><strong>2. What is the complete step-by-step process for solving angled projectile problems?</strong></p>
+
+<ul>
+  <li>Step 1: Use trig to resolve $v_i$ into $v_x$ and $v_{y,i}$.</li>
+  <li>Step 2: Use the vertical motion kinematics to solve for time, $t$.</li>
+  <li>Step 3: Use the horizontal motion equation ($\Delta x = v_x t$) to solve for range (or vice-versa).</li>
+</ul>
+
+<hr />
+
+<h2 id="summary-and-next-steps">Summary and Next Steps</h2>
+
+<p><strong>The Core Idea:</strong><br />
+The only new skill is using trigonometry to break the initial velocity into its components. After that first step, all the physics rules are the ones you already know.</p>
+
+<p><strong>Bridge Forward:</strong><br />
+You now possess the complete mathematical model for predicting the flight of any projectile. You are ready to enter the lab, calculate the muzzle velocity of your launcher, and predict with precision where your projectile will land. You are ready for the Real-World Projectile Motion Lab.</p>
 
   </div>
 </div>

@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -68,194 +95,6 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Chapter 5: The Independence of Motion</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Flexbook</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 
 <div class="activity-content-container">
@@ -299,17 +138,7 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Chapter 5: The Independence of Motion">
-  <input type="hidden" name="ResourceID" value="fb-5-independence-of-motion">
-  <input type="hidden" name="ContentType" value="flexbook">
-  <input type="hidden" name="Course" value="hphys">
-  <input type="hidden" name="Unit" value="3">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="flexbook-content instructional-flow">
+  <div class="flexbook-content">
     
     <!-- Progress indicator -->
     
@@ -318,16 +147,6 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 11</div>
-    </div>
-    
-    <!-- Navigation Buttons (Moved to top for better UX) -->
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
     </div>
     
 
@@ -342,18 +161,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Introduction: The Hidden Simplicity</h2>
+          <h2 class="flexbook-item-title">Introduction: The Hidden Simplicity</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p><strong>The Central Question:</strong> How can we analyze complex, two-dimensional motion as the sum of simple, independent linear motions?</p>
+            <div class="flexbook-reading">
+              <p><strong>The Central Question:</strong> How can we analyze complex, two-dimensional motion as the sum of simple, independent linear motions?</p>
 
 <p>Every time you toss a ball to a friend, you are solving a complex physics problem without thinking. Your brain intuitively calculates the arc, the speed, and the angle. But to truly understand that flight—to predict it with the flawless precision needed to land a probe on Mars or, centuries ago, to aim a cannon at a castle wall—requires a deeper insight. It requires us to see that the elegant, curving path of a projectile is a fiction, a beautiful illusion created by two much simpler stories being told at the exact same time. The journey of this chapter is to learn to see past the curve and read the two straight-line stories hidden within.</p>
 
-              </div>
             </div>
           
           
@@ -368,7 +185,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Checkpoint: Initial Thoughts</h2>
+          <h2 class="flexbook-item-title">Checkpoint: Initial Thoughts</h2>
           
           
           <!-- Content based on type -->
@@ -434,14 +251,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Long Arc of Technology</h2>
+          <h2 class="flexbook-item-title">The Long Arc of Technology</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The history of human power, in many ways, is the history of our ever-increasing mastery over projectile motion. This story begins not in a fortress, but on the ancient savanna.</p>
+            <div class="flexbook-reading">
+              <p>The history of human power, in many ways, is the history of our ever-increasing mastery over projectile motion. This story begins not in a fortress, but on the ancient savanna.</p>
 
 <p><strong>The Thrown Rock &amp; Spear:</strong> The first leap was using the lever of the human arm to impart high velocity to a projectile. Lighter, more aerodynamic throwing spears gave our Homo sapiens ancestors a decisive advantage over the more powerfully built Neanderthals, allowing for safer hunting and warfare. The ability to strike from a distance changed the rules of survival.</p>
 
@@ -453,7 +269,6 @@
 
 <p>At every step, the technology changed, but the underlying physics—the flight of an object under the sole influence of gravity—remained the same.</p>
 
-              </div>
             </div>
           
           
@@ -468,18 +283,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Phenomenon: The Siege of Constantinople, 1453</h2>
+          <h2 class="flexbook-item-title">Phenomenon: The Siege of Constantinople, 1453</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>For over a thousand years, the massive walls of Constantinople had protected the Byzantine Empire from invaders. They were an engineering marvel, a symbol of permanence. But in 1453, the next step in projectile technology arrived to literally crumble the foundations of the ancient world. A Hungarian engineer named Orban had constructed for the Ottoman Sultan Mehmed II a set of enormous cannons, the largest the world had ever seen. His masterpiece, “The Basilica,” was nearly 30 feet long and could hurl a 1,200-pound stone ball over a mile.</p>
+            <div class="flexbook-reading">
+              <p>For over a thousand years, the massive walls of Constantinople had protected the Byzantine Empire from invaders. They were an engineering marvel, a symbol of permanence. But in 1453, the next step in projectile technology arrived to literally crumble the foundations of the ancient world. A Hungarian engineer named Orban had constructed for the Ottoman Sultan Mehmed II a set of enormous cannons, the largest the world had ever seen. His masterpiece, “The Basilica,” was nearly 30 feet long and could hurl a 1,200-pound stone ball over a mile.</p>
 
 <p>But power alone was not enough. Hitting a specific section of wall from a mile away was not guesswork. It demanded an entirely new way of thinking about motion. The cannonballs didn’t travel in straight lines; they followed great, arcing paths. How high should the barrel be aimed? How did the flight time affect the final impact? The fate of an empire rested on these questions, and their answers lay in decoding the secrets of projectile motion.</p>
 
-              </div>
             </div>
           
           
@@ -494,7 +307,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Checkpoint: The Engineering Challenge</h2>
+          <h2 class="flexbook-item-title">Checkpoint: The Engineering Challenge</h2>
           
           
           <!-- Content based on type -->
@@ -560,14 +373,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Rules of the Game: Two Worlds, One Object</h2>
+          <h2 class="flexbook-item-title">The Rules of the Game: Two Worlds, One Object</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The genius of Galileo Galilei, centuries later, was to realize that we don’t have to analyze the complex arc at all. We can treat the horizontal and vertical motion of a projectile as two completely separate problems linked only by time.</p>
+            <div class="flexbook-reading">
+              <p>The genius of Galileo Galilei, centuries later, was to realize that we don’t have to analyze the complex arc at all. We can treat the horizontal and vertical motion of a projectile as two completely separate problems linked only by time.</p>
 
 <p><strong>The Horizontal Story: Constant Velocity</strong>
 Once a cannonball leaves the barrel, and ignoring air resistance, there are no forces acting on it in the horizontal direction. Newton’s First Law tells us that its horizontal velocity will not change. It remains perfectly constant.</p>
@@ -583,7 +395,6 @@ Vertically, the story is one we already know well. The force of gravity pulls th
 <p><strong>The Link:</strong>
 The thread that binds the two stories is time ($t$). The cannonball can only move horizontally for the same amount of time it is falling vertically.</p>
 
-              </div>
             </div>
           
           
@@ -598,7 +409,7 @@ The thread that binds the two stories is time ($t$). The cannonball can only mov
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Example: The Cannon on the Wall</h2>
+          <h2 class="flexbook-item-title">Example: The Cannon on the Wall</h2>
           
           
           <!-- Content based on type -->
@@ -633,14 +444,13 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Thinking Lens: Systems and System Models</h2>
+          <h2 class="flexbook-item-title">Thinking Lens: Systems and System Models</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The challenge of the cannonball seems impossibly complex at first glance. It’s moving in a curve, with its speed and direction changing at every instant. The power of a <strong>Systems and System Models</strong> approach is that it allows us to tame this complexity. Instead of trying to create one complicated model for the curved path, we break the system apart.</p>
+            <div class="flexbook-reading">
+              <p>The challenge of the cannonball seems impossibly complex at first glance. It’s moving in a curve, with its speed and direction changing at every instant. The power of a <strong>Systems and System Models</strong> approach is that it allows us to tame this complexity. Instead of trying to create one complicated model for the curved path, we break the system apart.</p>
 
 <p>We create two simple, independent models:</p>
 
@@ -651,7 +461,6 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
 
 <p>By analyzing these two systems separately and then linking them with the shared variable of time, we can make precise, powerful predictions about the combined system. This is a fundamental strategy in physics: if a system is too complex, redefine its boundaries and components until you have a set of simpler problems you already know how to solve.</p>
 
-              </div>
             </div>
           
           
@@ -666,16 +475,14 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Bigger Picture: A New Way of Seeing</h2>
+          <h2 class="flexbook-item-title">The Bigger Picture: A New Way of Seeing</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The fall of Constantinople was a world-changing event, and the cannons that breached its walls were a symbol of that change. But the true revolution wasn’t the gunpowder; it was the new way of thinking that such technology demanded. The ability to separate motion into its components is more than just a trick for solving physics problems—it’s a new lens for viewing the world. It is the humble beginning of a way of thinking that, when followed, leads directly to Newton’s Laws, the orbits of the planets, and the precise trajectories that carry our robotic explorers to other worlds. We learned that even the most complex motions in the cosmos are often governed by a breathtakingly simple set of underlying rules. All we have to do is learn how to see them.</p>
+            <div class="flexbook-reading">
+              <p>The fall of Constantinople was a world-changing event, and the cannons that breached its walls were a symbol of that change. But the true revolution wasn’t the gunpowder; it was the new way of thinking that such technology demanded. The ability to separate motion into its components is more than just a trick for solving physics problems—it’s a new lens for viewing the world. It is the humble beginning of a way of thinking that, when followed, leads directly to Newton’s Laws, the orbits of the planets, and the precise trajectories that carry our robotic explorers to other worlds. We learned that even the most complex motions in the cosmos are often governed by a breathtakingly simple set of underlying rules. All we have to do is learn how to see them.</p>
 
-              </div>
             </div>
           
           
@@ -690,7 +497,7 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Final Checkpoint: Synthesis & Reflection</h2>
+          <h2 class="flexbook-item-title">Final Checkpoint: Synthesis & Reflection</h2>
           
           
           <!-- Content based on type -->
@@ -756,16 +563,14 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Coming Next</h2>
+          <h2 class="flexbook-item-title">Coming Next</h2>
           
           
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-info">
-              <div class="content">
-                <p>In the next section of this chapter, we will take on the more complex challenge of projectiles that are not launched horizontally, but at an angle to the ground.</p>
+              <p>In the next section of this chapter, we will take on the more complex challenge of projectiles that are not launched horizontally, but at an angle to the ground.</p>
 
-              </div>
             </div>
           
           
@@ -775,15 +580,63 @@ Knowns: $v_x = 90.0\,\text{m/s}$, $t = 3.00\,\text{s}$.
       
     </div>
     
-    <!-- Navigation buttons have been moved to the top for better UX -->
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
     
     
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 5: The Independence of Motion">
+    <input type="hidden" name="ResourceID" value="fb-5-independence-of-motion">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="hphys">
+    <input type="hidden" name="Unit" value="3">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -817,8 +670,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    <script src="/assets/js/sticky-header.js?v=1760715382"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -836,7 +689,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760715118';
+                script.src = modulePath + '?v=1760715382';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Defensible Space Design</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-3.2-wildfire-defense"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
          data-title="Defensible Space Design"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-3.2-wildfire-defense","contentType":"hexagon_lab","course":"natdis","unit":"3","title":"Defensible Space Design"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"natdis","unit":"3","title":"Defensible Space Design"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,69 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <p>hexagon_lab_title: “Hexagon Lab 3.2: Engineering a Defensible Space”
+objective: |
+  To analyze three defensible space designs, select the optimal strategy based on scientific data and engineering constraints, and prepare a recommendation for policymakers.
+central_question: “How do engineers translate scientific risk data into a practical design that balances performance, cost, and other real-world constraints?”
+introduction:
+  title: “The Engineering Challenge”
+  content: |
+    <strong>Design Problem:</strong> The Scientist’s analysis (Lab 3.1) revealed that Branford is susceptible to weather conditions creating a Fire Weather Index (FWI) of over 60, indicating “Extreme” fire danger. Your task is to design a standard for “defensible space”—a buffer zone around homes—that can mitigate this specific level of risk.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Client Need:** The Branford Town Council requires a data-driven recommendation for a new building and landscaping code that can be applied to a typical quarter-acre residential lot.
+
+**Success Criteria:**
+- **Performance:** The chosen design must reduce a home's exposure to radiant heat from a wildfire by at least 75%.
+- **Economic:** The initial implementation cost must be under $8,000 per household.
+- **Feasibility:** The design must be achievable using standard landscaping practices. background:   title: "Background: Real-World Context"   content: |
+**Case Study:** After the 2018 Camp Fire destroyed Paradise, California, investigations by the Insurance Institute for Business &amp; Home Safety (IBHS) proved that homes with a well-maintained defensible space of at least 30-100 feet had a dramatically higher survival rate.
+
+**Engineering Approach:** Wildfire engineers treat defensible space as a system of zones. It is not just about clearing trees, but about strategically managing vegetation density and type to disrupt a fire's path and reduce its intensity as it nears a structure. investigation:   title: "Investigation: Design Analysis"   content: |
+**From the Scientists:** The key design parameter from Lab 3.1 is the **Peak Fire Weather Index (FWI) of 63**. This value informs the "worst-case scenario" your design must withstand.
+
+**Engineering Constraints:**
+- **Performance:** Must achieve ≥75% radiant heat reduction.
+- **Economic:** Budget limit of **$8,000** for initial setup.
+- **Environmental:** Must minimize removal of mature, healthy trees.
+- **Social:** Must be aesthetically acceptable to homeowners to ensure compliance.   table_data:
+caption: "Engineering Performance Data for Three Defensible Space Strategies"
+source: "Performance data from IBHS research; cost data from regional landscaping databases."
+headers:
+  - "Design Approach"
+  - "Radiant Heat Reduction (%)"
+  - "Avg. Cost ($/home)"
+  - "Environmental Impact"
+  - "Implementation Time (days)"
+rows:
+  - ["Option A: Aggressive Clearance", "95%", "$9,500", "High", "5-7"]
+  - ["Option B: Zoned System", "82%", "$5,800", "Medium", "3-4"]
+  - ["Option C: Minimalist Approach", "55%", "$2,100", "Low", "1-2"]   analysis_questions:
+- "**Part 1: Design Analysis**"
+- "Create a multi-criteria comparison chart. Which option is best on performance? Which is best on cost?"
+- "Calculate the 'Cost per Percent of Protection' for each option (Cost / Heat Reduction %). Which option gives the most protection for the money?"
+- "Perform a sensitivity analysis: If costs increase by 40%, which options remain within the $8,000 budget?"
+- "| **Engineering Decision** |"
+- "| :--- |"
+- "| **Preliminary Recommendation:** Based on the data, which design approach would you choose? Justify your choice by referencing the success criteria and trade-offs. |"
+- ""
+- "**Part 2: Systems Integration &amp; Methodology Critique**"
+- "How does your design contribute to a *community-wide* fire resilience system?"
+- "What is the most likely way your recommended design could fail in a real wildfire (failure mode analysis)?"
+- "The cost data is an *average*. What site-specific factors in Branford could cause the actual cost to be much higher?"
+- "What important long-term factor (e.g., ongoing costs) is not included in this dataset?"
+- "| **Critical Analysis** |"
+- "| :--- |"
+- "| If you were presenting to policymakers, what uncertainties in this data would you highlight? What additional testing would you recommend? |" synthesis:   title: "Synthesis: Preparing the Policy Brief"   prompts:
+- title: "For the Policymakers"
+  content: "Your engineering analysis must now be translated into a clear recommendation. Summarize the following for your report to the Town Council: Recommended Solution, Cost-Benefit Summary, Implementation Timeline, and Risk Assessment."
+- title: "When Engineering Analysis Breaks Down"
+  content: "Imagine the performance data came from tests in a dry, flat forest in California, but Branford's forests are often damp and hilly. How could this difference in conditions cause your design's real-world performance to be much lower than the lab data suggests? How do time pressures sometimes lead engineers to use data that is 'good enough' but not perfectly suited to the local context?"
+</code></pre></div></div>
+
+      </div>
       
       
     </div>
@@ -512,15 +414,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Rb 2 1D Kinematics | Cosmos in the Classroom</title>
+    <title>Rb 2 1d Kinematics | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,346 +34,128 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Enhanced Typography for Flexbooks -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-<!-- Research Brief Styling (when content_type is research_brief) -->
+      <link rel="stylesheet" href="/assets/css/research-brief.css">
 
-<link rel="stylesheet" href="/assets/css/research-brief.css">
-<link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Chart.js for data visualization -->
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Rb 2 1D Kinematics</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Research brief</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 2</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
-
-
-<div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
-    <div id="activity-metadata"
-         data-resource-id="rb-2-1d-kinematics"
-         data-content-type="research_brief"
-         data-course="hphys"
-         data-title="Rb 2 1D Kinematics"
-         data-unit="2"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null"
-         
-         hidden>
-         <!-- Debug output - remove after fixing -->
-         <script>
-         console.log('DEBUG - Page metadata:');
-         console.log('resourceId:', 'rb-2-1d-kinematics');
-         console.log('contentType:', 'research_brief');
-         console.log('submissionEnabled:', '');
-         console.log('submissionFields JSON:', 'null');
-         console.log('overview:', 'null');
-         console.log('investigations:', 'null');
-         console.log('synthesis:', 'null');
-         </script>
-         
-    </div>
-
-    <main class="main-content">
-        
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
-  Research Brief Content Display with Sequential Navigation
-  Renders brief_cycle phases one at a time with Previous/Next navigation
-  Mirrors flexbook-display.html architecture for stepwise progression
--->
-
-<form id="activity-submission-form" class="activity-form">
-  
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Rb 2 1D Kinematics">
-  <input type="hidden" name="ResourceID" value="rb-2-1d-kinematics">
-  <input type="hidden" name="ContentType" value="research_brief">
-  <input type="hidden" name="Course" value="hphys">
-  <input type="hidden" name="Unit" value="2">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="research-brief-content instructional-flow">
-    
-    <!-- Progress indicator -->
-    
-
-    <!-- Brief Cycle Phases (Sequential Display) -->
-    
+<div class="research-brief-container">
+  <div class="research-brief-header">
+    <h1>Rb 2 1d Kinematics</h1>
+    <p class="mb-0">HPHYS Unit 2</p>
   </div>
-
-  <!-- Submission Button (Bottom) -->
   
+  <div class="research-brief-info">
+    <div class="row">
+      <div class="col-md-6">
+        
+        
+      </div>
+      <div class="col-md-6">
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="research-brief-content">
+    <p>title: ‘Research Brief: The Sounding Rocket’ layout: research_brief date: ‘2025-09-28’ course: hphys content_type: research_brief unit: 2
+Unit 2 Phenomenon
+The multi-stage launch and trajectory of a suborbital sounding rocket, designed to carry scientific instruments to the edge of space before falling back to Earth.</p>
 
-</form>
+<p>Part 1: The Forecast
+The Mission Planner’s Challenge: You are a flight dynamics engineer preparing for a launch. Before the rocket leaves the pad, you must forecast its behavior based on its design. This allows you to set expectations and identify what “normal” flight looks like.</p>
 
+<p>Your Task: In your notebook, answer the following questions to create a qualitative model of the rocket’s flight.</p>
 
-<!-- Load ActivityNavigator library FIRST -->
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<p>Sketch a qualitative velocity vs. time graph for the entire mission. The graph should have at least three distinct phases:</p>
 
-<!-- Initialize all activity features after DOM is ready -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize stepwise navigation for research brief phases
-    const navigator = new ActivityNavigator({
-      containerSelector: '.research-brief-phase',
-      progressBarId: 'progress-fill',
-      progressTextId: 'progress-text',
-      prevButtonId: 'prev-item',
-      nextButtonId: 'next-item',
-      itemLabel: 'Phase',
-      scrollToTop: true
-    });
-    
-    // Set timestamps for form submission tracking
-    document.getElementById('start-time').value = new Date().toISOString();
-    document.getElementById('browser-info').value = navigator.userAgent;
-    
-    // Initialize form tracking if available
-    if (window.ActivityCore) {
-      window.ActivityCore.initializeForm('activity-submission-form');
-    }
-  });
+<p>Phase 1: The engine is firing, providing a strong, constant upward acceleration.</p>
 
-  // Update submit time when form is submitted
-  document.getElementById('activity-submission-form').addEventListener('submit', function(e) {
-    document.getElementById('submit-time').value = new Date().toISOString();
-  });
-</script>
+<p>Phase 2: The engine has cut off, and the rocket is coasting upwards against gravity.</p>
 
-            
-        </div>
+<p>Phase 3: The rocket has reached its peak altitude (apogee) and is falling back to Earth.</p>
 
-    </main>
+<p>On your sketch, label the point where the rocket’s acceleration is greatest. Label the point where its velocity is momentarily zero. Label the region where its acceleration is approximately −9.80 m/s 
+2
+ .</p>
 
-    <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
-    
-    
+<p>What is the fundamental physics principle that allows you to analyze the rocket’s flight as a series of distinct stages, each with its own set of rules?</p>
 
+<p>Part 2: The Blueprint
+Modeling the Trajectory: The launch has occurred, and the telemetry data is streaming in. Your team has generated a velocity-time graph of the initial phase of the flight. Your mission is to use this data to develop a quantitative model and predict the rocket’s maximum altitude.</p>
+
+<p>Your Task: In your notebook, use the provided velocity-time graph (or one supplied by your instructor) to complete the following calculations. Show all steps, starting with the base concepts or formulae.</p>
+
+<p>Graphical Analysis (Engine Burn):</p>
+
+<p>From the graph, determine the rocket’s acceleration during the engine burn (Phase 1). (Hint: Find the slope).</p>
+
+<p>From the graph, determine the altitude of the rocket at the moment the engine cuts off. (Hint: Find the area).</p>
+
+<p>Kinematic Calculation (Coasting Phase):</p>
+
+<p>Identify the rocket’s velocity at the exact moment the engine cuts off. This is your initial velocity ( 
+v</p>
+
+<p>i
+​
+ ) for the coasting phase (Phase 2).</p>
+
+<p>Using the appropriate kinematic equation, calculate how much additional altitude the rocket gains as it coasts from engine cutoff to its apogee (the point where<br />
+v</p>
+
+<p>f
+​
+ =0).</p>
+
+<p>Synthesis (Peak Altitude):</p>
+
+<p>Combine your results from steps 1 and 2 to calculate the rocket’s absolute maximum altitude (apogee).</p>
+
+<p>Part 3: The Reflection
+The Mission Debrief: The flight director needs a report that not only presents the results but also explains the physics behind them. They need to understand why this modeling approach is reliable.</p>
+
+<p>Your Task: Write a formal “Mission Debrief” explaining the physics behind your calculations. Your report must:</p>
+
+<p>Begin by clearly stating the calculated acceleration during burn, the altitude at engine cutoff, and the final predicted apogee.</p>
+
+<p>Explain the powerful connection between the graphical model and the mathematical model. How does the slope of the graph physically represent the a in the kinematic equations? How does the area under the graph physically represent the displacement, Δx?</p>
+
+<p>Analyze the flight using the thinking lens of Patterns. Describe the distinct patterns of motion in Phase 1 (engine burn) and Phase 2 (coasting). What is the underlying cause of each pattern?</p>
+
+<p>Conclude by summarizing how these analytical models allow us to move from simply observing motion to precisely predicting it, which is the fundamental skill required for all aerospace exploration.</p>
+
+  </div>
 </div>
-
     
     </div>
     <script type="application/json" id="course-data-">null</script>

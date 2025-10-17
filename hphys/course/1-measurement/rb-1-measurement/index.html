@@ -34,374 +34,248 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Enhanced Typography for Flexbooks -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-<!-- Research Brief Styling (when content_type is research_brief) -->
+      <link rel="stylesheet" href="/assets/css/research-brief.css">
 
-<link rel="stylesheet" href="/assets/css/research-brief.css">
-<link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Chart.js for data visualization -->
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Research Brief 1: Measurement & Mapping</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Research brief</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
-
-
-<div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
-    <div id="activity-metadata"
-         data-resource-id="rb-1-measurement"
-         data-content-type="research_brief"
-         data-course="hphys"
-         data-title="Research Brief 1: Measurement & Mapping"
-         data-unit="1"
-         data-submission-enabled="true"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null"
-         
-         hidden>
-         <!-- Debug output - remove after fixing -->
-         <script>
-         console.log('DEBUG - Page metadata:');
-         console.log('resourceId:', 'rb-1-measurement');
-         console.log('contentType:', 'research_brief');
-         console.log('submissionEnabled:', 'true');
-         console.log('submissionFields JSON:', 'null');
-         console.log('overview:', 'null');
-         console.log('investigations:', 'null');
-         console.log('synthesis:', 'null');
-         </script>
-         
-    </div>
-
-    <main class="main-content">
+<div class="research-brief-container">
+  <div class="research-brief-header">
+    <h1>Research Brief 1: Measurement & Mapping</h1>
+    <p class="mb-0">HPHYS Unit 1</p>
+  </div>
+  
+  <div class="research-brief-info">
+    <div class="row">
+      <div class="col-md-6">
         
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
-  Research Brief Content Display with Sequential Navigation
-  Renders brief_cycle phases one at a time with Previous/Next navigation
-  Mirrors flexbook-display.html architecture for stepwise progression
--->
-
-<form id="activity-submission-form" class="activity-form">
-  
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Research Brief 1: Measurement & Mapping">
-  <input type="hidden" name="ResourceID" value="rb-1-measurement">
-  <input type="hidden" name="ContentType" value="research_brief">
-  <input type="hidden" name="Course" value="hphys">
-  <input type="hidden" name="Unit" value="1">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="research-brief-content instructional-flow">
-    
-    <!-- Progress indicator -->
-    
-
-    <!-- Brief Cycle Phases (Sequential Display) -->
-    
-  </div>
-
-  <!-- Submission Button (Bottom) -->
-  
-  <div class="research-brief-submission">
-    <button type="submit" class="submit-btn" id="submit-brief">
-      Submit Research Brief
-    </button>
+        
+      </div>
+      <div class="col-md-6">
+        
+        <p><strong>Tags:</strong> measurement, mapping, vectors, units, uncertainty</p>
+        
+      </div>
+    </div>
   </div>
   
+  <div class="research-brief-content">
+    <h1 id="unit-1-research-brief-the-forecast">Unit 1 Research Brief: The Forecast</h1>
+<h2 id="speaking-the-same-language">Speaking the Same Language</h2>
 
-</form>
+<p>Before uncovering the great laws of the universe, scientists must agree on a shared, universal language to describe it.</p>
 
+<h3 id="scenario">Scenario</h3>
+<p>Imagine you are an ancient cartographer tasked with creating the first reliable map of a newly discovered area—our classroom. You have only rudimentary tools (string, protractor, stride, measuring stick). Your map must be clear enough for a stranger to navigate and find a hidden object.</p>
 
-<!-- Load ActivityNavigator library FIRST -->
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<h3 id="central-question">Central Question</h3>
+<p><strong>How can you create a reliable map of the classroom using only rudimentary tools, and what rules must you establish to ensure your map is understandable to anyone?</strong></p>
 
-<!-- Initialize all activity features after DOM is ready -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize stepwise navigation for research brief phases
-    const navigator = new ActivityNavigator({
-      containerSelector: '.research-brief-phase',
-      progressBarId: 'progress-fill',
-      progressTextId: 'progress-text',
-      prevButtonId: 'prev-item',
-      nextButtonId: 'next-item',
-      itemLabel: 'Phase',
-      scrollToTop: true
-    });
-    
-    // Set timestamps for form submission tracking
-    document.getElementById('start-time').value = new Date().toISOString();
-    document.getElementById('browser-info').value = navigator.userAgent;
-    
-    // Initialize form tracking if available
-    if (window.ActivityCore) {
-      window.ActivityCore.initializeForm('activity-submission-form');
-    }
-  });
+<hr />
 
-  // Update submit time when form is submitted
-  document.getElementById('activity-submission-form').addEventListener('submit', function(e) {
-    document.getElementById('submit-time').value = new Date().toISOString();
-  });
-</script>
+<h2 id="your-task-the-forecast">Your Task: The Forecast</h2>
 
-            
-        </div>
+<p>This is the first stage of your Research Brief. Your goal is to create a detailed plan (“forecast”) for the challenges you will face and the procedures you will use.</p>
 
-    </main>
+<h3 id="address-the-following-points">Address the following points:</h3>
 
-    <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
-    
-    
-    <!-- Conditionally load activity-specific form modules -->
-    <script>
-        // Module loading logic (executed after activity-core.js loads)
-        document.addEventListener('DOMContentLoaded', function() {
-            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-            const moduleMap = {
-                'problem_set': '/assets/js/activity-modules/ps-form.js',
-                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js'
-            };
-            
-            const modulePath = moduleMap[contentType];
-            if (modulePath) {
-                const script = document.createElement('script');
-                script.src = modulePath + '?v=1760715118';
-                document.body.appendChild(script);
-                console.log('[activity-focused.html] Loaded module:', modulePath);
-            }
-        });
-    </script>
-    
+<h4 id="your-toolkit">Your Toolkit</h4>
+<ul>
+  <li>What specific, rudimentary tools will you use? Why did you choose them?</li>
+</ul>
 
+<h4 id="your-procedure">Your Procedure</h4>
+<ul>
+  <li>Describe the step-by-step process you will follow. Where will you start?</li>
+  <li>What key features of the room will you measure?</li>
+  <li>How will you measure both distances and angles?</li>
+</ul>
+
+<h4 id="the-rules-of-the-map">The Rules of the Map</h4>
+<ul>
+  <li><strong>Scale:</strong> How will you represent a large distance in the room on a small piece of paper? (e.g., “1 of my steps = 1 cm on the map”)</li>
+  <li><strong>Origin &amp; Direction:</strong> Where is your starting point (0,0)? How will you indicate direction (North, South, East, West)?</li>
+  <li><strong>Key/Legend:</strong> What symbols will you use for important objects (desks, doors, windows)?</li>
+</ul>
+
+<h4 id="anticipating-uncertainty">Anticipating Uncertainty</h4>
+<ul>
+  <li>What are the biggest potential sources of error or uncertainty in your measurements?</li>
+  <li>How will you try to minimize them?</li>
+</ul>
+
+<h4 id="thinking-lens-scale-proportion-and-quantity">Thinking Lens: Scale, Proportion, and Quantity</h4>
+<ul>
+  <li>How does this challenge force you to think about the relationship between a small-scale measurement (like the length of a desk) and a larger-scale representation (your map)?</li>
+  <li>Why is establishing a clear proportion (your scale) the most critical step in making a map that is scientifically honest?</li>
+</ul>
+
+<hr />
+
+<h1 id="unit-1-research-brief-the-blueprint">Unit 1 Research Brief: The Blueprint</h1>
+<h2 id="speaking-the-same-language-1">Speaking the Same Language</h2>
+
+<h3 id="objective">Objective</h3>
+<p>Refine your initial plan for mapping the classroom by incorporating vectors.</p>
+
+<h3 id="from-forecast-to-blueprint">From Forecast to Blueprint</h3>
+<p>In the “Forecast” stage, you planned how to map the classroom. Now, use vectors—quantities with both magnitude and direction—to create a more precise plan.</p>
+
+<hr />
+
+<h2 id="your-task-create-a-vector-based-measurement-plan">Your Task: Create a Vector-Based Measurement Plan</h2>
+
+<p>Your goal: Write a plan so clear and detailed that another group could follow it exactly and produce a nearly identical map.</p>
+
+<h3 id="blueprint-template">Blueprint Template</h3>
+
+<p><strong>1. The Refined Research Question:</strong><br />
+How can we use displacement vectors to determine the precise location of key objects in our classroom relative to a single, chosen origin?</p>
+
+<p><strong>2. The Coordinate System:</strong></p>
+<ul>
+  <li><strong>Origin:</strong> Where will the (0,0) point of your map be? (e.g., “The front-left corner of the teacher’s desk”). Why did you choose this point?</li>
+  <li><strong>Axes:</strong> Which way is the positive x-direction (East)? Which way is the positive y-direction (North)? Include a simple sketch.</li>
+</ul>
+
+<p><strong>3. The Measurement Procedure:</strong></p>
+<ul>
+  <li><strong>Key Objects:</strong> List at least five key objects in the classroom you will map.</li>
+  <li><strong>Magnitude (Distance):</strong> What tool will you use to measure the straight-line distance from your origin to each object? How will you ensure this measurement is as accurate as possible?</li>
+  <li><strong>Direction (Angle):</strong> What tool will you use to measure the angle of each object’s displacement vector relative to your positive x-axis? How will you ensure this measurement is precise?</li>
+</ul>
+
+<p><strong>4. The Data Collection Plan:</strong><br />
+Create a data table to record your measurements:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Object Name</th>
+      <th>Distance (m)</th>
+      <th>Angle (°)</th>
+      <th>x-component (m)</th>
+      <th>y-component (m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="connecting-to-our-scientific-practices">Connecting to Our Scientific Practices</h2>
+
+<ul>
+  <li>
+    <p><strong>Science and Engineering Practice – Developing and Using Models:</strong><br />
+How does creating a vector map help us model the spatial relationships in our classroom more accurately than a simple sketch?</p>
+  </li>
+  <li>
+    <p><strong>Cross-Cutting Concept – Scale, Proportion, and Quantity:</strong><br />
+How does using vectors help us understand the proportional relationships between object positions and maintain scale accuracy in our map?</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="the-ultimate-test-mars-rover-landing">The Ultimate Test: Mars Rover Landing</h2>
+
+<p>Landing a robotic rover on Mars is a challenge of incredible complexity, but at its heart, it is a problem of speaking the same language.</p>
+
+<h3 id="a-cautionary-tale">A Cautionary Tale</h3>
+<p>In 1999, NASA’s Mars Climate Orbiter was lost because one engineering team used imperial units (pounds of force) while the spacecraft’s software expected metric units (Newtons). This small discrepancy compounded over time, causing the orbiter to enter the Martian atmosphere at the wrong angle and be lost forever. This real-world example shows that for science and engineering, a shared language is essential.</p>
+
+<h3 id="the-language-of-success">The Language of Success</h3>
+<p>For successful rover landings, every measurement had to be perfect. Teams on Earth and the probe millions of miles away had to use the exact same, unambiguous physical language. This included units, velocity, atmospheric density, gravitational pull, timing, and more. Honesty about uncertainty was also critical—calculating margins of error and planning for worst-case scenarios.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>The ability to explore other worlds, build global networks, and advance knowledge rests on the foundation of agreeing to speak the same language. The rovers on Mars are monuments to this principle.</p>
+
+<hr />
+
+<h2 id="checks-for-understanding">Checks for Understanding</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student Prompt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>The text describes the loss of the Mars Climate Orbiter as a “translation error.” What was being “translated” incorrectly, and what were the consequences?</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Why is an “unambiguous physical language” so critical for a complex mission like landing a rover on Mars? Besides units, what other elements might be part of this shared scientific language?</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>How does this story of landing on Mars serve as a final, powerful example for the importance of the concepts you’ve learned in this chapter about measurement and units?</td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
 </div>
-
     
     </div>
     <script type="application/json" id="course-data-">null</script>

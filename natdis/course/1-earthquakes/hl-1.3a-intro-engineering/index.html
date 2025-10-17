@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Pre-Lab: Engineering for Earthquakes - Your Mission Begins</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-1.3a-intro-engineering"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
          data-title="Pre-Lab: Engineering for Earthquakes - Your Mission Begins"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-1.3a-intro-engineering","contentType":"hexagon_lab","course":"natdis","unit":"1-earthquakes","title":"Pre-Lab: Engineering for Earthquakes - Your Mission Begins"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"natdis","unit":"1-earthquakes","title":"Pre-Lab: Engineering for Earthquakes - Your Mission Begins"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,236 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <h1 id="pre-lab-engineering-for-earthquakes---your-mission-begins">Pre-Lab: Engineering for Earthquakes - Your Mission Begins</h1>
+
+<p><strong>The Challenge Ahead:</strong> You’ve witnessed the raw power of earthquakes—seismic waves that can topple cities and reshape landscapes. The ground beneath our feet, which seems so solid and dependable, can suddenly become our greatest threat. But what if we could fight back? What if we could use scientific understanding to design structures that stand firm when the Earth itself betrays us?</p>
+
+<p>This is the daily challenge faced by structural engineers. Today, you’ll learn how they transform scientific knowledge into protective solutions, preparing you for your own engineering mission ahead.</p>
+
+<hr />
+
+<h2 id="part-1-the-problem-solvers---who-are-engineers">Part 1: The Problem Solvers - Who Are Engineers?</h2>
+
+<p>When disaster strikes, scientists rush to understand what happened. But engineers? Engineers are already thinking about what happens next. How do we rebuild better? How do we protect the communities that depend on us?</p>
+
+<p>An <strong>engineer</strong> is a professional problem-solver who bridges the gap between scientific discovery and human need. They take the elegant equations of physics and transform them into concrete solutions—literally, in many cases. While there are engineers who design everything from computer chips to space rockets, a <strong>structural engineer</strong> specializes in one of humanity’s most fundamental challenges: creating buildings and bridges that can safely resist powerful forces.</p>
+
+<p>For a structural engineer working in earthquake country, every design decision carries profound weight. Their calculations don’t just determine whether a building stands or falls—they determine whether families make it home safely each night.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Check for Understanding: <em>What’s the difference between what a scientist and an engineer do when studying earthquakes? How do their goals differ?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Think of it this way: if an earthquake scientist is like a detective investigating a crime scene, then a structural engineer is like a security expert designing better locks and alarm systems. Both use rigorous analysis, but one seeks to understand what happened while the other works to prevent it from happening again.</p>
+
+<p><strong>The Engineer’s Primary Mission:</strong> Above all else, the safety of people inside structures is paramount. This isn’t just professional obligation—it’s moral responsibility. Every beam specified, every connection detailed, every safety factor calculated becomes part of an invisible web of protection wrapped around human lives.</p>
+
+<hr />
+
+<h2 id="part-2-the-engineers-playbook---the-design-process">Part 2: The Engineer’s Playbook - The Design Process</h2>
+
+<p>Engineers don’t simply guess at solutions or rely on inspiration. They follow a systematic, time-tested approach called the <strong>Engineering Design Process</strong>—a methodical cycle that transforms vague problems into concrete solutions through iteration and refinement.</p>
+
+<p>Here’s how the process unfolds:</p>
+
+<h3 id="ask-define-the-challenge">ASK: Define the Challenge</h3>
+<ul>
+  <li>What problem needs solving? (The “what”)</li>
+  <li>What must a successful solution accomplish? (The criteria)</li>
+  <li>What limitations constrain our options? (The constraints)</li>
+</ul>
+
+<p>Constraints might include available materials, budget limits, time deadlines, or physical laws that cannot be bent.</p>
+
+<h3 id="imagine-unleash-creativity">IMAGINE: Unleash Creativity</h3>
+<p>This is the brainstorming phase where wild ideas are welcome. Engineers sketch freely, think laterally, and explore possibilities without immediately judging feasibility. The goal isn’t perfection—it’s possibility.</p>
+
+<h3 id="plan-choose-and-refine">PLAN: Choose and Refine</h3>
+<p>From the storm of ideas, engineers select the most promising concept and develop it systematically. Detailed drawings emerge, materials are specified, and dimensions are calculated. This blueprint becomes the roadmap for building.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Check for Understanding: <em>Why do you think engineers brainstorm many ideas before choosing one to develop? What might happen if they just went with their first thought?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="create-build-the-prototype">CREATE: Build the Prototype</h3>
+<p>Engineers construct a working model—a prototype—based on their detailed plans. This might be a scale model, a computer simulation, or even a full-sized test version, depending on the project.</p>
+
+<h3 id="test-evaluate-performance">TEST: Evaluate Performance</h3>
+<p>Here’s where theory meets reality. How well does the prototype perform under stress? Where does it succeed? Where does it fail? Engineers collect data methodically, measuring performance against their original criteria.</p>
+
+<h3 id="improve-learn-and-iterate">IMPROVE: Learn and Iterate</h3>
+<p>Based on test results, engineers identify weaknesses and redesign for better performance. This step often leads directly back to the beginning of the cycle—new insights spark new questions, which trigger new rounds of imagination and planning.</p>
+
+<p>The beauty of this process lies not in achieving perfection on the first try, but in systematic improvement through each cycle.</p>
+
+<hr />
+
+<h2 id="part-3-engineering-in-action---earthquake-resistant-design">Part 3: Engineering in Action - Earthquake-Resistant Design</h2>
+
+<p>How do engineers apply this systematic process to the chaotic challenge of earthquake forces? Through decades of testing, failure analysis, and innovation, they’ve developed several key strategies:</p>
+
+<h3 id="cross-bracing-the-power-of-triangles">Cross-Bracing: The Power of Triangles</h3>
+<p>Picture a simple building frame made of rectangles—walls and floors forming right angles. Now imagine lateral forces pushing sideways. Rectangles deform easily under this stress, collapsing into parallelograms.</p>
+
+<p>But add a diagonal brace across that rectangle, and suddenly you have two triangles. Triangles are nature’s strongest geometric shapes—they resist deformation with remarkable efficiency. This technique, called <strong>cross-bracing</strong>, transforms flexible frames into rigid, earthquake-resistant structures.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Check for Understanding: <em>Try this quick experiment: Make a rectangle with your thumbs and index fingers. Now push on one corner. Easy to deform, right? Now imagine a diagonal line connecting two opposite corners. How would that change the rectangle’s resistance to deformation?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="base-isolation-decoupling-from-disaster">Base Isolation: Decoupling from Disaster</h3>
+<p>Perhaps the most counterintuitive solution is <strong>base isolation</strong>—instead of fighting the earthquake, engineers surrender to it strategically. The building sits atop specially engineered bearings made of alternating layers of steel and rubber, or sophisticated mechanical systems that act like massive shock absorbers.</p>
+
+<p>When the ground convulses violently, these isolators absorb and dissipate the energy. The foundation moves with the earthquake, but the building above remains surprisingly calm—like a passenger in a luxury car gliding smoothly over rough terrain.</p>
+
+<h3 id="tuned-mass-dampers-fighting-motion-with-motion">Tuned Mass Dampers: Fighting Motion with Motion</h3>
+<p>In the world’s tallest skyscrapers, engineers sometimes install enormous pendulums near the top floors. These <strong>tuned mass dampers</strong> are precisely calibrated to swing in perfect opposition to the building’s natural sway during an earthquake.</p>
+
+<p>As seismic forces try to whip the tower back and forth, the massive pendulum swings in the opposite direction, counteracting the motion and keeping the building stable. It’s like a tightrope walker using a balance pole—controlled motion prevents uncontrolled collapse.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Check for Understanding: <em>Which of these three engineering solutions seems most surprising to you? Why do you think engineers would choose a strategy that seems to “work with” the earthquake rather than simply “resist” it?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="part-4-your-mission-should-you-choose-to-accept-it">Part 4: Your Mission, Should You Choose to Accept It</h2>
+
+<p>You are now about to join a team of structural engineers tasked with a critical challenge. Your city has experienced a wake-up call—a moderate earthquake that revealed vulnerabilities in existing buildings. The city council has commissioned your firm to design a new multi-story building that can serve as a model of earthquake-resistant construction.</p>
+
+<h3 id="the-problem-statement">The Problem Statement</h3>
+<p>Design and construct a scale model of a multi-story building that demonstrates earthquake-resistant engineering principles and can survive simulated seismic testing.</p>
+
+<h3 id="success-criteria-what-your-design-must-do">Success Criteria (What Your Design Must Do)</h3>
+<ul>
+  <li>Stand at least 30 cm tall when completed</li>
+  <li>Include a minimum of three distinct floors</li>
+  <li>Remain structurally intact during a 15-second earthquake simulation</li>
+  <li>Demonstrate at least one earthquake-resistant design principle</li>
+</ul>
+
+<h3 id="design-constraints-your-limitations">Design Constraints (Your Limitations)</h3>
+<ul>
+  <li>Materials limited to: wooden toothpicks and miniature marshmallows</li>
+  <li>Build time limited to available class period</li>
+  <li>Budget constraint: maximum of 50 toothpicks and 30 marshmallows</li>
+  <li>Must be freestanding (no external supports or guy-wires)</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Design Challenge Preparation: <em>Before you start building, which of the engineering principles you learned about today could you incorporate into a toothpick-and-marshmallow structure? Consider the materials’ properties and the scale of your model.</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="your-task-for-today-begin-the-design-process">Your Task for Today: Begin the Design Process</h3>
+
+<p>Working with your engineering team, start the IMAGINE and PLAN phases. In your engineering notebook, develop at least two different design concepts for your earthquake-resistant building. Consider:</p>
+
+<ul>
+  <li>How will you create a stable base?</li>
+  <li>Where will you add triangular bracing for strength?</li>
+  <li>How will you distribute weight across multiple floors?</li>
+  <li>What can you learn from the engineering principles discussed today?</li>
+</ul>
+
+<p><strong>Design Sketch 1:</strong>
+<em>[Space for detailed sketch with labeled components]</em></p>
+
+<p><strong>Design Rationale:</strong> Why did you choose this approach? What engineering principles does it incorporate?</p>
+
+<p><strong>Design Sketch 2:</strong>
+<em>[Space for detailed sketch with labeled components]</em></p>
+
+<p><strong>Design Rationale:</strong> How does this design differ from your first concept? What are its potential advantages?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Design Reflection: <em>Compare your two design concepts. Which do you predict will perform better in earthquake testing? What specific features make you confident in your choice? What concerns do you have about potential weak points?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="preparing-for-construction">Preparing for Construction</h3>
+
+<p>In your next lab session, you’ll CREATE and TEST your chosen design. But engineering success starts with thoughtful planning. Review your sketches, discuss them with your team, and come prepared to build with confidence.</p>
+
+<p>Remember: the goal isn’t just to build something that stands up—it’s to build something that stands up when the ground beneath it is shaking violently. That requires not just creativity, but systematic application of engineering principles you’ve studied today.</p>
+
+<p>The citizens of your earthquake-prone community are counting on your team’s expertise. How will you rise to meet their trust?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Final Preparation Check: <em>What questions do you still have about earthquake engineering that you’d like to explore during the building and testing phase? What aspects of the design process are you most excited to experience firsthand?</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p><strong>Next Session Preview:</strong> Armed with your design plans and understanding of engineering principles, you’ll construct your prototype and subject it to rigorous earthquake simulation. Will your calculations prove correct? Will your design principles hold up under stress? The shake table will reveal the truth—and provide valuable data for the next iteration of your design.</p>
+
+<p>Welcome to the world of earthquake engineering, where scientific understanding meets human ingenuity in service of community safety.</p>
+
+      </div>
       
       
     </div>
@@ -512,15 +581,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

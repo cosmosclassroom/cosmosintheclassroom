@@ -1,1 +1,714 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab: Deriving Kepler’s Laws | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+  </head>
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
+      </div>
+    </header>
+    
+  <div class="markdown-body">
+    
+      <!-- Activity Submission System CSS -->
+<link rel="stylesheet" href="/assets/css/activity-submission.css">
+<link rel="stylesheet" href="/assets/css/submission-bar.css">
+
+<style>
+/* Tighten up activity page spacing */
+.activity-page {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.activity-header {
+    margin-top: 1rem;
+    padding-top: 0;
+}
+
+.activity-header h1 {
+    margin-top: 0;
+}
+</style>
+
+<!-- Chart.js Library (Conditional Loading) -->
+
+
+<!-- Backend Configuration -->
+<script>
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+</script>
+
+<div class="activity-page">
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="hexagon_lab"
+         data-course="sphys"
+         data-title="Hexagon Lab: Deriving Kepler’s Laws"
+         data-unit="4"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null"
+         hidden></div>
+
+    <main class="main-content">
+        
+        <!-- Activity Header -->
+        <div class="activity-header">
+            <h1>Hexagon Lab: Deriving Kepler’s Laws</h1>
+            <div class="activity-meta">
+                <span class="activity-course">SPHYS</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-type">Hexagon lab</span>
+                <span class="activity-separator">|</span>
+                <span class="activity-unit">Unit 4</span>
+            </div>
+        </div>
+
+        <!-- Activity-Specific Content Display -->
+        <div class="activity-content-wrapper">
+            
+                <!-- 
+  Hexagon Lab Content Display with Sequential Navigation
+  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
+-->
+
+<div class="hexagon-lab-content">
+    <!-- Student name is now handled by the localStorage permanent name capture feature -->
+  
+    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
+    <div class="lab-progress" id="lab-progress" style="display: none;">
+      <div class="lab-progress-bar">
+        <div class="lab-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1</div>
+    </div>
+
+    <!-- Navigation Buttons (moved to top) -->
+    <div class="lab-navigation" id="lab-navigation" style="display: none;">
+      <button type="button" class="lab-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="lab-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+
+    <!-- Lab Content (rendered from YAML structure) -->
+    <div id="lab-sections-container">
+      
+      
+      <!-- Overview Section -->
+      <div class="nav-item-container lab-section active" data-item-index="0" data-section-title="Overview">
+        <h2>Overview</h2>
+        
+        
+        <div class="lab-abstract">
+          <h3>Abstract</h3>
+          <p>In this investigation, you will follow in the footsteps of the great astronomer Johannes Kepler. By analyzing a dataset containing the orbital periods and distances for various planets, you will manipulate the data and create a graph to discover the fundamental mathematical relationship that governs all orbits—Kepler’s Third Law.</p>
+
+        </div>
+        
+        
+        
+        <div class="lab-introduction">
+          <h3>Introduction</h3>
+          <p>Before Newton, Johannes Kepler spent decades analyzing the meticulous astronomical observations of his predecessor, Tycho Brahe. He was searching for a hidden pattern in the seemingly complex motions of the planets. He believed the cosmos was governed by an underlying mathematical harmony. He was right. Your task is to use a modern dataset to recreate his most profound discovery, revealing the simple, elegant rule that keeps our solar system in order.</p>
+
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Investigation Sections -->
+      
+      <div class="nav-item-container lab-section" data-item-index="1" data-section-title="Investigation ">
+        <h2>Investigation : Investigation: Finding the Harmony of the Worlds</h2>
+        
+        
+        <div class="investigation-description">
+          <p>The data table below lists the average orbital radius (R) in Astronomical Units (AU) and the orbital period (T) in Earth years for the planets in our solar system, plus two fictional exoplanets. Your goal is to process this data to find the hidden relationship. [Image of the solar system orbits]</p>
+
+        </div>
+        
+        
+        
+        
+        <!-- Render Dataset (Chart.js visualization) -->
+        
+        
+        <!-- Render Table Data -->
+        
+        <div class="investigation-table">
+          <table>
+            <thead>
+              <tr>
+                
+                <th>Object Name</th>
+                
+                <th>Orbital Radius (R) in AU</th>
+                
+                <th>Orbital Period (T) in years</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              
+              <tr>
+                
+                <td>Mercury
+</td>
+                
+                <td>0.39
+</td>
+                
+                <td>0.24
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Venus
+</td>
+                
+                <td>0.72
+</td>
+                
+                <td>0.62
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Earth
+</td>
+                
+                <td>1.00
+</td>
+                
+                <td>1.00
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Mars
+</td>
+                
+                <td>1.52
+</td>
+                
+                <td>1.88
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Exoplanet A
+</td>
+                
+                <td>2.00
+</td>
+                
+                <td>2.83
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Jupiter
+</td>
+                
+                <td>5.20
+</td>
+                
+                <td>11.86
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Saturn
+</td>
+                
+                <td>9.58
+</td>
+                
+                <td>29.46
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Uranus
+</td>
+                
+                <td>19.22
+</td>
+                
+                <td>84.01
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Neptune
+</td>
+                
+                <td>30.05
+</td>
+                
+                <td>164.8
+</td>
+                
+              </tr>
+              
+              <tr>
+                
+                <td>Exoplanet B
+</td>
+                
+                <td>0.50
+</td>
+                
+                <td>0.35
+</td>
+                
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        
+        
+        <!-- Analysis Questions -->
+        
+        <div class="analysis-questions">
+          <h3>Analysis Questions</h3>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      <!-- Synthesis Section (Claim-Evidence-Reasoning) -->
+      <div class="nav-item-container lab-section" data-item-index="2" data-section-title="Synthesis">
+        <h2>Synthesis: Claim-Evidence-Reasoning</h2>
+        
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-claim" class="cer-label">
+            <h3>Claim</h3>
+            <p><strong>Claim:</strong> Write a single sentence that describes the relationship you discovered (this is Kepler’s Third Law).</p>
+
+          </label>
+          <textarea 
+            id="cer-claim" 
+            name="synthesis_claim"
+            rows="3"
+            placeholder="Write your claim here..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-evidence" class="cer-label">
+            <h3>Evidence</h3>
+            <p><strong>Evidence:</strong> Provide at least two specific pieces of evidence from your investigation to support your claim.</p>
+
+<ul>
+  <li>“My graph of T² versus R³ produced a nearly perfect straight line passing through the origin, which is the graphical representation of a direct proportionality.”</li>
+  <li>“My calculation of the ratio T²/R³ was approximately equal to 1.0 for every object in the solar system, from Mercury (ratio ≈ 0.97) to Neptune (ratio ≈ 1.00), indicating that these two quantities are proportional.”</li>
+</ul>
+
+          </label>
+          <textarea 
+            id="cer-evidence" 
+            name="synthesis_evidence"
+            rows="6"
+            placeholder="List your evidence here (use bullet points)..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-reasoning" class="cer-label">
+            <h3>Reasoning</h3>
+            <p><strong>Reasoning:</strong> In a paragraph, explain how your evidence proves the relationship you claimed. Use the Crosscutting Concept of <strong>Patterns</strong>. Explain why finding a consistent mathematical rule that applies to all planets (and even fictional ones) is such a powerful idea in science. How does this pattern allow astronomers to predict the properties of orbits they have not yet observed?</p>
+
+          </label>
+          <textarea 
+            id="cer-reasoning" 
+            name="synthesis_reasoning"
+            rows="8"
+            placeholder="Explain your reasoning in a paragraph..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Connection to Unit Phenomenon -->
+      <div class="nav-item-container lab-section" data-item-index="3" data-section-title="Connection">
+        <h2>Connection to Unit Phenomenon</h2>
+        <p>The Chelyabinsk meteor, like every other object orbiting the sun, obeyed Kepler’s Laws for its entire existence. Its orbit was a predictable, elliptical path defined by the same mathematical rules you have just derived. Astronomers use these very laws to model the paths of all known Near-Earth Objects. By calculating an object’s orbit, they can predict its position years or even decades into the future to determine if its predictable path will ever intersect with Earth’s. This lab reveals the underlying order that makes such predictions possible, turning the chaos of the cosmos into a system of understandable clockwork.</p>
+
+      </div>
+      
+      
+      
+      
+      
+    </div>
+
+    <!-- Navigation Buttons moved to the top -->
+
+  </div> <!-- Close #lab-sections-container -->
+
+  <!-- Submission Section - using common pattern from activity-forms.js -->
+  <div class="submission-section-wrapper" id="submission-wrapper">
+    <!-- Student name is now handled by the sticky header -->
+    
+    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
+    <div id="activity-specific-fields"></div>
+
+    <!-- Submit Button -->
+    <div class="lab-form-actions">
+      <button type="submit" id="submit-button" class="lab-submit-button">
+        Submit Lab Report
+      </button>
+      <p class="lab-help-text">
+        Your answers are auto-saved as you work. Click above when you're ready to submit.
+      </p>
+    </div>
+    
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+<<<<<<< HEAD
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+=======
+<!-- Scripts are now loaded in the layout file -->
+>>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
+<script>
+/**
+ * Hexagon Lab Section Navigator
+ * YAML-first: Sections already structured by Liquid, just initialize navigation
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
+    
+    // Check if activity-core is initialized
+    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
+        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
+    } else {
+        const metadata = window.ACTIVITY_CORE.getMetadata();
+        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
+    }
+    
+    const container = document.getElementById('lab-sections-container');
+    
+    if (!container) {
+        console.warn('[hexagon-lab] Lab sections container not found');
+        return;
+    }
+    
+    // Count pre-structured sections
+    const sections = container.querySelectorAll('.nav-item-container');
+    
+    if (sections.length <= 1) {
+        // Single section or no sections - show everything, no navigation needed
+        console.log('[hexagon-lab] Single section mode - no navigation needed');
+        if (sections.length === 1) {
+            sections[0].classList.add('active');
+        }
+        return;
+    }
+    
+    console.log('[hexagon-lab] Found', sections.length, 'sections');
+    
+    // Show progress and navigation UI
+    document.getElementById('lab-progress').style.display = 'block';
+    document.getElementById('lab-navigation').style.display = 'flex';
+    
+    // Manual activation of first section and setup section visibility
+    if (sections.length > 0) {
+        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
+        
+        // Hide all sections first
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        });
+        
+        // Show only the first section
+        sections[0].style.display = 'block';
+        sections[0].classList.add('active');
+        
+        // Ensure all sections have proper display style
+        // This ensures that when we toggle the 'active' class, display changes work correctly
+        sections.forEach(section => {
+            // Enforce display:block when active, display:none when inactive
+            if (!section.style.display || section.style.display === '') {
+                section.style.display = 'none';
+            }
+        });
+    }
+    
+    // Debug elements
+    console.log('[hexagon-lab] Debug:');
+    console.log('- nav sections:', sections.length);
+    console.log('- section 0:', sections[0]);
+    console.log('- prev button:', document.getElementById('prev-item'));
+    console.log('- next button:', document.getElementById('next-item'));
+    console.log('- progress fill:', document.getElementById('progress-fill'));
+    console.log('- progress text:', document.getElementById('progress-text'));
+    
+    // Initialize navigator
+    // We'll use our own simple navigation implementation that's guaranteed to work
+    console.log('[hexagon-lab] Setting up lab navigation system');
+    
+    // Initialize navigation state
+    let currentIndex = 0;
+    const totalSections = sections.length;
+    
+    // Core navigation function
+    function showLabSection(index) {
+        console.log('[hexagon-lab] Navigating to section', index);
+        
+        // Validate index
+        if (index < 0 || index >= totalSections) {
+            console.warn('[hexagon-lab] Invalid section index:', index);
+            return;
+        }
+        
+        // Hide all sections
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        });
+        
+        // Show only the requested section
+        sections[index].style.display = 'block';
+        sections[index].classList.add('active');
+        
+        // Update state
+        currentIndex = index;
+        
+        // Update button states
+        document.getElementById('prev-item').disabled = (index === 0);
+        document.getElementById('next-item').disabled = (index === totalSections - 1);
+        
+        // Update progress bar
+        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
+        document.getElementById('progress-fill').style.width = progressPercent + '%';
+        
+        // Update progress text
+        const sectionTitle = sections[index].getAttribute('data-section-title') || 
+                             ('Section ' + (index + 1));
+        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log('[hexagon-lab] Section displayed:', sectionTitle);
+    }
+    
+    // Wire up navigation buttons
+    document.getElementById('prev-item').addEventListener('click', function() {
+        showLabSection(currentIndex - 1);
+    });
+    
+    document.getElementById('next-item').addEventListener('click', function() {
+        showLabSection(currentIndex + 1);
+    });
+    
+    // Initialize with first section
+    showLabSection(0);
+});
+</script>
+
+            
+        </div>
+
+    </main>
+
+    <!-- External JavaScript -->
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    
+    
+    <!-- Conditionally load activity-specific form modules -->
+    <script>
+        // Module loading logic (executed after activity-core.js loads)
+        document.addEventListener('DOMContentLoaded', function() {
+            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+            const moduleMap = {
+                'problem_set': '/assets/js/activity-modules/ps-form.js',
+                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
+                'research_brief': '/assets/js/activity-modules/rb-form.js',
+                'flexbook': '/assets/js/activity-modules/fb-form.js'
+            };
+            
+            if (moduleMap[contentType]) {
+                const script = document.createElement('script');
+                script.src = moduleMap[contentType] + '?v=1760715382';
+                script.onerror = function() {
+                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
+                };
+                document.body.appendChild(script);
+            } else {
+                console.warn('[activity.html] No submission module found for content_type:', contentType);
+            }
+        });
+    </script>
+    
+</div> <!-- .activity-page -->
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

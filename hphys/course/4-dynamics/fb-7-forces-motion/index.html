@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -68,194 +95,6 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Chapter 7: Newton's Laws of Motion</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Flexbook</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 4</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 
 <div class="activity-content-container">
@@ -299,17 +138,7 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Chapter 7: Newton's Laws of Motion">
-  <input type="hidden" name="ResourceID" value="fb-7-newtons-laws">
-  <input type="hidden" name="ContentType" value="flexbook">
-  <input type="hidden" name="Course" value="hphys">
-  <input type="hidden" name="Unit" value="4">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="flexbook-content instructional-flow">
+  <div class="flexbook-content">
     
     <!-- Progress indicator -->
     
@@ -318,16 +147,6 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 10</div>
-    </div>
-    
-    <!-- Navigation Buttons (Moved to top for better UX) -->
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
     </div>
     
 
@@ -342,18 +161,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Introduction: The Engineer's Enigma</h2>
+          <h2 class="flexbook-item-title">Introduction: The Engineer's Enigma</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p><strong>The Central Question:</strong> How can we use the concept of Force to explain the causes of changes in motion, as governed by Newton’s Laws?</p>
+            <div class="flexbook-reading">
+              <p><strong>The Central Question:</strong> How can we use the concept of Force to explain the causes of changes in motion, as governed by Newton’s Laws?</p>
 
 <p>For centuries, we described motion—the <em>how</em>. We could predict the path of a cannonball or the speed of a falling apple. But the deeper question—the <em>why</em>—remained a mystery. Why do objects start moving? Why do they speed up, slow down, or change direction? The answer required a new way of thinking, a shift from merely observing motion to understanding its fundamental causes. That cause is <strong>force</strong>. This chapter introduces the three simple, elegant laws discovered by Isaac Newton that form the bedrock of dynamics, the study of why things move.</p>
 
-              </div>
             </div>
           
           
@@ -368,21 +185,19 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Phenomenon: Constructing the Pyramids</h2>
+          <h2 class="flexbook-item-title">Phenomenon: Constructing the Pyramids</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>[Image of the Great Pyramids of Giza]
+            <div class="flexbook-reading">
+              <p>[Image of the Great Pyramids of Giza]
 The Great Pyramid of Giza is one of humanity’s most breathtaking engineering achievements. Built over 4,500 years ago, it consists of an estimated 2.3 million stone blocks, each weighing an average of 2.5 tons—the weight of a large pickup truck. These colossal blocks were quarried and then transported, lifted, and placed with astonishing precision.</p>
 
 <p>This was accomplished without modern machinery. The ancient Egyptians relied on immense human effort and an intuitive, masterful understanding of forces. They had to overcome the stone’s stubborn refusal to move (inertia), apply enough coordinated push and pull to get it going (net force), and manage the ever-present pull of the Earth (gravity). The construction of the pyramids is a monumental testament to understanding and manipulating forces on a grand scale.</p>
 
 <p><strong>The Question:</strong> What are the fundamental physical rules the Egyptians had to master to move 2.5-ton blocks, and how can we use those same rules to predict motion today?</p>
 
-              </div>
             </div>
           
           
@@ -397,20 +212,18 @@ The Great Pyramid of Giza is one of humanity’s most breathtaking engineering a
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Rule 1: The Law of Inertia</h2>
+          <h2 class="flexbook-item-title">Rule 1: The Law of Inertia</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>The first and most fundamental challenge the Egyptian engineers faced was simply getting a 2.5-ton block to budge. An object at rest, they knew, tends to stay at rest. This property of matter, its resistance to changes in motion, is called <strong>inertia</strong>.</p>
+            <div class="flexbook-reading">
+              <p>The first and most fundamental challenge the Egyptian engineers faced was simply getting a 2.5-ton block to budge. An object at rest, they knew, tends to stay at rest. This property of matter, its resistance to changes in motion, is called <strong>inertia</strong>.</p>
 
 <p>Isaac Newton formalized this as his First Law of Motion: <strong>An object at rest stays at rest and an object in motion stays in motion with the same speed and in the same direction unless acted upon by an unbalanced force.</strong></p>
 
 <p>In a universe without friction, a sliding stone would slide forever. In our world, friction is the unbalanced force that brings it to a stop. To get the block moving, the workers’ pulling force had to be greater than the force of friction.</p>
 
-              </div>
             </div>
           
           
@@ -425,7 +238,7 @@ The Great Pyramid of Giza is one of humanity’s most breathtaking engineering a
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Checkpoint: Inertia</h2>
+          <h2 class="flexbook-item-title">Checkpoint: Inertia</h2>
           
           
           <!-- Content based on type -->
@@ -470,14 +283,13 @@ The Great Pyramid of Giza is one of humanity’s most breathtaking engineering a
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Rule 2: The Law of Acceleration</h2>
+          <h2 class="flexbook-item-title">Rule 2: The Law of Acceleration</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Once the workers overcame friction and got the block moving, their next challenge was to control its acceleration. Newton’s Second Law provides the exact mathematical relationship between the total force on an object (the <strong>net force</strong>, $\Sigma\vec{F}$), its mass ($m$), and the acceleration ($\vec{a}$) it experiences.</p>
+            <div class="flexbook-reading">
+              <p>Once the workers overcame friction and got the block moving, their next challenge was to control its acceleration. Newton’s Second Law provides the exact mathematical relationship between the total force on an object (the <strong>net force</strong>, $\Sigma\vec{F}$), its mass ($m$), and the acceleration ($\vec{a}$) it experiences.</p>
 
 <p><strong>Newton’s Second Law:</strong>
 \(\\Sigma \\vec{F} = m\\vec{a}\)</p>
@@ -489,7 +301,6 @@ The Great Pyramid of Giza is one of humanity’s most breathtaking engineering a
   <li>The acceleration is always in the same direction as the net force.</li>
 </ol>
 
-              </div>
             </div>
           
           
@@ -504,7 +315,7 @@ The Great Pyramid of Giza is one of humanity’s most breathtaking engineering a
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Example: Moving the Block</h2>
+          <h2 class="flexbook-item-title">Example: Moving the Block</h2>
           
           
           <!-- Content based on type -->
@@ -538,21 +349,19 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Rule 3: The Law of Action-Reaction</h2>
+          <h2 class="flexbook-item-title">Rule 3: The Law of Action-Reaction</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                
+            <div class="flexbook-reading">
+              
 <p>There is a subtle but crucial final rule. When the workers pulled on the ropes attached to the stone block, the ropes also pulled back on the workers. When you push on a wall, the wall pushes back on you. Forces always come in pairs.</p>
 
 <p>Newton’s Third Law states: <strong>For every action, there is an equal and opposite reaction.</strong></p>
 
 <p>This means that the force of the workers on the rope is exactly equal in magnitude and opposite in direction to the force of the rope on the workers. This might seem confusing—if the forces are equal and opposite, how does anything move? The key is that the forces in an action-reaction pair act on <em>different objects</em>. The workers’ pull acts on the block; the rope’s pull acts on the workers. To find the block’s acceleration, we only look at the forces acting <em>on the block</em>.</p>
 
-              </div>
             </div>
           
           
@@ -567,14 +376,13 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Physicist's Sketchbook: Free-Body Diagrams</h2>
+          <h2 class="flexbook-item-title">The Physicist's Sketchbook: Free-Body Diagrams</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>To use Newton’s Second Law, we must first correctly identify all the forces acting on an object. The tool we use for this is the <strong>free-body diagram</strong>. It’s a simplified sketch where we represent the object as a dot and draw all the force vectors acting on it.</p>
+            <div class="flexbook-reading">
+              <p>To use Newton’s Second Law, we must first correctly identify all the forces acting on an object. The tool we use for this is the <strong>free-body diagram</strong>. It’s a simplified sketch where we represent the object as a dot and draw all the force vectors acting on it.</p>
 
 <p>[Image of a free-body diagram for a block on a ramp]</p>
 
@@ -588,7 +396,6 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
 
 <p>Mastering free-body diagrams is the single most important skill for solving problems in dynamics.</p>
 
-              </div>
             </div>
           
           
@@ -603,7 +410,7 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Final Checkpoint: Putting it Together</h2>
+          <h2 class="flexbook-item-title">Final Checkpoint: Putting it Together</h2>
           
           
           <!-- Content based on type -->
@@ -648,16 +455,14 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Coming Next</h2>
+          <h2 class="flexbook-item-title">Coming Next</h2>
           
           
           <!-- Content based on type -->
           
             <div class="flexbook-callout callout-info">
-              <div class="content">
-                <p>Now that we have established Newton’s three fundamental laws, the next chapter will apply them to more complex, real-world situations, including friction and forces on inclined planes.</p>
+              <p>Now that we have established Newton’s three fundamental laws, the next chapter will apply them to more complex, real-world situations, including friction and forces on inclined planes.</p>
 
-              </div>
             </div>
           
           
@@ -667,15 +472,63 @@ The net force is the sum of the forces. The workers’ pull is positive, and fri
       
     </div>
     
-    <!-- Navigation buttons have been moved to the top for better UX -->
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
     
     
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 7: Newton's Laws of Motion">
+    <input type="hidden" name="ResourceID" value="fb-7-newtons-laws">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="hphys">
+    <input type="hidden" name="Unit" value="4">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -709,8 +562,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    <script src="/assets/js/sticky-header.js?v=1760715382"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -728,7 +581,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760715118';
+                script.src = modulePath + '?v=1760715382';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }

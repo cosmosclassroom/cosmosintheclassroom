@@ -68,20 +68,12 @@ function loadMetadata() {
         submissionEnabled: metadataDiv.dataset.submissionEnabled === 'true',
         autoSaveEnabled: metadataDiv.dataset.autoSaveEnabled === 'true',
         autoSaveInterval: parseInt(metadataDiv.dataset.autoSaveInterval) || 30000,
-        submissionFields: parseJSON(metadataDiv.dataset.submissionFields),
-        // Add additional metadata fields specifically for research briefs
-        briefCycle: parseJSON(metadataDiv.dataset.briefCycle)
+        submissionFields: parseJSON(metadataDiv.dataset.submissionFields)
     };
     
     ACTIVITY_STATE.submissionEnabled = ACTIVITY_STATE.metadata.submissionEnabled;
     
     console.log('[activity-core] Metadata loaded:', ACTIVITY_STATE.metadata);
-    
-    // Expose metadata getter for modules
-    window.ACTIVITY_CORE = window.ACTIVITY_CORE || {};
-    window.ACTIVITY_CORE.getMetadata = function() {
-        return ACTIVITY_STATE.metadata;
-    };
 }
 
 function parseJSON(jsonString) {
@@ -104,21 +96,10 @@ function parseJSON(jsonString) {
 function initializeForm() {
     // Set start time
     ACTIVITY_STATE.startTime = new Date().toISOString();
-    
-    const startTimeField = document.getElementById('start-time');
-    if (startTimeField) {
-        startTimeField.value = ACTIVITY_STATE.startTime;
-    } else {
-        console.warn('[activity-core] Start time field not found');
-    }
+    document.getElementById('start-time').value = ACTIVITY_STATE.startTime;
     
     // Set browser info
-    const browserInfoField = document.getElementById('browser-info');
-    if (browserInfoField) {
-        browserInfoField.value = navigator.userAgent;
-    } else {
-        console.warn('[activity-core] Browser info field not found');
-    }
+    document.getElementById('browser-info').value = navigator.userAgent;
     
     console.log('[activity-core] Form initialized, start time:', ACTIVITY_STATE.startTime);
 }
@@ -131,9 +112,7 @@ function initializeFormHandlers() {
     const clearButton = document.getElementById('clear-form');
     
     if (!form) {
-        console.warn('[activity-core] Form not found, initializing in research brief mode');
-        // For research briefs, the form might be created later dynamically
-        setTimeout(checkForFormAgain, 1000);
+        console.error('[activity-core] Form not found');
         return;
     }
     
@@ -152,54 +131,23 @@ function initializeFormHandlers() {
     console.log('[activity-core] Form handlers initialized');
 }
 
-// Check again for the form after a delay (for dynamic forms)
-function checkForFormAgain() {
-    const form = document.getElementById('activity-submission-form');
-    if (form) {
-        console.log('[activity-core] Found form after delay, initializing handlers');
-        form.addEventListener('submit', handleSubmit);
-        
-        const clearButton = document.getElementById('clear-form');
-        if (clearButton) {
-            clearButton.addEventListener('click', function() {
-                if (confirm('Are you sure you want to clear all form data? This cannot be undone.')) {
-                    clearForm();
-                }
-            });
-        }
-    } else {
-        console.warn('[activity-core] Form still not found after delay');
-    }
-}
-
 async function handleSubmit(event) {
     event.preventDefault();
     
     console.log('[activity-core] Form submission started');
     
     const form = event.target;
-    
-    // Try to find submit button - could be in old form or sticky header
-    let submitButton = document.getElementById('submit-button');
-    if (!submitButton) {
-        submitButton = document.getElementById('submit-activity-btn');
-    }
-    
+    const submitButton = document.getElementById('submit-button');
     const statusDiv = document.getElementById('submission-status');
     
-    // Only disable and show state if submit button exists
-    if (submitButton) {
-        submitButton.disabled = true;
-        const originalText = submitButton.innerHTML;
-        submitButton.innerHTML = '⏳ Submitting...';
-        submitButton.style.opacity = '0.7';
-    }
+    // Disable submit button and show submitting state
+    submitButton.disabled = true;
+    const originalText = submitButton.innerHTML;
+    submitButton.innerHTML = '⏳ Submitting...';
+    submitButton.style.opacity = '0.7';
     
     // Set submit time
-    const submitTimeField = document.getElementById('submit-time');
-    if (submitTimeField) {
-        submitTimeField.value = new Date().toISOString();
-    }
+    document.getElementById('submit-time').value = new Date().toISOString();
     
     // Create FormData from the form
     const formData = new FormData(form);
@@ -252,11 +200,9 @@ async function handleSubmit(event) {
         showStatus('error', 'Submission failed: ' + error.message);
     } finally {
         // Re-enable submit button and restore text
-        if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.innerHTML = originalText;
-            submitButton.style.opacity = '1';
-        }
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalText;
+        submitButton.style.opacity = '1';
     }
 }
 
@@ -466,38 +412,12 @@ function showAutoSaveIndicator() {
 // UTILITY FUNCTIONS
 // =============================================================================
 
-// Make functions available globally for activity modules and sticky header
+// Make functions available globally for activity modules
 window.ACTIVITY_CORE = {
     getMetadata: () => ACTIVITY_STATE.metadata,
     getStartTime: () => ACTIVITY_STATE.startTime,
     saveFormData: saveFormData,
-    showStatus: showStatus,
-    submitActivity: function(studentName) {
-        // Trigger form submission programmatically
-        const form = document.getElementById('activity-submission-form');
-        if (!form) {
-            console.error('[activity-core] Form not found for submission');
-            return false;
-        }
-        
-        // If student name provided, set it in a hidden field or form element
-        if (studentName) {
-            let nameField = document.getElementById('student-name');
-            if (!nameField) {
-                // Create hidden field if it doesn't exist
-                nameField = document.createElement('input');
-                nameField.type = 'hidden';
-                nameField.id = 'student-name';
-                nameField.name = 'StudentName';
-                form.appendChild(nameField);
-            }
-            nameField.value = studentName;
-        }
-        
-        // Trigger the form's submit event (which calls handleSubmit)
-        form.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
-        return true;
-    }
+    showStatus: showStatus
 };
 
 console.log('[activity-core] Module loaded');

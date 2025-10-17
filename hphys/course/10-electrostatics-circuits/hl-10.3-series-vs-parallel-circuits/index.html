@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -71,199 +98,11 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">HPHYS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Hexagon lab</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 10</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 <div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
-         data-resource-id="hl-10.3-series-vs-parallel-circuits"
+         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="hphys"
          data-title="Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"
@@ -293,7 +132,7 @@
     <input type="hidden" id="start-time" name="StartTime" value="">
     <input type="hidden" id="submit-time" name="SubmitTime" value="">
     <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"hl-10.3-series-vs-parallel-circuits","contentType":"hexagon_lab","course":"hphys","unit":"10","title":"Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"}'>
+    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"hphys","unit":"10","title":"Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits"}'>
 
     <!-- Lab content is rendered from the hexagon-lab-display.html include -->
     <!-- 
@@ -334,6 +173,383 @@
       
       
       
+      
+      <!-- Fallback: Render markdown content if present (backward compatibility) -->
+      <div class="nav-item-container lab-section fallback-content">
+        <h1 id="hexagon-lab-103-hexagon-lab---series-vs-parallel-circuits">Hexagon Lab 10.3: Hexagon Lab - Series vs. Parallel Circuits</h1>
+
+<p>Complete the following investigations in your Science Notebook following the format of a scientific paper.</p>
+
+<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>[Write a 1-2 sentence overview of the scientific question and approach. This should connect to the unit’s anchoring phenomenon.]</p>
+
+<p><strong>Example format:</strong> “This investigation examines [phenomenon/relationship] by analyzing [type of data] to determine [specific question].”</p>
+
+<hr />
+
+<h2 id="introduction">Introduction</h2>
+
+<h3 id="background-and-context">Background and Context</h3>
+
+<p>[Provide historical, scientific, or technological context for the investigation. This should connect to the unit’s anchoring phenomenon and explain why this investigation matters. Include relevant scientific principles that students might discover. Aim for 100-150 words.]</p>
+
+<h3 id="research-question">Research Question</h3>
+
+<p><strong>How does the arrangement of components in a circuit (series vs. parallel) affect the total resistance, the current flow, and the brightness of light bulbs?</strong></p>
+
+<p>[If appropriate, include space for students to develop hypotheses based on their current understanding]</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Initial Prediction: Based on your current understanding, what do you expect to find?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Hypothesis:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="materials">Materials</h3>
+<ul>
+  <li>[Material 1]</li>
+  <li>[Material 2]</li>
+  <li>[Material 3]</li>
+  <li>Calculator</li>
+  <li>Research Log/Science Notebook</li>
+</ul>
+
+<h3 id="dataset">Dataset</h3>
+
+<p>[Provide the dataset in a clear, organized format. Include proper units and significant figures.]</p>
+
+<p><strong>[DATASET_DESCRIPTION]</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>[Column 1 Header]</th>
+      <th>[Column 2 Header]</th>
+      <th>[Column 3 Header]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[Data point 1]</td>
+      <td>[Data point 1]</td>
+      <td>[Data point 1]</td>
+    </tr>
+    <tr>
+      <td>[Data point 2]</td>
+      <td>[Data point 2]</td>
+      <td>[Data point 2]</td>
+    </tr>
+    <tr>
+      <td>[Data point 3]</td>
+      <td>[Data point 3]</td>
+      <td>[Data point 3]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Additional Information:</strong></p>
+<ul>
+  <li>[Any constants, conversion factors, or experimental conditions]</li>
+  <li>[Any assumptions students should make]</li>
+</ul>
+
+<hr />
+
+<h2 id="results">Results</h2>
+
+<h3 id="investigation-1-investigation_focus_1">Investigation 1: [INVESTIGATION_FOCUS_1]</h3>
+
+<p><strong>Variable Interpretation &amp; Calibration</strong></p>
+
+<p>[Brief description of what students should focus on in the data and how to interpret the variables. Include any necessary unit conversions or data manipulations.]</p>
+
+<p><strong>Guiding Questions:</strong></p>
+
+<ol>
+  <li>[Pattern-finding question - e.g., “What pattern do you observe in the relationship between X and Y?”]</li>
+  <li>[Quantitative analysis question - e.g., “Calculate the ratio/slope/rate for each data point.”]</li>
+  <li>[Interpretation question - e.g., “What does this mathematical relationship tell us about the physical process?”]</li>
+</ol>
+
+<p><strong>Data Analysis:</strong></p>
+
+<p>[Provide space or instructions for calculations, graphs, or other analysis]</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Your Analysis:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">[Space for calculations, graphs, or data manipulation]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Summary Statement:</strong></p>
+
+<p><strong>Make a Claim:</strong> What is the relationship between [variable A] and [variable B]? Support your claim using evidence from your data analysis.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Response:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Claim:</strong> [What is the relationship?]</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Evidence:</strong> [What specific data supports this claim?]</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong> [Why does this evidence support your claim? What scientific principles explain this relationship?]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="investigation-2-investigation_focus_2">Investigation 2: [INVESTIGATION_FOCUS_2]</h3>
+
+<p><strong>Variable Interpretation &amp; Calibration</strong></p>
+
+<p>[Brief description of second analytical focus, building on Investigation 1]</p>
+
+<p><strong>Guiding Questions:</strong></p>
+
+<ol>
+  <li>[Analysis question building on previous investigation]</li>
+  <li>[Synthesis question connecting multiple concepts]</li>
+  <li>[Application question extending to new situations]</li>
+</ol>
+
+<p><strong>Data Analysis:</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Your Analysis:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">[Space for additional calculations or analysis]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Summary Statement:</strong></p>
+
+<p><strong>Make a Claim:</strong> [Prompt specific to this investigation’s focus]</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Response:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Claim:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Evidence:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Reasoning:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>[Add Investigation 3, 4, etc. as needed following the same format]</p>
+
+<hr />
+
+<h2 id="discussion">Discussion</h2>
+
+<h3 id="summary-of-findings">Summary of Findings</h3>
+
+<p><strong>Synthesis Question:</strong> How do your findings from the different investigations work together to answer the research question? What is the “big picture” story that emerges from your data analysis?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Synthesis:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">[Space for comprehensive summary]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="connection-to-unit-learning-objectives">Connection to Unit Learning Objectives</h3>
+
+<p>Answer the following questions to connect your findings to the larger unit goals:</p>
+
+<ul>
+  <li>How do your findings help answer the unit’s overarching question: “[Unit overarching question]”?</li>
+  <li>What evidence have you gathered that supports [specific learning objective]?</li>
+  <li>How does this investigation connect to the unit’s anchoring phenomenon: “[anchoring phenomenon]”?</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Connections:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Unit Question:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Learning Objectives:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Anchoring Phenomenon:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="limitations-and-further-investigation">Limitations and Further Investigation</h3>
+
+<p><strong>Critical Thinking:</strong> What are the limitations of this investigation? What assumptions did we make? What additional data or experiments would strengthen our conclusions?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Critical Analysis:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>Limitations:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Assumptions:</strong></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Further Investigation:</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="scientific-thinking-reflection">Scientific Thinking Reflection</h3>
+
+<p><strong>Metacognitive Prompt:</strong> Reflect on your scientific reasoning process today. What habits of scientific thinking did you use (making observations, identifying patterns, constructing explanations, etc.)? What was challenging about interpreting the data, and how did you work through those challenges?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Your Reflection:</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">[Space for metacognitive reflection]</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="references">References</h2>
+
+<p>[List any sources of data, historical context, or methodology used in the lab]</p>
+
+<ul>
+  <li>[Reference 1]</li>
+  <li>[Reference 2]</li>
+  <li>[Course textbook/materials as appropriate]</li>
+</ul>
+
+<hr />
+
+<h2 id="assessment-checklist">Assessment Checklist</h2>
+
+<p><strong>For Students:</strong> Use this checklist to ensure you’ve completed all components:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Abstract clearly states the investigation’s purpose</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Initial prediction included with reasoning</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />All data analysis completed with proper units</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Each Claim-Evidence-Reasoning response is complete</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Synthesis connects multiple investigations</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Connections to unit objectives are explicit</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Limitations and assumptions are identified</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Scientific thinking reflection is thoughtful</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />All mathematical work shows appropriate significant figures</li>
+</ul>
+
+<p><strong>For Instructors:</strong> Assessment focuses on:</p>
+<ul>
+  <li>Quality of scientific reasoning (C-E-R responses)</li>
+  <li>Accuracy of data analysis and calculations</li>
+  <li>Depth of connections to unit learning objectives</li>
+  <li>Metacognitive awareness of scientific thinking processes
+```</li>
+</ul>
+
+<h2 id="lab-creation-guidelines">Lab Creation Guidelines</h2>
+
+<h3 id="investigation-design-principles">Investigation Design Principles</h3>
+
+<ol>
+  <li><strong>Phenomenon-Driven:</strong> Each investigation should connect clearly to the unit’s anchoring phenomenon</li>
+  <li><strong>Progressive Complexity:</strong> Investigations should build in sophistication throughout the lab</li>
+  <li><strong>Authentic Analysis:</strong> Use real or realistic data that requires genuine scientific reasoning</li>
+  <li><strong>Multiple Representations:</strong> Include opportunities for students to work with graphs, equations, and conceptual models</li>
+</ol>
+
+<h3 id="claim-evidence-reasoning-structure">Claim-Evidence-Reasoning Structure</h3>
+
+<ul>
+  <li><strong>Claim:</strong> A conclusion that answers the scientific question</li>
+  <li><strong>Evidence:</strong> Specific data from the investigation that supports the claim</li>
+  <li><strong>Reasoning:</strong> Scientific principles that explain why the evidence supports the claim</li>
+</ul>
+
+<h3 id="data-quality-standards">Data Quality Standards</h3>
+
+<ul>
+  <li>All numerical data should include appropriate units</li>
+  <li>Significant figures should reflect realistic measurement precision</li>
+  <li>Datasets should be large enough to identify clear patterns</li>
+  <li>Include some uncertainty or variability to promote discussion of experimental limitations</li>
+</ul>
+
+<h3 id="assessment-integration">Assessment Integration</h3>
+
+<p>Each lab should clearly connect to:</p>
+<ul>
+  <li>Unit learning objectives from the course JSON</li>
+  <li>Crosscutting concepts (thinking lenses)</li>
+  <li>Science and engineering practices</li>
+  <li>The unit’s overarching question</li>
+</ul>
+
+      </div>
       
       
     </div>
@@ -512,15 +728,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760715118"></script>
-<script src="/assets/js/sticky-header.js?v=1760715118"></script>
+<script src="/assets/js/activity-core.js?v=1760715382"></script>
+<script src="/assets/js/sticky-header.js?v=1760715382"></script>
 
 <!-- Conditionally load activity module -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Load hexagon lab module
         const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715118";
+        script.src = "/assets/js/activity-modules/hl-form.js?v=1760715382";
         document.body.appendChild(script);
         console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
     });

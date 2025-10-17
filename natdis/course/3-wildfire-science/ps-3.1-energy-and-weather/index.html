@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -75,194 +102,6 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Problem Set 3.1: Energy and Weather</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Problem set</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 3</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 
 <div class="activity-content-container">
@@ -306,16 +145,6 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Problem Set 3.1: Energy and Weather">
-  <input type="hidden" name="ResourceID" value="ps-3.1-energy-and-weather">
-  <input type="hidden" name="ContentType" value="problem_set">
-  <input type="hidden" name="Course" value="natdis">
-  <input type="hidden" name="Unit" value="3">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
   <div class="problem-set-content">
     <!-- Problem Set Introduction (Collapsible) -->
     
@@ -329,11 +158,84 @@
     <!-- Problems with Answer Fields -->
     
 
+    <!-- Reflection Section (at end, part of same form) -->
+    <div class="form-section reflection-section">
+      <h3>Reflection & Submission</h3>
+      
+      <!-- Student Information -->
+      <fieldset class="form-subsection">
+        <legend>Student Information</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="student-name">Full Name *</label>
+            <input type="text" id="student-name" name="StudentName" required>
+          </div>
+          <div class="form-field">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="StudentEmail">
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course</label>
+            <input type="text" id="course-name" name="CourseName" value="NATDIS" readonly>
+          </div>
+          <div class="form-field">
+            <label for="class-period">Class Period</label>
+            <select id="class-period" name="ClassPeriod">
+              <option value="">Select Period</option>
+              <option value="1">1st Period</option>
+              <option value="2">2nd Period</option>
+              <option value="3">3rd Period</option>
+              <option value="4">4th Period</option>
+              <option value="5">5th Period</option>
+              <option value="6">6th Period</option>
+              <option value="7">7th Period</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
+      <div id="activity-specific-fields"></div>
+
+      <!-- Hidden metadata fields -->
+      <input type="hidden" name="ActivityTitle" value="Problem Set 3.1: Energy and Weather">
+      <input type="hidden" name="ResourceID" value="ps-3.1-energy-and-weather">
+      <input type="hidden" name="ContentType" value="problem_set">
+      <input type="hidden" name="Course" value="natdis">
+      <input type="hidden" name="Unit" value="3">
+      <input type="hidden" name="StartTime" id="start-time">
+      <input type="hidden" name="SubmitTime" id="submit-time">
+      <input type="hidden" name="BrowserInfo" id="browser-info">
+
+      <!-- Status Messages -->
+      <div id="submission-status" class="submission-status" hidden></div>
+      
+      <!-- Auto-save indicator (top right corner) -->
+      <div id="auto-save-indicator" hidden>
+        ✓ Saved
+      </div>
+
+      <!-- Simple Submit Button -->
+      <div class="form-actions">
+        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
+          Submit Problem Set
+        </button>
+        <p class="help-text">
+          Answers are auto-saved. Submit when complete.
+        </p>
+      </div>
+      
+      <!-- Status Messages (appears after button) -->
+      <div id="submission-status" class="submission-status" hidden></div>
+
+    </div>
+
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Toggle solutions visibility
 function toggleSolutions() {
@@ -385,21 +287,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         console.log('[problem-set] Sequential navigation with dropdown initialized');
-        
-        // DIAGNOSTIC: Check if active class and grid are working
-        setTimeout(() => {
-            const firstProblem = document.querySelector('.problem-container.active');
-            if (firstProblem) {
-                const computedStyle = window.getComputedStyle(firstProblem);
-                console.log('[DIAGNOSTIC] First problem container:');
-                console.log('  - Has .active class:', firstProblem.classList.contains('active'));
-                console.log('  - Inline style.display:', firstProblem.style.display);
-                console.log('  - Computed display:', computedStyle.display);
-                console.log('  - Computed grid-template-columns:', computedStyle.gridTemplateColumns);
-            } else {
-                console.error('[DIAGNOSTIC] No .problem-container.active found!');
-            }
-        }, 500);
     }
 });
 
@@ -424,8 +311,8 @@ function jumpToProblem(index) {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    <script src="/assets/js/sticky-header.js?v=1760715382"></script>
     
     
 

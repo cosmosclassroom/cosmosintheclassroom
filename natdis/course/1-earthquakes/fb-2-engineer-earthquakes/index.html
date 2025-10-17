@@ -34,8 +34,35 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
   </head>
-  <body class="no-header-page">
-    
+  <body>
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
     
   <div class="markdown-body">
     
@@ -68,194 +95,6 @@
 </style>
 
 <!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-<!-- Sticky Header for Activity Pages -->
-<header class="activity-sticky-header" role="banner">
-    <div class="sticky-header-container">
-        <!-- Left: Student Name Input -->
-        <div class="sticky-header-left">
-            <label for="student-name-input" class="visually-hidden">Student Name</label>
-            <input 
-                type="text" 
-                id="student-name-input" 
-                class="student-name-field"
-                placeholder="Enter your name"
-                aria-label="Student name for submission">
-        </div>
-
-        <!-- Center: Activity Title -->
-        <div class="sticky-header-center">
-            <h1 class="activity-title">Chapter 3: The Engineer - Defining the Problem</h1>
-            <div class="activity-meta-compact">
-                <span class="meta-course">NATDIS</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-type">Flexbook</span>
-                <span class="meta-separator">•</span>
-                <span class="meta-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Right: Submit Button -->
-        <div class="sticky-header-right">
-            <button 
-                type="button" 
-                id="submit-activity-btn" 
-                class="submit-btn"
-                aria-label="Submit your work">
-                Submit
-            </button>
-        </div>
-    </div>
-</header>
-
-<style>
-/* Sticky Header Styles */
-.activity-sticky-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 2px solid #e9ecef;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.sticky-header-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    align-items: center;
-    padding: 0.75rem 1.5rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-/* Left: Student Name Input */
-.sticky-header-left {
-    justify-self: start;
-}
-
-.student-name-field {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.student-name-field:focus {
-    border-color: #007bff;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.student-name-field::placeholder {
-    color: #6c757d;
-}
-
-/* Center: Activity Title */
-.sticky-header-center {
-    text-align: center;
-    justify-self: center;
-}
-
-.activity-title {
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #212529;
-    line-height: 1.2;
-}
-
-.activity-meta-compact {
-    margin-top: 0.25rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-.meta-separator {
-    margin: 0 0.4rem;
-}
-
-/* Right: Submit Button */
-.sticky-header-right {
-    justify-self: end;
-}
-
-.submit-btn {
-    padding: 0.6rem 1.5rem;
-    background: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.15s ease-in-out, transform 0.1s ease-in-out;
-}
-
-.submit-btn:hover {
-    background: #218838;
-}
-
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-.submit-btn:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-}
-
-.submit-btn:disabled {
-    background: #6c757d;
-    cursor: not-allowed;
-}
-
-/* Visually Hidden (Accessibility) */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .sticky-header-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-    }
-
-    .sticky-header-left,
-    .sticky-header-center,
-    .sticky-header-right {
-        justify-self: stretch;
-        text-align: center;
-    }
-
-    .student-name-field {
-        max-width: 100%;
-    }
-
-    .activity-title {
-        font-size: 1.1rem;
-    }
-
-    .submit-btn {
-        width: 100%;
-    }
-}
-</style>
 
 
 <div class="activity-content-container">
@@ -299,17 +138,7 @@
 
 <form id="activity-submission-form" class="activity-form">
   
-  <!-- Hidden metadata fields for submission -->
-  <input type="hidden" name="ActivityTitle" value="Chapter 3: The Engineer - Defining the Problem">
-  <input type="hidden" name="ResourceID" value="fb-1.3-defining-the-problem">
-  <input type="hidden" name="ContentType" value="flexbook">
-  <input type="hidden" name="Course" value="natdis">
-  <input type="hidden" name="Unit" value="1">
-  <input type="hidden" name="StartTime" id="start-time">
-  <input type="hidden" name="SubmitTime" id="submit-time">
-  <input type="hidden" name="BrowserInfo" id="browser-info">
-  
-  <div class="flexbook-content instructional-flow">
+  <div class="flexbook-content">
     
     <!-- Progress indicator -->
     
@@ -318,16 +147,6 @@
         <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1 of 10</div>
-    </div>
-    
-    <!-- Navigation Buttons (Moved to top for better UX) -->
-    <div class="activity-navigation">
-      <button type="button" class="activity-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="activity-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
     </div>
     
 
@@ -342,18 +161,16 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Introduction: From Knowing to Doing</h2>
+          <h2 class="flexbook-item-title">Introduction: From Knowing to Doing</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>In the last chapter, you wore the hat of a scientist. You used data to understand the hazard, pinpointing where an earthquake might strike and why. But knowing a threat exists is only the first step. Now, you must trade your scientist’s hat for an engineer’s hard hat.</p>
+            <div class="flexbook-reading">
+              <p>In the last chapter, you wore the hat of a scientist. You used data to understand the hazard, pinpointing where an earthquake might strike and why. But knowing a threat exists is only the first step. Now, you must trade your scientist’s hat for an engineer’s hard hat.</p>
 
 <p>The engineer’s job is not just to understand the world as it is, but to imagine and build a world that is safer. Before we can build anything, however, we must do what all good engineers do first: define the problem with precision.</p>
 
-              </div>
             </div>
           
           
@@ -368,20 +185,18 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Phenomenon: A Bridge for Branford</h2>
+          <h2 class="flexbook-item-title">Phenomenon: A Bridge for Branford</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Our community, Branford, needs a new bridge. We know from our scientific investigation that we live in a seismically active area. Building a standard bridge is not an option; it would be a public safety disaster waiting to happen. The challenge is clear: we must design and build an earthquake-resistant bridge.</p>
+            <div class="flexbook-reading">
+              <p>Our community, Branford, needs a new bridge. We know from our scientific investigation that we live in a seismically active area. Building a standard bridge is not an option; it would be a public safety disaster waiting to happen. The challenge is clear: we must design and build an earthquake-resistant bridge.</p>
 
 <p>But what does ‘earthquake-resistant’ actually mean? How strong is strong enough? How much can we afford to spend? How do we protect the environment around the bridge during construction? These are the questions an engineer must answer before drawing a single blueprint.</p>
 
 <p><strong>The Question:</strong> How do we turn the general goal of ‘build a safe bridge’ into a specific, solvable engineering problem?</p>
 
-              </div>
             </div>
           
           
@@ -396,14 +211,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Forecast: Define the Problem</h2>
+          <h2 class="flexbook-item-title">Forecast: Define the Problem</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt reading-section">
-              <div class="content">
-                <p>Before we explore the formal language engineers use, take a moment to think like one. Open your Research Brief and respond to the first prompt for the Engineer’s Proposal. Based on the phenomenon described above, what do you think the most important goals and limitations for the Branford bridge project would be?</p>
+            <div class="flexbook-activity-prompt">
+              <p>Before we explore the formal language engineers use, take a moment to think like one. Open your Research Brief and respond to the first prompt for the Engineer’s Proposal. Based on the phenomenon described above, what do you think the most important goals and limitations for the Branford bridge project would be?</p>
 
 <p><strong>Guiding Questions:</strong></p>
 <ul>
@@ -412,7 +226,6 @@
   <li>What difficult choices might you have to make?</li>
 </ul>
 
-              </div>
               
               
               
@@ -430,14 +243,13 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">The Rules of the Game: The Language of Engineering Design</h2>
+          <h2 class="flexbook-item-title">The Rules of the Game: The Language of Engineering Design</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>To solve a problem, you must first speak its language. Engineers use three key concepts to translate a broad goal into a detailed plan: criteria, constraints, and trade-offs.</p>
+            <div class="flexbook-reading">
+              <p>To solve a problem, you must first speak its language. Engineers use three key concepts to translate a broad goal into a detailed plan: criteria, constraints, and trade-offs.</p>
 
 <h3 id="criteria-defining-success">Criteria: Defining Success</h3>
 <p>Criteria are the requirements for success. They are the specific, measurable goals that your design must meet. For our bridge, criteria might include:</p>
@@ -459,7 +271,6 @@
 <h3 id="trade-offs-the-art-of-compromise">Trade-offs: The Art of Compromise</h3>
 <p>In a perfect world, we could maximize every criterion. We would build the safest, biggest, longest-lasting bridge for the lowest price. But constraints make this impossible. This is where trade-offs come in. A trade-off is a compromise—a decision to sacrifice some of one benefit to get more of another. For example, using a stronger, more advanced material (improving the ‘Safety’ criterion) will likely increase the cost (making the ‘Budget’ constraint harder to meet). Engineering, at its heart, is the art of balancing these trade-offs to find the best possible solution that fits within the boundaries of the problem.</p>
 
-              </div>
             </div>
           
           
@@ -474,7 +285,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Checkpoint: The Language of Design</h2>
+          <h2 class="flexbook-item-title">Checkpoint: The Language of Design</h2>
           
           
           <!-- Content based on type -->
@@ -540,16 +351,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Application: From Theory to Practice</h2>
+          <h2 class="flexbook-item-title">Application: From Theory to Practice</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>Understanding these terms is the first step. Now, you will apply them. In the upcoming lab, you will see how different designs perform against specific criteria and how costs act as a major constraint. Then, in the problem set, you will use quantitative data to analyze these trade-offs mathematically.</p>
+            <div class="flexbook-reading">
+              <p>Understanding these terms is the first step. Now, you will apply them. In the upcoming lab, you will see how different designs perform against specific criteria and how costs act as a major constraint. Then, in the problem set, you will use quantitative data to analyze these trade-offs mathematically.</p>
 
-              </div>
             </div>
           
           
@@ -564,16 +373,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Lab Activity: Engineering for Resilience</h2>
+          <h2 class="flexbook-item-title">Lab Activity: Engineering for Resilience</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt reading-section">
-              <div class="content">
-                <p>It is time to step into the simulation. As an engineer, you will test different structural designs against seismic forces. Pay close attention to how each design performs (its ability to meet criteria) and how much it costs (its primary constraint). Your goal is to find the design that offers the best balance.</p>
+            <div class="flexbook-activity-prompt">
+              <p>It is time to step into the simulation. As an engineer, you will test different structural designs against seismic forces. Pay close attention to how each design performs (its ability to meet criteria) and how much it costs (its primary constraint). Your goal is to find the design that offers the best balance.</p>
 
-              </div>
               
               
               
@@ -591,16 +398,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Practice Problems</h2>
+          <h2 class="flexbook-item-title">Practice Problems</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="flexbook-activity-prompt reading-section">
-              <div class="content">
-                <p>Now, let’s practice analyzing these trade-offs with real data. Open Problem Set 1.2 and use your quantitative reasoning skills to evaluate different engineering solutions based on their costs and benefits.</p>
+            <div class="flexbook-activity-prompt">
+              <p>Now, let’s practice analyzing these trade-offs with real data. Open Problem Set 1.2 and use your quantitative reasoning skills to evaluate different engineering solutions based on their costs and benefits.</p>
 
-              </div>
               
               
               
@@ -618,16 +423,14 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Thinking Lens: Systems and System Models</h2>
+          <h2 class="flexbook-item-title">Thinking Lens: Systems and System Models</h2>
           
           
           <!-- Content based on type -->
           
-            <div class="reading-section">
-              <div class="content">
-                <p>A bridge is more than just steel and concrete; it’s a system. It’s a system of materials designed to resist forces. It’s also part of a larger transportation system for the town, an economic system of jobs and commerce, and an ecological system that includes the river it crosses. When you define criteria and constraints, you are creating a model of this complex system. You are deciding which parts of the system are most important and how they connect. A good engineer never forgets that their solution for one problem will have effects that ripple through the entire system.</p>
+            <div class="flexbook-reading">
+              <p>A bridge is more than just steel and concrete; it’s a system. It’s a system of materials designed to resist forces. It’s also part of a larger transportation system for the town, an economic system of jobs and commerce, and an ecological system that includes the river it crosses. When you define criteria and constraints, you are creating a model of this complex system. You are deciding which parts of the system are most important and how they connect. A good engineer never forgets that their solution for one problem will have effects that ripple through the entire system.</p>
 
-              </div>
             </div>
           
           
@@ -642,7 +445,7 @@
           
           <!-- Item Header -->
           
-          <h2 class="section-title">Final Checkpoint: Synthesis & Reflection</h2>
+          <h2 class="flexbook-item-title">Final Checkpoint: Synthesis & Reflection</h2>
           
           
           <!-- Content based on type -->
@@ -703,15 +506,63 @@
       
     </div>
     
-    <!-- Navigation buttons have been moved to the top for better UX -->
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
     
     
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 3: The Engineer - Defining the Problem">
+    <input type="hidden" name="ResourceID" value="fb-1.3-defining-the-problem">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="natdis">
+    <input type="hidden" name="Unit" value="1">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
 
   </div>
 
 </form>
 
-<script src="/assets/js/activity-navigator.js?v=1760715118"></script>
+<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -745,8 +596,8 @@ document.addEventListener('DOMContentLoaded', function() {
     </main>
 
     <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760715118"></script>
-    <script src="/assets/js/sticky-header.js?v=1760715118"></script>
+    <script src="/assets/js/activity-core.js?v=1760715382"></script>
+    <script src="/assets/js/sticky-header.js?v=1760715382"></script>
     
     
     <!-- Conditionally load activity-specific form modules -->
@@ -764,7 +615,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const modulePath = moduleMap[contentType];
             if (modulePath) {
                 const script = document.createElement('script');
-                script.src = modulePath + '?v=1760715118';
+                script.src = modulePath + '?v=1760715382';
                 document.body.appendChild(script);
                 console.log('[activity-focused.html] Loaded module:', modulePath);
             }
