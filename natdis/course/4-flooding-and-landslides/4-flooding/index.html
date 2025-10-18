@@ -26,16 +26,41 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -65,157 +90,67 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>4 Flooding</h1>
-    
-  </div>
-  
-  
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
+<div class="activity-container" id="top">
   
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
-    <p>flexbookGuide:</p>
-<ul>
-  <li>unitNumber: 2
-unitTitle: Tsunamis
-keyVocabulary:
-    <ul>
-      <li>term: Tsunami
-definition: &gt;-
-  A series of large ocean waves, typically caused by underwater
-  earthquakes or volcanic eruptions.</li>
-      <li>term: Shoaling
-definition: &gt;-
-  The effect by which surface waves entering shallower water change in
-  wave height.</li>
-      <li>term: Wavelength
-definition: &gt;-
-  The distance between corresponding points of two consecutive waves.</li>
-      <li>term: Early Warning System
-definition: &gt;-
-  An integrated system of hazard monitoring, forecasting, and prediction,
-  disaster risk assessment, communication, and preparedness activities.
-keyReasoningSkills:</li>
-      <li>Calculating Wave Speed</li>
-      <li>Predicting Travel Times</li>
-      <li>Analyzing the Relationship Between Wavelength and Wave Height</li>
-      <li>‘Calculating Rates (e.g., walking speed)’</li>
-      <li>Using Map Scales to Determine Distance</li>
-      <li>Interpreting Timelines and Data Tables
-chapters:</li>
-      <li>chapterNumber: 1
-chapterTitle: ‘The Scientist: Anatomy of a Wave’
-instructionalFlow:
-        <ul>
-          <li>type: reading
-title: ‘From the Seafloor to the Shore: The Story of a Wave’
-content: &gt;-
-  This section investigates the immense power of tsunamis, using the
-  2004 Indian Ocean event as our case study. We will explore the
-  paradox of the tsunami: a wave that can cross an entire ocean
-  unnoticed, only to unleash catastrophic energy upon reaching the
-  coast.</li>
-          <li>type: activity_prompt
-title: ‘Pause for Inquiry: Hexagon Lab’
-content: &gt;-
-  It is time to act as a scientist. Pause your reading and navigate to
-  the Hexagon Lab to model how a tsunami travels and analyze the
-  factors that determine its speed.
-linkedActivity: ‘Hexagon Lab 2.1: Modeling Tsunami Travel’</li>
-          <li>type: reading
-title: Understanding Wave Dynamics
-content: &gt;-
-  This section delves into the mathematical principles that govern a
-  tsunami’s speed and power, preparing you for the upcoming problem set.</li>
-          <li>type: activity_prompt
-title: ‘Pause for Practice: Problem Set’
-content: &gt;-
-  Apply what you have just learned. Pause your reading and complete
-  the problem set to practice your calculations.
-linkedActivity: ‘Problem Set 2.1: Wave Dynamics’</li>
-          <li>type: activity_prompt
-title: ‘Pause for Reporting: Research Brief’
-content: &gt;-
-  Synthesize your findings. Pause here and complete the first entry
-  of your Scientist’s Report in your Research Brief.
-linkedActivity: ‘Research Brief: Scientist’’s Report - Chapter 1’</li>
-        </ul>
-      </li>
-      <li>chapterNumber: 2
-chapterTitle: ‘The Engineer: The Value of Time’
-instructionalFlow:
-        <ul>
-          <li>type: reading
-title: ‘From Forecast to Warning: Engineering Systems That Save Lives’
-content: &gt;-
-  A scientific forecast is just data; a warning is a call to action.
-  This section explores the engineering challenge of turning a
-  prediction into a life-saving warning system under real-world
-  constraints.</li>
-          <li>type: activity_prompt
-title: ‘Pause for Design: Hexagon Lab’
-content: &gt;-
-  Step into the role of an engineer. Pause your reading and navigate
-  to the Hexagon Lab to design a tsunami warning system within a
-  strict budget, weighing the crucial trade-offs between cost,
-  speed, and reliability.
-linkedActivity: ‘Hexagon Lab 2.2: Designing a Warning System’</li>
-          <li>type: reading
-title: ‘Analyzing Evacuation &amp; Escape’
-content: &gt;-
-  A warning is only effective if people can get to safety. This
-  section introduces the methods used to calculate safe evacuation
-  distances and times, preparing you for the next problem set.</li>
-          <li>type: activity_prompt
-title: ‘Pause for Practice: Problem Set’
-content: &gt;-
-  Apply your analytical skills. Pause your reading and complete the
-  problem set on warning systems and evacuation.
-linkedActivity: ‘Problem Set 2.2: Warning Systems &amp; Evacuation’</li>
-          <li>type: activity_prompt
-title: ‘Pause for Proposals: Research Brief’
-content: &gt;-
-  Synthesize your findings. Pause here and complete the first entry
-  of your Engineer’s Proposal in your Research Brief, which will form
-  the technical foundation for your final policy recommendations.
-linkedActivity: ‘Research Brief: Engineer’’s Proposal - Chapter 3’</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-  </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> NATDIS<br>
-        <strong>Unit:</strong> 4<br>
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">4 Flooding</h1>
         
       </div>
-      <div class="col-md-6">
-        
-        
-        <strong>Topics:</strong>
-        
-        
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
       </div>
     </div>
-    
-  </footer>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type=""
+         data-course="natdis"
+         data-title="4 Flooding"
+         data-unit="4"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><p>Error: Unknown content type ''.</p></div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
 </div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

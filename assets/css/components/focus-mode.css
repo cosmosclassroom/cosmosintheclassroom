@@ -1,0 +1,31 @@
+/* public/website/assets/css/components/focus-mode.css */
+
+/* When focus mode is active, hide non-essential UI elements */
+.focus-mode-active .site-header,
+.focus-mode-active .page-header,
+.focus-mode-active .site-footer,
+.focus-mode-active .activity-actions, /* Hides submission buttons in sticky header */
+.focus-mode-active .progress-indicator /* Hides progress bar in sticky header */
+{
+    display: none !important;
+}
+
+/* Ensure the main content and sticky header are still visible */
+.focus-mode-active .main-content {
+    padding-top: 60px; /* Adjust to account for hidden elements if necessary */
+}
+
+.focus-mode-active .sticky-header {
+    /* You might want to simplify the sticky header in focus mode */
+    box-shadow: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Style for the toggle switch itself */
+.focus-mode-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}

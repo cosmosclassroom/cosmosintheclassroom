@@ -1,42 +1,89 @@
 /**
- * Flexbook Form Module
- * Generates checkpoint question fields for Flexbook activities
- * Version: 1.0.0
- * Date: October 14, 2025
+ * Socrates | Flexbook Form Module
+ *
+ * @version 1.0.1
+ * @author  Socrates Engineering Team
+ * @license MIT
+ *
+ * This module handles the specific logic for flexbook forms,
+ * including checkpoint questions and reading reflections.
  */
 
-(function() {
+(function(Socrates) {
     'use strict';
 
-    // Wait for activity-core to be ready
-    if (!window.ACTIVITY_CORE) {
-        console.error('[fb-form] activity-core.js not loaded');
+    if (!Socrates) {
+        console.error('[fb-form] Socrates global object not found. This module will not run.');
         return;
     }
 
-    console.log('[fb-form] Flexbook module loading...');
-
-    // =============================================================================
-    // MODULE INITIALIZATION
-    // =============================================================================
-    
-    function initialize() {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        
-        if (metadata.contentType !== 'flexbook') {
-            console.warn('[fb-form] Not a flexbook, skipping initialization');
+    /**
+     * Initializes the flexbook form handlers.
+     * This function is attached to the Socrates.modules object and called by activity-core.js.
+     * @param {HTMLElement} form - The main activity form element.
+     */
+    function initializeFlexbookForm(form) {
+        if (!form) {
+            console.error('[fb-form] Initialization failed: Form element not found.');
             return;
         }
 
-        console.log('[fb-form] Initializing Flexbook form...');
+        const metadata = Socrates.getMetadata();
+        
+        if (metadata.contentType !== 'flexbook') {
+            Socrates.log('[fb-form] Not a flexbook, skipping initialization');
+            return;
+        }
+
+        Socrates.log('[fb-form] Initializing flexbook form handlers...');
         
         // Generate form fields for checkpoints
         generateFormFields(metadata);
         
         // Attach event listeners
         attachEventListeners();
-        
-        console.log('[fb-form] Flexbook form initialized');
+
+        // This function will be called by the core script to gather data
+        Socrates.collectFormData = function() {
+            const formData = {};
+            
+            // Collect checkpoint answers
+            const checkpointInputs = document.querySelectorAll('.checkpoint-answer');
+            checkpointInputs.forEach(input => {
+                formData[input.name] = input.value;
+                
+                // Handle units for numeric inputs
+                const unitsInput = document.querySelector(`[name="${input.name}_units"]`);
+                if (unitsInput) {
+                    formData[`${input.name}_units`] = unitsInput.value;
+                }
+            });
+            
+            // Collect completion items
+            const completionItems = document.querySelectorAll('input[name="completion_items"]:checked');
+            formData.completion_items = Array.from(completionItems).map(item => item.value);
+            
+            return formData;
+        };
+
+        // Restore data function
+        Socrates.restoreFormData = function(savedData) {
+            Object.keys(savedData).forEach(key => {
+                if (key === 'completion_items' && Array.isArray(savedData[key])) {
+                    savedData[key].forEach(value => {
+                        const checkbox = document.querySelector(`input[name="completion_items"][value="${value}"]`);
+                        if (checkbox) checkbox.checked = true;
+                    });
+                } else {
+                    const element = form.querySelector(`[name="${key}"]`);
+                    if (element) {
+                        element.value = savedData[key];
+                    }
+                }
+            });
+        };
+
+        Socrates.log('[fb-form] Flexbook form handlers initialized.');
     }
 
     // =============================================================================
@@ -47,7 +94,7 @@
         // Simplified: No additional fields needed
         // Checkpoint answers are inline in content
         // Submission bar handles name + submit
-        console.log('[fb-form] Minimal submission mode - no additional fields needed');
+        Socrates.log('[fb-form] Minimal submission mode - no additional fields needed');
     }
 
     function findCheckpoints() {
@@ -285,17 +332,7 @@
         return div.innerHTML;
     }
 
-    // =============================================================================
-    // AUTO-INITIALIZATION
-    // =============================================================================
+    // Attach the initialization function to the global Socrates object
+    Socrates.modules.initForm = initializeFlexbookForm;
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initialize);
-    } else {
-        initialize();
-    }
-
-    console.log('[fb-form] Flexbook module loaded');
-
-})();
+})(window.Socrates);

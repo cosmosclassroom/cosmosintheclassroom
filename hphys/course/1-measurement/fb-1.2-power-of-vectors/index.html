@@ -26,16 +26,41 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/flexbook.css"><!-- Add Mermaid library and initialize -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -65,69 +90,476 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <div class="flexbook-container">
-  <div class="chapter-header">
-    <h1>Chapter 2: From Lines to Maps: The Power of Vectors</h1>
-    
-  </div>
-  
-  
-  <div class="learning-objectives">
-    <h5><i class="fas fa-bullseye"></i> Learning Objectives</h5>
-    <ul>
-      
-        <li>Distinguish between scalar quantities (magnitude only) and vector quantities (magnitude and direction).</li>
-      
-        <li>Represent vectors graphically and resolve them into perpendicular components using trigonometry.</li>
-      
-        <li>Determine the sum (resultant) of two or more vectors by using graphical and component methods.</li>
-      
-    </ul>
-  </div>
-  
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
+<div class="activity-container" id="top">
   
-
-  <!-- Structured content blocks from JSON (preferred) -->
-  
-
-  <!-- Content from markdown file (fallback) -->
-  
-  <div class="chapter-body-fallback">
-    
-
-  </div>
-  
-  
-  <footer class="mt-5">
-    
-    <div class="row">
-      <div class="col-md-6">
-        <strong>Course:</strong> HPHYS<br>
-        <strong>Unit:</strong> 1<br>
-        <strong>Chapter:</strong> 2
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Chapter 2: From Lines to Maps: The Power of Vectors</h1>
+        
       </div>
-      <div class="col-md-6">
-        
-        
-        <strong>Topics:</strong>
-        
-          <span class="badge bg-primary me-1">vectors</span>
-        
-          <span class="badge bg-primary me-1">measurement</span>
-        
-          <span class="badge bg-primary me-1">mapping</span>
-        
-          <span class="badge bg-primary me-1">trigonometry</span>
-        
-        
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
       </div>
     </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 2: From Lines to Maps: The Power of Vectors"
+         data-unit="1"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+
+
+<form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple instructional_flow items) -->
     
-  </footer>
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 11</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+    
+  
+  <div class="flexbook-content">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 11</div>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Introduction: The Human Story Behind the Science</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>For most of human history, our world was defined by simple questions: How far? How long? How heavy? We measured distances, times, and masses, and these numbers seemed to describe our reality perfectly. But as our ambitions grew, from navigating vast oceans to charting the heavens, we discovered a profound limitation. Knowing a destination is 100 kilometers away is useless without knowing <em>which way</em> to go. This shift from a simple quantity to a quantity with direction marked a revolution in thinking. It allowed us to create a new language, the language of vectors, to describe not just the scale of the universe, but its intricate geometry. This is the story of how we learned to give our numbers a direction, and in doing so, learned to truly map our world and the cosmos itself.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Phenomenon: The Uncharted World</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Imagine you are a European mariner in the 15th century. Your world is a patchwork of coastlines on a map that ends in blank spaces labeled “Here be dragons.” Your nation’s wealth depends on finding new sea routes, but your tools are simple: a magnetic compass for direction, an astrolabe to measure the angle of the stars, and disciplined guesswork to estimate speed. After weeks at sea, a storm blows you off course. You have traveled an estimated 100 leagues east, then 50 leagues north-northeast. Where are you? How do you combine these two separate journeys into a single, reliable position on your chart? This was not an abstract puzzle; it was a life-or-death problem of immense economic and political importance. The challenge of creating accurate maps from disjointed legs of a journey revealed the desperate need for a new kind of mathematics, one that could handle not just distances, but the directions in which those distances were traveled.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Forecast: The Cartographer's Challenge</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>Pause your reading here. Before we investigate the formal rules, it is time to engage with this problem directly. Open your <strong>Unit 1 Research Brief</strong> document and complete the “Forecast” section for “The Cartographer’s Challenge” in your research log.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Investigation: Modeling a Journey</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>How can we visually represent a journey made of multiple parts? If you walk five steps forward and then three steps to the right, how could you draw a single arrow that represents your total change in position from start to finish? Let’s explore a simulation to discover the rules for combining these directional quantities.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="4"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Discovery: Vector Addition</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>Pause your reading here. Open your <strong>Unit 1 Hexagon Labs</strong> document and complete “Hexagon Lab - Vector Addition Simulations.”</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">The Rules of the Game: Two Simple Paths are Better Than One</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>The simulation revealed a powerful pattern: any diagonal path can be broken down into two simpler, perpendicular paths. Think about walking diagonally across a classroom. That single journey is identical to walking along the front wall for some distance, making a 90-degree turn, and then walking along the side wall. That’s it. That’s the secret to vectors. A complicated diagonal journey is just two simple straight-line journeys—one east-west, one north-south—happening at the same time.</p>
+
+<p>The beauty of this is that the two perpendicular parts, which we call <strong>components</strong>, don’t interfere with each other. We can analyze the northward part of a journey completely separately from the eastward part. To find these components, we use basic trigonometry. For any vector, its two perpendicular components form a right triangle, with the original vector as the hypotenuse.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-image" 
+             data-item-index="6"
+             data-item-type="image">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Vector Components</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-image">
+              
+              <figure>
+                <img src="https://placehold.co/600x400/222/fff?text=Vector+Components+Diagram" alt="Vector Components" />
+                
+                <figcaption><p>Any vector can be broken down into two perpendicular components. This simplifies the analysis of motion and forces.</p>
+</figcaption>
+                
+              </figure>
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">The Rules of the Game (Continued)</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Once we break all of our vectors into their simple x and y components, the rest is easy. To add them up, we just add all the x-components together to get a total x-component, and add all the y-components to get a total y-component. We are left with two perpendicular vectors, which we can put back together into a final resultant vector using the Pythagorean theorem we all learned in middle school. By breaking a complex problem into two simple ones, we find a clear path to the solution. This is the core strategy of physics.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="8"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Thinking Lens: Patterns</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Using our <strong>Patterns</strong> lens, we see that the head-to-tail method of adding vectors is a universal geometric rule. It doesn’t matter if we are adding displacements, velocities, or forces; the pattern for finding the resultant is always the same. This consistent mathematical structure reveals a deep truth about our physical world: complex interactions can often be understood as the sum of simpler, independent parts. The rules we discovered for adding two vectors on a screen are the same rules that NASA engineers use to plot a course to Mars and that architects use to calculate the stability of a skyscraper. The pattern is universal.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="9"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Practice: The Power of Vectors</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>You’ve explored the simulation and learned the formal rules. Now it’s time to practice. Pause your reading here. Open your <strong>Unit 1 Problem Sets</strong> document and complete “Problem Set 1.2: The Power of Vectors” to solidify your skills.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="10"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">The Bigger Picture: Synthesis and Connection</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>The language of vectors was the key that unlocked our planet. It allowed us to transform fragmented journeys into coherent maps, turning fear of the unknown into a global network of trade and ideas. But its power extends far beyond that. This same mathematical tool allows us to guide a probe through the gravitational fields of the outer solar system, to predict the path of a hurricane, and to understand the forces acting on a subatomic particle. What began as a practical solution to the mariner’s dilemma became a fundamental way of describing the universe. By learning to account for direction, we discovered one of the most powerful and elegant patterns in all of physics, a pattern that connects a line on a map to the very structure of reality.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 2: From Lines to Maps: The Power of Vectors">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="hphys">
+    <input type="hidden" name="Unit" value="1">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
 </div>
+
+
+  </div>
+
+</form>
+
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

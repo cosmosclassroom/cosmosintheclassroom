@@ -1,0 +1,141 @@
+<hr />
+<p>title: “Problem Set 3.2: Predicting the Trajectory”
+layout: activity-focused_layout
+date: 2025-10-21
+course: hphys
+content_type: problem_set
+unit: “3-projectiles”
+DCI: “PS2.A”
+Practice: [“Using Mathematics and Computational Thinking”, “Developing and Using Models”]
+CCC: [“Patterns”]
+tags: [“projectile motion”, “kinematics”, “launch angle”, “range”, “problem_set”]</p>
+
+<h1>——————————————————————————</h1>
+
+<h1 id="section-3-problem-set-overview">SECTION 3: PROBLEM SET OVERVIEW</h1>
+
+<h1 id="-1">——————————————————————————</h1>
+
+<p>overview:
+  follows_lecture: “Lecture 3.2: A New Way of Seeing”
+  introduction: “In this set, we move from the simple horizontal launch to the <strong>full parabolic trajectory</strong>—the path of a stone thrown or a cannonball fired at an angle. Your mastery of vector components from Problem Set 3.1 is now essential. You will combine the horizontal (constant velocity) and vertical (freefall) systems to predict the flight time, maximum height, and range of projectiles.”
+  key_formulae:
+    - |
+      $v_{0x} = v_0 \cos(\theta)$
+    - |
+      $v_{0y} = v_0 \sin(\theta)$
+    - |
+      $v_1 = v_0 + at$ (Applied vertically to find time to peak)
+    - |
+      $\Delta d_y = v_{0y}t + \frac{1}{2}a_g t^2$
+    - |
+      $d_x = v_{0x} t_{total}$
+  global_standards:
+    - “For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \, m/s^2$.”
+    - “Follow the systematic problem-solving process demonstrated in the lecture.”
+    - “Present all final answers with the correct units and number of significant figures.”</p>
+
+<h1 id="-2">——————————————————————————</h1>
+
+<h1 id="section-4-problems--solutions">SECTION 4: PROBLEMS &amp; SOLUTIONS</h1>
+
+<h1 id="-3">——————————————————————————</h1>
+
+<p>problems:</p>
+
+<h1 id="--tier-1-apprentice-">————————- TIER 1: APPRENTICE —————————</h1>
+
+<ul>
+  <li>problem_number: 1
+  tier:
+    level: 1
+    title: “The Apprentice’s Practice: Foundational Skills”
+  phenomenon_connection: “This problem models the initial ascent of a projectile—the first phase of the cannonball’s journey—by finding the time to reach its highest point.”
+  problem_statement: “A stone is launched from the ground with an initial velocity of $28.0 \, m/s$ at an angle of $40.0^{\circ}$ above the horizontal. Assuming it lands at the same height from which it was launched, what is the <strong>total time of flight</strong>?”
+  diagram_placeholder: “”
+  solution:
+    givens:
+      - |
+        $v_0 = 28.0 \, m/s$
+      - |
+        $\theta = 40.0^{\circ}$
+      - |
+        $v_y(\text{peak}) = 0 \, m/s$
+      - |
+        $a_y = -9.80 \, m/s^2$
+    unknowns:
+      - |
+        $t_{\text{total}} = ?$
+    steps:
+      - “1. <strong>Find Initial Vertical Velocity ($v_{0y}$):</strong> $v_{0y} = v_0 \sin(\theta)$.”
+      - |
+        $v_{0y} = (28.0 \, m/s) \sin(40.0^{\circ}) = 17.998 \, m/s$
+      - “2. <strong>Find Time to Peak ($t_{\text{peak}}$):</strong> Use $v_{y,f} = v_{0y} + a_y t_{\text{peak}}$. Rearrange for $t_{\text{peak}}$ (where $v_{y,f} = 0$). $\implies t_{\text{peak}} = -v_{0y} / a_y$.”
+      - “3. <strong>Substitute Values and Track Units ($t_{\text{peak}}$):</strong>”
+      - |
+        $t_{\text{peak}} = \frac{-17.998 \, m/s}{-9.80 \, m/s^2} = 1.8365 \, s$
+      - “4. <strong>Find Total Time of Flight ($t_{\text{total}}$):</strong> Due to symmetry, $t_{\text{total}} = 2 \cdot t_{\text{peak}}$.”
+      - |
+        $t_{\text{total}} = 2 (1.8365 \, s) = 3.673 \, s$
+    final_answer: |
+      The total time of flight is <strong>$3.67 \, s$</strong>.</li>
+</ul>
+
+<h1 id="--tier-2-journeyman-">————————- TIER 2: JOURNEYMAN —————————</h1>
+
+<ul>
+  <li>
+    <p>problem_number: 2
+  tier:
+    level: 2
+    title: “The Journeyman’s Task: Synthesis &amp; Application”
+  phenomenon_connection: “This problem integrates all aspects of projectile motion (initial components, time, height, and range), serving as a crucial simulation for the artillery commander’s prediction.”
+  problem_statement: “A medieval cannon is fired at a launch speed of $55.0 \, m/s$ and an angle of $60.0^{\circ}$ above the horizontal. Assume the cannonball lands back at the same elevation. Calculate the cannonball’s <strong>(a) maximum height</strong> (above the launch point) and <strong>(b) horizontal range</strong> ($d_x$). (You must first find the total time of flight).”
+  diagram_placeholder: “”</p>
+
+    <p># Solution would be a three-part calculation: 1) Find initial components. 2) Use the $v_f^2$ equation (or $v_f=v_i+at$ then $d = v_i t + 1/2 a t^2$) for $d_{y, \text{max}}$. 3) Use $d_x = v_{0x}t_{\text{total}}$ for range</p>
+  </li>
+</ul>
+
+<h1 id="--tier-3-master--">————————- TIER 3: MASTER ——————————-</h1>
+
+<ul>
+  <li>
+    <p>problem_number: 3
+  tier:
+    level: 3
+    title: “The Master’s Insight: Design &amp; Optimization”
+  phenomenon_connection: “This problem directly relates to the concept of <strong>Optimizing Launch Angle for Range</strong>, a critical discovery for the artillery commander.”
+  problem_statement: “You conducted an experiment (Hexagon Lab: Optimizing Launch Angle for Range) and confirmed that for maximum range, a projectile should be launched at $45^{\circ}$ (assuming no air resistance). Use the kinematic equations and principles of vector components to <strong>explain</strong> why $45^{\circ}$ yields the maximum range.”
+  prompt: “Your explanation must be based on the trade-off between the horizontal velocity component ($v_{0x}$) and the time of flight ($t$), both of which are required to determine the range ($d_x = v_{0x} t$). Discuss how the $45^{\circ}$ angle provides the optimal balance.”
+  diagram_placeholder: “[Image showing three projectile trajectories launched at the same speed but different angles: $20^{\circ}$, $45^{\circ}$, and $70^{\circ}$]”
+  solution:
+    reflection: &gt;-
+      The range ($d_x$) is determined by $d_x = v_{0x} t$. The choice of launch angle ($\theta$) is a trade-off because it determines both $v_{0x}$ and $t$:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  1.  **Horizontal Component ($v_{0x}$):** $v_{0x}$ is proportional to $\\cos(\\theta)$. As $\\theta$ increases toward $90^{\\circ}$ (a straight up shot), $v_{0x}$ decreases. An angle of $0^{\\circ}$ maximizes $v_{0x}$, but results in zero time of flight.
+  2.  **Time of Flight ($t$):** The total flight time is determined by $t_{\\text{total}} \\propto v_{0y}$, and $v_{0y}$ is proportional to $\\sin(\\theta)$. As $\\theta$ increases, $v_{0y}$ increases, leading to more time in the air. An angle of $90^{\\circ}$ maximizes $t$, but results in zero horizontal distance.
+
+  The total range $d_x$ is proportional to $(\\cos\\theta)(\\sin\\theta)$. The mathematical **Pattern** is that the product of $\\sin(\\theta)$ and $\\cos(\\theta)$ is maximized when $\\theta = 45^{\\circ}$. At $45^{\\circ}$, the initial velocity is perfectly split, providing the optimal **balance** between enough forward speed ($v_{0x}$) and enough hang time ($t$) to achieve the greatest horizontal displacement.
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="-4">——————————————————————————</h1>
+
+<h1 id="section-5-student-solutions-list">SECTION 5: STUDENT SOLUTIONS LIST</h1>
+
+<h1 id="this-section-provides-final-quantitative-answers-for-student-self-assessment">This section provides final, quantitative answers for student self-assessment</h1>
+
+<h1 id="-5">——————————————————————————</h1>
+
+<p>student_solutions_list:</p>
+
+<ul>
+  <li>problem_number: 1
+  final_answer: “3.67 s”</li>
+  <li>problem_number: 2
+  final_answer: “a) 116 m; b) 267 m”</li>
+  <li>problem_number: 3
+  final_answer: “Conceptual/Reflective Question - No quantitative answer required.”</li>
+</ul>

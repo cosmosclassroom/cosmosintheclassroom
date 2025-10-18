@@ -24,8 +24,9 @@ class ActivityNavigator {
         this.containerSelector = options.containerSelector || '.nav-item-container';
         this.progressBarId = options.progressBarId || 'progress-fill';
         this.progressTextId = options.progressTextId || 'progress-text';
-        this.prevButtonId = options.prevButtonId || 'prev-item';
-        this.nextButtonId = options.nextButtonId || 'next-item';
+        // Support both old ID-based and new selector-based button targeting
+        this.prevButtonId = options.prevButtonId || options.prevButtonSelector || 'prev-item';
+        this.nextButtonId = options.nextButtonId || options.nextButtonSelector || 'next-item';
         this.dropdownId = options.dropdownId || null; // New: dropdown selector support
         this.itemLabel = options.itemLabel || 'Item';
         this.scrollToTop = options.scrollToTop !== false; // Default true
@@ -62,8 +63,28 @@ class ActivityNavigator {
     }
     
     setupButtons() {
-        const prevButton = document.getElementById(this.prevButtonId);
-        const nextButton = document.getElementById(this.nextButtonId);
+        // Handle both ID-based and selector-based button finding
+        let prevButton, nextButton;
+        
+        if (this.prevButtonId) {
+            if (this.prevButtonId.startsWith('.') || this.prevButtonId.startsWith('#')) {
+                // It's a CSS selector
+                prevButton = document.querySelector(this.prevButtonId);
+            } else {
+                // It's an ID
+                prevButton = document.getElementById(this.prevButtonId);
+            }
+        }
+        
+        if (this.nextButtonId) {
+            if (this.nextButtonId.startsWith('.') || this.nextButtonId.startsWith('#')) {
+                // It's a CSS selector
+                nextButton = document.querySelector(this.nextButtonId);
+            } else {
+                // It's an ID
+                nextButton = document.getElementById(this.nextButtonId);
+            }
+        }
         
         if (prevButton) {
             prevButton.addEventListener('click', () => this.navigate(-1));
@@ -131,8 +152,28 @@ class ActivityNavigator {
     }
     
     updateButtons() {
-        const prevButton = document.getElementById(this.prevButtonId);
-        const nextButton = document.getElementById(this.nextButtonId);
+        // Handle both ID-based and selector-based button finding (same logic as setupButtons)
+        let prevButton, nextButton;
+        
+        if (this.prevButtonId) {
+            if (this.prevButtonId.startsWith('.') || this.prevButtonId.startsWith('#')) {
+                // It's a CSS selector
+                prevButton = document.querySelector(this.prevButtonId);
+            } else {
+                // It's an ID
+                prevButton = document.getElementById(this.prevButtonId);
+            }
+        }
+        
+        if (this.nextButtonId) {
+            if (this.nextButtonId.startsWith('.') || this.nextButtonId.startsWith('#')) {
+                // It's a CSS selector
+                nextButton = document.querySelector(this.nextButtonId);
+            } else {
+                // It's an ID
+                nextButton = document.getElementById(this.nextButtonId);
+            }
+        }
         
         if (prevButton) {
             prevButton.disabled = (this.currentIndex === 0);

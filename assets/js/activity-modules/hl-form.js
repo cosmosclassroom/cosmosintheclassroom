@@ -1,39 +1,69 @@
 /**
- * Hexagon Lab Form Module
- * Generates submission fields for Hexagon Lab activities
- * Version: 1.0.0
- * Date: October 13, 2025
+ * Socrates | Hexagon Lab Form Module
+ *
+ * @version 1.0.1
+ * @author  Socrates Engineering Team
+ * @license MIT
+ *
+ * This module handles the specific logic for hexagon lab forms,
+ * including lab report submissions and data collection.
  */
 
-(function() {
+(function(Socrates) {
     'use strict';
 
-    // Wait for activity-core to be ready
-    if (!window.ACTIVITY_CORE) {
-        console.error('[hl-form] activity-core.js not loaded');
+    if (!Socrates) {
+        console.error('[hl-form] Socrates global object not found. This module will not run.');
         return;
     }
 
-    console.log('[hl-form] Hexagon Lab module loading...');
-
-    // =============================================================================
-    // MODULE INITIALIZATION
-    // =============================================================================
-    
-    function initialize() {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        
-        if (metadata.contentType !== 'hexagon_lab') {
-            console.warn('[hl-form] Not a hexagon lab, skipping initialization');
+    /**
+     * Initializes the hexagon lab form handlers.
+     * This function is attached to the Socrates.modules object and called by activity-core.js.
+     * @param {HTMLElement} form - The main activity form element.
+     */
+    function initializeHexagonLabForm(form) {
+        if (!form) {
+            console.error('[hl-form] Initialization failed: Form element not found.');
             return;
         }
 
-        console.log('[hl-form] Initializing Hexagon Lab form...');
+        const metadata = Socrates.getMetadata();
+        
+        if (metadata.contentType !== 'hexagon_lab') {
+            Socrates.log('[hl-form] Not a hexagon lab, skipping initialization');
+            return;
+        }
+
+        Socrates.log('[hl-form] Initializing hexagon lab form handlers...');
         
         // Generate form fields
         generateFormFields(metadata);
-        
-        console.log('[hl-form] Hexagon Lab form initialized');
+
+        // This function will be called by the core script to gather data
+        Socrates.collectFormData = function() {
+            const formData = {};
+            
+            // Collect lab report answers
+            const labInputs = document.querySelectorAll('textarea[name^="lab_"], input[name^="lab_"]');
+            labInputs.forEach(input => {
+                formData[input.name] = input.value;
+            });
+            
+            return formData;
+        };
+
+        // Restore data function
+        Socrates.restoreFormData = function(savedData) {
+            Object.keys(savedData).forEach(key => {
+                const element = form.querySelector(`[name="${key}"]`);
+                if (element) {
+                    element.value = savedData[key];
+                }
+            });
+        };
+
+        Socrates.log('[hl-form] Hexagon lab form handlers initialized.');
     }
 
     // =============================================================================
@@ -51,20 +81,10 @@
         // All questions are already rendered in the lab sections
         container.innerHTML = '';
         
-        console.log('[hl-form] Hexagon lab uses inline questions - no additional submission fields');
+        Socrates.log('[hl-form] Hexagon lab uses inline questions - no additional submission fields');
     }
 
-    // =============================================================================
-    // AUTO-INITIALIZATION
-    // =============================================================================
+    // Attach the initialization function to the global Socrates object
+    Socrates.modules.initForm = initializeHexagonLabForm;
 
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initialize);
-    } else {
-        initialize();
-    }
-
-    console.log('[hl-form] Module loaded');
-
-})();
+})(window.Socrates);

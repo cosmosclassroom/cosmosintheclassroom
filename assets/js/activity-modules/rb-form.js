@@ -1,68 +1,84 @@
 /**
- * Research Brief Form Module
- * Handles form generation and submission for Research Brief activities
- * Version: 1.0.0
- * Date: October 16, 2025
+ * Socrates | Research Brief Form Module
+ *
+ * @version 1.0.1
+ * @author  Socrates Engineering Team
+ * @license MIT
+ *
+ * This module handles the specific logic for research brief forms,
+ * including multi-phase research cycles and response collection.
  */
 
-(function() {
+(function(Socrates) {
     'use strict';
-    
-    // Create a safety check for activity-core
-    let retryCount = 0;
-    const MAX_RETRIES = 5;
-    
-    // Function to check for activity-core readiness
-    function checkActivityCore() {
-        if (window.ACTIVITY_CORE && typeof window.ACTIVITY_CORE.getMetadata === 'function') {
-            console.log('[rb-form] activity-core.js loaded and ready');
-            initialize();
-            return true;
-        } else {
-            retryCount++;
-            if (retryCount <= MAX_RETRIES) {
-                console.log(`[rb-form] activity-core.js not ready yet, retry ${retryCount}/${MAX_RETRIES} in ${retryCount * 300}ms`);
-                setTimeout(checkActivityCore, retryCount * 300);
-            } else {
-                console.error('[rb-form] activity-core.js failed to load after multiple retries');
-            }
-            return false;
-        }
+
+    if (!Socrates) {
+        console.error('[rb-form] Socrates global object not found. This module will not run.');
+        return;
     }
 
-    console.log('[rb-form] Research Brief module loading...');
-
-    // =============================================================================
-    // MODULE INITIALIZATION
-    // =============================================================================
-    
-    function initialize() {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        
-        if (metadata.contentType !== 'research_brief') {
-            console.warn('[rb-form] Not a research brief, skipping initialization');
+    /**
+     * Initializes the research brief form handlers.
+     * This function is attached to the Socrates.modules object and called by activity-core.js.
+     * @param {HTMLElement} form - The main activity form element.
+     */
+    function initializeResearchBriefForm(form) {
+        if (!form) {
+            console.error('[rb-form] Initialization failed: Form element not found.');
             return;
         }
 
-        console.log('[rb-form] Initializing Research Brief form...');
+        const metadata = Socrates.getMetadata();
+        
+        if (metadata.contentType !== 'research_brief') {
+            Socrates.log('[rb-form] Not a research brief, skipping initialization');
+            return;
+        }
+
+        Socrates.log('[rb-form] Initializing research brief form handlers...');
         
         // Generate form fields for research brief phases
         generateFormFields(metadata);
         
         // Attach event listeners
         attachEventListeners();
-        
-        console.log('[rb-form] Research Brief form initialized');
+
+        // This function will be called by the core script to gather data
+        Socrates.collectFormData = function() {
+            const formData = {};
+            
+            // Collect phase responses
+            const phaseInputs = document.querySelectorAll('textarea[name^="phase_"], input[name^="phase_"]');
+            phaseInputs.forEach(input => {
+                formData[input.name] = input.value;
+            });
+            
+            return formData;
+        };
+
+        // Restore data function
+        Socrates.restoreFormData = function(savedData) {
+            Object.keys(savedData).forEach(key => {
+                const element = form.querySelector(`[name="${key}"]`);
+                if (element) {
+                    element.value = savedData[key];
+                }
+            });
+        };
+
+        Socrates.log('[rb-form] Research brief form handlers initialized.');
     }
 
     // =============================================================================
     // FORM FIELD GENERATION
     // =============================================================================
-
+    
     function generateFormFields(metadata) {
-        // Safety check to ensure we have access to activity-core
-        if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
-            console.error('[rb-form] activity-core.js methods not available');
+        Socrates.log('[rb-form] Generating Research Brief form fields...');
+        
+        // Safety check to ensure we have access to Socrates methods
+        if (!Socrates.getMetadata) {
+            console.error('[rb-form] Socrates methods not available');
             return;
         }
         
@@ -178,40 +194,11 @@
             });
         }
         
-        // Fallback to DOM-based phase detection
-        console.log('[rb-form] Falling back to DOM-based phase detection');
-        const phaseElements = document.querySelectorAll('[data-brief-phase]');
-        const phases = [];
-        
-        phaseElements.forEach((element, index) => {
-            const phaseTitle = element.querySelector('h3, h4')?.textContent || `Phase ${index + 1}`;
-            const prompts = [];
-            
-            // Extract prompts from the phase display
-            const promptElements = element.querySelectorAll('.brief-prompt');
-            promptElements.forEach((pElement, pIndex) => {
-                const promptTitle = pElement.querySelector('.prompt-title')?.textContent || '';
-                const promptText = pElement.querySelector('.prompt-text')?.textContent || '';
-                const responseType = pElement.dataset.responseType || 'textarea';
-                const rows = parseInt(pElement.dataset.rows) || 5;
-                
-                prompts.push({
-                    index: pIndex,
-                    title: promptTitle,
-                    prompt: promptText,
-                    response_type: responseType,
-                    rows: rows
-                });
-            });
-            
-            phases.push({
-                index: index,
-                title: phaseTitle,
-                prompts: prompts
-            });
-        });
-        
-        return phases;
+        // CRITICAL FAILURE: No structured data found
+        // This violates our data-first architecture - the build should have failed earlier
+        console.error('[rb-form] CRITICAL: No brief phases found in structured data sources (JSON or YAML front matter)');
+        console.error('[rb-form] Research Brief requires briefCycle data in front matter. Check YAML configuration.');
+        throw new Error('Research Brief form cannot be generated: Missing briefCycle data in page front matter');
     }
 
     function buildPhaseSection(phase, phaseIndex) {
@@ -380,20 +367,7 @@
             .replace(/'/g, "&#039;");
     }
 
-    // =============================================================================
-    // INITIALIZE MODULE
-    // =============================================================================
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('[rb-form] DOM loaded, checking for activity-core...');
-        // Give activity-core.js a chance to load first
-        setTimeout(checkActivityCore, 100);
-    });
-    
-    window.RESEARCH_BRIEF_FORM = { 
-        initialize: initialize,
-        checkActivityCore: checkActivityCore
-    };
-    console.log('[rb-form] Module registered');
+    // Attach the initialization function to the global Socrates object
+    Socrates.modules.initForm = initializeResearchBriefForm;
 
-})();
+})(window.Socrates);

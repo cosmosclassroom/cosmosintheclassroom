@@ -1,0 +1,104 @@
+<hr />
+<p>layout: physics-quiz
+title: “Unit 3 Summative Test: The Defensible Designer”
+course: “natdis”
+unit: “3”
+unit_slug: “wildfire-science”
+content_type: “test”
+resource_id: “test-3.1-defensible-design”</p>
+
+<h1 id="assessment-settings">Assessment Settings</h1>
+
+<p>password_protected: true
+password: “fireproof”
+estimated_time: “50 minutes”
+points_total: 100
+support_materials:</p>
+
+<ul>
+  <li>“Calculator”</li>
+  <li>“Home Resilience Upgrade Table (provided below)”</li>
+</ul>
+
+<p>questions:</p>
+
+<h1 id="q1-scientist-review-mitigation-strategy">Q1: Scientist Review (Mitigation Strategy)</h1>
+
+<ul>
+  <li>id: q1
+  type: multiple_choice
+  prompt: “Which forest management strategy involves intentionally setting small, controlled fires to reduce the overall fuel load in a healthy ecosystem?”
+  points: 10
+  choices:
+    <ul>
+      <li>text: “Mechanical Thinning”
+    value: “thinning”
+    correct: false</li>
+      <li>text: “Prescribed Burn”
+    value: “prescribed-burn”
+    correct: true</li>
+      <li>text: “Chemical Defoliation”
+    value: “chemical”
+    correct: false
+explanation: “Prescribed burns are controlled fires used to safely clear out undergrowth, which acts as ‘ladder fuel,’ preventing future catastrophic fires.”</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="q2--q3-engineers-analysis-data-driven-trade-offs---hexagon-lab-32">Q2 &amp; Q3: Engineer’s Analysis (Data-Driven Trade-Offs - Hexagon Lab 3.2)</h1>
+
+<ul>
+  <li>
+    <p>id: q2
+  type: prompt_with_data
+  prompt: |
+    You are an engineer designing fire resilience upgrades for a home with an initial high-risk score. You have a budget of $$25,000$. Use the table below to calculate the Cost-Effectiveness of each upgrade.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$\text{Cost-Effectiveness} = \frac{\text{Risk Reduction Points}}{\text{Cost in thousands of dollars}}$$
+
+| Upgrade | Cost (\$) | Risk Reduction Points |
+| :--- | :--- | :--- |
+| **A. Replace Wood Roof with Tile** | $15,000$ | $25$ |
+| **B. Clear Defensible Space (30m)** | $3,000$ | $15$ |
+| **C. Install Fire-Resistant Vents** | $2,000$ | $8$ |
+
+What is the Cost-Effectiveness score (Risk Reduction Points per $\$1,000$) for **Upgrade B**?   points: 20   type: numeric   answer: 5.0   units: "points per $1,000"   tolerance: 0.01   explanation: "Upgrade B Cost in thousands is $\$3,000 \\rightarrow 3$. Cost-Effectiveness = $\\frac{15 \\, \\text{points}}{3 \\, \\text{thousand}} = 5.0 \\, \\frac{\\text{points}}{\\$1,000}$"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>id: q3
+  type: multiple_select
+  prompt: “You want to maximize your Risk Reduction while staying within a <strong>$$5,000$</strong> budget. Select the <strong>best combination</strong> of upgrades (A, B, and C) that provides the highest total risk reduction for less than $$5,000$.”
+  points: 20
+  choices:</p>
+    <ul>
+      <li>text: “Upgrade A only”
+    value: “A”
+    correct: false</li>
+      <li>text: “Upgrade B only”
+    value: “B”
+    correct: false</li>
+      <li>text: “Upgrade C only”
+    value: “C”
+    correct: false</li>
+      <li>text: “Upgrade B and Upgrade C”
+    value: “B+C”
+    correct: true # $3,000 + $2,000 = $5,000 (Total 23 points)</li>
+      <li>text: “Upgrade A and Upgrade B”
+    value: “A+B”
+    correct: false
+explanation: “Upgrade B and C together cost exactly $$5,000$ and yield $15 + 8 = 23$ risk reduction points, which is the highest possible reduction within the budget.”</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="q4-policymakers-brief-policy-justification">Q4: Policymaker’s Brief (Policy Justification)</h1>
+
+<ul>
+  <li>id: q4
+  type: essay
+  prompt: “Imagine you are a Policymaker for a community in the Wildland-Urban Interface (WUI). Your primary concern is the spread of fire from home to home. Write a brief policy proposal recommending a new zoning law. Which principle would you make mandatory (e.g., Roof Type, Defensible Space, or Vent Design)? Justify your choice using the concept of <strong>Stability and Change</strong> (the Unit’s CCC) and referencing the importance of reducing <strong>ignition risk</strong> and <strong>vulnerability</strong>.”
+  points: 50
+  rows: 15
+  explanation: “An effective answer should recommend <strong>Defensible Space</strong> (B) or <strong>Roof/Vent Upgrades</strong> (A or C). A strong justification connects the policy to the CCC: making Defensible Space mandatory introduces stability by creating a change—a physical barrier—that reduces the risk of <em>cascading failures</em> (fire jumping from one property to the next), making the whole community more resilient.”</li>
+</ul>

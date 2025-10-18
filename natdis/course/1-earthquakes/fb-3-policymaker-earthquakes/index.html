@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,33 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,39 +90,37 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<link rel="stylesheet" href="/assets/css/submission-bar.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<style>
-/* Tighten up activity page spacing */
-.activity-page {
-    padding-top: 0;
-    margin-top: 0;
-}
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Chapter 3: The Policymaker — The Tradeoffs of Resilience</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
 
-.activity-header {
-    margin-top: 1rem;
-    padding-top: 0;
-}
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
-.activity-header h1 {
-    margin-top: 0;
-}
-</style>
-
-<!-- Chart.js Library (Conditional Loading) -->
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<div class="activity-page">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
          data-resource-id="fb-3-policymaker-earthquakes"
@@ -107,32 +131,31 @@
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
-         data-submission-fields="null"
-         hidden></div>
+         data-submission-fields="null">
+    </div>
 
-    <main class="main-content">
-        
-        <!-- Activity Header -->
-        <div class="activity-header">
-            <h1>Chapter 3: The Policymaker — The Tradeoffs of Resilience</h1>
-            <div class="activity-meta">
-                <span class="activity-course">NATDIS</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-type">Flexbook</span>
-                <span class="activity-separator">|</span>
-                <span class="activity-unit">Unit 1</span>
-            </div>
-        </div>
-
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
   Flexbook Content Display with Sequential Navigation
   Renders instructional_flow array one item at a time
 -->
 
+
+
 <form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple instructional_flow items) -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 8</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+    
   
   <div class="flexbook-content">
     
@@ -586,7 +609,6 @@ Rules that control how land can be used. For example, zoning laws can prevent de
 
 </form>
 
-<script src="/assets/js/activity-navigator.js"></script>
 <script>
 // Initialize Flexbook Navigator
 document.addEventListener('DOMContentLoaded', function() {
@@ -613,42 +635,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+</div>
+  </div>
 
-            
-        </div>
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
 
-    </main>
+</div>
 
-    <!-- External JavaScript -->
-    <script src="/assets/js/activity-core.js?v=1760718057"></script>
-    
-    
-    <!-- Conditionally load activity-specific form modules -->
-    <script>
-        // Module loading logic (executed after activity-core.js loads)
-        document.addEventListener('DOMContentLoaded', function() {
-            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-            const moduleMap = {
-                'problem_set': '/assets/js/activity-modules/ps-form.js',
-                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js'
-            };
-            
-            if (moduleMap[contentType]) {
-                const script = document.createElement('script');
-                script.src = moduleMap[contentType] + '?v=1760718057';
-                script.onerror = function() {
-                    console.error('[activity.html] Failed to load module:', moduleMap[contentType]);
-                };
-                document.body.appendChild(script);
-            } else {
-                console.warn('[activity.html] No submission module found for content_type:', contentType);
-            }
-        });
-    </script>
-    
-</div> <!-- .activity-page -->
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
 
     
     </div>

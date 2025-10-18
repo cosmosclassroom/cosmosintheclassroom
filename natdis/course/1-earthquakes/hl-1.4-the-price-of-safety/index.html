@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,40 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,47 +97,36 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Enhanced Typography for Flexbooks -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-<!-- Research Brief Styling (when content_type is research_brief) -->
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Hexagon Lab: The Price of Safety</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
 
-<!-- Chart.js for data visualization -->
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
-</script>
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-
-
-<div class="activity-content-container">
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
@@ -116,29 +138,11 @@
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
-         data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Investigation 1: Cost-Benefit Analysis&quot;,&quot;Synthesis: Claim-Evidence-Reasoning&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What are the challenges of making policy decisions when all options have significant costs and benefits? How does quantitative data help, and what are its limitations?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}"
-         
-         hidden>
-         <!-- Debug output - remove after fixing -->
-         <script>
-         console.log('DEBUG - Page metadata:');
-         console.log('resourceId:', 'hl-1.4-price-of-safety');
-         console.log('contentType:', 'hexagon_lab');
-         console.log('submissionEnabled:', 'true');
-         console.log('submissionFields JSON:', '{"completion_checklist":{"sections":["Investigation 1: Cost-Benefit Analysis","Synthesis: Claim-Evidence-Reasoning"]},"difficulty_rating":true,"time_spent":true,"reflection":{"prompt":"What are the challenges of making policy decisions when all options have significant costs and benefits? How does quantitative data help, and what are its limitations?"},"questions":true,"collaboration":true,"additional_notes":true}');
-         console.log('overview:', '{"title":"Lab Overview","abstract":"In this lab, you will step into the role of a policymaker for the town of Branford. Presented with several engineering proposals to improve seismic safety, you must conduct a formal cost-benefit analysis. Your goal is not to find a perfect solution, but to choose the most prudent and defensible course of action given a limited budget and competing priorities. This exercise simulates the real-world trade-offs leaders face when allocating public funds for disaster resilience.\n","introduction":"The scientists have identified the seismic risk. The engineers have proposed solutions. Now, the decision rests with you. The town of Branford has a limited budget for infrastructure projects, and every dollar spent on earthquake safety is a dollar not spent on schools, roads, or parks. Your task is to analyze the data, weigh the difficult trade-offs, and make a formal recommendation that you can defend to your fellow citizens.\n","background_context":"You should be comfortable with the idea of a cost-benefit analysis and understand the difference between a project's financial cost and its broader benefits (like lives saved or economic activity protected).\n"}');
-         console.log('investigations:', '[{"title":"Investigation 1: Cost-Benefit Analysis of Seismic Policies","description":"Analyze the provided data for three different seismic safety proposals for the town of Branford. You will calculate key metrics to compare their efficiency and help you make an informed decision.\n","table_data":{"caption":"Proposed Seismic Resilience Projects for Branford, CT","source":"Simulated Municipal Planning Office Data","headers":["Project Proposal","Total Cost","Projected Lives Saved (in major earthquake)","Projected Economic Disruption Averted","Public Approval Rating"],"rows":[["A: Retrofit All Public Schools","$45,000,000","150","$200,000,000","High (85%)"],["B: Reinforce the Town's Main Bridge","$30,000,000","30","$500,000,000","Medium (60%)"],["C: Public Education Campaign & Home Retrofit Subsidies","$15,000,000","75","$50,000,000","Low (35%)"]]},"analysis_questions":["For each proposal (A, B, and C), calculate the 'Cost per Life Saved' (Total Cost / Projected Lives Saved). Which project is the most financially efficient in terms of saving lives?","For each proposal, calculate the 'Return on Investment' (Economic Disruption Averted / Total Cost). Which project provides the biggest economic benefit relative to its cost?","Proposal B saves the fewest lives but prevents the most economic disruption. Why might this be the case? (Hint: Think about what the bridge is used for).","Proposal C is the cheapest and is very efficient at saving lives, but has low public approval. Why might the public be hesitant to support this type of policy?"]}]');
-         console.log('synthesis:', '{"overarching_question":"As a policymaker with a budget of $50 million, which single project would you fund to provide the most prudent and defensible improvement to Branford's resilience, and why?","claim_prompt":"**Claim:** Based on the overarching question, write a single, clear sentence stating which project you recommend for funding.\n\n**(Example):** Based on a comprehensive cost-benefit analysis, I recommend funding Proposal A, the retrofitting of all public schools.\n","evidence_prompt":"**Evidence:** Provide a bulleted list of specific, quantitative data points from your investigation that support your claim. Your evidence should compare your chosen project to the other options.\n\n- (Example for Claim A) The cost per life saved for Proposal A is \\$300,000, which is more efficient than Proposal B's \\$1,000,000 per life saved.\n","reasoning_prompt":"**Reasoning:** In a paragraph, explain the logic that connects your evidence to your claim. Justify why you prioritized certain metrics (e.g., lives saved, economic return, public approval) over others. This is where you explain your governing philosophy.\n\n**(Example):** While all three proposals offer benefits to the town, the primary responsibility of government is to protect its most vulnerable citizens, particularly children. Proposal A, while not the cheapest option, saves the most lives and is highly efficient in its cost-per-life-saved metric compared to the bridge reinforcement. The high public approval rating also indicates that this is a community priority. Although the economic return is lower than that of the bridge project, preventing the loss of life and the catastrophic failure of our schools is a non-negotiable social good that outweighs the purely financial calculation...\n"}');
-         </script>
-         
+         data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Investigation 1: Cost-Benefit Analysis&quot;,&quot;Synthesis: Claim-Evidence-Reasoning&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What are the challenges of making policy decisions when all options have significant costs and benefits? How does quantitative data help, and what are its limitations?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}">
     </div>
 
-    <main class="main-content">
-        
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
   Hexagon Lab Content Display with Sequential Navigation
   YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
 -->
@@ -147,21 +151,16 @@
     <!-- Student name is now handled by the localStorage permanent name capture feature -->
   
     <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <div class="lab-progress" id="lab-progress" style="display: none;">
-      <div class="lab-progress-bar">
-        <div class="lab-progress-fill" id="progress-fill" style="width: 0%;"></div>
+    <!-- Progress indicator and navigation (if multiple sections) -->
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1</div>
     </div>
-
-    <!-- Navigation Buttons (moved to top) -->
-    <div class="lab-navigation" id="lab-navigation" style="display: none;">
-      <button type="button" class="lab-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="lab-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
     </div>
 
     <!-- Lab Content (rendered from YAML structure) -->
@@ -614,41 +613,48 @@ document.addEventListener('DOMContentLoaded', function() {
     showLabSection(0);
 });
 </script>
+</div>
+  </div>
 
-            
-        </div>
-
-    </main>
-
-    <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760718057"></script>
-    <script src="/assets/js/sticky-header.js?v=1760718057"></script>
-    
-    
-    <!-- Conditionally load activity-specific form modules -->
-    <script>
-        // Module loading logic (executed after activity-core.js loads)
-        document.addEventListener('DOMContentLoaded', function() {
-            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-            const moduleMap = {
-                'problem_set': '/assets/js/activity-modules/ps-form.js',
-                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js'
-            };
-            
-            const modulePath = moduleMap[contentType];
-            if (modulePath) {
-                const script = document.createElement('script');
-                script.src = modulePath + '?v=1760718057';
-                document.body.appendChild(script);
-                console.log('[activity-focused.html] Loaded module:', modulePath);
-            }
-        });
-    </script>
-    
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
 
 </div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
 
     
     </div>

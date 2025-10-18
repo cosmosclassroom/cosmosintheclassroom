@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,40 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,49 +97,263 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<div class="problem-set-container">
-  <div class="problem-set-header">
-    <h1>Cratering Evidence</h1>
-    <p class="mb-0">SPHYS Unit 4</p>
-  </div>
+<div class="activity-container" id="top">
   
-  <div class="problem-set-info">
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Difficulty:</strong> </p>
-        <p><strong>Submission Format:</strong> paper</p>
-        <p><strong>Estimated Time:</strong> 45 minutes</p>
-      </div>
-      <div class="col-md-6">
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Cratering Evidence</h1>
         
       </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
     </div>
   </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="problem_set"
+         data-course="sphys"
+         data-title="Cratering Evidence"
+         data-unit="4"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Problem Set Content Display
+  Single unified form with problems and reflection
+-->
+
+
+
+<form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple problems) -->
+    
   
   <div class="problem-set-content">
-    <hr />
-<p>layout: problem_set
-title: “Problem Set 2 (Cratering Evidence)”
-fileName: “ps-4.2-cratering-evidence.md”
-unitNumber: 4
-problemSetNumber: 4.2
-followsLecture: “Lecture 4.2: Applying Forces in the Real World”
-keyFormulae:</p>
-<ul>
-  <li>“$KE = \frac{1}{2} mv^2$”</li>
-  <li>“$PE = mgh$”</li>
-  <li>
-    <h2 id="e_total--ke--pe">“$E_{total} = KE + PE$”</h2>
-  </li>
-</ul>
+    <!-- Problem Set Introduction (Collapsible) -->
+    
+
+    <!-- Key Formulae (Collapsible) -->
+    
+
+    <!-- Global Standards (Collapsible) -->
+    
+
+    <!-- Problems with Answer Fields -->
+    
+
+    <!-- Reflection Section (at end, part of same form) -->
+    <div class="form-section reflection-section">
+      <h3>Reflection & Submission</h3>
+      
+      <!-- Student Information -->
+      <fieldset class="form-subsection">
+        <legend>Student Information</legend>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="student-name">Full Name *</label>
+            <input type="text" id="student-name" name="StudentName" required>
+          </div>
+          <div class="form-field">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="StudentEmail">
+          </div>
+          <div class="form-field">
+            <label for="course-name">Course</label>
+            <input type="text" id="course-name" name="CourseName" value="SPHYS" readonly>
+          </div>
+          <div class="form-field">
+            <label for="class-period">Class Period</label>
+            <select id="class-period" name="ClassPeriod">
+              <option value="">Select Period</option>
+              <option value="1">1st Period</option>
+              <option value="2">2nd Period</option>
+              <option value="3">3rd Period</option>
+              <option value="4">4th Period</option>
+              <option value="5">5th Period</option>
+              <option value="6">6th Period</option>
+              <option value="7">7th Period</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Dynamic Activity-Specific Fields (reflection prompts) -->
+      <div id="activity-specific-fields"></div>
+
+      <!-- Hidden metadata fields -->
+      <input type="hidden" name="ActivityTitle" value="Cratering Evidence">
+      <input type="hidden" name="ResourceID" value="">
+      <input type="hidden" name="ContentType" value="problem_set">
+      <input type="hidden" name="Course" value="sphys">
+      <input type="hidden" name="Unit" value="4">
+      <input type="hidden" name="StartTime" id="start-time">
+      <input type="hidden" name="SubmitTime" id="submit-time">
+      <input type="hidden" name="BrowserInfo" id="browser-info">
+
+      <!-- Status Messages -->
+      <div id="submission-status" class="submission-status" hidden></div>
+      
+      <!-- Auto-save indicator (top right corner) -->
+      <div id="auto-save-indicator" hidden>
+        ✓ Saved
+      </div>
+
+      <!-- Simple Submit Button -->
+      <div class="form-actions">
+        <button type="submit" id="submit-button" class="btn btn-primary btn-lg">
+          Submit Problem Set
+        </button>
+        <p class="help-text">
+          Answers are auto-saved. Submit when complete.
+        </p>
+      </div>
+      
+      <!-- Status Messages (appears after button) -->
+      <div id="submission-status" class="submission-status" hidden></div>
+
+    </div>
 
   </div>
+
+</form>
+
+<script>
+// Toggle solutions visibility
+function toggleSolutions() {
+    const solutionsDiv = document.getElementById('student-solutions');
+    const toggleBtn = document.getElementById('toggle-solutions-btn');
+    
+    if (solutionsDiv.style.display === 'none') {
+        solutionsDiv.style.display = 'block';
+        toggleBtn.textContent = '🙈 Hide Answers';
+        toggleBtn.style.background = '#dc3545';
+    } else {
+        solutionsDiv.style.display = 'none';
+        toggleBtn.textContent = '🔍 Check Your Answers';
+        toggleBtn.style.background = '#ffc107';
+    }
+}
+
+// Toggle current problem's answer
+function toggleCurrentAnswer(problemNumber) {
+    const answerDiv = document.getElementById('answer-key-' + problemNumber);
+    const checkBtn = document.getElementById('check-answer-' + problemNumber);
+    
+    if (answerDiv.style.display === 'none') {
+        answerDiv.style.display = 'block';
+        checkBtn.textContent = 'Hide Solution';
+        checkBtn.style.background = '#6c757d';
+        checkBtn.style.borderColor = '#5a6268';
+    } else {
+        answerDiv.style.display = 'none';
+        checkBtn.textContent = 'View Solution';
+        checkBtn.style.background = '#007bff';
+        checkBtn.style.borderColor = '#0056b3';
+    }
+}
+
+// Initialize Problem Set Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const problems = document.querySelectorAll('.problem-container');
+    
+    if (problems.length > 0) {
+        window.problemNavigator = new ActivityNavigator({
+            containerSelector: '.problem-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonSelector: '.nav-prev',
+            nextButtonSelector: '.nav-next',
+            itemLabel: 'Problem',
+            dropdownId: 'problem-selector'
+        });
+        
+        console.log('[problem-set] Sequential navigation with dropdown initialized');
+    }
+});
+
+// Legacy function support (for inline onclick handlers)
+function navigateProblem(direction) {
+    if (window.problemNavigator) {
+        window.problemNavigator.navigate(direction);
+    }
+}
+
+// Jump to specific problem from dropdown
+function jumpToProblem(index) {
+    if (window.problemNavigator) {
+        window.problemNavigator.jumpTo(parseInt(index));
+    }
+}
+</script>
 </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

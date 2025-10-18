@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,33 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,98 +90,67 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="/assets/css/research-brief.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<div class="research-brief-container">
-  <div class="research-brief-header">
-    <h1>Rb 2 1d Kinematics</h1>
-    <p class="mb-0">HPHYS Unit 2</p>
-  </div>
+<div class="activity-container" id="top">
   
-  <div class="research-brief-info">
-    <div class="row">
-      <div class="col-md-6">
-        
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Rb 2 1d Kinematics</h1>
         
       </div>
-      <div class="col-md-6">
-        
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
       </div>
     </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
   </div>
-  
-  <div class="research-brief-content">
-    <p>title: ‘Research Brief: The Sounding Rocket’ layout: research_brief date: ‘2025-09-28’ course: hphys content_type: research_brief unit: 2
-Unit 2 Phenomenon
-The multi-stage launch and trajectory of a suborbital sounding rocket, designed to carry scientific instruments to the edge of space before falling back to Earth.</p>
 
-<p>Part 1: The Forecast
-The Mission Planner’s Challenge: You are a flight dynamics engineer preparing for a launch. Before the rocket leaves the pad, you must forecast its behavior based on its design. This allows you to set expectations and identify what “normal” flight looks like.</p>
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
-<p>Your Task: In your notebook, answer the following questions to create a qualitative model of the rocket’s flight.</p>
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type=""
+         data-course="hphys"
+         data-title="Rb 2 1d Kinematics"
+         data-unit="2"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
 
-<p>Sketch a qualitative velocity vs. time graph for the entire mission. The graph should have at least three distinct phases:</p>
-
-<p>Phase 1: The engine is firing, providing a strong, constant upward acceleration.</p>
-
-<p>Phase 2: The engine has cut off, and the rocket is coasting upwards against gravity.</p>
-
-<p>Phase 3: The rocket has reached its peak altitude (apogee) and is falling back to Earth.</p>
-
-<p>On your sketch, label the point where the rocket’s acceleration is greatest. Label the point where its velocity is momentarily zero. Label the region where its acceleration is approximately −9.80 m/s 
-2
- .</p>
-
-<p>What is the fundamental physics principle that allows you to analyze the rocket’s flight as a series of distinct stages, each with its own set of rules?</p>
-
-<p>Part 2: The Blueprint
-Modeling the Trajectory: The launch has occurred, and the telemetry data is streaming in. Your team has generated a velocity-time graph of the initial phase of the flight. Your mission is to use this data to develop a quantitative model and predict the rocket’s maximum altitude.</p>
-
-<p>Your Task: In your notebook, use the provided velocity-time graph (or one supplied by your instructor) to complete the following calculations. Show all steps, starting with the base concepts or formulae.</p>
-
-<p>Graphical Analysis (Engine Burn):</p>
-
-<p>From the graph, determine the rocket’s acceleration during the engine burn (Phase 1). (Hint: Find the slope).</p>
-
-<p>From the graph, determine the altitude of the rocket at the moment the engine cuts off. (Hint: Find the area).</p>
-
-<p>Kinematic Calculation (Coasting Phase):</p>
-
-<p>Identify the rocket’s velocity at the exact moment the engine cuts off. This is your initial velocity ( 
-v</p>
-
-<p>i
-​
- ) for the coasting phase (Phase 2).</p>
-
-<p>Using the appropriate kinematic equation, calculate how much additional altitude the rocket gains as it coasts from engine cutoff to its apogee (the point where<br />
-v</p>
-
-<p>f
-​
- =0).</p>
-
-<p>Synthesis (Peak Altitude):</p>
-
-<p>Combine your results from steps 1 and 2 to calculate the rocket’s absolute maximum altitude (apogee).</p>
-
-<p>Part 3: The Reflection
-The Mission Debrief: The flight director needs a report that not only presents the results but also explains the physics behind them. They need to understand why this modeling approach is reliable.</p>
-
-<p>Your Task: Write a formal “Mission Debrief” explaining the physics behind your calculations. Your report must:</p>
-
-<p>Begin by clearly stating the calculated acceleration during burn, the altitude at engine cutoff, and the final predicted apogee.</p>
-
-<p>Explain the powerful connection between the graphical model and the mathematical model. How does the slope of the graph physically represent the a in the kinematic equations? How does the area under the graph physically represent the displacement, Δx?</p>
-
-<p>Analyze the flight using the thinking lens of Patterns. Describe the distinct patterns of motion in Phase 1 (engine burn) and Phase 2 (coasting). What is the underlying cause of each pattern?</p>
-
-<p>Conclude by summarizing how these analytical models allow us to move from simply observing motion to precisely predicting it, which is the fundamental skill required for all aerospace exploration.</p>
-
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><p>Error: Unknown content type ''.</p></div>
   </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
 </div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

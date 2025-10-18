@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,33 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,42 +90,37 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Hexagon Lab specific styling -->
-<link rel="stylesheet" href="/assets/css/hexagon-lab.css">
-<!-- Enhanced Typography -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<!-- Chart.js for data visualization -->
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.chartJsLoaded = true;
-    console.log('[hexagon_lab.html] Chart.js v4.4.0 loaded');
-</script>
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-
-<div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
          data-resource-id=""
@@ -107,35 +128,14 @@
          data-course="hphys"
          data-title="Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses"
          data-unit="9"
-         data-submission-enabled="true"
+         data-submission-enabled="false"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
-         data-submission-fields='{"student_name":"text"}'
-         data-brief-cycle='null'>
+         data-submission-fields="null">
     </div>
-    
-    <!-- Immediate debug script to check metadata before activity-core.js loads -->
-    <script>
-      console.log('[hexagon_lab] PRE-INIT: Checking metadata attributes');
-      const metadataDiv = document.getElementById('activity-metadata');
-      if (metadataDiv) {
-        console.log('- data-submission-fields attribute:', metadataDiv.getAttribute('data-submission-fields'));
-        console.log('- data-brief-cycle attribute:', metadataDiv.getAttribute('data-brief-cycle'));
-        console.log('- dataset.submissionFields:', metadataDiv.dataset.submissionFields);
-        console.log('- dataset.briefCycle:', metadataDiv.dataset.briefCycle);
-      } else {
-        console.error('- metadata div not found yet!');
-      }
-    </script>
-    
-    <!-- Hidden metadata fields required by activity-core.js - matching IDs exactly as expected in the JS -->
-    <input type="hidden" id="start-time" name="StartTime" value="">
-    <input type="hidden" id="submit-time" name="SubmitTime" value="">
-    <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"hphys","unit":"9","title":"Hexagon Lab 9.2: Hexagon Lab - Converging & Diverging Lenses"}'>
 
-    <!-- Lab content is rendered from the hexagon-lab-display.html include -->
-    <!-- 
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
   Hexagon Lab Content Display with Sequential Navigation
   YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
 -->
@@ -144,21 +144,16 @@
     <!-- Student name is now handled by the localStorage permanent name capture feature -->
   
     <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <div class="lab-progress" id="lab-progress" style="display: none;">
-      <div class="lab-progress-bar">
-        <div class="lab-progress-fill" id="progress-fill" style="width: 0%;"></div>
+    <!-- Progress indicator and navigation (if multiple sections) -->
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
       </div>
       <div id="progress-text">Section 1</div>
     </div>
-
-    <!-- Navigation Buttons (moved to top) -->
-    <div class="lab-navigation" id="lab-navigation" style="display: none;">
-      <button type="button" class="lab-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="lab-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
     </div>
 
     <!-- Lab Content (rendered from YAML structure) -->
@@ -724,39 +719,49 @@ document.addEventListener('DOMContentLoaded', function() {
     showLabSection(0);
 });
 </script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
 
 </div>
 
-<!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760718057"></script>
-<script src="/assets/js/sticky-header.js?v=1760718057"></script>
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
 
-<!-- Conditionally load activity module -->
+<!-- Load activity-specific JS module -->
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Load hexagon lab module
-        const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760718057";
-        document.body.appendChild(script);
-        console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
-    });
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
 </script>
 
-<!-- Initialize required fields -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Set required fields for submission
-    const startTimeField = document.getElementById('start-time');
-    if (startTimeField && !startTimeField.value) {
-      startTimeField.value = new Date().toISOString();
-    }
-    
-    const browserInfoField = document.getElementById('browser-info');
-    if (browserInfoField && !browserInfoField.value) {
-      browserInfoField.value = navigator.userAgent;
-    }
-  });
-</script>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

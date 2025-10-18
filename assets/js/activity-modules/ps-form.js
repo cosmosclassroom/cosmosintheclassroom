@@ -1,271 +1,83 @@
 /**
- * Problem Set Form Module
- * Generates submission fields for Problem Set activities
- * Version: 1.0.0
- * Date: October 13, 2025
+ * Socrates | Problem Set Form Module
+ *
+ * @version 1.0.1
+ * @author  [Your Name]
+ * @license MIT
+ *
+ * This module handles the specific logic for problem set forms,
+ * including collecting answers from various input fields.
  */
 
-(function() {
+(function(Socrates) {
     'use strict';
 
-    // Wait for activity-core to be ready
-    if (!window.ACTIVITY_CORE) {
-        console.error('[ps-form] activity-core.js not loaded');
+    if (!Socrates) {
+        console.error('[ps-form] Socrates global object not found. This module will not run.');
         return;
     }
 
-    console.log('[ps-form] Problem Set module loading...');
-
-    // =============================================================================
-    // MODULE INITIALIZATION
-    // =============================================================================
-    
-    function initialize() {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        
-        if (metadata.contentType !== 'problem_set') {
-            console.warn('[ps-form] Not a problem set, skipping initialization');
+    /**
+     * Initializes the problem set form handlers.
+     * This function is attached to the Socrates.modules object and called by activity-core.js.
+     * @param {HTMLElement} form - The main activity form element.
+     */
+    function initializeProblemSetForm(form) {
+        if (!form) {
+            console.error('[ps-form] Initialization failed: Form element not found.');
             return;
         }
+        Socrates.log('[ps-form] Initializing problem set form handlers...');
 
-        console.log('[ps-form] Initializing Problem Set form...');
-        
-        // Generate form fields
-        generateFormFields(metadata);
-        
-        console.log('[ps-form] Problem Set form initialized');
-    }
+        // This function will be called by the core script to gather data
+        Socrates.collectFormData = function() {
+            const formData = {};
+            const problems = document.querySelectorAll('.problem-container');
 
-    // =============================================================================
-    // FORM FIELD GENERATION
-    // =============================================================================
-
-    function generateFormFields(metadata) {
-        const container = document.getElementById('activity-specific-fields');
-        if (!container) {
-            console.error('[ps-form] Container #activity-specific-fields not found');
-            return;
-        }
-        
-        // Clear existing content - no additional fields needed for problem sets
-        // All questions are already rendered in the problem set sections
-        container.innerHTML = '';
-        
-        console.log('[ps-form] Problem set uses inline questions - no additional submission fields');
-    }
-
-    // =============================================================================
-    // FIELD BUILDERS
-    // =============================================================================
-
-    function buildCompletionChecklist(config) {
-        // Note: Completion checklist is now more meaningful since we're collecting actual answers
-        const problems = config?.problems || [
-            'Apprentice Problems',
-            'Journeyman Problems',
-            'Master Problems'
-        ];
-
-        let html = '<div class="form-section">';
-        html += '<h4>Completion Checklist</h4>';
-        html += '<p class="helper-text">Check all sections you completed:</p>';
-        html += '<div class="checkbox-group">';
-
-        problems.forEach((problem, index) => {
-            const id = `completion-${index}`;
-            html += `
-                <div class="checkbox-item">
-                    <input type="checkbox" 
-                           id="${id}" 
-                           name="completed_sections" 
-                           value="${escapeHtml(problem)}">
-                    <label for="${id}">${escapeHtml(problem)}</label>
-                </div>
-            `;
-        });
-
-        html += '</div>';
-        html += '<p class="helper-text"><small>Note: Your individual problem answers are automatically included in the submission.</small></p>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildDifficultyRating() {
-        let html = '<div class="form-section">';
-        html += '<h4>Difficulty Rating</h4>';
-        html += '<div class="form-group">';
-        html += '<label for="difficulty-rating">How challenging was this problem set?</label>';
-        html += '<select id="difficulty-rating" name="difficulty_rating" required>';
-        html += '<option value="">Select difficulty...</option>';
-        html += '<option value="too_easy">Too Easy - Not challenging enough</option>';
-        html += '<option value="just_right">Just Right - Good challenge level</option>';
-        html += '<option value="challenging">Challenging - Had to work hard but manageable</option>';
-        html += '<option value="too_hard">Too Hard - Struggled significantly</option>';
-        html += '</select>';
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildTimeSpent() {
-        let html = '<div class="form-section">';
-        html += '<h4>Time Spent</h4>';
-        html += '<div class="form-grid">';
-        
-        html += '<div class="form-group">';
-        html += '<label for="time-spent">Approximate time spent (minutes) <span class="required">*</span></label>';
-        html += '<input type="number" id="time-spent" name="time_spent" min="0" max="500" required>';
-        html += '</div>';
-
-        html += '<div class="form-group">';
-        html += '<label for="work-sessions">Number of work sessions</label>';
-        html += '<input type="number" id="work-sessions" name="work_sessions" min="1" max="20" value="1">';
-        html += '<span class="helper-text">How many separate times did you work on this?</span>';
-        html += '</div>';
-
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildReflection(config) {
-        const prompt = config?.prompt || 
-            'What did you learn from this problem set? What strategies worked well? What would you do differently next time?';
-
-        let html = '<div class="form-section">';
-        html += '<h4>Reflection <span class="required">*</span></h4>';
-        html += '<div class="form-group">';
-        html += `<label for="reflection">${escapeHtml(prompt)}</label>`;
-        html += '<textarea id="reflection" name="reflection" required minlength="50" rows="6">';
-        html += '</textarea>';
-        html += '<span class="helper-text">Minimum 50 characters. Be thoughtful and specific.</span>';
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildQuestionsField() {
-        let html = '<div class="form-section">';
-        html += '<h4>Questions or Help Needed</h4>';
-        html += '<div class="form-group">';
-        html += '<label for="questions">Do you have any questions about the problems or concepts?</label>';
-        html += '<textarea id="questions" name="questions" rows="4">';
-        html += '</textarea>';
-        html += '<span class="helper-text">Optional: List specific problems or concepts you struggled with.</span>';
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildCollaborationField() {
-        let html = '<div class="form-section">';
-        html += '<h4>Collaboration</h4>';
-        html += '<div class="form-group">';
-        html += '<label for="collaborated-with">Did you work with anyone? (Optional)</label>';
-        html += '<input type="text" id="collaborated-with" name="collaborated_with" ';
-        html += 'placeholder="Enter names of classmates">';
-        html += '<span class="helper-text">List classmates you collaborated with (discussion only, not copying).</span>';
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    function buildAdditionalNotes() {
-        let html = '<div class="form-section">';
-        html += '<h4>Additional Notes</h4>';
-        html += '<div class="form-group">';
-        html += '<label for="additional-notes">Any other comments or feedback?</label>';
-        html += '<textarea id="additional-notes" name="additional_notes" rows="3">';
-        html += '</textarea>';
-        html += '</div>';
-        html += '</div>';
-
-        return html;
-    }
-
-    // =============================================================================
-    // EVENT LISTENERS
-    // =============================================================================
-
-    function attachEventListeners() {
-        // Character counter for reflection
-        const reflectionField = document.getElementById('reflection');
-        if (reflectionField) {
-            reflectionField.addEventListener('input', function() {
-                const length = this.value.length;
-                const minLength = parseInt(this.getAttribute('minlength')) || 50;
+            problems.forEach((problem) => {
+                const problemNumber = problem.dataset.problemNumber;
+                const responseElement = problem.querySelector(`textarea[name="problem_${problemNumber}_response"]`);
                 
-                // Find or create counter display
-                let counter = this.parentElement.querySelector('.char-counter');
-                if (!counter) {
-                    counter = document.createElement('span');
-                    counter.className = 'char-counter';
-                    this.parentElement.appendChild(counter);
+                if (responseElement) {
+                    formData[`problem_${problemNumber}_response`] = responseElement.value;
                 }
 
-                counter.textContent = `${length} / ${minLength} characters`;
-                counter.style.color = length >= minLength ? '#27ae60' : '#7f8c8d';
-                counter.style.fontSize = '0.85rem';
-                counter.style.marginTop = '0.25rem';
+                // Handle multi-part questions if they exist
+                const multiPartInputs = problem.querySelectorAll(`.multi-part-response-field[data-problem-number="${problemNumber}"]`);
+                multiPartInputs.forEach(input => {
+                    const part = input.dataset.part;
+                    formData[`problem_${problemNumber}_part_${part}`] = input.value;
+                });
             });
-        }
 
-        // Time spent validation
-        const timeSpentField = document.getElementById('time-spent');
-        if (timeSpentField) {
-            timeSpentField.addEventListener('input', function() {
-                const value = parseInt(this.value);
-                if (value > 180) {
-                    this.setCustomValidity('If you spent more than 3 hours, please explain in Additional Notes.');
-                } else {
-                    this.setCustomValidity('');
+            // Also collect reflection response
+            const reflectionTextarea = form.querySelector('textarea[name="reflection_response"]');
+            if (reflectionTextarea) {
+                formData['reflection_response'] = reflectionTextarea.value;
+            }
+
+            Socrates.log('[ps-form] Collected form data:', formData);
+            return formData;
+        };
+
+        // This function will be called by the core script to restore data
+        Socrates.restoreFormData = function(savedData) {
+            if (!savedData) return;
+
+            Socrates.log('[ps-form] Restoring form data...');
+
+            Object.keys(savedData).forEach(key => {
+                const element = form.querySelector(`[name="${key}"]`);
+                if (element) {
+                    element.value = savedData[key];
                 }
             });
-        }
+        };
 
-        // Checklist tracking
-        const checkboxes = document.querySelectorAll('input[name="completed_sections"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', function() {
-                updateCompletionSummary();
-            });
-        });
+        Socrates.log('[ps-form] Problem set form handlers initialized.');
     }
 
-    function updateCompletionSummary() {
-        const checkboxes = document.querySelectorAll('input[name="completed_sections"]:checked');
-        console.log('[ps-form] Completed sections:', checkboxes.length);
-        
-        // Could add visual feedback here if desired
-    }
+    // Attach the initialization function to the global Socrates object
+    Socrates.modules.initForm = initializeProblemSetForm;
 
-    // =============================================================================
-    // UTILITY FUNCTIONS
-    // =============================================================================
-
-    function escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
-
-    // =============================================================================
-    // AUTO-INITIALIZATION
-    // =============================================================================
-
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initialize);
-    } else {
-        initialize();
-    }
-
-    console.log('[ps-form] Problem Set module loaded');
-
-})();
+})(window.Socrates);

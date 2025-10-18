@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,33 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,157 +90,67 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<div class="problem-set-container">
-  <div class="problem-set-header">
-    <h1>Ps 3.3 Relative Motion</h1>
-    <p class="mb-0">HPHYS Unit 3</p>
-  </div>
+<div class="activity-container" id="top">
   
-  <div class="problem-set-info">
-    <div class="row">
-      <div class="col-md-6">
-        <p><strong>Difficulty:</strong> </p>
-        <p><strong>Submission Format:</strong> paper</p>
-        <p><strong>Estimated Time:</strong> 45 minutes</p>
-      </div>
-      <div class="col-md-6">
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Ps 3.3 Relative Motion</h1>
         
       </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
     </div>
   </div>
-  
-  <div class="problem-set-content">
-    <h1>——————————————————————————</h1>
-<h1 id="section-2-front-matter--metadata">SECTION 2: FRONT MATTER &amp; METADATA</h1>
-<h1 id="-1">——————————————————————————</h1>
-<p>front_matter:
-  # — Jekyll Fields (Required by your site standards) —
-  title: “Problem Set 3.3: The Observer’s Frame (Relative Motion)”
-  layout: problem_set_layout
-  date: 2025-10-23
-  course: hphys
-  content_type: problem_set
-  unit: “3-projectiles”
-  DCI: “PS2.A”
-  Practice: [“Developing and Using Models”, “Constructing Explanations and Designing Solutions”]
-  CCC: [“Systems and System Models”]
-  tags: [“relative motion”, “kinematics”, “vectors”, “conceptual”, “problem_set”]</p>
 
-<h1 id="-2">——————————————————————————</h1>
-<h1 id="section-3-problem-set-overview">SECTION 3: PROBLEM SET OVERVIEW</h1>
-<h1 id="-3">——————————————————————————</h1>
-<p>overview:
-  follows_lecture: “Lecture 3.2: A New Way of Seeing”
-  introduction: “Our final look at two-dimensional motion asks the profound question: <strong>Relative to what?</strong> The motion you observe depends entirely on your frame of reference. This problem set uses the key vector concepts from the unit to model and explain how different observers perceive motion, moving beyond the simple $x$ and $y$ systems to larger, interacting ‘System Models’.”
-  key_formulae:
-    - |
-      $\vec{v}<em>{AE} = \vec{v}</em>{AB} + \vec{v}_{BE}$ (Velocity of A relative to E, is velocity of A relative to B plus velocity of B relative to E)
-  global_standards:
-    - “This problem set is primarily conceptual and focused on vector modeling and explanation.”
-    - “Follow the systematic problem-solving process for any quantitative component, but emphasize clear vector diagrams for the conceptual elements.”
-    - “Present all final answers with the correct units and number of significant figures where applicable.”</p>
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
-<h1 id="-4">——————————————————————————</h1>
-<h1 id="section-4-problems--solutions">SECTION 4: PROBLEMS &amp; SOLUTIONS</h1>
-<h1 id="-5">——————————————————————————</h1>
-<p>problems:
-  # ————————- TIER 1: APPRENTICE —————————</p>
-<ul>
-  <li>problem_number: 1
-tier:
-  level: 1
-  title: “The Apprentice’s Practice: Foundational Skills”
-phenomenon_connection: “This is the most fundamental case of relative motion—linear velocity—to establish the core idea of frames of reference.”
-problem_statement: “A boat travels due North across a river at a speed of $3.0 \, m/s$ relative to the water ($\vec{v}<em>{BW}$). The river is flowing East at a constant speed of $1.5 \, m/s$ relative to the shore ($\vec{v}</em>{WS}$). What is the magnitude and direction of the boat’s velocity relative to a stationary observer on the shore ($\vec{v}<em>{BS}$)? (Use the formula $\vec{v}</em>{BS} = \vec{v}<em>{BW} + \vec{v}</em>{WS}$).”
-diagram_placeholder: “”
-solution:
-  givens:
-    - |
-      $\vec{v}<em>{BW} = 3.0 \, m/s \text{, North}$
-    - |
-      $\vec{v}</em>{WS} = 1.5 \, m/s \text{, East}$
-  unknowns:
-    - |
-      $\vec{v}<em>{BS} = ?$ (Magnitude and Direction)
-  steps:
-    - “1. <strong>Find the Magnitude:</strong> Since the two velocities are perpendicular, use the Pythagorean theorem: $v</em>{BS} = \sqrt{v_{BW}^2 + v_{WS}^2}$.”
-    - “2. <strong>Substitute Values and Track Units (Magnitude):</strong>”
-    - |
-      $v_{BS} = \sqrt{(3.0 \, m/s)^2 + (1.5 \, m/s)^2} = \sqrt{9.0 \, m^2/s^2 + 2.25 \, m^2/s^2} = \sqrt{11.25 \, m^2/s^2} = 3.354 \, m/s$
-    - “3. <strong>Find the Direction:</strong> Use the inverse tangent function: $\theta = \tan^{-1}(\frac{v_{WS}}{v_{BW}})$. (This gives the angle East of North).”
-    - “4. <strong>Substitute Values (Direction):</strong>”
-    - |
-      $\theta = \tan^{-1}(\frac{1.5 \, m/s}{3.0 \, m/s}) = \tan^{-1}(0.5) = 26.565^{\circ}$
-  final_answer: |
-    The boat’s velocity relative to the shore is <strong>$3.4 \, m/s$</strong> at <strong>$27^{\circ}$ East of North</strong>.</li>
-</ul>
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type=""
+         data-course="hphys"
+         data-title="Ps 3.3 Relative Motion"
+         data-unit="3"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
 
-<p># ————————- TIER 2: JOURNEYMAN —————————</p>
-<ul>
-  <li>
-    <p>problem_number: 2
-tier:
-  level: 2
-  title: “The Journeyman’s Task: Synthesis &amp; Application”
-phenomenon_connection: “This problem returns to the Siege of Constantinople, requiring the student to consider how the cannon’s movement affects the projectile’s motion from the perspective of an external observer.”
-problem_statement: “A cannon is mounted on a flat cart that is rolling East along the city wall at a speed of $5.0 \, m/s$ (relative to the ground). The cannon is fired straight <strong>upward</strong> at a speed of $50.0 \, m/s$ (relative to the cart). The cannonball lands back on the cart’s deck.”
-prompt: “From the perspective of a stationary soldier standing outside the city wall, sketch the trajectory of the cannonball. Explain why the cannonball lands back on the cart using the concept of relative motion and vector components.”
-diagram_placeholder: “[Image showing a projectile launched vertically from a moving cart. The trajectory seen by an observer on the ground is a parabola (like Problem 2 of 3.2), but the trajectory seen by the person on the cart is a straight vertical line.]”
-solution:
-  reflection: &gt;-
-    <strong>Trajectory Sketch (Relative to Stationary Soldier):</strong> The soldier on the ground observes a <strong>parabolic trajectory</strong> .</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Explanation using Relative Motion:**
-1.  **Horizontal Velocity ($v_x$):** When the cannonball is fired, it inherits the **initial horizontal velocity of the cart** ($5.0 \\, m/s$ East). Since there is no horizontal force (ignoring air resistance), this velocity is constant throughout its flight.
-2.  **Vertical Velocity ($v_y$):** The cannonball has an initial vertical velocity of $50.0 \\, m/s$, which is constantly changing due to gravity ($a_y = g$).
-3.  **The Landing:** Because the cart also maintains a constant horizontal velocity of $5.0 \\, m/s$ for the *entire time of flight* and is not subject to any horizontal force, its horizontal position ($x_{\\text{cart}} = v_{\\text{cart}} t$) perfectly matches the cannonball's horizontal position ($x_{\\text{ball}} = v_{0x} t$). From the perspective of an observer on the cart, the horizontal velocity ($\vec{v}_{ball} - \vec{v}_{cart}$) is always zero, so they only see vertical motion. The cannonball lands exactly where it started *relative to the moving system* (the cart).
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<p># ————————- TIER 3: MASTER ——————————-</p>
-<ul>
-  <li>
-    <p>problem_number: 3
-tier:
-  level: 3
-  title: “The Master’s Insight: Metacognitive Reflection”
-phenomenon_connection: “This question ties the abstract concept of relative motion back to the fundamental idea of our course: the search for universal, consistent laws of nature.”
-problem_statement: “The law of projectile motion seems to work, regardless of where the observer stands (on the ground or on the moving cart). Reflect on the Cross-Cutting Concept of <strong>Systems and System Models</strong> and the overall ‘Burke-Sagan-Feynman’ course philosophy.”
-prompt: “Why is the fact that the laws of physics (like kinematics) are the same in all non-accelerating frames of reference (called <strong>Galilean Invariance</strong>) such a profound and necessary principle? How does this concept assure us that our physics models are describing fundamental <strong>patterns</strong> in the universe, rather than just local rules?”
-diagram_placeholder: “”
-solution:
-  reflection: &gt;-
-    <strong>Galilean Invariance</strong> is a profound principle because it confirms the <strong>universality</strong> of physical laws (the ‘Sagan’ influence).</p>
-
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.  **Fundamental Patterns:** If the laws of physics were different for observers in different non-accelerating frames (e.g., if the $\\vec{a}_g$ was $9.80 \, m/s^2$ on the ground but $10.80 \, m/s^2$ on the cart), our models would only describe local rules, not fundamental **patterns** of the universe. The consistency of the laws proves that the underlying relationships (like the equations of kinematics) are independent of the observer's steady velocity.
-
-2.  **System Models:** It assures us that our **System Model** is valid. Whether we define our system as 'cannonball relative to ground' (resulting in a parabola) or 'cannonball relative to cart' (resulting in a straight line), the forces and kinematics remain consistent with $F_{\\text{net}} = ma$ in both cases. The acceleration of gravity is the same for all inertial observers; only the $\\vec{v}$ and $\\vec{d}$ values change. This intellectual honesty (the 'Feynman' influence) is essential to building confidence in the predictability of the cosmos.
-</code></pre></div>    </div>
-  </li>
-</ul>
-
-<h1 id="-6">——————————————————————————</h1>
-<h1 id="section-5-student-solutions-list">SECTION 5: STUDENT SOLUTIONS LIST</h1>
-<h1 id="this-section-provides-final-quantitative-answers-for-student-self-assessment">This section provides final, quantitative answers for student self-assessment.</h1>
-<h1 id="-7">——————————————————————————</h1>
-<p>student_solutions_list:</p>
-<ul>
-  <li>problem_number: 1
-final_answer: “3.4 m/s at 27° East of North”</li>
-  <li>problem_number: 2
-final_answer: “Conceptual/Reflective Question - No quantitative answer required.”</li>
-  <li>problem_number: 3
-final_answer: “Conceptual/Reflective Question - No quantitative answer required.”</li>
-</ul>
-
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><p>Error: Unknown content type ''.</p></div>
   </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
 </div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
+
+<!-- Load activity-specific JS module -->
+
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

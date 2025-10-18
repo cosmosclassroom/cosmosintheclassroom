@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,33 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,385 +90,94 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Hexagon Lab specific styling -->
-<link rel="stylesheet" href="/assets/css/hexagon-lab.css">
-<!-- Enhanced Typography -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<!-- Chart.js for data visualization -->
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Hexagon Lab: Hitting a Moving Target</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
 
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-
-<div class="activity-content-container">
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
          data-resource-id=""
-         data-content-type="hexagon_lab"
+         data-content-type="lab"
          data-course="hphys"
          data-title="Hexagon Lab: Hitting a Moving Target"
          data-unit="3"
-         data-submission-enabled="true"
+         data-submission-enabled="false"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
-         data-submission-fields='{"student_name":"text"}'
-         data-brief-cycle='null'>
-    </div>
-    
-    <!-- Immediate debug script to check metadata before activity-core.js loads -->
-    <script>
-      console.log('[hexagon_lab] PRE-INIT: Checking metadata attributes');
-      const metadataDiv = document.getElementById('activity-metadata');
-      if (metadataDiv) {
-        console.log('- data-submission-fields attribute:', metadataDiv.getAttribute('data-submission-fields'));
-        console.log('- data-brief-cycle attribute:', metadataDiv.getAttribute('data-brief-cycle'));
-        console.log('- dataset.submissionFields:', metadataDiv.dataset.submissionFields);
-        console.log('- dataset.briefCycle:', metadataDiv.dataset.briefCycle);
-      } else {
-        console.error('- metadata div not found yet!');
-      }
-    </script>
-    
-    <!-- Hidden metadata fields required by activity-core.js - matching IDs exactly as expected in the JS -->
-    <input type="hidden" id="start-time" name="StartTime" value="">
-    <input type="hidden" id="submit-time" name="SubmitTime" value="">
-    <input type="hidden" id="browser-info" name="BrowserInfo" value="">
-    <input type="hidden" id="metadata-json" name="Metadata" value='{"resourceId":"","contentType":"hexagon_lab","course":"hphys","unit":"3","title":"Hexagon Lab: Hitting a Moving Target"}'>
-
-    <!-- Lab content is rendered from the hexagon-lab-display.html include -->
-    <!-- 
-  Hexagon Lab Content Display with Sequential Navigation
-  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
--->
-
-<div class="hexagon-lab-content">
-    <!-- Student name is now handled by the localStorage permanent name capture feature -->
-  
-    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <div class="lab-progress" id="lab-progress" style="display: none;">
-      <div class="lab-progress-bar">
-        <div class="lab-progress-fill" id="progress-fill" style="width: 0%;"></div>
-      </div>
-      <div id="progress-text">Section 1</div>
+         data-submission-fields="null">
     </div>
 
-    <!-- Navigation Buttons (moved to top) -->
-    <div class="lab-navigation" id="lab-navigation" style="display: none;">
-      <button type="button" class="lab-nav-button" id="prev-item">
-        <span class="nav-icon">←</span> Previous
-      </button>
-      <button type="button" class="lab-nav-button" id="next-item">
-        Next <span class="nav-icon">→</span>
-      </button>
-    </div>
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><p>Error: Unknown content type 'lab'.</p></div>
+  </div>
 
-    <!-- Lab Content (rendered from YAML structure) -->
-    <div id="lab-sections-container">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <!-- Fallback: Render markdown content if present (backward compatibility) -->
-      <div class="nav-item-container lab-section fallback-content">
-        <h1 id="objective">Objective</h1>
-<p>Synthesize principles of projectile motion and relative velocity to predict the required “lead time” to intercept a moving target in 2D kinematics (horizontal and vertical motion) plus time.</p>
-
-<h1 id="introduction">Introduction</h1>
-<p>In our last lecture, we discussed the challenge of aiming a cannon from a moving warship. Now, the cannon is stationary and the target is moving. Imagine you are the master gunner defending a fortress. A supply cart is being rushed across the field below at a constant speed. Firing directly at the cart’s current position will result in a miss, as the cart will have moved on by the time your cannonball arrives.</p>
-
-<p>Your mission: Analyze the motion of both your projectile and the target to determine precisely where to aim and when to fire so their paths intersect at the same moment.</p>
-
-<h1 id="scenario-simulated-data-analysis">Scenario: Simulated Data Analysis</h1>
-<p>You do not need to run a simulation. Instead, you will be provided with the necessary data from your “scouts,” who have already observed the target and your cannon.</p>
-
-<h2 id="cannon-parameters">Cannon Parameters</h2>
-<ul>
-  <li>Muzzle Velocity ($v_i$): 120.0 m/s</li>
-  <li>Launch Angle ($\theta$): 35.0°</li>
-</ul>
-
-<h2 id="target-parameters">Target Parameters</h2>
-<ul>
-  <li>Motion: Moves from left to right at a constant velocity</li>
-  <li>Starting Point: 300 m to the left of your cannon</li>
-  <li>Path: Will cross directly in front of your cannon ($x=0$)</li>
-</ul>
-
-<h2 id="data-table-target-motion">Data Table: Target Motion</h2>
-<p>| Time (s) | Target Position, $x$ (m) |
-|———-|————————–|
-| 0.0      | -300.0                   |
-| 5.0      | -200.0                   |
-| 10.0     | -100.0                   |
-| 15.0     | 0.0                      |
-| 20.0     | 100.0                    |</p>
-
-<p><em>Using this data, calculate the constant velocity of the target ($\vec{v}_{target}$).</em></p>
-
-<h1 id="investigation-calculating-the-intercept">Investigation: Calculating the Intercept</h1>
-<p>Work through the following steps in your lab notebook:</p>
-
-<h2 id="analyze-your-weapon-projectile">Analyze Your Weapon (Projectile)</h2>
-<ul>
-  <li>Calculate the total time of flight for your cannonball, assuming it is fired over level ground.</li>
-  <li>Calculate the range ($\Delta x$) of your cannonball. This is the only possible location where you can intercept the target.</li>
-</ul>
-
-<h2 id="analyze-the-targets-motion">Analyze the Target’s Motion</h2>
-<ul>
-  <li>Calculate the velocity of the target using the data table.</li>
-</ul>
-
-<h2 id="plan-the-intercept">Plan the Intercept</h2>
-<ul>
-  <li>You know how long your cannonball will be in the air ($t_{flight}$).</li>
-  <li>You know where it will land ($x_{intercept}$, the range).</li>
-  <li>During the time the cannonball is flying, the target will continue to move. Calculate the distance the target travels during your cannonball’s flight time (the “lead distance”).</li>
-  <li>To hit the target, the cannon must be fired before the target reaches the landing spot. Where must the target be located on the $x$-axis at the exact moment you fire for a successful hit?</li>
-</ul>
-
-<h1 id="post-lab-synthesis-and-analysis">Post-Lab: Synthesis and Analysis</h1>
-<p><strong>Argument from Evidence:</strong> Write a “General Order” to a new artillery apprentice explaining the rule for hitting a moving target. In your own words, explain why you cannot simply aim at the target’s current position. Use the specific values you calculated (time of flight, target speed, lead distance) to make your argument.</p>
-
-<p><strong>Cause and Effect:</strong> If the enemy used a faster cart (e.g., doubled the velocity), how would that change the required “lead distance”? How would it change the position the target must be in when you fire?</p>
-
-<p><strong>Modeling:</strong> Can you devise a single equation that an artillery officer could use? The formula should solve for the required position of the target at the moment of firing ($x_{target_at_fire}$) as a function of the cannonball’s range ($\Delta x_{projectile}$), the target’s velocity ($v_{target}$), and the projectile’s time of flight ($t_{flight}$).</p>
-
-<hr />
-
-      </div>
-      
-      
-    </div>
-
-    <!-- Navigation Buttons moved to the top -->
-
-  </div> <!-- Close #lab-sections-container -->
-
-  <!-- Submission Section - using common pattern from activity-forms.js -->
-  <div class="submission-section-wrapper" id="submission-wrapper">
-    <!-- Student name is now handled by the sticky header -->
-    
-    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
-    <div id="activity-specific-fields"></div>
-
-    <!-- Submit Button -->
-    <div class="lab-form-actions">
-      <button type="submit" id="submit-button" class="lab-submit-button">
-        Submit Lab Report
-      </button>
-      <p class="lab-help-text">
-        Your answers are auto-saved as you work. Click above when you're ready to submit.
-      </p>
-    </div>
-    
-    <!-- Status Messages -->
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
     <div id="submission-status" class="submission-status" hidden></div>
   </div>
 
-<<<<<<< HEAD
-</form>
-
-<script src="/assets/js/activity-navigator.js"></script>
-=======
-<!-- Scripts are now loaded in the layout file -->
->>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
-<script>
-/**
- * Hexagon Lab Section Navigator
- * YAML-first: Sections already structured by Liquid, just initialize navigation
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
-    
-    // Check if activity-core is initialized
-    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
-        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
-    } else {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
-    }
-    
-    const container = document.getElementById('lab-sections-container');
-    
-    if (!container) {
-        console.warn('[hexagon-lab] Lab sections container not found');
-        return;
-    }
-    
-    // Count pre-structured sections
-    const sections = container.querySelectorAll('.nav-item-container');
-    
-    if (sections.length <= 1) {
-        // Single section or no sections - show everything, no navigation needed
-        console.log('[hexagon-lab] Single section mode - no navigation needed');
-        if (sections.length === 1) {
-            sections[0].classList.add('active');
-        }
-        return;
-    }
-    
-    console.log('[hexagon-lab] Found', sections.length, 'sections');
-    
-    // Show progress and navigation UI
-    document.getElementById('lab-progress').style.display = 'block';
-    document.getElementById('lab-navigation').style.display = 'flex';
-    
-    // Manual activation of first section and setup section visibility
-    if (sections.length > 0) {
-        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the first section
-        sections[0].style.display = 'block';
-        sections[0].classList.add('active');
-        
-        // Ensure all sections have proper display style
-        // This ensures that when we toggle the 'active' class, display changes work correctly
-        sections.forEach(section => {
-            // Enforce display:block when active, display:none when inactive
-            if (!section.style.display || section.style.display === '') {
-                section.style.display = 'none';
-            }
-        });
-    }
-    
-    // Debug elements
-    console.log('[hexagon-lab] Debug:');
-    console.log('- nav sections:', sections.length);
-    console.log('- section 0:', sections[0]);
-    console.log('- prev button:', document.getElementById('prev-item'));
-    console.log('- next button:', document.getElementById('next-item'));
-    console.log('- progress fill:', document.getElementById('progress-fill'));
-    console.log('- progress text:', document.getElementById('progress-text'));
-    
-    // Initialize navigator
-    // We'll use our own simple navigation implementation that's guaranteed to work
-    console.log('[hexagon-lab] Setting up lab navigation system');
-    
-    // Initialize navigation state
-    let currentIndex = 0;
-    const totalSections = sections.length;
-    
-    // Core navigation function
-    function showLabSection(index) {
-        console.log('[hexagon-lab] Navigating to section', index);
-        
-        // Validate index
-        if (index < 0 || index >= totalSections) {
-            console.warn('[hexagon-lab] Invalid section index:', index);
-            return;
-        }
-        
-        // Hide all sections
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the requested section
-        sections[index].style.display = 'block';
-        sections[index].classList.add('active');
-        
-        // Update state
-        currentIndex = index;
-        
-        // Update button states
-        document.getElementById('prev-item').disabled = (index === 0);
-        document.getElementById('next-item').disabled = (index === totalSections - 1);
-        
-        // Update progress bar
-        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
-        document.getElementById('progress-fill').style.width = progressPercent + '%';
-        
-        // Update progress text
-        const sectionTitle = sections[index].getAttribute('data-section-title') || 
-                             ('Section ' + (index + 1));
-        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('[hexagon-lab] Section displayed:', sectionTitle);
-    }
-    
-    // Wire up navigation buttons
-    document.getElementById('prev-item').addEventListener('click', function() {
-        showLabSection(currentIndex - 1);
-    });
-    
-    document.getElementById('next-item').addEventListener('click', function() {
-        showLabSection(currentIndex + 1);
-    });
-    
-    // Initialize with first section
-    showLabSection(0);
-});
-</script>
-
 </div>
 
-<!-- Core Activity Scripts -->
-<script src="/assets/js/activity-core.js?v=1760718057"></script>
-<script src="/assets/js/sticky-header.js?v=1760718057"></script>
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
 
-<!-- Conditionally load activity module -->
+<!-- Load activity-specific JS module -->
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Load hexagon lab module
-        const script = document.createElement('script');
-        script.src = "/assets/js/activity-modules/hl-form.js?v=1760718057";
-        document.body.appendChild(script);
-        console.log('[hexagon_lab.html] Loaded module: /assets/js/activity-modules/hl-form.js');
-    });
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
 </script>
 
-<!-- Initialize required fields -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Set required fields for submission
-    const startTimeField = document.getElementById('start-time');
-    if (startTimeField && !startTimeField.value) {
-      startTimeField.value = new Date().toISOString();
-    }
-    
-    const browserInfoField = document.getElementById('browser-info');
-    if (browserInfoField && !browserInfoField.value) {
-      browserInfoField.value = navigator.userAgent;
-    }
-  });
-</script>
+
     
     </div>
     <script type="application/json" id="course-data-">null</script>

@@ -26,6 +26,7 @@
     <!-- tabs.js for tabs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
     <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
@@ -33,8 +34,36 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <link rel="stylesheet" href="/assets/css/research-brief.css">
+    <link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
   </head>
-  <body>
+  <body class="">
+    
     <header>
       <div class="site-header">
         <!---->
@@ -64,43 +93,38 @@
       </div>
     </header>
     
+    
   <div class="markdown-body">
     
-      <!-- Activity Submission System CSS -->
-<link rel="stylesheet" href="/assets/css/activity-submission.css">
-<!-- Enhanced Typography for Flexbooks -->
-<link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-<!-- Research Brief Styling (when content_type is research_brief) -->
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<link rel="stylesheet" href="/assets/css/research-brief.css">
-<link rel="stylesheet" href="/assets/css/components/multi-part-questions.css">
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Research Brief: Energy Grids</h1>
+        
+        <span class="badge badge-research">Research Brief</span>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Chart.js for data visualization -->
-
-
-<!-- Backend Configuration -->
-<script>
-    window.SITE_CONFIG = window.SITE_CONFIG || {};
-    window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
-</script>
-
-<style>
-/* Clean activity page: Full-width content with sticky header */
-.activity-content-container {
-    padding-top: 0;
-    margin-top: 0;
-}
-</style>
-
-<!-- Sticky Header (replaces breadcrumbs and scattered submission UI) -->
-
-
-<div class="activity-content-container">
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
 
     <!-- Critical metadata for backend routing and JavaScript -->
     <div id="activity-metadata"
@@ -112,77 +136,79 @@
          data-submission-enabled="true"
          data-auto-save-enabled="true"
          data-auto-save-interval="30000"
-         data-submission-fields="null"
-         data-brief-cycle="[{&quot;phase&quot;:1,&quot;title&quot;:&quot;Phase 1: Forecast&quot;,&quot;description&quot;:&quot;After encountering the 2021 Texas power crisis, your first task is to document your initial understanding of the problem and your ideas about how our electrical system works.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Initial Situation Understanding&quot;,&quot;prompt_text&quot;:&quot;In February 2021, millions of people in Texas lost power during a winter storm. Some had no electricity, heat, or water for days. What do you already know about power grids or blackouts? What factors do you think might have contributed to the power grid failure?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:6},{&quot;title&quot;:&quot;My First Model&quot;,&quot;prompt_text&quot;:&quot;Draw or describe what you think happened to cause the power grid failure. Show all the parts you think are involved and how they connect.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Who Was Affected?&quot;,&quot;prompt_text&quot;:&quot;Who do you think was most affected by this crisis? How might different communities have been impacted differently?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]},{&quot;phase&quot;:2,&quot;title&quot;:&quot;Phase 2: Blueprint&quot;,&quot;description&quot;:&quot;Now that you have learned about electrical circuits, power, and energy transfer, update your understanding of the grid failure using evidence from our labs and readings.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Updated Model with New Understanding&quot;,&quot;prompt_text&quot;:&quot;Based on what you&#39;ve learned, revise your understanding of the grid failure. Include concepts of voltage, current, resistance, power, energy transfer, and system stability.&quot;,&quot;response_type&quot;:&quot;file_upload&quot;,&quot;accepted_file_types&quot;:[&quot;.jpg&quot;,&quot;.png&quot;,&quot;.pdf&quot;]},{&quot;title&quot;:&quot;Cause-Effect Analysis&quot;,&quot;prompt_text&quot;:&quot;Complete these cause-and-effect statements:&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;The part of the system that failed first was probably ___ because ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;This failure led to ___ which then caused ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;A more reliable system would need to ___.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:2}]},{&quot;title&quot;:&quot;Evidence-Based Reasoning&quot;,&quot;prompt_text&quot;:&quot;Using evidence from Hexagon Lab 1.1, the Flexbook reading, and class discussion, construct a Claim-Evidence-Reasoning statement about what caused the Texas power grid failure.&quot;,&quot;response_type&quot;:&quot;cer&quot;}]},{&quot;phase&quot;:3,&quot;title&quot;:&quot;Phase 3: Reflection&quot;,&quot;description&quot;:&quot;Construct your final, evidence-based explanation of the power grid failure and reflect on solutions and equity considerations.&quot;,&quot;prompts&quot;:[{&quot;title&quot;:&quot;Final Explanation&quot;,&quot;prompt_text&quot;:&quot;Write a comprehensive explanation of what caused the Texas power grid failure and how it could have been prevented. Use at least 3 science terms correctly (voltage, current, power, etc.) and include evidence from our labs and readings.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:12},{&quot;title&quot;:&quot;Engineering Solutions&quot;,&quot;prompt_text&quot;:&quot;Propose three changes that could make the power grid more reliable.&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;Solution 1: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;Solution 2: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;Solution 3: Describe the solution and explain why it would help based on the science you&#39;ve learned.&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]},{&quot;title&quot;:&quot;Equity and Community Impact&quot;,&quot;prompt_text&quot;:&quot;Consider the following questions about equity and community impact:&quot;,&quot;response_type&quot;:&quot;multi_part&quot;,&quot;parts&quot;:[{&quot;part&quot;:&quot;a&quot;,&quot;prompt&quot;:&quot;How did the power grid failure affect different communities differently?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;b&quot;,&quot;prompt&quot;:&quot;Why is this important to consider when designing energy systems?&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4},{&quot;part&quot;:&quot;c&quot;,&quot;prompt&quot;:&quot;How does this connect to our big question: &#39;How can we design reliable and equitable systems to meet our communities&#39; energy needs?&#39;&quot;,&quot;response_type&quot;:&quot;textarea&quot;,&quot;rows&quot;:4}]}]}]"
-         hidden>
-         <!-- Debug output - remove after fixing -->
-         <script>
-         console.log('DEBUG - Page metadata:');
-         console.log('resourceId:', 'rb-1-energy-grids');
-         console.log('contentType:', 'research_brief');
-         console.log('submissionEnabled:', 'true');
-         console.log('submissionFields JSON:', 'null');
-         console.log('overview:', 'null');
-         console.log('investigations:', 'null');
-         console.log('synthesis:', 'null');
-         </script>
-         
-         <!-- Additional brief cycle data for JavaScript to access -->
-         <script type="application/json" id="brief-cycle-data">
-         [{"phase":1,"title":"Phase 1: Forecast","description":"After encountering the 2021 Texas power crisis, your first task is to document your initial understanding of the problem and your ideas about how our electrical system works.","prompts":[{"title":"Initial Situation Understanding","prompt_text":"In February 2021, millions of people in Texas lost power during a winter storm. Some had no electricity, heat, or water for days. What do you already know about power grids or blackouts? What factors do you think might have contributed to the power grid failure?","response_type":"textarea","rows":6},{"title":"My First Model","prompt_text":"Draw or describe what you think happened to cause the power grid failure. Show all the parts you think are involved and how they connect.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Who Was Affected?","prompt_text":"Who do you think was most affected by this crisis? How might different communities have been impacted differently?","response_type":"textarea","rows":4}]},{"phase":2,"title":"Phase 2: Blueprint","description":"Now that you have learned about electrical circuits, power, and energy transfer, update your understanding of the grid failure using evidence from our labs and readings.","prompts":[{"title":"Updated Model with New Understanding","prompt_text":"Based on what you've learned, revise your understanding of the grid failure. Include concepts of voltage, current, resistance, power, energy transfer, and system stability.","response_type":"file_upload","accepted_file_types":[".jpg",".png",".pdf"]},{"title":"Cause-Effect Analysis","prompt_text":"Complete these cause-and-effect statements:","response_type":"multi_part","parts":[{"part":"a","prompt":"The part of the system that failed first was probably ___ because ___.","response_type":"textarea","rows":2},{"part":"b","prompt":"This failure led to ___ which then caused ___.","response_type":"textarea","rows":2},{"part":"c","prompt":"A more reliable system would need to ___.","response_type":"textarea","rows":2}]},{"title":"Evidence-Based Reasoning","prompt_text":"Using evidence from Hexagon Lab 1.1, the Flexbook reading, and class discussion, construct a Claim-Evidence-Reasoning statement about what caused the Texas power grid failure.","response_type":"cer"}]},{"phase":3,"title":"Phase 3: Reflection","description":"Construct your final, evidence-based explanation of the power grid failure and reflect on solutions and equity considerations.","prompts":[{"title":"Final Explanation","prompt_text":"Write a comprehensive explanation of what caused the Texas power grid failure and how it could have been prevented. Use at least 3 science terms correctly (voltage, current, power, etc.) and include evidence from our labs and readings.","response_type":"textarea","rows":12},{"title":"Engineering Solutions","prompt_text":"Propose three changes that could make the power grid more reliable.","response_type":"multi_part","parts":[{"part":"a","prompt":"Solution 1: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4},{"part":"b","prompt":"Solution 2: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4},{"part":"c","prompt":"Solution 3: Describe the solution and explain why it would help based on the science you've learned.","response_type":"textarea","rows":4}]},{"title":"Equity and Community Impact","prompt_text":"Consider the following questions about equity and community impact:","response_type":"multi_part","parts":[{"part":"a","prompt":"How did the power grid failure affect different communities differently?","response_type":"textarea","rows":4},{"part":"b","prompt":"Why is this important to consider when designing energy systems?","response_type":"textarea","rows":4},{"part":"c","prompt":"How does this connect to our big question: 'How can we design reliable and equitable systems to meet our communities' energy needs?'","response_type":"textarea","rows":4}]}]}]
-         </script>
-         
+         data-submission-fields="null">
     </div>
 
-    <main class="main-content">
-        
-        <!-- Activity-Specific Content Display -->
-        <div class="activity-content-wrapper">
-            
-                <!-- 
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
   Research Brief Content Display
-  Renders the research brief content
+  Renders the research brief content with navigation
 -->
 
-<div class="research-brief-content">
+
+
+<form id="activity-submission-form" class="activity-form">
+  <div class="research-brief-content">
+    
+    <!-- Progress indicator for multi-section briefs -->
+    
+    
+    
+      <!-- Single section research brief -->
+      <div class="research-brief-full">
+        
+
+        
+        
+      </div>
+    
+  </div>
+
+  <!-- Navigation Controls -->
   
+</form>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
 
 </div>
 
-            
-        </div>
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1760749049"></script>
 
-    </main>
+<!-- Load activity-specific JS module -->
 
-    <!-- External JavaScript (load order matters: core first, then sticky header) -->
-    <script src="/assets/js/activity-core.js?v=1760718057"></script>
-    <script src="/assets/js/sticky-header.js?v=1760718057"></script>
-    
-    
-    <!-- Conditionally load activity-specific form modules -->
-    <script>
-        // Module loading logic (executed after activity-core.js loads)
-        document.addEventListener('DOMContentLoaded', function() {
-            const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-            const moduleMap = {
-                'problem_set': '/assets/js/activity-modules/ps-form.js',
-                'hexagon_lab': '/assets/js/activity-modules/hl-form.js',
-                'flexbook': '/assets/js/activity-modules/fb-form.js',
-                'research_brief': '/assets/js/activity-modules/rb-form.js'
-            };
-            
-            const modulePath = moduleMap[contentType];
-            if (modulePath) {
-                const script = document.createElement('script');
-                script.src = modulePath + '?v=1760718057';
-                document.body.appendChild(script);
-                console.log('[activity-focused.html] Loaded module:', modulePath);
-            }
-        });
-    </script>
-    
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
 
-</div>
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1760749049`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
 
     
     </div>
