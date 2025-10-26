@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>A Fireball from the Void: The Rules of Cosmic Attraction | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">A Fireball from the Void: The Rules of Cosmic Attraction</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="A Fireball from the Void: The Rules of Cosmic Attraction"
+         data-unit="4-cosmic-impacts"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+
+
+<form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple instructional_flow items) -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 8</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+    
+  
+  <div class="flexbook-content">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 8</div>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Chapter 13: A Fireball from the Void: The Rules of Cosmic Attraction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Central Question:</strong> What invisible force governs the paths of asteroids through space, and how can we use its rules to predict and understand cosmic collisions?
+<strong>Narrative Arc:</strong> Our focus shifts from the Earth’s surface to the vast emptiness of space, where a new drama unfolds. We begin with a terrifying, real-world event—a meteor exploding over a modern city—that shatters our sense of planetary safety. To understand this threat, we must follow in Newton’s footsteps, expanding our understanding of gravity from a local phenomenon to a universal law of attraction that binds the cosmos together.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.1 A Stone from the Sky</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>On the morning of February 15, 2013, the citizens of Chelyabinsk, Russia, witnessed a terrifying spectacle. A streak of light, brighter than the sun, tore across the winter sky. It was not a plane or a missile. It was a rock, an asteroid about 20 meters in diameter, that had been traveling through space for millions of years. It entered Earth’s atmosphere at over 40,000 miles per hour.</p>
+
+<p>The immense pressure and heat caused the asteroid to explode in a brilliant fireball nearly 18 miles above the ground. The resulting shockwave, arriving minutes later, blasted out windows, damaged thousands of buildings, and injured over 1,500 people. It was the largest known object to strike the Earth in over a century, and it was a stark reminder that we live in a cosmic shooting gallery. This event is our new anchoring phenomenon. Why did it happen? And could it happen again?</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="2"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Research Brief - Forecast: Initial Model of a Cosmic Impact</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>Based on what you currently know, draw a model of our solar system showing the Sun, Earth, and the path of an asteroid. Use arrows to represent the forces you think are acting on the asteroid and on Earth to cause such a collision.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.2 Newton's Great Idea: The Universal Tug</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>We are used to gravity. It’s the force that pulls a dropped apple to the ground. But Isaac Newton’s genius was to realize that the same force pulling the apple also reached far, far higher—all the way to the Moon. He proposed that gravity was not just a property of the Earth, but a <strong>universal</strong> force. Every object with mass in the universe pulls on every other object with mass. You are gravitationally attracted to your desk, the person next to you, and the Andromeda galaxy.
+The force that pulled the Chelyabinsk meteor toward Earth is the very same force that keeps the Moon in orbit and holds the Sun’s family of planets together. To analyze cosmic collisions, we need a law that works on this grand, universal scale.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="4"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">13.3 The Law of Universal Gravitation</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>Newton formulated this universal tug with a single, powerful equation that describes the force of gravity ($F_g$) between any two objects:
+\(F_g = G \frac{m_1 m_2}{r^2}\)
+Let’s break this down: - <strong>$m_1$ and $m_2$</strong> are the masses of the two objects. The more massive the objects, the stronger the pull. - <strong>$r$</strong> is the distance between the centers of the two objects. - <strong>$G$</strong> is the Universal Gravitational Constant, a tiny number that shows why gravity is the weakest of the fundamental forces.
+The most important part of this law is the <strong>inverse-square relationship</strong>. The force of gravity decreases with the <em>square</em> of the distance. If you double the distance between two objects, the gravitational force between them doesn’t get twice as weak; it gets <strong>four times</strong> weaker ($2^2 = 4$). This is why the pull of distant stars on Earth is negligible, while the pull of our nearby Sun and Moon dominates our cosmic neighborhood.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-callout" 
+             data-item-index="5"
+             data-item-type="callout">
+          
+          <!-- Item Header -->
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-callout callout-thinking-lens">
+              <p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> The force of gravity between you and the Earth is your weight. The force of gravity between you and your textbook is incredibly tiny. Use Newton’s Universal Law to explain why, considering the masses and distances involved.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-activity_prompt" 
+             data-item-index="6"
+             data-item-type="activity_prompt">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Connection to Problem Set: Problem Set 1 (Newton's Law of Gravitation)</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-activity-prompt">
+              <p>You will now apply this law to calculate the gravitational forces between various celestial objects, from planets and moons to asteroids and stars.</p>
+
+              
+              
+              
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Unit Conclusion</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Next Steps:</strong> This law describes the <em>force</em> between two objects, but it doesn’t tell us about the <em>path</em> they will take. How does this constant pull lead to the stable, repeating paths we call orbits? And how can a slight change in that path lead to a collision? That is the subject of our next chapter.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="A Fireball from the Void: The Rules of Cosmic Attraction">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="sphys">
+    <input type="hidden" name="Unit" value="4-cosmic-impacts">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
+
+  </div>
+
+</form>
+
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1761515983"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

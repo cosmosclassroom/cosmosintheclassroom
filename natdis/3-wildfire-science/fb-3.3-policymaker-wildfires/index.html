@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Policymaker Wildfires | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Policymaker Wildfires</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="flexbook"
+         data-course="natdis"
+         data-title="Policymaker Wildfires"
+         data-unit="3"
+         data-submission-enabled="false"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+
+
+<form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple instructional_flow items) -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 20</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+    
+  
+  <div class="flexbook-content">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 20</div>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Introduction</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <h1 id="template-a-chapter-1---the-scientist">Template A: Chapter 1 - The Scientist</h1>
+
+<hr />
+<p>chapter: “3.1”
+chapter_title: “The Scientist: [Investigating/Decoding/Understanding] The increasing frequency and intensity of wildfires at the wildland-urban interface.”
+role_focus: “scientist”
+ccc_primary: [“cause-effect”, “patterns”]
+prerequisite_components: []
+feeds_into_components: [“chapter-9.2”, “lab-9.1”, “problem-set-9.1”]
+—</p>
+
+<h1 id="chapter-91-the-scientist-investigating-the-increasing-frequency-and-intensity-of-wildfires-at-the-wildland-urban-interface">Chapter 9.1: The Scientist: [Investigating] The increasing frequency and intensity of wildfires at the wildland-urban interface.</h1>
+
+<p><strong>The Scientist Asks:</strong> What causes the increasing frequency and intensity of wildfires at the wildland-urban interface., and what is the specific risk to our community?</p>
+
+<p><strong>Your Mission:</strong> You will gather data, analyze patterns, and build an explanatory model to understand the fundamental science behind the increasing frequency and intensity of wildfires at the wildland-urban interface..</p>
+
+<p><strong>Narrative Arc:</strong> We step into the role of a [specific scientist type], starting with a puzzle: [compelling hook]. We will learn to decode the evidence to understand the underlying forces and processes.</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">The Phenomenon</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>[Opening with specific event - following Winchester tradition of human-scale stories]</p>
+
+<p><strong>Historical Context:</strong> [Brief story of scientific discovery related to this phenomenon]</p>
+
+<!-- CCC: cause-effect -->
+<p><strong>Understanding Cause and Effect:</strong></p>
+<ul>
+  <li>What we observe: [phenomenon manifestation]</li>
+  <li>What we need to explain: [underlying causes]
+<!-- /CCC --></li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Scientist: Initial Observations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><em>Based on the phenomenon described, what patterns do you notice? What initial questions do you have about the increasing frequency and intensity of wildfires at the wildland-urban interface. in our region?</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="2"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">[X.1] The Science & The Tools</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>From Planetary to Regional Scale:</strong> [How global processes create regional manifestations]</p>
+
+<p><strong>Key Vocabulary:</strong></p>
+<ul>
+  <li><strong>[Scientific Term]</strong>: [Definition with etymology/discovery story]</li>
+  <li><strong>[Process Term]</strong>: [Definition linking to observable evidence]</li>
+  <li><strong>[Measurement Term]</strong>: [Definition with practical application]</li>
+</ul>
+
+<p><strong>Core Principle:</strong> [Fundamental scientific law/theory]</p>
+
+<p>[Visual support: diagram showing the principle in action]</p>
+
+<p><strong>The Mathematics:</strong> 
+[Formula with clear physical meaning]</p>
+
+<p><strong>Worked Example:</strong> [Step-by-step analysis of real data from the phenomenon]</p>
+
+<p><strong>Navigate:</strong> <em>You now have the core information. Pause here and complete <a href=""><strong>Hexagon Lab 9.1 - [Lab Title]</strong></a> to practice scientific investigation.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">[X.2] Building Your Evidence Base</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>The Investigation Process:</strong> [How scientists gather evidence for this phenomenon]</p>
+
+<p><strong>Data Analysis:</strong> [Techniques scientists use to understand patterns]</p>
+
+<!-- CCC: patterns -->
+<p><strong>Patterns in the Evidence:</strong>
+<strong>Think About:</strong> How do recurring patterns help scientists predict future events?
+<strong>Evidence:</strong> [Where students can observe patterns in their lab work]
+<!-- /CCC --></p>
+
+<p><strong>Navigate:</strong> <em>Apply your skills. Complete <a href=""><strong>Problem Set 9.1</strong></a> to practice analyzing scientific data.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="4"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">[X.3] From Data to Understanding</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What Your Investigation Reveals:</strong> [How lab/problem set findings build understanding]</p>
+
+<p><strong>The Local Context:</strong> [How global/regional science applies specifically to Branford, CT]</p>
+
+<p><strong>Preparing for the Engineers:</strong> Your scientific findings will provide engineers with:</p>
+<ul>
+  <li>[Specific data type 1]</li>
+  <li>[Specific measurement/prediction 2]</li>
+  <li>[Risk assessment parameter 3]</li>
+</ul>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">When Scientific Information Breaks Down</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What if:</strong> Scientists underestimate the risk or data is incomplete?</p>
+
+<p><strong>Real Example:</strong> [Historical case where flawed science led to poor decisions]</p>
+
+<p><strong>Political Pressure:</strong> How funding cuts or political pressure can compromise scientific integrity</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Your Analysis: Scientific Vulnerabilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><em>How might incomplete data or political pressure affect the scientific understanding you just developed?</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="6"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Chapter 9.1 Summary</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What We Learned:</strong></p>
+<ul>
+  <li>[Key scientific principle]</li>
+  <li>[Measurement/prediction capability]</li>
+  <li>[Risk assessment for local area]</li>
+</ul>
+
+<p><strong>The Scientist’s Essential Question Answered:</strong> [Restate with evidence-based answer]</p>
+
+<p><strong>Navigate:</strong> <em>Continue to <a href=""><strong>Chapter 9.2 - The Engineer</strong></a> to see how your scientific findings guide engineering solutions.</em></p>
+
+<hr />
+
+<h1 id="template-b-chapter-2---the-engineer">Template B: Chapter 2 - The Engineer</h1>
+
+<hr />
+<p>chapter: “3.2”
+chapter_title: “The Engineer: [Designing/Building] [Solution Focus]”
+role_focus: “engineer”
+ccc_primary: [“structure-function”, “systems-models”]
+prerequisite_components: [“chapter-9.1”, “lab-9.1”, “problem-set-9.1”]
+feeds_into_components: [“chapter-9.3”, “lab-9.2”, “problem-set-9.2”]
+—</p>
+
+<h1 id="chapter-92-the-engineer-designing-for-challenge">Chapter 9.2: The Engineer: [Designing] for [Challenge]</h1>
+
+<p><strong>The Engineer Asks:</strong> What can we build to mitigate the risk identified by scientists? What are our design options?</p>
+
+<p><strong>Your Mission:</strong> You will use scientific findings to design, test, and optimize engineering solutions that protect communities from the increasing frequency and intensity of wildfires at the wildland-urban interface..</p>
+
+<p><strong>Narrative Arc:</strong> We adopt the role of a [specific engineer type], examining both historical failures and successes to extract crucial design principles, then innovating for our specific challenge.</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="7"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Building on the Science</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>From Chapter 9.1:</strong> Scientists discovered that [key finding from previous chapter]
+<strong>Your Role Now:</strong> As an engineer, you will use this scientific understanding to [specific engineering mission]
+<strong>The Information Flow:</strong> Scientists provide the “what and why” - engineers determine the “how”</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="8"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.2.1 Engineering Principles for The increasing frequency and intensity of wildfires at the wildland-urban interface.</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>From Regional to Local Scale:</strong> [How broad engineering principles apply to specific community needs]</p>
+
+<p><strong>Historical Context:</strong> [Story of engineering failure/success - following Petroski tradition]</p>
+
+<p><strong>Key Vocabulary:</strong></p>
+<ul>
+  <li><strong>[Engineering Term]</strong>: [Definition with practical application]</li>
+  <li><strong>[Design Principle]</strong>: [Definition with examples]</li>
+  <li><strong>[Performance Measure]</strong>: [Definition with standards]</li>
+</ul>
+
+<!-- CCC: structure-function -->
+<p><strong>Structure and Function in Design:</strong></p>
+<ul>
+  <li>How design choices (structure) affect performance (function)</li>
+  <li>Why engineers must balance multiple competing requirements
+<!-- /CCC --></li>
+</ul>
+
+<p><strong>Navigate:</strong> <em>Test these principles. Complete <a href=""><strong>Hexagon Lab 9.2 - [Lab Title]</strong></a> to design and test engineering solutions.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="9"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.2.2 Design Challenges and Solutions</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>The Engineering Problem:</strong> [Specific challenge posed by the phenomenon]</p>
+
+<p><strong>Design Criteria:</strong> [What the solution must accomplish]
+<strong>Design Constraints:</strong> [Limitations - cost, materials, physics, politics]</p>
+
+<p><strong>Solution Approaches:</strong> [Multiple engineering strategies with pros/cons]</p>
+
+<!-- CCC: systems-models -->
+<p><strong>Systems Thinking in Engineering:</strong>
+<strong>Think About:</strong> How does changing one part of a design affect the whole system?
+<strong>Evidence:</strong> [Examples from lab work or case studies]
+<!-- /CCC --></p>
+
+<p><strong>Navigate:</strong> <em>Optimize your designs. Complete <a href=""><strong>Problem Set 9.2</strong></a> to analyze engineering trade-offs.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="10"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.2.3 From Design to Implementation</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What Your Analysis Reveals:</strong> [How lab/problem set findings inform real-world engineering]</p>
+
+<p><strong>Preparing for the Policymakers:</strong> Your engineering analysis will provide policymakers with:</p>
+<ul>
+  <li>[Specific design option 1 with costs/benefits]</li>
+  <li>[Alternative approach 2 with trade-offs]</li>
+  <li>[Implementation timeline and requirements]</li>
+</ul>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="11"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">When Engineering Information Breaks Down</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What if:</strong> Engineers ignore scientific uncertainty or oversell solution capabilities?</p>
+
+<p><strong>Real Example:</strong> [Historical case where engineering overconfidence led to failure]</p>
+
+<p><strong>Economic Pressure:</strong> How cost-cutting or rushed timelines can compromise engineering integrity</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Your Analysis: Engineering Vulnerabilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><em>How might economic pressure or overconfidence affect the engineering solutions you just analyzed?</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="12"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Chapter 9.2 Summary</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What We Learned:</strong></p>
+<ul>
+  <li>[Key design principles]</li>
+  <li>[Solution options with trade-offs]</li>
+  <li>[Implementation requirements]</li>
+</ul>
+
+<p><strong>The Engineer’s Essential Question Answered:</strong> [Restate with design-based answer]</p>
+
+<p><strong>Navigate:</strong> <em>Continue to <a href=""><strong>Chapter 9.3 - The Policymaker</strong></a> to see how your engineering options inform community decisions.</em></p>
+
+<hr />
+
+<h1 id="template-c-chapter-3---the-policymaker">Template C: Chapter 3 - The Policymaker</h1>
+
+<hr />
+<p>chapter: “3.3”
+chapter_title: “The Policymaker: [Balancing/Choosing] [Policy Focus]”
+role_focus: “policymaker”
+ccc_primary: [“systems-models”, “stability-change”]
+prerequisite_components: [“chapter-9.1”, “chapter-9.2”, “lab-9.1”, “lab-9.2”]
+feeds_into_components: [“lab-9.3”, “research-brief-9”]
+—</p>
+
+<h1 id="chapter-93-the-policymaker-the-decisiontrade-offs-of-policy-area">Chapter 9.3: The Policymaker: The [Decision/Trade-offs] of [Policy Area]</h1>
+
+<p><strong>The Policymaker Asks:</strong> How do we balance public safety, economic constraints, and community values to make the best decision for everyone?</p>
+
+<p><strong>Your Mission:</strong> You will synthesize scientific findings and engineering options to make informed policy recommendations that serve the community’s best interests.</p>
+
+<p><strong>Narrative Arc:</strong> We take on the role of a [specific policymaker], weighing complex trade-offs where there are no perfect answers, only thoughtful choices informed by evidence and values.</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="13"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Building on Science and Engineering</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>From Chapter 9.1:</strong> Scientists established that [key scientific finding]
+<strong>From Chapter 9.2:</strong> Engineers determined that [key engineering options]
+<strong>Your Role Now:</strong> As a policymaker, you must balance these technical findings with [economic/social/ethical considerations]
+<strong>The Information Flow:</strong> Science provides the risk assessment, engineering provides the options, policy makes the choice</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="14"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.3.1 The Policy Landscape</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>From Local to Personal Scale:</strong> [How community-level decisions affect individual lives]</p>
+
+<p><strong>Historical Context:</strong> [Story of policy success/failure in similar situation]</p>
+
+<p><strong>Key Vocabulary:</strong></p>
+<ul>
+  <li><strong>[Policy Term]</strong>: [Definition with real-world examples]</li>
+  <li><strong>[Stakeholder Term]</strong>: [Definition with local relevance]</li>
+  <li><strong>[Decision Tool]</strong>: [Definition with application]</li>
+</ul>
+
+<!-- CCC: systems-models -->
+<p><strong>Systems Thinking in Policy:</strong></p>
+<ul>
+  <li>How policy decisions affect multiple interconnected systems</li>
+  <li>Why unintended consequences are common in complex systems
+<!-- /CCC --></li>
+</ul>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="15"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.3.2 Stakeholders and Trade-offs</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Who’s Affected:</strong> [Different community groups with different interests]</p>
+
+<p><strong>The Trade-offs:</strong> [Specific tensions between safety, cost, convenience, etc.]</p>
+
+<!-- CCC: stability-change -->
+<p><strong>Balancing Stability and Change:</strong>
+<strong>Think About:</strong> How do communities balance the safety of staying the same vs. the risk of change?
+<strong>Evidence:</strong> [Examples from engineering options where this tension appears]
+<!-- /CCC --></p>
+
+<p><strong>Navigate:</strong> <em>Experience these trade-offs. Complete <a href=""><strong>Hexagon Lab 9.3 - [Lab Title]</strong></a> to participate in policy decision-making.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="16"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">9.3.3 Making Informed Decisions</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>Decision-Making Tools:</strong> [Cost-benefit analysis, risk assessment, stakeholder input]</p>
+
+<p><strong>What Your Analysis Reveals:</strong> [How lab findings inform real-world policy choices]</p>
+
+<p><strong>For Branford Specifically:</strong> [How the policy principles apply to local context and needs]</p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="17"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">When Policy Information Breaks Down</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What if:</strong> Policymakers ignore scientific evidence or dismiss engineering recommendations for political reasons?</p>
+
+<p><strong>Real Example:</strong> [Historical case where politics trumped evidence with negative consequences]</p>
+
+<p><strong>Political Reality:</strong> How election cycles, lobbying, and public pressure can distort decision-making</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Your Analysis: Policy Vulnerabilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><em>How might political pressure or short-term thinking affect the policy decisions you just analyzed?</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="18"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Chapter 9.3 Summary</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p><strong>What We Learned:</strong></p>
+<ul>
+  <li>[Key policy principles]</li>
+  <li>[Decision-making framework]</li>
+  <li>[Specific recommendation for phenomenon]</li>
+</ul>
+
+<p><strong>The Policymaker’s Essential Question Answered:</strong> [Restate with policy-based answer]</p>
+
+<p><strong>Navigate:</strong> <em>Complete your understanding with <a href=""><strong>Research Brief 9 - Final Synthesis</strong></a> to integrate all three roles.</em></p>
+
+<hr />
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="19"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Template Usage Instructions</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <h3 id="role-voice-guidelines">Role Voice Guidelines:</h3>
+<ul>
+  <li><strong>Scientist (Ch. 1)</strong>: Voice of curiosity and precision. “What’s really happening here?” Focus on evidence and understanding.</li>
+  <li><strong>Engineer (Ch. 2)</strong>: Voice of problem-solving and innovation. “How can we build something better?” Focus on solutions and optimization.</li>
+  <li><strong>Policymaker (Ch. 3)</strong>: Voice of wisdom and responsibility. “How do we make good choices for everyone?” Focus on balance and community good.</li>
+</ul>
+
+<h3 id="information-flow-architecture">Information Flow Architecture:</h3>
+<ul>
+  <li><strong>Chapter 1 → 2</strong>: Scientific findings become engineering design requirements</li>
+  <li><strong>Chapter 2 → 3</strong>: Engineering options become policy choices</li>
+  <li><strong>Chapter 3</strong>: Synthesizes both previous chapters for community decision</li>
+</ul>
+
+<h3 id="validation-checklist">Validation Checklist:</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Role voice consistent with position in 3-chapter sequence</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Explicit connections to previous chapter(s)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Clear handoff information for next chapter</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cross-cutting concepts build cumulatively</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Local (Branford) applications become more specific through sequence</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />System breakdown analysis addresses role-specific vulnerabilities</li>
+</ul>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Policymaker Wildfires">
+    <input type="hidden" name="ResourceID" value="">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="natdis">
+    <input type="hidden" name="Unit" value="3">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
+
+  </div>
+
+</form>
+
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1761515983"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab: Evaluating Claims about 5G Radiation | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Hexagon Lab: Evaluating Claims about 5G Radiation</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id=""
+         data-content-type="hexagon_lab"
+         data-course="sphys"
+         data-title="Hexagon Lab: Evaluating Claims about 5G Radiation"
+         data-unit="5"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Hexagon Lab Content Display with Sequential Navigation
+  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
+-->
+
+<div class="hexagon-lab-content">
+    <!-- Student name is now handled by the localStorage permanent name capture feature -->
+  
+    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
+    <!-- Progress indicator and navigation (if multiple sections) -->
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+
+    <!-- Lab Content (rendered from YAML structure) -->
+    <div id="lab-sections-container">
+      
+      
+      <!-- Overview Section -->
+      <div class="nav-item-container lab-section active" data-item-index="0" data-section-title="Overview">
+        <h2>Overview</h2>
+        
+        
+        <div class="lab-abstract">
+          <h3>Abstract</h3>
+          <p>In this final investigation, you will act as a scientifically literate citizen. Your task is to use a scientific model of the electromagnetic (EM) spectrum to critically evaluate a series of real-world claims made about the safety of 5G technology. By comparing the claims to the known properties of different types of radiation, you will construct an evidence-based argument to either support or refute them.</p>
+
+        </div>
+        
+        
+        
+        <div class="lab-introduction">
+          <h3>Introduction</h3>
+          <p>New technologies often bring public concern, and the rollout of 5G cellular networks has been surrounded by a storm of claims and misinformation about its potential health effects. The word “radiation” itself can be scary, but as we have learned, not all radiation is the same. The key to navigating this information landscape is to apply a scientific model. Your job is not to decide whether 5G is “good” or “bad,” but to practice using scientific evidence to evaluate claims and separate fact from fiction.</p>
+
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Investigation Sections -->
+      
+      <div class="nav-item-container lab-section" data-item-index="1" data-section-title="Investigation ">
+        <h2>Investigation : Investigation: Fact-Checking with the EM Spectrum</h2>
+        
+        
+        <div class="investigation-description">
+          <p>You will be provided with two key assets:</p>
+<ol>
+  <li><strong>A detailed diagram of the electromagnetic spectrum.</strong> This model shows the location of different types of radiation (radio, microwave, visible, UV, X-ray) and indicates their relative frequency, wavelength, and energy. It will also clearly mark the dividing line between non-ionizing and ionizing radiation.</li>
+  <li><strong>A collection of curated text snippets.</strong> These include headlines, social media posts, and short article excerpts that make various claims about 5G radiation.</li>
+</ol>
+
+<p>[Image of the electromagnetic spectrum]</p>
+
+        </div>
+        
+        
+        
+        
+        <!-- Render Dataset (Chart.js visualization) -->
+        
+        
+        <!-- Render Table Data -->
+        
+        
+        <!-- Analysis Questions -->
+        
+        <div class="analysis-questions">
+          <h3>Analysis Questions</h3>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+          <div class="question-block">
+            <label for="inv-q" class="question-label">
+              <strong>Question :</strong>
+              
+
+            </label>
+            <textarea 
+              id="inv-q" 
+              name="inv_q"
+              rows="6"
+              placeholder="Enter your answer here..."
+              class="form-control question-response"
+            ></textarea>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      
+      
+      
+      <!-- Synthesis Section (Claim-Evidence-Reasoning) -->
+      <div class="nav-item-container lab-section" data-item-index="2" data-section-title="Synthesis">
+        <h2>Synthesis: Claim-Evidence-Reasoning</h2>
+        
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-claim" class="cer-label">
+            <h3>Claim</h3>
+            <p><strong>Claim:</strong> Write a single, general sentence that summarizes your conclusion about the primary scientific distinction needed to assess the safety of EM radiation.</p>
+
+          </label>
+          <textarea 
+            id="cer-claim" 
+            name="synthesis_claim"
+            rows="3"
+            placeholder="Write your claim here..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-evidence" class="cer-label">
+            <h3>Evidence</h3>
+            <p><strong>Evidence:</strong> Provide a specific piece of evidence from the EM spectrum that illustrates your claim.</p>
+
+<ul>
+  <li>“The EM spectrum shows that the energy of a microwave photon (used in 5G) is many thousands of times lower than the energy of an ultraviolet or X-ray photon.”</li>
+  <li>“The spectrum clearly categorizes microwaves as non-ionizing radiation, meaning their photons do not have enough energy to cause the cellular damage associated with ionizing radiation like X-rays.”</li>
+</ul>
+
+          </label>
+          <textarea 
+            id="cer-evidence" 
+            name="synthesis_evidence"
+            rows="6"
+            placeholder="List your evidence here (use bullet points)..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+        
+        
+        <div class="cer-section">
+          <label for="cer-reasoning" class="cer-label">
+            <h3>Reasoning</h3>
+            <p><strong>Reasoning:</strong> In a paragraph, explain how your evidence logically supports your claim. Use the Crosscutting Concept of <strong>Structure and Function</strong>. How does the ‘structure’ of an electromagnetic wave (its frequency/energy) determine its ‘function’ (its effect on biological tissue)? Explain why simply using the word “radiation” for both microwaves and X-rays can be scientifically misleading and cause public confusion.</p>
+
+          </label>
+          <textarea 
+            id="cer-reasoning" 
+            name="synthesis_reasoning"
+            rows="8"
+            placeholder="Explain your reasoning in a paragraph..."
+            class="form-control cer-response"
+          ></textarea>
+        </div>
+        
+      </div>
+      
+      
+      
+      <!-- Connection to Unit Phenomenon -->
+      <div class="nav-item-container lab-section" data-item-index="3" data-section-title="Connection">
+        <h2>Connection to Unit Phenomenon</h2>
+        <p>This lab connects our understanding of the microwave oven to a complex, real-world societal issue. The very same type of radiation used to heat food in our anchoring phenomenon—microwaves—is used for 5G communications. By understanding the physics, we know that microwaves transfer energy by causing water molecules to rotate (creating heat), but they are non-ionizing and do not have the energy to cause the kind of cellular damage associated with high-frequency radiation. This lab demonstrates that scientific literacy is not just about understanding phenomena, but about using established scientific models to be an informed and critical consumer of information in a technologically complex world.</p>
+
+      </div>
+      
+      
+      
+      
+      
+    </div>
+
+    <!-- Navigation Buttons moved to the top -->
+
+  </div> <!-- Close #lab-sections-container -->
+
+  <!-- Submission Section - using common pattern from activity-forms.js -->
+  <div class="submission-section-wrapper" id="submission-wrapper">
+    <!-- Student name is now handled by the sticky header -->
+    
+    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
+    <div id="activity-specific-fields"></div>
+
+    <!-- Submit Button -->
+    <div class="lab-form-actions">
+      <button type="submit" id="submit-button" class="lab-submit-button">
+        Submit Lab Report
+      </button>
+      <p class="lab-help-text">
+        Your answers are auto-saved as you work. Click above when you're ready to submit.
+      </p>
+    </div>
+    
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+<<<<<<< HEAD
+</form>
+
+<script src="/assets/js/activity-navigator.js"></script>
+=======
+<!-- Scripts are now loaded in the layout file -->
+>>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
+<script>
+/**
+ * Hexagon Lab Section Navigator
+ * YAML-first: Sections already structured by Liquid, just initialize navigation
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
+    
+    // Check if activity-core is initialized
+    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
+        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
+    } else {
+        const metadata = window.ACTIVITY_CORE.getMetadata();
+        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
+    }
+    
+    const container = document.getElementById('lab-sections-container');
+    
+    if (!container) {
+        console.warn('[hexagon-lab] Lab sections container not found');
+        return;
+    }
+    
+    // Count pre-structured sections
+    const sections = container.querySelectorAll('.nav-item-container');
+    
+    if (sections.length <= 1) {
+        // Single section or no sections - show everything, no navigation needed
+        console.log('[hexagon-lab] Single section mode - no navigation needed');
+        if (sections.length === 1) {
+            sections[0].classList.add('active');
+        }
+        return;
+    }
+    
+    console.log('[hexagon-lab] Found', sections.length, 'sections');
+    
+    // Show progress and navigation UI
+    document.getElementById('lab-progress').style.display = 'block';
+    document.getElementById('lab-navigation').style.display = 'flex';
+    
+    // Manual activation of first section and setup section visibility
+    if (sections.length > 0) {
+        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
+        
+        // Hide all sections first
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        });
+        
+        // Show only the first section
+        sections[0].style.display = 'block';
+        sections[0].classList.add('active');
+        
+        // Ensure all sections have proper display style
+        // This ensures that when we toggle the 'active' class, display changes work correctly
+        sections.forEach(section => {
+            // Enforce display:block when active, display:none when inactive
+            if (!section.style.display || section.style.display === '') {
+                section.style.display = 'none';
+            }
+        });
+    }
+    
+    // Debug elements
+    console.log('[hexagon-lab] Debug:');
+    console.log('- nav sections:', sections.length);
+    console.log('- section 0:', sections[0]);
+    console.log('- prev button:', document.getElementById('prev-item'));
+    console.log('- next button:', document.getElementById('next-item'));
+    console.log('- progress fill:', document.getElementById('progress-fill'));
+    console.log('- progress text:', document.getElementById('progress-text'));
+    
+    // Initialize navigator
+    // We'll use our own simple navigation implementation that's guaranteed to work
+    console.log('[hexagon-lab] Setting up lab navigation system');
+    
+    // Initialize navigation state
+    let currentIndex = 0;
+    const totalSections = sections.length;
+    
+    // Core navigation function
+    function showLabSection(index) {
+        console.log('[hexagon-lab] Navigating to section', index);
+        
+        // Validate index
+        if (index < 0 || index >= totalSections) {
+            console.warn('[hexagon-lab] Invalid section index:', index);
+            return;
+        }
+        
+        // Hide all sections
+        sections.forEach(section => {
+            section.style.display = 'none';
+            section.classList.remove('active');
+        });
+        
+        // Show only the requested section
+        sections[index].style.display = 'block';
+        sections[index].classList.add('active');
+        
+        // Update state
+        currentIndex = index;
+        
+        // Update button states
+        document.getElementById('prev-item').disabled = (index === 0);
+        document.getElementById('next-item').disabled = (index === totalSections - 1);
+        
+        // Update progress bar
+        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
+        document.getElementById('progress-fill').style.width = progressPercent + '%';
+        
+        // Update progress text
+        const sectionTitle = sections[index].getAttribute('data-section-title') || 
+                             ('Section ' + (index + 1));
+        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
+        
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log('[hexagon-lab] Section displayed:', sectionTitle);
+    }
+    
+    // Wire up navigation buttons
+    document.getElementById('prev-item').addEventListener('click', function() {
+        showLabSection(currentIndex - 1);
+    });
+    
+    document.getElementById('next-item').addEventListener('click', function() {
+        showLabSection(currentIndex + 1);
+    });
+    
+    // Initialize with first section
+    showLabSection(0);
+});
+</script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1761515983"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 2: The Power of Vectors | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+    </script>
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/hphys/">Honors Physics</a>
+            <a href="/sphys/">Standard Physics</a>
+            <a href="/natdis/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header -->
+  <div class="activity-header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1 class="activity-title">Chapter 2: The Power of Vectors</h1>
+        
+      </div>
+      <div class="header-right">
+        <button id="submit-button" class="btn btn-primary">Submit</button>
+        <button id="clear-form" class="btn btn-secondary">Clear</button>
+      </div>
+    </div>
+    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
+      <span>Draft saved</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+
+    <!-- Critical metadata for backend routing and JavaScript -->
+    <div id="activity-metadata"
+         data-resource-id="fb-2-power-of-vectors"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 2: The Power of Vectors"
+         data-unit="1"
+         data-submission-enabled="true"
+         data-auto-save-enabled="true"
+         data-auto-save-interval="30000"
+         data-submission-fields="null">
+    </div>
+
+    <div class="activity-content-wrapper">
+      <!-- This is where the specific activity type's content will be rendered --><!-- 
+  Flexbook Content Display with Sequential Navigation
+  Renders instructional_flow array one item at a time
+-->
+
+
+
+<form id="activity-submission-form" class="activity-form">
+    <!-- Progress indicator and navigation (if multiple instructional_flow items) -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 7</div>
+    </div>
+    <div class="activity-navigation">
+      <button type="button" class="btn nav-prev" disabled>Previous</button>
+      <button type="button" class="btn nav-next">Next</button>
+    </div>
+    
+  
+  <div class="flexbook-content">
+    
+    <!-- Progress indicator -->
+    
+    <div class="activity-progress">
+      <div class="activity-progress-bar">
+        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="progress-text">Section 1 of 7</div>
+    </div>
+    
+
+    <!-- Instructional Flow Items (Sequential Display) -->
+    
+    <div class="flexbook-flow">
+      
+        
+        <div class="nav-item-container flexbook-item-reading active" 
+             data-item-index="0"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Introduction: A New Way of Seeing</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>For thousands of years, to be a navigator was to be a storyteller. A sailor might describe a journey as “three days east toward the rising sun, then two days north with the guiding star on our right.” It was a story of movement, but it was imprecise. How long is a “day’s journey”? Which way is “north” exactly? To create reliable maps and share knowledge across cultures, humanity needed to invent a new, universal language to describe not just how far, but also in which direction.
+This challenge—turning a story into a precise map—is the same one you face in this unit’s research brief. What you need is a tool that holds both magnitude and direction in a single, elegant package. That tool is the vector. What began as a navigator’s puzzle on a parchment map becomes a key to understanding a universe in motion, from the path of a thrown ball to the journey of a spacecraft through the solar system.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="1"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Modeling Uncertainty in Measurement</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>In Chapter 1, you recreated Eratosthenes’s brilliant measurement of the Earth. You also grappled with a core principle of science: every measurement has uncertainty. The surveyor pacing the distance between two cities could have had an uneven stride; a slight miscalculation of that distance would change the final answer for the entire planet’s circumference.</p>
+
+<p>Now, as you map your classroom, the challenge deepens. You’re not just measuring straight-line distances. You are measuring a path that changes direction. This introduces a new kind of uncertainty. It’s one thing to be unsure by a few centimeters about the length of your step, but it’s another to be unsure by a few degrees about the direction you’re heading. A good map must honestly account for both.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="2"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Distinguishing Scalars and Vectors</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>The universe makes a fundamental distinction between two types of quantities, and to speak the language of physics, we must learn to use them correctly.
+A <strong>Scalar</strong> is a quantity that is completely described by its magnitude—a number and a unit. When you say the temperature is 22° Celsius, or a bag of sugar has a mass of 2 kilograms, you’ve said everything you need to say. The information is complete.
+<em>Examples: distance (50 m), speed (25 m/s), mass (70 kg), time (15 s)</em>
+A <strong>Vector</strong> is a quantity that requires both magnitude and direction to be fully described. If you’re trying to fly a plane, knowing your speed is not enough; you must also know your direction.
+<em>Examples: displacement (50 m, East), velocity (25 m/s, North), force (10 N, downward)</em>
+Think of it this way: your car’s speedometer reads your speed, a scalar. But if you combine that speed with a compass reading, you get your velocity, a vector. This distinction is the first step toward building a precise language of motion.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="3"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Graphical Vector Addition</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>In the vector simulation lab, you discovered a beautifully simple, visual rule for combining vectors. We formalize this as the “head-to-tail” method. It works exactly like a treasure map: walk 20 paces east, then 15 paces north.</p>
+<ol>
+  <li>Draw the first vector to scale and pointing in the correct direction.</li>
+  <li>Draw the second vector starting from the “head” (the arrow end) of the first vector.</li>
+  <li>The <strong>resultant</strong> vector, which is the sum of the two, is the arrow drawn from the “tail” (the start) of the first vector to the head of the last vector.
+This resultant vector, R, represents the total displacement—the shortest, straight-line path from your starting point to your ending point, no matter how complicated the journey was. As you saw in the simulation, the order doesn’t matter: the path “A + B” leads to the same destination as “B + A”. This visual grammar is powerful, but for the precision our classroom map requires, we need to add mathematics to our picture.</li>
+</ol>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="4"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Resolving Vectors into Components</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>While drawing is useful, it is not precise enough for science. The true power of vectors is unlocked when we use trigonometry to break them down into simpler pieces. This process is called <strong>resolving a vector into its components</strong>.</p>
+
+<p>Imagine a city laid out on a perfect grid of North-South and East-West streets. Giving someone directions to walk five blocks “northeast” is less precise than telling them to “walk four blocks east, then three blocks north.” Both paths lead to the same destination, but the second is built from simple, perpendicular parts. These parts are the vector’s components.
+We use trigonometry to find their length:</p>
+<ul>
+  <li>The x-component (horizontal): $V_x = V \cos(\theta)$</li>
+  <li>The y-component (vertical): $V_y = V \sin(\theta)$
+This is the most important skill in this chapter. It allows us to turn one difficult two-dimensional problem into two much simpler one-dimensional problems. To add multiple vectors together, you simply add all the x-components to get a total $R_x$, add all the y-components to get a total $R_y$, and then use the Pythagorean theorem ($a^2 + b^2 = c^2$) to find the final resultant vector’s magnitude. This is the mathematical engine that will power your map-making.</li>
+</ul>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="5"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Reconciling Discrepant Data Sets</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>In the lab where you compared two teams’ measurements of gravity, you learned a critical lesson: just because two numbers are different doesn’t mean they disagree. The real question is whether their ranges of uncertainty overlap.
+We apply this same intellectually honest thinking to our vectors. When you map your classroom, you might measure one leg of your journey as 8.50 meters at 20.0°. But how sure are you? Is that really 8.50, or could it be 8.52? Is the angle truly 20.0°, or perhaps 20.5°?
+Each component, $V_x$ and $V_y$, carries its own uncertainty. A trustworthy map, just like any good scientific result, doesn’t just present an answer; it presents an answer with a clear, honest statement of its limitations and its confidence. Acknowledging what we don’t know is just as important as stating what we do.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+        
+        <div class="nav-item-container flexbook-item-reading" 
+             data-item-index="6"
+             data-item-type="reading">
+          
+          <!-- Item Header -->
+          
+          <h2 class="flexbook-item-title">Chapter Synthesis</h2>
+          
+          
+          <!-- Content based on type -->
+          
+            <div class="flexbook-reading">
+              <p>We began with an ancient problem: how to give foolproof directions. We discovered that a special language was needed, one that combines magnitude and direction into a single object called a vector. We learned to add them graphically, like drawing a map, and then mathematically, by breaking them into components. This process of resolving vectors is a foundational skill, turning complex realities into manageable parts—a perfect example of a System Model.
+You now possess the tools to answer the Cartographer’s Challenge from this unit’s research brief. This method of describing a journey across a classroom is the very same method physicists use to describe the trajectory of a cannonball, the forces on a pyramid block, and the orbit of a satellite around the Earth. The quest for a universal language for measurement has given us a new, and more powerful, way of seeing the world.</p>
+
+            </div>
+          
+          
+          
+        </div>
+        
+      
+    </div>
+    
+    <!-- Navigation Buttons (OUTSIDE the loop so they're always visible) -->
+    
+    <div class="activity-navigation">
+      <button type="button" class="activity-nav-button" id="prev-item">
+        <span class="nav-icon">←</span> Previous
+      </button>
+      <button type="button" class="activity-nav-button" id="next-item">
+        Next <span class="nav-icon">→</span>
+      </button>
+    </div>
+    
+    
+    
+
+    <!-- Floating Submission Bar (included at end of form) -->
+    <!-- Floating Submission Bar (Minimal, Clean) -->
+<div id="submission-bar" class="submission-bar">
+  <div class="submission-bar-content">
+    
+    <!-- Student Name (Quick Confirm) -->
+    <div class="submission-field-inline">
+      <label for="student-name-quick">Your Name:</label>
+      <input type="text" id="student-name-quick" name="StudentName" placeholder="Full Name" required>
+    </div>
+
+    <!-- Hidden metadata fields -->
+    <input type="hidden" name="ActivityTitle" value="Chapter 2: The Power of Vectors">
+    <input type="hidden" name="ResourceID" value="fb-2-power-of-vectors">
+    <input type="hidden" name="ContentType" value="flexbook">
+    <input type="hidden" name="Course" value="hphys">
+    <input type="hidden" name="Unit" value="1">
+    <input type="hidden" name="StartTime" id="start-time">
+    <input type="hidden" name="SubmitTime" id="submit-time">
+    <input type="hidden" name="BrowserInfo" id="browser-info">
+
+    <!-- Status Messages -->
+    <div id="submission-status" class="submission-status-inline" hidden></div>
+    
+    <!-- Auto-save indicator -->
+    <div id="auto-save-indicator" class="auto-save-indicator-inline" hidden>
+      ✓ Saved
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-button" class="btn-submit-inline">
+      Submit
+    </button>
+
+  </div>
+</div>
+
+
+  </div>
+
+</form>
+
+<script>
+// Initialize Flexbook Navigator
+document.addEventListener('DOMContentLoaded', function() {
+    const flowItems = document.querySelectorAll('.nav-item-container');
+    
+    if (flowItems.length > 1) {
+        // Use unified navigator for multi-section flexbooks
+        window.flexbookNavigator = new ActivityNavigator({
+            containerSelector: '.nav-item-container',
+            progressBarId: 'progress-fill',
+            progressTextId: 'progress-text',
+            prevButtonId: 'prev-item',
+            nextButtonId: 'next-item',
+            itemLabel: 'Section'
+        });
+        
+        console.log('[flexbook] Sequential navigation initialized');
+    } else {
+        // Single section - show everything
+        if (flowItems.length === 1) {
+            flowItems[0].classList.add('active');
+        }
+        console.log('[flexbook] Single section mode - no navigation needed');
+    }
+});
+</script>
+</div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Submission System -->
+<script src="/assets/js/activity-core.js?v=1761515983"></script>
+
+<!-- Load activity-specific JS module -->
+
+<script>
+  (function() {
+    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
+    let modulePath = '';
+
+    switch(contentType) {
+      case 'problem_set':
+        modulePath = 'ps-form.js';
+        break;
+      case 'hexagon_lab':
+        modulePath = 'hl-form.js';
+        break;
+      case 'research_brief':
+         modulePath = 'rb-form.js';
+         break;
+      // Add other content types here
+    }
+
+    if (modulePath) {
+      const script = document.createElement('script');
+      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
+      document.body.appendChild(script);
+      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
+    }
+  })();
+</script>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    <script src="/assets/js/navigation.js"></script>
+  </body>
+</html>
