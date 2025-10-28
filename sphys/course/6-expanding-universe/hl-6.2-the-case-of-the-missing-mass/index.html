@@ -1,0 +1,234 @@
+<hr />
+<h1>==============================================================================</h1>
+<h1 id="hexagon-lab-62-the-case-of-the-missing-mass">HEXAGON LAB 6.2: The Case of the Missing Mass</h1>
+<h1 id="-1">==============================================================================</h1>
+<p>title: |
+  Hexagon Lab 6.2: The Case of the Missing Mass
+layout: activity-focused
+date: 2025-10-17
+course: “sphys”
+content_type: hexagon_lab
+unit: “6”
+unit_slug: “unit-06-cosmic-currents”
+slug: “hl-6.2-the-case-of-the-missing-mass”
+estimated_time: “50 minutes”</p>
+
+<h1 id="-2">——————————————————————————</h1>
+<h1 id="ngss-alignment-all-content">NGSS ALIGNMENT (All content)</h1>
+<h1 id="-3">——————————————————————————</h1>
+<p>DCI: [“ESS1.A”, “ESS1.B”]
+Practice: [“Analyzing and Interpreting Data”, “Developing and Using Models”]
+CCC: [“Systems and System Models”]
+tags: [“cosmology”, “dark-matter”, “galaxy-rotation”, “data-analysis”, “system-models”]</p>
+
+<h1 id="-4">——————————————————————————</h1>
+<h1 id="display-only-workspace-instructions">DISPLAY-ONLY WORKSPACE INSTRUCTIONS</h1>
+<h1 id="-5">——————————————————————————</h1>
+<p>workspace_instructions: |
+  Complete this lab in your lab notebook or on the provided data sheets. Record all:</p>
+<ul>
+  <li>Your graph plotting both expected and observed velocities</li>
+  <li>Analysis question responses with complete explanations</li>
+  <li>Final claim-evidence-reasoning synthesis</li>
+</ul>
+
+<p>Use the expandable sections to check your understanding and verify your approach.</p>
+
+<h1 id="-6">——————————————————————————</h1>
+<h1 id="hexagon-lab-specific-fields">HEXAGON LAB SPECIFIC FIELDS</h1>
+<h1 id="-7">——————————————————————————</h1>
+<p>materials:</p>
+<ul>
+  <li>“Lab notebook”</li>
+  <li>“Pencil and straightedge”</li>
+  <li>“Graphing software or graph paper”</li>
+  <li>“Calculator”</li>
+</ul>
+
+<p>learning_objectives:</p>
+<ul>
+  <li>“Analyze a galaxy’s rotation curve to find evidence that supports the existence of dark matter”</li>
+  <li>“Graphically compare an expected model (from visible matter) with actual observations”</li>
+  <li>“Identify the conflict between a model and an observation”</li>
+  <li>“Explain how dark matter is a modification to our ‘System Model’ of a galaxy”</li>
+</ul>
+
+<h1 id="-8">——————————————————————————</h1>
+<h1 id="lab-overview">LAB OVERVIEW</h1>
+<h1 id="-9">——————————————————————————</h1>
+<p>overview:
+  abstract: |
+    This investigation explores one of the biggest puzzles in modern cosmology: 
+    dark matter. Students will analyze a “galaxy rotation curve,” comparing the 
+    <em>expected</em> velocity of stars (based on visible matter) with their <em>observed</em> velocity. The clear discrepancy provides the primary evidence for dark 
+    matter.</p>
+
+<p>introduction: |
+    When we observe how galaxies spin, we find a major puzzle. The stars on the 
+    outer edges are moving so fast that the gravity from the visible matter 
+    (stars, gas, and dust) shouldn’t be enough to hold them in orbit. They 
+    should fly off into space. There must be something else 
+    there—something we can’t see. This is the primary evidence for dark matter.</p>
+
+<p>background_context: |
+    Before starting this lab, you should understand:
+    - <strong>Galaxy Rotation Curve:</strong> A graph that plots the orbital speed of stars 
+      (y-axis) against their distance from the galaxy’s center (x-axis).
+    - <strong>Expected Curve (from Visible Matter):</strong> Based on Newton’s law of 
+      gravitation and counting only the matter we can <em>see</em>, scientists 
+      build a model that predicts star speeds. This model predicts that 
+      speeds should <em>decrease</em> at large distances.
+    - <strong>Observed Curve (from Measurements):</strong> The actual speeds of stars, 
+      measured using redshift. Astronomers observed that these speeds <em>do not</em> decrease; they stay flat at high values.</p>
+
+<h1 id="-10">——————————————————————————</h1>
+<h1 id="investigations-yaml-markdown-hybrid">INVESTIGATIONS (YAML-Markdown Hybrid)</h1>
+<h1 id="-11">——————————————————————————</h1>
+<p>investigations:</p>
+<ul>
+  <li>
+    <p>title: “Investigation 1: Finding the Missing Mass”
+description: |
+  <strong>Objective:</strong> Analyze a galaxy’s rotation curve to find evidence that 
+  supports the existence of dark matter.</p>
+
+    <p><strong>Data Source:</strong> Provided dataset for a typical spiral galaxy, showing 
+  the expected velocity (from visible matter) and the actual 
+  observed velocity.</p>
+
+    <p><strong>Procedure:</strong></p>
+    <ol>
+      <li>Review the “Galaxy Rotation Curve Data” (Table 1).</li>
+      <li>Examine the Plotly chart, which graphs both data series.</li>
+      <li>In your log, sketch this graph.</li>
+      <li>Use the graph and table to answer the analysis questions.</li>
+    </ol>
+
+    <p>table_data:
+  caption: “Table 1: Galaxy Rotation Curve Data”
+  source: “Generated dataset based on typical spiral galaxy (e.g., M33) rotation curves.”
+  headers:
+    - “DistanceFromCenter_kpc”
+    - “ExpectedVelocity_km_s (from visible matter)”
+    - “ObservedVelocity_km_s”
+  rows:
+    - [“0”, “0”, “0”]
+    - [“2”, “100”, “100”]
+    - [“4”, “140”, “140”]
+    - [“6”, “160”, “175”]
+    - [“8”, “150”, “200”]
+    - [“10”, “130”, “215”]
+    - [“12”, “115”, “225”]
+    - [“14”, “105”, “228”]
+    - [“16”, “95”, “230”]</p>
+
+    <p>dataset:
+  chart_id: “rotation-curve-chart”
+  chart_type: “line”
+  title: “Chart 1: Galaxy Rotation Curve”
+  description: |
+    This plot compares the expected rotation speed of a galaxy (based 
+    on visible matter) to the actual observed rotation speed.
+  source: “Table 1”
+  x_label: “Distance From Center”
+  x_unit: “kpc”
+  y_label: “Orbital Velocity”
+  y_unit: “km/s”
+  datasets:
+    - label: “ObservedVelocity_km_s”
+      dataPoints:
+        - { x: 0, y: 0 }
+        - { x: 2, y: 100 }
+        - { x: 4, y: 140 }
+        - { x: 6, y: 175 }
+        - { x: 8, y: 200 }
+        - { x: 10, y: 215 }
+        - { x: 12, y: 225 }
+        - { x: 14, y: 228 }
+        - { x: 16, y: 230 }
+    - label: “ExpectedVelocity_km_s (from visible matter)”
+      dataPoints:
+        - { x: 0, y: 0 }
+        - { x: 2, y: 100 }
+        - { x: 4, y: 140 }
+        - { x: 6, y: 160 }
+        - { x: 8, y: 150 }
+        - { x: 10, y: 130 }
+        - { x: 12, y: 115 }
+        - { x: 14, y: 105 }
+        - { x: 16, y: 95 }</p>
+
+    <p>analysis_questions:</p>
+    <ul>
+      <li>|
+Look at your graph. At what distance (in kpc) do the two curves 
+(<code class="language-plaintext highlighter-rouge">Expected</code> and <code class="language-plaintext highlighter-rouge">Observed</code>) start to clearly separate?</li>
+      <li>|
+Describe the difference between the two curves at large distances 
+(e.g., beyond 8 kpc). What is the <code class="language-plaintext highlighter-rouge">Expected</code> curve doing? 
+What is the <code class="language-plaintext highlighter-rouge">Observed</code> curve doing?</li>
+      <li>|
+The <code class="language-plaintext highlighter-rouge">Expected</code> curve represents the gravity from all the stars and 
+gas we can see. The <code class="language-plaintext highlighter-rouge">Observed</code> curve represents the actual motion. 
+What does the discrepancy tell you about the amount of <em>visible</em> matter in the galaxy? Is it enough to explain the observed motion?</li>
+      <li>|
+In your log, write a claim, supported by your graphical evidence, 
+that argues for the existence of some form of invisible “dark matter.”</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="-12">——————————————————————————</h1>
+<h1 id="synthesis-claim-evidence-reasoning">SYNTHESIS: CLAIM-EVIDENCE-REASONING</h1>
+<h1 id="-13">——————————————————————————</h1>
+<p>synthesis:
+  research_question: |
+    How does this lab demonstrate the scientific process of identifying a 
+    conflict between a model (the expected curve) and observation (the 
+    observed curve)? How does the concept of dark matter represent a 
+    modification to our <strong>System Model</strong> of a galaxy to account for this 
+    new evidence?</p>
+
+<p>claim_prompt: |
+    <strong>Claim:</strong> Based on the research question, write a single, clear, and specific 
+    sentence that states your main conclusion.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Example Format:** The observed rotation curve of a galaxy conflicts 
+with the model based on visible matter, which is evidence that our 
+**System Model** of a galaxy is incomplete and must be modified to 
+include a new component: dark matter.
+</code></pre></div></div>
+
+<p>evidence_prompt: |
+    <strong>Evidence:</strong> Provide a bulleted list of specific, quantitative data points 
+    from your investigation that support your claim.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- (From Graph/Table) The `ExpectedVelocity_km_s` (our model) peaked 
+  at 160 km/s (at 6 kpc) and then *decreased* to 95 km/s by 16 kpc.
+- (From Graph/Table) The `ObservedVelocity_km_s` (our observation) 
+  *did not decrease*, but instead flattened out, reaching 230 km/s 
+  at 16 kpc.
+- (From Graph) The discrepancy (the conflict) between the model and 
+  the observation is largest at the outer edges of the galaxy. At 
+  16 kpc, the difference is $230 - 95 = 135 \, \text{km/s}$.
+</code></pre></div></div>
+
+<p>reasoning_prompt: |
+    <strong>Reasoning:</strong> In a paragraph, explain the scientific principles that connect 
+    your evidence to your claim. Why is this evidence sufficient to support 
+    your conclusion?</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Guidance:** Your reasoning should:
+- Reference the **Cross-Cutting Concept of 'Systems and System Models'**.
+- Explain that the `Expected` curve *is* our 'System Model' based on 
+  visible matter and the laws of gravity.
+- Explain that the `Observed` curve is the real-world data.
+- The *conflict* between the two (the evidence) proves our initial 
+  model is wrong or incomplete. The observed high velocities require 
+  *more gravitational force* than the visible matter can provide.
+- Therefore, the scientific process requires us to *modify the model*. 
+  The concept of "dark matter" is this modification. We add an 
+  invisible, massive halo to our **System Model** to provide the 
+  "missing" gravity needed to make the model's prediction match 
+  the observation (the flat curve).
+</code></pre></div></div>

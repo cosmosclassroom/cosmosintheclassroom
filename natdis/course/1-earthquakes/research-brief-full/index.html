@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
     
@@ -31,7 +41,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -48,6 +62,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,8 +76,11 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -78,9 +98,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -102,198 +122,112 @@
   CSS and JavaScript for the activity submission system.
 -->
 
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
 <div class="activity-container" id="top">
   
-  <!-- Activity Header -->
-  <div class="activity-header">
-    <div class="header-content">
-      <div class="header-left">
-        <h1 class="activity-title">Research Brief Full</h1>
-        
-        <span class="badge badge-research">Research Brief</span>
-        
-      </div>
-      <div class="header-right">
-        <button id="submit-button" class="btn btn-primary">Submit</button>
-        <button id="clear-form" class="btn btn-secondary">Clear</button>
-      </div>
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Research Brief Full</h1>
+      
+      <span class="badge badge-research">Research Brief</span>
+      
     </div>
-    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-      <span>Draft saved</span>
-    </div>
-  </div>
+  </header>
 
   <!-- Main Content Area -->
   <div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
     <div id="activity-metadata"
-         data-resource-id=""
          data-content-type="research_brief"
          data-course="natdis"
          data-title="Research Brief Full"
          data-unit="1"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null">
-    </div>
-
+         hidden></div>
+    
     <div class="activity-content-wrapper">
-      <!-- This is where the specific activity type's content will be rendered --><!-- 
-  Research Brief Content Display
-  Renders the research brief content with navigation
--->
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+  
 
 
 
-<form id="activity-submission-form" class="activity-form">
-  <div class="research-brief-content">
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
+      
+        📋
+      
+    </div>
+    <div class="workspace-notice-title">
+      
+        Research Portfolio
+      
+    </div>
+  </div>
+  
+  <div class="workspace-notice-content">
     
-    <!-- Progress indicator for multi-section briefs -->
-    
-    
-    
-      <!-- Single section research brief -->
-      <div class="research-brief-full">
-        <hr />
-<p>layout: default
-title: “Earthquakes Unit: Summative Briefs Overview”
-—</p>
-<h1 id="earthquakes-unit-summative-briefs-overview">Earthquakes Unit: Summative Briefs Overview</h1>
-
-<p>This document outlines the structure for the three summative briefs that conclude each chapter of the Earthquakes unit.</p>
-
-<hr />
-
-<h2 id="brief-1-the-scientists-risk-report">Brief 1: The Scientist’s Risk Report</h2>
-
-<p><strong>To be completed at the end of Chapter 1</strong></p>
-
-<p><strong>Objective:</strong> Synthesize data and scientific principles to formally assess the seismic risk to a specific community.</p>
-
-<p><strong>Title:</strong> Seismic Risk Assessment for [Local Town, e.g., East Haven, CT]</p>
-
-<h3 id="hazard-analysis">Hazard Analysis</h3>
-
-<ul>
-  <li><strong>Geologic Setting:</strong> Briefly explain the tectonic setting (e.g., plate boundaries, local fault lines like the Moodus Seismic Area).</li>
-  <li><strong>Hazard Level (Magnitude):</strong> Based on historical data, what is the likely magnitude? Assign a qualitative level: Low, Moderate, or High.</li>
-  <li><strong>Expected Intensity:</strong> Describe expected effects using the Mercalli Intensity Scale (e.g., “VI: Felt by all; many frightened. Some heavy furniture moved.”).</li>
-</ul>
-
-<h3 id="vulnerability-assessment">Vulnerability Assessment</h3>
-
-<ul>
-  <li><strong>Infrastructure:</strong> Identify at least two specific vulnerabilities in the built environment (e.g., “Many older buildings are unreinforced brick,” “A key bridge was built before modern seismic codes.”).</li>
-  <li><strong>Geographic Factors:</strong> Identify one geographic vulnerability (e.g., “Many homes are built on soft, sandy soil near the coastline, which is prone to liquefaction.”).</li>
-</ul>
-
-<h3 id="overall-risk-statement">Overall Risk Statement</h3>
-
-<ul>
-  <li>
-    <p><strong>Calculation:</strong> Use the core formula:</p>
-
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">Risk = Hazard × Vulnerability</code></li>
-      <li>[Calculated Risk Level] = [Hazard Level] × [Vulnerability Level]</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Synthesis:</strong> Write a 2–3 sentence summary statement that clearly articulates the overall risk, justifying your conclusion with specific hazards and vulnerabilities.</p>
-  </li>
-</ul>
-
-<hr />
-
-<h2 id="brief-2-the-engineers-proposal">Brief 2: The Engineer’s Proposal</h2>
-
-<p><strong>To be completed at the end of Chapter 2</strong></p>
-
-<p><strong>Objective:</strong> Use experimental data from the shake-table lab to propose a specific engineering solution.</p>
-
-<p><strong>Title:</strong> An Engineering Proposal for Seismic Retrofitting</p>
-
-<h3 id="problem-statement">Problem Statement</h3>
-
-<ul>
-  <li>Summarize the risk identified in the Scientist’s Risk Report as an engineering challenge (1–2 sentences).</li>
-</ul>
-
-<h3 id="experimental-analysis-hexagon-lab-12">Experimental Analysis (Hexagon Lab 1.2)</h3>
-
-<ul>
-  <li><strong>Initial Design:</strong> Describe the performance of your first tower and why it failed (e.g., “The initial tower failed due to a lack of resistance to lateral forces, causing it to shear at the base.”).</li>
-  <li><strong>Redesigned Solution:</strong> Describe the specific change made to your tower.</li>
-  <li><strong>Results:</strong> Present stability rating data, comparing the initial and redesigned towers. State which design was more resilient.</li>
-</ul>
-
-<h3 id="proposed-technical-solution">Proposed Technical Solution</h3>
-
-<ul>
-  <li><strong>Principle:</strong> Identify the specific engineering principle used (e.g., cross-bracing), referencing “Engineering Research Brief 1.2.”</li>
-  <li><strong>Mechanism:</strong> Explain how the principle works (1–2 sentences).</li>
-  <li><strong>Recommendation:</strong> Based on lab data, recommend the city investigate the use of [Identified Principle] for reinforcing vulnerable structures.</li>
-</ul>
-
-<hr />
-
-<h2 id="brief-3-the-policymakers-brief">Brief 3: The Policymaker’s Brief</h2>
-
-<p><strong>To be completed at the end of Chapter 3</strong></p>
-
-<p><strong>Objective:</strong> Analyze the engineering solution through a social and economic lens, weighing tradeoffs to propose a viable public policy.</p>
-
-<p><strong>Title:</strong> Policy Brief: A Recommendation on Seismic Safety Mandates</p>
-
-<h3 id="executive-summary">Executive Summary</h3>
-
-<ul>
-  <li>Summarize the issue, proposed solution, and final recommendation (2–3 sentences; written last, placed first).</li>
-</ul>
-
-<h3 id="background-the-risk-and-the-solution">Background: The Risk and the Solution</h3>
-
-<ul>
-  <li>Briefly summarize the conclusions of the Scientist’s Risk Report and the Engineer’s Proposal.</li>
-</ul>
-
-<h3 id="analysis-of-tradeoffs">Analysis of Tradeoffs</h3>
-
-<ul>
-  <li><strong>Costs:</strong> Identify at least two costs (e.g., financial cost of retrofitting, economic disruption, political challenges).</li>
-  <li><strong>Benefits:</strong> Identify at least two benefits (e.g., lives saved, reduced damage, protection of critical infrastructure).</li>
-  <li><strong>Equity Consideration:</strong> Who bears the greatest burden? Who benefits most? Is the solution equitable for all?</li>
-</ul>
-
-<h3 id="policy-recommendation">Policy Recommendation</h3>
-
-<ul>
-  <li>
-    <p>Choose and defend one specific, actionable policy:</p>
-
-    <ul>
-      <li><strong>Option A:</strong> Mandatory Retrofit Law (highest safety, highest cost)</li>
-      <li><strong>Option B:</strong> Voluntary Incentive Program (e.g., tax breaks; lower cost, lower compliance)</li>
-      <li><strong>Option C:</strong> Phased-In Approach (e.g., mandate for critical buildings now, incentives for others)</li>
-    </ul>
-  </li>
-  <li>
-    <p><strong>Justification:</strong> Defend your chosen policy, explaining why its benefits outweigh its costs and how it addresses key tradeoffs (reference cost-benefit analysis).</p>
-  </li>
-</ul>
-
-        
-        
-      </div>
+      
+        <p><strong>Complete this research project in your portfolio.</strong></p>
+        <p>Address all deliverables and guiding questions. Organize your work according to the timeline and submit according to your teacher's instructions.</p>
+      
     
   </div>
-
-  <!-- Navigation Controls -->
   
-</form>
+  
 </div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Fallback: No sequential content detected -->
+    <div class="content-error">
+      <p>No content structure detected for type: <code>research_brief</code></p>
+      <p>Expected data arrays:</p>
+      <ul>
+        <li><strong>problem_set:</strong> page.problems</li>
+        <li><strong>hexagon_lab:</strong> page.investigations</li>
+        <li><strong>flexbook:</strong> page.instructional_flow</li>
+        <li><strong>research_brief:</strong> page.investigation_tasks</li>
+      </ul>
+    </div>
+  
+  
+</div>
+
+
+
+
+    </div>
   </div>
 
   <!-- Hidden Metadata Div -->
@@ -303,42 +237,17 @@ title: “Earthquakes Unit: Summative Briefs Overview”
 
 </div>
 
-<!-- Core Activity Submission System -->
-<script src="/assets/js/activity-core.js?v=1761515983"></script>
-
-<!-- Load activity-specific JS module -->
-
-<script>
-  (function() {
-    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-    let modulePath = '';
-
-    switch(contentType) {
-      case 'problem_set':
-        modulePath = 'ps-form.js';
-        break;
-      case 'hexagon_lab':
-        modulePath = 'hl-form.js';
-        break;
-      case 'research_brief':
-         modulePath = 'rb-form.js';
-         break;
-      // Add other content types here
-    }
-
-    if (modulePath) {
-      const script = document.createElement('script');
-      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
-      document.body.appendChild(script);
-      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
-    }
-  })();
-</script>
-
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

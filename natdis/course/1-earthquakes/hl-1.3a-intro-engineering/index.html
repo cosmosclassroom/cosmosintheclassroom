@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Pre-Lab: Engineering for Earthquakes - Your Mission Begins | Cosmos in the Classroom</title>
+    <title>Hl 1.3A Intro Engineering | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
     
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
@@ -31,7 +41,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -45,6 +59,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,12 +69,22 @@
 
     <!-- Chart.js for data visualization -->
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
 
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -75,9 +102,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -99,480 +126,119 @@
   CSS and JavaScript for the activity submission system.
 -->
 
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
 <div class="activity-container" id="top">
   
-  <!-- Activity Header -->
-  <div class="activity-header">
-    <div class="header-content">
-      <div class="header-left">
-        <h1 class="activity-title">Pre-Lab: Engineering for Earthquakes - Your Mission Begins</h1>
-        
-      </div>
-      <div class="header-right">
-        <button id="submit-button" class="btn btn-primary">Submit</button>
-        <button id="clear-form" class="btn btn-secondary">Clear</button>
-      </div>
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Hl 1.3A Intro Engineering</h1>
+      
+      <span class="badge badge-lab">Hexagon Lab</span>
+      
     </div>
-    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-      <span>Draft saved</span>
-    </div>
-  </div>
+  </header>
 
   <!-- Main Content Area -->
   <div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
     <div id="activity-metadata"
-         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
-         data-title="Pre-Lab: Engineering for Earthquakes - Your Mission Begins"
-         data-unit="1-earthquakes"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null">
-    </div>
-
+         data-title="Hl 1.3A Intro Engineering"
+         data-unit="1"
+         hidden></div>
+    
     <div class="activity-content-wrapper">
-      <!-- This is where the specific activity type's content will be rendered --><!-- 
-  Hexagon Lab Content Display with Sequential Navigation
-  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
--->
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
 
-<div class="hexagon-lab-content">
-    <!-- Student name is now handled by the localStorage permanent name capture feature -->
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
   
-    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <!-- Progress indicator and navigation (if multiple sections) -->
-    <div class="activity-progress">
-      <div class="activity-progress-bar">
-        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
-      </div>
-      <div id="progress-text">Section 1</div>
-    </div>
-    <div class="activity-navigation">
-      <button type="button" class="btn nav-prev" disabled>Previous</button>
-      <button type="button" class="btn nav-next">Next</button>
-    </div>
 
-    <!-- Lab Content (rendered from YAML structure) -->
-    <div id="lab-sections-container">
+
+
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <!-- Fallback: Render markdown content if present (backward compatibility) -->
-      <div class="nav-item-container lab-section fallback-content">
-        <h1 id="pre-lab-engineering-for-earthquakes---your-mission-begins">Pre-Lab: Engineering for Earthquakes - Your Mission Begins</h1>
-
-<p><strong>The Challenge Ahead:</strong> You’ve witnessed the raw power of earthquakes—seismic waves that can topple cities and reshape landscapes. The ground beneath our feet, which seems so solid and dependable, can suddenly become our greatest threat. But what if we could fight back? What if we could use scientific understanding to design structures that stand firm when the Earth itself betrays us?</p>
-
-<p>This is the daily challenge faced by structural engineers. Today, you’ll learn how they transform scientific knowledge into protective solutions, preparing you for your own engineering mission ahead.</p>
-
-<hr />
-
-<h2 id="part-1-the-problem-solvers---who-are-engineers">Part 1: The Problem Solvers - Who Are Engineers?</h2>
-
-<p>When disaster strikes, scientists rush to understand what happened. But engineers? Engineers are already thinking about what happens next. How do we rebuild better? How do we protect the communities that depend on us?</p>
-
-<p>An <strong>engineer</strong> is a professional problem-solver who bridges the gap between scientific discovery and human need. They take the elegant equations of physics and transform them into concrete solutions—literally, in many cases. While there are engineers who design everything from computer chips to space rockets, a <strong>structural engineer</strong> specializes in one of humanity’s most fundamental challenges: creating buildings and bridges that can safely resist powerful forces.</p>
-
-<p>For a structural engineer working in earthquake country, every design decision carries profound weight. Their calculations don’t just determine whether a building stands or falls—they determine whether families make it home safely each night.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Check for Understanding: <em>What’s the difference between what a scientist and an engineer do when studying earthquakes? How do their goals differ?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Think of it this way: if an earthquake scientist is like a detective investigating a crime scene, then a structural engineer is like a security expert designing better locks and alarm systems. Both use rigorous analysis, but one seeks to understand what happened while the other works to prevent it from happening again.</p>
-
-<p><strong>The Engineer’s Primary Mission:</strong> Above all else, the safety of people inside structures is paramount. This isn’t just professional obligation—it’s moral responsibility. Every beam specified, every connection detailed, every safety factor calculated becomes part of an invisible web of protection wrapped around human lives.</p>
-
-<hr />
-
-<h2 id="part-2-the-engineers-playbook---the-design-process">Part 2: The Engineer’s Playbook - The Design Process</h2>
-
-<p>Engineers don’t simply guess at solutions or rely on inspiration. They follow a systematic, time-tested approach called the <strong>Engineering Design Process</strong>—a methodical cycle that transforms vague problems into concrete solutions through iteration and refinement.</p>
-
-<p>Here’s how the process unfolds:</p>
-
-<h3 id="ask-define-the-challenge">ASK: Define the Challenge</h3>
-<ul>
-  <li>What problem needs solving? (The “what”)</li>
-  <li>What must a successful solution accomplish? (The criteria)</li>
-  <li>What limitations constrain our options? (The constraints)</li>
-</ul>
-
-<p>Constraints might include available materials, budget limits, time deadlines, or physical laws that cannot be bent.</p>
-
-<h3 id="imagine-unleash-creativity">IMAGINE: Unleash Creativity</h3>
-<p>This is the brainstorming phase where wild ideas are welcome. Engineers sketch freely, think laterally, and explore possibilities without immediately judging feasibility. The goal isn’t perfection—it’s possibility.</p>
-
-<h3 id="plan-choose-and-refine">PLAN: Choose and Refine</h3>
-<p>From the storm of ideas, engineers select the most promising concept and develop it systematically. Detailed drawings emerge, materials are specified, and dimensions are calculated. This blueprint becomes the roadmap for building.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Check for Understanding: <em>Why do you think engineers brainstorm many ideas before choosing one to develop? What might happen if they just went with their first thought?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="create-build-the-prototype">CREATE: Build the Prototype</h3>
-<p>Engineers construct a working model—a prototype—based on their detailed plans. This might be a scale model, a computer simulation, or even a full-sized test version, depending on the project.</p>
-
-<h3 id="test-evaluate-performance">TEST: Evaluate Performance</h3>
-<p>Here’s where theory meets reality. How well does the prototype perform under stress? Where does it succeed? Where does it fail? Engineers collect data methodically, measuring performance against their original criteria.</p>
-
-<h3 id="improve-learn-and-iterate">IMPROVE: Learn and Iterate</h3>
-<p>Based on test results, engineers identify weaknesses and redesign for better performance. This step often leads directly back to the beginning of the cycle—new insights spark new questions, which trigger new rounds of imagination and planning.</p>
-
-<p>The beauty of this process lies not in achieving perfection on the first try, but in systematic improvement through each cycle.</p>
-
-<hr />
-
-<h2 id="part-3-engineering-in-action---earthquake-resistant-design">Part 3: Engineering in Action - Earthquake-Resistant Design</h2>
-
-<p>How do engineers apply this systematic process to the chaotic challenge of earthquake forces? Through decades of testing, failure analysis, and innovation, they’ve developed several key strategies:</p>
-
-<h3 id="cross-bracing-the-power-of-triangles">Cross-Bracing: The Power of Triangles</h3>
-<p>Picture a simple building frame made of rectangles—walls and floors forming right angles. Now imagine lateral forces pushing sideways. Rectangles deform easily under this stress, collapsing into parallelograms.</p>
-
-<p>But add a diagonal brace across that rectangle, and suddenly you have two triangles. Triangles are nature’s strongest geometric shapes—they resist deformation with remarkable efficiency. This technique, called <strong>cross-bracing</strong>, transforms flexible frames into rigid, earthquake-resistant structures.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Check for Understanding: <em>Try this quick experiment: Make a rectangle with your thumbs and index fingers. Now push on one corner. Easy to deform, right? Now imagine a diagonal line connecting two opposite corners. How would that change the rectangle’s resistance to deformation?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="base-isolation-decoupling-from-disaster">Base Isolation: Decoupling from Disaster</h3>
-<p>Perhaps the most counterintuitive solution is <strong>base isolation</strong>—instead of fighting the earthquake, engineers surrender to it strategically. The building sits atop specially engineered bearings made of alternating layers of steel and rubber, or sophisticated mechanical systems that act like massive shock absorbers.</p>
-
-<p>When the ground convulses violently, these isolators absorb and dissipate the energy. The foundation moves with the earthquake, but the building above remains surprisingly calm—like a passenger in a luxury car gliding smoothly over rough terrain.</p>
-
-<h3 id="tuned-mass-dampers-fighting-motion-with-motion">Tuned Mass Dampers: Fighting Motion with Motion</h3>
-<p>In the world’s tallest skyscrapers, engineers sometimes install enormous pendulums near the top floors. These <strong>tuned mass dampers</strong> are precisely calibrated to swing in perfect opposition to the building’s natural sway during an earthquake.</p>
-
-<p>As seismic forces try to whip the tower back and forth, the massive pendulum swings in the opposite direction, counteracting the motion and keeping the building stable. It’s like a tightrope walker using a balance pole—controlled motion prevents uncontrolled collapse.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Check for Understanding: <em>Which of these three engineering solutions seems most surprising to you? Why do you think engineers would choose a strategy that seems to “work with” the earthquake rather than simply “resist” it?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<h2 id="part-4-your-mission-should-you-choose-to-accept-it">Part 4: Your Mission, Should You Choose to Accept It</h2>
-
-<p>You are now about to join a team of structural engineers tasked with a critical challenge. Your city has experienced a wake-up call—a moderate earthquake that revealed vulnerabilities in existing buildings. The city council has commissioned your firm to design a new multi-story building that can serve as a model of earthquake-resistant construction.</p>
-
-<h3 id="the-problem-statement">The Problem Statement</h3>
-<p>Design and construct a scale model of a multi-story building that demonstrates earthquake-resistant engineering principles and can survive simulated seismic testing.</p>
-
-<h3 id="success-criteria-what-your-design-must-do">Success Criteria (What Your Design Must Do)</h3>
-<ul>
-  <li>Stand at least 30 cm tall when completed</li>
-  <li>Include a minimum of three distinct floors</li>
-  <li>Remain structurally intact during a 15-second earthquake simulation</li>
-  <li>Demonstrate at least one earthquake-resistant design principle</li>
-</ul>
-
-<h3 id="design-constraints-your-limitations">Design Constraints (Your Limitations)</h3>
-<ul>
-  <li>Materials limited to: wooden toothpicks and miniature marshmallows</li>
-  <li>Build time limited to available class period</li>
-  <li>Budget constraint: maximum of 50 toothpicks and 30 marshmallows</li>
-  <li>Must be freestanding (no external supports or guy-wires)</li>
-</ul>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Design Challenge Preparation: <em>Before you start building, which of the engineering principles you learned about today could you incorporate into a toothpick-and-marshmallow structure? Consider the materials’ properties and the scale of your model.</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="your-task-for-today-begin-the-design-process">Your Task for Today: Begin the Design Process</h3>
-
-<p>Working with your engineering team, start the IMAGINE and PLAN phases. In your engineering notebook, develop at least two different design concepts for your earthquake-resistant building. Consider:</p>
-
-<ul>
-  <li>How will you create a stable base?</li>
-  <li>Where will you add triangular bracing for strength?</li>
-  <li>How will you distribute weight across multiple floors?</li>
-  <li>What can you learn from the engineering principles discussed today?</li>
-</ul>
-
-<p><strong>Design Sketch 1:</strong>
-<em>[Space for detailed sketch with labeled components]</em></p>
-
-<p><strong>Design Rationale:</strong> Why did you choose this approach? What engineering principles does it incorporate?</p>
-
-<p><strong>Design Sketch 2:</strong>
-<em>[Space for detailed sketch with labeled components]</em></p>
-
-<p><strong>Design Rationale:</strong> How does this design differ from your first concept? What are its potential advantages?</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Design Reflection: <em>Compare your two design concepts. Which do you predict will perform better in earthquake testing? What specific features make you confident in your choice? What concerns do you have about potential weak points?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="preparing-for-construction">Preparing for Construction</h3>
-
-<p>In your next lab session, you’ll CREATE and TEST your chosen design. But engineering success starts with thoughtful planning. Review your sketches, discuss them with your team, and come prepared to build with confidence.</p>
-
-<p>Remember: the goal isn’t just to build something that stands up—it’s to build something that stands up when the ground beneath it is shaking violently. That requires not just creativity, but systematic application of engineering principles you’ve studied today.</p>
-
-<p>The citizens of your earthquake-prone community are counting on your team’s expertise. How will you rise to meet their trust?</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">Final Preparation Check: <em>What questions do you still have about earthquake engineering that you’d like to explore during the building and testing phase? What aspects of the design process are you most excited to experience firsthand?</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-
-<p><strong>Next Session Preview:</strong> Armed with your design plans and understanding of engineering principles, you’ll construct your prototype and subject it to rigorous earthquake simulation. Will your calculations prove correct? Will your design principles hold up under stress? The shake table will reveal the truth—and provide valuable data for the next iteration of your design.</p>
-
-<p>Welcome to the world of earthquake engineering, where scientific understanding meets human ingenuity in service of community safety.</p>
-
-      </div>
-      
+        🔬
       
     </div>
-
-    <!-- Navigation Buttons moved to the top -->
-
-  </div> <!-- Close #lab-sections-container -->
-
-  <!-- Submission Section - using common pattern from activity-forms.js -->
-  <div class="submission-section-wrapper" id="submission-wrapper">
-    <!-- Student name is now handled by the sticky header -->
-    
-    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
-    <div id="activity-specific-fields"></div>
-
-    <!-- Submit Button -->
-    <div class="lab-form-actions">
-      <button type="submit" id="submit-button" class="lab-submit-button">
-        Submit Lab Report
-      </button>
-      <p class="lab-help-text">
-        Your answers are auto-saved as you work. Click above when you're ready to submit.
-      </p>
+    <div class="workspace-notice-title">
+      
+        Lab Notebook
+      
     </div>
-    
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status" hidden></div>
   </div>
-
-<<<<<<< HEAD
-</form>
-
-<script src="/assets/js/activity-navigator.js"></script>
-=======
-<!-- Scripts are now loaded in the layout file -->
->>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
-<script>
-/**
- * Hexagon Lab Section Navigator
- * YAML-first: Sections already structured by Liquid, just initialize navigation
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
+  
+  <div class="workspace-notice-content">
     
-    // Check if activity-core is initialized
-    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
-        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
-    } else {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
-    }
+      
+        <p><strong>Record your observations and responses in your lab notebook.</strong></p>
+        <p>Include data tables, analysis responses, and your claim-evidence-reasoning synthesis. Follow your teacher's guidelines for lab notebook format and submission.</p>
+      
     
-    const container = document.getElementById('lab-sections-container');
-    
-    if (!container) {
-        console.warn('[hexagon-lab] Lab sections container not found');
-        return;
-    }
-    
-    // Count pre-structured sections
-    const sections = container.querySelectorAll('.nav-item-container');
-    
-    if (sections.length <= 1) {
-        // Single section or no sections - show everything, no navigation needed
-        console.log('[hexagon-lab] Single section mode - no navigation needed');
-        if (sections.length === 1) {
-            sections[0].classList.add('active');
-        }
-        return;
-    }
-    
-    console.log('[hexagon-lab] Found', sections.length, 'sections');
-    
-    // Show progress and navigation UI
-    document.getElementById('lab-progress').style.display = 'block';
-    document.getElementById('lab-navigation').style.display = 'flex';
-    
-    // Manual activation of first section and setup section visibility
-    if (sections.length > 0) {
-        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the first section
-        sections[0].style.display = 'block';
-        sections[0].classList.add('active');
-        
-        // Ensure all sections have proper display style
-        // This ensures that when we toggle the 'active' class, display changes work correctly
-        sections.forEach(section => {
-            // Enforce display:block when active, display:none when inactive
-            if (!section.style.display || section.style.display === '') {
-                section.style.display = 'none';
-            }
-        });
-    }
-    
-    // Debug elements
-    console.log('[hexagon-lab] Debug:');
-    console.log('- nav sections:', sections.length);
-    console.log('- section 0:', sections[0]);
-    console.log('- prev button:', document.getElementById('prev-item'));
-    console.log('- next button:', document.getElementById('next-item'));
-    console.log('- progress fill:', document.getElementById('progress-fill'));
-    console.log('- progress text:', document.getElementById('progress-text'));
-    
-    // Initialize navigator
-    // We'll use our own simple navigation implementation that's guaranteed to work
-    console.log('[hexagon-lab] Setting up lab navigation system');
-    
-    // Initialize navigation state
-    let currentIndex = 0;
-    const totalSections = sections.length;
-    
-    // Core navigation function
-    function showLabSection(index) {
-        console.log('[hexagon-lab] Navigating to section', index);
-        
-        // Validate index
-        if (index < 0 || index >= totalSections) {
-            console.warn('[hexagon-lab] Invalid section index:', index);
-            return;
-        }
-        
-        // Hide all sections
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the requested section
-        sections[index].style.display = 'block';
-        sections[index].classList.add('active');
-        
-        // Update state
-        currentIndex = index;
-        
-        // Update button states
-        document.getElementById('prev-item').disabled = (index === 0);
-        document.getElementById('next-item').disabled = (index === totalSections - 1);
-        
-        // Update progress bar
-        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
-        document.getElementById('progress-fill').style.width = progressPercent + '%';
-        
-        // Update progress text
-        const sectionTitle = sections[index].getAttribute('data-section-title') || 
-                             ('Section ' + (index + 1));
-        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('[hexagon-lab] Section displayed:', sectionTitle);
-    }
-    
-    // Wire up navigation buttons
-    document.getElementById('prev-item').addEventListener('click', function() {
-        showLabSection(currentIndex - 1);
-    });
-    
-    document.getElementById('next-item').addEventListener('click', function() {
-        showLabSection(currentIndex + 1);
-    });
-    
-    // Initialize with first section
-    showLabSection(0);
-});
-</script>
+  </div>
+  
+  
 </div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+  
+  
+  
+  
+  
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Hexagon Lab Sections (Overview + Investigations + Synthesis) -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
   </div>
 
   <!-- Hidden Metadata Div -->
@@ -582,42 +248,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
-<!-- Core Activity Submission System -->
-<script src="/assets/js/activity-core.js?v=1761515983"></script>
-
-<!-- Load activity-specific JS module -->
-
-<script>
-  (function() {
-    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-    let modulePath = '';
-
-    switch(contentType) {
-      case 'problem_set':
-        modulePath = 'ps-form.js';
-        break;
-      case 'hexagon_lab':
-        modulePath = 'hl-form.js';
-        break;
-      case 'research_brief':
-         modulePath = 'rb-form.js';
-         break;
-      // Add other content types here
-    }
-
-    if (modulePath) {
-      const script = document.createElement('script');
-      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
-      document.body.appendChild(script);
-      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
-    }
-  })();
-</script>
-
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

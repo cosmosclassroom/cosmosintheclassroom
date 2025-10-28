@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 9: Work and Energy
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Chapter 9: Work and Energy
+</h1>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 9: Work and Energy
+"
+         data-unit="5"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    
+    <!-- Flexbook Reference Sections (Key Vocabulary & Formulae) -->
+    
+    
+    <!-- Flexbook Instructional Flow Items -->
+    
+      <div class="flexbook-item active" 
+           data-item-index="0"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Introduction</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    
+<p>\ work in the physics context and calculate the work done by a constant force.\n<br />
+\  - Define kinetic energy and apply the work-energy theorem to relate the net<br />
+\ work done on an object to its change in kinetic energy.\n  - Differentiate between<br />
+\ various forms of potential energy, with a focus on calculating gravitational<br />
+\ potential energy.\n\nkeyVocabulary:\n  - term: Work\n    definition: &gt;-\n  <br />
+\    The measure of energy transfer that occurs when an object is moved\n    <br />
+\  over a distance by an external force.\n  - term: Kinetic Energy\n    definition:<br />
+\ &gt;-\n      The energy that an object possesses due to its motion, dependent on\n<br />
+\      its mass and speed.\n  - term: Potential Energy\n    definition: &gt;-\n <br />
+\     Stored energy that depends upon the relative position of various\n     <br />
+\ parts of a system. ($PE_g$ is energy stored due to height).\n  - term: Work-Energy<br />
+\ Theorem\n    definition: &gt;-\n      The principle that the net work done on an<br />
+\ object is equal to the change in its kinetic energy.\n\nkeyFormulae:\n  - formula:<br />
+\ $W = Fd\cos(\theta)$\n  - formula: $KE = \frac{1}{2}mv^2$\n  - formula: $W_{net}<br />
+\ = \Delta KE$\n  - formula: $PE_g = mgh$\n\n# The <code class="language-plaintext highlighter-rouge">instructional_flow</code> is an<br />
+\ ordered list of content blocks that structure the chapter.\ninstructional_flow:\n<br />
+\  - Define work in the physics context and calculate the work done by a constant<br />
+\ force.\n  - Define kinetic energy and apply the work-energy theorem to relate<br />
+\ the net work done on an object to its change in kinetic energy.\n  - Differentiate<br />
+\ between various forms of potential energy, with a focus on calculating gravitational<br />
+\ potential energy.\n\nkeyVocabulary:\n  - term: Work\n    definition: &gt;-\n  <br />
+\    The measure of energy transfer that occurs when an object is moved\n    <br />
+\  over a distance by an external force.\n  - term: Kinetic Energy\n    definition:<br />
+\ &gt;-\n      The energy that an object possesses due to its motion, dependent on\n<br />
+\      its mass and speed.\n  - term: Potential Energy\n    definition: &gt;-\n <br />
+\     Stored energy that depends upon the relative position of various\n     <br />
+\ parts of a system. ($PE_g$ is energy stored due to height).\n  - term: Work-Energy<br />
+\ Theorem\n    definition: &gt;-\n      The principle that the net work done on an<br />
+\ object is equal to the change in its kinetic energy.\n\nkeyFormulae:\n  - formula:<br />
+\ $W = Fd\cos(\theta)$\n  - formula: $KE = \frac{1}{2}mv^2$\n  - formula: $W_{net}<br />
+\ = \Delta KE$\n  - formula: $PE_g = mgh$\n\n# The <code class="language-plaintext highlighter-rouge">instructionalFlow</code> is an<br />
+\ ordered list of content blocks that structure the chapter.\ninstructional_flow:\n<br />
+\  - type: reading\n    title: \Introduction: A New Way of Keeping Score"\n<br />
+\    content: |\n      For the past several chapters, we’ve been like accountants<br />
+\ for motion, meticulously tracking the pushes and pulls—the forces—that cause<br />
+\ acceleration. But what if there’s another, more powerful way to understand the<br />
+\ universe? Imagine a universal currency, a quantity that can change its form<br />
+\ from motion, to position, to heat, but whose total amount is always conserved.<br />
+\ This currency is called <strong>energy</strong>. By learning to track it, we can solve problems<br />
+\ that are incredibly difficult using forces alone. This is not just a new tool;<br />
+\ it’s a new worldview. It’s the story of how physicists learned to stop focusing<br />
+\ only on the transactions of force and started balancing the universe’s checkbook.\n<br />
+\n  - type: reading\n    title: "Phenomenon: A River Tamed, A Desert Bloomed"<br />
+\n    content: |\n      \n      In the heart of the Great Depression, a monumental<br />
+\ structure of concrete and steel rose from the Black Canyon of the Colorado River.<br />
+\ The Hoover Dam, a testament to human ambition, tamed a wild river to bring life<br />
+\ and power to the American Southwest. The core principle is deceptively simple:<br />
+\ water held high behind the dam wall possesses a quiet, stored energy. As this<br />
+\ water is released, that stored energy is transformed into the violent, churning<br />
+\ energy of motion. This motion turns massive turbines, which transform the energy<br />
+\ of motion into the electrical energy that powers cities. The dam is a colossal<br />
+\ energy converter. The water behind it isn’t just a reservoir; it’s a battery,<br />
+\ storing the energy gifted by the sun that lifted the water from the ocean in<br />
+\ the first place. The puzzle is: how do we create a precise accounting system<br />
+\ to track this energy as it changes from one form to another?\n\n  - type: activity_prompt\n<br />
+\    title: "Forecast: The Accountant’s Ledger"\n    content: |\n      Pause<br />
+\ your reading here. It’s time to make your initial forecast about how energy<br />
+\ flows and transforms. Open your <strong>Unit 5 Research Brief</strong> document and complete<br />
+\ the "Forecast" section for "The Accountant’s Ledger."\n    button_text:<br />
+\ "Open Research Brief"\n\n  - type: reading\n    title: "Investigation: The<br />
+\ Price of Motion"\n    content: |\n      How do we "give" energy to an object?<br />
+\ If we want to make something move faster, we have to push it. The amount of<br />
+\ energy we transfer depends on how hard we push and for how far. Physicists have<br />
+\ a special name for this process of transferring energy via a force: <strong>Work</strong>.<br />
+\ Let’s investigate the rules that govern this fundamental transaction.\n\n  -<br />
+\ type: activity_prompt\n    title: "Discovery: Doing Work to Lift Objects"\n<br />
+\    content: |\n      Pause your reading here. Open your <strong>Unit 5 Hexagon Labs</strong><br />
+\ document and complete "Hexagon Lab - Doing Work to Lift Objects" to discover<br />
+\ the relationship between force, distance, and the energy transferred to a system.\n<br />
+\    button_text: "Open Hexagon Labs"\n\n  - type: reading\n    title: "The<br />
+\ Rules of the Game: Work and Energy"\n    content: |\n      Your investigation<br />
+\ revealed the rule for "doing work": <strong>$W = Fd\cos(\theta)$</strong>. Work is the<br />
+\ product of the force and the distance over which it’s applied, but only the<br />
+\ component of the force in the direction of motion counts (that’s what the $\<br />
+cos\theta$ is for). If you push a box horizontally, you do work. If you just<br />
+\ hold it still, no matter how tired you get, you are doing zero work because<br />
+\ the distance is zero.\n\n      So where does that transferred energy go? It<br />
+\ often becomes <strong>Kinetic Energy ($KE = \frac{1}{2}mv^2$)</strong>, the energy an object<br />
+\ has because it’s moving. The link between these is the <strong>Work-Energy Theorem</strong>:<br />
+\ the net work done on an object equals its change in kinetic energy ($W_{net}<br />
+\ = \Delta KE$). This is a powerful idea. It tells us that the total of all pushes<br />
+\ and pulls on an object, accounted for over a distance, precisely determines<br />
+\ its change in speed.\n\n      But energy can also be stored. When you lift an<br />
+\ object, you do work against gravity. That energy isn’t lost; it’s stored as<br />
+\ <strong>Gravitational Potential Energy ($PE_g = mgh$)</strong>. It’s the energy of position—the<br />
+\ higher an object is, the more potential it has to be converted back into motion.<br />
+\ This is the secret of the Hoover Dam: storing energy by putting water in a high<br />
+\ place.\n\n  - type: image\n    # A simple diagram showing a roller coaster car<br />
+\ at the top of a hill and at the bottom.\n    # At the top, a large bar graph<br />
+\ shows ‘PE’ is high and ‘KE’ is low.\n    # At the bottom, the bar graph shows<br />
+\ ‘PE’ is low and ‘KE’ is high.\n    # An arrow shows the direction of motion.\n<br />
+\    title: "Energy Conversion in a Roller Coaster"\n    src: "https://placehold.co/600x400/222/fff?text=Potential+and+Kinetic+Energy"<br />
+\n    caption: "As the coaster falls, its stored Gravitational Potential Energy<br />
+\ (PE) is converted into the energy of motion, Kinetic Energy (KE)."\n\n  - type:<br />
+\ reading\n    title: "Thinking Lens: Energy and Matter"\n    content: |\n <br />
+\     Using our lens of <strong>Energy and Matter</strong>, we see that energy is a fundamental<br />
+\ quantity that can be tracked as it flows through a system. The Hoover Dam is<br />
+\ a perfect example of a system designed to manage energy flow. The matter (water)<br />
+\ enters the system at a high potential energy. The structure of the dam guides<br />
+\ the flow of this matter, causing the energy to be transformed into kinetic,<br />
+\ then mechanical, then electrical forms. The matter itself is just the carrier<br />
+\ for the energy. This lens encourages us to stop looking at just the objects<br />
+\ and start looking at the energy they carry, store, and transfer. The total amount<br />
+\ of energy may change form, but it is never lost from the universe.\n\n  - type:<br />
+\ activity_prompt\n    title: "Practice: Work and Energy"\n    content: |\n<br />
+\      You’ve been introduced to the core concepts of the energy model. It’s time<br />
+\ to practice your new accounting skills. Pause your reading here. Open your <strong>Unit<br />
+\ 5 Problem Sets</strong> document and complete "Problem Set 5.1: Work and Energy."<br />
+\n    button_text: "Open Problem Sets"\n\n  - type: reading\n    title: "The<br />
+\ Bigger Picture: Synthesis and Connection"\n    content: |\n      The concepts<br />
+\ of work and energy give us a profoundly new way to analyze the physical world.<br />
+\ Instead of summing up vector forces, we can now track a single scalar quantity—energy—as<br />
+\ it changes form. This perspective simplifies many problems that would be incredibly<br />
+\ complex using Newton’s Laws alone. We have laid the groundwork for one of the<br />
+\ most important and sacrosanct laws in all of science: the Law of Conservation<br />
+\ of Energy. In the next chapter, we will formalize this law and see how it governs<br />
+\ everything from the swing of a pendulum to the power of a dam.”</p>
+
+  </div>
+
+
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

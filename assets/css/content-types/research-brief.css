@@ -1,0 +1,389 @@
+/**
+ * Research Brief Content-Type Styles
+ * Content-type-specific styles only (navigation/progress/buttons in components/)
+ */
+
+/* ========================================
+   RESEARCH BRIEF TASK CONTAINER
+   ======================================== */
+
+.brief-task {
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brief-task:last-child {
+  border-bottom: none;
+}
+
+/* Initially hide all tasks (JS shows active one) */
+.brief-task:not(.active) {
+  display: none;
+}
+
+/* ========================================
+   RESEARCH BRIEF TASK HEADER
+   ======================================== */
+
+.brief-task-header {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, #ffe0e0 0%, #fff0f0 100%);
+  border-left: 6px solid #ff6b6b;
+  border-radius: var(--radius-md);
+}
+
+.brief-task-number {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ff6b6b;
+  margin-bottom: var(--spacing-xs);
+}
+
+.brief-task-title {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ========================================
+   RESEARCH BRIEF PHASE INDICATORS
+   ======================================== */
+
+.brief-phase {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  border: 2px solid;
+}
+
+.brief-phase.forecast {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  color: #0d47a1;
+}
+
+.brief-phase.blueprint {
+  background-color: #f3e5f5;
+  border-color: #9c27b0;
+  color: #4a148c;
+}
+
+.brief-phase.reflection {
+  background-color: #fff3e0;
+  border-color: #ff9800;
+  color: #e65100;
+}
+
+/* ========================================
+   INVESTIGATION TASK CONTENT
+   ======================================== */
+
+.brief-task-content {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+}
+
+.brief-task-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.brief-task-content ul,
+.brief-task-content ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.brief-task-content li {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   RESEARCH QUESTION HIGHLIGHT
+   ======================================== */
+
+.research-question {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: #fff9e6;
+  border: 3px solid #ffd700;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.research-question-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
+.research-question-text {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  font-style: italic;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ========================================
+   DELIVERABLES SECTION
+   ======================================== */
+
+.brief-deliverables {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: var(--color-background-alt);
+  border-left: 4px solid #ff6b6b;
+  border-radius: var(--radius-sm);
+}
+
+.brief-deliverables-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #ff6b6b;
+  margin-bottom: var(--spacing-md);
+}
+
+.brief-deliverables ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.brief-deliverables li {
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+}
+
+.brief-deliverables li::before {
+  content: '📋';
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+
+/* ========================================
+   PORTFOLIO REQUIREMENTS
+   ======================================== */
+
+.portfolio-requirements {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: #f0f4f8;
+  border: 2px solid #4a90e2;
+  border-radius: var(--radius-md);
+}
+
+.portfolio-requirements-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #4a90e2;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.portfolio-requirements-title::before {
+  content: '📁';
+  font-size: 1.2em;
+}
+
+.portfolio-requirements-content {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   RESEARCH RESOURCES
+   ======================================== */
+
+.research-resources {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  border-radius: var(--radius-sm);
+}
+
+.research-resources-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: #2e7d32;
+  margin-bottom: var(--spacing-sm);
+}
+
+.research-resources ul {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+}
+
+.research-resources li {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ========================================
+   RUBRIC SECTION
+   ======================================== */
+
+.brief-rubric {
+  margin: var(--spacing-lg) 0;
+  overflow-x: auto;
+}
+
+.brief-rubric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.brief-rubric-table th {
+  padding: var(--spacing-sm);
+  background-color: #ff6b6b;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  border: 1px solid #ff5252;
+}
+
+.brief-rubric-table td {
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.brief-rubric-table tr:nth-child(even) {
+  background-color: var(--color-background-alt);
+}
+
+/* Rubric criteria column */
+.brief-rubric-table td:first-child {
+  font-weight: var(--font-weight-medium);
+  background-color: #fff3f3;
+}
+
+/* ========================================
+   TIMELINE SECTION
+   ======================================== */
+
+.brief-timeline {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-md);
+}
+
+.brief-timeline-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.timeline-item {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.timeline-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-date {
+  flex-shrink: 0;
+  width: 100px;
+  font-weight: var(--font-weight-bold);
+  color: #ff6b6b;
+}
+
+.timeline-description {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .brief-task-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .research-question-text {
+    font-size: var(--font-size-md);
+  }
+
+  .brief-rubric-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-date {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .brief-task-header {
+    padding: var(--spacing-sm);
+  }
+
+  .portfolio-requirements {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .brief-task {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+
+  .brief-task-header {
+    background: white !important;
+    border: 2px solid #000;
+  }
+
+  .research-question {
+    border: 2px solid #000;
+    background: white !important;
+  }
+
+  .brief-rubric-table th {
+    background-color: #e0e0e0 !important;
+    color: #000 !important;
+    border: 1px solid #000;
+  }
+
+  .brief-rubric-table td {
+    border: 1px solid #000;
+  }
+}

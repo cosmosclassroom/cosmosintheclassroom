@@ -49,11 +49,17 @@ if (window.markScriptLoaded) {
     });
     
     // Add metadata for backend routing
-    const metadata = document.getElementById('assessment-metadata');
+    const metadata = document.getElementById('assessment-metadata') || document.getElementById('activity-metadata');
+    console.log('🔍 [assessment-submit] DEBUG: metadata element:', metadata);
     if (metadata) {
         data.ResourceID = metadata.getAttribute('data-resource-id') || 'unknown';
         data.ContentType = metadata.getAttribute('data-content-type') || 'assessment';
         data.Course = metadata.getAttribute('data-course') || 'unknown';
+        console.log('🔍 [assessment-submit] DEBUG: Added ResourceID:', data.ResourceID);
+        console.log('🔍 [assessment-submit] DEBUG: Added ContentType:', data.ContentType);
+        console.log('🔍 [assessment-submit] DEBUG: Added Course:', data.Course);
+    } else {
+        console.warn('🔍 [assessment-submit] DEBUG: No metadata element found!');
     }
     
     data.SubmissionTime = new Date().toISOString();

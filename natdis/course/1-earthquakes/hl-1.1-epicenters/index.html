@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
     
@@ -31,7 +41,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -45,6 +59,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,12 +69,22 @@
 
     <!-- Chart.js for data visualization -->
     
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
 
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -75,9 +102,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -99,406 +126,119 @@
   CSS and JavaScript for the activity submission system.
 -->
 
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
 <div class="activity-container" id="top">
   
-  <!-- Activity Header -->
-  <div class="activity-header">
-    <div class="header-content">
-      <div class="header-left">
-        <h1 class="activity-title">Epicenters</h1>
-        
-      </div>
-      <div class="header-right">
-        <button id="submit-button" class="btn btn-primary">Submit</button>
-        <button id="clear-form" class="btn btn-secondary">Clear</button>
-      </div>
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Epicenters</h1>
+      
+      <span class="badge badge-lab">Hexagon Lab</span>
+      
     </div>
-    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-      <span>Draft saved</span>
-    </div>
-  </div>
+  </header>
 
   <!-- Main Content Area -->
   <div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
     <div id="activity-metadata"
-         data-resource-id=""
          data-content-type="hexagon_lab"
          data-course="natdis"
          data-title="Epicenters"
          data-unit="1"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null">
-    </div>
-
+         hidden></div>
+    
     <div class="activity-content-wrapper">
-      <!-- This is where the specific activity type's content will be rendered --><!-- 
-  Hexagon Lab Content Display with Sequential Navigation
-  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
--->
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
 
-<div class="hexagon-lab-content">
-    <!-- Student name is now handled by the localStorage permanent name capture feature -->
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
   
-    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <!-- Progress indicator and navigation (if multiple sections) -->
-    <div class="activity-progress">
-      <div class="activity-progress-bar">
-        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
-      </div>
-      <div id="progress-text">Section 1</div>
-    </div>
-    <div class="activity-navigation">
-      <button type="button" class="btn nav-prev" disabled>Previous</button>
-      <button type="button" class="btn nav-next">Next</button>
-    </div>
 
-    <!-- Lab Content (rendered from YAML structure) -->
-    <div id="lab-sections-container">
+
+
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <!-- Fallback: Render markdown content if present (backward compatibility) -->
-      <div class="nav-item-container lab-section fallback-content">
-        <hr />
-<p>layout: default
-title: “Hexagon Lab 1.1: Locating an Epicenter”
-—</p>
-<h1 id="hexagon-lab-11-locating-an-epicenter">Hexagon Lab 1.1: Locating an Epicenter</h1>
-
-<h2 id="authors">Authors</h2>
-
-<p><strong>Role:</strong> Seismologist<br />
-<strong>Mission:</strong> To determine the precise epicenter of an earthquake using seismic wave data from three monitoring stations.</p>
-
-<h2 id="abstract">Abstract</h2>
-
-<p>This laboratory investigation demonstrates the practical application of seismic wave analysis to locate earthquake epicenters. Using P-wave and S-wave arrival time data from three monitoring stations, students will employ standard seismological triangulation methods to determine the exact location of an earthquake’s origin.</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>Seismic events generate two primary types of waves that propagate through Earth’s crust: Primary waves (P-waves) and Secondary waves (S-waves). P-waves, being compression waves, travel at higher velocities than the transverse S-waves. The time difference between these wave arrivals at various monitoring stations provides crucial data for epicenter location. This investigation utilizes real-world seismological techniques to analyze wave arrival data and determine epicenter coordinates through triangulation.</p>
-
-<h2 id="methods-and-materials">Methods and Materials</h2>
-
-<h3 id="data-collection">Data Collection</h3>
-
-<p>This investigation requires careful analysis of seismic wave arrival times from three monitoring stations. Students will calculate essential parameters and use provided reference materials to determine the earthquake’s epicenter.</p>
-
-<h3 id="equipment">Equipment</h3>
-
-<ul>
-  <li>Travel-Time Graph</li>
-  <li>Compass</li>
-  <li>Reference Map</li>
-  <li>Data Recording Sheet</li>
-</ul>
-
-<h2 id="procedure">Procedure</h2>
-
-<h3 id="part-1-wave-analysis">Part 1: Wave Analysis</h3>
-
-<p>Calculate the S-P wave interval and determine epicenter distances for each monitoring station.</p>
-
-<h4 id="11-s-p-interval-calculation">1.1 S-P Interval Calculation</h4>
-
-<p>For each monitoring station, calculate the time difference between P-wave and S-wave arrivals using the following formula:</p>
-
-<pre><code class="language-math">S-P Interval = S-wave arrival time - P-wave arrival time
-</code></pre>
-
-<h4 id="12-data-collection">1.2 Data Collection</h4>
-
-<p>Record calculations in Table 1 below:</p>
-
-<h3 id="table-1-seismic-wave-arrival-data">Table 1: Seismic Wave Arrival Data</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Station</th>
-      <th>P-Wave Arrival (s)</th>
-      <th>S-Wave Arrival (s)</th>
-      <th>S-P Interval (s)</th>
-      <th>Distance to Epicenter (km)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>City A</td>
-      <td>32</td>
-      <td>57</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>City B</td>
-      <td>15</td>
-      <td>25</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>City C</td>
-      <td>45</td>
-      <td>80</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="13-distance-determination">1.3 Distance Determination</h4>
-
-<p>Using the Travel-Time Graph (Figure 2):</p>
-
-<p><img src="assets/images/P-S_Wave_Travel_Time_Graph.png" alt="P-S Wave Travel Time Graph showing P-wave (blue) and S-wave (red) arrival times versus epicenter distance" /></p>
-
-<p><strong>Figure 2:</strong> Seismic wave travel-time curves showing the linear relationship between arrival times and epicenter distance. P-waves (blue) arrive first due to higher propagation velocity, while S-waves (red) arrive later. The increasing separation between curves with distance enables accurate epicenter determination using the S-P interval method.</p>
-
-<p>Follow these steps to determine epicenter distance:</p>
-
-<ol>
-  <li>Locate the calculated S-P Interval on the vertical axis</li>
-  <li>Move horizontally to the center point between S-wave and P-wave curves</li>
-  <li>Project vertically down to the horizontal axis</li>
-  <li>Record the corresponding distance in kilometers</li>
-</ol>
-
-<h3 id="part-2-epicenter-triangulation">Part 2: Epicenter Triangulation</h3>
-
-<h4 id="21-map-preparation">2.1 Map Preparation</h4>
-
-<p>Transfer the reference map (Figure 1) to your laboratory notebook. This map displays the locations of monitoring stations (City A, B, and C) with an appropriate scale bar for distance measurements.</p>
-
-<p><strong>Figure 1:</strong> Schematic representation of monitoring station locations on a reference grid. Scale bar indicates distances in kilometers (km).</p>
-
-<h4 id="22-triangulation-process">2.2 Triangulation Process</h4>
-
-<ol>
-  <li>For each monitoring station:
-    <ul>
-      <li>Set compass radius to the calculated epicenter distance</li>
-      <li>Center compass on the station location</li>
-      <li>Draw a complete circle representing possible epicenter positions</li>
-    </ul>
-  </li>
-  <li>Epicenter Identification:
-    <ul>
-      <li>Locate the intersection point of all three circles</li>
-      <li>Mark this point with an “X” and label as “Epicenter”</li>
-      <li>Record the coordinates using the reference grid</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="results">Results</h2>
-
-<p>Document your findings in your laboratory notebook, including:</p>
-
-<ul>
-  <li>Completed data table with all calculations</li>
-  <li>Annotated map showing triangulation circles</li>
-  <li>Final epicenter coordinates</li>
-</ul>
-
-<h2 id="discussion">Discussion</h2>
-
-<p>Consider the following questions:</p>
-
-<ol>
-  <li>How does the time difference between P-waves and S-waves help determine distance?</li>
-  <li>Why are three stations necessary for accurate epicenter location?</li>
-  <li>What factors might affect the precision of this method?</li>
-</ol>
-
-      </div>
-      
+        🔬
       
     </div>
-
-    <!-- Navigation Buttons moved to the top -->
-
-  </div> <!-- Close #lab-sections-container -->
-
-  <!-- Submission Section - using common pattern from activity-forms.js -->
-  <div class="submission-section-wrapper" id="submission-wrapper">
-    <!-- Student name is now handled by the sticky header -->
-    
-    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
-    <div id="activity-specific-fields"></div>
-
-    <!-- Submit Button -->
-    <div class="lab-form-actions">
-      <button type="submit" id="submit-button" class="lab-submit-button">
-        Submit Lab Report
-      </button>
-      <p class="lab-help-text">
-        Your answers are auto-saved as you work. Click above when you're ready to submit.
-      </p>
+    <div class="workspace-notice-title">
+      
+        Lab Notebook
+      
     </div>
-    
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status" hidden></div>
   </div>
-
-<<<<<<< HEAD
-</form>
-
-<script src="/assets/js/activity-navigator.js"></script>
-=======
-<!-- Scripts are now loaded in the layout file -->
->>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
-<script>
-/**
- * Hexagon Lab Section Navigator
- * YAML-first: Sections already structured by Liquid, just initialize navigation
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
+  
+  <div class="workspace-notice-content">
     
-    // Check if activity-core is initialized
-    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
-        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
-    } else {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
-    }
+      
+        <p><strong>Record your observations and responses in your lab notebook.</strong></p>
+        <p>Include data tables, analysis responses, and your claim-evidence-reasoning synthesis. Follow your teacher's guidelines for lab notebook format and submission.</p>
+      
     
-    const container = document.getElementById('lab-sections-container');
-    
-    if (!container) {
-        console.warn('[hexagon-lab] Lab sections container not found');
-        return;
-    }
-    
-    // Count pre-structured sections
-    const sections = container.querySelectorAll('.nav-item-container');
-    
-    if (sections.length <= 1) {
-        // Single section or no sections - show everything, no navigation needed
-        console.log('[hexagon-lab] Single section mode - no navigation needed');
-        if (sections.length === 1) {
-            sections[0].classList.add('active');
-        }
-        return;
-    }
-    
-    console.log('[hexagon-lab] Found', sections.length, 'sections');
-    
-    // Show progress and navigation UI
-    document.getElementById('lab-progress').style.display = 'block';
-    document.getElementById('lab-navigation').style.display = 'flex';
-    
-    // Manual activation of first section and setup section visibility
-    if (sections.length > 0) {
-        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the first section
-        sections[0].style.display = 'block';
-        sections[0].classList.add('active');
-        
-        // Ensure all sections have proper display style
-        // This ensures that when we toggle the 'active' class, display changes work correctly
-        sections.forEach(section => {
-            // Enforce display:block when active, display:none when inactive
-            if (!section.style.display || section.style.display === '') {
-                section.style.display = 'none';
-            }
-        });
-    }
-    
-    // Debug elements
-    console.log('[hexagon-lab] Debug:');
-    console.log('- nav sections:', sections.length);
-    console.log('- section 0:', sections[0]);
-    console.log('- prev button:', document.getElementById('prev-item'));
-    console.log('- next button:', document.getElementById('next-item'));
-    console.log('- progress fill:', document.getElementById('progress-fill'));
-    console.log('- progress text:', document.getElementById('progress-text'));
-    
-    // Initialize navigator
-    // We'll use our own simple navigation implementation that's guaranteed to work
-    console.log('[hexagon-lab] Setting up lab navigation system');
-    
-    // Initialize navigation state
-    let currentIndex = 0;
-    const totalSections = sections.length;
-    
-    // Core navigation function
-    function showLabSection(index) {
-        console.log('[hexagon-lab] Navigating to section', index);
-        
-        // Validate index
-        if (index < 0 || index >= totalSections) {
-            console.warn('[hexagon-lab] Invalid section index:', index);
-            return;
-        }
-        
-        // Hide all sections
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the requested section
-        sections[index].style.display = 'block';
-        sections[index].classList.add('active');
-        
-        // Update state
-        currentIndex = index;
-        
-        // Update button states
-        document.getElementById('prev-item').disabled = (index === 0);
-        document.getElementById('next-item').disabled = (index === totalSections - 1);
-        
-        // Update progress bar
-        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
-        document.getElementById('progress-fill').style.width = progressPercent + '%';
-        
-        // Update progress text
-        const sectionTitle = sections[index].getAttribute('data-section-title') || 
-                             ('Section ' + (index + 1));
-        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('[hexagon-lab] Section displayed:', sectionTitle);
-    }
-    
-    // Wire up navigation buttons
-    document.getElementById('prev-item').addEventListener('click', function() {
-        showLabSection(currentIndex - 1);
-    });
-    
-    document.getElementById('next-item').addEventListener('click', function() {
-        showLabSection(currentIndex + 1);
-    });
-    
-    // Initialize with first section
-    showLabSection(0);
-});
-</script>
+  </div>
+  
+  
 </div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+  
+  
+  
+  
+  
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Hexagon Lab Sections (Overview + Investigations + Synthesis) -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
   </div>
 
   <!-- Hidden Metadata Div -->
@@ -508,42 +248,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
-<!-- Core Activity Submission System -->
-<script src="/assets/js/activity-core.js?v=1761515983"></script>
-
-<!-- Load activity-specific JS module -->
-
-<script>
-  (function() {
-    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-    let modulePath = '';
-
-    switch(contentType) {
-      case 'problem_set':
-        modulePath = 'ps-form.js';
-        break;
-      case 'hexagon_lab':
-        modulePath = 'hl-form.js';
-        break;
-      case 'research_brief':
-         modulePath = 'rb-form.js';
-         break;
-      // Add other content types here
-    }
-
-    if (modulePath) {
-      const script = document.createElement('script');
-      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
-      document.body.appendChild(script);
-      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
-    }
-  })();
-</script>
-
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

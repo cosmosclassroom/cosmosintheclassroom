@@ -1,0 +1,335 @@
+/**
+ * Hexagon Lab Content-Type Styles
+ * Content-type-specific styles only (navigation/progress/buttons in components/)
+ */
+
+/* ========================================
+   LAB SECTION CONTAINER
+   ======================================== */
+
+.lab-section {
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lab-section:last-child {
+  border-bottom: none;
+}
+
+/* Initially hide all sections (JS shows active one) */
+.lab-section:not(.active) {
+  display: none;
+}
+
+/* ========================================
+   LAB SECTION HEADER
+   ======================================== */
+
+.lab-section-header {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: linear-gradient(135deg, #f5f3ff 0%, #faf8ff 100%);
+  border-left: 6px solid #7b68ee;
+  border-radius: var(--radius-md);
+}
+
+.lab-section-number {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #7b68ee;
+  margin-bottom: var(--spacing-xs);
+}
+
+.lab-section-title {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ========================================
+   LAB PHASE INDICATORS
+   ======================================== */
+
+.lab-phase {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  border: 2px solid;
+}
+
+.lab-phase.investigation {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+  color: #0d47a1;
+}
+
+.lab-phase.synthesis {
+  background-color: #f3e5f5;
+  border-color: #9c27b0;
+  color: #4a148c;
+}
+
+/* ========================================
+   LAB CONTENT
+   ======================================== */
+
+.lab-content {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+}
+
+.lab-content p {
+  margin-bottom: var(--spacing-md);
+}
+
+.lab-content ul,
+.lab-content ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.lab-content li {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   DATA COLLECTION TABLE
+   ======================================== */
+
+.lab-data-table-container {
+  margin: var(--spacing-lg) 0;
+  overflow-x: auto;
+}
+
+.lab-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.lab-data-table th {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: #7b68ee;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  border: 1px solid #6858d8;
+}
+
+.lab-data-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+.lab-data-table tr:nth-child(even) td {
+  background-color: var(--color-background-alt);
+}
+
+/* Numeric columns */
+.lab-data-table td.numeric {
+  text-align: right;
+  font-family: var(--font-mono);
+}
+
+/* ========================================
+   CER (Claim-Evidence-Reasoning) STRUCTURE
+   ======================================== */
+
+.cer-container {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background-alt);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border);
+}
+
+.cer-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.cer-section:last-child {
+  margin-bottom: 0;
+}
+
+.cer-label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.cer-label::before {
+  content: '⬤';
+  font-size: 0.6em;
+}
+
+.cer-label.claim::before {
+  color: #2196f3;
+}
+
+.cer-label.evidence::before {
+  color: #4caf50;
+}
+
+.cer-label.reasoning::before {
+  color: #ff9800;
+}
+
+.cer-content {
+  padding: var(--spacing-md);
+  background-color: var(--color-background);
+  border-left: 4px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   LAB PROCEDURES
+   ======================================== */
+
+.lab-procedure {
+  margin: var(--spacing-lg) 0;
+}
+
+.lab-procedure-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.lab-procedure-steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.lab-procedure-step {
+  counter-increment: step-counter;
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-xl);
+  position: relative;
+}
+
+.lab-procedure-step::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: #7b68ee;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   LAB ANALYSIS QUESTIONS
+   ======================================== */
+
+.lab-analysis-questions {
+  margin: var(--spacing-lg) 0;
+}
+
+.lab-question {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: var(--color-background-alt);
+  border-left: 4px solid #7b68ee;
+  border-radius: var(--radius-sm);
+}
+
+.lab-question-number {
+  font-weight: var(--font-weight-bold);
+  color: #7b68ee;
+  margin-bottom: var(--spacing-xs);
+}
+
+.lab-question-text {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .lab-section-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .lab-data-table {
+    font-size: var(--font-size-xs);
+  }
+
+  .lab-procedure-step {
+    padding-left: var(--spacing-lg);
+  }
+
+  .lab-procedure-step::before {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .lab-section-header {
+    padding: var(--spacing-sm);
+  }
+
+  .cer-container {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .lab-section {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+
+  .lab-section-header {
+    background: white !important;
+    border: 2px solid #000;
+  }
+
+  .lab-data-table th {
+    background-color: #e0e0e0 !important;
+    color: #000 !important;
+    border: 1px solid #000;
+  }
+
+  .lab-data-table td {
+    border: 1px solid #000;
+  }
+
+  .cer-container {
+    page-break-inside: avoid;
+    border: 2px solid #000;
+  }
+}

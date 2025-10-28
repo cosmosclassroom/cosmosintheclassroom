@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 11: Impulse and Momentum | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Chapter 11: Impulse and Momentum</h1>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 11: Impulse and Momentum"
+         data-unit="6"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    
+    <!-- Flexbook Reference Sections (Key Vocabulary & Formulae) -->
+    
+    
+    <!-- Flexbook Instructional Flow Items -->
+    
+      <div class="flexbook-item active" 
+           data-item-index="0"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Introduction</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <h1 id="this-file-contains-the-drafted-content-for-unit-6-chapter-11">This file contains the drafted content for Unit 6, Chapter 11.</h1>
+<h1 id="it-aligns-with-the-established-course-structure-voice-and-phenomenon-based-approach">It aligns with the established course structure, voice, and phenomenon-based approach.</h1>
+<p>flexbookOverview:</p>
+<ul>
+  <li>unitNumber: 6
+unitTitle: Voyager’s Gravity Assist
+unitSubtitle: The Conservation of Momentum
+centralQuestion: &gt;-
+  How can we analyze interactions and collisions using a principle where a
+  key quantity is always conserved?
+anchoringPhenomenon: &gt;-
+  In the late 1970s, humanity launched two of its most ambitious explorers, the Voyager probes, on a grand tour of the outer solar system. To make the journey possible, engineers relied on a celestial trick—a ‘gravity assist’ or ‘slingshot’ maneuver. By flying breathtakingly close to massive planets like Jupiter, the tiny spacecraft were able to ‘steal’ a tiny fraction of the planet’s orbital energy to dramatically increase their own speed, flinging them towards their next destination.  This seemingly magical boost, a cornerstone of interplanetary travel, is not magic at all; it is a profound demonstration of one of physics’ most powerful and unwavering laws: the conservation of momentum.
+keyVocabulary:
+    <ul>
+      <li>term: Momentum
+definition: &gt;-
+  The product of the mass and velocity of an object; a vector
+  quantity often described as ‘mass in motion’. It is a measure of an object’s resistance to being stopped.</li>
+      <li>term: Impulse
+definition: &gt;-
+  The change in momentum of an object when the object is acted upon by
+  a force for a certain interval of time. A large force for a short time can produce the same impulse as a small force for a long time.</li>
+      <li>term: Elastic Collision
+definition: &gt;-
+  A collision in which there is no net loss in kinetic energy in the
+  system as a result of the collision. The objects bounce off each other perfectly, like billiard balls.</li>
+      <li>term: Inelastic Collision
+definition: &gt;-
+  A collision in which kinetic energy is not conserved, typically being transformed into other forms like heat or sound. A ‘perfectly inelastic’ collision is one where the objects stick together after impact.
+keyFormulae: |</li>
+      <li>$p = mv$</li>
+      <li>$J = F\Delta t = \Delta p$</li>
+      <li>$\Sigma p_0 = \Sigma p_1$</li>
+      <li>$m_1v_{1,0} + m_2v_{2,0} = m_1v_{1,1} + m_2v_{2,1}$
+chapters:</li>
+      <li>chapterNumber: 11
+chapterTitle: Impulse and Momentum
+topics:
+        <ul>
+          <li>‘Defining ‘‘Mass in Motion’’: The Concept of Momentum’</li>
+          <li>‘Changing Momentum: The Impulse-Momentum Theorem’</li>
+          <li>‘Force, Time, and Safety: Designing Airbags and Bumpers’</li>
+          <li>‘The Universe’’s Accounting Rule: Conservation of Momentum in One Dimension’</li>
+        </ul>
+      </li>
+      <li>chapterNumber: 12
+chapterTitle: Types of Collisions
+topics:
+        <ul>
+          <li>‘Modeling the Voyager Gravity Assist: A Cosmic Collision’</li>
+          <li>‘Bouncing vs. Sticking: Elastic and Inelastic Collisions’</li>
+          <li>‘Billiards on a Cosmic Scale: Collisions in Two Dimensions’</li>
+          <li>‘Action and Reaction Revisited: Rocket Propulsion as a Momentum System’</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="the-instructional_flow-section-is-required-for-flexbook-content">The <code class="language-plaintext highlighter-rouge">instructional_flow</code> section is required for flexbook content</h1>
+<p>instructional_flow:</p>
+<ul>
+  <li>
+    <p>type: reading
+title: “Introduction to Momentum”
+content: |
+  When we analyze the motion of objects in the universe, we often focus on forces and energy. But there’s another powerful way to understand interactions between objects: through the concept of momentum and its conservation. Momentum—defined as the product of mass and velocity—gives us insights into everything from car crashes to the Voyager mission’s gravity assists.</p>
+  </li>
+  <li>
+    <p>type: reading
+title: “Defining Momentum”
+content: |
+  Momentum is a vector quantity defined as the product of an object’s mass and velocity: $p = mv$. This quantity measures how difficult it is to stop a moving object. A massive truck moving slowly can have the same momentum as a small car moving quickly. The direction of momentum is the same as the direction of velocity.</p>
+  </li>
+  <li>type: activity_prompt
+title: “Momentum Comparison Exercise”
+content: |
+  Calculate and compare the momentum of different objects:
+    <ol>
+      <li>A 1500 kg car traveling at 25 m/s</li>
+      <li>A 0.145 kg baseball thrown at 40 m/s</li>
+      <li>A 75,000 kg freight train car moving at 10 m/s</li>
+    </ol>
+
+    <p>Which has the greatest momentum? How much greater is it than the smallest momentum?</p>
+  </li>
+  <li>
+    <p>type: reading
+title: “The Impulse-Momentum Theorem”
+content: |
+  When a force acts on an object over a period of time, it changes the object’s momentum. This change is called impulse, defined as $J = F\Delta t = \Delta p$. The impulse-momentum theorem states that the impulse applied to an object equals its change in momentum.</p>
+
+    <p>This relationship explains why airbags work: they extend the time over which a force acts, reducing the average force experienced during a collision while still providing the same impulse needed to stop a person’s momentum.</p>
+  </li>
+</ul>
+
+  </div>
+
+
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

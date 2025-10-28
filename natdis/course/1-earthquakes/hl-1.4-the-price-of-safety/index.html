@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Hexagon Lab: The Price of Safety | Cosmos in the Classroom</title>
+    <title>The Price Of Safety | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
     
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
@@ -31,7 +41,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -45,6 +59,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,8 +80,11 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -82,9 +102,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -106,514 +126,119 @@
   CSS and JavaScript for the activity submission system.
 -->
 
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
 <div class="activity-container" id="top">
   
-  <!-- Activity Header -->
-  <div class="activity-header">
-    <div class="header-content">
-      <div class="header-left">
-        <h1 class="activity-title">Hexagon Lab: The Price of Safety</h1>
-        
-      </div>
-      <div class="header-right">
-        <button id="submit-button" class="btn btn-primary">Submit</button>
-        <button id="clear-form" class="btn btn-secondary">Clear</button>
-      </div>
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">The Price Of Safety</h1>
+      
+      <span class="badge badge-lab">Hexagon Lab</span>
+      
     </div>
-    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-      <span>Draft saved</span>
-    </div>
-  </div>
+  </header>
 
   <!-- Main Content Area -->
   <div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
     <div id="activity-metadata"
-         data-resource-id="hl-1.4-price-of-safety"
          data-content-type="hexagon_lab"
          data-course="natdis"
-         data-title="Hexagon Lab: The Price of Safety"
+         data-title="The Price Of Safety"
          data-unit="1"
-         data-submission-enabled="true"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="{&quot;completion_checklist&quot;:{&quot;sections&quot;:[&quot;Investigation 1: Cost-Benefit Analysis&quot;,&quot;Synthesis: Claim-Evidence-Reasoning&quot;]},&quot;difficulty_rating&quot;:true,&quot;time_spent&quot;:true,&quot;reflection&quot;:{&quot;prompt&quot;:&quot;What are the challenges of making policy decisions when all options have significant costs and benefits? How does quantitative data help, and what are its limitations?&quot;},&quot;questions&quot;:true,&quot;collaboration&quot;:true,&quot;additional_notes&quot;:true}">
-    </div>
-
+         hidden></div>
+    
     <div class="activity-content-wrapper">
-      <!-- This is where the specific activity type's content will be rendered --><!-- 
-  Hexagon Lab Content Display with Sequential Navigation
-  YAML-first architecture: Renders from page.overview, page.investigations, page.synthesis
--->
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
 
-<div class="hexagon-lab-content">
-    <!-- Student name is now handled by the localStorage permanent name capture feature -->
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
   
-    <!-- Progress indicator & Navigation (at the top, will be shown if multiple sections detected) -->
-    <!-- Progress indicator and navigation (if multiple sections) -->
-    <div class="activity-progress">
-      <div class="activity-progress-bar">
-        <div class="activity-progress-fill" id="progress-fill" style="width: 0%;"></div>
-      </div>
-      <div id="progress-text">Section 1</div>
-    </div>
-    <div class="activity-navigation">
-      <button type="button" class="btn nav-prev" disabled>Previous</button>
-      <button type="button" class="btn nav-next">Next</button>
-    </div>
 
-    <!-- Lab Content (rendered from YAML structure) -->
-    <div id="lab-sections-container">
-      
-      
-      <!-- Overview Section -->
-      <div class="nav-item-container lab-section active" data-item-index="0" data-section-title="Overview">
-        <h2>Overview</h2>
-        
-        
-        <div class="lab-abstract">
-          <h3>Abstract</h3>
-          <p>In this lab, you will step into the role of a policymaker for the town of Branford. Presented with several engineering proposals to improve seismic safety, you must conduct a formal cost-benefit analysis. Your goal is not to find a perfect solution, but to choose the most prudent and defensible course of action given a limited budget and competing priorities. This exercise simulates the real-world trade-offs leaders face when allocating public funds for disaster resilience.</p>
 
-        </div>
-        
-        
-        
-        <div class="lab-introduction">
-          <h3>Introduction</h3>
-          <p>The scientists have identified the seismic risk. The engineers have proposed solutions. Now, the decision rests with you. The town of Branford has a limited budget for infrastructure projects, and every dollar spent on earthquake safety is a dollar not spent on schools, roads, or parks. Your task is to analyze the data, weigh the difficult trade-offs, and make a formal recommendation that you can defend to your fellow citizens.</p>
 
-        </div>
-        
-      </div>
-      
-      
-      
-      <!-- Investigation Sections -->
-      
-      <div class="nav-item-container lab-section" data-item-index="1" data-section-title="Investigation ">
-        <h2>Investigation : Investigation 1: Cost-Benefit Analysis of Seismic Policies</h2>
-        
-        
-        <div class="investigation-description">
-          <p>Analyze the provided data for three different seismic safety proposals for the town of Branford. You will calculate key metrics to compare their efficiency and help you make an informed decision.</p>
 
-        </div>
-        
-        
-        
-        
-        <!-- Render Dataset (Chart.js visualization) -->
-        
-        
-        <!-- Render Table Data -->
-        
-        <div class="investigation-table">
-          <table>
-            <thead>
-              <tr>
-                
-                <th>Project Proposal</th>
-                
-                <th>Total Cost</th>
-                
-                <th>Projected Lives Saved (in major earthquake)</th>
-                
-                <th>Projected Economic Disruption Averted</th>
-                
-                <th>Public Approval Rating</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              
-              <tr>
-                
-                <td>A: Retrofit All Public Schools
-</td>
-                
-                <td>$45,000,000
-</td>
-                
-                <td>150
-</td>
-                
-                <td>$200,000,000
-</td>
-                
-                <td>High (85%)
-</td>
-                
-              </tr>
-              
-              <tr>
-                
-                <td>B: Reinforce the Town’s Main Bridge
-</td>
-                
-                <td>$30,000,000
-</td>
-                
-                <td>30
-</td>
-                
-                <td>$500,000,000
-</td>
-                
-                <td>Medium (60%)
-</td>
-                
-              </tr>
-              
-              <tr>
-                
-                <td>C: Public Education Campaign &amp; Home Retrofit Subsidies
-</td>
-                
-                <td>$15,000,000
-</td>
-                
-                <td>75
-</td>
-                
-                <td>$50,000,000
-</td>
-                
-                <td>Low (35%)
-</td>
-                
-              </tr>
-              
-            </tbody>
-          </table>
-        </div>
-        
-        
-        <!-- Analysis Questions -->
-        
-        <div class="analysis-questions">
-          <h3>Analysis Questions</h3>
-          
-          <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
-              
 
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
-          </div>
-          
-          <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
-              
-
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
-          </div>
-          
-          <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
-              
-
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
-          </div>
-          
-          <div class="question-block">
-            <label for="inv-q" class="question-label">
-              <strong>Question :</strong>
-              
-
-            </label>
-            <textarea 
-              id="inv-q" 
-              name="inv_q"
-              rows="6"
-              placeholder="Enter your answer here..."
-              class="form-control question-response"
-            ></textarea>
-          </div>
-          
-        </div>
-        
-      </div>
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
       
-      
-      
-      
-      <!-- Synthesis Section (Claim-Evidence-Reasoning) -->
-      <div class="nav-item-container lab-section" data-item-index="2" data-section-title="Synthesis">
-        <h2>Synthesis: Claim-Evidence-Reasoning</h2>
-        
-        
-        
-        
-        <div class="cer-section">
-          <label for="cer-claim" class="cer-label">
-            <h3>Claim</h3>
-            <p><strong>Claim:</strong> Based on the overarching question, write a single, clear sentence stating which project you recommend for funding.</p>
-
-<p><strong>(Example):</strong> Based on a comprehensive cost-benefit analysis, I recommend funding Proposal A, the retrofitting of all public schools.</p>
-
-          </label>
-          <textarea 
-            id="cer-claim" 
-            name="synthesis_claim"
-            rows="3"
-            placeholder="Write your claim here..."
-            class="form-control cer-response"
-          ></textarea>
-        </div>
-        
-        
-        
-        <div class="cer-section">
-          <label for="cer-evidence" class="cer-label">
-            <h3>Evidence</h3>
-            <p><strong>Evidence:</strong> Provide a bulleted list of specific, quantitative data points from your investigation that support your claim. Your evidence should compare your chosen project to the other options.</p>
-
-<ul>
-  <li>(Example for Claim A) The cost per life saved for Proposal A is $300,000, which is more efficient than Proposal B’s $1,000,000 per life saved.</li>
-</ul>
-
-          </label>
-          <textarea 
-            id="cer-evidence" 
-            name="synthesis_evidence"
-            rows="6"
-            placeholder="List your evidence here (use bullet points)..."
-            class="form-control cer-response"
-          ></textarea>
-        </div>
-        
-        
-        
-        <div class="cer-section">
-          <label for="cer-reasoning" class="cer-label">
-            <h3>Reasoning</h3>
-            <p><strong>Reasoning:</strong> In a paragraph, explain the logic that connects your evidence to your claim. Justify why you prioritized certain metrics (e.g., lives saved, economic return, public approval) over others. This is where you explain your governing philosophy.</p>
-
-<p><strong>(Example):</strong> While all three proposals offer benefits to the town, the primary responsibility of government is to protect its most vulnerable citizens, particularly children. Proposal A, while not the cheapest option, saves the most lives and is highly efficient in its cost-per-life-saved metric compared to the bridge reinforcement. The high public approval rating also indicates that this is a community priority. Although the economic return is lower than that of the bridge project, preventing the loss of life and the catastrophic failure of our schools is a non-negotiable social good that outweighs the purely financial calculation…</p>
-
-          </label>
-          <textarea 
-            id="cer-reasoning" 
-            name="synthesis_reasoning"
-            rows="8"
-            placeholder="Explain your reasoning in a paragraph..."
-            class="form-control cer-response"
-          ></textarea>
-        </div>
-        
-      </div>
-      
-      
-      
-      <!-- Connection to Unit Phenomenon -->
-      <div class="nav-item-container lab-section" data-item-index="3" data-section-title="Connection">
-        <h2>Connection to Unit Phenomenon</h2>
-        <p>This lab simulates the difficult, real-world decisions that community leaders, city planners, and politicians must make. It is rare that a solution is obviously the best in all categories. More often, leaders must weigh competing values—economic vitality versus immediate safety, individual preparedness versus public works, the desires of the public versus the recommendations of experts. By using a structured, evidence-based approach like cost-benefit analysis, policymakers can make these difficult choices in a way that is transparent, logical, and defensible to the stakeholders they represent.</p>
-
-      </div>
-      
-      
-      
-      
+        🔬
       
     </div>
-
-    <!-- Navigation Buttons moved to the top -->
-
-  </div> <!-- Close #lab-sections-container -->
-
-  <!-- Submission Section - using common pattern from activity-forms.js -->
-  <div class="submission-section-wrapper" id="submission-wrapper">
-    <!-- Student name is now handled by the sticky header -->
-    
-    <!-- Dynamic Activity-Specific Fields (intentionally empty for hexagon labs) -->
-    <div id="activity-specific-fields"></div>
-
-    <!-- Submit Button -->
-    <div class="lab-form-actions">
-      <button type="submit" id="submit-button" class="lab-submit-button">
-        Submit Lab Report
-      </button>
-      <p class="lab-help-text">
-        Your answers are auto-saved as you work. Click above when you're ready to submit.
-      </p>
+    <div class="workspace-notice-title">
+      
+        Lab Notebook
+      
     </div>
-    
-    <!-- Status Messages -->
-    <div id="submission-status" class="submission-status" hidden></div>
   </div>
-
-<<<<<<< HEAD
-</form>
-
-<script src="/assets/js/activity-navigator.js"></script>
-=======
-<!-- Scripts are now loaded in the layout file -->
->>>>>>> 7534a4e8 (updated coursework material for upcoming teaching day. problem sets and hexagon labs for chapters 2/3 in hphys and ch 1 in natdis - earthquakes good to go)
-<script>
-/**
- * Hexagon Lab Section Navigator
- * YAML-first: Sections already structured by Liquid, just initialize navigation
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('[hexagon-lab] DOM loaded, initializing hexagon lab navigation');
+  
+  <div class="workspace-notice-content">
     
-    // Check if activity-core is initialized
-    if (!window.ACTIVITY_CORE || !window.ACTIVITY_CORE.getMetadata) {
-        console.warn('[hexagon-lab] Activity Core not initialized, some features may not work');
-    } else {
-        const metadata = window.ACTIVITY_CORE.getMetadata();
-        console.log('[hexagon-lab] Activity metadata loaded:', metadata);
-    }
+      
+        <p><strong>Record your observations and responses in your lab notebook.</strong></p>
+        <p>Include data tables, analysis responses, and your claim-evidence-reasoning synthesis. Follow your teacher's guidelines for lab notebook format and submission.</p>
+      
     
-    const container = document.getElementById('lab-sections-container');
-    
-    if (!container) {
-        console.warn('[hexagon-lab] Lab sections container not found');
-        return;
-    }
-    
-    // Count pre-structured sections
-    const sections = container.querySelectorAll('.nav-item-container');
-    
-    if (sections.length <= 1) {
-        // Single section or no sections - show everything, no navigation needed
-        console.log('[hexagon-lab] Single section mode - no navigation needed');
-        if (sections.length === 1) {
-            sections[0].classList.add('active');
-        }
-        return;
-    }
-    
-    console.log('[hexagon-lab] Found', sections.length, 'sections');
-    
-    // Show progress and navigation UI
-    document.getElementById('lab-progress').style.display = 'block';
-    document.getElementById('lab-navigation').style.display = 'flex';
-    
-    // Manual activation of first section and setup section visibility
-    if (sections.length > 0) {
-        console.log('[hexagon-lab] Setting up section visibility for', sections.length, 'sections');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the first section
-        sections[0].style.display = 'block';
-        sections[0].classList.add('active');
-        
-        // Ensure all sections have proper display style
-        // This ensures that when we toggle the 'active' class, display changes work correctly
-        sections.forEach(section => {
-            // Enforce display:block when active, display:none when inactive
-            if (!section.style.display || section.style.display === '') {
-                section.style.display = 'none';
-            }
-        });
-    }
-    
-    // Debug elements
-    console.log('[hexagon-lab] Debug:');
-    console.log('- nav sections:', sections.length);
-    console.log('- section 0:', sections[0]);
-    console.log('- prev button:', document.getElementById('prev-item'));
-    console.log('- next button:', document.getElementById('next-item'));
-    console.log('- progress fill:', document.getElementById('progress-fill'));
-    console.log('- progress text:', document.getElementById('progress-text'));
-    
-    // Initialize navigator
-    // We'll use our own simple navigation implementation that's guaranteed to work
-    console.log('[hexagon-lab] Setting up lab navigation system');
-    
-    // Initialize navigation state
-    let currentIndex = 0;
-    const totalSections = sections.length;
-    
-    // Core navigation function
-    function showLabSection(index) {
-        console.log('[hexagon-lab] Navigating to section', index);
-        
-        // Validate index
-        if (index < 0 || index >= totalSections) {
-            console.warn('[hexagon-lab] Invalid section index:', index);
-            return;
-        }
-        
-        // Hide all sections
-        sections.forEach(section => {
-            section.style.display = 'none';
-            section.classList.remove('active');
-        });
-        
-        // Show only the requested section
-        sections[index].style.display = 'block';
-        sections[index].classList.add('active');
-        
-        // Update state
-        currentIndex = index;
-        
-        // Update button states
-        document.getElementById('prev-item').disabled = (index === 0);
-        document.getElementById('next-item').disabled = (index === totalSections - 1);
-        
-        // Update progress bar
-        const progressPercent = totalSections > 1 ? (index / (totalSections - 1)) * 100 : 100;
-        document.getElementById('progress-fill').style.width = progressPercent + '%';
-        
-        // Update progress text
-        const sectionTitle = sections[index].getAttribute('data-section-title') || 
-                             ('Section ' + (index + 1));
-        document.getElementById('progress-text').textContent = sectionTitle + ' (' + (index + 1) + ' of ' + totalSections + ')';
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('[hexagon-lab] Section displayed:', sectionTitle);
-    }
-    
-    // Wire up navigation buttons
-    document.getElementById('prev-item').addEventListener('click', function() {
-        showLabSection(currentIndex - 1);
-    });
-    
-    document.getElementById('next-item').addEventListener('click', function() {
-        showLabSection(currentIndex + 1);
-    });
-    
-    // Initialize with first section
-    showLabSection(0);
-});
-</script>
+  </div>
+  
+  
 </div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+  
+  
+  
+  
+  
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Hexagon Lab Sections (Overview + Investigations + Synthesis) -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
   </div>
 
   <!-- Hidden Metadata Div -->
@@ -623,42 +248,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </div>
 
-<!-- Core Activity Submission System -->
-<script src="/assets/js/activity-core.js?v=1761515983"></script>
-
-<!-- Load activity-specific JS module -->
-
-<script>
-  (function() {
-    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-    let modulePath = '';
-
-    switch(contentType) {
-      case 'problem_set':
-        modulePath = 'ps-form.js';
-        break;
-      case 'hexagon_lab':
-        modulePath = 'hl-form.js';
-        break;
-      case 'research_brief':
-         modulePath = 'rb-form.js';
-         break;
-      // Add other content types here
-    }
-
-    if (modulePath) {
-      const script = document.createElement('script');
-      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
-      document.body.appendChild(script);
-      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
-    }
-  })();
-</script>
-
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

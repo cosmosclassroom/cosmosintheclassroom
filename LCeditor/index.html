@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Content Editor (LCE)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        select:focus, input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .status.info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .server-status {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .server-online {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .server-offline {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Local Content Editor</h1>
+        
+        <div id="serverStatus" class="server-status">
+            Checking server status...
+        </div>
+
+        <form id="contentForm">
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course...</option>
+                    <option value="hphys">Honors Physics</option>
+                    <option value="sphys">Standard Physics</option>
+                    <option value="natdis">Natural Disasters</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="contentType">Content Type:</label>
+                <select id="contentType" name="contentType" required>
+                    <option value="">Select content type...</option>
+                    <option value="flexbook">Flexbook (Interactive textbook)</option>
+                    <option value="problem_set">Problem Set (Homework questions)</option>
+                    <option value="hexagon_lab">Hexagon Lab (Laboratory investigation)</option>
+                    <option value="research_brief">Research Brief (Research assignment)</option>
+                    <option value="lecture">Lecture (Slide presentation)</option>
+                    <option value="assessment">Assessment (Quiz/test)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="unit">Unit:</label>
+                <input type="text" id="unit" name="unit" placeholder="e.g., 2-kinematics-1d" required>
+                <div class="help-text">Format: number-topic (e.g., "2-kinematics-1d" or just "2")</div>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="e.g., Motion and Velocity" required>
+                <div class="help-text">Descriptive title for your content</div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn-primary">Create Content</button>
+                <button type="button" id="buildBtn" class="btn-secondary">Build Site</button>
+            </div>
+        </form>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        const API_BASE = 'http://localhost:8080';
+        
+        // Check server status on load
+        async function checkServerStatus() {
+            const statusEl = document.getElementById('serverStatus');
+            try {
+                const response = await fetch(`${API_BASE}/health`);
+                if (response.ok) {
+                    statusEl.textContent = '✅ Server Online - Ready to create content';
+                    statusEl.className = 'server-status server-online';
+                } else {
+                    throw new Error('Server responded with error');
+                }
+            } catch (error) {
+                statusEl.textContent = '❌ Server Offline - Please start the LCE server first';
+                statusEl.className = 'server-status server-offline';
+            }
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+            statusEl.style.display = 'block';
+            
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 10000);
+        }
+
+        // Handle form submission
+        document.getElementById('contentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = {
+                course: formData.get('course'),
+                content_type: formData.get('contentType'),
+                unit: formData.get('unit'),
+                title: formData.get('title')
+            };
+
+            try {
+                showStatus('Creating content...', 'info');
+                
+                const response = await fetch(`${API_BASE}/api/scaffold`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    showStatus(`✅ Content created successfully!\nFile: ${result.target_path}`, 'success');
+                    // Reset form
+                    e.target.reset();
+                } else {
+                    showStatus(`❌ Failed to create content: ${result.error || 'Unknown error'}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Network error: ${error.message}`, 'error');
+            }
+        });
+
+        // Handle build button
+        document.getElementById('buildBtn').addEventListener('click', async () => {
+            try {
+                showStatus('Building site... (this may take 30-40 seconds)', 'info');
+                
+                const response = await fetch(`${API_BASE}/api/build`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    showStatus(`✅ Site built successfully in ${result.duration}s`, 'success');
+                } else {
+                    showStatus(`❌ Build failed: ${result.error || 'Unknown error'}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`❌ Network error: ${error.message}`, 'error');
+            }
+        });
+
+        // Check server status on page load
+        checkServerStatus();
+        
+        // Recheck server status every 30 seconds
+        setInterval(checkServerStatus, 30000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 4: The Rules of Constant Acceleration | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Chapter 4: The Rules of Constant Acceleration</h1>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="flexbook"
+         data-course="hphys"
+         data-title="Chapter 4: The Rules of Constant Acceleration"
+         data-unit="2"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+
+
+
+
+<!-- Navigation Component: Progress + Controls -->
+<div class="unified-navigation">
+  
+  <!-- Progress Indicator -->
+  <div class="nav-progress">
+    <div class="nav-progress-bar">
+      <div class="nav-progress-fill" id="nav-progress-fill" style="width: 0%;"></div>
+    </div>
+    <div class="nav-progress-text" id="nav-progress-text">
+      Section 1 of 11
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="nav-controls">
+    <!-- Previous Button -->
+    <button type="button" class="nav-button nav-prev" id="nav-prev" disabled>
+      <span class="nav-icon">←</span>
+      <span class="nav-text">Previous</span>
+    </button>
+
+    <!-- Jump-to Dropdown -->
+    <div class="nav-selector-container">
+      <label for="nav-selector" class="nav-selector-label">Jump to:</label>
+      <select id="nav-selector" class="nav-selector">
+        
+          <option value="0" selected>
+            Section 1
+            
+            
+              - Introduction: From Descript...
+            
+          </option>
+        
+          <option value="1" >
+            Section 2
+            
+            
+              - Phenomenon: Predicting the ...
+            
+          </option>
+        
+          <option value="2" >
+            Section 3
+            
+            
+              - Forecast: Modeling the Coast
+            
+          </option>
+        
+          <option value="3" >
+            Section 4
+            
+            
+              - The Four Kinematic Equations
+            
+          </option>
+        
+          <option value="4" >
+            Section 5
+            
+            
+              - Special Case: Freefall
+            
+          </option>
+        
+          <option value="5" >
+            Section 6
+            
+            
+              - Discovery: Freefall Simulat...
+            
+          </option>
+        
+          <option value="6" >
+            Section 7
+            
+            
+              - Modeling Imperfection: The ...
+            
+          </option>
+        
+          <option value="7" >
+            Section 8
+            
+            
+              - Discovery: Modeling Air Res...
+            
+          </option>
+        
+          <option value="8" >
+            Section 9
+            
+            
+              - Thinking Lens: Systems and ...
+            
+          </option>
+        
+          <option value="9" >
+            Section 10
+            
+            
+              - Practice: The Kinematic Equ...
+            
+          </option>
+        
+          <option value="10" >
+            Section 11
+            
+            
+              - The Bigger Picture: Synthes...
+            
+          </option>
+        
+      </select>
+    </div>
+
+    <!-- Next Button -->
+    <button type="button" class="nav-button nav-next" id="nav-next">
+      <span class="nav-text">Next</span>
+      <span class="nav-icon">→</span>
+    </button>
+  </div>
+
+</div>
+
+<script>
+/**
+ * Sequential Navigator - Unified navigation for all content types
+ * Initialized by navigation component, operates on container_class items
+ */
+(function() {
+  'use strict';
+  
+  const config = {
+    containerClass: 'flexbook-item',
+    itemType: 'Section',
+    itemCount: 11
+  };
+  
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigator);
+  } else {
+    initNavigator();
+  }
+  
+  function initNavigator() {
+    console.log('[navigation] Initializing navigator for', config.itemType, '(' + config.itemCount + ' items)');
+    
+    // Get all navigable items
+    const items = document.querySelectorAll('.' + config.containerClass);
+    if (items.length === 0) {
+      console.warn('[navigation] No items found with class:', config.containerClass);
+      return;
+    }
+    
+    // Get navigation controls
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+    const selector = document.getElementById('nav-selector');
+    const progressFill = document.getElementById('nav-progress-fill');
+    const progressText = document.getElementById('nav-progress-text');
+    
+    if (!prevBtn || !nextBtn || !selector || !progressFill || !progressText) {
+      console.error('[navigation] Required elements not found');
+      return;
+    }
+    
+    // Navigation state
+    let currentIndex = 0;
+    
+    /**
+     * Show item at specified index
+     */
+    function showItem(index) {
+      // Validate index
+      if (index < 0 || index >= items.length) {
+        console.warn('[navigation] Invalid index:', index);
+        return;
+      }
+      
+      console.log('[navigation] Showing item', index, 'of', items.length);
+      
+      // Hide all items
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.add('active');
+          item.style.display = 'block';
+        } else {
+          item.classList.remove('active');
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update state
+      currentIndex = index;
+      
+      // Update button states
+      prevBtn.disabled = (index === 0);
+      nextBtn.disabled = (index === items.length - 1);
+      
+      // Update selector
+      selector.value = index;
+      
+      // Update progress bar
+      const progressPercent = items.length > 1 
+        ? (index / (items.length - 1)) * 100 
+        : 100;
+      progressFill.style.width = progressPercent + '%';
+      
+      // Update progress text
+      progressText.textContent = config.itemType + ' ' + (index + 1) + ' of ' + items.length;
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Trigger chart rendering for visible item (if charts present)
+      triggerChartRendering(items[index]);
+    }
+    
+    /**
+     * Trigger Chart.js rendering for deferred charts in visible item
+     */
+    function triggerChartRendering(container) {
+      const canvases = container.querySelectorAll('canvas[data-defer-render="true"]');
+      if (canvases.length === 0) return;
+      
+      console.log('[navigation] Triggering chart rendering for', canvases.length, 'charts');
+      
+      canvases.forEach(canvas => {
+        // Trigger re-check of visibility by dispatching custom event
+        const event = new CustomEvent('itemvisible', { bubbles: true });
+        canvas.dispatchEvent(event);
+      });
+    }
+    
+    /**
+     * Navigate to previous item
+     */
+    function navigatePrevious() {
+      if (currentIndex > 0) {
+        showItem(currentIndex - 1);
+      }
+    }
+    
+    /**
+     * Navigate to next item
+     */
+    function navigateNext() {
+      if (currentIndex < items.length - 1) {
+        showItem(currentIndex + 1);
+      }
+    }
+    
+    /**
+     * Jump to specific item from dropdown
+     */
+    function jumpToItem(index) {
+      const targetIndex = parseInt(index, 10);
+      if (!isNaN(targetIndex)) {
+        showItem(targetIndex);
+      }
+    }
+    
+    // Wire up event listeners
+    prevBtn.addEventListener('click', navigatePrevious);
+    nextBtn.addEventListener('click', navigateNext);
+    selector.addEventListener('change', function() {
+      jumpToItem(this.value);
+    });
+    
+    // Keyboard navigation (arrow keys)
+    document.addEventListener('keydown', function(e) {
+      // Only if not typing in input field
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigatePrevious();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateNext();
+      }
+    });
+    
+    // Initialize first item
+    showItem(0);
+    
+    console.log('[navigation] Navigation initialized successfully');
+  }
+})();
+</script>
+
+
+
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    
+    <!-- Flexbook Reference Sections (Key Vocabulary & Formulae) -->
+    
+    <div class="flexbook-references">
+      
+      <!-- Key Vocabulary Section -->
+      
+      <details class="flexbook-vocabulary collapsible-section">
+        <summary class="section-toggle">
+          <span class="toggle-icon">▶</span>
+          <span class="toggle-text">Key Vocabulary (4 terms)</span>
+        </summary>
+        <div class="section-content">
+          <div class="vocabulary-list">
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Constant Acceleration</dt>
+              <dd class="vocabulary-definition"><p>A state of motion where the velocity changes by the same amount in every equal time interval, resulting in a constant slope on a velocity-time graph.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Kinematic Equations</dt>
+              <dd class="vocabulary-definition"><p>A set of four algebraic equations that relate displacement, velocity, acceleration, and time for objects moving with constant acceleration.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Freefall</dt>
+              <dd class="vocabulary-definition"><p>The motion of an object under the sole influence of gravity, where air resistance is negligible, and acceleration is constant ($\vec{a} = -\vec{a}_g$).</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Terminal Velocity</dt>
+              <dd class="vocabulary-definition"><p>The maximum velocity a falling object reaches when the force of air resistance equals the force of gravity, resulting in zero net force and zero acceleration.</p>
+</dd>
+            </div>
+            
+          </div>
+        </div>
+      </details>
+      
+      
+      <!-- Key Formulae Section -->
+      
+      <details class="flexbook-formulae collapsible-section">
+        <summary class="section-toggle">
+          <span class="toggle-icon">▶</span>
+          <span class="toggle-text">Key Formulae (4 formulas)</span>
+        </summary>
+        <div class="section-content">
+          <div class="formulae-list">
+            
+            <div class="formula-item">
+              <div class="formula-expression">\[v_f = v_i + at\]
+</div>
+              
+              <div class="formula-description"><p>Final velocity based on initial velocity, acceleration, and time (missing $\Delta x$).</p>
+</div>
+              
+            </div>
+            
+            <div class="formula-item">
+              <div class="formula-expression">\[\Delta x = v_i t + \frac{1}{2}at^2\]
+</div>
+              
+              <div class="formula-description"><p>Displacement based on initial velocity, acceleration, and time (missing $v_f$).</p>
+</div>
+              
+            </div>
+            
+            <div class="formula-item">
+              <div class="formula-expression">\[v_f^2 = v_i^2 + 2a\Delta x\]
+</div>
+              
+              <div class="formula-description"><p>Final velocity based on initial velocity, acceleration, and displacement (missing $t$).</p>
+</div>
+              
+            </div>
+            
+            <div class="formula-item">
+              <div class="formula-expression">\[\Delta x = \frac{1}{2}(v_i + v_f)t\]
+</div>
+              
+              <div class="formula-description"><p>Displacement based on average velocity and time (missing $a$).</p>
+</div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </details>
+      
+      
+    </div>
+    
+    
+    <!-- Flexbook Instructional Flow Items -->
+    
+      <div class="flexbook-item active" 
+           data-item-index="0"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Introduction: From Description to Prediction</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>In the previous chapter, we learned to analyze motion that <em>has happened</em> by using the visual language of graphs. We observed that the slope of a velocity-time graph tells us the acceleration. But what if we want to predict the trajectory of a rocket <em>before it launches</em>? We need a tool that moves beyond visual analysis—a set of elegant, powerful mathematical laws.</p>
+
+<p>In the 17th century, scientists like Galileo noticed that many real-world motions, particularly the motion of falling objects, followed a simple rule: <strong>constant acceleration</strong>. This single observation allowed them to translate the dynamic story of motion into a handful of algebraic equations. These are the <strong>Kinematic Equations</strong>—a concise, perfect mathematical model that allows us to predict the future position and velocity of any object, provided its acceleration doesn’t change.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="1"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Phenomenon: Predicting the Apogee</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>Recall the sounding rocket: it accelerates violently during the engine burn, then it <strong>coasts</strong>. During the coasting phase (after engine burnout and before re-entry), the rocket is subjected almost exclusively to one dominant, constant force: <strong>gravity</strong>.</p>
+
+<p>During this long, silent ascent to its apogee, the rocket’s acceleration is essentially a constant $\vec{a} = -9.80 \, \text{m/s}^2$ (or $-\vec{a}_g$). Engineers must use this known, constant value to predict the exact peak altitude (the apogee) and the exact moment vertical velocity becomes zero ($\vec{v} = 0$).</p>
+
+<p><strong>Consider This:</strong> If the rocket burns out at $350 \, \text{m/s}$ while traveling upwards, how much higher will it coast? Predicting this distance is the essence of this chapter. It requires using the constant acceleration model to solve for $\Delta x$.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="2"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Forecast: Modeling the Coast</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Forecast: Modeling the Coast
+    </div>
+    <div class="flexbook-activity-content">
+      <p>Pause your reading here. Try to set up a mathematical model for the rocket’s coasting problem. Open your <strong>Unit 2 Research Brief</strong> document and complete the “Blueprint” section for “Decoding the Data Stream.” Which of the four variables ($\Delta x, v_i, v_f, a, t$) is unknown, and which kinematic equation is best suited to solve for it?</p>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="3"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">The Four Kinematic Equations</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>The kinematic equations are derived from the definitions of constant acceleration and average velocity. Notice that each of the four equations is missing one of the five kinematic variables ($\Delta x, v_i, v_f, a, t$). This makes them a systematic tool: you only need three known variables to solve for any of the other two.</p>
+
+<p>This equation comes directly from the definition of acceleration ($\vec{a} = \frac{\Delta \vec{v}}{\Delta t}$) and is useful when displacement is not relevant:
+\(v_f = v_i + at\)</p>
+
+<p>This equation is derived by substituting the first equation into the average velocity definition, and it is the most commonly used:
+\(\Delta x = v_i t + \frac{1}{2}at^2\)</p>
+
+<p>This is often the most powerful equation for problems like the rocket’s apogee, where the time to reach the destination is unknown and unneeded:
+\(v_f^2 = v_i^2 + 2a\Delta x\)</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="4"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Special Case: Freefall</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>The most common application of constant acceleration is <strong>freefall</strong>. Near Earth’s surface, all objects, regardless of their mass, accelerate downward at the same rate, $\vec{g}$.
+\(\vec{a} = - \vec{g}\)
+where $\vec{g}$ is the vector representing the acceleration due to gravity, and its magnitude is $g = 9.80 \, \text{m/s}^2$.</p>
+
+<p>When solving freefall problems:</p>
+<ul>
+  <li><strong>Always Define Your Axis:</strong> Conventionally, ‘up’ is the positive ($\text{+y}$) direction, making the acceleration $\vec{a} = -9.80 \, \text{m/s}^2$.</li>
+  <li><strong>The Apex Rule:</strong> At the very top of an object’s flight (its apogee or maximum height), its instantaneous vertical velocity is exactly $v_y = 0 \, \text{m/s}$.</li>
+</ul>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="5"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Discovery: Freefall Simulations</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Discovery: Freefall Simulations
+    </div>
+    <div class="flexbook-activity-content">
+      <p>Pause your reading here. Does the freefall rule really apply equally to all objects? Open your <strong>Unit 2 Hexagon Labs</strong> document and complete “Lab 2.2: Freefall Simulations (Feather &amp; Bowling Ball)” to test Galileo’s famous hypothesis in a virtual vacuum.</p>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="6"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Modeling Imperfection: The Role of Air Resistance</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>The kinematic equations are a <strong>perfect system model</strong> that assumes only constant acceleration. In reality, our sounding rocket is also subject to <strong>air resistance</strong> (or drag), which is not constant; it increases with the square of the object’s speed.</p>
+
+<p>Air resistance acts as an opposing force, causing the net acceleration to be less than $9.80 \, \text{m/s}^2$ during the coasting ascent and less than $9.80 \, \text{m/s}^2$ during the fall. If an object falls far enough, the drag force eventually equals the gravitational force, resulting in zero net force and zero acceleration. At this point, the object stops accelerating and falls at a constant speed known as <strong>terminal velocity</strong>.</p>
+
+<p>For the sounding rocket, air resistance significantly affects its landing spot, which is why engineers rely on more complex computer models rather than just the four simple kinematic equations.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="7"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Discovery: Modeling Air Resistance</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Discovery: Modeling Air Resistance
+    </div>
+    <div class="flexbook-activity-content">
+      <p>Pause your reading here. How much does air resistance really matter? Complete “Lab 2.3: Modeling the Effects of Air Resistance” in your <strong>Unit 2 Hexagon Labs</strong> document to compare the idealized freefall model with the real-world trajectory.</p>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="8"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Thinking Lens: Systems and System Models</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>The kinematic equations represent a powerful <strong>System Model</strong>. They show how five separate variables ($\Delta x, v_i, v_f, a, t$) are mathematically intertwined. This model is only valid if the system condition—<strong>constant acceleration</strong>—is met. When we analyze a rocket’s flight, we use the Kinematic Model for the coasting phase ($\vec{a} = -\vec{g}$) and a different, more complex model for the powered ascent (where $\vec{a}$ is changing). Understanding the <strong>System Model’s</strong> limitations is just as important as knowing the equations themselves.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="9"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Practice: The Kinematic Equations</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Practice: The Kinematic Equations
+    </div>
+    <div class="flexbook-activity-content">
+      <p>You now possess the tools to predict the trajectory of any object moving with constant acceleration. Open your <strong>Unit 2 Problem Sets</strong> document and complete “Problem Set 2.2: The Kinematic Equations” to practice applying this system model.</p>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="10"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">The Bigger Picture: Synthesis and Connection</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>The four kinematic equations—simple as they are—are the cornerstone of classical physics. They allow us to precisely predict the motion of everything from a falling apple to a sounding rocket’s apogee. By creating this robust mathematical system, we are ready to ask the next, most profound question in physics: <strong>Why do things move and accelerate in the first place?</strong> That question leads us directly to the concepts of force and dynamics.</p>
+
+  </div>
+
+
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

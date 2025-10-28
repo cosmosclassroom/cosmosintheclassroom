@@ -1,0 +1,118 @@
+/* 
+ * figure-enhanced.css
+ * Enhanced styling for figures and illustrations with improved layout and visual design
+ * Added 2025-10-18 to resolve 404 errors
+ */
+
+/* Enhanced Figure Container */
+.figure-enhanced {
+  margin: 2rem 0;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Figure Image Styling */
+.figure-enhanced img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--color-background-subtle);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Figure Caption */
+.figure-enhanced figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-heading);
+  font-style: italic;
+  line-height: 1.4;
+  padding: 0.5rem;
+  background-color: var(--color-background-subtle);
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* Figure Number */
+.figure-enhanced .figure-number {
+  font-weight: bold;
+  color: var(--color-accent-maroon);
+  margin-right: 0.5rem;
+}
+
+/* Centered Figure Layout */
+.figure-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Multi-Column Figure Layout */
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Left-aligned Figure with Text Wrap */
+.figure-left {
+  float: left;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+
+/* Right-aligned Figure with Text Wrap */
+.figure-right {
+  float: right;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  max-width: 50%;
+}
+
+/* Figure with Border */
+.figure-bordered img {
+  border: 2px solid var(--color-accent-maroon);
+  border-radius: 4px;
+}
+
+/* Figure with Highlight */
+.figure-highlight {
+  position: relative;
+}
+
+.figure-highlight::before {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+  right: -1rem;
+  background-color: rgba(192, 149, 83, 0.1);
+  border: 2px dashed var(--color-accent-gold);
+  border-radius: 8px;
+  z-index: -1;
+}
+
+/* Large Figure */
+.figure-large {
+  margin: 3rem 0;
+}
+
+.figure-large img {
+  max-width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .figure-left,
+  .figure-right {
+    float: none;
+    margin: 1.5rem 0;
+    max-width: 100%;
+  }
+  
+  .figure-grid {
+    grid-template-columns: 1fr;
+  }
+}

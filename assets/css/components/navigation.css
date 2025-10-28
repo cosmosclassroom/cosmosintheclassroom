@@ -1,0 +1,380 @@
+/**
+ * Navigation Component Styles
+ * Unified navigation for all sequential content types
+ * Consolidates: unified-navigation.css + activity-ui.css navigation sections
+ */
+
+/* ========================================
+   UNIFIED NAVIGATION COMPONENT
+   ======================================== */
+
+.unified-navigation {
+  background: var(--color-background-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-progress {
+  margin-bottom: var(--spacing-md);
+}
+
+.nav-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.nav-progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: width var(--transition-fast);
+}
+
+.nav-progress-text {
+  text-align: center;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.nav-selector-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-selector-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.nav-selector {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  min-width: 180px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.nav-selector:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.nav-selector:hover {
+  border-color: var(--color-primary);
+}
+
+.nav-icon {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.nav-text {
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   NAVIGATION CONTAINER
+   ======================================== */
+
+.unified-navigation-container {
+  background: var(--color-background-alt);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin: var(--spacing-md) 0 var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   NAVIGATION CONTROLS ROW
+   ======================================== */
+
+.navigation-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+}
+
+/* ========================================
+   DROPDOWN SELECTOR
+   ======================================== */
+
+.problem-dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 200px;
+}
+
+.dropdown-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.problem-selector {
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  border: 2px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  min-width: 180px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.problem-selector:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.problem-selector:hover {
+  border-color: var(--color-primary);
+}
+
+/* ========================================
+   NAVIGATION BUTTONS
+   ======================================== */
+
+.activity-navigation {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-button,
+.activity-nav-button {
+  padding: 0.6rem 1.5rem;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-primary);
+  color: #ffffff;  /* Force white text */
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), 
+              border-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  /* Force visibility */
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.nav-button:hover:not(:disabled),
+.activity-nav-button:hover:not(:disabled) {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.nav-button:active:not(:disabled),
+.activity-nav-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-button:focus,
+.activity-nav-button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.nav-button:disabled,
+.activity-nav-button:disabled {
+  background-color: var(--color-border);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Navigation control selectors */
+#nav-prev,
+#nav-next,
+#prev-item,
+#next-item {
+  min-width: 120px;
+  /* Debug styling to ensure visibility */
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--color-primary) !important;
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix for Next button clickability (emergency patch preserved) */
+#nav-next,
+#next-item {
+  position: relative;
+  z-index: var(--z-dropdown);
+  pointer-events: auto;
+  overflow: visible;
+  /* Extra debug for Next button */
+  background-color: #007bff !important;
+  color: #ffffff !important;
+}
+
+#next-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+#next-item span {
+  pointer-events: none;
+}
+
+/* ========================================
+   NAVIGATION CONTROLS (for compatibility)
+   ======================================== */
+
+.nav-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.nav-selector {
+  flex: 1;
+  max-width: 300px;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  font-size: var(--font-size-md);
+  border: 2px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.nav-selector:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .navigation-controls-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .problem-dropdown-container,
+  .activity-navigation {
+    justify-content: center;
+  }
+
+  .problem-selector,
+  .nav-selector {
+    min-width: 100%;
+  }
+
+  #prev-item,
+  #next-item,
+  .nav-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .unified-navigation-container {
+    padding: var(--spacing-sm);
+  }
+
+  .activity-navigation {
+    flex-direction: column;
+  }
+
+  #prev-item,
+  #next-item,
+  .nav-button {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   KEYBOARD NAVIGATION INDICATORS
+   ======================================== */
+
+.nav-button:focus-visible,
+.problem-selector:focus-visible,
+.nav-selector:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .unified-navigation-container,
+  .activity-navigation,
+  .nav-controls {
+    display: none;
+  }
+}

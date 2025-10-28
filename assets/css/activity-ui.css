@@ -1,0 +1,256 @@
+/**
+ * Unified Activity UI Components
+ * Consolidated from multiple CSS files as part of UI refactoring (Oct 2025)
+ * 
+ * Consolidates:
+ * - submission-bar.css
+ * - top-bar.css
+ * - button-fix.css
+ * - unified-navigation.css
+ */
+
+/* =============================================================================
+   SUBMISSION BAR - COMMON STYLES
+   ============================================================================= */
+
+.submission-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background: var(--color-background-main);
+    border-top: 2px solid var(--color-text-heading);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.75rem 1.5rem;
+}
+
+.submission-bar-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Title area in bar */
+.submission-title-area {
+    flex: 1;
+    min-width: 250px;
+    margin-right: auto;
+}
+
+.submission-title-area h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-serif-headings);
+    color: var(--color-text-heading);
+    line-height: 1.2;
+}
+
+/* =============================================================================
+   TOP STICKY BAR
+   ============================================================================= */
+
+/* Top sticky variation */
+.submission-bar.top-sticky {
+    position: fixed;
+    top: 0;
+    bottom: auto !important; /* Ensure bottom positioning is overridden */
+    left: 0;
+    right: 0;
+    border-top: none;
+    border-bottom: 2px solid var(--color-text-heading);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1050; /* Higher than other fixed elements */
+    padding: 0.5rem 1.5rem;
+    background: var(--color-background-main, #fdfdfa);
+}
+
+/* Title in top bar should be more compact */
+.submission-bar.top-sticky .submission-title-area h1 {
+    font-size: 1.35rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+}
+
+/* =============================================================================
+   ACTIVITY CONTAINER SPACING
+   ============================================================================= */
+
+/* Ensure content doesn't get hidden behind fixed submission bars */
+.flexbook-content,
+.activity-content-wrapper {
+    padding-bottom: 100px; /* Space for bottom floating bar + navigation buttons */
+}
+
+/* When using the top sticky bar, add top padding to the container */
+.activity-container {
+    padding-top: 85px; /* Space for top sticky bar */
+}
+
+/* Activity content specific margin */
+.activity-content-container {
+    margin-top: 20px;
+}
+
+.activity-navigation {
+    margin-bottom: 2rem; /* Extra margin above submission bar */
+    display: flex;
+    gap: 1rem;
+}
+
+/* =============================================================================
+   BUTTONS
+   ============================================================================= */
+
+/* Secondary button style */
+.btn-secondary-inline {
+    padding: 0.5rem 1rem;
+    background: var(--color-background-subtle);
+    color: var(--color-text-body);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-inline:hover {
+    background: #e0e0e0;
+}
+
+/* Fix for Next button clickability issue */
+#next-item {
+    position: relative; 
+    z-index: 1001;
+    pointer-events: auto;
+    overflow: visible;
+}
+
+#next-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Ensure any content inside doesn't block clicks */
+#next-item span {
+    pointer-events: none;
+}
+
+/* Ensure consistent button widths */
+#prev-item, #next-item {
+    min-width: 120px;
+}
+
+/* =============================================================================
+   UNIFIED NAVIGATION
+   ============================================================================= */
+
+/* Container for the entire navigation section */
+.unified-navigation-container {
+    background: var(--color-background-subtle, #f1f1eb);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Navigation controls in a single row with dropdown and buttons */
+.navigation-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+
+/* Dropdown container */
+.problem-dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+.dropdown-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-body);
+}
+
+/* Dropdown styling */
+.problem-selector {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid var(--color-button-primary, #34495e);
+    border-radius: 4px;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2334495e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    appearance: none;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.problem-selector:focus {
+    outline: none;
+    border-color: var(--color-accent-maroon, #800000);
+    box-shadow: 0 0 0 2px rgba(128, 0, 0, 0.2);
+}
+
+/* =============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================= */
+
+@media (max-width: 768px) {
+    /* Top sticky bar adjustments */
+    .submission-bar.top-sticky {
+        padding: 0.5rem;
+    }
+    
+    .submission-bar.top-sticky .submission-bar-content {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .submission-bar.top-sticky .submission-title-area h1 {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    
+    /* Adjust container padding for mobile */
+    .activity-container {
+        padding-top: 130px;
+    }
+    
+    /* Navigation adjustments */
+    .navigation-controls-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .problem-dropdown-container,
+    .activity-navigation {
+        justify-content: center;
+    }
+    
+    #prev-item, #next-item {
+        flex: 1;
+    }
+}

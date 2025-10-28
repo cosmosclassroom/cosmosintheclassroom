@@ -1,88 +1,264 @@
-<hr />
-<p>layout: activity-focused
-title: Tsunami Defense Systems
-course: natdis
-unit: ‘2’
-content_type: hexagon_lab
-unit_slug: 2-tsunamis
-slug: hl-2.2-tsunami-defense
-lab_type: design
-role_and_mission: |
-  Your role is <strong>The Engineer</strong>. Your mission is to use the Scientist’s arrival time data to design a tsunami defense system for Branford, CT, that balances cost, effectiveness, and feasibility within a given budget.
-DCI: “ETS1.B: Developing Possible Solutions”
-Practice: [“Designing Solutions”, “Engaging in Argument from Evidence”]
-CCC: [“Systems and System Models”, “Structure and Function”]
-learning_objectives:</p>
-<ul>
-  <li>“Analyze and compare the costs and benefits of different engineering solutions.”</li>
-  <li>“Use a dataset to make a data-driven design decision under specific constraints (budget).”</li>
-  <li>“Calculate the total cost and effectiveness of a proposed tsunami defense system.”</li>
-  <li>“Justify an engineering design choice by articulating the trade-offs involved.”
-prerequisite_knowledge:</li>
-  <li>“Basic arithmetic (multiplication, addition).”</li>
-  <li>“Ability to interpret data from a table.”</li>
-  <li>“Understanding of the concept of a budget and constraints.”
-estimated_time: “50 minutes”
-materials:</li>
-  <li>
-    <p>“Calculator”
-hexagon_lab_title: “Hexagon Lab 2.2: Engineering a Defense (The Engineer)”
-objective: |
-  To analyze three proposed tsunami barrier designs and select the optimal solution for protecting a 2,000-meter section of the Branford coastline, staying within a strict budget of $250 million.
-central_question: |
-  How do engineers use data to choose the best possible solution when every option involves a trade-off between cost, effectiveness, and other real-world constraints?
-introduction:
-  title: “From Warning to Wall”
-  content: |
-The Scientist has given you the critical data: a tsunami will arrive in approximately 12.75 hours. Now, your job as the Engineer is to design a physical barrier to protect the community. The town of Branford has identified a 2,000-meter stretch of vulnerable coastline that needs immediate protection.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Tsunami Defense | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
 
-    <p>You have been given a budget of <strong>$250,000,000</strong>. Your task is to evaluate three potential barrier designs. You must choose the design that provides the best protection without exceeding the budget. The work you do here will be handed to the Policymaker, who will need to approve the funding and justify the decision to the public.
-investigation:
-  title: “Investigation”
-  content: |
-Use the data below to analyze each option. Calculate the total cost for a 2,000-meter barrier and determine if it fits within the budget.</p>
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <p><strong>Barrier Options Data Table</strong>
-| Barrier Design | Cost per Meter | Wave Height Reduction | Construction Time |
-| :— | :— | :— | :— |
-| <strong>Option A: Reinforced Seawall</strong> | $150,000 | 85% | 24 months |
-| <strong>Option B: Offshore Breakwater</strong> | $115,000 | 70% | 36 months |
-| <strong>Option C: Hybrid Living Shoreline</strong> | $95,000 | 55% | 18 months |</p>
+    <!-- Chart.js for data visualization -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
 
-    <p><strong>Calculation Steps</strong></p>
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
 
-    <ol>
-      <li><strong>Calculate Total Cost for Each Option:</strong> Use the formula \(Total \, Cost = Cost \, per \, Meter \times 2,000 \, m\)
-        <ul>
-          <li>Option A Cost: \(\$150,000 \times 2,000 = \$300,000,000\)</li>
-          <li>Option B Cost: \(\$115,000 \times 2,000 = \$230,000,000\)</li>
-          <li>Option C Cost: \(\$95,000 \times 2,000 = \$190,000,000\)</li>
-        </ul>
-      </li>
-      <li><strong>Analyze Constraints:</strong>
-        <ul>
-          <li><strong>Budget Constraint:</strong> The total budget is <strong>$250,000,000</strong>. Which option(s) are over budget?
-            <blockquote>
-              <p>Option A ($300M) is over budget. Options B ($230M) and C ($190M) are within budget.</p>
-            </blockquote>
-          </li>
-          <li><strong>Decision:</strong> Based on the budget, which is the most effective option you can afford?
-            <blockquote>
-              <p>Option B (Offshore Breakwater) offers the highest wave height reduction (70%) while remaining within the budget.
-synthesis:
-title: “Synthesis and Communication”
-prompts:
-      - title: “Justifying Your Design”
-content: “You have selected Option B. In your Research Brief, you must justify this choice to the Policymaker. Explain the concept of a ‘trade-off’ using your decision as an example. Why is Option B the <em>optimal</em> choice, even though Option A is more effective? Why is it a better choice than the cheaper Option C?”
-      - title: “Interconnections”
-content: “How did the Scientist’s work (calculating the arrival time) influence your work as the Engineer? If the Scientist had calculated an arrival time of 2 hours instead of 12.75, would that change the importance of the ‘Construction Time’ data column? Why?”
-dataset_description: |
-This dataset provides a simplified cost-benefit analysis for three different coastal engineering solutions designed to mitigate tsunami wave impact.
-—</p>
-            </blockquote>
-          </li>
-        </ul>
-      </li>
-    </ol>
-  </li>
-</ul>
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Tsunami Defense</h1>
+      
+      <span class="badge badge-lab">Hexagon Lab</span>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="hexagon_lab"
+         data-course="natdis"
+         data-title="Tsunami Defense"
+         data-unit="2"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+  
+
+
+
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
+      
+        🔬
+      
+    </div>
+    <div class="workspace-notice-title">
+      
+        Lab Notebook
+      
+    </div>
+  </div>
+  
+  <div class="workspace-notice-content">
+    
+      
+        <p><strong>Record your observations and responses in your lab notebook.</strong></p>
+        <p>Include data tables, analysis responses, and your claim-evidence-reasoning synthesis. Follow your teacher's guidelines for lab notebook format and submission.</p>
+      
+    
+  </div>
+  
+  
+</div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+  
+  
+  
+  
+  
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Hexagon Lab Sections (Overview + Investigations + Synthesis) -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

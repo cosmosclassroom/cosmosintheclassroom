@@ -1,0 +1,272 @@
+/**
+ * Progress Bar Component
+ * Visual progress indicator for sequential content navigation
+ */
+
+/* ========================================
+   PROGRESS CONTAINER
+   ======================================== */
+
+.activity-progress,
+.nav-progress {
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========================================
+   PROGRESS TEXT
+   ======================================== */
+
+.progress-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+  text-align: center;
+}
+
+/* ========================================
+   PROGRESS BAR TRACK
+   ======================================== */
+
+.progress-bar-container,
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   PROGRESS BAR FILL
+   ======================================== */
+
+.progress-bar-fill,
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  border-radius: var(--radius-lg);
+  transition: width var(--transition-normal) ease-out;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Animated shimmer effect for progress fill */
+.progress-bar-fill::after,
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ========================================
+   PROGRESS STATES
+   ======================================== */
+
+/* Zero progress */
+.progress-bar-fill[style*="width: 0"],
+.progress-fill[style*="width: 0"] {
+  opacity: 0;
+}
+
+/* Complete progress */
+.progress-bar-fill[style*="width: 100"],
+.progress-fill[style*="width: 100"] {
+  background: linear-gradient(
+    90deg,
+    var(--color-success) 0%,
+    var(--color-success-dark) 100%
+  );
+}
+
+/* ========================================
+   PROGRESS WITH PERCENTAGE
+   ======================================== */
+
+.progress-with-percentage {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.progress-with-percentage .progress-track {
+  flex: 1;
+}
+
+.progress-percentage {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  min-width: 3rem;
+  text-align: right;
+}
+
+/* ========================================
+   STEP PROGRESS (for multi-section content)
+   ======================================== */
+
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing-md) 0;
+  position: relative;
+}
+
+.step-progress::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-border);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.step-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-background);
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.step-circle.completed {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: white;
+}
+
+.step-circle.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.step-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 80px;
+}
+
+.step-label.active {
+  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .step-progress {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .step-progress::before {
+    display: none;
+  }
+
+  .step-item {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-bar-container,
+  .progress-track {
+    height: 6px;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: var(--font-size-xs);
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+    max-width: 60px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .activity-progress,
+  .nav-progress,
+  .step-progress {
+    display: none;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.progress-bar-container[role="progressbar"],
+.progress-track[role="progressbar"] {
+  position: relative;
+}
+
+/* Screen reader text for progress value */
+.progress-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

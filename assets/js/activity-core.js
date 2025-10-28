@@ -18,6 +18,27 @@ if (typeof window.Socrates === 'undefined') {
         modules: {},
         log: function(message) {
             console.log('[Socrates]', message);
+        },
+        getMetadata: function() {
+            // Extract metadata from the page's metadata element or form attributes
+            const metadataElement = document.getElementById('activity-metadata') || 
+                                  document.getElementById('assessment-metadata') ||
+                                  document.getElementById('activity-submission-form');
+            
+            if (!metadataElement) {
+                console.warn('[Socrates] No metadata element found');
+                return {
+                    contentType: 'unknown',
+                    resourceId: 'unknown',
+                    course: 'unknown'
+                };
+            }
+            
+            return {
+                contentType: metadataElement.getAttribute('data-content-type') || 'unknown',
+                resourceId: metadataElement.getAttribute('data-resource-id') || 'unknown',
+                course: metadataElement.getAttribute('data-course') || 'unknown'
+            };
         }
     };
     window.Socrates.log('Global object initialized.');

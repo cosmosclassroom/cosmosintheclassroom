@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Problem Set 4.2: Forces & Stability
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Problem Set 4.2: Forces & Stability
+</h1>
+      
+      <span class="badge badge-problem-set">Problem Set</span>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="problem_set"
+         data-course="natdis"
+         data-title="Problem Set 4.2: Forces & Stability
+"
+         data-unit="4"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+
+
+
+
+<!-- Navigation Component: Progress + Controls -->
+<div class="unified-navigation">
+  
+  <!-- Progress Indicator -->
+  <div class="nav-progress">
+    <div class="nav-progress-bar">
+      <div class="nav-progress-fill" id="nav-progress-fill" style="width: 0%;"></div>
+    </div>
+    <div class="nav-progress-text" id="nav-progress-text">
+      Problem 1 of 3
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="nav-controls">
+    <!-- Previous Button -->
+    <button type="button" class="nav-button nav-prev" id="nav-prev" disabled>
+      <span class="nav-icon">←</span>
+      <span class="nav-text">Previous</span>
+    </button>
+
+    <!-- Jump-to Dropdown -->
+    <div class="nav-selector-container">
+      <label for="nav-selector" class="nav-selector-label">Jump to:</label>
+      <select id="nav-selector" class="nav-selector">
+        
+          <option value="0" selected>
+            Problem 1
+            
+            
+              - The Apprentice's Practice: Calculating Factor of Safety
+            
+          </option>
+        
+          <option value="1" >
+            Problem 2
+            
+            
+              - The Journeyman's Task: Calculating Pressure on a Levee
+            
+          </option>
+        
+          <option value="2" >
+            Problem 3
+            
+            
+              - The Master's Insight: Engineering for Safety
+            
+          </option>
+        
+      </select>
+    </div>
+
+    <!-- Next Button -->
+    <button type="button" class="nav-button nav-next" id="nav-next">
+      <span class="nav-text">Next</span>
+      <span class="nav-icon">→</span>
+    </button>
+  </div>
+
+</div>
+
+<script>
+/**
+ * Sequential Navigator - Unified navigation for all content types
+ * Initialized by navigation component, operates on container_class items
+ */
+(function() {
+  'use strict';
+  
+  const config = {
+    containerClass: 'problem-container',
+    itemType: 'Problem',
+    itemCount: 3
+  };
+  
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigator);
+  } else {
+    initNavigator();
+  }
+  
+  function initNavigator() {
+    console.log('[navigation] Initializing navigator for', config.itemType, '(' + config.itemCount + ' items)');
+    
+    // Get all navigable items
+    const items = document.querySelectorAll('.' + config.containerClass);
+    if (items.length === 0) {
+      console.warn('[navigation] No items found with class:', config.containerClass);
+      return;
+    }
+    
+    // Get navigation controls
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+    const selector = document.getElementById('nav-selector');
+    const progressFill = document.getElementById('nav-progress-fill');
+    const progressText = document.getElementById('nav-progress-text');
+    
+    if (!prevBtn || !nextBtn || !selector || !progressFill || !progressText) {
+      console.error('[navigation] Required elements not found');
+      return;
+    }
+    
+    // Navigation state
+    let currentIndex = 0;
+    
+    /**
+     * Show item at specified index
+     */
+    function showItem(index) {
+      // Validate index
+      if (index < 0 || index >= items.length) {
+        console.warn('[navigation] Invalid index:', index);
+        return;
+      }
+      
+      console.log('[navigation] Showing item', index, 'of', items.length);
+      
+      // Hide all items
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.add('active');
+          item.style.display = 'block';
+        } else {
+          item.classList.remove('active');
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update state
+      currentIndex = index;
+      
+      // Update button states
+      prevBtn.disabled = (index === 0);
+      nextBtn.disabled = (index === items.length - 1);
+      
+      // Update selector
+      selector.value = index;
+      
+      // Update progress bar
+      const progressPercent = items.length > 1 
+        ? (index / (items.length - 1)) * 100 
+        : 100;
+      progressFill.style.width = progressPercent + '%';
+      
+      // Update progress text
+      progressText.textContent = config.itemType + ' ' + (index + 1) + ' of ' + items.length;
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Trigger chart rendering for visible item (if charts present)
+      triggerChartRendering(items[index]);
+    }
+    
+    /**
+     * Trigger Chart.js rendering for deferred charts in visible item
+     */
+    function triggerChartRendering(container) {
+      const canvases = container.querySelectorAll('canvas[data-defer-render="true"]');
+      if (canvases.length === 0) return;
+      
+      console.log('[navigation] Triggering chart rendering for', canvases.length, 'charts');
+      
+      canvases.forEach(canvas => {
+        // Trigger re-check of visibility by dispatching custom event
+        const event = new CustomEvent('itemvisible', { bubbles: true });
+        canvas.dispatchEvent(event);
+      });
+    }
+    
+    /**
+     * Navigate to previous item
+     */
+    function navigatePrevious() {
+      if (currentIndex > 0) {
+        showItem(currentIndex - 1);
+      }
+    }
+    
+    /**
+     * Navigate to next item
+     */
+    function navigateNext() {
+      if (currentIndex < items.length - 1) {
+        showItem(currentIndex + 1);
+      }
+    }
+    
+    /**
+     * Jump to specific item from dropdown
+     */
+    function jumpToItem(index) {
+      const targetIndex = parseInt(index, 10);
+      if (!isNaN(targetIndex)) {
+        showItem(targetIndex);
+      }
+    }
+    
+    // Wire up event listeners
+    prevBtn.addEventListener('click', navigatePrevious);
+    nextBtn.addEventListener('click', navigateNext);
+    selector.addEventListener('change', function() {
+      jumpToItem(this.value);
+    });
+    
+    // Keyboard navigation (arrow keys)
+    document.addEventListener('keydown', function(e) {
+      // Only if not typing in input field
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigatePrevious();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateNext();
+      }
+    });
+    
+    // Initialize first item
+    showItem(0);
+    
+    console.log('[navigation] Navigation initialized successfully');
+  }
+})();
+</script>
+
+
+
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Problem Set Items -->
+    
+      <div class="problem-container active" 
+           data-item-index="0">
+        
+
+<div class="problem">
+  <!-- Problem Header -->
+  <div class="problem-header">
+    
+      <div class="problem-number">Problem </div>
+    
+    
+    
+    
+    <!-- Difficulty Badges -->
+    
+  </div>
+  
+  <!-- Phenomenon Connection -->
+  
+    <p class="phenomenon-connection"><em>This is the most basic calculation an engineer makes to determine
+if a slope is safe.
+</em></p>
+  
+  
+  <!-- Problem Statement -->
+  
+    <div class="problem-content problem-prompt">
+      <p>An engineer is analyzing a hillside.</p>
+<ul>
+  <li>The <strong>Driving Forces</strong> (gravity, water weight) are $10,000 \text{ units}$.</li>
+  <li>The <strong>Resisting Forces</strong> (soil friction) are $15,000 \text{ units}$.</li>
+</ul>
+
+<p>What is the Factor of Safety (FS)? Is the slope stable?</p>
+
+<p><strong>Given:</strong></p>
+<ul>
+  <li>$Resisting \, Forces = 15,000 \text{ units}$</li>
+  <li>$Driving \, Forces = 10,000 \text{ units}$</li>
+</ul>
+
+<p><strong>Find:</strong> $Factor \, of \, Safety$ and stability.</p>
+
+    </div>
+  
+  
+  <!-- Dataset Visualization (Chart.js figure) -->
+  
+  
+  <!-- Solution Display (for solution keys) -->
+  
+  
+  <!-- Solution Workspace (Phase 3B - Static Content Delivery) -->
+  
+    <div class="problem-workspace">
+      
+        
+        <div class="workspace-simple">
+          <div class="workspace-header">
+            <strong>📝 Solution Workspace</strong>
+          </div>
+          <div class="workspace-content">
+            <p class="workspace-instruction">Show all work and include units in your final answer.</p>
+            <div class="workspace-area">
+              <p><em>Complete this problem in your notebook or on separate paper.</em></p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  
+
+  <!-- Solution Display (always show for problems with solutions) -->
+  
+    <details class="problem-solution">
+      <summary>🔍 View Solution</summary>
+      <div class="solution-content">
+        
+          
+          <p><strong>Step 1: Identify Givens and Unknowns</strong></p>
+<ul>
+  <li>$Resisting \, Forces = 15,000 \text{ units}$</li>
+  <li>$Driving \, Forces = 10,000 \text{ units}$</li>
+  <li>Unknown: $FS = ?$</li>
+</ul>
+
+<p><strong>Step 2: Select Parent Equation</strong></p>
+
+<p>We use the Factor of Safety formula:</p>
+
+\[FS = \frac{Resisting \, Forces}{Driving \, Forces}\]
+
+<p><strong>Step 3: Substitute Values and Track Units</strong></p>
+
+\[FS = \frac{15,000 \text{ units}}{10,000 \text{ units}}\]
+
+\[FS = 1.5\]
+
+<p><strong>Final Answer:</strong> The Factor of Safety is <strong>$1.5$</strong>.
+Since $FS &gt; 1$, the slope is <strong>stable</strong>.</p>
+
+        
+      </div>
+    </details>
+  
+
+  <!-- Problem Hints (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+      <div class="problem-container" 
+           data-item-index="1">
+        
+
+<div class="problem">
+  <!-- Problem Header -->
+  <div class="problem-header">
+    
+      <div class="problem-number">Problem </div>
+    
+    
+    
+    
+    <!-- Difficulty Badges -->
+    
+  </div>
+  
+  <!-- Phenomenon Connection -->
+  
+    <p class="phenomenon-connection"><em>This problem models how an engineer would calculate the pressure
+that floodwater exerts on a floodwall, which is the "driving
+force" the wall must resist.
+</em></p>
+  
+  
+  <!-- Problem Statement -->
+  
+    <div class="problem-content problem-prompt">
+      <p>During a flood, the water pushes against a $20 \text{ m}^2$ section
+of a floodwall with a total <strong>force</strong> of $800,000 \text{ Newtons}$.</p>
+
+<p>What is the <strong>pressure</strong> on that section of the floodwall?
+(The unit for pressure is Pascals, where $1 \text{ Pa} = 1 \text{ N/m}^2$).</p>
+
+<p><strong>Given:</strong></p>
+<ul>
+  <li>$Force = 800,000 \text{ N}$</li>
+  <li>$Area = 20 \text{ m}^2$</li>
+</ul>
+
+<p><strong>Find:</strong> $Pressure$ (in Pascals)</p>
+
+    </div>
+  
+  
+  <!-- Dataset Visualization (Chart.js figure) -->
+  
+  
+  <!-- Solution Display (for solution keys) -->
+  
+  
+  <!-- Solution Workspace (Phase 3B - Static Content Delivery) -->
+  
+    <div class="problem-workspace">
+      
+        
+        <div class="workspace-simple">
+          <div class="workspace-header">
+            <strong>📝 Solution Workspace</strong>
+          </div>
+          <div class="workspace-content">
+            <p class="workspace-instruction">Show all work and include units in your final answer.</p>
+            <div class="workspace-area">
+              <p><em>Complete this problem in your notebook or on separate paper.</em></p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  
+
+  <!-- Solution Display (always show for problems with solutions) -->
+  
+    <details class="problem-solution">
+      <summary>🔍 View Solution</summary>
+      <div class="solution-content">
+        
+          
+          <p><strong>Step 1: Identify Givens and Unknowns</strong></p>
+<ul>
+  <li>$Force = 800,000 \text{ N}$</li>
+  <li>$Area = 20 \text{ m}^2$</li>
+  <li>Unknown: $Pressure = ?$</li>
+</ul>
+
+<p><strong>Step 2: Select Parent Equation</strong></p>
+
+<p>We use the pressure formula:</p>
+
+\[Pressure = \frac{Force}{Area}\]
+
+<p><strong>Step 3: Substitute Values and Track Units</strong></p>
+
+\[Pressure = \frac{800,000 \text{ N}}{20 \text{ m}^2}\]
+
+\[Pressure = 40,000 \text{ N/m}^2\]
+
+<p><strong>Final Answer:</strong> The pressure is <strong>$40,000 \text{ Pascals}$</strong> (Pa).</p>
+
+        
+      </div>
+    </details>
+  
+
+  <!-- Problem Hints (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+      <div class="problem-container" 
+           data-item-index="2">
+        
+
+<div class="problem">
+  <!-- Problem Header -->
+  <div class="problem-header">
+    
+      <div class="problem-number">Problem </div>
+    
+    
+    
+    
+    <!-- Difficulty Badges -->
+    
+  </div>
+  
+  <!-- Phenomenon Connection -->
+  
+    <p class="phenomenon-connection"><em>This problem asks you to think like an engineer designing a solution.
+You know the forces, and you know your target safety level. How
+strong must your solution be?
+</em></p>
+  
+  
+  <!-- Problem Statement -->
+  
+    <div class="problem-content problem-prompt">
+      <p>An engineer is designing a retaining wall to stabilize a slope.</p>
+<ul>
+  <li>The <strong>Driving Forces</strong> on the slope are $50,000 \text{ units}$.</li>
+  <li>The natural <strong>Resisting Forces</strong> (from soil) are only $40,000 \text{ units}$.</li>
+</ul>
+
+<p>The engineer’s design must achieve a <strong>Factor of Safety of $1.5$</strong>.</p>
+
+<p>How much <em>additional</em> resisting force must the new retaining wall provide?</p>
+
+    </div>
+  
+  
+  <!-- Dataset Visualization (Chart.js figure) -->
+  
+  
+  <!-- Solution Display (for solution keys) -->
+  
+  
+  <!-- Solution Workspace (Phase 3B - Static Content Delivery) -->
+  
+    <div class="problem-workspace">
+      
+        
+        <div class="workspace-simple">
+          <div class="workspace-header">
+            <strong>📝 Solution Workspace</strong>
+          </div>
+          <div class="workspace-content">
+            <p class="workspace-instruction">Show all work and include units in your final answer.</p>
+            <div class="workspace-area">
+              <p><em>Complete this problem in your notebook or on separate paper.</em></p>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  
+
+  <!-- Solution Display (always show for problems with solutions) -->
+  
+    <details class="problem-solution">
+      <summary>🔍 View Solution</summary>
+      <div class="solution-content">
+        
+          
+          <p><strong>Step 1: Determine the Goal (Total Resisting Force)</strong></p>
+
+<p>We are given the target $FS$ and the $Driving \, Forces$. We can
+rearrange the $FS$ formula to find the <em>total</em> resisting force needed.</p>
+<ul>
+  <li>$FS_{target} = 1.5$</li>
+  <li>$Driving \, Forces = 50,000 \text{ units}$</li>
+</ul>
+
+<p>\(FS = \frac{Resisting_{total}}{Driving}\)
+\(Resisting_{total} = FS \cdot Driving\)</p>
+
+<p>\(Resisting_{total} = (1.5) \cdot (50,000 \text{ units})\)
+\(Resisting_{total} = 75,000 \text{ units}\)</p>
+
+<p><strong>Step 2: Calculate the Required <em>Additional</em> Force</strong></p>
+
+<p>The design must provide a <em>total</em> of $75,000$ units of resistance. The
+slope <em>already</em> has $40,000$ units of natural resistance. The
+retaining wall must provide the rest.</p>
+
+\[Force_{wall} = Resisting_{total} - Resisting_{natural}\]
+
+\[Force_{wall} = 75,000 \text{ units} - 40,000 \text{ units}\]
+
+\[Force_{wall} = 35,000 \text{ units}\]
+
+<p><strong>Final Answer:</strong> The new retaining wall must be engineered to provide
+<strong>$35,000 \text{ units}$</strong> of additional resisting force.</p>
+
+        
+      </div>
+    </details>
+  
+
+  <!-- Problem Hints (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

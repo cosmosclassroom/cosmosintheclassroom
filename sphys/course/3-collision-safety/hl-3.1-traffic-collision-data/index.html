@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Hexagon Lab 3.1: Analyzing Traffic Collision Data
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.chartJsLoaded = true;
+        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
+    </script>
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Hexagon Lab 3.1: Analyzing Traffic Collision Data
+</h1>
+      
+      <span class="badge badge-lab">Hexagon Lab</span>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="hexagon_lab"
+         data-course="sphys"
+         data-title="Hexagon Lab 3.1: Analyzing Traffic Collision Data
+"
+         data-unit="3"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+  
+
+
+
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
+      
+        🔬
+      
+    </div>
+    <div class="workspace-notice-title">
+      
+        Lab Notebook
+      
+    </div>
+  </div>
+  
+  <div class="workspace-notice-content">
+    
+      
+        <p><strong>Record your observations and responses in your lab notebook.</strong></p>
+        <p>Include data tables, analysis responses, and your claim-evidence-reasoning synthesis. Follow your teacher's guidelines for lab notebook format and submission.</p>
+      
+    
+  </div>
+  
+  
+</div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+  
+  
+  
+  
+  
+    
+
+
+
+
+  
+  <script>
+    // Ensure single item is visible
+    document.addEventListener('DOMContentLoaded', function() {
+      const item = document.querySelector('.lab-section');
+      if (item) {
+        item.classList.add('active');
+        item.style.display = 'block';
+      }
+    });
+  </script>
+
+
+  
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Hexagon Lab Sections (Overview + Investigations + Synthesis) -->
+    
+    
+    
+      <div class="lab-section active" data-item-index="0">
+        <h2>Overview</h2>
+        
+          <div class="lab-abstract">
+            <h3>Abstract</h3>
+            <p>This investigation places students in the role of a data scientist to 
+investigate the anchoring phenomenon. Students will analyze 
+a multi-decade dataset of traffic collision data to identify and explain 
+the puzzling trend: while cars have become safer and fatalities are 
+decreasing, the total number of collisions is rising.</p>
+
+          </div>
+        
+        
+          <div class="lab-introduction">
+            <h3>Introduction</h3>
+            <p>We begin this unit with a modern-day puzzle from our daily lives. 
+Common sense suggests that as cars get safer (with airbags, better 
+brakes, etc.), the roads should become safer overall. But the data shows 
+something strange: decreasing fatalities but <em>increasing</em> collisions and 
+injuries. Your task is to be a data scientist and 
+investigate this large dataset to develop a hypothesis that explains this 
+puzzling trend.</p>
+
+          </div>
+        
+      </div>
+    
+    
+    
+    
+      
+        <div class="lab-section" 
+             data-item-index="1">
+          
+
+
+  <!-- Investigation Section -->
+  <div class="lab-section-header">
+    <h2 class="lab-section-title">Investigation 1: Decoding the Collision Puzzle</h2>
+    
+    
+  </div>
+  
+  
+    <div class="lab-content investigation-description">
+      <p><strong>Objective:</strong> Analyze a dataset of traffic incidents to identify and 
+explain the puzzling trend.</p>
+
+<p><strong>Data Source:</strong> Provided dataset summarizing US traffic statistics from 
+1990 to 2020.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+  <li>Review the “US Traffic Collision Data” table (Table 1).</li>
+  <li>Examine the two Plotly charts, which visualize the data from the table.</li>
+  <li>Use the table and charts to answer the analysis questions in your log.</li>
+</ol>
+
+    </div>
+  
+  
+  
+  
+  <!-- Dataset Visualization (Chart.js) -->
+  
+    <div class="investigation-dataset">
+      
+
+
+  
+  
+  
+  
+  <div class="figure-container" role="img" aria-label="Chart 1: US Traffic Trends (1990-2020)">
+    <div class="figure-header">
+      
+      <h4 class="figure-title">Chart 1: US Traffic Trends (1990-2020)</h4>
+      
+    </div>
+    
+    <!-- Canvas for Chart.js -->
+    <div class="figure-canvas-wrapper">
+      <canvas 
+        id="traffic-trends-chart" 
+        data-chart-config="{&quot;chart_id&quot;:&quot;traffic-trends-chart&quot;,&quot;chart_type&quot;:&quot;line&quot;,&quot;title&quot;:&quot;Chart 1: US Traffic Trends (1990-2020)&quot;,&quot;description&quot;:&quot;This chart shows the long-term trends for total collisions, \ninjuries, and fatalities.\n&quot;,&quot;source&quot;:&quot;Table 1&quot;,&quot;x_label&quot;:&quot;Year&quot;,&quot;x_unit&quot;:&quot;&quot;,&quot;y_label&quot;:&quot;Count&quot;,&quot;y_unit&quot;:&quot;&quot;,&quot;datasets&quot;:[{&quot;label&quot;:&quot;Total Collisions (millions)&quot;,&quot;dataPoints&quot;:[{&quot;x&quot;:1990,&quot;y&quot;:6.5},{&quot;x&quot;:1995,&quot;y&quot;:6.7},{&quot;x&quot;:2000,&quot;y&quot;:6.4},{&quot;x&quot;:2005,&quot;y&quot;:6.2},{&quot;x&quot;:2010,&quot;y&quot;:5.4},{&quot;x&quot;:2015,&quot;y&quot;:6.3},{&quot;x&quot;:2020,&quot;y&quot;:6.8}]},{&quot;label&quot;:&quot;Total Injuries (millions)&quot;,&quot;dataPoints&quot;:[{&quot;x&quot;:1990,&quot;y&quot;:3.2},{&quot;x&quot;:1995,&quot;y&quot;:3.4},{&quot;x&quot;:2000,&quot;y&quot;:3.2},{&quot;x&quot;:2005,&quot;y&quot;:2.9},{&quot;x&quot;:2010,&quot;y&quot;:2.2},{&quot;x&quot;:2015,&quot;y&quot;:2.4},{&quot;x&quot;:2020,&quot;y&quot;:2.7}]},{&quot;label&quot;:&quot;Total Fatalities&quot;,&quot;dataPoints&quot;:[{&quot;x&quot;:1990,&quot;y&quot;:44599},{&quot;x&quot;:1995,&quot;y&quot;:41817},{&quot;x&quot;:2000,&quot;y&quot;:41945},{&quot;x&quot;:2005,&quot;y&quot;:43510},{&quot;x&quot;:2010,&quot;y&quot;:32999},{&quot;x&quot;:2015,&quot;y&quot;:35485},{&quot;x&quot;:2020,&quot;y&quot;:38680}]}]}"
+        data-defer-render="true"
+        aria-label="Chart 1: US Traffic Trends (1990-2020). Use the table below for accessible data.">
+      </canvas>
+    </div>
+    
+    <!-- Accessibility: Fallback data table (visually hidden, screen reader accessible) -->
+    <div class="figure-data-table sr-only" role="table" aria-label="Data table for Chart 1: US Traffic Trends (1990-2020)">
+      <table>
+        <caption>Chart 1: US Traffic Trends (1990-2020)</caption>
+        <thead>
+          <tr>
+            <th scope="col">X</th>
+            <th scope="col">Y</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+    
+    
+  </div>
+
+  
+  <script>
+  (function() {
+    const canvasId = 'traffic-trends-chart';
+    const canvas = document.getElementById(canvasId);
+    
+    if (!canvas) {
+      console.error('[figure.html] Canvas not found:', canvasId);
+      return;
+    }
+    
+    // Parse chart configuration from data attribute
+    let chartConfig;
+    try {
+      chartConfig = JSON.parse(canvas.getAttribute('data-chart-config'));
+    } catch (e) {
+      console.error('[figure.html] Failed to parse chart config for', canvasId, e);
+      return;
+    }
+    
+    // Deferred rendering function
+    let retryCount = 0;
+    const maxRetries = 50; // Max 5 seconds of retrying
+    
+    function renderChart() {
+      // Check if Chart.js is loaded
+      if (typeof Chart === 'undefined') {
+        retryCount++;
+        if (retryCount >= maxRetries) {
+          console.error('[figure.html] Chart.js failed to load after', maxRetries, 'attempts. Chart will not render.');
+          // Show error message to user
+          const errorDiv = document.createElement('div');
+          errorDiv.className = 'figure-error';
+          errorDiv.innerHTML = '<p><strong>Chart Loading Error:</strong> Unable to load Chart.js library. Please refresh the page.</p>';
+          canvas.parentNode.replaceChild(errorDiv, canvas);
+          return;
+        }
+        console.warn('[figure.html] Chart.js not loaded yet, retrying... (attempt', retryCount, 'of', maxRetries + ')');
+        setTimeout(renderChart, 100);
+        return;
+      }
+      
+      // Check if canvas is visible (navigation compatibility)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container && !container.classList.contains('active')) {
+        console.log('[figure.html] Deferring render for', canvasId, '(container not active)');
+        return; // Will be rendered when container becomes active
+      }
+      
+      // Build Chart.js data structure
+      const chartData = {
+        labels: chartConfig.dataPoints.map(p => p.x),
+        datasets: [{
+          label: chartConfig.yAxis.label || 'Data',
+          data: chartConfig.dataPoints.map(p => ({ x: p.x, y: p.y })),
+          borderColor: chartConfig.borderColor || 'rgb(52, 152, 219)',
+          backgroundColor: chartConfig.backgroundColor || 'rgba(52, 152, 219, 0.1)',
+          borderWidth: chartConfig.borderWidth || 2,
+          pointRadius: chartConfig.pointRadius || 4,
+          pointHoverRadius: chartConfig.pointHoverRadius || 6,
+          tension: chartConfig.tension || 0.1
+        }]
+      };
+      
+      // Build Chart.js options
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        aspectRatio: chartConfig.aspectRatio || 2,
+        plugins: {
+          legend: {
+            display: chartConfig.showLegend !== false,
+            position: 'top'
+          },
+          title: {
+            display: false // Using HTML title instead
+          },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            title: {
+              display: true,
+              text: chartConfig.xAxis.label || 'X'
+            },
+            min: chartConfig.xAxis.min,
+            max: chartConfig.xAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: chartConfig.yAxis.label || 'Y'
+            },
+            min: chartConfig.yAxis.min,
+            max: chartConfig.yAxis.max,
+            grid: {
+              display: chartConfig.showGrid !== false
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
+      };
+      
+      // Create chart
+      try {
+        // Check if chart already exists for this canvas
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+          console.log('[figure.html] Chart already exists for', canvasId, '- destroying old chart');
+          existingChart.destroy();
+        }
+        
+        new Chart(canvas, {
+          type: chartConfig.chart_type || 'line',
+          data: chartData,
+          options: chartOptions
+        });
+        console.log('[figure.html] Rendered chart:', canvasId);
+        
+        // Mark canvas as rendered
+        canvas.setAttribute('data-chart-rendered', 'true');
+      } catch (e) {
+        console.error('[figure.html] Failed to render chart:', canvasId, e);
+      }
+    }
+    
+    // Render immediately if visible, or wait for visibility
+    if (canvas.getAttribute('data-defer-render') === 'true') {
+      // Check if already rendered
+      if (canvas.getAttribute('data-chart-rendered') === 'true') {
+        console.log('[figure.html] Chart already rendered for', canvasId, '- skipping');
+        return;
+      }
+      
+      // Listen for container becoming active (navigation system)
+      const container = canvas.closest('.problem-container, .nav-item-container, .flexbook-item');
+      if (container) {
+        // Use MutationObserver to detect when 'active' class is added
+        let hasRendered = false;
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+              if (container.classList.contains('active') && !hasRendered) {
+                hasRendered = true;
+                renderChart();
+                observer.disconnect(); // Only render once
+              }
+            }
+          });
+        });
+        
+        observer.observe(container, { attributes: true });
+        
+        // Also check if already active (no navigation, or already on this item)
+        if (container.classList.contains('active') && !hasRendered) {
+          hasRendered = true;
+          renderChart();
+          observer.disconnect();
+        }
+      } else {
+        // No container found, render immediately
+        renderChart();
+      }
+    } else {
+      // Immediate rendering
+      renderChart();
+    }
+  })();
+  </script>
+
+
+
+    </div>
+  
+  
+  <!-- Data Table -->
+  
+    <div class="lab-data-table-container investigation-table">
+      <table class="lab-data-table">
+        <thead>
+          <tr>
+            
+              <th>Year</th>
+            
+              <th>Total Collisions (millions)</th>
+            
+              <th>Total Injuries (millions)</th>
+            
+              <th>Total Fatalities</th>
+            
+              <th>Percent Vehicles with Airbags</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              
+                <td>1990
+</td>
+              
+                <td>6.5
+</td>
+              
+                <td>3.2
+</td>
+              
+                <td>44,599
+</td>
+              
+                <td>5%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>1995
+</td>
+              
+                <td>6.7
+</td>
+              
+                <td>3.4
+</td>
+              
+                <td>41,817
+</td>
+              
+                <td>50%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>2000
+</td>
+              
+                <td>6.4
+</td>
+              
+                <td>3.2
+</td>
+              
+                <td>41,945
+</td>
+              
+                <td>95%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>2005
+</td>
+              
+                <td>6.2
+</td>
+              
+                <td>2.9
+</td>
+              
+                <td>43,510
+</td>
+              
+                <td>99%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>2010
+</td>
+              
+                <td>5.4
+</td>
+              
+                <td>2.2
+</td>
+              
+                <td>32,999
+</td>
+              
+                <td>100%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>2015
+</td>
+              
+                <td>6.3
+</td>
+              
+                <td>2.4
+</td>
+              
+                <td>35,485
+</td>
+              
+                <td>100%
+</td>
+              
+            </tr>
+          
+            <tr>
+              
+                <td>2020
+</td>
+              
+                <td>6.8
+</td>
+              
+                <td>2.7
+</td>
+              
+                <td>38,680
+</td>
+              
+                <td>100%
+</td>
+              
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  
+  
+  <!-- Procedure Steps (if present) -->
+  
+  
+  <!-- Analysis Questions - Display-Only (Phase 3B) -->
+  
+    <div class="lab-analysis-questions analysis-questions">
+      <h3>Analysis Questions</h3>
+      <div class="workspace-notice workspace-notice-alert">
+        <div class="workspace-notice-header">
+          <div class="workspace-notice-icon">🔬</div>
+          <div class="workspace-notice-title">Lab Notebook</div>
+        </div>
+        <div class="workspace-notice-content">
+          <p><strong>Record your responses to these analysis questions in your lab notebook.</strong></p>
+          <p>Use complete sentences and show any calculations or data analysis.</p>
+        </div>
+      </div>
+      
+        <div class="lab-question question-block">
+          <div class="question-header">
+            <strong>Question 1:</strong>
+          </div>
+          <div class="lab-question-text">
+            
+              <p>Describe the general trend shown in Chart 1 for <code class="language-plaintext highlighter-rouge">Total Fatalities</code> 
+from 1990 to 2020. Is it generally increasing, decreasing, or flat?</p>
+
+            
+          </div>
+          <div class="workspace-placeholder">
+            <p><em>Answer this question in your lab notebook.</em></p>
+          </div>
+        </div>
+      
+        <div class="lab-question question-block">
+          <div class="question-header">
+            <strong>Question 2:</strong>
+          </div>
+          <div class="lab-question-text">
+            
+              <p>Describe the general trend shown in Chart 1 for <code class="language-plaintext highlighter-rouge">Total Collisions</code> 
+from 1990 to 2020.</p>
+
+            
+          </div>
+          <div class="workspace-placeholder">
+            <p><em>Answer this question in your lab notebook.</em></p>
+          </div>
+        </div>
+      
+        <div class="lab-question question-block">
+          <div class="question-header">
+            <strong>Question 3:</strong>
+          </div>
+          <div class="lab-question-text">
+            
+              <p>This is the puzzle: fatalities are generally <em>down</em>, while total 
+collisions are <em>flat or rising</em>. Now look at Chart 2. What is the 
+relationship (correlation) between the <code class="language-plaintext highlighter-rouge">Percent Vehicles with Airbags</code> 
+and the <code class="language-plaintext highlighter-rouge">Total Fatalities</code> trend?</p>
+
+            
+          </div>
+          <div class="workspace-placeholder">
+            <p><em>Answer this question in your lab notebook.</em></p>
+          </div>
+        </div>
+      
+        <div class="lab-question question-block">
+          <div class="question-header">
+            <strong>Question 4:</strong>
+          </div>
+          <div class="lab-question-text">
+            
+              <p>In your log, propose a claim (a hypothesis) that explains the 
+<em>overall</em> puzzling pattern. Your claim should answer both parts 
+of the puzzle:</p>
+<ol>
+  <li>Why are <em>fatalities</em> down?</li>
+  <li>Why are <em>total collisions</em> flat or rising? (Hint: The data 
+doesn’t show the cause for this, you must hypothesize. What 
+has changed about driving since 1990?)</li>
+</ol>
+
+            
+          </div>
+          <div class="workspace-placeholder">
+            <p><em>Answer this question in your lab notebook.</em></p>
+          </div>
+        </div>
+      
+    </div>
+  
+
+
+
+        </div>
+      
+    
+    
+    
+    
+      
+      
+      <div class="lab-section" data-item-index="2">
+        
+
+
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

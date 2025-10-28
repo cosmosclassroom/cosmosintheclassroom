@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Rb 2 Tsunamis Full | Cosmos in the Classroom</title>
+    <title>Research Brief: Unit 2: Tsunamis
+ | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
     
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
@@ -31,7 +42,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -48,6 +63,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,8 +77,11 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -78,9 +99,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -102,114 +123,549 @@
   CSS and JavaScript for the activity submission system.
 -->
 
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
 <div class="activity-container" id="top">
   
-  <!-- Activity Header -->
-  <div class="activity-header">
-    <div class="header-content">
-      <div class="header-left">
-        <h1 class="activity-title">Rb 2 Tsunamis Full</h1>
-        
-        <span class="badge badge-research">Research Brief</span>
-        
-      </div>
-      <div class="header-right">
-        <button id="submit-button" class="btn btn-primary">Submit</button>
-        <button id="clear-form" class="btn btn-secondary">Clear</button>
-      </div>
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Research Brief: Unit 2: Tsunamis
+</h1>
+      
+      <span class="badge badge-research">Research Brief</span>
+      
     </div>
-    <div id="auto-save-indicator" class="auto-save-indicator" hidden>
-      <span>Draft saved</span>
-    </div>
-  </div>
+  </header>
 
   <!-- Main Content Area -->
   <div class="activity-content-container">
-
-    <!-- Critical metadata for backend routing and JavaScript -->
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
     <div id="activity-metadata"
-         data-resource-id=""
          data-content-type="research_brief"
          data-course="natdis"
-         data-title="Rb 2 Tsunamis Full"
+         data-title="Research Brief: Unit 2: Tsunamis
+"
          data-unit="2"
-         data-submission-enabled="false"
-         data-auto-save-enabled="true"
-         data-auto-save-interval="30000"
-         data-submission-fields="null">
-    </div>
-
+         hidden></div>
+    
     <div class="activity-content-wrapper">
-      <!-- This is where the specific activity type's content will be rendered --><!-- 
-  Research Brief Content Display
-  Renders the research brief content with navigation
--->
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+  
 
 
 
-<form id="activity-submission-form" class="activity-form">
-  <div class="research-brief-content">
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
+      
+        📋
+      
+    </div>
+    <div class="workspace-notice-title">
+      
+        Research Portfolio
+      
+    </div>
+  </div>
+  
+  <div class="workspace-notice-content">
     
-    <!-- Progress indicator for multi-section briefs -->
+      
+        <p><strong>Complete this research project in your portfolio.</strong></p>
+        <p>Address all deliverables and guiding questions. Organize your work according to the timeline and submit according to your teacher's instructions.</p>
+      
     
-    
-    
-      <!-- Single section research brief -->
-      <div class="research-brief-full">
-        <h2 id="metacognitive-journal-your-thinking-journey">Metacognitive Journal: Your Thinking Journey</h2>
+  </div>
+  
+  
+</div>
 
-<p>Throughout this unit, you’ll keep a journal to help you track your thinking, connect your learning, and reflect on your growth as a scientist, engineer, policymaker, and citizen. Use the prompts below to guide your entries at each stage:</p>
 
-<!-- Complete at the very start of the unit, before any major activities. -->
-<h3 id="a-forecast-your-initial-ideas--predictions">(a) Forecast: Your Initial Ideas &amp; Predictions</h3>
+<!-- Content Type Detection & Data Array Selection -->
 
-<ul>
-  <li>What do you currently believe causes tsunamis? Write down your ideas, even if you’re unsure or think they might be wrong.</li>
-  <li>Make a prediction: Which type of coastal defense (engineered or natural) do you think would work best for Branford, CT? Why?</li>
-  <li>What do you expect will be the biggest challenge for a community facing a tsunami? Explain your reasoning.</li>
-</ul>
 
-<!-- Complete after finishing at least two of the following: Hexagon Lab 2.1, Hexagon Lab 2.2, Problem Set 2.1, Problem Set 2.2, or relevant readings. -->
-<h3 id="b-blueprint-connecting-your-experiences-to-big-ideas">(b) Blueprint: Connecting Your Experiences to Big Ideas</h3>
 
-<ul>
-  <li>Choose at least two activities (labs, problem sets, or readings) from your progress tracker. For each:
-    <ul>
-      <li>Briefly describe what you did.</li>
-      <li>What did you learn about tsunamis, wave physics, or coastal engineering?</li>
-      <li>Did this experience change or confirm your initial predictions? How?</li>
-    </ul>
-  </li>
-  <li>Connect your learning to the unit’s central question: <em>How can we ensure community resilience against a low-frequency, high-impact coastal hazard?</em></li>
-  <li>Use the geo-literacy framework:
-    <ul>
-      <li><strong>Interactions:</strong> How did human and natural systems interact in your activities?</li>
-      <li><strong>Interconnections:</strong> Did you notice any connections between local actions and broader impacts?</li>
-      <li><strong>Implications:</strong> What consequences did you anticipate or observe from different engineering or policy choices?</li>
-    </ul>
-  </li>
-</ul>
 
-<!-- Complete after all major unit activities, including the Scientist’s Report, Engineer’s Proposal, Policymaker’s Brief, and all labs/problem sets. -->
-<h3 id="c-reflection-how-has-your-thinking-grown">(c) Reflection: How Has Your Thinking Grown?</h3>
 
-<ul>
-  <li>How has your thinking about tsunamis and coastal resilience changed since the start of the unit?</li>
-  <li>In what ways have your abilities to use math and science to understand and solve natural disaster engineering problems improved?</li>
-  <li>As a deliberate citizen, what responsibilities do you have in understanding, evaluating, and acting on scientific, engineering, and policy information?</li>
-  <li>What ethical or societal considerations now seem most important to you when planning for natural disasters?</li>
-</ul>
 
-        
-        
-      </div>
-    
+<!-- Navigation Component (Top placement) -->
+
+  
+
+
+
+
+<!-- Navigation Component: Progress + Controls -->
+<div class="unified-navigation">
+  
+  <!-- Progress Indicator -->
+  <div class="nav-progress">
+    <div class="nav-progress-bar">
+      <div class="nav-progress-fill" id="nav-progress-fill" style="width: 0%;"></div>
+    </div>
+    <div class="nav-progress-text" id="nav-progress-text">
+      Task 1 of 3
+    </div>
   </div>
 
   <!-- Navigation Controls -->
-  
-</form>
+  <div class="nav-controls">
+    <!-- Previous Button -->
+    <button type="button" class="nav-button nav-prev" id="nav-prev" disabled>
+      <span class="nav-icon">←</span>
+      <span class="nav-text">Previous</span>
+    </button>
+
+    <!-- Jump-to Dropdown -->
+    <div class="nav-selector-container">
+      <label for="nav-selector" class="nav-selector-label">Jump to:</label>
+      <select id="nav-selector" class="nav-selector">
+        
+          <option value="0" selected>
+            Task 1
+            
+            
+              - Phase 1: Forecast
+            
+          </option>
+        
+          <option value="1" >
+            Task 2
+            
+            
+              - Phase 2: Blueprint
+            
+          </option>
+        
+          <option value="2" >
+            Task 3
+            
+            
+              - Phase 3: Reflection & Final...
+            
+          </option>
+        
+      </select>
+    </div>
+
+    <!-- Next Button -->
+    <button type="button" class="nav-button nav-next" id="nav-next">
+      <span class="nav-text">Next</span>
+      <span class="nav-icon">→</span>
+    </button>
+  </div>
+
 </div>
+
+<script>
+/**
+ * Sequential Navigator - Unified navigation for all content types
+ * Initialized by navigation component, operates on container_class items
+ */
+(function() {
+  'use strict';
+  
+  const config = {
+    containerClass: 'brief-task',
+    itemType: 'Task',
+    itemCount: 3
+  };
+  
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigator);
+  } else {
+    initNavigator();
+  }
+  
+  function initNavigator() {
+    console.log('[navigation] Initializing navigator for', config.itemType, '(' + config.itemCount + ' items)');
+    
+    // Get all navigable items
+    const items = document.querySelectorAll('.' + config.containerClass);
+    if (items.length === 0) {
+      console.warn('[navigation] No items found with class:', config.containerClass);
+      return;
+    }
+    
+    // Get navigation controls
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+    const selector = document.getElementById('nav-selector');
+    const progressFill = document.getElementById('nav-progress-fill');
+    const progressText = document.getElementById('nav-progress-text');
+    
+    if (!prevBtn || !nextBtn || !selector || !progressFill || !progressText) {
+      console.error('[navigation] Required elements not found');
+      return;
+    }
+    
+    // Navigation state
+    let currentIndex = 0;
+    
+    /**
+     * Show item at specified index
+     */
+    function showItem(index) {
+      // Validate index
+      if (index < 0 || index >= items.length) {
+        console.warn('[navigation] Invalid index:', index);
+        return;
+      }
+      
+      console.log('[navigation] Showing item', index, 'of', items.length);
+      
+      // Hide all items
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.add('active');
+          item.style.display = 'block';
+        } else {
+          item.classList.remove('active');
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update state
+      currentIndex = index;
+      
+      // Update button states
+      prevBtn.disabled = (index === 0);
+      nextBtn.disabled = (index === items.length - 1);
+      
+      // Update selector
+      selector.value = index;
+      
+      // Update progress bar
+      const progressPercent = items.length > 1 
+        ? (index / (items.length - 1)) * 100 
+        : 100;
+      progressFill.style.width = progressPercent + '%';
+      
+      // Update progress text
+      progressText.textContent = config.itemType + ' ' + (index + 1) + ' of ' + items.length;
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Trigger chart rendering for visible item (if charts present)
+      triggerChartRendering(items[index]);
+    }
+    
+    /**
+     * Trigger Chart.js rendering for deferred charts in visible item
+     */
+    function triggerChartRendering(container) {
+      const canvases = container.querySelectorAll('canvas[data-defer-render="true"]');
+      if (canvases.length === 0) return;
+      
+      console.log('[navigation] Triggering chart rendering for', canvases.length, 'charts');
+      
+      canvases.forEach(canvas => {
+        // Trigger re-check of visibility by dispatching custom event
+        const event = new CustomEvent('itemvisible', { bubbles: true });
+        canvas.dispatchEvent(event);
+      });
+    }
+    
+    /**
+     * Navigate to previous item
+     */
+    function navigatePrevious() {
+      if (currentIndex > 0) {
+        showItem(currentIndex - 1);
+      }
+    }
+    
+    /**
+     * Navigate to next item
+     */
+    function navigateNext() {
+      if (currentIndex < items.length - 1) {
+        showItem(currentIndex + 1);
+      }
+    }
+    
+    /**
+     * Jump to specific item from dropdown
+     */
+    function jumpToItem(index) {
+      const targetIndex = parseInt(index, 10);
+      if (!isNaN(targetIndex)) {
+        showItem(targetIndex);
+      }
+    }
+    
+    // Wire up event listeners
+    prevBtn.addEventListener('click', navigatePrevious);
+    nextBtn.addEventListener('click', navigateNext);
+    selector.addEventListener('change', function() {
+      jumpToItem(this.value);
+    });
+    
+    // Keyboard navigation (arrow keys)
+    document.addEventListener('keydown', function(e) {
+      // Only if not typing in input field
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigatePrevious();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateNext();
+      }
+    });
+    
+    // Initialize first item
+    showItem(0);
+    
+    console.log('[navigation] Navigation initialized successfully');
+  }
+})();
+</script>
+
+
+
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Research Brief Investigation Tasks -->
+    
+      <div class="brief-task active" 
+           data-item-index="0">
+        
+
+<div class="research-brief-task">
+  <!-- Task Header -->
+  <div class="brief-task-header">
+    
+      <div class="brief-task-number">Task </div>
+    
+    
+    
+      <h2 class="brief-task-title">Phase 1: Forecast</h2>
+    
+    
+    <!-- Phase Indicator -->
+    
+      <span class="brief-phase 1">1</span>
+    
+  </div>
+  
+  <!-- Task Description/Content -->
+  
+    <div class="brief-task-content">
+      <p>After encountering the 2004 Indian Ocean tsunami case study, your first task is to 
+document your initial observations, questions, and ideas. This is a starting point.</p>
+
+    </div>
+  
+  
+  <!-- Research Question (if present) -->
+  
+  
+  <!-- Task Objectives (if present) -->
+  
+  
+  <!-- Deliverables Section -->
+  
+  
+  <!-- Portfolio Requirements (if present) -->
+  
+  
+  <!-- Resources Section (if present) -->
+  
+  
+  <!-- Dataset/Figure (if present) -->
+  
+  
+  <!-- Guiding Questions (if present) -->
+  
+  
+  <!-- Response Workspace - Display-Only (Phase 3B) -->
+  
+  
+  <!-- Timeline (if present) -->
+  
+  
+  <!-- Rubric (if present) -->
+  
+  
+  <!-- Submission Notes (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+      <div class="brief-task" 
+           data-item-index="1">
+        
+
+<div class="research-brief-task">
+  <!-- Task Header -->
+  <div class="brief-task-header">
+    
+      <div class="brief-task-number">Task </div>
+    
+    
+    
+      <h2 class="brief-task-title">Phase 2: Blueprint</h2>
+    
+    
+    <!-- Phase Indicator -->
+    
+      <span class="brief-phase 2">2</span>
+    
+  </div>
+  
+  <!-- Task Description/Content -->
+  
+    <div class="brief-task-content">
+      <p>Now that you have collected evidence from labs and readings, synthesize your findings 
+and connect the key ideas of this unit. This phase builds the foundation for your 
+final 3-part brief.</p>
+
+    </div>
+  
+  
+  <!-- Research Question (if present) -->
+  
+  
+  <!-- Task Objectives (if present) -->
+  
+  
+  <!-- Deliverables Section -->
+  
+  
+  <!-- Portfolio Requirements (if present) -->
+  
+  
+  <!-- Resources Section (if present) -->
+  
+  
+  <!-- Dataset/Figure (if present) -->
+  
+  
+  <!-- Guiding Questions (if present) -->
+  
+  
+  <!-- Response Workspace - Display-Only (Phase 3B) -->
+  
+  
+  <!-- Timeline (if present) -->
+  
+  
+  <!-- Rubric (if present) -->
+  
+  
+  <!-- Submission Notes (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+      <div class="brief-task" 
+           data-item-index="2">
+        
+
+<div class="research-brief-task">
+  <!-- Task Header -->
+  <div class="brief-task-header">
+    
+      <div class="brief-task-number">Task </div>
+    
+    
+    
+      <h2 class="brief-task-title">Phase 3: Reflection & Final Brief</h2>
+    
+    
+    <!-- Phase Indicator -->
+    
+      <span class="brief-phase 3">3</span>
+    
+  </div>
+  
+  <!-- Task Description/Content -->
+  
+    <div class="brief-task-content">
+      <p>The investigation is complete. Your task is to synthesize your findings into the 
+final <strong>Hazard Mitigation Brief</strong>, which consists of three professional 
+roles. After, you will reflect on your learning.</p>
+
+    </div>
+  
+  
+  <!-- Research Question (if present) -->
+  
+  
+  <!-- Task Objectives (if present) -->
+  
+  
+  <!-- Deliverables Section -->
+  
+  
+  <!-- Portfolio Requirements (if present) -->
+  
+  
+  <!-- Resources Section (if present) -->
+  
+  
+  <!-- Dataset/Figure (if present) -->
+  
+  
+  <!-- Guiding Questions (if present) -->
+  
+  
+  <!-- Response Workspace - Display-Only (Phase 3B) -->
+  
+  
+  <!-- Timeline (if present) -->
+  
+  
+  <!-- Rubric (if present) -->
+  
+  
+  <!-- Submission Notes (if present) -->
+  
+  
+</div>
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
   </div>
 
   <!-- Hidden Metadata Div -->
@@ -219,42 +675,17 @@
 
 </div>
 
-<!-- Core Activity Submission System -->
-<script src="/assets/js/activity-core.js?v=1761515983"></script>
-
-<!-- Load activity-specific JS module -->
-
-<script>
-  (function() {
-    const contentType = document.querySelector('#activity-metadata').dataset.contentType;
-    let modulePath = '';
-
-    switch(contentType) {
-      case 'problem_set':
-        modulePath = 'ps-form.js';
-        break;
-      case 'hexagon_lab':
-        modulePath = 'hl-form.js';
-        break;
-      case 'research_brief':
-         modulePath = 'rb-form.js';
-         break;
-      // Add other content types here
-    }
-
-    if (modulePath) {
-      const script = document.createElement('script');
-      script.src = `/assets/js/activity-modules/${modulePath}?v=1761515983`;
-      document.body.appendChild(script);
-      console.log(`[activity-focused.html] Loaded module: ${script.src}`);
-    }
-  })();
-</script>
-
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

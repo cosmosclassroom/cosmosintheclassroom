@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Lecture 2.1: The Language of Forces
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <link rel="stylesheet" href="/assets/css/lecture.css">
+
+<div class="lecture">
+  <header class="lecture-header">
+    <h1>Lecture 2.1: The Language of Forces
+</h1>
+    <div class="lecture-meta">
+      <p>SPHYS Unit 2</p>
+      
+    </div>
+  </header>
+  
+  <div class="lecture-content">
+    <!--
+marp: true
+theme: default
+size: 16:9
+paginate: true
+header: "Unit 2: Planetary Pulses"
+footer: "Lecture 2.1: The Language of Forces"
+math: katex
+-->
+
+<!-- --- between each item creates slide breaks -->
+
+<!-- _class: title -->
+<h1 id="lecture-21-the-language-of-forces"><strong>Lecture 2.1: The Language of Forces</strong></h1>
+<h2 id="unit-2-planetary-pulses">Unit 2: Planetary Pulses</h2>
+
+<hr />
+
+<!-- _class: mission -->
+<h2 id="mission-control">Mission Control</h2>
+
+<p><strong>Bridge Back:</strong>
+  In exploring the Afar Triangle rift, we asked: <em>What could cause such immense changes?</em> Today, we start building the physics toolkit needed to answer that. In Lab 2.1 (Plate Motion), you saw arrows (vectors) showing direction and speed. We’ll formalize what those arrows represent.</p>
+
+<p><strong>Thinking Lens:</strong> 
+  Scale, Proportion, and Quantity  - How do we <em>quantify</em> pushes and pulls, especially immense ones acting on continents, and why does <em>direction</em> matter as much as size?</p>
+
+<hr />
+
+<p><strong>Essential Questions:</strong></p>
+<ol>
+  <li>What is a force in physics?</li>
+  <li>How do vectors differ from scalars, and why are forces vectors?</li>
+  <li>How can we visually represent all the forces acting on an object using a Free-Body Diagram (FBD)?</li>
+</ol>
+
+<hr />
+
+<h2 id="what-is-a-force">What is a Force?</h2>
+
+<ul>
+  <li>A <strong>Force</strong> is simply a <strong>push</strong> or a <strong>pull</strong> exerted on an object <em>by another object</em>.</li>
+  <li>Forces cause <strong>changes in motion</strong> (acceleration). If an object’s velocity is changing, there <em>must</em> be a net force acting on it.</li>
+  <li>Forces are interactions. They always come in pairs (Newton’s 3rd Law, which we’ll visit later).</li>
+  <li>Unit of Force: <strong>Newton (N)</strong>. $1$ N $= 1$ kg$\cdot$m/s$^2$.</li>
+</ul>
+
+<hr />
+
+<h2 id="scalars-vs-vectors">Scalars vs. Vectors</h2>
+
+<ul>
+  <li><strong>Scalar:</strong> A quantity described <em>only</em> by its <strong>magnitude</strong> (size).
+    <ul>
+      <li>Examples: Mass (5 kg), Temperature (20 °C), Speed (30 m/s), Time (10 s).</li>
+    </ul>
+  </li>
+  <li><strong>Vector:</strong> A quantity described by <em>both</em> <strong>magnitude</strong> <em>and</em> <strong>direction</strong>.
+    <ul>
+      <li>Examples: Velocity (30 m/s, <em>East</em>), Acceleration (-9.8 m/s², <em>Down</em>), Displacement (5 m, <em>North</em>).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Why are Forces Vectors?</strong></p>
+<ul>
+  <li>The effect of a push or pull depends critically on its direction. A 10 N push East has a different effect than a 10 N push North.</li>
+  <li>We represent vectors graphically as <strong>arrows</strong>:
+    <ul>
+      <li>Length of arrow $\propto$ Magnitude</li>
+      <li>Arrowhead indicates Direction</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="representing-force-vectors">Representing Force Vectors</h2>
+
+<ul>
+  <li><strong>Graphically:</strong> Draw arrows. Head-to-tail addition finds the <em>resultant</em> (net) vector.</li>
+  <li><strong>Notation:</strong> We use an arrow symbol above the variable: $\vec{F}$. Magnitude is often written without the arrow: $F$.</li>
+  <li><strong>Components:</strong> In 1D, we use +/- signs (e.g., $\vec{F}_1 = +10$ N, $\vec{F}_2 = -5$ N).</li>
+  <li><strong>Net Force</strong> ($\vec{F}_{net}$ or $\Sigma \vec{F}$): The vector sum of <em>all</em> forces acting on an object.</li>
+</ul>
+
+<p><strong>Sign Convention:</strong></p>
+<ul>
+  <li><strong>Positive (+):</strong> North, East, Up</li>
+  <li><strong>Negative (-):</strong> South, West, Down</li>
+</ul>
+
+<hr />
+
+<h2 id="force-vector-notation">Force Vector Notation</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/force_arrows_directions.png" alt="bg right:65% contain" /></p>
+
+<p><strong>Key Points:</strong></p>
+<ul>
+  <li>Arrow length ∝ Magnitude</li>
+  <li>Arrow direction shows force direction</li>
+  <li>Multiple forces can act on one object</li>
+</ul>
+
+<hr />
+
+<h2 id="force-magnitude-comparison">Force Magnitude Comparison</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/force_magnitude_comparison.png" alt="bg right:65% contain" /></p>
+
+<p><strong>Key Points:</strong></p>
+<ul>
+  <li>Longer arrows = stronger forces</li>
+  <li>Same direction forces add together</li>
+  <li>Relative sizes matter for net effect</li>
+</ul>
+
+<hr />
+
+<h2 id="vector-addition-head-to-tail-method">Vector Addition: Head-to-Tail Method</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/vector-graphical-sum.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Key Steps:</strong></p>
+<ol>
+  <li>Place first vector tail at origin</li>
+  <li>Place second vector tail at first vector’s head</li>
+  <li>Net vector goes from origin to final head</li>
+</ol>
+
+<p><strong>Example:</strong> $\vec{F}_{net} = \vec{F}_1 + \vec{F}_2 = (+10) + (-5) = +5$ N</p>
+
+<hr />
+
+<h2 id="step-1-place-first-vector">Step 1: Place First Vector</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/head_to_tail_step1.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Start at origin</strong></p>
+<ul>
+  <li>Place tail of first vector at (0,0)</li>
+  <li>Arrow shows magnitude and direction</li>
+</ul>
+
+<hr />
+
+<h2 id="step-2-add-second-vector-head-to-tail">Step 2: Add Second Vector (Head-to-Tail)</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/head_to_tail_step2.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Connect the vectors</strong></p>
+<ul>
+  <li>Place tail of second vector at head of first</li>
+  <li>This is the “head-to-tail” method</li>
+</ul>
+
+<hr />
+
+<h2 id="step-3-draw-net-vector">Step 3: Draw Net Vector</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/head_to_tail_step3.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Find the resultant</strong></p>
+<ul>
+  <li>Draw arrow from origin to final head</li>
+  <li>This is your net force vector!</li>
+</ul>
+
+<hr />
+
+<h2 id="the-resultant-vector">The Resultant Vector</h2>
+
+<p><strong>Definition:</strong> The <strong>resultant vector</strong> (or <strong>net vector</strong>) is the single vector that represents the combined effect of all individual vectors acting on an object.</p>
+
+<ul>
+  <li><strong>Symbol:</strong> $\vec{F}<em>{net}$ or $\vec{F}</em>{resultant}$ or $\Sigma \vec{F}$</li>
+  <li><strong>Physical Meaning:</strong> The resultant force determines the object’s acceleration</li>
+  <li><strong>Key Principle:</strong> $\vec{F}_{resultant} = \vec{F}_1 + \vec{F}_2 + \vec{F}_3 + …$</li>
+</ul>
+
+<hr />
+
+<h2 id="adding-vectors-the-basics">Adding Vectors: The Basics</h2>
+
+<p><strong>Simple Case - Same Direction:</strong></p>
+<ul>
+  <li>When forces act in the same direction, simply add their magnitudes</li>
+  <li>Example: 3 N East + 2 N East = 5 N East</li>
+</ul>
+
+<p><strong>Opposite Directions:</strong></p>
+<ul>
+  <li>When forces oppose each other, add opposite sign</li>
+  <li>Example: 5 N East + 3 N West = 5 N - 3 N = 2 N East</li>
+</ul>
+
+<p><strong>The key:</strong> Use + and - signs to track direction!</p>
+
+<hr />
+
+<h2 id="1d-vector-addition-examples">1D Vector Addition Examples</h2>
+
+<p><strong>Example 1: Tectonic Forces Acting East</strong></p>
+<ul>
+  <li>Slab Pull: $+3.0 \times 10^{13}$ N (East)</li>
+  <li>Ridge Push: $+1.5 \times 10^{13}$ N (East)</li>
+  <li><strong>Result:</strong> $\vec{F}_{net} = (+3.0) + (+1.5) = +4.5 \times 10^{13}$ N East</li>
+</ul>
+
+<p><strong>Example 2: Opposing Forces</strong></p>
+<ul>
+  <li>Eastward Force: $+2.8 \times 10^{13}$ N</li>
+  <li>Westward Resistance: $-1.2 \times 10^{13}$ N</li>
+  <li><strong>Result:</strong> $\vec{F}_{net} = (+2.8) + (-1.2) = +1.6 \times 10^{13}$ N East</li>
+</ul>
+
+<hr />
+
+<h2 id="2d-vector-addition-when-forces-are-perpendicular">2D Vector Addition: When Forces are Perpendicular</h2>
+
+<p><strong>New Challenge:</strong> What if forces act at 90° angles?</p>
+
+<p><strong>Solution:</strong> Use the Pythagorean theorem!
+\(F_{net} = \sqrt{F_x^2 + F_y^2}\)</p>
+
+<p><strong>Example:</strong></p>
+<ul>
+  <li>East Force: $F_x = 3.0 \times 10^{12}$ N</li>
+  <li>North Force: $F_y = 4.0 \times 10^{12}$ N</li>
+  <li><strong>Result:</strong> $F_{net} = \sqrt{3^2 + 4^2} = \sqrt{25} = 5.0 \times 10^{12}$ N</li>
+</ul>
+
+<p><em>This is the famous 3-4-5 right triangle!</em></p>
+
+<hr />
+
+<h2 id="working-backwards-finding-unknown-forces">Working Backwards: Finding Unknown Forces</h2>
+
+<p><strong>Real-World Scenario:</strong> Scientists measure the net motion but need to find what’s causing it.</p>
+
+<p><strong>The Process:</strong></p>
+<ol>
+  <li>Measure the net force (from motion data)</li>
+  <li>Identify known forces (from models)</li>
+  <li>Calculate the unknown force</li>
+</ol>
+
+<p><strong>Equation:</strong> $\vec{F}<em>{unknown} = \vec{F}</em>{net} - \vec{F}_{known}$</p>
+
+<p><strong>Example:</strong> If net = -5.0 × 10¹³ N and known = +2.0 × 10¹³ N
+Then unknown = (-5.0) - (+2.0) = -7.0 × 10¹³ N</p>
+
+<hr />
+
+<h2 id="summary-key-formulae-for-vector-addition">Summary: Key Formulae for Vector Addition</h2>
+
+<p><strong>1D Forces (same or opposite directions):</strong>
+\(\vec{F}_{net} = \vec{F}_1 + \vec{F}_2\)</p>
+
+<p><strong>2D Perpendicular Forces:</strong>
+\(F_{net} = \sqrt{F_x^2 + F_y^2}\)</p>
+
+<p><strong>Finding Unknown Forces:</strong>
+\(\vec{F}_{unknown} = \vec{F}_{net} - \vec{F}_{known}\)</p>
+
+<hr />
+
+<h2 id="but-wait---how-do-we-identify-all-the-forces">But Wait - How Do We Identify All the Forces?</h2>
+
+<p><strong>The Challenge:</strong> Before we can add vectors, we need to know what forces are acting on an object.</p>
+
+<p><strong>The Solution:</strong> Free-Body Diagrams (FBDs)</p>
+
+<p><strong>Why FBDs Matter:</strong></p>
+<ul>
+  <li>They force us to think systematically about ALL forces</li>
+  <li>They provide a clear visual starting point for calculations</li>
+  <li>They prevent us from missing important forces</li>
+</ul>
+
+<hr />
+
+<h2 id="free-body-diagrams-fbds">Free-Body Diagrams (FBDs)</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/FBD-basic.png" alt="bg right:50% contain" /></p>
+
+<p><strong>Purpose:</strong> Isolate <em>one object</em> and visualize <em>all external forces</em> acting <strong>ON</strong> it.</p>
+
+<p><strong>Steps:</strong></p>
+
+<ol>
+  <li><strong>Isolate:</strong> Draw the object</li>
+  <li><strong>Identify Forces:</strong> Find all interactions</li>
+  <li><strong>Draw Arrows:</strong> From object center</li>
+  <li><strong>Label:</strong> Name each force vector</li>
+</ol>
+
+<hr />
+
+<h2 id="putting-it-all-together-from-concepts-to-tectonic-applications">Putting It All Together: From Concepts to Tectonic Applications</h2>
+
+<p><strong>The Big Picture:</strong></p>
+<ol>
+  <li><strong>Identify Forces</strong> → Use your knowledge of plate interactions</li>
+  <li><strong>Draw FBD</strong> → Isolate one plate, show all forces as arrows</li>
+  <li><strong>Apply Math</strong> → Use the vector addition rules you just learned</li>
+  <li><strong>Interpret Result</strong> → What does the net force tell us about plate motion?</li>
+</ol>
+
+<p><strong>Real Example:</strong> A subducting plate might experience slab pull (down), ridge push (horizontal), and mantle drag (opposing). Your job: find the net effect!</p>
+
+<hr />
+
+<h2 id="fbd-example-tectonic-plate-conceptual">FBD Example: Tectonic Plate (Conceptual)</h2>
+
+<p>Let’s think about a piece of oceanic crust being subducted:</p>
+
+<ol>
+  <li><strong>Object:</strong> The oceanic plate section. (Draw a rectangle).</li>
+  <li><strong>Forces:</strong>
+    <ul>
+      <li><strong>Gravity ($\vec{F}_g$ or Slab Pull):</strong> Pulling the dense plate down into the mantle (Down &amp; Right). <em>Strong force.</em></li>
+      <li><strong>Push from Ridge ($\vec{F}_{push}$):</strong> Force from the mid-ocean ridge (Right). <em>Moderate force.</em></li>
+      <li><strong>Mantle Drag ($\vec{F}_{drag}$):</strong> Resistance from the mantle below (Left). <em>Moderate force.</em></li>
+      <li><strong>Buoyancy ($\vec{F}_{B}$):</strong> Upward force from displaced mantle (Up &amp; Left). <em>Weaker force.</em></li>
+      <li><em>(Maybe friction with overriding plate, etc.)</em></li>
+    </ul>
+  </li>
+  <li><strong>Draw &amp; Label:</strong> 
+<strong>Key Idea:</strong> The <em>net force</em> (vector sum of all these arrows) determines how the plate <em>accelerates</em>.</li>
+</ol>
+
+<hr />
+
+<h2 id="fbd-example-tectonic-plate-visualization">FBD Example: Tectonic Plate (Visualization)</h2>
+
+<p><strong>Key Forces Acting on a Subducting Oceanic Plate:</strong></p>
+
+<ul>
+  <li><strong>Slab Pull (gravity):</strong> ~8.5 × 10¹² N - Down and Right</li>
+  <li><strong>Ridge Push:</strong> ~3.2 × 10¹² N - Right</li>
+  <li><strong>Mantle Drag (resistance):</strong> ~4.1 × 10¹² N - Left</li>
+  <li><strong>Buoyancy:</strong> ~2.8 × 10¹² N - Up and Left</li>
+</ul>
+
+<p>All forces shown would emanate from the plate center in a proper FBD.
+Arrow length would be proportional to force magnitude.</p>
+
+<hr />
+
+<!-- _class: check -->
+<h2 id="check-for-understanding">Check for Understanding</h2>
+
+<p><strong>Question:</strong> You push a book East across a table with a force of 5 N. Friction pushes West with 3 N. Draw the FBD (top-down view) and find the net force.</p>
+
+<p><strong>Solution:</strong></p>
+
+<ul>
+  <li>FBD shows $\vec{F}<em>{\mathrm{push}} = +5~\mathrm{N}$ (East arrow) and $\vec{F}</em>{\mathrm{friction}} = -3~\mathrm{N}$ (West arrow, shorter).</li>
+  <li>$\vec{F}_{\mathrm{net}} = (+5~\mathrm{N}) + (-3~\mathrm{N}) = +2~\mathrm{N}$ (East).</li>
+</ul>
+
+<p>Both force vectors emanate from the book’s center, with the push force being a longer arrow than the friction force.</p>
+
+<hr />
+
+<!-- _class: check -->
+<h2 id="check-for-understanding-2d-forces">Check for Understanding: 2D Forces</h2>
+
+<p><strong>Question:</strong> A tectonic plate experiences two perpendicular forces:</p>
+
+<ul>
+  <li>6 N North</li>
+  <li>8 N East</li>
+</ul>
+
+<p>What is the magnitude of the net force?</p>
+
+<p><strong>Solution:</strong></p>
+
+<ul>
+  <li>Use Pythagorean theorem: $F_{net} = \sqrt{F_x^2 + F_y^2}$</li>
+  <li>$F_{net} = \sqrt{(8)^2 + (6)^2} = \sqrt{64 + 36} = \sqrt{100} = 10$ N</li>
+  <li><strong>Answer:</strong> 10 N (Another classic 6-8-10 right triangle!)</li>
+</ul>
+
+<hr />
+
+<!-- _class: summary -->
+<h2 id="answering-our-essential-questions">Answering Our Essential Questions</h2>
+
+<ol>
+  <li><strong>What is a force?</strong>
+    <ul>
+      <li>A push or a pull exerted by one object on another, measured in Newtons (N).</li>
+    </ul>
+  </li>
+  <li><strong>Vectors vs. Scalars?</strong>
+    <ul>
+      <li>Scalars have magnitude only (mass, speed). Vectors have magnitude AND direction (force, velocity). Forces are vectors because direction matters.</li>
+    </ul>
+  </li>
+  <li><strong>What is an FBD?</strong>
+    <ul>
+      <li>A diagram showing <em>one object</em> and <em>all external forces</em> acting <em>on it</em>, represented as labeled arrows. It’s the starting point for analyzing forces.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<!-- _class: next -->
+<h2 id="summary--next-steps">Summary &amp; Next Steps</h2>
+
+<p><strong>What You Can Now Do:</strong></p>
+
+<ul>
+  <li>Define forces and identify them as vector quantities</li>
+  <li>Add vectors in 1D (same and opposite directions)</li>
+  <li>Apply Pythagorean theorem to perpendicular forces</li>
+  <li>Find unknown forces using algebra</li>
+  <li>Draw Free-Body Diagrams to identify all forces</li>
+</ul>
+
+<p><strong>Ready for Problem Set 2.1:</strong> You now have all the tools to tackle tectonic force problems!</p>
+
+<p><strong>Bridge Forward:</strong> In our next lecture, we’ll investigate the <em>source</em> of the forces moving Earth’s plates and explore Newton’s Laws.</p>
+
+<hr />
+
+<h2 id="vector-addition-same-direction">Vector Addition: Same Direction</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/vector_addition_same_direction.png" alt="bg right:70% contain" /></p>
+
+<p>When vectors point the same way, magnitudes add directly.</p>
+
+<hr />
+
+<h2 id="vector-addition-perpendicular">Vector Addition: Perpendicular</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/vector_addition_perpendicular.png" alt="bg right:70% contain" /></p>
+
+<p>When vectors are at 90°, use Pythagorean theorem.</p>
+
+<hr />
+
+<h2 id="balanced-forces">Balanced Forces</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/balanced_forces.png" alt="bg right:70% contain" /></p>
+
+<p>Equal and opposite forces cancel out (net force = 0).</p>
+
+<hr />
+
+<h2 id="net-force-result">Net Force Result</h2>
+
+<p><img src="E:/socrates/public/website/src/assets/images/sphys/Unit%202/convergent_net_force.png" alt="bg right:70% contain" /></p>
+
+<p>Multiple forces combine to create a single net effect.</p>
+
+  </div>
+</div>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

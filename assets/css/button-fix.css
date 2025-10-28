@@ -1,0 +1,23 @@
+/* Fix for Next button clickability issue */
+#next-item {
+    position: relative; 
+    z-index: 1001;
+    pointer-events: auto;
+    overflow: visible;
+}
+
+#next-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Ensure any content inside doesn't block clicks */
+#next-item span {
+    pointer-events: none;
+}

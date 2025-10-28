@@ -24,10 +24,32 @@
     padding: 0.75rem 1.5rem;
 }
 
-/* Ensure content doesn't get hidden behind fixed submission bar */
+/* Top sticky variation */
+.submission-bar.top-sticky {
+    position: fixed;
+    top: 0;
+    bottom: auto !important; /* Ensure bottom positioning is overridden */
+    left: 0;
+    right: 0;
+    border-top: none;
+    border-bottom: 2px solid var(--color-text-heading);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure content doesn't get hidden behind fixed submission bars */
 .flexbook-content,
 .activity-content-wrapper {
-    padding-bottom: 100px; /* Space for floating bar + navigation buttons */
+    padding-bottom: 100px; /* Space for bottom floating bar + navigation buttons */
+}
+
+/* When using the top sticky bar, add top padding to the container */
+.activity-container {
+    padding-top: 85px; /* Space for top sticky bar */
+}
+
+/* Activity content specific margin */
+.activity-content-container {
+    margin-top: 20px;
 }
 
 .activity-navigation {
@@ -38,9 +60,42 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+/* Title area in top bar */
+.submission-title-area {
+    flex: 1;
+    min-width: 250px;
+    margin-right: auto;
+}
+
+.submission-title-area h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-serif-headings);
+    color: var(--color-text-heading);
+    line-height: 1.2;
+}
+
+/* Secondary button style */
+.btn-secondary-inline {
+    padding: 0.5rem 1rem;
+    background: var(--color-background-subtle);
+    color: var(--color-text-body);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary-inline:hover {
+    background: #e0e0e0;
 }
 
 /* Inline Form Fields */

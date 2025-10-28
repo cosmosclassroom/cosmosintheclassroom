@@ -1,110 +1,229 @@
-/* ------------------------------------------------------------- */
-/* --- GLOBAL ACADEMIC TONE (Classic Library) - OCTOBER 2025 --- */
-/* --- Implement color palette, typography, and base layout    --- */
-/* ------------------------------------------------------------- */
+/**
+ * Main CSS Entry Point
+ * Consolidated stylesheet for all activity-focused content
+ * 
+ * ARCHITECTURE:
+ * Core → Components → Content Types
+ * 
+ * This file replaces the previous multiple CSS imports with a single
+ * organized import structure. All CSS files are loaded in dependency order.
+ * 
+ * Phase 3A Consolidation (October 2025)
+ */
 
-/* --- COLOR PALETTE --- */
-:root {
-  /* Light & Airy Foundation */
-  --color-background-main: #fdfdfa;    /* A soft, parchment off-white */
-  --color-background-subtle: #f1f1eb;  /* A slightly darker tone for blockquotes/code */
-  --color-text-body: #3d3d3c;          /* A very dark grey, softer than pure black */
+/* ========================================
+   CORE FOUNDATION
+   Base styles, reset, layout utilities
+   ======================================== */
 
-  /* Classic Library Accents */
-  --color-text-heading: #2c3e50;       /* A deep, slate blue for headings */
-  --color-accent-maroon: #800000;      /* A rich maroon for borders and special links */
-  --color-accent-gold: #c09553;        /* A muted gold for icons or secondary accents */
-  --color-button-primary: #34495e;     /* A slightly lighter slate for buttons */
+@import url('core/variables.css');
+@import url('core/reset.css');
+@import url('core/layout.css');
 
-  /* --- TYPOGRAPHY ROOT VARIABLES --- */
-  --font-serif-headings: 'Lora', serif;
-  --font-sans-body: 'Lato', sans-serif;
-  --font-mono-code: 'Source Code Pro', monospace;
+/* ========================================
+   REUSABLE COMPONENTS
+   Navigation, progress, figures, buttons, etc.
+   ======================================== */
+
+@import url('components/navigation.css');
+@import url('components/progress.css');
+@import url('components/figures.css');
+@import url('components/buttons.css');
+@import url('components/workspace-notice.css');
+@import url('components/callout.css');
+@import url('components/voices.css');
+@import url('components/focus-mode.css');
+
+/* ========================================
+   CONTENT-TYPE SPECIFIC STYLES
+   Problem sets, labs, flexbooks, research briefs
+   ======================================== */
+
+@import url('content-types/problem-set.css');
+@import url('content-types/hexagon-lab.css');
+@import url('content-types/flexbook.css');
+@import url('content-types/research-brief.css');
+
+/* ========================================
+   LEGACY COMPATIBILITY (TO BE REMOVED IN PHASE 3B)
+   These styles will be deprecated when assessment features removed
+   ======================================== */
+
+/* ========================================
+   ACTIVITY HEADER (STATIC CONTENT MODE)
+   ======================================== */
+
+.activity-header {
+  background: var(--color-background-alt);
+  border-bottom: 2px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-lg);
 }
 
-/* --- GLOBAL BASE STYLES --- */
-body {
-    background-color: var(--color-background-main); /* Apply parchment background globally */
-    font-family: var(--font-sans-body);
-    color: var(--color-text-body);
-}
-
-/* --- TYPOGRAPHY APPLICATION --- */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif-headings);
-  color: var(--color-text-heading);
-}
-
-body, p, li, a, button {
-  font-family: var(--font-sans-body);
-  color: var(--color-text-body);
-  line-height: 1.7;
-}
-
-code, pre {
-  font-family: var(--font-mono-code);
-  background-color: var(--color-background-subtle);
-  border-radius: 4px;
-  padding: 2px 6px;
-  color: var(--color-text-body);
-  white-space: pre-wrap;
-}
-
-/* --- LAYOUT & SPACING --- */
-.content-container {
-  max-width: 800px;
+.activity-header-content {
+  max-width: var(--max-width-content);
   margin: 0 auto;
-  padding: 2rem 4rem;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--color-background-subtle);
-  margin: 2rem 0;
+.activity-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  line-height: 1.3;
+  flex: 1;
+  min-width: 250px;
 }
 
-/* ------------------------------------------- */
-/* --- COMPONENT-SPECIFIC STYLING --- */
-/* ------------------------------------------- */
-
-/* A. Buttons & Interactive Elements */
-.btn-primary {
-  background-color: var(--color-button-primary);
-  color: var(--color-background-main) !important; 
-  border: 1px solid var(--color-text-heading);
-  padding: 10px 20px;
-  border-radius: 3px;
-  text-decoration: none;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.15);
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
+/* Badge styles */
+.badge {
   display: inline-block;
-  font-family: var(--font-sans-body);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-text-heading);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+.badge-problem-set {
+  background-color: var(--color-primary);
+  color: white;
 }
 
-/* B. Blockquotes & Emphasis (Scholarly Annotation) */
-blockquote {
-  border-left: 4px solid var(--color-accent-maroon);
-  background-color: var(--color-background-subtle);
-  padding: 1rem 1.5rem;
-  margin-left: 0;
-  font-style: italic;
-  color: var(--color-text-body);
+.badge-lab {
+  background-color: var(--color-info);
+  color: white;
 }
 
-/* C. Headings (Book-like Separator) */
-h1 {
-  border-bottom: 2px solid var(--color-text-heading);
-  padding-bottom: 0.5rem;
+.badge-research {
+  background-color: var(--color-warning);
+  color: var(--color-text);
 }
 
-h2 {
-  border-bottom: 1px solid var(--color-background-subtle);
-  padding-bottom: 0.5rem;
+/* ========================================
+   DEPRECATED SUBMISSION BAR STYLES
+   (Will be removed in Phase 4)
+   ======================================== */
+
+/* Submission bar styles (will be removed - no submissions in static site) */
+.submission-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: var(--color-background);
+  border-top: 2px solid var(--color-text);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0.75rem 1.5rem;
 }
+
+.submission-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.submission-title-area {
+  flex: 1;
+  min-width: 250px;
+  margin-right: auto;
+}
+
+.submission-title-area h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+/* Top sticky bar variant */
+.submission-bar.top-sticky {
+  position: fixed;
+  top: 0;
+  bottom: auto !important;
+  left: 0;
+  right: 0;
+  border-top: none;
+  border-bottom: 2px solid var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  padding: 0.5rem 1.5rem;
+  background: var(--color-background);
+}
+
+.submission-bar.top-sticky .submission-title-area h1 {
+  font-size: 1.35rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+/* Activity container spacing for fixed bars */
+.activity-container {
+  padding-top: 85px;
+}
+
+.flexbook-content,
+.activity-content-wrapper {
+  padding-bottom: 100px;
+}
+
+.activity-content-container {
+  margin-top: 20px;
+}
+
+/* ========================================
+   PRINT OPTIMIZATION
+   ======================================== */
+
+@media print {
+  /* Hide interactive elements */
+  .submission-bar,
+  .activity-navigation,
+  .unified-navigation-container {
+    display: none !important;
+  }
+
+  /* Show all content for printing */
+  .problem-container,
+  .lab-section,
+  .flexbook-item,
+  .brief-task {
+    display: block !important;
+  }
+
+  /* Optimize page breaks */
+  .problem-container,
+  .lab-section,
+  .flexbook-item,
+  .brief-task {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure readable text */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Remove shadows and transitions */
+  * {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+}
+

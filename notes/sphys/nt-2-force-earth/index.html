@@ -1,0 +1,151 @@
+<hr />
+<p>layout: notes
+title: “Unit P.2 Notes: Force and Earth”
+course: “sphys”
+unit: “2-earth-forces”
+summary: “Exploring gravitational forces, planetary motion, and the physics of Earth systems.”
+tags: [“gravity”, “forces”, “earth science”, “planetary motion”]
+difficulty_level: “apprentice”
+last_updated: “2025-10-17”</p>
+
+<h1>——————————————————————————</h1>
+<h1 id="jekyll-front-matter-required">JEKYLL FRONT MATTER (REQUIRED)</h1>
+<h1 id="-1">——————————————————————————</h1>
+<p>title: “Chapter 2.2: Applying the Kinematic Equations”
+layout: activity-focused
+date: 2025-10-17
+course: hphys
+content_type: flexbook
+unit: “2”
+unit_slug: “2-kinematics-1d”
+slug: “fb-2.2-applying-kinematics”
+resource_id: “fb-2.2-applying-kinematics”
+submission_enabled: true
+chapter: “2.2”
+chapter_number: “2.2”
+DCI: “PS2.A”
+Practice: [“Using Mathematics and Computational Thinking”, “Developing and Using Models”]
+CCC: [“Patterns”]
+tags: [“kinematics”, “equations_of_motion”, “freefall”, “problem-solving”]</p>
+
+<h1 id="-">—————————————————————————-</h1>
+<h1 id="chapter-metadata">CHAPTER METADATA</h1>
+<h1 id="--1">—————————————————————————-</h1>
+<p>chapter_title: “Applying the Kinematic Equations”
+learning_objectives:</p>
+<ul>
+  <li>“Apply the three primary kinematic equations to solve problems involving constant acceleration.”</li>
+  <li>“Recognize the special case of freefall motion near Earth’s surface.”</li>
+  <li>“Execute a systematic, algebraic problem-solving strategy for multi-step kinematics problems.”
+keyVocabulary:</li>
+  <li>term: “Freefall”
+definition: “Motion under the influence of gravity alone; acceleration is constant, $\vec{a} = -9.80 \, m/s^2$.”</li>
+  <li>term: “Apogee”
+definition: “The highest point reached by an object in projectile or freefall motion, where its instantaneous vertical velocity is zero.”</li>
+  <li>term: “Systematic Strategy”
+definition: “A structured process for solving physics problems: List knowns/unknowns, select formula, rearrange algebraically, then substitute with units.”
+keyFormulae:</li>
+  <li>formula: “\vec{v}_f = \vec{v}_i + \vec{a}t”
+description: “Final velocity from initial velocity, acceleration, and time.”</li>
+  <li>formula: “\Delta\vec{x} = \vec{v}_i t + \frac{1}{2}\vec{a}t^2”
+description: “Displacement from initial velocity, acceleration, and time.”</li>
+  <li>formula: “\vec{v}_f^2 = \vec{v}_i^2 + 2\vec{a}\Delta\vec{x}”
+description: “Final velocity from initial velocity, acceleration, and displacement (time-independent).”</li>
+</ul>
+
+<h1 id="--2">—————————————————————————-</h1>
+<h1 id="instructional-flow-sequential-content-blocks">INSTRUCTIONAL FLOW (Sequential Content Blocks)</h1>
+<h1 id="--3">—————————————————————————-</h1>
+<p>instructional_flow:
+  # ————————————————————————–
+  # SECTION 1: Introduction to Freefall
+  # ————————————————————————–</p>
+<ul>
+  <li>
+    <p>type: reading
+title: “The Universal Accelerator: Gravity”
+content: |
+  One of the most common applications of constant acceleration is <strong>freefall</strong>, which is the motion of any object subject only to the force of gravity. On Earth’s surface, this means the acceleration is always $\vec{a}_g = -9.80 \, m/s^2$. This is a constant value and its direction is always down.</p>
+
+    <p>Understanding this one value is the key to solving a massive class of kinematics problems, from a simple drop to the complex trajectory of a sounding rocket.</p>
+  </li>
+  <li>type: callout
+style: “tip”
+content: |
+  <strong>The Freefall Key:</strong> The term <em>freefall</em> or <em>dropped</em> means two things:
+    <ol>
+      <li><strong>Initial Velocity:</strong> $\vec{v}_i = 0 \, m/s$ (if dropped from rest).</li>
+      <li><strong>Acceleration:</strong> $\vec{a} = -9.80 \, m/s^2$ (always, near Earth).</li>
+    </ol>
+  </li>
+  <li>
+    <p>type: example
+title: “Example 1: A Simple Drop”
+content: |
+  <strong>Problem:</strong> A wrench is accidentally dropped from a platform. How fast is it traveling after $4.0 \, s$?</p>
+
+    <p><strong>Solution:</strong></p>
+    <ol>
+      <li><strong>Knowns/Unknowns:</strong> $\vec{v}_i = 0 \, m/s$, $\vec{a} = -9.8 \, m/s^2$, $t = 4.0 \, s$. Unknown is $\vec{v}_f$.</li>
+      <li><strong>Select Formula:</strong> Use the equation that excludes displacement: $\vec{v}_f = \vec{v}_i + \vec{a}t$.</li>
+      <li><strong>Substitute &amp; Solve:</strong>
+\(\\vec{v}_f = 0 + (-9.8 \\, m/s^2)(4.0 \\, s)\)
+\(\\vec{v}_f = -39 \\, m/s\)</li>
+    </ol>
+
+    <p><strong>Answer:</strong> The wrench is traveling at $39 \, m/s$ downwards.</p>
+  </li>
+  <li>
+    <p>type: reflection_prompt
+title: “Reflection: Freefall Basics”
+content: |
+  Take a moment to reflect on freefall motion:</p>
+
+    <ol>
+      <li>If you throw a ball straight up, what is its acceleration at its highest point (apogee)?</li>
+    </ol>
+
+    <p><strong>Note:</strong> Record your thoughts in your notebook or lab journal.</p>
+  </li>
+</ul>
+
+<p># ————————————————————————–
+  # SECTION 2: Multi-Step Problems
+  # ————————————————————————–</p>
+<ul>
+  <li>
+    <p>type: reading
+title: “Breaking Down Complex Motion”
+content: |
+  Many real-world motions, like a rocket launch, are <strong>multi-stage</strong> problems. The rocket’s motion when the engine is firing (high positive $\vec{a}$) is one stage, and its motion after the engine cuts out (freefall, $\vec{a} = -9.80 \, m/s^2$) is a second, distinct stage.</p>
+
+    <p>The <strong>final velocity</strong> of Stage 1 becomes the <strong>initial velocity</strong> of Stage 2. This linking step is critical for a systematic solution.</p>
+  </li>
+  <li>
+    <p>type: activity_prompt
+title: “Practice: Applying the Strategy”
+content: |
+  Now, apply this systematic, multi-step strategy to the problems in the accompanying problem set, which models the two-stage flight of a sounding rocket.
+button_text: “Open Problem Set 2.2”</p>
+  </li>
+  <li>
+    <p>type: reflection_prompt
+title: “Final Reflection: Problem Synthesis”
+content: |
+  Take a moment to synthesize multi-step problem solving:</p>
+
+    <ol>
+      <li>A problem describes a rocket’s motion in two stages: powered flight and freefall. Which quantity links these two stages, acting as the final value for the first stage and the initial value for the second?
+        <ul>
+          <li>Total Displacement</li>
+          <li>Time Duration</li>
+          <li>The Rocket’s Velocity</li>
+          <li>The Rocket’s Mass</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p><strong>Note:</strong> Record your thoughts in your notebook or lab journal.</p>
+  </li>
+</ul>
+

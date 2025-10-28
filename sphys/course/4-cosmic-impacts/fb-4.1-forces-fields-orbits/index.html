@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>Chapter 7: Forces, Fields, and Orbits
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<header class="site-header site-header-bar">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
+
+<!-- Force hide header (override header from default layout) -->
+<style>
+  header.site-header {
+    display: none !important;
+  }
+</style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Chapter 7: Forces, Fields, and Orbits
+</h1>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="flexbook"
+         data-course="sphys"
+         data-title="Chapter 7: Forces, Fields, and Orbits
+"
+         data-unit="4"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+  
+
+
+
+
+<!-- Navigation Component: Progress + Controls -->
+<div class="unified-navigation">
+  
+  <!-- Progress Indicator -->
+  <div class="nav-progress">
+    <div class="nav-progress-bar">
+      <div class="nav-progress-fill" id="nav-progress-fill" style="width: 0%;"></div>
+    </div>
+    <div class="nav-progress-text" id="nav-progress-text">
+      Section 1 of 9
+    </div>
+  </div>
+
+  <!-- Navigation Controls -->
+  <div class="nav-controls">
+    <!-- Previous Button -->
+    <button type="button" class="nav-button nav-prev" id="nav-prev" disabled>
+      <span class="nav-icon">←</span>
+      <span class="nav-text">Previous</span>
+    </button>
+
+    <!-- Jump-to Dropdown -->
+    <div class="nav-selector-container">
+      <label for="nav-selector" class="nav-selector-label">Jump to:</label>
+      <select id="nav-selector" class="nav-selector">
+        
+          <option value="0" selected>
+            Section 1
+            
+            
+              - Introduction: A Fireball fr...
+            
+          </option>
+        
+          <option value="1" >
+            Section 2
+            
+            
+              - Phenomenon: The Chelyabinsk...
+            
+          </option>
+        
+          <option value="2" >
+            Section 3
+            
+            
+              - Forecast: Initial Model of ...
+            
+          </option>
+        
+          <option value="3" >
+            Section 4
+            
+            
+              - The Rules of the Game: Newt...
+            
+          </option>
+        
+          <option value="4" >
+            Section 5
+            
+            
+          </option>
+        
+          <option value="5" >
+            Section 6
+            
+            
+              - Mass vs. Weight
+
+            
+          </option>
+        
+          <option value="6" >
+            Section 7
+            
+            
+              - Practice Problems: Universa...
+            
+          </option>
+        
+          <option value="7" >
+            Section 8
+            
+            
+              - Connecting Force to Motion:...
+            
+          </option>
+        
+          <option value="8" >
+            Section 9
+            
+            
+              - Reflection: Universal Laws
+
+            
+          </option>
+        
+      </select>
+    </div>
+
+    <!-- Next Button -->
+    <button type="button" class="nav-button nav-next" id="nav-next">
+      <span class="nav-text">Next</span>
+      <span class="nav-icon">→</span>
+    </button>
+  </div>
+
+</div>
+
+<script>
+/**
+ * Sequential Navigator - Unified navigation for all content types
+ * Initialized by navigation component, operates on container_class items
+ */
+(function() {
+  'use strict';
+  
+  const config = {
+    containerClass: 'flexbook-item',
+    itemType: 'Section',
+    itemCount: 9
+  };
+  
+  // Wait for DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavigator);
+  } else {
+    initNavigator();
+  }
+  
+  function initNavigator() {
+    console.log('[navigation] Initializing navigator for', config.itemType, '(' + config.itemCount + ' items)');
+    
+    // Get all navigable items
+    const items = document.querySelectorAll('.' + config.containerClass);
+    if (items.length === 0) {
+      console.warn('[navigation] No items found with class:', config.containerClass);
+      return;
+    }
+    
+    // Get navigation controls
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+    const selector = document.getElementById('nav-selector');
+    const progressFill = document.getElementById('nav-progress-fill');
+    const progressText = document.getElementById('nav-progress-text');
+    
+    if (!prevBtn || !nextBtn || !selector || !progressFill || !progressText) {
+      console.error('[navigation] Required elements not found');
+      return;
+    }
+    
+    // Navigation state
+    let currentIndex = 0;
+    
+    /**
+     * Show item at specified index
+     */
+    function showItem(index) {
+      // Validate index
+      if (index < 0 || index >= items.length) {
+        console.warn('[navigation] Invalid index:', index);
+        return;
+      }
+      
+      console.log('[navigation] Showing item', index, 'of', items.length);
+      
+      // Hide all items
+      items.forEach((item, i) => {
+        if (i === index) {
+          item.classList.add('active');
+          item.style.display = 'block';
+        } else {
+          item.classList.remove('active');
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update state
+      currentIndex = index;
+      
+      // Update button states
+      prevBtn.disabled = (index === 0);
+      nextBtn.disabled = (index === items.length - 1);
+      
+      // Update selector
+      selector.value = index;
+      
+      // Update progress bar
+      const progressPercent = items.length > 1 
+        ? (index / (items.length - 1)) * 100 
+        : 100;
+      progressFill.style.width = progressPercent + '%';
+      
+      // Update progress text
+      progressText.textContent = config.itemType + ' ' + (index + 1) + ' of ' + items.length;
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Trigger chart rendering for visible item (if charts present)
+      triggerChartRendering(items[index]);
+    }
+    
+    /**
+     * Trigger Chart.js rendering for deferred charts in visible item
+     */
+    function triggerChartRendering(container) {
+      const canvases = container.querySelectorAll('canvas[data-defer-render="true"]');
+      if (canvases.length === 0) return;
+      
+      console.log('[navigation] Triggering chart rendering for', canvases.length, 'charts');
+      
+      canvases.forEach(canvas => {
+        // Trigger re-check of visibility by dispatching custom event
+        const event = new CustomEvent('itemvisible', { bubbles: true });
+        canvas.dispatchEvent(event);
+      });
+    }
+    
+    /**
+     * Navigate to previous item
+     */
+    function navigatePrevious() {
+      if (currentIndex > 0) {
+        showItem(currentIndex - 1);
+      }
+    }
+    
+    /**
+     * Navigate to next item
+     */
+    function navigateNext() {
+      if (currentIndex < items.length - 1) {
+        showItem(currentIndex + 1);
+      }
+    }
+    
+    /**
+     * Jump to specific item from dropdown
+     */
+    function jumpToItem(index) {
+      const targetIndex = parseInt(index, 10);
+      if (!isNaN(targetIndex)) {
+        showItem(targetIndex);
+      }
+    }
+    
+    // Wire up event listeners
+    prevBtn.addEventListener('click', navigatePrevious);
+    nextBtn.addEventListener('click', navigateNext);
+    selector.addEventListener('change', function() {
+      jumpToItem(this.value);
+    });
+    
+    // Keyboard navigation (arrow keys)
+    document.addEventListener('keydown', function(e) {
+      // Only if not typing in input field
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigatePrevious();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateNext();
+      }
+    });
+    
+    // Initialize first item
+    showItem(0);
+    
+    console.log('[navigation] Navigation initialized successfully');
+  }
+})();
+</script>
+
+
+
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    
+    <!-- Flexbook Reference Sections (Key Vocabulary & Formulae) -->
+    
+    <div class="flexbook-references">
+      
+      <!-- Key Vocabulary Section -->
+      
+      <details class="flexbook-vocabulary collapsible-section">
+        <summary class="section-toggle">
+          <span class="toggle-icon">▶</span>
+          <span class="toggle-text">Key Vocabulary (5 terms)</span>
+        </summary>
+        <div class="section-content">
+          <div class="vocabulary-list">
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Gravitation</dt>
+              <dd class="vocabulary-definition"><p>A natural phenomenon by which all things with mass or energy are brought toward one another.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Newton's Law of Universal Gravitation</dt>
+              <dd class="vocabulary-definition"><p>The law stating that every particle attracts every other particle in the universe with a force which is directly proportional to the product of their masses and inversely proportional to the square of the distance between their centers.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Gravitational Constant (G)</dt>
+              <dd class="vocabulary-definition"><p>The proportionality constant in Newton’s Law of Gravitation, approximately $G = 6.67 \times 10^{-11} \, \text{N} \cdot \text{m}^2/\text{kg}^2$.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Inverse-Square Law</dt>
+              <dd class="vocabulary-definition"><p>A law stating that a specified physical quantity is inversely proportional to the square of the distance from the source of that quantity. Gravity follows this law.</p>
+</dd>
+            </div>
+            
+            <div class="vocabulary-item">
+              <dt class="vocabulary-term">Orbit</dt>
+              <dd class="vocabulary-definition"><p>The curved path of a celestial object or spacecraft around a star, planet, or moon, especially a periodic elliptical revolution.</p>
+</dd>
+            </div>
+            
+          </div>
+        </div>
+      </details>
+      
+      
+      <!-- Key Formulae Section -->
+      
+      <details class="flexbook-formulae collapsible-section">
+        <summary class="section-toggle">
+          <span class="toggle-icon">▶</span>
+          <span class="toggle-text">Key Formulae (2 formulas)</span>
+        </summary>
+        <div class="section-content">
+          <div class="formulae-list">
+            
+            <div class="formula-item">
+              <div class="formula-expression"><p>$F_g = G \frac{m_1 m_2}{r^2}$</p>
+</div>
+              
+              <div class="formula-description"><p><strong>Newton’s Law of Universal Gravitation</strong>: Calculates the gravitational force ($F_g$) between two masses ($m_1, m_2$) separated by a distance $r$ between their centers.</p>
+</div>
+              
+            </div>
+            
+            <div class="formula-item">
+              <div class="formula-expression"><p>$g = G \frac{M}{r^2}$</p>
+</div>
+              
+              <div class="formula-description"><p><strong>Gravitational Field Strength</strong>: Calculates the acceleration due to gravity ($g$) at a distance $r$ from the center of a celestial body of mass $M$. Derived from $F_g = mg$ and the universal law.</p>
+</div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </details>
+      
+      
+    </div>
+    
+    
+    <!-- Flexbook Instructional Flow Items -->
+    
+      <div class="flexbook-item active" 
+           data-item-index="0"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Introduction: A Fireball from the Void
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>Our focus shifts dramatically—from the familiar forces shaping Earth’s surface to the vast, silent emptiness of space, where an entirely different kind of drama unfolds. We leave behind the complexities of friction and materials to confront a single, dominant force: <strong>gravity</strong>. Our journey begins not with abstract theory, but with a terrifying, real-world event that shattered our sense of planetary safety. To understand the threat of cosmic impacts, we must first grasp the invisible rules that govern the paths of asteroids and planets – the universal law of attraction that orchestrates the cosmic dance.</p>
+
+<p><strong>Central Question:</strong> What invisible force governs the paths of asteroids through space, and how can we use its rules to predict and understand cosmic collisions?</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="1"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Phenomenon: The Chelyabinsk Meteor
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>On the morning of February 15, 2013, the skies over Chelyabinsk, Russia, exploded. A streak of light, momentarily brighter than the sun, blazed across the sky. It wasn’t military technology; it was an asteroid, roughly 20 meters wide, ending a journey millions of years long. Entering Earth’s atmosphere at over 19 km/s (nearly 60 times the speed of sound!), the intense pressure and heat caused it to detonate in a massive airburst about 30 km above the ground.</p>
+
+<p>The explosion released energy equivalent to roughly 500 kilotons of TNT (about 30 Hiroshima bombs). The resulting shockwave damaged over 7,000 buildings and injured more than 1,500 people, mostly from flying glass as they rushed to windows after seeing the flash. It was the largest object known to have hit Earth in over a century and, chillingly, it arrived completely undetected. This event serves as our <strong>anchoring phenomenon</strong>. What force guided this cosmic stone to its fiery end? How common are such events? And could we defend ourselves against a future, potentially larger, threat?</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="2"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Forecast: Initial Model of a Cosmic Impact
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Forecast: Initial Model of a Cosmic Impact
+
+    </div>
+    <div class="flexbook-activity-content">
+      <p>Let’s capture your initial ideas about the forces at play in the solar system. Open your <strong>Unit 4 Research Brief</strong> document and complete the “Forecast” prompts.</p>
+
+<p><strong>Guiding Questions:</strong></p>
+<ul>
+  <li>Summarize the key details of the Chelyabinsk event. What made it significant?</li>
+  <li>Based on what you currently know, draw your initial model of the solar system, including the Sun, Earth, an asteroid, and the forces acting between them.</li>
+</ul>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="3"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">The Rules of the Game: Newton's Universal Law of Gravitation
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>We experience gravity constantly – it holds us to the Earth, pulls dropped objects down. Isaac Newton’s revolutionary insight was realizing this force wasn’t just local; it was <strong>universal</strong>. The same force pulling an apple from a tree also reaches out to hold the Moon in its orbit around the Earth, and the Earth in its orbit around the Sun. Newton proposed that <strong>every object with mass attracts every other object with mass</strong> in the universe. The force guiding the Chelyabinsk meteor was the combined pull of the Sun, Earth, and other planets.</p>
+
+<p>Newton quantified this “universal tug” with a single equation:
+\(F_g = G \frac{m_1 m_2}{r^2}\)
+Let’s dissect this elegant law:</p>
+<ul>
+  <li><strong>$F_g$</strong> is the magnitude of the gravitational force between the two objects. It’s always attractive, pulling the objects toward each other.</li>
+  <li><strong>$m_1$ and $m_2$</strong> are the masses of the two objects (in kilograms). The force is directly proportional to the product of the masses – double one mass, and the force doubles.</li>
+  <li><strong>$r$</strong> is the distance between the <em>centers</em> of the two objects (in meters).</li>
+  <li><strong>$G$</strong> is the <strong>Universal Gravitational Constant</strong>. Its experimentally measured value is incredibly small: $G \approx 6.67 \times 10^{-11} \, \text{N} \cdot \text{m}^2/\text{kg}^2$. This tiny value explains why gravity is the weakest of the fundamental forces – you don’t feel a noticeable pull towards your textbook, even though you both have mass! Significant gravitational forces only arise when at least one of the objects (like a planet or star) is truly massive.</li>
+</ul>
+
+<p><strong>The Inverse-Square Relationship:</strong>
+The most critical feature for understanding orbits and cosmic distances is the $\frac{1}{r^2}$ term. The force of gravity weakens rapidly with distance, following an <strong>inverse-square law</strong>.</p>
+<ul>
+  <li>If you <strong>double</strong> the distance ($r \rightarrow 2r$), the force becomes $\frac{1}{(2r)^2} = \frac{1}{4r^2}$, meaning the force is <strong>four times weaker</strong>.</li>
+  <li>If you <strong>triple</strong> the distance ($r \rightarrow 3r$), the force becomes $\frac{1}{(3r)^2} = \frac{1}{9r^2}$, meaning the force is <strong>nine times weaker</strong>.
+This rapid fall-off explains why the Sun’s gravity dominates our solar system, while the pull from even the nearest stars is utterly negligible for planetary motion. [Image illustrating the inverse square law for gravity]</li>
+</ul>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="4"
+           data-item-type="callout">
+        
+
+<!-- Item Header -->
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-callout callout callout-info">
+    
+    <p><strong>Thinking Lens (Scale, Proportion, and Quantity):</strong> Consider your weight – the gravitational force between you and the Earth ($F_g = G \frac{M_{Earth} m_{you}}{R_{Earth}^2}$). Now consider the force between you and your textbook ($F_g = G \frac{m_{book} m_{you}}{r_{desk}^2}$). Why is your weight significant while the force from the book is imperceptible? Use the concepts of <strong>Scale</strong> (masses involved) and <strong>Quantity</strong> (value of G, distances) in your explanation. The immense mass of the Earth compensates for the distance $R_{Earth}$ and the small value of $G$.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="5"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Mass vs. Weight
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>It’s crucial to distinguish between <strong>mass</strong> and <strong>weight</strong>.</p>
+<ul>
+  <li><strong>Mass ($m$)</strong> is an intrinsic property of an object, measuring its inertia (resistance to acceleration) and the amount of “stuff” it contains. It’s measured in kilograms (kg) and is the <em>same everywhere</em> in the universe.</li>
+  <li><strong>Weight ($F_g$ or $W$)</strong> is the gravitational <em>force</em> exerted on an object by a celestial body (like a planet). It’s measured in Newtons (N) and <em>depends on the location</em>. Your mass is constant, but your weight on the Moon (where the gravitational field is weaker) is about 1/6th of your weight on Earth.</li>
+</ul>
+
+<p>Near Earth’s surface, we often use $F_g = mg$, where $g \approx 9.80 \, \text{m/s}^2$ is the gravitational field strength or acceleration due to gravity. This familiar ‘g’ is actually derived from the Universal Law: $mg = G \frac{M_{Earth} m}{R_{Earth}^2}$, so $g = G \frac{M_{Earth}}{R_{Earth}^2}$. This shows that ‘g’ depends on the mass and radius of the planet.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="6"
+           data-item-type="activity_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Practice Problems: Universal Gravitation
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-activity flexbook-activity-prompt">
+    <div class="flexbook-activity-title">
+      Practice Problems: Universal Gravitation
+
+    </div>
+    <div class="flexbook-activity-content">
+      <p>Now, let’s apply Newton’s powerful law. Open the Unit 4 Problem Sets document and complete <strong>Problem Set 4.1</strong>. You will calculate the gravitational forces between various celestial bodies and explore the consequences of the inverse-square relationship.</p>
+
+    </div>
+    
+    
+    
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="7"
+           data-item-type="reading">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Connecting Force to Motion: Orbits Ahead
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <div class="flexbook-reading">
+    <p>We’ve established the rule governing the <em>force</em> of gravity between any two objects in the cosmos. But how does this continuous pull result in the stable, predictable <em>paths</em> we call orbits? How does gravity dictate whether an asteroid remains in a harmless orbit, like Eros, or takes a collision course, like Chelyabinsk? Understanding the relationship between gravitational force and orbital motion is the next crucial step in analyzing cosmic impacts and even designing strategies for planetary defense. That intricate dance is the subject of our next explorations.</p>
+
+  </div>
+
+
+
+      </div>
+    
+      <div class="flexbook-item" 
+           data-item-index="8"
+           data-item-type="reflection_prompt">
+        
+
+<!-- Item Header -->
+
+  <h2 class="flexbook-item-title">Reflection: Universal Laws
+</h2>
+
+
+<!-- Content rendering based on type -->
+
+  <!-- Fallback: Generic content rendering -->
+  <div class="flexbook-content flexbook-generic">
+    
+      <p>Take a moment to consider the power of a “universal” law in science:</p>
+
+<ol>
+  <li>How did Newton’s realization that the force on the apple and the force on the Moon were the <em>same</em> change our understanding of the cosmos?</li>
+  <li>The inverse-square law appears in other areas of physics (like light intensity). Why do you think this mathematical relationship ($1/r^2$) appears in different natural phenomena?</li>
+</ol>
+
+<p><strong>Note:</strong> Record your thoughts in your notebook or lab journal.</p>
+
+    
+  </div>
+
+
+
+      </div>
+    
+    
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

@@ -12,6 +12,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
     
@@ -31,7 +41,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
     <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-  <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css"><!-- Add Mermaid library and initialize -->
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
@@ -45,6 +59,9 @@
     <link rel="stylesheet" href="/assets/css/components/callout.css">
     <link rel="stylesheet" href="/assets/css/components/voices.css">
     <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,8 +73,11 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbwo2zaqfcPVJnIWs9xwpWoNXm1uc1obl8nfoEMyPAmxkx1-YBzZ7pfj6Jkk_Dje2RRB8g/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
     </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
   </head>
   <body class="">
     
@@ -75,9 +95,9 @@
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
           <div id="courses-menu" class="dropdown-content" role="menu">
             <!-- AUTO-GENERATED NAV START -->
-            <a href="/hphys/">Honors Physics</a>
-            <a href="/sphys/">Standard Physics</a>
-            <a href="/natdis/">Natural Disasters</a>
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
             <!-- AUTO-GENERATED NAV END -->
           </div>
         </li>
@@ -93,188 +113,136 @@
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/problem-set.css">
+      <!-- 
+  This is the primary layout for all interactive activities.
+  It provides a clean, full-width container and loads all necessary
+  CSS and JavaScript for the activity submission system.
+-->
 
-<div class="answer-key solution-key">
-  <div class="warning-banner alert alert-danger d-flex align-items-center justify-content-between" role="alert">
-    <div>
-      <i class="fas fa-exclamation-triangle me-2"></i>
-      <strong>INSTRUCTOR ONLY — Worked Solutions Key</strong>
-    </div>
-    <span class="badge bg-danger">DO NOT DISTRIBUTE</span>
-  </div>
-  
-  <article class="answer-content">
-    <header class="mb-4">
-      <h1>Problem Set 1.1 Answer Key: Forces & Waves</h1>
-      <div class="d-flex gap-3 align-items-center">
-        
-          <span class="course-badge badge bg-primary">NATDIS</span>
-        
-        
-          <span class="text-muted">Unit 1</span>
-        
-      </div>
-    </header>
-    
-    
-    <div class="meta-info mb-4 p-3 bg-light rounded">
-      <div class="row">
-        <div class="col-md-6">
-          
-          
-          <p class="mb-1"><strong>Last Updated:</strong> October 26, 2025</p>
-          
-        </div>
-        <div class="col-md-6">
-          
-          <p class="mb-1"><strong>Topics:</strong> seismic-waves, magnitude-intensity, wave-calculations, answer-key</p>
-          
-        </div>
-      </div>
-    </div>
-    
-    
-    <div class="alert alert-info" role="alert">
-      <strong>📚 Pedagogical Note:</strong> When presenting solutions to students, show algebraic work step-by-step rather than distributing this document directly. Model the problem-solving process.
-    </div>
-    
-    <div class="content">
-      <h1 id="problem-set-11-answer-key-forces--waves">Problem Set 1.1 Answer Key: Forces &amp; Waves</h1>
-
-<p><strong>Instructor Notes:</strong> This answer key provides complete solutions with step-by-step calculations. Partial credit should be awarded for correct setup and reasoning even if final answers differ.</p>
-
-<hr />
-
-<h2 id="part-1-wave-calculations">Part 1: Wave Calculations</h2>
-
-<p><strong>1.</strong> A P-wave travels through rock at a constant speed of $6 \text{ km/s}$. It takes the wave $30 \text{ s}$ to reach a city.<br />
-<em>How far away was the earthquake’s epicenter?</em></p>
-
-<p><strong>Solution:</strong>
-\(\begin{align}
-\text{Given: } &amp;\text{Speed} = 6 \text{ km/s}, \text{Time} = 30 \text{ s} \\
-\text{Formula: } &amp;\text{Distance} = \text{Speed} \times \text{Time} \\
-\text{Calculate: } &amp;\text{Distance} = 6 \times 30 = 180 \\
-\text{Answer: } &amp;\text{Distance} = 180 \text{ km}
-\end{align}\)</p>
-
-<hr />
-
-<p><strong>2.</strong> A seismograph at a research station detects a P-wave arriving at <strong>10:05:15 AM</strong>. It detects the slower S-wave from the same earthquake arriving at <strong>10:05:40 AM</strong>.<br />
-<em>What is the S−P interval in seconds?</em></p>
-
-<p><strong>Solution:</strong>
-\(\begin{align}
-\text{Given: } &amp;t_{P-wave} = 10:05:15, t_{S-wave} = 10:05:40 \\
-\text{Formula: } &amp;\Delta t_{S-P} = t_{S-wave} - t_{P-wave} \\
-\text{Calculate: } &amp;\Delta t_{S-P} = 40 \text{ s} - 15 \text{ s} = 25 \text{ s} \\
-\text{Answer: } &amp;\text{S-P interval} = 25 \text{ seconds}
-\end{align}\)</p>
-
-<hr />
-
-<p><strong>3.</strong> An earthquake happens $1{,}200 \text{ km}$ away from a seismic station. The P-wave from the quake travels at a constant speed of $8 \text{ km/s}$.<br />
-<em>How long will it take for the P-wave to reach the station?</em></p>
-
-<p><strong>Solution:</strong>
-\(\begin{align}
-\text{Given: } &amp;\text{Distance} = 1{,}200 \text{ km}, \text{Speed} = 8 \text{ km/s} \\
-\text{Rearranged Formula: } &amp;\text{Time} = \frac{\text{Distance}}{\text{Speed}} \\
-\text{Calculate: } &amp;\text{Time} = \frac{1{,}200}{8} = 150 \\
-\text{Answer: } &amp;\text{Time} = 150 \text{ seconds (or 2 minutes 30 seconds)}
-\end{align}\)</p>
-
-<hr />
-
-<h2 id="part-2-applying-magnitude-and-intensity">Part 2: Applying Magnitude and Intensity</h2>
-
-<p><strong>4.</strong> Looking only at the <strong>Magnitude</strong> column, which earthquake was stronger (released more energy)?</p>
-
-<p><strong>Answer:</strong> Quake Beta (Magnitude 7.0)</p>
-
-<p><strong>Explanation:</strong> Magnitude measures the actual energy released at the earthquake’s source. The higher the magnitude number, the stronger the earthquake.</p>
-
-<hr />
-
-<p><strong>5.</strong> Based on the <strong>Observed Effects</strong>, which earthquake produced a higher <strong>Intensity</strong> where people lived?</p>
-
-<p><strong>Answer:</strong></p>
-<ul>
-  <li><strong>Quake Alpha Intensity:</strong> High (VII-VIII) - widespread damage, cracked walls, 500 buildings damaged</li>
-  <li><strong>Quake Beta Intensity:</strong> Low (I-II) - barely felt, no damage</li>
-  <li><strong>Quake Gamma Intensity:</strong> Moderate (IV-V) - felt by most, minor items fell, no structural damage</li>
-</ul>
-
-<p>Quake Alpha produced the highest intensity in populated areas despite having a lower magnitude.</p>
-
-<hr />
-
-<p><strong>6.</strong> In 2-3 sentences, use the specific terms <strong>Magnitude</strong>, <strong>Intensity</strong>, and <strong>Vulnerability</strong> to explain how a lower-magnitude earthquake can result in a higher-intensity experience for a community.</p>
-
-<p><strong>Sample Answer:</strong>
-<strong>Magnitude</strong> measures the energy released at the earthquake’s source, but <strong>Intensity</strong> measures the actual effects people experience. Quake Alpha had a lower magnitude than Quake Beta, but it occurred in a densely populated city with high <strong>vulnerability</strong> (many buildings and people). Quake Beta, despite its higher magnitude, occurred in a remote desert with low vulnerability (few people or structures), resulting in lower intensity effects where people actually lived.</p>
-
-<p><strong>Grading Notes:</strong></p>
-<ul>
-  <li>Award full credit for answers that correctly use all three terms</li>
-  <li>Look for understanding that location and population density affect intensity</li>
-  <li>Accept various reasonable explanations of the magnitude-intensity relationship</li>
-  <li>Partial credit for answers that address only two of the three required terms</li>
-</ul>
-
-    </div>
-  </article>
-</div>
-
+<!-- Force hide header (override header from default layout) -->
 <style>
-  .answer-key {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-  
-  .answer-key .warning-banner {
-    border-left: 5px solid #dc3545;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .answer-key .course-badge {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .answer-key .content {
-    line-height: 1.8;
-  }
-  
-  .answer-key .content h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    border-bottom: 2px solid #e9ecef;
-    padding-bottom: 0.5rem;
-  }
-  
-  .answer-key .content h3 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #495057;
-  }
-  
-  .answer-key code {
-    background-color: #f8f9fa;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.9em;
+  header.site-header {
+    display: none !important;
   }
 </style>
+
+<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<div class="activity-container" id="top">
+  
+  <!-- Activity Header (Static Content Mode) -->
+  <header class="activity-header">
+    <div class="activity-header-content">
+      <h1 class="activity-title">Problem Set 1.1 Answer Key: Forces & Waves</h1>
+      
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="activity-content-container">
+    
+    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
+    <div id="activity-metadata"
+         data-content-type="solution_key"
+         data-course="natdis"
+         data-title="Problem Set 1.1 Answer Key: Forces & Waves"
+         data-unit="1"
+         hidden></div>
+    
+    <div class="activity-content-wrapper">
+      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
+      <!-- Display-only content with workspace instructions for offline completion -->
+      
+
+<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+
+  
+
+
+
+
+
+<div class="workspace-notice workspace-notice-prominent">
+  <div class="workspace-notice-header">
+    <div class="workspace-notice-icon">
+      
+        📚
+      
+    </div>
+    <div class="workspace-notice-title">
+      
+        Learning Workspace
+      
+    </div>
+  </div>
+  
+  <div class="workspace-notice-content">
+    
+      
+        <p><strong>Complete this activity according to your teacher's instructions.</strong></p>
+        <p>Use your notebook, portfolio, or other materials as directed by your teacher.</p>
+      
+    
+  </div>
+  
+  
+</div>
+
+
+<!-- Content Type Detection & Data Array Selection -->
+
+
+
+
+
+
+<!-- Navigation Component (Top placement) -->
+
+
+<!-- Sequential Content Container -->
+<div class="sequential-content" id="sequential-content-container">
+  
+  
+    <!-- Fallback: No sequential content detected -->
+    <div class="content-error">
+      <p>No content structure detected for type: <code>solution_key</code></p>
+      <p>Expected data arrays:</p>
+      <ul>
+        <li><strong>problem_set:</strong> page.problems</li>
+        <li><strong>hexagon_lab:</strong> page.investigations</li>
+        <li><strong>flexbook:</strong> page.instructional_flow</li>
+        <li><strong>research_brief:</strong> page.investigation_tasks</li>
+      </ul>
+    </div>
+  
+  
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Hidden Metadata Div -->
+  <div id="metadata-container" hidden>
+    <div id="submission-status" class="submission-status" hidden></div>
+  </div>
+
+</div>
+
+<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
+<!-- Navigation and display functionality only - no assessment/submission features -->
+<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
     <script src="/assets/js/navigation.js"></script>
+    
   </body>
 </html>

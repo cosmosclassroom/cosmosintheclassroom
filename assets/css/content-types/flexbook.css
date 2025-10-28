@@ -1,0 +1,506 @@
+/**
+ * Flexbook Content-Type Styles
+ * Content-type-specific styles only (navigation/progress/buttons in components/)
+ * Consolidates: flexbook-typography.css + flexbook-specific styles
+ */
+
+/* ========================================
+   FLEXBOOK ITEM CONTAINER
+   ======================================== */
+
+.flexbook-item {
+  margin-bottom: var(--spacing-xxl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.flexbook-item:last-child {
+  border-bottom: none;
+}
+
+/* Initially hide all items (JS shows active one) */
+.flexbook-item:not(.active) {
+  display: none;
+}
+
+/* ========================================
+   READING TYPOGRAPHY (Enhanced readability)
+   ======================================== */
+
+.flexbook-reading {
+  max-width: var(--max-width-text);
+  margin: 0 auto var(--spacing-lg);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text);
+}
+
+.flexbook-reading p {
+  margin-bottom: var(--spacing-md);
+  text-indent: 0;
+}
+
+.flexbook-reading p:first-of-type::first-letter {
+  font-size: 3em;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  float: left;
+  margin-right: 0.1em;
+  margin-top: 0.05em;
+  color: var(--color-primary);
+}
+
+/* Subheadings within reading */
+.flexbook-reading h4 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.flexbook-reading h5 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Lists in reading */
+.flexbook-reading ul,
+.flexbook-reading ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-lg);
+}
+
+.flexbook-reading li {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Block quotes in reading */
+.flexbook-reading blockquote {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-background-alt);
+  font-style: italic;
+}
+
+/* Emphasis in reading */
+.flexbook-reading em {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.flexbook-reading strong {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+/* ========================================
+   ACTIVITY PROMPTS
+   ======================================== */
+
+.flexbook-activity {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
+  border: 2px solid #ffd700;
+  border-left-width: 6px;
+  border-radius: var(--radius-md);
+}
+
+.flexbook-activity-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.flexbook-activity-title::before {
+  content: '✏️';
+  font-size: 1.2em;
+}
+
+.flexbook-activity-content {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   CHECKPOINT QUESTIONS
+   ======================================== */
+
+.flexbook-checkpoint {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: var(--radius-sm);
+}
+
+.flexbook-checkpoint-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: #1976d2;
+  margin-bottom: var(--spacing-sm);
+}
+
+.flexbook-checkpoint-question {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   EMBEDDED TABLES
+   ======================================== */
+
+.flexbook-table-container {
+  margin: var(--spacing-lg) 0;
+  overflow-x: auto;
+}
+
+.flexbook-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.flexbook-table th {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  border: 1px solid var(--color-primary-dark);
+}
+
+.flexbook-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+}
+
+.flexbook-table tr:nth-child(even) {
+  background-color: var(--color-background-alt);
+}
+
+/* ========================================
+   EMBEDDED VIDEOS
+   ======================================== */
+
+.flexbook-video {
+  margin: var(--spacing-lg) 0;
+}
+
+.flexbook-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.flexbook-video-container iframe,
+.flexbook-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.flexbook-video-caption {
+  margin-top: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ========================================
+   KEY TAKEAWAYS SECTION
+   ======================================== */
+
+.flexbook-takeaways {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-lg);
+  background-color: #f0f4f8;
+  border: 2px solid #4a90e2;
+  border-radius: var(--radius-md);
+}
+
+.flexbook-takeaways-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #4a90e2;
+  margin-bottom: var(--spacing-md);
+}
+
+.flexbook-takeaways ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.flexbook-takeaways li {
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+}
+
+.flexbook-takeaways li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4a90e2;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.2em;
+}
+
+/* ========================================
+   EXAMPLE BOXES
+   ======================================== */
+
+.flexbook-example {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: #f5f5f5;
+  border-left: 4px solid #6c757d;
+  border-radius: var(--radius-sm);
+}
+
+.flexbook-example-title {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.flexbook-example-content {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+/* ========================================
+   DEFINITION BOXES
+   ======================================== */
+
+.flexbook-definition {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: #fff3e0;
+  border: 2px solid #ff9800;
+  border-radius: var(--radius-md);
+}
+
+.flexbook-definition-term {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: #e65100;
+  margin-bottom: var(--spacing-xs);
+}
+
+.flexbook-definition-text {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .flexbook-reading {
+    font-size: var(--font-size-sm);
+  }
+
+  .flexbook-reading p:first-of-type::first-letter {
+    font-size: 2em;
+  }
+
+  .flexbook-activity {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .flexbook-reading {
+    max-width: 100%;
+  }
+
+  .flexbook-table {
+    font-size: var(--font-size-xs);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .flexbook-item {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+
+  .flexbook-activity,
+  .flexbook-checkpoint {
+    border: 2px solid #000;
+    background: white !important;
+  }
+
+  .flexbook-video-container {
+    display: none;
+  }
+
+  .flexbook-reading p:first-of-type::first-letter {
+    color: #000;
+  }
+}
+
+/* ========================================
+   FLEXBOOK REFERENCE SECTIONS (Key Vocabulary & Formulae)
+   ======================================== */
+
+.flexbook-references {
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--spacing-lg);
+}
+
+.flexbook-vocabulary,
+.flexbook-formulae {
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.flexbook-vocabulary:last-child,
+.flexbook-formulae:last-child {
+  margin-bottom: 0;
+}
+
+/* Details/Summary styling for collapsible sections */
+.flexbook-vocabulary summary,
+.flexbook-formulae summary {
+  padding: var(--spacing-md);
+  background: var(--color-background-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-heading);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+.flexbook-vocabulary summary:hover,
+.flexbook-formulae summary:hover {
+  background: var(--color-background-hover);
+}
+
+.flexbook-vocabulary[open] summary,
+.flexbook-formulae[open] summary {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+/* Toggle icon animation */
+.toggle-icon {
+  transition: transform 0.2s ease;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.flexbook-vocabulary[open] .toggle-icon,
+.flexbook-formulae[open] .toggle-icon {
+  transform: rotate(90deg);
+}
+
+/* Content area */
+.section-content {
+  padding: var(--spacing-md);
+}
+
+/* Vocabulary list styling */
+.vocabulary-list {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.vocabulary-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-sm);
+  align-items: start;
+}
+
+.vocabulary-term {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  min-width: max-content;
+  margin: 0;
+}
+
+.vocabulary-definition {
+  margin: 0;
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+}
+
+.vocabulary-definition p {
+  margin: 0;
+}
+
+/* Formulae list styling */
+.formulae-list {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.formula-item {
+  border-left: 3px solid var(--color-primary);
+  padding-left: var(--spacing-md);
+}
+
+.formula-expression {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-heading);
+}
+
+.formula-expression p {
+  margin: 0;
+}
+
+.formula-description {
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.formula-description p {
+  margin: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .vocabulary-item {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+  
+  .vocabulary-term {
+    font-size: var(--font-size-sm);
+  }
+}
