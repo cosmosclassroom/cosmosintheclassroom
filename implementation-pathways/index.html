@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title> | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<style>
+.site-header {
+  background: var(--primary-color, #2c3e50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .site-nav ul {
+    gap: 1rem;
+  }
+}
+</style>
+
+<header class="site-header">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="/classroom/">Learning Portal</a></li>
+        <li><a href="/services/">District Services</a></li>
+        <li><a href="/about/">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <p>Our Implementation Pathways</p>
+
+<p>We don’t sell software; we build partnerships. Our mission is to mitigate teacher burnout by transferring digital tedium from human experts to AI collaborators.</p>
+
+<p>To do this, we partner with you to “read” the unique “DNA” of your curriculum and build a custom-trained Gem that amplAssists your team’s expertise. The process is collaborative, privacy-first, and designed to deliver tangible results quickly.</p>
+
+<p>Our engagements are structured as focused, collaborative pathways that begin with a single course or department.</p>
+
+<p>Pathway 1: The Pilot Pathway (Single Course Focus)</p>
+
+<p>The goal of this pathway is to prove the model, deliver immediate relief to a single team, and map the “DNA” of one core course.</p>
+
+<p>This is the perfect starting point for a department head, a PLC, or an administrator looking to run a controlled, high-impact pilot. We will focus all of our efforts on one specific course (e.g., 9th Grade ELA, Biology, 5th Grade Math) to demonstrate measurable results.</p>
+
+<p>How We Collaborate:</p>
+
+<p>Curriculum DNA Sequencing: We “read” the entire GVC, standards, and resource library for your chosen course.</p>
+
+<p>Gap &amp; Connection Analysis: Your curriculum team receives a full “DNA map” of the course, identifying narrative gaps, redundancies, and alignment breaks within that course.</p>
+
+<p>Custom Gem Co-Creation: We collaborate with your team to build two custom Gems tailored to their biggest pain points:</p>
+
+<p>The Teacher’s Time-Saver Gem: A tool for your teachers to instantly generate GVC-compliant, differentiated materials, assessments, and activities based on their pedagogical prompts.</p>
+
+<p>The Curriculum Analyzer Gem: A tool for your curriculum leads to ask strategic questions of the course content, test new resource alignments, and check PLC-driven experiments for GVC compliance.</p>
+
+<p>Targeted PLC Training: We provide hands-on workshops for the target PLC to ensure they are partners in the process, not subjects of it.</p>
+
+<p>The Outcome: You get a complete “DNA” report for one course, a set of powerful tools that your teachers love, and a clear, data-driven case study for district-wide expansion.</p>
+
+<p>Pathway 2: The Strategic Pathway (Full Department Focus)</p>
+
+<p>The goal of this pathway is to create a fully aligned, coherent, and interconnected narrative across an entire department (e.g., 6-12 ELA or K-5 Math).</p>
+
+<p>This pathway is for curriculum leaders and administrators ready to move beyond a single course and solve systemic issues like vertical alignment and inconsistent instructional voice across a full department.</p>
+
+<p>How We Collaborate:</p>
+
+<p>Vertical DNA Sequencing: We “read” the GVCs, standards, and all course materials for the entire department.</p>
+
+<p>Vertical &amp; Horizontal Gap Analysis: Your team receives a comprehensive “DNA map” showing the flow of skills and content from one grade level to the next. You can finally see where the narrative breaks down between 8th and 9th grade.</p>
+
+<p>A Suite of Collaborative Gems: We build a custom suite of Gems to serve the department’s interconnected needs:</p>
+
+<p>Teacher-facing Gems (as in Pathway 1) for every course in the department.</p>
+
+<p>The Vertical Alignment Gem: A tool for curriculum teams to ask questions like, “Show me how ‘argumentative writing’ is taught, scaffolded, and assessed from 6th to 12th grade.”</p>
+
+<p>The Admin Initiative Gem: A tool for administrators to analyze how a new strategic initiative (e.g., “Scientific Modeling”) can be woven into every course in the science department.</p>
+
+<p>Revision Cycle Support: We act as strategic partners during your department’s curriculum revision cycle, using the Gem to accelerate the drafting and alignment process.</p>
+
+<p>The Outcome: A fully unified department where every teacher is supported. You eliminate systemic redundancies, ensure clear vertical scaffolding, and create a single, powerful learning story for all students in that subject.</p>
+
+<p>Pathway 3: The Ecosystem Pathway (District-Wide Partnership)</p>
+
+<p>The goal of this pathway is to build a long-term, sustainable system for instructional excellence and burnout mitigation across your core academic departments.</p>
+
+<p>This is a multi-year strategic partnership for districts who want to make this collaborative, privacy-first AI model a core part of their operational DNA.</p>
+
+<p>How We Collaborate:</p>
+
+<p>Multi-Department DNA Sequencing: We “read” the curriculum DNA for all core academic departments (Math, ELA, Science, Social Studies), creating an interconnected map of your entire instructional ecosystem.</p>
+
+<p>Unlimited Gem Customization: We build and maintain a full library of custom Gems for all stakeholders, including potential tools for SpEd, ELL, or CTE departments.</p>
+
+<p>“Train the Trainer” Model: We provide dedicated training and support for your district-level curriculum leaders, empowering them to lead the ongoing evolution of the curriculum.</p>
+
+<p>Strategic Interoperability: We consult on how to safely connect the Gem’s outputs to your existing systems (like an LMS or resource portal) to streamline workflows, all while adhering to our strict no data storage policy.</p>
+
+<p>The Outcome: A district culture that has systematically freed its best teachers from digital tedium. You achieve unparalleled curriculum fidelity, consistency, and innovation, all while championing teacher well-being.</p>
+
+<p>Ready to Start the Conversation?</p>
+
+<p>Our work is deeply collaborative and begins with understanding your unique curriculum. Let’s schedule a 30-minute strategy session to discuss which pathway is right for you.</p>
+
+<p>[Button: Schedule a Strategy Session]</p>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

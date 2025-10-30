@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Problem Set 2.2 Key: Kinematics with Constant Acceleration | Cosmos in the Classroom</title>
+    <title>Solution Key: Problem Set 2.2 - Kinematics with Constant Acceleration
+ | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,24 +85,75 @@
     <header>
       <div class="site-header">
         <!---->
-<header class="site-header site-header-bar">
+<style>
+.site-header {
+  background: var(--primary-color, #2c3e50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .site-nav ul {
+    gap: 1rem;
+  }
+}
+</style>
+
+<header class="site-header">
   <div class="header-content">
     <div>
       <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/honors_physics/">Honors Physics</a>
-            <a href="/standard_physics/">Standard Physics</a>
-            <a href="/natural_disasters/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
+        <li><a href="/classroom/">Learning Portal</a></li>
+        <li><a href="/services/">District Services</a></li>
+        <li><a href="/about/">About Us</a></li>
       </ul>
     </nav>
   </div>
@@ -113,128 +165,341 @@
     
   <div class="markdown-body">
     
-      <!-- 
-  This is the primary layout for all interactive activities.
-  It provides a clean, full-width container and loads all necessary
-  CSS and JavaScript for the activity submission system.
--->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/problem-set.css">
 
-<!-- Force hide header (override header from default layout) -->
+<div class="answer-key solution-key">
+  <div class="warning-banner alert alert-danger d-flex align-items-center justify-content-between" role="alert">
+    <div>
+      <i class="fas fa-exclamation-triangle me-2"></i>
+      <strong>INSTRUCTOR ONLY — Worked Solutions Key</strong>
+    </div>
+    <span class="badge bg-danger">DO NOT DISTRIBUTE</span>
+  </div>
+  
+  <article class="answer-content">
+    <header class="mb-4">
+      <h1>Solution Key: Problem Set 2.2 - Kinematics with Constant Acceleration
+</h1>
+      <div class="d-flex gap-3 align-items-center">
+        
+          <span class="course-badge badge bg-primary">HPHYS</span>
+        
+        
+          <span class="text-muted">Unit 2</span>
+        
+      </div>
+    </header>
+    
+    
+    <div class="meta-info mb-4 p-3 bg-light rounded">
+      <div class="row">
+        <div class="col-md-6">
+          
+          
+          <p class="mb-1"><strong>Last Updated:</strong> October 29, 2025</p>
+          
+        </div>
+        <div class="col-md-6">
+          
+          <p class="mb-1"><strong>Topics:</strong> kinematics, solutions, constant-acceleration, solution-key, teacher-resource</p>
+          
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="alert alert-info" role="alert">
+      <strong>📚 Pedagogical Note:</strong> When presenting solutions to students, show algebraic work step-by-step rather than distributing this document directly. Model the problem-solving process.
+    </div>
+    
+    <div class="content">
+      <blockquote>
+  <p>Instructor Use Only – Do not distribute directly. Show algebra first when presenting solutions to students.</p>
+</blockquote>
+
+<p>Conventions: Upward (or stated positive) direction taken as + unless noted. $g=9.80\ \text{m/s}^2$.</p>
+
+<hr />
+
+<h3 id="part-a">Part A</h3>
+
+<ol>
+  <li>
+    <p>$108.0\ \text{km/h}\rightarrow \text{m/s}$<br />
+$108.0\ \text{km/h}\left(\dfrac{1000\ \text{m}}{1\ \text{km}}\right)\left(\dfrac{1\ \text{h}}{3600\ \text{s}}\right)=30.0\ \text{m/s}$ (3 sig figs)</p>
+  </li>
+  <li>
+    <p>Sprinter: $v_i=0,\ v_f=11.2,\ t=4.00$ s<br />
+(a) Use $v_f=v_i+at$ → $a=\dfrac{v_f-v_i}{t}=\dfrac{11.2}{4.00}=2.80\ \text{m/s}^2$</p>
+  </li>
+  <li>
+    <p>Bicycle: $v_i=6.50,\ a=1.20,\ t=3.00$<br />
+(a) $v_f=v_i+at=6.50+1.20(3.00)=10.1\ \text{m/s}$<br />
+(b-i) $\Delta x=v_i t+\tfrac12 a t^2=6.50(3.00)+0.5(1.20)(9.00)=19.5+5.40=24.9\ \text{m}$<br />
+(b-ii) $v_{avg}=\dfrac{v_i+v_f}{2}=\dfrac{6.50+10.1}{2}=8.30\ \text{m/s}$ → $\Delta x=v_{avg}t=8.30(3.00)=24.9\ \text{m}$ (agreement)</p>
+  </li>
+  <li>
+    <p>Drop: $v_i=0,\ \Delta x=-2.00\ \text{m},\ a=-9.80$<br />
+(a) Use time‑independent: $v_f^2=v_i^2+2a\Delta x$<br />
+(b) $v_f=\sqrt{2(-9.80)(-2.00)}=\sqrt{39.2}=6.26\ \text{m/s}$ downward → $v_f=-6.26\ \text{m/s}$ (sign shows direction)</p>
+  </li>
+  <li>
+    <p>Solve $\Delta x=v_i t+\tfrac12 a t^2$ for $t$:<br />
+$\tfrac12 a t^2+v_i t-\Delta x=0$ → $t=\dfrac{-v_i\pm\sqrt{v_i^2+2a\Delta x}}{a}$<br />
+Physical root: choose sign giving $t&gt;0$ (depends on sign of $a$ and $v_i$).</p>
+  </li>
+  <li>
+    <p>Cart: $v_i=0,\ a=0.845,\ t=2.60$<br />
+$\Delta x=\tfrac12 a t^2=0.5(0.845)(2.60^2)=0.4225(6.76)=2.86\ \text{m}$ (3 sig figs)</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="part-b">Part B</h3>
+
+<ol>
+  <li>
+    <p>At peak: $v=0$ but acceleration remains constant $-9.80\ \text{m/s}^2$ because gravity acts continuously; zero velocity does not imply zero net force.</p>
+  </li>
+  <li>
+    <p>Heights 5.0 m vs 20.0 m (drop).<br />
+Impact speed from $v_f=\sqrt{2g h}$. Larger $h$ → larger $v_f$; thus 20.0 m object faster.<br />
+Average acceleration both: $-9.80\ \text{m/s}^2$ (same).</p>
+  </li>
+  <li>
+    <p>Graphs qualitative:<br />
+(a) Throw up: positive $v$ decreasing linearly → crosses zero at top → negative $v$ of equal magnitude on descent (straight line slope $-9.80$).<br />
+(b) Drop: starts at $v=0$ then linear negative slope $-9.80$. Difference: (a) has positive segment before zero crossing.</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="part-c">Part C</h3>
+
+<ol>
+  <li>
+    <p>Drone: Take up positive. $v_i=-3.00,\ a=+2.00,\ t=1.80$<br />
+(a) $v_f=v_i+at=-3.00+2.00(1.80)=0.60\ \text{m/s}$ (now slight upward)<br />
+(b) $\Delta x=v_i t+\tfrac12 a t^2= (-3.00)(1.80)+0.5(2.00)(1.80^2)= -5.40+ (1.00)(3.24)= -2.16\ \text{m}$ (net still downward)</p>
+  </li>
+  <li>
+    <p>Rock: $v_i=+18.0,\ y_0=45.0\ \text{m},\ a=-9.80$<br />
+(a) $t_{up}= \dfrac{-v_i}{a}=\dfrac{-18.0}{-9.80}=1.84\ \text{s}$<br />
+(b) $\Delta y_{up}=v_i t_{up}+\tfrac12 a t_{up}^2=18.0(1.84)+0.5(-9.80)(1.84^2)=33.1-16.6=16.5\ \text{m}$ → $y_{max}=45.0+16.5=61.5\ \text{m}$<br />
+(c) Descent distance: $61.5\ \text{m}$ to ground → solve $0=61.5+0\cdot t+\tfrac12(-9.80)t^2$ → $t_{down}=\sqrt{\dfrac{2(61.5)}{9.80}}=\sqrt{12.6}=3.55\ \text{s}$<br />
+    Total time $t_{total}=1.84+3.55=5.39\ \text{s}$<br />
+(d) Impact speed: $v_f= v_i + a t_{total}=18.0 + (-9.80)(5.39)=18.0-52.8=-34.8\ \text{m/s}$ (speed 34.8 m/s downward)</p>
+  </li>
+  <li>
+    <p>Car: $v_i=15.0,\ v_f=25.0,\ \Delta x=120$<br />
+(a) $v_f^2=v_i^2+2a\Delta x \Rightarrow a=\dfrac{v_f^2-v_i^2}{2\Delta x}=\dfrac{625-225}{240}= \dfrac{400}{240}=1.67\ \text{m/s}^2$<br />
+(b) $t=\dfrac{v_f-v_i}{a}=\dfrac{10.0}{1.67}=5.99\ \text{s}$<br />
+(c) $v_{avg}=\dfrac{v_i+v_f}{2}=20.0\ \text{m/s}$; $\Delta x/t=120/5.99=20.0\ \text{m/s}$ (agreement)</p>
+  </li>
+  <li>
+    <p>Ball thrown downward: define down positive so $v_i=+5.00,\ t=1.10,\ a=+9.80$<br />
+(a) $\Delta x= v_i t + \tfrac12 a t^2=5.00(1.10)+0.5(9.80)(1.10^2)=5.50+4.90=10.4\ \text{m}$<br />
+(b) Height = 10.4 m<br />
+(c) $v_f= v_i + a t=5.00+9.80(1.10)=15.8\ \text{m/s}$ downward</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="part-d">Part D</h3>
+
+<ol>
+  <li>
+    <p>Reaction time drop: $\Delta x=0.210\ \text{m},\ v_i=0,\ a=9.80$<br />
+$t=\sqrt{\dfrac{2\Delta x}{a}}=\sqrt{\dfrac{0.420}{9.80}}=\sqrt{0.0429}=0.207\ \text{s}$</p>
+  </li>
+  <li>
+    <p>Two-phase cart: Phase 1: $a=1.50,\ t_1=6.00,\ v_i=0$<br />
+(a) $v_1= a t_1=9.00\ \text{m/s}$<br />
+(b) $\Delta x_1= \tfrac12 a t_1^2=0.5(1.50)(36.0)=27.0\ \text{m}$<br />
+Phase 2: constant $v=9.00,\ t_2=4.00$<br />
+(c) $\Delta x_2=9.00(4.00)=36.0\ \text{m}$<br />
+(d) Total $\Delta x=63.0\ \text{m}$; total $t=10.0\ \text{s}$ → $v_{avg}=6.30\ \text{m/s}$</p>
+  </li>
+  <li>
+    <p>Uncertainty propagation qualitative: $t\propto\sqrt{\Delta x}$ so fractional uncertainty halves: $\dfrac{\delta t}{t}=\tfrac12 \dfrac{\delta (\Delta x)}{\Delta x}$. A ±1 cm on 21.0 cm (≈4.8%) gives time uncertainty ≈2.4%.</p>
+  </li>
+  <li>
+    <p>Four equations each exclude one variable. Knowing any 3 of the 5 variables yields one equation directly or a two‑equation system; degrees of freedom reduced so system solvable without overconstraint (one unknown after selections).</p>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="part-e">Part E</h3>
+
+<ol>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Probe retro-thrust (taking up positive). Given initial downward speed $v_i=-35.0\ \text{m/s}$, target $</td>
+          <td>v_f</td>
+          <td>&lt;12.0\ \text{m/s}$ (choose $v_f=-12.0$ for minimum required decel), $\Delta x$ available = -160 m (will lose altitude). Need minimum constant upward acceleration $a$ over same distance OR solve via two unknowns approach:</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p>First solve with velocity constraint minimizing required $a$ if stopping just before exceeding altitude: Using $v_f^2=v_i^2+2a\Delta x$. We do not know $\Delta x$ consumed yet; instead better to ensure speed reduction before ground: Use $v_f = v_i + a t$ with displacement $\Delta x= v_i t + \tfrac12 a t^2$; two equations, unknown $t,a$. Eliminate $t$: $t=\dfrac{v_f-v_i}{a}$. Substitute:</p>
+
+<p>$\Delta x = v_i \dfrac{v_f-v_i}{a} + \tfrac12 a \left(\dfrac{v_f - v_i}{a}\right)^2
+= \dfrac{v_i(v_f-v_i)}{a} + \dfrac{(v_f - v_i)^2}{2a}$</p>
+
+<p>We require $\Delta x \ge -160\ \text{m}$ (negative). Compute numerator:</p>
+
+<p>$v_f - v_i = (-12) - (-35)=23\ \text{m/s}$; $v_i(v_f - v_i)=(-35)(23)=-805$; $(v_f - v_i)^2=529$.</p>
+
+<p>$\Delta x = \dfrac{-805 + 529/2}{a} = \dfrac{-805 + 264.5}{a} = \dfrac{-540.5}{a}$</p>
+
+<p>Set $\Delta x = -160$ (use full altitude → minimum $a$):</p>
+
+<p>$-160= -540.5/a \Rightarrow a= \dfrac{540.5}{160}=3.38\ \text{m/s}^2$ upward (net acceleration).<br />
+(a) $a=+3.38\ \text{m/s}^2$<br />
+(b) $t=(v_f - v_i)/a=23/3.38=6.80\ \text{s}$<br />
+(c) Altitude lost: $160\ \text{m}$ (by construction). Distance consumed equals margin, so just meets constraint.<br />
+(d) Margin? None (zero buffer). To add safety reduce $|v_f|$ further or start burn earlier.</p>
+
+<ol>
+  <li>
+    <p>Strategy: Drop an object, measure average fall distance corresponding to reaction catch; use $t=\sqrt{2\Delta x/g}$ to estimate reaction time. Repeat many trials; average reduces random error. Major errors: (1) distance reading parallax—mitigate by aligning eye perpendicular / using camera still; (2) inconsistent release height—use a clamp or fixed top reference.</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Model omissions: air resistance (would increase fall time, reduce impact speed); variation of $g$ with altitude (for tall distances would slightly decrease $</td>
+          <td>a</td>
+          <td>$, increasing time). Surface compliance / energy losses upon impact not predicted by ideal equations (affects post-impact not fall).</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<hr />
+
+<h3 id="summary-table-quantitative-final-answers">Summary Table (Quantitative Final Answers)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Key Numerical Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>30.0 m/s</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2.80 m/s²</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>$v_f=10.1$ m/s, $\Delta x=24.9$ m</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>$v_f= -6.26$ m/s (down)</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>2.86 m</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>$v_f=+0.60$ m/s, $\Delta x=-2.16$ m</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>$t_{tot}=5.39$ s, $h_{max}=61.5$ m, $v_{impact}=34.8$ m/s</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>$a=1.67$ m/s², $t=5.99$ s</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>$h=10.4$ m, $v_f=15.8$ m/s</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>$t=0.207$ s</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>$\Delta x=63.0$ m, $v_{avg}=6.30$ m/s</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>$a_{min}=3.38$ m/s², $t=6.80$ s</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>(Conceptual answers summarized in text above.)</p>
+
+<hr />
+
+    </div>
+  </article>
+</div>
+
 <style>
-  header.site-header {
-    display: none !important;
+  .answer-key {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .answer-key .warning-banner {
+    border-left: 5px solid #dc3545;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .answer-key .course-badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .answer-key .content {
+    line-height: 1.8;
+  }
+  
+  .answer-key .content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+  }
+  
+  .answer-key .content h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #495057;
+  }
+  
+  .answer-key code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
 </style>
-
-<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
-<link rel="stylesheet" href="/assets/css/main.css">
-
-<div class="activity-container" id="top">
-  
-  <!-- Activity Header (Static Content Mode) -->
-  <header class="activity-header">
-    <div class="activity-header-content">
-      <h1 class="activity-title">Problem Set 2.2 Key: Kinematics with Constant Acceleration</h1>
-      
-    </div>
-  </header>
-
-  <!-- Main Content Area -->
-  <div class="activity-content-container">
-    
-    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
-    <div id="activity-metadata"
-         data-content-type="solution_key"
-         data-course="hphys"
-         data-title="Problem Set 2.2 Key: Kinematics with Constant Acceleration"
-         data-unit="2"
-         hidden></div>
-    
-    <div class="activity-content-wrapper">
-      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
-      <!-- Display-only content with workspace instructions for offline completion -->
-      
-
-<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
-
-  
-
-
-
-
-
-<div class="workspace-notice workspace-notice-prominent">
-  <div class="workspace-notice-header">
-    <div class="workspace-notice-icon">
-      
-        📚
-      
-    </div>
-    <div class="workspace-notice-title">
-      
-        Learning Workspace
-      
-    </div>
-  </div>
-  
-  <div class="workspace-notice-content">
-    
-      
-        <p><strong>Complete this activity according to your teacher's instructions.</strong></p>
-        <p>Use your notebook, portfolio, or other materials as directed by your teacher.</p>
-      
-    
-  </div>
-  
-  
-</div>
-
-
-<!-- Content Type Detection & Data Array Selection -->
-
-
-
-
-
-
-<!-- Navigation Component (Top placement) -->
-
-
-<!-- Sequential Content Container -->
-<div class="sequential-content" id="sequential-content-container">
-  
-  
-    <!-- Fallback: No sequential content detected -->
-    <div class="content-error">
-      <p>No content structure detected for type: <code>solution_key</code></p>
-      <p>Expected data arrays:</p>
-      <ul>
-        <li><strong>problem_set:</strong> page.problems</li>
-        <li><strong>hexagon_lab:</strong> page.investigations</li>
-        <li><strong>flexbook:</strong> page.instructional_flow</li>
-        <li><strong>research_brief:</strong> page.investigation_tasks</li>
-      </ul>
-    </div>
-  
-  
-</div>
-
-
-
-
-    </div>
-  </div>
-
-  <!-- Hidden Metadata Div -->
-  <div id="metadata-container" hidden>
-    <div id="submission-status" class="submission-status" hidden></div>
-  </div>
-
-</div>
-
-<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
-<!-- Navigation and display functionality only - no assessment/submission features -->
-<script src="/assets/js/activity-core-static.js?v=1761611741"></script>
 
     
     </div>
