@@ -88,75 +88,24 @@
     <header>
       <div class="site-header">
         <!---->
-<style>
-.site-header {
-  background: var(--primary-color, #2c3e50);
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-title {
-  margin: 0;
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 1.5rem;
-}
-
-.site-title a {
-  color: white;
-  text-decoration: none;
-}
-
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2rem;
-}
-
-.site-nav a {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.site-nav a:hover {
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .site-nav ul {
-    gap: 1rem;
-  }
-}
-</style>
-
-<header class="site-header">
+<header class="site-header site-header-bar">
   <div class="header-content">
     <div>
       <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="/classroom/">Learning Portal</a></li>
-        <li><a href="/services/">District Services</a></li>
-        <li><a href="/about/">About Us</a></li>
+        <li class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
+          <div id="courses-menu" class="dropdown-content" role="menu">
+            <!-- AUTO-GENERATED NAV START -->
+            <a href="/honors_physics/">Honors Physics</a>
+            <a href="/standard_physics/">Standard Physics</a>
+            <a href="/natural_disasters/">Natural Disasters</a>
+            <!-- AUTO-GENERATED NAV END -->
+          </div>
+        </li>
+        <li><a href="/about.html">About</a></li>
       </ul>
     </nav>
   </div>
@@ -727,7 +676,7 @@ roles. After, you will reflect on your learning.</p>
 
 <!-- Core Activity Display System (Phase 3B - Static Content Only) -->
 <!-- Navigation and display functionality only - no assessment/submission features -->
-<script src="/assets/js/activity-core-static.js?v=1761867765"></script>
+<script src="/assets/js/activity-core-static.js?v=1761877261"></script>
 
     
     </div>
