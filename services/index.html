@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>AI Curriculum Support for Districts
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Services Pages CSS -->
+    
+    <link rel="stylesheet" href="/assets/css/services.css">
+    
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<style>
+.site-header {
+  background: var(--primary-color, #2c3e50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .site-nav ul {
+    gap: 1rem;
+  }
+}
+</style>
+
+<header class="site-header">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="/classroom/">Learning Portal</a></li>
+        <li><a href="/services/">District Services</a></li>
+        <li><a href="/about/">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <div class="services-hero">
+  <div class="hero-content">
+    <h1>AI Curriculum Support for Districts</h1>
+    <p class="lead">Transform your curriculum development with privacy-first AI assistance</p>
+    <div class="hero-cta">
+      <a href="#request-demo" class="primary-button">Request Demo</a>
+    </div>
+  </div>
+</div>
+
+<h2 id="for-stakeholders--section-header">For Stakeholders {: .section-header}</h2>
+
+<h3 id="-for-administrators--stakeholder-header"><img src="/assets/images/services/admin-icon.png" alt="Admin" class="icon" /> <a href="/services/stakeholder-solutions/#administrators">For Administrators</a> {: .stakeholder-header}</h3>
+
+<h4 id="strategic-oversight">Strategic Oversight</h4>
+
+<ul>
+  <li>Comprehensive standards alignment across all content areas</li>
+  <li>Data-driven gap analysis for curriculum improvement</li>
+  <li>Automated GVC gatekeeping and quality control</li>
+</ul>
+
+<h4 id="implementation-support">Implementation Support</h4>
+
+<ul>
+  <li>Change management resources and training</li>
+  <li>Progress monitoring and impact assessment</li>
+  <li>Compliance documentation and reporting</li>
+</ul>
+
+<h3 id="-for-curriculum-teams--stakeholder-header"><img src="/assets/images/services/teams-icon.png" alt="Teams" class="icon" /> <a href="/services/stakeholder-solutions/#curriculum-teams">For Curriculum Teams</a> {: .stakeholder-header}</h3>
+
+<h4 id="content-development">Content Development</h4>
+
+<ul>
+  <li>Collaborative review and iteration workflows</li>
+  <li>Automated standards mapping and validation</li>
+  <li>Cross-discipline alignment tools</li>
+</ul>
+
+<h4 id="resource-management">Resource Management</h4>
+
+<ul>
+  <li>Content effectiveness analytics</li>
+  <li>Resource allocation optimization</li>
+  <li>Implementation strategy support</li>
+</ul>
+
+<h3 id="-for-teachers--stakeholder-header"><img src="/assets/images/services/teacher-icon.png" alt="Teacher" class="icon" /> <a href="/services/stakeholder-solutions/#teachers">For Teachers</a> {: .stakeholder-header}</h3>
+
+<h4 id="instructional-support">Instructional Support</h4>
+
+<ul>
+  <li>Resource alignment with district standards</li>
+  <li>Differentiation and scaffolding suggestions</li>
+  <li>Assessment alignment verification</li>
+</ul>
+
+<h4 id="professional-growth">Professional Growth</h4>
+
+<ul>
+  <li>Integrated professional learning</li>
+  <li>Best practice recommendations</li>
+  <li>Content area deepening resources</li>
+</ul>
+
+<h2 class="capabilities" id="capabilities">Core Technical Capabilities</h2>
+
+<h3 id="key-features">Key Features</h3>
+
+<ul>
+  <li>
+    <p><img src="/assets/images/services/search-icon.png" alt="Search" class="feature-icon" /> <strong class="feature-title">Standards Analysis</strong><br />
+Automated alignment verification and gap identification across your entire curriculum.</p>
+  </li>
+  <li>
+    <p><img src="/assets/images/services/shield-icon.png" alt="Shield" class="feature-icon" /> <strong class="feature-title">GVC Gatekeeping</strong><br />
+Quality control and consistency enforcement through AI-powered content validation.</p>
+  </li>
+  <li>
+    <p><img src="/assets/images/services/chart-icon.png" alt="Chart" class="feature-icon" /> <strong class="feature-title">Implementation Analytics</strong><br />
+Data-driven insights for curriculum effectiveness and resource optimization.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="core-capabilities">Core Capabilities</h2>
+
+<ul>
+  <li><span aria-label="Magnifying glass">🔍</span> <strong>Gap Analysis</strong></li>
+  <li><span aria-label="Shield">🛡️</span> <strong>GVC Gatekeeping</strong></li>
+  <li><span aria-label="Checklist">📋</span> <strong>Standards Alignment</strong></li>
+</ul>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<p>Here are some examples of how curriculum teams use our AI assistance:</p>
+
+<blockquote>
+  <p>“Review this physics lesson plan and identify any gaps in NGSS alignment.”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Create differentiated versions of this lab activity for AP and standard physics.”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Map the progression of vector concepts across grades 9-12 in our current curriculum.”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Generate scaffolded question sets for this kinematics problem that align with Webb’s DOK levels.”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Compare our current energy transfer unit against state standards and suggest areas for enhancement.”</p>
+</blockquote>
+
+<blockquote>
+  <p>“Create modifications for this lab procedure to support English language learners.”</p>
+</blockquote>
+
+<p>These prompts showcase how our AI supports rigorous, standards-aligned curriculum development while respecting student privacy and teacher autonomy.</p>
+
+<hr />
+
+<section class="demo-request" id="request-demo">
+  <div class="container">
+    <h2>Request a Demo</h2>
+    <p class="section-lead">Experience how our AI support can transform your curriculum development process.</p>
+    
+    <form id="lead-capture-form" method="POST" action="/api/v1/lead-capture" class="demo-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required="" />
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required="" />
+        </div>
+
+        <div class="form-group">
+          <label for="org">District/Organization</label>
+          <input type="text" id="org" name="org" required="" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required="" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required="" />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Primary Role</label>
+          <select id="role" name="role" required="">
+            <option value="">Select your role</option>
+            <option value="Administrator">Administrator</option>
+            <option value="Curriculum Team">Curriculum Team</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <button type="submit" id="request-demo-btn" class="primary-button">Request Demo</button>
+      </div>
+    </form>
+
+    <div id="confirmation-message" class="confirmation-message" style="display:none;" role="status" aria-live="polite">
+      <p>Thank you for your interest. A member of our team will contact you within 24 hours to schedule your demo.</p>
+    </div>
+  </div>
+</section>
+
+<p class="trust-banner"><em>All features are privacy-first. No student data is ever collected or stored.</em></p>
+
+<hr />
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

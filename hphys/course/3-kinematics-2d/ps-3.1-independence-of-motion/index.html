@@ -1,225 +1,270 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
-  <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Independence Of Motion | Cosmos in the Classroom</title>
-    
-    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    
-    <!-- Core CSS Foundation -->
-    <link rel="stylesheet" href="/assets/css/core/variables.css">
-    <link rel="stylesheet" href="/assets/css/core/reset.css">
-    <link rel="stylesheet" href="/assets/css/core/layout.css">
-    
-    <!-- Component CSS -->
-    <link rel="stylesheet" href="/assets/css/components/navigation.css">
-    <link rel="stylesheet" href="/assets/css/components/buttons.css">
-    <link rel="stylesheet" href="/assets/css/components/figures.css">
-    
-    <!-- Global CSS with new academic palette -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
-    
-    <script src="/assets/js/mathjax-config.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    
-    <!-- Highlight.js for code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <!-- tabs.js for tabs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
-    <script src="/assets/js/site-init.js"></script>
-    <script src="/assets/js/activity-navigator.js"></script>
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
-    
-    
-    <!-- Only load navigation CSS if the header is visible -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
-    <!-- Add Mermaid library and initialize -->
-    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
+<hr />
+<h1>==============================================================================</h1>
+<h1 id="problem-set-the-independence-of-motion-siege-at-constantinople">PROBLEM SET: THE INDEPENDENCE OF MOTION (Siege at Constantinople)</h1>
+<h1 id="-1">==============================================================================</h1>
 
-    <!-- Activity Submission System CSS -->
-    <link rel="stylesheet" href="/assets/css/activity-submission.css">
-    <!-- Enhanced Typography for Flexbooks -->
-    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-    <!-- Research Brief Styling (when content_type is research_brief) -->
-    
-    <!-- Component Styles -->
-    <link rel="stylesheet" href="/assets/css/components/callout.css">
-    <link rel="stylesheet" href="/assets/css/components/voices.css">
-    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
-    <!-- Enhanced Content Styling -->
-    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
-    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<h1 id="-2">====</h1>
+<h1 id="core-jekyll-fields-all-content-types">CORE JEKYLL FIELDS (All content types)</h1>
+<h1 id="-3">====</h1>
+<p>title: |
+  Problem Set 3.1: The Independence of Motion
+layout: activity-focused
+date: 2025-10-29
+course: hphys
+content_type: problem_set
+unit: 3
+unit_slug: |
+  3-kinematics-2d
+slug: |
+  ps-3.1-independence-of-motion</p>
 
-    <!-- Chart.js for data visualization -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" crossorigin="anonymous"></script>
-    <script>
-        window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.chartJsLoaded = true;
-        console.log('[activity-focused.html] Chart.js v4.4.0 loaded');
-    </script>
-    
+<h1 id="-4">====</h1>
+<h1 id="ngss-alignment-all-content">NGSS ALIGNMENT (All content)</h1>
+<h1 id="-5">====</h1>
+<p>DCI: |
+  PS2.A
+Practice:</p>
+<ul>
+  <li>|
+Using Mathematics and Computational Thinking</li>
+  <li>|
+Developing and Using Models
+CCC:</li>
+  <li>|
+Systems and System Models</li>
+  <li>|
+Patterns
+tags:</li>
+  <li>kinematics</li>
+  <li>projectiles</li>
+  <li>2d-motion</li>
+  <li>vectors</li>
+</ul>
 
-    <!-- Backend Configuration -->
-    <script>
-        window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
-    </script>
+<h1 id="-6">====</h1>
+<h1 id="problem-set-specific-fields">PROBLEM SET SPECIFIC FIELDS</h1>
+<h1 id="-7">====</h1>
+<p>difficulty_levels: [apprentice, journeyman, master]
+estimated_time: |
+  30 minutes</p>
 
-  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
-  <!-- All assessment/submission functionality removed October 2025 -->
-  </head>
-  <body class="">
-    
-    <header>
-      <div class="site-header">
-        <!---->
-<header class="site-header site-header-bar">
-  <div class="header-content">
-    <div>
-      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
-    </div>
-    <nav class="site-nav" aria-label="Main Navigation">
-      <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/honors_physics/">Honors Physics</a>
-            <a href="/standard_physics/">Standard Physics</a>
-            <a href="/natural_disasters/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<h1 id="-8">====</h1>
+<h1 id="workspace-instructions-display-only">WORKSPACE INSTRUCTIONS (Display-Only)</h1>
+<h1 id="-9">====</h1>
+<p>workspace_instructions: |
+  Complete this problem set in your physics notebook or on paper. Show all work including:</p>
+<ul>
+  <li>Given values with units</li>
+  <li>Unknown quantities identified</li>
+  <li>Parent equation selection</li>
+  <li>Algebraic rearrangement (if needed)</li>
+  <li>Substitution with units tracked</li>
+  <li>Final answer with units and significant figures</li>
+</ul>
 
-      </div>
-    </header>
-    
-    
-  <div class="markdown-body">
-    
-      <!-- 
-  This is the primary layout for all interactive activities.
-  It provides a clean, full-width container and loads all necessary
-  CSS and JavaScript for the activity submission system.
--->
+<p>Use the “View Solution” buttons to check your work after attempting each problem.</p>
 
-<!-- Force hide header (override header from default layout) -->
-<style>
-  header.site-header {
-    display: none !important;
-  }
-</style>
+<h1 id="-10">====</h1>
+<h1 id="problem-set-overview">PROBLEM SET OVERVIEW</h1>
+<h1 id="-11">====</h1>
+<p>overview:
+  follows_lecture: |
+    Lecture 3.1: The Independence of Motion
+  introduction: |
+    In this problem set, you will apply the principle of independence of motion to analyze projectile motion scenarios. 
+    Connect these mathematical tools back to our unit’s anchoring phenomenon: How do projectiles move through space?</p>
 
-<!-- Unified CSS Entry Point (Phase 3A - Oct 2025) -->
-<link rel="stylesheet" href="/assets/css/main.css">
+<p>key_formulae:
+    - formula: |
+        $\Delta\vec{x} = \vec{v}_{0x}t$
+      description: |
+        Horizontal displacement (constant horizontal velocity).</p>
 
-<div class="activity-container" id="top">
-  
-  <!-- Activity Header (Static Content Mode) -->
-  <header class="activity-header">
-    <div class="activity-header-content">
-      <h1 class="activity-title">Independence Of Motion</h1>
-      
-      <span class="badge badge-problem-set">Problem Set</span>
-      
-    </div>
-  </header>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- formula: |
+    $\Delta\vec{y} = \vec{v}_{0y}t + \frac{1}{2}\vec{a}_y t^2$
+  description: |
+    Vertical displacement with initial vertical velocity and acceleration.
 
-  <!-- Main Content Area -->
-  <div class="activity-content-container">
-    
-    <!-- Critical metadata for navigation and JavaScript (static content mode) -->
-    <div id="activity-metadata"
-         data-content-type="problem_set"
-         data-course="hphys"
-         data-title="Independence Of Motion"
-         data-unit="3"
-         hidden></div>
-    
-    <div class="activity-content-wrapper">
-      <!-- Unified Sequential Content Renderer (Phase 3B - Static Content Delivery) -->
-      <!-- Display-only content with workspace instructions for offline completion -->
-      
+- formula: |
+    $\vec{v}_{0x} = \vec{v}_0 \cos\theta$
+  description: |
+    Horizontal component of initial velocity.
 
-<!-- Workspace Instructions (Phase 3B - Static Content Delivery) -->
+- formula: |
+    $\vec{v}_{0y} = \vec{v}_0 \sin\theta$
+  description: |
+    Vertical component of initial velocity.
+</code></pre></div></div>
 
+<p>global_standards:
+    - |
+      For all problems, assume the acceleration due to gravity is $\vec{a}_g = -9.80 \text{ m/s}^2$.
+    - |
+      Follow the systematic problem-solving process demonstrated in the lecture.
+    - |
+      Present all final answers with the correct units and number of significant figures.</p>
 
-<!-- Content Type Detection & Data Array Selection -->
+<h1 id="-12">====</h1>
+<h1 id="problems-yaml-markdown-hybrid-structure">PROBLEMS (YAML-Markdown Hybrid Structure)</h1>
+<h1 id="-13">====</h1>
+<p>problems:
+  # ==== TIER 1: APPRENTICE —————————</p>
+<ul>
+  <li>
+    <p>id: p1
+difficulty: apprentice
+tier_title: |
+  The Apprentice’s Practice: Conceptual Understanding</p>
 
+    <p>phenomenon_connection: |
+  This problem explores the fundamental principle that horizontal and vertical motions 
+  are independent during projectile motion.</p>
 
+    <p>prompt: |
+  An attacker fires a small cannon (Cannonball A) horizontally from a siege tower. The cannonball 
+  leaves the barrel at the exact same height as a defender on the city wall, who drops a heavy 
+  stone (Stone B) at the same instant.</p>
 
+    <p><strong>(a)</strong> Which projectile (the cannonball or the stone) strikes the ground first?</p>
 
+    <p><strong>(b)</strong> Briefly (1-2 sentences) explain your reasoning using the principle of the independence of motion.</p>
 
+    <p>solution: |
+  <strong>(a) Answer:</strong> They strike at the same time.</p>
 
-<!-- Navigation Component (Top placement) -->
+    <p><strong>(b) Explanation:</strong> The horizontal motion ($\vec{v}<em>x$) of Cannonball A does not affect its vertical motion. 
+  Both projectiles start with an initial vertical velocity ($\vec{v}</em>{0y}$) of $0 \text{ m/s}$ and accelerate 
+  downwards at $\vec{a}_g = 9.80 \text{ m/s}^2$ from the same height. Because their vertical motions are 
+  identical, they must land at the same time. This is the principle of the independence of motion.</p>
+  </li>
+</ul>
 
+<p># ==== TIER 2: JOURNEYMAN —————————</p>
+<ul>
+  <li>
+    <p>id: p2
+difficulty: journeyman
+tier_title: |
+  The Journeyman’s Task: Horizontal Projectile</p>
 
-<!-- Sequential Content Container -->
-<div class="sequential-content" id="sequential-content-container">
-  
-  
-    <!-- Fallback: No sequential content detected -->
-    <div class="content-error">
-      <p>No content structure detected for type: <code>problem_set</code></p>
-      <p>Expected data arrays:</p>
-      <ul>
-        <li><strong>problem_set:</strong> page.problems</li>
-        <li><strong>hexagon_lab:</strong> page.investigations</li>
-        <li><strong>flexbook:</strong> page.instructional_flow</li>
-        <li><strong>research_brief:</strong> page.investigation_tasks</li>
-      </ul>
-    </div>
-  
-  
-</div>
+    <p>phenomenon_connection: |
+  This problem models the trajectory of a cannonball fired horizontally from a siege tower, 
+  demonstrating how vertical and horizontal motions combine.</p>
 
+    <p>prompt: |
+  A small cannon is fired horizontally from the top of a $78.4 \text{ m}$ tall siege tower. 
+  The cannonball’s initial horizontal velocity is $90.0 \text{ m/s}$.</p>
 
+    <p><strong>(a)</strong> How long does it take for the cannonball to hit the ground?</p>
 
+    <p><strong>(b)</strong> What is the horizontal distance (the range) the cannonball travels before it lands?</p>
 
-    </div>
-  </div>
+    <p>solution: |
+  <strong>Given:</strong></p>
+    <ul>
+      <li>$\Delta y = -78.4 \text{ m}$ (negative because downward)</li>
+      <li>$\vec{v}_{0x} = 90.0 \text{ m/s}$</li>
+      <li>$\vec{v}_{0y} = 0 \text{ m/s}$ (fired horizontally)</li>
+      <li>$\vec{a}_y = -9.80 \text{ m/s}^2$</li>
+    </ul>
 
-  <!-- Hidden Metadata Div -->
-  <div id="metadata-container" hidden>
-    <div id="submission-status" class="submission-status" hidden></div>
-  </div>
+    <p><strong>(a) Time to hit ground:</strong></p>
 
-</div>
+    <p><strong>Step 1:</strong> Select equation for vertical motion
+  \(\Delta y = \vec{v}_{0y}t + \frac{1}{2}\vec{a}_y t^2\)</p>
 
-<!-- Core Activity Display System (Phase 3B - Static Content Only) -->
-<!-- Navigation and display functionality only - no assessment/submission features -->
-<script src="/assets/js/activity-core-static.js?v=1761877261"></script>
+    <p><strong>Step 2:</strong> Simplify (since $\vec{v}_{0y} = 0$)
+  \(\Delta y = \frac{1}{2}\vec{a}_y t^2\)</p>
 
-    
-    </div>
-    <script type="application/json" id="course-data-">null</script>
-    
-    
-    <!-- Only load navigation.js if the header is visible -->
-    <script src="/assets/js/navigation.js"></script>
-    
-  </body>
-</html>
+    <p><strong>Step 3:</strong> Rearrange for time
+  \(t = \sqrt{\frac{2\Delta y}{\vec{a}_y}}\)</p>
+
+    <p><strong>Step 4:</strong> Substitute values
+  \(t = \sqrt{\frac{2(-78.4 \text{ m})}{-9.80 \text{ m/s}^2}} = \sqrt{16.0 \text{ s}^2} = 4.00 \text{ s}\)</p>
+
+    <p><strong>(b) Horizontal range:</strong></p>
+
+    <p><strong>Step 1:</strong> Use horizontal motion equation
+  \(\Delta x = \vec{v}_{0x} t\)</p>
+
+    <p><strong>Step 2:</strong> Substitute values
+  \(\Delta x = (90.0 \text{ m/s})(4.00 \text{ s}) = 360. \text{ m}\)</p>
+
+    <p><strong>Final Answers:</strong></p>
+    <ul>
+      <li><strong>(a)</strong> Time = $4.00 \text{ s}$</li>
+      <li><strong>(b)</strong> Range = $360. \text{ m}$</li>
+    </ul>
+  </li>
+</ul>
+
+<p># ==== TIER 3: MASTER ——————————-</p>
+<ul>
+  <li>
+    <p>id: p3
+difficulty: master
+tier_title: |
+  The Master’s Insight: Projectile at an Angle</p>
+
+    <p>phenomenon_connection: |
+  This problem challenges you to analyze the complete trajectory of Orban’s great bombard, 
+  requiring component analysis and understanding of symmetric projectile motion.</p>
+
+    <p>prompt: |
+  One of Orban’s “great bombards” fires a massive stone cannonball from ground level with an 
+  initial velocity of $160. \text{ m/s}$ at an angle of $30.0°$ above the horizontal, aiming 
+  for the Theodosian Walls.</p>
+
+    <p><strong>(a)</strong> Calculate the initial horizontal ($\vec{v}<em>{0x}$) and vertical ($\vec{v}</em>{0y}$) components of the velocity.</p>
+
+    <p><strong>(b)</strong> What is the maximum height the cannonball reaches?</p>
+
+    <p><strong>(c)</strong> What is the total time the cannonball is in the air (its “hang time”)?</p>
+
+    <p>solution: |
+  <strong>Given:</strong></p>
+    <ul>
+      <li>$\vec{v}_0 = 160. \text{ m/s}$</li>
+      <li>$\theta = 30.0°$</li>
+      <li>$\vec{a}_y = -9.80 \text{ m/s}^2$</li>
+    </ul>
+
+    <p><strong>(a) Velocity components:</strong></p>
+
+\[\vec{v}_{0x} = \vec{v}_0 \cos\theta = (160. \text{ m/s})(\cos 30.0°) = (160. \text{ m/s})(0.866) = 139 \text{ m/s}\]
+
+\[\vec{v}_{0y} = \vec{v}_0 \sin\theta = (160. \text{ m/s})(\sin 30.0°) = (160. \text{ m/s})(0.500) = 80.0 \text{ m/s}\]
+
+    <p><strong>(b) Maximum height:</strong></p>
+
+    <p>At maximum height, $\vec{v}_y = 0$</p>
+
+    <p><strong>Step 1:</strong> Use kinematic equation
+  \(\vec{v}_y^2 = \vec{v}_{0y}^2 + 2\vec{a}_y\Delta y\)</p>
+
+    <p><strong>Step 2:</strong> Rearrange (with $\vec{v}_y = 0$)
+  \(\Delta y = \frac{-\vec{v}_{0y}^2}{2\vec{a}_y}\)</p>
+
+    <p><strong>Step 3:</strong> Substitute values
+  \(\Delta y = \frac{-(80.0 \text{ m/s})^2}{2(-9.80 \text{ m/s}^2)} = \frac{6400 \text{ m}^2/\text{s}^2}{19.6 \text{ m/s}^2} = 327 \text{ m}\)</p>
+
+    <p><strong>(c) Total hang time:</strong></p>
+
+    <p><strong>Step 1:</strong> Find time to peak
+  \(\vec{v}_y = \vec{v}_{0y} + \vec{a}_y t_{peak}\)</p>
+
+    <p><strong>Step 2:</strong> Rearrange (with $\vec{v}_y = 0$)
+  \(t_{peak} = \frac{-\vec{v}_{0y}}{\vec{a}_y} = \frac{-(80.0 \text{ m/s})}{-9.80 \text{ m/s}^2} = 8.16 \text{ s}\)</p>
+
+    <p><strong>Step 3:</strong> Total time (symmetry of projectile motion)
+  \(t_{total} = 2 \times t_{peak} = 2 \times (8.16 \text{ s}) = 16.3 \text{ s}\)</p>
+
+    <p><strong>Final Answers:</strong></p>
+    <ul>
+      <li><strong>(a)</strong> $\vec{v}<em>{0x} = 139 \text{ m/s}$, $\vec{v}</em>{0y} = 80.0 \text{ m/s}$</li>
+      <li><strong>(b)</strong> Maximum height = $327 \text{ m}$</li>
+      <li><strong>(c)</strong> Hang time = $16.3 \text{ s}$</li>
+    </ul>
+  </li>
+</ul>
+

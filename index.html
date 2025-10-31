@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
   <link rel="icon" href="/favico.ico" type="image/x-icon">
-    <title>Cosmos in the Classroom Homepage | Cosmos in the Classroom</title>
+    <title>Welcome to Cosmos in the Classroom
+ | Cosmos in the Classroom</title>
     
     <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +25,9 @@
     
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Services Pages CSS -->
+    
     
     
     <script src="/assets/js/mathjax-config.js"></script>
@@ -84,24 +88,75 @@
     <header>
       <div class="site-header">
         <!---->
-<header class="site-header site-header-bar">
+<style>
+.site-header {
+  background: var(--primary-color, #2c3e50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .site-nav ul {
+    gap: 1rem;
+  }
+}
+</style>
+
+<header class="site-header">
   <div class="header-content">
     <div>
       <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li class="dropdown">
-          <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="courses-menu">Courses ▼</button>
-          <div id="courses-menu" class="dropdown-content" role="menu">
-            <!-- AUTO-GENERATED NAV START -->
-            <a href="/honors_physics/">Honors Physics</a>
-            <a href="/standard_physics/">Standard Physics</a>
-            <a href="/natural_disasters/">Natural Disasters</a>
-            <!-- AUTO-GENERATED NAV END -->
-          </div>
-        </li>
-        <li><a href="/about.html">About</a></li>
+        <li><a href="/classroom/">Learning Portal</a></li>
+        <li><a href="/services/">District Services</a></li>
+        <li><a href="/about/">About Us</a></li>
       </ul>
     </nav>
   </div>
@@ -113,48 +168,99 @@
     
   <div class="markdown-body">
     
-      <link rel="stylesheet" href="/assets/css/homepage.css" />
-
-<h1 id="cosmos-in-the-classroom">Cosmos in the Classroom</h1>
-<p>Welcome to the Cosmos in the Classroom website! This site provides comprehensive physics and natural science education resources.</p>
-
-<h2 id="course-directory">Course Directory</h2>
-
-<div class="course-directory">
-  <div class="course-card">
-    <h2><a href="/hphys/">Honors Physics</a></h2>
-    <p>Advanced high school physics course emphasizing mathematical rigor and preparation for AP Physics</p>
-    <a href="/hphys/" class="course-link">Enter Course →</a>
-  </div>
+      <div class="landing-hero">
+  <h1>Welcome to Cosmos in the Classroom</h1>
   
-  <div class="course-card">
-    <h2><a href="/sphys/">Standard Physics</a></h2>
-    <p>Applied physics course focusing on real-world energy systems and Earth sciences</p>
-    <a href="/sphys/" class="course-link">Enter Course →</a>
-  </div>
-  
-  <div class="course-card">
-    <h2><a href="/natdis/">Natural Disasters</a></h2>
-    <p>Interdisciplinary study of natural disasters through physics, geology, and environmental science</p>
-    <a href="/natdis/" class="course-link">Enter Course →</a>
+  <div class="hero-cta">
+    <a href="/classroom/" class="cta-button student">
+      <h2>For Students &amp; Teachers</h2>
+      <p>Access course content and resources</p>
+      <span class="arrow">→</span>
+    </a>
+    
+    <a href="/services/" class="cta-button district">
+      <h2>For Districts</h2>
+      <p>Explore AI Curriculum Support Services</p>
+      <span class="arrow">→</span>
+    </a>
   </div>
 </div>
 
-<h2 id="additional-resources">Additional Resources</h2>
-
-<div class="resources-section">
-  <div class="resource-card">
-    <h3>Development Tools</h3>
-    <p>Access development tools and build systems</p>
-    <a href="/build/">Development Dashboard →</a>
-  </div>
-  
-  <div class="resource-card">
-    <h3>Course Assets</h3>
-    <p>Shared resources and media files</p>
-    <a href="/assets/">View Assets →</a>
-  </div>
+<div class="privacy-notice">
+  <p><strong>Privacy-First Platform:</strong> No student data is collected or stored.</p>
 </div>
+
+<style>
+.landing-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-cta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  display: block;
+  padding: 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  background: #f8f9fa;
+  border: 2px solid #e1e5e9;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cta-button.student:hover {
+  border-color: #4a90e2;
+}
+
+.cta-button.district:hover {
+  border-color: #2ecc71;
+}
+
+.cta-button h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.cta-button p {
+  margin: 0.5rem 0 1rem;
+  color: #666;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #999;
+}
+
+.privacy-notice {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #f1f9ff;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .landing-hero {
+    padding: 2rem 1rem;
+  }
+  
+  .hero-cta {
+    grid-template-columns: 1fr;
+  }
+}
 
 <style>
 /* Navigation Styles */
@@ -355,19 +461,6 @@
 }
 </style>
 
-<div class="footer">
-  <p>Cosmos in the Classroom © 2025 | Last updated: September 22, 2025</p>
-  <p>This site is statically hosted on GitHub Pages and powered by Jekyll</p>
-</div>
-
-<div class="course-landing">
-  <h1>Courses</h1>
-  <ul>
-    <li><a href="/hphys/">Honors Physics</a></li>
-    <li><a href="/sphys/">Standard Physics</a></li>
-    <li><a href="/natdis/">Natural Disasters</a></li>
-  </ul>
-</div>
 
     
     </div>

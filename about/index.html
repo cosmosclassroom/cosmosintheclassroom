@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A comprehensive physics education platform with multi-course support, dynamic content generation, and reusable multimedia assets.">
+  <link rel="icon" href="/favico.ico" type="image/x-icon">
+    <title>About Cosmos in the Classroom
+ | Cosmos in the Classroom</title>
+    
+    <!-- GOOGLE FONTS: Lora (Serif), Lato (Sans), Source Code Pro (Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <!-- Core CSS Foundation -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/core/reset.css">
+    <link rel="stylesheet" href="/assets/css/core/layout.css">
+    
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="/assets/css/components/navigation.css">
+    <link rel="stylesheet" href="/assets/css/components/buttons.css">
+    <link rel="stylesheet" href="/assets/css/components/figures.css">
+    
+    <!-- Global CSS with new academic palette -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Services Pages CSS -->
+    
+    
+    
+    <script src="/assets/js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    
+    <!-- Highlight.js for code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- tabs.js for tabs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabs.js/1.0.0/tabs.min.js"></script>
+    <script src="/assets/js/site-init.js"></script>
+    <script src="/assets/js/activity-navigator.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+    
+    
+    <!-- Only load navigation CSS if the header is visible -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/navigation.css">
+    <!-- Add Mermaid library and initialize -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+    <!-- Activity Submission System CSS -->
+    <link rel="stylesheet" href="/assets/css/activity-submission.css">
+    <!-- Enhanced Typography for Flexbooks -->
+    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
+    <!-- Research Brief Styling (when content_type is research_brief) -->
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="/assets/css/components/callout.css">
+    <link rel="stylesheet" href="/assets/css/components/voices.css">
+    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
+    <!-- Enhanced Content Styling -->
+    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
+    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js for data visualization -->
+    
+
+    <!-- Backend Configuration -->
+    <script>
+        window.SITE_CONFIG = window.SITE_CONFIG || {};
+        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+    </script>
+
+  <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
+  <!-- All assessment/submission functionality removed October 2025 -->
+  </head>
+  <body class="">
+    
+    <header>
+      <div class="site-header">
+        <!---->
+<style>
+.site-header {
+  background: var(--primary-color, #2c3e50);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.site-nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .site-nav ul {
+    gap: 1rem;
+  }
+}
+</style>
+
+<header class="site-header">
+  <div class="header-content">
+    <div>
+      <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
+    </div>
+    <nav class="site-nav" aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="/classroom/">Learning Portal</a></li>
+        <li><a href="/services/">District Services</a></li>
+        <li><a href="/about/">About Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+      </div>
+    </header>
+    
+    
+  <div class="markdown-body">
+    
+      <div class="about-hero">
+  <div class="hero-content">
+    <h1>Honoring the Legacy of Teaching</h1>
+    <p class="lead">Freeing the Masterful Teacher</p>
+  </div>
+</div>
+
+<section class="mission">
+  <div class="container">
+    <h2>Our Primary Mission</h2>
+    <p class="mission-statement">We believe that teaching is an act of profound connection—a legacy of knowledge passed from one human to another, one generation to the next. But today, that legacy is being buried under digital tedium. The creative, masterful teacher is trapped, spending more time on resource formatting, manual alignment, and compliance checks than on the art of instruction.</p>
+    <p>Our core purpose is to stop this burnout. We shift the repetitive, computational tasks onto computers so that human educators can reclaim their time for the work that matters: sparking curiosity, fostering relationships, and guiding students to their "a-ha!" moments.</p>
+  </div>
+</section>
+
+<section class="methodology">
+  <div class="container">
+    <h2>Our Methodology: Reading and Writing the Curriculum's DNA</h2>
+    <p>Just as Rosalind Franklin read our genetic code, revealing the essential recipe that connects all living things, we read the genetic code of your curriculum.</p>
+    <p>This "DNA" is your district's long legacy of information. It's a vast, interconnected web of ideas forged by tenured experts and wise educators. But over time, through countless revisions and adaptations, that web frays. Its brilliant connections—the threads that tie one concept to the next—become obscured.</p>
+    <p>Our customized AI Gem is designed to find that essential, masterful core.</p>
+    
+    <div class="dna-process">
+      <div class="process-step">
+        <h3>READ the DNA</h3>
+        <p>We ingest your GVC, standards, and foundational documents to rediscover those connections. We map the narrative flow of your knowledge, identifying where the story is clear and where the links are broken.</p>
+      </div>
+      <div class="process-step">
+        <h3>WRITE the Next Generation</h3>
+        <p>We then write the next generation of resources, not just to be compliant, but to make that interconnected narrative clear, compelling, and wondrous for the student.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <div class="container">
+    <h2>The Result: Clarity, Connection, and Good Content</h2>
+    <p>Our secondary mission is to make demonstrably good content. Our process ensures a compelling flow from your curriculum's DNA to its student-facing product, guaranteeing:</p>
+    
+    <div class="result-grid">
+      <div class="result-card">
+        <h3>Clarity Through Connection</h3>
+        <p>We help trace the thread of an idea from 9th-grade biology back to 7th-grade physical science, illuminating the path for students.</p>
+      </div>
+      
+      <div class="result-card">
+        <h3>Unification of Voice</h3>
+        <p>Predictable, high-quality, and consistent yet personalized styles across all generated materials.</p>
+      </div>
+      
+      <div class="result-card">
+        <h3>Clarity of Expectation</h3>
+        <p>Resources that are perfectly aligned with standards and GVC mandates yet adaptable to student needs and teacher styles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy-commitment">
+  <div class="container">
+    <h2>Our Non-Negotiable Commitment: Privacy First</h2>
+    <p>We do not sell software, and we do not create data dashboards. The potential for student data privacy violations is too great in EdTech.</p>
+    <p>The Gem is a focused, custom utility. It performs analysis and generation only on the standards and curriculum documents you provide.</p>
+    
+    <div class="privacy-points">
+      <div class="privacy-point">
+        <h3>No PII Storage</h3>
+        <p>We do not collect, store, or analyze student-specific personally identifiable information (PII).</p>
+      </div>
+      
+      <div class="privacy-point">
+        <h3>Zero Student Monitoring</h3>
+        <p>The Gem's function is to analyze curriculum documents and generate resources—not to track or judge instructional usage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem-solution">
+  <div class="container">
+    <div class="problem">
+      <h2>The Problem We Solve: Inconsistency and Time</h2>
+      <div class="stakeholder-grid">
+        <div class="stakeholder-card">
+          <h3>For Administrators</h3>
+          <p>The GVC is difficult to audit, leading to systemic instructional inconsistency and equity issues across schools.</p>
+        </div>
+        <div class="stakeholder-card">
+          <h3>For Curriculum Teams</h3>
+          <p>Manually cross-referencing state standards with internal resources takes thousands of hours, slowing down critical revision cycles.</p>
+        </div>
+        <div class="stakeholder-card">
+          <h3>For Teachers</h3>
+          <p>Differentiation and scaffolding are essential, but the time required to custom-build aligned resources is unsustainable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solution">
+  <div class="container">
+    <h2>Our Solution: The Customized AI Gem</h2>
+    <p class="solution-intro">We don't sell generic software or a dashboard. We provide a bespoke service that delivers a single, highly specialized, and private AI engine—your Gem.</p>
+    
+    <div class="gem-actions">
+      <div class="gem-action">
+        <h3>READ</h3>
+        <p>It ingests, interprets, and analyzes your unique, codified curriculum documents (the "DNA").</p>
+      </div>
+      <div class="gem-action">
+        <h3>WRITE</h3>
+        <p>It generates instantly aligned instructional resources, audits, and strategic reports based only on the standards you provide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="privacy">
+  <div class="container">
+    <h2>Our Commitment to Data Privacy</h2>
+    <p class="privacy-intro">In EdTech, privacy is non-negotiable. Our architecture is designed to protect your students and district:</p>
+    
+    <div class="privacy-points">
+      <div class="privacy-point">
+        <h3>No PII Storage</h3>
+        <p>The Gem does not collect, store, or analyze student-specific personally identifiable information (PII).</p>
+      </div>
+      <div class="privacy-point">
+        <h3>No Usage Monitoring</h3>
+        <p>We do not track student or teacher activity for the purpose of creating "dashboards" or selling usage data.</p>
+      </div>
+      <div class="privacy-point">
+        <h3>Pure Utility</h3>
+        <p>The Gem is a custom tool built to interpret your documents and generate outputs for your team, acting as a powerful calculator for curriculum fidelity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vision">
+  <div class="container">
+    <h2>Our Vision: Operationalizing Excellence</h2>
+    <p class="vision-statement">We believe every minute a teacher spends on resource creation is a minute taken away from instructional strategy. Our vision is to use the power of AI to operationalize your curriculum, making instructional fidelity automatic, differentiation instant, and strategic revision cycles fast and precise.</p>
+  </div>
+</section>
+
+<style>
+/* Base */
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #34495e;
+  --text-color: #2c3e50;
+  --light-bg: #f8f9fa;
+  --border-color: #e1e5e9;
+}
+
+/* Typography */
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Crimson Text", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Mission Section */
+.mission {
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mission-statement {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* Problem Solution Section */
+.stakeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.stakeholder-card {
+  background: white;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.stakeholder-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Solution Section */
+.solution {
+  background: var(--light-bg);
+}
+
+.gem-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.gem-action {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.gem-action h3 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* Privacy Section */
+.privacy {
+  background: white;
+}
+
+.privacy-points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.privacy-point {
+  padding: 2rem;
+  background: var(--light-bg);
+  border-radius: 8px;
+}
+
+/* Vision Section */
+.vision {
+  background: var(--light-bg);
+  text-align: center;
+}
+
+.vision-statement {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+  
+  .stakeholder-grid, .gem-actions, .privacy-points {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+
+    
+    </div>
+    <script type="application/json" id="course-data-">null</script>
+    
+    
+    <!-- Only load navigation.js if the header is visible -->
+    <script src="/assets/js/navigation.js"></script>
+    
+  </body>
+</html>

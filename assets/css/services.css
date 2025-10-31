@@ -1,0 +1,365 @@
+/* Services Page Styles */
+
+/* Common Hero Styles */
+.services-hero,
+.stakeholder-hero {
+  background: #f8f9fa;
+  color: #2c3e50;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content .lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-cta .primary-button {
+  display: inline-block;
+  background: #fff;
+  color: #1a237e;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-cta .primary-button:hover {
+  background: #e8eaf6;
+}
+
+.value-props {
+  padding: 4rem 2rem;
+  background: #f5f5f5;
+}
+
+.value-props .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.prop-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-header {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-header .icon {
+  opacity: 0.85;
+}
+
+.header-link {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all 0.2s ease;
+}
+
+.header-link h2 {
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+
+.header-link:hover {
+  color: white;
+}
+
+.card-header .icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  opacity: 0.9;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  color: #1a237e;
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.card-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.card-content li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.card-content li::before {
+  content: "•";
+  color: #1a237e;
+  position: absolute;
+  left: 0;
+}
+
+/* Stakeholder Solutions Page */
+.intro {
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.admin-solutions,
+.curriculum-solutions {
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.admin-solutions {
+  background: #f8f9fa;
+}
+
+.curriculum-solutions {
+  background: white;
+}
+
+/* Decorative elements reminiscent of manuscript pages */
+.admin-solutions::before,
+.curriculum-solutions::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #d4b886, transparent);
+}
+
+.role-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #2c1810;  /* Deep sepia */
+  font-family: 'Lora', serif;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+}
+
+/* Decorative quotes for role-intro */
+.role-intro::before,
+.role-intro::after {
+  content: """;
+  position: absolute;
+  font-size: 4rem;
+  color: #d4b886;
+  opacity: 0.5;
+  font-family: 'Lora', serif;
+}
+
+.role-intro::before {
+  top: -1rem;
+  left: 0;
+}
+
+.role-intro::after {
+  bottom: -2rem;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.solution-card {
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.solution-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.solution-card h3 {
+  margin: 0;
+  padding: 1rem;
+  background: #2c3e50;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.solution-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.05);
+}
+
+.solution-details {
+  padding: 1.5rem;
+  background: white;
+}
+
+.solution-details > div {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-left: 2px solid #2c3e50;
+  background: #f8f9fa;
+  border-radius: 0 4px 4px 0;
+}
+
+.solution-details > div:last-child {
+  margin-bottom: 0;
+}
+
+.solution-details h4 {
+  color: #2c3e50;
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.problem h4::before {
+  content: "⚠️";
+}
+
+.approach h4::before {
+  content: "💡";
+}
+
+.outcome h4::before {
+  content: "✨";
+}
+
+.solution-details p {
+  margin: 0;
+  line-height: 1.5;
+  color: #2c3e50;
+}
+
+/* Container width adjustments */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .solution-card h3 {
+    font-size: 1.2rem;
+    padding: 1.25rem;
+  }
+  
+  .solution-details {
+    padding: 1.25rem;
+  }
+  
+  .role-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Section headers */
+.admin-solutions h2,
+.curriculum-solutions h2 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.75rem;
+  margin: 0 0 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Decorative underline for section headers */
+.admin-solutions h2::after,
+.curriculum-solutions h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--color-primary);
+}
