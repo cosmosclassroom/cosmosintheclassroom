@@ -1,5 +1,233 @@
 /* Services Page Styles */
 
+/* ========================================
+   ACCORDION COMPONENTS
+   ======================================== */
+
+.services-accordion {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.accordion-item {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  border-color: #8B7355;
+}
+
+.accordion-item.recommended-item {
+  border-color: #D4A574;
+  border-width: 3px;
+}
+
+.recommended-banner {
+  background: linear-gradient(135deg, #D4A574 0%, #C9A961 100%);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: #f8f9fa;
+}
+
+.accordion-item.active .accordion-header {
+  background: #f8f9fa;
+}
+
+.accordion-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #6F5C4E 0%, #8B7355 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.accordion-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  font-family: var(--font-secondary);
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  color: #8B7355;
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.service-intro {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.service-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.detail-section h4 {
+  color: #8B7355;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.detail-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detail-section li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.detail-section li::before {
+  content: "✓";
+  color: #8B7355;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.service-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #8B7355;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.service-link:hover {
+  color: #6F5C4E;
+}
+
+/* Process Accordion Styles */
+.process-accordion {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.process-step-collapsible {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.process-step-collapsible:hover {
+  border-color: #8B7355;
+}
+
+.process-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.process-header:hover {
+  background: #f8f9fa;
+}
+
+.process-step-collapsible.active .process-header {
+  background: #f8f9fa;
+}
+
+.process-header .step-number {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6F5C4E 0%, #8B7355 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.process-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: 1.25rem;
+  color: #2c3e50;
+}
+
+.process-step-collapsible .accordion-content {
+  padding: 0 1.5rem;
+}
+
+.process-step-collapsible.active .accordion-content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.process-step-collapsible .accordion-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.process-step-collapsible .accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
 /* Common Hero Styles */
 .services-hero,
 .stakeholder-hero {
@@ -120,6 +348,41 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+}
+
+.callout-grid.chromosomes-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.chromosome-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(212, 165, 116, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.chromosome-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #D4A574;
+  transform: translateY(-4px);
+}
+
+.chromosome-card h4 {
+  color: #D4A574;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.chromosome-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 .callout-section h4 {
