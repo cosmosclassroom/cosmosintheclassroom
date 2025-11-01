@@ -96,9 +96,10 @@
         <!---->
 <style>
 .site-header {
-  background: var(--primary-color, #2c3e50);
+  background: #2c3e50;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 2px solid #d4b886;
 }
 
 .header-content {
@@ -119,6 +120,11 @@
 .site-title a {
   color: white;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-title a:hover {
+  color: #d4b886;
 }
 
 .site-nav ul {
@@ -133,11 +139,14 @@
   color: rgba(255,255,255,0.9);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .site-nav a:hover {
-  color: white;
+  color: #d4b886;
+  background-color: rgba(212, 184, 134, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -160,7 +169,7 @@
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="/classroom/">Learning Portal</a></li>
+        <!-- <li><a href="/classroom/">Learning Portal</a></li> -->
         <li><a href="/services/">District Services</a></li>
         <li><a href="/about/">About Us</a></li>
       </ul>
@@ -173,8 +182,7 @@
     
     
   <div class="markdown-body">
-    
-      <!-- 
+    <!-- 
   This is the primary layout for all interactive activities.
   It provides a clean, full-width container and loads all necessary
   CSS and JavaScript for the activity submission system.
@@ -719,10 +727,9 @@
 
 <!-- Core Activity Display System (Phase 3B - Static Content Only) -->
 <!-- Navigation and display functionality only - no assessment/submission features -->
-<script src="/assets/js/activity-core-static.js?v=1761877328"></script>
+<script src="/assets/js/activity-core-static.js?v=1761960371"></script>
 
-    
-    </div>
+  </div>
     <script type="application/json" id="course-data-">null</script>
     
     

@@ -89,9 +89,10 @@
         <!---->
 <style>
 .site-header {
-  background: var(--primary-color, #2c3e50);
+  background: #2c3e50;
   padding: 1rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-bottom: 2px solid #d4b886;
 }
 
 .header-content {
@@ -112,6 +113,11 @@
 .site-title a {
   color: white;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-title a:hover {
+  color: #d4b886;
 }
 
 .site-nav ul {
@@ -126,11 +132,14 @@
   color: rgba(255,255,255,0.9);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s, background 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .site-nav a:hover {
-  color: white;
+  color: #d4b886;
+  background-color: rgba(212, 184, 134, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -153,7 +162,7 @@
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <li><a href="/classroom/">Learning Portal</a></li>
+        <!-- <li><a href="/classroom/">Learning Portal</a></li> -->
         <li><a href="/services/">District Services</a></li>
         <li><a href="/about/">About Us</a></li>
       </ul>
@@ -166,8 +175,7 @@
     
     
   <div class="markdown-body">
-    
-      <link rel="stylesheet" href="/assets/css/lecture.css">
+    <link rel="stylesheet" href="/assets/css/lecture.css">
 
 <div class="lecture">
   <header class="lecture-header">
@@ -220,18 +228,22 @@
 <p>We use a special subscript notation to keep track of the frames of reference:</p>
 
 <ul>
-  <li>$v_{PG}$ = velocity of the Passenger relative to the Ground</li>
-  <li>$v_{PT}$ = velocity of the Passenger relative to the Train</li>
-  <li>$v_{TG}$ = velocity of the Train relative to the Ground</li>
+  <li>$\vec{v_{PG}}$ = velocity of the Passenger relative to the Ground</li>
+  <li>$\vec{v_{PT}}$ = velocity of the Passenger relative to the Train</li>
+  <li>$\vec{v_{TG}}$ = velocity of the Train relative to the Ground</li>
 </ul>
 
+<hr />
+
+<h1 id="notation-in-relative-motion-problems">Notation in Relative Motion Problems</h1>
+
 <p>The rule is:
-\(v_{AC} = v_{AB} + v_{BC}\)</p>
+\(\vec{v_{AC}} = \vec{v_{AB}} + \vec{v_{BC}}\)</p>
 
 <p>So,
-\(v_{PG} = v_{PT} + v_{TG} = 2\,\text{m/s} + 30\,\text{m/s} = 32\,\text{m/s}\)</p>
+\(\vec{v_{PG}} = \vec{v_{PT}} + \vec{v_{TG}} = 2\,\text{m/s} + 30\,\text{m/s} = 32\,\text{m/s}\)</p>
 
-<p>What if the passenger walks backward? Then $v_{PT} = -2\,\text{m/s}$, so $v_{PG} = -2\,\text{m/s} + 30\,\text{m/s} = 28\,\text{m/s}$.</p>
+<p>What if the passenger walks backward? Then $\vec{v_{PT}} = -2\,\text{m/s}$, so $\vec{v_{PG}} = -2\,\text{m/s} + 30\,\text{m/s} = 28\,\text{m/s}$.</p>
 
 <hr />
 
@@ -242,11 +254,11 @@
 <p><strong>The Classic Problem:</strong> A boat wants to travel straight across a river.</p>
 
 <ul>
-  <li>The boat’s engine can propel it at $4.0\,\text{m/s}$ relative to the water ($v_{BW}$).</li>
-  <li>The river flows downstream at $3.0\,\text{m/s}$ relative to the ground ($v_{WG}$).</li>
+  <li>The boat’s engine can propel it at $4.0\,\text{m/s}$ relative to the water ($\vec{v_{BW}}$).</li>
+  <li>The river flows downstream at $3.0\,\text{m/s}$ relative to the ground ($\vec{v_{WG}}$).</li>
 </ul>
 
-<p>What is the boat’s actual velocity relative to the ground ($v_{BG}$)?</p>
+<p>What is the boat’s actual velocity relative to the ground ($\vec{v_{BG}}$)?</p>
 
 <!-- A diagram showing a river with a current flowing to the right. A boat is pointed straight across the river. A vector for the boat's velocity relative to water ($v_{BW}$) points up. A vector for the water's velocity relative to the ground ($v_{WG}$) points right. -->
 
@@ -256,7 +268,7 @@
 
 <p>We need to find $v_{BG} = v_{BW} + v_{WG}$.</p>
 
-<p>This is a vector addition problem. We add the two velocity vectors tip-to-tail to find the resultant vector.</p>
+<p>This is a <strong>vector addition</strong> problem.</p>
 
 <!-- A right-triangle vector addition diagram. The $v_{BW}$ vector (4.0 m/s) points up. The $v_{WG}$ vector (3.0 m/s) is added tip-to-tail, pointing right. The resultant vector, $v_{BG}$, is the hypotenuse, pointing up and to the right. -->
 
@@ -278,13 +290,15 @@
 <p><strong>In which direction must she point the nose of the airplane to actually travel due north?</strong></p>
 
 <p>A) Due north<br />
-B) Due east<br />
-C) Northeast<br />
-D) Northwest</p>
+  B) Due east<br />
+  C) Northeast<br />
+  D) Northwest</p>
 
 <!-- A simple compass rose diagram. -->
 
-<p><strong>Answer:</strong> D) Northwest. She must aim the plane partially into the wind (to the west) to cancel out the wind’s eastward push.</p>
+<ul>
+  <li><strong>Answer:</strong> D) Northwest. She must aim the plane partially into the wind (to the west) to cancel out the wind’s eastward push.</li>
+</ul>
 
 <hr />
 
@@ -292,14 +306,23 @@ D) Northwest</p>
 
 <p><strong>1. What is a “frame of reference” and why is it important?</strong></p>
 
-<p>A frame of reference is the perspective from which motion is observed.</p>
+<ul>
+  <li>
+    <p>A frame of reference is the perspective from which motion is observed.</p>
+  </li>
+  <li>
+    <p>It is crucial because the description of an object’s velocity can be different for different observers. There is no single “correct” answer without first defining the frame of reference.</p>
+  </li>
+</ul>
 
-<p>It is crucial because the description of an object’s velocity can be different for different observers. There is no single “correct” answer without first defining the frame of reference.</p>
+<hr />
+
+<h2 id="answering-essential-questions-continued">Answering Essential Questions (continued)</h2>
 
 <p><strong>2. How do we find an object’s velocity relative to a different observer?</strong></p>
 
 <p>We use vector addition:
-\(v_{AC} = v_{AB} + v_{BC}\)</p>
+\(\vec{v_{AC}} = \vec{v_{AB}} + \vec{v_{BC}}\)</p>
 
 <p>In 1D, this is simple addition or subtraction.</p>
 
@@ -318,8 +341,7 @@ You now have the tools to analyze motion in a moving reference frame. This is th
   </div>
 </div>
 
-    
-    </div>
+  </div>
     <script type="application/json" id="course-data-">null</script>
     
     

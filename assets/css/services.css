@@ -90,6 +90,14 @@
   opacity: 0.85;
 }
 
+.card-link:hover {
+  text-decoration: none; /* Explicitly remove underline on hover */
+}
+
+.card-link:hover .header-link {
+  color: white; /* Make header text brighter on hover */
+}
+
 .header-link {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.95);
@@ -205,7 +213,7 @@
 /* Decorative quotes for role-intro */
 .role-intro::before,
 .role-intro::after {
-  content: """;
+  content: '""';
   position: absolute;
   font-size: 4rem;
   color: #d4b886;
@@ -362,4 +370,80 @@
   width: 60px;
   height: 2px;
   background: var(--color-primary);
+}
+
+.stakeholder-header .icon,
+#key-features .icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+/* Key Features & Use Cases Section */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.feature-icon .icon {
+  width: 48px;
+  height: 48px;
+  fill: #2c3e50;
+}
+
+.feature-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.feature-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.use-cases {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.use-case-card {
+  background: #f8f9fa;
+  border-left: 4px solid #2c3e50;
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: #34495e;
+}
+
+.use-case-card p {
+  margin: 0;
+}
+
+.section-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #34495e;
 }
