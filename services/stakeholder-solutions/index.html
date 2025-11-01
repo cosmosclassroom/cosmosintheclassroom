@@ -23,12 +23,21 @@
     <link rel="stylesheet" href="/assets/css/components/buttons.css">
     <link rel="stylesheet" href="/assets/css/components/figures.css">
     
+    <!-- Marketing Pages CSS (loaded before main.css for proper cascade) -->
+    <link rel="stylesheet" href="/assets/css/marketing-pages.css">
+    
     <!-- Global CSS with new academic palette -->
     <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <!-- Homepage CSS (Nov 2025 Refactor) -->
+    
     
     <!-- Services Pages CSS -->
     
     <link rel="stylesheet" href="/assets/css/services.css">
+    
+    
+    <!-- Perspectives/Blog Pages CSS -->
     
     
     
@@ -89,85 +98,18 @@
     
     <header>
       <div class="site-header">
-        <!---->
-<style>
-.site-header {
-  background: #2c3e50;
-  padding: 1rem 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-bottom: 2px solid #d4b886;
-}
-
-.header-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-title {
-  margin: 0;
-  font-family: "Crimson Text", Georgia, serif;
-  font-size: 1.5rem;
-}
-
-.site-title a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.site-title a:hover {
-  color: #d4b886;
-}
-
-.site-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 2rem;
-}
-
-.site-nav a {
-  color: rgba(255,255,255,0.9);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s, background 0.2s;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-
-.site-nav a:hover {
-  color: #d4b886;
-  background-color: rgba(212, 184, 134, 0.15);
-}
-
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .site-nav ul {
-    gap: 1rem;
-  }
-}
-</style>
-
-<header class="site-header">
+        <header class="site-header">
   <div class="header-content">
     <div>
       <h1 class="site-title"><a href="/">Cosmos in the Classroom</a></h1>
     </div>
     <nav class="site-nav" aria-label="Main Navigation">
       <ul class="nav-links">
-        <!-- <li><a href="/classroom/">Learning Portal</a></li> -->
-        <li><a href="/services/">District Services</a></li>
-        <li><a href="/about/">About Us</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/services/">Services</a></li>
+        <li><a href="/perspectives/">Perspectives</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -208,6 +150,10 @@
       <a href="#teachers" class="role-button">
         <img src="/assets/images/icons/teacher.png" alt="" class="role-icon" />
         <span class="role-label">Teachers</span>
+      </a>
+      <a href="#support-teams" class="role-button">
+        <img src="/assets/images/icons/support.png" alt="" class="role-icon" />
+        <span class="role-label">Support Teams</span>
       </a>
       <a href="#support-teams" class="role-button">
         <img src="/assets/images/icons/support.png" alt="" class="role-icon" />
@@ -432,44 +378,45 @@
 <section class="support-solutions" id="support-teams">
   <div class="container">
     <div class="section-header">
-      <span class="role-badge support">Support Teams</span>
+      <span class="role-badge support">Student &amp; Staff Support Teams</span>
       <h2>The Consistency &amp; Support Codex</h2>
-      <p class="role-intro">You are the critical support network for the entire school community. Your goal is to provide consistent, accurate support to students, teachers, and families, ensuring everyone can find the <em>right</em> information—from health policies to curriculum resources. The Codex acts as your central, verifiable knowledge base.</p>
+      <p class="role-intro">Connect counselors, nurses, paraprofessionals, and librarians to a single source of truth. The Codex ensures everyone has instant access to protocols, policies, and resources—no more hunting through disconnected systems.</p>
+      <p class="role-guarantee"><strong>Privacy guarantee:</strong> Never used for student tracking or surveillance.</p>
     </div>
-    
+
     <div class="solutions-grid">
       <div class="solution-card">
-        <h3>Siloed Policy &amp; Protocols</h3>
+        <h3>Unified Protocol Access</h3>
         <div class="solution-details">
           <div class="problem">
             <h4>The Challenge</h4>
-            <p>Policy documents are scattered across drives. A nurse needs the medication administration protocol. A counselor needs the wellness referral steps. Each search wastes time and risks using outdated information.</p>
+            <p>Counselors, nurses, and paras work from different systems. Finding the right protocol—IEP procedures, crisis response steps, medication policies—means hunting through folders, emails, and SharePoint sites.</p>
           </div>
           <div class="approach">
             <h4>How the Codex Helps</h4>
-            <p>Configure it with all district handbooks and protocols. Ask: <em>"What is the official policy for administering medication?"</em> or <em>"Summarize the 3-step protocol for a student wellness referral."</em></p>
+            <p>Train it on all support protocols and policies. Then query: <em>"What's the procedure for a student having a panic attack?"</em> or <em>"Show me the medication administration form and policy."</em> Instant, accurate recall.</p>
           </div>
           <div class="outcome">
             <h4>The Result</h4>
-            <p><strong>Verifiable single source of truth.</strong> Stop hunting for "the right document." Provide consistent, official answers to parents and staff, reducing liability and confusion.</p>
+            <p><strong>One source of truth.</strong> Every support staff member has instant access to the right protocol at the right time—no searching, no delays.</p>
           </div>
         </div>
       </div>
 
       <div class="solution-card">
-        <h3>Misaligned Academic Support</h3>
+        <h3>Aligned Academic Support</h3>
         <div class="solution-details">
           <div class="problem">
             <h4>The Challenge</h4>
-            <p>A librarian needs resources for a unit but doesn't know the learning goals. A paraprofessional wants to help but isn't sure what aligned questions to ask. Support work happens in a vacuum.</p>
+            <p>Paraprofessionals and tutors need curriculum-aligned support materials, but they don't have time to reverse-engineer what teachers are covering or hunt for resources that match the standards.</p>
           </div>
           <div class="approach">
             <h4>How the Codex Helps</h4>
-            <p>Knowing your GVC and curriculum, it answers: <em>"Show me the key themes for 10th Grade ELA Unit 3"</em> or <em>"Generate 3 aligned exit ticket questions for 7th-grade math."</em></p>
+            <p>Configure it with your curriculum scope and sequence. Query: <em>"What resources support Unit 3 fractions for tier 2 intervention?"</em> or <em>"Show me scaffolded reading materials for this week's science topic."</em></p>
           </div>
           <div class="outcome">
             <h4>The Result</h4>
-            <p><strong>Aligned, effective intervention.</strong> Support staff become force-multipliers for teachers. Their work—recommendations, small-group help—is now directly aligned with the official curriculum.</p>
+            <p><strong>Intervention that aligns.</strong> Support staff can deliver help that's actually connected to what students are learning in class—reducing confusion and improving outcomes.</p>
           </div>
         </div>
       </div>
@@ -479,15 +426,15 @@
         <div class="solution-details">
           <div class="problem">
             <h4>The Challenge</h4>
-            <p>New counselors, paras, and support staff are overwhelmed trying to find official procedures, contacts, and protocols. Veteran staff spend hours answering the same orientation questions.</p>
+            <p>New counselors, nurses, or librarians face a learning curve: Where's the handbook? What's the referral process? Who handles what? Veteran staff become the unofficial training source, taking time from their own work.</p>
           </div>
           <div class="approach">
             <h4>How the Codex Helps</h4>
-            <p>New hires ask: <em>"Summarize the 504 accommodation process"</em> or <em>"Who is the district contact for special education?"</em> <em>"Where do I find my duty schedule?"</em></p>
+            <p>New hires can query directly: <em>"Walk me through the special education referral process"</em> or <em>"Who do I contact for technology support requests?"</em> Self-serve onboarding, on-demand.</p>
           </div>
           <div class="outcome">
             <h4>The Result</h4>
-            <p><strong>Accelerated onboarding.</strong> New staff find official answers in moments, not days. They feel competent faster and become self-sufficient, reducing the training burden on veteran staff.</p>
+            <p><strong>Faster onboarding.</strong> New staff get up to speed without relying on overworked colleagues—preserving veteran capacity while accelerating integration.</p>
           </div>
         </div>
       </div>
@@ -509,6 +456,12 @@
 
   </div>
     <script type="application/json" id="course-data-">null</script>
+    
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+      </div>
+    </footer>
     
     
     <!-- Only load navigation.js if the header is visible -->
