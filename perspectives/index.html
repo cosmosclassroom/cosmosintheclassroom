@@ -54,8 +54,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -85,7 +84,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -103,13 +102,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -128,65 +126,150 @@
 
 <section class="insights-intro">
   <div class="container">
-    <p class="intro-text">Michel de Montaigne introduced the <em>essay</em>—literally "the attempt"—as a form of exploratory writing. Not declarations, not manifestos, but honest attempts to think through complex problems.</p>
-    <p class="intro-text">These essays are attempts to understand the tensions between human wisdom and machine intelligence, between institutional stability and creative adaptation, between the work we ask teachers to do and the work they were called to do.</p>
-    <p class="intro-text">They are explorations of how AI might help us preserve what matters in education—not by replacing teachers, but by finally allowing them to teach.</p>
+    <p class="intro-text">Michel de Montaigne introduced the <em>essay</em>—literally "the attempt"—as a form of exploratory writing.</p>
+    <p class="intro-text">These essays are attempts to consider the tensions and connections between human wisdom and machine intelligence, between institutional stability and creative adaptation, between the work we ask teachers to do and the work they do best.</p>
+    <p class="intro-text">They are explorations of how AI might help us preserve what matters in education—not by replacing teachers, but by returning to them their craft.</p>
   </div>
 </section>
 
 <section class="insights-list">
   <div class="container">
-    
-    <article class="insight-card">
-      <div class="insight-header">
-        <h2><a href="/perspectives/on-burnout/">On Teacher Burnout</a></h2>
-        <p class="insight-meta">November 1, 2025 • 5 min read</p>
-      </div>
-      <div class="insight-excerpt">
-        <p>A distinction between "The Job" (human work) and "The Work" (machine work)—and why conflating them is destroying the teaching profession.</p>
-        <p>"Any teacher who can be replaced by a computer probably should be... for their own sake. For it means they are doing computer work."</p>
-        <a href="/perspectives/on-burnout/" class="read-more">Read the essay →</a>
-      </div>
-    </article>
+    <div class="perspectives-layout">
+      <aside class="perspectives-sidebar" aria-label="Perspectives navigation">
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">Browse</h3>
+    <ul class="sidebar-links">
+      <li><a href="/perspectives/">All posts</a></li>
+    </ul>
+  </div>
 
-    <article class="insight-card">
-      <div class="insight-header">
-        <h2><a href="/perspectives/on-division-of-labor/">On Division of Labor: Human Brains and Plastic Brains</a></h2>
-        <p class="insight-meta">November 2, 2025 • 4 min read</p>
-      </div>
-      <div class="insight-excerpt">
-        <p>Everywhere except education, humans and computers have a sane partnership. We design; they calculate. We create; they execute. Why have we broken this in schools?</p>
-        <p>"We've turned teachers into low-grade processors, and in doing so, we've broken our teachers."</p>
-        <a href="/perspectives/on-division-of-labor/" class="read-more">Read the essay →</a>
-      </div>
-    </article>
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">Tags</h3>
+    <ul class="tag-list">
+      <li><button class="filter-button active" data-filter="all" type="button">All</button></li><li><button class="filter-button" data-filter="ai-literacy" type="button">AILiteracy</button></li><li><button class="filter-button" data-filter="division-of-labor" type="button">DivisionOfLabor</button></li><li><button class="filter-button" data-filter="institutional-memory" type="button">InstitutionalMemory</button></li><li><button class="filter-button" data-filter="custom-codex" type="button">CustomCodex</button></li><li><button class="filter-button" data-filter="teacher-burnout" type="button">TeacherBurnout</button></li><li><button class="filter-button" data-filter="systemic-burnout" type="button">SystemicBurnout</button></li><li><button class="filter-button" data-filter="institutional-design" type="button">InstitutionalDesign</button></li></ul>
+  </div>
 
-    <article class="insight-card">
-      <div class="insight-header">
-        <h2><a href="/perspectives/on-systemic-burnout/">On Human Viability and Systemic Burnout</a></h2>
-        <p class="insight-meta">November 3, 2025 • 6 min read</p>
-      </div>
-      <div class="insight-excerpt">
-        <p>The 8-pound binder on every teacher's shelf is a fossil—a static snapshot of a living ecosystem. We don't need a better binder. We need a better system.</p>
-        <p>"Burnout is the friction between these two jobs. It's the exhaustion of trying to serve two masters: the living needs of your students and the static demands of the binder."</p>
-        <a href="/perspectives/on-systemic-burnout/" class="read-more">Read the essay →</a>
-      </div>
-    </article>
+  <div class="sidebar-section">
+    <h3 class="sidebar-title">Archive</h3><div class="archive-groups"><details class="archive-year" open="">
+          <summary>2025</summary>
+          <ul class="archive-list"><li>
+                <a href="/perspectives/on-systemic-burnout/">Burnout is a Feature, Not a Bug: The Flaw in "One-Size-Fits-None"
+</a>
+                <span class="archive-date">Nov 20</span>
+              </li><li>
+                <a href="/perspectives/on-teacher-burnout/">Any Teacher Who Can Be Replaced by a Computer (Probably Should Be)
+</a>
+                <span class="archive-date">Nov 15</span>
+              </li><li>
+                <a href="/perspectives/on-nanoseconds/">On Nanoseconds</a>
+                <span class="archive-date">Nov 5</span>
+              </li><li>
+                <a href="/perspectives/on-changelogs/">On Changelogs and Institutional Memory</a>
+                <span class="archive-date">Nov 4</span>
+              </li><li>
+                <a href="/perspectives/on-division-of-labor/">On Division of Labor: Human Brains and Plastic Brains</a>
+                <span class="archive-date">Nov 2</span>
+              </li><li>
+                <a href="/perspectives/on-babes-in-woods/">On AI Literacy, or Babes in the Woods
+</a>
+                <span class="archive-date">Nov 1</span>
+              </li></ul>
+        </details></div>
+  </div>
+</aside>
 
-    <article class="insight-card">
-      <div class="insight-header">
-        <h2><a href="/perspectives/on-changelogs/">On Changelogs and Institutional Memory</a></h2>
-        <p class="insight-meta">November 4, 2025 • 5 min read</p>
-      </div>
-      <div class="insight-excerpt">
-        <p>A changelog is not just a record—it's proof of institutional maturity. It's the difference between being a reactive vessel and a proactive architect of your own evolution.</p>
-        <p>"The Custom Codex lets us be aware of our own story. For the first time, we are not condemned to be reactive due to the limits of human bandwidth and memory."</p>
-        <a href="/perspectives/on-changelogs/" class="read-more">Read the essay →</a>
-      </div>
-    </article>
+      <div class="perspectives-content">
+        
+        
+        
+        <article class="insight-card" data-tags="systemic-burnout institutional-design">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-systemic-burnout/">Burnout is a Feature, Not a Bug: The Flaw in "One-Size-Fits-None"
+</a></h2>
+            <p class="insight-meta">November 20, 2025</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>Teacher burnout isn't an unfortunate side effect of standardized curriculum systems. It's the predictable outcome of forcing creative professionals to do compliance work. Your move toward standardization wasn't wrong—it was necessary. But that V1.0 system has a design flaw.
+</p>
+            <a href="/perspectives/on-systemic-burnout/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
+        
+        <article class="insight-card" data-tags="teacher-burnout division-of-labor">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-teacher-burnout/">Any Teacher Who Can Be Replaced by a Computer (Probably Should Be)
+</a></h2>
+            <p class="insight-meta">November 15, 2025</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>This isn't about replacing teachers. It's about liberating them from computer work—the alignment cross-checking, the standards mapping, the tedious documentation that crushes creativity and breeds burnout.
+</p>
+            <a href="/perspectives/on-teacher-burnout/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
+        
+        <article class="insight-card" data-tags="ai-literacy">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-nanoseconds/">On Nanoseconds</a></h2>
+            <p class="insight-meta">November 5, 2025 • 4 min</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>We can now do in nanoseconds things we never should have been doing at all. This is the trap of speed without wisdom—using brilliant tools to accelerate misguided work.</p>
+            <a href="/perspectives/on-nanoseconds/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
+        
+        <article class="insight-card" data-tags="institutional-memory custom-codex">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-changelogs/">On Changelogs and Institutional Memory</a></h2>
+            <p class="insight-meta">November 4, 2025 • 5 min</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>A changelog is not just a record—it's proof of institutional maturity. It's the difference between being a reactive vessel and a proactive architect of your own evolution.</p>
+            <a href="/perspectives/on-changelogs/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
+        
+        <article class="insight-card" data-tags="division-of-labor ai-literacy">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-division-of-labor/">On Division of Labor: Human Brains and Plastic Brains</a></h2>
+            <p class="insight-meta">November 2, 2025 • 4 min</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>Humans and computers can have a sane partnership. We design; they calculate. We create; they execute. We can do this better in schools.</p>
+            <a href="/perspectives/on-division-of-labor/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
+        
+        <article class="insight-card" data-tags="ai-literacy">
+          <div class="insight-header">
+            <h2><a href="/perspectives/on-babes-in-woods/">On AI Literacy, or Babes in the Woods
+</a></h2>
+            <p class="insight-meta">November 1, 2025 • 5 min</p>
+          </div>
+          <div class="insight-excerpt">
+            <p>We are sending our students into the woods without a map. AI literacy begins with teachers practicing critical, ethical use in a safe, walled garden.</p>
+            <a href="/perspectives/on-babes-in-woods/" class="read-more">Read the essay →</a>
+          </div>
+        </article>
+        
 
+        <div class="insights-pagination" aria-label="Posts pagination">
+          <button id="newer-posts" class="pager-button" disabled="">Newer Posts</button>
+          <span id="page-status" class="pager-status"></span>
+          <button id="older-posts" class="pager-button">Older Posts</button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script defer="" src="/assets/js/perspectives-archive.js"></script>
 
 <section class="insights-cta">
   <div class="container">
@@ -202,6 +285,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

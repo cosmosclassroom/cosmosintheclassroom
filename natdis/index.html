@@ -51,8 +51,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -82,7 +81,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -100,13 +99,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -431,33 +429,11 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 <div class="course-nav-dropdown course-nav-dropdown--natdis">
   <div class="course-title">
     
-      <h2>Natural Disasters</h2>
+      <h2></h2>
     
   </div>
   
@@ -467,18 +443,6 @@
       <select id="unit-select-natdis" class="unit-select" aria-label="Select a unit">
         <option value="">-- Choose a Unit --</option>
         
-          
-            <option value="/natdis//">Unit 0: Unit 0</option>
-          
-            <option value="/natdis//">Unit 1: Unit 1</option>
-          
-            <option value="/natdis//">Unit 2: Unit 2</option>
-          
-            <option value="/natdis//">Unit 3: Unit 3</option>
-          
-            <option value="/natdis//">Unit 4: Unit 4</option>
-          
-            <option value="/natdis//">Unit 5: Unit 5</option>
           
         
       </select>
@@ -507,7 +471,7 @@
 <script>
 (function() {
   const courseCode = 'natdis';
-  const courseData = {"title":"Natural Disasters","url":"/natdis/","units":[{"number":0,"title":"Unit 0","slug":"","url":"/natdis//","content_types":[{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/natdis//flexbooks/"}],"files":[{"title":"Fb 1 Geoliteracy","unit":"0","unit_slug":"0-nature-science","url":"/natdis/0-nature-science/fb-1-geoliteracy/","type":"flexbooks","course":"natdis","filename":"fb-1-geoliteracy.md"}]},{"number":1,"title":"Unit 1","slug":"","url":"/natdis//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/natdis//assessments/"},{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/natdis//flexbooks/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/natdis//hexagon-labs/"},{"type":"keys","title":"🔑 Answer Keys","url":"/natdis//keys/"},{"type":"lectures","title":"📝 Lecture Slides","url":"/natdis//lectures/"},{"type":"problem-sets","title":"📊 Problem Sets","url":"/natdis//problem-sets/"},{"type":"research-briefs","title":"🔬 Research Briefs","url":"/natdis//research-briefs/"}],"files":[{"title":"Earth Waves","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/lec-1.1-earth-waves/","type":"lectures","course":"natdis","filename":"lec-1.1-earth-waves.md"},{"title":"Earthquakes","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/rb-1.1-earthquakes/","type":"research-briefs","course":"natdis","filename":"rb-1.1-earthquakes.md"},{"title":"Epicenters","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.1-epicenters/","type":"hexagon-labs","course":"natdis","filename":"hl-1.1-epicenters.md"},{"title":"Fb 1 Scientist Earthquakes","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/fb-1-scientist-earthquakes/","type":"flexbooks","course":"natdis","filename":"fb-1-scientist-earthquakes.md"},{"title":"Fb 3 Policymaker Earthquakes","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/fb-3-policymaker-earthquakes/","type":"flexbooks","course":"natdis","filename":"fb-3-policymaker-earthquakes.md"},{"title":"Fb 3B Policymaker Earthquakes","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/fb-3b-policymaker-earthquakes/","type":"flexbooks","course":"natdis","filename":"fb-3b-policymaker-earthquakes.md"},{"title":"Forces Waves","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/ps-1.1-forces-waves/","type":"problem-sets","course":"natdis","filename":"ps-1.1-forces-waves.md"},{"title":"Gis Connecticut","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.2-GIS-connecticut/","type":"hexagon-labs","course":"natdis","filename":"hl-1.2-GIS-connecticut.md"},{"title":"Hl 1.3.1 Real Engineering","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.3.1-real-engineering/","type":"hexagon-labs","course":"natdis","filename":"hl-1.3.1-real-engineering.md"},{"title":"Hl 1.3A Intro Engineering","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.3a-intro-engineering/","type":"hexagon-labs","course":"natdis","filename":"hl-1.3a-intro-engineering.md"},{"title":"Hl 1.3B Shake Table","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.3b-shake-table/","type":"hexagon-labs","course":"natdis","filename":"hl-1.3b-shake-table.md"},{"title":"Options To Action","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/fb-1.4-options-to-action/","type":"flexbooks","course":"natdis","filename":"fb-1.4-options-to-action.md"},{"title":"Problem Set 1.1 Answer Key: Forces & Waves","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/ps-1-1-forces-and-waves-key/","type":"keys","course":"natdis","filename":"ps-1-1-forces-and-waves-key.md"},{"title":"Problem Set 1.2 Answer Key: Systems & Solutions","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/ps-1-2-systems-and-solutions-key/","type":"keys","course":"natdis","filename":"ps-1-2-systems-and-solutions-key.md"},{"title":"Quiz 1 Earthquake Science","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/quiz-1-earthquake-science/","type":"assessments","course":"natdis","filename":"quiz-1-earthquake-science.md"},{"title":"Quiz 1.1: Decoding Seismic Signals - TEACHER ANSWER KEY","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/q1.1-earthquakes/","type":"keys","course":"natdis","filename":"q1.1-earthquakes.md"},{"title":"Research Brief Full","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/research-brief-full/","type":"research-briefs","course":"natdis","filename":"research-brief-full.md"},{"title":"The Policymaker - The Price of Safety","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/lec-1.3-policymaker-earthquakes/","type":"lectures","course":"natdis","filename":"lec-1.3-policymaker-earthquakes.md"},{"title":"The Price Of Safety","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/hl-1.4-the-price-of-safety/","type":"hexagon-labs","course":"natdis","filename":"hl-1.4-the-price-of-safety.md"},{"title":"Unit 1 Performance Task: Earthquake Resilience in Branford, CT","unit":"1","unit_slug":"1-earthquakes","url":"/natdis/1-earthquakes/pt-1-earthquakes-key/","type":"keys","course":"natdis","filename":"pt-1-earthquakes-key.md"}]},{"number":2,"title":"Unit 2","slug":"","url":"/natdis//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/natdis//assessments/"},{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/natdis//flexbooks/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/natdis//hexagon-labs/"}],"files":[{"title":"Chapter 2.1: The Scientist: Anatomy of a Wave\n","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/fb-2.1-anatomy-of-a-wave/","type":"flexbooks","course":"natdis","filename":"fb-2.1-anatomy-of-a-wave.md"},{"title":"Pt 2 Tsunamis Full Copy","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/pt-2-tsunamis-full copy/","type":"assessments","course":"natdis","filename":"pt-2-tsunamis-full copy.md"},{"title":"Quiz 2 Wave Dynamics","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/quiz-2-wave-dynamics/","type":"assessments","course":"natdis","filename":"quiz-2-wave-dynamics.md"},{"title":"Tsunami Defense","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/hl-2.2-tsunami-defense/","type":"hexagon-labs","course":"natdis","filename":"hl-2.2-tsunami-defense.md"},{"title":"Tsunami Policy","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/hl-2.3-tsunami-policy/","type":"hexagon-labs","course":"natdis","filename":"hl-2.3-tsunami-policy.md"},{"title":"Tsunami Speed","unit":"2","unit_slug":"2-tsunamis","url":"/natdis/2-tsunamis/hl-2.1-tsunami-speed/","type":"hexagon-labs","course":"natdis","filename":"hl-2.1-tsunami-speed.md"}]},{"number":3,"title":"Unit 3","slug":"","url":"/natdis//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/natdis//assessments/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/natdis//hexagon-labs/"},{"type":"problem-sets","title":"📊 Problem Sets","url":"/natdis//problem-sets/"}],"files":[{"title":"Defensible Design","unit":"3","unit_slug":"3-wildfire-science","url":"/natdis/3-wildfire-science/test-3.1-defensible-design/","type":"assessments","course":"natdis","filename":"test-3.1-defensible-design.md"},{"title":"Defensible Space Design","unit":"3","unit_slug":"3-wildfire-science","url":"/natdis/3-wildfire-science/hl-3.2-defensible-space-design/","type":"hexagon-labs","course":"natdis","filename":"hl-3.2-wildfire-defense.md"},{"title":"Defensible Space Policy","unit":"3","unit_slug":"3-wildfire-science","url":"/natdis/3-wildfire-science/hl-3.3-defensible-space-policy/","type":"hexagon-labs","course":"natdis","filename":"hl-3.3-wildfire-policy.md"},{"title":"Problem Set 3.1: Fire Behavior\n","unit":"3","unit_slug":"3-wildfires","url":"/natdis/3-wildfires/ps-3.1-fire-behavior/","type":"problem-sets","course":"natdis","filename":"ps-3.1-fire-behavior.md"},{"title":"Quiz 3 Fire Triangle","unit":"3","unit_slug":"3-wildfires","url":"/natdis/3-wildfires/quiz-3-fire-triangle/","type":"assessments","course":"natdis","filename":"quiz-3-fire-triangle.md"},{"title":"Wildfire Risk Assessment","unit":"3","unit_slug":"3-wildfire-science","url":"/natdis/3-wildfire-science/hl-3.1-wildfire-risk/","type":"hexagon-labs","course":"natdis","filename":"hl-3.1-widlfire-risk.md"}]},{"number":4,"title":"Unit 4","slug":"","url":"/natdis//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/natdis//assessments/"},{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/natdis//flexbooks/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/natdis//hexagon-labs/"}],"files":[{"title":"4 Flooding","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/flooding/","type":"flexbooks","course":"natdis","filename":"4-flooding.md"},{"title":"5 Flood Engineer","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/5-flood-engineer/","type":"flexbooks","course":"natdis","filename":"5-flood-engineer.md"},{"title":"Engineer Flooding Landslides","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/fb-4.2-engineer-flooding-landslides/","type":"flexbooks","course":"natdis","filename":"fb-4.2-engineer-flooding-landslides.md"},{"title":"Flood Barrier Design","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/hl-4.2-flood-barrier-design/","type":"hexagon-labs","course":"natdis","filename":"hl-4.2-holding-back-a-landslide.md"},{"title":"Flood Protection Policy","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/hl-4.3-flood-policy-decision/","type":"hexagon-labs","course":"natdis","filename":"hl-4.3-choosing-a-flood-plan.md"},{"title":"Infrastructure Planner","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/test-4.1-infrastructure-planner/","type":"assessments","course":"natdis","filename":"test-4.1-infrastructure-planner.md"},{"title":"Policymaker Flooding Landslides","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/fb-4.3-policymaker-flooding-landslides/","type":"flexbooks","course":"natdis","filename":"fb-4.3-policymaker-flooding-landslides.md"},{"title":"River Discharge and Flood Risk","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/hl-4.1-river-discharge-analysis/","type":"hexagon-labs","course":"natdis","filename":"hl-4.1-flooding-risk.md"},{"title":"Scientist Flooding Landslides","unit":"4","unit_slug":"4-flooding-and-landslides","url":"/natdis/4-flooding-and-landslides/fb-4.1-scientist-flooding-landslides/","type":"flexbooks","course":"natdis","filename":"fb-4.1-scientist-flooding-landslides.md"},{"title":"Scientist Landscape","unit":"4","unit_slug":"4-floods-landslides","url":"/natdis/4-floods-landslides/quiz-4.1-scientist-landscape/","type":"assessments","course":"natdis","filename":"quiz-4.1-scientist-landscape.md"}]},{"number":5,"title":"Unit 5","slug":"","url":"/natdis//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/natdis//assessments/"},{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/natdis//flexbooks/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/natdis//hexagon-labs/"},{"type":"problem-sets","title":"📊 Problem Sets","url":"/natdis//problem-sets/"}],"files":[{"title":"Branfords Hazard Hotspot","unit":"5","unit_slug":"5-final-portfolio","url":"/natdis/5-final-portfolio/hl-5.1-branfords-hazard-hotspot/","type":"hexagon-labs","course":"natdis","filename":"hl-5.1-branfords-hazard-hotspot.md"},{"title":"Capstone","unit":"5","unit_slug":"5-final-portfolio","url":"/natdis/5-final-portfolio/test-5.1-capstone/","type":"assessments","course":"natdis","filename":"test-5.1-capstone.md"},{"title":"Communicating Your Plan","unit":"5","unit_slug":"5-final-portfolio","url":"/natdis/5-final-portfolio/fb-5.3-communicating-your-plan/","type":"flexbooks","course":"natdis","filename":"fb-5.3-communicating-your-plan.md"},{"title":"Risk Assessment","unit":"5","unit_slug":"5-final-portfolio","url":"/natdis/5-final-portfolio/ps-5.1-risk-assessment/","type":"problem-sets","course":"natdis","filename":"ps-5.1-risk-assessment.md"}]}]};
+  const courseData = null;
   
   
   const useManifest = false;
@@ -736,6 +700,7 @@ a[href="/"]:hover {
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

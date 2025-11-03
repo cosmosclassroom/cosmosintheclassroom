@@ -51,8 +51,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -82,7 +81,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -100,13 +99,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -826,6 +824,7 @@ scripts\run_assessment_tests.bat --component=password --verbose
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

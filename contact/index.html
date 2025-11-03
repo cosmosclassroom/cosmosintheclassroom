@@ -52,8 +52,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -83,7 +82,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -101,13 +100,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -119,121 +117,85 @@
   <div class="markdown-body">
     <div class="contact-hero">
   <div class="hero-content">
-    <h1>Let's Talk About Your District's Needs</h1>
-    <p class="lead">Schedule a consultation to explore how a Custom Codex can help preserve your institutional knowledge and support your team.</p>
+    <h1>Start the Conversation</h1>
+    <h2>Let's Talk About Your District's Needs</h2>
+  <p class="lead">Schedule a consultation to explore how a Custom Codex can preserve your institutional knowledge and support your team.
+  We review every submission personally and will be in touch shortly to schedule a 20-minute, no-obligation call.</p>
   </div>
-</div>
+  </div>
 
-<section class="contact-form-section">
-  <div class="container">
-    <div class="form-intro">
-      <h2>Request a Consultation</h2>
-      <p>Tell us about your district and the challenges you're facing. We'll review your information and reach out within 24 hours to schedule a conversation.</p>
+<section class="contact-section">
+  <div class="container two-column">
+    <div class="why-column">
+      <h3>What Happens Next</h3>
+      <ol class="trust-steps">
+        <li><strong>Review:</strong> We'll personally review your challenges to see if we're a good fit.</li>
+        <li><strong>Connect:</strong> We will email you to schedule a 20-minute call at your convenience.</li>
+        <li><strong>Explore:</strong> We'll discuss your specific needs and our service pathways (Advising, Audit, or Codex Implementation).</li>
+      </ol>
     </div>
-    
-    <form id="consultation-form" method="POST" action="" class="contact-form">
-      <div class="form-grid">
-        <div class="form-group">
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required="" />
+
+    <div class="how-column">
+      <h3>Request a Consultation</h3>
+      <p>Please share your primary goals.</p>
+      <form id="consultation-form" class="contact-form" data-endpoint="">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required="" />
+          </div>
+
+          <div class="form-group">
+            <label for="organization">District or Organization *</label>
+            <input type="text" id="organization" name="organization" required="" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required="" />
+          </div>
+
+          <div class="form-group">
+            <label for="role">Your Role *</label>
+            <select id="role" name="role" required="">
+              <option value="">Select...</option>
+              <option>District or School Leadership</option>
+              <option>Curriculum &amp; Instruction</option>
+              <option>Teacher / Faculty</option>
+              <option>Support Staff (Counselor, Library, etc.)</option>
+              <option>Other</option>
+            </select>
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="title">Position/Title</label>
-          <input type="text" id="title" name="title" />
+        <fieldset class="form-group-full">
+          <legend>Primary Interest (Select at least one) *</legend>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="interests" value="Preserving Institutional Knowledge" /> Preserving Institutional Knowledge</label>
+            <label class="checkbox-label"><input type="checkbox" name="interests" value="Reducing Teacher Burnout / Admin Work" /> Reducing Teacher Burnout / Admin Work</label>
+            <label class="checkbox-label"><input type="checkbox" name="interests" value="Strategic AI &amp; Institutional Advising" /> Strategic AI &amp; Institutional Advising</label>
+            <label class="checkbox-label"><input type="checkbox" name="interests" value="Auditing Curriculum &amp; Policy" /> Auditing Curriculum &amp; Policy</label>
+            <label class="checkbox-label"><input type="checkbox" name="interests" value="Building a Custom Codex" /> Building a Custom Codex</label>
+          </div>
+        </fieldset>
+
+        <div class="form-group-full">
+          <label for="message">Your Goals or Questions (Optional)</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share any context or timelines that would help us prepare."></textarea>
         </div>
 
-        <div class="form-group">
-          <label for="org">District/Organization *</label>
-          <input type="text" id="org" name="org" required="" />
+        <div class="form-footer">
+          <button type="submit" id="request-consult-btn" class="primary-button">Request Consultation</button>
         </div>
-
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" required="" />
-        </div>
-
-        <div class="form-group">
-          <label for="phone">Phone *</label>
-          <input type="tel" id="phone" name="phone" required="" />
-        </div>
-
-        <div class="form-group">
-          <label for="role">Your Role *</label>
-          <select id="role" name="role" required="">
-            <option value="">Select your role...</option>
-            <option value="Administrator">Administrator (Superintendent, Principal, etc.)</option>
-            <option value="Curriculum Lead">Curriculum Lead/Director</option>
-            <option value="Teacher">Teacher</option>
-            <option value="Support Staff">Support Staff (Counselor, Librarian, etc.)</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group-full">
-        <label>Which challenges are you facing? (Select all that apply) *</label>
-        <div class="checkbox-group">
-          <label class="checkbox-label">
-            <input type="checkbox" name="challenge_veteran_wisdom" value="yes" />
-            <span>Losing veteran teacher wisdom when experienced educators retire</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="challenge_admin_burden" value="yes" />
-            <span>Teacher administrative burden (compliance, differentiation, alignment)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="challenge_ai_policy" value="yes" />
-            <span>Need AI policy guidance and ethical implementation strategies</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="challenge_alignment" value="yes" />
-            <span>Curriculum alignment issues (vertical, horizontal, cross-disciplinary)</span>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" name="challenge_other" value="yes" />
-            <span>Other challenges (please specify in additional information)</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="form-group-full">
-        <label for="additional_info">Additional Information</label>
-        <textarea id="additional_info" name="additional_info" rows="4" placeholder="Tell us more about your specific situation, timeline, or questions..."></textarea>
-      </div>
+      </form>
 
       <div class="form-footer">
-        <button type="submit" id="request-consult-btn" class="primary-button">Request Consultation</button>
+        <a href="mailto:jonathan@cosmosintheclassroom.org?subject=Consultation%20Inquiry" class="secondary-button" aria-label="Email Jonathan at Cosmos in the Classroom">Email Jonathan</a>
       </div>
-    </form>
 
-    <div id="confirmation-message" class="confirmation-message" style="display:none;" role="status" aria-live="polite">
-      <h3>Thank you for your interest!</h3>
-      <p>We'll review your information and reach out within 24 hours to schedule your consultation.</p>
-    </div>
-  </div>
-</section>
-
-<section class="what-happens-next">
-  <div class="container">
-    <h2>What Happens Next</h2>
-    <div class="steps-grid">
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <h3>We Review Your Information</h3>
-        <p>Our team reviews your district's specific challenges and determines how the Custom Codex can best serve your needs.</p>
-      </div>
-      
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <h3>We Schedule a 20-Minute Call</h3>
-        <p>We'll reach out within 24 hours to schedule a brief conversation—no sales pitch, just a genuine discussion about whether our approach is a good fit.</p>
-      </div>
-      
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <h3>We Explore Solutions Together</h3>
-        <p>If there's alignment, we'll discuss our three service pathways (Advising, DNA Audit, or Full Implementation) and create a plan tailored to your district.</p>
+      <div id="confirmation-message" class="confirmation-message" style="display:none;" role="status" aria-live="polite">
+        <h3>Thank you.</h3>
+        <p>We have received your message and will be in touch shortly.</p>
       </div>
     </div>
   </div>
@@ -241,44 +203,69 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var form = document.getElementById('consultation-form');
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      // Validate at least one checkbox is checked
-      const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-      const atLeastOneChecked = Array.from(checkboxes).some(cb => cb.checked);
-      
-      if (!atLeastOneChecked) {
-        alert('Please select at least one challenge you are facing.');
-        return;
-      }
-      
-      const data = new FormData(form);
-      
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-        });
-        
-        if (response.ok) {
-          form.style.display = 'none';
-          var confirmation = document.getElementById('confirmation-message');
-          if (confirmation) {
-            confirmation.style.display = 'block';
-          }
-          if (window.gtag) {
-            gtag('event', 'consultation_requested');
-          }
-        }
-      } catch (error) {
-        console.error('Form submission error:', error);
-        alert('There was an error submitting the form. Please try again or email us directly.');
-      }
-    });
+  const form = document.getElementById('consultation-form');
+  if (!form) return;
+
+  const submitBtn = document.getElementById('request-consult-btn');
+  const endpoint = form.getAttribute('data-endpoint');
+  if (!endpoint || !/^https?:\/\//.test(endpoint)) {
+    console.warn('[contact] No valid submission endpoint configured (site.data.form-submissions.web_app_url). Submissions will be disabled.');
   }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const selected = Array.from(form.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value);
+    if (selected.length === 0) {
+      alert('Please select at least one Primary Interest.');
+      return;
+    }
+
+    const payload = {
+      name: form.name.value.trim(),
+      organization: form.organization.value.trim(),
+      email: form.email.value.trim(),
+      role: form.role.value,
+      interests: selected.join(', '),
+      message: form.message.value.trim()
+    };
+
+    // Basic required validation
+    if (!payload.name || !payload.organization || !payload.email || !payload.role) {
+      alert('Please complete all required fields.');
+      return;
+    }
+
+    // Disable button and show submitting state
+    submitBtn.disabled = true;
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Submitting...';
+
+    try {
+      if (!endpoint || !/^https?:\/\//.test(endpoint)) {
+        throw new Error('Missing or invalid submission endpoint.');
+      }
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        const confirmation = document.getElementById('confirmation-message');
+        if (confirmation) confirmation.style.display = 'block';
+        if (window.gtag) { gtag('event', 'consultation_requested'); }
+      } else {
+        throw new Error('Non-200 response');
+      }
+    } catch (err) {
+      console.error('Submission failed:', err);
+      alert('An error occurred. Please try again or email us directly.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
 });
 </script>
 
@@ -289,6 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

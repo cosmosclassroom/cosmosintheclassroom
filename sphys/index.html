@@ -51,8 +51,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -82,7 +81,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -100,13 +99,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -431,33 +429,11 @@
 
   
 
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 <div class="course-nav-dropdown course-nav-dropdown--sphys">
   <div class="course-title">
     
-      <h2>Standard Physics</h2>
+      <h2></h2>
     
   </div>
   
@@ -467,18 +443,6 @@
       <select id="unit-select-sphys" class="unit-select" aria-label="Select a unit">
         <option value="">-- Choose a Unit --</option>
         
-          
-            <option value="/sphys//">Unit 1: Unit 1</option>
-          
-            <option value="/sphys//">Unit 2: Unit 2</option>
-          
-            <option value="/sphys//">Unit 3: Unit 3</option>
-          
-            <option value="/sphys//">Unit 4: Unit 4</option>
-          
-            <option value="/sphys//">Unit 5: Unit 5</option>
-          
-            <option value="/sphys//">Unit 6: Unit 6</option>
           
         
       </select>
@@ -507,7 +471,7 @@
 <script>
 (function() {
   const courseCode = 'sphys';
-  const courseData = {"title":"Standard Physics","url":"/sphys/","units":[{"number":1,"title":"Unit 1","slug":"","url":"/sphys//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/sphys//assessments/"},{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/sphys//flexbooks/"},{"type":"hexagon-labs","title":"🧪 Hexagon Labs","url":"/sphys//hexagon-labs/"},{"type":"keys","title":"🔑 Answer Keys","url":"/sphys//keys/"},{"type":"lectures","title":"📝 Lecture Slides","url":"/sphys//lectures/"},{"type":"problem-sets","title":"📊 Problem Sets","url":"/sphys//problem-sets/"},{"type":"research-briefs","title":"🔬 Research Briefs","url":"/sphys//research-briefs/"}],"files":[{"title":"Blackout Data","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/hl-1.1-blackout-data/","type":"hexagon-labs","course":"sphys","filename":"hl-1.1-blackout-data.md"},{"title":"Blackouts 2025\n","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/quiz-1.1-blackouts-2025/","type":"assessments","course":"sphys","filename":"quiz-1.1-blackouts-2025.md"},{"title":"Blackouts 2025 Key","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/quiz-1.1-blackouts-2025-key/","type":"keys","course":"sphys","filename":"quiz-1.1-blackouts-2025-key.md"},{"title":"Chapter 4: From Fields to Flow: The Rules of the Circuit","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/4-circuits-grids/","type":"flexbooks","course":"sphys","filename":"4-circuits-grids.md"},{"title":"Circuits And Power","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/ps-1.1-circuits-and-power/","type":"problem-sets","course":"sphys","filename":"ps-1.1-circuits-and-power.md"},{"title":"Circuits Power Key","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/ps-1.1-circuits-power-key/","type":"keys","course":"sphys","filename":"ps-1.1-circuits-power-key.md"},{"title":"Current Through Wire","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/hl-1.5-current-through-wire/","type":"hexagon-labs","course":"sphys","filename":"hl-1.5-current-through-wire.md"},{"title":"Designing Reliable Systems","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/lec-1.2-designing-reliable-systems/","type":"lectures","course":"sphys","filename":"lec-1.2-designing-reliable-systems.md"},{"title":"Engineering Design Tradeoffs","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/hl-1.3-engineering-design-tradeoffs/","type":"hexagon-labs","course":"sphys","filename":"hl-1.3-engineering-design-tradeoffs.md"},{"title":"Fb 1 How Electricity Transfers","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/fb-1-how-electricity-transfers/","type":"flexbooks","course":"sphys","filename":"fb-1-how-electricity-transfers.md"},{"title":"Fb 2 Designing Grid Solutions","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/fb-2-designing-grid-solutions/","type":"flexbooks","course":"sphys","filename":"fb-2-designing-grid-solutions.md"},{"title":"Fb 3 Electromagnetism","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/fb-3-electromagnetism/","type":"flexbooks","course":"sphys","filename":"fb-3-electromagnetism.md"},{"title":"Fb 4 Circuits Grids","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/fb-4-circuits-grids/","type":"flexbooks","course":"sphys","filename":"fb-4-circuits-grids.md"},{"title":"Grids Key","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/fb-1.2-grids-key/","type":"keys","course":"sphys","filename":"fb-1.2-grids-key.md"},{"title":"Hexagon Lab 1.4: Engineering Design Tradeoffs","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/hl-1.4-design-tradeoffs/","type":"hexagon-labs","course":"sphys","filename":"hl-1.4-design-tradeoffs.md"},{"title":"Key Ps 1.2 Supply Demand","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/ps-1.2-supply-demand-key/","type":"keys","course":"sphys","filename":"ps-1.2-supply-demand-key.md"},{"title":"Rb 1 Energy Grids","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/rb-1-energy-grids/","type":"research-briefs","course":"sphys","filename":"rb-1-energy-grids.md"},{"title":"Rules Of The Game","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/lec-1.1-rules-of-the-game/","type":"lectures","course":"sphys","filename":"lec-1.1-rules-of-the-game.md"},{"title":"Supply And Demand","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/ps-1.2-supply-and-demand/","type":"problem-sets","course":"sphys","filename":"ps-1.2-supply-and-demand.md"},{"title":"Supply and Demand - The Heartbeat of the Grid","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/lec-1.2-supply-and-demand/","type":"lectures","course":"sphys","filename":"lec-1.2-supply-and-demand.md"},{"title":"Unit P.1 Assessment Study Guide: The Invisible Currents\n","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/sg-quiz-1.1-blackouts/","type":"assessments","course":"sphys","filename":"sg-quiz-1.1-blackouts.md"},{"title":"Unit P.1 Assessment: Analyzing the Texas Power Crisis\n","unit":"1","unit_slug":"1-energy-grids","url":"/sphys/1-energy-grids/quiz-1.1-blackouts/","type":"assessments","course":"sphys","filename":"quiz-1.1-blackouts.md"}]},{"number":2,"title":"Unit 2","slug":"","url":"/sphys//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/sphys//assessments/"},{"type":"lectures","title":"📝 Lecture Slides","url":"/sphys//lectures/"}],"files":[{"title":"Lecture 2.1: The Language of Forces\n","unit":"2","unit_slug":"2-earth-forces","url":"/sphys/2-earth-forces/2.1-language-of-forces/","type":"lectures","course":"sphys","filename":"2.1-language-of-forces.md"},{"title":"Lecture 2.3: When Continents Collide\n","unit":"2","unit_slug":"2-earth-forces","url":"/sphys/2-earth-forces/2.3-continents-collide/","type":"lectures","course":"sphys","filename":"2.3-continents-collide.md"},{"title":"Pt 2 Earth Forces","unit":"2","unit_slug":"2-earth-forces","url":"/sphys/2-earth-forces/pt-2-earth-forces/","type":"assessments","course":"sphys","filename":"pt-2-earth-forces.md"},{"title":"Quiz 2 Earth Inertia","unit":"2","unit_slug":"2-earth-forces","url":"/sphys/2-earth-forces/quiz-2-earth-inertia/","type":"assessments","course":"sphys","filename":"quiz-2-earth-inertia.md"}]},{"number":3,"title":"Unit 3","slug":"","url":"/sphys//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/sphys//assessments/"},{"type":"lectures","title":"📝 Lecture Slides","url":"/sphys//lectures/"},{"type":"problem-sets","title":"📊 Problem Sets","url":"/sphys//problem-sets/"}],"files":[{"title":"Momentum Impulse","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/quiz-3.1-momentum-impulse/","type":"assessments","course":"sphys","filename":"quiz-3.1-momentum-impulse.md"},{"title":"Problem Set 3.2: Conservation of Momentum","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/ps-3.2-conservation-of-momentum/","type":"problem-sets","course":"sphys","filename":"ps-3.2-conservation-of-momentum.md"},{"title":"Pt 3 Collisions","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/pt-3-collisions/","type":"assessments","course":"sphys","filename":"pt-3-collisions.md"},{"title":"The Language Of Motion","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/lec-3.1-the-language-of-motion/","type":"lectures","course":"sphys","filename":"lec-3.1-the-language-of-motion.md"},{"title":"The Rules Of Interaction","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/lec-3.3-the-rules-of-interaction/","type":"lectures","course":"sphys","filename":"lec-3.3-the-rules-of-interaction.md"},{"title":"The Why Of Motion","unit":"3","unit_slug":"3-collision-safety","url":"/sphys/3-collision-safety/lec-3.2-the-why-of-motion/","type":"lectures","course":"sphys","filename":"lec-3.2-the-why-of-motion.md"}]},{"number":4,"title":"Unit 4","slug":"","url":"/sphys//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/sphys//assessments/"}],"files":[{"title":"Pt 4 Orbital Mechanics","unit":"4","unit_slug":"4-cosmic-impacts","url":"/sphys/4-cosmic-impacts/pt-4-orbital-mechanics/","type":"assessments","course":"sphys","filename":"pt-4-orbital-mechanics.md"},{"title":"Quiz 4 Orbital Mechanics","unit":"4","unit_slug":"4-cosmic-impacts","url":"/sphys/4-cosmic-impacts/quiz-4-orbital-mechanics/","type":"assessments","course":"sphys","filename":"quiz-4-orbital-mechanics.md"}]},{"number":5,"title":"Unit 5","slug":"","url":"/sphys//","content_types":[{"type":"assessments","title":"✅ Assessments","url":"/sphys//assessments/"},{"type":"lectures","title":"📝 Lecture Slides","url":"/sphys//lectures/"}],"files":[{"title":"The Duality Of Light","unit":"5","unit_slug":"5-electromagnetic-radiation","url":"/sphys/5-electromagnetic-radiation/lec-5.2-the-duality-of-light/","type":"lectures","course":"sphys","filename":"lec-5.2-the-duality-of-light.md"},{"title":"The Rhythm Of Nature","unit":"5","unit_slug":"5-electromagnetic-radiation","url":"/sphys/5-electromagnetic-radiation/lec-5.1-the-rhythm-of-nature/","type":"lectures","course":"sphys","filename":"lec-5.1-the-rhythm-of-nature.md"},{"title":"The Spectrum Of Reality","unit":"5","unit_slug":"5-electromagnetic-radiation","url":"/sphys/5-electromagnetic-radiation/lec-5.3-the-spectrum-of-reality/","type":"lectures","course":"sphys","filename":"lec-5.3-the-spectrum-of-reality.md"},{"title":"Unit Assessment","unit":"5","unit_slug":"5-electromagnetic-radiation","url":"/sphys/5-electromagnetic-radiation/unit-assessment/","type":"assessments","course":"sphys","filename":"unit-assessment.md"}]},{"number":6,"title":"Unit 6","slug":"","url":"/sphys//","content_types":[{"type":"flexbooks","title":"📖 Flexbook Chapters","url":"/sphys//flexbooks/"}],"files":[{"title":"Fb 18 Cosmic Background","unit":"6","unit_slug":"6-cosmology","url":"/sphys/6-cosmology/fb-18-cosmic-background/","type":"flexbooks","course":"sphys","filename":"fb-18-cosmic-background.md"},{"title":"Fb 19 Grand Design","unit":"6","unit_slug":"6-cosmology","url":"/sphys/6-cosmology/fb-19-grand-design/","type":"flexbooks","course":"sphys","filename":"fb-19-grand-design.md"}]}]};
+  const courseData = null;
   
   
   const useManifest = false;
@@ -735,6 +699,7 @@ a[href="/"]:hover {
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

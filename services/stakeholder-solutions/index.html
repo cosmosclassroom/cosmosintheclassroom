@@ -54,8 +54,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -85,7 +84,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -103,13 +102,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -128,7 +126,7 @@
 
 <section class="intro">
   <div class="container">
-    <p class="intro-text">Our "DNA Discovery Audit" and "Custom Codex" are designed to support every part of your school's "genome."</p>
+    <p class="intro-text">Our "DNA Discovery Audit" and "Custom Codex" are designed to support every part of your school's institutional ecosystem.</p>
     <p class="intro-text"><strong>Our service is an iterative partnership.</strong> We are the architects; your team defines the vision.</p>
   </div>
 </section>
@@ -138,28 +136,38 @@
     <p class="nav-prompt">Jump to your stakeholder group:</p>
     <div class="nav-buttons">
       <a href="#administrators" class="role-button">
-        <img src="/assets/images/icons/administrator.png" alt="" class="role-icon" />
+        <svg class="role-icon" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+          <circle cx="12" cy="12" r="11" fill="var(--color-primary)" />
+          <text x="12" y="16" text-anchor="middle" font-size="12" font-family="Inter, Arial, sans-serif" fill="#fff">A</text>
+        </svg>
         <span class="role-label">Administrators</span>
       </a>
       <a href="#support-teams" class="role-button">
-        <img src="/assets/images/icons/support.png" alt="" class="role-icon" />
+        <svg class="role-icon" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+          <circle cx="12" cy="12" r="11" fill="var(--color-success)" />
+          <text x="12" y="16" text-anchor="middle" font-size="12" font-family="Inter, Arial, sans-serif" fill="#fff">S</text>
+        </svg>
         <span class="role-label">Support Teams</span>
       </a>
       <a href="#curriculum-teams" class="role-button">
-        <img src="/assets/images/icons/curriculum.png" alt="" class="role-icon" />
+        <svg class="role-icon" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
+          <circle cx="12" cy="12" r="11" fill="var(--color-secondary)" />
+          <text x="12" y="16" text-anchor="middle" font-size="12" font-family="Inter, Arial, sans-serif" fill="#fff">C</text>
+        </svg>
         <span class="role-label">Curriculum &amp; Teachers</span>
       </a>
     </div>
   </div>
 </nav>
 
+<!-- DUPLICATE REMOVED (commented out to prevent rendering) START -->
 <section class="admin-solutions" id="administrators">
   <div class="container">
     <div class="section-header">
       <span class="role-badge admin">District &amp; School Administrators</span>
       <h2>The Mission-Anchored Codex</h2>
       <p class="role-intro"><strong>The Goal:</strong> To ensure all initiatives are anchored to your core mission and to lead strategic change with confidence.</p>
-      <p class="role-intro"><strong>The Codex:</strong> A "Mission-Anchored" Codex built from your "Policy Chromosome."</p>
+      <p class="role-intro"><strong>The Codex:</strong> A "Mission-Anchored" Codex built from your policy and mission documents.</p>
     </div>
 
     <div class="solutions-grid">
@@ -226,7 +234,7 @@
       <span class="role-badge support">Student &amp; Staff Support Teams</span>
       <h2>The Pathways &amp; Resources Codex</h2>
       <p class="role-intro"><strong>The Goal:</strong> To provide critical, timely, and accurate support to students and staff.</p>
-      <p class="role-intro"><strong>The Codex:</strong> A "Pathways &amp; Resources" Codex built from your "Support Chromosome."</p>
+      <p class="role-intro"><strong>The Codex:</strong> A "Pathways &amp; Resources" Codex built from your support systems and resource libraries.</p>
     </div>
 
     <div class="solutions-grid">
@@ -293,7 +301,7 @@
       <span class="role-badge curriculum">Curriculum Teams &amp; Teachers</span>
       <h2>The Course Sculptor Codex</h2>
       <p class="role-intro"><strong>The Goal:</strong> To preserve veteran wisdom and free teachers to focus on the "human work" of instruction.</p>
-      <p class="role-intro"><strong>The Codex:</strong> A "Course Sculptor" Codex built from your "Curriculum Chromosome."</p>
+      <p class="role-intro"><strong>The Codex:</strong> A "Course Sculptor" Codex built from your curriculum standards and instructional materials.</p>
     </div>
 
     <div class="solutions-grid">
@@ -354,16 +362,7 @@
   </div>
 </section>
 
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Ready to support your entire ecosystem?</h2>
-      <p>Learn how the DNA Discovery Audit can identify opportunities across all three chromosomes of your institutional genome.</p>
-      <a href="/services/" class="primary-button">Explore Our Services</a>
-    </div>
-  </div>
-</section>
-
+<!--
 <section class="admin-solutions" id="administrators">
   <div class="container">
     <div class="section-header">
@@ -439,7 +438,7 @@
   <div class="container">
     <div class="section-header">
       <span class="role-badge curriculum">Curriculum Teams</span>
-      <h2>The Cohesion &amp; Creativity Codex</h2>
+      <h2>The Cohesion & Creativity Codex</h2>
       <p class="role-intro">Balance creative energy with curricular coherence. The Codex serves as your institutional memory and alignment partner across departments and grade levels.</p>
     </div>
     
@@ -579,8 +578,8 @@
 <section class="support-solutions" id="support-teams">
   <div class="container">
     <div class="section-header">
-      <span class="role-badge support">Student &amp; Staff Support Teams</span>
-      <h2>The Consistency &amp; Support Codex</h2>
+      <span class="role-badge support">Student & Staff Support Teams</span>
+      <h2>The Consistency & Support Codex</h2>
       <p class="role-intro">Connect counselors, nurses, paraprofessionals, and librarians to a single source of truth. The Codex ensures everyone has instant access to protocols, policies, and resources—no more hunting through disconnected systems.</p>
       <p class="role-guarantee"><strong>Privacy guarantee:</strong> Never used for student tracking or surveillance.</p>
     </div>
@@ -647,6 +646,7 @@
   </div>
 </section>
 
+-->
 <section class="cta-section">
   <div class="container">
     <h2>Ready to see how the Codex can serve your team?</h2>
@@ -661,6 +661,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     

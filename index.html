@@ -54,8 +54,7 @@
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-    <!-- If you do not have style.css or worksheets.css, comment these out or provide the correct file -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/homepage.css">
+  
     
     <!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
@@ -85,7 +84,7 @@
     <!-- Backend Configuration -->
     <script>
         window.SITE_CONFIG = window.SITE_CONFIG || {};
-        window.SITE_CONFIG.activityCollectorUrl = "https://script.google.com/macros/s/AKfycbzX4la35UeZqeiZTh7K6izfIWiFhb_fdrXTfCM9T78CYfhXkvY3BNfdAtFofwWGTVQbew/exec";
+        window.SITE_CONFIG.activityCollectorUrl = "";
     </script>
 
   <!-- Assessment system deprecated in Phase 3B - Static Content Delivery Only -->
@@ -103,13 +102,12 @@
   </div>
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/perspectives/">Perspectives</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
+      <ul class="nav-links"><!-- Fallback nav (data file missing) -->
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/perspectives/">Perspectives</a></li>
+          <li><a href="/contact/">Contact</a></li></ul>
     </div>
   </nav>
 </header>
@@ -121,39 +119,51 @@
   <div class="markdown-body">
     <div class="homepage-hero">
   <div class="hero-content">
-    <h1>Preserve Your Wisdom, Honor Your Teachers</h1>
-    <p class="hero-subhead">Your curriculum is a valuable asset. Our mission is to unlock it—weaving your school's unique "DNA" and teacher expertise into a living, aligned, and human-centric resource.</p>
+    <h1>Your Institution's Wisdom, Preserved.</h1>
+    <p class="hero-subhead">AI is here. Many see it as a disruption. We see it as the single best tool to <strong>preserve</strong> your irreplaceable institutional knowledge and <strong>support</strong> your expert professionals. We build a private "Custom Codex," trained on <em>your</em> unique DNA, to humanize their workflows—not upset them.</p>
     <div class="hero-cta">
       <a href="/services/" class="primary-button">Explore Our Services →</a>
-      <a href="/about/" class="secondary-button">Our Living Curriculum Approach →</a>
+      <a href="/about/" class="secondary-button">About Our Approach →</a>
     </div>
   </div>
 </div>
 
+<section class="homepage-trust">
+    <div class="container">
+      <p class="trust-lead"><strong>Privacy first.</strong> We never store student PII. We never evaluate teachers. AI supports professionals—it never replaces them.</p>
+      <div class="trust-items">
+        <div class="trust-item">Private, school-owned Custom Codex</div>
+        <div class="trust-item">No student PII ever stored</div>
+        <div class="trust-item">Supports teachers—never evaluative</div>
+      </div>
+    </div>
+    </section>
+
 <section class="homepage-problem">
   <div class="container">
-    <h2>The Challenge: A Scripted System</h2>
-    <p class="problem-intro">Many schools invested heavily in standardized curriculum systems to ensure quality. But these "one-size-fits-none-well" solutions often come at a cost:</p>
+    <h2>The Challenge: A "One-Size-Fits-None" System</h2>
+    <p class="problem-intro">Many schools invested heavily in standardized systems to ensure quality. But these "one-size-fits-none-well" solutions often come at a high cost:</p>
+
+    <div class="problem-columns">
+      <div class="problem-card">
+        <h3>1. Knowledge Loss</h3>
+        <p>When your veteran teachers retire, their irreplaceable wisdom—the stories, context, and proven methods—evaporates. This institutional knowledge is your most valuable asset, and it's not in the curriculum guide.</p>
+      </div>
+      <div class="problem-card">
+        <h3>2. Professional Burnout</h3>
+        <p>Your best people are trapped in "machine work". Teachers, staff, and even admin spend their time on endless alignment, differentiation, and compliance paperwork instead of the "human work" of instruction and leadership.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="homepage-solution">
+  <div class="container">
+    <h2>A Better Approach: Your "Institutional DNA"</h2>
+    <p class="solution-intro">We don't replace your assets; we activate them. We audit your school's unique "Institutional DNA"—your curriculum, policies, and resource libraries. Then, we build a private <strong>Custom Codex</strong> for your teams. This AI partner handles the "machine work" (like alignment) so your professionals can focus on the "human work" (like instruction).</p>
     
-    <div class="problem-cards">
-      <div class="problem-card">
-        <div class="card-number">1</div>
-        <h3>The Loss from Retirement</h3>
-        <p>Mrs. Climie spent 30 years teaching biology in a jungle school in the Philippines. She knows how to make complex concepts land with underserved students. <strong><em>When she retires? Gone.</em></strong></p>
-        <p class="card-link"><a href="/about/">Read her full story →</a></p>
-      </div>
-      
-      <div class="problem-card">
-        <div class="card-number">2</div>
-        <h3>The Loss from Burnout</h3>
-        <p>Your most creative teachers are overwhelmed by "digital tedium" and administrative tasks. Their professional artistry is being crushed by compliance work, leading directly to disengagement and burnout.</p>
-      </div>
-      
-      <div class="problem-card">
-        <div class="card-number">3</div>
-        <h3>The Loss from Silos</h3>
-        <p>Scripted systems were built for core curriculum, leaving your vital support staff—counselors, nurses, paraprofessionals, and librarians—disconnected from a central source of truth, forcing them to hunt for information and protocols daily.</p>
-      </div>
+    <div class="solution-cta">
+       <a href="/services/stakeholder-solutions/" class="primary-button">See the Codex for Admins, Staff, and Teachers →</a>
     </div>
   </div>
 </section>
@@ -201,8 +211,9 @@
     <div class="how-steps">
       <div class="step-card">
         <div class="step-number">1</div>
-        <h3>The Single-Course DNA Audit</h3>
-        <p>We "read" your complete curriculum for a single course—standards, mission statements, veteran teacher materials—to map the unique DNA of your district's educational approach and reveal gaps, redundancies, and alignment opportunities.</p>
+  <h3>The DNA Discovery Audit</h3>
+  <p>We "read" your complete Institutional DNA for a single domain—standards, mission statements, and veteran teacher materials.</p>
+  <p>This maps your unique approach and reveals gaps, redundancies, and alignment opportunities.</p>
       </div>
       
       <div class="step-card">
@@ -223,252 +234,6 @@
     </div>
   </div>
 </section>
-<p>}</p>
-
-<p>.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}</p>
-
-<p>.cta-button.student:hover {
-  border-color: #4a90e2;
-}</p>
-
-<p>.cta-button.district:hover {
-  border-color: #2ecc71;
-}</p>
-
-<p>.cta-button h2 {
-  margin: 0;
-  color: #2c3e50;
-}</p>
-
-<p>.cta-button p {
-  margin: 0.5rem 0 1rem;
-  color: #666;
-}</p>
-
-<p>.arrow {
-  font-size: 1.5rem;
-  color: #999;
-}</p>
-
-<p>.privacy-notice {
-  text-align: center;
-  margin-top: 3rem;
-  padding: 1rem;
-  background: #f1f9ff;
-  border-radius: 4px;
-}</p>
-
-<p>@media (max-width: 768px) {
-  .landing-hero {
-    padding: 2rem 1rem;
-  }</p>
-
-<p>.hero-cta {
-    grid-template-columns: 1fr;
-  }
-}</p>
-
-<style>
-/* Navigation Styles */
-.main-nav {
-  background: #2c3e50;
-  padding: 0;
-  margin: -1rem -1rem 2rem -1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.nav-brand {
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 1rem 0;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 0;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background: #2c3e50;
-  color: white;
-  padding: 1rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.3s;
-}
-
-.dropbtn:hover {
-  background: #34495e;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
-  border-radius: 4px;
-  overflow: hidden;
-  top: 100%;
-  left: 0;
-}
-
-.dropdown-content a {
-  color: #2c3e50;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  transition: background 0.2s;
-}
-
-.dropdown-content a:hover {
-  background: #f1f2f6;
-  color: #4a90e2;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background: #34495e;
-}
-
-/* Course Directory Styles */
-.course-directory {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.course-card {
-  border: 2px solid #e1e5e9;
-  border-radius: 8px;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.course-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-color: #4a90e2;
-}
-
-.course-card h2 {
-  margin-top: 0;
-  color: #2c3e50;
-}
-
-.course-card h2 a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.course-card h2 a:hover {
-  color: #4a90e2;
-}
-
-.course-link {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #4a90e2;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-
-.course-link:hover {
-  background: #357abd;
-  color: white;
-}
-
-/* Resources Section Styles */
-.resources-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.resource-card {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 1rem;
-  background: #fff;
-}
-
-.resource-card h3 {
-  margin-top: 0;
-  color: #34495e;
-}
-
-.resource-card a {
-  color: #4a90e2;
-  text-decoration: none;
-}
-
-.resource-card a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .nav-brand {
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-  
-  .nav-menu {
-    flex-direction: column;
-  }
-  
-  .dropbtn {
-    width: 100%;
-    text-align: left;
-    padding: 0.75rem 1rem;
-  }
-  
-  .dropdown-content {
-    position: static;
-    display: none;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-    background: #ecf0f1;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-}
-</style>
 
 
   </div>
@@ -477,6 +242,7 @@
     <footer class="site-footer">
       <div class="footer-content">
         <p>&copy; 2015–2025 Cosmos in the Classroom | Site by Jonathan Corbett with Socrates AI</p>
+        <nav class="footer-nav" aria-label="Footer Navigation"></nav>
       </div>
     </footer>
     
