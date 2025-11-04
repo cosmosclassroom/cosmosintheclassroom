@@ -433,7 +433,7 @@ button:disabled {
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
   font-size: var(--font-size-md);
-  color: white; /* FULL WHITE FOR READABILITY */
+  color: white !important; /* FULL WHITE FOR READABILITY */
 }
 
 .footer-bottom p {
@@ -441,22 +441,28 @@ button:disabled {
   margin-bottom: var(--spacing-sm);
 }
 
+.footer-bottom * {
+  color: white !important; /* NUCLEAR OPTION: Force all footer bottom text white */
+}
+
 .footer-legal p {
   font-weight: var(--font-weight-medium);
+  color: white !important; /* FIXED: Ensure legal text is white */
 }
 
 .footer-tech p {
-  color: rgba(255, 255, 255, 0.9);
+  color: white !important; /* FIXED: Changed from rgba to solid white */
   font-style: italic;
 }
 
 .footer-license a {
-  color: var(--accent-color);
+  color: var(--color-accent-gold); /* FIXED: Use gold accent instead of brown */
   text-decoration: none;
 }
 
 .footer-license a:hover {
   text-decoration: underline;
+  color: white; /* FIXED: White on hover for better readability */
 }
 
 @media (max-width: 768px) {
@@ -506,17 +512,8 @@ button:disabled {
   position: relative;
 }
 
-.recommended-badge {
-  background: var(--accent-color);
-  color: var(--bg-white);
-  padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
-  border-radius: var(--radius-sm);
-  position: absolute;
-  top: -10px;
-  right: var(--spacing-md);
-}
+/* REMOVED: Floating recommended badge - now using inline badge in new design */
+/* .recommended-badge styles moved to pages/services.css */
 
 .content-wrapper {
   padding: var(--spacing-xl) 0;
@@ -541,6 +538,7 @@ button:disabled {
   margin-bottom: 2rem;
   opacity: 0.95;
   font-family: var(--font-sans-body);
+  color: white !important; /* FIXED: Ensure subhead is white for readability */
 }
 
 /* =============================================================================
