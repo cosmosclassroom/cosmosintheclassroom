@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Cosmos in the Classroom - Email Template</title>
     <style>
         /* Reset styles for email clients */
@@ -14,8 +17,8 @@
             margin: 0;
             padding: 0;
             font-family: Georgia, 'Times New Roman', serif;
-            background-color: #f5f1e8;
-            color: #2c1810;
+            background-color: #f8f6f0; /* Parchment */
+            color: #2c3e50; /* Deep Slate */
             line-height: 1.6;
         }
         
@@ -23,14 +26,13 @@
             max-width: 600px;
             margin: 20px auto;
             background-color: #ffffff;
-            border: 1px solid #d4b886;
+            border: 1px solid #8B7355; /* Warm Taupe */
             border-radius: 8px;
             overflow: hidden;
         }
         
         .email-header {
-            background: #2c1810;
-            background: linear-gradient(135deg, #2c1810 0%, #4a3628 100%);
+            background: #2c3e50; /* Deep Slate */
             padding: 25px 20px;
             text-align: center;
         }
@@ -58,7 +60,7 @@
         .email-body p {
             margin: 0 0 16px 0;
             font-size: 16px;
-            color: #2c1810;
+            color: #2c3e50; /* Deep Slate */
         }
         
         .email-body p:last-child {
@@ -66,25 +68,24 @@
         }
         
         .email-body a {
-            color: #8b4513;
+            color: #8B7355; /* Warm Taupe */
             text-decoration: none;
-            border-bottom: 1px solid #d4b886;
+            border-bottom: 1px solid #8B7355;
         }
         
         .email-body a:hover {
-            color: #2c1810;
-            border-bottom-color: #2c1810;
+            color: #6F5C4E; /* Deep Umber */
+            border-bottom-color: #6F5C4E;
         }
         
         .button {
             display: inline-block;
             padding: 12px 28px;
             margin: 20px 0;
-            background: #2c1810; /* fallback for clients that ignore gradients */
-            background: linear-gradient(135deg, #2c1810 0%, #4a3628 100%);
+            background: #2c3e50; /* Deep Slate */
             color: #ffffff !important;
             text-decoration: none !important;
-            border: 2px solid #d4b886;
+            border: 2px solid #f8f6f0; /* Parchment border for better contrast */
             border-radius: 6px;
             font-size: 15px;
             font-weight: 600;
@@ -92,17 +93,23 @@
             transition: all 0.2s;
         }
         
+        /* Force button text color in all email clients */
+        a.button {
+            color: #ffffff !important;
+        }
+        
         .button:hover {
-            background: #4a3628;
+            background: #34495e; /* Lighter Deep Slate */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            color: #ffffff !important;
         }
         
         .email-footer {
-            background-color: #f5f1e8;
+            background-color: #f8f6f0; /* Parchment */
             padding: 20px 40px;
-            border-top: 1px solid #d4b886;
+            border-top: 1px solid #8B7355; /* Warm Taupe */
             font-size: 14px;
-            color: #6b5446;
+            color: #2c3e50; /* Deep Slate */
         }
         
         .email-footer p {
@@ -110,24 +117,25 @@
         }
         
         .email-footer a {
-            color: #8b4513;
+            color: #2c3e50; /* Deep Slate for contrast on parchment */
             text-decoration: none;
         }
         
         .email-footer a:hover {
+            color: #34495e; /* Lighter Deep Slate on hover */
             text-decoration: underline;
         }
         
         .signature {
             margin-top: 24px;
             padding-top: 16px;
-            border-top: 1px solid #d4b886;
+            border-top: 1px solid #8B7355; /* Warm Taupe */
             font-style: italic;
         }
         
         .signature .name {
             font-weight: 600;
-            color: #2c1810;
+            color: #2c3e50; /* Deep Slate */
             font-style: normal;
         }
         
@@ -147,6 +155,92 @@
             .button { display: block !important; width: 100% !important; padding: 14px 0 !important; }
             .email-footer { padding: 16px !important; }
         }
+
+        /* =================================
+           DARK MODE STYLES
+           ================================= */
+
+        /* --- Explicit Dark Mode Styles --- */
+        :root {
+            color-scheme: light dark;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            
+            /* * We use !important to override inline styles 
+             * and ensure the email client applies our rules.
+             */
+
+            /* --- Page Background (Soft Dark Parchment) --- */
+            body {
+                background-color: #3a3731 !important; /* Darker parchment tone */
+            }
+
+            /* --- Main Email Container (Warm Light Background) --- */
+            .email-container {
+                background-color: #f8f6f0 !important; /* Keep parchment for readability */
+                border-color: #f8f6f0 !important; /* Parchment border for consistency */
+            }
+
+            /* --- Header (Deep Slate with subtle warmth) --- */
+            .email-header {
+                background: #2c3e50 !important; /* Deep Slate */
+            }
+            .email-header h1,
+            .email-header .tagline {
+                color: #f8f6f0 !important; /* Parchment text for warmth */
+            }
+
+            /* --- Body Text (Keep Dark for Readability) --- */
+            .email-body,
+            .email-body p,
+            .signature p {
+                color: #2c3e50 !important; /* Keep Deep Slate for readability on parchment */
+            }
+
+            .signature .name {
+                color: #2c3e50 !important; /* Deep Slate */
+            }
+
+            /* --- Links (Warm Taupe) --- */
+            .email-body a,
+            .signature a {
+                color: #8B7355 !important; /* Warm Taupe */
+                border-bottom-color: #8B7355 !important;
+            }
+            .email-body a:hover,
+            .signature a:hover {
+                color: #6F5C4E !important; /* Deep Umber on hover */
+                border-bottom-color: #6F5C4E !important;
+            }
+
+            /* --- Button (Deep Slate with Light Border) --- */
+            .button,
+            a.button {
+                background: #2c3e50 !important; /* Deep Slate */
+                color: #ffffff !important; /* White text for contrast */
+                border-color: #f8f6f0 !important; /* Parchment border */
+            }
+            .button:hover,
+            a.button:hover {
+                background: #34495e !important; /* Lighter Deep Slate */
+                color: #ffffff !important;
+            }
+            
+            /* --- Footer (Soft Dark Parchment) --- */
+            .email-footer {
+                background-color: #3a3731 !important; /* Darker parchment */
+                border-top-color: #8B7355 !important; /* Warm Taupe */
+                color: #f8f6f0 !important; /* Parchment text */
+            }
+            .email-footer a {
+                color: #f8f6f0 !important; /* Parchment for better contrast */
+            }
+            .email-footer a:hover {
+                color: #ffffff !important; /* White on hover */
+                text-decoration: underline !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -157,7 +251,7 @@
                     <!-- Header -->
                     <div class="email-header">
                         <h1>Cosmos in the Classroom</h1>
-                        <p class="tagline">Automate machine work. Preserve wisdom. Restore human work.</p>
+                        <p class="tagline">Automate machine work. Restore human work. Codify wisdom.</p>
                     </div>
                     
                     <!-- Body Content -->
@@ -184,7 +278,7 @@
                             <p class="name">Jonathan</p>
                             <p>Founder, Cosmos in the Classroom</p>
                             <p><a href="mailto:jonathan@cosmosintheclassroom.org">jonathan@cosmosintheclassroom.org</a></p>
-                            <p><a href="https://www.cosmosintheclassroom.org">www.cosmosintheclassroom.org</a></p>
+                            <p><a href="https://www.cosmosintheclassroom.org">cosmosintheclassroom.org</a></p>
                         </div>
                         
                         <!-- ======================================

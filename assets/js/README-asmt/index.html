@@ -12,30 +12,155 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     
-    <!-- Core CSS Foundation -->
-    <link rel="stylesheet" href="/assets/css/core/variables.css">
-    <link rel="stylesheet" href="/assets/css/core/reset.css">
-    <link rel="stylesheet" href="/assets/css/core/layout.css">
-    
-    <!-- Component CSS -->
-    <link rel="stylesheet" href="/assets/css/components/navigation.css">
-    <link rel="stylesheet" href="/assets/css/components/buttons.css">
-    <link rel="stylesheet" href="/assets/css/components/figures.css">
-    
-    <!-- Marketing Pages CSS (loaded before main.css for proper cascade) -->
-    <link rel="stylesheet" href="/assets/css/marketing-pages.css">
-    
-    <!-- Global CSS with new academic palette -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    
-    <!-- Homepage CSS (Nov 2025 Refactor) -->
-    
-    
-    <!-- Services Pages CSS -->
-    
-    
-    <!-- Perspectives/Blog Pages CSS -->
-    
+    <!-- CRITICAL CSS: Inlined for performance -->
+    <style>
+      /**
+ * CRITICAL CSS - Above-the-Fold Styles for Inlining
+ * Essential styles for initial page render performance
+ * Generated: November 3, 2025
+ */
+
+/* Critical Variables */
+:root {
+  --color-background-main: #fdfdfa;
+  --color-text-body: #3d3d3c;
+  --color-text-heading: #2c3e50;
+  --color-secondary: #2c3e50;
+  --color-accent-gold: #c09553;
+  --font-serif-headings: 'Lora', serif;
+  --font-sans-body: 'Lato', sans-serif;
+}
+
+/* Critical Base Styles */
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--color-background-main);
+  font-family: var(--font-sans-body);
+  color: var(--color-text-body);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Critical Typography */
+h1, h2, h3 {
+  font-family: var(--font-serif-headings);
+  color: var(--color-text-heading);
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+/* Critical Header Styles */
+.site-header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.header-hero {
+  background-image: url('/assets/images/cosmos_00001_.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-overlay {
+  background: rgba(44, 62, 80, 0.75);
+  padding: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.site-title {
+  margin: 0;
+  font-family: var(--font-serif-headings);
+  font-size: 2.5rem;
+}
+
+.site-title a {
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Critical Navigation */
+.site-nav {
+  background: var(--color-secondary);
+  border-bottom: 2px solid var(--color-accent-gold);
+}
+
+.nav-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0;
+  justify-content: center;
+}
+
+.nav-item a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  display: block;
+}
+
+/* Critical Hero Sections */
+.hero-section,
+.services-hero,
+.homepage-hero {
+  background: linear-gradient(135deg, #34495e, var(--color-secondary));
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero-content h1,
+.homepage-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.lead,
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Critical Responsive */
+@media (max-width: 768px) {
+  .site-title { font-size: 1.75rem; }
+  .header-hero { min-height: 150px; }
+  .hero-content h1, .homepage-hero h1 { font-size: 2rem; }
+  .nav-links { flex-wrap: wrap; }
+  .nav-item a { padding: 0.75rem 1rem; font-size: 0.9rem; }
+}
+    </style>
+
+    <!-- OPTIMIZED CSS: Async loading with fallback -->
+    <link rel="stylesheet" href="/assets/css/dist/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/assets/css/dist/pages.css" media="print" onload="this.media='all'">
+
+    <noscript>
+      <link rel="stylesheet" href="/assets/css/dist/main.css">
+      <link rel="stylesheet" href="/assets/css/dist/pages.css">
+    </noscript>
     
     
     <script src="/assets/js/mathjax-config.js"></script>
@@ -50,26 +175,13 @@
     <script src="/assets/js/site-init.js"></script>
     <script src="/assets/js/activity-navigator.js"></script>
     <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-  
-    
-    <!-- Add Mermaid library and initialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script><!-- Add Mermaid library and initialize -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
 
-    <!-- Activity Submission System CSS -->
-    <link rel="stylesheet" href="/assets/css/activity-submission.css">
-    <!-- Enhanced Typography for Flexbooks -->
-    <link rel="stylesheet" href="/assets/css/flexbook-typography.css">
-    <!-- Research Brief Styling (when content_type is research_brief) -->
-    
-    <!-- Component Styles -->
-    <link rel="stylesheet" href="/assets/css/components/callout.css">
-    <link rel="stylesheet" href="/assets/css/components/voices.css">
-    <link rel="stylesheet" href="/assets/css/components/focus-mode.css">
-    <!-- Enhanced Content Styling -->
-    <link rel="stylesheet" href="/assets/css/problem-set-enhanced.css">
-    <link rel="stylesheet" href="/assets/css/figure-enhanced.css">
+
+
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -100,11 +212,10 @@
   <nav class="site-nav" aria-label="Main Navigation">
     <div class="nav-panel">
       <ul class="nav-links"><!-- Fallback nav (data file missing) -->
-          <li><a href="/">Home</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="/services/">Services</a></li>
-          <li><a href="/perspectives/">Perspectives</a></li>
-          <li><a href="/contact/">Contact</a></li></ul>
+          <li><a href="/faq/">FAQ</a></li>
+          <li class="nav-cta"><a href="/services/#request-consult" class="nav-cta-button">Request a Consultation</a></li></ul>
     </div>
   </nav>
 </header>
@@ -114,6 +225,19 @@
     
     
   <div class="markdown-body">
+    <section class="hero-section">
+  <div class="container">
+    <h1></h1>
+    
+    
+    
+    
+  </div>
+</section>
+
+<div class="content-wrapper">
+  <div class="container">
+    
     <h1 id="assessment-system-documentation">Assessment System Documentation</h1>
 
 <h2 id="overview">Overview</h2>
@@ -817,6 +941,9 @@ scripts\run_assessment_tests.bat --component=password --verbose
   <li><code class="language-plaintext highlighter-rouge">scripts/google-apps-script/config.md</code>: Configuration options for the backend</li>
 </ul>
 
+    
+  </div>
+</div>
 
   </div>
     <script type="application/json" id="course-data-">null</script>

@@ -100,7 +100,7 @@
 .service-intro {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: var(--color-secondary);
 }
 
 .service-details-grid {
@@ -111,7 +111,7 @@
 }
 
 .detail-section h4 {
-  color: #8B7355;
+  color: var(--color-primary);
   font-size: 1.1rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -131,7 +131,7 @@
 
 .detail-section li::before {
   content: "✓";
-  color: #8B7355;
+  color: var(--color-primary);
   position: absolute;
   left: 0;
   font-weight: bold;
@@ -140,14 +140,14 @@
 .service-link {
   display: inline-block;
   margin-top: 1rem;
-  color: #8B7355;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .service-link:hover {
-  color: #6F5C4E;
+  color: var(--color-primary-dark);
 }
 
 /* Process Accordion Styles */
@@ -158,7 +158,7 @@
 
 .process-step-collapsible {
   background: white;
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--color-border);
   border-radius: 8px;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -166,7 +166,7 @@
 }
 
 .process-step-collapsible:hover {
-  border-color: #8B7355;
+  border-color: var(--color-primary);
 }
 
 .process-header {
@@ -183,18 +183,18 @@
 }
 
 .process-header:hover {
-  background: #f8f9fa;
+  background: var(--color-background-alt);
 }
 
 .process-step-collapsible.active .process-header {
-  background: #f8f9fa;
+  background: var(--color-background-alt);
 }
 
 .process-header .step-number {
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  background: linear-gradient(135deg, #6F5C4E 0%, #8B7355 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -255,7 +255,7 @@
 
 .hero-cta .primary-button {
   display: inline-block;
-  background: #fff;
+  background: var(--color-background);
   color: var(--color-secondary);
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -1656,7 +1656,7 @@
 .service-details {
   background: var(--color-background-light);
   padding: 4rem 0;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .service-details h2 {
@@ -1668,7 +1668,7 @@
 
 .service-cards {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1677,16 +1677,16 @@
   background: white;
   border: 2px solid var(--color-border-light);
   border-radius: 12px;
-  padding: 2.5rem;
   position: relative;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .service-card:hover {
   border-color: var(--color-primary);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .service-card.recommended {
@@ -1694,10 +1694,27 @@
   border-width: 3px;
 }
 
+/* Professional Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+  background-color: rgba(139, 115, 85, 0.02);
+}
+
+.card-title-section {
+  flex: 1;
+}
+
 .card-number {
-  position: absolute;
-  top: -20px;
-  left: 2rem;
+  flex-shrink: 0;
   width: 50px;
   height: 50px;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
@@ -1715,28 +1732,87 @@
   display: inline-block;
   background: linear-gradient(135deg, var(--color-accent-gold) 0%, var(--color-accent-bronze) 100%);
   color: white;
-  padding: 0.5rem 1.25rem;
+  padding: 0.4rem 1rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
+}
+
+/* Professional Expand Button */
+.expand-button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.3);
+}
+
+.expand-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.4);
+}
+
+.expand-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.expandable-card[data-expanded="true"] .expand-icon {
+  transform: rotate(45deg);
+}
+
+.expandable-card[data-expanded="true"] .expand-text::after {
+  content: " Less";
+}
+
+.expandable-card[data-expanded="false"] .expand-text::after {
+  content: "";
+}
+
+/* Collapsible Content */
+.service-details-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  border-top: 1px solid transparent;
+}
+
+.expandable-card[data-expanded="true"] .service-details-content {
+  max-height: 1000px;
+  padding: 0 2rem 2rem;
+  border-top-color: var(--color-border-light);
 }
 
 .service-card h3 {
   font-family: var(--font-secondary);
   color: var(--color-secondary);
-  font-size: 1.75rem;
-  margin-bottom: 1.25rem;
-  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem 0;
 }
 
 .service-card .service-intro {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.service-details-content .service-intro {
   margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: var(--color-text);
 }
 
 .service-fit,
