@@ -500,10 +500,28 @@ button:disabled {
   padding: var(--spacing-lg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow var(--transition-fast);
+  /* Flexbox to ensure equal heights and button alignment */
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card p {
+  flex-grow: 1; /* Push button to bottom */
+  margin-bottom: var(--spacing-md);
+}
+
+.card .primary-button,
+.card .secondary-button {
+  margin-top: auto; /* Align to bottom */
+  align-self: flex-start;
 }
 
 .card.recommended {
@@ -512,8 +530,19 @@ button:disabled {
   position: relative;
 }
 
-/* REMOVED: Floating recommended badge - now using inline badge in new design */
-/* .recommended-badge styles moved to pages/services.css */
+/* Recommended badge - styled as inline tag above title */
+.recommended-badge {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
 
 .content-wrapper {
   padding: var(--spacing-xl) 0;

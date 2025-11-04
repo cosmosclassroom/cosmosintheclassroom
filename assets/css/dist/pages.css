@@ -633,6 +633,72 @@
   font-size: 1.5rem;
 }
 
+/* Homepage Stakeholder Preview Cards */
+.stakeholder-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.preview-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.preview-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary-dark);
+}
+
+.preview-card .role-description {
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.preview-card p:last-child {
+  margin-bottom: 0;
+  flex-grow: 1;
+}
+
+/* Homepage Post Cards - ensure equal heights */
+.homepage-perspectives-hub .grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card h3 {
+  margin-top: 0;
+}
+
+.post-card p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.post-card .secondary-button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 /* =============================================================================
    PERSPECTIVES/BLOG SPECIFIC STYLES
    ============================================================================= */
