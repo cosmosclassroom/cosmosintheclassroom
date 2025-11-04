@@ -1,0 +1,115 @@
+/* Styles for the Contact Us page */
+
+.contact-section {
+  padding: 4rem 1.5rem;
+  background-color: var(--color-background-alt);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+}
+
+.why-column h3, .how-column h3 {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-3xl);
+  color: var(--color-primary-dark);
+  margin-bottom: 1.5rem;
+}
+
+.trust-steps {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step-counter;
+}
+
+.trust-steps li {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  position: relative;
+}
+
+.trust-steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+}
+
+.contact-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group, .form-group-full {
+  margin-bottom: 1.5rem;
+}
+
+.form-group-full {
+  grid-column: 1 / -1;
+}
+
+.contact-form label, .contact-form legend {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+.form-footer {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.confirmation-message {
+  border: 2px solid var(--color-success);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+}
+
+@media (max-width: 768px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
